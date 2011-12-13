@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pref_lockscreen_menu_unlock"
+        android:title="@string/title_pref_lockscreen_menu_unlock"
+        android:summary="@string/summary_pref_lockscreen_menu_unlock" />
+
+</PreferenceScreen>

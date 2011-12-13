@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ROM Control</string>
+    
+    <!-- Main -->
+    
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">Menu Settings</string>
+    <string name="summary_pref_menu_display">Position of legacy menu button</string>
+    
+    <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen</string>
+    
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
+    <string name="summary_pref_powersaving_pref_mode"></string>
+    
+    <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
+    <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
+        
+    <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">Sync action</string>
+    <string name="summary_pref_powersaving_sync_screen_off">What to do with your syncage?!</string>
+    
+    <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
+    
+</resources>

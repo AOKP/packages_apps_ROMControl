@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pref_mode"
+        android:title="@string/title_pref_powersaving_pref_mode"
+        android:summary="@string/summary_pref_powersaving_pref_mode" />
+
+    <PreferenceCategory
+        android:key="cat_data"
+        android:title="Data">
+
+        <ListPreference
+            android:entries="@array/pref_powersaving_data_screen_off_entries"
+            android:entryValues="@array/pref_powersaving_data_screen_off_values"
+            android:key="pref_powersaving_data_screen_off"
+            android:title="@string/title_pref_powersaving_data_screen_off"
+            android:summary="@string/summary_pref_powersaving_data_screen_off"
+            android:defaultValue="20" />
+
+        <ListPreference
+            android:entries="@array/pref_powersaving_data_screen_off_delay_entries"
+            android:entryValues="@array/pref_powersaving_data_screen_off_delay_values"
+            android:key="pref_powersaving_data_screen_off_delay"
+            android:title="@string/title_pref_powersaving_data_screen_off_delay"
+            android:summary="@string/summary_pref_powersaving_data_screen_off_delay"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_sync"
+        android:title="Sync">
+
+        <ListPreference
+            android:entries="@array/pref_powersaving_sync_screen_off_entries"
+            android:entryValues="@array/pref_powersaving_sync_screen_off_values"
+            android:key="pref_powersaving_sync_screen_off"
+            android:title="@string/title_pref_powersaving_sync_screen_off"
+            android:summary="@string/summary_pref_powersaving_sync_screen_off" />
+
+        <ListPreference
+            android:entries="@array/pref_powersaving_sync_screen_off_interval_entries"
+            android:entryValues="@array/pref_powersaving_sync_screen_off_interval_values"
+            android:key="pref_powersaving_sync_screen_off_interval"
+            android:title="@string/title_pref_powersaving_sync_screen_off_delay"
+            android:summary="@string/summary_pref_powersaving_sync_screen_off_delay"
+            android:enabled="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

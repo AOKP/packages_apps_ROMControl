@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="rom_ui"
+        android:title="ROM UI">
+
+        <Preference
+            android:key="menu_pref"
+            android:title="Navigation Menu">
+
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.roman.romcontrol.activities.NavigationBar"
+                android:targetPackage="com.roman.romcontrol" />
+        </Preference>
+
+        <Preference
+            android:key="lockscreen_pref"
+            android:title="Lockscreen Options">
+
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.roman.romcontrol.activities.Lockscreens"
+                android:targetPackage="com.roman.romcontrol" />
+        </Preference>
+
+        <Preference
+            android:key="powersaver_pref"
+            android:title="Power Saving Options">
+
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.roman.romcontrol.activities.PowerSaver"
+                android:targetPackage="com.roman.romcontrol" />
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

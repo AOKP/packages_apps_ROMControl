@@ -25,7 +25,7 @@ public class LockscreenPreferenceFragment extends PreferenceFragment {
 
         menuButtonLocation = (CheckBoxPreference) findPreference(PREF_MENU);
         menuButtonLocation.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.MENU_LOCATION,
+                .getContentResolver(), Settings.System.LOCKSCREEN_ENABLE_MENU_KEY,
                 0) == 1);
     }
 

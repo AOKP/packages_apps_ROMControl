@@ -59,7 +59,7 @@
 
     <string-array
         name="pref_powersaving_sync_screen_off_interval_entries">
-        <item>5 minutes</item>
+        <item>15 minutes</item>
         <item>30 minutes</item>
         <item>1 hour</item>
         <item>2 hours</item>
@@ -73,7 +73,7 @@
 
     <string-array
         name="pref_powersaving_sync_screen_off_interval_values">
-        <item>300</item>
+        <item>900</item>
         <item>1800</item>
         <item>3600</item>
         <item>7200</item>

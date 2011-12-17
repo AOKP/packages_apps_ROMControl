@@ -11,7 +11,7 @@
     
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
     
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>

@@ -2,11 +2,30 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListPreference
-        android:entries="@array/pref_navigation_menu_entries"
-        android:entryValues="@array/pref_navigation_menu_values"
-        android:key="pref_menu_display"
-        android:title="@string/title_pref_menu_display"
-        android:summary="@string/summary_pref_menu_display" />
+    <PreferenceCategory
+        android:key="nav_bar"
+        android:title="Navigation Bar">
+
+        <ListPreference
+            android:entries="@array/pref_navigation_menu_entries"
+            android:entryValues="@array/pref_navigation_menu_values"
+            android:key="pref_menu_display"
+            android:title="@string/title_pref_menu_display"
+            android:summary="@string/summary_pref_menu_display" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="crt"
+        android:title="CRT Animations">
+
+        <CheckBoxPreference
+            android:key="crt_on"
+            android:title="CRT on animation" />
+
+        <CheckBoxPreference
+            android:key="crt_off"
+            android:title="CRT off animation" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

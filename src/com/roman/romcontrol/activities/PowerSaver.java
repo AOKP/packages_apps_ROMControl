@@ -11,7 +11,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.service.PowerSaverService;
+import android.server.PowerSaverService;
 import android.util.Log;
 
 import com.roman.romcontrol.R;
@@ -123,7 +123,7 @@ public class PowerSaver extends Activity {
 
             } else if (preference == mDataDelay) {
                 int val = Integer.parseInt((String) newValue);
-                Log.i(TAG, "new value: " + val);
+                Log.i(TAG, "new mDataDelay value: " + val);
                 result = Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.POWER_SAVER_DATA_DELAY, val);
 

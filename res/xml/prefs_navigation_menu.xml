@@ -27,5 +27,16 @@
             android:title="CRT off animation" />
 
     </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="misc"
+        android:title="Misc">
+
+        <CheckBoxPreference
+            android:key="ime_switcher"
+            android:title="Show IME Switcher"
+            android:summary="In statusbar, while typing (requires reboot)" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

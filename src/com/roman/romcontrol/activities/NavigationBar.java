@@ -30,10 +30,12 @@ public class NavigationBar extends Activity {
         private static final String PREF_MENU_UNLOCK = "pref_menu_display";
         private static final String PREF_CRT_ON = "crt_on";
         private static final String PREF_CRT_OFF = "crt_off";
+        private static final String PREF_IME_SWITCHER = "ime_switcher";
 
         ListPreference menuDisplayLocation;
         CheckBoxPreference mCrtOnAnimation;
         CheckBoxPreference mCrtOffAnimation;
+        CheckBoxPreference mShowImeSwitcher;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,10 @@ public class NavigationBar extends Activity {
             mCrtOnAnimation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.CRT_ON_ANIMATION, 0) == 1);
 
+            mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
+            mShowImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
+
             ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);
         }
 
@@ -74,6 +80,12 @@ public class NavigationBar extends Activity {
                 boolean checked = ((CheckBoxPreference) preference).isChecked();
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.CRT_ON_ANIMATION, checked ? 1 : 0);
+                return true;
+            } else if (preference == mShowImeSwitcher) {
+
+                boolean checked = ((CheckBoxPreference) preference).isChecked();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.SHOW_STATUSBAR_IME_SWITCHER, checked ? 1 : 0);
                 return true;
             }
 

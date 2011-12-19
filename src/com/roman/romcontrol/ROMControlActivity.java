@@ -4,6 +4,7 @@ package com.roman.romcontrol;
 import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceGroup;
 
 public class ROMControlActivity extends Activity {
 
@@ -23,6 +24,8 @@ public class ROMControlActivity extends Activity {
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.prefs_main);
+
+            ((PreferenceGroup) findPreference("rom_ui")).removePreference(findPreference("lockscreen_pref"));
         }
     }
 }

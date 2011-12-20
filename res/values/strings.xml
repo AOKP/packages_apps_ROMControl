@@ -29,4 +29,16 @@
     <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
     <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
     
+    <string name="title_pref_navigation_layout">Navigation Bar Layout</string>
+    <string name="summary_pref_navigation_layout">Changing layouts requires a reboot!</string>
+    
+    <string name="title_led_on">LED pulse ON duration</string>
+    <string name="summary_led_on"></string>
+    <string name="title_led_off">LED pulse OFF duration</string>
+    <string name="summary_led_off"></string>
+    
+    <!-- Statusbar | Battery -->
+    <string name="battery_title_text_widget">Show battery text</string>
+    <string name="battery_summary_text_widget"></string>
+    
 </resources>

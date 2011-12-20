@@ -22,8 +22,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="Navigation Bar Settings"
-            android:name=".activities.NavigationBar" >
+            android:label="User Interface"
+            android:name=".activities.UserInterface" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -38,6 +38,20 @@
         <activity
             android:label="Power Saver Settings"
             android:name=".activities.PowerSaver" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="LED"
+            android:name=".activities.LED" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="Statusbar - Battery"
+            android:name=".activities.StatusBarBattery" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="text_widget"
+        android:title="@string/battery_title_text_widget"
+        android:summary="@string/battery_summary_text_widget" />
+
+</PreferenceScreen>

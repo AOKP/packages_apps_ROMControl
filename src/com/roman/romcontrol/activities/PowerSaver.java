@@ -50,7 +50,7 @@ public class PowerSaver extends Activity {
             super.onCreate(savedInstanceState);
 
             // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.prefs_powersaving);
+            addPreferencesFromResource(R.xml.prefs_powersaver);
 
             mPowerSaverEnabled = (CheckBoxPreference) findPreference(PREF_MODE);
             mPowerSaverEnabled

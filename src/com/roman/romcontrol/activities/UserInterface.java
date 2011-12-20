@@ -14,7 +14,7 @@ import android.provider.Settings;
 
 import com.roman.romcontrol.R;
 
-public class NavigationBar extends Activity {
+public class UserInterface extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,10 @@ public class NavigationBar extends Activity {
         private static final String PREF_CRT_ON = "crt_on";
         private static final String PREF_CRT_OFF = "crt_off";
         private static final String PREF_IME_SWITCHER = "ime_switcher";
+        private static final String PREF_NAVBAR_LAYOUT = "navbar_layout";
 
         ListPreference menuDisplayLocation;
+        ListPreference navBarLayout;
         CheckBoxPreference mCrtOnAnimation;
         CheckBoxPreference mCrtOffAnimation;
         CheckBoxPreference mShowImeSwitcher;
@@ -42,13 +44,21 @@ public class NavigationBar extends Activity {
             super.onCreate(savedInstanceState);
 
             // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.prefs_navigation_menu);
+            addPreferencesFromResource(R.xml.prefs_ui);
 
             menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
             menuDisplayLocation.setOnPreferenceChangeListener(this);
             menuDisplayLocation.setValue(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.MENU_LOCATION,
                     0) + "");
+            
+            navBarLayout = (ListPreference) findPreference(PREF_NAVBAR_LAYOUT);
+            navBarLayout.setOnPreferenceChangeListener(this);
+            navBarLayout.setValue(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.NAVIGATION_BAR_LAYOUT,
+                    0) + "");
+            
+            
 
             mCrtOffAnimation = (CheckBoxPreference) findPreference(PREF_CRT_OFF);
             mCrtOffAnimation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -97,6 +107,10 @@ public class NavigationBar extends Activity {
             if (preference == menuDisplayLocation) {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
+                return true;
+            } else if (preference == navBarLayout) {
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_LAYOUT, Integer.parseInt((String) newValue));
                 return true;
             }
             return false;

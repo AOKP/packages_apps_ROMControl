@@ -2,6 +2,9 @@
 package com.roman.romcontrol.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.CheckBoxPreference;
@@ -12,8 +15,10 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.server.PowerSaverService;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.android.internal.telephony.Phone;
 import com.roman.romcontrol.R;
 
 public class PowerSaver extends Activity {
@@ -116,10 +121,40 @@ public class PowerSaver extends Activity {
             boolean result = false;
 
             if (preference == mDataMode) {
-                int val = Integer.parseInt((String) newValue);
+                final int val = Integer.parseInt((String) newValue);
                 Log.i(TAG, "new value: " + val);
-                result = Settings.Secure.putInt(getActivity().getContentResolver(),
-                        Settings.Secure.POWER_SAVER_DATA_MODE, val);
+
+                final TelephonyManager phone = (TelephonyManager) ((Context) getActivity())
+                        .getSystemService(Context.TELEPHONY_SERVICE);
+                if (phone.getPhoneType() == Phone.PHONE_TYPE_CDMA
+                        && val == PowerSaverService.DATA_2G) {
+                    AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
+                    b.setTitle("Read me!");
+                    b.setMessage("The 2G function is not yet tested for CDMA/LTE devices. It can cause an infinite loop of errors and won't go away until you wipe data! Only choose this option if you're sure it's been fixed, or you have a nandroid backup!\n\nYou've been warned!!!");
+                    b.setCancelable(false);
+                    b.setPositiveButton("Do it. I have a Nandroid.",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Settings.Secure.putInt(getActivity().getContentResolver(),
+                                            Settings.Secure.POWER_SAVER_DATA_MODE, val);
+
+                                }
+                            });
+                    b.setNegativeButton("Return to safety",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                    b.show();
+                } else {
+                    result = Settings.Secure.putInt(getActivity().getContentResolver(),
+                            Settings.Secure.POWER_SAVER_DATA_MODE, val);
+                }
 
             } else if (preference == mDataDelay) {
                 int val = Integer.parseInt((String) newValue);

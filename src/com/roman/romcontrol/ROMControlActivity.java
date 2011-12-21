@@ -25,7 +25,7 @@ public class ROMControlActivity extends Activity {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.prefs_main);
 
-            ((PreferenceGroup) findPreference("rom_ui")).removePreference(findPreference("lockscreen_pref"));
+//            ((PreferenceGroup) findPreference("rom_ui")).removePreference(findPreference("lockscreen_pref"));
         }
     }
 }

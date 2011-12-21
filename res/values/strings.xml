@@ -9,9 +9,15 @@
     <string name="title_pref_menu_display">Menu Settings</string>
     <string name="summary_pref_menu_display">Position of legacy menu button</string>
     
+    <string name="title_pref_navigation_menu_display">Menu visibility</string>
+    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
+    
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
     <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
+    
+    <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
+    <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
     
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
@@ -33,12 +39,12 @@
     <string name="summary_pref_navigation_layout">Changing layouts requires a reboot!</string>
     
     <string name="title_led_on">LED pulse ON duration</string>
-    <string name="summary_led_on"></string>
+    <string name="summary_led_on">@null</string>
     <string name="title_led_off">LED pulse OFF duration</string>
-    <string name="summary_led_off"></string>
+    <string name="summary_led_off">@null</string>
     
     <!-- Statusbar | Battery -->
     <string name="battery_title_text_widget">Show battery text</string>
-    <string name="battery_summary_text_widget"></string>
+    <string name="battery_summary_text_widget">@null</string>
     
 </resources>

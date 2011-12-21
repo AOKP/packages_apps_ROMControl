@@ -14,6 +14,13 @@
 			android:summary="@string/summary_pref_menu_display" />
 
 		<ListPreference
+			android:entries="@array/pref_navigation_menu_display_entries"
+			android:entryValues="@array/pref_navigation_menu_display_values"
+			android:key="navbar_menu_display"
+			android:title="@string/title_pref_navigation_menu_display"
+			android:summary="@string/summary_pref_navigation_menu_display" />
+
+		<ListPreference
 			android:entries="@array/pref_navigation_layout_entries"
 			android:entryValues="@array/pref_navigation_layout_values"
 			android:key="navbar_layout"
@@ -43,6 +50,10 @@
 			android:key="ime_switcher"
 			android:title="Show IME Switcher"
 			android:summary="In statusbar, while typing (requires reboot)" />
+
+		<Preference
+			android:key="custom_carrier_label"
+			android:title="Custom Carrier Label" />
 
 	</PreferenceCategory>
 

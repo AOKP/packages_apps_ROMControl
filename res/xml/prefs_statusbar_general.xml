@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+       
+    <CheckBoxPreference
+        android:key="settings_behavior"
+        android:title="@string/title_settings_behavior"
+        android:summary="@string/summary_settings_behavior" />
+        
+    <CheckBoxPreference
+        android:key="auto_hide_toggles"
+        android:title="@string/title_auto_hide_toggles"
+        android:summary="@string/summary_auto_hide_toggles" />
+
+</PreferenceScreen>

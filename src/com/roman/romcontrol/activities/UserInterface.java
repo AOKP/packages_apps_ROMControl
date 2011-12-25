@@ -3,18 +3,24 @@ package com.roman.romcontrol.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.text.Spannable;
+import android.view.IWindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.roman.romcontrol.R;
 
@@ -52,9 +58,10 @@ public class UserInterface extends Activity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.prefs_ui);
+
+            PreferenceScreen prefs = getPreferenceScreen();
 
             menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
             menuDisplayLocation.setOnPreferenceChangeListener(this);
@@ -87,8 +94,20 @@ public class UserInterface extends Activity {
                     0) + "");
 
             mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
-
             updateCustomLabelTextSummary();
+
+            // remove navigation bar options
+            IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
+                    .getService(Context.WINDOW_SERVICE));
+            try {
+                if (!mWindowManager.hasNavigationBar()) {
+                    PreferenceGroup preferenceGroup = (PreferenceGroup) findPreference("nav_bar");
+                    if (preferenceGroup != null) {
+                        prefs.removePreference(preferenceGroup);
+                    }
+                }
+            } catch (RemoteException e) {
+            }
 
             // can't get this working in ICS just yet
             ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);

@@ -50,6 +50,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:label="Statusbar - General"
+            android:name=".activities.StatusBarGeneral" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:label="Statusbar - Battery"
             android:name=".activities.StatusBarBattery" >
             <intent-filter >

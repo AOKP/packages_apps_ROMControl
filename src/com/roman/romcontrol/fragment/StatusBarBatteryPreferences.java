@@ -13,8 +13,10 @@ import com.roman.romcontrol.R;
 public class StatusBarBatteryPreferences extends PreferenceFragment {
 
     private static final String PREF_BATT_TEXT = "text_widget";
+    private static final String PREF_BATT_TEXT_CENTER = "text_widget_center";
 
     CheckBoxPreference mEnableBatteryText;
+    CheckBoxPreference mEnableCenterBatteryText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,12 @@ public class StatusBarBatteryPreferences extends PreferenceFragment {
         mEnableBatteryText.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_BATTERY_TEXT,
                 0) == 1);
+        
+        mEnableCenterBatteryText = (CheckBoxPreference) findPreference(PREF_BATT_TEXT_CENTER);
+        mEnableCenterBatteryText.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_BATTERY_TEXT_STYLE,
+                0) == 1);
+        
     }
 
     @Override
@@ -37,6 +45,14 @@ public class StatusBarBatteryPreferences extends PreferenceFragment {
                     Settings.System.STATUSBAR_BATTERY_TEXT,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+            
+        } else if (preference == mEnableCenterBatteryText) {
+            
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_TEXT_STYLE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+            
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

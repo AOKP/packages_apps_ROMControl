@@ -18,6 +18,13 @@
 	</string-array>
 
 	<string-array
+		name="pref_powersaving_data_screen_off_entries_cdma">
+		<item>Do nothing</item>
+		<item>Turn data off</item>
+		<item>Turn LTE off (experimental)</item>
+	</string-array>
+
+	<string-array
 		name="pref_powersaving_data_screen_off_entries">
 		<item>Do nothing</item>
 		<item>Turn data off</item>
@@ -158,6 +165,7 @@
 		<item>Default ICS behavior</item>
 		<item>Always show invisible icons</item>
 		<item>Always show</item>
+		<item>Default ICS with invisible icons when hidden</item>
 	</string-array>
 
 	<string-array
@@ -165,6 +173,7 @@
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
+		<item>3</item>
 	</string-array>
 
 </resources>

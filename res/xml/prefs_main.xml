@@ -59,6 +59,16 @@
 		android:title="Statusbar">
 
 		<Preference
+			android:key="general_pref"
+			android:title="General">
+
+			<intent
+				android:action="android.intent.action.MAIN"
+				android:targetClass="com.roman.romcontrol.activities.StatusBarGeneral"
+				android:targetPackage="com.roman.romcontrol" />
+		</Preference>
+
+		<Preference
 			android:key="powersaver_pref"
 			android:title="Battery">
 

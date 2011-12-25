@@ -43,8 +43,22 @@
     <string name="title_led_off">LED pulse OFF duration</string>
     <string name="summary_led_off">@null</string>
     
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">Use default settings behavior</string>
+    <string name="summary_settings_behavior">Default behavior is to long press for toggles, press for settings. Uncheck to press for toggles, long press for settings</string>
+    
+    <string name="title_auto_hide_toggles">Auto hide toggles</string>
+    <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
+    
     <!-- Statusbar | Battery -->
     <string name="battery_title_text_widget">Show battery text</string>
     <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_title_text_widget_center">Center battery text</string>
+    
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>   
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
     
 </resources>

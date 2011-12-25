@@ -6,7 +6,7 @@
 		android:entryValues="@array/led_values"
 		android:key="led_on"
 		android:title="@string/title_led_on"
-		android:summary="@string/summary_led_on"/>
+		android:summary="@string/summary_led_on" />
 
 	<ListPreference
 		android:entries="@array/led_entries"
@@ -14,7 +14,5 @@
 		android:key="led_off"
 		android:title="@string/title_led_off"
 		android:summary="@string/summary_led_off" />
-
-
 
 </PreferenceScreen>

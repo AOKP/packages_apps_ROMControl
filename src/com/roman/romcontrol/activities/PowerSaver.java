@@ -71,6 +71,12 @@ public class PowerSaver extends Activity {
             Log.i(TAG, "data mode value onCreate: " + dataModeValue);
             mDataMode.setValue(Integer.toString(dataModeValue));
 
+            final TelephonyManager telephony = (TelephonyManager) getActivity().getSystemService(
+                    Context.TELEPHONY_SERVICE);
+            if (telephony.getCurrentPhoneType() == Phone.PHONE_TYPE_CDMA) {
+                mDataMode.setEntries(R.array.pref_powersaving_data_screen_off_entries_cdma);
+            }
+
             mDataDelay = (ListPreference) findPreference(PREF_DATA_DELAY);
             mDataDelay.setOnPreferenceChangeListener(this);
             mDataDelay.setValue(Settings.Secure.getInt(
@@ -130,7 +136,7 @@ public class PowerSaver extends Activity {
                         && val == PowerSaverService.DATA_2G) {
                     AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
                     b.setTitle("Read me!");
-                    b.setMessage("The 2G function is not yet tested for CDMA/LTE devices. It can cause an infinite loop of errors and won't go away until you wipe data! Only choose this option if you're sure it's been fixed, or you have a nandroid backup!\n\nYou've been warned!!!");
+                    b.setMessage("The LTE-off function is not yet tested for CDMA/LTE devices. It can cause an infinite loop of errors and won't go away until you wipe data! Only choose this option if you have a nandroid backup!\n\nYou've been warned!!!");
                     b.setCancelable(false);
                     b.setPositiveButton("Do it. I have a Nandroid.",
                             new DialogInterface.OnClickListener() {

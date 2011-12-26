@@ -21,7 +21,12 @@
 		name="pref_powersaving_data_screen_off_entries_cdma">
 		<item>Do nothing</item>
 		<item>Turn data off</item>
-		<item>Turn LTE off (experimental)</item>
+	</string-array>
+
+	<string-array
+		name="pref_powersaving_data_screen_off_values_cdma">
+		<item>20</item>
+		<item>22</item>
 	</string-array>
 
 	<string-array
@@ -37,6 +42,8 @@
 		<item>22</item>
 		<item>21</item>
 	</string-array>
+
+
 
 	<string-array
 		name="pref_powersaving_data_screen_off_delay_entries">

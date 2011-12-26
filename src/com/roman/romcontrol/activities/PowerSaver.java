@@ -75,6 +75,7 @@ public class PowerSaver extends Activity {
                     Context.TELEPHONY_SERVICE);
             if (telephony.getCurrentPhoneType() == Phone.PHONE_TYPE_CDMA) {
                 mDataMode.setEntries(R.array.pref_powersaving_data_screen_off_entries_cdma);
+                mDataMode.setEntryValues(R.array.pref_powersaving_data_screen_off_values_cdma);
             }
 
             mDataDelay = (ListPreference) findPreference(PREF_DATA_DELAY);
@@ -144,7 +145,7 @@ public class PowerSaver extends Activity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Settings.Secure.putInt(getActivity().getContentResolver(),
-                                            Settings.Secure.POWER_SAVER_DATA_MODE, val);
+                                            Settings.Secure.POWER_SAVER_DATA_MODE, PowerSaverService.DATA_2G);
 
                                 }
                             });

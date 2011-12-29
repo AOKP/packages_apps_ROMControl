@@ -120,12 +120,14 @@
 		name="pref_navigation_layout_entries">
 		<item>Regular</item>
 		<item>Regular w/Search</item>
+		<item>Back - Home - Search</item>
 	</string-array>
 
 	<string-array
 		name="pref_navigation_layout_values">
 		<item>0</item>
 		<item>1</item>
+		<item>2</item>
 	</string-array>
 
 	<string-array

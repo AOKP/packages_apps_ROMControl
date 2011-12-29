@@ -1,6 +1,7 @@
 
 package com.roman.romcontrol.fragment;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -17,9 +18,11 @@ public class LEDPreferences extends PreferenceFragment implements OnPreferenceCh
 
     private static final String PREF_LED_OFF = "led_off";
     private static final String PREF_LED_ON = "led_on";
+    private static final String PREF_COLOR_PICKER = "led_color";
 
     ListPreference mLedOffTime;
     ListPreference mLedOnTime;
+    ColorPickerPreference mColorPicker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class LEDPreferences extends PreferenceFragment implements OnPreferenceCh
                 + "";
         mLedOffTime.setValue(ledOffTime);
         Log.i(TAG, "led off time set to: " + ledOffTime);
-        
+
         mLedOnTime = (ListPreference) findPreference(PREF_LED_ON);
         mLedOnTime.setOnPreferenceChangeListener(this);
         String ledOnTime = Settings.System
@@ -49,6 +52,9 @@ public class LEDPreferences extends PreferenceFragment implements OnPreferenceCh
                 + "";
         mLedOnTime.setValue(ledOnTime);
         Log.i(TAG, "led on time set to: " + ledOnTime);
+
+        mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
+        mColorPicker.setOnPreferenceChangeListener(this);
 
     }
 
@@ -69,6 +75,14 @@ public class LEDPreferences extends PreferenceFragment implements OnPreferenceCh
             Log.i(TAG, "led on time new value: " + val);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NOTIFICATION_LIGHT_ON, val);
+        } else if (preference == mColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+            
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_LIGHT_COLOR, intHex);
+            Log.e("ROMAN", intHex + "");
         }
 
         return result;

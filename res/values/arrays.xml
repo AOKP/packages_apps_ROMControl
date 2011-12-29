@@ -20,12 +20,14 @@
 	<string-array
 		name="pref_powersaving_data_screen_off_entries_cdma">
 		<item>Do nothing</item>
+		<item>Switch to CDMA only (1x)</item>
 		<item>Turn data off</item>
 	</string-array>
 
 	<string-array
 		name="pref_powersaving_data_screen_off_values_cdma">
 		<item>20</item>
+		<item>21</item>
 		<item>22</item>
 	</string-array>
 

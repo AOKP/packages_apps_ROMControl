@@ -111,12 +111,44 @@ public class PowerSaver extends Activity {
             if (preference == mPowerSaverEnabled) {
                 boolean checked = ((CheckBoxPreference) preference).isChecked();
 
-                int newVal = checked ? PowerSaverService.POWER_SAVER_MODE_ON
+                final int newVal = checked ? PowerSaverService.POWER_SAVER_MODE_ON
                         : PowerSaverService.POWER_SAVER_MODE_OFF;
 
                 Log.i(TAG, "putting: " + newVal);
-                Settings.Secure.putInt(getActivity().getContentResolver(),
-                        Settings.Secure.POWER_SAVER_MODE, newVal);
+
+                final TelephonyManager phone = (TelephonyManager) ((Context) getActivity())
+                        .getSystemService(Context.TELEPHONY_SERVICE);
+                if (phone.getPhoneType() == Phone.PHONE_TYPE_CDMA
+                        && newVal == PowerSaverService.POWER_SAVER_MODE_ON) {
+
+                    AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
+                    b.setTitle("Read me!");
+                    b.setMessage("The Power Saver function is not yet fully functional for CDMA/LTE devices. It can cause an infinite loop of errors and won't go away until you wipe /data! Only choose this option if you have a nandroid backup and you want to help me test!\n\nYou've been warned!!!");
+                    b.setCancelable(false);
+                    b.setPositiveButton("Do it. I have a Nandroid.",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Settings.Secure.putInt(getActivity().getContentResolver(),
+                                            Settings.Secure.POWER_SAVER_MODE, newVal);
+
+                                }
+                            });
+                    b.setNegativeButton("Return to safety",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    mPowerSaverEnabled.setChecked(false);
+                                    dialog.cancel();
+                                }
+                            });
+                    b.show();
+                } else {
+                    Settings.Secure.putInt(getActivity().getContentResolver(),
+                            Settings.Secure.POWER_SAVER_MODE, newVal);
+                }
                 return true;
             }
             refreshSettings();
@@ -130,38 +162,9 @@ public class PowerSaver extends Activity {
             if (preference == mDataMode) {
                 final int val = Integer.parseInt((String) newValue);
                 Log.i(TAG, "new value: " + val);
-
-                final TelephonyManager phone = (TelephonyManager) ((Context) getActivity())
-                        .getSystemService(Context.TELEPHONY_SERVICE);
-                if (phone.getPhoneType() == Phone.PHONE_TYPE_CDMA
-                        && val == PowerSaverService.DATA_2G) {
-                    AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
-                    b.setTitle("Read me!");
-                    b.setMessage("The LTE-off function is not yet tested for CDMA/LTE devices. It can cause an infinite loop of errors and won't go away until you wipe data! Only choose this option if you have a nandroid backup!\n\nYou've been warned!!!");
-                    b.setCancelable(false);
-                    b.setPositiveButton("Do it. I have a Nandroid.",
-                            new DialogInterface.OnClickListener() {
-
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    Settings.Secure.putInt(getActivity().getContentResolver(),
-                                            Settings.Secure.POWER_SAVER_DATA_MODE, PowerSaverService.DATA_2G);
-
-                                }
-                            });
-                    b.setNegativeButton("Return to safety",
-                            new DialogInterface.OnClickListener() {
-
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.cancel();
-                                }
-                            });
-                    b.show();
-                } else {
-                    result = Settings.Secure.putInt(getActivity().getContentResolver(),
-                            Settings.Secure.POWER_SAVER_DATA_MODE, val);
-                }
+                result = Settings.Secure.putInt(getActivity().getContentResolver(),
+                        Settings.Secure.POWER_SAVER_DATA_MODE,
+                        val);
 
             } else if (preference == mDataDelay) {
                 int val = Integer.parseInt((String) newValue);

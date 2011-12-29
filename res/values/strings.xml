@@ -21,7 +21,7 @@
     
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
-    <string name="summary_pref_powersaving_pref_mode"></string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
     
     <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
     <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>

@@ -5,6 +5,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
@@ -56,6 +57,15 @@ public class LEDPreferences extends PreferenceFragment implements OnPreferenceCh
         mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
         mColorPicker.setOnPreferenceChangeListener(this);
 
+    }
+    
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if(preference == mColorPicker) {
+            
+           
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override

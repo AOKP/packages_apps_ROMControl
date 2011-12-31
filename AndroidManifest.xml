@@ -36,6 +36,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:label="Power Menu Settings"
+            android:name=".activities.PowerMenu" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:label="Power Saver Settings"
             android:name=".activities.PowerSaver" >
             <intent-filter >
@@ -59,6 +66,13 @@
         <activity
             android:label="Statusbar - Battery"
             android:name=".activities.StatusBarBattery" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="Statusbar - Clock"
+            android:name=".activities.StatusBarClock" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

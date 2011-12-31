@@ -19,6 +19,10 @@
     <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
     
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Show power saver</string>
+    <string name="title_show_screenshot">Show screenshot</string>
+    
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
@@ -54,6 +58,10 @@
     <string name="battery_title_text_widget">Show battery text</string>
     <string name="battery_summary_text_widget">@null</string>
     <string name="battery_title_text_widget_center">Center battery text</string>
+    
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Show clock</string>
+    <string name="title_clock_ampm_entries">AM/PM style</string>
     
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

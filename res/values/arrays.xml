@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string-array
-		name="pref_navigation_menu_entries">
+	<string-array name="pref_navigation_menu_entries">
 		<item>Right</item>
 		<item>Left</item>
 		<item>Both</item>
 	</string-array>
 
 	<!-- right is the default, easier to keep 0 as first index -->
-	<string-array
-		name="pref_navigation_menu_values"
+	<string-array name="pref_navigation_menu_values"
 		translatable="false">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_data_screen_off_entries_cdma">
+	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
 		<item>Do nothing</item>
 		<item>Switch to CDMA only (1x)</item>
 		<item>Turn data off</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_data_screen_off_values_cdma">
+	<string-array name="pref_powersaving_data_screen_off_values_cdma">
 		<item>20</item>
 		<item>21</item>
 		<item>22</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_data_screen_off_entries">
+	<string-array name="pref_powersaving_data_screen_off_entries">
 		<item>Do nothing</item>
 		<item>Turn data off</item>
 		<item>Switch to 2G mode</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_data_screen_off_values">
+	<string-array name="pref_powersaving_data_screen_off_values">
 		<item>20</item>
 		<item>22</item>
 		<item>21</item>
@@ -47,8 +41,7 @@
 
 
 
-	<string-array
-		name="pref_powersaving_data_screen_off_delay_entries">
+	<string-array name="pref_powersaving_data_screen_off_delay_entries">
 		<item>Don\'t wait (immediate)</item>
 		<item>10 seconds</item>
 		<item>30 seconds</item>
@@ -60,8 +53,7 @@
 		<item>30 minutes</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_data_screen_off_delay_values">
+	<string-array name="pref_powersaving_data_screen_off_delay_values">
 		<item>0</item>
 		<item>10</item>
 		<item>30</item>
@@ -73,8 +65,7 @@
 		<item>1800</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_sync_screen_off_interval_entries">
+	<string-array name="pref_powersaving_sync_screen_off_interval_entries">
 		<item>15 minutes</item>
 		<item>30 minutes</item>
 		<item>1 hour</item>
@@ -87,8 +78,7 @@
 		<item>12 hours</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_sync_screen_off_interval_values">
+	<string-array name="pref_powersaving_sync_screen_off_interval_values">
 		<item>900</item>
 		<item>1800</item>
 		<item>3600</item>
@@ -102,36 +92,31 @@
 	</string-array>
 
 
-	<string-array
-		name="pref_powersaving_sync_screen_off_entries">
+	<string-array name="pref_powersaving_sync_screen_off_entries">
 		<item>Do nothing</item>
 		<item>Turn autosync off</item>
 		<item>Turn autosync off with delay</item>
 	</string-array>
 
-	<string-array
-		name="pref_powersaving_sync_screen_off_values">
+	<string-array name="pref_powersaving_sync_screen_off_values">
 		<item>35</item>
 		<item>33</item>
 		<item>34</item>
 	</string-array>
 
-	<string-array
-		name="pref_navigation_layout_entries">
+	<string-array name="pref_navigation_layout_entries">
 		<item>Regular</item>
 		<item>Regular w/Search</item>
 		<item>Back - Home - Search</item>
 	</string-array>
 
-	<string-array
-		name="pref_navigation_layout_values">
+	<string-array name="pref_navigation_layout_values">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 	</string-array>
 
-	<string-array
-		name="led_entries">
+	<string-array name="led_entries">
 		<item>.5 seconds</item>
 		<item>1 second</item>
 		<item>1.5 seconds</item>
@@ -151,8 +136,7 @@
 	</string-array>
 
 	<!-- values must be in milliseconds!~@@#E!@ -->
-	<string-array
-		name="led_values">
+	<string-array name="led_values">
 		<item>500</item>
 		<item>1000</item>
 		<item>1500</item>
@@ -171,20 +155,30 @@
 		<item>10000</item>
 	</string-array>
 
-	<string-array
-		name="pref_navigation_menu_display_entries">
+	<string-array name="pref_navigation_menu_display_entries">
 		<item>Default ICS behavior</item>
 		<item>Always show invisible icons</item>
 		<item>Always show</item>
 		<item>Default ICS with invisible icons when hidden</item>
 	</string-array>
 
-	<string-array
-		name="pref_navigation_menu_display_values">
+	<string-array name="pref_navigation_menu_display_values">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 		<item>3</item>
+	</string-array>
+
+	<string-array name="clock_ampm_entries">
+		<item>Don\'t show</item>
+		<item>Small AM/PM</item>
+		<item>Regular AM/PM</item>
+	</string-array>
+
+	<string-array name="clock_ampm_values">
+		<item>2</item>
+		<item>1</item>
+		<item>0</item>
 	</string-array>
 
 </resources>

@@ -36,10 +36,10 @@ public class PowerSaver extends Activity {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new PrefsFragment()).commit();
+                new PowerSaverPreferences()).commit();
     }
 
-    public static class PrefsFragment extends PreferenceFragment implements
+    public static class PowerSaverPreferences extends PreferenceFragment implements
             OnPreferenceChangeListener {
 
         CheckBoxPreference mPowerSaverEnabled;

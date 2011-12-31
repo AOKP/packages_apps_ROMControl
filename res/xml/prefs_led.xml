@@ -17,7 +17,7 @@
 
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
 		android:key="led_color" 
-		android:title="SUCK IT BIRDMAN" 
+		android:title="LED color" 
 		android:defaultValue="#000000" />
 
 </PreferenceScreen>

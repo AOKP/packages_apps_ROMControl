@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<CheckBoxPreference android:key="clock_enable"
+		android:title="@string/clock_title_enable" />
+
+	<ListPreference android:entries="@array/clock_ampm_entries"
+		android:entryValues="@array/clock_ampm_values" android:key="clock_am_pm_style"
+		android:title="@string/title_clock_ampm_entries" android:dependency="clock_enable" />
+
+</PreferenceScreen>

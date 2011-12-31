@@ -11,7 +11,6 @@ import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
@@ -20,7 +19,6 @@ import android.provider.Settings;
 import android.text.Spannable;
 import android.view.IWindowManager;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.roman.romcontrol.R;
 
@@ -31,10 +29,10 @@ public class UserInterface extends Activity {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new PrefsFragment()).commit();
+                new UserInterfacePreferences()).commit();
     }
 
-    public static class PrefsFragment extends PreferenceFragment implements
+    public static class UserInterfacePreferences extends PreferenceFragment implements
             OnPreferenceChangeListener {
 
         private static final String PREF_MENU_UNLOCK = "pref_menu_display";
@@ -44,6 +42,7 @@ public class UserInterface extends Activity {
         private static final String PREF_NAVBAR_LAYOUT = "navbar_layout";
         private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
         private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+        private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
 
         ListPreference menuDisplayLocation;
         ListPreference navBarLayout;
@@ -51,6 +50,7 @@ public class UserInterface extends Activity {
         CheckBoxPreference mCrtOnAnimation;
         CheckBoxPreference mCrtOffAnimation;
         CheckBoxPreference mShowImeSwitcher;
+        CheckBoxPreference mLongPressToKill;
         Preference mCustomLabel;
 
         String mCustomLabelText = null;
@@ -96,6 +96,10 @@ public class UserInterface extends Activity {
             mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
             updateCustomLabelTextSummary();
 
+            mLongPressToKill = (CheckBoxPreference) findPreference(PREF_LONGPRESS_TO_KILL);
+            mLongPressToKill.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+                    Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
+
             // remove navigation bar options
             IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
                     .getService(Context.WINDOW_SERVICE));
@@ -105,6 +109,9 @@ public class UserInterface extends Activity {
                     if (preferenceGroup != null) {
                         prefs.removePreference(preferenceGroup);
                     }
+                } else {
+                    // nav bar
+                    ((PreferenceGroup) findPreference("misc")).removePreference(mLongPressToKill);
                 }
             } catch (RemoteException e) {
             }
@@ -147,6 +154,7 @@ public class UserInterface extends Activity {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.SHOW_STATUSBAR_IME_SWITCHER, checked ? 1 : 0);
                 return true;
+
             } else if (preference == mCustomLabel) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
@@ -174,6 +182,13 @@ public class UserInterface extends Activity {
                 });
 
                 alert.show();
+            } else if (preference == mLongPressToKill) {
+
+                boolean checked = ((CheckBoxPreference) preference).isChecked();
+                Settings.Secure.putInt(getActivity().getContentResolver(),
+                        Settings.Secure.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
+                return true;
+
             }
 
             return super.onPreferenceTreeClick(preferenceScreen, preference);

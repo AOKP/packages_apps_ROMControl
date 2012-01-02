@@ -75,9 +75,9 @@ public class LED extends Activity {
         @Override
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                 Preference preference) {
-            if (preference == mColorPicker) {
-
-            }
+//            if (preference == mColorPicker) {
+//
+//            }
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 

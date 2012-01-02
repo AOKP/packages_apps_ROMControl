@@ -30,6 +30,9 @@ public class PowerSaver extends Activity {
     private static final String PREF_DATA_DELAY = "pref_powersaving_data_screen_off_delay";
     private static final String PREF_SYNC_MODE = "pref_powersaving_sync_screen_off";
     private static final String PREF_SYNC_INTERVAL = "pref_powersaving_sync_screen_off_interval";
+    private static final String PREF_SCREEN_OFF_WIFI = "screen_off_wifi_action";
+    private static final String PREF_SYNC_DATA_MODE = "sync_data_mode";
+    private static final String PREF_SYNC_MOBILE_DATA_MODE = "sync_data_mobile_mode";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,9 @@ public class PowerSaver extends Activity {
         ListPreference mDataDelay;
         ListPreference mSyncMode;
         ListPreference mSyncInterval;
+        ListPreference mScreenOffWifiMode;
+        ListPreference mSyncDataAction;
+        ListPreference mSyncDataMobilePreference;
 
         Handler handler = new Handler();
 
@@ -97,6 +103,25 @@ public class PowerSaver extends Activity {
             mSyncInterval.setValue(Settings.Secure.getInt(
                     getActivity().getContentResolver(), Settings.Secure.POWER_SAVER_SYNC_INTERVAL,
                     3600) + "");
+
+            mScreenOffWifiMode = (ListPreference) findPreference(PREF_SCREEN_OFF_WIFI);
+            mScreenOffWifiMode.setOnPreferenceChangeListener(this);
+            mScreenOffWifiMode.setValue(Settings.Secure.getInt(
+                    getActivity().getContentResolver(), Settings.Secure.POWER_SAVER_WIFI_MODE,
+                    PowerSaverService.WIFI_UNTOUCHED) + "");
+
+            mSyncDataAction = (ListPreference) findPreference(PREF_SYNC_DATA_MODE);
+            mSyncDataAction.setOnPreferenceChangeListener(this);
+            mSyncDataAction.setValue(Settings.Secure.getInt(
+                    getActivity().getContentResolver(), Settings.Secure.POWER_SAVER_SYNC_DATA_MODE,
+                    PowerSaverService.WIFI_UNTOUCHED) + "");
+
+            mSyncDataMobilePreference = (ListPreference) findPreference(PREF_SYNC_MOBILE_DATA_MODE);
+            mSyncDataMobilePreference.setOnPreferenceChangeListener(this);
+            mSyncDataMobilePreference.setValue(Settings.Secure.getInt(
+                    getActivity().getContentResolver(),
+                    Settings.Secure.POWER_SAVER_SYNC_MOBILE_PREFERENCE,
+                    PowerSaverService.WIFI_UNTOUCHED) + "");
         }
 
         @Override
@@ -192,6 +217,24 @@ public class PowerSaver extends Activity {
                 Log.i(TAG, "new value: " + val);
                 result = Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.POWER_SAVER_SYNC_INTERVAL, val);
+
+            } else if (preference == mScreenOffWifiMode) {
+                int val = Integer.parseInt((String) newValue);
+                Log.i(TAG, "new value: " + val);
+                result = Settings.Secure.putInt(getActivity().getContentResolver(),
+                        Settings.Secure.POWER_SAVER_WIFI_MODE, val);
+
+            } else if (preference == mSyncDataAction) {
+                int val = Integer.parseInt((String) newValue);
+                Log.i(TAG, "new value: " + val);
+                result = Settings.Secure.putInt(getActivity().getContentResolver(),
+                        Settings.Secure.POWER_SAVER_SYNC_DATA_MODE, val);
+
+            } else if (preference == mSyncDataMobilePreference) {
+                int val = Integer.parseInt((String) newValue);
+                Log.i(TAG, "new value: " + val);
+                result = Settings.Secure.putInt(getActivity().getContentResolver(),
+                        Settings.Secure.POWER_SAVER_SYNC_MOBILE_PREFERENCE, val);
 
             }
             refreshSettings();

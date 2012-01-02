@@ -39,8 +39,6 @@
 		<item>21</item>
 	</string-array>
 
-
-
 	<string-array name="pref_powersaving_data_screen_off_delay_entries">
 		<item>Don\'t wait (immediate)</item>
 		<item>10 seconds</item>
@@ -103,7 +101,44 @@
 		<item>33</item>
 		<item>34</item>
 	</string-array>
-
+	
+	<string-array name="powersaving_screen_off_wifi_entries">
+		<item>Leave untouched</item>
+		<item>Turn Wi-Fi off</item>
+		<item>turn Wi-Fi on</item>
+	</string-array>
+	
+	<string-array name="powersaving_screen_off_wifi_values">
+		<item>40</item>
+		<item>41</item>
+		<item>42</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mode_entries">
+		<item>Leave untouched</item>
+		<item>Only Wi-Fi</item>
+		<item>Wi-Fi preferred</item>
+		<item>Data only</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mode_values">
+		<item>54</item>
+		<item>50</item>
+		<item>51</item>
+		<item>53</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mobile_mode_entries">
+		<item>2G/1x only</item>
+		<item>Prefer 3G</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mobile_mode_values">
+		<item>62</item>
+		<item>63</item>
+	</string-array>
+	
+	<!-- NAV BAR -->
 	<string-array name="pref_navigation_layout_entries">
 		<item>Regular</item>
 		<item>Regular w/Search</item>

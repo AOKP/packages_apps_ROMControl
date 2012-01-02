@@ -111,7 +111,7 @@ public class UserInterface extends Activity {
                     }
                 } else {
                     // nav bar
-                    ((PreferenceGroup) findPreference("misc")).removePreference(mLongPressToKill);
+//                    ((PreferenceGroup) findPreference("misc")).removePreference(mLongPressToKill);
                 }
             } catch (RemoteException e) {
             }

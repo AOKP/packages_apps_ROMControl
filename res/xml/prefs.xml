@@ -1,44 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<PreferenceCategory android:key="rom_ui"
+	<PreferenceCategory
+		android:key="rom_ui"
 		android:title="User Interface">
 
-		<Preference android:key="menu_pref" android:title="General UI">
+		<Preference
+			android:key="menu_pref"
+			android:title="General UI">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.UserInterface"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
 
-		<Preference android:key="lockscreen_pref" android:title="Lockscreen options">
+		<Preference
+			android:key="lockscreen_pref"
+			android:title="Lockscreen options">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.Lockscreens"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
 
-		<Preference android:key="powermenu_" android:title="Power menu options">
+		<Preference
+			android:key="powermenu_"
+			android:title="Power menu options">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.PowerMenu"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
 	</PreferenceCategory>
 
-	<PreferenceCategory android:key="functionality"
+	<PreferenceCategory
+		android:key="functionality"
 		android:title="Functionality">
 
-		<Preference android:key="powersaver_pref" android:title="Power Saver">
+		<Preference
+			android:key="powersaver_pref"
+			android:title="Power Saver">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.PowerSaver"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
 
-		<Preference android:key="led_prefs" android:title="LED options">
+		<Preference
+			android:key="led_prefs"
+			android:title="LED options">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.LED"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
@@ -46,26 +64,36 @@
 
 	</PreferenceCategory>
 
-	<PreferenceCategory android:key="statusbar"
+	<PreferenceCategory
+		android:key="statusbar"
 		android:title="Statusbar">
 
-		<Preference android:key="general_pref" android:title="General">
+		<Preference
+			android:key="general_pref"
+			android:title="General">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.StatusBarGeneral"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
 
-		<Preference android:key="clock" android:title="Clock">
+		<Preference
+			android:key="clock"
+			android:title="Clock">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.StatusBarClock"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
 
-		<Preference android:key="battery" android:title="Battery">
+		<Preference
+			android:key="battery"
+			android:title="Battery">
 
-			<intent android:action="android.intent.action.MAIN"
+			<intent
+				android:action="android.intent.action.MAIN"
 				android:targetClass="com.roman.romcontrol.activities.StatusBarBattery"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<Preference
+		android:key="enable_toggles"
+		android:title="Enabled Toggles"
+		android:summary="Choose toggles to display" />
+
+	<Preference
+		android:key="toggles"
+		android:title="Toggle Order"
+		android:summary="Choose the order which your toggles are displayed">
+
+		<intent
+			android:action="android.intent.action.MAIN"
+			android:targetClass="com.roman.romcontrol.activities.TogglesLayout"
+			android:targetPackage="com.roman.romcontrol" />
+	</Preference>
+	
+		<ListPreference
+		android:entries="@array/brightness_location_entries"
+		android:entryValues="@array/brightness_location_values"
+		android:key="brightness_location"
+		android:title="Brightness location" />
+
+</PreferenceScreen>

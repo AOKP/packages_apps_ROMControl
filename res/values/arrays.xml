@@ -143,12 +143,14 @@
 		<item>Regular</item>
 		<item>Regular w/Search</item>
 		<item>Back - Home - Search</item>
+		<item>Back - Home - Tasks - Search</item>
 	</string-array>
 
 	<string-array name="pref_navigation_layout_values">
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
+		<item>3</item>
 	</string-array>
 
 	<string-array name="led_entries">
@@ -227,6 +229,39 @@
 		<item>2</item>
 		<item>1</item>
 		<item>0</item>
+	</string-array>
+	
+	<!-- Toggles -->
+	<string-array name="available_toggle_entries">
+		<item>Auto-Rotate</item>
+		<item>Bluetooth</item>
+		<item>GPS</item>
+		<item>LTE Toggle</item>
+		<item>Mobile data</item>
+		<item>Wi-Fi</item>
+		<item>2G Toggle</item>
+	</string-array>
+	
+	<string-array name="available_toggle_values">
+		<item>ROTATE</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>LTE</item>
+		<item>DATA</item>
+		<item>WIFI</item>
+		<item>2G</item>
+	</string-array>
+	
+	<string-array name="brightness_location_entries">
+		<item>On top</item>
+		<item>On the bottom</item>
+		<item>Don\'t Show</item>
+	</string-array>
+	
+	<string-array name="brightness_location_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
 	</string-array>
 
 </resources>

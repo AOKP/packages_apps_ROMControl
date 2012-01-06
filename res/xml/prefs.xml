@@ -79,6 +79,16 @@
 		</Preference>
 
 		<Preference
+			android:key="toggles"
+			android:title="Toggle Layout">
+
+			<intent
+				android:action="android.intent.action.MAIN"
+				android:targetClass="com.roman.romcontrol.activities.StatusBarToggles"
+				android:targetPackage="com.roman.romcontrol" />
+		</Preference>
+
+		<Preference
 			android:key="clock"
 			android:title="Clock">
 

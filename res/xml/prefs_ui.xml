@@ -1,45 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<PreferenceCategory android:key="nav_bar"
+	<PreferenceCategory
+		android:key="nav_bar"
 		android:title="Navigation Bar">
 
-		<ListPreference android:entries="@array/pref_navigation_menu_entries"
-			android:entryValues="@array/pref_navigation_menu_values" android:key="pref_menu_display"
-			android:title="@string/title_pref_menu_display" android:summary="@string/summary_pref_menu_display" />
+		<ListPreference
+			android:entries="@array/pref_navigation_menu_entries"
+			android:entryValues="@array/pref_navigation_menu_values"
+			android:key="pref_menu_display"
+			android:title="@string/title_pref_menu_display"
+			android:summary="@string/summary_pref_menu_display" />
 
-		<ListPreference android:entries="@array/pref_navigation_menu_display_entries"
+		<ListPreference
+			android:entries="@array/pref_navigation_menu_display_entries"
 			android:entryValues="@array/pref_navigation_menu_display_values"
-			android:key="navbar_menu_display" android:title="@string/title_pref_navigation_menu_display"
+			android:key="navbar_menu_display"
+			android:title="@string/title_pref_navigation_menu_display"
 			android:summary="@string/summary_pref_navigation_menu_display" />
 
-		<ListPreference android:entries="@array/pref_navigation_layout_entries"
+		<ListPreference
+			android:entries="@array/pref_navigation_layout_entries"
 			android:entryValues="@array/pref_navigation_layout_values"
-			android:key="navbar_layout" android:title="@string/title_pref_navigation_layout"
+			android:key="navbar_layout"
+			android:title="@string/title_pref_navigation_layout"
 			android:summary="@string/summary_pref_navigation_layout" />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="nav_button_color"
+			android:title="Navigation Bar Tint"
+			android:defaultValue="#FFFFFF" />
 	</PreferenceCategory>
 
-	<PreferenceCategory android:key="crt" android:title="CRT Animations">
+	<PreferenceCategory
+		android:key="crt"
+		android:title="CRT Animations">
 
-		<CheckBoxPreference android:key="crt_on"
+		<CheckBoxPreference
+			android:key="crt_on"
 			android:title="CRT on animation" />
 
-		<CheckBoxPreference android:key="crt_off"
+		<CheckBoxPreference
+			android:key="crt_off"
 			android:title="CRT off animation" />
 
 	</PreferenceCategory>
 
-	<PreferenceCategory android:key="misc"
+	<PreferenceCategory
+		android:key="misc"
 		android:title="Misc">
 
-		<CheckBoxPreference android:key="ime_switcher"
-			android:title="Show IME Switcher" android:summary="In statusbar, while typing (requires reboot)" />
+		<CheckBoxPreference
+			android:key="ime_switcher"
+			android:title="Show IME Switcher"
+			android:summary="In statusbar, while typing (requires reboot)" />
 
-		<Preference android:key="custom_carrier_label"
+		<Preference
+			android:key="custom_carrier_label"
 			android:title="Custom Carrier Label" />
 
-		<CheckBoxPreference android:key="longpress_to_kill"
-			android:title="Hold back to kill" android:summary="Holding back will kill the current activity" />
+		<CheckBoxPreference
+			android:key="longpress_to_kill"
+			android:title="Hold back to kill"
+			android:summary="Holding back will kill the current activity" />
 	</PreferenceCategory>
 
 </PreferenceScreen>

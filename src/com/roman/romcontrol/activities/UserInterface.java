@@ -1,6 +1,7 @@
 
 package com.roman.romcontrol.activities;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -17,6 +18,7 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.text.Spannable;
+import android.util.Log;
 import android.view.IWindowManager;
 import android.widget.EditText;
 
@@ -43,6 +45,7 @@ public class UserInterface extends Activity {
         private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
         private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
+        private static final String PREF_NAV_COLOR = "nav_button_color";
 
         ListPreference menuDisplayLocation;
         ListPreference navBarLayout;
@@ -52,6 +55,7 @@ public class UserInterface extends Activity {
         CheckBoxPreference mShowImeSwitcher;
         CheckBoxPreference mLongPressToKill;
         Preference mCustomLabel;
+        ColorPickerPreference mNavigationBarColor;
 
         String mCustomLabelText = null;
 
@@ -100,6 +104,8 @@ public class UserInterface extends Activity {
             mLongPressToKill.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                     Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
+            mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
+            mNavigationBarColor.setOnPreferenceChangeListener(this);
             // remove navigation bar options
             IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
                     .getService(Context.WINDOW_SERVICE));
@@ -111,7 +117,8 @@ public class UserInterface extends Activity {
                     }
                 } else {
                     // nav bar
-//                    ((PreferenceGroup) findPreference("misc")).removePreference(mLongPressToKill);
+                    // ((PreferenceGroup)
+                    // findPreference("misc")).removePreference(mLongPressToKill);
                 }
             } catch (RemoteException e) {
             }
@@ -208,6 +215,15 @@ public class UserInterface extends Activity {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.MENU_VISIBILITY, Integer.parseInt((String) newValue));
                 return true;
+            } else if (preference == mNavigationBarColor) {
+                String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                        .valueOf(newValue)));
+                preference.setSummary(hex);
+
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_TINT, intHex);
+                Log.e("ROMAN", intHex + "");
             }
             return false;
         }

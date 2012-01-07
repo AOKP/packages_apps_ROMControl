@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ROM Control</string>
+    <string name="app_name">ROM Vezérlés</string>
     
     <!-- Main -->
     
     <!-- Navigation Bar -->
-    <string name="title_pref_menu_display">Menu Settings</string>
-    <string name="summary_pref_menu_display">Position of legacy menu button</string>
+    <string name="title_pref_menu_display">Menü beállítások</string>
+    <string name="summary_pref_menu_display">Hagyományos menü gomb helye</string>
     
-    <string name="title_pref_navigation_menu_display">Menu visibility</string>
-    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
+    <string name="title_pref_navigation_menu_display">Menü láthatóság</string>
+    <string name="summary_pref_navigation_menu_display">Hol és mikor jelenjenek meg a menü gombok?</string>
     
     <!-- Lockscreens -->
-    <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
+    <string name="title_pref_lockscreen_menu_unlock">Feloldás menüvel</string>
+    <string name="summary_pref_lockscreen_menu_unlock">A hagyományos menü gomb feloldja a kijelzőt (újraindítás szükséges)</string>
     
-    <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
-    <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+    <string name="title_lockscreen_user_timeout_override">Várakozás a képernyőzárra</string>
+    <string name="summary_lockscreen_user_timeout_override">Az Android késleltetésének használata a kijelző manuális kikapcsolása után. Alapértelmezetten csak akkor használjuk a késleltetést, ha a kijelző magától kapcsol ki.</string>
     
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Show power saver</string>
-    <string name="title_show_screenshot">Show screenshot</string>
+    <string name="title_show_power_saver">Energiatak. mód megjelenítése</string>
+    <string name="title_show_screenshot">Képernyőkép megjelenítése</string>
     
     <!-- Power Saving -->
-    <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
+    <string name="title_pref_powersaving_pref_mode">Energiatakarékos mód</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
     
-    <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
-    <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
+    <string name="title_pref_powersaving_data_screen_off">Kijelző kikapcs. művelet</string>
+    <string name="summary_pref_powersaving_data_screen_off">Mi történjen az adatkapcsolattal a kijelző kikapcsolásakor?</string>
         
-    <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
+    <string name="title_pref_powersaving_data_screen_off_delay">Művelet késleltetése</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Mennyi idővel a kikapcsolás után történjen meg?</string>
 
-    <string name="title_pref_powersaving_sync_screen_off">Sync action</string>
-    <string name="summary_pref_powersaving_sync_screen_off">What to do with your syncage?!</string>
+    <string name="title_pref_powersaving_sync_screen_off">Szinkr. művelet</string>
+    <string name="summary_pref_powersaving_sync_screen_off">Mi történjen a szinkronizációval?</string>
     
-    <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
-    <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
+    <string name="title_pref_powersaving_sync_screen_off_delay">Szinkronizáció gyakorisága</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">Milyen gyakran történjen szinkronizáció?</string>
     
-    <string name="title_pref_navigation_layout">Navigation Bar Layout</string>
-    <string name="summary_pref_navigation_layout">Changing layouts requires a reboot!</string>
+    <string name="title_pref_navigation_layout">Navigációs sáv elrendezése</string>
+    <string name="summary_pref_navigation_layout">Az elrendezés változtatásához újraindítás szükséges!</string>
     
-    <string name="title_led_on">LED pulse ON duration</string>
+    <string name="title_led_on">LED villogás BE hossza</string>
     <string name="summary_led_on">@null</string>
-    <string name="title_led_off">LED pulse OFF duration</string>
+    <string name="title_led_off">LED villogás KI hossza</string>
     <string name="summary_led_off">@null</string>
     
     <!--  Statusbar | General -->
-    <string name="title_settings_behavior">Use default settings behavior</string>
-    <string name="summary_settings_behavior">Default behavior is to long press for toggles, press for settings. Uncheck to press for toggles, long press for settings</string>
+    <string name="title_settings_behavior">Alapértelmezett működés</string>
+    <string name="summary_settings_behavior">Alapértelmezetten hosszú lenyomás a kapcsolókhoz, rövid a beállításokhoz. Ha fordítva szeretnéd, kapcsold ezt ki!</string>
     
-    <string name="title_auto_hide_toggles">Auto hide toggles</string>
-    <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
+    <string name="title_auto_hide_toggles">Kapcsolók automatikus elrejtése</string>
+    <string name="summary_auto_hide_toggles">Visszacsúsztatás után a kapcsolók eltűnnek</string>
     
     <!-- Statusbar | Battery -->
-    <string name="battery_title_text_widget">Show battery text</string>
+    <string name="battery_title_text_widget">Akku töltöttsége számmal</string>
     <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_title_text_widget_center">Center battery text</string>
+    <string name="battery_title_text_widget_center">Középre igazítás</string>
     
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Show clock</string>
-    <string name="title_clock_ampm_entries">AM/PM style</string>
+    <string name="clock_title_enable">Óra megjelenítése</string>
+    <string name="title_clock_ampm_entries">AM/PM stílus</string>
     
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on Color to apply</string>   
+    <string name="dialog_color_picker">Színválasztó</string>
+    <string name="press_color_to_apply">Érintsd meg a színt a mentéshez!</string>   
     <string name="arrow_right">→</string> 
     <string name="arrow_down">↓</string>
     

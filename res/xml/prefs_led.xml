@@ -17,7 +17,7 @@
 
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
 		android:key="led_color" 
-		android:title="LED color" 
+		android:title="@string/led_color_title" 
 		android:defaultValue="#000000" />
 
 </PreferenceScreen>

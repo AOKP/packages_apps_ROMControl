@@ -9,7 +9,7 @@
 
 	<PreferenceCategory
 		android:key="cat_data"
-		android:title="Data">
+		android:title="@string/powersaver_data_cat">
 
 		<ListPreference
 			android:entries="@array/pref_powersaving_data_screen_off_entries"
@@ -31,7 +31,7 @@
 
 	<PreferenceCategory
 		android:key="cat_sync"
-		android:title="Sync">
+		android:title="@string/powersaver_sync_cat">
 
 		<ListPreference
 			android:entries="@array/pref_powersaving_sync_screen_off_entries"
@@ -52,7 +52,7 @@
 
 	<PreferenceCategory
 		android:key="advanced"
-		android:title="Advanced Settings">
+		android:title="@string/advanced_settings">
 
 		<ListPreference
 			android:entries="@array/powersaving_screen_off_wifi_entries"

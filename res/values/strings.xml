@@ -3,11 +3,27 @@
     <string name="app_name">ROM Control</string>
 
     <!-- Main -->
+    <string name="user_interface">User Interface</string>
+    <string name="general_ui">General UI</string>
+    <string name="lockscreen_options">Lockscreen options</string>
+    <string name="power_menu_optons">Power menu options</string>
+    <string name="functionality">Functionality</string>
+    <string name="power_saver">Power saver</string>
+    <string name="led_options">LED options</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="general">General</string>
+    <string name="toggles_layout">Toggle layout</string>
+    <string name="clock">Clock</string>
+    <string name="battery">Battery</string>
+    
     <string name="advanced_settings">Advanced settings</string>
-
+    <string name="misc_short">Misc</string>
+    
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Menu Settings</string>
     <string name="summary_pref_menu_display">Position of legacy menu button</string>
+    <string name="navigation_bar">Navigation bar</string>
+    <string name="navigation_bar_tint_title">Navigation bar tint</string>
 
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
@@ -15,6 +31,18 @@
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotation delay</string>
     <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>
+
+	<string name="ime_switcher_title">Show IME Switcher</string>
+	<string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+
+	<string name="custom_carrier_label_title">Custom carrier label</string>
+	<string name="longpress_to_kill_title">Hold back to kill</string>
+	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
+
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRT animations</string>
+	<string name="crt_on_title">CRT on animation</string>
+	<string name="crt_off_title">CRT off animation</string>
 
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
@@ -45,12 +73,16 @@
 
     <string name="title_pref_navigation_layout">Navigation Bar Layout</string>
     <string name="summary_pref_navigation_layout">Changing layouts requires a reboot!</string>
+    
+    <string name="powersaver_data_cat">Data</string>
+    <string name="powersaver_sync_cat">Sync</string>
 
     <!--  LED -->
     <string name="title_led_on">LED pulse ON duration</string>
     <string name="summary_led_on">@null</string>
     <string name="title_led_off">LED pulse OFF duration</string>
     <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LED color</string>
 
     <!--  Statusbar | General -->
     <string name="title_settings_behavior">Use default settings behavior</string>
@@ -67,6 +99,11 @@
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Show clock</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>
+    <string name="colors">Colors</string>
+    <string name="clock_color_title">Clock color</string>
+    <string name="reset_color_title">Reset color</string>
+    <string name="enable_alarm_title">Enable alarm icon</string>
+    <string name="enable_alarm_summary">After disabling/enabling, you must toggle your alarms for it to show up again. Or reboot.</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>
@@ -74,6 +111,13 @@
 
     <string name="alternate_button_layout_title">Alternate toggles</string>
     <string name="alternate_button_layout_summary">Use Toggle Buttons instead of switches for your toggles.</string>
+    
+    <string name="enabled_toggles_title">Enabled toggles</string>
+    <string name="enabled_toggles_summary">Choose toggles to display</string>
+    <string name="toggles_order_title">Toggle order</string>
+    <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
+    <string name="brightness_location_title">Brightness location</string>
+    
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

@@ -16,27 +16,27 @@
 
 	<PreferenceCategory
 		android:key="colors"
-		android:title="Colors">
+		android:title="@string/colors">
 
 		<net.margaritov.preference.colorpicker.ColorPickerPreference
 			android:key="clock_color"
-			android:title="Clock color"
+			android:title="@string/clock_color_title"
 			android:defaultValue="@android:color/holo_blue_light" />
 
 		<Preference
 			android:key="reset_color"
-			android:title="Reset color" />
+			android:title="@string/reset_color_title" />
 
 	</PreferenceCategory>
 
 	<PreferenceCategory
 		android:key="misc"
-		android:title="Misc">
+		android:title="@string/misc_short">
 
 		<CheckBoxPreference
 			android:key="alarm"
-			android:title="Enable alarm icon"
-			android:summary="After disabling/enabling, you must toggle your alarms for it to show up again. Or reboot." />
+			android:title="@string/enable_alarm_title"
+			android:summary="@string/enable_alarm_summary" />
 
 	</PreferenceCategory>
 

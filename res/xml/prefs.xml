@@ -4,11 +4,11 @@
 
 	<PreferenceCategory
 		android:key="rom_ui"
-		android:title="User Interface">
+		android:title="@string/user_interface">
 
 		<Preference
 			android:key="menu_pref"
-			android:title="General UI">
+			android:title="@string/general_ui">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -18,7 +18,7 @@
 
 		<Preference
 			android:key="lockscreen_pref"
-			android:title="Lockscreen options">
+			android:title="@string/lockscreen_options">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -27,8 +27,8 @@
 		</Preference>
 
 		<Preference
-			android:key="powermenu_"
-			android:title="Power menu options">
+			android:key="powermenu"
+			android:title="@string/power_menu_optons">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -39,11 +39,11 @@
 
 	<PreferenceCategory
 		android:key="functionality"
-		android:title="Functionality">
+		android:title="@string/functionality">
 
 		<Preference
 			android:key="powersaver_pref"
-			android:title="Power Saver">
+			android:title="@string/power_saver">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -53,7 +53,7 @@
 
 		<Preference
 			android:key="led_prefs"
-			android:title="LED options">
+			android:title="@string/led_options">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -66,11 +66,11 @@
 
 	<PreferenceCategory
 		android:key="statusbar"
-		android:title="Statusbar">
+		android:title="@string/statusbar">
 
 		<Preference
 			android:key="general_pref"
-			android:title="General">
+			android:title="@string/general">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -80,7 +80,7 @@
 
 		<Preference
 			android:key="toggles"
-			android:title="Toggle Layout">
+			android:title="@string/toggles_layout">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -90,7 +90,7 @@
 
 		<Preference
 			android:key="clock"
-			android:title="Clock">
+			android:title="@string/clock">
 
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -100,7 +100,7 @@
 
 		<Preference
 			android:key="battery"
-			android:title="Battery">
+			android:title="@string/battery">
 
 			<intent
 				android:action="android.intent.action.MAIN"

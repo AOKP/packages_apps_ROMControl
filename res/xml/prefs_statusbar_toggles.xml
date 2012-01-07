@@ -4,13 +4,13 @@
 
 	<Preference
 		android:key="enable_toggles"
-		android:title="Enabled Toggles"
-		android:summary="Choose toggles to display" />
+		android:title="@string/enabled_toggles_title"
+		android:summary="@string/enabled_toggles_summary" />
 
 	<Preference
 		android:key="toggles"
-		android:title="Toggle Order"
-		android:summary="Choose the order which your toggles are displayed">
+		android:title="@string/toggles_order_title"
+		android:summary="@string/toggles_order_summary">
 
 		<intent
 			android:action="android.intent.action.MAIN"
@@ -22,7 +22,7 @@
 		android:entries="@array/brightness_location_entries"
 		android:entryValues="@array/brightness_location_values"
 		android:key="brightness_location"
-		android:title="Brightness location" />
+		android:title="@string/brightness_location_title" />
 
 	<PreferenceCategory
 		android:key="advanced_cat"

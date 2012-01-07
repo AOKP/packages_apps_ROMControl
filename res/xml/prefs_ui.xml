@@ -64,6 +64,14 @@
 			android:key="longpress_to_kill"
 			android:title="Hold back to kill"
 			android:summary="Holding back will kill the current activity" />
+
+		<ListPreference
+			android:entries="@array/rotation_animation_delay_entries"
+			android:entryValues="@array/rotation_animation_delay_values"
+			android:key="rotation_animation_delay"
+			android:title="@string/rotation_animation_delay_title"
+			android:summary="@string/rotation_animation_delay_summary" />
+
 	</PreferenceCategory>
 
 </PreferenceScreen>

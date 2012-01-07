@@ -17,11 +17,29 @@
 			android:targetClass="com.roman.romcontrol.activities.TogglesLayout"
 			android:targetPackage="com.roman.romcontrol" />
 	</Preference>
-	
-		<ListPreference
+
+	<ListPreference
 		android:entries="@array/brightness_location_entries"
 		android:entryValues="@array/brightness_location_values"
 		android:key="brightness_location"
 		android:title="Brightness location" />
+
+	<PreferenceCategory
+		android:key="advanced_cat"
+		android:title="@string/advanced_settings">
+
+		<ListPreference
+			android:entries="@array/toggle_style_entries"
+			android:entryValues="@array/toggle_style_values"
+			android:key="toggle_style"
+			android:title="@string/toggle_style_title"
+			android:summary="@string/toggle_style_summary" />
+
+		<CheckBoxPreference
+			android:key="alternate_button_layout"
+			android:title="@string/alternate_button_layout_title"
+			android:summary="@string/alternate_button_layout_summary" />
+
+	</PreferenceCategory>
 
 </PreferenceScreen>

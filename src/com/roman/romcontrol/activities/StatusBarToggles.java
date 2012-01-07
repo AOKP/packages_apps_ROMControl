@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -16,6 +17,8 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.widget.NumberPicker;
 
 import com.android.internal.telephony.Phone;
 import com.roman.romcontrol.R;
@@ -35,9 +38,14 @@ public class StatusBarToggles extends Activity {
 
         private static final String PREF_ENABLE_TOGGLES = "enable_toggles";
         private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
+        private static final String PREF_TOGGLES_STYLE = "toggle_style";
+        private static final String PREF_TOGGLES_PER_ROW = "toggles_per_row";
+        private static final String PREF_ALT_BUTTON_LAYOUT = "alternate_button_layout";
 
         Preference mEnabledToggles;
         ListPreference mBrightnessLocation;
+        CheckBoxPreference mAlternateButtonLayout;
+        ListPreference mToggleStyle;
 
         private final String[] availableGsmToggles = {
                 "ROTATE", "BT", "GPS", "DATA", "WIFI", "2G"
@@ -61,6 +69,16 @@ public class StatusBarToggles extends Activity {
             mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC,
                     1)));
+
+            mToggleStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
+            mToggleStyle.setOnPreferenceChangeListener(this);
+            mToggleStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_STYLE,
+                    3)));
+
+            mAlternateButtonLayout = (CheckBoxPreference) findPreference(PREF_ALT_BUTTON_LAYOUT);
+            mAlternateButtonLayout.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS, 0) == 1);
 
         }
 
@@ -119,6 +137,12 @@ public class StatusBarToggles extends Activity {
                 d.show();
 
                 return true;
+            } else if (preference == mAlternateButtonLayout) {
+
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS,
+                        ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                return true;
             }
             return super.onPreferenceTreeClick(preferenceScreen, preference);
 
@@ -132,6 +156,11 @@ public class StatusBarToggles extends Activity {
                 int val = Integer.parseInt((String) newValue);
                 result = Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
+
+            } else if (preference == mToggleStyle) {
+                int val = Integer.parseInt((String) newValue);
+                result = Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_TOGGLES_STYLE, val);
 
             }
             return result;

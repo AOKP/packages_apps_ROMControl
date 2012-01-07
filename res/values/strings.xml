@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">ROM Control</string>
-    
+
     <!-- Main -->
-    
+    <string name="advanced_settings">Advanced settings</string>
+
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Menu Settings</string>
     <string name="summary_pref_menu_display">Position of legacy menu button</string>
-    
+
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
-    
+
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">Rotation delay</string>
+    <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>
+
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
     <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
@@ -38,31 +42,39 @@
     
     <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
     <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
-    
+
     <string name="title_pref_navigation_layout">Navigation Bar Layout</string>
     <string name="summary_pref_navigation_layout">Changing layouts requires a reboot!</string>
-    
+
+    <!--  LED -->
     <string name="title_led_on">LED pulse ON duration</string>
     <string name="summary_led_on">@null</string>
     <string name="title_led_off">LED pulse OFF duration</string>
     <string name="summary_led_off">@null</string>
-    
+
     <!--  Statusbar | General -->
     <string name="title_settings_behavior">Use default settings behavior</string>
     <string name="summary_settings_behavior">Default behavior is to long press for toggles, press for settings. Uncheck to press for toggles, long press for settings</string>
-    
+
     <string name="title_auto_hide_toggles">Auto hide toggles</string>
     <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
-    
+
     <!-- Statusbar | Battery -->
     <string name="battery_title_text_widget">Show battery text</string>
     <string name="battery_summary_text_widget">@null</string>
     <string name="battery_title_text_widget_center">Center battery text</string>
-    
+
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Show clock</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>
-    
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Toggle style</string>
+    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
+
+    <string name="alternate_button_layout_title">Alternate toggles</string>
+    <string name="alternate_button_layout_summary">Use Toggle Buttons instead of switches for your toggles.</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on Color to apply</string>   

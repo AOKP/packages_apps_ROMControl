@@ -230,7 +230,7 @@
 		<item>1</item>
 		<item>0</item>
 	</string-array>
-	
+
 	<!-- Toggles -->
 	<string-array name="available_toggle_entries">
 		<item>Auto-Rotate</item>
@@ -241,7 +241,7 @@
 		<item>Wi-Fi</item>
 		<item>2G Toggle</item>
 	</string-array>
-	
+
 	<string-array name="available_toggle_values">
 		<item>ROTATE</item>
 		<item>BT</item>
@@ -251,17 +251,57 @@
 		<item>WIFI</item>
 		<item>2G</item>
 	</string-array>
-	
+
 	<string-array name="brightness_location_entries">
 		<item>On top</item>
 		<item>On the bottom</item>
 		<item>Don\'t Show</item>
 	</string-array>
-	
+
 	<string-array name="brightness_location_values">
 		<item>1</item>
 		<item>2</item>
 		<item>3</item>
+	</string-array>
+
+	<!-- animation rotation -->
+	<string-array name="rotation_animation_delay_entries">
+		<item>10 ms</item>
+		<item>25 ms</item>
+		<item>50 ms</item>
+		<item>75 ms</item>
+		<item>100 ms</item>
+		<item>150 ms</item>
+		<item>200 ms</item>
+		<item>250 ms</item>
+		<item>300 ms</item>
+	</string-array>
+
+	<string-array name="rotation_animation_delay_values">
+		<item>10</item>
+		<item>25</item>
+		<item>50</item>
+		<item>75</item>
+		<item>100</item>
+		<item>150</item>
+		<item>200</item>
+		<item>250</item>
+		<item>300</item>
+	</string-array>
+
+	<!-- toggle style -->
+	<string-array name="toggle_style_entries">
+		<item>No icon, no text</item>
+		<item>Icon only</item>
+		<item>Text only</item>
+		<item>Icon and text</item>
+	</string-array>
+
+	<string-array name="toggle_style_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
 	</string-array>
 
 </resources>

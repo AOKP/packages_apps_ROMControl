@@ -46,6 +46,7 @@ public class UserInterface extends Activity {
         private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
         private static final String PREF_NAV_COLOR = "nav_button_color";
+        private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
 
         ListPreference menuDisplayLocation;
         ListPreference navBarLayout;
@@ -56,6 +57,7 @@ public class UserInterface extends Activity {
         CheckBoxPreference mLongPressToKill;
         Preference mCustomLabel;
         ColorPickerPreference mNavigationBarColor;
+        ListPreference mAnimationRotationDelay;
 
         String mCustomLabelText = null;
 
@@ -106,6 +108,13 @@ public class UserInterface extends Activity {
 
             mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
             mNavigationBarColor.setOnPreferenceChangeListener(this);
+
+            mAnimationRotationDelay = (ListPreference) findPreference(PREF_ROTATION_ANIMATION);
+            mAnimationRotationDelay.setOnPreferenceChangeListener(this);
+            mAnimationRotationDelay.setValue(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
+                    200) + "");
+
             // remove navigation bar options
             IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
                     .getService(Context.WINDOW_SERVICE));
@@ -224,7 +233,16 @@ public class UserInterface extends Activity {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_TINT, intHex);
                 Log.e("ROMAN", intHex + "");
+
+            } else if (preference == mAnimationRotationDelay) {
+
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
+                        Integer.parseInt((String) newValue));
+
+                return true;
             }
+
             return false;
         }
     }

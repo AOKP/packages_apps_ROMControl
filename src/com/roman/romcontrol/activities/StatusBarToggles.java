@@ -48,11 +48,11 @@ public class StatusBarToggles extends Activity {
         ListPreference mToggleStyle;
 
         private final String[] availableGsmToggles = {
-                "ROTATE", "BT", "GPS", "DATA", "WIFI", "2G"
+                "ROTATE", "BT", "GPS", "DATA", "WIFI", "2G", "AP", "AIRPLANE_MODE", "VIBRATE", "SILENT"
         };
 
         private final String[] availableCdmaToggles = {
-                "ROTATE", "BT", "GPS", "LTE", "DATA", "WIFI"
+                "ROTATE", "BT", "GPS", "LTE", "DATA", "WIFI", "AP", "AIRPLANE_MODE", "VIBRATE", "SILENT"
         };
 
         @Override

@@ -3,13 +3,46 @@
     <string name="app_name">ROM Vezérlés</string>
    
     <!-- Main -->
+    <string name="user_interface">Felhasználói felület</string>
+    <string name="general_ui">Általános felület</string>
+    <string name="lockscreen_options">Képernyőzár beállításai</string>
+    <string name="power_menu_optons">Kikapcsolás menü beállítások</string>
+    <string name="functionality">Funkcionalitás</string>
+    <string name="power_saver">Energiatakarékos mód</string>
+    <string name="led_options">LED beállítások</string>
+    <string name="statusbar">Állapotsáv</string>
+    <string name="general">Általános</string>
+    <string name="toggles_layout">Kapcsolók elrendezése</string>
+    <string name="clock">Óra</string>
+    <string name="battery">Akkumulátor</string>
+    
+    <string name="advanced_settings">Haladó beállítások</string>
+    <string name="misc_short">Egyéb</string>
     
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Menü beállítások</string>
     <string name="summary_pref_menu_display">Hagyományos menü gomb helye</string>
+	<string name="navigation_bar">Navigációs sáv</string>
+    <string name="navigation_bar_tint_title">Navigációs sáv színe</string>
     
     <string name="title_pref_navigation_menu_display">Menü láthatóság</string>
     <string name="summary_pref_navigation_menu_display">Hol és mikor jelenjenek meg a menü gombok?</string>
+	
+	<!-- UI -->
+    <string name="rotation_animation_delay_title">Forgatás késleltetése</string>
+    <string name="rotation_animation_delay_summary">Az az időtartam, amennyi ideig az eszköznek stabilan kell tartózkodnia az új helyzetben elforgatás után. Alapértelmezetten 200 ms.</string>
+
+	<string name="ime_switcher_title">Beviteli mód kapcsoló mutatása</string>
+	<string name="ime_switcher_summary">Az állapotsávon, gépelés közben (újraindítás szükséges)</string>
+
+	<string name="custom_carrier_label_title">Személyreszabott szolgáltató felirat</string>
+	<string name="longpress_to_kill_title">Vissza hosszan: kénysz. leáll.</string>
+	<string name="longpress_to_kill_summary">A vissza gomb hosszan lenntartása kényszerített leállítást végez a megnyitott alkalmazáson</string>
+	
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRT animációk</string>
+	<string name="crt_on_title">CRT be animáció</string>
+	<string name="crt_off_title">CRT ki animáció</string>
     
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">Feloldás menüvel</string>
@@ -40,11 +73,16 @@
     
     <string name="title_pref_navigation_layout">Navigációs sáv elrendezése</string>
     <string name="summary_pref_navigation_layout">Az elrendezés változtatásához újraindítás szükséges!</string>
+	
+	<string name="powersaver_data_cat">Adatkapcsolat</string>
+    <string name="powersaver_sync_cat">Szinkronizáció</string>
     
+	<!--  LED -->
     <string name="title_led_on">LED villogás BE hossza</string>
     <string name="summary_led_on">@null</string>
     <string name="title_led_off">LED villogás KI hossza</string>
     <string name="summary_led_off">@null</string>
+	<string name="led_color_title">LED színe</string>
     
     <!--  Statusbar | General -->
     <string name="title_settings_behavior">Alapértelmezett működés</string>
@@ -61,8 +99,27 @@
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Óra megjelenítése</string>
     <string name="title_clock_ampm_entries">AM/PM stílus</string>
+	<string name="colors">Színek</string>
+    <string name="clock_color_title">Óra színe</string>
+    <string name="reset_color_title">Szín visszaállítása</string>
+    <string name="enable_alarm_title">Ébresztő ikon engedélyezve</string>
+    <string name="enable_alarm_summary">Ki/bekapcsolás után újra be kell állítanod az ébresztőt a beállítás érvényesíléséhez. Vagy indítsd újra a telefont.</string>
+	
+	<!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Kapcsolók stílusa</string>
+    <string name="toggle_style_summary">Ikon vagy szöveg jelenjen meg kapcsolókként.</string>
+
+    <string name="alternate_button_layout_title">Alternatív kapcsolók</string>
+    <string name="alternate_button_layout_summary">Gombok alkalmazása kapcsolók helyett.</string>
+    
+    <string name="enabled_toggles_title">Engedélyezett kapcsolók</string>
+    <string name="enabled_toggles_summary">Mely kapcsolók látszódjanak?</string>
+    <string name="toggles_order_title">Kapcsolók elrendezése</string>
+    <string name="toggles_order_summary">Válaszd ki a megjelenített kapcsolók sorrendjét!</string>
+    <string name="brightness_location_title">Fényerő helye</string>
     
     <!-- Color Picker -->
     <string name="dialog_color_picker">Színválasztó</string>
-    <string name="press_color_to_apply">Érintsd meg a színt a mentéshez!</string>   
+    <string name="press_color_to_apply">Érintsd meg a színt a mentéshez!</string> 
+	
 </resources>

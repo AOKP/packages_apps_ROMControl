@@ -122,7 +122,5 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Paleta wyboru koloru</string>
     <string name="press_color_to_apply">Kliknij w kolor aby aktywować</string>   
-    <string name="arrow_right">→</string> 
-    <string name="arrow_down">↓</string>
     
 </resources>

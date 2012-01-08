@@ -117,12 +117,9 @@
     <string name="toggles_order_title">Ordenar los interruptores</string>
     <string name="toggles_order_summary">Elegir el orden para mostrarse</string>
     <string name="brightness_location_title">Localización del brillo</string>
-    
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Presiona color para aplicar</string>   
-    <string name="arrow_right">?</string> 
-    <string name="arrow_down">?</string>
     
 </resources>

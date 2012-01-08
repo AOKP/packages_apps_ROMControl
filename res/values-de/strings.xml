@@ -122,7 +122,5 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Farb-Dialog</string>
     <string name="press_color_to_apply">Farbe per Klick wählen</string>   
-    <string name="arrow_right">→</string> 
-    <string name="arrow_down">↓</string>
     
 </resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ROM Control</string>
+
+    <!-- Main -->
+    <string name="user_interface">Oberfläche</string>
+    <string name="general_ui">Allgemein</string>
+    <string name="lockscreen_options">Lockscreen</string>
+    <string name="power_menu_optons">Energiemenü</string>
+    <string name="functionality">Funktionen</string>
+    <string name="power_saver">Stromsparmodus</string>
+    <string name="led_options">LED Einstellungen</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="general">Allgemein</string>
+    <string name="toggles_layout">Schalter</string>
+    <string name="clock">Uhr</string>
+    <string name="battery">Akku</string>
+    
+    <string name="advanced_settings">Fortgeschrittene Optionen</string>
+    <string name="misc_short">Sonstiges</string>
+    
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">Menü Einstellungen</string>
+    <string name="summary_pref_menu_display">Position des Menü-Buttons</string>
+    <string name="navigation_bar">Navigationsleiste</string>
+    <string name="navigation_bar_tint_title">Farbton der Navigationsleiste</string>
+
+    <string name="title_pref_navigation_menu_display">Menü Sichtbarkeit</string>
+    <string name="summary_pref_navigation_menu_display">Wie und wann soll der Menü-Button erscheinen?</string>
+
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">Rotations-Verzögerung</string>
+    <string name="rotation_animation_delay_summary">Wie lange soll gewartet werden, bis der Bildschrim an die Geräte-Orientierung angepasst wird? (200 ms Standard)</string>
+
+	<string name="ime_switcher_title">Zeige Tastatur-Dialog</string>
+	<string name="ime_switcher_summary">In der Statusbar wird ein Dialog zum Wechseln der Eingabemethode gezeigt. (Neustart erforderlich)</string>
+
+	<string name="custom_carrier_label_title">Eigener Anbieter-Text</string>
+	<string name="longpress_to_kill_title">Beenden via Zurück</string>
+	<string name="longpress_to_kill_summary">Halten der Zurück-Taste beendet die aktuelle App.</string>
+
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRT Animationen</string>
+	<string name="crt_on_title">CRT-An Animation</string>
+	<string name="crt_off_title">CRT-Aus Animation</string>
+
+    <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_menu_unlock">Entsperren mit Menü</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Menü-Button entsperrt den Lockscreen. (Neustart erforderlich)</string>
+    
+    <string name="title_lockscreen_user_timeout_override">Verzögere Lockscreen</string>
+    <string name="summary_lockscreen_user_timeout_override">Nutze Android\'s Timeout Einstellung nach manuellem Ausschalten des Bildschirms.</string>
+    
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Zeige Stromsparmodus</string>
+    <string name="title_show_screenshot">Zeige Screenshot</string>
+    
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Aktiviere Stromsparmodus</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+    
+    <string name="title_pref_powersaving_data_screen_off">Daten-Verhalten</string>
+    <string name="summary_pref_powersaving_data_screen_off">Was soll mit der Datenverbindung passieren, wenn der Bildschirm ausgeht?</string>
+        
+    <string name="title_pref_powersaving_data_screen_off_delay">Verzögerung</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Wie lange soll gewartet werden, bevor die Aktion ausgeführt werden soll?</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">Synchronisations Verhalten</string>
+    <string name="summary_pref_powersaving_sync_screen_off">Wie soll sich die Synchronisation verhalten?</string>
+    
+    <string name="title_pref_powersaving_sync_screen_off_delay">Synchronisations Intervall</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">Wie lange soll zwischen zwei Synchronisierungen gewartet werden?</string>
+
+    <string name="title_pref_navigation_layout">Navigationsleisten Layout</string>
+    <string name="summary_pref_navigation_layout">Veränderung des Layouts erfordert einen Neustart.</string>
+    
+    <string name="powersaver_data_cat">Mobile Daten</string>
+    <string name="powersaver_sync_cat">Synchronisation</string>
+
+    <!--  LED -->
+    <string name="title_led_on">LED AN Dauer</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">LED AUS Dauer</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LED Farbe</string>
+
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">Standard Einstellungen</string>
+    <string name="summary_settings_behavior">Standard-Verhalten: Gedrückt halten für Schalter, drücken für Einstellungen. Deaktiviere, um das Verhalten zu umzukehren.</string>
+
+    <string name="title_auto_hide_toggles">Schalter verstecken</string>
+    <string name="summary_auto_hide_toggles">Schalter werden automatisch geschlossen.</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_title_text_widget">Zeige Akkustand als Text</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_title_text_widget_center">Zentriere Akkustand</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Zeige Uhr</string>
+    <string name="title_clock_ampm_entries">AM/PM Stil</string>
+    <string name="colors">Farben</string>
+    <string name="clock_color_title">Uhren-Farbe</string>
+    <string name="reset_color_title">Farbe zurücksetzen</string>
+    <string name="enable_alarm_title">Zeige Wecker-Icon</string>
+    <string name="enable_alarm_summary">Änderungen am Wecker-Icon werden erst nach einem Neustart sichtbar.</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Schalter Stil</string>
+    <string name="toggle_style_summary">Zeige Icons oder Text für die Schalter.</string>
+
+    <string name="alternate_button_layout_title">Alternative Schalter</string>
+    <string name="alternate_button_layout_summary">Nutze Buttons statt Schalter.</string>
+    
+    <string name="enabled_toggles_title">Aktivierte Schalter</string>
+    <string name="enabled_toggles_summary">Wähle die anzuzeigenden Schalter.</string>
+    <string name="toggles_order_title">Reihenfolge der Schalter</string>
+    <string name="toggles_order_summary">Wähle die Reihenfolge der Schalter.</string>
+    <string name="brightness_location_title">Brightness location</string>
+    
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Farb-Dialog</string>
+    <string name="press_color_to_apply">Farbe per Klick wählen</string>   
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
+    
+</resources>

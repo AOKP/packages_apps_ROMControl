@@ -24,8 +24,11 @@ import android.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.roman.romcontrol.R;
 
 /**
  * A preference type that allows a user to choose a time
@@ -43,6 +46,8 @@ public class ColorPickerPreference extends Preference implements
     private boolean mAlphaSliderEnabled = false;
 
     private static final String androidns = "http://schemas.android.com/apk/res/android";
+
+    private EditText mEditText;
 
     public ColorPickerPreference(Context context) {
         super(context);
@@ -94,6 +99,7 @@ public class ColorPickerPreference extends Preference implements
 
         widgetFrameView = ((LinearLayout) view
                 .findViewById(android.R.id.widget_frame));
+
         setPreviewColor();
     }
 
@@ -168,7 +174,10 @@ public class ColorPickerPreference extends Preference implements
         try {
             getOnPreferenceChangeListener().onPreferenceChange(this, color);
         } catch (NullPointerException e) {
-
+        }
+        try {
+            mEditText.setText(Integer.toString(color, 16));
+        } catch (NullPointerException e) {
         }
     }
 

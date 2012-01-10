@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="pref_navigation_menu_entries">
+		<item>Droite</item>
+		<item>Gauche</item>
+		<item>les deux</item>
+	</string-array>
+
+	<!-- right is the default, easier to keep 0 as first index -->
+	<string-array name="pref_navigation_menu_values"
+		translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
+		<item>Do nothing</item>
+		<item>Switch to CDMA only (1x)</item>
+		<item>Turn data off</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_values_cdma">
+		<item>20</item>
+		<item>21</item>
+		<item>22</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_entries">
+		<item>Ne rien faire</item>
+		<item>Stop les données</item>
+		<item>Switch en 2G</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_values">
+		<item>20</item>
+		<item>22</item>
+		<item>21</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_delay_entries">
+		<item>Ne pas attendre (immédiat)</item>
+		<item>10 secondes</item>
+		<item>30 secondes</item>
+		<item>45 secondes</item>
+		<item>1 minute</item>
+		<item>5 minutes</item>
+		<item>10 minutes</item>
+		<item>15 minutes</item>
+		<item>30 minutes</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_delay_values">
+		<item>0</item>
+		<item>10</item>
+		<item>30</item>
+		<item>45</item>
+		<item>60</item>
+		<item>300</item>
+		<item>600</item>
+		<item>900</item>
+		<item>1800</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_interval_entries">
+		<item>15 minutes</item>
+		<item>30 minutes</item>
+		<item>1 heure</item>
+		<item>2 heures</item>
+		<item>3 heures</item>
+		<item>4 heures</item>
+		<item>5 heures</item>
+		<item>6 heures</item>
+		<item>8 heures</item>
+		<item>12 heures</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_interval_values">
+		<item>900</item>
+		<item>1800</item>
+		<item>3600</item>
+		<item>7200</item>
+		<item>10800</item>
+		<item>14400</item>
+		<item>18000</item>
+		<item>21600</item>
+		<item>28800</item>
+		<item>43200</item>
+	</string-array>
+
+
+	<string-array name="pref_powersaving_sync_screen_off_entries">
+		<item>Ne rien faire</item>
+		<item>Eteind la syncronisation</item>
+		<item>Eteind la syncronisation avec un délai</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_values">
+		<item>35</item>
+		<item>33</item>
+		<item>34</item>
+	</string-array>
+	
+	<string-array name="powersaving_screen_off_wifi_entries">
+		<item>laisser intacts</item>
+		<item>Eteind le WIFI</item>
+		<item>Allume le WIFI</item>
+	</string-array>
+	
+	<string-array name="powersaving_screen_off_wifi_values">
+		<item>40</item>
+		<item>41</item>
+		<item>42</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mode_entries">
+		<item>laisser intacts</item>
+		<item>Seulement Wi-Fi</item>
+		<item>Wi-Fi préféré</item>
+		<item>Seulement les données</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mode_values">
+		<item>54</item>
+		<item>50</item>
+		<item>51</item>
+		<item>53</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mobile_mode_entries">
+		<item>Seulement2G/1x</item>
+		<item>3G préféré</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mobile_mode_values">
+		<item>62</item>
+		<item>63</item>
+	</string-array>
+	
+	<!-- NAV BAR -->
+	<string-array name="pref_navigation_layout_entries">
+		<item>Regular</item>
+		<item>Regular w/Search</item>
+		<item>Back - Home - Search</item>
+		<item>Back - Home - Tasks - Search</item>
+	</string-array>
+
+	<string-array name="pref_navigation_layout_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<string-array name="led_entries">
+		<item>.5 seconds</item>
+		<item>1 second</item>
+		<item>1.5 seconds</item>
+		<item>2 seconds</item>
+		<item>2.5 seconds</item>
+		<item>3 seconds</item>
+		<item>3.5 seconds</item>
+		<item>4 seconds</item>
+		<item>4.5 seconds</item>
+		<item>5 seconds</item>
+		<item>5.5 seconds</item>
+		<item>6 seconds</item>
+		<item>7 seconds</item>
+		<item>8 seconds</item>
+		<item>9 seconds</item>
+		<item>10 seconds</item>
+	</string-array>
+
+	<!-- values must be in milliseconds!~@@#E!@ -->
+	<string-array name="led_values">
+		<item>500</item>
+		<item>1000</item>
+		<item>1500</item>
+		<item>2000</item>
+		<item>2500</item>
+		<item>3000</item>
+		<item>3500</item>
+		<item>4000</item>
+		<item>4500</item>
+		<item>5000</item>
+		<item>5500</item>
+		<item>6000</item>
+		<item>7000</item>
+		<item>8000</item>
+		<item>9000</item>
+		<item>10000</item>
+	</string-array>
+
+	<string-array name="pref_navigation_menu_display_entries">
+		<item>Par défaut ICS</item>
+		<item>Toujours afficher les icônes invisibless</item>
+		<item>Toujours afficher</item>
+		<item>ICS par défaut avec des icônes invisibles quand cachés</item>
+	</string-array>
+
+	<string-array name="pref_navigation_menu_display_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<!-- clock stuff -->
+	<string-array name="clock_style_entries">
+		<item>Horloge à droite</item>
+		<item>Horloge au centre</item>
+		<item>Pas d\'horloge</item>
+	</string-array>
+
+	<string-array name="clock_style_values">
+		<item>1</item>
+		<item>2</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="clock_ampm_entries">
+		<item>Ne pas montrer</item>
+		<item>Petit AM/PM</item>
+		<item>Normale AM/PM</item>
+	</string-array>
+
+	<string-array name="clock_ampm_values">
+		<item>2</item>
+		<item>1</item>
+		<item>0</item>
+	</string-array>
+
+	<!-- Toggles -->
+	<string-array name="available_toggle_entries">
+		<item>Auto-Rotation</item>
+		<item>Bluetooth</item>
+		<item>GPS</item>
+		<item>LTE Toggle</item>
+		<item>Données mobile</item>
+		<item>Wi-Fi</item>
+		<item>2G Toggle</item>
+	</string-array>
+
+	<string-array name="available_toggle_values">
+		<item>ROTATE</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>LTE</item>
+		<item>DATA</item>
+		<item>WIFI</item>
+		<item>2G</item>
+	</string-array>
+
+	<string-array name="brightness_location_entries">
+		<item>Sur le dessus</item>
+		<item>Sur le bas</item>
+		<item>Ne pas montrer</item>
+	</string-array>
+
+	<string-array name="brightness_location_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<!-- animation rotation -->
+	<string-array name="rotation_animation_delay_entries">
+		<item>10 ms</item>
+		<item>25 ms</item>
+		<item>50 ms</item>
+		<item>75 ms</item>
+		<item>100 ms</item>
+		<item>150 ms</item>
+		<item>200 ms</item>
+		<item>250 ms</item>
+		<item>300 ms</item>
+	</string-array>
+
+	<string-array name="rotation_animation_delay_values">
+		<item>10</item>
+		<item>25</item>
+		<item>50</item>
+		<item>75</item>
+		<item>100</item>
+		<item>150</item>
+		<item>200</item>
+		<item>250</item>
+		<item>300</item>
+	</string-array>
+
+	<!-- toggle style -->
+	<string-array name="toggle_style_entries">
+		<item>Pas d\'icône, pas de texte</item>
+		<item>Seulement Icon</item>
+		<item>SeulementText</item>
+		<item>Icône et texte</item>
+	</string-array>
+
+	<string-array name="toggle_style_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+	</string-array>
+
+</resources>

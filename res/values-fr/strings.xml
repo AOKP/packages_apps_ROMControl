@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contrôle de la ROM</string>
+
+    <!-- Main -->
+    <string name="user_interface">Interface utilisateur</string>
+    <string name="general_ui">Génerale UI</string>
+    <string name="lockscreen_options">Option du lockscreen</string>
+    <string name="power_menu_optons">Options du menu Power</string>
+    <string name="functionality">Fonctionnalité</string>
+    <string name="power_saver">Économie d\'énergie</string>
+    <string name="led_options">Options de la LED</string>
+    <string name="statusbar">Barre d\'état</string>
+    <string name="general">Génerale</string>
+    <string name="toggles_layout">Disposition de la bascule</string>
+    <string name="clock">Horloge</string>
+    <string name="battery">Batterie</string>
+    
+    <string name="advanced_settings">Paramètres avancés</string>
+    <string name="misc_short">Divers</string>
+    
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">Paramètres du menu</string>
+    <string name="summary_pref_menu_display">Position du bouton de menu</string>
+    <string name="navigation_bar">barre de navigation</string>
+    <string name="navigation_bar_tint_title">Barre de navigation teinté</string>
+
+    <string name="title_pref_navigation_menu_display">Visibilté du menu</string>
+    <string name="summary_pref_navigation_menu_display">Quand et comment voulez vous que les boutons du menu apparaisse?</string>
+
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">La vitesse de rotation</string>
+    <string name="rotation_animation_delay_summary">Nombre de millisecondes pendant lequel l\'appareil doit être stable avant un changement d\'orientation. 200 ms par défaut.</string>
+
+	<string name="ime_switcher_title">Afficher l\'icône du clavier</string>
+	<string name="ime_switcher_summary">Dans la barre d\'état pendant que vous tapez (redémarrage requis)</string>
+
+	<string name="custom_carrier_label_title">Nom de l\'opérateur personnalisé</string>
+	<string name="longpress_to_kill_title">Appuie long pour tuer</string>
+	<string name="longpress_to_kill_summary">Appuie long sur la touche retour pour fermer le processus ouvert</string>
+
+	<!-- CRT animations -->
+	<string name="crt_animations_header">Animations d\'écran</string>
+	<string name="crt_on_title">Animations d\'écran on</string>
+	<string name="crt_off_title">Animations d\'écran off</string>
+
+    <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_menu_unlock">Déverrouiller le menu</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Le bouton Menu ouvre le lockscreen.(redémarrage requis)</string>
+    
+    <string name="title_lockscreen_user_timeout_override">Retarder le lockscreen</string>
+    <string name="summary_lockscreen_user_timeout_override">Utiliser le paramètre délai d\Android après avoir manuellement éteind l\'écran. Le comportement par défaut est d\'utiliser le délai que lorsque l\'écran est éteind par lui-même.</string>
+    
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Voir l\'économie d\'énergie</string>
+    <string name="title_show_screenshot">Voir la capture d\'écran</string>
+    
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Activer l\'économiseur d\'énergie</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+    
+    <string name="title_pref_powersaving_data_screen_off">Action des données après l\'arrêt de l\'écran</string>
+    <string name="summary_pref_powersaving_data_screen_off">Que faire avec les données lorsque l\'écran s\'éteint?</string>
+        
+    <string name="title_pref_powersaving_data_screen_off_delay">Temps avant l\'action des données</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Combien de temps attendre avant d\'appliquer l\'action?</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">Action de synchronisation</string>
+    <string name="summary_pref_powersaving_sync_screen_off">Que faire avec votre synchronisation?!</string>
+    
+    <string name="title_pref_powersaving_sync_screen_off_delay">Intervalle de temps de synchronisation</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">Combien de temps à attendre entre chaque synchronisation forcée</string>
+
+    <string name="title_pref_navigation_layout">Disposition de la barre de navigation</string>
+    <string name="summary_pref_navigation_layout">Changement de mise en page nécessite un redémarrage!</string>
+    
+    <string name="powersaver_data_cat">Données</string>
+    <string name="powersaver_sync_cat">Synchronisation</string>
+
+    <!--  LED -->
+    <string name="title_led_on">Impulsions LED ON durée</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">Impulsions LED OFF durée</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">Couleur de la LED</string>
+
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">Utiliser les paramètres par défaut</string>
+    <string name="summary_settings_behavior">Le comportement par défaut consiste à appuyer sur le bouton paramètres pour voir le commutateurs et appuie long pour voir les "Paramètres système". Cocher pour inverser le fonctionnement</string>
+
+    <string name="title_auto_hide_toggles">Masquer automatiquement</string>
+    <string name="summary_auto_hide_toggles">Après l\'action est cachée</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_title_text_widget">Afficher le texte de la batterie</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_title_text_widget_center">Centré le texte de la batterie</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Afficher l\'horloge</string>
+    <string name="title_clock_ampm_entries">Style AM/PM</string>
+    <string name="colors">Couleurs</string>
+    <string name="clock_color_title">Couleur de l\'horloge</string>
+    <string name="reset_color_title">Réinitialiser la couleur</string>
+    <string name="enable_alarm_title">Activer l\'icône de l\'alarme</string>
+    <string name="enable_alarm_summary">Après la désactivation / Activation, vous devez ré-activer vos alarmes pour qu\'elle fonctionne de nouveau. Ou redémarrer.</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Style de la bascule</string>
+    <string name="toggle_style_summary">Que ce soit pour afficher des icônes ou du texte sur votre bascule.</string>
+
+    <string name="alternate_button_layout_title">Autre bascule</string>
+    <string name="alternate_button_layout_summary">Utilisez les boutons au lieu d\'interrupteurs.</string>
+    
+    <string name="enabled_toggles_title">activez les commutateurs</string>
+    <string name="enabled_toggles_summary">Modification de l\'affichage de la bascule</string>
+    <string name="toggles_order_title">Trier les commutateurs</string>
+    <string name="toggles_order_summary">Choisissez l\'ordre d\'affichage dans votre bascule</string>
+    <string name="brightness_location_title">Emplacement de la luminosité</string>
+    
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Appuyez sur Couleur pour appliquer</string>   
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
+    
+</resources>

@@ -12,7 +12,7 @@
     <string name="led_options">LED options</string>
     <string name="statusbar">Statusbar</string>
     <string name="general">General</string>
-    <string name="toggles_layout">Toggle layout</string>
+    <string name="toggles_layout">Toggles</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     
@@ -97,7 +97,7 @@
     <string name="battery_title_text_widget_center">Center battery text</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Show clock</string>
+    <string name="clock_title_enable">Clock style</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>
     <string name="colors">Colors</string>
     <string name="clock_color_title">Clock color</string>
@@ -124,5 +124,9 @@
     <string name="press_color_to_apply">Press on Color to apply</string>   
     <string name="arrow_right">→</string> 
     <string name="arrow_down">↓</string>
+    <string name="hex">Hex code:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>
     
 </resources>

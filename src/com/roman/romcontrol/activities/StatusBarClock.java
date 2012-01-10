@@ -29,14 +29,12 @@ public class StatusBarClock extends Activity {
 
         private static final String PREF_ENABLE = "clock_style";
         private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
-        private static final String PREF_RESET_COLOR = "reset_color";
         private static final String PREF_COLOR_PICKER = "clock_color";
         private static final String PREF_ALARM_ENABLE = "alarm";
 
         ListPreference mClockStyle;
         ListPreference mClockAmPmstyle;
         CheckBoxPreference mAlarm;
-        Preference mResetClockColor;
         ColorPickerPreference mColorPicker;
 
         @Override
@@ -58,8 +56,6 @@ public class StatusBarClock extends Activity {
                     .getContentResolver(), Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE,
                     2)));
 
-            mResetClockColor = findPreference(PREF_RESET_COLOR);
-
             mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
             mColorPicker.setOnPreferenceChangeListener(this);
 
@@ -74,12 +70,7 @@ public class StatusBarClock extends Activity {
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                 Preference preference) {
 
-            if (preference == mResetClockColor) {
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUSBAR_CLOCK_COLOR, -1);
-                return true;
-
-            } else if (preference == mAlarm) {
+            if (preference == mAlarm) {
 
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUSBAR_SHOW_ALARM,

@@ -23,10 +23,6 @@
 			android:title="@string/clock_color_title"
 			android:defaultValue="@android:color/holo_blue_light" />
 
-		<Preference
-			android:key="reset_color"
-			android:title="@string/reset_color_title" />
-
 	</PreferenceCategory>
 
 	<PreferenceCategory

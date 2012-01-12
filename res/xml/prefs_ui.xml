@@ -3,53 +3,6 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<PreferenceCategory
-		android:key="nav_bar"
-		android:title="@string/navigation_bar">
-
-		<ListPreference
-			android:entries="@array/pref_navigation_menu_entries"
-			android:entryValues="@array/pref_navigation_menu_values"
-			android:key="pref_menu_display"
-			android:title="@string/title_pref_menu_display"
-			android:summary="@string/summary_pref_menu_display" />
-
-		<ListPreference
-			android:entries="@array/pref_navigation_menu_display_entries"
-			android:entryValues="@array/pref_navigation_menu_display_values"
-			android:key="navbar_menu_display"
-			android:title="@string/title_pref_navigation_menu_display"
-			android:summary="@string/summary_pref_navigation_menu_display" />
-
-		<ListPreference
-			android:entries="@array/pref_navigation_layout_entries"
-			android:entryValues="@array/pref_navigation_layout_values"
-			android:key="navbar_layout"
-			android:title="@string/title_pref_navigation_layout"
-			android:summary="@string/summary_pref_navigation_layout" />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="nav_button_color"
-			android:title="@string/navigation_bar_tint_title"
-			android:defaultValue="#FFFFFF" />
-
-		<Preference
-			android:key="enabled_buttons"
-			android:title="@string/enabled_navbar_buttons_title"
-			android:summary="@string/enabled_navbar_buttons_summary" />
-
-		<Preference
-			android:key="buttons"
-			android:title="@string/navbar_order_title"
-			android:summary="@string/navbar_order_summary">
-
-			<intent
-				android:action="android.intent.action.MAIN"
-				android:targetClass="com.roman.romcontrol.activities.NavbarLayout"
-				android:targetPackage="com.roman.romcontrol" />
-		</Preference>
-	</PreferenceCategory>
-
-	<PreferenceCategory
 		android:key="crt"
 		android:title="@string/crt_animations_header">
 

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
@@ -49,13 +50,6 @@ public class UserInterface extends Activity {
         private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
         private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
 
-        // move these later
-        private static final String PREF_EANBLED_BUTTONS = "enabled_buttons";
-        private static final String PREF_NAVBAR_LAYOUT = "navbar_layout";
-        private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
-        private static final String PREF_NAV_COLOR = "nav_button_color";
-        private static final String PREF_MENU_UNLOCK = "pref_menu_display";
-
         CheckBoxPreference mCrtOnAnimation;
         CheckBoxPreference mCrtOffAnimation;
         CheckBoxPreference mShowImeSwitcher;
@@ -63,18 +57,7 @@ public class UserInterface extends Activity {
         Preference mCustomLabel;
         ListPreference mAnimationRotationDelay;
 
-        // move these later
-        ColorPickerPreference mNavigationBarColor;
-        ListPreference menuDisplayLocation;
-        ListPreference navBarLayout;
-        ListPreference mNavBarMenuDisplay;
-        Preference mNavBarEnabledButtons;
-
         String mCustomLabelText = null;
-
-        private final String[] buttons = {
-                "HOME", "BACK", "TASKS", "SEARCH"
-        };
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -83,18 +66,6 @@ public class UserInterface extends Activity {
             addPreferencesFromResource(R.xml.prefs_ui);
 
             PreferenceScreen prefs = getPreferenceScreen();
-
-            menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
-            menuDisplayLocation.setOnPreferenceChangeListener(this);
-            menuDisplayLocation.setValue(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.MENU_LOCATION,
-                    0) + "");
-
-            navBarLayout = (ListPreference) findPreference(PREF_NAVBAR_LAYOUT);
-            navBarLayout.setOnPreferenceChangeListener(this);
-            navBarLayout.setValue(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.NAVIGATION_BAR_LAYOUT,
-                    0) + "");
 
             mCrtOffAnimation = (CheckBoxPreference) findPreference(PREF_CRT_OFF);
             mCrtOffAnimation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -108,12 +79,6 @@ public class UserInterface extends Activity {
             mShowImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
 
-            mNavBarMenuDisplay = (ListPreference) findPreference(PREF_NAVBAR_MENU_DISPLAY);
-            mNavBarMenuDisplay.setOnPreferenceChangeListener(this);
-            mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.MENU_VISIBILITY,
-                    0) + "");
-
             mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
             updateCustomLabelTextSummary();
 
@@ -121,33 +86,11 @@ public class UserInterface extends Activity {
             mLongPressToKill.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                     Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
-            mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
-            mNavigationBarColor.setOnPreferenceChangeListener(this);
-
             mAnimationRotationDelay = (ListPreference) findPreference(PREF_ROTATION_ANIMATION);
             mAnimationRotationDelay.setOnPreferenceChangeListener(this);
             mAnimationRotationDelay.setValue(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
                     200) + "");
-
-            mNavBarEnabledButtons = findPreference(PREF_EANBLED_BUTTONS);
-
-            // remove navigation bar options
-            IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
-                    .getService(Context.WINDOW_SERVICE));
-            try {
-                if (!mWindowManager.hasNavigationBar()) {
-                    PreferenceGroup preferenceGroup = (PreferenceGroup) findPreference("nav_bar");
-                    if (preferenceGroup != null) {
-                        prefs.removePreference(preferenceGroup);
-                    }
-                } else {
-                    // nav bar
-                    // ((PreferenceGroup)
-                    // findPreference("misc")).removePreference(mLongPressToKill);
-                }
-            } catch (RemoteException e) {
-            }
 
             // can't get this working in ICS just yet
             ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);
@@ -222,49 +165,6 @@ public class UserInterface extends Activity {
                         Settings.Secure.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
                 return true;
 
-            } else if (preference == mNavBarEnabledButtons) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
-
-                ArrayList<String> enabledToggles = NavbarLayout
-                        .getButtonsStringArray(this.getActivity().getApplicationContext());
-
-                boolean checkedToggles[] = new boolean[buttons.length];
-
-                for (int i = 0; i < checkedToggles.length; i++) {
-                    if (enabledToggles.contains(buttons[i])) {
-                        checkedToggles[i] = true;
-                    }
-                }
-
-                builder.setTitle("Choose which buttons to use");
-                builder.setCancelable(false);
-                builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                builder.setMultiChoiceItems(buttons,
-                        checkedToggles,
-                        new OnMultiChoiceClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                                String toggleKey = (buttons[which]);
-
-                                if (isChecked)
-                                    addButton(getApplicationContext(), toggleKey);
-                                else
-                                    removeButton(getApplicationContext(), toggleKey);
-                            }
-                        });
-
-                AlertDialog d = builder.create();
-
-                d.show();
-
-                return true;
             }
 
             return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -272,29 +172,7 @@ public class UserInterface extends Activity {
 
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
-            if (preference == menuDisplayLocation) {
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
-                return true;
-            } else if (preference == navBarLayout) {
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_LAYOUT, Integer.parseInt((String) newValue));
-                return true;
-            } else if (preference == mNavBarMenuDisplay) {
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.MENU_VISIBILITY, Integer.parseInt((String) newValue));
-                return true;
-            } else if (preference == mNavigationBarColor) {
-                String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
-                        .valueOf(newValue)));
-                preference.setSummary(hex);
-
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_TINT, intHex);
-                Log.e("ROMAN", intHex + "");
-
-            } else if (preference == mAnimationRotationDelay) {
+            if (preference == mAnimationRotationDelay) {
 
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,

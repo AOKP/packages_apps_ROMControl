@@ -15,6 +15,7 @@
     <string name="toggles_layout">Toggles</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
+    <string name="nav_bar">Navigation bar</string>
     
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
@@ -88,9 +89,6 @@
     
     <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
     <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
-
-    <string name="title_pref_navigation_layout">Navigation Bar Layout</string>
-    <string name="summary_pref_navigation_layout">Changing layouts requires a reboot!</string>
     
     <string name="powersaver_data_cat">Data</string>
     <string name="powersaver_sync_cat">Sync</string>

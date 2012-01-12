@@ -138,21 +138,6 @@
 		<item>63</item>
 	</string-array>
 	
-	<!-- NAV BAR -->
-	<string-array name="pref_navigation_layout_entries">
-		<item>Regular</item>
-		<item>Regular w/Search</item>
-		<item>Back - Home - Search</item>
-		<item>Back - Home - Tasks - Search</item>
-	</string-array>
-
-	<string-array name="pref_navigation_layout_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-	</string-array>
-
 	<string-array name="led_entries">
 		<item>.5 seconds</item>
 		<item>1 second</item>
@@ -294,14 +279,12 @@
 		<item>No icon, no text</item>
 		<item>Icon only</item>
 		<item>Text only</item>
-		<item>Icon and text</item>
 	</string-array>
 
 	<string-array name="toggle_style_values">
 		<item>1</item>
 		<item>2</item>
 		<item>3</item>
-		<item>4</item>
 	</string-array>
 
 </resources>

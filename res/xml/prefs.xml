@@ -15,6 +15,16 @@
 				android:targetClass="com.roman.romcontrol.activities.UserInterface"
 				android:targetPackage="com.roman.romcontrol" />
 		</Preference>
+		
+		<Preference
+			android:key="nav_bar"
+			android:title="@string/nav_bar">
+
+			<intent
+				android:action="android.intent.action.MAIN"
+				android:targetClass="com.roman.romcontrol.activities.Navbar"
+				android:targetPackage="com.roman.romcontrol" />
+		</Preference>
 
 		<Preference
 			android:key="lockscreen_pref"

@@ -2,9 +2,13 @@
 package com.roman.romcontrol;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
+import android.view.IWindowManager;
 
 public class ROMControlActivity extends Activity {
 
@@ -30,9 +34,24 @@ public class ROMControlActivity extends Activity {
             addPreferencesFromResource(R.xml.prefs);
 
             if (!hasNotificationLed) {
-                ((PreferenceGroup)
-                findPreference("functionality")).removePreference(findPreference("led_prefs"));
+                ((PreferenceGroup) findPreference("functionality"))
+                        .removePreference(findPreference("led_prefs"));
             }
+
+            // remove navigation bar options
+            IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
+                    .getService(Context.WINDOW_SERVICE));
+            try {
+                if (!mWindowManager.hasNavigationBar()) {
+                    PreferenceGroup preferenceGroup = (PreferenceGroup) findPreference("nav_bar");
+                    if (preferenceGroup != null) {
+                        getPreferenceScreen().removePreference(preferenceGroup);
+                    }
+                } else {
+                }
+            } catch (RemoteException e) {
+            }
+
         }
     }
 }

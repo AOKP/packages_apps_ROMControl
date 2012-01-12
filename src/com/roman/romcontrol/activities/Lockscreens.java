@@ -13,6 +13,7 @@ import com.roman.romcontrol.R;
 
 public class Lockscreens extends Activity {
     private static final String PREF_MENU = "pref_lockscreen_menu_unlock";
+    private static final String QUAD_TARGETS = "pref_lockscreen_quad_targets";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,11 @@ public class Lockscreens extends Activity {
 
         private static final String PREF_MENU = "pref_lockscreen_menu_unlock";
         private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
+        private static final String QUAD_TARGETS = "pref_lockscreen_quad_targets";
 
         CheckBoxPreference menuButtonLocation;
         CheckBoxPreference mLockScreenTimeoutUserOverride;
+        CheckBoxPreference mQuadTargets;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,11 @@ public class Lockscreens extends Activity {
             mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
                     .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
                     0) == 1);
+
+            mQuadTargets = (CheckBoxPreference) findPreference(QUAD_TARGETS);
+            mQuadTargets.setChecked(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.LOCKSCREEN_QUAD_TARGETS,
+                    0) == 1);
         }
 
         @Override
@@ -59,6 +67,11 @@ public class Lockscreens extends Activity {
             } else if (preference == mLockScreenTimeoutUserOverride) {
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
+                        ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                return true;
+	    } else if (preference == mQuadTargets) {	
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.LOCKSCREEN_QUAD_TARGETS,	
                         ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
                 return true;
             }

@@ -51,6 +51,9 @@
 	<string name="crt_off_title">CRT off animation</string>
 
     <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>	
+    <string name="summary_pref_lockscreen_quad_targets">Adds Phone and Messaging shortcuts on the lock screen</string>
+
     <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
     <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
     

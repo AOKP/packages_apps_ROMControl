@@ -66,6 +66,9 @@
     <string name="volume_wake_title">Volume wake</string>
     <string name="volume_wake_summary">Tapping the volume keys while your phone is off</string>
     
+    <string name="volume_music_controls_title">Volume music controls</string>
+    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks</string>
+    
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show power saver</string>
     <string name="title_show_screenshot">Show screenshot</string>

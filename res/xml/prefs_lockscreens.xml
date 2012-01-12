@@ -22,9 +22,20 @@
 		android:title="@string/volume_wake_title"
 		android:summary="@string/volume_wake_summary" />
 
-	<Preference
-		android:key="sms_picker"
-		android:title="@string/sms_picker_title"
-		android:summary="@string/sms_picker_summary" />
+	<CheckBoxPreference
+		android:key="volume_music_controls"
+		android:title="@string/volume_music_controls_title"
+		android:summary="@string/volume_music_controls_summary" />
+
+	<PreferenceCategory
+		android:key="advanced_cat"
+		android:title="@string/advanced_settings">
+
+		<Preference
+			android:key="sms_picker"
+			android:title="@string/sms_picker_title"
+			android:summary="@string/sms_picker_summary" />
+
+	</PreferenceCategory>
 
 </PreferenceScreen>

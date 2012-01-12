@@ -12,7 +12,7 @@
     <string name="led_options">LED beállítások</string>
     <string name="statusbar">Állapotsáv</string>
     <string name="general">Általános</string>
-    <string name="toggles_layout">Kapcsolók elrendezése</string>
+    <string name="toggles_layout">Kapcsolók</string>
     <string name="clock">Óra</string>
     <string name="battery">Akkumulátor</string>
     
@@ -27,6 +27,12 @@
     
     <string name="title_pref_navigation_menu_display">Menü láthatóság</string>
     <string name="summary_pref_navigation_menu_display">Hol és mikor jelenjenek meg a menü gombok?</string>
+    
+    <string name="navbar_order_title">Navigációs gombok sorrendje</string>
+    <string name="navbar_order_summary">Rendszerezd a navigációs gombjaid!</string>	
+
+    <string name="enabled_navbar_buttons_title">Engedélyezett gombok</string>
+    <string name="enabled_navbar_buttons_summary">Válaszd ki mely gombokat szeretnéd használni!</string>
 	
 	<!-- UI -->
     <string name="rotation_animation_delay_title">Forgatás késleltetése</string>
@@ -45,11 +51,23 @@
 	<string name="crt_off_title">CRT ki animáció</string>
     
     <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_quad_targets">Négy opció</string>  
+    <string name="summary_pref_lockscreen_quad_targets">Telefon és SMS opciók hozzáadása a záróképernyőhöz</string>
+    
     <string name="title_pref_lockscreen_menu_unlock">Feloldás menüvel</string>
     <string name="summary_pref_lockscreen_menu_unlock">A hagyományos menü gomb feloldja a kijelzőt (újraindítás szükséges)</string>
     
     <string name="title_lockscreen_user_timeout_override">Várakozás a képernyőzárra</string>
-    <string name="summary_lockscreen_user_timeout_override">Az Android késleltetésének használata a kijelző manuális kikapcsolása után. Alapértelmezetten csak akkor használjuk a késleltetést, ha a kijelző magától kapcsol ki.</string>
+    <string name="summary_lockscreen_user_timeout_override">Az Android késleltetésének használata a kijelző manuális kikapcs. után. Alapért. csak akkor használjuk a késleltetést, ha a kijelző magától kapcsol ki.</string>
+    
+    <string name="sms_picker_title">Egyéni alk. SMS helyett</string>	
+    <string name="sms_picker_summary">Válassz egy másik alkalmazást az SMS gomb megnyomásához!</string>
+    
+    <string name="volume_wake_title">Bekapcs. hang gombra</string>	
+    <string name="volume_wake_summary">Hangerőszabályzó megnyomására is bekapcsol a telefon</string>
+    
+    <string name="volume_music_controls_title">Hang gomb - zene vezérlés</string>
+    <string name="volume_music_controls_summary">A hangerő gomb hosszú lenyomása zenét léptet</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Energiatak. mód megjelenítése</string>
@@ -97,20 +115,20 @@
     <string name="battery_title_text_widget_center">Középre igazítás</string>
     
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Óra megjelenítése</string>
+    <string name="clock_title_enable">Óra stílusa</string>
     <string name="title_clock_ampm_entries">AM/PM stílus</string>
 	<string name="colors">Színek</string>
     <string name="clock_color_title">Óra színe</string>
     <string name="reset_color_title">Szín visszaállítása</string>
     <string name="enable_alarm_title">Ébresztő ikon engedélyezve</string>
-    <string name="enable_alarm_summary">Ki/bekapcsolás után újra be kell állítanod az ébresztőt a beállítás érvényesíléséhez. Vagy indítsd újra a telefont.</string>
+    <string name="enable_alarm_summary">Ki/bekapcsolás után újra be kell állítanod az ébresztőt a beállítás érvényesíléséhez. Vagy indítsd újra a telefont!</string>
 	
 	<!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Kapcsolók stílusa</string>
     <string name="toggle_style_summary">Ikon vagy szöveg jelenjen meg kapcsolókként.</string>
 
     <string name="alternate_button_layout_title">Alternatív kapcsolók</string>
-    <string name="alternate_button_layout_summary">Gombok alkalmazása kapcsolók helyett.</string>
+    <string name="alternate_button_layout_summary">Gombok alkalmazása kapcsolók helyett</string>
     
     <string name="enabled_toggles_title">Engedélyezett kapcsolók</string>
     <string name="enabled_toggles_summary">Mely kapcsolók látszódjanak?</string>
@@ -120,6 +138,16 @@
     
     <!-- Color Picker -->
     <string name="dialog_color_picker">Színválasztó</string>
-    <string name="press_color_to_apply">Érintsd meg a színt a mentéshez!</string> 
+    <string name="press_color_to_apply">Érintsd meg a színt a mentéshez!</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>	
+    <string name="set">Alk.</string>	
+    <string name="ics_color">!!!</string>
+    
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Egyéni alkalmazás</string>
+    <string name="use_custom_app_summary">Egyéni alkalmazás indítása a feladatválasztó helyett</string>	
+    <string name="select_custom_app_title">Válaszd ki!</string>	
+    <string name="group_applications">Alkalmazások</string>
 	
 </resources>

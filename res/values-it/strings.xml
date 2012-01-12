@@ -38,17 +38,17 @@
     <string name="rotation_animation_delay_title">Ritardo nella rotazione</string>
     <string name="rotation_animation_delay_summary">Il numero dei millisecondi che devono passare per compiere la rotazione  del telefono. Di default è settato a 200ms.</string>
 
-<string name="ime_switcher_title">Show IME Switcher</string>
-<string name="ime_switcher_summary">Nella barra di stato, durante la digitazione (richiede il riavvio)</string>
-
-<string name="custom_carrier_label_title">Personalizzazione tasti</string>
-<string name="longpress_to_kill_title">Tieni premuto per chiudere</string>
-<string name="longpress_to_kill_summary">Tieni premuto il tasto indietro per chiudere l\'applicazione corrente</string>
-
-<!-- CRT animations -->
-<string name="crt_animations_header">Controlla animazioni</string>
-<string name="crt_on_title">Controllo animazioni attivo</string>
-<string name="crt_off_title">Controllo animazioni disattivo</string>
+	<string name="ime_switcher_title">Show IME Switcher</string>
+	<string name="ime_switcher_summary">Nella barra di stato, durante la digitazione (richiede il riavvio)</string>
+	
+	<string name="custom_carrier_label_title">Personalizzazione tasti</string>
+	<string name="longpress_to_kill_title">Tieni premuto per chiudere</string>
+	<string name="longpress_to_kill_summary">Tieni premuto il tasto indietro per chiudere l\'applicazione corrente</string>
+	
+	<!-- CRT animations -->
+	<string name="crt_animations_header">Controlla animazioni</string>
+	<string name="crt_on_title">Controllo animazioni attivo</string>
+	<string name="crt_off_title">Controllo animazioni disattivo</string>
 
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">menu\' sblocco</string>
@@ -63,7 +63,7 @@
     
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Attiva risparmio energetico</string>
-    <string name="summary_pref_powersaving_pref_mode">@vuoto</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
     
     <string name="title_pref_powersaving_data_screen_off">Gestione dati a schermo spento</string>
     <string name="summary_pref_powersaving_data_screen_off">Cosa fare con i dati quando lo schermo si spegne?</string>
@@ -85,7 +85,7 @@
 
     <!-- LED -->
     <string name="title_led_on">Durata lampeggio con LED attivo</string>
-    <string name="summary_led_on">@vuoto</string>
+    <string name="summary_led_on">@null</string>
     <string name="title_led_off">Durata lampeggio con LED spento</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">Colore del LED</string>
@@ -99,7 +99,7 @@
 
     <!-- Statusbar | Battery -->
     <string name="battery_title_text_widget">Mostra la percentuale della batteria</string>
-    <string name="battery_summary_text_widget">@Vuoto</string>
+    <string name="battery_summary_text_widget">@null</string>
     <string name="battery_title_text_widget_center">Centra la percentuale della batteria</string>
 
     <!-- Statusbar | Clock -->

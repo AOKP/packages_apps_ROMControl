@@ -33,11 +33,12 @@ public class Lockscreens extends Activity {
         private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
         private static final String QUAD_TARGETS = "pref_lockscreen_quad_targets";
         private static final String PREF_SMS_PICKER = "sms_picker";
+        private static final String PREF_VOLUME_WAKE = "volume_wake";
 
         CheckBoxPreference menuButtonLocation;
         CheckBoxPreference mLockScreenTimeoutUserOverride;
         CheckBoxPreference mQuadTargets;
-
+        CheckBoxPreference mVolumeWake;
         Preference mSmsPicker;
 
         private Preference mCurrentCustomActivityPreference;
@@ -64,6 +65,11 @@ public class Lockscreens extends Activity {
             mQuadTargets = (CheckBoxPreference) findPreference(QUAD_TARGETS);
             mQuadTargets.setChecked(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.LOCKSCREEN_QUAD_TARGETS,
+                    0) == 1);
+
+            mVolumeWake = (CheckBoxPreference) findPreference(PREF_VOLUME_WAKE);
+            mVolumeWake.setChecked(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                     0) == 1);
 
             mSmsPicker = findPreference(PREF_SMS_PICKER);
@@ -96,6 +102,12 @@ public class Lockscreens extends Activity {
                 mCurrentCustomActivityPreference = preference;
                 mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT;
                 mPicker.pickShortcut();
+                return true;
+            } else if (preference == mVolumeWake) {
+
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.VOLUME_WAKE_SCREEN,
+                        ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
                 return true;
             }
 

@@ -28,6 +28,12 @@
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
 
+    <string name="navbar_order_title">Navigation button order</string>
+    <string name="navbar_order_summary">Customize the order of your soft keys</string>
+
+    <string name="enabled_navbar_buttons_title">Enabled buttons</string>
+    <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
+    
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotation delay</string>
     <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>

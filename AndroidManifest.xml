@@ -89,6 +89,13 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+            android:label="NavBar Layout"
+            android:name=".activities.NavbarLayout" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

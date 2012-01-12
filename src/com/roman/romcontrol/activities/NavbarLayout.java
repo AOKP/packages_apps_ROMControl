@@ -35,8 +35,8 @@ import android.widget.TextView;
 import com.roman.romcontrol.R;
 import com.roman.romcontrol.widgets.TouchInterceptor;
 
-public class TogglesLayout extends ListActivity {
-    private static final String TAG = "TogglesLayout";
+public class NavbarLayout extends ListActivity {
+    private static final String TAG = "NavbarLayout";
 
     private ListView mButtonList;
     private ButtonAdapter mButtonAdapter;
@@ -72,7 +72,7 @@ public class TogglesLayout extends ListActivity {
     private TouchInterceptor.DropListener mDropListener = new TouchInterceptor.DropListener() {
         public void drop(int from, int to) {
             // get the current button list
-            ArrayList<String> toggles = getTogglesStringArray(getApplicationContext());
+            ArrayList<String> toggles = getButtonsStringArray(getApplicationContext());
 
             // move the button
             if (from < toggles.size()) {
@@ -82,7 +82,7 @@ public class TogglesLayout extends ListActivity {
                     toggles.add(to, toggle);
 
                     // save our buttons
-                    setTogglesFromStringArray(getApplicationContext(), toggles);
+                    setButtonsFromStringArray(getApplicationContext(), toggles);
 
                     // tell our adapter/listview to reload
                     mButtonAdapter.reloadButtons();
@@ -116,7 +116,7 @@ public class TogglesLayout extends ListActivity {
         }
 
         public void reloadButtons() {
-            ArrayList<String> toggles = getTogglesStringArray(getApplicationContext());
+            ArrayList<String> toggles = getButtonsStringArray(getApplicationContext());
 
             mToggles = new ArrayList<Toggle>();
             for (String toggle : toggles) {
@@ -151,7 +151,7 @@ public class TogglesLayout extends ListActivity {
         }
     }
 
-    public static void setTogglesFromStringArray(Context c, ArrayList<String> newGoodies) {
+    public static void setButtonsFromStringArray(Context c, ArrayList<String> newGoodies) {
         String newToggles = "";
 
         for (String s : newGoodies)
@@ -160,18 +160,17 @@ public class TogglesLayout extends ListActivity {
         // remote last |
         newToggles = newToggles.substring(0, newToggles.length() - 1);
 
-        Settings.System.putString(c.getContentResolver(), Settings.System.STATUSBAR_TOGGLES,
+        Settings.System.putString(c.getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTONS,
                 newToggles);
     }
 
-    public static ArrayList<String> getTogglesStringArray(Context c) {
+    public static ArrayList<String> getButtonsStringArray(Context c) {
         String clusterfuck = Settings.System.getString(c.getContentResolver(),
-                Settings.System.STATUSBAR_TOGGLES);
+                Settings.System.NAVIGATION_BAR_BUTTONS);
 
         if (clusterfuck == null) {
-            Log.e(TAG, "clusterfuck was null");
-//            return null;
-            clusterfuck = "WIFI|BT|GPS|DATA|ROTATE";
+            Log.e(TAG, "clusterfudge was null");
+            clusterfuck = "BACK|HOME|TASKS";
         }
 
         String[] togglesStringArray = clusterfuck.split("\\|");

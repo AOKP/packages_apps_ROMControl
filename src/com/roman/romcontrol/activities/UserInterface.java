@@ -1,11 +1,14 @@
 
 package com.roman.romcontrol.activities;
 
+import java.util.ArrayList;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -17,11 +20,13 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.util.Log;
 import android.view.IWindowManager;
 import android.widget.EditText;
 
+import com.android.internal.telephony.Phone;
 import com.roman.romcontrol.R;
 
 public class UserInterface extends Activity {
@@ -34,32 +39,42 @@ public class UserInterface extends Activity {
                 new UserInterfacePreferences()).commit();
     }
 
-    public static class UserInterfacePreferences extends PreferenceFragment implements
+    public class UserInterfacePreferences extends PreferenceFragment implements
             OnPreferenceChangeListener {
 
-        private static final String PREF_MENU_UNLOCK = "pref_menu_display";
         private static final String PREF_CRT_ON = "crt_on";
         private static final String PREF_CRT_OFF = "crt_off";
         private static final String PREF_IME_SWITCHER = "ime_switcher";
-        private static final String PREF_NAVBAR_LAYOUT = "navbar_layout";
-        private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
         private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
-        private static final String PREF_NAV_COLOR = "nav_button_color";
         private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
 
-        ListPreference menuDisplayLocation;
-        ListPreference navBarLayout;
-        ListPreference mNavBarMenuDisplay;
+        // move these later
+        private static final String PREF_EANBLED_BUTTONS = "enabled_buttons";
+        private static final String PREF_NAVBAR_LAYOUT = "navbar_layout";
+        private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
+        private static final String PREF_NAV_COLOR = "nav_button_color";
+        private static final String PREF_MENU_UNLOCK = "pref_menu_display";
+
         CheckBoxPreference mCrtOnAnimation;
         CheckBoxPreference mCrtOffAnimation;
         CheckBoxPreference mShowImeSwitcher;
         CheckBoxPreference mLongPressToKill;
         Preference mCustomLabel;
-        ColorPickerPreference mNavigationBarColor;
         ListPreference mAnimationRotationDelay;
 
+        // move these later
+        ColorPickerPreference mNavigationBarColor;
+        ListPreference menuDisplayLocation;
+        ListPreference navBarLayout;
+        ListPreference mNavBarMenuDisplay;
+        Preference mNavBarEnabledButtons;
+
         String mCustomLabelText = null;
+
+        private final String[] buttons = {
+                "HOME", "BACK", "TASKS", "SEARCH"
+        };
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -114,6 +129,8 @@ public class UserInterface extends Activity {
             mAnimationRotationDelay.setValue(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
                     200) + "");
+
+            mNavBarEnabledButtons = findPreference(PREF_EANBLED_BUTTONS);
 
             // remove navigation bar options
             IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
@@ -205,6 +222,49 @@ public class UserInterface extends Activity {
                         Settings.Secure.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
                 return true;
 
+            } else if (preference == mNavBarEnabledButtons) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
+
+                ArrayList<String> enabledToggles = NavbarLayout
+                        .getButtonsStringArray(this.getActivity().getApplicationContext());
+
+                boolean checkedToggles[] = new boolean[buttons.length];
+
+                for (int i = 0; i < checkedToggles.length; i++) {
+                    if (enabledToggles.contains(buttons[i])) {
+                        checkedToggles[i] = true;
+                    }
+                }
+
+                builder.setTitle("Choose which buttons to use");
+                builder.setCancelable(false);
+                builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.setMultiChoiceItems(buttons,
+                        checkedToggles,
+                        new OnMultiChoiceClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                                String toggleKey = (buttons[which]);
+
+                                if (isChecked)
+                                    addButton(getApplicationContext(), toggleKey);
+                                else
+                                    removeButton(getApplicationContext(), toggleKey);
+                            }
+                        });
+
+                AlertDialog d = builder.create();
+
+                d.show();
+
+                return true;
             }
 
             return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -245,6 +305,20 @@ public class UserInterface extends Activity {
 
             return false;
         }
+    }
+
+    public static void addButton(Context context, String key) {
+        ArrayList<String> enabledToggles = NavbarLayout
+                .getButtonsStringArray(context);
+        enabledToggles.add(key);
+        NavbarLayout.setButtonsFromStringArray(context, enabledToggles);
+    }
+
+    public static void removeButton(Context context, String key) {
+        ArrayList<String> enabledToggles = NavbarLayout
+                .getButtonsStringArray(context);
+        enabledToggles.remove(key);
+        NavbarLayout.setButtonsFromStringArray(context, enabledToggles);
     }
 
 }

@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <CheckBoxPreference
-        android:key="pref_lockscreen_quad_targets"
-        android:title="@string/title_pref_lockscreen_quad_targets"
-        android:summary="@string/summary_pref_lockscreen_quad_targets" />
-
-    <CheckBoxPreference
-        android:key="pref_lockscreen_menu_unlock"
-        android:title="@string/title_pref_lockscreen_menu_unlock"
-        android:summary="@string/summary_pref_lockscreen_menu_unlock" />
+	xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<CheckBoxPreference
-        android:key="lockscreen_user_timeout_override"
-        android:title="@string/title_lockscreen_user_timeout_override"
-        android:summary="@string/summary_lockscreen_user_timeout_override" />
+		android:key="pref_lockscreen_quad_targets"
+		android:title="@string/title_pref_lockscreen_quad_targets"
+		android:summary="@string/summary_pref_lockscreen_quad_targets" />
+
+	<CheckBoxPreference
+		android:key="pref_lockscreen_menu_unlock"
+		android:title="@string/title_pref_lockscreen_menu_unlock"
+		android:summary="@string/summary_pref_lockscreen_menu_unlock" />
+
+	<CheckBoxPreference
+		android:key="lockscreen_user_timeout_override"
+		android:title="@string/title_lockscreen_user_timeout_override"
+		android:summary="@string/summary_lockscreen_user_timeout_override" />
+
+	<Preference
+		android:key="sms_picker"
+		android:title="@string/sms_picker_title"
+		android:summary="@string/sms_picker_summary" />
 
 </PreferenceScreen>

@@ -14,91 +14,104 @@
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
-            android:name=".ROMControlActivity" >
+            android:name=".ROMControlActivity"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="User Interface"
-            android:name=".activities.UserInterface" >
+            android:name=".activities.UserInterface"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Lockscreen Settings"
-            android:name=".activities.Lockscreens" >
+            android:name=".activities.Lockscreens"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Power Menu Settings"
-            android:name=".activities.PowerMenu" >
+            android:name=".activities.PowerMenu"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Power Saver Settings"
-            android:name=".activities.PowerSaver" >
+            android:name=".activities.PowerSaver"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="LED"
-            android:name=".activities.LED" >
+            android:name=".activities.LED"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Statusbar - General"
-            android:name=".activities.StatusBarGeneral" >
+            android:name=".activities.StatusBarGeneral"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Statusbar - Battery"
-            android:name=".activities.StatusBarBattery" >
+            android:name=".activities.StatusBarBattery"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Statusbar - Clock"
-            android:name=".activities.StatusBarClock" >
+            android:name=".activities.StatusBarClock"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Toggles"
-            android:name=".activities.StatusBarToggles" >
+            android:name=".activities.StatusBarToggles"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="Toggles Layout"
-            android:name=".activities.TogglesLayout" >
+            android:name=".activities.TogglesLayout"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="NavBar Layout"
-            android:name=".activities.NavbarLayout" >
+            android:name=".activities.NavbarLayout"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:label="@string/nav_bar"
-            android:name=".activities.Navbar" >
+            android:name=".activities.Navbar"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

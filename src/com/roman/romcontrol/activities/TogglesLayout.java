@@ -158,7 +158,10 @@ public class TogglesLayout extends ListActivity {
             newToggles += s + "|";
 
         // remote last |
-        newToggles = newToggles.substring(0, newToggles.length() - 1);
+        try {
+            newToggles = newToggles.substring(0, newToggles.length() - 1);
+        } catch (StringIndexOutOfBoundsException e) {
+        }
 
         Settings.System.putString(c.getContentResolver(), Settings.System.STATUSBAR_TOGGLES,
                 newToggles);
@@ -170,7 +173,7 @@ public class TogglesLayout extends ListActivity {
 
         if (clusterfuck == null) {
             Log.e(TAG, "clusterfuck was null");
-//            return null;
+            // return null;
             clusterfuck = "WIFI|BT|GPS|DATA|ROTATE";
         }
 

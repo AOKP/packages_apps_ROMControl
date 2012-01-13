@@ -163,6 +163,7 @@ public class Navbar extends Activity {
                 int intHex = ColorPickerPreference.convertToColorInt(hex);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_TINT, intHex);
+                return true;
 
             } else if (preference == mHomeLongpress) {
                 Settings.System.putInt(getActivity().getContentResolver(),

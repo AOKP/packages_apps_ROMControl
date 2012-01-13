@@ -287,4 +287,15 @@
 		<item>3</item>
 	</string-array>
 
+	<!-- long press home -->
+	<string-array name="long_press_home_values">
+		<item>Do nothing</item>
+		<item>Show recents</item>
+	</string-array>
+
+	<string-array name="long_press_home_entries">
+		<item>Do nothing</item>
+		<item>Show recents</item>
+	</string-array>
+
 </resources>

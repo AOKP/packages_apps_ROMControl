@@ -35,6 +35,9 @@
     <string name="enabled_navbar_buttons_title">Enabled buttons</string>
     <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
     
+    <string name="long_press_home_title">Long press home action</string>
+    <string name="long_press_home_summary">What to do when long pressing the home softkey</string>
+    
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotation delay</string>
     <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>

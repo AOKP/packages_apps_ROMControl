@@ -36,4 +36,17 @@
 			android:targetClass="com.roman.romcontrol.activities.NavbarLayout"
 			android:targetPackage="com.roman.romcontrol" />
 	</Preference>
+
+	<PreferenceCategory
+		android:key="advanced_cat"
+		android:title="@string/advanced_settings">
+
+		<ListPreference
+			android:entries="@array/long_press_home_entries"
+			android:entryValues="@array/long_press_home_values"
+			android:key="long_press_home"
+			android:title="@string/long_press_home_title"
+			android:summary="@string/long_press_home_summary" />
+
+	</PreferenceCategory>
 </PreferenceScreen>

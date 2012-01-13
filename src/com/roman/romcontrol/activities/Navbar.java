@@ -47,11 +47,13 @@ public class Navbar extends Activity {
         private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
         private static final String PREF_NAV_COLOR = "nav_button_color";
         private static final String PREF_MENU_UNLOCK = "pref_menu_display";
+        private static final String PREF_HOME_LONGPRESS = "long_press_home";
 
         // move these later
         ColorPickerPreference mNavigationBarColor;
         ListPreference menuDisplayLocation;
         ListPreference mNavBarMenuDisplay;
+        ListPreference mHomeLongpress;
         Preference mNavBarEnabledButtons;
 
         private final String[] buttons = {
@@ -76,6 +78,12 @@ public class Navbar extends Activity {
             mNavBarMenuDisplay.setOnPreferenceChangeListener(this);
             mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.MENU_VISIBILITY,
+                    0) + "");
+
+            mHomeLongpress = (ListPreference) findPreference(PREF_HOME_LONGPRESS);
+            mHomeLongpress.setOnPreferenceChangeListener(this);
+            mHomeLongpress.setValue(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
                     0) + "");
 
             mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
@@ -155,10 +163,13 @@ public class Navbar extends Activity {
                 int intHex = ColorPickerPreference.convertToColorInt(hex);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_TINT, intHex);
-                Log.e("ROMAN", intHex + "");
 
+            } else if (preference == mHomeLongpress) {
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
+                        Integer.parseInt((String) newValue));
+                return true;
             }
-
             return false;
         }
     }

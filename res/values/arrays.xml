@@ -17,7 +17,7 @@
 
 	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
 		<item>Do nothing</item>
-		<item>Switch to CDMA only (1x)</item>
+		<item>Turn LTE off</item>
 		<item>Turn data off</item>
 	</string-array>
 

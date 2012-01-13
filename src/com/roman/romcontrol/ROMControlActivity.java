@@ -43,10 +43,8 @@ public class ROMControlActivity extends Activity {
                     .getService(Context.WINDOW_SERVICE));
             try {
                 if (!mWindowManager.hasNavigationBar()) {
-                    PreferenceGroup preferenceGroup = (PreferenceGroup) findPreference("nav_bar");
-                    if (preferenceGroup != null) {
-                        getPreferenceScreen().removePreference(preferenceGroup);
-                    }
+                    ((PreferenceGroup) findPreference("rom_ui"))
+                            .removePreference(findPreference("nav_bar"));
                 } else {
                 }
             } catch (RemoteException e) {

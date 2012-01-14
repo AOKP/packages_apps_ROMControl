@@ -1,157 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ROM Control</string>
+   <string name="app_name">自定义设置</string>
 
     <!-- Main -->
-    <string name="user_interface">User Interface</string>
-    <string name="general_ui">General UI</string>
-    <string name="lockscreen_options">Lockscreen options</string>
-    <string name="power_menu_optons">Power menu options</string>
-    <string name="functionality">Functionality</string>
-    <string name="power_saver">Power saver</string>
-    <string name="led_options">LED options</string>
-    <string name="statusbar">Statusbar</string>
-    <string name="general">General</string>
-    <string name="toggles_layout">Toggles</string>
-    <string name="clock">Clock</string>
-    <string name="battery">Battery</string>
-    <string name="nav_bar">Navigation bar</string>
+    <string name="user_interface">用户界面</string>
+    <string name="general_ui">一般界面</string>
+    <string name="lockscreen_options">锁屏设置</string>
+    <string name="power_menu_optons">电源菜单设置</string>
+    <string name="functionality">功能</string>
+    <string name="power_saver">节电设置</string>
+    <string name="led_options">呼吸灯设置</string>
+    <string name="statusbar">状态栏</string>
+    <string name="general">基本</string>
+    <string name="toggles_layout">切换开关</string>
+    <string name="clock">时钟选项</string>
+    <string name="battery">电池选项</string>
+    <string name="nav_bar">导航栏</string>
     
-    <string name="advanced_settings">Advanced settings</string>
-    <string name="misc_short">Misc</string>
+    <string name="advanced_settings">高级设置</string>
+    <string name="misc_short">杂项</string>
     
     <!-- Navigation Bar -->
-    <string name="title_pref_menu_display">Menu Settings</string>
-    <string name="summary_pref_menu_display">Position of legacy menu button</string>
-    <string name="navigation_bar">Navigation bar</string>
-    <string name="navigation_bar_tint_title">Navigation bar tint</string>
+    <string name="title_pref_menu_display">菜单键设置</string>
+    <string name="summary_pref_menu_display">菜单按键位置选项</string>
+    <string name="navigation_bar">导航栏</string>
+    <string name="navigation_bar_tint_title">按键颜色</string>
 
-    <string name="title_pref_navigation_menu_display">Menu visibility</string>
-    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
+    <string name="title_pref_navigation_menu_display">菜单键显示方式</string>
+    <string name="summary_pref_navigation_menu_display">设置菜单按键的显示方式</string>
 
-    <string name="navbar_order_title">Navigation button order</string>
-    <string name="navbar_order_summary">Customize the order of your soft keys</string>
+    <string name="navbar_order_title">导航键顺序</string>
+    <string name="navbar_order_summary">自定义虚拟按键的顺序</string>
 
-    <string name="enabled_navbar_buttons_title">Enabled buttons</string>
-    <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
-    
-    <string name="long_press_home_title">Long press home action</string>
-    <string name="long_press_home_summary">What to do when long pressing the home softkey</string>
+    <string name="enabled_navbar_buttons_title">启用按钮</string>
+    <string name="enabled_navbar_buttons_summary">选择想要在导航栏显示的虚拟按键</string>
     
     <!-- UI -->
-    <string name="rotation_animation_delay_title">Rotation delay</string>
-    <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>
+    <string name="rotation_animation_delay_title">旋转屏幕延迟选项</string>
+    <string name="rotation_animation_delay_summary">设置旋转屏幕前的延迟时间，200毫秒为默认值</string>
 
-	<string name="ime_switcher_title">Show IME Switcher</string>
-	<string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+	<string name="ime_switcher_title">显示输入法切换</string>
+	<string name="ime_switcher_summary">输入时在状态栏显示（需要重启）</string>
 
-	<string name="custom_carrier_label_title">Custom carrier label</string>
-	<string name="longpress_to_kill_title">Hold back to kill</string>
-	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
+	<string name="custom_carrier_label_title">自定义运营商名称</string>
+	<string name="longpress_to_kill_title">长按返回键关闭程序</string>
+	<string name="longpress_to_kill_summary">长按返回键关闭当前正在运行的程序</string>
 
 	<!-- CRT animations -->
-	<string name="crt_animations_header">CRT animations</string>
-	<string name="crt_on_title">CRT on animation</string>
-	<string name="crt_off_title">CRT off animation</string>
+	<string name="crt_animations_header">CRT动画</string>
+	<string name="crt_on_title">开启CRT动画</string>
+	<string name="crt_off_title">关闭CRT动画</string>
 
     <!-- Lockscreens -->
-    <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>	
-    <string name="summary_pref_lockscreen_quad_targets">Adds Phone and Messaging shortcuts on the lock screen</string>
+    <string name="title_pref_lockscreen_quad_targets">锁屏四键设置</string>	
+    <string name="summary_pref_lockscreen_quad_targets">在锁屏界面加入电话及信息按键</string>
 
-    <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
+    <string name="title_pref_lockscreen_menu_unlock">菜单解锁</string>
+    <string name="summary_pref_lockscreen_menu_unlock">传统菜单图标解锁（需要重启）</string>
     
-    <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
-    <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+    <string name="title_lockscreen_user_timeout_override">锁屏等待锁屏</string>
+    <string name="summary_lockscreen_user_timeout_override">手动关闭屏幕时采用Andriod的超时设置。 默认设置为只有自动超时关闭屏幕时使用延迟</string>
     
-    <string name="sms_picker_title">Custom SMS app</string>
-    <string name="sms_picker_summary">Choose a custom app to launch when the SMS toggle is opened</string>
+    <string name="sms_picker_title">自定义短信应用程序</string>
+    <string name="sms_picker_summary">选择一个自定义程序用于打开短消息</string>
     
-    <string name="volume_wake_title">Volume wake</string>
-    <string name="volume_wake_summary">Tapping the volume keys while your phone is off</string>
+    <string name="volume_wake_title">音量键唤醒</string>
+    <string name="volume_wake_summary">当手机关闭时按音量键唤醒</string>
     
-    <string name="volume_music_controls_title">Volume music controls</string>
-    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks</string>
+    <string name="volume_music_controls_title">音量键控制音乐播放</string>
+    <string name="volume_music_controls_summary">长按音量键跳过当前曲目</string>
     
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Show power saver</string>
-    <string name="title_show_screenshot">Show screenshot</string>
+    <string name="title_show_power_saver">显示节电选项</string>
+    <string name="title_show_screenshot">显示截屏选项</string>
     
     <!-- Power Saving -->
-    <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
+    <string name="title_pref_powersaving_pref_mode">启用节电设置</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
     
-    <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
-    <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
+    <string name="title_pref_powersaving_data_screen_off">关屏后数据传输设置</string>
+    <string name="summary_pref_powersaving_data_screen_off">设置屏幕关闭后数据传输动作</string>
         
-    <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
+    <string name="title_pref_powersaving_data_screen_off_delay">数据传输设置时效</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">启动数据传输设置的等待时间</string>
 
-    <string name="title_pref_powersaving_sync_screen_off">Sync action</string>
-    <string name="summary_pref_powersaving_sync_screen_off">What to do with your syncage?!</string>
+    <string name="title_pref_powersaving_sync_screen_off">同步设置</string>
+    <string name="summary_pref_powersaving_sync_screen_off">同步设置选项</string>
     
-    <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
-    <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
+    <string name="title_pref_powersaving_sync_screen_off_delay">同步间隔时间</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">设置同步间隔时间</string>
     
-    <string name="powersaver_data_cat">Data</string>
-    <string name="powersaver_sync_cat">Sync</string>
+    <string name="powersaver_data_cat">数据传输</string>
+    <string name="powersaver_sync_cat">同步</string>
 
     <!--  LED -->
-    <string name="title_led_on">LED pulse ON duration</string>
+    <string name="title_led_on">呼吸灯开启持续时间</string>
     <string name="summary_led_on">@null</string>
-    <string name="title_led_off">LED pulse OFF duration</string>
+    <string name="title_led_off">呼吸灯关闭持续时间</string>
     <string name="summary_led_off">@null</string>
-    <string name="led_color_title">LED color</string>
+    <string name="led_color_title">呼吸灯颜色</string>
 
     <!--  Statusbar | General -->
-    <string name="title_settings_behavior">Use default settings behavior</string>
-    <string name="summary_settings_behavior">Default behavior is to long press for toggles, press for settings. Uncheck to press for toggles, long press for settings</string>
+    <string name="title_settings_behavior">使用默认设置</string>
+    <string name="summary_settings_behavior">默认为长按为显示切换开关，短按为进入系统设置。反选则短按为显示切换开关，长按进入系统设置。</string>
 
-    <string name="title_auto_hide_toggles">Auto hide toggles</string>
-    <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
+    <string name="title_auto_hide_toggles">自动隐藏切换开关</string>
+    <string name="summary_auto_hide_toggles">收回状态栏后隐藏切换开关</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_title_text_widget">Show battery text</string>
+    <string name="battery_title_text_widget">显示电量数值</string>
     <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_title_text_widget_center">Center battery text</string>
+    <string name="battery_title_text_widget_center">居中电量数值</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Clock style</string>
-    <string name="title_clock_ampm_entries">AM/PM style</string>
-    <string name="colors">Colors</string>
-    <string name="clock_color_title">Clock color</string>
-    <string name="reset_color_title">Reset color</string>
-    <string name="enable_alarm_title">Enable alarm icon</string>
-    <string name="enable_alarm_summary">After disabling/enabling, you must toggle your alarms for it to show up again. Or reboot.</string>
+    <string name="clock_title_enable">时钟显示风格</string>
+    <string name="title_clock_ampm_entries">显示AM/PM</string>
+    <string name="colors">颜色</string>
+    <string name="clock_color_title">时钟颜色</string>
+    <string name="reset_color_title">重置颜色</string>
+    <string name="enable_alarm_title">显示闹钟图标</string>
+    <string name="enable_alarm_summary">禁用/启用后，必须切换一次闹钟，使它再次显示。或重新启动。</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_style_title">Toggle style</string>
-    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
+    <string name="toggle_style_title">切换开关风格</string>
+    <string name="toggle_style_summary">切换开关显示风格</string>
 
-    <string name="alternate_button_layout_title">Alternate toggles</string>
-    <string name="alternate_button_layout_summary">Use Toggle Buttons instead of switches for your toggles.</string>
+    <string name="alternate_button_layout_title">使用按钮</string>
+    <string name="alternate_button_layout_summary">使用按钮替代切换开关</string>
     
-    <string name="enabled_toggles_title">Enabled toggles</string>
-    <string name="enabled_toggles_summary">Choose toggles to display</string>
-    <string name="toggles_order_title">Toggle order</string>
-    <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
-    <string name="brightness_location_title">Brightness location</string>
+    <string name="enabled_toggles_title">启用切换开关</string>
+    <string name="enabled_toggles_summary">选择想要显示的切换开关</string>
+    <string name="toggles_order_title">切换开关顺序</string>
+    <string name="toggles_order_summary">选择切换开关的显示顺序</string>
+    <string name="brightness_location_title">亮度调节选项位置</string>
     
 
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on Color to apply</string>   
+    <string name="dialog_color_picker">选择颜色</string>
+    <string name="press_color_to_apply">点击颜色框确认</string>   
     <string name="arrow_right">→</string> 
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
-    <string name="set">Set</string>
+    <string name="set">设置</string>
     <string name="ics_color">!!!</string>
     
     <!-- Shortcut picker -->
-    <string name="use_custom_app_title">Use custom application</string>
-	<string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
-	<string name="select_custom_app_title">Select custom application</string>
-	<string name="group_applications">Applications</string>
+    <string name="use_custom_app_title">使用自定义应用</string>
+	<string name="use_custom_app_summary">使用自定义应用替代当前应用</string>
+	<string name="select_custom_app_title">选择自定义用用</string>
+	<string name="group_applications">应用程序</string>
     
 </resources>
+

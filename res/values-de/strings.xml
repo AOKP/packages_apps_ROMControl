@@ -116,7 +116,7 @@
     <string name="enabled_toggles_summary">Wähle die anzuzeigenden Schalter.</string>
     <string name="toggles_order_title">Reihenfolge der Schalter</string>
     <string name="toggles_order_summary">Wähle die Reihenfolge der Schalter.</string>
-    <string name="brightness_location_title">Brightness location</string>
+    <string name="brightness_location_title">Helligkeits-Schalter Platzierung</string>
     
 
     <!-- Color Picker -->

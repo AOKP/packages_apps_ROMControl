@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">固件控制器</string>
+   <string name="app_name">自定义设置</string>
 
     <!-- Main -->
     <string name="user_interface">用户界面</string>

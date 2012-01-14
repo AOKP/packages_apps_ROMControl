@@ -1,128 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Contrôle de la ROM</string>
+    <string name="app_name">ROM Control</string>
 
     <!-- Main -->
-    <string name="user_interface">Interface utilisateur</string>
-    <string name="general_ui">Génerale UI</string>
-    <string name="lockscreen_options">Option du lockscreen</string>
-    <string name="power_menu_optons">Options du menu Power</string>
+    <string name="user_interface">Interface</string>
+    <string name="general_ui">Général</string>
+    <string name="lockscreen_options">"Options de l'écran de verrouillage"</string>
+    <string name="power_menu_optons">"Options de menu d'alimentation"</string>
     <string name="functionality">Fonctionnalité</string>
-    <string name="power_saver">Économie d\'énergie</string>
+    <string name="power_saver">"Économie d'énergie"</string>
     <string name="led_options">Options de la LED</string>
-    <string name="statusbar">Barre d\'état</string>
-    <string name="general">Génerale</string>
-    <string name="toggles_layout">Disposition de la bascule</string>
+    <string name="statusbar">"Barre d'état"</string>
+    <string name="general">Général</string>
+    <string name="toggles_layout">Interrupteurs</string>
     <string name="clock">Horloge</string>
     <string name="battery">Batterie</string>
+    <string name="nav_bar">Barre de navigation</string>
     
     <string name="advanced_settings">Paramètres avancés</string>
-    <string name="misc_short">Divers</string>
+    <string name="misc_short">Autres</string>
     
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Paramètres du menu</string>
-    <string name="summary_pref_menu_display">Position du bouton de menu</string>
-    <string name="navigation_bar">barre de navigation</string>
-    <string name="navigation_bar_tint_title">Barre de navigation teinté</string>
+    <string name="summary_pref_menu_display">Position du bouton du menu</string>
+    <string name="navigation_bar">Barre de navigation</string>
+    <string name="navigation_bar_tint_title">Couleur de la barre de navigation</string>
 
-    <string name="title_pref_navigation_menu_display">Visibilté du menu</string>
-    <string name="summary_pref_navigation_menu_display">Quand et comment voulez vous que les boutons du menu apparaisse?</string>
+    <string name="title_pref_navigation_menu_display">Visibilité du menu</string>
+    <string name="summary_pref_navigation_menu_display">Quand et de quelle manière les boutons du menu doivent-ils apparaître ?</string>
 
+    <string name="navbar_order_title">Ordre des boutons de navigation</string>
+    <string name="navbar_order_summary">"Changer l'ordre des boutons de navigation"</string>
+
+    <string name="enabled_navbar_buttons_title">Boutons activés</string>
+    <string name="enabled_navbar_buttons_summary">Choisissez quels boutons de navigation doivent apparaître</string>
+    
+    <string name="long_press_home_title">Longue pression du bouton d'accueil</string>
+    <string name="long_press_home_summary">"Choisissez l'action à réaliser lors d'une longue pression sur le bouton d'accueil"</string>
+    
     <!-- UI -->
-    <string name="rotation_animation_delay_title">La vitesse de rotation</string>
-    <string name="rotation_animation_delay_summary">Nombre de millisecondes pendant lequel l\'appareil doit être stable avant un changement d\'orientation. 200 ms par défaut.</string>
+    <string name="rotation_animation_delay_title">Délai de rotation</string>
+    <string name="rotation_animation_delay_summary">"Nombre de millisecondes durant lesquelles l'interface du téléphone doit rester stable avant la rotation. Par défaut 200 millisecondes."</string>
 
-	<string name="ime_switcher_title">Afficher l\'icône du clavier</string>
-	<string name="ime_switcher_summary">Dans la barre d\'état pendant que vous tapez (redémarrage requis)</string>
+	<string name="ime_switcher_title">Afficher le menu de changement du clavier</string>
+	<string name="ime_switcher_summary">"Dans la barre d'état, lorsque le clavier est utilisé. Nécessite un redémarrage."</string>
 
-	<string name="custom_carrier_label_title">Nom de l\'opérateur personnalisé</string>
-	<string name="longpress_to_kill_title">Appuie long pour tuer</string>
-	<string name="longpress_to_kill_summary">Appuie long sur la touche retour pour fermer le processus ouvert</string>
+	<string name="custom_carrier_label_title">"Texte d'opérateur personnalisé"</string>
+	<string name="longpress_to_kill_title">Longue pression sur la touche Retour</string>
+	<string name="longpress_to_kill_summary">"Rester appuyé sur la touche Retour pour quitter l'application (libérer de la RAM)"</string>
 
 	<!-- CRT animations -->
-	<string name="crt_animations_header">Animations d\'écran</string>
-	<string name="crt_on_title">Animations d\'écran on</string>
-	<string name="crt_off_title">Animations d\'écran off</string>
+	<string name="crt_animations_header">"Effet d'animation CRT"</string>
+	<string name="crt_on_title">"Animation CRT lors de l'activation de l'écran"</string>
+	<string name="crt_off_title">"Animation CRT lors de l'extinction de l'écran"</string>
 
     <!-- Lockscreens -->
-    <string name="title_pref_lockscreen_menu_unlock">Déverrouiller le menu</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Le bouton Menu ouvre le lockscreen.(redémarrage requis)</string>
+    <string name="title_pref_lockscreen_quad_targets">"Quatre raccourcis d'application"</string>	
+    <string name="summary_pref_lockscreen_quad_targets">Activer les raccourcis vers les applications Téléphone et Messages</string>
+
+    <string name="title_pref_lockscreen_menu_unlock">"Déverrouillage de l'écran avec la touche Menu"</string>
+    <string name="summary_pref_lockscreen_menu_unlock">"La touche Menu déverrouille l'écran"</string>
     
-    <string name="title_lockscreen_user_timeout_override">Retarder le lockscreen</string>
-    <string name="summary_lockscreen_user_timeout_override">Utiliser le paramètre délai d\Android après avoir manuellement éteind l\'écran. Le comportement par défaut est d\'utiliser le délai que lorsque l\'écran est éteind par lui-même.</string>
+    <string name="title_lockscreen_user_timeout_override">Délai de verrouillage</string>
+    <string name="summary_lockscreen_user_timeout_override">"Utiliser le délai d'Android même après avoir manuellement étéint l'écran. Par défaut, le délai est utilisé seulement lorsque l'écran s'éteint automatiquement."
+    </string>
+    
+    <string name="sms_picker_title">Application de messagerie personnalisée</string>
+    <string name="sms_picker_summary">Lancer une application de messagerie personnalisée lorsque le raccourci Message est utilisé</string>
+    
+    <string name="volume_wake_title">"Activer l'écran avec les boutons de volume"</string>
+    <string name="volume_wake_summary">"Appuyer sur les boutons de volume activera l'écran"</string>
+    
+    <string name="volume_music_controls_title">Contrôle du lecteur audio avec les boutons de volume</string>
+    <string name="volume_music_controls_summary">Une pression longue sur les boutons de volume permettra de passer à la chanson précedente ou suivante</string>
     
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Voir l\'économie d\'énergie</string>
-    <string name="title_show_screenshot">Voir la capture d\'écran</string>
+    <string name="title_show_power_saver">"Afficher l'économiseur d'énergie"</string>
+    <string name="title_show_screenshot">"Afficher la capture d'écran"</string>
     
     <!-- Power Saving -->
-    <string name="title_pref_powersaving_pref_mode">Activer l\'économiseur d\'énergie</string>
+    <string name="title_pref_powersaving_pref_mode">"Activer l'économiseur d'énergie"</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
     
-    <string name="title_pref_powersaving_data_screen_off">Action des données après l\'arrêt de l\'écran</string>
-    <string name="summary_pref_powersaving_data_screen_off">Que faire avec les données lorsque l\'écran s\'éteint?</string>
+    <string name="title_pref_powersaving_data_screen_off">Données cellulaires</string>
+    <string name="summary_pref_powersaving_data_screen_off">"Économiseur d'énergie : comportement des données cellulaires lorsque l'écran est éteint"</string>
         
-    <string name="title_pref_powersaving_data_screen_off_delay">Temps avant l\'action des données</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">Combien de temps attendre avant d\'appliquer l\'action?</string>
+    <string name="title_pref_powersaving_data_screen_off_delay">"Délai de désactivation des données"</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">"Économiseur d'énergie : choisissez le délai avant de désactiver les données cellulaires"</string>
 
-    <string name="title_pref_powersaving_sync_screen_off">Action de synchronisation</string>
-    <string name="summary_pref_powersaving_sync_screen_off">Que faire avec votre synchronisation?!</string>
+    <string name="title_pref_powersaving_sync_screen_off">Synchonisation</string>
+    <string name="summary_pref_powersaving_sync_screen_off">"Économiseur d'énergie : comportement de la synchonisation lorsque l'écran est éteint"</string>
     
-    <string name="title_pref_powersaving_sync_screen_off_delay">Intervalle de temps de synchronisation</string>
-    <string name="summary_pref_powersaving_sync_screen_off_delay">Combien de temps à attendre entre chaque synchronisation forcée</string>
-
-    <string name="title_pref_navigation_layout">Disposition de la barre de navigation</string>
-    <string name="summary_pref_navigation_layout">Changement de mise en page nécessite un redémarrage!</string>
+    <string name="title_pref_powersaving_sync_screen_off_delay">Délai entre chaque synchonisation</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">Économiseur d'énergie : choisissez le délai entre chaque synchonisation forcée</string>
     
-    <string name="powersaver_data_cat">Données</string>
-    <string name="powersaver_sync_cat">Synchronisation</string>
+    <string name="powersaver_data_cat">Données cellulaires</string>
+    <string name="powersaver_sync_cat">Synchonisation</string>
 
     <!--  LED -->
-    <string name="title_led_on">Impulsions LED ON durée</string>
-    <string name="summary_led_on">@null</string>
-    <string name="title_led_off">Impulsions LED OFF durée</string>
-    <string name="summary_led_off">@null</string>
+    <string name="title_led_on">"Durée d'activation de la LED"</string>
+    <string name="summary_led_on">"Temps pendant lequel la LED sera allumée lorsqu'elle clignote (notification)"</string>
+    <string name="title_led_off">Durée de pause de la LED</string>
+    <string name="summary_led_off">"Temps pendant lequel la LED sera éteinte lorsqu'elle clignote (notification)"</string>
     <string name="led_color_title">Couleur de la LED</string>
 
     <!--  Statusbar | General -->
-    <string name="title_settings_behavior">Utiliser les paramètres par défaut</string>
-    <string name="summary_settings_behavior">Le comportement par défaut consiste à appuyer sur le bouton paramètres pour voir le commutateurs et appuie long pour voir les "Paramètres système". Cocher pour inverser le fonctionnement</string>
+    <string name="title_settings_behavior">Utiliser le comportement par défaut</string>
+    <string name="summary_settings_behavior">Si cette option est activée, une longue pression sur le bouton de réglages affichera les interrupteurs, et une simple pression ouvrira les paramètres.</string>
 
-    <string name="title_auto_hide_toggles">Masquer automatiquement</string>
-    <string name="summary_auto_hide_toggles">Après l\'action est cachée</string>
+    <string name="title_auto_hide_toggles">Masquer les interrupteurs automatiquement</string>
+    <string name="summary_auto_hide_toggles">Masquer les interrupteurs lorsque le centre de notifications est fermé.</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_title_text_widget">Afficher le texte de la batterie</string>
+    <string name="battery_title_text_widget">Afficher le pourcentage de batterie</string>
     <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_title_text_widget_center">Centré le texte de la batterie</string>
+    <string name="battery_title_text_widget_center">Centrer le pourcentage</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Afficher l\'horloge</string>
-    <string name="title_clock_ampm_entries">Style AM/PM</string>
-    <string name="colors">Couleurs</string>
-    <string name="clock_color_title">Couleur de l\'horloge</string>
+    <string name="clock_title_enable">"Mode de l'horloge"</string>
+    <string name="title_clock_ampm_entries">Mode AM/PM</string>
+    <string name="colors">Couleur</string>
+    <string name="clock_color_title">"Couleur de l'horloge"</string>
     <string name="reset_color_title">Réinitialiser la couleur</string>
-    <string name="enable_alarm_title">Activer l\'icône de l\'alarme</string>
-    <string name="enable_alarm_summary">Après la désactivation / Activation, vous devez ré-activer vos alarmes pour qu\'elle fonctionne de nouveau. Ou redémarrer.</string>
+    <string name="enable_alarm_title">"Activer l'icône d'alarme"</string>
+    <string name="enable_alarm_summary">"Afficher ou non l'icône de l'alarme. Nécessite une réactivation de celles-ci ou un redémarrage du téléphone."</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_style_title">Style de la bascule</string>
-    <string name="toggle_style_summary">Que ce soit pour afficher des icônes ou du texte sur votre bascule.</string>
+    <string name="toggle_style_title">Style des interrupteurs</string>
+    <string name="toggle_style_summary">"Mode d'affichage des interrupteurs : texte ou icône"</string>
 
-    <string name="alternate_button_layout_title">Autre bascule</string>
-    <string name="alternate_button_layout_summary">Utilisez les boutons au lieu d\'interrupteurs.</string>
+    <string name="alternate_button_layout_title">Style alternatif</string>
+    <string name="alternate_button_layout_summary">Afficher des interrupteurs au lieu de boutons rapides</string>
     
-    <string name="enabled_toggles_title">activez les commutateurs</string>
-    <string name="enabled_toggles_summary">Modification de l\'affichage de la bascule</string>
-    <string name="toggles_order_title">Trier les commutateurs</string>
-    <string name="toggles_order_summary">Choisissez l\'ordre d\'affichage dans votre bascule</string>
-    <string name="brightness_location_title">Emplacement de la luminosité</string>
+    <string name="enabled_toggles_title">Interrupteurs activés</string>
+    <string name="enabled_toggles_summary">Choisissez les paramètres rapides à afficher</string>
+    <string name="toggles_order_title">Ordre des interrupteurs</string>
+    <string name="toggles_order_summary">"Choisissez l'ordre dans lequel les paramètres rapides apparaissent"</string>
+    <string name="brightness_location_title">Position du paramètre de luminosité</string>
     
 
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Appuyez sur Couleur pour appliquer</string>   
+    <string name="dialog_color_picker">Palette de couleurs</string>
+    <string name="press_color_to_apply">Appuyez sur la couleur de droite pour appliquer</string>   
     <string name="arrow_right">→</string> 
     <string name="arrow_down">↓</string>
+    <string name="hex">Hex :</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">OK</string>
+    <string name="ics_color">Défaut</string>
+    
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">"Changer le raccourci d'application"</string>
+	<string name="use_custom_app_summary">"Utiliser une application personnalisée au lieu du menu des applications récentes"</string>
+	<string name="select_custom_app_title">Choisissez une application</string>
+	<string name="group_applications">Applications</string>
     
 </resources>

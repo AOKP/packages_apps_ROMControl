@@ -5,13 +5,13 @@
     <string name="user_interface">Интерфейс</string>
     <string name="general_ui">Общие</string>
     <string name="lockscreen_options">Настройка блокировки</string>
-    <string name="power_menu_optons">Настройка Power Menu</string>
+    <string name="power_menu_optons">Настройка меню выключения</string>
     <string name="functionality">Функции</string>
     <string name="power_saver">Энергосбережение</string>
-    <string name="led_options">Настройка LED</string>
+    <string name="led_options">Настройка LED индикации</string>
     <string name="statusbar">Статус бар</string>
     <string name="general">Общие</string>
-    <string name="toggles_layout">Выключатели</string>
+    <string name="toggles_layout">Переключатели</string>
     <string name="clock">Часы</string>
     <string name="battery">Батарея</string>
     
@@ -24,8 +24,17 @@
     <string name="navigation_bar">Navigation bar</string>
     <string name="navigation_bar_tint_title">Navigation bar tint</string>
 
-    <string name="title_pref_navigation_menu_display">Menu visibility</string>
-    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
+    <string name="title_pref_navigation_menu_display">Положение кнопок меню</string>
+    <string name="summary_pref_navigation_menu_display">Как ты хочешь расположить кнопки?</string>
+
+    <string name="navbar_order_title">Navigation button order</string>
+    <string name="navbar_order_summary">Настройте программные кнопки управления</string>
+
+    <string name="enabled_navbar_buttons_title">Включить кнопки</string>
+    <string name="enabled_navbar_buttons_summary">Включите, если хотите видеть программные кнопки управления</string>
+
+    <string name="long_press_home_title">Долгое нажатие ДОМОЙ</string>
+    <string name="long_press_home_summary">Что делать при долгом нажатии кнопки ДОМОЙ</string>
 
     <!-- UI -->
     <string name="rotation_animation_delay_title">Задержка поворота</string>
@@ -44,11 +53,23 @@
 	<string name="crt_off_title">CRT анимация выкл.</string>
 
     <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_quad_targets">Четыре ярлыка</string>	
+    <string name="summary_pref_lockscreen_quad_targets">Добавить ярлыки Телефона и СМС на экран блокировки</string>
+
     <string name="title_pref_lockscreen_menu_unlock">Меню разблокировки</string>
     <string name="summary_pref_lockscreen_menu_unlock">Простые значки экрана разблокировки (перезагрузка)</string>
     
     <string name="title_lockscreen_user_timeout_override">Задержка перед блокировкой</string>
     <string name="summary_lockscreen_user_timeout_override">Использовать настройки ОС</string>
+
+    <string name="sms_picker_title">Своё приложение</string>
+    <string name="sms_picker_summary">Выбрать своё приложение вместо СМС</string>
+    
+    <string name="volume_wake_title">Пробуждать громкостью</string>
+    <string name="volume_wake_summary">Разрешить пробуждать телефон клавишей регулировки громкости</string>
+
+    <string name="volume_music_controls_title">Управление музыкой</string>
+    <string name="volume_music_controls_summary">Долгое нажатие на кнопки громкости, переключает играющие треки</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Показывать энергосбережение</string>
@@ -58,22 +79,22 @@
     <string name="title_pref_powersaving_pref_mode">Включить энергосбережение</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
     
-    <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
-    <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
+    <string name="title_pref_powersaving_data_screen_off">Действия с передачей данных</string>
+    <string name="summary_pref_powersaving_data_screen_off">Что делать с передачей данных, если экран выключен?</string>
         
-    <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
+    <string name="title_pref_powersaving_data_screen_off_delay">Задержка</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Как долго ждать перед применением?</string>
 
-    <string name="title_pref_powersaving_sync_screen_off">Sync action</string>
-    <string name="summary_pref_powersaving_sync_screen_off">What to do with your syncage?!</string>
+    <string name="title_pref_powersaving_sync_screen_off">Действия с синхронизацией</string>
+    <string name="summary_pref_powersaving_sync_screen_off">Что делать с синхронизацией?!</string>
     
-    <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
-    <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
+    <string name="title_pref_powersaving_sync_screen_off_delay">Интервал синхронизации</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">Задержка между сеансами синхронизации</string>
 
-    <string name="title_pref_navigation_layout">Navigation Bar Layout</string>
-    <string name="summary_pref_navigation_layout">Changing layouts requires a reboot!</string>
+    <string name="title_pref_navigation_layout">Положение бара навигации</string>
+    <string name="summary_pref_navigation_layout">Изменение положения требует перезагрузки!</string>
     
-    <string name="powersaver_data_cat">Дата</string>
+    <string name="powersaver_data_cat">Передача данных</string>
     <string name="powersaver_sync_cat">Синхронизация</string>
 
     <!--  LED -->
@@ -121,4 +142,7 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Выбор цвета</string>
     <string name="press_color_to_apply">Нажмите на цвет для выбора</string>   
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
+    
 </resources>

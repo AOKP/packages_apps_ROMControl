@@ -30,10 +30,12 @@ public class StatusBarBattery extends Activity {
         private static final String PREF_BATT_TEXT_CENTER = "text_widget_center";
         private static final String PREF_BATT_BAR = "battery_bar";
         private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
+        private static final String PREF_BATT = "show_battery_icon";
 
         CheckBoxPreference mEnableBatteryText;
         CheckBoxPreference mEnableCenterBatteryText;
         CheckBoxPreference mBatteryBar;
+        CheckBoxPreference mShowBatteryIcon;
         ColorPickerPreference mBatteryBarColor;
 
         @Override
@@ -61,6 +63,11 @@ public class StatusBarBattery extends Activity {
             mBatteryBarColor = (ColorPickerPreference) findPreference(PREF_BATT_BAR_COLOR);
             mBatteryBarColor.setOnPreferenceChangeListener(this);
 
+            mShowBatteryIcon = (CheckBoxPreference) findPreference(PREF_BATT);
+            mShowBatteryIcon.setChecked(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.STATUSBAR_BATTERY_ICON,
+                    1) == 1);
+
         }
 
         @Override
@@ -83,6 +90,13 @@ public class StatusBarBattery extends Activity {
 
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUSBAR_BATTERY_BAR,
+                        ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                return true;
+
+            } else if (preference == mShowBatteryIcon) {
+
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_ICON,
                         ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
                 return true;
 

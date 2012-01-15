@@ -116,6 +116,7 @@
     <string name="battery_title_text_widget_center">Center battery text</string>
     <string name="battery_bar">Battery bar</string>
     <string name="battery_bar_color">Battery bar color</string>
+    <string name="show_battery_icon_title">Show battery icon</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

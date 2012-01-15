@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+	xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference
-        android:key="text_widget"
-        android:title="@string/battery_title_text_widget"
-        android:summary="@string/battery_summary_text_widget" />
-        
-    <CheckBoxPreference
-        android:key="text_widget_center"
-        android:title="@string/battery_title_text_widget_center"
-        android:dependency="text_widget" />
+	<CheckBoxPreference
+		android:key="text_widget"
+		android:title="@string/battery_title_text_widget"
+		android:summary="@string/battery_summary_text_widget" />
+
+	<CheckBoxPreference
+		android:key="text_widget_center"
+		android:title="@string/battery_title_text_widget_center"
+		android:dependency="text_widget" />
+
+	<CheckBoxPreference
+		android:key="battery_bar"
+		android:title="@string/battery_bar" />
+
+	<net.margaritov.preference.colorpicker.ColorPickerPreference
+		android:key="battery_bar_color"
+		android:title="@string/battery_bar_color"
+		android:defaultValue="#FFFFFF" />
+
 
 </PreferenceScreen>

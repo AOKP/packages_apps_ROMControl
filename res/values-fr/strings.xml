@@ -35,8 +35,8 @@
     <string name="enabled_navbar_buttons_title">Boutons activés</string>
     <string name="enabled_navbar_buttons_summary">Choisissez quels boutons de navigation doivent apparaître</string>
     
-    <string name="long_press_home_title">Longue pression du bouton d'accueil</string>
-    <string name="long_press_home_summary">"Choisissez l'action à réaliser lors d'une longue pression sur le bouton d'accueil"</string>
+    <string name="long_press_home_title">Longue pression du bouton d\'accueil</string>
+    <string name="long_press_home_summary">"Choisissez l\'action à réaliser lors d\'une longue pression sur le bouton d'accueil"</string>
     
     <!-- UI -->
     <string name="rotation_animation_delay_title">Délai de rotation</string>
@@ -92,7 +92,7 @@
     <string name="summary_pref_powersaving_sync_screen_off">"Économiseur d'énergie : comportement de la synchonisation lorsque l'écran est éteint"</string>
     
     <string name="title_pref_powersaving_sync_screen_off_delay">Délai entre chaque synchonisation</string>
-    <string name="summary_pref_powersaving_sync_screen_off_delay">Économiseur d'énergie : choisissez le délai entre chaque synchonisation forcée</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">Économiseur d\'énergie : choisissez le délai entre chaque synchonisation forcée</string>
     
     <string name="powersaver_data_cat">Données cellulaires</string>
     <string name="powersaver_sync_cat">Synchonisation</string>

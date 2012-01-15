@@ -41,7 +41,7 @@
 	<string name="ime_switcher_title">Show IME Switcher</string>
 	<string name="ime_switcher_summary">Nella barra di stato, durante la digitazione (richiede il riavvio)</string>
 	
-	<string name="custom_carrier_label_title">Personalizzazione tasti</string>
+	<string name="custom_carrier_label_title">Personalizza nome operatore</string>
 	<string name="longpress_to_kill_title">Tieni premuto per chiudere</string>
 	<string name="longpress_to_kill_summary">Tieni premuto il tasto indietro per chiudere l\'applicazione corrente</string>
 	

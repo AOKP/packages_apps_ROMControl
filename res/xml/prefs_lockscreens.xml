@@ -2,10 +2,11 @@
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<CheckBoxPreference
-		android:key="pref_lockscreen_quad_targets"
-		android:title="@string/title_pref_lockscreen_quad_targets"
-		android:summary="@string/summary_pref_lockscreen_quad_targets" />
+	<ListPreference
+		android:entries="@array/pref_lockscreen_options_entries"
+		android:entryValues="@array/pref_lockscreen_options_values"
+		android:key="pref_lockscreen_layout"
+		android:title="Lockscreen Style" />
 
 	<CheckBoxPreference
 		android:key="pref_lockscreen_menu_unlock"
@@ -31,10 +32,25 @@
 		android:key="advanced_cat"
 		android:title="@string/advanced_settings">
 
-		<Preference
+                <Preference
 			android:key="sms_picker"
 			android:title="@string/sms_picker_title"
 			android:summary="@string/sms_picker_summary" />
+
+		<Preference
+			android:key="sms_picker_1"
+			android:title="@string/sms_picker_1_title"
+			android:summary="@string/sms_picker_1_summary" />
+
+		<Preference
+			android:key="sms_picker_2"
+			android:title="@string/sms_picker_2_title"
+			android:summary="@string/sms_picker_2_summary" />
+
+		<Preference
+			android:key="sms_picker_3"
+			android:title="@string/sms_picker_3_title"
+			android:summary="@string/sms_picker_3_summary" />
 
 	</PreferenceCategory>
 

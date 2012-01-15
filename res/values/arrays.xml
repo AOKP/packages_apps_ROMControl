@@ -288,14 +288,26 @@
 	</string-array>
 
 	<!-- long press home -->
-	<string-array name="long_press_home_entries">
+	<string-array name="long_press_home_values">
 		<item>Do nothing</item>
 		<item>Show recents</item>
 	</string-array>
 
-	<string-array name="long_press_home_values">
+	<string-array name="long_press_home_entries">
 		<item>0</item>
 		<item>1</item>
+	</string-array>
+
+        <string-array name="pref_lockscreen_options_values">
+		<item>0</item>
+		<item>1</item>
+                <item>2</item>
+	</string-array>
+
+        <string-array name="pref_lockscreen_options_entries">
+		<item>Stock</item>
+		<item>Quad</item>
+                <item>Octo</item>
 	</string-array>
 
 </resources>

@@ -14,7 +14,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.roman.romcontrol.R;
-import com.roman.romcontrol.utils.ShortcutPickerHelper;
+import com.roman.romcontrol.util.ShortcutPickerHelper;
 
 public class Lockscreens extends Activity {
 
@@ -47,16 +47,16 @@ public class Lockscreens extends Activity {
         CheckBoxPreference mVolumeWake;
         CheckBoxPreference mVolumeMusic;
         Preference mSmsPicker;
-        Preference mSmsPicker1;
-        Preference mSmsPicker2;
-        Preference mSmsPicker3;
+        Preference mAppPicker1;
+        Preference mAppPicker2;
+        Preference mAppPicker3;
 
         private Preference mCurrentCustomActivityPreference;
         private String mCurrentCustomActivityString;
         private String mSmsIntentUri;
-        private String mSmsIntentUri1;
-        private String mSmsIntentUri2;
-        private String mSmsIntentUri3;
+        private String mCustomAppUri1;
+        private String mCustomAppUri2;
+        private String mCustomAppUri3;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -92,26 +92,26 @@ public class Lockscreens extends Activity {
                     0) == 1);
 
             mSmsPicker = findPreference(PREF_SMS_PICKER);
-            
-            mSmsPicker1 = findPreference(PREF_SMS_PICKER_1);
-            
-            mSmsPicker2 = findPreference(PREF_SMS_PICKER_2);
-            
-            mSmsPicker3 = findPreference(PREF_SMS_PICKER_3);
+
+            mAppPicker1 = findPreference(PREF_SMS_PICKER_1);
+
+            mAppPicker2 = findPreference(PREF_SMS_PICKER_2);
+
+            mAppPicker3 = findPreference(PREF_SMS_PICKER_3);
 
             mPicker = new ShortcutPickerHelper(this.getActivity(), this);
 
             mSmsIntentUri = Settings.System.getString(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT);
-            
-            mSmsIntentUri1 = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT_1);
-            
-            mSmsIntentUri2 = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT_2);
-            
-            mSmsIntentUri3 = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT_3);
+
+            mCustomAppUri1 = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_1);
+
+            mCustomAppUri2 = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_2);
+
+            mCustomAppUri3 = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3);
         }
 
         @Override
@@ -132,21 +132,21 @@ public class Lockscreens extends Activity {
                 mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT;
                 mPicker.pickShortcut();
                 return true;
-            } else if (preference == mSmsPicker1) {
+            } else if (preference == mAppPicker1) {
                 mCurrentCustomActivityPreference = preference;
-                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT_1;
-                mPicker.pickShortcut();
-                return true;    
-            } else if (preference == mSmsPicker2) {
-                mCurrentCustomActivityPreference = preference;
-                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT_2;
+                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_1;
                 mPicker.pickShortcut();
                 return true;
-            } else if (preference == mSmsPicker3) {
+            } else if (preference == mAppPicker2) {
                 mCurrentCustomActivityPreference = preference;
-                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT_3;
+                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_2;
                 mPicker.pickShortcut();
-                return true;    
+                return true;
+            } else if (preference == mAppPicker3) {
+                mCurrentCustomActivityPreference = preference;
+                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3;
+                mPicker.pickShortcut();
+                return true;
             } else if (preference == mVolumeWake) {
 
                 Settings.System.putInt(getActivity().getContentResolver(),
@@ -166,14 +166,14 @@ public class Lockscreens extends Activity {
 
         public void refreshSettings() {
             mSmsPicker.setSummary(mPicker.getFriendlyNameForUri(mSmsIntentUri));
-            
-            mSmsPicker1.setSummary(mPicker.getFriendlyNameForUri(mSmsIntentUri1));
-            
-            mSmsPicker2.setSummary(mPicker.getFriendlyNameForUri(mSmsIntentUri2));
-            
-            mSmsPicker3.setSummary(mPicker.getFriendlyNameForUri(mSmsIntentUri3));
+
+            mAppPicker1.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri1));
+
+            mAppPicker2.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri2));
+
+            mAppPicker3.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri3));
         }
-        
+
         @Override
         public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
             Log.e("ROMAN", "shortcut picked");
@@ -189,7 +189,7 @@ public class Lockscreens extends Activity {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.LOCKSCREEN_LAYOUT, val);
                 return true;
-                
+
             }
             return false;
         }
@@ -203,4 +203,3 @@ public class Lockscreens extends Activity {
     }
 
 }
-

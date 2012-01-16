@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/pc_init_d"
+		android:key="pc_init_d">
+		<CheckBoxPreference android:key="enable_init_d"
+			android:defaultValue="true" android:title="@string/pt_enable_init_d"
+			android:summaryOn="@string/ps_enable_init_d" android:summaryOff="@string/ps_enable_init_d" />
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/pc_init_d_tweaks"
+		android:key="pc_init_d_tweaks">
+		<CheckBoxPreference android:key="zipalign"
+			android:defaultValue="true" android:title="@string/pt_zipalign"
+			android:summary="@string/ps_zipalign" android:dependency="enable_init_d"
+			android:shouldDisableView="true" />
+		<CheckBoxPreference android:key="enable_sd_boost"
+			android:defaultValue="true" android:title="@string/pt_enable_sd_boost"
+			android:summary="@string/ps_enable_sd_boost" android:dependency="enable_init_d"
+			android:shouldDisableView="true" />
+		<EditTextPreference android:key="sd_boost"
+			android:inputType="numberDecimal" android:name="@string/pt_sd_boost"
+			android:defaultValue="2048" android:title="@string/pt_sd_boost"
+			android:dependency="enable_sd_boost" android:shouldDisableView="true" />
+		<CheckBoxPreference android:key="fix_permissions"
+			android:defaultValue="false" android:title="@string/pt_fix_permissions"
+			android:summary="@string/ps_fix_permissions" android:dependency="enable_init_d"
+			android:shouldDisableView="true" />
+		<CheckBoxPreference android:key="clear_cache"
+			android:defaultValue="false" android:title="@string/pt_clear_cache"
+			android:summary="@string/ps_clear_cache" android:dependency="enable_init_d"
+			android:shouldDisableView="true" />
+		<CheckBoxPreference android:key="enable_sysctl"
+			android:defaultValue="true" android:title="@string/pt_enable_sysctl"
+			android:summary="@string/ps_enable_sysctl" android:dependency="enable_init_d"
+			android:shouldDisableView="true" />
+		<CheckBoxPreference android:key="enable_cron"
+			android:defaultValue="true" android:title="@string/pt_enable_cron"
+			android:summary="@string/ps_enable_cron" android:dependency="enable_init_d"
+			android:shouldDisableView="true" />
+	</PreferenceCategory>
+</PreferenceScreen>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.roman.romcontrol.utils;
+package com.roman.romcontrol.util;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="wrap_content" android:layout_gravity="center_vertical">
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/Freq"
+		android:textSize="18sp" android:textColor="#FF177bbd" android:text="@string/freq" />
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/mVCurrent"
+		android:textSize="18sp" android:textColor="#FFFFFFFF" android:text="@string/current" />
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/mVSaved"
+		android:textSize="18sp" android:textColor="#FFA8A8A8" android:text="@string/saved" />
+</LinearLayout>

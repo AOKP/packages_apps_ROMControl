@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="General Settings"
+		android:key="general">
+		<PreferenceScreen android:key="customizer" android:title="@string/pt_liberty_customizer"
+			android:summary="@string/ps_liberty_customizer">
+			<intent android:action="android.intent.action.MAIN"
+				android:targetPackage="com.liberty.customizerFree" android:targetClass="com.liberty.customizerFree.MainActivity" />
+		</PreferenceScreen>
+		<PreferenceScreen android:key="theme_manager" android:title="@string/pt_theme_manager"
+			android:summary="@string/ps_theme_manager">
+		</PreferenceScreen>
+		<PreferenceScreen android:key="lockscreen" android:title="@string/pt_lockscreen"
+			android:summary="@string/ps_lockscreen">
+			<intent android:action="android.intent.action.MAIN"
+				android:targetPackage="com.liberty.parts" android:targetClass="com.liberty.parts.activities.LockscreenActivity" />
+		</PreferenceScreen>
+		<PreferenceScreen android:key="ui_status_bar" android:title="@string/pt_ui_status_bar"
+			android:summary="@string/ps_ui_status_bar">
+			<intent android:action="android.intent.action.MAIN"
+				android:targetPackage="com.liberty.parts" android:targetClass="com.liberty.parts.activities.UIStatusBarActivity" />
+		</PreferenceScreen>
+		<PreferenceScreen android:key="pulldown_text" android:title="@string/pt_pulldown_text"
+			android:summary="@string/ps_pulldown_text">
+		</PreferenceScreen>
+	</PreferenceCategory>
+</PreferenceScreen>

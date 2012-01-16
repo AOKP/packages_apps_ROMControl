@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<ListView
+		android:id="@+id/ListView"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:cacheColorHint="#00000000"
+		android:layout_above="@+id/BottomBar"></ListView>
+
+	<TextView
+		android:id="@+id/emptyList"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:text="@string/error_values"
+		android:visibility="gone" />
+
+	<LinearLayout
+		android:id="@+id/BottomBar"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_alignParentBottom="true"
+		android:gravity="center_horizontal">
+		<CheckBox
+			android:id="@+id/applyAtBoot"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/set_boot" />
+		<Button
+			android:id="@+id/applyBtn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/apply_values"
+			android:layout_gravity="right"
+			android:layout_marginLeft="25dp"
+			android:paddingLeft="25dp"
+			android:paddingRight="25dp" />
+	</LinearLayout>
+
+</RelativeLayout>

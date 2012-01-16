@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+		android:title="@string/prefcat_cpu"
+		android:key="cpu">
+		<ListPreference
+			android:key="max_cpu"
+			android:title="@string/pt_set_max"
+			android:summary="@string/ps_set_max"
+			android:dialogTitle="@string/pt_set_max"
+			android:persistent="true" />
+		<ListPreference
+			android:key="min_cpu"
+			android:title="@string/pt_set_min"
+			android:summary="@string/ps_set_min"
+			android:dialogTitle="@string/pt_set_min"
+			android:persistent="true" />
+		<ListPreference
+			android:key="gov"
+			android:title="@string/pt_set_gov"
+			android:summary="@string/ps_set_gov"
+			android:dialogTitle="@string/pt_set_gov"
+			android:persistent="true" />
+		<CheckBoxPreference
+			android:key="cpu_boot"
+			android:defaultValue="false"
+			android:summary="@string/ps_cpu_boot"
+			android:title="@string/pt_cpu_boot" />
+		<PreferenceScreen
+			android:key="volt_control"
+			android:title="Voltage Control">
+			<intent
+				android:action="android.intent.action.MAIN"
+				android:targetPackage="com.roman.romcontrol"
+				android:targetClass="com.roman.romcontrol.tools.VoltageControl" />
+		</PreferenceScreen>
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:title="@string/prefcat_free_memory"
+		android:key="performance">
+		<ListPreference
+			android:key="free_memory"
+			android:title="@string/pt_free_memory"
+			android:summary="@string/ps_free_memory"
+			android:dialogTitle="@string/dt_free_memory"
+			android:persistent="true"
+			android:entries="@array/minfree"
+			android:entryValues="@array/minfree_values" />
+		<CheckBoxPreference
+			android:key="free_memory_boot"
+			android:defaultValue="false"
+			android:title="@string/pt_free_memory_boot"
+			android:summary="@string/ps_free_memory_boot" />
+	</PreferenceCategory>
+</PreferenceScreen>

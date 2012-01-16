@@ -122,7 +122,7 @@
 
 	<PreferenceCategory
 		android:key="tools"
-		android:title="@string/Tools">
+		android:title="@string/tools">
 		<Preference
 			android:key="performance"
 			android:title="@string/pt_performance"

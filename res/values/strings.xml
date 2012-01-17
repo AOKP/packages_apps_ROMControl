@@ -49,6 +49,9 @@
 	<string name="custom_carrier_label_title">Custom carrier label</string>
 	<string name="longpress_to_kill_title">Hold back to kill</string>
 	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
+	
+	<string name="rotate_180_title">Allow 180° rotation</string>
+	<string name="rotate_180_summary">Allow your device to rotate upsideown!</string>
 
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animations</string>
@@ -85,6 +88,9 @@
     
     <string name="volume_music_controls_title">Volume music controls</string>
     <string name="volume_music_controls_summary">Long press volume buttons to skip tracks</string>
+    
+    <string name="lockscreen_show_nav_title">Hide nav bar</string>
+    <string name="lockscreen_show_nav_summary">Hide the nav bar (if you\'re device supports it) on the lockscreen.</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show power saver</string>

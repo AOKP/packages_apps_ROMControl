@@ -32,7 +32,12 @@
 		android:key="advanced_cat"
 		android:title="@string/advanced_settings">
 
-                <Preference
+		<CheckBoxPreference
+			android:key="lockscreen_hide_nav"
+			android:title="@string/lockscreen_show_nav_title"
+			android:summary="@string/lockscreen_show_nav_summary" />
+
+		<Preference
 			android:key="sms_picker"
 			android:title="@string/sms_picker_title"
 			android:summary="@string/sms_picker_summary" />

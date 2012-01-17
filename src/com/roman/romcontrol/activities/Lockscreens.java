@@ -11,6 +11,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 
 import com.roman.romcontrol.R;
@@ -112,6 +113,19 @@ public class Lockscreens extends Activity {
 
             mCustomAppUri3 = Settings.System.getString(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3);
+
+            String[] keys = {
+                    "lockscreen_show_nav"
+            };
+
+            for (String key : keys) {
+                try {
+                    ((CheckBoxPreference) findPreference(key))
+                            .setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                                    key) == 1);
+                } catch (SettingNotFoundException e) {
+                }
+            }
         }
 
         @Override
@@ -159,9 +173,13 @@ public class Lockscreens extends Activity {
                         Settings.System.VOLUME_MUSIC_CONTROLS,
                         ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
                 return true;
+            } else {
+                return Settings.System.putInt(getActivity().getContentResolver(),
+                        preference.getKey(),
+                        ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             }
 
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
+            // return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         public void refreshSettings() {

@@ -49,11 +49,13 @@ public class UserInterface extends Activity {
         private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
         private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
+        private static final String PREF_180 = "rotate_180";
 
         CheckBoxPreference mCrtOnAnimation;
         CheckBoxPreference mCrtOffAnimation;
         CheckBoxPreference mShowImeSwitcher;
         CheckBoxPreference mLongPressToKill;
+        CheckBoxPreference mAllow180Rotation;
         Preference mCustomLabel;
         ListPreference mAnimationRotationDelay;
 
@@ -91,6 +93,11 @@ public class UserInterface extends Activity {
             mAnimationRotationDelay.setValue(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
                     200) + "");
+            
+            mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
+            mAllow180Rotation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.ACCELEROMETER_ROTATION_ANGLES, (1 | 2 | 8)) == (1 | 2 | 4 | 8));
+            
 
             // can't get this working in ICS just yet
             ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);
@@ -163,6 +170,14 @@ public class UserInterface extends Activity {
                 boolean checked = ((CheckBoxPreference) preference).isChecked();
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
+                return true;
+
+            } else if (preference == mAllow180Rotation) {
+
+                boolean checked = ((CheckBoxPreference) preference).isChecked();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION_ANGLES, checked ? (1 | 2 | 4 | 8)
+                                : (1 | 2 | 8));
                 return true;
 
             }

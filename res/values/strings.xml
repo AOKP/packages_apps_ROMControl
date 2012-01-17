@@ -45,6 +45,9 @@
 	<string name="custom_carrier_label_title">Custom carrier label</string>
 	<string name="longpress_to_kill_title">Hold back to kill</string>
 	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
+	
+	<string name="horizontal_recents_title">Use WebAOKP</string>
+	<string name="horizontal_recents_summary">Horizontal style recent tasks panel.  Must Reboot following change.</string>
 
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animations</string>

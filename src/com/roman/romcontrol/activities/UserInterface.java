@@ -49,11 +49,13 @@ public class UserInterface extends Activity {
         private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
         private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
+        private static final String PREF_HORIZONTAL_RECENTS = "horizontal_recents";
 
         CheckBoxPreference mCrtOnAnimation;
         CheckBoxPreference mCrtOffAnimation;
         CheckBoxPreference mShowImeSwitcher;
         CheckBoxPreference mLongPressToKill;
+        CheckBoxPreference mHorizontalRecents;
         Preference mCustomLabel;
         ListPreference mAnimationRotationDelay;
 
@@ -86,6 +88,10 @@ public class UserInterface extends Activity {
             mLongPressToKill.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                     Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
+            mHorizontalRecents = (CheckBoxPreference) findPreference(PREF_HORIZONTAL_RECENTS);
+            mHorizontalRecents.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, 0) == 1);
+            
             mAnimationRotationDelay = (ListPreference) findPreference(PREF_ROTATION_ANIMATION);
             mAnimationRotationDelay.setOnPreferenceChangeListener(this);
             mAnimationRotationDelay.setValue(Settings.System.getInt(getActivity()
@@ -165,8 +171,15 @@ public class UserInterface extends Activity {
                         Settings.Secure.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
                 return true;
 
-            }
+            } else if (preference == mHorizontalRecents) {
 
+                boolean checked = ((CheckBoxPreference) preference).isChecked();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, checked ? 1 : 0);
+                Log.d("WebAOKP", "Setting WebAOKP to");
+                Log.d("WebAOKP", checked ? "True" : "False");
+                return true;
+            } 
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 

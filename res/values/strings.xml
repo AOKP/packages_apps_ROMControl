@@ -37,7 +37,7 @@
     <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
     
     <string name="long_press_home_title">Long press home action</string>
-    <string name="long_press_home_summary">What to do when long pressing the home softkey</string>
+    <string name="long_press_home_summary">What to do when long pressing the home softkey. Reboot required to reflect changes.</string>
     
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotation delay</string>
@@ -75,13 +75,13 @@
     <string name="sms_picker_summary">Choose a custom app to launch when SMS toggle is opened</string>    
 
     <string name="sms_picker_1_title">Custom app</string>
-    <string name="sms_picker_1_summary">Choose a custom app to launch</string>
+    <string name="sms_picker_1_summary">Top trigger. Choose a custom app to launch</string>
 
     <string name="sms_picker_2_title">Custom app 2</string>
-    <string name="sms_picker_2_summary">Choose a custom app to launch</string>
+    <string name="sms_picker_2_summary">Bottom left trigger. Choose a custom app to launch</string>
 
     <string name="sms_picker_3_title">Custom app 3</string>
-    <string name="sms_picker_3_summary">Choose a custom app to launch</string>
+    <string name="sms_picker_3_summary">Bottom right trigger. Choose a custom app to launch</string>
     
     <string name="volume_wake_title">Volume wake</string>
     <string name="volume_wake_summary">Tapping the volume keys while your phone is off</string>

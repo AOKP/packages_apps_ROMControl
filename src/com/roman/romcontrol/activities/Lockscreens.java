@@ -1,6 +1,8 @@
 
 package com.roman.romcontrol.activities;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -59,9 +61,13 @@ public class Lockscreens extends Activity {
         private String mCustomAppUri2;
         private String mCustomAppUri3;
 
+        ArrayList<String> keys = new ArrayList<String>();
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
+            keys.add("lockscreen_show_nav");
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.prefs_lockscreens);
@@ -113,10 +119,6 @@ public class Lockscreens extends Activity {
 
             mCustomAppUri3 = Settings.System.getString(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3);
-
-            String[] keys = {
-                    "lockscreen_show_nav"
-            };
 
             for (String key : keys) {
                 try {
@@ -173,13 +175,14 @@ public class Lockscreens extends Activity {
                         Settings.System.VOLUME_MUSIC_CONTROLS,
                         ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
                 return true;
-            } else {
+
+            } else if (keys.contains(preference.getKey())) {
                 return Settings.System.putInt(getActivity().getContentResolver(),
                         preference.getKey(),
                         ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             }
 
-            // return super.onPreferenceTreeClick(preferenceScreen, preference);
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         public void refreshSettings() {

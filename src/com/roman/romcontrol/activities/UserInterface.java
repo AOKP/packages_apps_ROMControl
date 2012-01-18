@@ -3,16 +3,11 @@ package com.roman.romcontrol.activities;
 
 import java.util.ArrayList;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -21,14 +16,11 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.text.Spannable;
-import android.util.Log;
-import android.view.IWindowManager;
 import android.widget.EditText;
 
-import com.android.internal.telephony.Phone;
 import com.roman.romcontrol.R;
+import com.roman.romcontrol.util.CMDProcessor;
 
 public class UserInterface extends Activity {
 
@@ -56,6 +48,7 @@ public class UserInterface extends Activity {
         CheckBoxPreference mShowImeSwitcher;
         CheckBoxPreference mLongPressToKill;
         CheckBoxPreference mAllow180Rotation;
+        CheckBoxPreference mHorizontalAppSwitcher;
         Preference mCustomLabel;
         ListPreference mAnimationRotationDelay;
 
@@ -93,11 +86,15 @@ public class UserInterface extends Activity {
             mAnimationRotationDelay.setValue(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
                     200) + "");
-            
+
             mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
             mAllow180Rotation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES, (1 | 2 | 8)) == (1 | 2 | 4 | 8));
-            
+
+            mHorizontalAppSwitcher = (CheckBoxPreference) findPreference("horizontal_recents_task_panel");
+            mHorizontalAppSwitcher.setChecked(Settings.System.getInt(getActivity()
+                    .getContentResolver(),
+                    Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, 0) == 1);
 
             // can't get this working in ICS just yet
             ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);
@@ -178,6 +175,15 @@ public class UserInterface extends Activity {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.ACCELEROMETER_ROTATION_ANGLES, checked ? (1 | 2 | 4 | 8)
                                 : (1 | 2 | 8));
+                return true;
+
+            } else if (preference == mHorizontalAppSwitcher) {
+
+                boolean checked = ((CheckBoxPreference) preference).isChecked();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, checked ? 1
+                                : 0);
+                new CMDProcessor().su.runWaitFor("pkill -TERM -f  com.android.systemui");
                 return true;
 
             }

@@ -53,6 +53,8 @@
 	<string name="rotate_180_title">Allow 180° rotation</string>
 	<string name="rotate_180_summary">Allow your device to rotate upsideown!</string>
 
+	<string name="horizontal_recents_task_panel_title">Horizontal recents window</string>
+	<string name="horizontal_recents_task_panel_summary">Use WebOS style task switcher. Your UI will restart after changing this. It will come back in about 10 seconds. If it doesn\'t, just reboot the phone from the power menu.</string>
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animations</string>
 	<string name="crt_on_title">CRT on animation</string>

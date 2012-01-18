@@ -2,12 +2,16 @@
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	
-	
+
 	<CheckBoxPreference
-			android:key="rotate_180"
-			android:title="@string/rotate_180_title"
-			android:summary="@string/rotate_180_summary" />
+		android:key="rotate_180"
+		android:title="@string/rotate_180_title"
+		android:summary="@string/rotate_180_summary" />
+
+	<CheckBoxPreference
+		android:key="horizontal_recents_task_panel"
+		android:title="@string/horizontal_recents_task_panel_title"
+		android:summary="@string/horizontal_recents_task_panel_summary" />
 
 	<PreferenceCategory
 		android:key="crt"

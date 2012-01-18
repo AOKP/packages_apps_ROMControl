@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">固件设置</string>
+
+    <!-- Main -->
+    <string name="user_interface">界面</string>
+    <string name="general_ui">一般设置</string>
+    <string name="lockscreen_options">锁屏设置</string>
+    <string name="power_menu_optons">电源菜单</string>
+    <string name="functionality">功能</string>
+    <string name="power_saver">省电设置</string>
+    <string name="led_options">提示灯设置</string>
+    <string name="statusbar">状态栏</string>
+    <string name="general">一般设置</string>
+    <string name="toggles_layout">快捷开关</string>
+    <string name="clock">时间设置</string>
+    <string name="battery">电池设置</string>
+    <string name="nav_bar">导航栏设置</string>
+    <string name="tools">工具</string>
+    
+    <string name="advanced_settings">高级设置</string>
+    <string name="misc_short">Misc</string>
+    
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">Menu Settings</string>
+    <string name="summary_pref_menu_display">Position of legacy menu button</string>
+    <string name="navigation_bar">Navigation bar</string>
+    <string name="navigation_bar_tint_title">Navigation bar tint</string>
+
+    <string name="title_pref_navigation_menu_display">Menu visibility</string>
+    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
+
+    <string name="navbar_order_title">Navigation button order</string>
+    <string name="navbar_order_summary">Customize the order of your soft keys</string>
+
+    <string name="enabled_navbar_buttons_title">Enabled buttons</string>
+    <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
+    
+    <string name="long_press_home_title">Long press home action</string>
+    <string name="long_press_home_summary">What to do when long pressing the home softkey. Reboot required to reflect changes.</string>
+    
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">Rotation delay</string>
+    <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>
+
+	<string name="ime_switcher_title">Show IME Switcher</string>
+	<string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+
+	<string name="custom_carrier_label_title">Custom carrier label</string>
+	<string name="longpress_to_kill_title">Hold back to kill</string>
+	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
+	
+	<string name="rotate_180_title">Allow 180° rotation</string>
+	<string name="rotate_180_summary">Allow your device to rotate upsideown!</string>
+
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRT animations</string>
+	<string name="crt_on_title">CRT on animation</string>
+	<string name="crt_off_title">CRT off animation</string>
+
+    <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>	
+    <string name="summary_pref_lockscreen_quad_targets">Adds Phone and Messaging shortcuts on the lock screen</string>
+
+    <string name="title_pref_lockscreen_octo_targets">Octo Targets</string>	
+    <string name="summary_pref_lockscreen_octo_targets">Adds too many shortcuts on the lock screen</string>
+
+    <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
+    
+    <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
+    <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+
+    <string name="sms_picker_title">Custom SMS app</string>
+    <string name="sms_picker_summary">Choose a custom app to launch when SMS toggle is opened</string>    
+
+    <string name="sms_picker_1_title">Custom app</string>
+    <string name="sms_picker_1_summary">Top trigger. Choose a custom app to launch</string>
+
+    <string name="sms_picker_2_title">Custom app 2</string>
+    <string name="sms_picker_2_summary">Bottom left trigger. Choose a custom app to launch</string>
+
+    <string name="sms_picker_3_title">Custom app 3</string>
+    <string name="sms_picker_3_summary">Bottom right trigger. Choose a custom app to launch</string>
+    
+    <string name="volume_wake_title">Volume wake</string>
+    <string name="volume_wake_summary">Tapping the volume keys while your phone is off</string>
+    
+    <string name="volume_music_controls_title">Volume music controls</string>
+    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks</string>
+    
+    <string name="lockscreen_show_nav_title">Hide nav bar</string>
+    <string name="lockscreen_show_nav_summary">Hide the nav bar (if you\'re device supports it) on the lockscreen.</string>
+    
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Show power saver</string>
+    <string name="title_show_screenshot">Show screenshot</string>
+    
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+    
+    <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
+    <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
+        
+    <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">Sync action</string>
+    <string name="summary_pref_powersaving_sync_screen_off">What to do with your syncage?!</string>
+    
+    <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
+    
+    <string name="powersaver_data_cat">Data</string>
+    <string name="powersaver_sync_cat">Sync</string>
+
+    <!--  LED -->
+    <string name="title_led_on">LED pulse ON duration</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">LED pulse OFF duration</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LED color</string>
+
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">Use default settings behavior</string>
+    <string name="summary_settings_behavior">Default behavior is to long press for toggles, press for settings. Uncheck to press for toggles, long press for settings</string>
+
+    <string name="title_auto_hide_toggles">Auto hide toggles</string>
+    <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_title_text_widget">Show battery text</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_title_text_widget_center">Center battery text</string>
+    <string name="battery_bar">Battery bar</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="show_battery_icon_title">Show battery icon</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Clock style</string>
+    <string name="title_clock_ampm_entries">AM/PM style</string>
+    <string name="colors">Colors</string>
+    <string name="clock_color_title">Clock color</string>
+    <string name="reset_color_title">Reset color</string>
+    <string name="enable_alarm_title">Enable alarm icon</string>
+    <string name="enable_alarm_summary">After disabling/enabling, you must toggle your alarms for it to show up again. Or reboot.</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Toggle style</string>
+    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
+
+    <string name="alternate_button_layout_title">Alternate toggles</string>
+    <string name="alternate_button_layout_summary">Use Toggle Buttons instead of switches for your toggles.</string>
+    
+    <string name="enabled_toggles_title">Enabled toggles</string>
+    <string name="enabled_toggles_summary">Choose toggles to display</string>
+    <string name="toggles_order_title">Toggle order</string>
+    <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
+    <string name="brightness_location_title">Brightness location</string>
+    
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>   
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>
+    
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+	<string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+	<string name="select_custom_app_title">Select custom application</string>
+	<string name="group_applications">Applications</string>
+	
+	<!-- Dialog Titles -->
+	<string name="dt_free_memory">Minfree Taskkiller</string>
+
+	<!-- Preference Categories -->
+	<string name="prefcat_cpu">Set CPU</string>
+	<string name="prefcat_free_memory">Free Memory</string>
+	<string name="pc_tweaks">Tweaks</string>
+	<string name="pc_init_d">Enable/Disable Tweaks</string>
+	<string name="pc_init_d_tweaks">Customize Tweaks</string>
+
+	<!-- Preference Titles -->
+	<!-- Main -->
+	<string name="pt_performance">Performance</string>
+	<string name="pt_customization">Customization</string>
+	<string name="pt_tools">Tools</string>
+	<string name="pt_mod_version">Mod version</string>
+	<!-- Customization -->
+	<string name="pt_liberty_customizer">Liberty Customizer</string>
+	<string name="pt_lockscreen">Lockscreen Settings</string>
+	<string name="pt_ui_status_bar">Status Bar</string>
+	<string name="pt_pulldown_text">Pulldown Text</string>
+	<string name="pt_theme_manager">Theme Manager</string>
+	<!-- Tools -->
+	<string name="pt_spare_parts">Spare Parts</string>
+	<string name="pt_dev_tools">Dev Tools</string>
+	<string name="pt_dsp_manager">DSP Manager</string>
+	<string name="pt_testing_menu">Testing Menu</string>
+	<!-- Start up tweaks -->
+	<string name="pt_init_d">Start-up Tweaks</string>
+	<string name="pt_enable_init_d">Enable start-up tweaks</string>
+	<string name="pt_zipalign">Zipalign apks</string>
+	<string name="pt_enable_sd_boost">Enable SD boost</string>
+	<string name="pt_sd_boost">Read ahead value</string>
+	<string name="pt_fix_permissions">Fix permissions</string>
+	<string name="pt_clear_cache">Clear cache</string>
+	<string name="pt_enable_sysctl">Enable sysctl</string>
+	<string name="pt_enable_cron">Enable scheduled tasks</string>
+	<!-- Performance -->
+	<string name="pt_set_cpu_activity">Set cpu</string>
+	<string name="pt_free_memory">Free memory</string>
+	<string name="pt_free_memory_boot">Set at boot</string>
+	<!-- Cpu -->
+	<string name="pt_set_max">Max cpu</string>
+	<string name="pt_set_min">Min cpu</string>
+	<string name="pt_set_gov">Scaling governor</string>
+	<string name="pt_cpu_boot">Set at boot</string>
+
+	<!-- Preference Summaries -->
+	<!-- Main -->
+	<string name="ps_performance">Set cpu, free memory &amp; customize start-up
+		settings.</string>
+	<string name="ps_customization">Customize the lockscreen &amp; status bar. Install
+		blur/aosp apps with Liberty Customizer</string>
+	<string name="ps_tools">Various system tools</string>
+	<!-- Customization -->
+	<string name="ps_liberty_customizer">Customize the ROM to your liking</string>
+	<string name="ps_lockscreen">Change lockscreen styles and manage widgets
+	</string>
+	<string name="ps_ui_status_bar">Customize the status bar</string>
+	<string name="ps_pulldown_text">Change the text in the pulldown bar.</string>
+	<string name="ps_theme_manager">Install custom themes for Liberty ROM</string>
+	<!-- Tools -->
+	<string name="ps_spare_parts">Various tweaks and customization</string>
+	<string name="ps_dev_tools">Tools for developers and advanced users</string>
+	<string name="ps_dsp_manager">Stand alone equalizer</string>
+	<string name="ps_testing_menu">Phone info, battery info, usage statistics</string>
+	<!-- Start up tweaks -->
+	<string name="ps_init_d">Configure tweaks that are run at boot
+		(init.d)
+	</string>
+	<string name="ps_enable_init_d">Enable/disabe start-up tweaks</string>
+	<string name="ps_zipalign">zipalign any unaligned apps on each boot</string>
+	<string name="ps_enable_sd_boost">Enable/disable SD card speed boost</string>
+	<string name="ps_sd_boost">Set value of read ahead in kb</string>
+	<string name="ps_fix_permissions">Fix permissions for apps on each boot</string>
+	<string name="ps_clear_cache">Clear data cache on each boot</string>
+	<string name="ps_enable_sysctl">Enable sysctl tweaks on boot</string>
+	<string name="ps_enable_cron">Enable scheduled cron jobs</string>
+	<!-- CPU -->
+	<string name="ps_set_max">Set max cpu scaling frequency\nCurrent: %s</string>
+	<string name="ps_set_min">Set min cpu scaling frequency\nCurrent: %s</string>
+	<string name="ps_set_gov">Set current scaling governor\nCurrent: %s</string>
+	<string name="ps_cpu_boot">Apply cpu at boot</string>
+	<!-- Performance -->
+	<string name="ps_set_cpu_activity">Set min/max frequencies and scaling governor
+	</string>
+	<string name="ps_free_memory">Amount of ram the minfree taskkiller will keep |
+		Current: %s</string>
+	<string name="ps_free_memory_boot">Apply the amount above at boot</string>
+
+	<!-- Toast Messages -->
+	<string name="toast_min_max_error01">Max cpu cannot be lower than min cpu</string>
+	<string name="toast_min_max_error02">Min cpu cannot be higher than max cpu</string>
+
+	<!-- list_voltage -->
+	<string name="freq">Frequency</string>
+	<string name="current">mV current</string>
+	<string name="saved">mV saved</string>
+
+	<!-- voltage -->
+	<string name="error_values">Error getting values</string>
+	<string name="set_boot">Set On Boot</string>
+	<string name="apply_values">Apply Values</string>
+    
+</resources>

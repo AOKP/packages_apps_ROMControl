@@ -5,11 +5,13 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.util.Log;
 
 import com.roman.romcontrol.R;
 
@@ -28,14 +30,20 @@ public class StatusBarBattery extends Activity {
 
         private static final String PREF_BATT_TEXT = "text_widget";
         private static final String PREF_BATT_TEXT_CENTER = "text_widget_center";
-        private static final String PREF_BATT_BAR = "battery_bar";
+        private static final String PREF_BATT_BAR = "battery_bar_list";
+        private static final String PREF_BATT_BAR_STYLE = "battery_bar_style";
         private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
+        private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
+        private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
         private static final String PREF_BATT = "show_battery_icon";
 
         CheckBoxPreference mEnableBatteryText;
         CheckBoxPreference mEnableCenterBatteryText;
-        CheckBoxPreference mBatteryBar;
+        ListPreference mBatteryBar;
+        ListPreference mBatteryBarStyle;
+        ListPreference mBatteryBarThickness;
         CheckBoxPreference mShowBatteryIcon;
+        CheckBoxPreference mBatteryBarChargingAnimation;
         ColorPickerPreference mBatteryBarColor;
 
         @Override
@@ -55,10 +63,17 @@ public class StatusBarBattery extends Activity {
                     .getContentResolver(), Settings.System.STATUSBAR_BATTERY_TEXT_STYLE,
                     0) == 1);
 
-            mBatteryBar = (CheckBoxPreference) findPreference(PREF_BATT_BAR);
-            mBatteryBar.setChecked(Settings.System.getInt(getActivity()
+            mBatteryBar = (ListPreference) findPreference(PREF_BATT_BAR);
+            mBatteryBar.setOnPreferenceChangeListener(this);
+            mBatteryBar.setValue((Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.STATUSBAR_BATTERY_BAR,
-                    0) == 1);
+                    0)) + "");
+
+            mBatteryBarStyle = (ListPreference) findPreference(PREF_BATT_BAR_STYLE);
+            mBatteryBarStyle.setOnPreferenceChangeListener(this);
+            mBatteryBarStyle.setValue((Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.STATUSBAR_BATTERY_BAR_STYLE,
+                    0)) + "");
 
             mBatteryBarColor = (ColorPickerPreference) findPreference(PREF_BATT_BAR_COLOR);
             mBatteryBarColor.setOnPreferenceChangeListener(this);
@@ -68,6 +83,16 @@ public class StatusBarBattery extends Activity {
                     .getContentResolver(), Settings.System.STATUSBAR_BATTERY_ICON,
                     1) == 1);
 
+            mBatteryBarChargingAnimation = (CheckBoxPreference) findPreference(PREF_BATT_ANIMATE);
+            mBatteryBarChargingAnimation.setChecked(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
+                    0) == 1);
+
+            mBatteryBarThickness = (ListPreference) findPreference(PREF_BATT_BAR_WIDTH);
+            mBatteryBarThickness.setOnPreferenceChangeListener(this);
+            mBatteryBarThickness.setValue((Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS,
+                    1)) + "");
         }
 
         @Override
@@ -86,17 +111,17 @@ public class StatusBarBattery extends Activity {
                         ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
                 return true;
 
-            } else if (preference == mBatteryBar) {
-
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUSBAR_BATTERY_BAR,
-                        ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-                return true;
-
             } else if (preference == mShowBatteryIcon) {
 
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUSBAR_BATTERY_ICON,
+                        ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                return true;
+
+            } else if (preference == mBatteryBarChargingAnimation) {
+
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
                         ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
                 return true;
 
@@ -115,6 +140,24 @@ public class StatusBarBattery extends Activity {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUSBAR_BATTERY_BAR_COLOR, intHex);
                 return true;
+
+            } else if (preference == mBatteryBar) {
+
+                int val = Integer.parseInt((String) newValue);
+                return Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_BAR, val);
+
+            } else if (preference == mBatteryBarStyle) {
+
+                int val = Integer.parseInt((String) newValue);
+                return Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_BAR_STYLE, val);
+
+            } else if (preference == mBatteryBarThickness) {
+
+                int val = Integer.parseInt((String) newValue);
+                return Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
 
             }
             return false;

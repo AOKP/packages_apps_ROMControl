@@ -43,6 +43,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
     Preference mCustomLabel;
     ListPreference mAnimationRotationDelay;
     CheckBoxPreference mDisableBootAnimation;
+    CheckBoxPreference mDisableBugMailer;
 
     String mCustomLabelText = null;
 
@@ -92,6 +93,9 @@ public class UserInterface extends SettingsPreferenceFragment implements
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
         if (mDisableBootAnimation.isChecked())
             mDisableBootAnimation.setSummary(R.string.disable_bootanimation_summary);
+        
+        mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
+        mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
 
         if (!getResources().getBoolean(com.android.internal.R.bool.config_enableCrtAnimations)) {
             prefs.removePreference((PreferenceGroup) findPreference("crt"));
@@ -199,6 +203,20 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 Helpers.getMount("rw");
                 new CMDProcessor().su
                         .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
+                Helpers.getMount("ro");
+            }
+        } else if (preference == mDisableBugMailer) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            if (checked) {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/bin/bugmailer.sh /system/bin/bugmailer.sh.unicorn");
+                Helpers.getMount("ro");
+                preference.setSummary(R.string.disable_bootanimation_summary);
+            } else {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/bin/bugmailer.sh.unicorn /system/bin/bugmailer.sh");
                 Helpers.getMount("ro");
             }
         }

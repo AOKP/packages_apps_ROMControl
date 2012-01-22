@@ -5,6 +5,10 @@
 	<CheckBoxPreference
 		android:key="disable_bootanimation"
 		android:title="@string/disable_bootanimation_title" />
+		
+	<CheckBoxPreference
+		android:key="disable_bugmailer"
+		android:title="@string/disable_bugmailer_title" />
 
 	<CheckBoxPreference
 		android:key="rotate_180"

@@ -59,6 +59,8 @@
 	<string name="disable_bootanimation_title">Disable boot animation</string>
 	<string name="disable_bootanimation_summary">Jerk.</string>
 	
+	<string name="disable_bugmailer_title">Disable bugmailer</string>
+	
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animations</string>
 	<string name="crt_on_title">CRT on animation</string>

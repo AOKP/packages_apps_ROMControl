@@ -19,6 +19,7 @@ package net.margaritov.preference.colorpicker;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.PixelFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -124,7 +125,11 @@ public class ColorPickerDialog
     public void onColorChanged(int color) {
 
         mNewColor.setColor(color);
-        mHex.setText(ColorPickerPreference.convertToARGB(color));
+        try {
+            mHex.setText(ColorPickerPreference.convertToARGB(color));
+        } catch (Exception e) {
+
+        }
         /*
          * if (mListener != null) { mListener.onColorChanged(color); }
          */

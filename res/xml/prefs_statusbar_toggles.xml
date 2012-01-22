@@ -11,11 +11,6 @@
 		android:key="toggles"
 		android:title="@string/toggles_order_title"
 		android:summary="@string/toggles_order_summary">
-
-		<intent
-			android:action="android.intent.action.MAIN"
-			android:targetClass="com.roman.romcontrol.activities.TogglesLayout"
-			android:targetPackage="com.roman.romcontrol" />
 	</Preference>
 
 	<ListPreference
@@ -39,6 +34,11 @@
 			android:key="alternate_button_layout"
 			android:title="@string/alternate_button_layout_title"
 			android:summary="@string/alternate_button_layout_summary" />
+
+		<Preference
+			android:key="reset_toggles"
+			android:title="Reset toggles">
+		</Preference>
 
 	</PreferenceCategory>
 

@@ -217,25 +217,6 @@
 	</string-array>
 
 	<!-- Toggles -->
-	<string-array name="available_toggle_entries">
-		<item>Auto-Rotate</item>
-		<item>Bluetooth</item>
-		<item>GPS</item>
-		<item>LTE Toggle</item>
-		<item>Mobile data</item>
-		<item>Wi-Fi</item>
-		<item>2G Toggle</item>
-	</string-array>
-
-	<string-array name="available_toggle_values">
-		<item>ROTATE</item>
-		<item>BT</item>
-		<item>GPS</item>
-		<item>LTE</item>
-		<item>DATA</item>
-		<item>WIFI</item>
-		<item>2G</item>
-	</string-array>
 
 	<string-array name="brightness_location_entries">
 		<item>On top</item>
@@ -362,6 +343,30 @@
 		<item>2</item>
 		<item>3</item>
 		<item>4</item>
+	</string-array>
+	
+	<string-array name="available_toggles_entries">
+		<item>ROTATE</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>WIFI</item>
+		<item>AIRPLANE_MODE</item>
+		<item>VIBRATE</item>
+		<item>SILENT</item>
+		<item>TORCH</item>
+		<item>SYNC</item>
+	</string-array>
+	
+	<string-array name="available_toggles_values">
+		<item>Auto-rotate</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>Wi-Fi</item>
+		<item>Airplane mode</item>
+		<item>Vibrate</item>
+		<item>Silent</item>
+		<item>Torch</item>
+		<item>Sync</item>
 	</string-array>
 
 </resources>

@@ -30,11 +30,6 @@
 		android:key="buttons"
 		android:title="@string/navbar_order_title"
 		android:summary="@string/navbar_order_summary">
-
-		<intent
-			android:action="android.intent.action.MAIN"
-			android:targetClass="com.roman.romcontrol.activities.NavbarLayout"
-			android:targetPackage="com.roman.romcontrol" />
 	</Preference>
 
 	<PreferenceCategory

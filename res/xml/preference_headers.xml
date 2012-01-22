@@ -1,0 +1,73 @@
+<preference-headers
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<header
+		android:title="@string/user_interface" />
+
+	<header
+		android:id="@+id/user_interface"
+		android:fragment="com.roman.romcontrol.fragments.UserInterface"
+		android:title="@string/general_ui" />
+
+	<header
+		android:id="@+id/nav_bar"
+		android:fragment="com.roman.romcontrol.fragments.Navbar"
+		android:title="@string/nav_bar" />
+
+	<header
+		android:id="@+id/lockscreens"
+		android:fragment="com.roman.romcontrol.fragments.Lockscreens"
+		android:title="@string/lockscreen_options" />
+
+	<header
+		android:id="@+id/power_menu"
+		android:fragment="com.roman.romcontrol.fragments.PowerMenu"
+		android:title="@string/power_menu_optons" />
+
+	<header
+		android:title="@string/functionality" />
+
+	<header
+		android:id="@+id/power_saver"
+		android:fragment="com.roman.romcontrol.fragments.PowerSaver"
+		android:title="@string/power_saver" />
+
+
+	<header
+		android:id="@+id/led"
+		android:fragment="com.roman.romcontrol.fragments.Led"
+		android:title="@string/led_options" />
+
+	<header
+		android:title="@string/statusbar" />
+
+	<header
+		android:id="@+id/statusbar_general"
+		android:fragment="com.roman.romcontrol.fragments.StatusBarGeneral"
+		android:title="@string/general" />
+
+	<header
+		android:id="@+id/statusbar_toggles"
+		android:fragment="com.roman.romcontrol.fragments.StatusBarToggles"
+		android:title="@string/toggles_layout" />
+
+	<header
+		android:id="@+id/statusbar_clock"
+		android:title="@string/clock"
+		android:fragment="com.roman.romcontrol.fragments.StatusBarClock" />
+
+	<header
+		android:id="@+id/statusbar_battery"
+		android:title="@string/battery"
+		android:fragment="com.roman.romcontrol.fragments.StatusBarBattery" />
+
+	<header
+		android:title="@string/tools" />
+
+	<header
+		android:id="@+id/performance"
+		android:title="@string/pt_performance"
+		android:summary="@string/ps_performance"
+		android:fragment="com.roman.romcontrol.fragments.Performance" />
+
+</preference-headers>

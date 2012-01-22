@@ -1,6 +1,7 @@
 
 package com.roman.romcontrol.fragments;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.util.CMDProcessor;
+import com.roman.romcontrol.util.Helpers;
 
 public class UserInterface extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -40,6 +42,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
     CheckBoxPreference mHorizontalAppSwitcher;
     Preference mCustomLabel;
     ListPreference mAnimationRotationDelay;
+    CheckBoxPreference mDisableBootAnimation;
 
     String mCustomLabelText = null;
 
@@ -85,8 +88,17 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getContentResolver(),
                 Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, 0) == 1);
 
-        // can't get this working in ICS just yet
-        ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);
+        mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
+        mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
+        if (mDisableBootAnimation.isChecked())
+            mDisableBootAnimation.setSummary(R.string.disable_bootanimation_summary);
+
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_enableCrtAnimations)) {
+            prefs.removePreference((PreferenceGroup) findPreference("crt"));
+        } else {
+            // can't get this working in ICS just yet
+            ((PreferenceGroup) findPreference("crt")).removePreference(mCrtOnAnimation);
+        }
     }
 
     private void updateCustomLabelTextSummary() {
@@ -175,6 +187,20 @@ public class UserInterface extends SettingsPreferenceFragment implements
             new CMDProcessor().su.runWaitFor("pkill -TERM -f  com.android.systemui");
             return true;
 
+        } else if (preference == mDisableBootAnimation) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            if (checked) {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.unicorn");
+                Helpers.getMount("ro");
+                preference.setSummary(R.string.disable_bootanimation_summary);
+            } else {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
+                Helpers.getMount("ro");
+            }
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

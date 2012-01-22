@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
-
+	
+	<CheckBoxPreference
+		android:key="disable_bootanimation"
+		android:title="@string/disable_bootanimation_title" />
 
 	<CheckBoxPreference
 		android:key="rotate_180"

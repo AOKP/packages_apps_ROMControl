@@ -25,6 +25,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.Button;
 
@@ -36,9 +37,11 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     private static final String TAG = "SettingsPreferenceFragment";
 
     private SettingsDialogFragment mDialogFragment;
+    protected boolean mTablet;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
         super.onActivityCreated(savedInstanceState);
     }
 

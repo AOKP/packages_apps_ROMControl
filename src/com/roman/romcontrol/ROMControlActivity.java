@@ -1,20 +1,19 @@
 
 package com.roman.romcontrol;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.IWindowManager;
 import android.view.LayoutInflater;
@@ -40,10 +39,14 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     private Header mCurrentHeader;
     boolean mInLocalHeaderSwitch;
 
+    boolean mTablet;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+        mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
+
         mInLocalHeaderSwitch = true;
         super.onCreate(savedInstanceState);
         mInLocalHeaderSwitch = false;
@@ -131,9 +134,12 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 } catch (RemoteException e) {
                 }
             } else if (id == R.id.statusbar_general) {
-                if (isTabletDevice())
+                if (mTablet)
                     target.remove(header);
-            }
+            } else if (id == R.id.statusbar_clock && mTablet)
+                target.remove(header);
+            else if (id == R.id.lockscreens && mTablet)
+                target.remove(header);
 
             // Increment if the current one wasn't removed by the Utils code.
             if (target.get(i) == header) {
@@ -192,25 +198,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
         // Ignore the adapter provided by PreferenceActivity and substitute ours instead
         super.setListAdapter(new HeaderAdapter(this, mHeaders));
-    }
-
-    private boolean isTabletDevice() {
-        if (android.os.Build.VERSION.SDK_INT >= 11) { // honeycomb
-            // test screen size, use reflection because isLayoutSizeAtLeast is
-            // only available since 11
-            Configuration con = getResources().getConfiguration();
-            try {
-                Method mIsLayoutSizeAtLeast = con.getClass().getMethod(
-                        "isLayoutSizeAtLeast", int.class);
-                boolean r = (Boolean) mIsLayoutSizeAtLeast.invoke(con,
-                        0x00000004); // Configuration.SCREENLAYOUT_SIZE_XLARGE
-                return r;
-            } catch (Exception x) {
-                x.printStackTrace();
-                return false;
-            }
-        }
-        return false;
     }
 
     private static class HeaderAdapter extends ArrayAdapter<Header> {

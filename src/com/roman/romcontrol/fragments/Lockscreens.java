@@ -24,10 +24,12 @@ public class Lockscreens extends PreferenceFragment implements
     private static final String PREF_MENU = "pref_lockscreen_menu_unlock";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
     private static final String PREF_LOCKSCREEN_LAYOUT = "pref_lockscreen_layout";
-    private static final String PREF_SMS_PICKER = "sms_picker";
     private static final String PREF_SMS_PICKER_1 = "sms_picker_1";
     private static final String PREF_SMS_PICKER_2 = "sms_picker_2";
     private static final String PREF_SMS_PICKER_3 = "sms_picker_3";
+    private static final String PREF_SMS_PICKER_5 = "sms_picker_5";
+    private static final String PREF_SMS_PICKER_6 = "sms_picker_6";
+    private static final String PREF_SMS_PICKER_7 = "sms_picker_7";
     private static final String PREF_VOLUME_WAKE = "volume_wake";
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
 
@@ -36,17 +38,21 @@ public class Lockscreens extends PreferenceFragment implements
     ListPreference mLockscreenOption;
     CheckBoxPreference mVolumeWake;
     CheckBoxPreference mVolumeMusic;
-    Preference mSmsPicker;
     Preference mAppPicker1;
     Preference mAppPicker2;
     Preference mAppPicker3;
+    Preference mAppPicker5;
+    Preference mAppPicker6;
+    Preference mAppPicker7;
 
     private Preference mCurrentCustomActivityPreference;
     private String mCurrentCustomActivityString;
-    private String mSmsIntentUri;
     private String mCustomAppUri1;
     private String mCustomAppUri2;
     private String mCustomAppUri3;
+    private String mCustomAppUri5;
+    private String mCustomAppUri6;
+    private String mCustomAppUri7;
 
     private ShortcutPickerHelper mPicker;
 
@@ -87,18 +93,19 @@ public class Lockscreens extends PreferenceFragment implements
                 .getContentResolver(), Settings.System.VOLUME_MUSIC_CONTROLS,
                 0) == 1);
 
-        mSmsPicker = findPreference(PREF_SMS_PICKER);
-
         mAppPicker1 = findPreference(PREF_SMS_PICKER_1);
 
         mAppPicker2 = findPreference(PREF_SMS_PICKER_2);
 
         mAppPicker3 = findPreference(PREF_SMS_PICKER_3);
 
-        mPicker = new ShortcutPickerHelper(this.getActivity(), this);
+        mAppPicker5 = findPreference(PREF_SMS_PICKER_5);
 
-        mSmsIntentUri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT);
+        mAppPicker6 = findPreference(PREF_SMS_PICKER_6);
+
+        mAppPicker7 = findPreference(PREF_SMS_PICKER_7);
+
+        mPicker = new ShortcutPickerHelper(this.getActivity(), this);
 
         mCustomAppUri1 = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_1);
@@ -109,6 +116,15 @@ public class Lockscreens extends PreferenceFragment implements
         mCustomAppUri3 = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3);
 
+        mCustomAppUri5 = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_5);
+
+        mCustomAppUri6 = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_6);
+
+        mCustomAppUri7 = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_7);
+
         for (String key : keys) {
             try {
                 ((CheckBoxPreference) findPreference(key))
@@ -117,6 +133,7 @@ public class Lockscreens extends PreferenceFragment implements
             } catch (SettingNotFoundException e) {
             }
         }
+        refreshSettings();
     }
 
     @Override
@@ -132,11 +149,6 @@ public class Lockscreens extends PreferenceFragment implements
                     Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mSmsPicker) {
-            mCurrentCustomActivityPreference = preference;
-            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_SMS_INTENT;
-            mPicker.pickShortcut();
-            return true;
         } else if (preference == mAppPicker1) {
             mCurrentCustomActivityPreference = preference;
             mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_1;
@@ -150,6 +162,21 @@ public class Lockscreens extends PreferenceFragment implements
         } else if (preference == mAppPicker3) {
             mCurrentCustomActivityPreference = preference;
             mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3;
+            mPicker.pickShortcut();
+            return true;
+        } else if (preference == mAppPicker5) {
+            mCurrentCustomActivityPreference = preference;
+            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_5;
+            mPicker.pickShortcut();
+            return true;
+        } else if (preference == mAppPicker6) {
+            mCurrentCustomActivityPreference = preference;
+            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_6;
+            mPicker.pickShortcut();
+            return true;
+        } else if (preference == mAppPicker7) {
+            mCurrentCustomActivityPreference = preference;
+            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_7;
             mPicker.pickShortcut();
             return true;
         } else if (preference == mVolumeWake) {
@@ -175,13 +202,17 @@ public class Lockscreens extends PreferenceFragment implements
     }
 
     public void refreshSettings() {
-        mSmsPicker.setSummary(mPicker.getFriendlyNameForUri(mSmsIntentUri));
-
         mAppPicker1.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri1));
 
         mAppPicker2.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri2));
 
         mAppPicker3.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri3));
+
+        mAppPicker5.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri5));
+
+        mAppPicker6.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri6));
+
+        mAppPicker7.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri7));
     }
 
     @Override

@@ -141,6 +141,10 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference("lockscreen_targets");
         targetGroup.removeAll();
 
+        //quad only uses first 4, but we make the system think there's 6 for the alternate layout so only show 4
+        if(lockscreenTargets == 6)
+            lockscreenTargets = 4;
+        
         for (int i = 0; i < lockscreenTargets; i++) {
             ListPreference p = new ListPreference(getActivity());
             String dialogTitle = String.format(

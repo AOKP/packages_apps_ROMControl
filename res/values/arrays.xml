@@ -281,7 +281,7 @@
 
     <string-array name="pref_lockscreen_options_values">
 		<item>2</item>
-		<item>4</item>
+		<item>6</item>
         <item>8</item>
 	</string-array>
 

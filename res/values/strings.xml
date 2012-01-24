@@ -18,6 +18,16 @@
     <string name="nav_bar">Navigation bar</string>
     <string name="tools">Tools</string>
     
+    <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
+    <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
+    <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order</string>
+    <string name="header_summary_lockscreens">Custom apps to launch, layout</string>
+    <string name="header_summary_power_menu">What to display in your power menu</string>
+    <string name="header_summary_powersaver">Automatically disable data to save battery</string>
+    <string name="header_summary_led">Change default settings for Android to use</string>
+    <string name="header_summary_general">Settings button behavior</string>
+    <string name="header_summary_toggles">Customize toggles</string>
+	<string name="header_summary_clock">Clock location, AM/PM style, color</string>    
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
     

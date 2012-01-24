@@ -138,8 +138,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                     target.remove(header);
             } else if (id == R.id.statusbar_clock && mTablet)
                 target.remove(header);
-            else if (id == R.id.lockscreens && mTablet)
-                target.remove(header);
 
             // Increment if the current one wasn't removed by the Utils code.
             if (target.get(i) == header) {

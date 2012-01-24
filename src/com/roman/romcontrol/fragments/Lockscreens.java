@@ -9,27 +9,23 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceFragment;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 
 import com.roman.romcontrol.R;
+import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.util.ShortcutPickerHelper;
 
-public class Lockscreens extends PreferenceFragment implements
+public class Lockscreens extends SettingsPreferenceFragment implements
         ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
     private static final String PREF_MENU = "pref_lockscreen_menu_unlock";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
     private static final String PREF_LOCKSCREEN_LAYOUT = "pref_lockscreen_layout";
-    private static final String PREF_SMS_PICKER_1 = "sms_picker_1";
-    private static final String PREF_SMS_PICKER_2 = "sms_picker_2";
-    private static final String PREF_SMS_PICKER_3 = "sms_picker_3";
-    private static final String PREF_SMS_PICKER_5 = "sms_picker_5";
-    private static final String PREF_SMS_PICKER_6 = "sms_picker_6";
-    private static final String PREF_SMS_PICKER_7 = "sms_picker_7";
+
     private static final String PREF_VOLUME_WAKE = "volume_wake";
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
 
@@ -38,21 +34,10 @@ public class Lockscreens extends PreferenceFragment implements
     ListPreference mLockscreenOption;
     CheckBoxPreference mVolumeWake;
     CheckBoxPreference mVolumeMusic;
-    Preference mAppPicker1;
-    Preference mAppPicker2;
-    Preference mAppPicker3;
-    Preference mAppPicker5;
-    Preference mAppPicker6;
-    Preference mAppPicker7;
+    CheckBoxPreference mLockscreenLandscape;
 
     private Preference mCurrentCustomActivityPreference;
     private String mCurrentCustomActivityString;
-    private String mCustomAppUri1;
-    private String mCustomAppUri2;
-    private String mCustomAppUri3;
-    private String mCustomAppUri5;
-    private String mCustomAppUri6;
-    private String mCustomAppUri7;
 
     private ShortcutPickerHelper mPicker;
 
@@ -63,6 +48,7 @@ public class Lockscreens extends PreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         keys.add("lockscreen_show_nav");
+        keys.add(Settings.System.LOCKSCREEN_LANDSCAPE);
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_lockscreens);
@@ -93,37 +79,7 @@ public class Lockscreens extends PreferenceFragment implements
                 .getContentResolver(), Settings.System.VOLUME_MUSIC_CONTROLS,
                 0) == 1);
 
-        mAppPicker1 = findPreference(PREF_SMS_PICKER_1);
-
-        mAppPicker2 = findPreference(PREF_SMS_PICKER_2);
-
-        mAppPicker3 = findPreference(PREF_SMS_PICKER_3);
-
-        mAppPicker5 = findPreference(PREF_SMS_PICKER_5);
-
-        mAppPicker6 = findPreference(PREF_SMS_PICKER_6);
-
-        mAppPicker7 = findPreference(PREF_SMS_PICKER_7);
-
-        mPicker = new ShortcutPickerHelper(this.getActivity(), this);
-
-        mCustomAppUri1 = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_1);
-
-        mCustomAppUri2 = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_2);
-
-        mCustomAppUri3 = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3);
-
-        mCustomAppUri5 = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_5);
-
-        mCustomAppUri6 = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_6);
-
-        mCustomAppUri7 = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_7);
+        mPicker = new ShortcutPickerHelper(this, this);
 
         for (String key : keys) {
             try {
@@ -149,36 +105,12 @@ public class Lockscreens extends PreferenceFragment implements
                     Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mAppPicker1) {
-            mCurrentCustomActivityPreference = preference;
-            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_1;
-            mPicker.pickShortcut();
-            return true;
-        } else if (preference == mAppPicker2) {
-            mCurrentCustomActivityPreference = preference;
-            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_2;
-            mPicker.pickShortcut();
-            return true;
-        } else if (preference == mAppPicker3) {
-            mCurrentCustomActivityPreference = preference;
-            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_3;
-            mPicker.pickShortcut();
-            return true;
-        } else if (preference == mAppPicker5) {
-            mCurrentCustomActivityPreference = preference;
-            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_5;
-            mPicker.pickShortcut();
-            return true;
-        } else if (preference == mAppPicker6) {
-            mCurrentCustomActivityPreference = preference;
-            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_6;
-            mPicker.pickShortcut();
-            return true;
-        } else if (preference == mAppPicker7) {
-            mCurrentCustomActivityPreference = preference;
-            mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_INTENT_7;
-            mPicker.pickShortcut();
-            return true;
+
+            // } else if (preference == mAppPicker8) {
+            // mCurrentCustomActivityPreference = preference;
+            // mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[7];
+            // mPicker.pickShortcut();
+            // return true;
         } else if (preference == mVolumeWake) {
 
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -202,22 +134,58 @@ public class Lockscreens extends PreferenceFragment implements
     }
 
     public void refreshSettings() {
-        mAppPicker1.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri1));
 
-        mAppPicker2.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri2));
+        int lockscreenTargets = Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_LAYOUT, 2);
 
-        mAppPicker3.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri3));
+        PreferenceGroup targetGroup = (PreferenceGroup) findPreference("lockscreen_targets");
+        targetGroup.removeAll();
 
-        mAppPicker5.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri5));
+        for (int i = 0; i < lockscreenTargets; i++) {
+            ListPreference p = new ListPreference(getActivity());
+            String dialogTitle = String.format(
+                    getResources().getString(R.string.custom_app_n_dialog_title), i + 1);
+            ;
+            p.setDialogTitle(dialogTitle);
+            p.setEntries(R.array.lockscreen_choice_entries);
+            p.setEntryValues(R.array.lockscreen_choice_values);
+            String title = String.format(getResources().getString(R.string.custom_app_n), i + 1);
+            p.setTitle(title);
+            p.setKey("lockscreen_target_" + i);
+            p.setSummary(getProperSummary(i));
+            p.setOnPreferenceChangeListener(this);
+            targetGroup.addPreference(p);
+        }
 
-        mAppPicker6.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri6));
+    }
 
-        mAppPicker7.setSummary(mPicker.getFriendlyNameForUri(mCustomAppUri7));
+    private String getProperSummary(int i) {
+        String uri = Settings.System.getString(getActivity()
+                .getContentResolver(),
+                Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[i]);
+
+        if(uri == null)
+            return getResources().getString(R.string.lockscreen_action_none);
+        
+        if (uri.startsWith("**")) {
+            if (uri.equals("**unlock**"))
+                return getResources().getString(R.string.lockscreen_action_unlock);
+            else if (uri.equals("**sound**"))
+                return getResources().getString(R.string.lockscreen_action_sound);
+            else if (uri.equals("**camera**"))
+                return getResources().getString(R.string.lockscreen_action_camera);
+            else if (uri.equals("**phone**"))
+                return getResources().getString(R.string.lockscreen_action_phone);
+            else if (uri.equals("**null**"))
+                return getResources().getString(R.string.lockscreen_action_none);
+        } else {
+            return mPicker.getFriendlyNameForUri(uri);
+        }
+        return null;
     }
 
     @Override
     public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
-        Log.e("ROMAN", "shortcut picked");
         if (Settings.System.putString(getActivity().getContentResolver(),
                 mCurrentCustomActivityString, uri)) {
             mCurrentCustomActivityPreference.setSummary(friendlyName);
@@ -230,15 +198,35 @@ public class Lockscreens extends PreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_LAYOUT, val);
+            refreshSettings();
             return true;
 
+        } else if (preference.getKey().startsWith("lockscreen_target")) {
+            int index = Integer.parseInt(preference.getKey().substring(
+                    preference.getKey().lastIndexOf("_") + 1));
+            Log.e("ROMAN", "lockscreen target, index: " + index);
+
+            if (newValue.equals("**app**")) {
+                mCurrentCustomActivityPreference = preference;
+                mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index];
+                mPicker.pickShortcut();
+            } else {
+                Settings.System.putString(getContentResolver(),
+                        Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index], (String) newValue);
+                refreshSettings();
+            }
+            return true;
         }
+
         return false;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.e("ROMAN", "on activity result");
+        Log.e("ROMAN", "ACTIVITY RESULT");
+
         mPicker.onActivityResult(requestCode, resultCode, data);
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

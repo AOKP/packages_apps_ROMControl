@@ -280,9 +280,9 @@
 	</string-array>
 
     <string-array name="pref_lockscreen_options_values">
-		<item>0</item>
-		<item>1</item>
-        <item>2</item>
+		<item>2</item>
+		<item>4</item>
+        <item>8</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
@@ -367,6 +367,24 @@
 		<item>Silent</item>
 		<item>Torch</item>
 		<item>Sync</item>
+	</string-array>
+	
+	<string-array name="lockscreen_choice_entries">
+		<item>Unlock</item>
+		<item>Sound toggle</item>
+		<item>Phone</item>
+		<item>Camera</item>
+		<item>Custom app</item>
+		<item>Blank</item>
+	</string-array>
+	
+	<string-array name="lockscreen_choice_values">
+		<item>**unlock**</item>
+		<item>**sound**</item>
+		<item>**phone**</item>
+		<item>**camera**</item>
+		<item>**app**</item>
+		<item>**null**</item>
 	</string-array>
 
 </resources>

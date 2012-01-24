@@ -20,17 +20,19 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.roman.romcontrol.R;
 
 public class ShortcutPickerHelper {
 
-    private Activity mParent;
+    private Fragment mParent;
     private OnPickListener mListener;
 
     private static final int REQUEST_PICK_SHORTCUT = 100;
@@ -41,7 +43,7 @@ public class ShortcutPickerHelper {
         void shortcutPicked(String uri, String friendlyName, boolean isApplication);
     }
 
-    public ShortcutPickerHelper(Activity parent, OnPickListener listener) {
+    public ShortcutPickerHelper(Fragment parent, OnPickListener listener) {
         mParent = parent;
         mListener = listener;
     }
@@ -70,7 +72,8 @@ public class ShortcutPickerHelper {
         bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
 
         ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
-        shortcutIcons.add(ShortcutIconResource.fromContext(mParent, R.drawable.ic_launcher_application));
+        shortcutIcons.add(ShortcutIconResource.fromContext(mParent.getActivity(),
+                R.drawable.ic_launcher));
         bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
 
         Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
@@ -79,6 +82,7 @@ public class ShortcutPickerHelper {
         pickIntent.putExtras(bundle);
 
         mParent.startActivityForResult(pickIntent, REQUEST_PICK_SHORTCUT);
+        Log.e("ROMAN", "starting activity for result");
     }
 
     private void processShortcut(Intent intent, int requestCodeApplication, int requestCodeShortcut) {
@@ -107,12 +111,13 @@ public class ShortcutPickerHelper {
         /* preserve shortcut name, we want to restore it later */
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, data.getStringExtra(Intent.EXTRA_SHORTCUT_NAME));
         String appUri = intent.toUri(0);
-        appUri = appUri.replaceAll("com.android.contacts.action.QUICK_CONTACT", "android.intent.action.VIEW");
+        appUri = appUri.replaceAll("com.android.contacts.action.QUICK_CONTACT",
+                "android.intent.action.VIEW");
         mListener.shortcutPicked(appUri, getFriendlyShortcutName(intent), false);
     }
 
     private String getFriendlyActivityName(Intent intent, boolean labelOnly) {
-        PackageManager pm = mParent.getPackageManager();
+        PackageManager pm = mParent.getActivity().getPackageManager();
         ActivityInfo ai = intent.resolveActivityInfo(pm, PackageManager.GET_ACTIVITIES);
         String friendlyName = null;
 

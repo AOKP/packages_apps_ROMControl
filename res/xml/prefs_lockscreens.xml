@@ -37,25 +37,16 @@
 			android:title="@string/lockscreen_show_nav_title"
 			android:summary="@string/lockscreen_show_nav_summary" />
 
-		<Preference
-			android:key="sms_picker"
-			android:title="@string/sms_picker_title"
-			android:summary="@string/sms_picker_summary" />
+		<CheckBoxPreference
+			android:key="lockscreen_landscape"
+			android:title="@string/lockscreen_landscape_title"
+			android:summary="@string/lockscreen_landscape_summary" />
 
-		<Preference
-			android:key="sms_picker_1"
-			android:title="@string/sms_picker_1_title"
-			android:summary="@string/sms_picker_1_summary" />
+	</PreferenceCategory>
 
-		<Preference
-			android:key="sms_picker_2"
-			android:title="@string/sms_picker_2_title"
-			android:summary="@string/sms_picker_2_summary" />
-
-		<Preference
-			android:key="sms_picker_3"
-			android:title="@string/sms_picker_3_title"
-			android:summary="@string/sms_picker_3_summary" />
+	<PreferenceCategory
+		android:key="lockscreen_targets"
+		android:title="@string/lockscreen_targets">
 
 	</PreferenceCategory>
 

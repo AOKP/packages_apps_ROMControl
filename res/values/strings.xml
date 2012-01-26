@@ -66,7 +66,7 @@
 	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
 	
 	<string name="rotate_180_title">Allow 180° rotation</string>
-	<string name="rotate_180_summary">Allow your device to rotate upsideown!</string>
+	<string name="rotate_180_summary">Allow your device to rotate upside down!</string>
 
 	<string name="horizontal_recents_task_panel_title">Horizontal recents window</string>
 	<string name="horizontal_recents_task_panel_summary">Use WebOS style task switcher. Your UI will restart after changing this. It will come back in about 10 seconds. If it doesn\'t, just reboot the phone from the power menu.</string>
@@ -101,7 +101,7 @@
     <string name="volume_music_controls_summary">Long press volume buttons to skip tracks</string>
     
     <string name="lockscreen_show_nav_title">Hide nav bar</string>
-    <string name="lockscreen_show_nav_summary">Hide the nav bar (if you\'re device supports it) on the lockscreen.</string>
+    <string name="lockscreen_show_nav_summary">Hide the nav bar (if your device supports it) on the lockscreen.</string>
     
     <string name="custom_app_n_dialog_title">Choose action for target %1$s</string>
     <string name="custom_app_n">Custom app %1$s</string>

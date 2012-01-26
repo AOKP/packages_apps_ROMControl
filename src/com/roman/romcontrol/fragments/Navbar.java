@@ -52,7 +52,7 @@ public class Navbar extends PreferenceFragment implements
     SeekBarPreference mButtonAlpha;
 
     private final String[] buttons = {
-            "HOME", "BACK", "TASKS", "SEARCH"
+            "HOME", "BACK", "TASKS", "SEARCH", "MENU_BIG"
     };
 
     @Override

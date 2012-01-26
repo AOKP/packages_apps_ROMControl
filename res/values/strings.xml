@@ -32,10 +32,10 @@
     <string name="misc_short">Misc</string>
     
     <!-- Navigation Bar -->
-    <string name="title_pref_menu_display">Menu Settings</string>
-    <string name="summary_pref_menu_display">Position of legacy menu button</string>
+    <string name="title_pref_menu_display">Menu location</string>
+    <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
     <string name="navigation_bar">Navigation bar</string>
-    <string name="navigation_bar_tint_title">Navigation bar tint</string>
+    <string name="navigation_bar_tint_title">Navigation bar color</string>
 
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
@@ -82,6 +82,9 @@
 	<string name="crt_off_title">CRT off animation</string>
 
     <!-- Lockscreens -->
+    <string name="pref_lockscreen_layout_title">Lockscreen style</string>
+    <string name="pref_lockscreen_layout_summary">Remember to scroll down and change your targets after changing styles</string>
+    
     <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>	
     <string name="summary_pref_lockscreen_quad_targets">Adds Phone and Messaging shortcuts on the lock screen</string>
 
@@ -95,10 +98,10 @@
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
     
     <string name="volume_wake_title">Volume wake</string>
-    <string name="volume_wake_summary">Tapping the volume keys while your phone is off</string>
+    <string name="volume_wake_summary">Tapping the volume keys while your phone is off will turn the screen on.</string>
     
     <string name="volume_music_controls_title">Volume music controls</string>
-    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks</string>
+    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
     
     <string name="lockscreen_show_nav_title">Hide nav bar</string>
     <string name="lockscreen_show_nav_summary">Hide the nav bar (if your device supports it) on the lockscreen.</string>

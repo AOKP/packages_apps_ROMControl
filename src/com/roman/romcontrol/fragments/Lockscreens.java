@@ -47,7 +47,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        keys.add("lockscreen_show_nav");
+        keys.add(Settings.System.LOCKSCREEN_HIDE_NAV);
         keys.add(Settings.System.LOCKSCREEN_LANDSCAPE);
 
         // Load the preferences from an XML resource
@@ -106,11 +106,6 @@ public class Lockscreens extends SettingsPreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 
-            // } else if (preference == mAppPicker8) {
-            // mCurrentCustomActivityPreference = preference;
-            // mCurrentCustomActivityString = Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[7];
-            // mPicker.pickShortcut();
-            // return true;
         } else if (preference == mVolumeWake) {
 
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -125,6 +120,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
             return true;
 
         } else if (keys.contains(preference.getKey())) {
+            Log.e("RC_Lockscreens", "key: " + preference.getKey());
             return Settings.System.putInt(getActivity().getContentResolver(),
                     preference.getKey(),
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
@@ -141,10 +137,11 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference("lockscreen_targets");
         targetGroup.removeAll();
 
-        //quad only uses first 4, but we make the system think there's 6 for the alternate layout so only show 4
-        if(lockscreenTargets == 6)
+        // quad only uses first 4, but we make the system think there's 6 for the alternate layout
+        // so only show 4
+        if (lockscreenTargets == 6)
             lockscreenTargets = 4;
-        
+
         for (int i = 0; i < lockscreenTargets; i++) {
             ListPreference p = new ListPreference(getActivity());
             String dialogTitle = String.format(
@@ -168,9 +165,9 @@ public class Lockscreens extends SettingsPreferenceFragment implements
                 .getContentResolver(),
                 Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[i]);
 
-        if(uri == null)
+        if (uri == null)
             return getResources().getString(R.string.lockscreen_action_none);
-        
+
         if (uri.startsWith("**")) {
             if (uri.equals("**unlock**"))
                 return getResources().getString(R.string.lockscreen_action_unlock);

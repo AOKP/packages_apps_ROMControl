@@ -7,6 +7,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 
 import com.roman.romcontrol.R;
 
@@ -26,9 +27,13 @@ public class PowerMenu extends PreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_powermenu);
 
         mShowPowerSaver = (CheckBoxPreference) findPreference(PREF_POWER_SAVER);
-        mShowPowerSaver.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_POWER_SAVER,
-                1) == 1);
+        try {
+            mShowPowerSaver.setChecked(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_POWER_SAVER) == 1);
+        } catch (SettingNotFoundException e) {
+            mShowPowerSaver.setEnabled(false);
+            mShowPowerSaver.setSummary("You need to enable power saver before you can see it in the power menu.");
+        }
 
         mShowScreenShot = (CheckBoxPreference) findPreference(PREF_SCREENSHOT);
         mShowScreenShot.setChecked(Settings.System.getInt(getActivity()

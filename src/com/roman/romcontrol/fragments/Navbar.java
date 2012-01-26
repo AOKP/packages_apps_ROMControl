@@ -46,6 +46,7 @@ public class Navbar extends PreferenceFragment implements
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     ListPreference mHomeLongpress;
+    ListPreference mGlowTimes;
     Preference mNavBarEnabledButtons;
     Preference mLayout;
 
@@ -81,6 +82,12 @@ public class Navbar extends PreferenceFragment implements
 
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
+
+        mGlowTimes = (ListPreference) findPreference("glow_times");
+        mGlowTimes.setOnPreferenceChangeListener(this);
+        // mGlowTimes.setValue(Settings.System.getInt(getActivity()
+        // .getContentResolver(), Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
+        // 0) + "");
 
         mNavBarEnabledButtons = findPreference(PREF_EANBLED_BUTTONS);
 
@@ -171,6 +178,21 @@ public class Navbar extends PreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
                     Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mGlowTimes) {
+            // format is (on|off) both in MS
+            int breakIndex = ((String) newValue).indexOf("|");
+            String value = (String) newValue;
+
+            int offTime = Integer.parseInt(value.substring(breakIndex + 1));
+            int onTime = Integer.parseInt(value.substring(0, breakIndex));
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[0],
+                    offTime);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[1],
+                    onTime);
             return true;
         }
         return false;

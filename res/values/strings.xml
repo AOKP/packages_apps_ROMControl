@@ -77,6 +77,7 @@
 	<string name="disable_bugmailer_title">Disable bugmailer</string>
 	
 	<!-- CRT animations -->
+	<string name="lockscreen_style_header">LockScreen Style</string>
 	<string name="crt_animations_header">CRT animations</string>
 	<string name="crt_on_title">CRT on animation</string>
 	<string name="crt_off_title">CRT off animation</string>

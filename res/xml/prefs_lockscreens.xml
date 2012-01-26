@@ -6,7 +6,7 @@
 		android:entries="@array/pref_lockscreen_options_entries"
 		android:entryValues="@array/pref_lockscreen_options_values"
 		android:key="pref_lockscreen_layout"
-		android:title="Lockscreen Style" />
+		android:title="@string/lockscreen_style_header" />
 
 	<CheckBoxPreference
 		android:key="pref_lockscreen_menu_unlock"

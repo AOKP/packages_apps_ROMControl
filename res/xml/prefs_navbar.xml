@@ -43,6 +43,10 @@
 			android:title="@string/glow_times_title"
 			android:summary="@string/glow_times_summary" />
 
+		<com.roman.romcontrol.widgets.SeekBarPreference
+			android:key="button_transparency"
+			android:title="@string/button_transparency_title" />
+
 		<ListPreference
 			android:entries="@array/long_press_home_entries"
 			android:entryValues="@array/long_press_home_values"

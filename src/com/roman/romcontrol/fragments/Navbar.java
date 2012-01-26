@@ -28,7 +28,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.roman.romcontrol.R;
-import com.roman.romcontrol.fragments.StatusBarToggles.TogglesLayout;
+import com.roman.romcontrol.widgets.SeekBarPreference;
 import com.roman.romcontrol.widgets.TouchInterceptor;
 
 public class Navbar extends PreferenceFragment implements
@@ -49,6 +49,7 @@ public class Navbar extends PreferenceFragment implements
     ListPreference mGlowTimes;
     Preference mNavBarEnabledButtons;
     Preference mLayout;
+    SeekBarPreference mButtonAlpha;
 
     private final String[] buttons = {
             "HOME", "BACK", "TASKS", "SEARCH"
@@ -90,6 +91,13 @@ public class Navbar extends PreferenceFragment implements
         // 0) + "");
 
         mNavBarEnabledButtons = findPreference(PREF_EANBLED_BUTTONS);
+
+        float defaultAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
+                0.6f);
+        mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
+        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
+        mButtonAlpha.setOnPreferenceChangeListener(this);
 
         mLayout = findPreference("buttons");
 
@@ -193,6 +201,13 @@ public class Navbar extends PreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_GLOW_DURATION[1],
                     onTime);
+            return true;
+        } else if (preference == mButtonAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Log.e("R", "value: " + val / 100);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
+                    val / 100);
             return true;
         }
         return false;

@@ -46,6 +46,8 @@
     <string name="enabled_navbar_buttons_title">Enabled buttons</string>
     <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
     
+    <string name="button_transparency_title">Nav button transparency</string>
+    
     <string name="long_press_home_title">Long press home action</string>
     <string name="long_press_home_summary">What to do when long pressing the home softkey. Reboot required to reflect changes.</string>
     

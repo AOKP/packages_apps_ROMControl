@@ -48,7 +48,7 @@
     
     <string name="button_transparency_title">Nav gombok átlátszósága</string>
     
-    <string name="long_press_home_title">Hosszú 'Home' művelet</string>
+    <string name="long_press_home_title">Hosszú Home művelet</string>
     <string name="long_press_home_summary">Mi történjen a Home gomb hosszú megnyomásakor. Újraindítás szükséges.</string>
     
     <string name="glow_times_title">Felvillanás animációja</string>

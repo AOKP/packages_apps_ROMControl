@@ -212,7 +212,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 new CMDProcessor().su
                         .runWaitFor("mv /system/bin/bugmailer.sh /system/bin/bugmailer.sh.unicorn");
                 Helpers.getMount("ro");
-                preference.setSummary(R.string.disable_bootanimation_summary);
             } else {
                 Helpers.getMount("rw");
                 new CMDProcessor().su

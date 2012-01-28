@@ -139,8 +139,13 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
         // quad only uses first 4, but we make the system think there's 6 for the alternate layout
         // so only show 4
-        if (lockscreenTargets == 6)
+        if (lockscreenTargets == 6) {
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[4], "**null**");
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[5], "**null**");
             lockscreenTargets = 4;
+        }
 
         for (int i = 0; i < lockscreenTargets; i++) {
             ListPreference p = new ListPreference(getActivity());

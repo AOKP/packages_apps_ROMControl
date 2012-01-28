@@ -15,7 +15,19 @@
     <string name="toggles_layout">Kapcsolók</string>
     <string name="clock">Óra</string>
     <string name="battery">Akkumulátor</string>
+    <string name="nav_bar">Navigációs sáv</string>
+    <string name="tools">Eszközök</string>
     
+    <string name="header_summary_battery">Akku sáv, 1% Akku mod, etc</string>
+    <string name="header_summary_general_ui">Boot animáció, hibajelentés, forgatás, IME váltó, etc</string>
+    <string name="header_summary_navigation_bar">Gombok, nav. sáv színe, sorrend</string>
+    <string name="header_summary_lockscreens">Saját alkalmazások, elrendezés</string>
+    <string name="header_summary_power_menu">Mi látszódjon az energiatakarékos menüben</string>
+    <string name="header_summary_powersaver">Adatkapcsolat megszüntetése automatikusan</string>
+    <string name="header_summary_led">Az alapértelmezett beállítások megváltoztatása</string>
+    <string name="header_summary_general">Beállítások gomb működése</string>
+    <string name="header_summary_toggles">Kapcsolók személyreszabása</string>
+	<string name="header_summary_clock">Óra helye, AM/PM stílus, szín</string>
     <string name="advanced_settings">Haladó beállítások</string>
     <string name="misc_short">Egyéb</string>
     
@@ -33,6 +45,14 @@
 
     <string name="enabled_navbar_buttons_title">Engedélyezett gombok</string>
     <string name="enabled_navbar_buttons_summary">Válaszd ki mely gombokat szeretnéd használni!</string>
+    
+    <string name="button_transparency_title">Nav gombok átlátszósága</string>
+    
+    <string name="long_press_home_title">Hosszú 'Home' művelet</string>
+    <string name="long_press_home_summary">Mi történjen a Home gomb hosszú megnyomásakor. Újraindítás szükséges.</string>
+    
+    <string name="glow_times_title">Felvillanás animációja</string>
+    <string name="glow_times_summary">Milyen gyors legyen a gombok megnyomásakor felvillanó animáció? A sebesség csökkentése megnövelheti a teljesítményt.</string>
 	
 	<!-- UI -->
     <string name="rotation_animation_delay_title">Forgatás késleltetése</string>
@@ -45,14 +65,31 @@
 	<string name="longpress_to_kill_title">Vissza hosszan: kénysz. leáll.</string>
 	<string name="longpress_to_kill_summary">A vissza gomb hosszan lenntartása kényszerített leállítást végez a megnyitott alkalmazáson</string>
 	
+	<string name="rotate_180_title">180°-os forgatás engedélyezése</string>
+	<string name="rotate_180_summary">Fejjel lefelé forgatás!</string>
+
+	<string name="horizontal_recents_task_panel_title">Vízszintes alkalmazásváltó</string>
+	<string name="horizontal_recents_task_panel_summary">WebOS stílusú váltó használata. A felhasználói felület kb. 10 mp alatt újraindul, ha nem, indítsd újra a készüléket!</string>
+	
+	<string name="disable_bootanimation_title">Boot animáció kikapcsolása</string>
+	<string name="disable_bootanimation_summary">Faszkalap!</string>
+	
+	<string name="disable_bugmailer_title">Hibajelentés kikapcsolása</string>
+	
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animációk</string>
 	<string name="crt_on_title">CRT be animáció</string>
 	<string name="crt_off_title">CRT ki animáció</string>
     
     <!-- Lockscreens -->
+    <string name="pref_lockscreen_layout_title">Zárókép. stílusa</string>
+    <string name="pref_lockscreen_layout_summary">Stílusváltás után válaszd ki az alkalmazásokat odalent!</string>
+    
     <string name="title_pref_lockscreen_quad_targets">Négy opció</string>  
     <string name="summary_pref_lockscreen_quad_targets">Telefon és SMS opciók hozzáadása a záróképernyőhöz</string>
+    
+    <string name="title_pref_lockscreen_octo_targets">Nyolc opció</string>	
+    <string name="summary_pref_lockscreen_octo_targets">Sok-sok opció hozzáadása</string>
     
     <string name="title_pref_lockscreen_menu_unlock">Feloldás menüvel</string>
     <string name="summary_pref_lockscreen_menu_unlock">A hagyományos menü gomb feloldja a kijelzőt (újraindítás szükséges)</string>
@@ -60,14 +97,26 @@
     <string name="title_lockscreen_user_timeout_override">Várakozás a képernyőzárra</string>
     <string name="summary_lockscreen_user_timeout_override">Az Android késleltetésének használata a kijelző manuális kikapcs. után. Alapért. csak akkor használjuk a késleltetést, ha a kijelző magától kapcsol ki.</string>
     
-    <string name="sms_picker_title">Egyéni alk. SMS helyett</string>	
-    <string name="sms_picker_summary">Válassz egy másik alkalmazást az SMS gomb megnyomásához!</string>
-    
     <string name="volume_wake_title">Bekapcs. hang gombra</string>	
     <string name="volume_wake_summary">Hangerőszabályzó megnyomására is bekapcsol a telefon</string>
     
     <string name="volume_music_controls_title">Hang gomb - zene vezérlés</string>
     <string name="volume_music_controls_summary">A hangerő gomb hosszú lenyomása zenét léptet</string>
+    
+    <string name="lockscreen_show_nav_title">Nav. sáv elrejtése</string>
+    <string name="lockscreen_show_nav_summary">Navigációs sáv elrejtése, ha az eszköz támogatja.</string>
+    
+    <string name="custom_app_n_dialog_title">Művelet kiválasztása a(z) %1$s gombhoz</string>
+    <string name="custom_app_n">Saját alk. %1$s</string>
+    <string name="lockscreen_targets">Zárókép. gombok</string>
+    <string name="lockscreen_action_unlock">Feloldás</string>
+    <string name="lockscreen_action_sound">Hang kapcsoló</string>
+    <string name="lockscreen_action_camera">Kamera</string>
+    <string name="lockscreen_action_phone">Telefon</string>
+    <string name="lockscreen_action_none">Üres</string>
+    
+    <string name="lockscreen_landscape_title">Vízszintes záróképernyő</string>
+    <string name="lockscreen_landscape_summary">Vízszintes elrendezés engedélyezése</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Energiatak. mód megjelenítése</string>
@@ -88,9 +137,6 @@
     
     <string name="title_pref_powersaving_sync_screen_off_delay">Szinkronizáció gyakorisága</string>
     <string name="summary_pref_powersaving_sync_screen_off_delay">Milyen gyakran történjen szinkronizáció?</string>
-    
-    <string name="title_pref_navigation_layout">Navigációs sáv elrendezése</string>
-    <string name="summary_pref_navigation_layout">Az elrendezés változtatásához újraindítás szükséges!</string>
 	
 	<string name="powersaver_data_cat">Adatkapcsolat</string>
     <string name="powersaver_sync_cat">Szinkronizáció</string>
@@ -110,9 +156,15 @@
     <string name="summary_auto_hide_toggles">Visszacsúsztatás után a kapcsolók eltűnnek</string>
     
     <!-- Statusbar | Battery -->
-    <string name="battery_title_text_widget">Akku töltöttsége számmal</string>
+    <string name="battery_icon">Akku ikon stílusa</string>
     <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_title_text_widget_center">Középre igazítás</string>
+    <string name="battery_bar">Akku sáv helye</string>
+    <string name="battery_bar_color">Akku sáv színe</string>
+    <string name="battery_bar_cat">Akku sáv beállítása</string>
+    <string name="battery_bar_style_title">Akku sáv stílusa</string>
+    <string name="battery_bar_thickness_title">Akku sáv vastagsága</string>
+    <string name="battery_bar_animate_title">Töltés animáció</string>
+    <string name="battery_bar_animate_summary">Akadozhat, ha nem tetszik, kapcsold ki.</string>
     
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Óra stílusa</string>
@@ -136,6 +188,7 @@
     <string name="toggles_order_summary">Válaszd ki a megjelenített kapcsolók sorrendjét!</string>
     <string name="brightness_location_title">Fényerő helye</string>
     
+    
     <!-- Color Picker -->
     <string name="dialog_color_picker">Színválasztó</string>
     <string name="press_color_to_apply">Érintsd meg a színt a mentéshez!</string>
@@ -149,5 +202,108 @@
     <string name="use_custom_app_summary">Egyéni alkalmazás indítása a feladatválasztó helyett</string>	
     <string name="select_custom_app_title">Válaszd ki!</string>	
     <string name="group_applications">Alkalmazások</string>
+    
+    <!-- Dialog Titles -->
+	<string name="dt_free_memory">Minfree Taskkiller</string>
+
+	<!-- Preference Categories -->
+	<string name="prefcat_cpu">CPU beállítása</string>
+	<string name="prefcat_free_memory">Szabad memória</string>
+	<string name="pc_tweaks">Tweakek</string>
+	<string name="pc_init_d">Tweakek engedélyezése</string>
+	<string name="pc_init_d_tweaks">Tweakek beállítása</string>
+	
+	<!-- Preference Titles -->
+	<!-- Main -->
+	<string name="pt_performance">Teljesítmény</string>
+	<string name="pt_customization">Testreszabás</string>
+	<string name="pt_tools">Eszközök</string>
+	<string name="pt_mod_version">Mod verzió</string>
+	<!-- Customization -->
+	<string name="pt_liberty_customizer">Liberty testreszabása</string>
+	<string name="pt_lockscreen">Képernyőzár beállítások</string>
+	<string name="pt_ui_status_bar">Állapotsáv</string>
+	<string name="pt_pulldown_text">Legördülő szöveg</string>
+	<string name="pt_theme_manager">Téma menedzser</string>
+	<!-- Tools -->
+	<string name="pt_spare_parts">Tartalékok</string>
+	<string name="pt_dev_tools">Fejlesztői eszközök</string>
+	<string name="pt_dsp_manager">DSP Manager</string>
+	<string name="pt_testing_menu">Tesztelő menü</string>
+	<!-- Start up tweaks -->
+	<string name="pt_init_d">Indítási tweakek</string>
+	<string name="pt_enable_init_d">Indítási tweakek engedélyezése</string>
+	<string name="pt_zipalign">APK-k Zipalignja</string>
+	<string name="pt_enable_sd_boost">SD gyorsítás</string>
+	<string name="pt_sd_boost">Read ahead értéke</string>
+	<string name="pt_fix_permissions">Engedélyek kijavítása</string>
+	<string name="pt_clear_cache">Cache ürítése</string>
+	<string name="pt_enable_sysctl">Sysctl</string>
+	<string name="pt_enable_cron">Cron műveletek</string>
+	<!-- Performance -->
+	<string name="pt_set_cpu_activity">Cpu</string>
+	<string name="pt_free_memory">Szabad memória</string>
+	<string name="pt_free_memory_boot">Bootnál beállítás</string>
+	<!-- Cpu -->
+	<string name="pt_set_max">Max cpu</string>
+	<string name="pt_set_min">Min cpu</string>
+	<string name="pt_set_gov">Governor</string>
+	<string name="pt_cpu_boot">Bootnál beállítás</string>
+
+	<!-- Preference Summaries -->
+	<!-- Main -->
+	<string name="ps_performance">CPU, szabad memória &amp; boot beállítások</string>
+	<string name="ps_customization">Zárókép &amp; állapotsáv személyreszabása. 
+		Blur/aosp eszközök telepítése Liberty Customizer-rel</string>
+	<string name="ps_tools">Rendszereszközök</string>
+	<!-- Customization -->
+	<string name="ps_liberty_customizer">Szabd személyre a ROM-ot!</string>
+	<string name="ps_lockscreen">Zárókép. stílusa és widgetek beállítása
+	</string>
+	<string name="ps_ui_status_bar">Állapotsáv beállítása</string>
+	<string name="ps_pulldown_text">Legördülő menü szövegének megváltoztatása</string>
+	<string name="ps_theme_manager">Saját témák telepítése a Liberty ROM-hoz</string>
+	<!-- Tools -->
+	<string name="ps_spare_parts">Tweakek, további beállítások</string>
+	<string name="ps_dev_tools">Eszközök fejlesztőknek és haladó felhasználóknak</string>
+	<string name="ps_dsp_manager">Equalizer</string>
+	<string name="ps_testing_menu">Telefon infó, Akku infó, használati statisztikák</string>
+	<!-- Start up tweaks -->
+	<string name="ps_init_d">Bootolási tweakek beállítása
+		(init.d)
+	</string>
+	<string name="ps_enable_init_d">Indítási tweakek engedélyezése</string>
+	<string name="ps_zipalign">Zipalign bootnál</string>
+	<string name="ps_enable_sd_boost">SD kártya gyorsítás</string>
+	<string name="ps_sd_boost">Read ahead értéke kb-ban</string>
+	<string name="ps_fix_permissions">App engedélyek kijavítása bootnál</string>
+	<string name="ps_clear_cache">Cache ürítése bootnál</string>
+	<string name="ps_enable_sysctl">Sysctl tweakek engedélyezése bootnál</string>
+	<string name="ps_enable_cron">Cron engedélyezése</string>
+	<!-- CPU -->
+	<string name="ps_set_max">Max cpu frekvencia\nJelenleg: %s</string>
+	<string name="ps_set_min">Min cpu frekvencia\nJelenleg: %s</string>
+	<string name="ps_set_gov">Governor\nJelenleg: %s</string>
+	<string name="ps_cpu_boot">Beállítás bootnál</string>
+	<!-- Performance -->
+	<string name="ps_set_cpu_activity">Min/max frekvenciák és governor beállítása
+	</string>
+	<string name="ps_free_memory">Minimum szabad memória |
+		Beállítva: %s</string>
+	<string name="ps_free_memory_boot">Beállítás boot-nál</string>
+
+	<!-- Toast Messages -->
+	<string name="toast_min_max_error01">Max cpu nem lehet kisebb mint min cpu</string>
+	<string name="toast_min_max_error02">Min cpu nem lehet nagyobb mint max cpu</string>
+
+	<!-- list_voltage -->
+	<string name="freq">Frekvencia</string>
+	<string name="current">mV most</string>
+	<string name="saved">mV mentve</string>
+
+	<!-- voltage -->
+	<string name="error_values">Hiba az értékek betöltésekor</string>
+	<string name="set_boot">Beállítás boot-nál</string>
+	<string name="apply_values">Alkalmazás</string>
 	
 </resources>

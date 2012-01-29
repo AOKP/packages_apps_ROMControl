@@ -314,6 +314,7 @@
 		<item>Text only</item>
 		<item>Icon with text</item>
 		<item>Icon with centered text</item>
+		<item>CircleMOD</item>
 		<item>Hide</item>
 	</string-array>
 
@@ -323,6 +324,7 @@
 		<item>2</item>
 		<item>3</item>
 		<item>4</item>
+		<item>5</item>
 	</string-array>
 
 	<string-array name="battery_bar_entries">

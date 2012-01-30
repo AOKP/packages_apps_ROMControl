@@ -19,6 +19,13 @@
 		android:key="horizontal_recents_task_panel"
 		android:title="@string/horizontal_recents_task_panel_title"
 		android:summary="@string/horizontal_recents_task_panel_summary" />
+		
+	<ListPreference
+			android:entries="@array/lcd_density_entries"
+			android:entryValues="@array/lcd_density_entries"
+			android:key="lcd_density"
+			android:title="@string/lcd_density_title"
+			android:summary="@string/lcd_density_summary" />
 
 	<PreferenceCategory
 		android:key="crt"

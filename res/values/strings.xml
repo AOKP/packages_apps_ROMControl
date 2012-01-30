@@ -75,6 +75,9 @@
 	<string name="disable_bootanimation_summary">Jerk.</string>
 	
 	<string name="disable_bugmailer_title">Disable bugmailer</string>
+
+	<string name="lcd_density_title">LCD Density</string>
+	<string name="lcd_density_summary">unknown</string>
 	
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animations</string>

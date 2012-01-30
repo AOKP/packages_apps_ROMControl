@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -17,7 +19,9 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.android.internal.app.ShutdownThread;
 import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.util.CMDProcessor;
@@ -42,6 +46,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
     CheckBoxPreference mHorizontalAppSwitcher;
     Preference mCustomLabel;
     ListPreference mAnimationRotationDelay;
+    ListPreference mLcdDensity;
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mDisableBugMailer;
 
@@ -89,11 +94,21 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getContentResolver(),
                 Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, 0) == 1);
 
+        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
+        if (currentProperty == null)
+            currentProperty = "0";
+        mLcdDensity = (ListPreference) findPreference("lcd_density");
+        mLcdDensity.setSummary(currentProperty);
+        mLcdDensity.setOnPreferenceChangeListener(this);
+        mLcdDensity.setValue(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
+                Integer.parseInt(currentProperty)) + "");
+
         mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
         if (mDisableBootAnimation.isChecked())
             mDisableBootAnimation.setSummary(R.string.disable_bootanimation_summary);
-        
+
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
 
@@ -231,6 +246,15 @@ public class UserInterface extends SettingsPreferenceFragment implements
                     Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
                     Integer.parseInt((String) newValue));
 
+            return true;
+        } else if (preference == mLcdDensity) {
+            Helpers.getMount("rw");
+            new CMDProcessor().su.runWaitFor("busybox sed -i 's|ro.sf.lcd_density=.*|"
+                    + "ro.sf.lcd_density" + "=" + newValue + "|' " + "/system/build.prop");
+            Helpers.getMount("ro");
+            Toast.makeText(getActivity().getApplicationContext(), "Reboot to see changes",
+                    Toast.LENGTH_LONG).show();
+            preference.setSummary((String) newValue);
             return true;
         }
 

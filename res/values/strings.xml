@@ -96,19 +96,14 @@
 
     <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
     <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
-    
     <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
-    
     <string name="volume_wake_title">Volume wake</string>
     <string name="volume_wake_summary">Tapping the volume keys while your phone is off will turn the screen on.</string>
-    
     <string name="volume_music_controls_title">Volume music controls</string>
     <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
-    
     <string name="lockscreen_show_nav_title">Hide nav bar</string>
     <string name="lockscreen_show_nav_summary">Hide the nav bar (if your device supports it) on the lockscreen.</string>
-    
     <string name="custom_app_n_dialog_title">Choose action for target %1$s</string>
     <string name="custom_app_n">Custom app %1$s</string>
     <string name="lockscreen_targets">Lockscreen targets</string>
@@ -117,9 +112,10 @@
     <string name="lockscreen_action_camera">Camera</string>
     <string name="lockscreen_action_phone">Phone</string>
     <string name="lockscreen_action_none">Empty</string>
-    
     <string name="lockscreen_landscape_title">Horizontal lockscreen</string>
     <string name="lockscreen_landscape_summary">Whether horizontal lockscreen orientation will be enabled</string>
+    <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
+    <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show power saver</string>

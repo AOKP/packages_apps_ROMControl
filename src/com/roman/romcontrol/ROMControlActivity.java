@@ -4,9 +4,13 @@ package com.roman.romcontrol;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -15,10 +19,15 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.IWindowManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,7 +37,10 @@ import android.widget.TextView;
 
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
 
+    private static final String TAG = "ROM_Control";
+
     private static boolean hasNotificationLed;
+    private static String KEY_USE_ENGLISH_LOCALE = "use_english_locale";
 
     protected HashMap<Integer, Integer> mHeaderIndexMap = new HashMap<Integer, Integer>();
     private List<Header> mHeaders;
@@ -39,6 +51,8 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     private Header mCurrentHeader;
     boolean mInLocalHeaderSwitch;
 
+    Locale defaultLocale;
+
     boolean mTablet;
 
     @Override
@@ -46,6 +60,9 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
         mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
+        defaultLocale = Locale.getDefault();
+        Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
+        setLocale();
 
         mInLocalHeaderSwitch = true;
         super.onCreate(savedInstanceState);
@@ -58,6 +75,62 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             setTitle(R.string.app_name);
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity, menu);
+
+        MenuItem locale = menu.findItem(R.id.change_locale);
+
+        if (Locale.getDefault().getLanguage().equals(Locale.ENGLISH.getLanguage())) {
+            menu.removeItem(R.id.change_locale);
+        } else {
+            Configuration config = getBaseContext().getResources().getConfiguration();
+            locale.setTitle("Locale (" + config.locale.getDisplayLanguage() + ")");
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.change_locale:
+                Log.e(TAG, "change_locale clicked");
+                SharedPreferences p = getPreferences(MODE_PRIVATE);
+                boolean useEnglishLocale = p.getBoolean(KEY_USE_ENGLISH_LOCALE, false);
+                p.edit().putBoolean(KEY_USE_ENGLISH_LOCALE, !useEnglishLocale).apply();
+                recreate();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void setLocale() {
+        SharedPreferences p = getPreferences(MODE_PRIVATE);
+        boolean useEnglishLocale = p.getBoolean(KEY_USE_ENGLISH_LOCALE, false);
+
+        if (useEnglishLocale) {
+            Locale locale = null;
+            Configuration config = null;
+            config = getBaseContext().getResources().getConfiguration();
+            locale = Locale.ENGLISH;
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            Locale locale = null;
+            Configuration config = null;
+            config = getBaseContext().getResources().getConfiguration();
+            locale = defaultLocale;
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+
+        }
     }
 
     /**
@@ -155,6 +228,8 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     @Override
     public void onResume() {
         super.onResume();
+
+        setLocale();
 
         ListAdapter listAdapter = getListAdapter();
         if (listAdapter instanceof HeaderAdapter) {

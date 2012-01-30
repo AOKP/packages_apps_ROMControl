@@ -14,7 +14,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo"
-        android:uiOptions="splitActionBarWhenNarrow" >
+        android:uiOptions="none" >
         <activity
             android:label="@string/app_name"
             android:name="ROMControlActivity" >

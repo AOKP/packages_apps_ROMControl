@@ -49,6 +49,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
         keys.add(Settings.System.LOCKSCREEN_HIDE_NAV);
         keys.add(Settings.System.LOCKSCREEN_LANDSCAPE);
+        keys.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_lockscreens);
@@ -89,6 +90,10 @@ public class Lockscreens extends SettingsPreferenceFragment implements
             } catch (SettingNotFoundException e) {
             }
         }
+
+        ((PreferenceGroup) findPreference("advanced_cat"))
+                .removePreference(findPreference(Settings.System.LOCKSCREEN_HIDE_NAV));
+
         refreshSettings();
     }
 

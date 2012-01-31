@@ -2,6 +2,7 @@
 package com.roman.romcontrol.fragments;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.AlertDialog;
@@ -10,7 +11,9 @@ import android.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -21,17 +24,22 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.roman.romcontrol.R;
+import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.widgets.SeekBarPreference;
 import com.roman.romcontrol.widgets.TouchInterceptor;
 
-public class Navbar extends PreferenceFragment implements
+public class Navbar extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     // move these later
@@ -101,6 +109,38 @@ public class Navbar extends PreferenceFragment implements
 
         mLayout = findPreference("buttons");
 
+        if (mTablet) {
+            Log.e("ROMAN", "is tablet");
+            prefs.removePreference(mLayout);
+            prefs.removePreference(mNavBarEnabledButtons);
+            prefs.removePreference(mHomeLongpress);
+            prefs.removePreference(mNavBarMenuDisplay);
+        }
+
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.nav_bar, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.reset:
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_TINT, Integer.MIN_VALUE);
+                Settings.System.putFloat(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
+                        0.6f);
+                mButtonAlpha.setValue(60);
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     @Override

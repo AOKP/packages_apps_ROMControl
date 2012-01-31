@@ -48,6 +48,11 @@ public class SeekBarPreference extends Preference
         defaultValue = progress;
     }
     
+    public void setValue(int value) {
+        if(bar != null)
+            bar.setProgress(value);
+    }
+    
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
         // TODO Auto-generated method stub

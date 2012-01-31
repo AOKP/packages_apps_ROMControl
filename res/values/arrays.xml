@@ -424,6 +424,8 @@
 	</string-array>
 	
 	<string-array name="lcd_density_entries">
+		<item>160</item>
+		<item>180</item>
 		<item>200</item>	
 		<item>220</item>
 		<item>240</item>

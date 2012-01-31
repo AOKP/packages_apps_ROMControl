@@ -27,13 +27,16 @@ public class PowerMenu extends PreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_powermenu);
 
         mShowPowerSaver = (CheckBoxPreference) findPreference(PREF_POWER_SAVER);
+        int powerSaverVal = 0;
         try {
-            mShowPowerSaver.setChecked(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_POWER_SAVER) == 1);
+            powerSaverVal = Settings.Secure.getInt(getActivity()
+                    .getContentResolver(), Settings.Secure.POWER_SAVER_MODE);
         } catch (SettingNotFoundException e) {
             mShowPowerSaver.setEnabled(false);
-            mShowPowerSaver.setSummary("You need to enable power saver before you can see it in the power menu.");
+            mShowPowerSaver
+                    .setSummary("You need to enable power saver before you can see it in the power menu.");
         }
+        mShowPowerSaver.setChecked(powerSaverVal == 1);
 
         mShowScreenShot = (CheckBoxPreference) findPreference(PREF_SCREENSHOT);
         mShowScreenShot.setChecked(Settings.System.getInt(getActivity()

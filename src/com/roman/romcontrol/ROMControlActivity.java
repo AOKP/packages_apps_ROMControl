@@ -200,7 +200,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 IWindowManager mWindowManager = IWindowManager.Stub.asInterface(ServiceManager
                         .getService(Context.WINDOW_SERVICE));
                 try {
-                    if (!mWindowManager.hasNavigationBar()) {
+                    if (!mWindowManager.hasNavigationBar() && !mTablet) {
                         target.remove(header);
                     } else {
                     }
@@ -210,6 +210,10 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 if (mTablet)
                     target.remove(header);
             } else if (id == R.id.statusbar_clock && mTablet)
+                target.remove(header);
+            else if (id == R.id.power_saver && mTablet)
+                target.remove(header);
+            else if (id == R.id.functionality & mTablet)
                 target.remove(header);
 
             // Increment if the current one wasn't removed by the Utils code.

@@ -41,8 +41,13 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
         super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
+        super.onCreate(savedInstanceState);
     }
 
     /*

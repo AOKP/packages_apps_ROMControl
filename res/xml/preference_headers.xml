@@ -33,6 +33,7 @@
 		android:summary="@string/header_summary_power_menu" />
 
 	<header
+		android:id="@+id/functionality"
 		android:title="@string/functionality" />
 
 	<header

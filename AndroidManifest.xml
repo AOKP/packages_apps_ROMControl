@@ -8,6 +8,7 @@
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="permissions android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:hardwareAccelerated="true"
@@ -16,92 +17,99 @@
         android:theme="@android:style/Theme.Holo"
         android:uiOptions="none" >
         <activity
-            android:label="@string/app_name"
-            android:name="ROMControlActivity" >
-            <intent-filter >
+            android:name="ROMControlActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
-            android:label="User interface"
-            android:name=".fragments.UserInterface" >
-            <intent-filter >
+            android:name=".fragments.UserInterface"
+            android:label="User interface" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.StatusBarBattery" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.StatusBarToggles" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.StatusBarClock" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.Performance" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
-            android:label="Voltage Control"
-            android:name=".tools.VoltageControl" >
-            <intent-filter >
+            android:name=".tools.VoltageControl"
+            android:label="Voltage Control" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.Led" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.PowerMenu" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.PowerSaver" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.Lockscreens" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.Navbar" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.StatusBarGeneral" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.StatusBarToggles" >
-            <intent-filter >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".fragments.Weather" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
         <receiver
-            android:enabled="true"
-            android:name=".service.BootReceiver" >
-            <intent-filter >
+            android:name=".service.BootReceiver"
+            android:enabled="true" >
+            <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
+        <service android:name=".service.WeatherRefreshService" />
+        <service android:name=".service.WeatherService" />
         <service android:name=".service.BootService" />
     </application>
 

@@ -75,6 +75,12 @@ public class BootService extends Service {
                                 + VoltageControl.MV_TABLE1);
                     }
                 }
+
+                preferences = getApplicationContext().getSharedPreferences("weather", MODE_PRIVATE);
+                if (preferences.getBoolean(WeatherRefreshService.KEY_START_ON_BOOT, false)) {
+                    Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
+                    getApplicationContext().startService(i);
+                }
             }
         };
         bootThread.start();

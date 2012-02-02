@@ -5,6 +5,11 @@
 		android:title="@string/user_interface" />
 
 	<header
+		android:id="@+id/weather"
+		android:fragment="com.roman.romcontrol.fragments.Weather"
+		android:title="Weather" />
+
+	<header
 		android:id="@+id/user_interface"
 		android:fragment="com.roman.romcontrol.fragments.UserInterface"
 		android:title="@string/general_ui"

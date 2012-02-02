@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<Preference
+		android:key="get_weather"
+		android:title="Get weather" />
+
+	<ListPreference
+		android:entries="@array/weather_interval_entries"
+		android:entryValues="@array/weather_interval_values"
+		android:key="refresh_interval"
+		android:title="Refresh Interval" />
+
+</PreferenceScreen>

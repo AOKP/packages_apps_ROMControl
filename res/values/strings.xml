@@ -243,18 +243,18 @@
 	<string name="pt_enable_sysctl">Enable sysctl</string>
 	<string name="pt_enable_cron">Enable scheduled tasks</string>
 	<!-- Performance -->
-	<string name="pt_set_cpu_activity">Set cpu</string>
+	<string name="pt_set_cpu_activity">Set CPU</string>
 	<string name="pt_free_memory">Free memory</string>
 	<string name="pt_free_memory_boot">Set at boot</string>
 	<!-- Cpu -->
-	<string name="pt_set_max">Max cpu</string>
-	<string name="pt_set_min">Min cpu</string>
+	<string name="pt_set_max">Max CPU</string>
+	<string name="pt_set_min">Min CPU</string>
 	<string name="pt_set_gov">Scaling governor</string>
 	<string name="pt_cpu_boot">Set at boot</string>
 
 	<!-- Preference Summaries -->
 	<!-- Main -->
-	<string name="ps_performance">Set cpu, free memory &amp; customize start-up
+	<string name="ps_performance">Set CPU, free memory &amp; customize start-up
 		settings.</string>
 	<string name="ps_customization">Customize the lockscreen &amp; status bar. Install
 		blur/aosp apps with Liberty Customizer</string>
@@ -276,7 +276,7 @@
 		(init.d)
 	</string>
 	<string name="ps_enable_init_d">Enable/disabe start-up tweaks</string>
-	<string name="ps_zipalign">zipalign any unaligned apps on each boot</string>
+	<string name="ps_zipalign">Zipalign any unaligned apps on each boot</string>
 	<string name="ps_enable_sd_boost">Enable/disable SD card speed boost</string>
 	<string name="ps_sd_boost">Set value of read ahead in kb</string>
 	<string name="ps_fix_permissions">Fix permissions for apps on each boot</string>
@@ -284,20 +284,20 @@
 	<string name="ps_enable_sysctl">Enable sysctl tweaks on boot</string>
 	<string name="ps_enable_cron">Enable scheduled cron jobs</string>
 	<!-- CPU -->
-	<string name="ps_set_max">Set max cpu scaling frequency\nCurrent: %s</string>
-	<string name="ps_set_min">Set min cpu scaling frequency\nCurrent: %s</string>
+	<string name="ps_set_max">Set max CPU scaling frequency\nCurrent: %s</string>
+	<string name="ps_set_min">Set min CPU scaling frequency\nCurrent: %s</string>
 	<string name="ps_set_gov">Set current scaling governor\nCurrent: %s</string>
-	<string name="ps_cpu_boot">Apply cpu at boot</string>
+	<string name="ps_cpu_boot">Apply CPU at boot</string>
 	<!-- Performance -->
 	<string name="ps_set_cpu_activity">Set min/max frequencies and scaling governor
 	</string>
-	<string name="ps_free_memory">Amount of ram the minfree taskkiller will keep |
+	<string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep |
 		Current: %s</string>
 	<string name="ps_free_memory_boot">Apply the amount above at boot</string>
 
 	<!-- Toast Messages -->
-	<string name="toast_min_max_error01">Max cpu cannot be lower than min cpu</string>
-	<string name="toast_min_max_error02">Min cpu cannot be higher than max cpu</string>
+	<string name="toast_min_max_error01">Max CPU cannot be lower than min CPU</string>
+	<string name="toast_min_max_error02">Min CPU cannot be higher than max CPU</string>
 
 	<!-- list_voltage -->
 	<string name="freq">Frequency</string>

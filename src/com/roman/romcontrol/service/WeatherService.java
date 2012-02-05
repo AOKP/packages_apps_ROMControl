@@ -12,11 +12,13 @@ import android.app.IntentService;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.roman.romcontrol.WeatherInfo;
@@ -51,6 +53,10 @@ public class WeatherService extends IntentService {
         String extra = null;
         String action = intent.getAction();
 
+        if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) == 0) {
+            return;
+        }
+
         if (action != null && action.equals(INTENT_UPDATE_WEATHER_AUTO_OBTAINED)) {
             Log.i(TAG, "Got location from network, sending weather update intent");
             Bundle b = intent.getExtras();
@@ -63,7 +69,7 @@ public class WeatherService extends IntentService {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else {
+        } else if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
             /*
              * if a zip or location is sent as an extra with the intent, it will use that as the
              * location instead of trying to acquire it via the network
@@ -71,9 +77,6 @@ public class WeatherService extends IntentService {
             Log.i(TAG, "Requesting weather data.");
             if (intent.hasExtra(EXTRA_ZIP)) {
                 extra = intent.getCharSequenceExtra(EXTRA_ZIP).toString();
-                w = parseXml(extra);
-                if (w != null)
-                    sendBroadcast(w);
             } else if (intent.hasExtra(EXTRA_CITY)) {
                 extra = intent.getCharSequenceExtra(EXTRA_CITY).toString();
             }
@@ -82,8 +85,9 @@ public class WeatherService extends IntentService {
                 w = parseXml(extra);
                 if (w != null)
                     sendBroadcast(w);
-            } else
+            } else {
                 getLocationAndStartService();
+            }
 
         }
 
@@ -99,6 +103,7 @@ public class WeatherService extends IntentService {
             e.printStackTrace();
         } catch (SAXException e) {
             e.printStackTrace();
+            Log.w(TAG, "Coudln't connect to Google to get weather data.");
         }
         return null;
     }
@@ -117,17 +122,38 @@ public class WeatherService extends IntentService {
         broadcast.putExtra(EXTRA_ZIP, w.postal_code);
         getApplicationContext().sendBroadcast(broadcast);
         Log.i(TAG, "Sent weather broadcast.");
+        Log.i(TAG, "City: " + w.city);
+        Log.i(TAG, "Condition: " + w.condition);
+        Log.i(TAG, "Low: " + w.todaysLow);
+        Log.i(TAG, "High: " + w.todaysHigh);
+        Log.i(TAG, "Temp (f): " + w.temp_f);
     }
 
     private void getLocationAndStartService() {
-        final LocationManager locationManager = (LocationManager) this
-                .getSystemService(Context.LOCATION_SERVICE);
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("weather",
+                MODE_PRIVATE);
+        boolean useCustomLoc = prefs
+                .getBoolean(WeatherRefreshService.KEY_USE_CUSTOM_LOCATION, false);
+        String loc = prefs.getString(WeatherRefreshService.KEY_CUSTOM_LOCATION, "");
 
-        Intent i = new Intent(getApplicationContext(), WeatherService.class);
-        i.setAction(INTENT_UPDATE_WEATHER_AUTO_OBTAINED);
-        PendingIntent pi = PendingIntent.getService(getApplicationContext(), 0, i, 0);
+        if (useCustomLoc && !loc.equals("")) {
+            Log.i(TAG, "Using custom-set location.");
+            Intent i = new Intent(getApplicationContext(), WeatherService.class);
+            i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+            i.putExtra(WeatherService.EXTRA_CITY, loc);
+            getApplicationContext().startService(i);
 
-        locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, pi);
+        } else if (!useCustomLoc) {
+            Log.i(TAG, "Requesting location from network.");
+            final LocationManager locationManager = (LocationManager) this
+                    .getSystemService(Context.LOCATION_SERVICE);
+
+            Intent i = new Intent(getApplicationContext(), WeatherService.class);
+            i.setAction(INTENT_UPDATE_WEATHER_AUTO_OBTAINED);
+            PendingIntent pi = PendingIntent.getService(getApplicationContext(), 0, i, 0);
+
+            locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, pi);
+        }
     }
 
 }

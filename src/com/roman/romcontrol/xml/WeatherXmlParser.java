@@ -39,9 +39,6 @@ public class WeatherXmlParser {
         } catch (IOException e) {
             // TODO handle if there's no connectivity
             // throw new RuntimeException(e);
-            Toast.makeText(context,
-                    "Unable to establish a connection to the internets",
-                    Toast.LENGTH_LONG);
             return null;
         }
     }

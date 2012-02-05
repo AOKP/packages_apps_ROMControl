@@ -17,6 +17,7 @@
     <string name="battery">Battery</string>
     <string name="nav_bar">Navigation bar</string>
     <string name="tools">Tools</string>
+    <string name="weather">Weather</string>
     
     <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
@@ -27,7 +28,9 @@
     <string name="header_summary_led">Change default settings for Android to use</string>
     <string name="header_summary_general">Settings button behavior</string>
     <string name="header_summary_toggles">Customize toggles</string>
-	<string name="header_summary_clock">Clock location, AM/PM style, color</string>    
+	<string name="header_summary_clock">Clock location, AM/PM style, color</string>
+	<string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
+	
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
     
@@ -204,6 +207,16 @@
 	<string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
 	<string name="select_custom_app_title">Select custom application</string>
 	<string name="group_applications">Applications</string>
+	
+	<!-- Weather -->
+	<string name="weather_enable">Enable weather</string>
+	<string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
+	<string name="weather_use_custom_location">Use custom location</string>
+	<string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise network-location is used to determine your location.</string>
+	<string name="weather_custom_location_dialog_title">Set your location</string>
+	<string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
+	<string name="weather_custom_location_title">Custom location</string>
+	<string name="weather_refresh_interval">Refresh interval</string>
 	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>

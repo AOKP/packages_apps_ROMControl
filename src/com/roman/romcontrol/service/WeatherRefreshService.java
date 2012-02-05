@@ -27,8 +27,9 @@ public class WeatherRefreshService extends Service {
 
     int refreshIntervalInMinutes;
 
-    public static final String KEY_START_ON_BOOT = "start_on_boot";
     public static final String KEY_REFRESH = "refresh_interval";
+    public static final String KEY_USE_CUSTOM_LOCATION = "use_custom_location";
+    public static final String KEY_CUSTOM_LOCATION = "custom_location";
 
     @Override
     public void onCreate() {
@@ -62,6 +63,7 @@ public class WeatherRefreshService extends Service {
 
         Intent i = new Intent(getApplicationContext(), WeatherService.class);
         i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+
         weatherRefreshIntent = PendingIntent.getService(getApplicationContext(), 0, i,
                 0);
 

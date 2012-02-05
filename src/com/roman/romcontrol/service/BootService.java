@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.roman.romcontrol.tools.Voltage;
@@ -76,8 +77,7 @@ public class BootService extends Service {
                     }
                 }
 
-                preferences = getApplicationContext().getSharedPreferences("weather", MODE_PRIVATE);
-                if (preferences.getBoolean(WeatherRefreshService.KEY_START_ON_BOOT, false)) {
+                if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) != 0) {
                     Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
                     getApplicationContext().startService(i);
                 }

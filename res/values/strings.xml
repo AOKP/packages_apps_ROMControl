@@ -154,6 +154,9 @@
     <string name="title_auto_hide_toggles">Auto hide toggles</string>
     <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
 
+    <string name="title_status_bar_brightness_toggle">Enable brightness control</string>
+    <string name="summary_status_bar_brightness_toggle">Slide finger slowly across statusbar to adjust brightness setting</string>
+
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
     <string name="battery_summary_text_widget">@null</string>

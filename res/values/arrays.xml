@@ -107,7 +107,7 @@
 	<string-array name="powersaving_screen_off_wifi_entries">
 		<item>Leave untouched</item>
 		<item>Turn Wi-Fi off</item>
-		<item>turn Wi-Fi on</item>
+		<item>Turn Wi-Fi on</item>
 	</string-array>
 	
 	<string-array name="powersaving_screen_off_wifi_values">

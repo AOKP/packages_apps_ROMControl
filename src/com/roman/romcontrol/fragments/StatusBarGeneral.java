@@ -16,9 +16,11 @@ public class StatusBarGeneral extends PreferenceFragment {
 
     private static final String PREF_SETTINGS_BUTTON_BEHAVIOR = "settings_behavior";
     private static final String PREF_AUTO_HIDE_TOGGLES = "auto_hide_toggles";
+    private static final String PREF_BRIGHTNESS_TOGGLE = "status_bar_brightness_toggle";
 
     CheckBoxPreference mDefaultSettingsButtonBehavior;
     CheckBoxPreference mAutoHidetoggles;
+    CheckBoxPreference mStatusBarBrightnessToggle;
 
     Context mContext;
 
@@ -40,6 +42,11 @@ public class StatusBarGeneral extends PreferenceFragment {
         mAutoHidetoggles.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUSBAR_QUICKTOGGLES_AUTOHIDE,
                 1) == 1);
+        
+        mStatusBarBrightnessToggle = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_TOGGLE);
+        mStatusBarBrightnessToggle.setChecked(Settings.System.getInt(mContext
+                .getContentResolver(), Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE,
+                1) == 1);
     }
 
     @Override
@@ -60,6 +67,14 @@ public class StatusBarGeneral extends PreferenceFragment {
                     Settings.System.STATUSBAR_QUICKTOGGLES_AUTOHIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+            
+        } else if (preference == mStatusBarBrightnessToggle) {
+
+            Log.e("LOL", "m");
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;    
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

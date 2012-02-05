@@ -6,7 +6,10 @@ import java.io.File;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -19,7 +22,7 @@ import com.roman.romcontrol.util.CMDProcessor;
 import com.roman.romcontrol.util.Helpers;
 
 public class Performance extends PreferenceFragment implements
-        OnSharedPreferenceChangeListener {
+        OnSharedPreferenceChangeListener, OnPreferenceChangeListener {
 
     public static final String TAG = "Performance";
     public static final String KEY_MAX_CPU = "max_cpu";
@@ -34,6 +37,9 @@ public class Performance extends PreferenceFragment implements
     private static final String GETALL_GOV = "sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors";
     private static final String CUR_GOV = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor";
     public static final String MINFREE = "/sys/module/lowmemorykiller/parameters/minfree";
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+    private static final String SCROLLINGCACHE_DEFAULT = "1";
 
     private String[] ALL_GOV;
     private int[] SPEED_STEPS;
@@ -41,6 +47,7 @@ public class Performance extends PreferenceFragment implements
     private ListPreference mMaxCpu;
     private ListPreference mSetGov;
     private ListPreference mFreeMem;
+    private ListPreference mScrollingCachePref;
     private SharedPreferences preferences;
     private boolean doneLoading = false;
 
@@ -80,6 +87,11 @@ public class Performance extends PreferenceFragment implements
         mSetGov.setEntryValues(govs);
         mSetGov.setValue(currentGov);
         mSetGov.setSummary(getString(R.string.ps_set_gov, currentGov));
+        
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
 
         final int minFree = getMinFreeValue();
         final String values[] = getResources().getStringArray(R.array.minfree_values);
@@ -262,6 +274,17 @@ public class Performance extends PreferenceFragment implements
         }
 
         return isOk;
+    }
+    
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mScrollingCachePref) {
+            if (newValue != null) {
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)newValue);
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }

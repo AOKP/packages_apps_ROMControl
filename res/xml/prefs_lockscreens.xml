@@ -19,6 +19,11 @@
 		android:title="@string/title_lockscreen_user_timeout_override"
 		android:summary="@string/summary_lockscreen_user_timeout_override" />
 
+        <CheckBoxPreference
+		android:key="lockscreen_battery"
+		android:title="@string/lockscreen_battery_title"
+		android:summary="@string/lockscreen_battery_summary" />
+
 	<CheckBoxPreference
 		android:key="volume_wake"
 		android:title="@string/volume_wake_title"

@@ -28,6 +28,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
     private static final String PREF_VOLUME_WAKE = "volume_wake";
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
+    
+    private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
 
     CheckBoxPreference menuButtonLocation;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
@@ -35,6 +37,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     CheckBoxPreference mVolumeWake;
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mLockscreenLandscape;
+    CheckBoxPreference mLockscreenBattery;
 
     private Preference mCurrentCustomActivityPreference;
     private String mCurrentCustomActivityString;
@@ -69,6 +72,11 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         mLockscreenOption.setValue(Settings.System.getInt(
                 getActivity().getContentResolver(), Settings.System.LOCKSCREEN_LAYOUT,
                 0) + "");
+        
+        mLockscreenBattery = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_BATTERY);
+        mLockscreenBattery.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_BATTERY,
+                0) == 1);
 
         mVolumeWake = (CheckBoxPreference) findPreference(PREF_VOLUME_WAKE);
         mVolumeWake.setChecked(Settings.System.getInt(getActivity()
@@ -110,6 +118,13 @@ public class Lockscreens extends SettingsPreferenceFragment implements
                     Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+            
+        } else if (preference == mLockscreenBattery) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_BATTERY,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;    
 
         } else if (preference == mVolumeWake) {
 

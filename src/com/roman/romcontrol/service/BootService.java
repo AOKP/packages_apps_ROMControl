@@ -78,8 +78,13 @@ public class BootService extends Service {
                 }
 
                 if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) != 0) {
-                    Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
-                    getApplicationContext().startService(i);
+                    Intent startRefresh = new Intent(getApplicationContext(),
+                            WeatherRefreshService.class);
+                    getApplicationContext().startService(startRefresh);
+
+                    Intent getWeatherNow = new Intent(getApplicationContext(), WeatherService.class);
+                    getWeatherNow.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+                    getApplicationContext().startService(getWeatherNow);
                 }
             }
         };

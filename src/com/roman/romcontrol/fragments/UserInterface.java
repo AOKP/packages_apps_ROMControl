@@ -5,9 +5,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
@@ -17,11 +17,14 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.text.Editable;
 import android.text.Spannable;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.internal.app.ShutdownThread;
 import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.util.CMDProcessor;
@@ -30,6 +33,8 @@ import com.roman.romcontrol.util.Helpers;
 public class UserInterface extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    public static final String TAG = "UserInterface";
+
     private static final String PREF_CRT_ON = "crt_on";
     private static final String PREF_CRT_OFF = "crt_off";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
@@ -37,6 +42,9 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
     private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
     private static final String PREF_180 = "rotate_180";
+
+    private static final int DIALOG_DENSITY = 101;
+    private static final int DIALOG_WARN_DENSITY = 102;
 
     CheckBoxPreference mCrtOnAnimation;
     CheckBoxPreference mCrtOffAnimation;
@@ -51,6 +59,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
     CheckBoxPreference mDisableBugMailer;
 
     String mCustomLabelText = null;
+    int newDensityValue;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,9 +109,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
         mLcdDensity = (ListPreference) findPreference("lcd_density");
         mLcdDensity.setSummary(currentProperty);
         mLcdDensity.setOnPreferenceChangeListener(this);
-        mLcdDensity.setValue(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
-                Integer.parseInt(currentProperty)) + "");
+        mLcdDensity.setValue(Integer.parseInt(currentProperty) + "");
+        newDensityValue = Integer.parseInt(currentProperty);
 
         mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
@@ -239,6 +247,66 @@ public class UserInterface extends SettingsPreferenceFragment implements
     }
 
     @Override
+    public Dialog onCreateDialog(int dialogId) {
+        LayoutInflater factory = LayoutInflater.from(mContext);
+
+        switch (dialogId) {
+            case DIALOG_DENSITY:
+                final View textEntryView = factory.inflate(
+                        R.layout.alert_dialog_text_entry, null);
+                return new AlertDialog.Builder(getActivity())
+                        .setTitle("Set custom density")
+                        .setView(textEntryView)
+                        .setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                EditText dpi = (EditText) textEntryView.findViewById(R.id.dpi_edit);
+                                Editable text = dpi.getText();
+                                Log.i(TAG, text.toString());
+
+                                try {
+                                    newDensityValue = Integer.parseInt(text.toString());
+                                    showDialog(DIALOG_WARN_DENSITY);
+                                } catch (Exception e) {
+                                    mLcdDensity.setSummary("INVALID DENSITY!");
+                                }
+
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+
+                                dialog.dismiss();
+                            }
+                        }).create();
+            case DIALOG_WARN_DENSITY:
+                return new AlertDialog.Builder(getActivity())
+                        .setTitle("WARNING!")
+                        .setMessage(
+                                "Changing your LCD density can cause unexpected app behavior and cause incompatibility issues with the market. If this occurs, you need to change your density back, reboot, then clear your market data.")
+                        .setCancelable(false)
+                        .setPositiveButton("Got it!", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                setLcdDensity(newDensityValue);
+                                dialog.dismiss();
+                                mLcdDensity.setSummary(newDensityValue + "");
+
+                            }
+                        })
+                        .setNegativeButton("Return to safety",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                        .create();
+        }
+        return null;
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mAnimationRotationDelay) {
 
@@ -248,17 +316,28 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
             return true;
         } else if (preference == mLcdDensity) {
-            Helpers.getMount("rw");
-            new CMDProcessor().su.runWaitFor("busybox sed -i 's|ro.sf.lcd_density=.*|"
-                    + "ro.sf.lcd_density" + "=" + newValue + "|' " + "/system/build.prop");
-            Helpers.getMount("ro");
-            Toast.makeText(getActivity().getApplicationContext(), "Reboot to see changes",
-                    Toast.LENGTH_LONG).show();
-            preference.setSummary((String) newValue);
-            return true;
+            String strValue = (String) newValue;
+            if (strValue.equals("custom")) {
+                showDialog(DIALOG_DENSITY);
+                return true;
+            } else {
+                newDensityValue = Integer.parseInt((String) newValue);
+                showDialog(DIALOG_WARN_DENSITY);
+                return true;
+            }
         }
 
         return false;
+    }
+
+    private void setLcdDensity(int newDensity) {
+        Helpers.getMount("rw");
+        new CMDProcessor().su.runWaitFor("busybox sed -i 's|ro.sf.lcd_density=.*|"
+                + "ro.sf.lcd_density" + "=" + newDensity + "|' " + "/system/build.prop");
+        Helpers.getMount("ro");
+        Toast.makeText(getActivity().getApplicationContext(), "Reboot to see changes",
+                Toast.LENGTH_LONG).show();
+
     }
 
     public static void addButton(Context context, String key) {

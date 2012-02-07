@@ -335,5 +335,7 @@
 	<string name="error_values">Error getting values</string>
 	<string name="set_boot">Set On Boot</string>
 	<string name="apply_values">Apply Values</string>
+	
+	<string name="dpi">DPI</string>
     
 </resources>

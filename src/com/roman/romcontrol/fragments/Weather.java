@@ -22,6 +22,7 @@ import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.service.WeatherRefreshService;
 import com.roman.romcontrol.service.WeatherService;
+import com.roman.romcontrol.util.WeatherPrefs;
 
 public class Weather extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -29,6 +30,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
     CheckBoxPreference mEnableWeather;
     CheckBoxPreference mUseCustomLoc;
+    CheckBoxPreference mUseCelcius;
     ListPreference mWeatherSyncInterval;
     EditTextPreference mCustomWeatherLoc;
 
@@ -43,21 +45,23 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
         mWeatherSyncInterval = (ListPreference) findPreference("refresh_interval");
         mWeatherSyncInterval.setOnPreferenceChangeListener(this);
-        mWeatherSyncInterval.setSummary(Integer.toString(prefs.getInt(
-                WeatherRefreshService.KEY_REFRESH, 0)) + " minutes");
+        mWeatherSyncInterval.setSummary(Integer.toString(WeatherPrefs.getRefreshInterval(mContext))
+                + " minutes");
 
         mCustomWeatherLoc = (EditTextPreference) findPreference("custom_location");
         mCustomWeatherLoc.setOnPreferenceChangeListener(this);
         mCustomWeatherLoc
-                .setSummary(prefs.getString(WeatherRefreshService.KEY_CUSTOM_LOCATION, ""));
+                .setSummary(WeatherPrefs.getCustomLocation(mContext));
 
         mEnableWeather = (CheckBoxPreference) findPreference("enable_weather");
         mEnableWeather.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.USE_WEATHER, 0) == 1);
 
-        mUseCustomLoc = (CheckBoxPreference) findPreference(WeatherRefreshService.KEY_USE_CUSTOM_LOCATION);
-        mUseCustomLoc.setChecked(prefs.getBoolean(WeatherRefreshService.KEY_USE_CUSTOM_LOCATION,
-                false));
+        mUseCustomLoc = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CUSTOM_LOCATION);
+        mUseCustomLoc.setChecked(WeatherPrefs.getUseCustomLocation(mContext));
+
+        mUseCelcius = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CELCIUS);
+        mUseCustomLoc.setChecked(WeatherPrefs.getUseCelcius(mContext));
 
         setHasOptionsMenu(true);
 
@@ -91,9 +95,11 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mUseCustomLoc) {
-            prefs.edit().putBoolean(WeatherRefreshService.KEY_USE_CUSTOM_LOCATION,
-                    ((CheckBoxPreference) preference).isChecked()).commit();
-            return true;
+            return WeatherPrefs.setUseCustomLocation(mContext,
+                    ((CheckBoxPreference) preference).isChecked());
+        } else if (preference == mUseCelcius) {
+            return WeatherPrefs.setUseCelcius(mContext,
+                    ((CheckBoxPreference) preference).isChecked());
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -102,21 +108,19 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mWeatherSyncInterval) {
             int newVal = Integer.parseInt((String) newValue);
-            prefs.edit().putInt(WeatherRefreshService.KEY_REFRESH,
-                    newVal).commit();
             preference.setSummary(newValue + " minutes");
-            Log.i("new val", newVal + "");
-            return true;
+
+            return WeatherPrefs.setRefreshInterval(mContext, newVal);
 
         } else if (preference == mCustomWeatherLoc) {
+
             String newVal = (String) newValue;
-            prefs.edit().putString(WeatherRefreshService.KEY_CUSTOM_LOCATION,
-                    newVal).commit();
+
             Intent i = new Intent(getActivity().getApplicationContext(),
                     WeatherRefreshService.class);
             getActivity().getApplicationContext().startService(i);
             preference.setSummary(newVal);
-            return true;
+            return WeatherPrefs.setCustomLocation(mContext, newVal);
 
         }
         return false;

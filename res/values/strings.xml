@@ -222,6 +222,8 @@
 	<string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
 	<string name="weather_custom_location_title">Custom location</string>
 	<string name="weather_refresh_interval">Refresh interval</string>
+	<string name="weather_use_celcius">Display temp in Celcius</string>
+	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Ceclius rather than Fahrenheit.</string>
 	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>

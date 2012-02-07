@@ -4,6 +4,8 @@ package com.roman.romcontrol.service;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
+import com.roman.romcontrol.util.WeatherPrefs;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -27,23 +29,19 @@ public class WeatherRefreshService extends Service {
 
     int refreshIntervalInMinutes;
 
-    public static final String KEY_REFRESH = "refresh_interval";
-    public static final String KEY_USE_CUSTOM_LOCATION = "use_custom_location";
-    public static final String KEY_CUSTOM_LOCATION = "custom_location";
-
     @Override
     public void onCreate() {
         mContext = getApplicationContext();
         prefs = getApplicationContext().getSharedPreferences("weather", MODE_PRIVATE);
         alarms = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
-        refreshIntervalInMinutes = prefs.getInt(KEY_REFRESH, 0);
+        refreshIntervalInMinutes = prefs.getInt(WeatherPrefs.KEY_REFRESH, 0);
         Log.i("Refresher", "service started with refresh: " + refreshIntervalInMinutes);
         prefs.registerOnSharedPreferenceChangeListener(new OnSharedPreferenceChangeListener() {
 
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                if (key.equals(KEY_REFRESH)) {
-                    refreshIntervalInMinutes = prefs.getInt(KEY_REFRESH, 0);
+                if (key.equals(WeatherPrefs.KEY_REFRESH)) {
+                    refreshIntervalInMinutes = WeatherPrefs.getRefreshInterval(mContext);
                     Log.i("Refresher", "new value: " + refreshIntervalInMinutes);
                     scheduleRefresh();
                 }
@@ -86,7 +84,7 @@ public class WeatherRefreshService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Log.i("LocalService", "Received start id " + startId + ": " + intent);
-        refreshIntervalInMinutes = prefs.getInt(KEY_REFRESH, 0);
+        refreshIntervalInMinutes = WeatherPrefs.getRefreshInterval(mContext);
         scheduleRefresh();
 
         return START_STICKY;

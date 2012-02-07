@@ -22,6 +22,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.roman.romcontrol.WeatherInfo;
+import com.roman.romcontrol.util.WeatherPrefs;
 import com.roman.romcontrol.xml.WeatherXmlParser;
 
 public class WeatherService extends IntentService {
@@ -42,6 +43,7 @@ public class WeatherService extends IntentService {
     public static final String EXTRA_WIND = "wind";
     public static final String EXTRA_LOW = "todays_low";
     public static final String EXTRA_HIGH = "todays_high";
+    public static final String EXTRA_TEMP = "temp";
 
     public WeatherService() {
         super("WeatherService");
@@ -120,6 +122,14 @@ public class WeatherService extends IntentService {
         broadcast.putExtra(EXTRA_TEMP_F, w.temp_f);
         broadcast.putExtra(EXTRA_WIND, w.wind);
         broadcast.putExtra(EXTRA_ZIP, w.postal_code);
+
+        boolean celcius = WeatherPrefs.getUseCelcius(getApplicationContext());
+        if (celcius) {
+            broadcast.putExtra(EXTRA_TEMP, w.temp_c + "°");
+        } else {
+            broadcast.putExtra(EXTRA_TEMP, w.temp_f + "°");
+        }
+
         getApplicationContext().sendBroadcast(broadcast);
         Log.i(TAG, "Sent weather broadcast.");
         Log.i(TAG, "City: " + w.city);
@@ -127,14 +137,12 @@ public class WeatherService extends IntentService {
         Log.i(TAG, "Low: " + w.todaysLow);
         Log.i(TAG, "High: " + w.todaysHigh);
         Log.i(TAG, "Temp (f): " + w.temp_f);
+
     }
 
     private void getLocationAndStartService() {
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("weather",
-                MODE_PRIVATE);
-        boolean useCustomLoc = prefs
-                .getBoolean(WeatherRefreshService.KEY_USE_CUSTOM_LOCATION, false);
-        String loc = prefs.getString(WeatherRefreshService.KEY_CUSTOM_LOCATION, "");
+        boolean useCustomLoc = WeatherPrefs.getUseCustomLocation(getApplicationContext());
+        String loc = WeatherPrefs.getCustomLocation(getApplicationContext());
 
         if (useCustomLoc && !loc.equals("")) {
             Log.i(TAG, "Using custom-set location.");

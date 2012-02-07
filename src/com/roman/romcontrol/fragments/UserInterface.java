@@ -103,14 +103,19 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getContentResolver(),
                 Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, 0) == 1);
 
+        mLcdDensity = (ListPreference) findPreference("lcd_density");
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
         if (currentProperty == null)
             currentProperty = "0";
-        mLcdDensity = (ListPreference) findPreference("lcd_density");
+        try {
+            newDensityValue = Integer.parseInt(currentProperty);
+        } catch (NumberFormatException e) {
+            getPreferenceScreen().removePreference(mLcdDensity);
+        }
+
         mLcdDensity.setSummary(currentProperty);
         mLcdDensity.setOnPreferenceChangeListener(this);
-        mLcdDensity.setValue(Integer.parseInt(currentProperty) + "");
-        newDensityValue = Integer.parseInt(currentProperty);
+        mLcdDensity.setValue(newDensityValue + "");
 
         mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());

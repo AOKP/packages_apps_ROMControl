@@ -46,7 +46,7 @@ public class StatusBarGeneral extends PreferenceFragment {
         mStatusBarBrightnessToggle = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_TOGGLE);
         mStatusBarBrightnessToggle.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE,
-                1) == 1);
+                0) == 1);
     }
 
     @Override

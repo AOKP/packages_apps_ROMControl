@@ -61,7 +61,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
         mUseCustomLoc.setChecked(WeatherPrefs.getUseCustomLocation(mContext));
 
         mUseCelcius = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CELCIUS);
-        mUseCustomLoc.setChecked(WeatherPrefs.getUseCelcius(mContext));
+        mUseCelcius.setChecked(WeatherPrefs.getUseCelcius(mContext));
 
         setHasOptionsMenu(true);
 

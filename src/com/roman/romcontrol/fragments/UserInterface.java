@@ -105,11 +105,9 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
         mLcdDensity = (ListPreference) findPreference("lcd_density");
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
-        if (currentProperty == null)
-            currentProperty = "0";
         try {
             newDensityValue = Integer.parseInt(currentProperty);
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             getPreferenceScreen().removePreference(mLcdDensity);
         }
 

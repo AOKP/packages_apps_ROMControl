@@ -41,7 +41,7 @@ public class StatusBarGeneral extends PreferenceFragment {
         mAutoHidetoggles = (CheckBoxPreference) findPreference(PREF_AUTO_HIDE_TOGGLES);
         mAutoHidetoggles.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUSBAR_QUICKTOGGLES_AUTOHIDE,
-                1) == 1);
+                0) == 1);
         
         mStatusBarBrightnessToggle = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_TOGGLE);
         mStatusBarBrightnessToggle.setChecked(Settings.System.getInt(mContext

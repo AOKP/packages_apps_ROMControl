@@ -18,11 +18,13 @@ public class StatusBarGeneral extends PreferenceFragment {
     private static final String PREF_AUTO_HIDE_TOGGLES = "auto_hide_toggles";
     private static final String PREF_BRIGHTNESS_TOGGLE = "status_bar_brightness_toggle";
     private static final String PREF_ADB_ICON = "adb_icon";
+    private static final String PREF_STATUSBAR_CIRCLESMOD = "status_bar_circlesmod";
 
     CheckBoxPreference mDefaultSettingsButtonBehavior;
     CheckBoxPreference mAutoHidetoggles;
     CheckBoxPreference mStatusBarBrightnessToggle;
     CheckBoxPreference mAdbIcon;
+    CheckBoxPreference mStatusBarCirclesMod;
 
     Context mContext;
 
@@ -53,6 +55,11 @@ public class StatusBarGeneral extends PreferenceFragment {
         mAdbIcon = (CheckBoxPreference) findPreference(PREF_ADB_ICON);
         mAdbIcon.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.ADB_ICON, 1) == 1);
+        
+        mStatusBarCirclesMod = (CheckBoxPreference) findPreference(PREF_STATUSBAR_CIRCLESMOD);
+        mStatusBarCirclesMod.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.STATUS_BAR_CIRCLESMOD, 1) == 1);
+        
     }
 
     @Override
@@ -87,6 +94,12 @@ public class StatusBarGeneral extends PreferenceFragment {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ADB_ICON, checked ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarCirclesMod) {
+
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.STATUS_BAR_CIRCLESMOD, checked ? 1 : 0);
             return true;
         }
 

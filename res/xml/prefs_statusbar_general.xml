@@ -20,6 +20,11 @@
 
     <CheckBoxPreference 
         android:key="adb_icon" 
-        android:title="@string/adb_icon_title" />        
+        android:title="@string/adb_icon_title" />
+        
+    <CheckBoxPreference
+        android:key="status_bar_circlesmod"
+        android:title="@string/title_status_bar_circlesmod"
+        android:summary="@string/summary_status_bar_circlesmod" />        
 
 </PreferenceScreen>

@@ -58,7 +58,7 @@ public class StatusBarGeneral extends PreferenceFragment {
         
         mStatusBarCirclesMod = (CheckBoxPreference) findPreference(PREF_STATUSBAR_CIRCLESMOD);
         mStatusBarCirclesMod.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
-                Settings.Secure.STATUS_BAR_CIRCLESMOD, 1) == 1);
+                Settings.System.STATUS_BAR_CIRCLESMOD, 1) == 1);
         
     }
 
@@ -99,7 +99,7 @@ public class StatusBarGeneral extends PreferenceFragment {
 
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.Secure.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.STATUS_BAR_CIRCLESMOD, checked ? 1 : 0);
+                    Settings.System.STATUS_BAR_CIRCLESMOD, checked ? 1 : 0);
             return true;
         }
 

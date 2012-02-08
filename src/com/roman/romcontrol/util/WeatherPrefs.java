@@ -15,7 +15,7 @@ public class WeatherPrefs {
 
     public static int getRefreshInterval(Context c) {
         SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        return prefs.getInt(KEY_REFRESH, 0);
+        return prefs.getInt(KEY_REFRESH, 60);
     }
 
     public static boolean setRefreshInterval(Context c, int interval) {

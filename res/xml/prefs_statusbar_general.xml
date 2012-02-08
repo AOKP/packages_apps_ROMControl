@@ -18,4 +18,8 @@
         android:title="@string/title_status_bar_brightness_toggle"
         android:summary="@string/summary_status_bar_brightness_toggle" />
 
+    <CheckBoxPreference 
+        android:key="adb_icon" 
+        android:title="@string/adb_icon_title" />        
+
 </PreferenceScreen>

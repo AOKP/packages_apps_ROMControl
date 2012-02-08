@@ -162,6 +162,9 @@
     <string name="title_status_bar_brightness_toggle">Enable brightness control</string>
     <string name="summary_status_bar_brightness_toggle">Slide finger slowly across statusbar to adjust brightness setting</string>
 
+    <string name="adb_icon_title">Enable USB debugging icon</string>
+    <string name="adb_icon_summary">Wutang</string>
+
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
     <string name="battery_summary_text_widget">@null</string>

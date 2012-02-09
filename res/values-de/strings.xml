@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ROM Control</string>
-
-    <!-- Main -->
+	
+	    <!-- Main -->
     <string name="user_interface">Oberfläche</string>
     <string name="general_ui">Allgemein</string>
     <string name="lockscreen_options">Lockscreen</string>
@@ -14,7 +14,23 @@
     <string name="general">Allgemein</string>
     <string name="toggles_layout">Schalter</string>
     <string name="clock">Uhr</string>
-    <string name="battery">Akku</string>
+    <string name="battery">Batterie</string>
+    <string name="nav_bar">Navigationsleiste</string>
+    <string name="tools">Tools</string>
+	
+    <string name="weather">Wetter</string>
+	
+	<string name="header_summary_battery">Batterie bar, 1% batterie mod, etc</string>
+    <string name="header_summary_general_ui">Boot Animation, bug mailer, Rotation, IME switcher, etc</string>
+    <string name="header_summary_navigation_bar">Verändere Buttons, Navigationsleisten farbe, Reihenfolge</string>
+    <string name="header_summary_lockscreens">Custom apps to launch, layout</string>
+    <string name="header_summary_power_menu">Bearbeite das Energiemenü</string>
+    <string name="header_summary_powersaver">Deaktiviere Datenverbindung automatisch zum Batterie sparen</string>
+    <string name="header_summary_led">Bearbeite standard Einstellungen von Android</string>
+    <string name="header_summary_general">Einstellungs button verhalten</string>
+    <string name="header_summary_toggles">Bearbeite Schalter</string>
+	<string name="header_summary_clock">Uhr position, AM/PM stil, Farbe</string>
+	<string name="header_summary_weather">Einschalten/Ausschalten, bearbeite standort, und intervall</string>
     
     <string name="advanced_settings">Fortgeschrittene Optionen</string>
     <string name="misc_short">Sonstiges</string>
@@ -27,6 +43,20 @@
 
     <string name="title_pref_navigation_menu_display">Menü Sichtbarkeit</string>
     <string name="summary_pref_navigation_menu_display">Wie und wann soll der Menü-Button erscheinen?</string>
+	
+	<string name="navbar_order_title">Navigationsbutton reihenfolge</string>
+    <string name="navbar_order_summary">Verändere die Reihenfolge der Navigationsbutton</string>
+
+    <string name="enabled_navbar_buttons_title">Aktiviere Buttons</string>
+    <string name="enabled_navbar_buttons_summary">Wähle welche Navigationsbutton erscheinen sollen</string>
+    
+    <string name="button_transparency_title">Navigationsbutton Transparenz</string>
+    
+    <string name="long_press_home_title">Home lange gedrückt halten</string>
+    <string name="long_press_home_summary">Was soll pasieren wenn Home lange gedrückt wird. (Neustart erforderlich) </string>
+    
+    <string name="glow_times_title">Button glow</string>
+    <string name="glow_times_summary">Verändere wie schnell die Button Animation erscheinen soll nach Berühren. Verringern der Geschwindigkeit kann performance erhöhen.</string>
 
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotations-Verzögerung</string>
@@ -38,6 +68,20 @@
 	<string name="custom_carrier_label_title">Eigener Anbieter-Text</string>
 	<string name="longpress_to_kill_title">Beenden via Zurück</string>
 	<string name="longpress_to_kill_summary">Halten der Zurück-Taste beendet die aktuelle App.</string>
+	
+	<string name="rotate_180_title">Erlaube 180° Rotation</string>
+	<string name="rotate_180_summary">Erlaube 180° Rotation deines Gerätes.</string>
+
+	<string name="horizontal_recents_task_panel_title">Zuletzt Benutze Apps</string>
+	<string name="horizontal_recents_task_panel_summary">Benutze WebOS stil für Apps switcher. UI startet Automatisch neu. Falls es nicht in 10 Sekunden wieder erscheine, starte das Handy neu.</string>
+	
+	<string name="disable_bootanimation_title">Deaktiviere Boot Animation</string>
+	<string name="disable_bootanimation_summary">Jerk. Herp derp.</string>
+	
+	<string name="disable_bugmailer_title">Deaktiviere bugmailer</string>
+
+	<string name="lcd_density_title">LCD Density</string>
+	<string name="lcd_density_summary">Verändere LCD Densite. Kann Probleme hervorrufen!</string>
 
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT Animationen</string>
@@ -50,7 +94,44 @@
     
     <string name="title_lockscreen_user_timeout_override">Verzögere Lockscreen</string>
     <string name="summary_lockscreen_user_timeout_override">Nutze Android\'s Timeout Einstellung nach manuellem Ausschalten des Bildschirms.</string>
+	
+	<string name="pref_lockscreen_layout_title">Lockscreen stil</string>
+    <string name="pref_lockscreen_layout_summary">Vergiss nach dem verändern nicht runterzuscrollen und die Apps zu bearbeiten.</string>
     
+    <string name="title_pref_lockscreen_quad_targets">Quad Apps</string>	
+    <string name="summary_pref_lockscreen_quad_targets">Fügt Telefon und Nachrichten verknüpfungen zum Lockscreen hinzu.</string>
+
+    <string name="title_pref_lockscreen_octo_targets">Octo Apps</string>	
+    <string name="summary_pref_lockscreen_octo_targets">Adds too many shortcuts on the lock screen</string>
+
+    <string name="lockscreen_battery_title">Lockscreen Batterie Prozentanzeige</string>
+    <string name="lockscreen_battery_summary">Zeige dauerhaft Batterie in Prozent auf dem Lockscreen.</string>
+	
+    <string name="volume_wake_title">Aufwachen mit Lautstärketasten</string>
+    <string name="volume_wake_summary">Betätigen der Lautstärke Tasten während ausgeschaltetem Bildschirm, schaltet den Bildschirm an.</string>
+	
+    <string name="volume_music_controls_title">Musik Lautstärke Kontrolle</string>
+    <string name="volume_music_controls_summary">Drücke und Halte Lautsärkebuttons um Lieder zu überspringen, wenn der Bildschirm ausgeschaltet ist. Funktioniert nur wenn Musik spielt.</string>
+	
+    <string name="lockscreen_show_nav_title">Verstecke Navigationsleiste</string>
+    <string name="lockscreen_show_nav_summary">Versteckt die Navigationsleiste (wenn dein Gerät es unterstützt) auf dem Lockscreen.</string>
+	
+    <string name="custom_app_n_dialog_title">Wähle ausführende Aktion für %1$s</string>
+    <string name="custom_app_n">Custom app %1$s</string>
+	
+    <string name="lockscreen_targets">Lockscreen Apps</string>
+    <string name="lockscreen_action_unlock">Entsperren</string>
+    <string name="lockscreen_action_sound">Sound schalter</string>
+    <string name="lockscreen_action_camera">Kamera</string>
+    <string name="lockscreen_action_phone">Telefon</string>
+    <string name="lockscreen_action_none">Leer</string>
+	
+    <string name="lockscreen_landscape_title">Horizontaler Lockscreen</string>
+    <string name="lockscreen_landscape_summary">Schalte Horizontalen Lockscreen ein.</string>
+	
+    <string name="lockscreen_quick_unlock_control_title">Schnelles Pin Entsperren</string>
+    <string name="lockscreen_quick_unlock_control_summary">Entsperre mit Pin/Passwort und Enter zu drücken.</string>
+	
     <!-- Power Menu -->
     <string name="title_show_power_saver">Zeige Stromsparmodus</string>
     <string name="title_show_screenshot">Zeige Screenshot</string>
@@ -90,11 +171,27 @@
 
     <string name="title_auto_hide_toggles">Schalter verstecken</string>
     <string name="summary_auto_hide_toggles">Schalter werden automatisch geschlossen.</string>
+	
+	<string name="title_status_bar_brightness_toggle">Aktiviere Helligkeits kontrolle</string>
+    <string name="summary_status_bar_brightness_toggle">Swipe Finger über die Statusbar zum verändern der Helligkeit.</string>
+
+    <string name="adb_icon_title">Aktiviere USB debugging Icon</string>
+    <string name="adb_icon_summary">Shoop da whoop</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_title_text_widget">Zeige Akkustand als Text</string>
     <string name="battery_summary_text_widget">@null</string>
     <string name="battery_title_text_widget_center">Zentriere Akkustand</string>
+	
+	<string name="battery_icon">Batterie Icon stil</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_bar">Batterie bar position</string>
+    <string name="battery_bar_color">Batterie bar Farbe</string>
+    <string name="battery_bar_cat">Batterie bar Optionen</string>
+    <string name="battery_bar_style_title">Batterie bar stil</string>
+    <string name="battery_bar_thickness_title">Batterie bar dicke</string>
+    <string name="battery_bar_animate_title">Lade Animation</string>
+    <string name="battery_bar_animate_summary">Die Lade animation kann performance reduzieren. Auf eigene Gefahr aktivieren.</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Zeige Uhr</string>

@@ -183,7 +183,6 @@
     <string name="battery_title_text_widget_center">Zentriere Akkustand</string>
 	
 	<string name="battery_icon">Batterie Icon stil</string>
-    <string name="battery_summary_text_widget">@null</string>
     <string name="battery_bar">Batterie bar position</string>
     <string name="battery_bar_color">Batterie bar Farbe</string>
     <string name="battery_bar_cat">Batterie bar Optionen</string>

@@ -25,33 +25,48 @@
         </activity>
         <activity
             android:name=".fragments.UserInterface"
-            android:label="User interface" >
+            android:label="User Interface" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.StatusBarBattery" >
+        <activity
+            android:name=".fragments.StatusBarBattery"
+            android:label="Statusbar Battery" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.StatusBarToggles" >
+        <activity
+            android:name=".fragments.StatusBarToggles"
+            android:label="Statusbar Toggles" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.StatusBarClock" >
+        <activity
+            android:name=".fragments.StatusBarClock"
+            android:label="Statusbar Clock" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.Performance"
-             android:label="@string/pt_performance"
-             android:clearTaskOnLaunch="true" >
+        <activity
+            android:name=".fragments.Performance"
+            android:clearTaskOnLaunch="true"
+            android:label="Performance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
@@ -63,52 +78,85 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.Led" >
+        <activity
+            android:name=".fragments.Led"
+            android:label="LED" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".fragments.PowerMenu" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".fragments.PowerSaver"
-            android:label="@string/power_saver" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.Lockscreens" >
+        <activity
+            android:name=".fragments.PowerMenu"
+            android:label="Power Menu" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.Navbar" >
+        <activity
+            android:name=".fragments.PowerSaver"
+            android:label="Power Saver" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.StatusBarGeneral" >
+        <activity
+            android:name=".fragments.Lockscreens"
+            android:label="Lockscreens" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.StatusBarToggles" >
+        <activity
+            android:name=".fragments.Navbar"
+            android:label="Navigation Bar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.Weather" >
+        <activity
+            android:name=".fragments.StatusBarGeneral"
+            android:label="Statusbar General" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <activity android:name="CreateShortcut"
-            android:theme="@style/Theme.CreateShortCut">
+        <activity
+            android:name=".fragments.StatusBarToggles"
+            android:label="Statusbar Toggles" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.Weather"
+            android:label="Weather" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="CreateShortcut"
+            android:theme="@style/Theme.CreateShortCut" >
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -120,7 +168,7 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-       
+
         <service android:name=".service.WeatherRefreshService" />
         <service android:name=".service.WeatherService" />
         <service android:name=".service.BootService" />

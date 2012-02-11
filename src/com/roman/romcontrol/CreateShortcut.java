@@ -47,11 +47,42 @@ public class CreateShortcut extends LauncherActivity {
 
         Intent intent = new Intent();
         intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
-                Intent.ShortcutIconResource.fromContext(this, R.mipmap.ic_launcher));
+                Intent.ShortcutIconResource.fromContext(this, getProperShortcutIcon(intentClass)));
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, itemForPosition(position).label);
         setResult(RESULT_OK, intent);
         finish();
+    }
+
+    private int getProperShortcutIcon(String className) {
+        String c = className.substring(className.lastIndexOf(".") + 1);
+
+        if (c.equals("Performance"))
+            return R.drawable.ic_rom_control_performance;
+        else if (c.equals("PowerSaver"))
+            return R.drawable.ic_rom_control_power_menu;
+        else if (c.equals("Led"))
+            return R.drawable.ic_rom_control_led;
+        else if (c.equals("Lockscreens"))
+            return R.drawable.ic_rom_control_lockscreens;
+        else if (c.equals("Navbar"))
+            return R.drawable.ic_rom_control_navigation_bar;
+        else if (c.equals("PowerMenu"))
+            return R.drawable.ic_rom_control_power_menu;
+        else if (c.equals("StatusBarBattery"))
+            return R.drawable.ic_rom_control_battery;
+        else if (c.equals("StatusBarClock"))
+            return R.drawable.ic_rom_control_clock;
+        else if (c.equals("StatusBarGeneral"))
+            return R.drawable.ic_rom_control_general;
+        else if (c.equals("StatusBarToggles"))
+            return R.drawable.ic_rom_control_toggles;
+        else if (c.equals("UserInterface"))
+            return R.drawable.ic_rom_control_general_ui;
+        else if (c.equals("Weather"))
+            return R.drawable.ic_rom_control_weather;
+        else
+            return R.mipmap.ic_launcher;
     }
 
     @Override

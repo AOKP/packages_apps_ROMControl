@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import android.app.ActivityManager;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -54,6 +54,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     Locale defaultLocale;
 
     boolean mTablet;
+    protected boolean isShortcut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,24 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             setTitle(R.string.app_name);
         }
 
+        if (getIntent().getAction().equals("com.aokp.romcontrol.START_NEW_FRAGMENT")) {
+            String className = getIntent().getStringExtra("aokp_fragment_name").toString();
+            Bundle b = new Bundle();
+            b.putBoolean("started_from_shortcut", true);
+            // startPreferencePanel(className, b, 0, null, null, 0);
+            isShortcut = true;
+            startWithFragment(className, null, null, 0);
+            finish(); // close current activity
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (isShortcut) {
+            finish();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override

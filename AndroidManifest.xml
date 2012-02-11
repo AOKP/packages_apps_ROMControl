@@ -47,9 +47,13 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.Performance" >
+        <activity android:name=".fragments.Performance"
+             android:label="@string/pt_performance"
+             android:clearTaskOnLaunch="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity
@@ -69,9 +73,11 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.PowerSaver" >
+        <activity android:name=".fragments.PowerSaver"
+            android:label="@string/power_saver" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity android:name=".fragments.Lockscreens" >
@@ -99,6 +105,13 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity android:name="CreateShortcut"
+            android:theme="@style/Theme.CreateShortCut">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name=".service.BootReceiver"
@@ -107,7 +120,7 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
+       
         <service android:name=".service.WeatherRefreshService" />
         <service android:name=".service.WeatherService" />
         <service android:name=".service.BootService" />

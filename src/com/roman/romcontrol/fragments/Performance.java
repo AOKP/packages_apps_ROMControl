@@ -11,17 +11,17 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 
 import com.roman.romcontrol.R;
+import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.tools.VoltageControl;
 import com.roman.romcontrol.util.CMDProcessor;
 import com.roman.romcontrol.util.Helpers;
 
-public class Performance extends PreferenceFragment implements
+public class Performance extends SettingsPreferenceFragment implements
         OnSharedPreferenceChangeListener, OnPreferenceChangeListener {
 
     public static final String TAG = "Performance";
@@ -87,7 +87,7 @@ public class Performance extends PreferenceFragment implements
         mSetGov.setEntryValues(govs);
         mSetGov.setValue(currentGov);
         mSetGov.setSummary(getString(R.string.ps_set_gov, currentGov));
-        
+
         mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
         mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
@@ -275,11 +275,11 @@ public class Performance extends PreferenceFragment implements
 
         return isOk;
     }
-    
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mScrollingCachePref) {
             if (newValue != null) {
-                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)newValue);
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
                 return true;
             }
         }

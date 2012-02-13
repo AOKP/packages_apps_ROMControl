@@ -2,20 +2,19 @@
 package com.roman.romcontrol.fragments;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import android.app.Activity;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 
 import com.roman.romcontrol.R;
+import com.roman.romcontrol.SettingsPreferenceFragment;
 
-public class StatusBarClock extends PreferenceFragment implements
+public class StatusBarClock extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE = "clock_style";
@@ -55,6 +54,10 @@ public class StatusBarClock extends PreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUSBAR_SHOW_ALARM,
                 1) == 1);
 
+        if (mTablet) {
+            PreferenceScreen prefs = getPreferenceScreen();
+            prefs.removePreference(mClockAmPmstyle);
+        }
     }
 
     @Override

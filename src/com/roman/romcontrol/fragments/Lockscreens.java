@@ -53,6 +53,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         keys.add(Settings.System.LOCKSCREEN_HIDE_NAV);
         keys.add(Settings.System.LOCKSCREEN_LANDSCAPE);
         keys.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+        keys.add(Settings.System.ENABLE_FAST_TORCH);
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_lockscreens);

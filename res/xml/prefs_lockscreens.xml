@@ -39,6 +39,11 @@
 		android:title="@string/advanced_settings">
 
 		<CheckBoxPreference
+			android:key="enable_fast_torch"
+			android:title="@string/lockscreen_show_nav_title"
+			android:summary="@string/lockscreen_show_nav_summary" />		
+	
+		<CheckBoxPreference
 			android:key="lockscreen_hide_nav"
 			android:title="@string/lockscreen_show_nav_title"
 			android:summary="@string/lockscreen_show_nav_summary" />

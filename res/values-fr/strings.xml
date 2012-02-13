@@ -221,7 +221,7 @@
 	
 	<!-- Weather -->
 	<string name="weather_enable">Activer la météo</string>
-	<string name="weather_enable_summary">Affiche les information météorologique à différents endroits de la ROM.</string>
+	<string name="weather_enable_summary">Affiche les informations météorologiques à différents endroits de la ROM.</string>
 	<string name="weather_use_custom_location">Paramétrer une ville personnalisée</string>
 	<string name="weather_use_custom_location_summary">Définie une ville personnalisée pour préserver la batterie. Dans le cas contraire le système de localisation calculera votre position.</string>
 	<string name="weather_custom_location_dialog_title">Finir votre ville</string>

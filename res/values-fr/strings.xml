@@ -101,8 +101,8 @@
     <string name="summary_pref_lockscreen_menu_unlock">"La touche Menu déverrouille l'écran (rédemarrage nécessaire)"</string>
     <string name="title_lockscreen_user_timeout_override">Délai de verrouillage</string>
     <string name="summary_lockscreen_user_timeout_override">"Utiliser le délai d'Android même après avoir manuellement étéint l'écran. Par défaut, le délai est utilisé seulement lorsque l'écran s'éteint automatiquement."</string>
-	<string name="lockscreen_battery_title">Afficher le % de baterie</string>
-    <string name="lockscreen_battery_summary">Toujours afficher le % de baterie sur l\'écran de verrouillage</string>
+	<string name="lockscreen_battery_title">Afficher le % de batterie</string>
+    <string name="lockscreen_battery_summary">Toujours afficher le % de batterie sur l\'écran de verrouillage</string>
     <string name="volume_wake_title">"Activer l'écran avec les boutons de volume"</string>
     <string name="volume_wake_summary">"Appuyer sur les boutons de volume activera l'écran"</string>
     <string name="volume_music_controls_title">Contrôle du lecteur audio avec les boutons de volume</string>
@@ -110,7 +110,7 @@
     <string name="lockscreen_show_nav_title">Masquer la barre de nav</string>
     <string name="lockscreen_show_nav_summary">Cache la barre de nav (si votre appareil le permet) sur le verrouillage de l\'écran.</string>
     <string name="custom_app_n_dialog_title">Choisissez la cible pour la cible %1$s</string>
-    <string name="custom_app_n">Personalisé l\'application %1$s</string>
+    <string name="custom_app_n">Personaliser l\'application %1$s</string>
     <string name="lockscreen_targets">Cibles du Lockscreen</string>
     <string name="lockscreen_action_unlock">Déverrouiller</string>
     <string name="lockscreen_action_sound">Couper/Activer le son</string>
@@ -121,8 +121,11 @@
     <string name="lockscreen_landscape_summary">Active l\'orientation horizontale de l\'écran de verrouillage</string>
     <string name="lockscreen_quick_unlock_control_title">Déverouillage code PIN rapide</string>
     <string name="lockscreen_quick_unlock_control_summary">Déverouille l\'écran par PIN sans devoir faire appuyer sur Entrer</string>
-      
-    <!-- Power Menu -->
+	
+	<string name="enable_fast_torch_title">Activer la torche rapide</string>
+	<string name="enable_fast_torch_summary">Quand l\'écran est éteint, vous pouvez en pressant la touche power allumer le flash. Relacher le bouton power pour éteindre.</string>
+    
+	<!-- Power Menu -->
     <string name="title_show_power_saver">"Afficher l'économiseur d'énergie"</string>
     <string name="title_show_screenshot">"Afficher la capture d'écran"</string>
     
@@ -218,9 +221,9 @@
 	
 	<!-- Weather -->
 	<string name="weather_enable">Activer la météo</string>
-	<string name="weather_enable_summary">Affiche les informations météorologiques à différents endroits de la ROM.</string>
+	<string name="weather_enable_summary">Affiche les information météorologique à différents endroits de la ROM.</string>
 	<string name="weather_use_custom_location">Paramétrer une ville personnalisée</string>
-	<string name="weather_use_custom_location_summary">Définie une ville personnalisée pour préserver la baterie. Dans le cas contraire le système de localisation calculera votre position.</string>
+	<string name="weather_use_custom_location_summary">Définie une ville personnalisée pour préserver la batterie. Dans le cas contraire le système de localisation calculera votre position.</string>
 	<string name="weather_custom_location_dialog_title">Finir votre ville</string>
 	<string name="weather_custom_location_dialog_message">Veillez à bien respecter l\'exemple. Régler un nom de ville erroné vous empêchera d\'obtenir les informations et peut également provoquer un comportement de l\'appareil inattendu\n\nExemples: Paris,France // Paris, France // 10033 // London, England</string>
 	<string name="weather_custom_location_title">Ville personalisée</string>
@@ -276,12 +279,12 @@
     <string name="pt_cpu_boot">Appli. au démarrage</string>
 	
 	<!-- Scrolling Cache -->
-	<string name="pref_scrollingcache_title">Cache défilement</string>
+	<string name="pref_scrollingcache_title">Cache barre de défilement</string>
 	<string name="pref_scrollingcache_summary">La mise en cache du défilement peut augmenter les performances en consomant moins de mémoire.</string>
-	<string name="pref_scrollingcache_force_enable">Force enable</string>
-	<string name="pref_scrollingcache_default_enable">Default enable</string>
-	<string name="pref_scrollingcache_default_disable">Default disable</string>
-	<string name="pref_scrollingcache_force_disable">Force disable</string>
+	<string name="pref_scrollingcache_force_enable">Forcer à activé</string>
+	<string name="pref_scrollingcache_default_enable">Activé par défaut</string>
+	<string name="pref_scrollingcache_default_disable">Désactivé par défaut</string>
+	<string name="pref_scrollingcache_force_disable">Forcer à désactivé</string>
 
 	   <!-- Preference Summaries -->
 	<!-- Main -->

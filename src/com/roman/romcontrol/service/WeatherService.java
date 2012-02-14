@@ -64,13 +64,16 @@ public class WeatherService extends IntentService {
             Bundle b = intent.getExtras();
             Location loc = (Location) b.get(android.location.LocationManager.KEY_LOCATION_CHANGED);
             Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
-            try {
-                List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),
-                        loc.getLongitude(), 1);
-                sendBroadcast(parseXml(addresses.get(0).getPostalCode()));
+           	try {
+           		List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),
+            			loc.getLongitude(), 1);
+           		sendBroadcast(parseXml(addresses.get(0).getPostalCode()));
             } catch (IOException e) {
-                e.printStackTrace();
+            	e.printStackTrace();
+            } catch (Exception e) {
+            	e.printStackTrace();
             }
+			
         } else if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
             /*
              * if a zip or location is sent as an extra with the intent, it will use that as the
@@ -112,6 +115,7 @@ public class WeatherService extends IntentService {
 
     private void sendBroadcast(WeatherInfo w) {
         Intent broadcast = new Intent(INTENT_UPDATE_WEATHER);
+    	try {
         broadcast.putExtra(EXTRA_CITY, w.city);
         broadcast.putExtra(EXTRA_CONDITION, w.condition);
         broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
@@ -122,6 +126,9 @@ public class WeatherService extends IntentService {
         broadcast.putExtra(EXTRA_TEMP_F, w.temp_f);
         broadcast.putExtra(EXTRA_WIND, w.wind);
         broadcast.putExtra(EXTRA_ZIP, w.postal_code);
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
 
         boolean celcius = WeatherPrefs.getUseCelcius(getApplicationContext());
         if (celcius) {

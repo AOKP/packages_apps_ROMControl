@@ -73,6 +73,7 @@ public class WeatherService extends IntentService {
             } catch (Exception e) {
 				e.printStackTrace();
 			}
+			
         } else if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
             /*
              * if a zip or location is sent as an extra with the intent, it will use that as the

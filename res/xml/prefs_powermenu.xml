@@ -7,4 +7,6 @@
 	<CheckBoxPreference android:key="show_power_saver"
 		android:title="@string/title_show_power_saver" />
 
+	<CheckBoxPreference android:key="show_torch_toggle"
+		android:title="@string/title_show_torch_toggle" />
 </PreferenceScreen>

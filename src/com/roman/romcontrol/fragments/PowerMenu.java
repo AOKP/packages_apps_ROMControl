@@ -15,9 +15,11 @@ public class PowerMenu extends PreferenceFragment {
 
     private static final String PREF_POWER_SAVER = "show_power_saver";
     private static final String PREF_SCREENSHOT = "show_screenshot";
+    private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
 
     CheckBoxPreference mShowPowerSaver;
     CheckBoxPreference mShowScreenShot;
+    CheckBoxPreference mShowTorchToggle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,11 @@ public class PowerMenu extends PreferenceFragment {
         mShowScreenShot.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
                 0) == 1);
+        
+        mShowTorchToggle = (CheckBoxPreference) findPreference(PREF_TORCH_TOGGLE);
+        mShowTorchToggle.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE,
+                0) == 1);
     }
 
     @Override
@@ -55,6 +62,11 @@ public class PowerMenu extends PreferenceFragment {
         } else if (preference == mShowScreenShot) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mShowTorchToggle) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         }

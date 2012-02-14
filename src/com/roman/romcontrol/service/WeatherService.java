@@ -115,6 +115,7 @@ public class WeatherService extends IntentService {
 
     private void sendBroadcast(WeatherInfo w) {
         Intent broadcast = new Intent(INTENT_UPDATE_WEATHER);
+    	try {
         broadcast.putExtra(EXTRA_CITY, w.city);
         broadcast.putExtra(EXTRA_CONDITION, w.condition);
         broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
@@ -125,6 +126,9 @@ public class WeatherService extends IntentService {
         broadcast.putExtra(EXTRA_TEMP_F, w.temp_f);
         broadcast.putExtra(EXTRA_WIND, w.wind);
         broadcast.putExtra(EXTRA_ZIP, w.postal_code);
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
 
         boolean celcius = WeatherPrefs.getUseCelcius(getApplicationContext());
         if (celcius) {

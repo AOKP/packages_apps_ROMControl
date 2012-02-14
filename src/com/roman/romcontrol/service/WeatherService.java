@@ -64,16 +64,14 @@ public class WeatherService extends IntentService {
             Bundle b = intent.getExtras();
             Location loc = (Location) b.get(android.location.LocationManager.KEY_LOCATION_CHANGED);
             Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
-            if(loc != null) {
-            	try {
-            		List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),
-            				loc.getLongitude(), 1);
-            		sendBroadcast(parseXml(addresses.get(0).getPostalCode()));
-            	} catch (IOException e) {
-            		e.printStackTrace();
-            	} catch (Exception e) {
-            		e.printStackTrace();
-            	}
+           	try {
+           		List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),
+            			loc.getLongitude(), 1);
+           		sendBroadcast(parseXml(addresses.get(0).getPostalCode()));
+            } catch (IOException e) {
+            	e.printStackTrace();
+            } catch (Exception e) {
+            	e.printStackTrace();
             }
 			
         } else if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {

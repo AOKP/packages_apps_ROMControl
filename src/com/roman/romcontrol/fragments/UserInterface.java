@@ -4,11 +4,15 @@ package com.roman.romcontrol.fragments;
 import java.io.File;
 import java.util.ArrayList;
 
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.IPackageDataObserver;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.PowerManager;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -23,7 +27,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
@@ -43,6 +46,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
     private static final String PREF_180 = "rotate_180";
 
+    private static final int MSG_DATA_CLEARED = 500;
+
     private static final int DIALOG_DENSITY = 101;
     private static final int DIALOG_WARN_DENSITY = 102;
 
@@ -60,6 +65,22 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     String mCustomLabelText = null;
     int newDensityValue;
+
+    private Handler mHandler = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+            switch (msg.what) {
+                case MSG_DATA_CLEARED:
+                    setLcdDensity(newDensityValue);
+                    mLcdDensity.setSummary(newDensityValue + "");
+
+                    PowerManager pm = (PowerManager) UserInterface.this
+                            .getSystemService(Context.POWER_SERVICE);
+                    pm.reboot("Resetting density.");
+                    break;
+            }
+
+        };
+    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -287,7 +308,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
                         .setMessage(
                                 "Changing your LCD density can cause unexpected app behavior and cause incompatibility issues with the market. If this occurs, you need to change your density back, reboot, then clear your market data.")
                         .setCancelable(false)
-                        .setPositiveButton("Got it!", new DialogInterface.OnClickListener() {
+                        .setNeutralButton("Got it!", new DialogInterface.OnClickListener() {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -297,7 +318,17 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
                             }
                         })
-                        .setNegativeButton("Return to safety",
+//                        .setPositiveButton("Reboot now", new DialogInterface.OnClickListener() {
+//
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                ActivityManager am = (ActivityManager)
+//                                        getActivity().getSystemService(Context.ACTIVITY_SERVICE);
+//                                boolean res = am.clearApplicationUserData("com.android.vending",
+//                                        new ClearUserDataObserver());
+//                            }
+//                        })
+                        .setNegativeButton("Cancel",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -338,8 +369,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
         new CMDProcessor().su.runWaitFor("busybox sed -i 's|ro.sf.lcd_density=.*|"
                 + "ro.sf.lcd_density" + "=" + newDensity + "|' " + "/system/build.prop");
         Helpers.getMount("ro");
-        Toast.makeText(getActivity().getApplicationContext(), "Reboot to see changes",
-                Toast.LENGTH_LONG).show();
 
     }
 
@@ -355,5 +384,11 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 .getButtonsStringArray(context);
         enabledToggles.remove(key);
         Navbar.setButtonsFromStringArray(context, enabledToggles);
+    }
+
+    class ClearUserDataObserver extends IPackageDataObserver.Stub {
+        public void onRemoveCompleted(final String packageName, final boolean succeeded) {
+            mHandler.sendEmptyMessage(MSG_DATA_CLEARED);
+        }
     }
 }

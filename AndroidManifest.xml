@@ -174,13 +174,6 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".util.SystemRootTools"
-            android:enabled="true" >
-            <intent-filter>
-                <action android:name="com.aokp.romcontrol.ACTION_RESTART_SYSTEMUI" />
-            </intent-filter>
-        </receiver>
 
         <service android:name=".service.WeatherRefreshService" />
         <service android:name=".service.WeatherService" />

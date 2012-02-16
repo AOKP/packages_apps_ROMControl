@@ -5,10 +5,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
@@ -19,18 +17,13 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.text.Editable;
 import android.text.Spannable;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.EditText;
 
 import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.util.CMDProcessor;
 import com.roman.romcontrol.util.Helpers;
-import com.roman.romcontrol.util.SystemRootTools;
 
 public class UserInterface extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -274,7 +267,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
     }
 
     private void restartSystemUI() {
-        mContext.sendBroadcast(new Intent(SystemRootTools.ACTION_RESTART_SYSTEMUI));
+        Runtime.getRuntime().exec("pkill -TERM -f  com.android.systemui");
     }
 
     public static void addButton(Context context, String key) {

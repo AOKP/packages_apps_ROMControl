@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.IPackageDataObserver;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,6 +33,7 @@ import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
 import com.roman.romcontrol.util.CMDProcessor;
 import com.roman.romcontrol.util.Helpers;
+import com.roman.romcontrol.util.SystemRootTools;
 
 public class UserInterface extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -235,7 +237,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, checked ? 1
                             : 0);
-            new CMDProcessor().su.runWaitFor("pkill -TERM -f  com.android.systemui");
+            restartSystemUI();
             return true;
 
         } else if (preference == mDisableBootAnimation) {
@@ -318,16 +320,16 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
                             }
                         })
-//                        .setPositiveButton("Reboot now", new DialogInterface.OnClickListener() {
-//
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                ActivityManager am = (ActivityManager)
-//                                        getActivity().getSystemService(Context.ACTIVITY_SERVICE);
-//                                boolean res = am.clearApplicationUserData("com.android.vending",
-//                                        new ClearUserDataObserver());
-//                            }
-//                        })
+                        .setPositiveButton("Reboot now", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ActivityManager am = (ActivityManager)
+                                        getActivity().getSystemService(Context.ACTIVITY_SERVICE);
+                                boolean res = am.clearApplicationUserData("com.android.vending",
+                                        new ClearUserDataObserver());
+                            }
+                        })
                         .setNegativeButton("Cancel",
                                 new DialogInterface.OnClickListener() {
                                     @Override
@@ -362,6 +364,10 @@ public class UserInterface extends SettingsPreferenceFragment implements
         }
 
         return false;
+    }
+    
+    private void restartSystemUI() {
+        mContext.sendBroadcast(new Intent(SystemRootTools.ACTION_RESTART_SYSTEMUI));
     }
 
     private void setLcdDensity(int newDensity) {

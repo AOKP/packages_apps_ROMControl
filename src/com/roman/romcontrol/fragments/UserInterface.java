@@ -2,6 +2,7 @@
 package com.roman.romcontrol.fragments;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
@@ -267,7 +268,11 @@ public class UserInterface extends SettingsPreferenceFragment implements
     }
 
     private void restartSystemUI() {
-        Runtime.getRuntime().exec("pkill -TERM -f  com.android.systemui");
+        try {
+            Runtime.getRuntime().exec("pkill -TERM -f  com.android.systemui");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void addButton(Context context, String key) {

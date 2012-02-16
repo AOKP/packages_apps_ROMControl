@@ -31,7 +31,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
@@ -69,7 +68,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
@@ -104,7 +102,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
@@ -151,6 +148,13 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.DensityChanger"
+            android:label="@string/lcd_density_wizard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity

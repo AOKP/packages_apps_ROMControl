@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
-	
+
 	<CheckBoxPreference
 		android:key="disable_bootanimation"
 		android:title="@string/disable_bootanimation_title" />
-		
+
 	<CheckBoxPreference
 		android:key="disable_bugmailer"
 		android:title="@string/disable_bugmailer_title" />
@@ -19,13 +19,11 @@
 		android:key="horizontal_recents_task_panel"
 		android:title="@string/horizontal_recents_task_panel_title"
 		android:summary="@string/horizontal_recents_task_panel_summary" />
-		
-	<ListPreference
-			android:entries="@array/lcd_density_entries"
-			android:entryValues="@array/lcd_density_entries"
-			android:key="lcd_density"
-			android:title="@string/lcd_density_title"
-			android:summary="@string/lcd_density_summary" />
+
+	<Preference
+		android:key="lcd_density_setup"
+		android:title="@string/lcd_density_title"
+		android:summary="@string/lcd_density_summary" />
 
 	<PreferenceCategory
 		android:key="crt"

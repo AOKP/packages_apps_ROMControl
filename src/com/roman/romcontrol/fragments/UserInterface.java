@@ -320,16 +320,16 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
                             }
                         })
-                        .setPositiveButton("Reboot now", new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                ActivityManager am = (ActivityManager)
-                                        getActivity().getSystemService(Context.ACTIVITY_SERVICE);
-                                boolean res = am.clearApplicationUserData("com.android.vending",
-                                        new ClearUserDataObserver());
-                            }
-                        })
+//                        .setPositiveButton("Reboot now", new DialogInterface.OnClickListener() {
+//
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                ActivityManager am = (ActivityManager)
+//                                        getActivity().getSystemService(Context.ACTIVITY_SERVICE);
+//                                boolean res = am.clearApplicationUserData("com.android.vending",
+//                                        new ClearUserDataObserver());
+//                            }
+//                        })
                         .setNegativeButton("Cancel",
                                 new DialogInterface.OnClickListener() {
                                     @Override

@@ -16,6 +16,7 @@
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>
     <string name="nav_bar">Navigation Bar</string>
+    <string name="power_menu">Power menu</string>
     <string name="led_options">LED Options</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
@@ -31,6 +32,7 @@
     <string name="title_statusbar_toggles">Statusbar Toggles</string>
     <string name="title_statusbar_battery">Statusbar Battery</string>
     <string name="title_navbar">Navigation Bar</string>
+    <string name="title_power_menu">Power Menu</string>
     <string name="title_led">LED Control</string>
     <string name="title_lockscreens">Lockscreen Options</string>
     <string name="title_sound">Sound Settings</string>
@@ -45,6 +47,7 @@
     <string name="header_summary_battery">@null</string>
     <string name="header_summary_signal">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
@@ -60,6 +63,42 @@
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+    <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
+    <string name="volume_wake_title">Volume wake</string>
+    <string name="volume_wake_summary">Tapping the volume keys while your phone is off will turn the screen on.</string>
+    <string name="volume_music_controls_title">Volume music controls</string>
+    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
+    <string name="lockscreen_show_nav_title">Hide nav bar</string>
+    <string name="lockscreen_show_nav_summary">Hide the nav bar (if your device supports it) on the lockscreen.</string>
+    <string name="custom_app_n_dialog_title">Choose action for target %1$s</string>
+    <string name="custom_app_n">Custom app %1$s</string>
+    <string name="lockscreen_targets">Lockscreen targets</string>
+    <string name="lockscreen_action_unlock">Unlock</string>
+    <string name="lockscreen_action_sound">Sound toggle</string>
+    <string name="lockscreen_action_camera">Camera</string>
+    <string name="lockscreen_action_mms">SMS</string>
+    <string name="lockscreen_action_phone">Phone</string>
+    <string name="lockscreen_action_none">Empty</string>
+    <string name="lockscreen_landscape_title">Horizontal lockscreen</string>
+    <string name="lockscreen_landscape_summary">Whether horizontal lockscreen orientation will be enabled</string>
+
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Show power saver</string>
+    <string name="title_show_screenshot">Show screenshot</string>
+    <string name="title_show_torch_toggle">Show torch toggle</string>
+    <string name="title_show_airplane_toggle">Show airplane toggle</string>
+    <string name="title_show_navbar_hide">Show navigation bar toggle</string>
+
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+
+    <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
+    <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
+
+    <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>

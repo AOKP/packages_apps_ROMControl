@@ -3,14 +3,14 @@
     <string name="app_name">ROM Control</string>
 	
 	    <!-- Main -->
-    <string name="user_interface">Oberfläche</string>
+    <string name="user_interface">Benutzeroberfläche</string>
     <string name="general_ui">Allgemein</string>
     <string name="lockscreen_options">Lockscreen</string>
     <string name="power_menu_optons">Energiemenü</string>
     <string name="functionality">Funktionen</string>
     <string name="power_saver">Stromsparmodus</string>
     <string name="led_options">LED Einstellungen</string>
-    <string name="statusbar">Status Bar</string>
+    <string name="statusbar">Benachrichtungsleiste</string>
     <string name="general">Allgemein</string>
     <string name="toggles_layout">Schalter</string>
     <string name="clock">Uhr</string>
@@ -19,17 +19,17 @@
     <string name="tools">Tools</string>
     <string name="weather">Wetter</string>
 	
-	<string name="header_summary_battery">Batterie Leiste, 1% Batterie Mod, etc.</string>
-    <string name="header_summary_general_ui">Boot Animation, Bugmailer, Rotation, IME switcher, etc.</string>
-    <string name="header_summary_navigation_bar">Verändere Buttons, Navigationsleisten Farbe, Reihenfolge</string>
+	<string name="header_summary_battery">Batterie, 1 % Batterie Mod etc.</string>
+    <string name="header_summary_general_ui">Boot Animation, Fehlerberichte, Rotation, Eingabemethoden etc.</string>
+    <string name="header_summary_navigation_bar">Anzuzeigende Buttons, Farbe der Navigationsleiste, Reihenfolge</string>
     <string name="header_summary_lockscreens">Eigene Apps zum Starten, Layout</string>
-    <string name="header_summary_power_menu">Bearbeite das Energiemenü</string>
-    <string name="header_summary_powersaver">Deaktiviere automatisch die Datenverbindung um Batterie sparen</string>
-    <string name="header_summary_led">Bearbeite Standardeinstellungen von Android</string>
+    <string name="header_summary_power_menu">Das Energiemenü bearbeiten</string>
+    <string name="header_summary_powersaver">Deaktiviere automatisch die Datenverbindung um Akku zu sparen</string>
+    <string name="header_summary_led">Standardeinstellungen von Android bearbeiten</string>
     <string name="header_summary_general">Verhalten des Einstellungs Buttons</string>
     <string name="header_summary_toggles">Schalter anpassen</string>
 	<string name="header_summary_clock">Uhr Position, AM/PM Style, Farbe</string>
-	<string name="header_summary_weather">Einschalten/Ausschalten, bearbeite standort, und intervall</string>
+	<string name="header_summary_weather">Aktivieren/Deaktivieren, Eigener Standort oder Netzwerk, Intervall</string>
     
     <string name="advanced_settings">Erweiterte Einstellungen</string>
     <string name="misc_short">Sonstiges</string>
@@ -44,9 +44,9 @@
     <string name="summary_pref_navigation_menu_display">Wie und wann soll der Menü-Button erscheinen?</string>
 	
 	<string name="navbar_order_title">Navigationsbutton Reihenfolge</string>
-    <string name="navbar_order_summary">Die Reihenfolge der Navigationsbuttons anpassen.</string>
+    <string name="navbar_order_summary">Die Reihenfolge der Navigationsbutton anpassen</string>
 
-    <string name="enabled_navbar_buttons_title">Aktiviere Buttons</string>
+    <string name="enabled_navbar_buttons_title">Buttons aktivieren</string>
     <string name="enabled_navbar_buttons_summary">Wähle welche Navigationsbutton erscheinen sollen</string>
     
     <string name="button_transparency_title">Navigationsbutton Transparenz</string>
@@ -54,64 +54,64 @@
     <string name="long_press_home_title">Aktion für Home-Taste gedrückt lassen</string>
     <string name="long_press_home_summary">Was soll geschehen wenn die Home-Taste lange gedrückt wird? Neustart erforderlich.</string>
     
-    <string name="glow_times_title">Button Glow Animation</string>
-    <string name="glow_times_summary">Verändere wie schnell die Button Animation erscheinen soll nach Berühren. Verringern der Geschwindigkeit kann performance erhöhen.</string>
+    <string name="glow_times_title">Button Glühen-Animation</string>
+    <string name="glow_times_summary">Passe an, wie schnell Deine Buttons nach dem Berühren animieren. Verringern der Geschwindigkeit kann die Leistung verbessern.</string>
 
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotations-Verzögerung</string>
     <string name="rotation_animation_delay_summary">Wie lange soll gewartet werden, bis der Bildschrim an die Geräte-Orientierung angepasst wird? (200 ms Standard)</string>
 
-	<string name="ime_switcher_title">Zeige IME Switcher</string>
-	<string name="ime_switcher_summary">In der Status Bar wird ein Dialog zum Wechseln der Eingabemethode angezeigt (Neustart erforderlich).</string>
+	<string name="ime_switcher_title">Zeige Eingabemethoden</string>
+	<string name="ime_switcher_summary">In der Benachrichtungsleiste wird ein Schalter für Eingabemethoden angezeigt. Neustart erforderlich.</string>
 
 	<string name="custom_carrier_label_title">Eigener Anbieter-Text</string>
 	<string name="longpress_to_kill_title">Beenden via Zurück</string>
 	<string name="longpress_to_kill_summary">Halten der Zurück-Taste beendet die aktuelle App.</string>
 	
 	<string name="rotate_180_title">Erlaube 180° Rotation</string>
-	<string name="rotate_180_summary">Erlaube 180° Rotation deines Gerätes.</string>
+	<string name="rotate_180_summary">Erlaube Deinem Gerät eine 180° Rotation!</string>
 
-	<string name="horizontal_recents_task_panel_title">Zuletzt Benutze Apps</string>
-	<string name="horizontal_recents_task_panel_summary">Verwende WebOS Style für Apps Switcher. Deine UI wird automatisch neugestartet. Falls diese in 10 Sekunden nicht wieder erscheint, starte Dein Handy neu.</string>
+	<string name="horizontal_recents_task_panel_title">Zuletzt verwendete Apps</string>
+	<string name="horizontal_recents_task_panel_summary">Verwende WebOS Style für zuletzt verwendete Apps. Deine UI wird nach Änderung automatisch neugestartet. Falls diese in 10 Sekunden nicht wieder erscheint, starte Dein Handy neu.</string>
 	
-	<string name="disable_bootanimation_title">Deaktiviere Boot Animation</string>
+	<string name="disable_bootanimation_title">Boot Animation deaktivieren</string>
 	<string name="disable_bootanimation_summary">Jerk.</string>
 	
-	<string name="disable_bugmailer_title">Deaktiviere Bugmailer</string>
+	<string name="disable_bugmailer_title">Fehlerberichte deaktivieren</string>
 
 	<string name="lcd_density_title">LCD Density</string>
-	<string name="lcd_density_summary">Verändere LCD Density. Kann Probleme hervorrufen!</string>
+	<string name="lcd_density_summary">Verändere die LCD Density. Kann Probleme hervorrufen!</string>
 
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT Animationen</string>
-	<string name="crt_on_title">CRT-An Animation</string>
-	<string name="crt_off_title">CRT-Aus Animation</string>
+	<string name="crt_on_title">CRT Einschalt-Animation</string>
+	<string name="crt_off_title">CRT Ausschalt-Animation</string>
 
     <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Lockscreen Style</string>
-    <string name="pref_lockscreen_layout_summary">Bitte runterscrollen und Deine Ziele ändern nach dem Wechseln eines Styles.
+    <string name="pref_lockscreen_layout_summary">Nach dem Wechsel eines Styles die Ziele Deiner eigenen Apps erneut festlegen
 </string>
     
-    <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>
-    <string name="summary_pref_lockscreen_quad_targets">Verknüpfungen von Telefon und Nachrichten auf dem Lockscreen hinzufügen.</string>
+    <string name="title_pref_lockscreen_quad_targets">Vierfach</string>
+    <string name="summary_pref_lockscreen_quad_targets">Verknüpfungen für Telefon und Nachrichten auf dem Lockscreen hinzufügen</string>
 	
-	<string name="title_pref_lockscreen_octo_targets">Octo Targets</string>
-    <string name="summary_pref_lockscreen_octo_targets">Zu viele Verknüpfungen auf dem Lockscreen hinzufügen.</string>
+	<string name="title_pref_lockscreen_octo_targets">Achtfach</string>
+    <string name="summary_pref_lockscreen_octo_targets">Zu viele Verknüpfungen auf dem Lockscreen hinzufügen</string>
     
-    <string name="title_pref_lockscreen_menu_unlock">Entsperren mit Menü-Taste</string>	
-    <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt den Lockscreen (Neustart erforderlich).</string>
+    <string name="title_pref_lockscreen_menu_unlock">Mit Menü-Taste entsperren</string>	
+    <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt den Lockscreen (Neustart erforderlich)</string>
 
 <string name="title_lockscreen_user_timeout_override">Wartezeit zum Sperren des Bildschirms</string>	
-    <string name="summary_lockscreen_user_timeout_override">Verwende Android\'s Timeout nachdem Du manuell den Bildschirm ausgeschaltet hast. Das Standardverhalten ist für die Verzögerung wenn der Bildschirm sich selbst ausschaltet.</string>
+    <string name="summary_lockscreen_user_timeout_override">Verwende Android\'s Timeout Einstellung nachdem Du manuell den Bildschirm ausgeschaltet hast. Das Standardverhalten ist für die Verzögerung wenn der Bildschirm sich selbst ausschaltet.</string>
 
 <string name="lockscreen_battery_title">Batterie Prozentanzeige</string>
-    <string name="lockscreen_battery_summary">Zeige dauerhaft die Batterie in Prozent auf dem Lockscreen an.</string>
+    <string name="lockscreen_battery_summary">Dauerhaft die Batterie in Prozent auf dem Lockscreen anzeigen</string>
 	
-<string name="volume_wake_title">Aufwachen mit Lautstärkentasten</string>
-    <string name="volume_wake_summary">Betätigen der Lautstärketasten schaltet den ausgeschalteteen Bildschirm wieder ein.</string>
+<string name="volume_wake_title">Aufwachen mit Lautstärketasten</string>
+    <string name="volume_wake_summary">Betätigen der Lautstärketasten schaltet den ausgeschalteten Bildschirm wieder ein.</string>
 	
-<string name="volume_music_controls_title">Musik Lautstärke Kontrolle</string>
-    <string name="volume_music_controls_summary">Lautstärkentasten gedrückt halten um Lieder zu überspringen wenn der Bildschirm ausgeschaltet ist. Die Aufwachenfunktion funktioniert nicht wenn Musik gespielt wird.</string>
+<string name="volume_music_controls_title">Musik-Steuerung mit Lautstärketasten</string>
+    <string name="volume_music_controls_summary">Lautstärketasten gedrückt halten um Lieder zu überspringen wenn der Bildschirm ausgeschaltet ist. Die Aufwachenfunktion funktioniert nicht wenn Musik gespielt wird.</string>
 	
 <string name="lockscreen_show_nav_title">Verstecke Navigationsleiste</string>
     <string name="lockscreen_show_nav_summary">Versteckt die Navigationsleiste (wenn Dein Gerät es unterstützt) auf dem Lockscreen.</string>
@@ -137,11 +137,11 @@
     <string name="title_show_screenshot">Zeige Screenshot</string>
     
     <!-- Power Saving -->
-    <string name="title_pref_powersaving_pref_mode">Aktiviere Stromsparmodus</string>
+    <string name="title_pref_powersaving_pref_mode">Stromsparmodus aktivieren</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
     
-    <string name="title_pref_powersaving_data_screen_off">Daten-Verhalten</string>
-    <string name="summary_pref_powersaving_data_screen_off">Was soll mit der Datenverbindung passieren, wenn der Bildschirm ausgeht?</string>
+    <string name="title_pref_powersaving_data_screen_off">Datenverbindung</string>
+    <string name="summary_pref_powersaving_data_screen_off">Was soll mit der Datenverbindung passieren, wenn der Bildschirm ausschaltet?</string>
         
     <string name="title_pref_powersaving_data_screen_off_delay">Verzögerung</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">Wie lange soll gewartet werden, bevor die Aktion ausgeführt werden soll?</string>
@@ -169,10 +169,10 @@
     <string name="title_auto_hide_toggles">Schalter automatisch verstecken</string>
     <string name="summary_auto_hide_toggles">Schalter werden automatisch versteckt.</string>
 	
-	<string name="title_status_bar_brightness_toggle">Aktiviere Helligkeitsregler</string>
-    <string name="summary_status_bar_brightness_toggle">Streiche Deinen Finger über die Status Bar zum Verändern der Helligkeit.</string>
+	<string name="title_status_bar_brightness_toggle">Helligkeitsregler aktivieren</string>
+    <string name="summary_status_bar_brightness_toggle">Streiche Deinen Finger über die Benachrichtungsleiste zum Verändern der Helligkeit.</string>
 
-    <string name="adb_icon_title">Aktiviere USB Debugging Icon</string>
+    <string name="adb_icon_title">USB Debugging Icon aktivieren</string>
     <string name="adb_icon_summary">Wutang</string>
 
     <!-- Statusbar | Battery -->
@@ -192,7 +192,7 @@
     <string name="colors">Farben</string>
     <string name="clock_color_title">Farbe der Uhr</string>
     <string name="reset_color_title">Farbe zurücksetzen</string>
-    <string name="enable_alarm_title">Aktiviere Wecker-Icon</string>
+    <string name="enable_alarm_title">Wecker-Icon aktivieren</string>
     <string name="enable_alarm_summary">Aktiviere und deaktiviere Deine Alarme erneut zum Anzeigen oder starte das System neu.</string>
 
     <!-- Statusbar | Toggles -->
@@ -222,13 +222,13 @@
     
 <!-- Shortcut picker -->
     <string name="use_custom_app_title">Verwende eigene App</string>
-	<string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+	<string name="use_custom_app_summary">Verwende eigene App anstatt den Dialog der zuletzt verwendeteten Apps</string>
 	<string name="select_custom_app_title">Wähle eigene App</string>
 	<string name="group_applications">Apps</string>
 	
 	
 <!-- Weather -->
-	<string name="weather_enable">Aktiviere Wetter</string>
+	<string name="weather_enable">Wetter aktivieren</string>
 	<string name="weather_enable_summary">Wetterinformationen abrufen und in der ROM anzeigen.</string>
 	<string name="weather_use_custom_location">Verwende eigenen Standort</string>
 	<string name="weather_use_custom_location_summary">Die Verwendung eines eigenen Standorts kann ein wenig Batterie sparen. Anderweitig wird Dein Netz zum Festlegen des Standorts verwendet.</string>
@@ -236,7 +236,7 @@
 	<string name="weather_custom_location_dialog_message">Stelle sicher, dass Du Dich an die Beispiele gehalten hast! Wird ein ungültiger Standort festgelegt, können keine Wetterdaten aktualisiert werden.\n\nBeispiele: New York,NY // New York, NY // 10033 // London, England</string>
 	<string name="weather_custom_location_title">Eigener Standort</string>
 	<string name="weather_refresh_interval">Aktualisiere Intervall</string>
-	<string name="weather_use_celcius">Zeige Temperatur in Celcius</string>
+	<string name="weather_use_celcius">Zeige Temperatur in Celsius</string>
 	<string name="weather_use_celcius_summary">Bei Aktivierung wird die Wetter Temperatur in Celcius anstatt in Fahrenheit angezeigt.</string>
 	
 	
@@ -248,7 +248,7 @@
 	<string name="prefcat_cpu">CPU anpassen</string>
 	<string name="prefcat_free_memory">Freier Speicher</string>
 	<string name="pc_tweaks">Tweaks</string>
-	<string name="pc_init_d">Aktiviere/Deaktiviere Tweaks</string>
+	<string name="pc_init_d">Tweaks aktivieren/deaktivieren</string>
 	<string name="pc_init_d_tweaks">Tweaks anpassen</string>
 
 
@@ -261,7 +261,7 @@
 		<!-- Customization -->
 	<string name="pt_liberty_customizer">Liberty Customizer</string>
 	<string name="pt_lockscreen">Lockscreen Einstellungen</string>
-	<string name="pt_ui_status_bar">Status Bar</string>
+	<string name="pt_ui_status_bar">Benachrichtungsleiste</string>
 	<string name="pt_pulldown_text">Pulldown Text</string>
 	<string name="pt_theme_manager">Theme Manager</string>
 		<!-- Tools -->
@@ -271,14 +271,14 @@
 	<string name="pt_testing_menu">Test-Menü</string>
 		<!-- Start up tweaks -->
 	<string name="pt_init_d">Start-up Tweaks</string>
-	<string name="pt_enable_init_d">Aktiviere Start-up Tweaks</string>
+	<string name="pt_enable_init_d">Start-up Tweaks aktivieren</string>
 	<string name="pt_zipalign">Zipalign apks</string>
-	<string name="pt_enable_sd_boost">Aktiviere SD Boost</string>
+	<string name="pt_enable_sd_boost">SD Boost aktivieren</string>
 	<string name="pt_sd_boost">Read ahead value</string>
 	<string name="pt_fix_permissions">Zugriffsrechte beheben</string>
 	<string name="pt_clear_cache">Cache löschen</string>
-	<string name="pt_enable_sysctl">Aktiviere sysctl</string>
-	<string name="pt_enable_cron">Aktiviere geplante Aufgaben</string>
+	<string name="pt_enable_sysctl">sysctl aktivieren</string>
+	<string name="pt_enable_cron">Geplante Aufgaben aktivieren</string>
 		<!-- Performance -->
 	<string name="pt_set_cpu_activity">CPU anpassen</string>
 	<string name="pt_free_memory">Freier Speicher</string>
@@ -286,7 +286,7 @@
 		<!-- Cpu -->
 	<string name="pt_set_max">Max CPU</string>
 	<string name="pt_set_min">Min CPU</string>
-	<string name="pt_set_gov">Scaling governor</string>
+	<string name="pt_set_gov">Governor</string>
 	<string name="pt_cpu_boot">Beim Boot festlegen</string>
                 <!-- Scrolling Cache -->
         <string name="pref_scrollingcache_title">Cache für Bildlauf</string>
@@ -301,14 +301,14 @@
 		<!-- Main -->
 	<string name="ps_performance">CPU anpassen, Freier Speicher &amp; Start-up Einstellungen
 		anpassen.</string>
-	<string name="ps_customization">Lockscreen Status Bar anpassen. Installiere
+	<string name="ps_customization">Benachrichtungsleiste im Lockscreen anpassen. Installiere
 		blur/aosp Apps mit Liberty Customizer</string>
 	<string name="ps_tools">Verschiedene System-Tools</string>
 		<!-- Customization -->
-	<string name="ps_liberty_customizer">ROM nach Deinen Geschmack anpassen</string>
+	<string name="ps_liberty_customizer">ROM nach Deinem Geschmack anpassen</string>
 	<string name="ps_lockscreen">Ändern des Lockscreen Styles und verwalten der Widgets
 	</string>
-	<string name="ps_ui_status_bar">Status Bar anpassen</string>
+	<string name="ps_ui_status_bar">Benachrichtigungsleiste anpassen</string>
 	<string name="ps_pulldown_text">Change the text in the pulldown bar.</string>
 	<string name="ps_theme_manager">Installiere eigene Themen für Liberty ROM</string>
 		<!-- Tools -->
@@ -317,28 +317,28 @@
 	<string name="ps_dsp_manager">Standalone Equalizer</string>
 	<string name="ps_testing_menu">Telefoninfo, Batterieinfo, Statistik der Datennutzung</string>
 		<!-- Start up tweaks -->
-	<string name="ps_init_d">Configure tweaks that are run at boot
+	<string name="ps_init_d">Konfiguriere Tweaks die beim Boot starten
 		(init.d)
 		</string>
-	<string name="ps_enable_init_d">Enable/disabe start-up tweaks</string>
+	<string name="ps_enable_init_d">Start-up Tweaks aktivieren/deaktivieren</string>
 	<string name="ps_zipalign">Zipalign any unaligned apps on each boot</string>
-	<string name="ps_enable_sd_boost">Enable/disable SD card speed boost</string>
+	<string name="ps_enable_sd_boost">SD Card Speed-Boost aktivieren/deaktivieren</string>
 	<string name="ps_sd_boost">Set value of read ahead in kb</string>
-	<string name="ps_fix_permissions">Fix permissions for apps on each boot</string>
-	<string name="ps_clear_cache">Clear data cache on each boot</string>
-	<string name="ps_enable_sysctl">Enable sysctl tweaks on boot</string>
-	<string name="ps_enable_cron">Enable scheduled cron jobs</string>
+	<string name="ps_fix_permissions">Zugriffsrechte für Apps bei jedem Boot beheben</string>
+	<string name="ps_clear_cache">Daten-Cache bei jedem Boot löschen</string>
+	<string name="ps_enable_sysctl">Sysctl-Tweaks beim Boot aktivieren</string>
+	<string name="ps_enable_cron">Scheduled Cron Jobs aktivieren</string>
 		<!-- CPU -->
-	<string name="ps_set_max">Set max CPU scaling frequency\nCurrent: %s</string>
-	<string name="ps_set_min">Set min CPU scaling frequency\nCurrent: %s</string>
-	<string name="ps_set_gov">Set current scaling governor\nCurrent: %s</string>
+	<string name="ps_set_max">Max CPU Frequenz festlegen\nAktuell: %s</string>
+	<string name="ps_set_min">Min CPU Frequenz festlegen\nAktuell: %s</string>
+	<string name="ps_set_gov">Governor festlegen\nAktuell: %s</string>
 	<string name="ps_cpu_boot">CPU beim Boot übernehmen</string>
 		<!-- Performance -->
-	<string name="ps_set_cpu_activity">Set min/max frequencies and scaling governor
+	<string name="ps_set_cpu_activity">Wähle min/max Frequenzen und Governor
 	</string>
-	<string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep |
-		Current: %s</string>
-	<string name="ps_free_memory_boot">Apply the amount above at boot	</string>
+	<string name="ps_free_memory">Menge an RAM, die der Taskkiller behalten soll |
+		Aktuell: %s</string>
+	<string name="ps_free_memory_boot">Obenstehende Menge beim Boot übernehmen	</string>
 
 
 <!-- Toast Messages -->
@@ -354,8 +354,8 @@
 
 <!-- voltage -->
 	
-<string name="error_values">Error getting values</string>
-	<string name="set_boot">Beim Boot setzen</string>
+<string name="error_values">Fehler beim Abrufen der Werte</string>
+	<string name="set_boot">Beim Boot festlegen</string>
 	<string name="apply_values">Werte übernehmen</string>
 	
 	<string name="dpi">DPI</string>

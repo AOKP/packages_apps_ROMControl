@@ -130,6 +130,7 @@
     <string name="lockscreen_action_unlock">Unlock</string>
     <string name="lockscreen_action_sound">Sound toggle</string>
     <string name="lockscreen_action_camera">Camera</string>
+    <string name="lockscreen_action_mms">SMS</string>
     <string name="lockscreen_action_phone">Phone</string>
     <string name="lockscreen_action_none">Empty</string>
     <string name="lockscreen_landscape_title">Horizontal lockscreen</string>

@@ -158,6 +158,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.About"
+            android:label="@string/about_aokp" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="CreateShortcut"
             android:theme="@style/Theme.CreateShortCut" >
             <intent-filter>

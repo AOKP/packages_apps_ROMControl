@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:aokp="http://schemas.android.com/apk/res/com.roman.romcontrol">
+
+	<PreferenceCategory
+		android:key="devs"
+		android:title="@string/devs">
+		<com.roman.romcontrol.widgets.DeveloperPreference
+			android:title="Roman"
+			aokp:twitterHandle="romanbb"
+			aokp:donateLink="@string/donate_roman" />
+
+		<com.roman.romcontrol.widgets.DeveloperPreference
+			android:title="Whitehawkx"
+			aokp:twitterHandle="whitehawkx"
+			aokp:donateLink="@string/donate_whitehawk" />
+
+		<com.roman.romcontrol.widgets.DeveloperPreference
+			android:title="Zaphod-Beeble"
+			aokp:donateLink="@string/donate_zaph" />
+
+		<com.roman.romcontrol.widgets.DeveloperPreference
+			android:title="Jonathan Grigg"
+			aokp:twitterHandle="jonathongrigg" />
+
+		<com.roman.romcontrol.widgets.DeveloperPreference
+			android:title="ProTekk"
+			aokp:twitterHandle="protekk"
+			aokp:donateLink="@string/donate_protekk" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="aokp"
+		android:title="@string/aokp">
+
+		<Preference
+			android:key="aokp_website"
+			android:title="@string/aokp_website_title"
+			android:summary="@string/aokp_website_summary" />
+
+		<Preference
+			android:key="aokp_source"
+			android:title="@string/aokp_source_title"
+			android:summary="@string/aokp_source_summary" />
+
+		<Preference
+			android:key="aokp_irc"
+			android:title="@string/aokp_irc_title"
+			android:summary="@string/aokp_irc_summary" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,8 +1,12 @@
-<preference-headers
-	xmlns:android="http://schemas.android.com/apk/res/android">
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<header
-		android:title="@string/user_interface" />
+		android:id="@+id/about"
+		android:fragment="com.roman.romcontrol.fragments.About"
+		android:title="@string/about_aokp"
+		android:summary="@string/about_aokp_summary" />
+
+	<header android:title="@string/user_interface" />
 
 	<header
 		android:id="@+id/user_interface"
@@ -31,13 +35,13 @@
 		android:title="@string/power_menu_optons"
 		android:icon="@drawable/ic_rom_control_power_menu"
 		android:summary="@string/header_summary_power_menu" />
-		
+
 	<header
 		android:id="@+id/weather"
 		android:fragment="com.roman.romcontrol.fragments.Weather"
 		android:title="@string/weather"
-		android:summary="@string/header_summary_weather" 
-		android:icon="@drawable/ic_rom_control_weather"/>
+		android:summary="@string/header_summary_weather"
+		android:icon="@drawable/ic_rom_control_weather" />
 
 	<header
 		android:id="@+id/functionality"
@@ -58,8 +62,7 @@
 		android:icon="@drawable/ic_rom_control_led"
 		android:summary="@string/header_summary_led" />
 
-	<header
-		android:title="@string/statusbar" />
+	<header android:title="@string/statusbar" />
 
 	<header
 		android:id="@+id/statusbar_general"
@@ -89,8 +92,7 @@
 		android:icon="@drawable/ic_rom_control_battery"
 		android:summary="@string/header_summary_battery" />
 
-	<header
-		android:title="@string/tools" />
+	<header android:title="@string/tools" />
 
 	<header
 		android:id="@+id/performance"

@@ -40,7 +40,7 @@ public class PowerMenu extends PreferenceFragment {
             mShowPowerSaver
                     .setSummary("You need to enable power saver before you can see it in the power menu.");
         }
-        mShowPowerSaver.setChecked(powerSaverVal == 1);
+        mShowPowerSaver.setChecked(powerSaverVal != 0);
 
         mShowScreenShot = (CheckBoxPreference) findPreference(PREF_SCREENSHOT);
         mShowScreenShot.setChecked(Settings.System.getInt(getActivity()

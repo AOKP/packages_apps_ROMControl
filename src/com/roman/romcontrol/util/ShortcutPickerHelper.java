@@ -35,9 +35,9 @@ public class ShortcutPickerHelper {
     private Fragment mParent;
     private OnPickListener mListener;
 
-    private static final int REQUEST_PICK_SHORTCUT = 100;
-    private static final int REQUEST_PICK_APPLICATION = 101;
-    private static final int REQUEST_CREATE_SHORTCUT = 102;
+    public static final int REQUEST_PICK_SHORTCUT = 100;
+    public static final int REQUEST_PICK_APPLICATION = 101;
+    public static final int REQUEST_CREATE_SHORTCUT = 102;
 
     public interface OnPickListener {
         void shortcutPicked(String uri, String friendlyName, boolean isApplication);
@@ -82,7 +82,6 @@ public class ShortcutPickerHelper {
         pickIntent.putExtras(bundle);
 
         mParent.startActivityForResult(pickIntent, REQUEST_PICK_SHORTCUT);
-        Log.e("ROMAN", "starting activity for result");
     }
 
     private void processShortcut(Intent intent, int requestCodeApplication, int requestCodeShortcut) {

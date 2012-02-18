@@ -52,7 +52,6 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
-    private static final int REQUEST_PICK_SHORTCUT = 100;
     public static final int SELECT_ACTIVITY = 2;
     public static final int SELECT_WALLPAPER = 3;
 
@@ -88,35 +87,29 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.prefs_lockscreens);
 
         menuButtonLocation = (CheckBoxPreference) findPreference(PREF_MENU);
-        menuButtonLocation.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.LOCKSCREEN_ENABLE_MENU_KEY,
-                1) == 1);
+        menuButtonLocation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_ENABLE_MENU_KEY, 1) == 1);
 
         mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
         mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
-                .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
-                0) == 1);
+                .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
 
         mLockscreenOption = (ListPreference) findPreference(PREF_LOCKSCREEN_LAYOUT);
         mLockscreenOption.setOnPreferenceChangeListener(this);
-        mLockscreenOption.setValue(Settings.System.getInt(
-                getActivity().getContentResolver(), Settings.System.LOCKSCREEN_LAYOUT,
-                0) + "");
+        mLockscreenOption.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_LAYOUT, 0) + "");
 
         mLockscreenBattery = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_BATTERY);
-        mLockscreenBattery.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.LOCKSCREEN_BATTERY,
-                0) == 1);
+        mLockscreenBattery.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_BATTERY, 0) == 1);
 
         mVolumeWake = (CheckBoxPreference) findPreference(PREF_VOLUME_WAKE);
-        mVolumeWake.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
-                0) == 1);
+        mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
 
         mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
-        mVolumeMusic.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.VOLUME_MUSIC_CONTROLS,
-                0) == 1);
+        mVolumeMusic.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, 0) == 1);
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -124,9 +117,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
         for (String key : keys) {
             try {
-                ((CheckBoxPreference) findPreference(key))
-                        .setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                                key) == 1);
+                ((CheckBoxPreference) findPreference(key)).setChecked(Settings.System.getInt(
+                        getActivity().getContentResolver(), key) == 1);
             } catch (SettingNotFoundException e) {
             }
         }
@@ -139,8 +131,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == menuButtonLocation) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ENABLE_MENU_KEY,
@@ -180,8 +171,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
             float spotlightX = (float) display.getWidth() / width;
             float spotlightY = (float) display.getHeight() / height;
 
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT,
-                    null);
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
             intent.setType("image/*");
             intent.putExtra("crop", "true");
             intent.putExtra("aspectX", width);
@@ -193,16 +183,14 @@ public class Lockscreens extends SettingsPreferenceFragment implements
             intent.putExtra("spotlightX", spotlightX);
             intent.putExtra("spotlightY", spotlightY);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, getLockscreenExternalUri());
-            intent.putExtra("outputFormat",
-                    Bitmap.CompressFormat.JPEG.toString());
+            intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
 
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             return true;
 
         } else if (keys.contains(preference.getKey())) {
             Log.e("RC_Lockscreens", "key: " + preference.getKey());
-            return Settings.System.putInt(getActivity().getContentResolver(),
-                    preference.getKey(),
+            return Settings.System.putInt(getActivity().getContentResolver(), preference.getKey(),
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
         }
 
@@ -244,7 +232,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference("lockscreen_targets");
         targetGroup.removeAll();
 
-        // quad only uses first 4, but we make the system think there's 6 for the alternate layout
+        // quad only uses first 4, but we make the system think there's 6 for
+        // the alternate layout
         // so only show 4
         if (lockscreenTargets == 6) {
             Settings.System.putString(getContentResolver(),
@@ -273,8 +262,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     }
 
     private String getProperSummary(int i) {
-        String uri = Settings.System.getString(getActivity()
-                .getContentResolver(),
+        String uri = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[i]);
 
         if (uri == null)
@@ -342,8 +330,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
                 FileOutputStream wallpaperStream = null;
                 try {
-                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_PRIVATE);
+                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME, Context.MODE_PRIVATE);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
                 }
@@ -353,13 +340,14 @@ public class Lockscreens extends SettingsPreferenceFragment implements
                 Log.e(TAG, "Selected image uri: " + selectedImageUri);
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
 
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100,
-                        wallpaperStream);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream);
 
-            } else if (requestCode == REQUEST_PICK_SHORTCUT) {
+            } else if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
+                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION) {
                 mPicker.onActivityResult(requestCode, resultCode, data);
             }
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void copy(File src, File dst) throws IOException {

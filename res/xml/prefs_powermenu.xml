@@ -9,4 +9,7 @@
 
 	<CheckBoxPreference android:key="show_torch_toggle"
 		android:title="@string/title_show_torch_toggle" />
+
+        <CheckBoxPreference android:key="show_airplane_toggle"
+		android:title="@string/title_show_airplane_toggle" />
 </PreferenceScreen>

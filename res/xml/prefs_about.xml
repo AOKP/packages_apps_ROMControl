@@ -4,6 +4,27 @@
 	xmlns:aokp="http://schemas.android.com/apk/res/com.roman.romcontrol">
 
 	<PreferenceCategory
+		android:key="aokp"
+		android:title="@string/aokp">
+
+		<Preference
+			android:key="aokp_website"
+			android:title="@string/aokp_website_title"
+			android:summary="@string/aokp_website_summary" />
+
+		<Preference
+			android:key="aokp_source"
+			android:title="@string/aokp_source_title"
+			android:summary="@string/aokp_source_summary" />
+
+		<Preference
+			android:key="aokp_irc"
+			android:title="@string/aokp_irc_title"
+			android:summary="@string/aokp_irc_summary" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
 		android:key="devs"
 		android:title="@string/devs">
 		<com.roman.romcontrol.widgets.DeveloperPreference
@@ -29,27 +50,15 @@
 			aokp:twitterHandle="protekk"
 			aokp:donateLink="@string/donate_protekk" />
 
-	</PreferenceCategory>
-
-	<PreferenceCategory
-		android:key="aokp"
-		android:title="@string/aokp">
-
-		<Preference
-			android:key="aokp_website"
-			android:title="@string/aokp_website_title"
-			android:summary="@string/aokp_website_summary" />
-
-		<Preference
-			android:key="aokp_source"
-			android:title="@string/aokp_source_title"
-			android:summary="@string/aokp_source_summary" />
-
-		<Preference
-			android:key="aokp_irc"
-			android:title="@string/aokp_irc_title"
-			android:summary="@string/aokp_irc_summary" />
-
+		<com.roman.romcontrol.widgets.DeveloperPreference
+			android:title="Khas Mek"
+			aokp:twitterHandle="KhasMek"
+			aokp:donateLink="@string/donate_khasmek" />
+			
+		<com.roman.romcontrol.widgets.DeveloperPreference
+			android:title="sethyx"
+			aokp:twitterHandle="sethyx"
+			aokp:donateLink="@string/donate_sethyx" />
 	</PreferenceCategory>
 
 </PreferenceScreen>

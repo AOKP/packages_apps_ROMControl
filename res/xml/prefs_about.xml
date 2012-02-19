@@ -42,7 +42,7 @@
 			aokp:donateLink="@string/donate_zaph" />
 
 		<com.roman.romcontrol.widgets.DeveloperPreference
-			android:title="Jonathan Grigg"
+			android:title="Jonathon Grigg"
 			aokp:twitterHandle="jonathongrigg" />
 
 		<com.roman.romcontrol.widgets.DeveloperPreference

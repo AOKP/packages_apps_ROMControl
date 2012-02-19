@@ -4,4 +4,10 @@
     	<attr format="string" name="checkAll" />
     	<attr format="string" name="separator" />
     </declare-styleable>
+    
+    <declare-styleable name="DeveloperPreference">
+        <attr name="twitterHandle" format="string" />
+        <attr name="donateLink" format="string" />
+    </declare-styleable>
+    
 </resources>

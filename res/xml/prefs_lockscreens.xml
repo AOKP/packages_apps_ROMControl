@@ -2,6 +2,11 @@
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
+	<Preference
+		android:key="wallpaper"
+		android:title="@string/lockscreen_wallpaper_title"
+		android:summary="@string/lockscreen_wallpaper_summary" />
+
 	<ListPreference
 		android:entries="@array/pref_lockscreen_options_entries"
 		android:entryValues="@array/pref_lockscreen_options_values"
@@ -19,7 +24,7 @@
 		android:title="@string/title_lockscreen_user_timeout_override"
 		android:summary="@string/summary_lockscreen_user_timeout_override" />
 
-        <CheckBoxPreference
+	<CheckBoxPreference
 		android:key="lockscreen_battery"
 		android:title="@string/lockscreen_battery_title"
 		android:summary="@string/lockscreen_battery_summary" />
@@ -39,6 +44,11 @@
 		android:title="@string/advanced_settings">
 
 		<CheckBoxPreference
+			android:key="enable_fast_torch"
+			android:title="@string/enable_fast_torch_title"
+			android:summary="@string/enable_fast_torch_summary" />
+
+		<CheckBoxPreference
 			android:key="lockscreen_hide_nav"
 			android:title="@string/lockscreen_show_nav_title"
 			android:summary="@string/lockscreen_show_nav_summary" />
@@ -47,7 +57,7 @@
 			android:key="lockscreen_landscape"
 			android:title="@string/lockscreen_landscape_title"
 			android:summary="@string/lockscreen_landscape_summary" />
-			
+
 		<CheckBoxPreference
 			android:key="lockscreen_quick_unlock_control"
 			android:title="@string/lockscreen_quick_unlock_control_title"

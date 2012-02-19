@@ -47,7 +47,7 @@
 
 		<com.roman.romcontrol.widgets.DeveloperPreference
 			android:title="ProTekk"
-			aokp:twitterHandle="protekk"
+			aokp:twitterHandle="protekkfzs"
 			aokp:donateLink="@string/donate_protekk" />
 
 		<com.roman.romcontrol.widgets.DeveloperPreference

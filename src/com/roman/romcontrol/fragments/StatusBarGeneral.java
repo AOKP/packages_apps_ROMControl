@@ -88,6 +88,7 @@ public class StatusBarGeneral extends SettingsPreferenceFragment {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ADB_ICON, checked ? 1 : 0);
             return true;
+            
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

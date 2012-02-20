@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<ListPreference
+		android:entries="@array/signal_style_entries"
+		android:entryValues="@array/signal_style_values"
+		android:key="signal_style"
+		android:title="@string/signal_style" />
+
+	<net.margaritov.preference.colorpicker.ColorPickerPreference
+		android:key="signal_color"
+		android:title="@string/signal_color_title"
+		android:defaultValue="@android:color/holo_blue_light" />
+
+</PreferenceScreen>

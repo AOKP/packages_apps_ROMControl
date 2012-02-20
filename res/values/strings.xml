@@ -18,6 +18,7 @@
     <string name="nav_bar">Navigation bar</string>
     <string name="tools">Tools</string>
     <string name="weather">Weather</string>
+    <string name="signal">Signal</string>
     
     <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
@@ -30,6 +31,7 @@
     <string name="header_summary_toggles">Customize toggles</string>
 	<string name="header_summary_clock">Clock location, AM/PM style, color</string>
 	<string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
+	<string name="header_summary_signal">Signal dBm text</string>
 	
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
@@ -147,6 +149,7 @@
     <string name="title_show_screenshot">Show screenshot</string>
     <string name="title_show_torch_toggle">Show torch toggle</string>
     <string name="title_show_airplane_toggle">Show airplane toggle</string>
+    <string name="title_show_navbar_hide">Show navigation bar toggle</string>
     
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
@@ -223,7 +226,10 @@
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
     <string name="brightness_location_title">Brightness location</string>
-    
+
+	<!-- Statusbar | Signal -->
+	<string name="signal_style">Signal Text Style</string>
+	<string name="signal_color_title">Signal color</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

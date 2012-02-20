@@ -17,11 +17,13 @@ public class PowerMenu extends PreferenceFragment {
     private static final String PREF_SCREENSHOT = "show_screenshot";
     private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
+    private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
 
     CheckBoxPreference mShowPowerSaver;
     CheckBoxPreference mShowScreenShot;
     CheckBoxPreference mShowTorchToggle;
     CheckBoxPreference mShowAirplaneToggle;
+    CheckBoxPreference mShowNavBarHide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,16 +48,21 @@ public class PowerMenu extends PreferenceFragment {
         mShowScreenShot.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
                 0) == 1);
-        
+
         mShowTorchToggle = (CheckBoxPreference) findPreference(PREF_TORCH_TOGGLE);
         mShowTorchToggle.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE,
                 0) == 1);
-        
+
         mShowAirplaneToggle = (CheckBoxPreference) findPreference(PREF_AIRPLANE_TOGGLE);
         mShowAirplaneToggle.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
                 1) == 1);
+
+        mShowNavBarHide = (CheckBoxPreference) findPreference(PREF_NAVBAR_HIDE);
+        mShowNavBarHide.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
+                0) == 1);
     }
 
     @Override
@@ -81,9 +88,13 @@ public class PowerMenu extends PreferenceFragment {
                     Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+        } else if (preference == mShowNavBarHide) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
-
 }

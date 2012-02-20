@@ -91,6 +91,13 @@
 		android:fragment="com.roman.romcontrol.fragments.StatusBarBattery"
 		android:icon="@drawable/ic_rom_control_battery"
 		android:summary="@string/header_summary_battery" />
+		
+	<header
+		android:id="@+id/statusbar_battery"
+		android:title="@string/signal"
+		android:fragment="com.roman.romcontrol.fragments.StatusBarSignal"
+		android:icon="@drawable/empty_icon"
+		android:summary="@string/header_summary_signal" />
 
 	<header android:title="@string/tools" />
 

@@ -1,10 +1,15 @@
 
 package com.roman.romcontrol.fragments;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
@@ -12,10 +17,14 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.text.Editable;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import com.roman.romcontrol.R;
@@ -35,6 +44,8 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
     EditTextPreference mCustomWeatherLoc;
 
     SharedPreferences prefs;
+
+    private static final int LOC_WARNING = 101;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +76,40 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
         setHasOptionsMenu(true);
 
+        if (!Settings.Secure.isLocationProviderEnabled(
+                getContentResolver(), LocationManager.NETWORK_PROVIDER)
+                && !mUseCustomLoc.isChecked()) {
+            showDialog(LOC_WARNING);
+        }
+
+    }
+
+    @Override
+    public Dialog onCreateDialog(int dialogId) {
+        LayoutInflater factory = LayoutInflater.from(mContext);
+
+        switch (dialogId) {
+            case LOC_WARNING:
+                return new AlertDialog.Builder(getActivity())
+                        .setTitle("Cannot retrieve location!")
+                        .setMessage(
+                                "Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network.")
+                        .setCancelable(false)
+                        .setPositiveButton("Enable network location",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        Settings.Secure.setLocationProviderEnabled(
+                                                getContentResolver(),
+                                                LocationManager.NETWORK_PROVIDER, true);
+                                    }
+                                })
+                        .setNegativeButton("Don't enable.", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+        }
+        return null;
     }
 
     @Override

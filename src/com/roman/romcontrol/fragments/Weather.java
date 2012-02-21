@@ -39,6 +39,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
     CheckBoxPreference mEnableWeather;
     CheckBoxPreference mUseCustomLoc;
+    CheckBoxPreference mShowLoc;
     CheckBoxPreference mUseCelcius;
     ListPreference mWeatherSyncInterval;
     EditTextPreference mCustomWeatherLoc;
@@ -70,6 +71,10 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
         mUseCustomLoc = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CUSTOM_LOCATION);
         mUseCustomLoc.setChecked(WeatherPrefs.getUseCustomLocation(mContext));
+        
+        mShowLoc = (CheckBoxPreference) findPreference("show_location");
+        mShowLoc.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.WEATHER_SHOW_LOCATION, 0) == 1);
 
         mUseCelcius = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CELCIUS);
         mUseCelcius.setChecked(WeatherPrefs.getUseCelcius(mContext));
@@ -142,6 +147,11 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
         } else if (preference == mUseCustomLoc) {
             return WeatherPrefs.setUseCustomLocation(mContext,
                     ((CheckBoxPreference) preference).isChecked());
+        } else if (preference == mShowLoc) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.WEATHER_SHOW_LOCATION,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
         } else if (preference == mUseCelcius) {
             return WeatherPrefs.setUseCelcius(mContext,
                     ((CheckBoxPreference) preference).isChecked());

@@ -14,6 +14,12 @@
 		android:summary="@string/weather_use_custom_location_summary" />
 		
 	<CheckBoxPreference
+		android:key="show_location"
+		android:dependency="enable_weather"
+		android:title="@string/weather_show_location_title"
+		android:summary="@string/weather_show_location_summary" />
+		
+	<CheckBoxPreference
 		android:key="use_celcius"
 		android:dependency="enable_weather"
 		android:title="@string/weather_use_celcius"

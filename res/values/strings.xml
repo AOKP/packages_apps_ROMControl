@@ -227,6 +227,8 @@
 	<!-- Statusbar | Signal -->
 	<string name="signal_style">Signal Text Style</string>
 	<string name="signal_color_title">Signal color</string>
+	<string name="hide_signal_title">Hide signal bars</string>
+	<string name="hide_signal_summary">Will also hide data indicator for now. Will be able to separate later.</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

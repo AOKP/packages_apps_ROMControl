@@ -53,6 +53,13 @@ public class StatusBarGeneral extends SettingsPreferenceFragment {
         mAdbIcon = (CheckBoxPreference) findPreference(PREF_ADB_ICON);
         mAdbIcon.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.ADB_ICON, 1) == 1);
+        
+        if (mTablet) {
+            PreferenceScreen prefs = getPreferenceScreen();
+            prefs.removePreference(mStatusBarBrightnessToggle);
+            prefs.removePreference(mAutoHideToggles);
+            prefs.removePreference(mDefaultSettingsButtonBehavior);
+        }
     }
 
     @Override

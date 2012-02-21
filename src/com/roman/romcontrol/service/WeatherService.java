@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Address;
+import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
@@ -67,7 +68,11 @@ public class WeatherService extends IntentService {
            	try {
            		List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),
             			loc.getLongitude(), 1);
-           		sendBroadcast(parseXml(addresses.get(0).getPostalCode()));
+           		if (addresses.get(0).getPostalCode() != null) {
+           		    sendBroadcast(parseXml(addresses.get(0).getPostalCode() + "," + addresses.get(0).getLocality()));
+           		} else {
+           		 sendBroadcast(parseXml(addresses.get(0).getLocality() + "," + addresses.get(0).getAdminArea()));
+           		}
             } catch (IOException e) {
             	e.printStackTrace();
             } catch (Exception e) {
@@ -132,9 +137,9 @@ public class WeatherService extends IntentService {
 
         boolean celcius = WeatherPrefs.getUseCelcius(getApplicationContext());
         if (celcius) {
-            broadcast.putExtra(EXTRA_TEMP, w.temp_c + "°");
+            broadcast.putExtra(EXTRA_TEMP, w.temp_c + "°C");
         } else {
-            broadcast.putExtra(EXTRA_TEMP, w.temp_f + "°");
+            broadcast.putExtra(EXTRA_TEMP, w.temp_f + "°F");
         }
 
         getApplicationContext().sendBroadcast(broadcast);

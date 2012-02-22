@@ -218,7 +218,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     }
 
     private Uri getLockscreenExternalUri() {
-        File dir = mContext.getExternalCacheDir();
+        // File dir = mContext.getExternalCacheDir();
+        File dir = mContext.dir("/sdcard");
         File wallpaper = new File(dir, WALLPAPER_NAME);
 
         return Uri.fromFile(wallpaper);

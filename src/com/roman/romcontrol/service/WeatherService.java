@@ -22,6 +22,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 
+import org.w3c.dom.Document;
+
 import com.roman.romcontrol.WeatherInfo;
 import com.roman.romcontrol.util.WeatherPrefs;
 import com.roman.romcontrol.xml.WeatherXmlParser;
@@ -35,19 +37,21 @@ public class WeatherService extends IntentService {
     public static final String INTENT_UPDATE_WEATHER_AUTO_OBTAINED = "com.aokp.romcontrol.INTENT_WEATHER_UPDATE";
 
     public static final String EXTRA_CITY = "city";
-    public static final String EXTRA_ZIP = "zip";
+    public static final String EXTRA_FORECAST_DATE = "forecast_date";
     public static final String EXTRA_CONDITION = "condition";
-    public static final String EXTRA_FORECAST_DATE = "forecase_date";
+    public static final String EXTRA_TEMP = "temp";
     public static final String EXTRA_TEMP_F = "temp_f";
     public static final String EXTRA_TEMP_C = "temp_c";
     public static final String EXTRA_HUMIDITY = "humidity";
     public static final String EXTRA_WIND = "wind";
-    public static final String EXTRA_LOW = "todays_low";
-    public static final String EXTRA_HIGH = "todays_high";
-    public static final String EXTRA_TEMP = "temp";
+
+    private static final String URL_YAHOO_API_WEATHER = "http://weather.yahooapis.com/forecastrss?w=%s&u=c";
+
+    private HttpRetriever httpRetriever = null;
 
     public WeatherService() {
         super("WeatherService");
+        httpRetriever = new HttpRetriever();
     }
 
     @Override
@@ -55,6 +59,7 @@ public class WeatherService extends IntentService {
         WeatherInfo w = null;
         String extra = null;
         String action = intent.getAction();
+        String woeid = null;
 
         if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) == 0) {
             return;
@@ -62,7 +67,8 @@ public class WeatherService extends IntentService {
 
         if (action != null && action.equals(INTENT_UPDATE_WEATHER_AUTO_OBTAINED)) {
             Log.i(TAG, "Location updated, sending weather update intent");
-            // don't use the bundle as the location extra may be empty. select best provider and use getLastKnownLocation instead
+            // don't use the bundle as the location extra may be empty. select
+            // best provider and use getLastKnownLocation instead
             final LocationManager locationManager = (LocationManager) this
                     .getSystemService(Context.LOCATION_SERVICE);
             Criteria crit = new Criteria();
@@ -74,34 +80,28 @@ public class WeatherService extends IntentService {
                 loc = locationManager.getLastKnownLocation(bestProvider);
             else
                 loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-            Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
-           	try {
-           	    String lat = superCoordFormat(String.valueOf(loc.getLatitude()));
-           	    String lon = superCoordFormat(String.valueOf(loc.getLongitude()));
-           		List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),
-            			loc.getLongitude(), 1);
-           		sendBroadcast(parseXml(addresses.get(0).getLocality() + ",,," + lat + "," + lon));
-           		Log.i(TAG, "Sent broadcast: " + addresses.get(0).getLocality() + ",,," + lat + "," + lon);
-            } catch (IOException e) {
-            	e.printStackTrace();
+            try {
+                woeid = YahooPlaceFinder.reverseGeoCode(loc.getLatitude(),
+                        loc.getLongitude());
+                Log.i(TAG, "got woeid: " + woeid);
+                sendBroadcast(parseXml(getDocument(woeid)));
             } catch (Exception e) {
-            	e.printStackTrace();
-            }
-			
-        } else if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
-            /*
-             * if a zip or location is sent as an extra with the intent, it will use that as the
-             * location instead of trying to acquire it via the network
-             */
-            Log.i(TAG, "Requesting weather data.");
-            if (intent.hasExtra(EXTRA_ZIP)) {
-                extra = intent.getCharSequenceExtra(EXTRA_ZIP).toString();
-            } else if (intent.hasExtra(EXTRA_CITY)) {
-                extra = intent.getCharSequenceExtra(EXTRA_CITY).toString();
+                e.printStackTrace();
             }
 
+        } else if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
+            /*
+             * if a zip or location is sent as an extra with the intent, it will
+             * use that as the location instead of trying to acquire it via the
+             * network
+             */
+            Log.i(TAG, "Requesting weather data.");
+            if (intent.hasExtra(EXTRA_CITY)) {
+                extra = intent.getCharSequenceExtra(EXTRA_CITY).toString();
+            }
             if (extra != null) {
-                w = parseXml(extra);
+                woeid = YahooPlaceFinder.GeoCode(extra);
+                w = parseXml(getDocument(woeid));
                 if (w != null)
                     sendBroadcast(w);
             } else {
@@ -109,50 +109,41 @@ public class WeatherService extends IntentService {
             }
 
         }
-
     }
     
-    private String superCoordFormat(String coordinate) {
-        Log.i(TAG, "coord before: " + coordinate);
-        coordinate = coordinate.replaceAll("\\.", "");
-        Log.i(TAG, "coord after: " + coordinate);
-        while(coordinate.length() < 9)
-            coordinate = coordinate.concat(String.valueOf('0'));
-        coordinate = (coordinate.indexOf('-') != -1) ? coordinate.substring(0,9) : coordinate.substring(0,8);
-        return coordinate;
+    private Document getDocument(String woeid) {
+        try {
+        return httpRetriever.getDocumentFromURL(String.format(URL_YAHOO_API_WEATHER,
+                woeid));
+        } catch (IOException e) {
+            Log.e(TAG, e.toString());
+        }
+        return null;
     }
 
-    private WeatherInfo parseXml(String extra) {
+    private WeatherInfo parseXml(Document wDoc) {
         try {
-            return new WeatherXmlParser(getApplicationContext(), extra)
-                    .parse();
-        } catch (MalformedURLException e) {
+            return new WeatherXmlParser().parseWeatherResponse(wDoc);
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-            Log.w(TAG, "Coudln't connect to Google to get weather data.");
+            Log.w(TAG, "Couldn't connect to Google to get weather data.");
         }
         return null;
     }
 
     private void sendBroadcast(WeatherInfo w) {
         Intent broadcast = new Intent(INTENT_UPDATE_WEATHER);
-    	try {
-        broadcast.putExtra(EXTRA_CITY, w.city);
-        broadcast.putExtra(EXTRA_CONDITION, w.condition);
-        broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
-        broadcast.putExtra(EXTRA_HIGH, w.todaysHigh);
-        broadcast.putExtra(EXTRA_LOW, w.todaysLow);
-        broadcast.putExtra(EXTRA_HUMIDITY, w.humidify);
-        broadcast.putExtra(EXTRA_TEMP_C, w.temp_c);
-        broadcast.putExtra(EXTRA_TEMP_F, w.temp_f);
-        broadcast.putExtra(EXTRA_WIND, w.wind);
-        broadcast.putExtra(EXTRA_ZIP, w.postal_code);
-    	} catch (Exception e) {
-    		e.printStackTrace();
-    	}
+        try {
+            broadcast.putExtra(EXTRA_CITY, w.city);
+            broadcast.putExtra(EXTRA_CONDITION, w.condition);
+            broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
+            broadcast.putExtra(EXTRA_HUMIDITY, w.humidity);
+            broadcast.putExtra(EXTRA_TEMP_C, w.temp_c);
+            broadcast.putExtra(EXTRA_TEMP_F, w.temp_f);
+            broadcast.putExtra(EXTRA_WIND, w.wind);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         boolean celcius = WeatherPrefs.getUseCelcius(getApplicationContext());
         if (celcius) {
@@ -162,12 +153,6 @@ public class WeatherService extends IntentService {
         }
 
         getApplicationContext().sendBroadcast(broadcast);
-        Log.i(TAG, "Sent weather broadcast.");
-        Log.i(TAG, "City: " + w.city);
-        Log.i(TAG, "Condition: " + w.condition);
-        Log.i(TAG, "Low: " + w.todaysLow);
-        Log.i(TAG, "High: " + w.todaysHigh);
-        Log.i(TAG, "Temp (f): " + w.temp_f);
 
     }
 

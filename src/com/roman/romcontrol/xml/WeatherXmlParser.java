@@ -1,20 +1,20 @@
 
 package com.roman.romcontrol.xml;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-
 import android.content.Context;
-import android.sax.Element;
-import android.sax.RootElement;
-import android.sax.StartElementListener;
-import android.util.Xml;
-import android.widget.Toast;
+import android.util.Log;
+
+import java.io.StringReader;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 import com.roman.romcontrol.WeatherInfo;
 
@@ -22,112 +22,104 @@ public class WeatherXmlParser {
 
     protected static final String TAG = "WeatherXmlParser";
 
-    private static String googleWeatherPrefix = "http://www.google.com/ig/api?weather=";
+    /** Yahoo attributes */
+    private static final String PARAM_YAHOO_LOCATION = "yweather:location";
+    private static final String PARAM_YAHOO_UNIT = "yweather:units";
+    private static final String PARAM_YAHOO_ATMOSPHERE = "yweather:atmosphere";
+    private static final String PARAM_YAHOO_CONDITION = "yweather:condition";
+    private static final String PARAM_YAHOO_WIND = "yweather:wind";
+
+    private static final String ATT_YAHOO_CITY = "city";
+    private static final String ATT_YAHOO_TEMP = "temp";
+    private static final String ATT_YAHOO_HUMIDITY = "humidity";
+    private static final String ATT_YAHOO_TEXT = "text";
+    private static final String ATT_YAHOO_DATE = "date";
+    private static final String ATT_YAHOO_SPEED = "speed";
+
     private Context context;
-    private final URL feedUrl;
 
-    public WeatherXmlParser(Context c, String zipOrCity) throws MalformedURLException {
-        context = c;
-
-        this.feedUrl = new URL(googleWeatherPrefix + zipOrCity);
+    public WeatherXmlParser() {
     }
 
-    protected InputStream getInputStream() {
-        try {
-            // Log.i("bloater:xmlparser", "returning inputstream");
-            InputStream result = feedUrl.openConnection().getInputStream();
-            return result;
-        } catch (IOException e) {
-            // TODO handle if there's no connectivity
-            // throw new RuntimeException(e);
+    public WeatherInfo parseWeatherResponse(Document docWeather) {
+        if (docWeather == null) {
+            Log.e(TAG, "Invalid doc weather");
             return null;
         }
+
+        String strCity = null;
+        String strDate = null;
+        String strCondition = null;
+        String strTempC = null;
+        String strHumidity = null;
+        String strWindSpeed = null;
+
+        try {
+            Element root = docWeather.getDocumentElement();
+            root.normalize();
+            
+            NamedNodeMap locationNode = root.getElementsByTagName(PARAM_YAHOO_LOCATION).item(0)
+                    .getAttributes();
+
+            if (locationNode != null) {
+                strCity = locationNode.getNamedItem(ATT_YAHOO_CITY).getNodeValue();
+            }
+
+            NamedNodeMap atmosNode = root.getElementsByTagName(PARAM_YAHOO_ATMOSPHERE).item(0)
+                    .getAttributes();
+            if (atmosNode != null) {
+                strHumidity = atmosNode.getNamedItem(ATT_YAHOO_HUMIDITY).getNodeValue();
+            }
+
+            NamedNodeMap conditionNode = root.getElementsByTagName(PARAM_YAHOO_CONDITION).item(0)
+                    .getAttributes();
+            if (conditionNode != null) {
+                strCondition = conditionNode.getNamedItem(ATT_YAHOO_TEXT).getNodeValue();
+                strTempC = conditionNode.getNamedItem(ATT_YAHOO_TEMP).getNodeValue();
+                strDate = conditionNode.getNamedItem(ATT_YAHOO_DATE).getNodeValue();
+            }
+
+            NamedNodeMap temNode = root.getElementsByTagName(PARAM_YAHOO_WIND).item(0)
+                    .getAttributes();
+            if (temNode != null) {
+                strWindSpeed = temNode.getNamedItem(ATT_YAHOO_SPEED).getNodeValue();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Something wrong with parser data: " + e.toString());
+            return null;
+        }
+
+        /* Weather info */
+        WeatherInfo yahooWeatherInfo = new WeatherInfo(strCity, strDate,
+                strCondition, strTempC, strHumidity, strWindSpeed);
+
+        return yahooWeatherInfo;
     }
 
-    public WeatherInfo parse() throws IOException, SAXException {
-        final WeatherInfo w = new WeatherInfo(context);
+    public String parsePlaceFinderResponse(String response) {
+        try {
 
-        RootElement root = new RootElement("xml_api_reply");
-        Element weatherRoot = root.getChild("weather");
-        Element forecastInformation = weatherRoot.getChild("forecast_information");
-        Element currentConditions = weatherRoot.getChild("current_conditions");
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(new InputSource(new StringReader(response)));
 
-        forecastInformation.getChild("city").setStartElementListener(
-                new StartElementListener() {
+            NodeList resultNodes = doc.getElementsByTagName("Result");
 
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.city = attributes.getValue("data");
-                    }
-                });
+            Node resultNode = resultNodes.item(0);
+            NodeList attrsList = resultNode.getChildNodes();
 
-        forecastInformation.getChild("postal_code").setStartElementListener(
-                new StartElementListener() {
+            for (int i = 0; i < attrsList.getLength(); i++) {
+                
+                Node node = attrsList.item(i);
+                Node firstChild = node.getFirstChild();
 
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.postal_code = attributes.getValue("data");
-                    }
-                });
-
-        forecastInformation.getChild("forecast_date").setStartElementListener(
-                new StartElementListener() {
-
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.forecast_date = attributes.getValue("data");
-                    }
-                });
-
-        currentConditions.getChild("condition").setStartElementListener(
-                new StartElementListener() {
-
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.condition = attributes.getValue("data");
-                    }
-                });
-
-        currentConditions.getChild("temp_f").setStartElementListener(
-                new StartElementListener() {
-
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.temp_f = attributes.getValue("data");
-                    }
-                });
-
-        currentConditions.getChild("temp_c").setStartElementListener(
-                new StartElementListener() {
-
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.temp_c = attributes.getValue("data");
-                    }
-                });
-
-        currentConditions.getChild("humidity").setStartElementListener(
-                new StartElementListener() {
-
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.humidify = attributes.getValue("data");
-                    }
-                });
-
-        currentConditions.getChild("wind").setStartElementListener(
-                new StartElementListener() {
-
-                    @Override
-                    public void start(Attributes attributes) {
-                        w.wind = attributes.getValue("data");
-                    }
-                });
-
-        Xml.parse(this.getInputStream(), Xml.Encoding.UTF_8,
-                root.getContentHandler());
-
-        return w;
-
+                if ("woeid".equalsIgnoreCase(node.getNodeName()) && firstChild != null) {
+                    return firstChild.getNodeValue();
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+        return null;
     }
 }

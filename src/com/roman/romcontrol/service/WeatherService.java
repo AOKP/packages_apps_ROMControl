@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -60,18 +61,27 @@ public class WeatherService extends IntentService {
         }
 
         if (action != null && action.equals(INTENT_UPDATE_WEATHER_AUTO_OBTAINED)) {
-            Log.i(TAG, "Got location from network, sending weather update intent");
-            Bundle b = intent.getExtras();
-            Location loc = (Location) b.get(android.location.LocationManager.KEY_LOCATION_CHANGED);
+            Log.i(TAG, "Location updated, sending weather update intent");
+            // don't use the bundle as the location extra may be empty. select best provider and use getLastKnownLocation instead
+            final LocationManager locationManager = (LocationManager) this
+                    .getSystemService(Context.LOCATION_SERVICE);
+            Criteria crit = new Criteria();
+            crit.setAccuracy(Criteria.ACCURACY_COARSE);
+            String bestProvider = locationManager.getBestProvider(crit, true);
+            Location loc = null;
+            Log.i(TAG, "using " + bestProvider + " provider");
+            if (bestProvider != null)
+                loc = locationManager.getLastKnownLocation(bestProvider);
+            else
+                loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
             Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
            	try {
+           	    String lat = superCoordFormat(String.valueOf(loc.getLatitude()));
+           	    String lon = superCoordFormat(String.valueOf(loc.getLongitude()));
            		List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(),
             			loc.getLongitude(), 1);
-           		if (addresses.get(0).getPostalCode() != null) {
-           		    sendBroadcast(parseXml(addresses.get(0).getPostalCode() + "," + addresses.get(0).getLocality()));
-           		} else {
-           		 sendBroadcast(parseXml(addresses.get(0).getLocality() + "," + addresses.get(0).getAdminArea()));
-           		}
+           		sendBroadcast(parseXml(addresses.get(0).getLocality() + ",,," + lat + "," + lon));
+           		Log.i(TAG, "Sent broadcast: " + addresses.get(0).getLocality() + ",,," + lat + "," + lon);
             } catch (IOException e) {
             	e.printStackTrace();
             } catch (Exception e) {
@@ -100,6 +110,16 @@ public class WeatherService extends IntentService {
 
         }
 
+    }
+    
+    private String superCoordFormat(String coordinate) {
+        Log.i(TAG, "coord before: " + coordinate);
+        coordinate = coordinate.replaceAll("\\.", "");
+        Log.i(TAG, "coord after: " + coordinate);
+        while(coordinate.length() < 9)
+            coordinate = coordinate.concat(String.valueOf('0'));
+        coordinate = (coordinate.indexOf('-') != -1) ? coordinate.substring(0,9) : coordinate.substring(0,8);
+        return coordinate;
     }
 
     private WeatherInfo parseXml(String extra) {

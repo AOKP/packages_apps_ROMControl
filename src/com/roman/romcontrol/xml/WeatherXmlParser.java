@@ -35,7 +35,8 @@ public class WeatherXmlParser {
     protected InputStream getInputStream() {
         try {
             // Log.i("bloater:xmlparser", "returning inputstream");
-            return feedUrl.openConnection().getInputStream();
+            InputStream result = feedUrl.openConnection().getInputStream();
+            return result;
         } catch (IOException e) {
             // TODO handle if there's no connectivity
             // throw new RuntimeException(e);

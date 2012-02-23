@@ -34,7 +34,6 @@ public class WeatherService extends IntentService {
 
     public static final String INTENT_REQUEST_WEATHER = "com.aokp.romcontrol.INTENT_WEATHER_REQUEST";
     public static final String INTENT_UPDATE_WEATHER = "com.aokp.romcontrol.INTENT_WEATHER_UPDATE";
-    public static final String INTENT_UPDATE_WEATHER_AUTO_OBTAINED = "com.aokp.romcontrol.INTENT_WEATHER_UPDATE";
 
     public static final String EXTRA_CITY = "city";
     public static final String EXTRA_FORECAST_DATE = "forecast_date";
@@ -65,56 +64,46 @@ public class WeatherService extends IntentService {
             return;
         }
 
-        if (action != null && action.equals(INTENT_UPDATE_WEATHER_AUTO_OBTAINED)) {
-            Log.i(TAG, "Location updated, sending weather update intent");
-            // don't use the bundle as the location extra may be empty. select
-            // best provider and use getLastKnownLocation instead
-            final LocationManager locationManager = (LocationManager) this
-                    .getSystemService(Context.LOCATION_SERVICE);
-            Criteria crit = new Criteria();
-            crit.setAccuracy(Criteria.ACCURACY_COARSE);
-            String bestProvider = locationManager.getBestProvider(crit, true);
-            Location loc = null;
-            Log.i(TAG, "using " + bestProvider + " provider");
-            if (bestProvider != null)
-                loc = locationManager.getLastKnownLocation(bestProvider);
-            else
-                loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-            try {
-                woeid = YahooPlaceFinder.reverseGeoCode(loc.getLatitude(),
-                        loc.getLongitude());
-                Log.i(TAG, "got woeid: " + woeid);
-                sendBroadcast(parseXml(getDocument(woeid)));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        } else if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
-            /*
-             * if a zip or location is sent as an extra with the intent, it will
-             * use that as the location instead of trying to acquire it via the
-             * network
-             */
-            Log.i(TAG, "Requesting weather data.");
-            if (intent.hasExtra(EXTRA_CITY)) {
-                extra = intent.getCharSequenceExtra(EXTRA_CITY).toString();
-            }
-            if (extra != null) {
-                woeid = YahooPlaceFinder.GeoCode(extra);
-                w = parseXml(getDocument(woeid));
-                if (w != null)
-                    sendBroadcast(w);
+        if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
+            // custom location
+            boolean useCustomLoc = WeatherPrefs.getUseCustomLocation(getApplicationContext());
+            String customLoc = WeatherPrefs.getCustomLocation(getApplicationContext());
+            if (customLoc != null && useCustomLoc) {
+                woeid = YahooPlaceFinder.GeoCode(customLoc);
+                // network location
             } else {
-                getLocationAndStartService();
+                final LocationManager locationManager = (LocationManager) this
+                        .getSystemService(Context.LOCATION_SERVICE);
+                Criteria crit = new Criteria();
+                crit.setAccuracy(Criteria.ACCURACY_COARSE);
+                String bestProvider = locationManager.getBestProvider(crit, true);
+                Location loc = null;
+                Log.i(TAG, "using " + bestProvider + " provider");
+                if (bestProvider != null) {
+                    loc = locationManager.getLastKnownLocation(bestProvider);
+                } else {
+                    loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                }
+                try {
+                    woeid = YahooPlaceFinder.reverseGeoCode(loc.getLatitude(),
+                            loc.getLongitude());
+                    Log.i(TAG, "got woeid: " + woeid);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
+            w = parseXml(getDocument(woeid));
+            if (w != null) {
+                sendBroadcast(w);
+            }
         }
     }
-    
+
     private Document getDocument(String woeid) {
         try {
-        return httpRetriever.getDocumentFromURL(String.format(URL_YAHOO_API_WEATHER,
-                woeid));
+            return httpRetriever.getDocumentFromURL(String.format(URL_YAHOO_API_WEATHER,
+                    woeid));
         } catch (IOException e) {
             Log.e(TAG, e.toString());
         }
@@ -154,30 +143,6 @@ public class WeatherService extends IntentService {
 
         getApplicationContext().sendBroadcast(broadcast);
 
-    }
-
-    private void getLocationAndStartService() {
-        boolean useCustomLoc = WeatherPrefs.getUseCustomLocation(getApplicationContext());
-        String loc = WeatherPrefs.getCustomLocation(getApplicationContext());
-
-        if (useCustomLoc && !loc.equals("")) {
-            Log.i(TAG, "Using custom-set location.");
-            Intent i = new Intent(getApplicationContext(), WeatherService.class);
-            i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
-            i.putExtra(WeatherService.EXTRA_CITY, loc);
-            getApplicationContext().startService(i);
-
-        } else if (!useCustomLoc) {
-            Log.i(TAG, "Requesting location from network.");
-            final LocationManager locationManager = (LocationManager) this
-                    .getSystemService(Context.LOCATION_SERVICE);
-
-            Intent i = new Intent(getApplicationContext(), WeatherService.class);
-            i.setAction(INTENT_UPDATE_WEATHER_AUTO_OBTAINED);
-            PendingIntent pi = PendingIntent.getService(getApplicationContext(), 0, i, 0);
-
-            locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, pi);
-        }
     }
 
 }

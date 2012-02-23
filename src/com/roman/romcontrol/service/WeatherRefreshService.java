@@ -85,6 +85,11 @@ public class WeatherRefreshService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Log.i("LocalService", "Received start id " + startId + ": " + intent);
         refreshIntervalInMinutes = WeatherPrefs.getRefreshInterval(mContext);
+        if (intent.getAction().equals(WeatherService.INTENT_REQUEST_WEATHER)) {
+            Intent i = new Intent(getApplicationContext(), WeatherService.class);
+            i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+            getApplicationContext().startService(i);
+        }
         scheduleRefresh();
 
         return START_STICKY;

@@ -128,7 +128,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.get_weather:
-                Intent i = new Intent(getActivity().getApplicationContext(), WeatherService.class);
+                Intent i = new Intent(getActivity().getApplicationContext(), WeatherRefreshService.class);
                 i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
                 getActivity().getApplicationContext().startService(i);
                 return true;

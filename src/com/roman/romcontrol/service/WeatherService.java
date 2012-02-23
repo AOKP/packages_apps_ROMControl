@@ -40,12 +40,12 @@ public class WeatherService extends IntentService {
     public static final String EXTRA_FORECAST_DATE = "forecast_date";
     public static final String EXTRA_CONDITION = "condition";
     public static final String EXTRA_TEMP = "temp";
-    public static final String EXTRA_TEMP_F = "temp_f";
-    public static final String EXTRA_TEMP_C = "temp_c";
     public static final String EXTRA_HUMIDITY = "humidity";
     public static final String EXTRA_WIND = "wind";
+    public static final String EXTRA_LOW = "todays_low";
+    public static final String EXTRA_HIGH = "todays_high";
 
-    private static final String URL_YAHOO_API_WEATHER = "http://weather.yahooapis.com/forecastrss?w=%s&u=c";
+    private static final String URL_YAHOO_API_WEATHER = "http://weather.yahooapis.com/forecastrss?w=%s&u=";
 
     private HttpRetriever httpRetriever = null;
 
@@ -114,7 +114,14 @@ public class WeatherService extends IntentService {
 
     private Document getDocument(String woeid) {
         try {
-            return httpRetriever.getDocumentFromURL(String.format(URL_YAHOO_API_WEATHER,
+            boolean celcius = WeatherPrefs.getUseCelcius(getApplicationContext());
+            String urlWithDegreeUnit;
+            if (celcius) {
+                urlWithDegreeUnit = URL_YAHOO_API_WEATHER + "c";
+            } else {
+                urlWithDegreeUnit = URL_YAHOO_API_WEATHER + "f";
+            }
+            return httpRetriever.getDocumentFromURL(String.format(urlWithDegreeUnit,
                     woeid));
         } catch (IOException e) {
             Log.e(TAG, e.toString());
@@ -139,22 +146,22 @@ public class WeatherService extends IntentService {
             broadcast.putExtra(EXTRA_CONDITION, w.condition);
             broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
             broadcast.putExtra(EXTRA_HUMIDITY, w.humidity);
-            broadcast.putExtra(EXTRA_TEMP_C, w.temp_c);
-            broadcast.putExtra(EXTRA_TEMP_F, w.temp_f);
+            broadcast.putExtra(EXTRA_TEMP, w.temp);
             broadcast.putExtra(EXTRA_WIND, w.wind);
+            broadcast.putExtra(EXTRA_LOW, w.low);
+            broadcast.putExtra(EXTRA_HIGH, w.high);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        boolean celcius = WeatherPrefs.getUseCelcius(getApplicationContext());
-        if (celcius) {
-            broadcast.putExtra(EXTRA_TEMP, w.temp_c + "°C");
-        } else {
-            broadcast.putExtra(EXTRA_TEMP, w.temp_f + "°F");
-        }
-
+        Log.i(TAG, "Sending weather broadcast...");
+        Log.i(TAG, "City: " + w.city);
+        Log.i(TAG, "Condition: " + w.condition);
+        Log.i(TAG, "Date: " + w.forecast_date);
+        Log.i(TAG, "Humidity: " + w.humidity);
+        Log.i(TAG, "Temp: " + w.temp);
+        Log.i(TAG, "Wind: " + w.wind);
+        Log.i(TAG, "Low: " + w.low);
+        Log.i(TAG, "High: " + w.high);
         getApplicationContext().sendBroadcast(broadcast);
-
     }
-
 }

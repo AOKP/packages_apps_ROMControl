@@ -7,31 +7,25 @@ public class WeatherInfo {
 
     private static final String NODATA = "No data";
 
-    public String city, forecast_date, condition, temp_f, temp_c, humidity, wind;
+    public String city, forecast_date, condition, temp, temp_unit, humidity, wind, speed_unit, low, high;
 
     private Context mContext;
 
     public WeatherInfo() {
-        this.city = this.forecast_date = this.condition = this.temp_f = this.temp_c = this.humidity = this.wind = NODATA;
+        this.city = this.forecast_date = this.condition = this.temp = this.temp_unit = this.humidity = this.wind = this.speed_unit = this.low = this.high = NODATA;
     }
 
-    public WeatherInfo(String city, String fdate, String condition, String temp_c, String humidity,
-            String wind) {
+    public WeatherInfo(String city, String fdate, String condition, String temp, String temp_unit, String humidity,
+            String wind, String speed_unit, String low, String high) {
         this.city = city;
         this.forecast_date = fdate;
         this.condition = condition;
-        this.temp_c = temp_c;
-        this.temp_f = convertC2F(temp_c);
+        this.temp = temp + "°" + temp_unit;
+        this.temp_unit = temp_unit;
         this.humidity = humidity;
-        this.wind = wind;
+        this.wind = wind + speed_unit;
+        this.speed_unit = speed_unit;
+        this.low = low + "°" + temp_unit;
+        this.high = high + "°" + temp_unit;
     }
-
-    public static String convertC2F(String temp_c) {
-        if (temp_c == null)
-            return "";
-        int celsius = Integer.parseInt(temp_c);
-        int fahrenheit = (celsius * 9) / 5 + 32;
-        return String.valueOf(fahrenheit);
-    }
-
 }

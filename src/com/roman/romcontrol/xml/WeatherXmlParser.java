@@ -28,13 +28,18 @@ public class WeatherXmlParser {
     private static final String PARAM_YAHOO_ATMOSPHERE = "yweather:atmosphere";
     private static final String PARAM_YAHOO_CONDITION = "yweather:condition";
     private static final String PARAM_YAHOO_WIND = "yweather:wind";
+    private static final String PARAM_YAHOO_FORECAST = "yweather:forecast";
 
     private static final String ATT_YAHOO_CITY = "city";
     private static final String ATT_YAHOO_TEMP = "temp";
+    private static final String ATT_YAHOO_TEMP_UNIT = "temperature";
     private static final String ATT_YAHOO_HUMIDITY = "humidity";
     private static final String ATT_YAHOO_TEXT = "text";
     private static final String ATT_YAHOO_DATE = "date";
     private static final String ATT_YAHOO_SPEED = "speed";
+    private static final String ATT_YAHOO_TODAY_HIGH = "high";
+    private static final String ATT_YAHOO_TODAY_LOW = "low";
+    
 
     private Context context;
 
@@ -50,9 +55,13 @@ public class WeatherXmlParser {
         String strCity = null;
         String strDate = null;
         String strCondition = null;
-        String strTempC = null;
+        String strTemp = null;
+        String strTempUnit = null;
         String strHumidity = null;
         String strWindSpeed = null;
+        String strSpeedUnit = null;
+        String strHigh = null;
+        String strLow = null;
 
         try {
             Element root = docWeather.getDocumentElement();
@@ -60,9 +69,16 @@ public class WeatherXmlParser {
             
             NamedNodeMap locationNode = root.getElementsByTagName(PARAM_YAHOO_LOCATION).item(0)
                     .getAttributes();
-
             if (locationNode != null) {
                 strCity = locationNode.getNamedItem(ATT_YAHOO_CITY).getNodeValue();
+            }
+            
+            NamedNodeMap unitNode = root.getElementsByTagName(PARAM_YAHOO_UNIT).item(0)
+                    .getAttributes();
+
+            if (locationNode != null) {
+                strTempUnit = unitNode.getNamedItem(ATT_YAHOO_TEMP_UNIT).getNodeValue();
+                strSpeedUnit = unitNode.getNamedItem(ATT_YAHOO_SPEED).getNodeValue();
             }
 
             NamedNodeMap atmosNode = root.getElementsByTagName(PARAM_YAHOO_ATMOSPHERE).item(0)
@@ -75,7 +91,7 @@ public class WeatherXmlParser {
                     .getAttributes();
             if (conditionNode != null) {
                 strCondition = conditionNode.getNamedItem(ATT_YAHOO_TEXT).getNodeValue();
-                strTempC = conditionNode.getNamedItem(ATT_YAHOO_TEMP).getNodeValue();
+                strTemp = conditionNode.getNamedItem(ATT_YAHOO_TEMP).getNodeValue();
                 strDate = conditionNode.getNamedItem(ATT_YAHOO_DATE).getNodeValue();
             }
 
@@ -84,6 +100,12 @@ public class WeatherXmlParser {
             if (temNode != null) {
                 strWindSpeed = temNode.getNamedItem(ATT_YAHOO_SPEED).getNodeValue();
             }
+            
+            NamedNodeMap fcNode = root.getElementsByTagName(PARAM_YAHOO_FORECAST).item(0).getAttributes();
+            if (fcNode != null) {
+                strHigh = fcNode.getNamedItem(ATT_YAHOO_TODAY_HIGH).getNodeValue();
+                strLow = fcNode.getNamedItem(ATT_YAHOO_TODAY_LOW).getNodeValue();
+            }
         } catch (Exception e) {
             Log.e(TAG, "Something wrong with parser data: " + e.toString());
             return null;
@@ -91,7 +113,7 @@ public class WeatherXmlParser {
 
         /* Weather info */
         WeatherInfo yahooWeatherInfo = new WeatherInfo(strCity, strDate,
-                strCondition, strTempC, strHumidity, strWindSpeed);
+                strCondition, strTemp, strTempUnit, strHumidity, strWindSpeed, strSpeedUnit, strLow, strHigh);
 
         return yahooWeatherInfo;
     }

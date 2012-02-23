@@ -26,7 +26,6 @@ public class BootService extends Service {
     public static SharedPreferences preferences;
     private Thread bootThread;
 
-    @Override
     public void onStart(Intent intent, int startId) {
         preferences = PreferenceManager.getDefaultSharedPreferences(service);
         super.onStart(intent, startId);
@@ -76,18 +75,19 @@ public class BootService extends Service {
                                 + VoltageControl.MV_TABLE1);
                     }
                 }
-
-                if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) != 0) {
-                    Intent startRefresh = new Intent(getApplicationContext(),
-                            WeatherRefreshService.class);
-                    getApplicationContext().startService(startRefresh);
-
-                    Intent getWeatherNow = new Intent(getApplicationContext(), WeatherService.class);
-                    getWeatherNow.setAction(WeatherService.INTENT_REQUEST_WEATHER);
-                    getApplicationContext().startService(getWeatherNow);
-                }
             }
         };
+        
+        if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) != 0) {
+            Intent startRefresh = new Intent(getApplicationContext(),
+                    WeatherRefreshService.class);
+            getApplicationContext().startService(startRefresh);
+            
+            Intent getWeatherNow = new Intent(getApplicationContext(), WeatherService.class);
+            getWeatherNow.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+            getApplicationContext().startService(getWeatherNow);
+        }
+        
         bootThread.start();
         // Stop the service
         stopSelf();

@@ -2,7 +2,9 @@
 package com.roman.romcontrol.fragments;
 
 import android.app.AlertDialog;
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -140,9 +142,20 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mEnableWeather) {
+            // _stop_ alarm or start service
+            boolean check = ((CheckBoxPreference) preference).isChecked();
+            Intent i = new Intent(getActivity().getApplicationContext(), WeatherRefreshService.class);
+            i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+            PendingIntent weatherRefreshIntent = PendingIntent.getService(getActivity(), 0, i, 0);
+            if (!check) {
+                AlarmManager alarms = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+                alarms.cancel(weatherRefreshIntent);
+            } else {
+                getActivity().startService(i);
+            }
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.USE_WEATHER,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    check ? 1 : 0);
             return true;
         } else if (preference == mUseCustomLoc) {
             return WeatherPrefs.setUseCustomLocation(mContext,

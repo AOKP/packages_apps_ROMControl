@@ -18,6 +18,7 @@ import android.location.Geocoder;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.text.format.Time;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -63,7 +64,7 @@ public class WeatherService extends IntentService {
         if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) == 0) {
             return;
         }
-
+        
         if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
             // custom location
             boolean useCustomLoc = WeatherPrefs.getUseCustomLocation(getApplicationContext());
@@ -74,6 +75,15 @@ public class WeatherService extends IntentService {
             } else {
                 final LocationManager locationManager = (LocationManager) this
                         .getSystemService(Context.LOCATION_SERVICE);
+                if (!intent.hasExtra("newlocation")) {
+                    intent.putExtra("newlocation", true);
+                    PendingIntent pi = PendingIntent.getService(getApplicationContext(), 0, intent,
+                            PendingIntent.FLAG_CANCEL_CURRENT);
+                    locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, pi);
+                    Log.i(TAG, "requesting location update");
+                    return;
+                }
+
                 Criteria crit = new Criteria();
                 crit.setAccuracy(Criteria.ACCURACY_COARSE);
                 String bestProvider = locationManager.getBestProvider(crit, true);
@@ -84,15 +94,17 @@ public class WeatherService extends IntentService {
                 } else {
                     loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
                 }
+                Time time = new Time();
+                time.set(loc.getTime());
+                Log.i(TAG, "location timestamp: " + time.format("%H:%M:%S"));
                 try {
                     woeid = YahooPlaceFinder.reverseGeoCode(loc.getLatitude(),
                             loc.getLongitude());
-                    Log.i(TAG, "got woeid: " + woeid);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-
+            Log.i(TAG, "got woeid: " + woeid);
             w = parseXml(getDocument(woeid));
             if (w != null) {
                 sendBroadcast(w);

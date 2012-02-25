@@ -495,7 +495,7 @@
 	</string-array>
 	
 	<string-array name="signal_style_entries">
-		<item>Hide</item>
+		<item>Show signal bars</item>
 		<item>Show Signal Text</item>
 		<item>Show w/dBm</item>
 	</string-array>

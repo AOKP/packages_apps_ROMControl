@@ -51,19 +51,21 @@ public class WeatherRefreshService extends Service {
     }
 
     private void scheduleRefresh() {
+        // we need to set our intent BEFORE cancel, because the service is not running in the background now.
+        Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
+        i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+
+        weatherRefreshIntent = PendingIntent.getService(getApplicationContext(), 0, i,
+                0);
+        
         cancelRefresh();
+        
         if (refreshIntervalInMinutes == 0) {
             Log.i(TAG, "Did not schedule refresh.");
             return;
         }
 
         // Log.i(TAG, "scheduling with refresh interval : " + refreshIntervalInMinutes + " minutes");
-
-        Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
-        i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
-
-        weatherRefreshIntent = PendingIntent.getService(getApplicationContext(), 0, i,
-                0);
 
         Calendar timeToStart = Calendar.getInstance();
         timeToStart.setTimeInMillis(System.currentTimeMillis());

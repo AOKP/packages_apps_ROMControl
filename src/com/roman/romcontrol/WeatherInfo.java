@@ -5,23 +5,27 @@ import android.content.Context;
 
 public class WeatherInfo {
 
-    public String city, postal_code, forecast_date, condition, temp_f, temp_c, humidify, wind;
-    public String todaysLow, todaysHigh;
+    private static final String NODATA = "No data";
+
+    public String city, forecast_date, condition, temp, temp_unit, humidity, wind, speed_unit, low, high;
 
     private Context mContext;
 
-    public WeatherInfo(Context c) {
-        mContext = c;
+    public WeatherInfo() {
+        this.city = this.forecast_date = this.condition = this.temp = this.temp_unit = this.humidity = this.wind = this.speed_unit = this.low = this.high = NODATA;
     }
 
-    public WeatherInfo(Context c, String city) {
-        mContext = c;
+    public WeatherInfo(String city, String fdate, String condition, String temp, String temp_unit, String humidity,
+            String wind, String speed_unit, String low, String high) {
         this.city = city;
+        this.forecast_date = fdate;
+        this.condition = condition;
+        this.temp = temp + "°" + temp_unit;
+        this.temp_unit = temp_unit;
+        this.humidity = humidity;
+        this.wind = wind + speed_unit;
+        this.speed_unit = speed_unit;
+        this.low = low + "°" + temp_unit;
+        this.high = high + "°" + temp_unit;
     }
-
-    public WeatherInfo(Context c, int postalCode) {
-        mContext = c;
-        postal_code = Integer.toString(postalCode);
-    }
-
 }

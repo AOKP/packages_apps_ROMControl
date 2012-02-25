@@ -35,35 +35,37 @@ public class WeatherRefreshService extends Service {
         prefs = getApplicationContext().getSharedPreferences("weather", MODE_PRIVATE);
         alarms = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
         refreshIntervalInMinutes = prefs.getInt(WeatherPrefs.KEY_REFRESH, 0);
-        Log.i("Refresher", "service started with refresh: " + refreshIntervalInMinutes);
+        // Log.i("Refresher", "service started with refresh: " + refreshIntervalInMinutes);
         prefs.registerOnSharedPreferenceChangeListener(new OnSharedPreferenceChangeListener() {
 
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
                 if (key.equals(WeatherPrefs.KEY_REFRESH)) {
                     refreshIntervalInMinutes = WeatherPrefs.getRefreshInterval(mContext);
-                    Log.i("Refresher", "new value: " + refreshIntervalInMinutes);
+                    // Log.i("Refresher", "new value: " + refreshIntervalInMinutes);
                     scheduleRefresh();
                 }
-                Log.i("Refresher", "new key: " + key);
+                // Log.i("Refresher", "new key: " + key);
             }
         });
     }
 
     private void scheduleRefresh() {
+        // we need to set our intent BEFORE cancel, because the service is not running in the background now.
+        Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
+        i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+
+        weatherRefreshIntent = PendingIntent.getService(getApplicationContext(), 0, i,
+                0);
+        
         cancelRefresh();
+        
         if (refreshIntervalInMinutes == 0) {
             Log.i(TAG, "Did not schedule refresh.");
             return;
         }
 
-        Log.i(TAG, "scheduling with refresh interval : " + refreshIntervalInMinutes + " minutes");
-
-        Intent i = new Intent(getApplicationContext(), WeatherService.class);
-        i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
-
-        weatherRefreshIntent = PendingIntent.getService(getApplicationContext(), 0, i,
-                0);
+        // Log.i(TAG, "scheduling with refresh interval : " + refreshIntervalInMinutes + " minutes");
 
         Calendar timeToStart = Calendar.getInstance();
         timeToStart.setTimeInMillis(System.currentTimeMillis());
@@ -74,18 +76,28 @@ public class WeatherRefreshService extends Service {
 
         alarms.setInexactRepeating(AlarmManager.RTC, timeToStart.getTimeInMillis(), interval,
                 weatherRefreshIntent);
+        stopSelf(); // so it won't run in the background eatin up RAM, ^ alarm will restart it
     }
 
-    private void cancelRefresh() {
+    public void cancelRefresh() {
         if (weatherRefreshIntent != null)
             alarms.cancel(weatherRefreshIntent);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        // Log.i("LocalService", "Received start id " + startId + ": " + intent);
+        // Log.i("LocalService", "Received start id " + startId + ": " +
+        // intent);
         refreshIntervalInMinutes = WeatherPrefs.getRefreshInterval(mContext);
-        scheduleRefresh();
+        if (intent.getAction() != null) {
+            if (intent.getAction().equals(WeatherService.INTENT_REQUEST_WEATHER)) {
+                Intent i = new Intent(getApplicationContext(), WeatherService.class);
+                i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+                getApplicationContext().startService(i);
+            }
+        }
+        if (weatherRefreshIntent == null)
+            scheduleRefresh();
 
         return START_STICKY;
     }

@@ -2,7 +2,9 @@
 package com.roman.romcontrol.fragments;
 
 import android.app.AlertDialog;
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -39,6 +41,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
     CheckBoxPreference mEnableWeather;
     CheckBoxPreference mUseCustomLoc;
+    CheckBoxPreference mShowLoc;
     CheckBoxPreference mUseCelcius;
     ListPreference mWeatherSyncInterval;
     EditTextPreference mCustomWeatherLoc;
@@ -70,6 +73,10 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
         mUseCustomLoc = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CUSTOM_LOCATION);
         mUseCustomLoc.setChecked(WeatherPrefs.getUseCustomLocation(mContext));
+        
+        mShowLoc = (CheckBoxPreference) findPreference("show_location");
+        mShowLoc.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.WEATHER_SHOW_LOCATION, 0) == 1);
 
         mUseCelcius = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CELCIUS);
         mUseCelcius.setChecked(WeatherPrefs.getUseCelcius(mContext));
@@ -123,7 +130,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.get_weather:
-                Intent i = new Intent(getActivity().getApplicationContext(), WeatherService.class);
+                Intent i = new Intent(getActivity().getApplicationContext(), WeatherRefreshService.class);
                 i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
                 getActivity().getApplicationContext().startService(i);
                 return true;
@@ -135,13 +142,29 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mEnableWeather) {
+            // _stop_ alarm or start service
+            boolean check = ((CheckBoxPreference) preference).isChecked();
+            Intent i = new Intent(getActivity().getApplicationContext(), WeatherRefreshService.class);
+            i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+            PendingIntent weatherRefreshIntent = PendingIntent.getService(getActivity(), 0, i, 0);
+            if (!check) {
+                AlarmManager alarms = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+                alarms.cancel(weatherRefreshIntent);
+            } else {
+                getActivity().startService(i);
+            }
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.USE_WEATHER,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    check ? 1 : 0);
             return true;
         } else if (preference == mUseCustomLoc) {
             return WeatherPrefs.setUseCustomLocation(mContext,
                     ((CheckBoxPreference) preference).isChecked());
+        } else if (preference == mShowLoc) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.WEATHER_SHOW_LOCATION,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
         } else if (preference == mUseCelcius) {
             return WeatherPrefs.setUseCelcius(mContext,
                     ((CheckBoxPreference) preference).isChecked());

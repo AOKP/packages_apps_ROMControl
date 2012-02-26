@@ -32,6 +32,7 @@ public class WeatherXmlParser {
 
     private static final String ATT_YAHOO_CITY = "city";
     private static final String ATT_YAHOO_TEMP = "temp";
+    private static final String ATT_YAHOO_CODE = "code";
     private static final String ATT_YAHOO_TEMP_UNIT = "temperature";
     private static final String ATT_YAHOO_HUMIDITY = "humidity";
     private static final String ATT_YAHOO_TEXT = "text";
@@ -55,6 +56,7 @@ public class WeatherXmlParser {
         String strCity = null;
         String strDate = null;
         String strCondition = null;
+        String strCondition_code = null;
         String strTemp = null;
         String strTempUnit = null;
         String strHumidity = null;
@@ -91,6 +93,7 @@ public class WeatherXmlParser {
                     .getAttributes();
             if (conditionNode != null) {
                 strCondition = conditionNode.getNamedItem(ATT_YAHOO_TEXT).getNodeValue();
+                strCondition_code = conditionNode.getNamedItem(ATT_YAHOO_CODE).getNodeValue();
                 strTemp = conditionNode.getNamedItem(ATT_YAHOO_TEMP).getNodeValue();
                 strDate = conditionNode.getNamedItem(ATT_YAHOO_DATE).getNodeValue();
             }
@@ -113,7 +116,7 @@ public class WeatherXmlParser {
 
         /* Weather info */
         WeatherInfo yahooWeatherInfo = new WeatherInfo(strCity, strDate,
-                strCondition, strTemp, strTempUnit, strHumidity, strWindSpeed, strSpeedUnit, strLow, strHigh);
+                strCondition, strCondition_code, strTemp, strTempUnit, strHumidity, strWindSpeed, strSpeedUnit, strLow, strHigh);
 
         return yahooWeatherInfo;
     }

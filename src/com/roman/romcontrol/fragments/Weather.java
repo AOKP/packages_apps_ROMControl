@@ -59,7 +59,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
         mWeatherSyncInterval = (ListPreference) findPreference("refresh_interval");
         mWeatherSyncInterval.setOnPreferenceChangeListener(this);
-        mWeatherSyncInterval.setSummary(Integer.toString(WeatherPrefs.getRefreshInterval(mContext))
+        mWeatherSyncInterval.setSummary(Long.toString(WeatherPrefs.getRefreshInterval(mContext))
                 + " minutes");
 
         mCustomWeatherLoc = (EditTextPreference) findPreference("custom_location");
@@ -175,7 +175,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mWeatherSyncInterval) {
-            int newVal = Integer.parseInt((String) newValue);
+            long newVal = Long.parseLong((String) newValue);
             preference.setSummary(newValue + " minutes");
 
             return WeatherPrefs.setRefreshInterval(mContext, newVal);

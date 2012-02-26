@@ -13,14 +13,14 @@ public class WeatherPrefs {
     public static final String KEY_USE_CUSTOM_LOCATION = "use_custom_location";
     public static final String KEY_CUSTOM_LOCATION = "custom_location";
 
-    public static int getRefreshInterval(Context c) {
+    public static long getRefreshInterval(Context c) {
         SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        return prefs.getInt(KEY_REFRESH, 60);
+        return prefs.getLong(KEY_REFRESH, 60);
     }
 
-    public static boolean setRefreshInterval(Context c, int interval) {
+    public static boolean setRefreshInterval(Context c, long interval) {
         SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        return prefs.edit().putInt(KEY_REFRESH, interval).commit();
+        return prefs.edit().putLong(KEY_REFRESH, interval).commit();
     }
 
     public static String getCustomLocation(Context c) {

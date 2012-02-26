@@ -178,6 +178,8 @@
     <string name="title_led_off">LED pulse OFF duration</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">LED color</string>
+    <string name="title_led_screen_on">LED flash while screen ON</string>
+    <string name="summary_led_screen_on">@null</string>
 
     <!--  Statusbar | General -->
     <string name="title_settings_behavior">Use default settings behavior</string>

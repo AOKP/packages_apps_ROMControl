@@ -20,4 +20,9 @@
 		android:title="@string/led_color_title" 
 		android:defaultValue="#000000" />
 
+  <CheckBoxPreference
+    android:key="led_screen_on"
+    android:title="@string/title_led_screen_on"
+    android:summary="@string/summary_led_screen_on" />
+
 </PreferenceScreen>

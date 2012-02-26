@@ -70,8 +70,9 @@ public class WeatherRefreshService extends Service {
         Calendar timeToStart = Calendar.getInstance();
         timeToStart.setTimeInMillis(System.currentTimeMillis());
         timeToStart.add(Calendar.MINUTE, 1);
-
-        long interval = TimeUnit.MILLISECONDS.convert(refreshIntervalInMinutes,
+        
+        long intMins = new Long(refreshIntervalInMinutes);
+        long interval = TimeUnit.MILLISECONDS.convert(intMins,
                 TimeUnit.MINUTES);
 
         alarms.setInexactRepeating(AlarmManager.RTC, timeToStart.getTimeInMillis(), interval,

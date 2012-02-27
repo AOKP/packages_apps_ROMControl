@@ -58,7 +58,7 @@ public class WeatherRefreshService extends Service {
         cancelRefresh();
         if (refreshIntervalInMinutes == 0) {
             Log.i(TAG, "Did not schedule refresh.");
-            return;
+            stopSelf();
         }        
 
         Calendar timeToStart = Calendar.getInstance();

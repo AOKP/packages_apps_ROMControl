@@ -48,7 +48,7 @@ public class WeatherRefreshService extends Service {
     }
 
     private void scheduleRefresh() {
-        
+
         Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
         i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
 

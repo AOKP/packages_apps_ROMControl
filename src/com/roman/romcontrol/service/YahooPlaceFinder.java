@@ -23,7 +23,7 @@ public class YahooPlaceFinder {
     }
     
     public static String GeoCode(String location) {
-        String url = String.format(YAHOO_API_BASE_URL, location);
+        String url = String.format(YAHOO_API_BASE_URL, location).replace(' ', '+');
         String response = httpRetriever.retrieve(url);
         return xmlParser.parsePlaceFinderResponse(response);
     }

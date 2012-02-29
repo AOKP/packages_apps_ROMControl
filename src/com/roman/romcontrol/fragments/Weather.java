@@ -43,6 +43,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
     CheckBoxPreference mUseCustomLoc;
     CheckBoxPreference mShowLoc;
     CheckBoxPreference mUseCelcius;
+    ListPreference mStatusBarLocation;
     ListPreference mWeatherSyncInterval;
     EditTextPreference mCustomWeatherLoc;
 
@@ -62,6 +63,11 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
         mWeatherSyncInterval.setSummary(Integer.toString(WeatherPrefs.getRefreshInterval(mContext))
                 + " minutes");
 
+        mStatusBarLocation = (ListPreference) findPreference("statusbar_location");
+        mStatusBarLocation.setOnPreferenceChangeListener(this);
+        mStatusBarLocation.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.WEATHER_STATUSBAR_STYLE, 1) + "");
+
         mCustomWeatherLoc = (EditTextPreference) findPreference("custom_location");
         mCustomWeatherLoc.setOnPreferenceChangeListener(this);
         mCustomWeatherLoc
@@ -73,7 +79,7 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
 
         mUseCustomLoc = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CUSTOM_LOCATION);
         mUseCustomLoc.setChecked(WeatherPrefs.getUseCustomLocation(mContext));
-        
+
         mShowLoc = (CheckBoxPreference) findPreference("show_location");
         mShowLoc.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.WEATHER_SHOW_LOCATION, 0) == 1);
@@ -130,7 +136,8 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.get_weather:
-                Intent i = new Intent(getActivity().getApplicationContext(), WeatherRefreshService.class);
+                Intent i = new Intent(getActivity().getApplicationContext(),
+                        WeatherRefreshService.class);
                 i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
                 getActivity().getApplicationContext().startService(i);
                 return true;
@@ -144,11 +151,13 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
         if (preference == mEnableWeather) {
             // _stop_ alarm or start service
             boolean check = ((CheckBoxPreference) preference).isChecked();
-            Intent i = new Intent(getActivity().getApplicationContext(), WeatherRefreshService.class);
+            Intent i = new Intent(getActivity().getApplicationContext(),
+                    WeatherRefreshService.class);
             i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
             PendingIntent weatherRefreshIntent = PendingIntent.getService(getActivity(), 0, i, 0);
             if (!check) {
-                AlarmManager alarms = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+                AlarmManager alarms = (AlarmManager) getActivity().getSystemService(
+                        Context.ALARM_SERVICE);
                 alarms.cancel(weatherRefreshIntent);
             } else {
                 getActivity().startService(i);
@@ -190,6 +199,12 @@ public class Weather extends SettingsPreferenceFragment implements OnPreferenceC
             preference.setSummary(newVal);
             return WeatherPrefs.setCustomLocation(mContext, newVal);
 
+        } else if (preference == mStatusBarLocation) {
+
+            String newVal = (String) newValue;
+            return Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.WEATHER_STATUSBAR_STYLE,
+                    Integer.parseInt(newVal));
         }
         return false;
     }

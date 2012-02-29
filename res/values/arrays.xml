@@ -259,13 +259,11 @@
 
 	<!-- toggle style -->
 	<string-array name="toggle_style_entries">
-		<item>No icon, no text</item>
 		<item>Icon only</item>
 		<item>Text only</item>
 	</string-array>
 
 	<string-array name="toggle_style_values">
-		<item>1</item>
 		<item>2</item>
 		<item>3</item>
 	</string-array>
@@ -506,5 +504,46 @@
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
+	</string-array>
+	
+	<string-array name="weather_statusbar_location_entries">
+		<item>Above carrier text</item>
+		<item>Weather panel</item>
+	</string-array>
+	
+	<string-array name="weather_statusbar_location_values">
+		<item>0</item>
+		<item>1</item>
+	</string-array>
+		
+	<string-array name="navigation_bar_width_entries">
+		<item>42 dp (default)</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+	
+	<string-array name="navigation_bar_width">
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
+	</string-array>
+	
+	<string-array name="navigation_bar_height_entries">
+		<item>48 dp (default)</item>
+		<item>42 dp</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+	
+	
+	<string-array name="navigation_bar_height">
+		<item>48</item>
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
 	</string-array>
 </resources>

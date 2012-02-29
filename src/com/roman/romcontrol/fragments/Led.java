@@ -5,6 +5,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -20,10 +21,12 @@ public class Led extends SettingsPreferenceFragment implements OnPreferenceChang
     private static final String PREF_LED_OFF = "led_off";
     private static final String PREF_LED_ON = "led_on";
     private static final String PREF_COLOR_PICKER = "led_color";
+    private static final String PREF_LED_SCREEN_ON = "led_screen_on";
 
     ListPreference mLedOffTime;
     ListPreference mLedOnTime;
     ColorPickerPreference mColorPicker;
+    CheckBoxPreference mLedScreenOn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,10 @@ public class Led extends SettingsPreferenceFragment implements OnPreferenceChang
         mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
         mColorPicker.setOnPreferenceChangeListener(this);
 
+				mLedScreenOn = (CheckBoxPreference) findPreference(PREF_LED_SCREEN_ON);
+				mLedScreenOn.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+					Settings.Secure.LED_SCREEN_ON, 0) == 1);
+
     }
 
     @Override
@@ -67,6 +74,14 @@ public class Led extends SettingsPreferenceFragment implements OnPreferenceChang
         // if (preference == mColorPicker) {
         //
         // }
+				if (preference == mLedScreenOn) {
+						boolean checked = ((CheckBoxPreference) preference).isChecked();
+						Settings.Secure.putInt(getActivity().getContentResolver(),
+							Settings.Secure.LED_SCREEN_ON, checked ? 1 : 0);
+						Log.i(TAG, "LED flash when screen ON is set to: " + checked);
+						return true;
+				}
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

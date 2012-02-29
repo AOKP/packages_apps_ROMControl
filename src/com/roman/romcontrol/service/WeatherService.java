@@ -39,6 +39,7 @@ public class WeatherService extends IntentService {
     public static final String EXTRA_CITY = "city";
     public static final String EXTRA_FORECAST_DATE = "forecast_date";
     public static final String EXTRA_CONDITION = "condition";
+    public static final String EXTRA_CONDITION_CODE = "condition_code";
     public static final String EXTRA_TEMP = "temp";
     public static final String EXTRA_HUMIDITY = "humidity";
     public static final String EXTRA_WIND = "wind";
@@ -80,7 +81,6 @@ public class WeatherService extends IntentService {
                     PendingIntent pi = PendingIntent.getService(getApplicationContext(), 0, intent,
                             PendingIntent.FLAG_CANCEL_CURRENT);
                     locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, pi);
-                    Log.i(TAG, "requesting location update");
                     return;
                 }
 
@@ -88,7 +88,6 @@ public class WeatherService extends IntentService {
                 crit.setAccuracy(Criteria.ACCURACY_COARSE);
                 String bestProvider = locationManager.getBestProvider(crit, true);
                 Location loc = null;
-                Log.i(TAG, "using " + bestProvider + " provider");
                 if (bestProvider != null) {
                     loc = locationManager.getLastKnownLocation(bestProvider);
                 } else {
@@ -96,7 +95,6 @@ public class WeatherService extends IntentService {
                 }
                 Time time = new Time();
                 time.set(loc.getTime());
-                Log.i(TAG, "location timestamp: " + time.format("%H:%M:%S"));
                 try {
                     woeid = YahooPlaceFinder.reverseGeoCode(loc.getLatitude(),
                             loc.getLongitude());
@@ -104,12 +102,12 @@ public class WeatherService extends IntentService {
                     e.printStackTrace();
                 }
             }
-            Log.i(TAG, "got woeid: " + woeid);
             w = parseXml(getDocument(woeid));
             if (w != null) {
                 sendBroadcast(w);
             }
         }
+        stopSelf();
     }
 
     private Document getDocument(String woeid) {
@@ -134,7 +132,7 @@ public class WeatherService extends IntentService {
             return new WeatherXmlParser().parseWeatherResponse(wDoc);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.w(TAG, "Couldn't connect to Google to get weather data.");
+            Log.w(TAG, "Couldn't connect to Yahoo to get weather data.");
         }
         return null;
     }
@@ -144,6 +142,7 @@ public class WeatherService extends IntentService {
         try {
             broadcast.putExtra(EXTRA_CITY, w.city);
             broadcast.putExtra(EXTRA_CONDITION, w.condition);
+            broadcast.putExtra(EXTRA_CONDITION_CODE, w.condition_code);
             broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
             broadcast.putExtra(EXTRA_HUMIDITY, w.humidity);
             broadcast.putExtra(EXTRA_TEMP, w.temp);
@@ -153,15 +152,11 @@ public class WeatherService extends IntentService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.i(TAG, "Sending weather broadcast...");
-        Log.i(TAG, "City: " + w.city);
-        Log.i(TAG, "Condition: " + w.condition);
-        Log.i(TAG, "Date: " + w.forecast_date);
-        Log.i(TAG, "Humidity: " + w.humidity);
-        Log.i(TAG, "Temp: " + w.temp);
-        Log.i(TAG, "Wind: " + w.wind);
-        Log.i(TAG, "Low: " + w.low);
-        Log.i(TAG, "High: " + w.high);
         getApplicationContext().sendBroadcast(broadcast);
+    }
+    
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return super.onStartCommand(intent, flags, startId);
     }
 }

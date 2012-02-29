@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -214,7 +215,29 @@ public class Navbar extends SettingsPreferenceFragment implements
             ft.addToBackStack("navbar_layout");
             ft.replace(this.getId(), fragment);
             ft.commit();
+        } else if (preference == mEnableNavigationBar) {
 
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_SHOW,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+
+            new AlertDialog.Builder(getActivity())
+                    .setTitle("Reboot required!")
+                    .setMessage("Please reboot to enable/disable the navigation bar properly!")
+                    .setNegativeButton("I'll reboot later", null)
+                    .setCancelable(false)
+                    .setPositiveButton("Reboot now!", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            PowerManager pm = (PowerManager) getActivity()
+                                    .getSystemService(Context.POWER_SERVICE);
+                            pm.reboot("New navbar");
+                        }
+                    })
+                    .create()
+                    .show();
+
+            return true;
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

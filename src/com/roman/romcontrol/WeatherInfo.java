@@ -23,7 +23,7 @@ public class WeatherInfo {
         this.condition_code = condition_code;
         this.temp = temp + "°" + temp_unit;
         this.temp_unit = temp_unit;
-        this.humidity = humidity;
+        this.humidity = humidity + "%";
         this.wind = wind + speed_unit;
         this.speed_unit = speed_unit;
         this.low = low + "°" + temp_unit;

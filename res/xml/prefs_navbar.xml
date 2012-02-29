@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<CheckBoxPreference
+		android:key="enable_nav_bar"
+		android:title="Enable bar" />
 
 	<ListPreference
 		android:entries="@array/pref_navigation_menu_entries"
@@ -29,8 +32,7 @@
 	<Preference
 		android:key="buttons"
 		android:title="@string/navbar_order_title"
-		android:summary="@string/navbar_order_summary">
-	</Preference>
+		android:summary="@string/navbar_order_summary" />
 
 	<PreferenceCategory
 		android:key="advanced_cat"
@@ -53,6 +55,18 @@
 			android:key="long_press_home"
 			android:title="@string/long_press_home_title"
 			android:summary="@string/long_press_home_summary" />
+
+		<ListPreference
+			android:entries="@array/navigation_bar_width_entries"
+			android:entryValues="@array/navigation_bar_width"
+			android:key="navigation_bar_width"
+			android:title="Navigation bar width" />
+
+		<ListPreference
+			android:entries="@array/navigation_bar_height_entries"
+			android:entryValues="@array/navigation_bar_height"
+			android:key="navigation_bar_height"
+			android:title="Navigation bar height" />
 
 	</PreferenceCategory>
 </PreferenceScreen>

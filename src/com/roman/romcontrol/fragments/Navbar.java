@@ -2,7 +2,6 @@
 package com.roman.romcontrol.fragments;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.AlertDialog;
@@ -11,15 +10,14 @@ import android.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -58,6 +56,10 @@ public class Navbar extends SettingsPreferenceFragment implements
     Preference mNavBarEnabledButtons;
     Preference mLayout;
     SeekBarPreference mButtonAlpha;
+
+    CheckBoxPreference mEnableNavigationBar;
+    ListPreference mNavigationBarHeight;
+    ListPreference mNavigationBarWidth;
 
     private final String[] buttons = {
             "HOME", "BACK", "TASKS", "SEARCH", "MENU_BIG"
@@ -107,10 +109,26 @@ public class Navbar extends SettingsPreferenceFragment implements
         mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
 
+        boolean hasNavBarByDefault = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+        mEnableNavigationBar = (CheckBoxPreference) findPreference("enable_nav_bar");
+        mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
+
+        // don't allow devices that must use a navigation bar to disable it
+        if (hasNavBarByDefault) {
+            prefs.removePreference(mEnableNavigationBar);
+        }
+        mNavigationBarHeight = (ListPreference) findPreference("navigation_bar_height");
+        mNavigationBarHeight.setOnPreferenceChangeListener(this);
+
+        mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
+        mNavigationBarWidth.setOnPreferenceChangeListener(this);
+
         mLayout = findPreference("buttons");
 
         if (mTablet) {
-            Log.e("ROMAN", "is tablet");
+            Log.e("NavBar", "is tablet");
             prefs.removePreference(mLayout);
             prefs.removePreference(mNavBarEnabledButtons);
             prefs.removePreference(mHomeLongpress);
@@ -249,8 +267,48 @@ public class Navbar extends SettingsPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                     val / 100);
             return true;
+        } else if (preference == mNavigationBarWidth) {
+            String newVal = (String) newValue;
+            int dp = Integer.parseInt(newVal);
+            int width = mapChosenDpToPixels(dp);
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH,
+                    width);
+            toggleBar();
+            return true;
+        } else if (preference == mNavigationBarHeight) {
+            String newVal = (String) newValue;
+            int dp = Integer.parseInt(newVal);
+            int height = mapChosenDpToPixels(dp);
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT,
+                    height);
+            toggleBar();
+            return true;
         }
         return false;
+    }
+
+    public void toggleBar() {
+        boolean isBarOn = Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_BUTTONS_HIDE, 0) == 1;
+        Handler h = new Handler();
+        Settings.System.putInt(mContext.getContentResolver(),
+                Settings.System.NAVIGATION_BAR_BUTTONS_HIDE, isBarOn ? 0 : 1);
+        Settings.System.putInt(mContext.getContentResolver(),
+                Settings.System.NAVIGATION_BAR_BUTTONS_HIDE, isBarOn ? 1 : 0);
+    }
+
+    public int mapChosenDpToPixels(int dp) {
+        switch (dp) {
+            case 48:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_48);
+            case 42:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_42);
+            case 36:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_36);
+            case 24:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_24);
+        }
+        return -1;
     }
 
     public static void addButton(Context context, String key) {

@@ -263,6 +263,7 @@
 	<string name="weather_refresh_interval">Refresh interval</string>
 	<string name="weather_use_celcius">Metric units</string>
 	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
+	<string name="weather_statusbar_style">Statusbar weather style</string>
 	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>

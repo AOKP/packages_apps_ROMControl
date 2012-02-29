@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<CheckBoxPreference
 		android:key="enable_weather"
@@ -12,13 +11,13 @@
 		android:dependency="enable_weather"
 		android:title="@string/weather_use_custom_location"
 		android:summary="@string/weather_use_custom_location_summary" />
-		
+
 	<CheckBoxPreference
 		android:key="show_location"
 		android:dependency="enable_weather"
 		android:title="@string/weather_show_location_title"
 		android:summary="@string/weather_show_location_summary" />
-		
+
 	<CheckBoxPreference
 		android:key="use_celcius"
 		android:dependency="enable_weather"
@@ -38,5 +37,12 @@
 		android:dependency="enable_weather"
 		android:key="refresh_interval"
 		android:title="@string/weather_refresh_interval" />
+
+	<ListPreference
+		android:entries="@array/weather_statusbar_location_entries"
+		android:entryValues="@array/weather_statusbar_location_values"
+		android:dependency="enable_weather"
+		android:key="statusbar_location"
+		android:title="@string/weather_statusbar_style" />
 
 </PreferenceScreen>

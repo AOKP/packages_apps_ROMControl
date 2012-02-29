@@ -5,7 +5,7 @@
     <string name="user_interface">Benutzeroberfläche</string>
     <string name="general_ui">Allgemein</string>
     <string name="lockscreen_options">Bildschirmsperre</string>
-    <string name="power_menu_optons">An-/Aus-Schalter MenÃ¼</string>
+    <string name="power_menu_optons">An-/Aus-Schalter Menü</string>
     <string name="functionality">Funktionen</string>
     <string name="power_saver">Stromsparmodus</string>
     <string name="led_options">LED Einstellungen</string>
@@ -317,22 +317,29 @@
     <string name="set_boot">Beim Boot festlegen</string>
     <string name="apply_values">Werte übernehmen</string>
     <string name="dpi">DPI</string>
-    <!-- Not yet translated
+    <!-- Do not translate
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
     <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
     <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
     <string name="donate_khasmek">@null</string>
     <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
-    <string name="devs">Developers</string>
+    -->
+    <string name="devs">Entwickler</string>
+    <!-- Do not translate
     <string name="aokp">Android Open Kang Project</string>
-    <string name="aokp_website_title">AOKP Website</string>
+    -->
+    <string name="aokp_website_title">AOKP Webseite</string>
+    <!-- Do not translate
     <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
     <string name="aokp_source_title">AOKP Source</string>
-    <string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
-    <string name="aokp_irc_title">Join us on IRC</string>
+    -->
+    <string name="aokp_source_summary">AOKP ist vollständig open source. Die neuste Version findest Du immer unter github.com/aokp</string>
+    <string name="aokp_irc_title">Tritt unserem IRC-Channel bei</string>
+    <!-- Do not translate
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">About AOKP</string>
+    -->
+    <string name="about_aokp">Über AOKP</string>
     <string name="about_aokp_summary">@null</string>
     -->
 </resources>

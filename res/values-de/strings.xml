@@ -317,7 +317,7 @@
     <string name="set_boot">Beim Boot festlegen</string>
     <string name="apply_values">Werte übernehmen</string>
     <string name="dpi">DPI</string>
-	<!-- Not yet translated
+    <!-- Not yet translated
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
     <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
@@ -334,5 +334,5 @@
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">About AOKP</string>
     <string name="about_aokp_summary">@null</string>
-	-->
+    -->
 </resources>

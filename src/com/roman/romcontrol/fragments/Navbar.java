@@ -305,6 +305,8 @@ public class Navbar extends SettingsPreferenceFragment implements
                 return getResources().getDimensionPixelSize(R.dimen.navigation_bar_42);
             case 36:
                 return getResources().getDimensionPixelSize(R.dimen.navigation_bar_36);
+            case 30:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_30);
             case 24:
                 return getResources().getDimensionPixelSize(R.dimen.navigation_bar_24);
         }

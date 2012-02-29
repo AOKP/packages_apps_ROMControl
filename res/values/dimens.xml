@@ -23,5 +23,6 @@
     <dimen name="navigation_bar_48">48.0dip</dimen>
     <dimen name="navigation_bar_42">42.0dip</dimen>
     <dimen name="navigation_bar_36">36.0dip</dimen>
+    <dimen name="navigation_bar_30">30.0dip</dimen>
     <dimen name="navigation_bar_24">24.0dip</dimen>
 </resources>

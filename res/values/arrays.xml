@@ -519,12 +519,14 @@
 	<string-array name="navigation_bar_width_entries">
 		<item>42 dp (default)</item>
 		<item>36 dp</item>
+		<item>30 dp</item>
 		<item>24 dp</item>
 	</string-array>
 	
 	<string-array name="navigation_bar_width">
 		<item>42</item>
 		<item>36</item>
+		<item>30</item>
 		<item>24</item>
 	</string-array>
 	
@@ -532,6 +534,7 @@
 		<item>48 dp (default)</item>
 		<item>42 dp</item>
 		<item>36 dp</item>
+		<item>30 dp</item>
 		<item>24 dp</item>
 	</string-array>
 	
@@ -540,6 +543,7 @@
 		<item>48</item>
 		<item>42</item>
 		<item>36</item>
+		<item>30</item>
 		<item>24</item>
 	</string-array>
 </resources>

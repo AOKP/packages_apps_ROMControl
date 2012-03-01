@@ -114,10 +114,10 @@ public class Navbar extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_showNavigationBar);
         mEnableNavigationBar = (CheckBoxPreference) findPreference("enable_nav_bar");
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
+                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
 
         // don't allow devices that must use a navigation bar to disable it
-        if (hasNavBarByDefault) {
+        if (hasNavBarByDefault || mTablet) {
             prefs.removePreference(mEnableNavigationBar);
         }
         mNavigationBarHeight = (ListPreference) findPreference("navigation_bar_height");
@@ -218,7 +218,7 @@ public class Navbar extends SettingsPreferenceFragment implements
         } else if (preference == mEnableNavigationBar) {
 
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_SHOW,
+                    Settings.System.NAVIGATION_BAR_BUTTONS_SHOW,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
 
             new AlertDialog.Builder(getActivity())
@@ -312,12 +312,12 @@ public class Navbar extends SettingsPreferenceFragment implements
 
     public void toggleBar() {
         boolean isBarOn = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS_HIDE, 0) == 1;
+                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, 0) == 1;
         Handler h = new Handler();
         Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS_HIDE, isBarOn ? 0 : 1);
+                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, isBarOn ? 0 : 1);
         Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS_HIDE, isBarOn ? 1 : 0);
+                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, isBarOn ? 1 : 0);
     }
 
     public int mapChosenDpToPixels(int dp) {

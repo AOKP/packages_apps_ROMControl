@@ -40,12 +40,14 @@ public class StatusBarToggles extends PreferenceFragment implements
 
     private static final String PREF_ENABLE_TOGGLES = "enable_toggles";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
+    private static final String PREF_BRIGHTNESS_SHOW_ICON = "brightness_show_icon";
     private static final String PREF_TOGGLES_STYLE = "toggle_style";
     private static final String PREF_ALT_BUTTON_LAYOUT = "alternate_button_layout";
 
     Preference mEnabledToggles;
     Preference mLayout;
     ListPreference mBrightnessLocation;
+    CheckBoxPreference mBrightnessShowIcon;
     CheckBoxPreference mAlternateButtonLayout;
     ListPreference mToggleStyle;
     Preference mResetToggles;
@@ -64,6 +66,11 @@ public class StatusBarToggles extends PreferenceFragment implements
         mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC,
                 1)));
+                
+        mBrightnessShowIcon = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_SHOW_ICON);
+        mBrightnessShowIcon.setChecked(Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_SHOW_ICON, 0) == 1);
 
         mToggleStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
         mToggleStyle.setOnPreferenceChangeListener(this);
@@ -130,6 +137,11 @@ public class StatusBarToggles extends PreferenceFragment implements
 
             d.show();
 
+            return true;
+        } else if (preference == mBrightnessShowIcon) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_SHOW_ICON,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mAlternateButtonLayout) {
 

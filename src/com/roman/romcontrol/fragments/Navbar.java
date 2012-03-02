@@ -312,8 +312,7 @@ public class Navbar extends SettingsPreferenceFragment implements
 
     public void toggleBar() {
         boolean isBarOn = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, 0) == 1;
-        Handler h = new Handler();
+                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, 1) == 1;
         Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, isBarOn ? 0 : 1);
         Settings.System.putInt(mContext.getContentResolver(),

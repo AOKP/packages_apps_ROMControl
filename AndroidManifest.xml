@@ -191,6 +191,14 @@
             </intent-filter>
         </receiver>
 
+        <receiver
+            android:name=".service.WeatherReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.aokp.romcontrol.INTENT_WEATHER_REQUEST" />
+            </intent-filter>
+        </receiver>
+
         <service android:name=".service.WeatherRefreshService" />
         <service android:name=".service.WeatherService" />
         <service android:name=".service.BootService" />

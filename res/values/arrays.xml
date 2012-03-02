@@ -193,6 +193,22 @@
 		<item>3</item>
 	</string-array>
 
+	<string-array name="statusbar_transparency_entries">
+		<item>No transparency</item>
+		<item>25%</item>
+		<item>50%</item>
+		<item>75%</item>
+		<item>Full transparency</item>
+	</string-array>
+
+	<string-array name="statusbar_transparency_values">
+		<item>100</item>
+		<item>75</item>
+		<item>50</item>
+		<item>25</item>
+		<item>0</item>
+	</string-array>
+
 	<!-- clock stuff -->
 	<string-array name="clock_style_entries">
 		<item>Right clock</item>
@@ -216,6 +232,18 @@
 		<item>2</item>
 		<item>1</item>
 		<item>0</item>
+	</string-array>
+
+	<string-array name="clock_weekday_entries">
+		<item>Don\'t show</item>
+		<item>Small weekday</item>
+		<item>Regular weekday</item>
+	</string-array>
+
+	<string-array name="clock_weekday_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
 	</string-array>
 
 	<!-- Toggles -->

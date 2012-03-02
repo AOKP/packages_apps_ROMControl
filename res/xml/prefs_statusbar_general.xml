@@ -20,6 +20,13 @@
 
     <CheckBoxPreference 
         android:key="adb_icon" 
-        android:title="@string/adb_icon_title" />        
+        android:title="@string/adb_icon_title" />
+
+    <ListPreference
+        android:key="status_bar_transparency"
+        android:title="@string/statusbar_transparency"
+        android:summary="@string/statusbar_transparency_summary"
+        android:entries="@array/statusbar_transparency_entries"
+        android:entryValues="@array/statusbar_transparency_values" />
 
 </PreferenceScreen>

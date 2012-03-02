@@ -2,6 +2,7 @@
 package com.roman.romcontrol;
 
 import android.content.Context;
+import java.lang.Math;
 
 public class WeatherInfo {
 
@@ -24,7 +25,7 @@ public class WeatherInfo {
         this.temp = temp + "°" + temp_unit;
         this.temp_unit = temp_unit;
         this.humidity = humidity + "%";
-        this.wind = calcDirection(wind_dir) + " " + wind + speed_unit;
+        this.wind = calcDirection(wind_dir) + " " + trimSpeed(wind) + speed_unit;
         this.speed_unit = speed_unit;
         this.low = low + "°" + temp_unit;
         this.high = high + "°" + temp_unit;
@@ -49,6 +50,10 @@ public class WeatherInfo {
         else if (deg < 338)
             return "NW";
         else return "";
+    }
+    
+    private String trimSpeed(String speed) {
+        return String.valueOf(Math.round(Float.parseFloat(speed)));
     }
 }
 

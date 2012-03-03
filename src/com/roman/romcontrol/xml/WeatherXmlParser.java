@@ -38,6 +38,7 @@ public class WeatherXmlParser {
     private static final String ATT_YAHOO_TEXT = "text";
     private static final String ATT_YAHOO_DATE = "date";
     private static final String ATT_YAHOO_SPEED = "speed";
+    private static final String ATT_YAHOO_DIRECTION = "direction";
     private static final String ATT_YAHOO_TODAY_HIGH = "high";
     private static final String ATT_YAHOO_TODAY_LOW = "low";
     
@@ -61,6 +62,7 @@ public class WeatherXmlParser {
         String strTempUnit = null;
         String strHumidity = null;
         String strWindSpeed = null;
+        String strWindDir = null;
         String strSpeedUnit = null;
         String strHigh = null;
         String strLow = null;
@@ -102,6 +104,7 @@ public class WeatherXmlParser {
                     .getAttributes();
             if (temNode != null) {
                 strWindSpeed = temNode.getNamedItem(ATT_YAHOO_SPEED).getNodeValue();
+                strWindDir = temNode.getNamedItem(ATT_YAHOO_DIRECTION).getNodeValue();
             }
             
             NamedNodeMap fcNode = root.getElementsByTagName(PARAM_YAHOO_FORECAST).item(0).getAttributes();
@@ -116,7 +119,7 @@ public class WeatherXmlParser {
 
         /* Weather info */
         WeatherInfo yahooWeatherInfo = new WeatherInfo(strCity, strDate,
-                strCondition, strCondition_code, strTemp, strTempUnit, strHumidity, strWindSpeed, strSpeedUnit, strLow, strHigh);
+                strCondition, strCondition_code, strTemp, strTempUnit, strHumidity, strWindSpeed, strWindDir, strSpeedUnit, strLow, strHigh);
 
         return yahooWeatherInfo;
     }

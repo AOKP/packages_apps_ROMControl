@@ -155,6 +155,9 @@ public class Navbar extends SettingsPreferenceFragment implements
                 Settings.System.putFloat(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                         0.6f);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, mContext.getResources().getBoolean(
+                                com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0);
                 mButtonAlpha.setValue(60);
                 return true;
             default:
@@ -312,8 +315,7 @@ public class Navbar extends SettingsPreferenceFragment implements
 
     public void toggleBar() {
         boolean isBarOn = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, 0) == 1;
-        Handler h = new Handler();
+                Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, 1) == 1;
         Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, isBarOn ? 0 : 1);
         Settings.System.putInt(mContext.getContentResolver(),

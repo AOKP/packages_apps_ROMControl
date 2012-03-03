@@ -209,6 +209,20 @@
 		<item>0</item>
 	</string-array>
 
+	<string-array name="statusbar_layout_entries">
+		<item>Regular layout</item>
+		<item>Reversed</item>
+		<!-- <item>Tabs</item>
+		<item>Bottom Tabs</item> -->
+	</string-array>
+
+	<string-array name="statusbar_layout_values">
+		<item>0</item>
+		<item>1</item>
+		<!-- <item>2</item>
+		<item>3</item> -->
+	</string-array>
+
 	<!-- clock stuff -->
 	<string-array name="clock_style_entries">
 		<item>Right clock</item>

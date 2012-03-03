@@ -24,12 +24,14 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
     private static final String PREF_BRIGHTNESS_TOGGLE = "status_bar_brightness_toggle";
     private static final String PREF_ADB_ICON = "adb_icon";
     private static final String PREF_TRANSPARENCY = "status_bar_transparency";
+    private static final String PREF_LAYOUT = "status_bar_layout";
 
     CheckBoxPreference mDefaultSettingsButtonBehavior;
     CheckBoxPreference mAutoHideToggles;
     CheckBoxPreference mStatusBarBrightnessToggle;
     CheckBoxPreference mAdbIcon;
     ListPreference mTransparency;
+    ListPreference mLayout;
 
     Context mContext;
 
@@ -66,6 +68,13 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
         mTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY,
                 100)));
+
+        mLayout = (ListPreference) findPreference(PREF_LAYOUT);
+        mLayout.setOnPreferenceChangeListener(this);
+        mLayout.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUS_BAR_LAYOUT,
+                0)));
+
 
         if (mTablet) {
             PreferenceScreen prefs = getPreferenceScreen();
@@ -122,6 +131,11 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_TRANSPARENCY, val);
+            restartSystemUI();
+        } else if (preference == mLayout) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_LAYOUT, val);
             restartSystemUI();
         }
         return result;

@@ -65,7 +65,7 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
         mTransparency.setOnPreferenceChangeListener(this);
         mTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY,
-                0)));
+                100)));
 
         if (mTablet) {
             PreferenceScreen prefs = getPreferenceScreen();

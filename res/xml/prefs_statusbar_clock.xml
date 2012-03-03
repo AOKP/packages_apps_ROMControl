@@ -14,6 +14,13 @@
 		android:key="clock_am_pm_style"
 		android:title="@string/title_clock_ampm_entries" />
 
+	<ListPreference
+		android:key="clock_weekday"
+		android:title="@string/enable_clock_weekday"
+		android:summary="@string/enable_clock_weekday_summary"
+		android:entries="@array/clock_weekday_entries"
+		android:entryValues="@array/clock_weekday_values" />
+
 	<PreferenceCategory
 		android:key="colors"
 		android:title="@string/colors">

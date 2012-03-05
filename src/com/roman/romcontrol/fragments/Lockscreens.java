@@ -51,6 +51,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_LOCKSCREEN_WEATHER = "lockscreen_weather";
+    
+    private static final String PREF_SHOW_LOCK_BEFORE_UNLOCK = "show_lock_before_unlock";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int SELECT_ACTIVITY = 2;
@@ -66,6 +68,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     CheckBoxPreference mLockscreenLandscape;
     CheckBoxPreference mLockscreenBattery;
     CheckBoxPreference mLockscreenWeather;
+    CheckBoxPreference mShowLockBeforeUnlock;
 
     Preference mLockscreenWallpaper;
 
@@ -108,6 +111,10 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         mLockscreenWeather = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_WEATHER);
         mLockscreenWeather.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_WEATHER, 0) == 1);
+        
+        mShowLockBeforeUnlock = (CheckBoxPreference) findPreference(PREF_SHOW_LOCK_BEFORE_UNLOCK);
+        mShowLockBeforeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SHOW_LOCK_BEFORE_UNLOCK, 0) == 1);
 
         mVolumeWake = (CheckBoxPreference) findPreference(PREF_VOLUME_WAKE);
         mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -143,9 +150,17 @@ public class Lockscreens extends SettingsPreferenceFragment implements
                     Settings.System.LOCKSCREEN_ENABLE_MENU_KEY,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+            
         } else if (preference == mLockScreenTimeoutUserOverride) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+            
+        } else if (preference == mShowLockBeforeUnlock) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_LOCK_BEFORE_UNLOCK,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 

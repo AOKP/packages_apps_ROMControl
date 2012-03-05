@@ -551,11 +551,13 @@
 	<string-array name="weather_statusbar_location_entries">
 		<item>Above carrier text</item>
 		<item>Weather panel</item>
+		<item>Disabled</item>
 	</string-array>
 	
 	<string-array name="weather_statusbar_location_values">
 		<item>0</item>
 		<item>1</item>
+		<item>2</item>
 	</string-array>
 		
 	<string-array name="navigation_bar_width_entries">

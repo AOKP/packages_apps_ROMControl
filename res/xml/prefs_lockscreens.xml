@@ -22,12 +22,7 @@
 	<CheckBoxPreference
 		android:key="lockscreen_user_timeout_override"
 		android:title="@string/title_lockscreen_user_timeout_override"
-		android:summary="@string/summary_lockscreen_user_timeout_override" />
-
-	<CheckBoxPreference
-		android:key="show_lock_before_unlock"
-		android:title="@string/show_lock_before_unlock_title"
-		android:summary="@string/show_lock_before_unlock_summary" />
+		android:summary="@string/summary_lockscreen_user_timeout_override" />	
 
 	<CheckBoxPreference
 		android:key="lockscreen_battery"
@@ -72,6 +67,11 @@
 			android:key="lockscreen_quick_unlock_control"
 			android:title="@string/lockscreen_quick_unlock_control_title"
 			android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
+		<CheckBoxPreference
+			android:key="show_lock_before_unlock"
+			android:title="@string/show_lock_before_unlock_title"
+			android:summary="@string/show_lock_before_unlock_summary" />
 
 	</PreferenceCategory>
 

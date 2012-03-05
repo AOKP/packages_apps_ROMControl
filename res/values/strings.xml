@@ -199,7 +199,7 @@
     <string name="statusbar_transparency">Transparency</string>
     <string name="statusbar_transparency_summary">Turning this on might affect performance and battery life. (requires UI restart)</string>
 
-    <string name="statusbar_layout">Phone drawer layout</string>
+    <string name="statusbar_layout">Notification drawer layout</string>
     <string name="statusbar_layout_summary">Change the notification drawer layout (requires UI restart)</string>
 
     <!-- Statusbar | Battery -->

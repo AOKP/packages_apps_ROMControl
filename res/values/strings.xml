@@ -118,6 +118,8 @@
     <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
     <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+    <string name="show_lock_before_unlock_title">Show lockscreen before unlock</string>
+    <string name="show_lock_before_unlock_summary">Show standard lockscreen before secure unlock</string>
     <string name="lockscreen_battery_title">Lockscreen Battery Percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
 	<string name="lockscreen_weather_title">Lockscreen Weather</string>

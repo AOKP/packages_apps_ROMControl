@@ -81,6 +81,8 @@ public class StatusBarGeneral extends SettingsPreferenceFragment implements
             prefs.removePreference(mStatusBarBrightnessToggle);
             prefs.removePreference(mAutoHideToggles);
             prefs.removePreference(mDefaultSettingsButtonBehavior);
+            prefs.removePreference(mTransparency);
+            prefs.removePreference(mLayout);
         }
     }
 

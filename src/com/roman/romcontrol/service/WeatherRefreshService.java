@@ -54,12 +54,6 @@ public class WeatherRefreshService extends Service {
 
         weatherRefreshIntent = PendingIntent.getService(getApplicationContext(), 0, i,
                 0);
-        
-        cancelRefresh();
-        if (refreshIntervalInMinutes == 0) {
-            Log.i(TAG, "Did not schedule refresh.");
-            stopSelf();
-        }        
 
         Calendar timeToStart = Calendar.getInstance();
         timeToStart.setTimeInMillis(System.currentTimeMillis());
@@ -67,7 +61,6 @@ public class WeatherRefreshService extends Service {
 
         alarms.set(AlarmManager.RTC, timeToStart.getTimeInMillis(),
                 weatherRefreshIntent);
-        stopSelf(); // so it won't run in the background eatin up RAM, ^ alarm will restart it
     }
 
     public void cancelRefresh() {
@@ -85,8 +78,12 @@ public class WeatherRefreshService extends Service {
                 getApplicationContext().startService(i);
             }
         }
-        scheduleRefresh();
-
+        cancelRefresh();
+        if (refreshIntervalInMinutes != 0) {
+            scheduleRefresh();
+        }
+        
+        stopSelf(); // so it won't run in the background eatin up RAM, ^ alarm will restart it
         return START_STICKY;
     }
 

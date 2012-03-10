@@ -108,4 +108,11 @@
 		android:fragment="com.roman.romcontrol.fragments.Performance"
 		android:icon="@drawable/ic_rom_control_performance" />
 
+    <header
+        android:id="@+id/init_d"
+        android:title="@string/pt_init_d"
+        android:summary="@string/ps_init_d"
+        android:fragment="com.roman.romcontrol.fragments.InitD"
+        android:icon="@drawable/ic_rom_control_init_d"/>
+
 </preference-headers>

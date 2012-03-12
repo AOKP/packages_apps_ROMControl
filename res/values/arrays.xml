@@ -430,6 +430,7 @@
 		<item>TORCH</item>
 		<item>SYNC</item>
 		<item>SWAGGER</item>
+		<item>FCHARGE</item>
 	</string-array>
 	
 	<string-array name="available_toggles_values">
@@ -443,6 +444,7 @@
 		<item>Torch</item>
 		<item>Sync</item>
 		<item>Swagger</item>
+		<item>Fast charge</item>
 	</string-array>
 	
 	<string-array name="lockscreen_choice_entries">

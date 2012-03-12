@@ -227,7 +227,7 @@
     <string name="weather_show_location_summary">Zeigt Deinen Standort an.</string>
     <string name="weather_refresh_interval">Aktualisierungsintervall</string>
     <string name="weather_use_celcius">Metrische Einheiten</string>
-    <string name="weather_use_celcius_summary">Zeigt die Temperatur in Celsius statt Fahrenheit und die Windgeschwindigkeit in km/h statt mph.</string></string>
+    <string name="weather_use_celcius_summary">Zeigt die Temperatur in Celsius statt Fahrenheit und die Windgeschwindigkeit in km/h statt mph.</string>
 	
     <string name="weather_statusbar_style">Statusbar weather style</string>
 	

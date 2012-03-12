@@ -74,7 +74,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 0) == 1);
+                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, 1) == 1);
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();

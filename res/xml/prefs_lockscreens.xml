@@ -7,6 +7,11 @@
 		android:title="@string/lockscreen_wallpaper_title"
 		android:summary="@string/lockscreen_wallpaper_summary" />
 
+	<net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_text_color"
+            android:title="@string/lockscreen_text_color_title"
+            android:defaultValue="#ffffffff" />
+
 	<ListPreference
 		android:entries="@array/pref_lockscreen_options_entries"
 		android:entryValues="@array/pref_lockscreen_options_values"

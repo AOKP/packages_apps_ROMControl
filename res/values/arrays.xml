@@ -212,15 +212,13 @@
 	<string-array name="statusbar_layout_entries">
 		<item>Regular layout</item>
 		<item>Reversed</item>
-		<!-- <item>Tabs</item>
-		<item>Bottom Tabs</item> -->
+		<item>Traditional</item>
 	</string-array>
 
 	<string-array name="statusbar_layout_values">
 		<item>0</item>
 		<item>1</item>
-		<!-- <item>2</item>
-		<item>3</item> -->
+		<item>2</item>
 	</string-array>
 
 	<!-- clock stuff -->

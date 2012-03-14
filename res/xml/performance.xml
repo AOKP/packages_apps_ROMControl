@@ -60,4 +60,18 @@
                         android:summary="@string/pref_scrollingcache_summary"
                         android:entries="@array/entries_scrollingcache"
                         android:entryValues="@array/values_scrollingcache" />
+    <PreferenceCategory
+		android:key="kernel"
+		android:title="@string/kernel">
+    		
+    		<com.roman.romcontrol.fragments.ColorTuningPreference
+        		android:key="color_tuning"
+        		android:title="@string/color_tuning_title_head"
+        		android:summary="@string/color_tuning_summary_head" />
+    		<com.roman.romcontrol.fragments.GammaTuningPreference
+        		android:key="gamma_tuning"
+        		android:title="@string/gamma_tuning_title_head"
+        		android:summary="@string/gamma_tuning_summary_head" />
+		
+	</PreferenceCategory>
 </PreferenceScreen>

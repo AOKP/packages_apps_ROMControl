@@ -142,5 +142,4 @@
 				android:targetClass="com.roman.romcontrol.tools.InitD" />
 		</Preference>
 	</PreferenceCategory>
-
 </PreferenceScreen>

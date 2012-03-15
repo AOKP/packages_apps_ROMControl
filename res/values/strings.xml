@@ -118,8 +118,12 @@
     <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
     <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+    <string name="show_lock_before_unlock_title">Show lockscreen before unlock</string>
+    <string name="show_lock_before_unlock_summary">Show standard lockscreen before secure unlock</string>
     <string name="lockscreen_battery_title">Lockscreen Battery Percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
+	<string name="lockscreen_weather_title">Lockscreen Weather</string>
+    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
     <string name="volume_wake_title">Volume wake</string>
     <string name="volume_wake_summary">Tapping the volume keys while your phone is off will turn the screen on.</string>
     <string name="volume_music_controls_title">Volume music controls</string>
@@ -143,6 +147,7 @@
     <string name="enable_fast_torch_summary">While your screen is off, you can long-press the power key to turn the LED light on. Letting go of the power button will turn the torch off.</string>
     <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="lockscreen_text_color_title">Lockscreen text color</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show power saver</string>
@@ -176,6 +181,8 @@
     <string name="title_led_off">LED pulse OFF duration</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">LED color</string>
+    <string name="title_led_screen_on">LED flash while screen ON</string>
+    <string name="summary_led_screen_on">@null</string>
 
     <!--  Statusbar | General -->
     <string name="title_settings_behavior">Use default settings behavior</string>
@@ -189,6 +196,12 @@
 
     <string name="adb_icon_title">Enable USB debugging icon</string>
     <string name="adb_icon_summary">Wutang</string>
+
+    <string name="statusbar_transparency">Transparency</string>
+    <string name="statusbar_transparency_summary">Turning this on might affect performance and battery life. (requires UI restart)</string>
+
+    <string name="statusbar_layout">Notification drawer layout</string>
+    <string name="statusbar_layout_summary">Change the notification drawer layout (requires UI restart)</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
@@ -210,6 +223,8 @@
     <string name="reset_color_title">Reset color</string>
     <string name="enable_alarm_title">Enable alarm icon</string>
     <string name="enable_alarm_summary">After disabling/enabling, you must toggle your alarms for it to show up again. Or reboot.</string>
+    <string name="enable_clock_weekday">Day of the week</string>
+    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>
@@ -254,9 +269,12 @@
 	<string name="weather_custom_location_dialog_title">Set your location</string>
 	<string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
 	<string name="weather_custom_location_title">Custom location</string>
+	<string name="weather_show_location_title">Show location</string>
+	<string name="weather_show_location_summary">Show your location.</string>
 	<string name="weather_refresh_interval">Refresh interval</string>
-	<string name="weather_use_celcius">Display temp in Celcius</string>
-	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Ceclius rather than Fahrenheit.</string>
+	<string name="weather_use_celcius">Metric units</string>
+	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
+	<string name="weather_statusbar_style">Statusbar weather style</string>
 	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>
@@ -375,7 +393,7 @@
 	<string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
 	<string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
 	<string name="donate_khasmek">@null</string>
-	<string name="donate_sethyx">@null</string>
+	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
 	<string name="devs">Developers</string>
 	<string name="aokp">Android Open Kang Project</string>
 	<string name="aokp_website_title">AOKP Website</string>

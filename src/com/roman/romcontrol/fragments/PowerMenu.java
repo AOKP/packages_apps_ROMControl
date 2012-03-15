@@ -4,14 +4,14 @@ package com.roman.romcontrol.fragments;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
 import com.roman.romcontrol.R;
+import com.roman.romcontrol.SettingsPreferenceFragment;
 
-public class PowerMenu extends PreferenceFragment {
+public class PowerMenu extends SettingsPreferenceFragment {
 
     private static final String PREF_POWER_SAVER = "show_power_saver";
     private static final String PREF_SCREENSHOT = "show_screenshot";
@@ -63,6 +63,10 @@ public class PowerMenu extends PreferenceFragment {
         mShowNavBarHide.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
                 0) == 1);
+        
+        if(mTablet) {
+            getPreferenceScreen().removePreference(mShowNavBarHide);
+        }
     }
 
     @Override

@@ -1,10 +1,14 @@
 
 package com.roman.romcontrol.fragments;
 
+import java.io.IOException;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -12,17 +16,22 @@ import android.util.Log;
 import com.roman.romcontrol.R;
 import com.roman.romcontrol.SettingsPreferenceFragment;
 
-public class StatusBarGeneral extends SettingsPreferenceFragment {
+public class StatusBarGeneral extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
 
     private static final String PREF_SETTINGS_BUTTON_BEHAVIOR = "settings_behavior";
     private static final String PREF_AUTO_HIDE_TOGGLES = "auto_hide_toggles";
     private static final String PREF_BRIGHTNESS_TOGGLE = "status_bar_brightness_toggle";
     private static final String PREF_ADB_ICON = "adb_icon";
+    private static final String PREF_TRANSPARENCY = "status_bar_transparency";
+    private static final String PREF_LAYOUT = "status_bar_layout";
 
     CheckBoxPreference mDefaultSettingsButtonBehavior;
     CheckBoxPreference mAutoHideToggles;
     CheckBoxPreference mStatusBarBrightnessToggle;
     CheckBoxPreference mAdbIcon;
+    ListPreference mTransparency;
+    ListPreference mLayout;
 
     Context mContext;
 
@@ -53,14 +62,28 @@ public class StatusBarGeneral extends SettingsPreferenceFragment {
         mAdbIcon = (CheckBoxPreference) findPreference(PREF_ADB_ICON);
         mAdbIcon.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.ADB_ICON, 1) == 1);
+        
+        mTransparency = (ListPreference) findPreference(PREF_TRANSPARENCY);
+        mTransparency.setOnPreferenceChangeListener(this);
+        mTransparency.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENCY,
+                100)));
+
+        mLayout = (ListPreference) findPreference(PREF_LAYOUT);
+        mLayout.setOnPreferenceChangeListener(this);
+        mLayout.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUS_BAR_LAYOUT,
+                0)));
+
 
         if (mTablet) {
             PreferenceScreen prefs = getPreferenceScreen();
             prefs.removePreference(mStatusBarBrightnessToggle);
             prefs.removePreference(mAutoHideToggles);
             prefs.removePreference(mDefaultSettingsButtonBehavior);
+            prefs.removePreference(mTransparency);
+            prefs.removePreference(mLayout);
         }
-
     }
 
     @Override
@@ -96,10 +119,34 @@ public class StatusBarGeneral extends SettingsPreferenceFragment {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.ADB_ICON, checked ? 1 : 0);
             return true;
+            
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
     }
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean result = false;
 
+        if (preference == mTransparency) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_TRANSPARENCY, val);
+            restartSystemUI();
+        } else if (preference == mLayout) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_LAYOUT, val);
+            restartSystemUI();
+        }
+        return result;
+    }
+    private void restartSystemUI() {
+        try {
+            Runtime.getRuntime().exec("pkill -TERM -f  com.android.systemui");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

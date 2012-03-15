@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -41,6 +41,7 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
     private static final String TAG = "Lockscreens";
+    private static final boolean DEBUG = true;
 
     private static final String PREF_MENU = "pref_lockscreen_menu_unlock";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
@@ -50,6 +51,10 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
+    private static final String PREF_LOCKSCREEN_WEATHER = "lockscreen_weather";
+    private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
+    
+    private static final String PREF_SHOW_LOCK_BEFORE_UNLOCK = "show_lock_before_unlock";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int SELECT_ACTIVITY = 2;
@@ -64,6 +69,9 @@ public class Lockscreens extends SettingsPreferenceFragment implements
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mLockscreenLandscape;
     CheckBoxPreference mLockscreenBattery;
+    CheckBoxPreference mLockscreenWeather;
+    CheckBoxPreference mShowLockBeforeUnlock;
+    ColorPickerPreference mLockscreenTextColor;
 
     Preference mLockscreenWallpaper;
 
@@ -102,6 +110,14 @@ public class Lockscreens extends SettingsPreferenceFragment implements
         mLockscreenBattery = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_BATTERY);
         mLockscreenBattery.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_BATTERY, 0) == 1);
+        
+        mLockscreenWeather = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_WEATHER);
+        mLockscreenWeather.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_WEATHER, 0) == 1);
+        
+        mShowLockBeforeUnlock = (CheckBoxPreference) findPreference(PREF_SHOW_LOCK_BEFORE_UNLOCK);
+        mShowLockBeforeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SHOW_LOCK_BEFORE_UNLOCK, 0) == 1);
 
         mVolumeWake = (CheckBoxPreference) findPreference(PREF_VOLUME_WAKE);
         mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -125,6 +141,9 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
         ((PreferenceGroup) findPreference("advanced_cat"))
                 .removePreference(findPreference(Settings.System.LOCKSCREEN_HIDE_NAV));
+        
+        mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
+        mLockscreenTextColor.setOnPreferenceChangeListener(this);
 
         refreshSettings();
         setHasOptionsMenu(true);
@@ -137,9 +156,17 @@ public class Lockscreens extends SettingsPreferenceFragment implements
                     Settings.System.LOCKSCREEN_ENABLE_MENU_KEY,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+            
         } else if (preference == mLockScreenTimeoutUserOverride) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+            
+        } else if (preference == mShowLockBeforeUnlock) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_LOCK_BEFORE_UNLOCK,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 
@@ -147,6 +174,13 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_BATTERY,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+
+        } else if (preference == mLockscreenWeather) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_WEATHER,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 
@@ -298,11 +332,21 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+    	boolean handled = false;
         if (preference == mLockscreenOption) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_LAYOUT, val);
             refreshSettings();
+            return true;
+            
+        } else if (preference == mLockscreenTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
+            if (DEBUG) Log.d(TAG, String.format("new color hex value: %d", intHex));
             return true;
 
         } else if (preference.getKey().startsWith("lockscreen_target")) {
@@ -344,7 +388,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream);
 
             } else if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
-                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION) {
+                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
+                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
                 mPicker.onActivityResult(requestCode, resultCode, data);
             }
         }

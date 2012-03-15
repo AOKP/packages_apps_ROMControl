@@ -7,6 +7,11 @@
 		android:title="@string/lockscreen_wallpaper_title"
 		android:summary="@string/lockscreen_wallpaper_summary" />
 
+	<net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_text_color"
+            android:title="@string/lockscreen_text_color_title"
+            android:defaultValue="#ffffffff" />
+
 	<ListPreference
 		android:entries="@array/pref_lockscreen_options_entries"
 		android:entryValues="@array/pref_lockscreen_options_values"
@@ -22,12 +27,17 @@
 	<CheckBoxPreference
 		android:key="lockscreen_user_timeout_override"
 		android:title="@string/title_lockscreen_user_timeout_override"
-		android:summary="@string/summary_lockscreen_user_timeout_override" />
+		android:summary="@string/summary_lockscreen_user_timeout_override" />	
 
 	<CheckBoxPreference
 		android:key="lockscreen_battery"
 		android:title="@string/lockscreen_battery_title"
 		android:summary="@string/lockscreen_battery_summary" />
+
+	<CheckBoxPreference
+		android:key="lockscreen_weather"
+		android:title="@string/lockscreen_weather_title"
+		android:summary="@string/lockscreen_weather_summary" />
 
 	<CheckBoxPreference
 		android:key="volume_wake"
@@ -62,6 +72,11 @@
 			android:key="lockscreen_quick_unlock_control"
 			android:title="@string/lockscreen_quick_unlock_control_title"
 			android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
+		<CheckBoxPreference
+			android:key="show_lock_before_unlock"
+			android:title="@string/show_lock_before_unlock_title"
+			android:summary="@string/show_lock_before_unlock_summary" />
 
 	</PreferenceCategory>
 

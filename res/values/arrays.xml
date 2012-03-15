@@ -193,6 +193,36 @@
 		<item>3</item>
 	</string-array>
 
+	<string-array name="statusbar_transparency_entries">
+		<item>No transparency</item>
+		<item>25%</item>
+		<item>50%</item>
+		<item>75%</item>
+		<item>Full transparency</item>
+	</string-array>
+
+	<string-array name="statusbar_transparency_values">
+		<item>100</item>
+		<item>75</item>
+		<item>50</item>
+		<item>25</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="statusbar_layout_entries">
+		<item>Regular layout</item>
+		<item>Reversed</item>
+		<!-- <item>Tabs</item>
+		<item>Bottom Tabs</item> -->
+	</string-array>
+
+	<string-array name="statusbar_layout_values">
+		<item>0</item>
+		<item>1</item>
+		<!-- <item>2</item>
+		<item>3</item> -->
+	</string-array>
+
 	<!-- clock stuff -->
 	<string-array name="clock_style_entries">
 		<item>Right clock</item>
@@ -216,6 +246,18 @@
 		<item>2</item>
 		<item>1</item>
 		<item>0</item>
+	</string-array>
+
+	<string-array name="clock_weekday_entries">
+		<item>Don\'t show</item>
+		<item>Small weekday</item>
+		<item>Regular weekday</item>
+	</string-array>
+
+	<string-array name="clock_weekday_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
 	</string-array>
 
 	<!-- Toggles -->
@@ -259,13 +301,11 @@
 
 	<!-- toggle style -->
 	<string-array name="toggle_style_entries">
-		<item>No icon, no text</item>
 		<item>Icon only</item>
 		<item>Text only</item>
 	</string-array>
 
 	<string-array name="toggle_style_values">
-		<item>1</item>
 		<item>2</item>
 		<item>3</item>
 	</string-array>
@@ -284,13 +324,15 @@
     <string-array name="pref_lockscreen_options_values">
 		<item>2</item>
 		<item>6</item>
-        <item>8</item>
+		<item>8</item>
+		<item>0</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
 		<item>Stock</item>
 		<item>Quad</item>
-        <item>Octo</item>
+		<item>Octo</item>
+		<item>AOSP</item>
 	</string-array>
 
 	<string-array name="minfree">
@@ -389,6 +431,7 @@
 		<item>SILENT</item>
 		<item>TORCH</item>
 		<item>SYNC</item>
+		<item>SWAGGER</item>
 	</string-array>
 	
 	<string-array name="available_toggles_values">
@@ -401,6 +444,7 @@
 		<item>Silent</item>
 		<item>Torch</item>
 		<item>Sync</item>
+		<item>Swagger</item>
 	</string-array>
 	
 	<string-array name="lockscreen_choice_entries">
@@ -504,5 +548,48 @@
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
+	</string-array>
+	
+	<string-array name="weather_statusbar_location_entries">
+		<item>Above carrier text</item>
+		<item>Weather panel</item>
+		<item>Disabled</item>
+	</string-array>
+	
+	<string-array name="weather_statusbar_location_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+		
+	<string-array name="navigation_bar_width_entries">
+		<item>42 dp (default)</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+	
+	<string-array name="navigation_bar_width">
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
+	</string-array>
+	
+	<string-array name="navigation_bar_height_entries">
+		<item>48 dp (default)</item>
+		<item>42 dp</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+	
+	
+	<string-array name="navigation_bar_height">
+		<item>48</item>
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
 	</string-array>
 </resources>

@@ -148,6 +148,15 @@
     <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
+    <string name="lockscreen_calendar">Lockscreen calendar</string>
+    <string name="lockscreen_calendar_title">Enable</string>
+    <string name="lockscreen_calendar_summary">Show upcoming events from your calendar on the lockscreen.</string>
+    <string name="lockscreen_calendar_sources_title">Select calendars</string>
+    <string name="lockscreen_calendar_sources_summary">Select the calendars you want to see.</string>
+    <string name="lockscreen_calendar_flip_title">Multiple events</string>
+    <string name="lockscreen_calendar_flip_summary">If enabled, the widget will flip between the upcoming events from the next 24 hours.</string>
+    <string name="lockscreen_calendar_interval_title">Flip interval</string>
+    <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show power saver</string>

@@ -63,6 +63,7 @@ public class WeatherService extends IntentService {
         String woeid = null;
 
         if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) == 0) {
+            stopSelf();
             return;
         }
         
@@ -93,8 +94,6 @@ public class WeatherService extends IntentService {
                 } else {
                     loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
                 }
-                Time time = new Time();
-                time.set(loc.getTime());
                 try {
                     woeid = YahooPlaceFinder.reverseGeoCode(loc.getLatitude(),
                             loc.getLongitude());
@@ -102,9 +101,13 @@ public class WeatherService extends IntentService {
                     e.printStackTrace();
                 }
             }
-            w = parseXml(getDocument(woeid));
-            if (w != null) {
-                sendBroadcast(w);
+            try {
+                w = parseXml(getDocument(woeid));
+                if (w != null) {
+                    sendBroadcast(w);
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "ohnoes: " + e.getMessage());
             }
         }
         stopSelf();

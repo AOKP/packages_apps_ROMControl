@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="pref_navigation_menu_entries">
+		<item>Vpravo</item>
+		<item>Vlevo</item>
+		<item>Po obou stranách</item>
+		<item>Odstranit</item>
+	</string-array>
+
+	<!-- right is the default, easier to keep 0 as first index -->
+	<string-array name="pref_navigation_menu_values"
+		translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>4</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
+		<item>Nedělat nic</item>
+		<item>Vypnout LTE</item>
+		<item>Vypnout data</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_values_cdma">
+		<item>20</item>
+		<item>21</item>
+		<item>22</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_entries">
+		<item>Nedělat nic</item>
+		<item>Vypnout data</item>
+		<item>Přepnout na 2G</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_values">
+		<item>20</item>
+		<item>22</item>
+		<item>21</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_delay_entries">
+		<item>Žádná (okamžitě)</item>
+		<item>10 sekund</item>
+		<item>30 sekund</item>
+		<item>45 sekund</item>
+		<item>1 minuta</item>
+		<item>5 minut</item>
+		<item>10 minut</item>
+		<item>15 minut</item>
+		<item>30 minut</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_delay_values">
+		<item>0</item>
+		<item>10</item>
+		<item>30</item>
+		<item>45</item>
+		<item>60</item>
+		<item>300</item>
+		<item>600</item>
+		<item>900</item>
+		<item>1800</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_interval_entries">
+		<item>15 minut</item>
+		<item>30 minut</item>
+		<item>1 hodina</item>
+		<item>2 hodiny</item>
+		<item>3 hodiny</item>
+		<item>4 hodiny</item>
+		<item>5 hodin</item>
+		<item>6 hodin</item>
+		<item>8 hodin</item>
+		<item>12 hodin</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_interval_values">
+		<item>900</item>
+		<item>1800</item>
+		<item>3600</item>
+		<item>7200</item>
+		<item>10800</item>
+		<item>14400</item>
+		<item>18000</item>
+		<item>21600</item>
+		<item>28800</item>
+		<item>43200</item>
+	</string-array>
+
+
+	<string-array name="pref_powersaving_sync_screen_off_entries">
+		<item>Nedělat nic</item>
+		<item>Vypnout automatickou synchronizaci</item>
+		<item>Vypnout automatickou synchronizaci se spožděním</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_values">
+		<item>35</item>
+		<item>33</item>
+		<item>34</item>
+	</string-array>
+	
+	<string-array name="powersaving_screen_off_wifi_entries">
+		<item>Ponechat beze změny</item>
+		<item>Vypnout Wi-Fi</item>
+		<item>Zapnout Wi-Fi</item>
+	</string-array>
+	
+	<string-array name="powersaving_screen_off_wifi_values">
+		<item>40</item>
+		<item>41</item>
+		<item>42</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mode_entries">
+		<item>Ponechat beze změny</item>
+		<item>Pouze Wi-Fi</item>
+		<item>Wi-Fi preferována</item>
+		<item>Pouze data</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mode_values">
+		<item>54</item>
+		<item>50</item>
+		<item>51</item>
+		<item>53</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mobile_mode_entries">
+		<item>Pouze 2G</item>
+		<item>Preferovat 3G</item>
+	</string-array>
+	
+	<string-array name="powersaving_sync_data_mobile_mode_values">
+		<item>62</item>
+		<item>63</item>
+	</string-array>
+	
+	<string-array name="led_entries">
+		<item>0.5 sekundy</item>
+		<item>1 sekunda</item>
+		<item>1.5 sekundy</item>
+		<item>2 sekundy</item>
+		<item>2.5 sekundy</item>
+		<item>3 sekundy</item>
+		<item>3.5 sekundy</item>
+		<item>4 sekundy</item>
+		<item>4.5 sekundy</item>
+		<item>5 sekund</item>
+		<item>5.5 sekundy</item>
+		<item>6 sekund</item>
+		<item>7 sekund</item>
+		<item>8 sekund</item>
+		<item>9 sekund</item>
+		<item>10 sekund</item>
+	</string-array>
+
+	<!-- values must be in milliseconds!~@@#E!@ -->
+	<string-array name="led_values">
+		<item>500</item>
+		<item>1000</item>
+		<item>1500</item>
+		<item>2000</item>
+		<item>2500</item>
+		<item>3000</item>
+		<item>3500</item>
+		<item>4000</item>
+		<item>4500</item>
+		<item>5000</item>
+		<item>5500</item>
+		<item>6000</item>
+		<item>7000</item>
+		<item>8000</item>
+		<item>9000</item>
+		<item>10000</item>
+	</string-array>
+
+	<string-array name="pref_navigation_menu_display_entries">
+		<item>Výchozí chování ICS</item>
+		<item>Vždy zobrazovat neviditelné ikony</item>
+		<item>Vždy zobrazovat</item>
+		<item>Výchozí ICS s neviditelnými ikonami pokud jsou schovány</item>
+	</string-array>
+
+	<string-array name="pref_navigation_menu_display_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<string-array name="statusbar_transparency_entries">
+		<item>Bez průhlednosti</item>
+		<item>25%</item>
+		<item>50%</item>
+		<item>75%</item>
+		<item>Plná průhlednost</item>
+	</string-array>
+
+	<string-array name="statusbar_transparency_values">
+		<item>100</item>
+		<item>75</item>
+		<item>50</item>
+		<item>25</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="statusbar_layout_entries">
+		<item>Normální uspořádání</item>
+		<item>Obrácené</item>
+		<!-- <item>Tabs</item>
+		<item>Bottom Tabs</item> -->
+	</string-array>
+
+	<string-array name="statusbar_layout_values">
+		<item>0</item>
+		<item>1</item>
+		<!-- <item>2</item>
+		<item>3</item> -->
+	</string-array>
+
+	<!-- clock stuff -->
+	<string-array name="clock_style_entries">
+		<item>Hodiny vpravo</item>
+		<item>Hodiny uprostřed</item>
+		<item>Bez hodin</item>
+	</string-array>
+
+	<string-array name="clock_style_values">
+		<item>1</item>
+		<item>2</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="clock_ampm_entries">
+		<item>Nezobrazovat</item>
+		<item>Malé AM/PM</item>
+		<item>Normální AM/PM</item>
+	</string-array>
+
+	<string-array name="clock_ampm_values">
+		<item>2</item>
+		<item>1</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="clock_weekday_entries">
+		<item>Nezobrazovat</item>
+		<item>Malý den</item>
+		<item>Normální den</item>
+	</string-array>
+
+	<string-array name="clock_weekday_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+	<!-- Toggles -->
+
+	<string-array name="brightness_location_entries">
+		<item>Nahoře</item>
+		<item>Dole</item>
+		<item>Nezobrazovat</item>
+	</string-array>
+
+	<string-array name="brightness_location_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<!-- animation rotation -->
+	<string-array name="rotation_animation_delay_entries">
+		<item>10 ms</item>
+		<item>25 ms</item>
+		<item>50 ms</item>
+		<item>75 ms</item>
+		<item>100 ms</item>
+		<item>150 ms</item>
+		<item>200 ms</item>
+		<item>250 ms</item>
+		<item>300 ms</item>
+	</string-array>
+
+	<string-array name="rotation_animation_delay_values">
+		<item>10</item>
+		<item>25</item>
+		<item>50</item>
+		<item>75</item>
+		<item>100</item>
+		<item>150</item>
+		<item>200</item>
+		<item>250</item>
+		<item>300</item>
+	</string-array>
+
+	<!-- toggle style -->
+	<string-array name="toggle_style_entries">
+		<item>Pouze ikony</item>
+		<item>Pouze text</item>
+	</string-array>
+
+	<string-array name="toggle_style_values">
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<!-- long press home -->
+	<string-array name="long_press_home_entries">
+		<item>Nedělat nic</item>
+		<item>Zobrazit poslední</item>
+	</string-array>
+
+	<string-array name="long_press_home_values">
+		<item>0</item>
+		<item>1</item>
+	</string-array>
+
+    <string-array name="pref_lockscreen_options_values">
+		<item>2</item>
+		<item>6</item>
+		<item>8</item>
+		<item>0</item>
+	</string-array>
+
+        <string-array name="pref_lockscreen_options_entries">
+		<item>Výchozí</item>
+		<item>Quad</item>
+		<item>Octo</item>
+		<item>AOSP</item>
+	</string-array>
+
+	<string-array name="minfree">
+		<item>25mb</item>
+		<item>50mb</item>
+		<item>75mb</item>
+		<item>80mb</item>
+		<item>100mb</item>
+	</string-array>
+
+	<string-array name="minfree_values">
+		<item>1536,2048,4096,5120,5632,6144</item>
+		<item>2560,3840,6400,7680,10240,12800</item>
+		<item>2560,3840,6400,10240,12800,19200</item>
+		<item>2048,3072,6144,15360,17920,20480</item>
+		<item>2560,3840,6400,12800,12800,25600</item>
+	</string-array>
+
+        <string-array name="entries_scrollingcache" translatable="false">
+                <item>@string/pref_scrollingcache_force_enable</item>
+                <item>@string/pref_scrollingcache_default_enable</item>
+                <item>@string/pref_scrollingcache_default_disable</item>
+                <item>@string/pref_scrollingcache_force_disable</item>
+         </string-array>
+
+        <string-array name="values_scrollingcache" translatable="false">
+                <item>0</item>
+                <item>1</item>
+                <item>2</item>
+                <item>3</item>
+        </string-array>
+	
+	<string-array name="battery_icon_entries">
+		<item>Pouze ikona</item>
+		<item>Pouze text</item>
+		<item>Ikona s textem</item>
+		<item>Ikona s vycentrovaným textem</item>
+		<item>CircleMOD</item>
+		<item>Nezobrazovat</item>
+	</string-array>
+
+	<string-array name="battery_icon_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="battery_bar_entries">
+		<item>Nezobrazovat</item>
+		<item>Ve stavové liště</item>
+		<item>Navrchu navigační lišty</item>
+		<item>Vespod navigační lišty</item>
+	</string-array>
+	
+	<string-array name="battery_bar_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+	
+	<string-array name="battery_bar_style_entries">
+		<item>Normální</item>
+		<item>Na střed se zrcadlením</item>
+	</string-array>
+	
+	<string-array name="battery_bar_style_values">
+		<item>0</item>
+		<item>1</item>
+	</string-array>
+	
+	<string-array name="battery_bar_thickness_entries">
+		<item>1 bod</item>
+		<item>2 body</item>
+		<item>3 body</item>
+		<item>4 body</item>
+	</string-array>
+	
+	<string-array name="battery_bar_thickness_values">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+	</string-array>
+	
+	<string-array name="available_toggles_entries">
+		<item>ROTACE</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>WIFI</item>
+		<item>REŽIM LETADLO</item>
+		<item>VIBRACE</item>
+		<item>TICHÝ</item>
+		<item>SVÍTILNA</item>
+		<item>SYNCHRONIZACE</item>
+		<item>SWAGGER</item>
+	</string-array>
+	
+	<string-array name="available_toggles_values">
+		<item>Auto-rotace</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>Wi-Fi</item>
+		<item>Režim letadlo</item>
+		<item>Vibrace</item>
+		<item>Tichý</item>
+		<item>Svítilna</item>
+		<item>Synchronizace</item>
+		<item>Swagger</item>
+	</string-array>
+	
+	<string-array name="lockscreen_choice_entries">
+		<item>Odemčení</item>
+		<item>Přepínač zvuku</item>
+		<item>Telefon</item>
+		<item>Fotoaparát</item>
+		<item>SMS</item>
+		<item>Vlastní aplikace</item>
+		<item>Prázdné</item>
+	</string-array>
+	
+	<string-array name="lockscreen_choice_values">
+		<item>**unlock**</item>
+		<item>**sound**</item>
+		<item>**phone**</item>
+		<item>**camera**</item>
+		<item>**mms**</item>
+		<item>**app**</item>
+		<item>**null**</item>
+	</string-array>
+	
+	<string-array name="glow_times_entries">
+		<item>Vypnut</item>
+		<item>Hodně rychlý</item>
+		<item>Rychlý</item>
+		<item>Normální</item>
+	</string-array>
+
+	<string-array name="glow_times_values">
+		<item>0|0</item>
+		<item>100|10</item>
+		<item>250|25</item>
+		<item>500|50</item>
+	</string-array>
+	
+	<string-array name="lcd_density_entries">
+		<item>160</item>
+		<item>180</item>
+		<item>200</item>	
+		<item>220</item>
+		<item>240</item>
+		<item>241</item>
+		<item>260</item>
+		<item>280</item>
+		<item>300</item>
+		<item>320</item>
+		<item>340</item>
+		<item>custom</item>
+	</string-array>
+	
+	<string-array name="weather_interval_entries">
+		<item>Vypnuto</item>
+		<item>1 minuta</item>
+		<item>5 minut</item>
+		<item>10 minut</item>
+		<item>30 minut</item>
+		<item>45 minut</item>
+		<item>1 hodina</item>
+		<item>2 hodiny</item>
+		<item>3 hodiny</item>
+		<item>4 hodiny</item>
+		<item>6 hodin</item>
+		<item>8 hodin</item>
+	</string-array>
+	
+	<string-array name="weather_interval_values">
+		<item>0</item>
+		<item>1</item>
+		<item>5</item>
+		<item>10</item>
+		<item>30</item>
+		<item>45</item>
+		<item>60</item>
+		<item>120</item>
+		<item>180</item>
+		<item>240</item>
+		<item>360</item>
+		<item>480</item>
+	</string-array>
+	
+	<string-array name="lcd_density_stock_entries">
+		<item>160 -- mdpi</item>
+		<item>240 -- hdpi</item>
+		<item>320 -- xhdpi</item>
+	</string-array>
+
+	<string-array name="lcd_density_stock_values">
+		<item>160</item>
+		<item>240</item>
+		<item>320</item>
+	</string-array>
+	
+	<string-array name="signal_style_entries">
+		<item>Zobrazit ukazatel signálu</item>
+		<item>Zobrazit signál textově</item>
+		<item>Zobrazit w/dBm</item>
+	</string-array>
+
+	<string-array name="signal_style_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+	
+	<string-array name="weather_statusbar_location_entries">
+		<item>Pod názvem operátora</item>
+		<item>Panel počasí</item>
+		<item>Vypnuto</item>
+	</string-array>
+	
+	<string-array name="weather_statusbar_location_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+		
+	<string-array name="navigation_bar_width_entries">
+		<item>42 bodů (výchozí)</item>
+		<item>36 bodů</item>
+		<item>30 bodů</item>
+		<item>24 bodů</item>
+	</string-array>
+	
+	<string-array name="navigation_bar_width">
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
+	</string-array>
+	
+	<string-array name="navigation_bar_height_entries">
+		<item>48 bodů (výchozí)</item>
+		<item>42 bodů</item>
+		<item>36 bodů</item>
+		<item>30 bodů</item>
+		<item>24 bodů</item>
+	</string-array>
+	
+	
+	<string-array name="navigation_bar_height">
+		<item>48</item>
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
+	</string-array>
+</resources>

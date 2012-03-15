@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ROM Control</string>
+
+    <!-- Main -->
+    <string name="user_interface">User Interface</string>
+    <string name="general_ui">General UI</string>
+    <string name="lockscreen_options">Lockscreen options</string>
+    <string name="power_menu_optons">Power menu options</string>
+    <string name="functionality">Functionality</string>
+    <string name="power_saver">Power saver</string>
+    <string name="led_options">LED options</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="general">General</string>
+    <string name="toggles_layout">Toggles</string>
+    <string name="clock">Clock</string>
+    <string name="battery">Battery</string>
+    <string name="nav_bar">Navigation bar</string>
+    <string name="tools">Tools</string>
+    <string name="weather">Weather</string>
+    <string name="signal">Signal</string>
+    
+    <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
+    <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
+    <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order</string>
+    <string name="header_summary_lockscreens">Custom apps to launch, layout</string>
+    <string name="header_summary_power_menu">What to display in your power menu</string>
+    <string name="header_summary_powersaver">Automatically disable data to save battery</string>
+    <string name="header_summary_led">Change default settings for Android to use</string>
+    <string name="header_summary_general">Settings button behavior</string>
+    <string name="header_summary_toggles">Customize toggles</string>
+	<string name="header_summary_clock">Clock location, AM/PM style, color</string>
+	<string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
+	<string name="header_summary_signal">Signal dBm text</string>
+	
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="misc_short">Misc</string>
+    
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">Menu location</string>
+    <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
+    <string name="navigation_bar">Navigation bar</string>
+    <string name="navigation_bar_tint_title">Navigation bar color</string>
+
+    <string name="title_pref_navigation_menu_display">Menu visibility</string>
+    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
+
+    <string name="navbar_order_title">Navigation button order</string>
+    <string name="navbar_order_summary">Customize the order of your soft keys</string>
+
+    <string name="enabled_navbar_buttons_title">Enabled buttons</string>
+    <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
+    
+    <string name="button_transparency_title">Nav button transparency</string>
+    
+    <string name="long_press_home_title">Long press home action</string>
+    <string name="long_press_home_summary">What to do when long pressing the home softkey. Reboot required to reflect changes.</string>
+    
+    <string name="glow_times_title">Button glow animation</string>
+    <string name="glow_times_summary">Adjust how fast your buttons animate after you touch them. Lowering the speed can improve performance.</string>
+    
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">Rotation delay</string>
+    <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>
+
+	<string name="ime_switcher_title">Show IME Switcher</string>
+	<string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+
+	<string name="custom_carrier_label_title">Custom carrier label</string>
+	<string name="longpress_to_kill_title">Hold back to kill</string>
+	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
+	
+	<string name="rotate_180_title">Allow 180° rotation</string>
+	<string name="rotate_180_summary">Allow your device to rotate upside down!</string>
+
+	<string name="horizontal_recents_task_panel_title">Horizontal recents window</string>
+	<string name="horizontal_recents_task_panel_summary">Use WebOS style task switcher. Your UI will restart after changing this. It will come back in about 10 seconds. If it doesn\'t, just reboot the phone from the power menu.</string>
+	
+	<string name="disable_bootanimation_title">Disable boot animation</string>
+	<string name="disable_bootanimation_summary">Jerk.</string>
+	
+	<string name="disable_bugmailer_title">Disable bugmailer</string>
+
+	<string name="lcd_density_title">LCD Density</string>
+	<string name="lcd_density_summary">unknown</string>
+	
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRT animations</string>
+	<string name="crt_on_title">CRT on animation</string>
+	<string name="crt_off_title">CRT off animation</string>
+	
+	<!-- LCD Density -->
+	<string name="lcd_density_wizard">LCD Density Wizard</string>
+	<string name="follow_through_title">Follow through!</string>
+	<string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
+	<string name="stock_density_title">1. Change LCD Density to stock value</string>
+	<string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
+	<string name="reboot_title">2. Reboot!</string>
+	<string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
+	<string name="clear_market_data_title">3. Clear market data</string>
+	<string name="clear_market_data_cleared">Market data cleared</string>
+	<string name="open_market_title">4. Open Market and hit accept</string>
+	<string name="open_market_summary">Press back when done to return here.</string>
+	<string name="custom_density_title">5. Change density to whatever you like!</string>
+	<string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
+	
+    <!-- Lockscreens -->
+    <string name="pref_lockscreen_layout_title">Lockscreen style</string>
+    <string name="pref_lockscreen_layout_summary">Remember to scroll down and change your targets after changing styles</string>
+    
+    <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>	
+    <string name="summary_pref_lockscreen_quad_targets">Adds Phone and Messaging shortcuts on the lock screen</string>
+
+    <string name="title_pref_lockscreen_octo_targets">Octo Targets</string>	
+    <string name="summary_pref_lockscreen_octo_targets">Adds too many shortcuts on the lock screen</string>
+
+    <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
+    <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
+    <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+    <string name="show_lock_before_unlock_title">Show lockscreen before unlock</string>
+    <string name="show_lock_before_unlock_summary">Show standard lockscreen before secure unlock</string>
+    <string name="lockscreen_battery_title">Lockscreen Battery Percentage</string>
+    <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
+	<string name="lockscreen_weather_title">Lockscreen Weather</string>
+    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
+    <string name="volume_wake_title">Volume wake</string>
+    <string name="volume_wake_summary">Tapping the volume keys while your phone is off will turn the screen on.</string>
+    <string name="volume_music_controls_title">Volume music controls</string>
+    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
+    <string name="lockscreen_show_nav_title">Hide nav bar</string>
+    <string name="lockscreen_show_nav_summary">Hide the nav bar (if your device supports it) on the lockscreen.</string>
+    <string name="custom_app_n_dialog_title">Choose action for target %1$s</string>
+    <string name="custom_app_n">Custom app %1$s</string>
+    <string name="lockscreen_targets">Lockscreen targets</string>
+    <string name="lockscreen_action_unlock">Unlock</string>
+    <string name="lockscreen_action_sound">Sound toggle</string>
+    <string name="lockscreen_action_camera">Camera</string>
+    <string name="lockscreen_action_mms">SMS</string>
+    <string name="lockscreen_action_phone">Phone</string>
+    <string name="lockscreen_action_none">Empty</string>
+    <string name="lockscreen_landscape_title">Horizontal lockscreen</string>
+    <string name="lockscreen_landscape_summary">Whether horizontal lockscreen orientation will be enabled</string>
+    <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
+    <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
+    <string name="enable_fast_torch_title">Enable fast torch</string>
+    <string name="enable_fast_torch_summary">While your screen is off, you can long-press the power key to turn the LED light on. Letting go of the power button will turn the torch off.</string>
+    <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="lockscreen_text_color_title">Lockscreen text color</string>
+    
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Show power saver</string>
+    <string name="title_show_screenshot">Show screenshot</string>
+    <string name="title_show_torch_toggle">Show torch toggle</string>
+    <string name="title_show_airplane_toggle">Show airplane toggle</string>
+    <string name="title_show_navbar_hide">Show navigation bar toggle</string>
+    
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+    
+    <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
+    <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
+        
+    <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">Sync action</string>
+    <string name="summary_pref_powersaving_sync_screen_off">What to do with your syncage?!</string>
+    
+    <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
+    
+    <string name="powersaver_data_cat">Data</string>
+    <string name="powersaver_sync_cat">Sync</string>
+
+    <!--  LED -->
+    <string name="title_led_on">LED pulse ON duration</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">LED pulse OFF duration</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LED color</string>
+    <string name="title_led_screen_on">LED flash while screen ON</string>
+    <string name="summary_led_screen_on">@null</string>
+
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">Use default settings behavior</string>
+    <string name="summary_settings_behavior">Default behavior is to long press for toggles, press for settings. Uncheck to press for toggles, long press for settings</string>
+
+    <string name="title_auto_hide_toggles">Auto hide toggles</string>
+    <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
+
+    <string name="title_status_bar_brightness_toggle">Enable brightness control</string>
+    <string name="summary_status_bar_brightness_toggle">Slide finger slowly across statusbar to adjust brightness setting</string>
+
+    <string name="adb_icon_title">Enable USB debugging icon</string>
+    <string name="adb_icon_summary">Wutang</string>
+
+    <string name="statusbar_transparency">Transparency</string>
+    <string name="statusbar_transparency_summary">Turning this on might affect performance and battery life. (requires UI restart)</string>
+
+    <string name="statusbar_layout">Notification drawer layout</string>
+    <string name="statusbar_layout_summary">Change the notification drawer layout (requires UI restart)</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">Battery icon style</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_bar">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_cat">Battery bar options</string>
+    <string name="battery_bar_style_title">Battery bar style</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Clock style</string>
+    <string name="title_clock_ampm_entries">AM/PM style</string>
+    <string name="colors">Colors</string>
+    <string name="clock_color_title">Clock color</string>
+    <string name="reset_color_title">Reset color</string>
+    <string name="enable_alarm_title">Enable alarm icon</string>
+    <string name="enable_alarm_summary">After disabling/enabling, you must toggle your alarms for it to show up again. Or reboot.</string>
+    <string name="enable_clock_weekday">Day of the week</string>
+    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Toggle style</string>
+    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
+
+    <string name="alternate_button_layout_title">Alternate toggles</string>
+    <string name="alternate_button_layout_summary">Use Toggle Buttons instead of switches for your toggles.</string>
+    
+    <string name="enabled_toggles_title">Enabled toggles</string>
+    <string name="enabled_toggles_summary">Choose toggles to display</string>
+    <string name="toggles_order_title">Toggle order</string>
+    <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
+    <string name="brightness_location_title">Brightness location</string>
+
+	<!-- Statusbar | Signal -->
+	<string name="signal_style">Signal Text Style</string>
+	<string name="signal_color_title">Signal color</string>
+	<string name="hide_signal_title">Hide signal bars</string>
+	<string name="hide_signal_summary">Will also hide data indicator for now. Will be able to separate later.</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>   
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>
+    
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+	<string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+	<string name="select_custom_app_title">Select custom application</string>
+	<string name="group_applications">Applications</string>
+	
+	<!-- Weather -->
+	<string name="weather_enable">Enable weather</string>
+	<string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
+	<string name="weather_use_custom_location">Use custom location</string>
+	<string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise network-location is used to determine your location.</string>
+	<string name="weather_custom_location_dialog_title">Set your location</string>
+	<string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
+	<string name="weather_custom_location_title">Custom location</string>
+	<string name="weather_show_location_title">Show location</string>
+	<string name="weather_show_location_summary">Show your location.</string>
+	<string name="weather_refresh_interval">Refresh interval</string>
+	<string name="weather_use_celcius">Metric units</string>
+	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
+	<string name="weather_statusbar_style">Statusbar weather style</string>
+	
+	<!-- Dialog Titles -->
+	<string name="dt_free_memory">Minfree Taskkiller</string>
+
+	<!-- Preference Categories -->
+	<string name="prefcat_cpu">Set CPU</string>
+	<string name="prefcat_free_memory">Free Memory</string>
+	<string name="pc_tweaks">Tweaks</string>
+	<string name="pc_init_d">Enable/Disable Tweaks</string>
+	<string name="pc_init_d_tweaks">Customize Tweaks</string>
+
+	<!-- Preference Titles -->
+	<!-- Main -->
+	<string name="pt_performance">Performance</string>
+	<string name="pt_customization">Customization</string>
+	<string name="pt_tools">Tools</string>
+	<string name="pt_mod_version">Mod version</string>
+	<!-- Customization -->
+	<string name="pt_liberty_customizer">Liberty Customizer</string>
+	<string name="pt_lockscreen">Lockscreen Settings</string>
+	<string name="pt_ui_status_bar">Status Bar</string>
+	<string name="pt_pulldown_text">Pulldown Text</string>
+	<string name="pt_theme_manager">Theme Manager</string>
+	<!-- Tools -->
+	<string name="pt_spare_parts">Spare Parts</string>
+	<string name="pt_dev_tools">Dev Tools</string>
+	<string name="pt_dsp_manager">DSP Manager</string>
+	<string name="pt_testing_menu">Testing Menu</string>
+	<!-- Start up tweaks -->
+	<string name="pt_init_d">Start-up Tweaks</string>
+	<string name="pt_enable_init_d">Enable start-up tweaks</string>
+	<string name="pt_zipalign">Zipalign apks</string>
+	<string name="pt_enable_sd_boost">Enable SD boost</string>
+	<string name="pt_sd_boost">Read ahead value</string>
+	<string name="pt_fix_permissions">Fix permissions</string>
+	<string name="pt_clear_cache">Clear cache</string>
+	<string name="pt_enable_sysctl">Enable sysctl</string>
+	<string name="pt_enable_cron">Enable scheduled tasks</string>
+	<!-- Performance -->
+	<string name="pt_set_cpu_activity">Set CPU</string>
+	<string name="pt_free_memory">Free memory</string>
+	<string name="pt_free_memory_boot">Set at boot</string>
+	<!-- Cpu -->
+	<string name="pt_set_max">Max CPU</string>
+	<string name="pt_set_min">Min CPU</string>
+	<string name="pt_set_gov">Scaling governor</string>
+	<string name="pt_cpu_boot">Set at boot</string>
+        <!-- Scrolling Cache -->
+        <string name="pref_scrollingcache_title">Scrolling cache</string>
+        <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
+        <string name="pref_scrollingcache_force_enable">Force enable</string>
+        <string name="pref_scrollingcache_default_enable">Default enable</string>
+        <string name="pref_scrollingcache_default_disable">Default disable</string>
+        <string name="pref_scrollingcache_force_disable">Force disable</string>
+
+	<!-- Preference Summaries -->
+	<!-- Main -->
+	<string name="ps_performance">Set CPU, free memory &amp; customize start-up
+		settings.</string>
+	<string name="ps_customization">Customize the lockscreen &amp; status bar. Install
+		blur/aosp apps with Liberty Customizer</string>
+	<string name="ps_tools">Various system tools</string>
+	<!-- Customization -->
+	<string name="ps_liberty_customizer">Customize the ROM to your liking</string>
+	<string name="ps_lockscreen">Change lockscreen styles and manage widgets
+	</string>
+	<string name="ps_ui_status_bar">Customize the status bar</string>
+	<string name="ps_pulldown_text">Change the text in the pulldown bar.</string>
+	<string name="ps_theme_manager">Install custom themes for Liberty ROM</string>
+	<!-- Tools -->
+	<string name="ps_spare_parts">Various tweaks and customization</string>
+	<string name="ps_dev_tools">Tools for developers and advanced users</string>
+	<string name="ps_dsp_manager">Stand alone equalizer</string>
+	<string name="ps_testing_menu">Phone info, battery info, usage statistics</string>
+	<!-- Start up tweaks -->
+	<string name="ps_init_d">Configure tweaks that are run at boot
+		(init.d)
+	</string>
+	<string name="ps_enable_init_d">Enable/disabe start-up tweaks</string>
+	<string name="ps_zipalign">Zipalign any unaligned apps on each boot</string>
+	<string name="ps_enable_sd_boost">Enable/disable SD card speed boost</string>
+	<string name="ps_sd_boost">Set value of read ahead in kb</string>
+	<string name="ps_fix_permissions">Fix permissions for apps on each boot</string>
+	<string name="ps_clear_cache">Clear data cache on each boot</string>
+	<string name="ps_enable_sysctl">Enable sysctl tweaks on boot</string>
+	<string name="ps_enable_cron">Enable scheduled cron jobs</string>
+	<!-- CPU -->
+	<string name="ps_set_max">Set max CPU scaling frequency\nCurrent: %s</string>
+	<string name="ps_set_min">Set min CPU scaling frequency\nCurrent: %s</string>
+	<string name="ps_set_gov">Set current scaling governor\nCurrent: %s</string>
+	<string name="ps_cpu_boot">Apply CPU at boot</string>
+	<!-- Performance -->
+	<string name="ps_set_cpu_activity">Set min/max frequencies and scaling governor
+	</string>
+	<string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep |
+		Current: %s</string>
+	<string name="ps_free_memory_boot">Apply the amount above at boot</string>
+
+	<!-- Toast Messages -->
+	<string name="toast_min_max_error01">Max CPU cannot be lower than min CPU</string>
+	<string name="toast_min_max_error02">Min CPU cannot be higher than max CPU</string>
+
+	<!-- list_voltage -->
+	<string name="freq">Frequency</string>
+	<string name="current">mV current</string>
+	<string name="saved">mV saved</string>
+
+	<!-- voltage -->
+	<string name="error_values">Error getting values</string>
+	<string name="set_boot">Set On Boot</string>
+	<string name="apply_values">Apply Values</string>
+	
+	<string name="dpi">DPI</string>
+	<string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+	<string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+	<string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+	<string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+	<string name="donate_khasmek">@null</string>
+	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+	<string name="devs">Developers</string>
+	<string name="aokp">Android Open Kang Project</string>
+	<string name="aokp_website_title">AOKP Website</string>
+	<string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+	<string name="aokp_source_title">AOKP Source</string>
+	<string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
+    <string name="aokp_irc_title">Join us on IRC</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">About AOKP</string>
+    <string name="about_aokp_summary">@null</string>
+</resources>

@@ -3,37 +3,37 @@
     <string name="app_name">ROM Control</string>
 
     <!-- Main -->
-    <string name="user_interface">User Interface</string>
-    <string name="general_ui">General UI</string>
-    <string name="lockscreen_options">Lockscreen options</string>
-    <string name="power_menu_optons">Power menu options</string>
-    <string name="functionality">Functionality</string>
-    <string name="power_saver">Power saver</string>
-    <string name="led_options">LED options</string>
-    <string name="statusbar">Statusbar</string>
-    <string name="general">General</string>
-    <string name="toggles_layout">Toggles</string>
-    <string name="clock">Clock</string>
-    <string name="battery">Battery</string>
-    <string name="nav_bar">Navigation bar</string>
-    <string name="tools">Tools</string>
-    <string name="weather">Weather</string>
-    <string name="signal">Signal</string>
+    <string name="user_interface">Uživatelské rozhraní</string>
+    <string name="general_ui">Hlavní nastavení</string>
+    <string name="lockscreen_options">Možnosti zámku obrazovky</string>
+    <string name="power_menu_optons">Možnosti menu napájení</string>
+    <string name="functionality">Funkčnost</string>
+    <string name="power_saver">Spořič energie</string>
+    <string name="led_options">Možnosti LED</string>
+    <string name="statusbar">Stavová lišta</string>
+    <string name="general">Hlavní nastavení</string>
+    <string name="toggles_layout">Přepínače</string>
+    <string name="clock">Hodiny</string>
+    <string name="battery">Baterie</string>
+    <string name="nav_bar">Navigační lišta</string>
+    <string name="tools">Nástroje</string>
+    <string name="weather">Počasí</string>
+    <string name="signal">Signál</string>
     
-    <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
-    <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
-    <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order</string>
-    <string name="header_summary_lockscreens">Custom apps to launch, layout</string>
-    <string name="header_summary_power_menu">What to display in your power menu</string>
-    <string name="header_summary_powersaver">Automatically disable data to save battery</string>
-    <string name="header_summary_led">Change default settings for Android to use</string>
-    <string name="header_summary_general">Settings button behavior</string>
-    <string name="header_summary_toggles">Customize toggles</string>
-	<string name="header_summary_clock">Clock location, AM/PM style, color</string>
-	<string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
-	<string name="header_summary_signal">Signal dBm text</string>
+    <string name="header_summary_battery">Lišta baterie, % ukazatel baterie, atd.</string>
+    <string name="header_summary_general_ui">Startovací animace, rotace, přepínač klávesnice, atd.</string>
+    <string name="header_summary_navigation_bar">Tlačítka k zobrazení, barva navigační lišty, pořadí</string>
+    <string name="header_summary_lockscreens">Spouštění vlastních aplikací, rozložení</string>
+    <string name="header_summary_power_menu">Co se bude zobrazovat v menu napájení</string>
+    <string name="header_summary_powersaver">Automaticky vypíná data pro úsporu baterie</string>
+    <string name="header_summary_led">Změna výchozího nastavení Androidu</string>
+    <string name="header_summary_general">Nastavení chování tlačítek</string>
+    <string name="header_summary_toggles">Přizpůsobit přepínače</string>
+	<string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
+	<string name="header_summary_weather">Vypnout/zapnout, nastavení vlastní polohy nebo sítě a také intervalu</string>
+	<string name="header_summary_signal">Signál zobrazen v dBm</string>
 	
-    <string name="advanced_settings">Advanced settings</string>
+    <string name="advanced_settings">Pokročilá nastavení</string>
     <string name="misc_short">Misc</string>
     
     <!-- Navigation Bar -->

@@ -324,13 +324,15 @@
     <string-array name="pref_lockscreen_options_values">
 		<item>2</item>
 		<item>6</item>
-        <item>8</item>
+		<item>8</item>
+		<item>0</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
 		<item>Stock</item>
 		<item>Quad</item>
-        <item>Octo</item>
+		<item>Octo</item>
+		<item>AOSP</item>
 	</string-array>
 	
 	<string-array name="pref_lockscreen_calendar_interval_values">

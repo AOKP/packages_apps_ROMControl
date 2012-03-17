@@ -47,8 +47,8 @@
 	
 	<!-- CRT animations -->
 	<string name="crt_animations_header">Controlla animazioni</string>
-	<string name="crt_on_title">Controllu ri l'animazioni attivi</string>
-	<string name="crt_off_title">Controllu ri l'animazioni disattivu</string>
+	<string name="crt_on_title">Controllu ri l\'animazioni attivi</string>
+	<string name="crt_off_title">Controllu ri l\'animazioni disattivu</string>
 
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">menu\' sbloccu</string>
@@ -69,7 +69,7 @@
     <string name="summary_pref_powersaving_data_screen_off">Chi vuoi fari che dati quannu u schermu si stuta?</string>
         
     <string name="title_pref_powersaving_data_screen_off_delay">Ritardu ra gestioni dati</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">Quantu tiempu vuoi aspittari prima r'applicari i dati?</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Quantu tiempu vuoi aspittari prima r\'applicari i dati?</string>
 
     <string name="title_pref_powersaving_sync_screen_off">Gestioni sincronizzazioni</string>
     <string name="summary_pref_powersaving_sync_screen_off">Chi vuoi fare ca sincronizzazioni?!</string>
@@ -91,11 +91,11 @@
     <string name="led_color_title">Culuri ro LED</string>
 
     <!-- Statusbar | General -->
-    <string name="title_settings_behavior">Utilizza l'impostazioni ri basi</string>
-    <string name="summary_settings_behavior">Che'mpostazioni i basi tieni scacciatu p'attivari a modifica rapida, na vota sula pi trasiri nto menu\' impostazioni. Se sbarri u box sovrastante s'otterra\' l'effettu contrariu.</string>
+    <string name="title_settings_behavior">Utilizza l\'impostazioni ri basi</string>
+    <string name="summary_settings_behavior">Che\'mpostazioni i basi tieni scacciatu p\'attivari a modifica rapida, na vota sula pi trasiri nto menu\' impostazioni. Se sbarri u box sovrastante s\'otterra\' l\'effettu contrariu.</string>
 
     <string name="title_auto_hide_toggles">Ammuccia impostazioni rapidi</string>
-    <string name="summary_auto_hide_toggles">Duoppu u toccu l'impostazioni rapide scumparunu</string>
+    <string name="summary_auto_hide_toggles">Duoppu u toccu l\'impostazioni rapide scumparunu</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_title_text_widget">Mostra a percentuali ra batteria</string>
@@ -108,24 +108,24 @@
     <string name="colors">Culura</string>
     <string name="clock_color_title">Culuri ruloggiu</string>
     <string name="reset_color_title">Resetta culura</string>
-    <string name="enable_alarm_title">Abilita l'icona ra sveglia</string>
+    <string name="enable_alarm_title">Abilita l\'icona ra sveglia</string>
     <string name="enable_alarm_summary">Duoppu a disabilitazioni/abilitazioni, e\' necessariu attivari attonna a sveglia o riavviari u telefunu.</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Stile impostazioni rapide</string>
-    <string name="toggle_style_summary">Sciegghi se visualizzari l'icone o u testu nall'impostazioni rapide.</string>
+    <string name="toggle_style_summary">Sciegghi se visualizzari l\'icone o u testu nall\'impostazioni rapide.</string>
 
     <string name="alternate_button_layout_title">Alterna impostazioni rapide</string>
     <string name="alternate_button_layout_summary">Utilizza u tastu cancia impostazioni anziche\' ro switch pi modificari.</string>
     
     <string name="enabled_toggles_title">Attiva impostazioni rapide</string>
-    <string name="enabled_toggles_summary">Sciegghi l'impostazioni ri visualizzari</string>
-    <string name="toggles_order_title">Ordina l'impostazioni</string>
+    <string name="enabled_toggles_summary">Sciegghi l\'impostazioni ri visualizzari</string>
+    <string name="toggles_order_title">Ordina l\'impostazioni</string>
     <string name="toggles_order_summary">Imposta l\'ordini ra visualizzazioni re buttuna</string>
     <string name="brightness_location_title">Posizioni ra gestioni luminosita\'</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Pigghia culuri</string>
-    <string name="press_color_to_apply">Tocca u culuri p'applicallu</string>
+    <string name="press_color_to_apply">Tocca u culuri p\'applicallu</string>
     <string name="hex">Esadecimali:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Imposta</string>

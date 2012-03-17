@@ -69,6 +69,8 @@
 	<string name="custom_carrier_label_title">Custom carrier label</string>
 	<string name="longpress_to_kill_title">Hold back to kill</string>
 	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
+        
+        <string name="enable_volume_options">Enable Volume Options</string>
 	
 	<string name="rotate_180_title">Allow 180° rotation</string>
 	<string name="rotate_180_summary">Allow your device to rotate upside down!</string>

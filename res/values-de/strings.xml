@@ -50,9 +50,9 @@
     <string name="glow_times_summary">Animationsgeschwindigkeit der Buttons anpassen. Verringern der Geschwindigkeit kann die Leistung verbessern.</string>
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotations-Verzögerung</string>
-    <string name="rotation_animation_delay_summary">Anazhl von Millisekunden, wie lange die Geräte-Orientierung gleich bleiben muss, bevor der Bildschirm-Inhalt gedreht wird. (Standard: 200 ms)</string>
+    <string name="rotation_animation_delay_summary">Dauer, wie lange die Geräte-Orientierung gleich bleiben muss, bevor der Bildschirm rotiert wird. (Standard: 200 ms)</string>
     <string name="ime_switcher_title">Eingabemethoden-Wechsler</string>
-    <string name="ime_switcher_summary">In der Benachrichtungsleiste, während des Tippens. (Neustart erforderlich)</string>
+    <string name="ime_switcher_summary">In der Benachrichtungsleiste während des Tippens anzeigen. (Neustart erforderlich)</string>
     <string name="custom_carrier_label_title">Eigener Anbieter-Text</string>
     <string name="longpress_to_kill_title">Zurück-Taste zum Beenden</string>
     <string name="longpress_to_kill_summary">Das Halten der Zurück-Taste beendet die aktuelle App.</string>
@@ -61,28 +61,28 @@
     <string name="horizontal_recents_task_panel_title">Horizontaler Task-Bildschirm</string>
     <string name="horizontal_recents_task_panel_summary">WebOS-Aussehen für den Task-Wechsler. Die Benutzeroberfläche wird neu starten und in 10 Sekunden wieder erscheinen. Falls nicht, führe ein Neustart durch.</string>
     <string name="disable_bootanimation_title">Boot-Animation deaktivieren</string>
-    <string name="disable_bootanimation_summary">Idiot!</string>
+    <string name="disable_bootanimation_summary">Deaktiviert die ROM-Animation beim Startvorgang.</string>
     <string name="disable_bugmailer_title">Fehlerberichte deaktivieren</string>
-    <string name="lcd_density_title">LCD Dichte</string>
+    <string name="lcd_density_title">LCD Pixeldichte</string>
     <string name="lcd_density_summary">unbekannt</string>
     <!-- CRT animations -->
     <string name="crt_animations_header">An-/Aus-Animationen</string>
     <string name="crt_on_title">Einschalt-Animation (CRT)</string>
     <string name="crt_off_title">Ausschalt-Animation (CRT)</string>
     <!-- LCD Density -->
-    <string name="lcd_density_wizard">Assistent für LCD Dichte</string>
-    <string name="follow_through_title">Zu Ende führen!</string>
-	<string name="follow_through_summary">Gehe sicher, dass Du alle Schritte nach und nach durchführst und erst nach Abschließen eines zum Nächsten übergehst.</string>
-	<string name="stock_density_title">1. LCD Dichte auf Standardwerte ändern</string>
+    <string name="lcd_density_wizard">Assistent für LCD Pixeldichte</string>
+    <string name="follow_through_title">Alle Schritte vollständig durchführen!</string>
+	<string name="follow_through_summary">Stelle sicher, dass Du alle Schritte nach und nach durchführst und erst nach Abschließen eines Schrittes zum Nächsten übergehst.</string>
+	<string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
 	<string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
 	<string name="reboot_title">2. Neustarten!</string>
-	<string name="reboot_summary">Nach dem Neustart hier her zurückkommen und die restlichen Schritte durchführen!</string>
-	<string name="clear_market_data_title">3. Lösche Daten von Google Play</string>
+	<string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
+	<string name="clear_market_data_title">3. Lösche die Daten von Google Play</string>
 	<string name="clear_market_data_cleared">Google Play Daten gelöscht</string>
 	<string name="open_market_title">4. Google Play öffnen und akzeptieren drücken</string>
-	<string name="open_market_summary">Zurück drücken um hier her zurück zu gelangen</string>
-	<string name="custom_density_title">5. Ändere die Dichte auf einen eigenen Wert!</string>
-	<string name="custom_density_summary">Sollten irgendwann Kompatibilitätsprobleme mit Google Play auftreten, wiederhole die hier genannten Schritte.</string>
+	<string name="open_market_summary">Zurück drücken um zum Assistenten zurückzukehren</string>
+	<string name="custom_density_title">5. Die Pixeldichte auf einen eigenen Wert ändern!</string>
+	<string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play auftreten, wiederhole die hier genannten Schritte.</string>
 	<!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Aussehen der Bildschirmsperre</string>
     <string name="pref_lockscreen_layout_summary">Nach dem Wechsel des Aussehens müssen die Verknüpfungen erneut festgelegt werden!</string>
@@ -164,8 +164,8 @@
     <string name="adb_icon_summary">Wutang</string>
 <string name="statusbar_transparency">Transparenz</string>
     <string name="statusbar_transparency_summary">Kann sich negativ auf die Leistung und Akkulaufzeit auswirken. (Neustart erforderlich)</string>
-<string name="statusbar_layout">Notification drawer layout</string>
-    <string name="statusbar_layout_summary">Change the notification drawer layout (requires UI restart)</string>
+<string name="statusbar_layout">Layout der Benachrichtungsleiste</string>
+    <string name="statusbar_layout_summary">Das Layout der Benachrichtungsleiste ändern. (Neustart erforderlich)</string>
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Aussehen des Batteriesymbols</string>
     <string name="battery_summary_text_widget">@null</string>

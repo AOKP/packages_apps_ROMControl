@@ -30,6 +30,7 @@ public class Performance extends SettingsPreferenceFragment implements
     public static final String KEY_GOV = "gov";
     public static final String KEY_CPU_BOOT = "cpu_boot";
     public static final String KEY_MINFREE = "free_memory";
+    public static final String KEY_FASTCHARGE = "fast_charge_boot";
 
     private static final String STEPS = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies";
     private static final String MAX_FREQ = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq";

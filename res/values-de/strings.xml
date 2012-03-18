@@ -259,7 +259,7 @@
     <!-- Start up tweaks -->
     <string name="pt_init_d">Startvorgang Tweaks</string>
     <string name="pt_enable_init_d">Startvorgang Tweaks aktivieren</string>
-    <string name="pt_zipalign">Zipalign APK's</string>
+    <string name="pt_zipalign">Zipalign APK\'s</string>
     <string name="pt_enable_sd_boost">SD-Boost aktivieren</string>
     <string name="pt_sd_boost">Read-ahead Wert</string>
     <string name="pt_fix_permissions">Zugriffsrechte beheben</string>

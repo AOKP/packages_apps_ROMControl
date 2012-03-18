@@ -61,7 +61,7 @@
     
     <!-- UI -->
     <string name="rotation_animation_delay_title">Prodleva rotace</string>
-    <string name="rotation_animation_delay_summary">Počet milisekund, po které musí zůstat telefon v klidu, než dojde k otočení obrazovky. Výchozí hodnota je 200ms.</string>
+    <string name="rotation_animation_delay_summary">Počet milisekund po které musí zůstat telefon v klidu, než dojde k otočení obrazovky. Výchozí hodnota je 200ms.</string>
 
 	<string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
 	<string name="ime_switcher_summary">Během psaní ve stavové liště (vyžaduje restart)</string>
@@ -148,6 +148,15 @@
     <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
     <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
     <string name="lockscreen_text_color_title">Barva textu na zamknuté obrazovce</string>
+    <string name="lockscreen_calendar">Kalendář na zamknuté obrazovce</string>
+    <string name="lockscreen_calendar_title">Povoleno</string>
+    <string name="lockscreen_calendar_summary">Zobrazovat budoucí události z kalendáře na zamknuté obrazovce.</string>
+    <string name="lockscreen_calendar_sources_title">Vybrat kalendáře</string>
+    <string name="lockscreen_calendar_sources_summary">Vybrat kalendáře, ze kterých se mají události zobrazovat.</string>
+    <string name="lockscreen_calendar_flip_title">Několik událostí</string>
+    <string name="lockscreen_calendar_flip_summary">Pokud je povoleno, dojde ke střídání jednotlivých událostí v příštích 24 hodinách.</string>
+    <string name="lockscreen_calendar_interval_title">Interval střídání</string>
+    <string name="lockscreen_calendar_interval_summary">Zvolit rychlost střídání v sekundách.</string>
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Zobrazovat spořič energie</string>

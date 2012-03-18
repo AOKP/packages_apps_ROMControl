@@ -406,8 +406,9 @@
     <string name="about_aokp_summary">@null</string>
     
     <!--  Kernel Tweaks -->
-    <string name="kernel">Kernel Tweaks</string>
-    <string name="category_screen_title">WM8994 Settings ( voodoo )</string>
+    <string name="pt_fast_charge_boot">Fast Charge</string>
+    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+    <string name="kernel">Kernel Tweaks (if supported)</string>
     <string name="color_tuning_title_head">Color Multipliers Tuning</string>
     <string name="color_tuning_summary_head">Calibrate multipliers screen color</string>
     <string name="gamma_tuning_title_head">Color Gamma Tuning</string>
@@ -415,4 +416,5 @@
     <string name="color_red_title">Red</string>
     <string name="color_green_title">Green</string>
     <string name="color_blue_title">Blue</string>
+    <string name="reset_defaults">Reset to Defaults</string>
 </resources>

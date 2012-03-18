@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.roman.romcontrol.fragments;
+package com.roman.romcontrol.util;
 
 import android.util.Log;
 
@@ -26,7 +26,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.SyncFailedException;
 
-public class Utils {
+public class KernelUtils {
     private static final String TAG = "Utils";
     private static final String TAG_READ = "Utils_Read";
     private static final String TAG_WRITE = "Utils_Write";

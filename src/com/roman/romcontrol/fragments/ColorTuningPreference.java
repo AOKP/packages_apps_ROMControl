@@ -25,13 +25,16 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Button;
 import android.util.Log;
+import com.roman.romcontrol.util.KernelUtils;
 import com.roman.romcontrol.R;
 
 
 public class ColorTuningPreference extends DialogPreference {
 
     private static final String TAG = "COLOR...";
+    private static final int DEFAULT_COLOR_MULT = 1002159035;
 
     enum Colors {
         RED, GREEN, BLUE
@@ -51,6 +54,7 @@ public class ColorTuningPreference extends DialogPreference {
             "/sys/class/misc/samoled_color/blue_multiplier"
     };
 
+    private Button mReset_button;
     private ColorSeekBar mSeekBars[] = new ColorSeekBar[3];
 
     // Align MAX_VALUE with Voodoo Control settings
@@ -78,6 +82,14 @@ public class ColorTuningPreference extends DialogPreference {
             TextView valueDisplay = (TextView) view.findViewById(VALUE_DISPLAY_ID[i]);
             mSeekBars[i] = new ColorSeekBar(seekBar, valueDisplay, FILE_PATH[i]);
         }
+        mReset_button = (Button) view.findViewById(R.id.reset_button);
+        mReset_button.setOnClickListener(new Button.OnClickListener() {  
+            public void onClick(View v) {
+            	for (ColorSeekBar seekbar : mSeekBars){
+            		seekbar.mSeekBar.setProgress(DEFAULT_COLOR_MULT);
+                }
+            }
+            });
     }
 
     @Override
@@ -110,7 +122,7 @@ public class ColorTuningPreference extends DialogPreference {
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         for (String filePath : FILE_PATH) {
-            String sDefaultValue = Utils.readOneLine(filePath);
+            String sDefaultValue = KernelUtils.readOneLine(filePath);
             Log.d(TAG,"INIT: " + sDefaultValue);
             try {
                 iValue2 = Integer.parseInt(sDefaultValue);
@@ -124,7 +136,7 @@ public class ColorTuningPreference extends DialogPreference {
                 iValue = iValue2;
                 Log.e(TAG, "restore ERROR: iValue: " + iValue + " File: " + filePath);
             }
-            Utils.writeColor(filePath, (int) iValue);
+            KernelUtils.writeColor(filePath, (int) iValue);
         }
     }
 
@@ -136,14 +148,14 @@ public class ColorTuningPreference extends DialogPreference {
     public static boolean isSupported() {
         boolean supported = true;
         for (String filePath : FILE_PATH) {
-            if (!Utils.fileExists(filePath)) {
+            if (!KernelUtils.fileExists(filePath)) {
                 supported = false;
             }
         }
 
         return supported;
     }
-
+    
     class ColorSeekBar implements SeekBar.OnSeekBarChangeListener {
 
         private String mFilePath;
@@ -164,8 +176,8 @@ public class ColorTuningPreference extends DialogPreference {
             SharedPreferences sharedPreferences = getSharedPreferences();
 
             // Read original value
-            if (Utils.fileExists(mFilePath)) {
-                String sDefaultValue = Utils.readOneLine(mFilePath);
+            if (KernelUtils.fileExists(mFilePath)) {
+                String sDefaultValue = KernelUtils.readOneLine(mFilePath);
                 iValue = (int) (Long.valueOf(sDefaultValue) / 2);
             } else {
                 iValue = sharedPreferences.getInt(mFilePath, MAX_VALUE);
@@ -190,7 +202,7 @@ public class ColorTuningPreference extends DialogPreference {
 
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            Utils.writeColor(mFilePath, progress);
+            KernelUtils.writeColor(mFilePath, progress);
             updateValue(progress);
         }
 
@@ -204,7 +216,7 @@ public class ColorTuningPreference extends DialogPreference {
             // Do nothing
         }
 
-        private void updateValue(int progress) {
+        public void updateValue(int progress) {
             mValueDisplay.setText(String.format("%.10f", (double) progress / MAX_VALUE));
         }
 

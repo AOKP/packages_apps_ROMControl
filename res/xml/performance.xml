@@ -63,6 +63,11 @@
     <PreferenceCategory
 		android:key="kernel"
 		android:title="@string/kernel">
+			<CheckBoxPreference
+				android:key="fast_charge_boot"
+				android:defaultValue="false"
+				android:title="@string/pt_fast_charge_boot"
+				android:summary="@string/ps_fast_charge_boot" />
     		
     		<com.roman.romcontrol.fragments.ColorTuningPreference
         		android:key="color_tuning"

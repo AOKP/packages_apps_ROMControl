@@ -48,6 +48,37 @@
 		android:key="volume_music_controls"
 		android:title="@string/volume_music_controls_title"
 		android:summary="@string/volume_music_controls_summary" />
+		
+	<PreferenceCategory
+		android:key="calendar_cat"
+		android:title="@string/lockscreen_calendar">
+		
+		<CheckBoxPreference
+			android:key="enable_calendar"
+			android:title="@string/lockscreen_calendar_title"
+			android:summary="@string/lockscreen_calendar_summary" />
+			
+		<Preference
+			android:key="lockscreen_calendar_sources"
+			android:dependency="enable_calendar"
+			android:title="@string/lockscreen_calendar_sources_title"
+			android:summary="@string/lockscreen_calendar_sources_summary" />
+	
+		<CheckBoxPreference
+			android:key="lockscreen_calendar_flip"
+			android:dependency="enable_calendar"
+			android:title="@string/lockscreen_calendar_flip_title"
+			android:summary="@string/lockscreen_calendar_flip_summary" />
+			
+		<ListPreference
+			android:key="lockscreen_calendar_interval"
+			android:entries="@array/pref_lockscreen_calendar_interval_entries"
+			android:entryValues="@array/pref_lockscreen_calendar_interval_values"
+			android:dependency="lockscreen_calendar_flip"
+			android:title="@string/lockscreen_calendar_interval_title"
+			android:summary="@string/lockscreen_calendar_interval_summary" />
+			
+	</PreferenceCategory>
 
 	<PreferenceCategory
 		android:key="advanced_cat"

@@ -334,6 +334,26 @@
 		<item>Octo</item>
 		<item>AOSP</item>
 	</string-array>
+  
+  <string-array name="pref_lockscreen_calendar_interval_values">
+    <item>1000</item>
+    <item>1500</item>
+    <item>2000</item>
+    <item>2500</item>
+    <item>3000</item>
+    <item>3500</item>
+    <item>4000</item>
+  </string-array>
+  
+  <string-array name="pref_lockscreen_calendar_interval_entries">
+    <item>1 sekunda</item>
+    <item>1.5 sekundy</item>
+    <item>2 sekundy</item>
+    <item>2.5 sekundy</item>
+    <item>3 sekundy</item>
+    <item>3.5 sekundy</item>
+    <item>4 sekundy</item>
+  </string-array>
 
 	<string-array name="minfree">
 		<item>25mb</item>

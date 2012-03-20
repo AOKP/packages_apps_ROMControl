@@ -5,6 +5,7 @@
 		<item>Справа</item>
 		<item>Слева</item>
 		<item>Везде</item>
+		<item>удаление</item>
 	</string-array>
 
 	<!-- right is the default, easier to keep 0 as first index -->
@@ -13,6 +14,7 @@
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
+		<item>4</item>
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
@@ -216,27 +218,6 @@
 		<item>0</item>
 	</string-array>
 
-	<!-- Toggles -->
-	<string-array name="available_toggle_entries">
-		<item>Авто-поворот</item>
-		<item>Bluetooth</item>
-		<item>GPS</item>
-		<item>LTE</item>
-		<item>Передача данных</item>
-		<item>Wi-Fi</item>
-		<item>2G</item>
-	</string-array>
-
-	<string-array name="available_toggle_values">
-		<item>ПОВОРОТ</item>
-		<item>BT</item>
-		<item>GPS</item>
-		<item>LTE</item>
-		<item>ДАННЫЕ</item>
-		<item>WIFI</item>
-		<item>2G</item>
-	</string-array>
-
 	<string-array name="brightness_location_entries">
 		<item>Сверху</item>
 		<item>Снизу</item>
@@ -276,13 +257,11 @@
 
 	<!-- Toggle style -->
 	<string-array name="toggle_style_entries">
-		<item>Без значков / Без текста</item>
 		<item>Только значки</item>
 		<item>Только текст</item>
 	</string-array>
 
 	<string-array name="toggle_style_values">
-		<item>1</item>
 		<item>2</item>
 		<item>3</item>
 	</string-array>

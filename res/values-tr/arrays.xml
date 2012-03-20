@@ -380,13 +380,9 @@
         <item>UÇAK_MODU</item>
         <item>TİTREŞİM</item>
         <item>SESSİZ</item>
-        <item>SENKRON</item>
-        <item>VERİ</item>
-        <item>2G</item>
-        <item>AP</item>
         <item>FENER</item>
+		<item>SENKRON</item>
         <item>SWAGGER</item>
-        <item>H-ŞARJ</item>
     </string-array>
     <string-array name="available_toggles_values">
         <item>Oto-Donüş</item>
@@ -396,13 +392,9 @@
         <item>Uçak Modu</item>
         <item>Titreşim</item>
         <item>Sessiz</item>
-        <item>Senkron</item>
-        <item>Veri</item>
-        <item>2G</item>
-        <item>Bağlanma (AP)</item>
         <item>Fener</item>
+		<item>Senkron</item>
         <item>Swagger</item>
-        <item>Hızlı Şarj</item>
     </string-array>
     <string-array name="lockscreen_choice_entries">
         <item>Kilit aç</item>

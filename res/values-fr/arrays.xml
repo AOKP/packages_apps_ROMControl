@@ -5,6 +5,7 @@
 		<item>Droite</item>
 		<item>Gauche</item>
 		<item>les deux</item>
+		<item>supprimer</item>
 	</string-array>
 
 	<!-- right is the default, easier to keep 0 as first index -->
@@ -13,11 +14,12 @@
 		<item>0</item>
 		<item>1</item>
 		<item>2</item>
+		<item>4</item>
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
 		<item>Do nothing</item>
-		<item>Switch to CDMA only (1x)</item>
+		<item>Turn LTE off</item>
 		<item>Turn data off</item>
 	</string-array>
 
@@ -138,20 +140,6 @@
 		<item>63</item>
 	</string-array>
 	
-	<!-- NAV BAR -->
-	<string-array name="pref_navigation_layout_entries">
-		<item>Regular</item>
-		<item>Regular w/Search</item>
-		<item>Back - Home - Search</item>
-		<item>Back - Home - Tasks - Search</item>
-	</string-array>
-
-	<string-array name="pref_navigation_layout_values">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-	</string-array>
 
 	<string-array name="led_entries">
 		<item>.5 seconds</item>
@@ -195,6 +183,7 @@
 	<string-array name="pref_navigation_menu_display_entries">
 		<item>Par défaut ICS</item>
 		<item>Toujours afficher les icônes invisibless</item>
+		
 		<item>Toujours afficher</item>
 		<item>ICS par défaut avec des icônes invisibles quand cachés</item>
 	</string-array>
@@ -229,27 +218,6 @@
 		<item>2</item>
 		<item>1</item>
 		<item>0</item>
-	</string-array>
-
-	<!-- Toggles -->
-	<string-array name="available_toggle_entries">
-		<item>Auto-Rotation</item>
-		<item>Bluetooth</item>
-		<item>GPS</item>
-		<item>LTE Toggle</item>
-		<item>Données mobile</item>
-		<item>Wi-Fi</item>
-		<item>2G Toggle</item>
-	</string-array>
-
-	<string-array name="available_toggle_values">
-		<item>ROTATE</item>
-		<item>BT</item>
-		<item>GPS</item>
-		<item>LTE</item>
-		<item>DATA</item>
-		<item>WIFI</item>
-		<item>2G</item>
 	</string-array>
 
 	<string-array name="brightness_location_entries">
@@ -291,17 +259,13 @@
 
 	<!-- toggle style -->
 	<string-array name="toggle_style_entries">
-		<item>Pas d\'icône, pas de texte</item>
 		<item>Seulement Icon</item>
 		<item>SeulementText</item>
-		<item>Icône et texte</item>
 	</string-array>
 
 	<string-array name="toggle_style_values">
-		<item>1</item>
 		<item>2</item>
 		<item>3</item>
-		<item>4</item>
 	</string-array>
 
 </resources>

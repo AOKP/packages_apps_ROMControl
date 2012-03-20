@@ -307,7 +307,7 @@
         <item>Sadece metin</item>
         <item>ikon ile birlikte metin</item>
         <item>Ortasında metin ile birlikte ikon</item>
-        <item>CircleMOD</item>
+        <item>Yüzdeli Mod</item>
         <item>Gizle</item>
     </string-array>
     <string-array name="battery_icon_values">
@@ -372,7 +372,7 @@
         <item>Wi-Fi</item>
         <item>Uçak Modu</item>
         <item>Titreşim</item>
-        <item>Silent</item>
+        <item>Sessiz</item>
         <item>Senkron</item>
         <item>Veri</item>
         <item>2G</item>

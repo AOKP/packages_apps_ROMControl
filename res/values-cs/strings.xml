@@ -313,19 +313,19 @@
 	<string name="pt_dsp_manager">DSP Manager</string>
 	<string name="pt_testing_menu">Testing Menu</string>
 	<!-- Start up tweaks -->
-	<string name="pt_init_d">Start-up Tweaks</string>
-	<string name="pt_enable_init_d">Enable start-up tweaks</string>
-	<string name="pt_zipalign">Zipalign apks</string>
-	<string name="pt_enable_sd_boost">Enable SD boost</string>
-	<string name="pt_sd_boost">Read ahead value</string>
-	<string name="pt_fix_permissions">Fix permissions</string>
-	<string name="pt_clear_cache">Clear cache</string>
-	<string name="pt_enable_sysctl">Enable sysctl</string>
-	<string name="pt_enable_cron">Enable scheduled tasks</string>
+	<string name="pt_init_d">Startovací tweaky</string>
+	<string name="pt_enable_init_d">Zapnout tweaky při startu</string>
+	<string name="pt_zipalign">Zipalignovat apky</string>
+	<string name="pt_enable_sd_boost">Zapnout zrychlení SD</string>
+	<string name="pt_sd_boost">Hodnota předběžného čtení</string>
+	<string name="pt_fix_permissions">Opravit oprávnění</string>
+	<string name="pt_clear_cache">Vymazat cache</string>
+	<string name="pt_enable_sysctl">Zapnout sysctl</string>
+	<string name="pt_enable_cron">Zapnout plánované úlohy</string>
 	<!-- Performance -->
-	<string name="pt_set_cpu_activity">Set CPU</string>
-	<string name="pt_free_memory">Free memory</string>
-	<string name="pt_free_memory_boot">Set at boot</string>
+	<string name="pt_set_cpu_activity">Nastavení CPU</string>
+	<string name="pt_free_memory">Volná paměť</string>
+	<string name="pt_free_memory_boot">Nastavit při startu</string>
 	<!-- Cpu -->
 	<string name="pt_set_max">Maximální frekvence CPU</string>
 	<string name="pt_set_min">Minimální frekvence CPU</string>
@@ -341,45 +341,41 @@
 
 	<!-- Preference Summaries -->
 	<!-- Main -->
-	<string name="ps_performance">Nastavení CPU, volná paměť &amp; přizpůsobení startovacího nastavení.</string>
-	<string name="ps_customization">Customize the lockscreen &amp; status bar. Install
-		blur/aosp apps with Liberty Customizer</string>
-	<string name="ps_tools">Various system tools</string>
+	<string name="ps_performance">Nastavení CPU, volná paměť a přizpůsobení startovacího nastavení.</string>
+	<string name="ps_customization">Přizpůsobení zamknuté obrazovky a stavové lišty. Instalovat blur/aosp aplikace s Liberty přizpůsobením</string>
+	<string name="ps_tools">Různé systémové nástroje</string>
 	<!-- Customization -->
-	<string name="ps_liberty_customizer">Customize the ROM to your liking</string>
+	<string name="ps_liberty_customizer">Přizpůsobení ROM vlastním potřebám</string>
 	<string name="ps_lockscreen">Change lockscreen styles and manage widgets
 	</string>
-	<string name="ps_ui_status_bar">Customize the status bar</string>
-	<string name="ps_pulldown_text">Change the text in the pulldown bar.</string>
-	<string name="ps_theme_manager">Install custom themes for Liberty ROM</string>
+	<string name="ps_ui_status_bar">Přizpůsobení stavové lišty</string>
+	<string name="ps_pulldown_text">Změnit text ve vysouvací liště.</string>
+	<string name="ps_theme_manager">Instalovat vlastní téma vzhledu pro Liberty ROM</string>
 	<!-- Tools -->
-	<string name="ps_spare_parts">Various tweaks and customization</string>
-	<string name="ps_dev_tools">Tools for developers and advanced users</string>
+	<string name="ps_spare_parts">Různá přizpůsobení a tweaky</string>
+	<string name="ps_dev_tools">Nástroje pro vývojáře a pokročilé uživatele</string>
 	<string name="ps_dsp_manager">Stand alone equalizer</string>
-	<string name="ps_testing_menu">Phone info, battery info, usage statistics</string>
+	<string name="ps_testing_menu">Informace o telefonu, baterii, statistiky užívání</string>
 	<!-- Start up tweaks -->
-	<string name="ps_init_d">Configure tweaks that are run at boot
-		(init.d)
-	</string>
-	<string name="ps_enable_init_d">Enable/disabe start-up tweaks</string>
-	<string name="ps_zipalign">Zipalign any unaligned apps on each boot</string>
-	<string name="ps_enable_sd_boost">Enable/disable SD card speed boost</string>
-	<string name="ps_sd_boost">Set value of read ahead in kb</string>
-	<string name="ps_fix_permissions">Fix permissions for apps on each boot</string>
-	<string name="ps_clear_cache">Clear data cache on each boot</string>
-	<string name="ps_enable_sysctl">Enable sysctl tweaks on boot</string>
-	<string name="ps_enable_cron">Enable scheduled cron jobs</string>
+	<string name="ps_init_d">Konfigurovat tweaky spouštěné při každém startu (init.d)</string>
+	<string name="ps_enable_init_d">Zapnout/vypnout startovací tweaky</string>
+	<string name="ps_zipalign">Zipalignovat všechny nezalignované aplikace při startu</string>
+	<string name="ps_enable_sd_boost">Zapnout/vypnout zrychlení SD karty</string>
+	<string name="ps_sd_boost">Nastavit hodnotu předběžného čtení v kb</string>
+	<string name="ps_fix_permissions">Opravit oprávnění aplikací při každém startu</string>
+	<string name="ps_clear_cache">Vymazat cache při každém startu</string>
+	<string name="ps_enable_sysctl">Zapnout tweaky sysctl při startu</string>
+	<string name="ps_enable_cron">Zapnout naplánované úlohy cronu</string>
 	<!-- CPU -->
 	<string name="ps_set_max">Nastavit maximální frekvenci škálování\nAktuálně: %s</string>
 	<string name="ps_set_min">Nastavit minimální frekvenci škálování\nAktuálně: %s</string>
 	<string name="ps_set_gov">Nastavit metodu škálování\nAktuálně: %s</string>
 	<string name="ps_cpu_boot">Nastavit hodnoty CPU při startu</string>
 	<!-- Performance -->
-	<string name="ps_set_cpu_activity">Set min/max frequencies and scaling governor
-	</string>
-	<string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep |
-		Current: %s</string>
-	<string name="ps_free_memory_boot">Apply the amount above at boot</string>
+	<string name="ps_set_cpu_activity">Nastavit minimální/maximální frekvenci a metodu škálování (governor)</string>
+	<string name="ps_free_memory">Množství paměti, které minfree taskkiler ponechá volné |
+		Aktuálně: %s</string>
+	<string name="ps_free_memory_boot">Použít výše uvedené množství při startu</string>
 
 	<!-- Toast Messages -->
 	<string name="toast_min_max_error01">Maximální frekvence CPU nemůže být nižší než minimální.</string>
@@ -391,7 +387,7 @@
 	<string name="saved">uloženo mV</string>
 
 	<!-- voltage -->
-	<string name="error_values">Error getting values</string>
+	<string name="error_values">Hodnoty způsobující chybu</string>
 	<string name="set_boot">Nastavit při startu</string>
 	<string name="apply_values">Použít hodnoty</string>
 	
@@ -402,14 +398,26 @@
 	<string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
 	<string name="donate_khasmek">@null</string>
 	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
-	<string name="devs">Developers</string>
+	<string name="devs">Vývojáři</string>
 	<string name="aokp">Android Open Kang Project</string>
-	<string name="aokp_website_title">AOKP Website</string>
+	<string name="aokp_website_title">Web AOKP</string>
 	<string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
 	<string name="aokp_source_title">AOKP Source</string>
-	<string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
-    <string name="aokp_irc_title">Join us on IRC</string>
-    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">Informace o AOKP</string>
-    <string name="about_aokp_summary">@null</string>
+	<string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlídnout nejnovější verzi na github.com/aokp</string>
+  <string name="aokp_irc_title">Připojit se k nám na IRC</string>
+  <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+  <string name="about_aokp">Informace o AOKP</string>
+  <string name="about_aokp_summary">@null</string>
+  <!--  Kernel Tweaks -->
+  <string name="pt_fast_charge_boot">Rychlé nabíjení</string>
+  <string name="ps_fast_charge_boot">Zapnout rychlé nabíjení při startu</string>
+  <string name="kernel">Kernel tweaky (pokud jsou podporovány)</string>
+  <string name="color_tuning_title_head">Kalibrace nastavení barev</string>
+  <string name="color_tuning_summary_head">Kalibrovat násobiče barev obrazovky</string>
+  <string name="gamma_tuning_title_head">Barevné ladění gamma</string>
+  <string name="gamma_tuning_summary_head">Kalibrovat gamma korekci barev</string>
+  <string name="color_red_title">Červená</string>
+  <string name="color_green_title">Zelená</string>
+  <string name="color_blue_title">Modrá</string>
+  <string name="reset_defaults">Zpět k výchozím hodnotám</string>
 </resources>

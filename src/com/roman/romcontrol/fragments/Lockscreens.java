@@ -367,6 +367,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
     private Uri getLockscreenExternalUri() {
         File dir = mContext.getExternalCacheDir();
+        if (dir == null)
+            dir = new File("/sdcard/Anroid/data/com.roman.romcontrol/cache/");
         File wallpaper = new File(dir, WALLPAPER_NAME);
 
         return Uri.fromFile(wallpaper);
@@ -374,6 +376,8 @@ public class Lockscreens extends SettingsPreferenceFragment implements
 
     private Uri getExternalIconUri() {
         File dir = mContext.getExternalCacheDir();
+        if (dir == null)
+            dir = new File("/sdcard/Anroid/data/com.roman.romcontrol/cache/");
         dir.mkdirs();
 
         return Uri.fromFile(new File(dir, "icon_" + currentIconIndex + ".png"));

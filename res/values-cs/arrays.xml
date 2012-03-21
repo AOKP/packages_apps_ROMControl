@@ -444,28 +444,28 @@
 	</string-array>
 	
 	<string-array name="available_toggles_entries">
-		<item>ROTACE</item>
+		<item>ROTATE</item>
 		<item>BT</item>
 		<item>GPS</item>
 		<item>WIFI</item>
-		<item>REŽIM LETADLO</item>
-		<item>VIBRACE</item>
-		<item>TICHÝ</item>
-		<item>SVÍTILNA</item>
-		<item>SYNCHRONIZACE</item>
+		<item>AIRPLANE_MODE</item>
+		<item>VIBRATE</item>
+		<item>SILENT</item>
+		<item>TORCH</item>
+		<item>SYNC</item>
 		<item>SWAGGER</item>
 	</string-array>
 	
 	<string-array name="available_toggles_values">
-		<item>Auto-rotace</item>
+		<item>Auto-rotate</item>
 		<item>BT</item>
 		<item>GPS</item>
 		<item>Wi-Fi</item>
-		<item>Režim letadlo</item>
-		<item>Vibrace</item>
-		<item>Tichý</item>
-		<item>Svítilna</item>
-		<item>Synchronizace</item>
+		<item>Airplane mode</item>
+		<item>Vibrate</item>
+		<item>Silent</item>
+		<item>Torch</item>
+		<item>Sync</item>
 		<item>Swagger</item>
 	</string-array>
 	

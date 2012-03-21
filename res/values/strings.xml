@@ -124,6 +124,8 @@
     <string name="show_lock_before_unlock_summary">Show standard lockscreen before secure unlock</string>
     <string name="lockscreen_battery_title">Lockscreen Battery Percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
+    <string name="lockscreen_low_battery_title">Low Battery Percentage</string>
+    <string name="lockscreen_low_battery_summary">Show low battery percentage on the lockscreen</string>
 	<string name="lockscreen_weather_title">Lockscreen Weather</string>
     <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
     <string name="volume_wake_title">Volume wake</string>

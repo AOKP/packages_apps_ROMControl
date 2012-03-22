@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:aokp="http://schemas.android.com/apk/res/com.roman.romcontrol">
+	xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol">
 
 	<PreferenceCategory
 		android:key="aokp"
@@ -27,35 +27,35 @@
 	<PreferenceCategory
 		android:key="devs"
 		android:title="@string/devs">
-		<com.roman.romcontrol.widgets.DeveloperPreference
+		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="Roman"
 			aokp:twitterHandle="romanbb"
 			aokp:donateLink="@string/donate_roman" />
 
-		<com.roman.romcontrol.widgets.DeveloperPreference
+		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="Whitehawkx"
 			aokp:twitterHandle="whitehawkx"
 			aokp:donateLink="@string/donate_whitehawk" />
 
-		<com.roman.romcontrol.widgets.DeveloperPreference
+		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="Zaphod-Beeble"
 			aokp:donateLink="@string/donate_zaph" />
 
-		<com.roman.romcontrol.widgets.DeveloperPreference
+		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="Jonathon Grigg"
 			aokp:twitterHandle="jonathongrigg" />
 
-		<com.roman.romcontrol.widgets.DeveloperPreference
+		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="ProTekk"
 			aokp:twitterHandle="protekkfzs"
 			aokp:donateLink="@string/donate_protekk" />
 
-		<com.roman.romcontrol.widgets.DeveloperPreference
+		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="Khas Mek"
 			aokp:twitterHandle="KhasMek"
 			aokp:donateLink="@string/donate_khasmek" />
 			
-		<com.roman.romcontrol.widgets.DeveloperPreference
+		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="sethyx"
 			aokp:twitterHandle="sethyx"
 			aokp:donateLink="@string/donate_sethyx" />

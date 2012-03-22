@@ -45,7 +45,7 @@
 			android:title="@string/glow_times_title"
 			android:summary="@string/glow_times_summary" />
 
-		<com.roman.romcontrol.widgets.SeekBarPreference
+		<com.aokp.romcontrol.widgets.SeekBarPreference
 			android:key="button_transparency"
 			android:title="@string/button_transparency_title" />
 

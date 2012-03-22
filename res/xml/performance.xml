@@ -32,8 +32,8 @@
 			android:title="Voltage Control">
 			<intent
 				android:action="android.intent.action.MAIN"
-				android:targetPackage="com.roman.romcontrol"
-				android:targetClass="com.roman.romcontrol.tools.VoltageControl" />
+				android:targetPackage="com.aokp.romcontrol"
+				android:targetClass="com.aokp.romcontrol.tools.VoltageControl" />
 		</PreferenceScreen>
 	</PreferenceCategory>
 	<PreferenceCategory
@@ -69,11 +69,11 @@
 				android:title="@string/pt_fast_charge_boot"
 				android:summary="@string/ps_fast_charge_boot" />
     		
-    		<com.roman.romcontrol.fragments.ColorTuningPreference
+    		<com.aokp.romcontrol.fragments.ColorTuningPreference
         		android:key="color_tuning"
         		android:title="@string/color_tuning_title_head"
         		android:summary="@string/color_tuning_summary_head" />
-    		<com.roman.romcontrol.fragments.GammaTuningPreference
+    		<com.aokp.romcontrol.fragments.GammaTuningPreference
         		android:key="gamma_tuning"
         		android:title="@string/gamma_tuning_title_head"
         		android:summary="@string/gamma_tuning_summary_head" />

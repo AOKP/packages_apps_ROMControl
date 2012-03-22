@@ -18,6 +18,11 @@
 		android:entryValues="@array/brightness_location_values"
 		android:key="brightness_location"
 		android:title="@string/brightness_location_title" />
+		
+	<CheckBoxPreference
+		android:key="brightness_show_icon"
+		android:title="@string/brightness_show_icon_title"
+		android:summary="@string/brightness_show_icon_summary" />
 
 	<PreferenceCategory
 		android:key="advanced_cat"

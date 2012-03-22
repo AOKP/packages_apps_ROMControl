@@ -28,7 +28,7 @@ import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.service.WeatherRefreshService;
 import com.aokp.romcontrol.service.WeatherService;
 import com.aokp.romcontrol.util.WeatherPrefs;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 public class Weather extends AOKPPreferenceFragment implements OnPreferenceChangeListener {
 

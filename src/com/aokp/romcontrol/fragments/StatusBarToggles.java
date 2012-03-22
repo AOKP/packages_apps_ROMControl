@@ -26,7 +26,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.aokp.romcontrol.widgets.TouchInterceptor;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import java.util.ArrayList;
 

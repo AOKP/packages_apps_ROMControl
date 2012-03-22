@@ -17,7 +17,7 @@ import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.tools.VoltageControl;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import java.io.File;
 

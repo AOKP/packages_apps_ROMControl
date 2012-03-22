@@ -8,7 +8,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 public class About extends AOKPPreferenceFragment {
 

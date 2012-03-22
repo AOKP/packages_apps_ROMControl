@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import java.io.File;
 

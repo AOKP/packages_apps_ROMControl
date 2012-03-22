@@ -10,7 +10,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

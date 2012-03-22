@@ -33,7 +33,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 public class TouchInterceptor extends ListView {
 

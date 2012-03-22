@@ -32,7 +32,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.aokp.romcontrol.util.CMDProcessor;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import java.io.BufferedReader;
 import java.io.File;

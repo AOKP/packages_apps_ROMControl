@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 public class DeveloperPreference extends Preference {
 

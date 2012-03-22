@@ -9,7 +9,7 @@ import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 public class PowerMenu extends AOKPPreferenceFragment {
 

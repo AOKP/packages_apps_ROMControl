@@ -12,7 +12,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import java.io.IOException;
 

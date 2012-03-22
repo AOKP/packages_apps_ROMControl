@@ -41,7 +41,7 @@ import android.widget.Toast;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.LockscreenItemPreference;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -397,7 +397,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private Uri getLockscreenExternalUri() {
         File dir = mContext.getExternalCacheDir();
         if (dir == null)
-            dir = new File("/sdcard/Anroid/data/com.roman.romcontrol/cache/");
+            dir = new File("/sdcard/Anroid/data/com.aokp.romcontrol/cache/");
         File wallpaper = new File(dir, WALLPAPER_NAME);
 
         return Uri.fromFile(wallpaper);
@@ -406,7 +406,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private Uri getExternalIconUri() {
         File dir = mContext.getExternalCacheDir();
         if (dir == null)
-            dir = new File("/sdcard/Anroid/data/com.roman.romcontrol/cache/");
+            dir = new File("/sdcard/Anroid/data/com.aokp.romcontrol/cache/");
         dir.mkdirs();
 
         return Uri.fromFile(new File(dir, "icon_" + currentIconIndex + ".png"));

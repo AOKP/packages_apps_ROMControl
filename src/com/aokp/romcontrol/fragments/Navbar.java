@@ -32,7 +32,7 @@ import android.widget.TextView;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 import com.aokp.romcontrol.widgets.TouchInterceptor;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

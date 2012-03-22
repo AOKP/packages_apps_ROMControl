@@ -24,7 +24,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;

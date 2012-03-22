@@ -12,7 +12,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 public class SeekBarPreference extends Preference
         implements OnSeekBarChangeListener {

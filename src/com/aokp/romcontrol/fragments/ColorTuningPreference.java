@@ -29,7 +29,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.aokp.romcontrol.util.KernelUtils;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 
 public class ColorTuningPreference extends DialogPreference {

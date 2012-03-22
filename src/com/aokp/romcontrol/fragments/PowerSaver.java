@@ -18,7 +18,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.internal.telephony.Phone;
-import com.roman.romcontrol.R;
+import com.aokp.romcontrol.R;
 
 public class PowerSaver extends PreferenceFragment implements
         OnPreferenceChangeListener {

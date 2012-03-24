@@ -68,6 +68,26 @@
 			android:dependency="enable_calendar"
 			android:title="@string/lockscreen_calendar_sources_title"
 			android:summary="@string/lockscreen_calendar_sources_summary" />
+		
+		<ListPreference
+			android:key="lockscreen_calendar_range"
+			android:entries="@array/pref_lockscreen_calendar_range_entries"
+			android:entryValues="@array/pref_lockscreen_calendar_range_values"
+			android:dependency="enable_calendar"
+			android:title="@string/lockscreen_calendar_range_title"
+			android:summary="@string/lockscreen_calendar_range_summary" />
+		
+		<CheckBoxPreference
+			android:key="lockscreen_calendar_use_colors"
+			android:dependency="enable_calendar"
+			android:title="@string/lockscreen_calendar_use_colors_title"
+			android:summary="@string/lockscreen_calendar_use_colors_summary" />
+		
+		<CheckBoxPreference
+			android:key="lockscreen_calendar_hide_ongoing"
+			android:dependency="enable_calendar"
+			android:title="@string/lockscreen_calendar_hide_ongoing_title"
+			android:summary="@string/lockscreen_calendar_hide_ongoing_summary" />
 	
 		<CheckBoxPreference
 			android:key="lockscreen_calendar_flip"

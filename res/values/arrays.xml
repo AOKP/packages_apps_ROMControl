@@ -352,6 +352,26 @@
         <item>3.5 seconds</item>
         <item>4 seconds</item>
 	</string-array>
+	
+	<string-array name="pref_lockscreen_calendar_range_values" translatable="false">
+		<item>86400000</item>
+		<item>172800000</item>
+        <item>259200000</item>
+        <item>345600000</item>
+        <item>432000000</item>
+        <item>518400000</item>
+        <item>604800000</item>
+	</string-array>
+	
+	<string-array name="pref_lockscreen_calendar_range_entries">
+		<item>1 day</item>
+		<item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>5 days</item>
+        <item>6 days</item>
+        <item>1 week</item>
+	</string-array>
 
 	<string-array name="minfree">
 		<item>25mb</item>

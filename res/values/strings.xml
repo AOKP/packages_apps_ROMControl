@@ -154,11 +154,17 @@
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_calendar">Lockscreen calendar</string>
     <string name="lockscreen_calendar_title">Enable</string>
-    <string name="lockscreen_calendar_summary">Show upcoming events from your calendar on the lockscreen.</string>
-    <string name="lockscreen_calendar_sources_title">Select calendars</string>
+    <string name="lockscreen_calendar_summary">Show upcoming event(s) from your calendar on the lockscreen.</string>
+    <string name="lockscreen_calendar_sources_title">Calendar sources</string>
     <string name="lockscreen_calendar_sources_summary">Select the calendars you want to see.</string>
+    <string name="lockscreen_calendar_range_title">Time-range</string>
+    <string name="lockscreen_calendar_range_summary">Select the time-range to be displayed.</string>
+    <string name="lockscreen_calendar_use_colors_title">Use colors</string>
+    <string name="lockscreen_calendar_use_colors_summary">If enabled, events will be colored like in your calendar.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Hide ongoing events</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">If enabled, events which already started won\'t show up.</string>
     <string name="lockscreen_calendar_flip_title">Multiple events</string>
-    <string name="lockscreen_calendar_flip_summary">If enabled, the widget will flip between the upcoming events from the next 24 hours.</string>
+    <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
     

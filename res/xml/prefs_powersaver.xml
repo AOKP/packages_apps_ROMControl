@@ -58,19 +58,19 @@
 			android:entries="@array/powersaving_screen_off_wifi_entries"
 			android:entryValues="@array/powersaving_screen_off_wifi_values"
 			android:key="screen_off_wifi_action"
-			android:title="Screen-off Wi-Fi action" />
+			android:title="@string/screen_off_wifi_action" />
 
 		<ListPreference
 			android:entries="@array/powersaving_sync_data_mode_entries"
 			android:entryValues="@array/powersaving_sync_data_mode_values"
 			android:key="sync_data_mode"
-			android:title="Sync data usage" />
+			android:title="@string/sync_data_usage" />
 
 		<ListPreference
 			android:entries="@array/powersaving_sync_data_mobile_mode_entries"
 			android:entryValues="@array/powersaving_sync_data_mobile_mode_values"
 			android:key="sync_data_mobile_mode"
-			android:title="Sync mobile data preference" />
+			android:title="@string/sync_mobile_data_preference" />
 
 	</PreferenceCategory>
 

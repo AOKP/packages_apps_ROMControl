@@ -190,7 +190,10 @@
     
     <string name="powersaver_data_cat">Data</string>
     <string name="powersaver_sync_cat">Synchronizace</string>
-
+    
+    <string name="screen_off_wifi_action">Wi-Fi při vypnuté obrazovce</string>
+    <string name="sync_data_usage">Datové spojení pro synchronizaci</string>
+    <string name="sync_mobile_data_preference">Mobilní data pro synchronizaci</string>
     <!--  LED -->
     <string name="title_led_on">Doba svícení LEDky</string>
     <string name="summary_led_on">@null</string>

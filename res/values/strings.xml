@@ -259,6 +259,8 @@
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
     <string name="brightness_location_title">Brightness location</string>
+    <string name="reset_toggles_title">Reset toggles</string>
+    <string name="reset_toggles_summary">Reset all toggles and their order</string>
 
 	<!-- Statusbar | Signal -->
 	<string name="signal_style">Signal Text Style</string>

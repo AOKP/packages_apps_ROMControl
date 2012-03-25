@@ -250,6 +250,8 @@
     <string name="toggles_order_title">Pořadí přepínačů</string>
     <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
     <string name="brightness_location_title">Pozice nastavení jasu</string>
+    <string name="reset_toggles_title">Vyresetovat přepínače</string>
+    <string name="reset_toggles_summary">Vyresetovat všechny přepínače a jejich pořadí</string>
 
 	<!-- Statusbar | Signal -->
 	<string name="signal_style">Styl ukazatele signálu</string>

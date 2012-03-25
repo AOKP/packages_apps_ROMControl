@@ -191,6 +191,10 @@
     
     <string name="powersaver_data_cat">Data</string>
     <string name="powersaver_sync_cat">Sync</string>
+    
+    <string name="screen_off_wifi_action">Screen-off Wi-Fi action</string>
+    <string name="sync_data_usage">Sync data usage</string>
+    <string name="sync_mobile_data_preference">Sync mobile data preference</string>
 
     <!--  LED -->
     <string name="title_led_on">LED pulse ON duration</string>

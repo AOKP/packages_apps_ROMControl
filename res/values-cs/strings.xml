@@ -69,6 +69,7 @@
 	<string name="custom_carrier_label_title">Vlastní název operátora</string>
 	<string name="longpress_to_kill_title">Podržet zpět pro ukončení</string>
 	<string name="longpress_to_kill_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
+  <string name="enable_volume_options">Zapnout nastavení hlasitosti</string>
 	
 	<string name="rotate_180_title">Umožnit rotaci o 180°</string>
 	<string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
@@ -153,6 +154,12 @@
     <string name="lockscreen_calendar_summary">Zobrazovat budoucí události z kalendáře na zamknuté obrazovce.</string>
     <string name="lockscreen_calendar_sources_title">Vybrat kalendáře</string>
     <string name="lockscreen_calendar_sources_summary">Vybrat kalendáře, ze kterých se mají události zobrazovat.</string>
+    <string name="lockscreen_calendar_range_title">Časový rozsah</string>
+    <string name="lockscreen_calendar_range_summary">Zvolit časový rozsah pro události.</string>
+    <string name="lockscreen_calendar_use_colors_title">Použít barvy</string>
+    <string name="lockscreen_calendar_use_colors_summary">Pokud je zapnuto, události budou mít barvu jako jednotlivé kalendáře.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Skrýt probíhající události</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Pokud je zapnuto, již probíhající události se nebudou zobrazovat.</string>
     <string name="lockscreen_calendar_flip_title">Několik událostí</string>
     <string name="lockscreen_calendar_flip_summary">Pokud je povoleno, dojde ke střídání jednotlivých událostí v příštích 24 hodinách.</string>
     <string name="lockscreen_calendar_interval_title">Interval střídání</string>
@@ -253,6 +260,8 @@
 	<string name="signal_color_title">Barva ukazatele signálu</string>
 	<string name="hide_signal_title">Skrýt graficky ukazatel signálu</string>
 	<string name="hide_signal_summary">Skryje také ukazatel dat (prozatím). Později bude možné skrývat odděleně.</string>
+  <string name="wifi_signal_style">Textový styl ukazatele WiFi</string>
+	<string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Výběr barvy</string>

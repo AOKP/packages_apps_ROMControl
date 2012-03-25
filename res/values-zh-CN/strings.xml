@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">固件设置</string>
+
+    <!-- Main -->
+    <string name="user_interface">界面</string>
+    <string name="general_ui">一般设置</string>
+    <string name="lockscreen_options">锁屏设置</string>
+    <string name="power_menu_optons">电源菜单</string>
+    <string name="functionality">功能</string>
+    <string name="power_saver">省电设置</string>
+    <string name="led_options">指示灯设置</string>
+    <string name="statusbar">状态栏</string>
+    <string name="general">一般设置</string>
+    <string name="toggles_layout">快捷开关</string>
+    <string name="clock">时间设置</string>
+    <string name="battery">电池图标</string>
+    <string name="nav_bar">导航栏设置</string>
+    <string name="tools">工具</string>
+    
+    <string name="advanced_settings">进阶设置</string>
+    <string name="misc_short">杂项</string>
+    
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">菜单设置</string>
+    <string name="summary_pref_menu_display">菜单图标位置设置</string>
+    <string name="navigation_bar">导航栏</string>
+    <string name="navigation_bar_tint_title">图标颜色</string>
+
+    <string name="title_pref_navigation_menu_display">菜单可见设置</string>
+    <string name="summary_pref_navigation_menu_display">设置菜单的显示方式</string>
+
+    <string name="navbar_order_title">导航键排序</string>
+    <string name="navbar_order_summary">自定义排列导航键顺序显示</string>
+
+    <string name="enabled_navbar_buttons_title">导航键选择</string>
+    <string name="enabled_navbar_buttons_summary">选择启用需要的导航键</string>
+    
+    <string name="long_press_home_title">长按主页键</string>
+    <string name="long_press_home_summary">设置长按主页键触发的功能,更改设置后,请重新启动手机</string>
+    
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">旋转延时</string>
+    <string name="rotation_animation_delay_summary">设置屏幕旋转的延迟时间, 默认为 200 毫秒</string>
+
+	<string name="ime_switcher_title">输入法切换</string>
+	<string name="ime_switcher_summary">输入时在状态栏显示输入法切换图标,更改设置后,请重新启动手机</string>
+
+	<string name="custom_carrier_label_title">自定义运营商字符</string>
+	<string name="longpress_to_kill_title">返回键结束进程</string>
+	<string name="longpress_to_kill_summary">长按返回键结束当前进程</string>
+	
+	<string name="rotate_180_title">180° 旋转</string>
+	<string name="rotate_180_summary">允许屏幕上下翻转</string>
+
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRT 动画</string>
+	<string name="crt_on_title">唤醒时 CRT 动画</string>
+	<string name="crt_off_title">休眠时 CRT 动画</string>
+
+    <!-- Lockscreens -->
+    <string name="title_pref_lockscreen_quad_targets">Quad 样式</string>	
+    <string name="summary_pref_lockscreen_quad_targets">添加电话及信息的快捷方式到锁屏界面</string>
+
+    <string name="title_pref_lockscreen_octo_targets">Octo 样式</string>	
+    <string name="summary_pref_lockscreen_octo_targets">添加更多的快捷方式到锁屏界面</string>
+
+    <string name="title_pref_lockscreen_menu_unlock">菜单解锁</string>
+    <string name="summary_pref_lockscreen_menu_unlock">锁屏时仍然显示当前程序菜单, 点击即可解锁.更改设置后, 请重新启动手机</string>
+    
+    <string name="title_lockscreen_user_timeout_override">延迟锁屏</string>
+    <string name="summary_lockscreen_user_timeout_override">手动关闭屏幕时, 延迟锁定屏幕, 延迟时间为显示设置中休眠设置时间</string>
+
+    <string name="sms_picker_title">信息程序</string>
+    <string name="sms_picker_summary">解锁界面快捷开启自定义的信息程序</string>    
+
+    <string name="sms_picker_1_title">自定义程序一</string>
+    <string name="sms_picker_1_summary">解锁界面向上方滑动快捷开启自定义程序</string>
+
+    <string name="sms_picker_2_title">自定义程序二</string>
+    <string name="sms_picker_2_summary">解锁界面向左下方滑动快捷开启自定义程序</string>
+
+    <string name="sms_picker_3_title">自定义程序三</string>
+    <string name="sms_picker_3_summary">解锁界面向右下方滑动快捷开启自定义程序</string>
+    
+    <string name="volume_wake_title">音量键唤醒</string>
+    <string name="volume_wake_summary">使用音量键唤醒手机</string>
+    
+    <string name="volume_music_controls_title">播放控制</string>
+    <string name="volume_music_controls_summary">长按住音量键切换播放曲目</string>
+    
+    <string name="lockscreen_show_nav_title">隐藏导航栏</string>
+    <string name="lockscreen_show_nav_summary">在锁屏界面隐藏导航栏(需要设备支持)</string>
+    
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">显示省电设置</string>
+    <string name="title_show_screenshot">显示快捷截屏</string>
+    
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+    
+    <string name="title_pref_powersaving_data_screen_off">休眠时数据设置</string>
+    <string name="summary_pref_powersaving_data_screen_off">选择休眠时的数据模式</string>
+        
+    <string name="title_pref_powersaving_data_screen_off_delay">延时设置</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">选择休眠时数据模式切换的延迟时间</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">同步设置</string>
+    <string name="summary_pref_powersaving_sync_screen_off">选择休眠时的同步模式</string>
+    
+    <string name="title_pref_powersaving_sync_screen_off_delay">间隔时间</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">设置每次强制同步的间隔时间</string>
+    
+    <string name="powersaver_data_cat">数据</string>
+    <string name="powersaver_sync_cat">同步</string>
+
+    <!--  LED -->
+    <string name="title_led_on">指示灯亮起间隔</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">指示灯熄灭间隔</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">指示灯颜色</string>
+
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">使用默认点击方式</string>
+    <string name="summary_settings_behavior">默认为点击设置图标进入系统设置, 长按呼出快捷开关. 如果取消勾选此项, 则点击设置图标呼出快捷开关, 长按进入系统设置. </string>
+
+    <string name="title_auto_hide_toggles">自动隐藏快捷开关</string>
+    <string name="summary_auto_hide_toggles">收起下拉通知栏时自动隐藏快捷开关</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_title_text_widget">显示电量数值</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_title_text_widget_center">电量数值对齐</string>
+    <string name="battery_bar">电量指示条</string>
+    <string name="battery_bar_color">电量指示条颜色</string>
+    <string name="show_battery_icon_title">显示电池图标</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">显示方式</string>
+    <string name="title_clock_ampm_entries">上午/下午显示</string>
+    <string name="colors">颜色</string>
+    <string name="clock_color_title">时间颜色</string>
+    <string name="reset_color_title">重置颜色</string>
+    <string name="enable_alarm_title">显示闹钟图标</string>
+    <string name="enable_alarm_summary">更改设置后,请重新启用闹钟或者重新启动手机</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">快捷开关样式</string>
+    <string name="toggle_style_summary">使用图标或者文字样式</string>
+
+    <string name="alternate_button_layout_title">按钮样式</string>
+    <string name="alternate_button_layout_summary">使用按钮样式来取代默认的滑动样式</string>
+    
+    <string name="enabled_toggles_title">开关启用</string>
+    <string name="enabled_toggles_summary">选择需要启用的快捷开关</string>
+    <string name="toggles_order_title">开关排序</string>
+    <string name="toggles_order_summary">自定义快捷开关的显示顺序</string>
+    <string name="brightness_location_title">亮度开关位置</string>
+    
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">取色器</string>
+    <string name="press_color_to_apply">点击颜色以确认选择</string>   
+    <string name="arrow_right">→</string> 
+    <string name="arrow_down">↓</string>
+    <string name="hex">代码:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">好</string>
+    <string name="ics_color">!!!</string>
+    
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">使用自定义程序</string>
+	<string name="use_custom_app_summary">使用自定义程序取代最近运行程序对话框</string>
+	<string name="select_custom_app_title">选择自定义程序</string>
+	<string name="group_applications">程序</string>
+	
+	<!-- Dialog Titles -->
+	<string name="dt_free_memory">任务管理器</string>
+
+	<!-- Preference Categories -->
+	<string name="prefcat_cpu">CPU 设置</string>
+	<string name="prefcat_free_memory">空余内存</string>
+	<string name="pc_tweaks">优化</string>
+	<string name="pc_init_d">启用/禁用优化</string>
+	<string name="pc_init_d_tweaks">自定义优化</string>
+
+	<!-- Preference Titles -->
+	<!-- Main -->
+	<string name="pt_performance">性能优化</string>
+	<string name="pt_customization">自定义</string>
+	<string name="pt_tools">工具</string>
+	<string name="pt_mod_version">Mod 版本</string>
+	<!-- Customization -->
+	<string name="pt_liberty_customizer">Liberty 自定义</string>
+	<string name="pt_lockscreen">锁屏设置</string>
+	<string name="pt_ui_status_bar">状态栏</string>
+	<string name="pt_pulldown_text">下拉文字</string>
+	<string name="pt_theme_manager">主题管理</string>
+	<!-- Tools -->
+	<string name="pt_spare_parts">备用设置</string>
+	<string name="pt_dev_tools">开发工具</string>
+	<string name="pt_dsp_manager">音效管理</string>
+	<string name="pt_testing_menu">测试目录</string>
+	<!-- Start up tweaks -->
+	<string name="pt_init_d">开机优化</string>
+	<string name="pt_enable_init_d">启用开机优化脚本</string>
+	<string name="pt_zipalign">Zipalign 优化</string>
+	<string name="pt_enable_sd_boost">储存卡加速</string>
+	<string name="pt_sd_boost">预读数值</string>
+	<string name="pt_fix_permissions">权限修复</string>
+	<string name="pt_clear_cache">缓存清理</string>
+	<string name="pt_enable_sysctl">启用 Sysctl</string>
+	<string name="pt_enable_cron">启用定时任务</string>
+	<!-- Performance -->
+	<string name="pt_set_cpu_activity">CPU 设置</string>
+	<string name="pt_free_memory">空余内存</string>
+	<string name="pt_free_memory_boot">开机启用</string>
+	<!-- Cpu -->
+	<string name="pt_set_max">最高频率</string>
+	<string name="pt_set_min">最低频率</string>
+	<string name="pt_set_gov">管理模式</string>
+	<string name="pt_cpu_boot">开机启用</string>
+
+	<!-- Preference Summaries -->
+	<!-- Main -->
+	<string name="ps_performance">超频设置,内存优化及其他开机设置</string>
+	<string name="ps_customization">自定义锁屏界面及状态栏设置</string>
+	<string name="ps_tools">其他系统工具</string>
+	<!-- Customization -->
+	<string name="ps_liberty_customizer">根据个人喜好自定义</string>
+	<string name="ps_lockscreen">更改锁屏样式及桌面小插件管理</string>
+	<string name="ps_ui_status_bar">自定义状态栏</string>
+	<string name="ps_pulldown_text">设置下拉框文字</string>
+	<string name="ps_theme_manager">安装自定义主题</string>
+	<!-- Tools -->
+	<string name="ps_spare_parts">其他自定义及优化</string>
+	<string name="ps_dev_tools">开发者和高级用户设置</string>
+	<string name="ps_dsp_manager">独立音效</string>
+	<string name="ps_testing_menu">电话信息,电池信息,使用情况</string>
+	<!-- Start up tweaks -->
+	<string name="ps_init_d">随机启动的优化设置(init.d)</string>
+	<string name="ps_enable_init_d">启用/禁用手机启动优化</string>
+	<string name="ps_zipalign">每次启动手机时对未优化的程序进行 Zipalign 优化</string>
+	<string name="ps_enable_sd_boost">启用/禁用储存卡加速</string>
+	<string name="ps_sd_boost">设置预读数值</string>
+	<string name="ps_fix_permissions">每次启动时修复权限错误</string>
+	<string name="ps_clear_cache">每次启动时清理缓存</string>
+	<string name="ps_enable_sysctl">每次启动时进行 Sysctl 优化</string>
+	<string name="ps_enable_cron">启用定时任务</string>
+	<!-- CPU -->
+	<string name="ps_set_max">设置 CPU 最高频率\n当前: %s</string>
+	<string name="ps_set_min">设置 CPU 最低频率\n当前: %s</string>
+	<string name="ps_set_gov">设置 CPU 管理模式\n当前: %s</string>
+	<string name="ps_cpu_boot">开机启用以上 CPU 设置</string>
+	<!-- Performance -->
+	<string name="ps_set_cpu_activity">设置 CPU 最低/最高频率及管理模式</string>
+	<string name="ps_free_memory">最小保证内存 | 当前: %s</string>
+	<string name="ps_free_memory_boot">开机启用以上设置</string>
+
+	<!-- Toast Messages -->
+	<string name="toast_min_max_error01">最高频率不能低于最低频率</string>
+	<string name="toast_min_max_error02">最低频率不能高于最高频率</string>
+
+	<!-- list_voltage -->
+	<string name="freq">频率</string>
+	<string name="current">mV 当前</string>
+	<string name="saved">mV 已保存</string>
+
+	<!-- voltage -->
+	<string name="error_values">获取数值错误</string>
+	<string name="set_boot">开机启用</string>
+	<string name="apply_values">应用设置</string>
+    
+</resources>

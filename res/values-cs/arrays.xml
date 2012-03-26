@@ -168,6 +168,7 @@
 		<item>Quad</item>
 		<item>Octo</item>
 		<item>AOSP</item>
+    <item>Honeycomb</item>
 	</string-array>
   
   <string-array name="pref_lockscreen_calendar_interval_entries">

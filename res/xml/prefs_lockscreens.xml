@@ -35,11 +35,6 @@
 		android:summary="@string/lockscreen_battery_summary" />
 
 	<CheckBoxPreference
-		android:key="lockscreen_low_battery"
-		android:title="@string/lockscreen_low_battery_title"
-		android:summary="@string/lockscreen_low_battery_summary" />
-
-	<CheckBoxPreference
 		android:key="lockscreen_weather"
 		android:title="@string/lockscreen_weather_title"
 		android:summary="@string/lockscreen_weather_summary" />

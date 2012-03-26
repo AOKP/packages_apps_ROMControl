@@ -323,6 +323,7 @@
 		<item>2</item>
 		<item>6</item>
 		<item>8</item>
+		<item>1</item>
 		<item>0</item>
 	</string-array>
 
@@ -331,6 +332,7 @@
 		<item>Quad</item>
 		<item>Octo</item>
 		<item>AOSP</item>
+		<item>Honeycomb</item>
 	</string-array>
 	
 	<string-array name="pref_lockscreen_calendar_interval_values" translatable="false">

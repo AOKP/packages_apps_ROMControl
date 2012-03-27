@@ -124,8 +124,6 @@
     <string name="show_lock_before_unlock_summary">在使用密码解锁前先显示正常的解锁界面</string>
     <string name="lockscreen_battery_title">锁屏显示电量百分比</string>
     <string name="lockscreen_battery_summary">总是在锁屏上显示剩余电量的百分比</string>
-    <string name="lockscreen_low_battery_title">锁屏显示低电量百分比</string>
-    <string name="lockscreen_low_battery_summary">电量偏低时在锁屏上显示剩余电量的百分比</string>
 	<string name="lockscreen_weather_title">锁屏显示天气</string>
     <string name="lockscreen_weather_summary">在锁屏显示天气信息。你需要在ROM 控制面板中先把天气服务打开。</string>
     <string name="volume_wake_title">音量键唤醒屏幕</string>
@@ -157,6 +155,12 @@
     <string name="lockscreen_calendar_summary">在锁屏上显示日历中接下来几天的事项</string>
     <string name="lockscreen_calendar_sources_title">选择日历</string>
     <string name="lockscreen_calendar_sources_summary">选择你想要显示的日历</string>
+    <string name="lockscreen_calendar_range_title">时间范围</string>
+    <string name="lockscreen_calendar_range_summary">选择显示事件的时间范围</string>
+    <string name="lockscreen_calendar_use_colors_title">使用颜色标记</string>
+    <string name="lockscreen_calendar_use_colors_summary">启用时，事件将会像在日历中显示一样使用颜色标记出来。</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">隐藏正在进行的时间</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">启用时，已经开始的事件将不会显示。</string>
     <string name="lockscreen_calendar_flip_title">多事项显示模式</string>
     <string name="lockscreen_calendar_flip_summary">启用后，接下来24小时的事项将会以翻页形式显示。</string>
     <string name="lockscreen_calendar_interval_title">翻页间隔</string>
@@ -257,6 +261,8 @@
 	<string name="signal_color_title">信号强度颜色</string>
 	<string name="hide_signal_title">隐藏信号强度</string>
 	<string name="hide_signal_summary">暂时会把流量活动指示器也隐藏起来。以后将可以分开隐藏。</string>
+	<string name="wifi_signal_style">WiFi 信号显示风格</string>
+	<string name="wifi_signal_color_title">WiFi 信号颜色</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">颜色选择器</string>

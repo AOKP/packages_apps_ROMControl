@@ -68,13 +68,15 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
-    private static final String PREF_LOCKSCREEN_LOW_BATTERY = "lockscreen_low_battery";
     private static final String PREF_LOCKSCREEN_WEATHER = "lockscreen_weather";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
 
     private static final String PREF_LOCKSCREEN_CALENDAR = "enable_calendar";
     private static final String PREF_LOCKSCREEN_CALENDAR_FLIP = "lockscreen_calendar_flip";
     private static final String PREF_LOCKSCREEN_CALENDAR_SOURCES = "lockscreen_calendar_sources";
+    private static final String PREF_LOCKSCREEN_CALENDAR_RANGE = "lockscreen_calendar_range";
+    private static final String PREF_LOCKSCREEN_CALENDAR_HIDE_ONGOING = "lockscreen_calendar_hide_ongoing";
+    private static final String PREF_LOCKSCREEN_CALENDAR_USE_COLORS = "lockscreen_calendar_use_colors";
     private static final String PREF_LOCKSCREEN_CALENDAR_INTERVAL = "lockscreen_calendar_interval";
 
     private static final String PREF_SHOW_LOCK_BEFORE_UNLOCK = "show_lock_before_unlock";
@@ -93,7 +95,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mLockscreenLandscape;
     CheckBoxPreference mLockscreenBattery;
-    CheckBoxPreference mLockscreenLowBattery;
     CheckBoxPreference mLockscreenWeather;
     CheckBoxPreference mShowLockBeforeUnlock;
     ColorPickerPreference mLockscreenTextColor;
@@ -101,6 +102,9 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenCalendarFlip;
     Preference mCalendarSources;
     ListPreference mCalendarInterval;
+    ListPreference mCalendarRange;
+    CheckBoxPreference mLockscreenCalendarHideOngoing;
+    CheckBoxPreference mLockscreenCalendarUseColors;
 
     Preference mLockscreenWallpaper;
 
@@ -140,10 +144,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockscreenBattery = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_BATTERY);
         mLockscreenBattery.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_BATTERY, 0) == 1);
-        
-        mLockscreenLowBattery = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_LOW_BATTERY);
-        mLockscreenLowBattery.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.LOCKSCREEN_LOW_BATTERY, 0) == 1);
 
         mLockscreenWeather = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_WEATHER);
         mLockscreenWeather.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -170,6 +170,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockscreenCalendarFlip = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_FLIP);
         mLockscreenCalendarFlip.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.LOCKSCREEN_CALENDAR_FLIP, 0) == 1);
+        
+        mLockscreenCalendarHideOngoing = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_HIDE_ONGOING);
+        mLockscreenCalendarHideOngoing.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_CALENDAR_HIDE_ONGOING, 0) == 1);
+        
+        mLockscreenCalendarUseColors = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_USE_COLORS);
+        mLockscreenCalendarUseColors.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_CALENDAR_USE_COLORS, 0) == 1);
 
         mCalendarSources = findPreference(PREF_LOCKSCREEN_CALENDAR_SOURCES);
 
@@ -177,6 +185,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mCalendarInterval.setOnPreferenceChangeListener(this);
         mCalendarInterval.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_CALENDAR_INTERVAL, 2500) + "");
+        
+        mCalendarRange = (ListPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_RANGE);
+        mCalendarRange.setOnPreferenceChangeListener(this);
+        mCalendarRange.setValue(Settings.System.getLong(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_CALENDAR_RANGE, 86400000) + "");
 
         mPicker = new ShortcutPickerHelper(this, this);
 
@@ -240,13 +253,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     Settings.System.LOCKSCREEN_BATTERY,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-            
-        } else if (preference == mLockscreenLowBattery) {
-
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.LOCKSCREEN_LOW_BATTERY,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true;
 
         } else if (preference == mLockscreenWeather) {
 
@@ -304,6 +310,20 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_CALENDAR_FLIP,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+            
+        } else if (preference == mLockscreenCalendarHideOngoing) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CALENDAR_HIDE_ONGOING,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+
+        } else if (preference == mLockscreenCalendarUseColors) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CALENDAR_USE_COLORS,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 
@@ -612,6 +632,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_CALENDAR_INTERVAL, val);
+            return true;
+
+        } else if (preference == mCalendarRange) {
+            long val = Long.parseLong((String) newValue);
+            Settings.System.putLong(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CALENDAR_RANGE, val);
             return true;
 
         } else if (preference == mLockscreenTextColor) {

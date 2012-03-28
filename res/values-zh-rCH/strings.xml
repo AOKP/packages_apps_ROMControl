@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">进阶设置</string>
+
+    <!-- Main -->
+    <string name="user_interface">用户界面</string>
+    <string name="general_ui">常规界面</string>
+    <string name="lockscreen_options">锁屏选项</string>
+    <string name="power_menu_optons">电源键菜单</string>
+    <string name="functionality">功能</string>
+    <string name="power_saver">省电模式</string>
+    <string name="led_options">LED 选项</string>
+    <string name="statusbar">状态栏</string>
+    <string name="general">常规</string>
+    <string name="toggles_layout">开关</string>
+    <string name="clock">时钟</string>
+    <string name="battery">电池</string>
+    <string name="nav_bar">导航栏</string>
+    <string name="tools">工具</string>
+    <string name="weather">天气</string>
+    <string name="signal">信号</string>
+
+    <string name="header_summary_battery">电量栏, 数字电量等</string>
+    <string name="header_summary_general_ui">开机动画, bug 邮件反馈, 旋转, 输入法等</string>
+    <string name="header_summary_navigation_bar">要显示的按钮, 虚拟栏颜色, 顺序</string>
+    <string name="header_summary_lockscreens">锁屏界面启动程序, 布局</string>
+    <string name="header_summary_power_menu">电源菜单显示内容</string>
+    <string name="header_summary_powersaver">自动关闭移动数据以保存电量</string>
+    <string name="header_summary_led">改变 Android 的默认设置</string>
+    <string name="header_summary_general">设置按钮的行为</string>
+    <string name="header_summary_toggles">定制切换开关</string>
+	<string name="header_summary_clock">时钟位置, 上午/下午 风格, 颜色</string>
+	<string name="header_summary_weather">启动/禁用,设置自定义的位置或网络，与频率</string>
+	<string name="header_summary_signal">信号强度 dBm</string>
+
+    <string name="advanced_settings">高级设置</string>
+    <string name="misc_short">其它</string>
+
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">Menu 键设置</string>
+    <string name="summary_pref_menu_display">使用旧式 MENU 键时务必选择移除 MENU 键</string>
+    <string name="navigation_bar">导航栏</string>
+    <string name="navigation_bar_tint_title">虚拟按键颜色</string>
+
+    <string name="title_pref_navigation_menu_display">显示 MENU 键</string>
+    <string name="summary_pref_navigation_menu_display">MENU 键的显示样式（需要重启）</string>
+
+    <string name="navbar_order_title">虚拟按键排序</string>
+    <string name="navbar_order_summary">排列虚拟按键的次序</string>
+
+    <string name="enabled_navbar_buttons_title">虚拟按键</string>
+    <string name="enabled_navbar_buttons_summary">选择需要启用的虚拟按键</string>
+
+    <string name="button_transparency_title">虚拟按键透明度</string>
+
+    <string name="long_press_home_title">长按 HOME 键</string>
+    <string name="long_press_home_summary">选择长按 HOME 键的行为（需要重启）</string>
+
+    <string name="glow_times_title">虚拟按键发光动画</string>
+    <string name="glow_times_summary">调整虚拟按键按下后的动画速度. 降低速度可以提高性能.</string>
+
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">旋转延时</string>
+    <string name="rotation_animation_delay_summary">屏幕翻转的延长时间. 默认 200 毫秒</string>
+
+	<string name="ime_switcher_title">显示输入法切换</string>
+	<string name="ime_switcher_summary">输入时状态栏显示键盘图标（需要重启）</string>
+
+	<string name="custom_carrier_label_title">自定义运营商名称</string>
+	<string name="longpress_to_kill_title">长按 BACK 键</string>
+	<string name="longpress_to_kill_summary">长按 BACK 键将会杀掉当前程序</string>
+
+        <string name="enable_volume_options">打开音量键选项</string>
+
+	<string name="rotate_180_title">允许 180° 旋转</string>
+	<string name="rotate_180_summary">允许设备倒置显示</string>
+
+	<string name="horizontal_recents_task_panel_title">横向显示近期任务窗口</string>
+	<string name="horizontal_recents_task_panel_summary">使用 WebOS 风格的程序切换窗口. 大概需要10秒时间来应用改变. 若未改变成功，请重启.</string>
+
+	<string name="disable_bootanimation_title">禁用启动动画</string>
+	<string name="disable_bootanimation_summary">你真坏.</string>
+
+	<string name="disable_bugmailer_title">禁用bug邮件反馈</string>
+
+	<string name="lcd_density_title">LCD 密度</string>
+	<string name="lcd_density_summary">unknown</string>
+
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRT 动画</string>
+	<string name="crt_on_title">亮屏 CRT 动画效果</string>
+	<string name="crt_off_title">关屏 CRT 动画效果</string>
+
+	<!-- LCD Density -->
+	<string name="lcd_density_wizard">LCD 密度指南</string>
+	<string name="follow_through_title">遵循</string>
+	<string name="follow_through_summary">确保一步一步完成</string>
+	<string name="stock_density_title">1. 改变密度为默认值</string>
+	<string name="stock_density_summary">平板以及旧款电话 160. 大多数电话 240. Galaxy Nexus 使用 320 为默认值.</string>
+	<string name="reboot_title">2. 重启</string>
+	<string name="reboot_summary">回到此菜单，完成其余的步骤！</string>
+	<string name="clear_market_data_title">3. 清理市场数据</string>
+	<string name="clear_market_data_cleared">市场数据清除</string>
+	<string name="open_market_title">4. 打开市场选择同意</string>
+	<string name="open_market_summary">然后回到此菜单.</string>
+	<string name="custom_density_title">5. 再选择你需要的密度!</string>
+	<string name="custom_density_summary">如果你遇到市场兼容问题,回到这里,重复步骤.</string>
+
+    <!-- Lockscreens -->
+    <string name="pref_lockscreen_layout_title">锁屏风格</string>
+    <string name="pref_lockscreen_layout_summary">记得在改变锁屏风格后拖到底部重新设置要启动的程序</string>
+
+    <string name="title_pref_lockscreen_quad_targets">四键模式</string>
+    <string name="summary_pref_lockscreen_quad_targets">在锁屏界面增加通话和短信的快捷键</string>
+
+    <string name="title_pref_lockscreen_octo_targets">八键模式</string>
+    <string name="summary_pref_lockscreen_octo_targets">在锁屏界面增加更多的快捷键</string>
+
+    <string name="title_pref_lockscreen_menu_unlock">Menu 键解锁</string>
+    <string name="summary_pref_lockscreen_menu_unlock">通过 Menu 键解锁屏幕（需要重启）</string>
+    <string name="title_lockscreen_user_timeout_override">锁屏延迟</string>
+    <string name="summary_lockscreen_user_timeout_override">手动关闭屏幕后经过系统设定的休眠时间后锁屏. 默认是屏幕自行关闭后锁屏</string>
+    <string name="show_lock_before_unlock_title">在解锁前显示锁屏界面</string>
+    <string name="show_lock_before_unlock_summary">在安全解锁前显示标准的锁屏界面</string>
+    <string name="lockscreen_battery_title">锁屏电池百分比</string>
+    <string name="lockscreen_battery_summary">在锁屏中显示电池百分比</string>
+	<string name="lockscreen_weather_title">锁屏天气</string>
+    <string name="lockscreen_weather_summary">锁屏中显示天气,你需要在进阶中开启天气服务</string>
+    <string name="volume_wake_title">音量键唤醒</string>
+    <string name="volume_wake_summary">通过音量键唤醒屏幕</string>
+    <string name="volume_music_controls_title">音量键控制音乐</string>
+    <string name="volume_music_controls_summary">长按音量键切换歌曲</string>
+    <string name="lockscreen_show_nav_title">隐藏导航栏</string>
+    <string name="lockscreen_show_nav_summary">锁屏时隐藏导航栏（需要设备支持）</string>
+    <string name="custom_app_n_dialog_title">选择目标 %1$s 的行为</string>
+    <string name="custom_app_n">定制程序 %1$s</string>
+    <string name="lockscreen_targets">锁屏定制目标</string>
+    <string name="lockscreen_action_unlock">解锁</string>
+    <string name="lockscreen_action_sound">音量切换</string>
+    <string name="lockscreen_action_camera">相机</string>
+    <string name="lockscreen_action_mms">短信</string>
+    <string name="lockscreen_action_phone">电话</string>
+    <string name="lockscreen_action_none">空</string>
+    <string name="lockscreen_landscape_title">水平方向锁屏</string>
+    <string name="lockscreen_landscape_summary">无论重力感应是否开启</string>
+    <string name="lockscreen_quick_unlock_control_title">快速 PIN 解锁</string>
+    <string name="lockscreen_quick_unlock_control_summary">密码/PIN锁屏解锁时不需要按确定键</string>
+    <string name="enable_fast_torch_title">启用快速手电筒</string>
+    <string name="enable_fast_torch_summary">当屏幕关闭时，常按电源键开启手电，手松开则关闭</string>
+    <string name="lockscreen_wallpaper_title">选择锁屏壁纸</string>
+    <string name="lockscreen_wallpaper_summary">你也可以移除锁屏壁纸，在这个界面按下菜单键才可以看见</string>
+    <string name="lockscreen_text_color_title">锁屏文字颜色</string>
+    <string name="lockscreen_calendar">锁屏日历</string>
+    <string name="lockscreen_calendar_title">启用</string>
+    <string name="lockscreen_calendar_summary">显示日历最近事件</string>
+    <string name="lockscreen_calendar_sources_title">日历源</string>
+    <string name="lockscreen_calendar_sources_summary">选择你想要查看的日历</string>
+    <string name="lockscreen_calendar_range_title">时间范围</string>
+    <string name="lockscreen_calendar_range_summary">选择你想要显示的时间范围</string>
+    <string name="lockscreen_calendar_use_colors_title">使用颜色</string>
+    <string name="lockscreen_calendar_use_colors_summary">如果启用, 事件将会按照日历设定上色</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">隐藏进行中事件</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">如果启用, 已经开始的事件将会不显示</string>
+    <string name="lockscreen_calendar_flip_title">多事件</string>
+    <string name="lockscreen_calendar_flip_summary">如果启用, 将会翻转显示多个事件</string>
+    <string name="lockscreen_calendar_interval_title">翻转频率</string>
+    <string name="lockscreen_calendar_interval_summary">选择动画速度(秒)Choose the animation speed in seconds.</string>
+
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">显示省电模式</string>
+    <string name="title_show_screenshot">屏幕截图</string>
+    <string name="title_show_torch_toggle">显示手电筒开关</string>
+    <string name="title_show_airplane_toggle">显示飞行模式开关</string>
+    <string name="title_show_navbar_hide">显示导航键开关</string>
+
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">开启省电模式</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+
+    <string name="title_pref_powersaving_data_screen_off">屏幕关闭移动数据活动</string>
+    <string name="summary_pref_powersaving_data_screen_off">屏幕关闭后移动数据状态</string>
+
+    <string name="title_pref_powersaving_data_screen_off_delay">移动数据活动延时</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">移动数据活动生效前的等待时间</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">屏幕关闭数据同步活动</string>
+    <string name="summary_pref_powersaving_sync_screen_off">屏幕关闭后数据同步状态</string>
+
+    <string name="title_pref_powersaving_sync_screen_off_delay">数据同步周期</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">每次强制同步的时间间隔</string>
+
+    <string name="powersaver_data_cat">移动数据</string>
+    <string name="powersaver_sync_cat">数据同步</string>
+
+    <string name="screen_off_wifi_action">锁屏 Wi-Fi 动作</string>
+    <string name="sync_data_usage">数据同步行为</string>
+    <string name="sync_mobile_data_preference">数据同步偏好</string>
+
+    <!--  LED -->
+    <string name="title_led_on">LED闪烁持续时间</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">LED关闭持续时间</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LED 颜色</string>
+    <string name="title_led_screen_on">LED 在屏幕亮时也闪烁</string>
+    <string name="summary_led_screen_on">@null</string>
+
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">默认的设置行为</string>
+    <string name="summary_settings_behavior">默认行为是短按通知栏设置图标进入设置，长按显示电源控件</string>
+
+    <string name="title_auto_hide_toggles">自动隐藏电源控件</string>
+    <string name="summary_auto_hide_toggles">通知栏收拢后电源控件将隐藏</string>
+
+    <string name="title_status_bar_brightness_toggle">启用亮度控制</string>
+    <string name="summary_status_bar_brightness_toggle">在状态栏缓慢左右滑动手指调整亮度</string>
+
+    <string name="adb_icon_title">启动debug图标</string>
+    <string name="adb_icon_summary">Wutang</string>
+
+    <string name="statusbar_transparency">透明度</string>
+    <string name="statusbar_transparency_summary">打开此项可能会影响性能以及降低电池寿命 (需要重启UI)</string>
+
+    <string name="statusbar_layout">下拉通知栏布局</string>
+    <string name="statusbar_layout_summary">改变下拉通知栏布局 (需要重启UI)</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">电池图标风格</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_bar">电量栏</string>
+    <string name="battery_bar_color">电量栏颜色</string>
+    <string name="battery_bar_cat">电量栏选项</string>
+    <string name="battery_bar_style_title">电量栏风格</string>
+    <string name="battery_bar_thickness_title">电量栏厚度</string>
+    <string name="battery_bar_animate_title">充电动画</string>
+    <string name="battery_bar_animate_summary">充电动画可能带来较差的用户体验. 自行决定是否打开.</string>
+
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">时钟位置</string>
+    <string name="title_clock_ampm_entries">上午/下午 风格</string>
+    <string name="colors">颜色</string>
+    <string name="clock_color_title">时钟颜色</string>
+    <string name="reset_color_title">重设颜色</string>
+    <string name="enable_alarm_title">显示闹钟图标</string>
+    <string name="enable_alarm_summary">关闭/开启该选项都需要重新设置闹钟才生效（或重启）</string>
+    <string name="enable_clock_weekday">星期几</string>
+    <string name="enable_clock_weekday_summary">在时钟前显示星期几</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">开关风格</string>
+    <string name="toggle_style_summary">显示开关的图标与文字</string>
+
+    <string name="alternate_button_layout_title">切换开关</string>
+    <string name="alternate_button_layout_summary">使用切换开关代替选择开关</string>
+
+    <string name="enabled_toggles_title">开启开关</string>
+    <string name="enabled_toggles_summary">选择要显示的开关</string>
+    <string name="toggles_order_title">开关排序</string>
+    <string name="toggles_order_summary">排列要显示的切换开关顺序</string>
+    <string name="brightness_location_title">亮度调整的位置</string>
+
+	<!-- Statusbar | Signal -->
+	<string name="signal_style">信号文字风格</string>
+	<string name="signal_color_title">信号颜色</string>
+	<string name="hide_signal_title">隐藏信号栏</string>
+	<string name="hide_signal_summary">目前会隐藏数据指示,未来将分开.</string>
+	<string name="wifi_signal_style">WiFi 信号文字风格Style</string>
+	<string name="wifi_signal_color_title">WiFi 信号颜色</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">颜色选择器</string>
+    <string name="press_color_to_apply">点击颜色以应用</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">设置</string>
+    <string name="ics_color">默认</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">使用自定义程序</string>
+	<string name="use_custom_app_summary">使用自定义程序代替最近打开程序</string>
+	<string name="select_custom_app_title">选择自定义程序</string>
+	<string name="group_applications">程序</string>
+
+	<!-- Weather -->
+	<string name="weather_enable">启用天气</string>
+	<string name="weather_enable_summary">下拉天气显示</string>
+	<string name="weather_use_custom_location">使用自定义位置</string>
+	<string name="weather_use_custom_location_summary">设置自定义的位置，可以节省一些电池。否则，使用网络位置，以确定你的位置</string>
+	<string name="weather_custom_location_dialog_title">设置位置</string>
+	<string name="weather_custom_location_dialog_message">"务必遵循的规则！设置一个无效的位置将停止从您获得天气更新，并可能导致意外的行为。 举例: New York,NY // New York, NY // 10033 // London, England"</string>
+	<string name="weather_custom_location_title">自定义位置</string>
+	<string name="weather_show_location_title">显示位置</string>
+	<string name="weather_show_location_summary">显示你的位置.</string>
+	<string name="weather_refresh_interval">刷新间隔</string>
+	<string name="weather_use_celcius">公制单位</string>
+	<string name="weather_use_celcius_summary">摄氏度显示而不是华氏</string>
+	<string name="weather_statusbar_style">状态栏天气风格</string>
+
+	<!-- Dialog Titles -->
+	<string name="dt_free_memory">最小内存管理</string>
+
+	<!-- Preference Categories -->
+	<string name="prefcat_cpu">CPU 设置</string>
+	<string name="prefcat_free_memory">空闲内存</string>
+	<string name="pc_tweaks">优化</string>
+	<string name="pc_init_d">优化</string>
+	<string name="pc_init_d_tweaks">自定义优化</string>
+
+	<!-- Preference Titles -->
+	<!-- Main -->
+	<string name="pt_performance">性能</string>
+	<string name="pt_customization">自定义</string>
+	<string name="pt_tools">工具</string>
+	<string name="pt_mod_version">Mod 版本</string>
+	<!-- Customization -->
+	<string name="pt_liberty_customizer">自由定制</string>
+	<string name="pt_lockscreen">锁屏设置</string>
+	<string name="pt_ui_status_bar">状态栏</string>
+	<string name="pt_pulldown_text">下拉栏文字</string>
+	<string name="pt_theme_manager">主题管理</string>
+	<!-- Tools -->
+	<string name="pt_spare_parts">Spare Parts</string>
+	<string name="pt_dev_tools">开发工具</string>
+	<string name="pt_dsp_manager">DSP 管理</string>
+	<string name="pt_testing_menu">测试菜单</string>
+	<!-- Start up tweaks -->
+	<string name="pt_init_d">优化</string>
+	<string name="pt_enable_init_d">启动时优化</string>
+	<string name="pt_zipalign">zipalign 安装包</string>
+	<string name="pt_enable_sd_boost">SD 加速</string>
+	<string name="pt_sd_boost">预读取数值</string>
+	<string name="pt_fix_permissions">修正权限</string>
+	<string name="pt_clear_cache">清除缓存</string>
+	<string name="pt_enable_sysctl">启用 sysctl</string>
+	<string name="pt_enable_cron">计划任务</string>
+	<!-- Performance -->
+	<string name="pt_set_cpu_activity">调整 CPU</string>
+	<string name="pt_free_memory">空闲内存</string>
+	<string name="pt_free_memory_boot">启动时自动设置</string>
+	<!-- Cpu -->
+	<string name="pt_set_max">最高 CPU</string>
+	<string name="pt_set_min">最低 CPU</string>
+	<string name="pt_set_gov">频率调整模式</string>
+	<string name="pt_cpu_boot">启动时自动设置</string>
+        <!-- Scrolling Cache -->
+        <string name="pref_scrollingcache_title">滚动缓存</string>
+        <string name="pref_scrollingcache_summary">滚动内存可以消耗一些内存来提高滚动性能</string>
+        <string name="pref_scrollingcache_force_enable">强制开启</string>
+        <string name="pref_scrollingcache_default_enable">默认开启</string>
+        <string name="pref_scrollingcache_default_disable">默认关闭</string>
+        <string name="pref_scrollingcache_force_disable">强制关闭</string>
+
+	<!-- Preference Summaries -->
+	<!-- Main -->
+	<string name="ps_performance">设置 CPU ,空闲内存</string>
+
+	<string name="ps_customization">定制锁屏 &amp; 状态栏. 安装可自由定制的 blue/aosp 应用</string>
+
+	<string name="ps_tools">各类系统工具</string>
+	<!-- Customization -->
+	<string name="ps_liberty_customizer">将 ROM 定制成你喜欢的样子</string>
+	<string name="ps_lockscreen">改变锁屏风格, 并且管理小部件</string>
+
+	<string name="ps_ui_status_bar">定制状态栏</string>
+	<string name="ps_pulldown_text">改变下拉栏文字</string>
+	<string name="ps_theme_manager">安装自定义主题</string>
+	<!-- Tools -->
+	<string name="ps_spare_parts">各类定制和优化</string>
+	<string name="ps_dev_tools">开发者和高级玩家工具</string>
+	<string name="ps_dsp_manager">独立均衡器</string>
+	<string name="ps_testing_menu">电话 &amp; 电池信息, 用量统计</string>
+	<!-- Start up tweaks -->
+	<string name="ps_init_d">配置启动阶段运行的优化 (init.d)</string>
+
+
+	<string name="ps_enable_init_d">运行启动阶段的优化</string>
+	<string name="ps_zipalign">每次启动时进行程序zipalign</string>
+	<string name="ps_enable_sd_boost">启用/禁用SD卡的加速</string>
+	<string name="ps_sd_boost">设置预读取值，单位 kb</string>
+	<string name="ps_fix_permissions">每次启动时修正程序权限</string>
+	<string name="ps_clear_cache">每次启动时清除数据缓存</string>
+	<string name="ps_enable_sysctl">每次启动时运行 sysctl</string>
+	<string name="ps_enable_cron">运行预设的计划任务</string>
+	<!-- CPU -->
+	<string name="ps_set_max">设置 CPU 最高频率\n当前: %s</string>
+	<string name="ps_set_min">设置 CPU 最低频率\n当前: %s</string>
+	<string name="ps_set_gov">设置当前调整模式\n当前: %s</string>
+	<string name="ps_cpu_boot">启动时应用 CPU 设置</string>
+	<!-- Performance -->
+	<string name="ps_set_cpu_activity">设置频率和调节模式</string>
+
+	<string name="ps_free_memory">"Minfree taskkiller 将会保持的内存空间\n当前: %s"</string>
+
+	<string name="ps_free_memory_boot">启动时设置上面的数值</string>
+
+	<!-- Toast Messages -->
+	<string name="toast_min_max_error01">CPU 最高频率不能低于最低频率</string>
+	<string name="toast_min_max_error02">CPU 最低频率不能高于最高频率</string>
+
+	<!-- list_voltage -->
+	<string name="freq">频率</string>
+	<string name="current">mV 当前</string>
+	<string name="saved">mV 已保存</string>
+
+	<!-- voltage -->
+	<string name="error_values">获取数值出错</string>
+	<string name="set_boot">启动时设置</string>
+	<string name="apply_values">应用数值</string>
+
+	<string name="dpi">DPI</string>
+	<string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+	<string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+	<string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+	<string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+	<string name="donate_khasmek">@null</string>
+	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+	<string name="devs">Developers</string>
+	<string name="aokp">Android Open Kang Project</string>
+	<string name="aokp_website_title">AOKP Website</string>
+	<string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+	<string name="aokp_source_title">AOKP Source</string>
+	<string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
+    <string name="aokp_irc_title">Join us on IRC</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">About AOKP</string>
+    <string name="about_aokp_summary">@null</string>
+
+    <!--  Kernel Tweaks -->
+    <string name="pt_fast_charge_boot">快速充电</string>
+    <string name="ps_fast_charge_boot">开机时启动快速充电</string>
+    <string name="kernel">内核优化 (可能不支持)</string>
+    <string name="color_tuning_title_head">颜色调优</string>
+    <string name="color_tuning_summary_head">校准屏幕颜色</string>
+    <string name="gamma_tuning_title_head">颜色 Gamma 值调优</string>
+    <string name="gamma_tuning_summary_head">校准 Gamma 颜色准确性</string>
+    <string name="color_red_title">红</string>
+    <string name="color_green_title">绿</string>
+    <string name="color_blue_title">蓝</string>
+    <string name="reset_defaults">恢复默认</string>
+</resources>

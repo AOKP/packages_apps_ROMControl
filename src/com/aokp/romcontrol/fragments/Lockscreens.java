@@ -30,11 +30,7 @@ import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.Display;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Toast;
 
@@ -45,12 +41,7 @@ import com.aokp.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
@@ -282,7 +273,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             float spotlightX = (float) display.getWidth() / width;
             float spotlightY = (float) display.getHeight() / height;
 
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             intent.setType("image/*");
             intent.putExtra("crop", "true");
             intent.putExtra("aspectX", width);
@@ -293,9 +284,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             // intent.putExtra("return-data", false);
             intent.putExtra("spotlightX", spotlightX);
             intent.putExtra("spotlightY", spotlightY);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, getLockscreenExternalUri());
-            intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
-
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             return true;
 
@@ -414,24 +402,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         }
     }
 
-    private Uri getLockscreenExternalUri() {
-        File dir = mContext.getExternalCacheDir();
-        if (dir == null)
-            dir = new File("/sdcard/Anroid/data/com.aokp.romcontrol/cache/");
-        File wallpaper = new File(dir, WALLPAPER_NAME);
-
-        return Uri.fromFile(wallpaper);
-    }
-
-    private Uri getExternalIconUri() {
-        File dir = mContext.getExternalCacheDir();
-        if (dir == null)
-            dir = new File("/sdcard/Anroid/data/com.aokp.romcontrol/cache/");
-        dir.mkdirs();
-
-        return Uri.fromFile(new File(dir, "icon_" + currentIconIndex + ".png"));
-    }
-
     public void refreshSettings() {
 
         int lockscreenTargets = Settings.System.getInt(getContentResolver(),
@@ -495,11 +465,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     intent.putExtra("outputY", height);
                     intent.putExtra("scale", true);
                     // intent.putExtra("return-data", false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri());
-                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-
-                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri());
-
                     startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
                 }
             });
@@ -683,12 +648,20 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     return; // NOOOOO
                 }
 
-                // should use intent.getData() here but it keeps returning null
-                Uri selectedImageUri = getLockscreenExternalUri();
-                Log.e(TAG, "Selected image uri: " + selectedImageUri);
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream);
+                Uri selectedImageUri = data.getData();
+                Log.d(TAG, "Selected image uri: " + selectedImageUri);
+                try {
+                    Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(selectedImageUri.getPath()));
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream);
+                } catch (FileNotFoundException e) {
+                    Log.e(TAG, "Error opening file!", e);
+                    Toast.makeText(getActivity(), "Error opening file!", Toast.LENGTH_LONG).show();
+                    return;
+                } catch (OutOfMemoryError e) {
+                    Log.e(TAG, "Out of memory!", e);
+                    Toast.makeText(getActivity(), "Out of memory! Try a smaller image.", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
             } else if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
                     || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
@@ -702,24 +675,28 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     iconStream = mContext.openFileOutput("icon_" + currentIconIndex + ".png",
                             Context.MODE_WORLD_READABLE);
                 } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                     return; // NOOOOO
                 }
 
-                Uri selectedImageUri = getExternalIconUri();
-                Log.e(TAG, "Selected icon uri: " + selectedImageUri.getPath());
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
-                if (bitmap == null) {
-                    Log.e(TAG, "bitmap was null");
-                } else
+                Uri selectedImageUri = data.getData();
+                Log.d(TAG, "Selected icon uri: " + selectedImageUri.getPath());
+                try {
+                    Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(selectedImageUri.getPath()));
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[currentIconIndex],
-                        getExternalIconUri().toString());
-                Toast.makeText(getActivity(), currentIconIndex + "'s icon set successfully!",
-                        Toast.LENGTH_LONG).show();
+                    Settings.System.putString(getContentResolver(),
+                            Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[currentIconIndex],
+                            "file:///data/data/com.aokp.romcontrol/files/icon_" + currentIconIndex + ".png");
+                    Toast.makeText(getActivity(), (currentIconIndex + 1) + "'s icon set successfully!",
+                            Toast.LENGTH_LONG).show();
+                } catch (FileNotFoundException e) {
+                    Log.e(TAG, "Error opening file!", e);
+                    Toast.makeText(getActivity(), "Error opening file!", Toast.LENGTH_LONG).show();
+                    return;
+                } catch (OutOfMemoryError e) {
+                    Log.e(TAG, "Out of memory!", e);
+                    Toast.makeText(getActivity(), "Out of memory! Try a smaller image.", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 refreshSettings();
 
             }

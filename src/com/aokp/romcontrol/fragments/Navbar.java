@@ -50,6 +50,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_NAV_COLOR = "nav_button_color";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
+    private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
 
     // move these later
     ColorPickerPreference mNavigationBarColor;
@@ -57,6 +58,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavBarMenuDisplay;
     ListPreference mHomeLongpress;
     ListPreference mGlowTimes;
+    CheckBoxPreference mLongPressToKill;
     Preference mNavBarEnabledButtons;
     Preference mLayout;
     SeekBarPreference mButtonAlpha;
@@ -94,6 +96,10 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.MENU_VISIBILITY,
                 0) + "");
+        
+        mLongPressToKill = (CheckBoxPreference) findPreference(PREF_LONGPRESS_TO_KILL);
+        mLongPressToKill.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
         mHomeLongpress = (ListPreference) findPreference(PREF_HOME_LONGPRESS);
         mHomeLongpress.setOnPreferenceChangeListener(this);
@@ -221,6 +227,12 @@ public class Navbar extends AOKPPreferenceFragment implements
 
             d.show();
 
+            return true;
+        } else if (preference == mLongPressToKill) {
+
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
             return true;
         } else if (preference == mLayout) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();

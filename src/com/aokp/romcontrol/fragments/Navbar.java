@@ -1,12 +1,14 @@
 
 package com.aokp.romcontrol.fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -30,6 +32,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 import com.aokp.romcontrol.widgets.TouchInterceptor;
 import com.aokp.romcontrol.R;
@@ -39,7 +42,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import java.util.ArrayList;
 
 public class Navbar extends AOKPPreferenceFragment implements
-        OnPreferenceChangeListener {
+        ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
     // move these later
     private static final String PREF_EANBLED_BUTTONS = "enabled_buttons";
@@ -47,6 +50,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_NAV_COLOR = "nav_button_color";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
+    private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
 
     // move these later
     ColorPickerPreference mNavigationBarColor;
@@ -54,6 +58,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavBarMenuDisplay;
     ListPreference mHomeLongpress;
     ListPreference mGlowTimes;
+    CheckBoxPreference mLongPressToKill;
     Preference mNavBarEnabledButtons;
     Preference mLayout;
     SeekBarPreference mButtonAlpha;
@@ -61,6 +66,10 @@ public class Navbar extends AOKPPreferenceFragment implements
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarWidth;
+    
+    ShortcutPickerHelper mPicker;
+    
+    String mCustomAppString;
 
     private final String[] buttons = {
             "HOME", "BACK", "TASKS", "SEARCH", "MENU_BIG"
@@ -73,6 +82,8 @@ public class Navbar extends AOKPPreferenceFragment implements
         addPreferencesFromResource(R.xml.prefs_navbar);
 
         PreferenceScreen prefs = getPreferenceScreen();
+        
+        mPicker = new ShortcutPickerHelper(this, this);
 
         menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
         menuDisplayLocation.setOnPreferenceChangeListener(this);
@@ -85,12 +96,17 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.MENU_VISIBILITY,
                 0) + "");
+        
+        mLongPressToKill = (CheckBoxPreference) findPreference(PREF_LONGPRESS_TO_KILL);
+        mLongPressToKill.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
         mHomeLongpress = (ListPreference) findPreference(PREF_HOME_LONGPRESS);
         mHomeLongpress.setOnPreferenceChangeListener(this);
-        mHomeLongpress.setValue(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
-                0) + "");
+        int lpv = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_BAR_HOME_LONGPRESS, 0);
+        mHomeLongpress.setValue(lpv + "");
+        mHomeLongpress.setSummary(getProperSummary(lpv));
 
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
@@ -212,6 +228,12 @@ public class Navbar extends AOKPPreferenceFragment implements
             d.show();
 
             return true;
+        } else if (preference == mLongPressToKill) {
+
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
+            return true;
         } else if (preference == mLayout) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             NavbarLayout fragment = new NavbarLayout();
@@ -270,6 +292,13 @@ public class Navbar extends AOKPPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
                     Integer.parseInt((String) newValue));
+            int nV = Integer.valueOf(String.valueOf(newValue));
+            if (nV == 3) {
+                mCustomAppString = Settings.System.NAVIGATION_BAR_HOME_LONGPRESS_CUSTOMAPP;
+                mPicker.pickShortcut();
+            } else {
+                preference.setSummary(getProperSummary(nV));
+            }
             return true;
         } else if (preference == mGlowTimes) {
             // format is (on|off) both in MS
@@ -527,6 +556,38 @@ public class Navbar extends AOKPPreferenceFragment implements
         }
 
         return iloveyou;
+    }
+    
+    @Override
+    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+        if (Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_BAR_HOME_LONGPRESS_CUSTOMAPP, uri)) {
+                    mHomeLongpress.setSummary(friendlyName);
+        }
+    }
+    
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
+                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
+                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
+                mPicker.onActivityResult(requestCode, resultCode, data);
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+    
+    private String getProperSummary(int i) {
+        if (i < 3) {
+            return getResources().getStringArray(R.array.long_press_home_entries)[i];
+        } else {
+            String uri = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_HOME_LONGPRESS_CUSTOMAPP);
+            if (uri == null)
+                return "-";
+
+            return mPicker.getFriendlyNameForUri(uri);
+        }
     }
 
 }

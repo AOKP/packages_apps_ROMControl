@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="pref_navigation_menu_entries">
+		<item>右边</item>
+		<item>左边</item>
+		<item>两边</item>
+		<item>移除</item>
+	</string-array>
+
+	<!-- right is the default, easier to keep 0 as first index -->
+	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
+		<item>无操作</item>
+		<item>关闭 LTE</item>
+		<item>关闭移动数据</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_entries">
+		<item>无操作</item>
+		<item>关闭移动数据</item>
+		<item>切换 2G 模式</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_delay_entries">
+		<item>立即</item>
+		<item>10 秒钟</item>
+		<item>30 秒钟</item>
+		<item>45 秒钟</item>
+		<item>1 分钟</item>
+		<item>5 分钟</item>
+		<item>10 分钟</item>
+		<item>15 分钟</item>
+		<item>30 分钟</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_interval_entries">
+		<item>15 分钟</item>
+		<item>30 分钟</item>
+		<item>1 小时</item>
+		<item>2 小时</item>
+		<item>3 小时</item>
+		<item>4 小时</item>
+		<item>5 小时</item>
+		<item>6 小时</item>
+		<item>8 小时</item>
+		<item>12 小时</item>
+	</string-array>
+
+
+	<string-array name="pref_powersaving_sync_screen_off_entries">
+		<item>无操作</item>
+		<item>关闭数据同步</item>
+		<item>延时关闭数据同步</item>
+	</string-array>
+
+	<string-array name="powersaving_screen_off_wifi_entries">
+		<item>不变</item>
+		<item>关闭 Wi-Fi</item>
+		<item>开启 Wi-Fi</item>
+	</string-array>
+
+	<string-array name="powersaving_sync_data_mode_entries">
+		<item>不变</item>
+		<item>仅 Wi-Fi</item>
+		<item>Wi-Fi 优先</item>
+		<item>仅 移动数据</item>
+	</string-array>
+
+	<string-array name="powersaving_sync_data_mobile_mode_entries">
+		<item>仅 2G/1x</item>
+		<item>优先 3G</item>
+	</string-array>
+
+	<string-array name="led_entries">
+		<item>.5 秒</item>
+		<item>1 秒</item>
+		<item>1.5 秒</item>
+		<item>2 秒</item>
+		<item>2.5 秒</item>
+		<item>3 秒</item>
+		<item>3.5 秒</item>
+		<item>4 秒</item>
+		<item>4.5 秒</item>
+		<item>5 秒</item>
+		<item>5.5 秒</item>
+		<item>6 秒</item>
+		<item>7 秒</item>
+		<item>8 秒</item>
+		<item>9 秒</item>
+		<item>10 秒</item>
+	</string-array>
+
+	<!-- values must be in milliseconds!~@@#E!@ -->
+	<string-array name="pref_navigation_menu_display_entries">
+		<item>默认</item>
+		<item>总是隐藏图标</item>
+		<item>总是显示图标</item>
+		<item>在需要时显示图标（默认隐藏）</item>
+	</string-array>
+
+	<string-array name="statusbar_transparency_entries">
+		<item>不透明</item>
+		<item>25%</item>
+		<item>50%</item>
+		<item>75%</item>
+		<item>完全透明</item>
+	</string-array>
+
+	<string-array name="statusbar_layout_entries">
+		<item>一般布局</item>
+		<item>反转</item>
+		<item>传统</item>
+	</string-array>
+
+	<!-- clock stuff -->
+	<string-array name="clock_style_entries">
+		<item>右边</item>
+		<item>中间</item>
+		<item>隐藏</item>
+	</string-array>
+
+	<string-array name="clock_ampm_entries">
+		<item>隐藏</item>
+		<item>小号</item>
+		<item>中等</item>
+	</string-array>
+
+	<string-array name="clock_weekday_entries">
+		<item>不显示</item>
+		<item>小号</item>
+		<item>中等</item>
+	</string-array>
+
+	<!-- Toggles -->
+
+	<string-array name="brightness_location_entries">
+		<item>顶部</item>
+		<item>底部</item>
+		<item>隐藏</item>
+	</string-array>
+
+	<!-- animation rotation -->
+	<string-array name="rotation_animation_delay_entries">
+		<item>10 毫秒</item>
+		<item>25 毫秒</item>
+		<item>50 毫秒</item>
+		<item>75 毫秒</item>
+		<item>100 毫秒</item>
+		<item>150 毫秒</item>
+		<item>200 毫秒</item>
+		<item>250 毫秒</item>
+		<item>300 毫秒</item>
+	</string-array>
+
+	<!-- toggle style -->
+	<string-array name="toggle_style_entries">
+		<item>仅 图标</item>
+		<item>仅 文字</item>
+	</string-array>
+
+	<!-- long press home -->
+	<string-array name="long_press_home_entries">
+		<item>无操作</item>
+		<item>显示近期任务</item>
+	</string-array>
+
+        <string-array name="pref_lockscreen_options_entries">
+		<item>默认</item>
+		<item>四键</item>
+		<item>八键</item>
+		<item>AOSP</item>
+		<item>蜂窝</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_interval_entries">
+		<item>1 秒</item>
+		<item>1.5 秒</item>
+        <item>2 秒</item>
+        <item>2.5 秒</item>
+        <item>3 秒</item>
+        <item>3.5 秒</item>
+        <item>4 秒</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_range_entries">
+		<item>1 day</item>
+		<item>2 days</item>
+        <item>3 days</item>
+        <item>4 days</item>
+        <item>5 days</item>
+        <item>6 days</item>
+        <item>1 week</item>
+	</string-array>
+
+	<string-array name="minfree">
+		<item>25mb</item>
+		<item>50mb</item>
+		<item>75mb</item>
+		<item>80mb</item>
+		<item>100mb</item>
+	</string-array>
+
+	<string-array name="battery_icon_entries">
+		<item>仅图标</item>
+		<item>仅文字</item>
+		<item>图加字</item>
+		<item>文字在图标中间</item>
+		<item>圆圈</item>
+		<item>隐藏</item>
+	</string-array>
+
+	<string-array name="battery_bar_entries">
+		<item>隐藏</item>
+		<item>状态栏</item>
+		<item>虚拟栏上部</item>
+		<item>虚拟栏底部</item>
+	</string-array>
+
+	<string-array name="battery_bar_style_entries">
+		<item>正常</item>
+		<item>居中</item>
+	</string-array>
+
+	<string-array name="battery_bar_thickness_entries">
+		<item>1 dp</item>
+		<item>2 dp</item>
+		<item>3 dp</item>
+		<item>4 dp</item>
+	</string-array>
+
+	<string-array name="available_toggles_values">
+		<item>翻转</item>
+		<item>蓝牙</item>
+		<item>GPS</item>
+		<item>Wi-Fi</item>
+		<item>飞行模式</item>
+		<item>振动</item>
+		<item>静音</item>
+		<item>手电</item>
+		<item>同步</item>
+		<item>Swagger</item>
+	</string-array>
+
+	<string-array name="lockscreen_choice_entries">
+		<item>解锁</item>
+		<item>声音模式</item>
+		<item>电话</item>
+		<item>相机</item>
+		<item>短信</item>
+		<item>自定义程序</item>
+		<item>空白</item>
+	</string-array>
+
+	<string-array name="glow_times_entries">
+		<item>关闭</item>
+		<item>超快</item>
+		<item>快</item>
+		<item>正常</item>
+	</string-array>
+
+	<string-array name="weather_interval_entries">
+		<item>关</item>
+		<item>1 分钟</item>
+		<item>5 分钟</item>
+		<item>10 分钟</item>
+		<item>30 分钟</item>
+		<item>45 分钟</item>
+		<item>60 分钟</item>
+		<item>2 小时</item>
+		<item>3 小时</item>
+		<item>4 小时</item>
+		<item>6 小时</item>
+		<item>8 小时</item>
+	</string-array>
+
+	<string-array name="lcd_density_stock_entries">
+		<item>160 -- mdpi</item>
+		<item>240 -- hdpi</item>
+		<item>320 -- xhdpi</item>
+	</string-array>
+
+	<string-array name="signal_style_entries">
+		<item>显示信号栏</item>
+		<item>显示信号文本</item>
+		<item>显示 w/dBm</item>
+	</string-array>
+
+	<string-array name="wifi_signal_style_entries">
+		<item>Show signal bars</item>
+		<item>Show Signal Text</item>
+	</string-array>
+
+	<string-array name="weather_statusbar_location_entries">
+		<item>显示在运营商名之上</item>
+		<item>显示为天气面板</item>
+		<item>禁用</item>
+	</string-array>
+
+	<string-array name="navigation_bar_width_entries">
+		<item>42 dp (默认)</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+
+	<string-array name="navigation_bar_height_entries">
+		<item>48 dp (默认)</item>
+		<item>42 dp</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+
+</resources>

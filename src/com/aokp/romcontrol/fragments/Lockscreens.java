@@ -170,11 +170,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockscreenCalendarFlip = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_FLIP);
         mLockscreenCalendarFlip.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.LOCKSCREEN_CALENDAR_FLIP, 0) == 1);
-        
+
         mLockscreenCalendarHideOngoing = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_HIDE_ONGOING);
         mLockscreenCalendarHideOngoing.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.LOCKSCREEN_CALENDAR_HIDE_ONGOING, 0) == 1);
-        
+
         mLockscreenCalendarUseColors = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_USE_COLORS);
         mLockscreenCalendarUseColors.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.LOCKSCREEN_CALENDAR_USE_COLORS, 0) == 1);
@@ -185,7 +185,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mCalendarInterval.setOnPreferenceChangeListener(this);
         mCalendarInterval.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_CALENDAR_INTERVAL, 2500) + "");
-        
+
         mCalendarRange = (ListPreference) findPreference(PREF_LOCKSCREEN_CALENDAR_RANGE);
         mCalendarRange.setOnPreferenceChangeListener(this);
         mCalendarRange.setValue(Settings.System.getLong(getActivity().getContentResolver(),
@@ -293,7 +293,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             // intent.putExtra("return-data", false);
             intent.putExtra("spotlightX", spotlightX);
             intent.putExtra("spotlightY", spotlightY);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, getLockscreenExternalUri());
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, getTempFileUri());
             intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
 
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
@@ -312,7 +312,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     Settings.System.LOCKSCREEN_CALENDAR_FLIP,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-            
+
         } else if (preference == mLockscreenCalendarHideOngoing) {
 
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -415,21 +415,24 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     }
 
     private Uri getLockscreenExternalUri() {
-        File dir = mContext.getExternalCacheDir();
-        if (dir == null)
-            dir = new File("/sdcard/Anroid/data/com.aokp.romcontrol/cache/");
+        File dir = mContext.getFilesDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);
+        Log.i(TAG, "wallpaper loc: " + wallpaper.getAbsolutePath());
+        return Uri.fromFile(wallpaper);
+    }
+
+    private Uri getTempFileUri() {
+        File dir = mContext.getFilesDir();
+        File wallpaper = new File(dir, "temp");
 
         return Uri.fromFile(wallpaper);
     }
 
     private Uri getExternalIconUri() {
-        File dir = mContext.getExternalCacheDir();
-        if (dir == null)
-            dir = new File("/sdcard/Anroid/data/com.aokp.romcontrol/cache/");
-        dir.mkdirs();
+        File dir = mContext.getFilesDir();
+        File icon = new File(dir, "icon_" + currentIconIndex + ".png");
 
-        return Uri.fromFile(new File(dir, "icon_" + currentIconIndex + ".png"));
+        return Uri.fromFile(icon);
     }
 
     public void refreshSettings() {
@@ -538,13 +541,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private Drawable resize(Drawable image) {
         int size = 50;
-        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources().getDisplayMetrics());
+        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources()
+                .getDisplayMetrics());
 
         Bitmap d = ((BitmapDrawable) image).getBitmap();
         Bitmap bitmapOrig = Bitmap.createScaledBitmap(d, px, px, false);
         return new BitmapDrawable(mContext.getResources(), bitmapOrig);
     }
-    
+
     private Drawable getLockscreenIconImage(int index) {
         String uri = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[index]);
@@ -678,16 +682,16 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
                 FileOutputStream wallpaperStream = null;
                 try {
-                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME, Context.MODE_PRIVATE);
+                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
+                            Context.MODE_WORLD_WRITEABLE);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
                 }
 
                 // should use intent.getData() here but it keeps returning null
-                Uri selectedImageUri = getLockscreenExternalUri();
-                Log.e(TAG, "Selected image uri: " + selectedImageUri);
+                Uri selectedImageUri = getTempFileUri();
+                Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream);
 
             } else if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
@@ -700,20 +704,15 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 FileOutputStream iconStream = null;
                 try {
                     iconStream = mContext.openFileOutput("icon_" + currentIconIndex + ".png",
-                            Context.MODE_WORLD_READABLE);
+                            Context.MODE_WORLD_WRITEABLE);
                 } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                     return; // NOOOOO
                 }
 
-                Uri selectedImageUri = getExternalIconUri();
-                Log.e(TAG, "Selected icon uri: " + selectedImageUri.getPath());
+                Uri selectedImageUri = getTempFileUri();
+                Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
-                if (bitmap == null) {
-                    Log.e(TAG, "bitmap was null");
-                } else
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
 
                 Settings.System.putString(getContentResolver(),
                         Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[currentIconIndex],

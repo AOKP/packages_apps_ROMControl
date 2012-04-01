@@ -2,6 +2,7 @@
 package com.aokp.romcontrol.fragments;
 
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -20,7 +21,7 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
     ListPreference mWifiStyle;
     ColorPickerPreference mColorPicker;
     ColorPickerPreference mWifiColorPicker;
-//    CheckBoxPreference mHideSignal;
+    CheckBoxPreference mHideSignal;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,23 +47,23 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mWifiColorPicker = (ColorPickerPreference) findPreference("wifi_signal_color");
         mWifiColorPicker.setOnPreferenceChangeListener(this);
 
-//        mHideSignal = (CheckBoxPreference) findPreference("hide_signal");
-//        mHideSignal.setChecked(Settings.System.getInt(getActivity()
-//                .getContentResolver(), Settings.System.STATUSBAR_HIDE_SIGNAL_BARS,
-//                0) != 0);
+        mHideSignal = (CheckBoxPreference) findPreference("hide_signal");
+        mHideSignal.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_HIDE_SIGNAL_BARS,
+                0) != 0);
 
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-//        if (preference == mHideSignal) {
-//            Settings.System.putInt(getActivity().getContentResolver(),
-//                    Settings.System.STATUSBAR_HIDE_SIGNAL_BARS,
-//                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-//
-//            return true;
-//        }
+        if (preference == mHideSignal) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_HIDE_SIGNAL_BARS,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

@@ -14,43 +14,93 @@
     <string name="toggles_layout">Переключатели</string>
     <string name="clock">Часы</string>
     <string name="battery">Батарея</string>
+    <string name="nav_bar">Панель навигации</string>
+    <string name="tools">Инструменты</string>
+    <string name="weather">Погода</string>
+    <string name="signal">Сигнал</string>
+
+    <string name="header_summary_battery">Строка батареи, 1% battery mod, пр.</string>
+    <string name="header_summary_general_ui">Анимация включения, отчет об ошибках, поворот экрана, переключение метода ввода, пр.</string>
+    <string name="header_summary_navigation_bar">Отображаемые кнопки, цвет кнопок, порядок</string>
+    <string name="header_summary_lockscreens">Запуск своих приложений, расположение</string>
+    <string name="header_summary_power_menu">Что отображать в меню выключения</string>
+    <string name="header_summary_powersaver">Автоматическое отключение передачи данных для экономии батареи</string>
+    <string name="header_summary_led">Частота мерцания, цвет</string>
+    <string name="header_summary_general">Поведение кнопок настроек</string>
+    <string name="header_summary_toggles">Настройка переключателей в панели уведомлений</string>
+    <string name="header_summary_clock">Расположение часов, AM/PM, цвет</string>
+    <string name="header_summary_weather">Вкл/выкл, установка своего местоположения, интервал обновления</string>
+    <string name="header_summary_signal">Signal dBm text</string>
     
     <string name="advanced_settings">Расширенные</string>
     <string name="misc_short">Общие</string>
     
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Настройки меню</string>
-    <string name="summary_pref_menu_display">Позиции кнопок</string>
-    <string name="navigation_bar">Navigation bar</string>
-    <string name="navigation_bar_tint_title">Navigation bar tint</string>
+    <string name="summary_pref_menu_display">Не забудте убрать кнопки меню, если используете большую кнопку меню!</string>
+    <string name="navigation_bar">Панель навигации</string>
+    <string name="navigation_bar_tint_title">Цвет кнопок</string>
 
     <string name="title_pref_navigation_menu_display">Положение кнопок меню</string>
     <string name="summary_pref_navigation_menu_display">Как ты хочешь расположить кнопки?</string>
 
-    <string name="navbar_order_title">Navigation button order</string>
-    <string name="navbar_order_summary">Настройте программные кнопки управления</string>
+    <string name="navbar_order_title">Порядок кнопок</string>
+    <string name="navbar_order_summary">Измените порядок кнопок на панели</string>
 
     <string name="enabled_navbar_buttons_title">Включить кнопки</string>
-    <string name="enabled_navbar_buttons_summary">Включите, если хотите видеть программные кнопки управления</string>
+    <string name="enabled_navbar_buttons_summary">Выберите кнопки, отображающиеся на панели навигации</string>
 
+	<string name="button_transparency_title">Прозрачность кнопок навигации</string>
+	
     <string name="long_press_home_title">Долгое нажатие ДОМОЙ</string>
     <string name="long_press_home_summary">Что делать при долгом нажатии кнопки ДОМОЙ</string>
 
     <!-- UI -->
-    <string name="rotation_animation_delay_title">Задержка поворота</string>
+	<string name="rotation_animation_delay_title">Задержка поворота</string>
     <string name="rotation_animation_delay_summary">Задержка перед сменой ориентации экрана. По умолчанию 200 мс.</string>
 
-	<string name="ime_switcher_title">Показывать IME</string>
-	<string name="ime_switcher_summary">В статус баре, при наборе текста (перезагрузка)</string>
+	<string name="ime_switcher_title">Показывать выбор IME</string>
+	<string name="ime_switcher_summary">Выбор метода ввода в статус баре при наборе текста (перезагрузка)</string>
 
 	<string name="custom_carrier_label_title">Свое название оператора</string>
 	<string name="longpress_to_kill_title">Удерживать чтобы закрыть</string>
 	<string name="longpress_to_kill_summary">Удерживайте кнопку НАЗАД чтобы закрыть текущее приложение</string>
+        
+    <string name="enable_volume_options">Включить настройки громкости</string>
 
+	<string name="rotate_180_title">Разрешить поворот на 180°</string>
+	<string name="rotate_180_summary">Разрешить переворачивание экрана</string>
+
+	<string name="horizontal_recents_task_panel_title">Горизонтальное окно переключения задач</string>
+	<string name="horizontal_recents_task_panel_summary">Переключение задач как в WebOS. UI перезапустится после применения и вернется примерно через 10 секунд. Если этого не произойдет, просто перезагрузите телефон.</string>
+
+	<string name="disable_bootanimation_title">Выключить анимацию при включении</string>
+	<string name="disable_bootanimation_summary">Jerk.</string>
+
+	<string name="disable_bugmailer_title">Отключить отчет об ошибках</string>
+
+	<string name="lcd_density_title">LCD Density</string>
+	<string name="lcd_density_summary">unknown</string>
+	
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT анимация</string>
 	<string name="crt_on_title">CRT анимация вкл.</string>
 	<string name="crt_off_title">CRT анимация выкл.</string>
+	
+	<!-- LCD Density -->
+	<string name="lcd_density_wizard">LCD Density Wizard</string>
+	<string name="follow_through_title">Следуйте инструкции!</string>
+	<string name="follow_through_summary">Выполните следующие шаги один за другим. Завершите каждый, прежде чем переходить к следующему.</string>
+	<string name="stock_density_title">1. Измените плотость LCD на значение по-умолчанию</string>
+	<string name="stock_density_summary">На планшетах и старых телефонах - 160. На большинстве телефонов - 240. На Galaxy Nexus - 320 по-умолчанию.</string>
+	<string name="reboot_title">2. Перезагрузите!</string>
+	<string name="reboot_summary">Вернитесь сюда после перезагрузки и завершите остальные шаги!</string>
+	<string name="clear_market_data_title">3. Удалите данные Маркета</string>
+	<string name="clear_market_data_cleared">Данные Маркета очищены</string>
+	<string name="open_market_title">4. Откройте Маркет и нажмите \"принять\"</string>
+	<string name="open_market_summary">Нажмите назад, когда завершите, чтобы вернуться сюда.</string>
+	<string name="custom_density_title">5. Изменяйте плотность как угодно!</string>
+	<string name="custom_density_summary">Если у Вас возникли проблемы с совместимостью в Маркете, обязательно вернитесь сюда и повторите процесс.</string>
 
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_quad_targets">Четыре ярлыка</string>	
@@ -142,7 +192,7 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Выбор цвета</string>
     <string name="press_color_to_apply">Нажмите на цвет для выбора</string>   
-    <string name="arrow_right">→</string> 
-    <string name="arrow_down">↓</string>
+    <string name="arrow_right">></string> 
+    <string name="arrow_down">v</string>
     
 </resources>

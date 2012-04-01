@@ -5,7 +5,7 @@
 		<item>Справа</item>
 		<item>Слева</item>
 		<item>Везде</item>
-		<item>удаление</item>
+		<item>Убрать</item>
 	</string-array>
 
 	<!-- right is the default, easier to keep 0 as first index -->

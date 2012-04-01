@@ -19,7 +19,7 @@
     <string name="tools">Tools</string>
     <string name="weather">Weather</string>
     <string name="signal">Signal</string>
-    
+
     <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
     <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order</string>
@@ -32,10 +32,10 @@
 	<string name="header_summary_clock">Clock location, AM/PM style, color</string>
 	<string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
 	<string name="header_summary_signal">Signal dBm text</string>
-	
+
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
-    
+
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
@@ -47,18 +47,18 @@
 
     <string name="navbar_order_title">Navigation button order</string>
     <string name="navbar_order_summary">Customize the order of your soft keys</string>
-    
+
     <string name="navbar_button_cat">Navigation bar buttons</string>
-    
+
     <string name="navbar_qty_title">Navigation button quantity</string>
     <string name="navbar_qty_summary">Choose the number of navigation buttons</string>
 
     <string name="enabled_navbar_buttons_title">Enabled buttons</string>
     <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
-    
+
     <string name="navbar_action_title">Button %1$s action &amp; icon</string>
     <string name="navbar_longpress_title">Button %1$s longpress action</string>
-    
+
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>
     <string name="navbar_action_recents">Recents</string>
@@ -67,15 +67,15 @@
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_none">Empty</string>
-    
+
     <string name="button_transparency_title">Nav button transparency</string>
-    
+
     <string name="long_press_home_title">Long press home action</string>
     <string name="long_press_home_summary">What to do when long pressing the home softkey. Reboot required to reflect changes.</string>
-    
+
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_summary">Adjust how fast your buttons animate after you touch them. Lowering the speed can improve performance.</string>
-    
+
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotation delay</string>
     <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>
@@ -86,28 +86,28 @@
 	<string name="custom_carrier_label_title">Custom carrier label</string>
 	<string name="longpress_to_kill_title">Hold back to kill</string>
 	<string name="longpress_to_kill_summary">Holding back will kill the current activity</string>
-        
+
     <string name="enable_volume_options">Enable Volume Options</string>
-	
+
 	<string name="rotate_180_title">Allow 180° rotation</string>
 	<string name="rotate_180_summary">Allow your device to rotate upside down!</string>
 
 	<string name="horizontal_recents_task_panel_title">Horizontal recents window</string>
 	<string name="horizontal_recents_task_panel_summary">Use WebOS style task switcher. Your UI will restart after changing this. It will come back in about 10 seconds. If it doesn\'t, just reboot the phone from the power menu.</string>
-	
+
 	<string name="disable_bootanimation_title">Disable boot animation</string>
 	<string name="disable_bootanimation_summary">Jerk.</string>
-	
+
 	<string name="disable_bugmailer_title">Disable bugmailer</string>
 
 	<string name="lcd_density_title">LCD Density</string>
 	<string name="lcd_density_summary">unknown</string>
-	
+
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animations</string>
 	<string name="crt_on_title">CRT on animation</string>
 	<string name="crt_off_title">CRT off animation</string>
-	
+
 	<!-- LCD Density -->
 	<string name="lcd_density_wizard">LCD Density Wizard</string>
 	<string name="follow_through_title">Follow through!</string>
@@ -122,15 +122,15 @@
 	<string name="open_market_summary">Press back when done to return here.</string>
 	<string name="custom_density_title">5. Change density to whatever you like!</string>
 	<string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
-	
+
     <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Lockscreen style</string>
     <string name="pref_lockscreen_layout_summary">Remember to scroll down and change your targets after changing styles</string>
-    
-    <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>	
+
+    <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>
     <string name="summary_pref_lockscreen_quad_targets">Adds Phone and Messaging shortcuts on the lock screen</string>
 
-    <string name="title_pref_lockscreen_octo_targets">Octo Targets</string>	
+    <string name="title_pref_lockscreen_octo_targets">Octo Targets</string>
     <string name="summary_pref_lockscreen_octo_targets">Adds too many shortcuts on the lock screen</string>
 
     <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
@@ -182,33 +182,33 @@
     <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
-    
+
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show power saver</string>
     <string name="title_show_screenshot">Show screenshot</string>
     <string name="title_show_torch_toggle">Show torch toggle</string>
     <string name="title_show_airplane_toggle">Show airplane toggle</string>
     <string name="title_show_navbar_hide">Show navigation bar toggle</string>
-    
+
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
-    
+
     <string name="title_pref_powersaving_data_screen_off">Screen off data action</string>
     <string name="summary_pref_powersaving_data_screen_off">What to do with the data when the screen turns off</string>
-        
+
     <string name="title_pref_powersaving_data_screen_off_delay">Data action delay</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">How long to wait before applying data action?</string>
 
     <string name="title_pref_powersaving_sync_screen_off">Sync action</string>
     <string name="summary_pref_powersaving_sync_screen_off">What to do with your syncage?!</string>
-    
+
     <string name="title_pref_powersaving_sync_screen_off_delay">Sync time interval</string>
     <string name="summary_pref_powersaving_sync_screen_off_delay">How long to wait between each forced sync</string>
-    
+
     <string name="powersaver_data_cat">Data</string>
     <string name="powersaver_sync_cat">Sync</string>
-    
+
     <string name="screen_off_wifi_action">Screen-off Wi-Fi action</string>
     <string name="sync_data_usage">Sync data usage</string>
     <string name="sync_mobile_data_preference">Sync mobile data preference</string>
@@ -251,7 +251,7 @@
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
-    
+
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
@@ -270,7 +270,7 @@
 
     <string name="alternate_button_layout_title">Alternate toggles</string>
     <string name="alternate_button_layout_summary">Use Toggle Buttons instead of switches for your toggles.</string>
-    
+
     <string name="enabled_toggles_title">Enabled toggles</string>
     <string name="enabled_toggles_summary">Choose toggles to display</string>
     <string name="toggles_order_title">Toggle order</string>
@@ -283,26 +283,26 @@
 	<string name="signal_style">Signal Text Style</string>
 	<string name="signal_color_title">Signal color</string>
 	<string name="hide_signal_title">Hide signal bars</string>
-	<string name="hide_signal_summary">Will also hide data indicator for now. Will be able to separate later.</string>
+	<string name="hide_signal_summary">Will also hide data indicator for now. Will be able to separate later. (Reboot required!)</string>
 	<string name="wifi_signal_style">WiFi Signal Text Style</string>
 	<string name="wifi_signal_color_title">WiFi Signal color</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on Color to apply</string>   
-    <string name="arrow_right">→</string> 
+    <string name="press_color_to_apply">Press on Color to apply</string>
+    <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
     <string name="ics_color">!!!</string>
-    
+
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>
 	<string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
 	<string name="select_custom_app_title">Select custom application</string>
 	<string name="group_applications">Applications</string>
-	
+
 	<!-- Weather -->
 	<string name="weather_enable">Enable weather</string>
 	<string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
@@ -317,7 +317,7 @@
 	<string name="weather_use_celcius">Metric units</string>
 	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
 	<string name="weather_statusbar_style">Statusbar weather style</string>
-	
+
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>
 
@@ -428,7 +428,7 @@
 	<string name="error_values">Error getting values</string>
 	<string name="set_boot">Set On Boot</string>
 	<string name="apply_values">Apply Values</string>
-	
+
 	<string name="dpi">DPI</string>
 	<string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
 	<string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
@@ -446,7 +446,7 @@
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">About AOKP</string>
     <string name="about_aokp_summary">@null</string>
-    
+
     <!--  Kernel Tweaks -->
     <string name="pt_fast_charge_boot">Fast Charge</string>
     <string name="ps_fast_charge_boot">Enable fast charge at boot</string>

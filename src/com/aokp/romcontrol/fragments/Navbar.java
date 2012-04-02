@@ -10,6 +10,14 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PowerManager;
@@ -17,9 +25,12 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -30,19 +41,30 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
+import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.TouchInterceptor;
+import com.aokp.romcontrol.widgets.NavBarItemPreference;
 import com.aokp.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+
 
 public class Navbar extends AOKPPreferenceFragment implements
-        ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
+        OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
 
     // move these later
     private static final String PREF_EANBLED_BUTTONS = "enabled_buttons";
@@ -50,13 +72,18 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_NAV_COLOR = "nav_button_color";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
-
+    private static final String PREF_NAVBAR_QTY = "navbar_qty";
+    
+    public static final int REQUEST_PICK_CUSTOM_ICON = 200;
+    public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
+    
     // move these later
     ColorPickerPreference mNavigationBarColor;
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     ListPreference mHomeLongpress;
     ListPreference mGlowTimes;
+    ListPreference mNavBarButtonQty;
     Preference mNavBarEnabledButtons;
     Preference mLayout;
     SeekBarPreference mButtonAlpha;
@@ -73,6 +100,14 @@ public class Navbar extends AOKPPreferenceFragment implements
             "HOME", "BACK", "TASKS", "SEARCH", "MENU_BIG"
     };
 
+    private int currentIconIndex;
+    private Preference mCurrentCustomActivityPreference;
+    private String mCurrentCustomActivityString;
+
+    private ShortcutPickerHelper mPicker;
+
+    private static final String TAG = "NavBar";
+     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +129,13 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.MENU_VISIBILITY,
                 0) + "");
+        
+        mNavBarButtonQty = (ListPreference) findPreference(PREF_NAVBAR_QTY);
+        mNavBarButtonQty.setOnPreferenceChangeListener(this);
+        mNavBarButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 0) + "");
+        
+        mPicker = new ShortcutPickerHelper(this, this);
 
         mHomeLongpress = (ListPreference) findPreference(PREF_HOME_LONGPRESS);
         mHomeLongpress.setOnPreferenceChangeListener(this);
@@ -145,7 +187,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             prefs.removePreference(mHomeLongpress);
             prefs.removePreference(mNavBarMenuDisplay);
         }
-
+        refreshSettings();
         setHasOptionsMenu(true);
     }
 
@@ -288,6 +330,13 @@ public class Navbar extends AOKPPreferenceFragment implements
                 preference.setSummary(getProperSummary(nV));
             }
             return true;
+        } if (preference == mNavBarButtonQty) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_BUTTONS_QTY, val);
+            refreshSettings();
+            return true;
+
         } else if (preference == mGlowTimes) {
             // format is (on|off) both in MS
             int breakIndex = ((String) newValue).indexOf("|");
@@ -326,7 +375,36 @@ public class Navbar extends AOKPPreferenceFragment implements
                     height);
             toggleBar();
             return true;
+        } else if ((preference.getKey().startsWith("navbar_action")) || (preference.getKey().startsWith("navbar_longpress"))) {
+        	boolean longpress = preference.getKey().startsWith("navbar_longpress_");
+            int index = Integer.parseInt(preference.getKey().substring(
+                    preference.getKey().lastIndexOf("_") + 1));
+
+            if (newValue.equals("**app**")) {
+                mCurrentCustomActivityPreference = preference;
+                if (longpress)
+                	mCurrentCustomActivityString = Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index];
+                else
+                	mCurrentCustomActivityString = Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index];
+                mPicker.pickShortcut();
+            } else {
+            	if (longpress) {
+            		Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index], (String) newValue);
+            	} else {
+            		Settings.System.putString(getContentResolver(),
+                        Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index], (String) newValue);
+            		Settings.System.putString(getContentResolver(),
+                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[index], "");
+            		Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[index], "");
+            	}    
+            }
+            refreshSettings();
+            Log.d(TAG,"Action:" + newValue);
+            return true;
         }
+
         return false;
     }
 
@@ -364,9 +442,361 @@ public class Navbar extends AOKPPreferenceFragment implements
     public static void removeButton(Context context, String key) {
         ArrayList<String> enabledToggles = getButtonsStringArray(context);
         enabledToggles.remove(key);
-        setButtonsFromStringArray(context, enabledToggles);
+        setButtonsFromStringArray(context, enabledToggles);       
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
+                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
+                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
+                mPicker.onActivityResult(requestCode, resultCode, data);
+
+            } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON) || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
+
+                FileOutputStream iconStream = null;
+                try {
+                    iconStream = mContext.openFileOutput("icon_" + currentIconIndex + ".png",
+                            Context.MODE_WORLD_WRITEABLE);
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
+                }
+
+                Uri selectedImageUri = getTempFileUri();
+                Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
+                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                
+                if (requestCode == REQUEST_PICK_CUSTOM_ICON) 
+                	Settings.System.putString(getContentResolver(),
+                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[currentIconIndex],
+                        getExternalIconUri().toString());
+                else
+                	Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[currentIconIndex],
+                            getExternalIconUri().toString());
+                Toast.makeText(getActivity(), currentIconIndex + "'s icon set successfully!",
+                        Toast.LENGTH_LONG).show();
+                refreshSettings();
+
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+    
+    public void refreshSettings() {
+
+        int navbarQuantity = Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3);
+
+        PreferenceGroup targetGroup = (PreferenceGroup) findPreference("navbar_buttons");
+        targetGroup.removeAll();
+
+        PackageManager pm = mContext.getPackageManager();
+        Resources res = mContext.getResources();
+
+        for (int i = 0; i < navbarQuantity; i++) {
+            NavBarItemPreference pAction = new NavBarItemPreference(getActivity());
+            NavBarItemPreference pLongpress = new NavBarItemPreference(getActivity());
+            String dialogTitle = String.format(
+                    getResources().getString(R.string.navbar_action_title), i + 1);
+            pAction.setDialogTitle(dialogTitle);
+            pAction.setEntries(R.array.navbar_button_entries);
+            pAction.setEntryValues(R.array.navbar_button_values);
+            String title = String.format(getResources().getString(R.string.navbar_action_title), i + 1);
+            pAction.setTitle(title);
+            pAction.setKey("navbar_action_" + i);
+            pAction.setSummary(getProperSummary(i,false));
+            pAction.setOnPreferenceChangeListener(this);
+            targetGroup.addPreference(pAction);
+            
+            dialogTitle = String.format(
+                    getResources().getString(R.string.navbar_longpress_title), i + 1);
+            pLongpress.setDialogTitle(dialogTitle);
+            pLongpress.setEntries(R.array.navbar_button_entries);
+            pLongpress.setEntryValues(R.array.navbar_button_values);
+            title = String.format(getResources().getString(R.string.navbar_longpress_title), i + 1);
+            pLongpress.setTitle(title);
+            pLongpress.setKey("navbar_longpress_" + i);
+            pLongpress.setSummary(getProperSummary(i,true));
+            pLongpress.setOnPreferenceChangeListener(this);
+            targetGroup.addPreference(pLongpress);
+            
+            final int index = i;
+            pAction.setImageListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Boolean isSDPresent = android.os.Environment.getExternalStorageState().equals(
+                            android.os.Environment.MEDIA_MOUNTED);
+                    if (!isSDPresent) {
+                        Toast.makeText(v.getContext(), "Insert SD card to use this feature",
+                                Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
+                    currentIconIndex = index;
+
+                    int width = 100;
+                    int height = width;
+
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                    intent.setType("image/*");
+                    intent.putExtra("crop", "true");
+                    intent.putExtra("aspectX", width);
+                    intent.putExtra("aspectY", height);
+                    intent.putExtra("outputX", width);
+                    intent.putExtra("outputY", height);
+                    intent.putExtra("scale", true);
+                    // intent.putExtra("return-data", false);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri());
+                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+
+                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri());
+
+                    startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
+                }
+            });
+            
+            pLongpress.setImageListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Boolean isSDPresent = android.os.Environment.getExternalStorageState().equals(
+                            android.os.Environment.MEDIA_MOUNTED);
+                    if (!isSDPresent) {
+                        Toast.makeText(v.getContext(), "Insert SD card to use this feature",
+                                Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
+                    currentIconIndex = index;
+
+                    int width = 100;
+                    int height = width;
+
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                    intent.setType("image/*");
+                    intent.putExtra("crop", "true");
+                    intent.putExtra("aspectX", width);
+                    intent.putExtra("aspectY", height);
+                    intent.putExtra("outputX", width);
+                    intent.putExtra("outputY", height);
+                    intent.putExtra("scale", true);
+                    // intent.putExtra("return-data", false);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri());
+                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+
+                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri());
+
+                    startActivityForResult(intent, REQUEST_PICK_LANDSCAPE_ICON);
+                }
+            });
+
+            String customIconUri = Settings.System.getString(getContentResolver(),
+                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[i]);
+            Log.d(TAG,"PIcon:" +  i + " - " + customIconUri);
+            if (customIconUri != null && customIconUri.length() > 0) {
+                File f = new File(Uri.parse(customIconUri).getPath());
+                if (f.exists())
+                    pAction.setIcon(resize(new BitmapDrawable(res, f.getAbsolutePath())));
+            }
+
+            if (customIconUri != null && !customIconUri.equals("")
+                    && customIconUri.startsWith("file")) {
+                // it's an icon the user chose from the gallery here
+                File icon = new File(Uri.parse(customIconUri).getPath());
+                if (icon.exists())
+                    pAction.setIcon(resize(new BitmapDrawable(getResources(), icon.getAbsolutePath())));
+
+            } else if (customIconUri != null && !customIconUri.equals("")) {
+                // here they chose another app icon
+                try {
+                    pAction.setIcon(resize(pm.getActivityIcon(Intent.parseUri(customIconUri, 0))));
+                } catch (NameNotFoundException e) {
+                    e.printStackTrace();
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                // ok use default icons here
+                pAction.setIcon(resize(getNavbarIconImage(i,false)));
+            }
+            
+            customIconUri = Settings.System.getString(getContentResolver(),
+                    Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[i]);
+            Log.d(TAG,"LIcon:" +  i + " - " + customIconUri);
+            if (customIconUri != null && customIconUri.length() > 0) {
+                File f = new File(Uri.parse(customIconUri).getPath());
+                if (f.exists())
+                    pAction.setIcon(resize(new BitmapDrawable(res, f.getAbsolutePath())));
+            }
+
+            if (customIconUri != null && !customIconUri.equals("")
+                    && customIconUri.startsWith("file")) {
+                // it's an icon the user chose from the gallery here
+                File icon = new File(Uri.parse(customIconUri).getPath());
+                if (icon.exists())
+                    pAction.setIcon(resize(new BitmapDrawable(getResources(), icon.getAbsolutePath())));
+
+            } else if (customIconUri != null && !customIconUri.equals("")) {
+                // here they chose another app icon
+                try {
+                    pLongpress.setIcon(resize(pm.getActivityIcon(Intent.parseUri(customIconUri, 0))));
+                } catch (NameNotFoundException e) {
+                    e.printStackTrace();
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                // ok use default icons here
+                pLongpress.setIcon(resize(getNavbarIconImage(i,true)));
+            }
+        }
+
+    }
+    private Drawable resize(Drawable image) {
+        int size = 50;
+        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources()
+                .getDisplayMetrics());
+
+        Bitmap d = ((BitmapDrawable) image).getBitmap();
+        Bitmap bitmapOrig = Bitmap.createScaledBitmap(d, px, px, false);
+        return new BitmapDrawable(mContext.getResources(), bitmapOrig);
+    }
+
+    private Drawable getNavbarIconImage(int index, boolean landscape) {
+    	String uri = Settings.System.getString(getActivity().getContentResolver(),
+    				Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
+    	
+        if (uri == null)
+            return getResources().getDrawable(R.drawable.ic_null);
+
+        if (uri.startsWith("**")) {
+            if (uri.equals("**home**")) {
+            	if (!landscape)
+            		return getResources().getDrawable(R.drawable.ic_sysbar_home);
+            	else
+            		return getResources().getDrawable(R.drawable.ic_sysbar_home_land);
+            } else if (uri.equals("**back**")) {
+            	if (!landscape)
+            		return getResources().getDrawable(R.drawable.ic_sysbar_back);
+            	else
+            		return getResources().getDrawable(R.drawable.ic_sysbar_back_land);
+            } else if (uri.equals("**recents**")) {
+            	if (!landscape)
+            		return getResources().getDrawable(R.drawable.ic_sysbar_recent);
+            	else
+            		return getResources().getDrawable(R.drawable.ic_sysbar_recent_land);
+            } else if (uri.equals("**search**")) {
+            	if (!landscape)
+            		return getResources().getDrawable(R.drawable.ic_sysbar_search);
+            	else
+            		return getResources().getDrawable(R.drawable.ic_sysbar_search_land);
+            } else if (uri.equals("**menu**")) {
+            	if (!landscape)
+            		return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
+            	else
+            		return getResources().getDrawable(R.drawable.ic_sysbar_menu_land_big);
+            } else if (uri.equals("**kill**")) {
+            	if (!landscape)
+            		return getResources().getDrawable(R.drawable.ic_sysbar_killtask);
+            	else
+            		return getResources().getDrawable(R.drawable.ic_sysbar_killtask_land);
+            } else if (uri.equals("**power**")) {
+            	if (!landscape)
+            		return getResources().getDrawable(R.drawable.ic_sysbar_power);
+            	else
+            		return getResources().getDrawable(R.drawable.ic_sysbar_power_land);
+            }
+        } else {
+            try {
+                return mContext.getPackageManager().getActivityIcon(Intent.parseUri(uri, 0));
+            } catch (NameNotFoundException e) {
+                e.printStackTrace();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return getResources().getDrawable(R.drawable.ic_null);
+    }
+
+    private String getProperSummary(int i, boolean longpress) {
+    	String uri = "";
+    	if (longpress)
+    		uri = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[i]);
+    	else
+    		uri = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[i]);
+        if (uri == null)
+            return getResources().getString(R.string.navbar_action_none);
+
+        if (uri.startsWith("**")) {
+            if (uri.equals("**home**"))
+                return getResources().getString(R.string.navbar_action_home);
+            else if (uri.equals("**back**"))
+                return getResources().getString(R.string.navbar_action_back);
+            else if (uri.equals("**recents**"))
+                return getResources().getString(R.string.navbar_action_recents);
+            else if (uri.equals("**search**"))
+                return getResources().getString(R.string.navbar_action_search);
+            else if (uri.equals("**menu**"))
+                return getResources().getString(R.string.navbar_action_menu);
+            else if (uri.equals("**kill**"))
+                return getResources().getString(R.string.navbar_action_kill);
+            else if (uri.equals("**power**"))
+                return getResources().getString(R.string.navbar_action_power);
+            else if (uri.equals("**null**"))
+                return getResources().getString(R.string.navbar_action_none);
+        } else {
+            return mPicker.getFriendlyNameForUri(uri);
+        }
+        return null;
+    }
+
+    @Override
+    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+        if (Settings.System.putString(getActivity().getContentResolver(),
+                mCurrentCustomActivityString, uri)) {
+
+            String i = mCurrentCustomActivityString.substring(mCurrentCustomActivityString
+                    .lastIndexOf("_") + 1);
+            boolean longpress = mCurrentCustomActivityString.startsWith("navbar_longpress_");
+            Log.i(TAG, "shortcut picked, index: " + i);
+            Log.i(TAG, uri);
+            if (!longpress) {
+            	Settings.System.putString(getContentResolver(),
+                        Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[Integer.parseInt(i)], "");
+            
+            	Settings.System.putString(getContentResolver(),
+            			Settings.System.NAVIGATION_CUSTOM_APP_ICONS[Integer.parseInt(i)], "");
+            }
+            mCurrentCustomActivityPreference.setSummary(friendlyName);        
+        }
+    }
+    
+    private Uri getExternalIconUri() {
+        File dir = mContext.getFilesDir();
+        File icon = new File(dir, "navbar_" + currentIconIndex + ".png");
+
+        return Uri.fromFile(icon);
+    }
+    
+    private Uri getTempFileUri() {
+        File dir = mContext.getFilesDir();
+        File wallpaper = new File(dir, "temp");
+
+        return Uri.fromFile(wallpaper);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshSettings();
+    }
+    
     public static class NavbarLayout extends ListFragment {
         private static final String TAG = "NavbarLayout";
 
@@ -545,37 +975,4 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         return iloveyou;
     }
-    
-    @Override
-    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
-        if (Settings.System.putString(getActivity().getContentResolver(),
-                Settings.System.NAVIGATION_BAR_HOME_LONGPRESS_CUSTOMAPP, uri)) {
-                    mHomeLongpress.setSummary(friendlyName);
-        }
-    }
-    
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
-                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
-                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
-                mPicker.onActivityResult(requestCode, resultCode, data);
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-    
-    private String getProperSummary(int i) {
-        if (i < 3) {
-            return getResources().getStringArray(R.array.long_press_home_entries)[i];
-        } else {
-            String uri = Settings.System.getString(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_HOME_LONGPRESS_CUSTOMAPP);
-            if (uri == null)
-                return "-";
-
-            return mPicker.getFriendlyNameForUri(uri);
-        }
-    }
-
 }

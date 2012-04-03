@@ -145,15 +145,16 @@
 	<string-array name="long_press_home_entries">
 		<item>Keine Aktion</item>
 		<item>Zeige Kürzliche</item>
+		<item>Kamera</item>
+		<item>Eigene App</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
 		<item>Standard</item>
 		<item>Vierfach</item>
-        <item>Achtfach</item>
+        	<item>Achtfach</item>
 		<item>AOSP</item>
-
-<item>Honeycomb</item>
+		<item>Honeycomb</item>
 	</string-array>
 
 	<string-array name="pref_lockscreen_calendar_interval_entries">

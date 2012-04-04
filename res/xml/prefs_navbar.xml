@@ -55,11 +55,6 @@
 			android:key="long_press_home"
 			android:title="@string/long_press_home_title"
 			android:summary="@string/long_press_home_summary" />
-		
-		<CheckBoxPreference
-			android:key="longpress_to_kill"
-			android:title="@string/longpress_to_kill_title"
-			android:summary="@string/longpress_to_kill_summary" />
 
 		<ListPreference
 			android:entries="@array/navigation_bar_width_entries"

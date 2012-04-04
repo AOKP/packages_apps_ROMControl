@@ -56,6 +56,11 @@
 			android:key="custom_carrier_label"
 			android:title="@string/custom_carrier_label_title" />
 
+		<CheckBoxPreference
+			android:key="longpress_to_kill"
+			android:title="@string/longpress_to_kill_title"
+			android:summary="@string/longpress_to_kill_summary" />
+
 		<ListPreference
 			android:entries="@array/rotation_animation_delay_entries"
 			android:entryValues="@array/rotation_animation_delay_values"

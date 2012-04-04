@@ -161,6 +161,8 @@
 	<string-array name="long_press_home_entries">
 		<item>Nedělat nic</item>
 		<item>Zobrazit poslední</item>
+    <item>Fotoaparát</item>
+		<item>Vlastní aplikace</item>
 	</string-array>
 
 	<string-array name="pref_lockscreen_options_entries">
@@ -168,6 +170,7 @@
 		<item>Quad</item>
 		<item>Octo</item>
 		<item>AOSP</item>
+    <item>Honeycomb</item>
 	</string-array>
   
   <string-array name="pref_lockscreen_calendar_interval_entries">

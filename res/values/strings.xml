@@ -56,8 +56,8 @@
     <string name="enabled_navbar_buttons_title">Enabled buttons</string>
     <string name="enabled_navbar_buttons_summary">Choose which soft keys you would like to see</string>
     
-    <string name="navbar_action_title">Button %1$s action &amp; Portrait icon</string>
-    <string name="navbar_longpress_title">Button %1$s Longpress &amp; Landscape icon</string>
+    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
+    <string name="navbar_longpress_title">Button %1$s longpress action</string>
     
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>

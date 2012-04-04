@@ -401,7 +401,6 @@ public class Navbar extends AOKPPreferenceFragment implements
             	}    
             }
             refreshSettings();
-            Log.d(TAG,"Action:" + newValue);
             return true;
         }
 
@@ -454,9 +453,10 @@ public class Navbar extends AOKPPreferenceFragment implements
 
             } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON) || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
 
+            	boolean landscape = (requestCode == REQUEST_PICK_LANDSCAPE_ICON);
                 FileOutputStream iconStream = null;
                 try {
-                    iconStream = mContext.openFileOutput("icon_" + currentIconIndex + ".png",
+                    iconStream = mContext.openFileOutput((landscape ? "navbar_land_icon_" : "navbar_icon_") + currentIconIndex + ".png",
                             Context.MODE_WORLD_WRITEABLE);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
@@ -470,11 +470,11 @@ public class Navbar extends AOKPPreferenceFragment implements
                 if (requestCode == REQUEST_PICK_CUSTOM_ICON) 
                 	Settings.System.putString(getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[currentIconIndex],
-                        getExternalIconUri().toString());
+                        getExternalIconUri(false).toString());
                 else
                 	Settings.System.putString(getContentResolver(),
                             Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[currentIconIndex],
-                            getExternalIconUri().toString());
+                            getExternalIconUri(true).toString());
                 Toast.makeText(getActivity(), currentIconIndex + "'s icon set successfully!",
                         Toast.LENGTH_LONG).show();
                 refreshSettings();
@@ -549,10 +549,10 @@ public class Navbar extends AOKPPreferenceFragment implements
                     intent.putExtra("outputY", height);
                     intent.putExtra("scale", true);
                     // intent.putExtra("return-data", false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri());
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri(false));
                     intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
 
-                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri());
+                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri(false));
 
                     startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
                 }
@@ -584,10 +584,10 @@ public class Navbar extends AOKPPreferenceFragment implements
                     intent.putExtra("outputY", height);
                     intent.putExtra("scale", true);
                     // intent.putExtra("return-data", false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri());
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri(true));
                     intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
 
-                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri());
+                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri(true));
 
                     startActivityForResult(intent, REQUEST_PICK_LANDSCAPE_ICON);
                 }
@@ -595,7 +595,6 @@ public class Navbar extends AOKPPreferenceFragment implements
 
             String customIconUri = Settings.System.getString(getContentResolver(),
                     Settings.System.NAVIGATION_CUSTOM_APP_ICONS[i]);
-            Log.d(TAG,"PIcon:" +  i + " - " + customIconUri);
             if (customIconUri != null && customIconUri.length() > 0) {
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
@@ -625,7 +624,6 @@ public class Navbar extends AOKPPreferenceFragment implements
             
             customIconUri = Settings.System.getString(getContentResolver(),
                     Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[i]);
-            Log.d(TAG,"LIcon:" +  i + " - " + customIconUri);
             if (customIconUri != null && customIconUri.length() > 0) {
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
@@ -777,17 +775,21 @@ public class Navbar extends AOKPPreferenceFragment implements
         }
     }
     
-    private Uri getExternalIconUri() {
-        File dir = mContext.getFilesDir();
-        File icon = new File(dir, "navbar_" + currentIconIndex + ".png");
-
+    private Uri getExternalIconUri(boolean landscape) {
+        //File dir = mContext.getFilesDir();
+        String dir = "/sdcard/data/com.aokp.romcontrol/icons/";
+        File icon = new File(dir, (landscape ? "navbar_land_" : "navbar_") + currentIconIndex + ".png");
+        icon.getParentFile().mkdirs();
+        Log.d(TAG,"GetIcon:"+ icon.getAbsolutePath());
         return Uri.fromFile(icon);
     }
     
     private Uri getTempFileUri() {
-        File dir = mContext.getFilesDir();
+        //File dir = mContext.getFilesDir();
+        String dir = "/sdcard/data/com.aokp.romcontrol/temp/";
         File wallpaper = new File(dir, "temp");
-
+        wallpaper.getParentFile().mkdirs();
+        Log.d(TAG,"GetTemp:"+ wallpaper.getAbsolutePath());
         return Uri.fromFile(wallpaper);
     }
 

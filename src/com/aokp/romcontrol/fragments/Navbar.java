@@ -1,6 +1,13 @@
 
 package com.aokp.romcontrol.fragments;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
@@ -12,14 +19,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.PowerManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -44,24 +50,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.util.ShortcutPickerHelper;
-import com.aokp.romcontrol.widgets.SeekBarPreference;
-import com.aokp.romcontrol.util.ShortcutPickerHelper;
-import com.aokp.romcontrol.widgets.TouchInterceptor;
-import com.aokp.romcontrol.widgets.NavBarItemPreference;
 import com.aokp.romcontrol.R;
-
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
-import java.util.ArrayList;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-
+import com.aokp.romcontrol.util.ShortcutPickerHelper;
+import com.aokp.romcontrol.widgets.NavBarItemPreference;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
+import com.aokp.romcontrol.widgets.TouchInterceptor;
 
 public class Navbar extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
@@ -73,10 +66,10 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
-    
+
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
-    
+
     // move these later
     ColorPickerPreference mNavigationBarColor;
     ListPreference menuDisplayLocation;
@@ -91,9 +84,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarWidth;
-    
-    ShortcutPickerHelper mPicker;
-    
+
     String mCustomAppString;
 
     private final String[] buttons = {
@@ -107,7 +98,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private ShortcutPickerHelper mPicker;
 
     private static final String TAG = "NavBar";
-     
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,7 +106,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         addPreferencesFromResource(R.xml.prefs_navbar);
 
         PreferenceScreen prefs = getPreferenceScreen();
-        
+
         mPicker = new ShortcutPickerHelper(this, this);
 
         menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
@@ -129,12 +120,12 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.MENU_VISIBILITY,
                 0) + "");
-        
+
         mNavBarButtonQty = (ListPreference) findPreference(PREF_NAVBAR_QTY);
         mNavBarButtonQty.setOnPreferenceChangeListener(this);
         mNavBarButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 0) + "");
-        
+
         mPicker = new ShortcutPickerHelper(this, this);
 
         mHomeLongpress = (ListPreference) findPreference(PREF_HOME_LONGPRESS);
@@ -142,7 +133,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         int lpv = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NAVIGATION_BAR_HOME_LONGPRESS, 0);
         mHomeLongpress.setValue(lpv + "");
-        mHomeLongpress.setSummary(getProperSummary(lpv));
+        mHomeLongpress.setSummary(getProperSummary(lpv, true));
 
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
@@ -208,8 +199,10 @@ public class Navbar extends AOKPPreferenceFragment implements
                         Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                         0.6f);
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, mContext.getResources().getBoolean(
-                                com.android.internal.R.bool.config_showNavigationBar) ? 1 : 0);
+                        Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, mContext.getResources()
+                                .getBoolean(
+                                        com.android.internal.R.bool.config_showNavigationBar) ? 1
+                                : 0);
                 mButtonAlpha.setValue(60);
                 return true;
             default:
@@ -327,10 +320,11 @@ public class Navbar extends AOKPPreferenceFragment implements
                 mCustomAppString = Settings.System.NAVIGATION_BAR_HOME_LONGPRESS_CUSTOMAPP;
                 mPicker.pickShortcut();
             } else {
-                preference.setSummary(getProperSummary(nV));
+                preference.setSummary(getProperSummary(nV, true));
             }
             return true;
-        } if (preference == mNavBarButtonQty) {
+        }
+        if (preference == mNavBarButtonQty) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTONS_QTY, val);
@@ -375,30 +369,30 @@ public class Navbar extends AOKPPreferenceFragment implements
                     height);
             toggleBar();
             return true;
-        } else if ((preference.getKey().startsWith("navbar_action")) || (preference.getKey().startsWith("navbar_longpress"))) {
-        	boolean longpress = preference.getKey().startsWith("navbar_longpress_");
+        } else if ((preference.getKey().startsWith("navbar_action"))
+                || (preference.getKey().startsWith("navbar_longpress"))) {
+            boolean longpress = preference.getKey().startsWith("navbar_longpress_");
             int index = Integer.parseInt(preference.getKey().substring(
                     preference.getKey().lastIndexOf("_") + 1));
 
             if (newValue.equals("**app**")) {
                 mCurrentCustomActivityPreference = preference;
                 if (longpress)
-                	mCurrentCustomActivityString = Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index];
+                    mCurrentCustomActivityString = Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index];
                 else
-                	mCurrentCustomActivityString = Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index];
+                    mCurrentCustomActivityString = Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index];
                 mPicker.pickShortcut();
             } else {
-            	if (longpress) {
-            		Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index], (String) newValue);
-            	} else {
-            		Settings.System.putString(getContentResolver(),
-                        Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index], (String) newValue);
-            		Settings.System.putString(getContentResolver(),
-                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[index], "");
-            		Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[index], "");
-            	}    
+                if (longpress) {
+                    Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index],
+                            (String) newValue);
+                } else {
+                    Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index], (String) newValue);
+                    Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_CUSTOM_APP_ICONS[index], "");
+                }
             }
             refreshSettings();
             return true;
@@ -441,7 +435,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     public static void removeButton(Context context, String key) {
         ArrayList<String> enabledToggles = getButtonsStringArray(context);
         enabledToggles.remove(key);
-        setButtonsFromStringArray(context, enabledToggles);       
+        setButtonsFromStringArray(context, enabledToggles);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -451,13 +445,13 @@ public class Navbar extends AOKPPreferenceFragment implements
                     || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
                 mPicker.onActivityResult(requestCode, resultCode, data);
 
-            } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON) || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
+            } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON)
+                    || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
 
-            	boolean landscape = (requestCode == REQUEST_PICK_LANDSCAPE_ICON);
+                String iconName = "navbar_icon_" + currentIconIndex + ".png";
                 FileOutputStream iconStream = null;
                 try {
-                    iconStream = mContext.openFileOutput((landscape ? "navbar_land_icon_" : "navbar_icon_") + currentIconIndex + ".png",
-                            Context.MODE_WORLD_WRITEABLE);
+                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
                 }
@@ -466,15 +460,17 @@ public class Navbar extends AOKPPreferenceFragment implements
                 Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-                
-                if (requestCode == REQUEST_PICK_CUSTOM_ICON) 
-                	Settings.System.putString(getContentResolver(),
+
+                Settings.System.putString(
+                        getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[currentIconIndex],
-                        getExternalIconUri(false).toString());
-                else
-                	Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[currentIconIndex],
-                            getExternalIconUri(true).toString());
+                        Uri.fromFile(
+                                new File(mContext.getFilesDir(), iconName)).getPath());
+
+                File f = new File(selectedImageUri.getPath());
+                if (f.exists())
+                    f.delete();
+
                 Toast.makeText(getActivity(), currentIconIndex + "'s icon set successfully!",
                         Toast.LENGTH_LONG).show();
                 refreshSettings();
@@ -483,7 +479,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-    
+
     public void refreshSettings() {
 
         int navbarQuantity = Settings.System.getInt(getContentResolver(),
@@ -503,13 +499,14 @@ public class Navbar extends AOKPPreferenceFragment implements
             pAction.setDialogTitle(dialogTitle);
             pAction.setEntries(R.array.navbar_button_entries);
             pAction.setEntryValues(R.array.navbar_button_values);
-            String title = String.format(getResources().getString(R.string.navbar_action_title), i + 1);
+            String title = String.format(getResources().getString(R.string.navbar_action_title),
+                    i + 1);
             pAction.setTitle(title);
             pAction.setKey("navbar_action_" + i);
-            pAction.setSummary(getProperSummary(i,false));
+            pAction.setSummary(getProperSummary(i, false));
             pAction.setOnPreferenceChangeListener(this);
             targetGroup.addPreference(pAction);
-            
+
             dialogTitle = String.format(
                     getResources().getString(R.string.navbar_longpress_title), i + 1);
             pLongpress.setDialogTitle(dialogTitle);
@@ -518,22 +515,15 @@ public class Navbar extends AOKPPreferenceFragment implements
             title = String.format(getResources().getString(R.string.navbar_longpress_title), i + 1);
             pLongpress.setTitle(title);
             pLongpress.setKey("navbar_longpress_" + i);
-            pLongpress.setSummary(getProperSummary(i,true));
+            pLongpress.setSummary(getProperSummary(i, true));
             pLongpress.setOnPreferenceChangeListener(this);
             targetGroup.addPreference(pLongpress);
-            
+
             final int index = i;
             pAction.setImageListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
-                    Boolean isSDPresent = android.os.Environment.getExternalStorageState().equals(
-                            android.os.Environment.MEDIA_MOUNTED);
-                    if (!isSDPresent) {
-                        Toast.makeText(v.getContext(), "Insert SD card to use this feature",
-                                Toast.LENGTH_LONG).show();
-                        return;
-                    }
 
                     currentIconIndex = index;
 
@@ -549,49 +539,53 @@ public class Navbar extends AOKPPreferenceFragment implements
                     intent.putExtra("outputY", height);
                     intent.putExtra("scale", true);
                     // intent.putExtra("return-data", false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri(false));
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getTempFileUri());
                     intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
 
-                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri(false));
+                    Log.i(TAG, "started for result, should output to: " + getTempFileUri());
 
                     startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
                 }
             });
-            
-            pLongpress.setImageListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick(View v) {
-                    Boolean isSDPresent = android.os.Environment.getExternalStorageState().equals(
-                            android.os.Environment.MEDIA_MOUNTED);
-                    if (!isSDPresent) {
-                        Toast.makeText(v.getContext(), "Insert SD card to use this feature",
-                                Toast.LENGTH_LONG).show();
-                        return;
-                    }
-
-                    currentIconIndex = index;
-
-                    int width = 100;
-                    int height = width;
-
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                    intent.setType("image/*");
-                    intent.putExtra("crop", "true");
-                    intent.putExtra("aspectX", width);
-                    intent.putExtra("aspectY", height);
-                    intent.putExtra("outputX", width);
-                    intent.putExtra("outputY", height);
-                    intent.putExtra("scale", true);
-                    // intent.putExtra("return-data", false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri(true));
-                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-
-                    Log.i(TAG, "started for result, should output to: " + getExternalIconUri(true));
-
-                    startActivityForResult(intent, REQUEST_PICK_LANDSCAPE_ICON);
-                }
-            });
+            // pLongpress.setImageListener(new View.OnClickListener() {
+            //
+            // @Override
+            // public void onClick(View v) {
+            // Boolean isSDPresent =
+            // android.os.Environment.getExternalStorageState().equals(
+            // android.os.Environment.MEDIA_MOUNTED);
+            // if (!isSDPresent) {
+            // Toast.makeText(v.getContext(),
+            // "Insert SD card to use this feature",
+            // Toast.LENGTH_LONG).show();
+            // return;
+            // }
+            //
+            // currentIconIndex = index;
+            //
+            // int width = 100;
+            // int height = width;
+            //
+            // Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+            // intent.setType("image/*");
+            // intent.putExtra("crop", "true");
+            // intent.putExtra("aspectX", width);
+            // intent.putExtra("aspectY", height);
+            // intent.putExtra("outputX", width);
+            // intent.putExtra("outputY", height);
+            // intent.putExtra("scale", true);
+            // // intent.putExtra("return-data", false);
+            // intent.putExtra(MediaStore.EXTRA_OUTPUT, getExternalIconUri());
+            // intent.putExtra("outputFormat",
+            // Bitmap.CompressFormat.PNG.toString());
+            //
+            // Log.i(TAG, "started for result, should output to: " +
+            // getExternalIconUri());
+            //
+            // startActivityForResult(intent, REQUEST_PICK_LANDSCAPE_ICON);
+            // }
+            // });
 
             String customIconUri = Settings.System.getString(getContentResolver(),
                     Settings.System.NAVIGATION_CUSTOM_APP_ICONS[i]);
@@ -606,7 +600,8 @@ public class Navbar extends AOKPPreferenceFragment implements
                 // it's an icon the user chose from the gallery here
                 File icon = new File(Uri.parse(customIconUri).getPath());
                 if (icon.exists())
-                    pAction.setIcon(resize(new BitmapDrawable(getResources(), icon.getAbsolutePath())));
+                    pAction.setIcon(resize(new BitmapDrawable(getResources(), icon
+                            .getAbsolutePath())));
 
             } else if (customIconUri != null && !customIconUri.equals("")) {
                 // here they chose another app icon
@@ -619,40 +614,13 @@ public class Navbar extends AOKPPreferenceFragment implements
                 }
             } else {
                 // ok use default icons here
-                pAction.setIcon(resize(getNavbarIconImage(i,false)));
-            }
-            
-            customIconUri = Settings.System.getString(getContentResolver(),
-                    Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[i]);
-            if (customIconUri != null && customIconUri.length() > 0) {
-                File f = new File(Uri.parse(customIconUri).getPath());
-                if (f.exists())
-                    pAction.setIcon(resize(new BitmapDrawable(res, f.getAbsolutePath())));
+                pAction.setIcon(resize(getNavbarIconImage(i, false)));
             }
 
-            if (customIconUri != null && !customIconUri.equals("")
-                    && customIconUri.startsWith("file")) {
-                // it's an icon the user chose from the gallery here
-                File icon = new File(Uri.parse(customIconUri).getPath());
-                if (icon.exists())
-                    pAction.setIcon(resize(new BitmapDrawable(getResources(), icon.getAbsolutePath())));
-
-            } else if (customIconUri != null && !customIconUri.equals("")) {
-                // here they chose another app icon
-                try {
-                    pLongpress.setIcon(resize(pm.getActivityIcon(Intent.parseUri(customIconUri, 0))));
-                } catch (NameNotFoundException e) {
-                    e.printStackTrace();
-                } catch (URISyntaxException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                // ok use default icons here
-                pLongpress.setIcon(resize(getNavbarIconImage(i,true)));
-            }
         }
 
     }
+
     private Drawable resize(Drawable image) {
         int size = 50;
         int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources()
@@ -664,48 +632,34 @@ public class Navbar extends AOKPPreferenceFragment implements
     }
 
     private Drawable getNavbarIconImage(int index, boolean landscape) {
-    	String uri = Settings.System.getString(getActivity().getContentResolver(),
-    				Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
-    	
+        String uri = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
+
         if (uri == null)
             return getResources().getDrawable(R.drawable.ic_null);
 
         if (uri.startsWith("**")) {
             if (uri.equals("**home**")) {
-            	if (!landscape)
-            		return getResources().getDrawable(R.drawable.ic_sysbar_home);
-            	else
-            		return getResources().getDrawable(R.drawable.ic_sysbar_home_land);
+
+                    return getResources().getDrawable(R.drawable.ic_sysbar_home);
             } else if (uri.equals("**back**")) {
-            	if (!landscape)
-            		return getResources().getDrawable(R.drawable.ic_sysbar_back);
-            	else
-            		return getResources().getDrawable(R.drawable.ic_sysbar_back_land);
+
+                    return getResources().getDrawable(R.drawable.ic_sysbar_back);
             } else if (uri.equals("**recents**")) {
-            	if (!landscape)
-            		return getResources().getDrawable(R.drawable.ic_sysbar_recent);
-            	else
-            		return getResources().getDrawable(R.drawable.ic_sysbar_recent_land);
+
+                    return getResources().getDrawable(R.drawable.ic_sysbar_recent);
             } else if (uri.equals("**search**")) {
-            	if (!landscape)
-            		return getResources().getDrawable(R.drawable.ic_sysbar_search);
-            	else
-            		return getResources().getDrawable(R.drawable.ic_sysbar_search_land);
+
+                    return getResources().getDrawable(R.drawable.ic_sysbar_search);
             } else if (uri.equals("**menu**")) {
-            	if (!landscape)
-            		return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
-            	else
-            		return getResources().getDrawable(R.drawable.ic_sysbar_menu_land_big);
+
+                    return getResources().getDrawable(R.drawable.ic_sysbar_menu_land_big);
             } else if (uri.equals("**kill**")) {
-            	if (!landscape)
-            		return getResources().getDrawable(R.drawable.ic_sysbar_killtask);
-            	else
-            		return getResources().getDrawable(R.drawable.ic_sysbar_killtask_land);
+
+                    return getResources().getDrawable(R.drawable.ic_sysbar_killtask);
             } else if (uri.equals("**power**")) {
-            	if (!landscape)
-            		return getResources().getDrawable(R.drawable.ic_sysbar_power);
-            	else
-            		return getResources().getDrawable(R.drawable.ic_sysbar_power_land);
+
+                    return getResources().getDrawable(R.drawable.ic_sysbar_power);
             }
         } else {
             try {
@@ -721,12 +675,12 @@ public class Navbar extends AOKPPreferenceFragment implements
     }
 
     private String getProperSummary(int i, boolean longpress) {
-    	String uri = "";
-    	if (longpress)
-    		uri = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[i]);
-    	else
-    		uri = Settings.System.getString(getActivity().getContentResolver(),
+        String uri = "";
+        if (longpress)
+            uri = Settings.System.getString(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[i]);
+        else
+            uri = Settings.System.getString(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[i]);
         if (uri == null)
             return getResources().getString(R.string.navbar_action_none);
@@ -761,36 +715,30 @@ public class Navbar extends AOKPPreferenceFragment implements
 
             String i = mCurrentCustomActivityString.substring(mCurrentCustomActivityString
                     .lastIndexOf("_") + 1);
-            boolean longpress = mCurrentCustomActivityString.startsWith("navbar_longpress_");
             Log.i(TAG, "shortcut picked, index: " + i);
             Log.i(TAG, uri);
-            if (!longpress) {
-            	Settings.System.putString(getContentResolver(),
-                        Settings.System.NAVIGATION_LANDSCAPE_APP_ICONS[Integer.parseInt(i)], "");
-            
-            	Settings.System.putString(getContentResolver(),
-            			Settings.System.NAVIGATION_CUSTOM_APP_ICONS[Integer.parseInt(i)], "");
-            }
-            mCurrentCustomActivityPreference.setSummary(friendlyName);        
+
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[Integer.parseInt(i)], "");
+
+            mCurrentCustomActivityPreference.setSummary(friendlyName);
         }
     }
-    
-    private Uri getExternalIconUri(boolean landscape) {
-        //File dir = mContext.getFilesDir();
-        String dir = "/sdcard/data/com.aokp.romcontrol/icons/";
-        File icon = new File(dir, (landscape ? "navbar_land_" : "navbar_") + currentIconIndex + ".png");
-        icon.getParentFile().mkdirs();
-        Log.d(TAG,"GetIcon:"+ icon.getAbsolutePath());
+
+    private Uri getExternalIconUri() {
+        File dir = mContext.getFilesDir();
+        // String dir = "/data/data/com.aokp.romcontrol/icons/";
+        File icon = new File(dir, "navbar_" + currentIconIndex
+                + ".png");
+
+        Log.d(TAG, "GetIcon:" + icon.getAbsolutePath());
         return Uri.fromFile(icon);
     }
-    
+
     private Uri getTempFileUri() {
-        //File dir = mContext.getFilesDir();
-        String dir = "/sdcard/data/com.aokp.romcontrol/temp/";
-        File wallpaper = new File(dir, "temp");
-        wallpaper.getParentFile().mkdirs();
-        Log.d(TAG,"GetTemp:"+ wallpaper.getAbsolutePath());
-        return Uri.fromFile(wallpaper);
+        return Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
+                "tmp_icon_" + currentIconIndex + ".png"));
+
     }
 
     @Override
@@ -798,7 +746,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         super.onResume();
         refreshSettings();
     }
-    
+
     public static class NavbarLayout extends ListFragment {
         private static final String TAG = "NavbarLayout";
 

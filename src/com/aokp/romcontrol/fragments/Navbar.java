@@ -506,7 +506,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                 Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
 
         if (uri == null)
-            return getResources().getDrawable(R.drawable.ic_null);
+            return getResources().getDrawable(R.drawable.ic_sysbar_null);
 
         if (uri.startsWith("**")) {
             if (uri.equals("**home**")) {
@@ -541,7 +541,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             }
         }
 
-        return getResources().getDrawable(R.drawable.ic_null);
+        return getResources().getDrawable(R.drawable.ic_sysbar_null);
     }
 
     private String getProperSummary(int i, boolean longpress) {

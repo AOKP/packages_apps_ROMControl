@@ -48,8 +48,25 @@
     <string name="navbar_order_title">Pořadí navigačních tlačítek</string>
     <string name="navbar_order_summary">Přizpůsobit pořadí tlačítek</string>
 
+    <string name="navbar_button_cat">Tlačítka navigační lišty</string>
+    
+    <string name="navbar_qty_title">Počet navigačních tlačítek</string>
+    <string name="navbar_qty_summary">Zvolit počet tlačítek v navigační liště</string>
+
     <string name="enabled_navbar_buttons_title">Povolená tlačítka</string>
     <string name="enabled_navbar_buttons_summary">Vybrat tlačítka, která se budou používat</string>
+    
+    <string name="navbar_action_title">Akce a ikona tlačítka %1$s</string>
+    <string name="navbar_longpress_title">Akce dlouhého stisknutí tlačítka %1$s</string>
+    
+    <string name="navbar_action_home">Domů</string>
+    <string name="navbar_action_back">Zpět</string>
+    <string name="navbar_action_recents">Přepínač aplikací</string>
+    <string name="navbar_action_search">Hledat</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_kill">Kilnout aplikaci</string>
+    <string name="navbar_action_power">Napájení</string>
+    <string name="navbar_action_none">Prázdné</string>
     
     <string name="button_transparency_title">Průhlednost navigační lišty</string>
     
@@ -69,7 +86,7 @@
 	<string name="custom_carrier_label_title">Vlastní název operátora</string>
 	<string name="longpress_to_kill_title">Podržet zpět pro ukončení</string>
 	<string name="longpress_to_kill_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
-  <string name="enable_volume_options">Zapnout nastavení hlasitosti</string>
+  <string name="enable_volume_options">Zapnout volby hlasitosti</string>
 	
 	<string name="rotate_180_title">Umožnit rotaci o 180°</string>
 	<string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>

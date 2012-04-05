@@ -308,4 +308,24 @@
 		<item>30 bodů</item>
 		<item>24 bodů</item>
 	</string-array>
+  
+  <string-array name="navigation_bar_qty_entries">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+  
+  <string-array name="navbar_button_entries">
+		<item>Domů</item>
+		<item>Zpět</item>
+		<item>Přepínač aplikací</item>
+		<item>Hledat</item>
+		<item>Menu</item>
+		<item>Kilnout aplikaci</item>
+		<item>Napájení</item>
+		<item>Vlastní aplikace</item>
+		<item>Prázdné</item>
+	</string-array>
 </resources>

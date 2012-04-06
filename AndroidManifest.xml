@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    coreApp="true"
-    package="com.aokp.romcontrol"
-    android:sharedUserId="android.uid.system" >
+    package="com.aokp.romcontrol" >
 
     <original-package android:name="com.aokp.romcontrol" />
 

@@ -294,7 +294,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             // intent.putExtra("return-data", false);
             intent.putExtra("spotlightX", spotlightX);
             intent.putExtra("spotlightY", spotlightY);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, getTempFileUri());
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getTempFile()));
             intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
 
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
@@ -417,7 +417,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private Uri getTempFileUri() {
         return Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
-                ".aokp"));
+                "aokp_tmp"));
+    }
+
+    private File getTempFile() {
+        return new File(Environment.getExternalStorageDirectory(), ".aokp_temp");
     }
 
     private Uri getIconUri() {
@@ -672,30 +676,33 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_WALLPAPER) {
 
+                File galleryImage = getTempFile();
                 String message = "";
                 FileOutputStream wallpaperStream = null;
                 try {
                     wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_WORLD_WRITEABLE);
+                            Context.MODE_WORLD_READABLE);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
                 }
 
-                // should use intent.getData() here but it keeps returning null
-                Uri selectedImageUri = getTempFileUri();
-                Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-                if (bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream)) {
+                Bitmap bitmap = BitmapFactory.decodeFile(galleryImage.getAbsolutePath());
+
+                if (bitmap == null) {
+                    message = "Wallpaper did not set (is your SD mounted?)";
+                } else if (bitmap != null
+                        && bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream)) {
                     message = "Wallpaper set successfully";
                 } else {
-                    message = "Wallpaper did not set (is your SD mounted?)";
+                    // shouldn't get here, but let's leave it just in case
+                    message = "Wallpaepr did not set (!!!)";
                 }
                 Toast.makeText(getActivity(), message,
                         Toast.LENGTH_SHORT).show();
 
-                File f = new File(selectedImageUri.getPath());
-                if (f.exists())
-                    f.delete();
+                // go ahead and clean up if it was successful or not
+                if (galleryImage.exists())
+                    galleryImage.delete();
 
             } else if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
                     || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION

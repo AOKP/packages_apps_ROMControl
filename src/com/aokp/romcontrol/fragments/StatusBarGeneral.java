@@ -13,8 +13,7 @@ import android.util.Log;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-
-import java.io.IOException;
+import com.aokp.romcontrol.util.Helpers;
 
 public class StatusBarGeneral extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -133,20 +132,13 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_TRANSPARENCY, val);
-            restartSystemUI();
+            Helpers.restartSystemUI();
         } else if (preference == mLayout) {
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_LAYOUT, val);
-            restartSystemUI();
+            Helpers.restartSystemUI();
         }
         return result;
-    }
-    private void restartSystemUI() {
-        try {
-            Runtime.getRuntime().exec("pkill -TERM -f  com.android.systemui");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

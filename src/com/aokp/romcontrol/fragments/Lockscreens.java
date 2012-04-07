@@ -424,13 +424,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         return new File(Environment.getExternalStorageDirectory(), ".aokp_temp");
     }
 
-    private Uri getIconUri() {
-        File dir = mContext.getFilesDir();
-        File icon = new File(dir, "icon_" + currentIconIndex + ".png");
-
-        return Uri.fromFile(icon);
-    }
-
     public void refreshSettings() {
 
         int lockscreenTargets = Settings.System.getInt(getContentResolver(),
@@ -494,7 +487,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     intent.putExtra("outputY", height);
                     intent.putExtra("scale", true);
                     // intent.putExtra("return-data", false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getTempFileUri());
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getTempFile()));
                     intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
 
                     Log.i(TAG, "started for result, should output to: " + getTempFileUri());
@@ -505,11 +498,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
             String customIconUri = Settings.System.getString(getContentResolver(),
                     Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[i]);
-            if (customIconUri != null && customIconUri.length() > 0) {
-                File f = new File(Uri.parse(customIconUri).getPath());
-                if (f.exists())
-                    p.setIcon(new BitmapDrawable(res, f.getAbsolutePath()));
-            }
+            Log.i(TAG, "customIconUri: " + customIconUri);
 
             if (customIconUri != null && !customIconUri.equals("")
                     && customIconUri.startsWith("file")) {
@@ -711,27 +700,25 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
             } else if (requestCode == REQUEST_PICK_CUSTOM_ICON) {
 
-                String iconName = "icon_" + currentIconIndex + ".png";
+                File galleryImage = getTempFile();
+                String iconName = "lockscreen_icon_" + currentIconIndex + ".png";
                 FileOutputStream iconStream = null;
                 try {
-                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_WRITEABLE);
+                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
                 }
 
-                Uri selectedImageUri = getTempFileUri();
-                Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-                if (bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream)) {
+                Bitmap bitmap = BitmapFactory.decodeFile(galleryImage.getAbsolutePath());
+                if (bitmap != null && bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream)) {
 
                     Settings.System.putString(getContentResolver(),
                             Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[currentIconIndex],
                             Uri.fromFile(
-                                    new File(mContext.getFilesDir(), iconName)).getPath());
+                                    new File(mContext.getFilesDir(), iconName)).toString());
 
-                    File f = new File(selectedImageUri.getPath());
-                    if (f.exists())
-                        f.delete();
+                    if (galleryImage.exists())
+                        galleryImage.delete();
 
                     Toast.makeText(getActivity(), currentIconIndex + "'s icon set successfully!",
                             Toast.LENGTH_SHORT).show();

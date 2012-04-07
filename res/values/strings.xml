@@ -19,7 +19,10 @@
     <string name="tools">Tools</string>
     <string name="weather">Weather</string>
     <string name="signal">Signal</string>
-    
+
+    <string name="dummy">Adding some strings!</string>
+    <string name="dummy1">I really needed to add this second string for some reason</string>
+
     <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
     <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order</string>

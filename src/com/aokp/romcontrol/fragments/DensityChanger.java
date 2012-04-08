@@ -1,7 +1,6 @@
 
 package com.aokp.romcontrol.fragments;
 
-import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
@@ -9,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.IPackageDataObserver;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
@@ -24,9 +24,10 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.util.CMDProcessor;
-import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.CMDProcessor;
+import com.aokp.romcontrol.util.CMDProcessor.CommandResult;
+import com.aokp.romcontrol.util.Helpers;
 
 public class DensityChanger extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -98,10 +99,7 @@ public class DensityChanger extends AOKPPreferenceFragment implements
 
         } else if (preference == mClearMarketData) {
 
-            ActivityManager am = (ActivityManager)
-                    getActivity().getSystemService(Context.ACTIVITY_SERVICE);
-            boolean res = am.clearApplicationUserData("com.android.vending",
-                    new ClearUserDataObserver());
+            new ClearMarketDataTask().execute("");
             return true;
 
         } else if (preference == mOpenMarket) {
@@ -225,6 +223,31 @@ public class DensityChanger extends AOKPPreferenceFragment implements
     class ClearUserDataObserver extends IPackageDataObserver.Stub {
         public void onRemoveCompleted(final String packageName, final boolean succeeded) {
             mHandler.sendEmptyMessage(MSG_DATA_CLEARED);
+        }
+    }
+
+    private class ClearMarketDataTask extends AsyncTask<String, Void, Boolean> {
+        protected Boolean doInBackground(String... stuff) {
+            String vending = "/data/data/com.android.vending/";
+            CommandResult cr = new CMDProcessor().su.runWaitFor("ls " + vending);
+
+            if (cr.stdout == null)
+                return false;
+
+            for (String dir : cr.stdout.split("\n")) {
+                if (!dir.equals("lib")) {
+                    String c = "rm -r " + vending + dir;
+                    // Log.i(TAG, c);
+                    if (!new CMDProcessor().su.runWaitFor(c).success())
+                        return false;
+                }
+            }
+            return true;
+        }
+
+        protected void onPostExecute(Boolean result) {
+            mClearMarketData.setSummary(result ? "Market data cleared."
+                    : "Market data couldn't be cleared, please clear it yourself!");
         }
     }
 }

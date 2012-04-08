@@ -1,0 +1,9 @@
+Change-Id: I1f652a6c352dbe84777a7673316a4fdecbcd14f7
+Code-Review+2: Roman Birg <romanbirg@gmail.com>
+Verified+1: Roman Birg <romanbirg@gmail.com>
+Code-Review+1: Khas Mek <boushh@gmail.com>
+Submitted-by: Roman Birg <romanbirg@gmail.com>
+Submitted-at: Sun, 08 Apr 2012 15:57:54 -0400
+Reviewed-on: http://gerrit.sudoservers.com/77
+Project: AOKP/packages_apps_ROMControl
+Branch: refs/heads/ics

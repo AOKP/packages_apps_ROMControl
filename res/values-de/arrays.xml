@@ -56,14 +56,14 @@
 		<item>WLAN ausschalten</item>
 		<item>WLAN anschalten</item>
 	</string-array>
-	
+
 	<string-array name="powersaving_sync_data_mode_entries">
 		<item>Nicht ändern</item>
 		<item>Nur WLAN</item>
 		<item>Bevorzugt WLAN</item>
 		<item>Nur Mobile Daten</item>
 	</string-array>
-	
+
 	<string-array name="powersaving_sync_data_mobile_mode_entries">
 		<item>Nur 2G</item>
 		<item>3G bezorzugen</item>
@@ -95,6 +95,20 @@
 		<item>Standardverhalten von ICS, aber unsichtbare Icons statt ausgeblendet</item>
 	</string-array>
 
+	<string-array name="statusbar_transparency_entries">
+		<item>No transparency</item>
+		<item>25%</item>
+		<item>50%</item>
+		<item>75%</item>
+		<item>Full transparency</item>
+	</string-array>
+
+	<string-array name="statusbar_layout_entries">
+		<item>Regular layout</item>
+		<item>Reversed</item>
+		<item>Traditional</item>
+	</string-array>
+
 	<!-- clock stuff -->
 	<string-array name="clock_style_entries">
 		<item>Uhr Rechts</item>
@@ -108,6 +122,12 @@
 		<item>Normales AM/PM</item>
 	</string-array>
 
+	<string-array name="clock_weekday_entries">
+		<item>Nicht anzeigen</item>
+		<item>Wochentag klein</item>
+		<item>Wochentag normal</item>
+	</string-array>
+
 	<!-- Toggles -->
 	<string-array name="brightness_location_entries">
 		<item>Oben</item>
@@ -115,9 +135,21 @@
 		<item>Nicht anzeigen</item>
 	</string-array>
 
+	<!-- animation rotation -->
+	<string-array name="rotation_animation_delay_entries">
+		<item>10 ms</item>
+		<item>25 ms</item>
+		<item>50 ms</item>
+		<item>75 ms</item>
+		<item>100 ms</item>
+		<item>150 ms</item>
+		<item>200 ms</item>
+		<item>250 ms</item>
+		<item>300 ms</item>
+	</string-array>
+
 	<!-- toggle style -->
 	<string-array name="toggle_style_entries">
-		<item>Kein Icon, kein Text</item>
 		<item>Nur Icon</item>
 		<item>Nur Text</item>
 	</string-array>
@@ -126,13 +158,36 @@
 	<string-array name="long_press_home_entries">
 		<item>Nichts tun</item>
 		<item>Show recents</item>
+		<item>Kamera</item>
+		<item>Benutzer Anwendung</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
 		<item>Standard</item>
 		<item>Vierfach</item>
-        <item>Achtfach</item>
+		<item>Achtfach</item>
 		<item>AOSP</item>
+		<item>Honeycomb</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_interval_entries">
+		<item>1 Sekunde</item>
+		<item>1.5 Sekunden</item>
+        	<item>2 Sekunden</item>
+	        <item>2.5 Sekunden</item>
+	        <item>3 Sekunden</item>
+	        <item>3.5 Sekunden</item>
+	        <item>4 Sekunden</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_range_entries">
+		<item>1 Tag</item>
+		<item>2 Tage</item>
+        	<item>3 Tage</item>
+        	<item>4 Tage</item>
+        	<item>5 Tage</item>
+        	<item>6 Tage</item>
+        	<item>1 Woche</item>
 	</string-array>
 
 	<string-array name="battery_icon_entries">
@@ -155,7 +210,7 @@
 		<item>Normal</item>
 		<item>Mittig</item>
 	</string-array>
-	
+
 	<string-array name="available_toggles_values"> <!-- Will possibly be fixed/renamed to ..._entries in future version -->
 		<item>Automatisch drehen</item>
 		<item>Bluetooth</item>
@@ -178,7 +233,7 @@
 		<item>Benutzerdefinierte App</item>
 		<item>Leer</item>
 	</string-array>
-	
+
 	<string-array name="glow_times_entries">
 		<item>Aus</item>
 		<item>Sehr schnell</item>
@@ -216,9 +271,48 @@
 		<item>8 Stunden</item>
 	</string-array>
 
+
 	<string-array name="signal_style_entries">
 		<item>Empfangsbalken anzeigen</item>
 		<item>Als Text anzeigen</item>
 		<item>Als Text mit dBm anzeigen</item>
+	</string-array>
+
+	<string-array name="wifi_signal_style_entries">
+		<item>Zeige Signal als Empfangsbalken</item>
+		<item>Zeige Signal als Text</item>
+	</string-array>
+
+	<string-array name="weather_statusbar_location_entries">
+		<item>Über Carrier-Text</item>
+		<item>Wetterleiste</item>
+		<item>Deaktivert</item>
+	</string-array>
+
+	<string-array name="navigation_bar_width_entries">
+		<item>42 dp (Standard)</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+
+	<string-array name="navigation_bar_height_entries">
+		<item>48 dp (Standard)</item>
+		<item>42 dp</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+
+	<string-array name="navbar_button_entries">
+		<item>Home</item>
+		<item>Zurück</item>
+		<item>kürzlich Verwendet</item>
+		<item>Suche</item>
+		<item>Menü</item>
+		<item>Task beenden</item>
+		<item>Power</item>
+		<item>Benutzerdefinierte Anwendung</item>
+		<item>Leer</item>
 	</string-array>
 </resources>

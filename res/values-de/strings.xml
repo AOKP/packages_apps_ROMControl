@@ -337,6 +337,6 @@
     <string name="aokp_website_title">AOKP Webseite</string>
 <string name="aokp_source_summary">AOKP ist vollständig Open Source. Die neuste Version findest Du immer unter github.com/aokp</string>
     <string name="aokp_irc_title">Tritt unserem IRC-Channel bei</string>
-<string name="about_aokp">Über AOKP</string>
+    <string name="about_aokp">Über AOKP</string>
     <string name="about_aokp_summary">@null</string>
 </resources>

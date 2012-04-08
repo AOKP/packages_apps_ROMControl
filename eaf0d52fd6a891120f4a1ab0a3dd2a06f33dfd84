@@ -1,0 +1,10 @@
+Change-Id: Ieaf0d52fd6a891120f4a1ab0a3dd2a06f33dfd84
+Code-Review+2: Roman Birg <romanbirg@gmail.com>
+Verified+1: Roman Birg <romanbirg@gmail.com>
+Code-Review+1: Gergely Szell <sethyx@gmail.com>
+Verified+1: Gergely Szell <sethyx@gmail.com>
+Submitted-by: Roman Birg <romanbirg@gmail.com>
+Submitted-at: Sun, 08 Apr 2012 13:18:18 -0400
+Reviewed-on: http://gerrit.sudoservers.com/66
+Project: AOKP/packages_apps_ROMControl
+Branch: refs/heads/ics

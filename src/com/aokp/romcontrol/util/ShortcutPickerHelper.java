@@ -15,6 +15,8 @@
  */
 
 package com.aokp.romcontrol.util;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -22,13 +24,14 @@ import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 
 import com.aokp.romcontrol.R;
-
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-
 public class ShortcutPickerHelper {
 
     private Fragment mParent;
@@ -39,7 +42,15 @@ public class ShortcutPickerHelper {
     public static final int REQUEST_CREATE_SHORTCUT = 102;
 
     public interface OnPickListener {
-        void shortcutPicked(String uri, String friendlyName, boolean isApplication);
+        /**
+         * Callback after a shortcut is picked
+         * 
+         * @param uri Intent for the shortcut
+         * @param friendlyName Title
+         * @param icon Icon for the shortcut, or null
+         * @param isApplication true for standard app, false for "shortcut"
+         */
+        void shortcutPicked(String uri, String friendlyName, Bitmap icon, boolean isApplication);
     }
 
     public ShortcutPickerHelper(Fragment parent, OnPickListener listener) {
@@ -101,7 +112,7 @@ public class ShortcutPickerHelper {
     }
 
     private void completeSetCustomApp(Intent data) {
-        mListener.shortcutPicked(data.toUri(0), getFriendlyActivityName(data, false), true);
+        mListener.shortcutPicked(data.toUri(0), getFriendlyActivityName(data, false), null, true);
     }
 
     private void completeSetCustomShortcut(Intent data) {
@@ -111,7 +122,26 @@ public class ShortcutPickerHelper {
         String appUri = intent.toUri(0);
         appUri = appUri.replaceAll("com.android.contacts.action.QUICK_CONTACT",
                 "android.intent.action.VIEW");
-        mListener.shortcutPicked(appUri, getFriendlyShortcutName(intent), false);
+        /* Try to get the icon (if any) */
+        Bitmap bmp = null;
+        Parcelable extra = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON);
+        if (extra != null && extra instanceof Bitmap)
+            bmp = (Bitmap) extra;
+        if (bmp == null) {
+            extra = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE);
+            if (extra != null && extra instanceof Intent.ShortcutIconResource) {
+                try {
+                    Intent.ShortcutIconResource iconResource = (ShortcutIconResource) extra;
+                    final PackageManager packageManager = mParent.getActivity().getPackageManager();
+                    Resources resources = packageManager.getResourcesForApplication(iconResource.packageName);
+                    final int id = resources.getIdentifier(iconResource.resourceName, null, null);
+                    bmp = BitmapFactory.decodeResource(resources, id);
+                } catch (Exception e) {
+                    Log.w("ROMControl.ShortcutPicker", "Could not load shortcut icon: " + extra);
+                }
+            }
+        }
+        mListener.shortcutPicked(appUri, getFriendlyShortcutName(intent), bmp, false);
     }
 
     private String getFriendlyActivityName(Intent intent, boolean labelOnly) {

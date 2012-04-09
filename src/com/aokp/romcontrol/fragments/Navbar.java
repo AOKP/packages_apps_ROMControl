@@ -396,7 +396,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON)
                     || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
 
-                String iconName = "navbar_icon_" + mPendingIconIndex + ".png";
+                String iconName = getIconFileName(mPendingIconIndex);
                 FileOutputStream iconStream = null;
                 try {
                     iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
@@ -613,14 +613,28 @@ public class Navbar extends AOKPPreferenceFragment implements
     }
 
     @Override
-    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+    public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
         if (Settings.System.putString(getActivity().getContentResolver(),
-        		mPendingNavBarCustomAction.activitySettingName, uri)) {
-
-            if (mPendingNavBarCustomAction.iconIndex != -1)
-            	Settings.System.putString(getContentResolver(),
-            			Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
-
+                mPendingNavBarCustomAction.activitySettingName, uri)) {
+            if (mPendingNavBarCustomAction.iconIndex != -1) {
+                if (bmp == null) {
+                    Settings.System.putString(getContentResolver(),
+                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
+                } else {
+                    String iconName = getIconFileName(mPendingNavBarCustomAction.iconIndex);
+                    FileOutputStream iconStream = null;
+                    try {
+                        iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
+                    } catch (FileNotFoundException e) {
+                        return; // NOOOOO
+                    }
+                    bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                    Settings.System.putString(
+                            getContentResolver(),
+                            Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex],
+                            Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
+                }
+            }
             mPendingNavBarCustomAction.preference.setSummary(friendlyName);
         }
     }
@@ -629,6 +643,10 @@ public class Navbar extends AOKPPreferenceFragment implements
         return Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
                 "tmp_icon_" + mPendingIconIndex + ".png"));
 
+    }
+
+    private String getIconFileName(int index) {
+        return "navbar_icon_" + index + ".png";
     }
 
     @Override

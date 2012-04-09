@@ -424,6 +424,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         return new File(Environment.getExternalStorageDirectory(), ".aokp_temp");
     }
 
+    private String getIconFileName(int index) {
+        return "lockscreen_icon_" + index + ".png";
+    }
+
     public void refreshSettings() {
 
         int lockscreenTargets = Settings.System.getInt(getContentResolver(),
@@ -594,16 +598,33 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     }
 
     @Override
-    public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
+    public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
         if (Settings.System.putString(getActivity().getContentResolver(),
                 mCurrentCustomActivityString, uri)) {
 
             String i = mCurrentCustomActivityString.substring(mCurrentCustomActivityString
                     .lastIndexOf("_") + 1);
+            int index = Integer.parseInt(i);
             Log.i(TAG, "shortcut picked, index: " + i);
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[Integer.parseInt(i)], "");
+            if (bmp == null) {
+                Settings.System.putString(getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[index], "");
+            } else {
+                String iconName = getIconFileName(index);
+                FileOutputStream iconStream = null;
+                try {
+                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
+                }
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                Settings.System.putString(
+                        getContentResolver(),
+                        Settings.System.LOCKSCREEN_CUSTOM_APP_ICONS[index],
+                        Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
+            }
             mCurrentCustomActivityPreference.setSummary(friendlyName);
+            refreshSettings();
         }
     }
 
@@ -701,7 +722,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             } else if (requestCode == REQUEST_PICK_CUSTOM_ICON) {
 
                 File galleryImage = getTempFile();
-                String iconName = "lockscreen_icon_" + currentIconIndex + ".png";
+                String iconName = getIconFileName(currentIconIndex);
                 FileOutputStream iconStream = null;
                 try {
                     iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);

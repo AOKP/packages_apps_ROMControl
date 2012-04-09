@@ -80,11 +80,15 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarWidth;
 
-    String mCustomAppString;
 
-    private int currentIconIndex;
-    private Preference mCurrentCustomActivityPreference;
-    private String mCurrentCustomActivityString;
+    private int mPendingIconIndex = -1;
+    private NavBarCustomAction mPendingNavBarCustomAction = null;
+
+    private static class NavBarCustomAction {
+        String activitySettingName;
+        Preference preference;
+        int iconIndex = -1;
+    }
 
     private ShortcutPickerHelper mPicker;
 
@@ -315,22 +319,27 @@ public class Navbar extends AOKPPreferenceFragment implements
                     preference.getKey().lastIndexOf("_") + 1));
 
             if (newValue.equals("**app**")) {
-                mCurrentCustomActivityPreference = preference;
-                if (longpress)
-                    mCurrentCustomActivityString = Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index];
-                else
-                    mCurrentCustomActivityString = Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index];
+                mPendingNavBarCustomAction = new NavBarCustomAction();
+                mPendingNavBarCustomAction.preference = preference;
+                if (longpress) {
+                    mPendingNavBarCustomAction.activitySettingName = Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index];
+                    mPendingNavBarCustomAction.iconIndex = -1;
+                } else {
+                    mPendingNavBarCustomAction.activitySettingName = Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index];
+                    mPendingNavBarCustomAction.iconIndex = index;
+                }
                 mPicker.pickShortcut();
             } else {
                 if (longpress) {
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index],
-                            (String) newValue);
+                        Settings.System.NAVIGATION_LONGPRESS_ACTIVITIES[index],
+                        (String) newValue);
                 } else {
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index], (String) newValue);
+                        Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index],
+                        (String) newValue);
                     Settings.System.putString(getContentResolver(),
-                            Settings.System.NAVIGATION_CUSTOM_APP_ICONS[index], "");
+                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[index], "");
                 }
             }
             refreshSettings();
@@ -387,7 +396,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON)
                     || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
 
-                String iconName = "navbar_icon_" + currentIconIndex + ".png";
+                String iconName = "navbar_icon_" + mPendingIconIndex + ".png";
                 FileOutputStream iconStream = null;
                 try {
                     iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
@@ -402,7 +411,7 @@ public class Navbar extends AOKPPreferenceFragment implements
 
                 Settings.System.putString(
                         getContentResolver(),
-                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[currentIconIndex],
+                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex],
                         Uri.fromFile(
                                 new File(mContext.getFilesDir(), iconName)).getPath());
 
@@ -410,7 +419,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                 if (f.exists())
                     f.delete();
 
-                Toast.makeText(getActivity(), currentIconIndex + "'s icon set successfully!",
+                Toast.makeText(getActivity(), mPendingIconIndex + "'s icon set successfully!",
                         Toast.LENGTH_LONG).show();
                 refreshSettings();
 
@@ -464,7 +473,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             pAction.setImageListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    currentIconIndex = index;
+                    mPendingIconIndex = index;
                     int width = 100;
                     int height = width;
 
@@ -606,23 +615,19 @@ public class Navbar extends AOKPPreferenceFragment implements
     @Override
     public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
         if (Settings.System.putString(getActivity().getContentResolver(),
-                mCurrentCustomActivityString, uri)) {
+        		mPendingNavBarCustomAction.activitySettingName, uri)) {
 
-            String i = mCurrentCustomActivityString.substring(mCurrentCustomActivityString
-                    .lastIndexOf("_") + 1);
-            Log.i(TAG, "shortcut picked, index: " + i);
-            Log.i(TAG, uri);
+            if (mPendingNavBarCustomAction.iconIndex != -1)
+            	Settings.System.putString(getContentResolver(),
+            			Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
 
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[Integer.parseInt(i)], "");
-
-            mCurrentCustomActivityPreference.setSummary(friendlyName);
+            mPendingNavBarCustomAction.preference.setSummary(friendlyName);
         }
     }
 
     private Uri getTempFileUri() {
         return Uri.fromFile(new File(Environment.getExternalStorageDirectory(),
-                "tmp_icon_" + currentIconIndex + ".png"));
+                "tmp_icon_" + mPendingIconIndex + ".png"));
 
     }
 

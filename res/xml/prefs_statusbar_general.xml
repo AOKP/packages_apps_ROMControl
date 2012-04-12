@@ -17,6 +17,10 @@
         android:key="status_bar_brightness_toggle"
         android:title="@string/title_status_bar_brightness_toggle"
         android:summary="@string/summary_status_bar_brightness_toggle" />
+    
+    <com.aokp.romcontrol.widgets.SeekBarPreference
+			android:key="icon_transparency"
+			android:title="@string/icon_transparency_title" />
 
     <CheckBoxPreference 
         android:key="adb_icon" 

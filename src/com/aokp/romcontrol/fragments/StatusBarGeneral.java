@@ -14,6 +14,7 @@ import android.util.Log;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.Helpers;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 public class StatusBarGeneral extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -21,6 +22,7 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
     private static final String PREF_SETTINGS_BUTTON_BEHAVIOR = "settings_behavior";
     private static final String PREF_AUTO_HIDE_TOGGLES = "auto_hide_toggles";
     private static final String PREF_BRIGHTNESS_TOGGLE = "status_bar_brightness_toggle";
+    private static final String PREF_ICON_TRANSPARENCY = "status_bar_icon_transparency";
     private static final String PREF_ADB_ICON = "adb_icon";
     private static final String PREF_TRANSPARENCY = "status_bar_transparency";
     private static final String PREF_LAYOUT = "status_bar_layout";
@@ -28,6 +30,7 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
     CheckBoxPreference mDefaultSettingsButtonBehavior;
     CheckBoxPreference mAutoHideToggles;
     CheckBoxPreference mStatusBarBrightnessToggle;
+    SeekBarPreference mIconAlpha;
     CheckBoxPreference mAdbIcon;
     ListPreference mTransparency;
     ListPreference mLayout;
@@ -57,6 +60,13 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
         mStatusBarBrightnessToggle.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE,
                 0) == 1);
+        
+        float defaultAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.STATUS_BAR_ICON_TRANSPARENCY,
+                0.55f);
+        mIconAlpha = (SeekBarPreference) findPreference("icon_transparency");
+        mIconAlpha.setInitValue((int) (defaultAlpha * 100));
+        mIconAlpha.setOnPreferenceChangeListener(this);
 
         mAdbIcon = (CheckBoxPreference) findPreference(PREF_ADB_ICON);
         mAdbIcon.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
@@ -138,6 +148,12 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_LAYOUT, val);
             Helpers.restartSystemUI();
+        } else if (preference == mIconAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_ICON_TRANSPARENCY,
+                    val / 100);
+            return true;
         }
         return result;
     }

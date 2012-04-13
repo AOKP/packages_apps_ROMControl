@@ -317,6 +317,11 @@
 	<string name="weather_use_celcius">Metric units</string>
 	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
 	<string name="weather_statusbar_style">Statusbar weather style</string>
+        <string name="weather_start_custom_app">Start custom app</string>
+        <string name="weather_start_custom_app_summary">Start a custom app when clicking on the weather image.</string>
+        <string name="weather_custom_app_title">Custom app</string>
+        <string name="weather_custom_app_dialog_title">Choose your app</string>
+	<string name="weather_custom_app_dialog_message">Package name for now.</string>
 	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>

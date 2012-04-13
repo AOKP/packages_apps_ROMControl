@@ -1,6 +1,7 @@
 
 package com.aokp.romcontrol.fragments;
 
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -23,14 +24,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.graphics.Bitmap;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.service.WeatherRefreshService;
 import com.aokp.romcontrol.service.WeatherService;
 import com.aokp.romcontrol.util.WeatherPrefs;
+import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.R;
 
-public class Weather extends AOKPPreferenceFragment implements OnPreferenceChangeListener {
+public class Weather extends AOKPPreferenceFragment implements
+        ShortcutPickerHelper.OnPickListener,  OnPreferenceChangeListener {
 
     public static final String TAG = "Weather";
 
@@ -41,6 +45,10 @@ public class Weather extends AOKPPreferenceFragment implements OnPreferenceChang
     ListPreference mStatusBarLocation;
     ListPreference mWeatherSyncInterval;
     EditTextPreference mCustomWeatherLoc;
+    CheckBoxPreference mUseCustomApp;
+    Preference mCustomWeatherApp;
+
+    private ShortcutPickerHelper mPicker;
 
     SharedPreferences prefs;
 
@@ -52,6 +60,8 @@ public class Weather extends AOKPPreferenceFragment implements OnPreferenceChang
         addPreferencesFromResource(R.xml.prefs_weather);
 
         prefs = getActivity().getSharedPreferences("weather", Context.MODE_PRIVATE);
+
+        mPicker = new ShortcutPickerHelper(this, this);
 
         mWeatherSyncInterval = (ListPreference) findPreference("refresh_interval");
         mWeatherSyncInterval.setOnPreferenceChangeListener(this);
@@ -81,6 +91,13 @@ public class Weather extends AOKPPreferenceFragment implements OnPreferenceChang
 
         mUseCelcius = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CELCIUS);
         mUseCelcius.setChecked(WeatherPrefs.getUseCelcius(mContext));
+
+        mUseCustomApp = (CheckBoxPreference) findPreference(WeatherPrefs.KEY_USE_CUSTOM_APP);
+        mUseCustomApp.setChecked(WeatherPrefs.getUseCustomApp(mContext));
+
+        mCustomWeatherApp = (Preference) findPreference(WeatherPrefs.KEY_CUSTOM_APP);
+        mCustomWeatherApp.setOnPreferenceChangeListener(this);
+        mCustomWeatherApp.setSummary(mPicker.getFriendlyNameForUri(WeatherPrefs.getCustomApp(mContext)));
 
         setHasOptionsMenu(true);
 
@@ -172,6 +189,13 @@ public class Weather extends AOKPPreferenceFragment implements OnPreferenceChang
         } else if (preference == mUseCelcius) {
             return WeatherPrefs.setUseCelcius(mContext,
                     ((CheckBoxPreference) preference).isChecked());
+        } else if (preference == mUseCustomApp) {
+            return WeatherPrefs.setUseCustomApp(mContext,
+                    ((CheckBoxPreference) preference).isChecked());
+        } else if (preference == mCustomWeatherApp) {
+            mPicker.pickShortcut();
+            return true;
+
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -202,6 +226,27 @@ public class Weather extends AOKPPreferenceFragment implements OnPreferenceChang
                     Integer.parseInt(newVal));
         }
         return false;
+    }
+
+    @Override
+    public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
+
+        if (WeatherPrefs.setCustomApp(mContext, uri)) {
+
+            mCustomWeatherApp.setSummary(friendlyName);
+
+        }
+    }
+    
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
+                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
+                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
+                mPicker.onActivityResult(requestCode, resultCode, data);
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
 }

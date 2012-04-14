@@ -9,13 +9,13 @@
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>LTE ausschalten</item>
 		<item>Mobile Daten ausschalten</item>
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>Mobile Daten ausschalten</item>
 		<item>In 2G-Modus wechseln</item>
 	</string-array>
@@ -46,7 +46,7 @@
 	</string-array>
 
 	<string-array name="pref_powersaving_sync_screen_off_entries">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>Autosync ausschalten</item>
 		<item>Autosync mit Verzögerung ausschalten</item>
 	</string-array>
@@ -66,7 +66,7 @@
 	
 	<string-array name="powersaving_sync_data_mobile_mode_entries">
 		<item>Nur 2G</item>
-		<item>3G bezorzugen</item>
+		<item>3G bevorzugen</item>
 	</string-array>
 	
 	<string-array name="led_entries">
@@ -90,9 +90,23 @@
 
 	<string-array name="pref_navigation_menu_display_entries">
 		<item>Standardverhalten von ICS</item>
-		<item>Immer unsichtbare Icons zeigen</item>
+		<item>Immer unsichtbare Icons anzeigen</item>
 		<item>Immer anzeigen</item>
-		<item>Standardverhalten von ICS, aber unsichtbare Icons statt ausgeblendet</item>
+		<item>Standardverhalten von ICS mit unsichtbaren Icons wenn versteckt</item>
+	</string-array>
+
+<string-array name="statusbar_transparency_entries">
+		<item>Keine Transparenz</item>
+		<item>25%</item>
+		<item>50%</item>
+		<item>75%</item>
+		<item>Volle Transparenz</item>
+	</string-array>
+
+<string-array name="statusbar_layout_entries">
+		<item>Normales Layout</item>
+		<item>Umgekehrt</item>
+		<item>Traditionell</item>
 	</string-array>
 
 	<!-- clock stuff -->
@@ -104,12 +118,18 @@
 
 	<string-array name="clock_ampm_entries">
 		<item>Nicht anzeigen</item>
-		<item>Kleines AM/PM</item>
+		<item>Kurzes AM/PM</item>
 		<item>Normales AM/PM</item>
 	</string-array>
 
+<string-array name="clock_weekday_entries">
+		<item>Nicht anzeigen</item>
+		<item>Kurzer Wochentag</item>
+		<item>Normaler Wochentag</item>
+	</string-array>
+
 	<!-- Toggles -->
-	<string-array name="brightness_location_entries">
+		<string-array name="brightness_location_entries">
 		<item>Oben</item>
 		<item>Unten</item>
 		<item>Nicht anzeigen</item>
@@ -117,22 +137,44 @@
 
 	<!-- toggle style -->
 	<string-array name="toggle_style_entries">
-		<item>Kein Icon, kein Text</item>
 		<item>Nur Icon</item>
 		<item>Nur Text</item>
 	</string-array>
 
 	<!-- long press home -->
 	<string-array name="long_press_home_entries">
-		<item>Nichts tun</item>
-		<item>Show recents</item>
+		<item>Keine Aktion</item>
+		<item>Zeige Kürzliche</item>
+		<item>Kamera</item>
+		<item>Eigene App</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
 		<item>Standard</item>
 		<item>Vierfach</item>
-        <item>Achtfach</item>
+        	<item>Achtfach</item>
 		<item>AOSP</item>
+		<item>Honeycomb</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_interval_entries">
+		<item>1 Sekunde</item>
+		<item>1.5 Sekunden</item>
+		<item>2 Sekunden</item>
+		<item>2.5 Sekunden</item>
+		<item>3 Sekunden</item>
+		<item>3.5 Sekunden</item>
+		<item>4 Sekunden</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_range_entries">
+		<item>1 Tag</item>
+		<item>2 Tage</item>
+		<item>3 Tage</item>
+		<item>4 Tage</item>
+		<item>5 Tage</item>
+		<item>6 Tage</item>
+		<item>1 Woche</item>
 	</string-array>
 
 	<string-array name="battery_icon_entries">
@@ -157,7 +199,7 @@
 	</string-array>
 	
 	<string-array name="available_toggles_values"> <!-- Will possibly be fixed/renamed to ..._entries in future version -->
-		<item>Automatisch drehen</item>
+		<item>Automatisch rotieren</item>
 		<item>Bluetooth</item>
 		<item>GPS</item>
 		<item>WLAN</item>
@@ -178,32 +220,15 @@
 		<item>Benutzerdefinierte App</item>
 		<item>Leer</item>
 	</string-array>
-	
 	<string-array name="glow_times_entries">
 		<item>Aus</item>
 		<item>Sehr schnell</item>
 		<item>Schnell</item>
 		<item>Normal</item>
 	</string-array>
-
-	<string-array name="lcd_density_entries">
-		<item>160</item>
-		<item>180</item>
-		<item>200</item>	
-		<item>220</item>
-		<item>240</item>
-		<item>241</item>
-		<item>260</item>
-		<item>280</item>
-		<item>300</item>
-		<item>320</item>
-		<item>340</item>
-		<item>Benutzerdefiniert</item>
-	</string-array>
-	
 	<string-array name="weather_interval_entries">
 		<item>Aus</item>
-		<item>1 Minuten</item>
+		<item>1 Minute</item>
 		<item>5 Minuten</item>
 		<item>10 Minuten</item>
 		<item>30 Minuten</item>
@@ -220,5 +245,26 @@
 		<item>Empfangsbalken anzeigen</item>
 		<item>Als Text anzeigen</item>
 		<item>Als Text mit dBm anzeigen</item>
+	</string-array>
+
+<string-array name="weather_statusbar_location_entries">
+		<item>Über dem Anbieter-Text</item>
+		<item>Wetter-Leiste</item>
+		<item>Deaktiviert</item>
+	</string-array>
+
+<string-array name="navigation_bar_width_entries">
+		<item>42 dp (Standard)</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
+	</string-array>
+
+<string-array name="navigation_bar_height_entries">
+		<item>48 dp (Standard)</item>
+		<item>42 dp</item>
+		<item>36 dp</item>
+		<item>30 dp</item>
+		<item>24 dp</item>
 	</string-array>
 </resources>

@@ -208,6 +208,24 @@
 		<item>25</item>
 		<item>0</item>
 	</string-array>
+	
+	<string-array name="statusbar_fontsize_entries">
+		<item>8dp</item>
+		<item>12dp</item>
+		<item>14dp</item>
+		<item>16dp(Default)</item>
+		<item>20dp</item>
+		<item>24dp</item>
+	</string-array>
+	
+	<string-array name="statusbar_fontsize_values">
+		<item>8</item>		
+		<item>12</item>
+		<item>14</item>
+		<item>16</item>
+		<item>20</item>
+		<item>24</item>
+	</string-array>
 
 	<string-array name="statusbar_layout_entries">
 		<item>Regular layout</item>

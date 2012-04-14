@@ -209,7 +209,7 @@
     <string name="powersaver_sync_cat">Synchronizace</string>
     
     <string name="screen_off_wifi_action">Wi-Fi při vypnuté obrazovce</string>
-    <string name="sync_data_usage">Datové spojení pro synchronizaci</string>
+    <string name="sync_data_usage">Datové spojení pro synchronizaci</string> 
     <string name="sync_mobile_data_preference">Mobilní data pro synchronizaci</string>
     <!--  LED -->
     <string name="title_led_on">Doba svícení LEDky</string>
@@ -229,6 +229,8 @@
 
     <string name="title_status_bar_brightness_toggle">Zapnout změnu jasu</string>
     <string name="summary_status_bar_brightness_toggle">Slide finger slowly across statusbar to adjust brightness setting</string>
+    
+    <string name="icon_transparency_title">Průhlednost notifikačních ikon</string>
 
     <string name="adb_icon_title">Zapnout ikonu Ladění USB</string>
     <string name="adb_icon_summary">Wutang</string>

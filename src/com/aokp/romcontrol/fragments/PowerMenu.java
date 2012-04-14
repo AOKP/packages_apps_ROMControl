@@ -63,10 +63,12 @@ public class PowerMenu extends AOKPPreferenceFragment {
         mShowNavBarHide.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
                 0) == 1);
-        
-        if(mTablet) {
-            getPreferenceScreen().removePreference(mShowNavBarHide);
-        }
+        // I took this code out to allow Tablets the ability to Hide Navbar.
+        // Note going to completely delete it incase an issue arises and needs to
+        // be re-implemented - Z
+        //if(mTablet) {
+        //    getPreferenceScreen().removePreference(mShowNavBarHide);
+        //}
     }
 
     @Override

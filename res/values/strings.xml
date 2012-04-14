@@ -242,6 +242,8 @@
 
     <string name="statusbar_layout">Notification drawer layout</string>
     <string name="statusbar_layout_summary">Change the notification drawer layout (requires UI restart)</string>
+    <string name="statusbar_fontsize">Statusbar Font Size</string>
+    <string name="statusbar_fontsize_summary">Change the size of text elements on statusbar</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>

@@ -94,7 +94,6 @@ public class UserInterface extends AOKPPreferenceFragment implements
         mAnimationRotationDelay.setValue(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_SETTLE_TIME,
                 200) + "");
-        ((PreferenceGroup) findPreference("misc")).removePreference(mAnimationRotationDelay);
 
         mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
         mAllow180Rotation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),

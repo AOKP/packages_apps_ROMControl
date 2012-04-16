@@ -42,7 +42,7 @@
     <string name="navigation_bar">Navigationsleiste</string>
     <string name="navigation_bar_tint_title">Farbe der Navigationsleiste</string>
     <string name="navigation_bar_glow_tint_title">Navigationsleiste Leuchtfarbe</string>
-    <string name="navigation_bar_glow_tint_summary">Wenn ein Knopf gedrückt wird, leuchtet dieser auf. Hier kann die Farbe des aufleuchtens eingestellt werden</string>
+    <string name="navigation_bar_glow_tint_summary">Wenn ein Knopf gedrückt wird, leuchtet dieser auf. Hier kann die Farbe des Aufleuchtens eingestellt werden</string>
 
     <string name="title_pref_navigation_menu_display">Sichtbarkeit des Menüs</string>
     <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü-Buttons erscheinen?</string>
@@ -118,12 +118,12 @@
     <string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
     <string name="reboot_title">2. Neustarten!</string>
     <string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
-    <string name="clear_market_data_title">3. Lösche die Daten von Google Play</string>
-    <string name="clear_market_data_cleared">Google Play Daten gelöscht</string>
-    <string name="open_market_title">4. Google Play öffnen und akzeptieren drücken</string>
+    <string name="clear_market_data_title">3. Lösche die Daten vom Google Play Store</string>
+    <string name="clear_market_data_cleared">Google Play Store Daten gelöscht</string>
+    <string name="open_market_title">4. Google Play Store öffnen und akzeptieren drücken</string>
     <string name="open_market_summary">Zurück drücken um zum Assistenten zurückzukehren</string>
     <string name="custom_density_title">5. Die Pixeldichte auf einen eigenen Wert ändern!</string>
-    <string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play auftreten, wiederhole die hier genannten Schritte.</string>
+    <string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play Store auftreten, wiederhole die hier genannten Schritte.</string>
 
     <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Aussehen der Bildschirmsperre</string>
@@ -234,7 +234,7 @@
     <string name="title_status_bar_brightness_toggle">Helligkeitsregler aktivieren</string>
     <string name="summary_status_bar_brightness_toggle">Helligkeitsregelung mit dem Berühren der Benachrichtigungsleiste anpassen.</string>
 
-    <string name="icon_transparency_title">Benachrichtigungssymbol Transparenz</string>
+    <string name="icon_transparency_title">Benachrichtigungssymbol-Transparenz</string>
 
     <string name="adb_icon_title">USB Debugging Symbol aktivieren</string>
     <string name="adb_icon_summary">Wutang</string>
@@ -244,7 +244,7 @@
 
     <string name="statusbar_layout">Layout der Benachrichtungsleiste</string>
     <string name="statusbar_layout_summary">Das Layout der Benachrichtungsleiste ändern. (Neustart erforderlich)</string>
-    <string name="statusbar_fontsize">Statusbar Schriftgröße</string>
+    <string name="statusbar_fontsize">Statusbar-Schriftgröße</string>
     <string name="statusbar_fontsize_summary">Ändert die Größe der Textelemente</string>
 
     <!-- Statusbar | Battery -->
@@ -324,7 +324,7 @@
     <string name="weather_use_celcius_summary">Zeigt die Temperatur in Celsius statt Fahrenheit und die Windgeschwindigkeit in km/h statt mph.</string>
     <string name="weather_statusbar_style">Wetter-Aussehen in Benachrichtungsleiste</string>
     <string name="weather_start_custom_app">Starte Benutzeranwendung</string>
-    <string name="weather_start_custom_app_summary">Startet eine benutzerdefinierte Anwendung beim Drücken auf das Wetter Bild.</string>
+    <string name="weather_start_custom_app_summary">Startet eine benutzerdefinierte Anwendung beim Drücken auf das Wetterbild.</string>
     <string name="weather_custom_app_title">benutzerdefinierte Anwendung</string>
     <string name="weather_custom_app_dialog_title">Wähle eine Anwendung</string>
     <string name="weather_custom_app_dialog_message">Momentaner Paketname.</string>

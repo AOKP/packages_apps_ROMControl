@@ -41,6 +41,8 @@
     <string name="summary_pref_menu_display">Beachte, Deine Menü-Buttons zu entfernen, wenn Du den großen Menü-Button verwendest!</string>
     <string name="navigation_bar">Navigationsleiste</string>
     <string name="navigation_bar_tint_title">Farbe der Navigationsleiste</string>
+    <string name="navigation_bar_glow_tint_title">Navigationsleiste Leuchtfarbe</string>
+    <string name="navigation_bar_glow_tint_summary">Wenn ein Knopf gedrückt wird, leuchtet dieser auf. Hier kann die Farbe des Aufleuchtens eingestellt werden</string>
 
     <string name="title_pref_navigation_menu_display">Sichtbarkeit des Menüs</string>
     <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü-Buttons erscheinen?</string>
@@ -58,7 +60,7 @@
 
     <string name="navbar_action_title">Knopf %1$s Aktion &amp; Icon</string>
     <string name="navbar_longpress_title">Knopf %1$s Aktion bei langem drücken</string>
-    
+
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Zurück</string>
     <string name="navbar_action_recents">kürzlich verwendet</string>
@@ -67,7 +69,7 @@
     <string name="navbar_action_kill">Task beenden</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_none">Leer</string>
-    
+
     <string name="button_transparency_title">Transparenz der Navigations-Buttons</string>
 
     <string name="long_press_home_title">Langes Drücken der Home-Taste</string>
@@ -111,19 +113,19 @@
     <!-- LCD Density -->
     <string name="lcd_density_wizard">Assistent für LCD Pixeldichte</string>
     <string name="follow_through_title">Alle Schritte vollständig durchführen!</string>
-	<string name="follow_through_summary">Stelle sicher, dass Du alle Schritte nach und nach durchführst und erst nach Abschließen eines Schrittes zum Nächsten übergehst.</string>
-	<string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
-	<string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
-	<string name="reboot_title">2. Neustarten!</string>
-	<string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
-	<string name="clear_market_data_title">3. Lösche die Daten von Google Play</string>
-	<string name="clear_market_data_cleared">Google Play Daten gelöscht</string>
-	<string name="open_market_title">4. Google Play öffnen und akzeptieren drücken</string>
-	<string name="open_market_summary">Zurück drücken um zum Assistenten zurückzukehren</string>
-	<string name="custom_density_title">5. Die Pixeldichte auf einen eigenen Wert ändern!</string>
-	<string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play auftreten, wiederhole die hier genannten Schritte.</string>
+    <string name="follow_through_summary">Stelle sicher, dass Du alle Schritte nach und nach durchführst und erst nach Abschließen eines Schrittes zum Nächsten übergehst.</string>
+    <string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
+    <string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
+    <string name="reboot_title">2. Neustarten!</string>
+    <string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
+    <string name="clear_market_data_title">3. Lösche die Daten vom Google Play Store</string>
+    <string name="clear_market_data_cleared">Google Play Store Daten gelöscht</string>
+    <string name="open_market_title">4. Google Play Store öffnen und akzeptieren drücken</string>
+    <string name="open_market_summary">Zurück drücken um zum Assistenten zurückzukehren</string>
+    <string name="custom_density_title">5. Die Pixeldichte auf einen eigenen Wert ändern!</string>
+    <string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play Store auftreten, wiederhole die hier genannten Schritte.</string>
 
-	<!-- Lockscreens -->
+    <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Aussehen der Bildschirmsperre</string>
     <string name="pref_lockscreen_layout_summary">Nach dem Wechsel des Aussehens müssen die Verknüpfungen erneut festgelegt werden!</string>
 
@@ -136,7 +138,7 @@
     <string name="title_pref_lockscreen_menu_unlock">Mit Menü-Taste entsperren</string>
     <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt die Bildschirmsperre. (Neustart erforderlich)</string>
     <string name="title_lockscreen_user_timeout_override">Wartezeit zum Sperren des Bildschirms</string>
-<string name="summary_lockscreen_user_timeout_override">Android\'s Timeout Einstellung verwenden, nachdem der Bildschirm manuell ausgeschaltet wurde. Normalerweise wird das Telefon sofort gesperrt, wenn der Bildschirm manuell ausgeschaltet wird.</string>
+    <string name="summary_lockscreen_user_timeout_override">Android\'s Timeout Einstellung verwenden, nachdem der Bildschirm manuell ausgeschaltet wurde. Normalerweise wird das Telefon sofort gesperrt, wenn der Bildschirm manuell ausgeschaltet wird.</string>
     <string name="show_lock_before_unlock_title">Bildschirmsperre vor dem Entsperren</string>
     <string name="show_lock_before_unlock_summary">Zeige die standard Bildschirmsperre vor dem sicheren Entsperren.</string>
     <string name="lockscreen_battery_title">Batterie Prozentanzeige</string>
@@ -182,7 +184,7 @@
     <string name="lockscreen_calendar_flip_summary">Wenn aktiviert, werden mehrere Veranstaltungen durch Umschalten angezeigt.</string>
     <string name="lockscreen_calendar_interval_title">Umschaltinterval</string>
     <string name="lockscreen_calendar_interval_summary">Wähle die Animationsgeschwindigkeit in Sekunden.</string>
-    
+
     <!-- Power Menu -->
     <string name="title_show_power_saver">Stromsparmodus anzeigen</string>
     <string name="title_show_screenshot">Screenshot anzeigen</string>
@@ -232,6 +234,8 @@
     <string name="title_status_bar_brightness_toggle">Helligkeitsregler aktivieren</string>
     <string name="summary_status_bar_brightness_toggle">Helligkeitsregelung mit dem Berühren der Benachrichtigungsleiste anpassen.</string>
 
+    <string name="icon_transparency_title">Benachrichtigungssymbol-Transparenz</string>
+
     <string name="adb_icon_title">USB Debugging Symbol aktivieren</string>
     <string name="adb_icon_summary">Wutang</string>
 
@@ -240,6 +244,8 @@
 
     <string name="statusbar_layout">Layout der Benachrichtungsleiste</string>
     <string name="statusbar_layout_summary">Das Layout der Benachrichtungsleiste ändern. (Neustart erforderlich)</string>
+    <string name="statusbar_fontsize">Statusbar-Schriftgröße</string>
+    <string name="statusbar_fontsize_summary">Ändert die Größe der Textelemente</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Aussehen des Batteriesymbols</string>
@@ -279,15 +285,15 @@
     <string name="reset_toggles_title">Schalter zurücksetzen</string>
     <string name="reset_toggles_summary">Setzt alle Schalter und Ihre Reihenvolge zurück</string>
 
-    <!-- Statusbar | Signal -->
-    <string name="signal_style">Aussehen des Empfang Textes</string>
+	<!-- Statusbar | Signal -->
+	<string name="signal_style">Aussehen des Empfang Textes</string>
 	<string name="signal_color_title">Farbe des Empfangs</string>
 	<string name="hide_signal_title">Empfangsleisten verstecken</string>
 	<string name="hide_signal_summary">Versteckt aktuell zusätzlich das Symbol für Datenverbindung. Wird später separat verfügbar sein.</string>
 	<string name="wifi_signal_style">WiFi Signal Text Stiel</string>
 	<string name="wifi_signal_color_title">WiFi Signal Farbe</string>
 
-<!-- Color Picker -->
+    <!-- Color Picker -->
     <string name="dialog_color_picker">Farbe wählen</string>
     <string name="press_color_to_apply">Zum Anwenden die Farbe klicken</string>
     <string name="arrow_right">→</string>
@@ -296,13 +302,13 @@
     <string name="hex_hint">#FF000000</string>
     <string name="set">OK</string>
     <string name="ics_color">ICS</string>
-    
+
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Benutzerdefinierte App verwenden</string>
     <string name="use_custom_app_summary">Benutzerdefinierte App statt Dialog mit den zuletzt verwendeten Apps verwenden.</string>
     <string name="select_custom_app_title">Benutzerdefinierte App wählen</string>
     <string name="group_applications">Apps</string>
-	
+
     <!-- Weather -->
     <string name="weather_enable">Wetter aktivieren</string>
     <string name="weather_enable_summary">Wetterinformationen abrufen und an verschiedenen Stellen anzeigen.</string>
@@ -317,6 +323,11 @@
     <string name="weather_use_celcius">Metrische Einheiten</string>
     <string name="weather_use_celcius_summary">Zeigt die Temperatur in Celsius statt Fahrenheit und die Windgeschwindigkeit in km/h statt mph.</string>
     <string name="weather_statusbar_style">Wetter-Aussehen in Benachrichtungsleiste</string>
+    <string name="weather_start_custom_app">Starte Benutzeranwendung</string>
+    <string name="weather_start_custom_app_summary">Startet eine benutzerdefinierte Anwendung beim Drücken auf das Wetterbild.</string>
+    <string name="weather_custom_app_title">benutzerdefinierte Anwendung</string>
+    <string name="weather_custom_app_dialog_title">Wähle eine Anwendung</string>
+    <string name="weather_custom_app_dialog_message">Momentaner Paketname.</string>
 	
 <!-- Dialog Titles -->
     <string name="dt_free_memory">Minfree Taskkiller</string>
@@ -436,7 +447,7 @@
 
     <string name="about_aokp">Über AOKP</string>
     <string name="about_aokp_summary">@null</string>
-    
+
     <!--  Kernel Tweaks -->
     <string name="pt_fast_charge_boot">Fast Charge</string>
     <string name="ps_fast_charge_boot">Aktiviere Fast Charge beim Start</string>

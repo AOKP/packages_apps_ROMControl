@@ -2,21 +2,21 @@
 package com.aokp.romcontrol;
 
 import android.content.Context;
-import java.lang.Math;
+import android.util.Log;
 
 public class WeatherInfo {
 
     private static final String NODATA = "No data";
 
-    public String city, forecast_date, condition, condition_code, temp, temp_unit, humidity, wind, wind_dir, speed_unit, low, high;
-
-    private Context mContext;
+    public String city, forecast_date, condition, condition_code, temp, temp_unit, humidity, wind,
+            wind_dir, speed_unit, low, high;
 
     public WeatherInfo() {
         this.city = this.forecast_date = this.condition = this.condition_code = this.temp = this.temp_unit = this.humidity = this.wind = this.wind_dir = this.speed_unit = this.low = this.high = NODATA;
     }
 
-    public WeatherInfo(String city, String fdate, String condition,String condition_code, String temp, String temp_unit, String humidity,
+    public WeatherInfo(String city, String fdate, String condition, String condition_code,
+            String temp, String temp_unit, String humidity,
             String wind, String wind_dir, String speed_unit, String low, String high) {
         this.city = city;
         this.forecast_date = fdate;
@@ -30,7 +30,24 @@ public class WeatherInfo {
         this.low = low + "°" + temp_unit;
         this.high = high + "°" + temp_unit;
     }
-    
+
+    /**
+     * find the optimal weather string (helper function for translation)
+     * 
+     * @param conditionCode condition code from Yahoo (this is the main
+     *            identifier which will be used to find a matching translation
+     *            in the project's resources
+     * @param providedString
+     * @return either the defaultString (which should be Yahoo's weather
+     *         condition text), or the translated version from resources
+     */
+    public static String getTranslatedConditionString(Context mContext, int conditionCode,
+            String providedString) {
+        int resID = mContext.getResources().getIdentifier("weather_" + conditionCode, "string",
+                mContext.getPackageName());
+        return (resID != 0) ? mContext.getResources().getString(resID) : providedString;
+    }
+
     private String calcDirection(String degrees) {
         int deg = Integer.parseInt(degrees);
         if (deg >= 338 || deg <= 22)
@@ -49,11 +66,11 @@ public class WeatherInfo {
             return "W";
         else if (deg < 338)
             return "NW";
-        else return "";
+        else
+            return "";
     }
-    
+
     private String trimSpeed(String speed) {
         return String.valueOf(Math.round(Float.parseFloat(speed)));
     }
 }
-

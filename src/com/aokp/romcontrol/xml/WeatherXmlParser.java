@@ -1,10 +1,10 @@
 
 package com.aokp.romcontrol.xml;
 
-import android.content.Context;
-import android.util.Log;
+import java.io.StringReader;
 
-import com.aokp.romcontrol.WeatherInfo;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -13,10 +13,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-import java.io.StringReader;
+import android.content.Context;
+import android.util.Log;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import com.aokp.romcontrol.WeatherInfo;
 
 public class WeatherXmlParser {
 
@@ -42,10 +42,10 @@ public class WeatherXmlParser {
     private static final String ATT_YAHOO_TODAY_HIGH = "high";
     private static final String ATT_YAHOO_TODAY_LOW = "low";
     
+    private Context mContext;
 
-    private Context context;
-
-    public WeatherXmlParser() {
+    public WeatherXmlParser(Context context) {
+        mContext = context;
     }
 
     public WeatherInfo parseWeatherResponse(Document docWeather) {
@@ -96,6 +96,7 @@ public class WeatherXmlParser {
             if (conditionNode != null) {
                 strCondition = conditionNode.getNamedItem(ATT_YAHOO_TEXT).getNodeValue();
                 strCondition_code = conditionNode.getNamedItem(ATT_YAHOO_CODE).getNodeValue();
+                strCondition = WeatherInfo.getTranslatedConditionString(mContext, Integer.parseInt(strCondition_code), strCondition);
                 strTemp = conditionNode.getNamedItem(ATT_YAHOO_TEMP).getNodeValue();
                 strDate = conditionNode.getNamedItem(ATT_YAHOO_DATE).getNodeValue();
             }

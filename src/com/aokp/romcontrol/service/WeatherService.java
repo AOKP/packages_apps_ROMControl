@@ -62,7 +62,7 @@ public class WeatherService extends IntentService {
             boolean useCustomLoc = WeatherPrefs.getUseCustomLocation(getApplicationContext());
             String customLoc = WeatherPrefs.getCustomLocation(getApplicationContext());
             if (customLoc != null && useCustomLoc) {
-                woeid = YahooPlaceFinder.GeoCode(customLoc);
+                woeid = YahooPlaceFinder.GeoCode(getApplicationContext(), customLoc);
                 // network location
             } else {
                 final LocationManager locationManager = (LocationManager) this
@@ -85,7 +85,7 @@ public class WeatherService extends IntentService {
                     loc = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
                 }
                 try {
-                    woeid = YahooPlaceFinder.reverseGeoCode(loc.getLatitude(),
+                    woeid = YahooPlaceFinder.reverseGeoCode(getApplicationContext(), loc.getLatitude(),
                             loc.getLongitude());
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -122,7 +122,7 @@ public class WeatherService extends IntentService {
 
     private WeatherInfo parseXml(Document wDoc) {
         try {
-            return new WeatherXmlParser().parseWeatherResponse(wDoc);
+            return new WeatherXmlParser(getApplicationContext()).parseWeatherResponse(wDoc);
         } catch (Exception e) {
             e.printStackTrace();
             Log.w(TAG, "Couldn't connect to Yahoo to get weather data.");

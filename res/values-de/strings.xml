@@ -449,4 +449,63 @@
     <string name="color_green_title">Grün</string>
     <string name="color_blue_title">Blau</string>
     <string name="reset_defaults">Auf Standard zurücksetzten</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">Tornado</string>
+    <string name="weather_1">Tropensturm</string>
+    <string name="weather_2">Hurrikan</string>
+    <string name="weather_3">schwere Gewitter</string>
+    <string name="weather_4">Gewitter</string>
+    <string name="weather_5">Regen und Schnee</string>
+    <string name="weather_6">Regen und Graupel</string>
+    <string name="weather_7">Schnee und Graupel</string>
+    <string name="weather_8">gefrierender Nieselregen</string>
+    <string name="weather_9">Nieselregen</string>
+    <string name="weather_10">gefrierender Regen</string>
+    <string name="weather_11">Regenschauer</string>
+    <string name="weather_12">Regenschauer</string>
+    <string name="weather_13">Schneegestöber</string>
+    <string name="weather_14">meist bewölkt</string>
+    <string name="weather_15">Schneetreiben</string>
+    <string name="weather_16">Schnee</string>
+    <string name="weather_17">Hagel</string>
+    <string name="weather_18">Schneeregen</string>
+    <string name="weather_19">Staub</string>
+    <string name="weather_20">neblig</string>
+    <string name="weather_21">Dunst</string>
+    <string name="weather_22">dunstig</string>
+    <string name="weather_23">stürmisch</string>
+    <string name="weather_24">windig</string>
+    <string name="weather_25">Kälte</string>
+    <string name="weather_26">bewölkt</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">leicht bewölkt</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">leicht bewölkt</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">leicht bewölkt</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">leicht bewölkt</string>
+    <!-- clear (night) -->
+    <string name="weather_31">klar</string>
+    <string name="weather_32">sonnig</string>
+    <!-- fair (night) -->
+    <string name="weather_33">heiter</string>
+    <!-- fair (day) -->
+    <string name="weather_34">heiter</string>
+    <string name="weather_35">Regen und Hagel</string>
+    <string name="weather_36">heiß</string>
+    <string name="weather_37">örtliche Gewitter</string>
+    <string name="weather_38">vereinzelte Gewitter</string>
+    <string name="weather_39">vereinzelte Gewitter</string>
+    <string name="weather_40">vereinzelte Regenschauer</string>
+    <string name="weather_41">schwerer Schneefall</string>
+    <string name="weather_42">vereinzelt Schneeschauer</string>
+    <string name="weather_43">schwerer Schneefall</string>
+    <string name="weather_44">leicht bewölkt</string>
+    <string name="weather_45">Gewitter</string>
+    <string name="weather_46">Schneeschauer</string>
+    <string name="weather_47">örtliche Gewitter</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
 </resources>

@@ -135,7 +135,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
                 Settings.System.CUSTOM_CARRIER_LABEL);
         if (mCustomLabelText == null) {
             mCustomLabel
-                    .setSummary("Custom label currently not set. Once you specify a custom one, there's no way back without doing a data wipe.");
+                    .setSummary(R.string.custom_carrier_label_warning);
         } else {
             mCustomLabel.setSummary(mCustomLabelText);
         }
@@ -176,8 +176,8 @@ public class UserInterface extends AOKPPreferenceFragment implements
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
-            alert.setTitle("Custom Carrier Label");
-            alert.setMessage("Please enter a new one!");
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_empty);
 
             // Set an EditText view to get user input
             final EditText input = new EditText(getActivity());

@@ -43,6 +43,8 @@
     <string name="navigation_bar_tint_title">Farbe der Navigationsleiste</string>
     <string name="navigation_bar_glow_tint_title">Navigationsleiste Leuchtfarbe</string>
     <string name="navigation_bar_glow_tint_summary">Wenn ein Knopf gedrückt wird, leuchtet dieser auf. Hier kann die Farbe des Aufleuchtens eingestellt werden</string>
+    <string name="navigation_bar_height_title">Höhe der Navigationsleiste</string>
+    <string name="navigation_bar_width_title">Breite der Navigationsleiste</string>
 
     <string name="title_pref_navigation_menu_display">Sichtbarkeit des Menüs</string>
     <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü-Buttons erscheinen?</string>
@@ -86,6 +88,8 @@
     <string name="ime_switcher_summary">In der Benachrichtungsleiste während des Tippens anzeigen. (Neustart erforderlich)</string>
 
     <string name="custom_carrier_label_title">Eigener Anbieter-Text</string>
+    <string name="custom_carrier_label_empty">Bitte neuen Text eingeben</string>
+    <string name="custom_carrier_label_warning">Eigener Anbieter-Text ist zur Zeit nicht gesetzt. Sobald dieser gesetzt wurde, lässt es sich ohne einen "data wipe" nicht mehr rückgangig machen</string>
     <string name="longpress_to_kill_title">Zurück-Taste zum Beenden</string>
     <string name="longpress_to_kill_summary">Das Halten der Zurück-Taste beendet die aktuelle App.</string>
 
@@ -279,6 +283,10 @@
 
     <string name="enabled_toggles_title">Aktivierte Schalter</string>
     <string name="enabled_toggles_summary">Die anzuzeigenden Schalter wählen.</string>
+
+    <string name="toggles_display_dialog">Wähle zu benutzende Schalter:</string>
+    <string name="toggles_display_close">Schließen</string>
+
     <string name="toggles_order_title">Reihenfolge der Schalter</string>
     <string name="toggles_order_summary">Die Reihenfolge wählen, in der die Schalter angezeigt werden.</string>
     <string name="brightness_location_title">Position des Helligkeitsreglers</string>

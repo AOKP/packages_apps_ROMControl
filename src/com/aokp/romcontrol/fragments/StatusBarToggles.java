@@ -95,9 +95,9 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
                 }
             }
 
-            builder.setTitle("Choose which toggles to use");
+            builder.setTitle(R.string.toggles_display_dialog);
             builder.setCancelable(true);
-            builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(R.string.toggles_display_close, new DialogInterface.OnClickListener(){
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

@@ -157,9 +157,9 @@
 	<!-- long press home -->
 	<string-array name="long_press_home_entries">
 		<item>Nichts tun</item>
-		<item>Show recents</item>
+		<item>Kürzlich verwendet</item>
 		<item>Kamera</item>
-		<item>Benutzer Anwendung</item>
+		<item>Benutzerdefinierte Anwendung</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
@@ -211,18 +211,7 @@
 		<item>Mittig</item>
 	</string-array>
 
-	<string-array name="available_toggles_values"> <!-- Will possibly be fixed/renamed to ..._entries in future version -->
-		<item>Automatisch drehen</item>
-		<item>Bluetooth</item>
-		<item>GPS</item>
-		<item>WLAN</item>
-		<item>Flugmodus</item>
-		<item>Vibrieren</item>
-		<item>Lautlos</item>
-		<item>Taschenlampe</item>
-		<item>Synchronisation</item>
-		<item>Swagger</item>
-	</string-array>
+
 	
 	<string-array name="lockscreen_choice_entries">
 		<item>Entsperren</item>
@@ -307,7 +296,7 @@
 	<string-array name="navbar_button_entries">
 		<item>Home</item>
 		<item>Zurück</item>
-		<item>kürzlich Verwendet</item>
+		<item>Kürzlich verwendet</item>
 		<item>Suche</item>
 		<item>Menü</item>
 		<item>Task beenden</item>

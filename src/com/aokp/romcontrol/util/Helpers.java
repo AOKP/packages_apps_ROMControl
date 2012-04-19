@@ -1,11 +1,5 @@
 package com.aokp.romcontrol.util;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.util.Log;
-import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,6 +7,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.aokp.romcontrol.util.CMDProcessor.CommandResult;
 
 public class Helpers {
 
@@ -204,5 +206,23 @@ public class Helpers {
 
     public static void restartSystemUI() {
         new CMDProcessor().su.run("pkill -TERM -f com.android.systemui");
+    }
+
+    public static void setSystemProp(String prop, String val) {
+        new CMDProcessor().su.run("setprop " + prop + " " + val);
+    }
+
+    public static String getSystemProp(String prop, String def) {
+        String result = getSystemProp(prop);
+        return result == null ? def : result;
+    }
+
+    private static String getSystemProp(String prop) {
+        CommandResult cr = new CMDProcessor().sh.runWaitFor("getprop " + prop);
+        if (cr.success()) {
+            return cr.stdout;
+        } else {
+            return null;
+        }
     }
 }

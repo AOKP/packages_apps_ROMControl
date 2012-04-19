@@ -36,6 +36,10 @@
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
 
+    <!-- General Strings -->
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
@@ -331,10 +335,10 @@
 	<string name="weather_use_celcius">Metric units</string>
 	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
 	<string name="weather_statusbar_style">Statusbar weather style</string>
-        <string name="weather_start_custom_app">Start custom app</string>
-        <string name="weather_start_custom_app_summary">Start a custom app when clicking on the weather image.</string>
-        <string name="weather_custom_app_title">Custom app</string>
-        <string name="weather_custom_app_dialog_title">Choose your app</string>
+    <string name="weather_start_custom_app">Start custom app</string>
+    <string name="weather_start_custom_app_summary">Start a custom app when clicking on the weather image.</string>
+    <string name="weather_custom_app_title">Custom app</string>
+    <string name="weather_custom_app_dialog_title">Choose your app</string>
 	<string name="weather_custom_app_dialog_message">Package name for now.</string>
 	
 	<!-- Dialog Titles -->
@@ -383,13 +387,13 @@
 	<string name="pt_set_min">Min CPU</string>
 	<string name="pt_set_gov">Scaling governor</string>
 	<string name="pt_cpu_boot">Set at boot</string>
-        <!-- Scrolling Cache -->
-        <string name="pref_scrollingcache_title">Scrolling cache</string>
-        <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
-        <string name="pref_scrollingcache_force_enable">Force enable</string>
-        <string name="pref_scrollingcache_default_enable">Default enable</string>
-        <string name="pref_scrollingcache_default_disable">Default disable</string>
-        <string name="pref_scrollingcache_force_disable">Force disable</string>
+    <!-- Scrolling Cache -->
+    <string name="pref_scrollingcache_title">Scrolling cache</string>
+    <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
+    <string name="pref_scrollingcache_force_enable">Force enable</string>
+    <string name="pref_scrollingcache_default_enable">Default enable</string>
+    <string name="pref_scrollingcache_default_disable">Default disable</string>
+    <string name="pref_scrollingcache_force_disable">Force disable</string>
 
 	<!-- Preference Summaries -->
 	<!-- Main -->
@@ -469,6 +473,10 @@
     <!--  Kernel Tweaks -->
     <string name="pt_fast_charge_boot">Fast Charge</string>
     <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+    <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
+    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
+    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
+
     <string name="kernel">Kernel Tweaks (if supported)</string>
     <string name="color_tuning_title_head">Color Multipliers Tuning</string>
     <string name="color_tuning_summary_head">Calibrate multipliers screen color</string>

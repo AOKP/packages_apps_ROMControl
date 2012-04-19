@@ -1,8 +1,13 @@
 
 package com.aokp.romcontrol.fragments;
 
+import java.io.File;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.ListPreference;
@@ -14,12 +19,10 @@ import android.preference.PreferenceScreen;
 import android.util.Log;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.tools.VoltageControl;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
-import com.aokp.romcontrol.R;
-
-import java.io.File;
 
 public class Performance extends AOKPPreferenceFragment implements
         OnSharedPreferenceChangeListener, OnPreferenceChangeListener {
@@ -93,7 +96,7 @@ public class Performance extends AOKPPreferenceFragment implements
         mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
         mScrollingCachePref.setOnPreferenceChangeListener(this);
-
+        
         final int minFree = getMinFreeValue();
         final String values[] = getResources().getStringArray(R.array.minfree_values);
         String closestValue = preferences.getString(KEY_MINFREE, values[0]);
@@ -120,6 +123,39 @@ public class Performance extends AOKPPreferenceFragment implements
         }
 
         doneLoading = true;
+    }
+    
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        String key = preference.getKey();
+
+        if (KEY_FASTCHARGE.equals(key)) {
+            if (preferences.getBoolean(KEY_FASTCHARGE, false)) {
+                Resources res = getActivity().getResources();
+                String warningMessage = res.getString(R.string.fast_charge_warning);
+                String cancel = res.getString(R.string.cancel);
+                String ok = res.getString(R.string.ok);
+
+                new AlertDialog.Builder(getActivity())
+                        .setMessage(warningMessage)
+                        .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                preferences.edit().putBoolean(KEY_FASTCHARGE, false).apply();
+                            }
+                        })
+                        .setPositiveButton(ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                preferences.edit().putBoolean(KEY_FASTCHARGE, true).apply();
+                            }
+                        })
+                        .create()
+                        .show();
+            }
+        }
+
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override

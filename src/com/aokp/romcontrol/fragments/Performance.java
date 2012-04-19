@@ -90,8 +90,7 @@ public class Performance extends AOKPPreferenceFragment implements
         mSetGov.setSummary(getString(R.string.ps_set_gov, currentGov));
 
         mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
-        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
-                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setValue(Helpers.getSystemProp(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT));
         mScrollingCachePref.setOnPreferenceChangeListener(this);
 
         final int minFree = getMinFreeValue();
@@ -280,7 +279,7 @@ public class Performance extends AOKPPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mScrollingCachePref) {
             if (newValue != null) {
-                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
+                Helpers.setSystemProp(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
                 return true;
             }
         }

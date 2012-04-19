@@ -336,6 +336,7 @@
         <string name="weather_custom_app_title">Custom app</string>
         <string name="weather_custom_app_dialog_title">Choose your app</string>
 	<string name="weather_custom_app_dialog_message">Package name for now.</string>
+	<string name="weather_refreshing">Requesting weather update!</string>
 	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>

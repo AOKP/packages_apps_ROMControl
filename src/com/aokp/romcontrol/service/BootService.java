@@ -124,10 +124,6 @@ public class BootService extends Service {
             Intent startRefresh = new Intent(getApplicationContext(),
                     WeatherRefreshService.class);
             getApplicationContext().startService(startRefresh);
-            
-            Intent getWeatherNow = new Intent(getApplicationContext(), WeatherService.class);
-            getWeatherNow.setAction(WeatherService.INTENT_REQUEST_WEATHER);
-            getApplicationContext().startService(getWeatherNow);
         }
         
         bootThread.start();

@@ -52,6 +52,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     ListPreference mHomeLongpress;
     Preference mLcdDensity;
     CheckBoxPreference mDisableBootAnimation;
+    CheckBoxPreference mDisableBootAudio;
     CheckBoxPreference mDisableBugMailer;
     ListPreference mRecentAppSwitcher;
 
@@ -121,6 +122,18 @@ public class UserInterface extends AOKPPreferenceFragment implements
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
         if (mDisableBootAnimation.isChecked())
             mDisableBootAnimation.setSummary(R.string.disable_bootanimation_summary);
+
+        mDisableBootAudio = (CheckBoxPreference) findPreference("disable_bootaudio");
+        
+        if(!new File("/system/media/boot_audio.mp3").exists() &&
+                !new File("/system/media/boot_audio.unicorn").exists() ) {
+            mDisableBootAudio.setEnabled(false);
+            mDisableBootAudio.setSummary(R.string.disable_bootaudio_summary_disabled);
+        } else {
+            mDisableBootAudio.setChecked(!new File("/system/media/boot_audio.mp3").exists());
+            if (mDisableBootAudio.isChecked())
+                mDisableBootAudio.setSummary(R.string.disable_bootaudio_summary);
+        }
 
         mDisableBugMailer = (CheckBoxPreference) findPreference("disable_bugmailer");
         mDisableBugMailer.setChecked(!new File("/system/bin/bugmailer.sh").exists());
@@ -245,6 +258,22 @@ public class UserInterface extends AOKPPreferenceFragment implements
                 Helpers.getMount("rw");
                 new CMDProcessor().su
                         .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
+                Helpers.getMount("ro");
+            }
+            return true;
+
+        } else if (preference == mDisableBootAudio) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            if (checked) {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/boot_audio.mp3 /system/media/boot_audio.unicorn");
+                Helpers.getMount("ro");
+                preference.setSummary(R.string.disable_bootaudio_summary);
+            } else {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/boot_audio.unicorn /system/media/boot_audio.mp3");
                 Helpers.getMount("ro");
             }
             return true;

@@ -7,6 +7,10 @@
 		android:title="@string/disable_bootanimation_title" />
 
 	<CheckBoxPreference
+		android:key="disable_bootaudio"
+		android:title="@string/disable_bootaudio_title" />
+
+	<CheckBoxPreference
 		android:key="disable_bugmailer"
 		android:title="@string/disable_bugmailer_title" />
 

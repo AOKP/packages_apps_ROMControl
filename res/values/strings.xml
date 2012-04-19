@@ -108,6 +108,10 @@
 	<string name="disable_bootanimation_title">Disable boot animation</string>
 	<string name="disable_bootanimation_summary">Jerk.</string>
 
+	<string name="disable_bootaudio_title">Disable boot audio</string>
+	<string name="disable_bootaudio_summary">Quiet.</string>
+	<string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/boot_audio.mp3</string>
+
 	<string name="disable_bugmailer_title">Disable bugmailer</string>
 
 	<string name="lcd_density_title">LCD Density</string>

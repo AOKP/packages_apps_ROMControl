@@ -170,6 +170,10 @@ public class Navbar extends AOKPPreferenceFragment implements
             prefs.removePreference(mNavBarMenuDisplay);
             prefs.removePreference(mHomeLongpress);
         }
+
+        if (!hasHardwareButtons) {
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mHomeLongpress);
+        }
         refreshSettings();
         setHasOptionsMenu(true);
     }

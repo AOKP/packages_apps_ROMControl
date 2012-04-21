@@ -69,6 +69,10 @@ public class PowerMenu extends AOKPPreferenceFragment {
         //if(mTablet) {
         //    getPreferenceScreen().removePreference(mShowNavBarHide);
         //}
+
+        if(!hasTorch) {
+            getPreferenceScreen().removePreference(mShowTorchToggle);
+        }
     }
 
     @Override

@@ -10,10 +10,12 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
@@ -55,6 +57,8 @@ public class Performance extends AOKPPreferenceFragment implements
     private SharedPreferences preferences;
     private boolean doneLoading = false;
 
+    CheckBoxPreference mFastCharge;
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,7 +99,7 @@ public class Performance extends AOKPPreferenceFragment implements
         mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
         mScrollingCachePref.setValue(Helpers.getSystemProp(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT));
         mScrollingCachePref.setOnPreferenceChangeListener(this);
-        
+
         final int minFree = getMinFreeValue();
         final String values[] = getResources().getStringArray(R.array.minfree_values);
         String closestValue = preferences.getString(KEY_MINFREE, values[0]);
@@ -121,9 +125,23 @@ public class Performance extends AOKPPreferenceFragment implements
                     .removePreference(ps);
         }
 
+        mFastCharge = (CheckBoxPreference) findPreference(KEY_FASTCHARGE);
+        if (!hasFastCharge) {
+            ((PreferenceGroup) findPreference("kernel")).removePreference(mFastCharge);
+        }
+
+        com.aokp.romcontrol.fragments.ColorTuningPreference ct = (com.aokp.romcontrol.fragments.ColorTuningPreference) findPreference("color_tuning");
+        com.aokp.romcontrol.fragments.GammaTuningPreference gt = (com.aokp.romcontrol.fragments.GammaTuningPreference) findPreference("gamma_tuning");
+        if (!hasColorTuning) {
+            ((PreferenceCategory) getPreferenceScreen().findPreference("kernel"))
+                    .removePreference(ct);
+            ((PreferenceCategory) getPreferenceScreen().findPreference("kernel"))
+                    .removePreference(gt);
+        }
+
         doneLoading = true;
     }
-    
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         String key = preference.getKey();

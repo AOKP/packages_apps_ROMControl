@@ -45,10 +45,18 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
 
     private SettingsDialogFragment mDialogFragment;
     protected boolean mTablet;
+    protected boolean hasTorch;
+    protected boolean hasHardwareButtons;
+    protected boolean hasFastCharge;
+    protected boolean hasColorTuning;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
+        hasTorch = getResources().getBoolean(R.bool.has_torch);
+        hasHardwareButtons = getResources().getBoolean(R.bool.has_hardware_buttons);
+        hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
+        hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
         mContext = getActivity().getApplicationContext();
         super.onCreate(savedInstanceState);
     }

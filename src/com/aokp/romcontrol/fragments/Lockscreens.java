@@ -205,6 +205,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         ((PreferenceGroup) findPreference("advanced_cat"))
                 .removePreference(findPreference(Settings.System.LOCKSCREEN_HIDE_NAV));
 
+        if (!hasTorch) {
+            ((PreferenceGroup) findPreference("advanced_cat"))
+                    .removePreference(findPreference(Settings.System.ENABLE_FAST_TORCH));
+        }
+
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
 

@@ -165,11 +165,12 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
-        if (mTablet) {
+        if (mTablet || !mHomeLongpress) {
             Log.e("NavBar", "is tablet");
             prefs.removePreference(mNavBarMenuDisplay);
             prefs.removePreference(mHomeLongpress);
         }
+
         refreshSettings();
         setHasOptionsMenu(true);
     }

@@ -65,6 +65,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
+    private static final String PREF_HOME_LONGPRESS = "long_press_home";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
@@ -74,6 +75,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ColorPickerPreference mNavigationBarGlowColor;
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
+    ListPreference mHomeLongpress;
     ListPreference mGlowTimes;
     ListPreference mNavBarButtonQty;
     SeekBarPreference mButtonAlpha;
@@ -133,8 +135,12 @@ public class Navbar extends AOKPPreferenceFragment implements
         mGlowTimes = (ListPreference) findPreference("glow_times");
         mGlowTimes.setOnPreferenceChangeListener(this);
         // mGlowTimes.setValue(Settings.System.getInt(getActivity()
-        // .getContentResolver(), Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
-        // 0) + "");
+
+        mHomeLongpress = (ListPreference) findPreference(PREF_HOME_LONGPRESS);
+        mHomeLongpress.setOnPreferenceChangeListener(this);
+        mHomeLongpress.setValue(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
+                0) + "");
 
         float defaultAlpha = Settings.System.getFloat(getActivity()
                 .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
@@ -159,9 +165,10 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
-        if (mTablet) {
+        if (mTablet || hasHardwareButtons) {
             Log.e("NavBar", "is tablet");
             prefs.removePreference(mNavBarMenuDisplay);
+            prefs.removePreference(mHomeLongpress);
         }
         refreshSettings();
         setHasOptionsMenu(true);
@@ -271,6 +278,12 @@ public class Navbar extends AOKPPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_TINT, intHex);
+            return true;
+
+        } else if (preference == mHomeLongpress) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
+                    Integer.parseInt((String) newValue));
             return true;
 
         } else if (preference == mNavigationBarGlowColor) {

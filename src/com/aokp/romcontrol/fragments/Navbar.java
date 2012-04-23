@@ -18,6 +18,7 @@ import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -195,10 +196,15 @@ public class Navbar extends AOKPPreferenceFragment implements
                 Settings.System.putFloat(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                         0.6f);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, mContext.getResources()
+				
+				// we need to check if the device is a tablet and not rely solely on
+				// config_showNavigationBar, otherwise the navbar will disappear
+				Configuration config = getResources().getConfiguration();
+				boolean isTablet = (config.smallestScreenWidthDp >= 600);
+				Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_BUTTONS_SHOW, (mContext.getResources()
                                 .getBoolean(
-                                        com.android.internal.R.bool.config_showNavigationBar) ? 1
+                                        com.android.internal.R.bool.config_showNavigationBar) | isTablet) ? 1
                                 : 0);
                 mButtonAlpha.setValue(60);
 

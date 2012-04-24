@@ -48,7 +48,7 @@
 			android:title="@string/ime_switcher_title"
 			android:summary="@string/ime_switcher_summary" />
 
-                <CheckBoxPreference
+         <CheckBoxPreference
 			android:key="enable_volume_options"
 			android:title="@string/enable_volume_options" />
 
@@ -60,6 +60,13 @@
 			android:key="longpress_to_kill"
 			android:title="@string/longpress_to_kill_title"
 			android:summary="@string/longpress_to_kill_summary" />
+
+		<ListPreference
+			android:entries="@array/long_press_home_entries"
+			android:entryValues="@array/long_press_home_values"
+			android:key="long_press_home"
+			android:title="@string/long_press_home_title"
+			android:summary="@string/long_press_home_summary" />
 
 		<ListPreference
 			android:entries="@array/rotation_animation_delay_entries"

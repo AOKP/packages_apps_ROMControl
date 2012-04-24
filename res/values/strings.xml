@@ -74,6 +74,7 @@
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Power</string>
+    <string name="navbar_action_screenshot">Screenshot</string>
     <string name="navbar_action_none">Empty</string>
 
     <string name="button_transparency_title">Nav button transparency</string>

@@ -686,6 +686,7 @@
 		<item>Menu</item>
 		<item>Kill app</item>
 		<item>Power</item>
+		<item>Screenshot</item>
 		<item>Custom app</item>
 		<item>Blank</item>
 	</string-array>
@@ -698,6 +699,7 @@
 		<item>**menu**</item>
 		<item>**kill**</item>
 		<item>**power**</item>
+		<item>**screenshot**</item>
 		<item>**app**</item>
 		<item>**null**</item>
 	</string-array>

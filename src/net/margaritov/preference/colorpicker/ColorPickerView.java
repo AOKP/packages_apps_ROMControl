@@ -152,6 +152,7 @@ public class ColorPickerView extends View {
 	}
 
 	private void init(){
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 		mDensity = getContext().getResources().getDisplayMetrics().density;
 		PALETTE_CIRCLE_TRACKER_RADIUS *= mDensity;
 		RECTANGLE_TRACKER_OFFSET *= mDensity;

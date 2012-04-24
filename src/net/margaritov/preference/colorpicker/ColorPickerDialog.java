@@ -19,9 +19,9 @@ package net.margaritov.preference.colorpicker;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -59,7 +59,7 @@ public class ColorPickerDialog
     private void init(int color) {
         // To fight color branding.
         getWindow().setFormat(PixelFormat.RGBA_8888);
-
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setUp(color);
 
     }

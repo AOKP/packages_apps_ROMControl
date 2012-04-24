@@ -104,18 +104,16 @@ public class ColorPickerPreference extends Preference implements
     }
 
     private void setPreviewColor() {
-        // if (mView == null) {
-        // Log.e("ROMAN", "null");
-        // return;
-        // }
+        if (mView == null)
+            return;
 
         ImageView iView = new ImageView(getContext());
-        // LinearLayout widgetFrameView = ((LinearLayout) mView
-        // .findViewById(android.R.id.widget_frame));
-        if (widgetFrameView == null) {
-
+        LinearLayout widgetFrameView = ((LinearLayout) mView
+                .findViewById(android.R.id.widget_frame));
+        if (widgetFrameView == null)
             return;
-        }
+
+        widgetFrameView.setVisibility(View.VISIBLE);
         widgetFrameView.setPadding(
                 widgetFrameView.getPaddingLeft(),
                 widgetFrameView.getPaddingTop(),
@@ -128,6 +126,7 @@ public class ColorPickerPreference extends Preference implements
             widgetFrameView.removeViews(0, count);
         }
         widgetFrameView.addView(iView);
+        widgetFrameView.setMinimumWidth(0);
         iView.setBackgroundDrawable(new AlphaPatternDrawable((int) (5 * mDensity)));
         iView.setImageBitmap(getPreviewBitmap());
     }

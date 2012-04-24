@@ -328,13 +328,17 @@
 
 	<!-- long press home -->
 	<string-array name="long_press_home_entries">
+		<item>Phone default</item>
 		<item>Do nothing</item>
+		<item>Pre-ICS recents</item>
 		<item>Show recents</item>
 	</string-array>
 
 	<string-array name="long_press_home_values" translatable="false">
+		<item>-1</item>
 		<item>0</item>
 		<item>1</item>
+		<item>2</item>
 	</string-array>
 
     <string-array name="pref_lockscreen_options_values" translatable="false">

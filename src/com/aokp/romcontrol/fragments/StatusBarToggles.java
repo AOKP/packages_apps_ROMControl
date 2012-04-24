@@ -36,12 +36,14 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
 
     private static final String PREF_ENABLE_TOGGLES = "enable_toggles";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
+    private static final String PREF_VOLUME_LOC = "volume_location";
     private static final String PREF_TOGGLES_STYLE = "toggle_style";
     private static final String PREF_ALT_BUTTON_LAYOUT = "alternate_button_layout";
 
     Preference mEnabledToggles;
     Preference mLayout;
     ListPreference mBrightnessLocation;
+    ListPreference mVolumeLocation;
     CheckBoxPreference mAlternateButtonLayout;
     ListPreference mToggleStyle;
     Preference mResetToggles;
@@ -59,6 +61,11 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
         mBrightnessLocation.setOnPreferenceChangeListener(this);
         mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 1)));
+
+        mVolumeLocation = (ListPreference) findPreference(PREF_VOLUME_LOC);
+        mVolumeLocation.setOnPreferenceChangeListener(this);
+        mVolumeLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_VOLUME_LOC, 1)));
 
         mToggleStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
         mToggleStyle.setOnPreferenceChangeListener(this);
@@ -153,7 +160,11 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
 
-        } else if (preference == mToggleStyle) {
+        } else if (preference == mVolumeLocation) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_VOLUME_LOC, val);
+		} else if (preference == mToggleStyle) {
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_STYLE, val);

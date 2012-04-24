@@ -19,6 +19,12 @@
 		android:key="brightness_location"
 		android:title="@string/brightness_location_title" />
 
+	<ListPreference
+		android:entries="@array/brightness_location_entries"
+		android:entryValues="@array/brightness_location_values"
+		android:key="volume_location"
+		android:title="@string/volume_location_title" />
+
 	<PreferenceCategory
 		android:key="advanced_cat"
 		android:title="@string/advanced_settings">

@@ -22,7 +22,6 @@ import android.content.SharedPreferences.Editor;
 import android.preference.DialogPreference;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -116,28 +115,17 @@ public class ColorTuningPreference extends DialogPreference {
      * @param context The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
-        int iValue, iValue2;
+        int iValue;
         if (!isSupported()) {
             return;
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         for (String filePath : FILE_PATH) {
-            String sDefaultValue = KernelUtils.readOneLine(filePath);
-            Log.d(TAG,"INIT: " + sDefaultValue);
-            try {
-                iValue2 = Integer.parseInt(sDefaultValue);
-            } catch (NumberFormatException e) {
-                iValue2 = MAX_VALUE;
+            if (sharedPrefs.contains(filePath)) {
+                iValue = sharedPrefs.getInt(filePath, MAX_VALUE / 2);
+                KernelUtils.writeColor(filePath, (int) iValue);
             }
-            try {
-                iValue = sharedPrefs.getInt(filePath, iValue2);
-                Log.d(TAG, "restore: iValue: " + iValue + " File: " + filePath);
-            } catch (NumberFormatException e) {
-                iValue = iValue2;
-                Log.e(TAG, "restore ERROR: iValue: " + iValue + " File: " + filePath);
-            }
-            KernelUtils.writeColor(filePath, (int) iValue);
         }
     }
 

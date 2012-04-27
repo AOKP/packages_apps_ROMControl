@@ -51,6 +51,10 @@ public class InitD extends AOKPPreferenceFragment implements
 
             super.onCreate(savedInstanceState);
 
+            // get su permissions faster so there's no hangup while
+            // looking up all of the preferences
+            new CMDProcessor().su.run("");
+
             PreferenceManager.getDefaultSharedPreferences(getActivity())
                     .registerOnSharedPreferenceChangeListener(this);
 

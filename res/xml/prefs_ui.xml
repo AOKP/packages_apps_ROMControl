@@ -15,10 +15,12 @@
 		android:title="@string/rotate_180_title"
 		android:summary="@string/rotate_180_summary" />
 
-	<CheckBoxPreference
-		android:key="horizontal_recents_task_panel"
-		android:title="@string/horizontal_recents_task_panel_title"
-		android:summary="@string/horizontal_recents_task_panel_summary" />
+	<ListPreference
+		android:key="recent_app_switcher"
+		android:title="@string/recent_app_switcher_title"
+		android:summary="@string/recent_app_switcher_summary"
+		android:entries="@array/recent_app_switcher_entries"
+        android:entryValues="@array/recent_app_switcher_values" />
 
 	<Preference
 		android:key="lcd_density_setup"

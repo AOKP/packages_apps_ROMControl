@@ -102,8 +102,8 @@
 	<string name="rotate_180_title">Allow 180° rotation</string>
 	<string name="rotate_180_summary">Allow your device to rotate upside down!</string>
 
-	<string name="horizontal_recents_task_panel_title">Horizontal recents window</string>
-	<string name="horizontal_recents_task_panel_summary">Use WebOS style task switcher. Your UI will restart after changing this. It will come back in about 10 seconds. If it doesn\'t, just reboot the phone from the power menu.</string>
+	<string name="recent_app_switcher_title">Recents window style</string>
+	<string name="recent_app_switcher_summary">Change the recents window style (requires UI restart)</string>
 
 	<string name="disable_bootanimation_title">Disable boot animation</string>
 	<string name="disable_bootanimation_summary">Jerk.</string>
@@ -242,7 +242,7 @@
 
     <string name="title_status_bar_brightness_toggle">Enable brightness control</string>
     <string name="summary_status_bar_brightness_toggle">Slide finger slowly across statusbar to adjust brightness setting</string>
-    
+
     <string name="icon_transparency_title">Notification icon transparency</string>
 
     <string name="adb_icon_title">Enable USB debugging icon</string>
@@ -342,7 +342,7 @@
     <string name="weather_custom_app_dialog_title">Choose your app</string>
 	<string name="weather_custom_app_dialog_message">Package name for now.</string>
 	<string name="weather_refreshing">Requesting weather update!</string>
-	
+
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>
 

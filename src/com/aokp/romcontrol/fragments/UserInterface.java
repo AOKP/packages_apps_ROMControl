@@ -39,6 +39,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     private static final String PREF_ROTATION_ANIMATION = "rotation_animation_delay";
     private static final String PREF_180 = "rotate_180";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
+    private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
 
     CheckBoxPreference mCrtOnAnimation;
     CheckBoxPreference mCrtOffAnimation;
@@ -46,13 +47,13 @@ public class UserInterface extends AOKPPreferenceFragment implements
     CheckBoxPreference mEnableVolumeOptions;
     CheckBoxPreference mLongPressToKill;
     CheckBoxPreference mAllow180Rotation;
-    CheckBoxPreference mHorizontalAppSwitcher;
     Preference mCustomLabel;
     ListPreference mAnimationRotationDelay;
     ListPreference mHomeLongpress;
     Preference mLcdDensity;
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mDisableBugMailer;
+    ListPreference mRecentAppSwitcher;
 
     String mCustomLabelText = null;
     int newDensityValue;
@@ -100,10 +101,11 @@ public class UserInterface extends AOKPPreferenceFragment implements
         mAllow180Rotation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.ACCELEROMETER_ROTATION_ANGLES, (1 | 2 | 8)) == (1 | 2 | 4 | 8));
 
-        mHorizontalAppSwitcher = (CheckBoxPreference) findPreference("horizontal_recents_task_panel");
-        mHorizontalAppSwitcher.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(),
-                Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, 0) == 1);
+        mRecentAppSwitcher = (ListPreference) findPreference(PREF_RECENT_APP_SWITCHER);
+        mRecentAppSwitcher.setOnPreferenceChangeListener(this);
+        mRecentAppSwitcher.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.RECENT_APP_SWITCHER,
+                0)));
 
         mLcdDensity = findPreference("lcd_density_setup");
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
@@ -231,15 +233,6 @@ public class UserInterface extends AOKPPreferenceFragment implements
                             : (1 | 2 | 8));
             return true;
 
-        } else if (preference == mHorizontalAppSwitcher) {
-
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.HORIZONTAL_RECENTS_TASK_PANEL, checked ? 1
-                            : 0);
-            Helpers.restartSystemUI();
-            return true;
-
         } else if (preference == mDisableBootAnimation) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             if (checked) {
@@ -297,6 +290,12 @@ public class UserInterface extends AOKPPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_HOME_LONGPRESS,
                     Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mRecentAppSwitcher) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.RECENT_APP_SWITCHER, val);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;

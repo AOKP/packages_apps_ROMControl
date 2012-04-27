@@ -106,12 +106,9 @@ public class Led extends AOKPPreferenceFragment implements OnPreferenceChangeLis
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));
-            preference.setSummary(hex);
-
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NOTIFICATION_LIGHT_COLOR, intHex);
-            Log.e("ROMAN", intHex + "");
         }
 
         return result;

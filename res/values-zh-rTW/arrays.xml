@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="pref_navigation_menu_entries">
+        <item>右側</item>
+        <item>左側</item>
+        <item>兩側</item>
+        <item>不顯示</item>
+    </string-array>
+    <string-array name="pref_powersaving_data_screen_off_entries_cdma">
+        <item>保持現狀</item>
+        <item>關閉 LTE</item>
+        <item>關閉 3G/4G</item>
+    </string-array>
+    <string-array name="pref_powersaving_data_screen_off_entries">
+        <item>保持現狀</item>
+        <item>關閉 3G/4G 連線</item>
+        <item>切換至 2G 模式</item>
+    </string-array>
+    <string-array name="pref_powersaving_data_screen_off_delay_entries">
+        <item>立即執行</item>
+        <item>10 秒</item>
+        <item>30 秒</item>
+        <item>45 秒</item>
+        <item>1 分鐘</item>
+        <item>5 分鐘</item>
+        <item>10 分鐘</item>
+        <item>15 分鐘</item>
+        <item>30 分鐘</item>
+    </string-array>
+    <string-array name="pref_powersaving_sync_screen_off_interval_entries">
+        <item>15 分鐘</item>
+        <item>30 分鐘</item>
+        <item>1 小時</item>
+        <item>2 小時</item>
+        <item>3 小時</item>
+        <item>4 小時</item>
+        <item>5 小時</item>
+        <item>6 小時</item>
+        <item>8 小時</item>
+        <item>12 小時</item>
+    </string-array>
+    <string-array name="pref_powersaving_sync_screen_off_entries">
+        <item>保持現狀</item>
+        <item>關閉同步</item>
+        <item>延遲關閉同步</item>
+    </string-array>
+    <string-array name="powersaving_screen_off_wifi_entries">
+        <item>保持現狀</item>
+        <item>關閉 Wi-Fi</item>
+        <item>開啟 Wi-Fi</item>
+    </string-array>
+    <string-array name="powersaving_sync_data_mode_entries">
+        <item>保持現狀</item>
+        <item>僅透過 Wi-Fi</item>
+        <item>Wi-Fi 優先</item>
+        <item>僅透過 3G/4G</item>
+    </string-array>
+    <string-array name="powersaving_sync_data_mobile_mode_entries">
+        <item>僅透過 2G/1x</item>
+        <item>3G/4G 優先</item>
+    </string-array>
+    <string-array name="led_entries">
+        <item>0.5 秒</item>
+        <item>1.0 秒</item>
+        <item>1.5 秒</item>
+        <item>2.0 秒</item>
+        <item>2.5 秒</item>
+        <item>3.0 秒</item>
+        <item>3.5 秒</item>
+        <item>4.0 秒</item>
+        <item>4.5 秒</item>
+        <item>5.0 秒</item>
+        <item>5.5 秒</item>
+        <item>6.0 秒</item>
+        <item>7.0 秒</item>
+        <item>8.0 秒</item>
+        <item>9.0 秒</item>
+        <item>10.0 秒</item>
+    </string-array>
+    <string-array name="pref_navigation_menu_display_entries">
+        <item>系統預設</item>
+        <item>永遠顯示，但不顯示圖示。</item>
+        <item>永遠顯示</item>
+        <item>程式預設為隱藏則隱藏圖示。</item>
+    </string-array>
+    <string-array name="statusbar_transparency_entries">
+        <item>系統預設</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+        <item>完全透明</item>
+    </string-array>
+    <string-array name="statusbar_fontsize_entries">
+        <item>8dp</item>
+        <item>12dp</item>
+        <item>14dp</item>
+        <item>16dp（預設）</item>
+        <item>20dp</item>
+        <item>24dp</item>
+    </string-array>
+    <string-array name="statusbar_layout_entries">
+        <item>預設位置</item>
+        <item>下方</item>
+        <item>上方，但時間在下</item>
+    </string-array>
+    <string-array name="clock_style_entries">
+        <item>預設位置</item>
+        <item>居中</item>
+        <item>不顯示</item>
+    </string-array>
+    <string-array name="clock_ampm_entries">
+        <item>不顯示</item>
+        <item>小字體 上/下午</item>
+        <item>標準字體 上/下午</item>
+    </string-array>
+    <string-array name="clock_weekday_entries">
+        <item>不顯示</item>
+        <item>顯示小字體</item>
+        <item>顯示標準字體</item>
+    </string-array>
+    <string-array name="brightness_location_entries">
+        <item>上方</item>
+        <item>下方</item>
+        <item>不顯示</item>
+    </string-array>
+    <string-array name="rotation_animation_delay_entries">
+        <item>10 毫秒</item>
+        <item>25 毫秒</item>
+        <item>50 毫秒</item>
+        <item>75 毫秒</item>
+        <item>100 毫秒</item>
+        <item>150 毫秒</item>
+        <item>200 毫秒</item>
+        <item>250 毫秒</item>
+        <item>300 毫秒</item>
+    </string-array>
+    <string-array name="toggle_style_entries">
+        <item>僅顯示圖示</item>
+        <item>僅顯示文字</item>
+    </string-array>
+    <string-array name="long_press_home_entries">
+        <item>保持現狀</item>
+        <item>顯示執行中程式清單</item>
+        <item>相機</item>
+        <item>選取程式</item>
+    </string-array>
+    <string-array name="pref_lockscreen_options_entries">
+        <item>系統預設（雙鍵）</item>
+        <item>四鍵</item>
+        <item>八鍵</item>
+        <item>傳統</item>
+        <item>Honeycomb</item>
+    </string-array>
+    <string-array name="pref_lockscreen_calendar_interval_entries">
+        <item>1.0 秒</item>
+        <item>1.5 秒</item>
+        <item>2.0 秒</item>
+        <item>2.5 秒</item>
+        <item>3.0 秒</item>
+        <item>3.5 秒</item>
+        <item>4.0 秒</item>
+    </string-array>
+    <string-array name="pref_lockscreen_calendar_range_entries">
+        <item>1 天</item>
+        <item>2 天</item>
+        <item>3 天</item>
+        <item>4 天</item>
+        <item>5 天</item>
+        <item>6 天</item>
+        <item>1 星期</item>
+    </string-array>
+    <string-array name="minfree">
+        <item>25 MB</item>
+        <item>50 MB</item>
+        <item>75 MB</item>
+        <item>80 MB</item>
+        <item>100 MB</item>
+    </string-array>
+    <string-array name="battery_icon_entries">
+        <item>僅顯示圖示（預設）</item>
+        <item>僅顯示數值</item>
+        <item>顯示大字百分比圖示</item>
+        <item>顯示小字百分比圖示</item>
+        <item>環狀電量圖</item>
+        <item>隱藏</item>
+    </string-array>
+    <string-array name="battery_bar_entries">
+        <item>隱藏</item>
+        <item>狀態列上方</item>
+        <item>導航列上方</item>
+        <item>導航列下方</item>
+    </string-array>
+    <string-array name="battery_bar_style_entries">
+        <item>正常</item>
+        <item>居中</item>
+    </string-array>
+    <string-array name="battery_bar_thickness_entries">
+        <item>1 dp</item>
+        <item>2 dp</item>
+        <item>3 dp</item>
+        <item>4 dp</item>
+    </string-array>
+    <string-array name="lockscreen_choice_entries">
+        <item>解鎖</item>
+        <item>音量設定</item>
+        <item>電話</item>
+        <item>照相機</item>
+        <item>簡訊</item>
+        <item>預設程式</item>
+        <item>未設定</item>
+    </string-array>
+    <string-array name="glow_times_entries">
+        <item>關閉</item>
+        <item>快到個不行</item>
+        <item>快</item>
+        <item>正常</item>
+    </string-array>
+    <string-array name="weather_interval_entries">
+        <item>關閉</item>
+        <item>1 分鐘</item>
+        <item>5 分鐘</item>
+        <item>10 分鐘</item>
+        <item>30 分鐘</item>
+        <item>45 分鐘</item>
+        <item>60 分鐘</item>
+        <item>2 小時</item>
+        <item>3 小時</item>
+        <item>4 小時</item>
+        <item>6 小時</item>
+        <item>8 小時</item>
+    </string-array>
+    <string-array name="lcd_density_stock_entries">
+        <item>160 -- mdpi</item>
+        <item>240 -- hdpi</item>
+        <item>320 -- xhdpi</item>
+    </string-array>
+    <string-array name="signal_style_entries">
+        <item>系統預設</item>
+        <item>顯示訊號強度值</item>
+        <item>顯示強度值加 dBm 值</item>
+    </string-array>
+    <string-array name="wifi_signal_style_entries">
+        <item>顯示圖示</item>
+        <item>顯示數值</item>
+    </string-array>
+    <string-array name="weather_statusbar_location_entries">
+        <item>通知攔下方</item>
+        <item>天氣看板</item>
+        <item>不顯示</item>
+    </string-array>
+    <string-array name="navigation_bar_width_entries">
+        <item>42 dp（預設值）</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    <string-array name="navigation_bar_height_entries">
+        <item>48 dp（預設值）</item>
+        <item>42 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    <string-array name="navigation_bar_qty_entries">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="navbar_button_entries">
+        <item>主頁</item>
+        <item>返回</item>
+        <item>最近開啟程式</item>
+        <item>搜尋</item>
+        <item>選單</item>
+        <item>關閉程式</item>
+        <item>電源</item>
+        <item>自訂應用程式</item>
+        <item>無</item>
+    </string-array>
+</resources>

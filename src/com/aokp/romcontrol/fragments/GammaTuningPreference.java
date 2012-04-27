@@ -58,11 +58,11 @@ public class GammaTuningPreference extends DialogPreference {
 
     private GammaSeekBar mSeekBars[] = new GammaSeekBar[3];
     
-    private static final int DEFAULT_GAMMA = 60;
+    private static final int DEFAULT_GAMMA = 100;
 
-    private static final int MAX_VALUE = 80;
+    private static final int MAX_VALUE = 200;
 
-    private static final int OFFSET_VALUE = 0;
+    private static final int OFFSET_VALUE = 100;
     
     private Button mReset_button;
 
@@ -121,15 +121,17 @@ public class GammaTuningPreference extends DialogPreference {
      * @param context The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
+        int iValue;
         if (!isSupported()) {
             return;
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         for (String filePath : FILE_PATH) {
-            String sDefaultValue = KernelUtils.readOneLine(filePath);
-            int iValue = sharedPrefs.getInt(filePath, Integer.valueOf(sDefaultValue));
-            KernelUtils.writeValue(filePath, String.valueOf((long) iValue));
+            if (sharedPrefs.contains(filePath)) {
+                iValue = sharedPrefs.getInt(filePath, DEFAULT_GAMMA);
+                KernelUtils.writeValue(filePath, String.valueOf((long) iValue));
+            }
         }
     }
 

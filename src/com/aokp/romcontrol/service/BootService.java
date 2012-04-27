@@ -18,6 +18,8 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
+import com.aokp.romcontrol.fragments.ColorTuningPreference;
+import com.aokp.romcontrol.fragments.GammaTuningPreference;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.tools.Voltage;
 import com.aokp.romcontrol.tools.VoltageControl;
@@ -36,21 +38,6 @@ public class BootService extends Service {
     private final BootService service = this;
     public static SharedPreferences preferences;
     private Thread bootThread;
-
-    private static final String[] colorFILE_PATH = new String[] {
-            "/sys/class/misc/samoled_color/red_multiplier",
-            "/sys/class/misc/samoled_color/green_multiplier",
-            "/sys/class/misc/samoled_color/blue_multiplier"
-    };
-    // Align MAX_VALUE with Voodoo Control settings
-    private static final int colorMAX_VALUE = Integer.MAX_VALUE - 2;
-
-    private static final String[] gammaFILE_PATH = new String[] {
-            "/sys/class/misc/samoled_color/red_v1_offset",
-            "/sys/class/misc/samoled_color/green_v1_offset",
-            "/sys/class/misc/samoled_color/blue_v1_offset"
-    };
-    private static final int gammaMAX_VALUE = 80;
 
     public void onStart(Intent intent, int startId) {
         preferences = PreferenceManager.getDefaultSharedPreferences(service);
@@ -141,8 +128,8 @@ public class BootService extends Service {
         }
 
         // Let's restore color & gamma settings
-        restoreColor();
-        restoreGamma();
+        ColorTuningPreference.restore(service);
+        GammaTuningPreference.restore(service);
 
         if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) != 0) {
             Intent startRefresh = new Intent(getApplicationContext(),
@@ -153,58 +140,6 @@ public class BootService extends Service {
         bootThread.start();
         // Stop the service
         stopSelf();
-    }
-
-    public static void restoreColor() {
-        int iValue, iValue2;
-        if (!isSupported(colorFILE_PATH)) {
-            return;
-        }
-
-        for (String filePath : colorFILE_PATH) {
-            String sDefaultValue = KernelUtils.readOneLine(filePath);
-            Log.d(TAG, "INIT: " + sDefaultValue);
-            try {
-                iValue2 = Integer.parseInt(sDefaultValue);
-            } catch (NumberFormatException e) {
-                iValue2 = colorMAX_VALUE;
-            }
-            try {
-                iValue = preferences.getInt(filePath, iValue2);
-                Log.d(TAG, "restore: iValue: " + iValue + " File: " + filePath);
-            } catch (NumberFormatException e) {
-                iValue = iValue2;
-                Log.e(TAG, "restore ERROR: iValue: " + iValue + " File: " + filePath);
-            }
-            KernelUtils.writeColor(filePath, (int) iValue);
-        }
-    }
-
-    public static void restoreGamma() {
-        if (!isSupported(gammaFILE_PATH)) {
-            return;
-        }
-        for (String filePath : gammaFILE_PATH) {
-            String sDefaultValue = KernelUtils.readOneLine(filePath);
-            int iValue = preferences.getInt(filePath, Integer.valueOf(sDefaultValue));
-            KernelUtils.writeValue(filePath, String.valueOf((long) iValue));
-        }
-    }
-
-    /**
-     * Check whether the running kernel supports color/gamma tuning or not.
-     * 
-     * @return Whether color/gamma tuning is supported or not
-     */
-    public static boolean isSupported(String[] filecheck) {
-        boolean supported = true;
-        for (String filePath : filecheck) {
-            if (!KernelUtils.fileExists(filePath)) {
-                supported = false;
-            }
-        }
-
-        return supported;
     }
 
     @Override

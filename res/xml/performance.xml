@@ -29,7 +29,7 @@
 			android:title="@string/pt_cpu_boot" />
 		<PreferenceScreen
 			android:key="volt_control"
-			android:title="Voltage Control">
+                        android:title="@string/pt_volt_control">
 			<intent
 				android:action="android.intent.action.MAIN"
 				android:targetPackage="com.aokp.romcontrol"

@@ -156,6 +156,7 @@
     <string name="lockscreen_calendar_interval_title">滾動間隔</string>
     <string name="lockscreen_calendar_interval_summary">選擇活動事項滾動間隔秒數。</string>
     <string name="title_show_power_saver">顯示節電模式</string>
+    <string name="summary_show_power_saver">你必須先啟用節電功能。</string>
     <string name="title_show_screenshot">顯示截圖</string>
     <string name="title_show_torch_toggle">顯示手電筒開關</string>
     <string name="title_show_airplane_toggle">顯示飛行模式</string>
@@ -180,6 +181,7 @@
     <string name="title_led_off">閃爍燈關閉時之持續時間</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">閃爍燈顏色</string>
+    <string name="led_color_summary">可改變閃爍燈顏色，應用程式本身之設定值仍可取代此設定。</string>
     <string name="title_led_screen_on">螢幕開啟時持續閃爍燈光</string>
     <string name="summary_led_screen_on">@null</string>
     <string name="title_settings_behavior">快捷開關使用設定</string>
@@ -251,7 +253,7 @@
     <string name="weather_use_custom_location">使用自訂地點</string>
     <string name="weather_use_custom_location_summary">設定自訂地點較為省電，反之則需連上網路確認所在位置。</string>
     <string name="weather_custom_location_dialog_title">自訂地點</string>
-    <string name="weather_custom_location_dialog_message">"請依照範例輸入英文地名，否則將無法顯示天氣更新。例如：Taipei // Chungho City // Chungho City, Hsing Bei Shi"</string>
+    <string name="weather_custom_location_dialog_message">"請依照範例輸入英文地名，否則將無法顯示天氣更新。\n例如：Taipei // Chungho City // Chungho City, Hsing Bei Shi"</string>
     <string name="weather_custom_location_title">自訂地點</string>
     <string name="weather_show_location_title">顯示地名</string>
     <string name="weather_show_location_summary">於通知欄下方顯示所在地名。</string>
@@ -300,6 +302,7 @@
     <string name="pt_set_min">CPU 最低頻率</string>
     <string name="pt_set_gov">調整模式</string>
     <string name="pt_cpu_boot">開機立即啟用</string>
+    <string name="pt_volt_control">CPU 電壓設定</string>
     <string name="pref_scrollingcache_title">頁面滾動快取</string>
     <string name="pref_scrollingcache_summary">啟用本功能可提高系統效能表現，相對亦將佔用較多記憶體。</string>
     <string name="pref_scrollingcache_force_enable">強制啟用</string>
@@ -352,16 +355,16 @@
     <string name="devs">開發者</string>
     <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP 官網</string>
-    <string name="aokp_website_summary">"www.aokp.co - 可至此網址取得最新發佈版本。"</string>
+    <string name="aokp_website_summary">"www.aokp.co\n可至此網址取得最新發佈版本。"</string>
     <string name="aokp_source_title">AOKP 原始碼</string>
-    <string name="aokp_source_summary">"AOKP 屬完全開放之原始碼。可於 github.com/aokp 取得最新資源。"</string>
+    <string name="aokp_source_summary">"AOKP 屬完全開放之原始碼。\n可於 github.com/aokp 取得最新資源。"</string>
     <string name="aokp_irc_title">參與 IRC</string>
-    <string name="aokp_irc_summary">"\#teamkang @ irc.freenode.net 正體中文化：bulin24 etc."</string>
+    <string name="aokp_irc_summary">"\#teamkang @ irc.freenode.net\n正體中文化：bulin24 etc."</string>
     <string name="about_aokp">關於 AOKP</string>
     <string name="about_aokp_summary">@null</string>
     <string name="pt_fast_charge_boot">快速充電</string>
     <string name="ps_fast_charge_boot">開機後立即啟動快速充電功能。</string>
-    <string name="fast_charge_warning">"啟用此快速充電，每次重啟後將無法連入 PC！若開啟本設定，每次重啟手機後，將直接進入快速充電模式，usb 線將僅限充電之用。"</string>
+    <string name="fast_charge_warning">"啟用此快速充電，每次重啟後將無法連入 PC！\n\n若開啟本設定，每次重啟手機後，將直接進入快速充電模式，usb 線將僅限充電之用。"</string>
     <string name="fast_charge_notification_title">已啟用快速充電模式！</string>
     <string name="fast_charge_notification_message">usb 線僅限充電之用！</string>
     <string name="kernel">內核控制器（需內核支援）</string>
@@ -384,7 +387,7 @@
     <string name="weather_8">凍毛雨</string>
     <string name="weather_9">小雨</string>
     <string name="weather_10">凍雨</string>
-    <string name="weather_11">陣雨</string>
+    <string name="weather_11">雨</string>
     <string name="weather_12">小雪</string>
     <string name="weather_13">陣雪</string>
     <string name="weather_14">中雪</string>
@@ -401,7 +404,7 @@
     <string name="weather_25">冷</string>
     <string name="weather_26">多雲</string>
     <string name="weather_27">夜間多雲</string>
-    <string name="weather_28">晴時多雲</string>
+    <string name="weather_28">多雲時陰</string>
     <string name="weather_29">多雲</string>
     <string name="weather_30">多雲時晴</string>
     <string name="weather_31">夜空晴朗</string>
@@ -409,7 +412,7 @@
     <string name="weather_33">夜空薄霧</string>
     <string name="weather_34">晴朗有霧</string>
     <string name="weather_35">雨混冰雹</string>
-    <string name="weather_36">炎熱</string>
+    <string name="weather_36">熱</string>
     <string name="weather_37">局部雷陣雨</string>
     <string name="weather_38">晴時多雲偶陣雨</string>
     <string name="weather_39">雷陣雨</string>
@@ -421,6 +424,5 @@
     <string name="weather_45">雷雨</string>
     <string name="weather_46">陣雪</string>
     <string name="weather_47">局部雷雨</string>
-    <string name="weather_3200" />
-    <string name="enable_volume_options_summary">按下音量鍵時顯示其他音量設定鍵。</string>
+    <string name="weather_3200"></string>
 </resources>

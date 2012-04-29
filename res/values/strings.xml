@@ -195,6 +195,7 @@
 
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show power saver</string>
+    <string name="summary_show_power_saver">You need to enable power saver before you can see it in the power menu.</string>
     <string name="title_show_screenshot">Show screenshot</string>
     <string name="title_show_torch_toggle">Show torch toggle</string>
     <string name="title_show_airplane_toggle">Show airplane toggle</string>
@@ -389,6 +390,7 @@
 	<string name="pt_set_min">Min CPU</string>
 	<string name="pt_set_gov">Scaling governor</string>
 	<string name="pt_cpu_boot">Set at boot</string>
+        <string name="pt_volt_control">Voltage control</string>
     <!-- Scrolling Cache -->
     <string name="pref_scrollingcache_title">Scrolling cache</string>
     <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>

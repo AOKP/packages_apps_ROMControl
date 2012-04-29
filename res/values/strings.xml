@@ -389,6 +389,7 @@
 	<string name="pt_set_min">Min CPU</string>
 	<string name="pt_set_gov">Scaling governor</string>
 	<string name="pt_cpu_boot">Set at boot</string>
+        <string name="pt_volt_control">Voltage control</string>
     <!-- Scrolling Cache -->
     <string name="pref_scrollingcache_title">Scrolling cache</string>
     <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>

@@ -57,7 +57,7 @@ public class Performance extends AOKPPreferenceFragment implements
     private SharedPreferences preferences;
     private boolean doneLoading = false;
 
-    CheckBoxPreference mFastCharge;
+    private CheckBoxPreference mFastCharge;
 
     /** Called when the activity is first created. */
     @Override
@@ -126,6 +126,7 @@ public class Performance extends AOKPPreferenceFragment implements
         }
 
         mFastCharge = (CheckBoxPreference) findPreference(KEY_FASTCHARGE);
+        mFastCharge.setChecked(preferences.getBoolean(KEY_FASTCHARGE, false));
         if (!hasFastCharge) {
             ((PreferenceGroup) findPreference("kernel")).removePreference(mFastCharge);
         }
@@ -159,16 +160,19 @@ public class Performance extends AOKPPreferenceFragment implements
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 preferences.edit().putBoolean(KEY_FASTCHARGE, false).apply();
+                                mFastCharge.setChecked(false);
                             }
                         })
                         .setPositiveButton(ok, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 preferences.edit().putBoolean(KEY_FASTCHARGE, true).apply();
+                                mFastCharge.setChecked(true);
                             }
                         })
                         .create()
                         .show();
+                return true;
             }
         }
 

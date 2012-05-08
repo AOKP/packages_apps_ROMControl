@@ -36,6 +36,10 @@
     <string name="advanced_settings">Pokročilá nastavení</string>
     <string name="misc_short">Ostatní</string>
     
+    <!-- General Strings -->
+    <string name="cancel">Zrušit</string>
+    <string name="ok">OK</string>
+
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Pozice menu</string>
     <string name="summary_pref_menu_display">Při používání velkého tlačítka menu je třeba odstranit postranní tlačítka menu!</string>
@@ -84,6 +88,9 @@
 	<string name="ime_switcher_summary">Během psaní ve stavové liště (vyžaduje restart)</string>
 
 	<string name="custom_carrier_label_title">Vlastní název operátora</string>
+  <string name="custom_carrier_label_empty">Vložit nový název!</string>
+	<string name="custom_carrier_label_warning">Vlastní název není nastaven. Jakmile je definován, nelze to vzít zpátky do provedení plného wipu.</string>
+
 	<string name="longpress_to_kill_title">Podržet zpět pro ukončení</string>
 	<string name="longpress_to_kill_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
@@ -184,6 +191,7 @@
     
     <!-- Power Menu -->
     <string name="title_show_power_saver">Zobrazovat spořič energie</string>
+    <string name="summary_show_power_saver">Pro zobrazení v menu napájení musí být spořič energie aktivní.</string>
     <string name="title_show_screenshot">Zobrazovat snímek obrazovky</string>
     <string name="title_show_torch_toggle">Zobrazovat přepínač svítilny</string>
     <string name="title_show_airplane_toggle">Zobrazovat přepínač letového módu</string>
@@ -217,6 +225,7 @@
     <string name="title_led_off">Doba mezi rozsvícením LEDky</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">Barva LEDky</string>
+    <string name="led_color_summary">Změní výchozí barvu LEDky. Aplikace mohou snadno potlačit toto nastavení jejich vlastní barvou.</string>
     <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
     <string name="summary_led_screen_on">@null</string>
 
@@ -228,7 +237,9 @@
     <string name="summary_auto_hide_toggles">Po zavření notifikační lišty budou přepínače skryty</string>
 
     <string name="title_status_bar_brightness_toggle">Zapnout změnu jasu</string>
-    <string name="summary_status_bar_brightness_toggle">Slide finger slowly across statusbar to adjust brightness setting</string>
+    <string name="summary_status_bar_brightness_toggle">Jemným posunutím prstu po stavové liště dojde ke změně jasu.</string>
+
+    <string name="icon_transparency_title">Průhlednost notifikačních ikon</string>
 
     <string name="adb_icon_title">Zapnout ikonu Ladění USB</string>
     <string name="adb_icon_summary">Wutang</string>
@@ -238,6 +249,8 @@
 
     <string name="statusbar_layout">Rozložení notifikačního panelu</string>
     <string name="statusbar_layout_summary">Mění rozložení notifikačního vysouvacího panelu (vyžaduje restart UI)</string>
+    <string name="statusbar_fontsize">Velikost písma ve stavové liště</string>
+    <string name="statusbar_fontsize_summary">Mění velikost textu položek ve stavové liště</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Styl ikony baterie</string>
@@ -315,6 +328,12 @@
 	<string name="weather_use_celcius">Metrické jednotky (naše české)</string>
 	<string name="weather_use_celcius_summary">Povolením této volby dojde k zobrazování teploty ve stupních Celsia místo Fahrenheitech a rychlost větru v km/h místo m/h.</string>
 	<string name="weather_statusbar_style">Styl počasí ve stavové liště</string>
+	<string name="weather_start_custom_app">Spustit vlastní aplikaci</string>
+	<string name="weather_start_custom_app_summary">Po kliknutí na obrázek počasí spustit vlastní aplikaci.</string>
+        <string name="weather_custom_app_title">Vlastní aplikace</string>
+        <string name="weather_custom_app_dialog_title">Vybrat aplikaci</string>
+	<string name="weather_custom_app_dialog_message">Název balíčku (prozatím).</string>
+	<string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>
 	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>
@@ -362,6 +381,7 @@
 	<string name="pt_set_min">Minimální frekvence CPU</string>
 	<string name="pt_set_gov">Metoda škálování (governor)</string>
 	<string name="pt_cpu_boot">Nastavit při startu</string>
+  <string name="pt_volt_control">Nastavení voltáže</string>
   <!-- Scrolling Cache -->
   <string name="pref_scrollingcache_title">Mezipaměť skrolování</string>
   <string name="pref_scrollingcache_summary">Mezipaměť skrolování může zlepšit výkon na úkor paměti</string>
@@ -451,4 +471,63 @@
   <string name="color_green_title">Zelená</string>
   <string name="color_blue_title">Modrá</string>
   <string name="reset_defaults">Zpět k výchozím hodnotám</string>
+
+  <!-- Weather Codes -->
+  <string name="weather_0">Tornádo</string>
+  <string name="weather_1">Tropická bouře</string>
+  <string name="weather_2">Hurikán</string>
+  <string name="weather_3">Těžké bouřky</string>
+    <string name="weather_4">Bouřky</string>
+    <string name="weather_5">Déšť se sněhem</string>
+    <string name="weather_6">Déšť se sněhem</string>
+    <string name="weather_7">Déšť se sněhem</string>
+    <string name="weather_8">Mrznoucí mrholení</string>
+    <string name="weather_9">Mrholení</string>
+    <string name="weather_10">Mrznoucí déšť</string>
+    <string name="weather_11">Přeháňky</string>
+    <string name="weather_12">Přeháňky</string>
+    <string name="weather_13">Sněhové přeháňky</string>
+    <string name="weather_14">Lehké přeháňky se sněhem</string>
+    <string name="weather_15">Zvířený sníh</string>
+    <string name="weather_16">Sněžení</string>
+    <string name="weather_17">Krupobití</string>
+    <string name="weather_18">Plískanice</string>
+    <string name="weather_19">Prašno</string>
+    <string name="weather_20">Mlhavo</string>
+    <string name="weather_21">Opar</string>
+    <string name="weather_22">Zakouřeno</string>
+    <string name="weather_23">Bouřlivo</string>
+    <string name="weather_24">Větrno</string>
+    <string name="weather_25">Chladno</string>
+    <string name="weather_26">Zataženo</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">Převážně zataženo</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">Převážně zataženo</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">Částečně zataženo</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">Částečně zataženo</string>
+    <!-- clear (night) -->
+    <string name="weather_31">Jasno</string>
+    <string name="weather_32">Slunečno</string>
+    <!-- fair (night) -->
+    <string name="weather_33">Hezky</string>
+    <!-- fair (day) -->
+    <string name="weather_34">Hezky</string>
+    <string name="weather_35">Déšť se sněhem</string>
+    <string name="weather_36">Horko</string>
+    <string name="weather_37">Ojedinělé bouřky</string>
+    <string name="weather_38">Rozptýlené bouřky</string>
+    <string name="weather_39">Rozptýlené bouřky</string>
+    <string name="weather_40">Rozptýlené přeháňky</string>
+    <string name="weather_41">Těžké sněžení</string>
+    <string name="weather_42">Rozptýlené sněhové přeháňky</string>
+    <string name="weather_43">Rozptýlené sněhové přeháňky</string>
+    <string name="weather_44">Polojasno</string>
+    <string name="weather_45">Bouřkové přeháňky</string>
+    <string name="weather_46">Sněhové přeháňky</string>
+    <string name="weather_47">Ojedinělé bouřky</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
 </resources>

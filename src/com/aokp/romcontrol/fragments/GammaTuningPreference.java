@@ -27,8 +27,8 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.aokp.romcontrol.util.KernelUtils;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.KernelUtils;
 
 /**
  * Special preference type that allows configuration of both the ring volume and
@@ -38,32 +38,53 @@ public class GammaTuningPreference extends DialogPreference {
 
     private static final String TAG = "GAMMA...";
 
-    enum Colors {
-        RED, GREEN, BLUE
+    enum BarType {
+        RED(R.id.gamma_red_seekbar, R.id.gamma_red_value,
+                "/sys/class/misc/samoled_color/red_v1_offset",
+                DEFAULT_GAMMA, OFFSET_VALUE, MAX_VALUE),
+
+        GREEN(R.id.gamma_green_seekbar, R.id.gamma_green_value,
+                "/sys/class/misc/samoled_color/green_v1_offset",
+                DEFAULT_GAMMA, OFFSET_VALUE, MAX_VALUE),
+
+        BLUE(R.id.gamma_blue_seekbar, R.id.gamma_blue_value,
+                "/sys/class/misc/samoled_color/blue_v1_offset",
+                DEFAULT_GAMMA, 100, MAX_VALUE),
+
+        GAMMA(R.id.gamma_dss_seekbar, R.id.gamma_dss_value,
+                "/sys/devices/platform/omapdss/manager0/gamma",
+                0, 0, 10);
+
+        int seekBarId;
+        int valueDisplayId;
+        String filePath;
+        int defValue;
+        int offSetValue;
+        int maxValue;
+
+        BarType(int id, int valueDisplayId, String filePath, int defValue, int offSetValue,
+                int maxValue) {
+            this.seekBarId = id;
+            this.valueDisplayId = valueDisplayId;
+            this.filePath = filePath;
+            this.defValue = defValue;
+            this.offSetValue = offSetValue;
+            this.maxValue = maxValue;
+        }
     };
 
-    private static final int[] SEEKBAR_ID = new int[] {
-            R.id.gamma_red_seekbar, R.id.gamma_green_seekbar, R.id.gamma_blue_seekbar
+    private static final BarType[] SEEK_BARS = new BarType[] {
+            BarType.RED, BarType.GREEN, BarType.BLUE, BarType.GAMMA
     };
 
-    private static final int[] VALUE_DISPLAY_ID = new int[] {
-            R.id.gamma_red_value, R.id.gamma_green_value, R.id.gamma_blue_value
-    };
+    private GammaSeekBar mSeekBars[] = new GammaSeekBar[SEEK_BARS.length];
 
-    private static final String[] FILE_PATH = new String[] {
-            "/sys/class/misc/samoled_color/red_v1_offset",
-            "/sys/class/misc/samoled_color/green_v1_offset",
-            "/sys/class/misc/samoled_color/blue_v1_offset"
-    };
-
-    private GammaSeekBar mSeekBars[] = new GammaSeekBar[3];
-    
     private static final int DEFAULT_GAMMA = 100;
 
     private static final int MAX_VALUE = 200;
 
     private static final int OFFSET_VALUE = 100;
-    
+
     private Button mReset_button;
 
     // Track instances to know when to restore original color
@@ -83,19 +104,20 @@ public class GammaTuningPreference extends DialogPreference {
 
         sInstances++;
 
-        for (int i = 0; i < SEEKBAR_ID.length; i++) {
-            SeekBar seekBar = (SeekBar) view.findViewById(SEEKBAR_ID[i]);
-            TextView valueDisplay = (TextView) view.findViewById(VALUE_DISPLAY_ID[i]);
-            mSeekBars[i] = new GammaSeekBar(seekBar, valueDisplay, FILE_PATH[i]);
+        for (int i = 0; i < SEEK_BARS.length; i++) {
+            SeekBar seekBar = (SeekBar) view.findViewById(SEEK_BARS[i].seekBarId);
+            TextView valueDisplay = (TextView) view.findViewById(SEEK_BARS[i].valueDisplayId);
+            mSeekBars[i] = new GammaSeekBar(seekBar, valueDisplay, SEEK_BARS[i].filePath,
+                    SEEK_BARS[i].offSetValue, SEEK_BARS[i].maxValue);
         }
         mReset_button = (Button) view.findViewById(R.id.reset_button);
-        mReset_button.setOnClickListener(new Button.OnClickListener() {  
+        mReset_button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-            	for (GammaSeekBar seekbar : mSeekBars){
-            		seekbar.mSeekBar.setProgress(DEFAULT_GAMMA);
+                for (int i = 0; i < SEEK_BARS.length; i++) {
+                    mSeekBars[i].mSeekBar.setProgress(SEEK_BARS[i].defValue);
                 }
             }
-            });
+        });
     }
 
     @Override
@@ -121,17 +143,25 @@ public class GammaTuningPreference extends DialogPreference {
      * @param context The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
-        int iValue;
         if (!isSupported()) {
             return;
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        for (String filePath : FILE_PATH) {
-            if (sharedPrefs.contains(filePath)) {
-                iValue = sharedPrefs.getInt(filePath, DEFAULT_GAMMA);
+        Boolean bFirstTime = sharedPrefs.getBoolean("FirstTimeGamma", true);
+        for (int i = 0; i < SEEK_BARS.length; i++) {
+            String filePath = SEEK_BARS[i].filePath;
+            String sDefaultValue = KernelUtils.readOneLine(filePath);
+            int iValue = sharedPrefs.getInt(filePath, Integer.valueOf(sDefaultValue));
+            if (bFirstTime)
+                KernelUtils.writeValue(filePath, "0");
+            else
                 KernelUtils.writeValue(filePath, String.valueOf((long) iValue));
-            }
+        }
+        if (bFirstTime) {
+            SharedPreferences.Editor editor = sharedPrefs.edit();
+            editor.putBoolean("FirstTimeGamma", false);
+            editor.commit();
         }
     }
 
@@ -142,8 +172,8 @@ public class GammaTuningPreference extends DialogPreference {
      */
     public static boolean isSupported() {
         boolean supported = true;
-        for (String filePath : FILE_PATH) {
-            if (!KernelUtils.fileExists(filePath)) {
+        for (int i = 0; i < SEEK_BARS.length; i++) {
+            if (!KernelUtils.fileExists(SEEK_BARS[i].filePath)) {
                 supported = false;
             }
         }
@@ -161,14 +191,19 @@ public class GammaTuningPreference extends DialogPreference {
 
         private TextView mValueDisplay;
 
-        public GammaSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
+        private int OFFSET_VALUE;
+
+        private int MAX_VALUE;
+
+        public GammaSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath,
+                Integer offsetValue, Integer maxValue) {
             int iValue;
 
             mSeekBar = seekBar;
             mValueDisplay = valueDisplay;
             mFilePath = filePath;
-
-            SharedPreferences sharedPreferences = getSharedPreferences();
+            OFFSET_VALUE = offsetValue;
+            MAX_VALUE = maxValue;
 
             // Read original value
             if (KernelUtils.fileExists(mFilePath)) {

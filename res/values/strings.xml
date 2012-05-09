@@ -495,6 +495,7 @@
     <string name="color_red_title">Red</string>
     <string name="color_green_title">Green</string>
     <string name="color_blue_title">Blue</string>
+    <string name="gamma_dss_title">Software Gamma Adjustment</string>
     <string name="reset_defaults">Reset to Defaults</string>
 
     <!-- Weather Codes -->

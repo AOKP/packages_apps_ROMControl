@@ -328,4 +328,10 @@
 		<item>Vlastní aplikace</item>
 		<item>Prázdné</item>
 	</string-array>
+
+  <string-array name="recent_app_switcher_entries">
+    <item>Výchozí</item>
+    <item>WebOS</item>
+    <item>Sense 4</item>
+  </string-array>
 </resources>

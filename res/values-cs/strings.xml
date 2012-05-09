@@ -98,12 +98,16 @@
 	<string name="rotate_180_title">Umožnit rotaci o 180°</string>
 	<string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
 
-	<string name="horizontal_recents_task_panel_title">Horizontální přepínač aplikací</string>
-	<string name="horizontal_recents_task_panel_summary">Používat styl WebOS pro přepínání aplikací. Po provedení změny bude restartováno uživatelské rozhraní. Mělo by se nastartovat po 10 sekundách. Pokud se tak nestane, pomůže restart telefonu z menu napájení.</string>
+  <string name="recent_app_switcher_title">Styl přepínače aplikací</string>
+  <string name="recent_app_switcher_summary">Změnit styl přepínače aplikací (vyžaduje restart UI)</string>
 	
 	<string name="disable_bootanimation_title">Vypnout startovací animaci</string>
 	<string name="disable_bootanimation_summary">Heteráku :D</string>
 	
+  <string name="disable_bootaudio_title">Vypnout startovací zvuk</string>
+	<string name="disable_bootaudio_summary">Ticho!</string>
+	<string name="disable_bootaudio_summary_disabled">Pro zapnutí startovacího zvuku musí být MP3 soubor umístěn v \n/system/media/boot_audio.mp3</string>
+
 	<string name="disable_bugmailer_title">Vypnout bugmailer</string>
 
 	<string name="lcd_density_title">Hustota displeje</string>

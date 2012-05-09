@@ -43,20 +43,21 @@ public class GammaTuningPreference extends DialogPreference {
     };
 
     private static final int[] SEEKBAR_ID = new int[] {
-            R.id.gamma_red_seekbar, R.id.gamma_green_seekbar, R.id.gamma_blue_seekbar
+            R.id.gamma_red_seekbar, R.id.gamma_green_seekbar, R.id.gamma_blue_seekbar, R.id.gamma_dss_seekbar
     };
 
     private static final int[] VALUE_DISPLAY_ID = new int[] {
-            R.id.gamma_red_value, R.id.gamma_green_value, R.id.gamma_blue_value
+            R.id.gamma_red_value, R.id.gamma_green_value, R.id.gamma_blue_value, R.id.gamma_dss_value
     };
 
     private static final String[] FILE_PATH = new String[] {
             "/sys/class/misc/samoled_color/red_v1_offset",
             "/sys/class/misc/samoled_color/green_v1_offset",
-            "/sys/class/misc/samoled_color/blue_v1_offset"
+            "/sys/class/misc/samoled_color/blue_v1_offset",
+            "/sys/devices/platform/omapdss/manager0/gamma"
     };
 
-    private GammaSeekBar mSeekBars[] = new GammaSeekBar[3];
+    private GammaSeekBar mSeekBars[] = new GammaSeekBar[4];
     
     private static final int DEFAULT_GAMMA = 100;
 
@@ -86,16 +87,19 @@ public class GammaTuningPreference extends DialogPreference {
         for (int i = 0; i < SEEKBAR_ID.length; i++) {
             SeekBar seekBar = (SeekBar) view.findViewById(SEEKBAR_ID[i]);
             TextView valueDisplay = (TextView) view.findViewById(VALUE_DISPLAY_ID[i]);
-            mSeekBars[i] = new GammaSeekBar(seekBar, valueDisplay, FILE_PATH[i]);
+            if (i < 3)
+                mSeekBars[i] = new GammaSeekBar(seekBar, valueDisplay, FILE_PATH[i], OFFSET_VALUE, MAX_VALUE);
+            else
+                mSeekBars[i] = new GammaSeekBar(seekBar, valueDisplay, FILE_PATH[i], 0, 10);
         }
         mReset_button = (Button) view.findViewById(R.id.reset_button);
         mReset_button.setOnClickListener(new Button.OnClickListener() {  
             public void onClick(View v) {
-            	for (GammaSeekBar seekbar : mSeekBars){
-            		seekbar.mSeekBar.setProgress(DEFAULT_GAMMA);
+            for (GammaSeekBar seekbar : mSeekBars){
+            seekbar.mSeekBar.setProgress(DEFAULT_GAMMA);
                 }
             }
-            });
+        });
     }
 
     @Override
@@ -121,17 +125,25 @@ public class GammaTuningPreference extends DialogPreference {
      * @param context The context to read the SharedPreferences from
      */
     public static void restore(Context context) {
-        int iValue;
         if (!isSupported()) {
             return;
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        Boolean bFirstTime = sharedPrefs.getBoolean("FirstTimeGamma", true);
         for (String filePath : FILE_PATH) {
-            if (sharedPrefs.contains(filePath)) {
-                iValue = sharedPrefs.getInt(filePath, DEFAULT_GAMMA);
+            String sDefaultValue = KernelUtils.readOneLine(filePath);
+            int iValue = sharedPrefs.getInt(filePath, Integer.valueOf(sDefaultValue));
+            if (bFirstTime)
+                KernelUtils.writeValue(filePath, "0");
+            else
                 KernelUtils.writeValue(filePath, String.valueOf((long) iValue));
-            }
+        }
+        if (bFirstTime)
+        {
+            SharedPreferences.Editor editor = sharedPrefs.edit();
+            editor.putBoolean("FirstTimeGamma", false);
+            editor.commit();
         }
     }
 
@@ -161,12 +173,18 @@ public class GammaTuningPreference extends DialogPreference {
 
         private TextView mValueDisplay;
 
-        public GammaSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
+        private int OFFSET_VALUE;
+
+        private int MAX_VALUE;
+
+        public GammaSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath, Integer offsetValue, Integer maxValue) {
             int iValue;
 
             mSeekBar = seekBar;
             mValueDisplay = valueDisplay;
             mFilePath = filePath;
+            OFFSET_VALUE = offsetValue;
+            MAX_VALUE = maxValue;
 
             SharedPreferences sharedPreferences = getSharedPreferences();
 

@@ -56,6 +56,13 @@ public class WeatherService extends IntentService {
             stopSelf();
             return;
         }
+
+        if (!Settings.Secure.isLocationProviderEnabled(
+                getContentResolver(), LocationManager.NETWORK_PROVIDER)
+                && !WeatherPrefs.getUseCustomLocation(getApplicationContext())) {
+            stopSelf();
+            return;
+        }
         
         if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
             // custom location

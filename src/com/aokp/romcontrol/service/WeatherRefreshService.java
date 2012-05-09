@@ -8,7 +8,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.location.LocationManager;
 import android.os.IBinder;
+import android.provider.Settings;
 
 import com.aokp.romcontrol.util.WeatherPrefs;
 
@@ -45,6 +47,12 @@ public class WeatherRefreshService extends Service {
     }
 
     private void scheduleRefresh() {
+        if (!Settings.Secure.isLocationProviderEnabled(
+                getContentResolver(), LocationManager.NETWORK_PROVIDER)
+                && !WeatherPrefs.getUseCustomLocation(getApplicationContext())) {
+            stopSelf();
+            return;
+        }
 
         Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
         i.setAction(WeatherService.INTENT_REQUEST_WEATHER);

@@ -259,6 +259,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
                 new CMDProcessor().su
                         .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
                 Helpers.getMount("ro");
+                preference.setSummary("");
             }
             return true;
 

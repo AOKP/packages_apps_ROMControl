@@ -29,6 +29,7 @@ import android.graphics.Bitmap;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.service.WeatherRefreshService;
 import com.aokp.romcontrol.service.WeatherService;
+import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.util.WeatherPrefs;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.R;
@@ -152,6 +153,8 @@ public class Weather extends AOKPPreferenceFragment implements
                         WeatherRefreshService.class);
                 i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
                 getActivity().getApplicationContext().startService(i);
+                Helpers.msgShort(getActivity().getApplicationContext(),
+                        getString(R.string.weather_refreshing));
                 return true;
             default:
                 return super.onContextItemSelected(item);

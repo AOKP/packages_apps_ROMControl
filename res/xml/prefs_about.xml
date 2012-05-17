@@ -18,6 +18,11 @@
 			android:summary="@string/aokp_source_summary" />
 
 		<Preference
+			android:key="aokp_review"
+			android:title="@string/aokp_review_title"
+			android:summary="@string/aokp_review_summary" />
+
+		<Preference
 			android:key="aokp_irc"
 			android:title="@string/aokp_irc_title"
 			android:summary="@string/aokp_irc_summary" />

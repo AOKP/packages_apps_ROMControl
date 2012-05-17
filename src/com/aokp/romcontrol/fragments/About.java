@@ -16,6 +16,7 @@ public class About extends AOKPPreferenceFragment {
 
     Preference mSiteUrl;
     Preference mSourceUrl;
+    Preference mReviewUrl;
     Preference mIrcUrl;
 
     @Override
@@ -25,6 +26,7 @@ public class About extends AOKPPreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_about);
         mSiteUrl = findPreference("aokp_website");
         mSourceUrl = findPreference("aokp_source");
+        mReviewUrl = findPreference("aokp_review");
         mIrcUrl = findPreference("aokp_irc");
 
     }
@@ -35,6 +37,8 @@ public class About extends AOKPPreferenceFragment {
             launchUrl("http://aokp.co/");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/aokp");
+	} else if (preference == mReviewUrl) {
+            launchUrl("http://gerrit.aokp.co");
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=teamkang");
         }

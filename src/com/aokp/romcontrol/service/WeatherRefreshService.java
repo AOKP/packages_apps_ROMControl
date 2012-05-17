@@ -31,7 +31,7 @@ public class WeatherRefreshService extends Service {
     @Override
     public void onCreate() {
         mContext = getApplicationContext();
-        prefs = getApplicationContext().getSharedPreferences("weather", MODE_PRIVATE);
+        prefs = getApplicationContext().getSharedPreferences("weather", MODE_WORLD_WRITEABLE);
         alarms = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
         refreshIntervalInMinutes = prefs.getInt(WeatherPrefs.KEY_REFRESH, 0);
         prefs.registerOnSharedPreferenceChangeListener(new OnSharedPreferenceChangeListener() {

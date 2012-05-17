@@ -44,6 +44,7 @@
 
 		<com.aokp.romcontrol.widgets.DeveloperPreference
 			android:title="Zaphod-Beeble"
+			aokp:twitterHandle="Dont_Panic_Zaph"
 			aokp:donateLink="@string/donate_zaph" />
 
 		<com.aokp.romcontrol.widgets.DeveloperPreference

@@ -36,6 +36,12 @@
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
 
+    <!-- Menu Strings -->
+    <string name="menu_lockscreens_remove_wallpaper">Reset lockscreen wallpaper</string>
+    <string name="menu_main_activity_change_locale">Locale</string>
+    <string name="menu_nav_bar_reset">Reset nav bar</string>
+    <string name="menu_weather_get_weather">Get weather</string>
+
     <!-- General Strings -->
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
@@ -123,6 +129,7 @@
 	<string name="crt_off_title">CRT off animation</string>
 
 	<!-- LCD Density -->
+	<string name="current_lcd_density">"Current LCD Density: "</string>
 	<string name="lcd_density_wizard">LCD Density Wizard</string>
 	<string name="follow_through_title">Follow through!</string>
 	<string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
@@ -180,12 +187,17 @@
     <string name="enable_fast_torch_summary">While your screen is off, you can long-press the power key to turn the LED light on. Letting go of the power button will turn the torch off.</string>
     <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="lockscreen_wallpaper_not_set_sd">"Wallpaper did not set (is your SD mounted?)"</string>
+    <string name="lockscreen_wallpaper_set successfully">"Wallpaper set successfully"</string>
+    <string name="lockscreen_wallpaper_not_set">"Wallpaper did not set (!!!)"</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_calendar">Lockscreen calendar</string>
     <string name="lockscreen_calendar_title">Enable</string>
     <string name="lockscreen_calendar_summary">Show upcoming event(s) from your calendar on the lockscreen.</string>
     <string name="lockscreen_calendar_sources_title">Calendar sources</string>
     <string name="lockscreen_calendar_sources_summary">Select the calendars you want to see.</string>
+    <string name="lockscreen_calendar_dialog">Choose which calendars to use</string>
+    <string name="lockscreen_calendar_close">Close</string>
     <string name="lockscreen_calendar_range_title">Time-range</string>
     <string name="lockscreen_calendar_range_summary">Select the time-range to be displayed.</string>
     <string name="lockscreen_calendar_use_colors_title">Use colors</string>
@@ -338,6 +350,7 @@
 	<string name="weather_show_location_title">Show location</string>
 	<string name="weather_show_location_summary">Show your location.</string>
 	<string name="weather_refresh_interval">Refresh interval</string>
+	<string name="weather_refresh_interval_minutes">" minutes"</string>
 	<string name="weather_use_celcius">Metric units</string>
 	<string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
 	<string name="weather_statusbar_style">Statusbar weather style</string>
@@ -347,6 +360,10 @@
     <string name="weather_custom_app_dialog_title">Choose your app</string>
 	<string name="weather_custom_app_dialog_message">Package name for now.</string>
 	<string name="weather_refreshing">Requesting weather update!</string>
+    <string name="weather_loc_warning_title">Cannot retrieve location!</string>
+    <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network."</string>
+    <string name="weather_loc_warning_positive">"Enable network location"</string>
+    <string name="weather_loc_warning_negative">"Don't enable."</string>
 
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>
@@ -555,5 +572,6 @@
     <string name="weather_47">Isolated Thundershowers</string>
     <!-- Forecase unavailable -->
     <string name="weather_3200"></string>
+
 
 </resources>

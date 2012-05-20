@@ -350,9 +350,9 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 }
             }
 
-            builder.setTitle("Choose which calendars to use");
+            builder.setTitle(getString(R.string.lockscreen_calendar_dialog));
             builder.setCancelable(false);
-            builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(getString(R.string.lockscreen_calendar_close), new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -704,13 +704,13 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 Bitmap bitmap = BitmapFactory.decodeFile(galleryImage.getAbsolutePath());
 
                 if (bitmap == null) {
-                    message = "Wallpaper did not set (is your SD mounted?)";
+                    message = getString(R.string.lockscreen_wallpaper_not_set_sd);
                 } else if (bitmap != null
                         && bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream)) {
-                    message = "Wallpaper set successfully";
+                    message = getString(R.string.lockscreen_wallpaper_set successfully);
                 } else {
                     // shouldn't get here, but let's leave it just in case
-                    message = "Wallpaepr did not set (!!!)";
+                    message = getString(R.string.lockscreen_wallpaper_not_set);
                 }
                 Toast.makeText(getActivity(), message,
                         Toast.LENGTH_SHORT).show();

@@ -459,6 +459,8 @@
 	<string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
 	<string name="aokp_source_title">AOKP Source</string>
 	<string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlídnout nejnovější verzi na github.com/aokp</string>
+  <string name="aokp_review_title">AOKP Code Review</string>
+  <string name="aokp_review_summary">Gerrit server AOKP pro odesílání a testování pačů</string>
   <string name="aokp_irc_title">Připojit se k nám na IRC</string>
   <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
   <string name="about_aokp">Informace o AOKP</string>

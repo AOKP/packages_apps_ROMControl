@@ -6,6 +6,7 @@
         <item>两者</item>
         <item>移除</item>
     </string-array>
+    <!-- right is the default, easier to keep 0 as first index -->
     <string-array name="pref_navigation_menu_values">
         <item>0</item>
         <item>1</item>
@@ -119,7 +120,7 @@
         <item>63</item>
     </string-array>
     <string-array name="led_entries">
-        <item>.5 秒</item>
+        <item>0.5 秒</item>
         <item>1 秒</item>
         <item>1.5 秒</item>
         <item>2 秒</item>
@@ -136,6 +137,7 @@
         <item>9 秒</item>
         <item>10 秒</item>
     </string-array>
+    <!-- values must be in milliseconds!~@@#E!@ -->
     <string-array name="led_values">
         <item>500</item>
         <item>1000</item>
@@ -180,6 +182,14 @@
         <item>25</item>
         <item>0</item>
     </string-array>
+    <string-array name="statusbar_fontsize_entries">
+	<item>8dp</item>
+	<item>12dp</item>
+	<item>14dp</item>
+	<item>16dp (默认)</item>
+	<item>20dp</item>
+	<item>24dp</item>
+    </string-array>
     <string-array name="statusbar_layout_entries">
         <item>常规</item>
         <item>逆转</item>
@@ -190,6 +200,7 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <!-- clock stuff -->
     <string-array name="clock_style_entries">
         <item>右边</item>
         <item>中间</item>
@@ -220,6 +231,7 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <!-- Toggles -->
     <string-array name="brightness_location_entries">
         <item>顶部</item>
         <item>底部</item>
@@ -336,12 +348,8 @@
         <item>2048,3072,6144,15360,17920,20480</item>
         <item>2560,3840,6400,12800,12800,25600</item>
     </string-array>
-    <array name="entries_scrollingcache">
-        <item>@string/pref_scrollingcache_force_enable</item>
-        <item>@string/pref_scrollingcache_default_enable</item>
-        <item>@string/pref_scrollingcache_default_disable</item>
-        <item>@string/pref_scrollingcache_force_disable</item>
-    </array>
+
+
     <string-array name="values_scrollingcache">
         <item>0</item>
         <item>1</item>
@@ -404,29 +412,30 @@
         <item>AIRPLANE_MODE</item>
         <item>VIBRATE</item>
         <item>SILENT</item>
+        <item>TORCH</item>
         <item>SYNC</item>
         <item>DATA</item>
         <item>2G</item>
         <item>AP</item>
-        <item>TORCH</item>
-        <item>SWAGGER</item>
-        <item>FCHARGE</item>
+	<item>SWAGGER</item>
+	<item>FCHARGE</item>
     </string-array>
     <string-array name="available_toggles_values">
-        <item>旋转</item>
+        <item>屏幕自动旋转</item>
         <item>蓝牙</item>
-        <item>GPS</item>
-        <item>WiFi</item>
-        <item>飞行</item>
-        <item>振动</item>
-        <item>静音</item>
+        <item>GPS 定位</item>
+        <item>Wi-Fi 无线网络</item>
+        <item>飞行模式</item>
+        <item>振动模式</item>
+        <item>静音模式</item>
+        <item>手电筒</item>
         <item>同步</item>
-        <item>数据</item>
-        <item>2G</item>
-        <item>热点</item>
-        <item>手电</item>
-        <item>自爆</item>
-        <item>快充</item>
+        <item>移动网络数据</item>
+        <item>仅使用 2G 网络</item>
+        <item>Wi-Fi 热点</item>
+        <item>USB 网络共享</item>
+        <item>手机自爆</item>
+        <item>快速充电</item>
     </string-array>
     <string-array name="lockscreen_choice_entries">
         <item>解锁</item>

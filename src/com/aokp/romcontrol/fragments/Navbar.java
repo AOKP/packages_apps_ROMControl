@@ -232,11 +232,11 @@ public class Navbar extends AOKPPreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
 
             new AlertDialog.Builder(getActivity())
-                    .setTitle("Reboot required!")
-                    .setMessage("Please reboot to enable/disable the navigation bar properly!")
-                    .setNegativeButton("I'll reboot later", null)
+                    .setTitle(getResources().getString(R.string.navbar_enable_dialog_title))
+                    .setMessage(getResources().getString(R.string.navbar_enable_dialog_msg))
+                    .setNegativeButton(getResources().getString(R.string.navbar_enable_dialog_negative), null)
                     .setCancelable(false)
-                    .setPositiveButton("Reboot now!", new DialogInterface.OnClickListener() {
+                    .setPositiveButton(getResources().getString(R.string.navbar_enable_dialog_Positive), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             PowerManager pm = (PowerManager) getActivity()
@@ -435,7 +435,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                 if (f.exists())
                     f.delete();
 
-                Toast.makeText(getActivity(), mPendingIconIndex + "'s icon set successfully!",
+                Toast.makeText(getActivity(), mPendingIconIndex + getResources().getString(R.string.lockscreen_custom_app_icon_successfully),
                         Toast.LENGTH_LONG).show();
                 refreshSettings();
 

@@ -52,7 +52,8 @@
 			android:entryValues="@array/glow_times_values"
 			android:key="glow_times"
 			android:title="@string/glow_times_title"
-			android:summary="@string/glow_times_summary" />
+			android:summary="@string/glow_times_summary"
+			android:defaultValue="100|10" />
 
 		<com.aokp.romcontrol.widgets.SeekBarPreference
 			android:key="button_transparency"

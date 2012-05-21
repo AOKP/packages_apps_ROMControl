@@ -288,8 +288,7 @@
     <string name="toggle_style_title">Toggle style</string>
     <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
 
-    <string name="alternate_button_layout_title">Alternate toggles</string>
-    <string name="alternate_button_layout_summary">Use Toggle Buttons instead of switches for your toggles.</string>
+    <string name="toggles_layout_title">Toggle Layout</string>
 
     <string name="enabled_toggles_title">Enabled toggles</string>
     <string name="enabled_toggles_summary">Choose toggles to display</string>

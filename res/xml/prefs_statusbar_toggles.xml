@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol">
 
-	<Preference
-		android:key="enable_toggles"
-		android:title="@string/enabled_toggles_title"
-		android:summary="@string/enabled_toggles_summary" />
+    <Preference
+        android:key="enable_toggles"
+        android:summary="@string/enabled_toggles_summary"
+        android:title="@string/enabled_toggles_title" />
+    <Preference
+        android:key="toggles"
+        android:summary="@string/toggles_order_summary"
+        android:title="@string/toggles_order_title" />
 
-	<Preference
-		android:key="toggles"
-		android:title="@string/toggles_order_title"
-		android:summary="@string/toggles_order_summary">
-	</Preference>
+    <com.scheffsblend.smw.Preferences.ImageListPreference
+        android:entries="@array/toggles_layout_entries"
+        android:entryValues="@array/toggles_layout_entries"
+        aokp:entryImages="@array/toggles_layout_images"
+        aokp:summaryImage="@drawable/toggle_layout_summary"
+        android:key="toggles_layout_preference"
+        android:title="@string/toggles_layout_title" />
+    <ListPreference
+        android:entries="@array/brightness_location_entries"
+        android:entryValues="@array/brightness_location_values"
+        android:key="brightness_location"
+        android:title="@string/brightness_location_title" />
 
-	<ListPreference
-		android:entries="@array/brightness_location_entries"
-		android:entryValues="@array/brightness_location_values"
-		android:key="brightness_location"
-		android:title="@string/brightness_location_title" />
+    <PreferenceCategory
+        android:key="advanced_cat"
+        android:title="@string/advanced_settings" >
+        <ListPreference
+            android:entries="@array/toggle_style_entries"
+            android:entryValues="@array/toggle_style_values"
+            android:key="toggle_style"
+            android:summary="@string/toggle_style_summary"
+            android:title="@string/toggle_style_title" />
 
-	<PreferenceCategory
-		android:key="advanced_cat"
-		android:title="@string/advanced_settings">
-
-		<ListPreference
-			android:entries="@array/toggle_style_entries"
-			android:entryValues="@array/toggle_style_values"
-			android:key="toggle_style"
-			android:title="@string/toggle_style_title"
-			android:summary="@string/toggle_style_summary" />
-
-		<CheckBoxPreference
-			android:key="alternate_button_layout"
-			android:title="@string/alternate_button_layout_title"
-			android:summary="@string/alternate_button_layout_summary" />
-
-		<Preference
-			android:key="reset_toggles"
-			android:title="@string/reset_toggles_title"
-      android:summary="@string/reset_toggles_summary">
-		</Preference>
-
-	</PreferenceCategory>
+        <Preference
+            android:key="reset_toggles"
+            android:summary="@string/reset_toggles_summary"
+            android:title="@string/reset_toggles_title" >
+        </Preference>
+    </PreferenceCategory>
 
 </PreferenceScreen>

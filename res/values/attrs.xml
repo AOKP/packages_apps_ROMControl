@@ -9,5 +9,10 @@
         <attr name="twitterHandle" format="string" />
         <attr name="donateLink" format="string" />
     </declare-styleable>
-    
+
+    <declare-styleable name="ImageListPreference">
+        <attr name="summaryImage" format="reference" />
+        <attr name="entryImages" format="reference" />
+    </declare-styleable>
+
 </resources>

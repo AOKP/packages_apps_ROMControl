@@ -1,6 +1,8 @@
 
 package com.aokp.romcontrol.fragments;
 
+import java.util.ArrayList;
+
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
@@ -10,7 +12,6 @@ import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -25,10 +26,9 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.aokp.romcontrol.widgets.TouchInterceptor;
 import com.aokp.romcontrol.R;
-
-import java.util.ArrayList;
+import com.aokp.romcontrol.widgets.TouchInterceptor;
+import com.scheffsblend.smw.Preferences.ImageListPreference;
 
 public class StatusBarToggles extends PreferenceFragment implements OnPreferenceChangeListener {
 
@@ -37,12 +37,12 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
     private static final String PREF_ENABLE_TOGGLES = "enable_toggles";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
     private static final String PREF_TOGGLES_STYLE = "toggle_style";
-    private static final String PREF_ALT_BUTTON_LAYOUT = "alternate_button_layout";
+    private static final String PREF_ALT_BUTTON_LAYOUT = "toggles_layout_preference";
 
     Preference mEnabledToggles;
     Preference mLayout;
     ListPreference mBrightnessLocation;
-    CheckBoxPreference mAlternateButtonLayout;
+    ImageListPreference mTogglesLayout;
     ListPreference mToggleStyle;
     Preference mResetToggles;
 
@@ -65,10 +65,8 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
         mToggleStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_STYLE, 3)));
 
-        mAlternateButtonLayout = (CheckBoxPreference) findPreference(PREF_ALT_BUTTON_LAYOUT);
-        mAlternateButtonLayout.setChecked(Settings.System.getInt(
-                getActivity().getContentResolver(), Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS,
-                0) == 1);
+        mTogglesLayout = (ImageListPreference) findPreference(PREF_ALT_BUTTON_LAYOUT);
+        mTogglesLayout.setOnPreferenceChangeListener(this);
 
         mLayout = findPreference("toggles");
 
@@ -97,13 +95,14 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
 
             builder.setTitle(R.string.toggles_display_dialog);
             builder.setCancelable(true);
-            builder.setPositiveButton(R.string.toggles_display_close, new DialogInterface.OnClickListener(){
+            builder.setPositiveButton(R.string.toggles_display_close,
+                    new DialogInterface.OnClickListener() {
 
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
             builder.setMultiChoiceItems(values, checkedToggles, new OnMultiChoiceClickListener() {
 
                 @Override
@@ -121,12 +120,6 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
 
             d.show();
 
-            return true;
-        } else if (preference == mAlternateButtonLayout) {
-
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLayout) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -158,6 +151,13 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_STYLE, val);
 
+        } else if (preference == mTogglesLayout) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_STYLE, val == 0 ? 3 : 2);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS,
+                    val);
         }
         return result;
     }

@@ -60,7 +60,7 @@ public class Weather extends AOKPPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.prefs_weather);
 
-        prefs = getActivity().getSharedPreferences("weather", Context.MODE_PRIVATE);
+        prefs = getActivity().getSharedPreferences("weather", Context.MODE_WORLD_WRITEABLE);
 
         mPicker = new ShortcutPickerHelper(this, this);
 

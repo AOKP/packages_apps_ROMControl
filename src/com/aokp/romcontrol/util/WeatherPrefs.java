@@ -16,62 +16,62 @@ public class WeatherPrefs {
     public static final String KEY_CUSTOM_APP = "custom_app";
 
     public static int getRefreshInterval(Context c) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.getInt(KEY_REFRESH, 60);
     }
 
     public static boolean setRefreshInterval(Context c, int interval) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.edit().putInt(KEY_REFRESH, interval).commit();
     }
 
     public static String getCustomLocation(Context c) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.getString(KEY_CUSTOM_LOCATION, "");
     }
 
     public static boolean setCustomLocation(Context c, String loc) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.edit().putString(KEY_CUSTOM_LOCATION, loc).commit();
     }
 
     public static boolean getUseCustomLocation(Context c) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.getBoolean(KEY_USE_CUSTOM_LOCATION, false);
     }
 
     public static boolean setUseCustomLocation(Context c, boolean use) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.edit().putBoolean(KEY_USE_CUSTOM_LOCATION, use).commit();
     }
 
     public static boolean getUseCelcius(Context c) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.getBoolean(KEY_USE_CELCIUS, false);
     }
 
     public static boolean setUseCelcius(Context c, boolean use) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.edit().putBoolean(KEY_USE_CELCIUS, use).commit();
     }
 
     public static boolean getUseCustomApp(Context c) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.getBoolean(KEY_USE_CUSTOM_APP, false);
     }
 
     public static boolean setUseCustomApp(Context c, boolean use) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.edit().putBoolean(KEY_USE_CUSTOM_APP, use).commit();
     }
 
     public static String getCustomApp(Context c) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.getString(KEY_CUSTOM_APP, "");
     }
 
     public static boolean setCustomApp(Context c, String packagename) {
-        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences prefs = c.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_WRITEABLE);
         return prefs.edit().putString(KEY_CUSTOM_APP, packagename).commit();
     }
 }

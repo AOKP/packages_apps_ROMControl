@@ -12,6 +12,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetHost;
+import android.appwidget.AppWidgetProviderInfo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
@@ -56,8 +59,8 @@ import com.aokp.romcontrol.widgets.NavBarItemPreference;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 import com.aokp.romcontrol.widgets.TouchInterceptor;
 
-public class Navbar extends AOKPPreferenceFragment implements
-        OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
+public class Navbar extends AOKPPreferenceFragment implements 
+		OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
 
     // move these later
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
@@ -69,6 +72,9 @@ public class Navbar extends AOKPPreferenceFragment implements
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
+    private static final int REQUEST_CREATE_APPWIDGET = 5;
+    private static final int REQUEST_PICK_APPWIDGET = 9;
+    public static final int APP_WIDGET_HOST_ID = 2112; 
 
     // move these later
     ColorPickerPreference mNavigationBarColor;
@@ -82,8 +88,14 @@ public class Navbar extends AOKPPreferenceFragment implements
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarWidth;
+    
+    CheckBoxPreference mEnableLeftDrawer;
+    CheckBoxPreference mEnableRightDrawer;
+    Preference mLeftDrawerWidget;
+    Preference mRightDrawerWidget;
 
     private int mPendingIconIndex = -1;
+    private int mPendingWidgetDrawer = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
 
     private static class NavBarCustomAction {
@@ -93,6 +105,9 @@ public class Navbar extends AOKPPreferenceFragment implements
     }
 
     private ShortcutPickerHelper mPicker;
+    
+    private AppWidgetManager mAppWidgetManager;
+    private AppWidgetHost mAppWidgetHost;
 
     private static final String TAG = "NavBar";
 
@@ -105,6 +120,8 @@ public class Navbar extends AOKPPreferenceFragment implements
         PreferenceScreen prefs = getPreferenceScreen();
 
         mPicker = new ShortcutPickerHelper(this, this);
+        mAppWidgetManager = AppWidgetManager.getInstance(getActivity().getBaseContext());
+        mAppWidgetHost = new AppWidgetHost(getActivity().getBaseContext(), APP_WIDGET_HOST_ID);
 
         menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
         menuDisplayLocation.setOnPreferenceChangeListener(this);
@@ -122,8 +139,6 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarButtonQty.setOnPreferenceChangeListener(this);
         mNavBarButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3) + "");
-
-        mPicker = new ShortcutPickerHelper(this, this);
 
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
@@ -157,6 +172,24 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
+        
+        mEnableLeftDrawer = (CheckBoxPreference) findPreference("enable_left_drawer");
+        mEnableLeftDrawer.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_LEFT_DRAWER_SHOW, 0 ) == 1);
+        
+        mEnableRightDrawer = (CheckBoxPreference) findPreference("enable_right_drawer");
+        mEnableRightDrawer.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_RIGHT_DRAWER_SHOW, 0 ) == 1);
+        
+        mLeftDrawerWidget = (Preference) findPreference("left_drawer_widget");
+        mLeftDrawerWidget.setSummary(getWidgetSummary(Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_LEFT_DRAWER_WIDGET_ID, -1 )));
+        mLeftDrawerWidget.setEnabled(mEnableLeftDrawer.isChecked());
+        
+        mRightDrawerWidget = (Preference) findPreference("right_drawer_widget");
+        mRightDrawerWidget.setSummary(getWidgetSummary(Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_RIGHT_DRAWER_WIDGET_ID, -1 )));
+        mRightDrawerWidget.setEnabled(mEnableRightDrawer.isChecked());
 
         if (mTablet) {
             Log.e("NavBar", "is tablet");
@@ -248,8 +281,31 @@ public class Navbar extends AOKPPreferenceFragment implements
                     .show();
 
             return true;
+            
+        } else if (preference == mEnableLeftDrawer) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_LEFT_DRAWER_SHOW,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);  
+            mLeftDrawerWidget.setEnabled(mEnableLeftDrawer.isChecked());
+            return true;
+            
+        } else if (preference == mEnableRightDrawer) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_RIGHT_DRAWER_SHOW,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0); 
+            mRightDrawerWidget.setEnabled(mEnableRightDrawer.isChecked());
+            return true;
+            
+        } else if (preference == mLeftDrawerWidget) {
+            mPendingWidgetDrawer = 1;
+            selectWidget();       	
+        	return true;
+        } else if (preference == mRightDrawerWidget) {
+            mPendingWidgetDrawer = 2;
+            selectWidget();       	
+        	return true;
         }
-
+        
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -439,7 +495,17 @@ public class Navbar extends AOKPPreferenceFragment implements
                         Toast.LENGTH_LONG).show();
                 refreshSettings();
 
-            }
+            } else if (requestCode ==  REQUEST_PICK_APPWIDGET) {
+                    configureWidget(data);
+            } else if (requestCode == REQUEST_CREATE_APPWIDGET) {
+                    saveWidget(data);
+            } 
+        } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
+                int appWidgetId = 
+                    data.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
+                if (appWidgetId != -1) {
+                    mAppWidgetHost.deleteAppWidgetId(appWidgetId);
+                }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -853,4 +919,67 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         return iloveyou;
     }
+    
+    private String getWidgetSummary(int appWidgetId) {
+    	if (appWidgetId == -1) {
+    		return "None";
+    	} else {
+    		AppWidgetProviderInfo appWPI = mAppWidgetManager.getAppWidgetInfo(appWidgetId);
+    		if (appWPI == null) {
+    			return "Problem:" + appWidgetId;
+    		} else {
+    			return appWPI.label;
+    		}
+    	}
+    	
+    }
+    
+    void selectWidget() {
+        int appWidgetId = this.mAppWidgetHost.allocateAppWidgetId();
+        Intent pickIntent = new Intent(AppWidgetManager.ACTION_APPWIDGET_PICK);
+        pickIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+        addEmptyData(pickIntent);
+        startActivityForResult(pickIntent, REQUEST_PICK_APPWIDGET);
+    }
+
+    void addEmptyData(Intent pickIntent) {
+        ArrayList<AppWidgetProviderInfo> customInfo = 
+            new ArrayList<AppWidgetProviderInfo>();
+        pickIntent.putParcelableArrayListExtra(
+            AppWidgetManager.EXTRA_CUSTOM_INFO, customInfo);
+        ArrayList<Bundle> customExtras = new ArrayList<Bundle>();
+        pickIntent.putParcelableArrayListExtra(
+            AppWidgetManager.EXTRA_CUSTOM_EXTRAS, customExtras);
+    }
+    
+    private void configureWidget(Intent data) {
+        Bundle extras = data.getExtras();
+        int appWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
+        AppWidgetProviderInfo appWidgetInfo = 
+            mAppWidgetManager.getAppWidgetInfo(appWidgetId);
+        if (appWidgetInfo.configure != null) {
+            Intent intent = 
+                new Intent(AppWidgetManager.ACTION_APPWIDGET_CONFIGURE);
+            intent.setComponent(appWidgetInfo.configure);
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+            startActivityForResult(intent, REQUEST_CREATE_APPWIDGET);
+        } else {
+            saveWidget(data);
+        }
+    }
+    
+    private void saveWidget(Intent data) {
+    	Bundle extras = data.getExtras();
+    	int appWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
+    	if (mPendingWidgetDrawer == 1) {
+    		Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_LEFT_DRAWER_WIDGET_ID, appWidgetId);
+    		mLeftDrawerWidget.setSummary(getWidgetSummary(appWidgetId));
+    	} else if (mPendingWidgetDrawer == 2) {
+    		Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_RIGHT_DRAWER_WIDGET_ID, appWidgetId);
+    		mRightDrawerWidget.setSummary(getWidgetSummary(appWidgetId));
+    	}
+    }
+    
 }

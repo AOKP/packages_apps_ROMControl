@@ -95,6 +95,12 @@
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_summary">Adjust how fast your buttons animate after you touch them. Lowering the speed can improve performance.</string>
 
+	<string name="navbar_widgets">Sliding Widget Containers</string>
+	<string name="enable_widget_left">Enable left drawer widget</string>
+	<string name="widget_left_name">Left drawer widget</string>
+	<string name="enable_widget_right">Enable right drawer widget</string>
+	<string name="widget_right_name">Right drawer widget</string>
+
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotation delay</string>
     <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>

@@ -1,6 +1,16 @@
 
 package com.aokp.romcontrol.fragments;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
@@ -40,20 +50,9 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Toast;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.LockscreenItemPreference;
-import com.aokp.romcontrol.R;
-
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
 
 public class Lockscreens extends AOKPPreferenceFragment implements
         ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {

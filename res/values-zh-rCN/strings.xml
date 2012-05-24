@@ -82,6 +82,8 @@
     <string name="navbar_action_power">电源</string>
     <string name="navbar_action_none">空</string>
 
+    <string name="navbar_enable_bar">启用导航栏</string>
+
     <string name="navbar_enable_dialog_title">一定要重启的，亲！</string>
     <string name="navbar_enable_dialog_msg">请重新启动以启用/禁用此属性</string>
     <string name="navbar_enable_dialog_negative">稍后重启</string>
@@ -303,6 +305,8 @@
     <string name="alternate_button_layout_title">切换开关</string>
     <string name="alternate_button_layout_summary">使用切换开关代替选择开关</string>
 
+    <string name="toggles_layout_title">开关布局</string>
+
     <string name="enabled_toggles_title">开启开关</string>
     <string name="enabled_toggles_summary">选择要显示的开关</string>
 
@@ -472,6 +476,8 @@
     <string name="aokp_website_summary">www.aokp.co - 可在此获取所有最新发布</string>
     <string name="aokp_source_title">AOKP 源代码</string>
     <string name="aokp_source_summary">AOKP 完全开源，在github.com/aokp你可以随时检出资源</string>
+    <string name="aokp_review_title">AOKP 代码评审</string>
+    <string name="aokp_review_summary">AOKP 的 Gerrit ，用于评审提交代码和测试补丁</string>
     <string name="aokp_irc_title">加入我们的IRC</string>
     <string name="about_aokp">关于AOKP</string>
 

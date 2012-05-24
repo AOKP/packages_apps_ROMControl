@@ -82,7 +82,9 @@
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_none">Empty</string>
 
-    <string name="navbar_enable_dialog_title">Reboot required!</string>
+    <string name="navbar_enable_bar">Enable bar</string>
+    
+<string name="navbar_enable_dialog_title">Reboot required!</string>
     <string name="navbar_enable_dialog_msg">Please reboot to enable/disable the navigation bar properly!</string>
     <string name="navbar_enable_dialog_negative">I'll reboot later</string>
     <string name="navbar_enable_dialog_Positive">Reboot now!</string>

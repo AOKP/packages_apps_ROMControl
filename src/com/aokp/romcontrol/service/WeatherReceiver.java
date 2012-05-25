@@ -54,8 +54,6 @@ public class WeatherReceiver extends BroadcastReceiver {
             if (updateweather
                     && Settings.System.getInt(context.getContentResolver(),
                             Settings.System.USE_WEATHER, 0) != 0) {
-                Toast.makeText(context, context.getText(R.string.weather_refreshing),
-                        Toast.LENGTH_SHORT).show();
                 Intent getWeatherNow = new Intent(context, WeatherService.class);
                 getWeatherNow.setAction(action);
                 context.startService(getWeatherNow);

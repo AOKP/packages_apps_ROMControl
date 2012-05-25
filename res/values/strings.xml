@@ -586,5 +586,8 @@
     <!-- Forecase unavailable -->
     <string name="weather_3200"></string>
 
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Unable to retrieve location information for weather update</string>
+
 
 </resources>

@@ -152,8 +152,6 @@ public class Weather extends AOKPPreferenceFragment implements
                         WeatherRefreshService.class);
                 i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
                 getActivity().getApplicationContext().startService(i);
-                Helpers.msgShort(getActivity().getApplicationContext(),
-                        getString(R.string.weather_refreshing));
                 return true;
             default:
                 return super.onContextItemSelected(item);

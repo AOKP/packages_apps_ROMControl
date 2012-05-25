@@ -11,6 +11,8 @@ import java.io.IOException;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -45,6 +47,27 @@ public class Helpers {
             Log.e(TAG, e.getLocalizedMessage().toString());
             return false;
         }
+    }
+
+    /**
+     * Checks device for network connectivity
+     *
+     * @return If the device has data connectivity
+    */
+    public static boolean isNetworkAvailable(final Context c) {
+        boolean state = false;
+        if (c != null) {
+            ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo = cm.getActiveNetworkInfo();
+            if(netInfo != null && netInfo.isConnected()) {
+                Log.i(TAG, "The device currently has data connectivity");
+                state = true;
+            } else {
+                Log.i(TAG, "The device does not currently have data connectivity");
+                state = false;
+            }
+        }
+        return state;
     }
 
     /**

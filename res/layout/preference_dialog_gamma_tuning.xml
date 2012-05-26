@@ -79,21 +79,45 @@
                 android:paddingTop="2dip"
                 android:paddingLeft="20dip"
                 android:paddingRight="20dip" />
+                
+        <TextView android:id="@+id/gamma_dss_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gamma_blue_seekbar"
+                android:text="@string/gamma_dss_title"
+                android:paddingTop="10dip"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip" />
+        <TextView android:id="@+id/gamma_dss_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gamma_blue_seekbar"
+                android:layout_alignParentRight="true"
+                android:paddingTop="10dip"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip" />
+        <SeekBar android:id="@+id/gamma_dss_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gamma_dss_text"
+                android:paddingTop="2dip"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip" />
 
         <ImageView android:src="@drawable/color_tuning_preview"
-        		android:id="@+id/color_tuning_preview"
+        	android:id="@+id/color_tuning_preview"
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
-                android:layout_below="@id/gamma_blue_seekbar"
+                android:layout_below="@id/gamma_dss_seekbar"
                 android:paddingTop="20dip"
                 android:paddingLeft="20dip"
                 android:paddingRight="20dip" />
         <Button
-            	android:id="@+id/reset_button"
-     			android:layout_height="wrap_content"
-     			android:layout_width="match_parent"
-     			android:layout_below="@id/color_tuning_preview"
-     			android:text="@string/reset_defaults"  />
+        	android:id="@+id/reset_button"
+            	android:layout_height="wrap_content"
+     		android:layout_width="match_parent"
+     		android:layout_below="@id/color_tuning_preview"
+     		android:text="@string/reset_defaults"  />
 
     </RelativeLayout>
 </ScrollView>

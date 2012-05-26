@@ -404,39 +404,6 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    <string-array name="available_toggles_entries">
-        <item>ROTATE</item>
-        <item>BT</item>
-        <item>GPS</item>
-        <item>WIFI</item>
-        <item>AIRPLANE_MODE</item>
-        <item>VIBRATE</item>
-        <item>SILENT</item>
-        <item>TORCH</item>
-        <item>SYNC</item>
-        <item>DATA</item>
-        <item>2G</item>
-        <item>AP</item>
-	<item>SWAGGER</item>
-	<item>FCHARGE</item>
-    </string-array>
-    <string-array name="available_toggles_values">
-        <item>屏幕自动旋转</item>
-        <item>蓝牙</item>
-        <item>GPS 定位</item>
-        <item>Wi-Fi 无线网络</item>
-        <item>飞行模式</item>
-        <item>振动模式</item>
-        <item>静音模式</item>
-        <item>手电筒</item>
-        <item>同步</item>
-        <item>移动网络数据</item>
-        <item>仅使用 2G 网络</item>
-        <item>Wi-Fi 热点</item>
-        <item>USB 网络共享</item>
-        <item>手机自爆</item>
-        <item>快速充电</item>
-    </string-array>
     <string-array name="lockscreen_choice_entries">
         <item>解锁</item>
         <item>声音模式</item>
@@ -466,20 +433,6 @@
         <item>100|10</item>
         <item>250|25</item>
         <item>500|50</item>
-    </string-array>
-    <string-array name="lcd_density_entries">
-        <item>160</item>
-        <item>180</item>
-        <item>200</item>
-        <item>220</item>
-        <item>240</item>
-        <item>241</item>
-        <item>260</item>
-        <item>280</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>自定义</item>
     </string-array>
     <string-array name="weather_interval_entries">
         <item>关闭</item>

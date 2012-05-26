@@ -82,6 +82,8 @@
     <string name="navbar_action_power">电源</string>
     <string name="navbar_action_none">空</string>
 
+    <string name="navbar_enable_bar">启用导航栏</string>
+
     <string name="navbar_enable_dialog_title">一定要重启的，亲！</string>
     <string name="navbar_enable_dialog_msg">请重新启动以启用/禁用此属性</string>
     <string name="navbar_enable_dialog_negative">稍后重启</string>
@@ -133,7 +135,7 @@
 	<string name="crt_off_title">关屏 CRT 动画效果</string>
 
 	<!-- LCD Density LCD密度 -->
-	<string name="current_lcd_density">当前 LDC 密度：</string>
+	<string name="current_lcd_density">当前 LCD 密度：</string>
 	<string name="lcd_density_wizard">LCD 密度设置向导</string>
 	<string name="follow_through_title">遵循</string>
 	<string name="follow_through_summary">确保一步一步完成</string>
@@ -141,9 +143,9 @@
 	<string name="stock_density_summary">平板以及旧款电话 160，大多数电话 240，Galaxy Nexus 使用 320 为默认值</string>
 	<string name="reboot_title">2. 点我重启</string>
 	<string name="reboot_summary">回到此菜单，完成其余的步骤</string>
-	<string name="clear_market_data_title">3. 清理市场数据</string>
-	<string name="clear_market_data_cleared">市场数据清除</string>
-	<string name="open_market_title">4. 打开市场选择同意</string>
+	<string name="clear_market_data_title">3. 清理Play商店数据</string>
+	<string name="clear_market_data_cleared">Play商店数据清除</string>
+	<string name="open_market_title">4. 打开Play商店选择接受</string>
 	<string name="open_market_summary">然后回到此菜单</string>
 	<string name="custom_density_title">5. 再选择你需要的密度</string>
 	<string name="custom_density_summary">如果你遇到市场兼容问题，回到这里，重复步骤</string>
@@ -248,8 +250,8 @@
     <string name="sync_mobile_data_preference">移动数据同步</string>
 
     <!--  LED -->
-    <string name="title_led_on">LED闪烁持续时间</string>
-    <string name="title_led_off">LED关闭持续时间</string>
+    <string name="title_led_on">LED 闪烁持续时间</string>
+    <string name="title_led_off">LED 关闭持续时间</string>
     <string name="led_color_title">LED 颜色</string>
     <string name="led_color_summary">这将改变 LED 的默认设置，可以很方便的自定义指示灯颜色。</string>
     <string name="title_led_screen_on">当屏幕亮起时 LED 闪烁</string>
@@ -300,8 +302,7 @@
     <string name="toggle_style_title">开关风格</string>
     <string name="toggle_style_summary">显示开关的图标与文字</string>
 
-    <string name="alternate_button_layout_title">切换开关</string>
-    <string name="alternate_button_layout_summary">使用切换开关代替选择开关</string>
+    <string name="toggles_layout_title">开关布局</string>
 
     <string name="enabled_toggles_title">开启开关</string>
     <string name="enabled_toggles_summary">选择要显示的开关</string>
@@ -472,6 +473,8 @@
     <string name="aokp_website_summary">www.aokp.co - 可在此获取所有最新发布</string>
     <string name="aokp_source_title">AOKP 源代码</string>
     <string name="aokp_source_summary">AOKP 完全开源，在github.com/aokp你可以随时检出资源</string>
+    <string name="aokp_review_title">AOKP 代码评审</string>
+    <string name="aokp_review_summary">AOKP 的 Gerrit ，用于评审提交代码和测试补丁</string>
     <string name="aokp_irc_title">加入我们的IRC</string>
     <string name="about_aokp">关于AOKP</string>
 

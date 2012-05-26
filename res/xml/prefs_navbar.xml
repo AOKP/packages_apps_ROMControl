@@ -3,7 +3,7 @@
 
 	<CheckBoxPreference
 		android:key="enable_nav_bar"
-		android:title="Enable bar" />
+		android:title="@string/navbar_enable_bar" />
 
 	<ListPreference
 		android:entries="@array/pref_navigation_menu_entries"

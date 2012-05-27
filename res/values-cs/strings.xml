@@ -36,6 +36,12 @@
     <string name="advanced_settings">Pokročilá nastavení</string>
     <string name="misc_short">Ostatní</string>
     
+    <!-- Menu Strings -->
+    <string name="menu_lockscreens_remove_wallpaper">Obnovit pozadí zamknuté obrazovky</string>
+    <string name="menu_main_activity_change_locale">Jazyk</string>
+    <string name="menu_nav_bar_reset">Obnovit navigačřní lištu</string>
+    <string name="menu_weather_get_weather">Načíst počasí</string>
+    
     <!-- General Strings -->
     <string name="cancel">Zrušit</string>
     <string name="ok">OK</string>
@@ -45,7 +51,11 @@
     <string name="summary_pref_menu_display">Při používání velkého tlačítka menu je třeba odstranit postranní tlačítka menu!</string>
     <string name="navigation_bar">Navigační lišta</string>
     <string name="navigation_bar_tint_title">Barva navigační lišty</string>
-
+    <string name="navigation_bar_glow_tint_title">Barva světelného efektu navigační lišty</string>
+    <string name="navigation_bar_glow_tint_summary">Při stisku tlačítka v navigační liště se zobrazuje svetělný efekt. Tato volba umožňuje změnit jeho barvu.</string>
+    <string name="navigation_bar_height_title">Výška navigační lišty</string>
+    <string name="navigation_bar_width_title">Šířka navigační lišty</string>
+    
     <string name="title_pref_navigation_menu_display">Viditelnost menu</string>
     <string name="summary_pref_navigation_menu_display">Jak a kde se mají zobrazovat tlačítka menu?</string>
 
@@ -77,8 +87,8 @@
     <string name="long_press_home_title">Akce při dlouhém podržení tlačítka domů</string>
     <string name="long_press_home_summary">Co se stane po dlouhém stisku tlačítka domů. Pro uplatnění změny je vyžadován restart.</string>
     
-    <string name="glow_times_title">Animace glow efektu u tlačítek</string>
-    <string name="glow_times_summary">Přizpůsobení délky trvání glow efektu po klepnutí na tlačítka. Snížení rychlosti může zvýšit výkon.</string>
+    <string name="glow_times_title">Animace světelného efektu tlačítek</string>
+    <string name="glow_times_summary">Přizpůsobení délky trvání světelného efektu po klepnutí na tlačítka. Snížení rychlosti může zvýšit výkon.</string>
     
     <!-- UI -->
     <string name="rotation_animation_delay_title">Prodleva rotace</string>
@@ -283,8 +293,7 @@
     <string name="toggle_style_title">Styl přepínačů</string>
     <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
 
-    <string name="alternate_button_layout_title">Alternativní přepínače</string>
-    <string name="alternate_button_layout_summary">Místo přepínačů se použijí tlačítka.</string>
+    <string name="toggles_layout_title">Vzhled přepínačů</string>
     
     <string name="enabled_toggles_title">Zapnuté přepínače</string>
     <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
@@ -456,7 +465,7 @@
 	<string name="devs">Vývojáři</string>
 	<string name="aokp">Android Open Kang Project</string>
 	<string name="aokp_website_title">Web AOKP</string>
-	<string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+	<string name="aokp_website_summary">www.aokp.co - Zde jsou k nalezení nejnovější verze.</string>
 	<string name="aokp_source_title">AOKP Source</string>
 	<string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlídnout nejnovější verzi na github.com/aokp</string>
   <string name="aokp_review_title">AOKP Code Review</string>

@@ -1,123 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Nastavení ROM</string>
-
-    <!-- Main -->
-    <string name="user_interface">Uživatelské rozhraní</string>
-    <string name="general_ui">Hlavní nastavení</string>
-    <string name="lockscreen_options">Možnosti zamčené obrazovky</string>
-    <string name="power_menu_optons">Možnosti menu napájení</string>
-    <string name="functionality">Funkčnost</string>
-    <string name="power_saver">Spořič energie</string>
-    <string name="led_options">Možnosti LED</string>
-    <string name="statusbar">Stavová lišta</string>
-    <string name="general">Hlavní nastavení</string>
-    <string name="toggles_layout">Přepínače</string>
-    <string name="clock">Hodiny</string>
-    <string name="battery">Baterie</string>
-    <string name="nav_bar">Navigační lišta</string>
-    <string name="tools">Nástroje</string>
-    <string name="weather">Počasí</string>
-    <string name="signal">Signál</string>
-    
-    <string name="header_summary_battery">Lišta baterie, % ukazatel baterie, atd.</string>
-    <string name="header_summary_general_ui">Startovací animace, rotace, přepínač klávesnice, atd.</string>
-    <string name="header_summary_navigation_bar">Tlačítka k zobrazení, barva navigační lišty, pořadí</string>
-    <string name="header_summary_lockscreens">Spouštění vlastních aplikací, rozložení</string>
-    <string name="header_summary_power_menu">Co se bude zobrazovat v menu napájení</string>
-    <string name="header_summary_powersaver">Automaticky vypíná data pro úsporu baterie</string>
-    <string name="header_summary_led">Změna výchozího nastavení Androidu</string>
-    <string name="header_summary_general">Nastavení chování tlačítek</string>
-    <string name="header_summary_toggles">Přizpůsobit přepínače</string>
+  <string name="app_name">Nastavení ROM</string>
+  <!-- Main -->
+  <string name="user_interface">Uživatelské rozhraní</string>
+  <string name="general_ui">Hlavní nastavení</string>
+  <string name="lockscreen_options">Možnosti zamčené obrazovky</string>
+  <string name="power_menu_optons">Možnosti menu napájení</string>
+  <string name="functionality">Funkčnost</string>
+  <string name="power_saver">Spořič energie</string>
+  <string name="led_options">Možnosti LED</string>
+  <string name="statusbar">Stavová lišta</string>
+  <string name="general">Hlavní nastavení</string>
+  <string name="toggles_layout">Přepínače</string>
+  <string name="clock">Hodiny</string>
+  <string name="battery">Baterie</string>
+  <string name="nav_bar">Navigační lišta</string>
+  <string name="tools">Nástroje</string>
+  <string name="weather">Počasí</string>
+  <string name="signal">Signál</string>
+  <string name="header_summary_battery">Lišta baterie, % ukazatel baterie, atd.</string>
+  <string name="header_summary_general_ui">Startovací animace, rotace, přepínač klávesnice, atd.</string>
+  <string name="header_summary_navigation_bar">Tlačítka k zobrazení, barva navigační lišty, pořadí</string>
+  <string name="header_summary_lockscreens">Spouštění vlastních aplikací, rozložení</string>
+  <string name="header_summary_power_menu">Co se bude zobrazovat v menu napájení</string>
+  <string name="header_summary_powersaver">Automaticky vypíná data pro úsporu baterie</string>
+  <string name="header_summary_led">Změna výchozího nastavení Androidu</string>
+  <string name="header_summary_general">Nastavení chování tlačítek</string>
+  <string name="header_summary_toggles">Přizpůsobit přepínače</string>
 	<string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
 	<string name="header_summary_weather">Vypnout/zapnout, nastavení vlastní polohy nebo sítě a také intervalu</string>
 	<string name="header_summary_signal">Signál zobrazen v dBm</string>
-	
-    <string name="advanced_settings">Pokročilá nastavení</string>
-    <string name="misc_short">Ostatní</string>
-    
-    <!-- General Strings -->
-    <string name="cancel">Zrušit</string>
-    <string name="ok">OK</string>
-
-    <!-- Navigation Bar -->
-    <string name="title_pref_menu_display">Pozice menu</string>
-    <string name="summary_pref_menu_display">Při používání velkého tlačítka menu je třeba odstranit postranní tlačítka menu!</string>
-    <string name="navigation_bar">Navigační lišta</string>
-    <string name="navigation_bar_tint_title">Barva navigační lišty</string>
-
-    <string name="title_pref_navigation_menu_display">Viditelnost menu</string>
-    <string name="summary_pref_navigation_menu_display">Jak a kde se mají zobrazovat tlačítka menu?</string>
-
-    <string name="navbar_order_title">Pořadí navigačních tlačítek</string>
-    <string name="navbar_order_summary">Přizpůsobit pořadí tlačítek</string>
-
-    <string name="navbar_button_cat">Tlačítka navigační lišty</string>
-    
-    <string name="navbar_qty_title">Počet navigačních tlačítek</string>
-    <string name="navbar_qty_summary">Zvolit počet tlačítek v navigační liště</string>
-
-    <string name="enabled_navbar_buttons_title">Povolená tlačítka</string>
-    <string name="enabled_navbar_buttons_summary">Vybrat tlačítka, která se budou používat</string>
-    
-    <string name="navbar_action_title">Akce a ikona tlačítka %1$s</string>
-    <string name="navbar_longpress_title">Akce dlouhého stisknutí tlačítka %1$s</string>
-    
-    <string name="navbar_action_home">Domů</string>
-    <string name="navbar_action_back">Zpět</string>
-    <string name="navbar_action_recents">Přepínač aplikací</string>
-    <string name="navbar_action_search">Hledat</string>
-    <string name="navbar_action_menu">Menu</string>
-    <string name="navbar_action_kill">Kilnout aplikaci</string>
-    <string name="navbar_action_power">Napájení</string>
-    <string name="navbar_action_none">Prázdné</string>
-    
-    <string name="button_transparency_title">Průhlednost navigační lišty</string>
-    
-    <string name="long_press_home_title">Akce při dlouhém podržení tlačítka domů</string>
-    <string name="long_press_home_summary">Co se stane po dlouhém stisku tlačítka domů. Pro uplatnění změny je vyžadován restart.</string>
-    
-    <string name="glow_times_title">Animace glow efektu u tlačítek</string>
-    <string name="glow_times_summary">Přizpůsobení délky trvání glow efektu po klepnutí na tlačítka. Snížení rychlosti může zvýšit výkon.</string>
-    
-    <!-- UI -->
-    <string name="rotation_animation_delay_title">Prodleva rotace</string>
-    <string name="rotation_animation_delay_summary">Počet milisekund po které musí zůstat telefon v klidu, než dojde k otočení obrazovky. Výchozí hodnota je 200ms.</string>
-
+  <string name="advanced_settings">Pokročilá nastavení</string>
+  <string name="misc_short">Ostatní</string>
+  <!-- Menu Strings -->
+  <string name="menu_lockscreens_remove_wallpaper">Obnovit pozadí zamknuté obrazovky</string>
+  <string name="menu_main_activity_change_locale">Jazyk</string>
+  <string name="menu_nav_bar_reset">Obnovit navigačřní lištu</string>
+  <string name="menu_weather_get_weather">Načíst počasí</string>
+  <!-- General Strings -->
+  <string name="cancel">Zrušit</string>
+  <string name="ok">OK</string>
+  <!-- Navigation Bar -->
+  <string name="title_pref_menu_display">Pozice menu</string>
+  <string name="summary_pref_menu_display">Při používání velkého tlačítka menu je třeba odstranit postranní tlačítka menu!</string>
+  <string name="navigation_bar">Navigační lišta</string>
+  <string name="navigation_bar_tint_title">Barva navigační lišty</string>
+  <string name="navigation_bar_glow_tint_title">Barva světelného efektu navigační lišty</string>
+  <string name="navigation_bar_glow_tint_summary">Při stisku tlačítka v navigační liště se zobrazuje svetělný efekt. Tato volba umožňuje změnit jeho barvu.</string>
+  <string name="navigation_bar_height_title">Výška navigační lišty</string>
+  <string name="navigation_bar_width_title">Šířka navigační lišty</string>
+  <string name="title_pref_navigation_menu_display">Viditelnost menu</string>
+  <string name="summary_pref_navigation_menu_display">Jak a kde se mají zobrazovat tlačítka menu?</string>
+  <string name="navbar_order_title">Pořadí navigačních tlačítek</string>
+  <string name="navbar_order_summary">Přizpůsobit pořadí tlačítek</string>
+  <string name="navbar_button_cat">Tlačítka navigační lišty</string>
+  <string name="navbar_qty_title">Počet navigačních tlačítek</string>
+  <string name="navbar_qty_summary">Zvolit počet tlačítek v navigační liště</string>
+  <string name="enabled_navbar_buttons_title">Povolená tlačítka</string>
+  <string name="enabled_navbar_buttons_summary">Vybrat tlačítka, která se budou používat</string>
+  <string name="navbar_action_title">Akce a ikona tlačítka %1$s</string>
+  <string name="navbar_longpress_title">Akce dlouhého stisknutí tlačítka %1$s</string>
+  <string name="navbar_action_home">Domů</string>
+  <string name="navbar_action_back">Zpět</string>
+  <string name="navbar_action_recents">Přepínač aplikací</string>
+  <string name="navbar_action_search">Hledat</string>
+  <string name="navbar_action_menu">Menu</string>
+  <string name="navbar_action_kill">Kilnout aplikaci</string>
+  <string name="navbar_action_power">Napájení</string>
+  <string name="navbar_action_none">Prázdné</string>
+  <string name="button_transparency_title">Průhlednost navigační lišty</string>
+  <string name="long_press_home_title">Akce při dlouhém podržení tlačítka domů</string>
+  <string name="long_press_home_summary">Co se stane po dlouhém stisku tlačítka domů. Pro uplatnění změny je vyžadován restart.</string>
+  <string name="glow_times_title">Animace světelného efektu tlačítek</string>
+  <string name="glow_times_summary">Přizpůsobení délky trvání světelného efektu po klepnutí na tlačítka. Snížení rychlosti může zvýšit výkon.</string>
+  <!-- UI -->
+  <string name="rotation_animation_delay_title">Prodleva rotace</string>
+  <string name="rotation_animation_delay_summary">Počet milisekund po které musí zůstat telefon v klidu, než dojde k otočení obrazovky. Výchozí hodnota je 200ms.</string>
 	<string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
 	<string name="ime_switcher_summary">Během psaní ve stavové liště (vyžaduje restart)</string>
-
 	<string name="custom_carrier_label_title">Vlastní název operátora</string>
   <string name="custom_carrier_label_empty">Vložit nový název!</string>
 	<string name="custom_carrier_label_warning">Vlastní název není nastaven. Jakmile je definován, nelze to vzít zpátky do provedení plného wipu.</string>
-
 	<string name="longpress_to_kill_title">Podržet zpět pro ukončení</string>
 	<string name="longpress_to_kill_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
-	
 	<string name="rotate_180_title">Umožnit rotaci o 180°</string>
 	<string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
-
   <string name="recent_app_switcher_title">Styl přepínače aplikací</string>
   <string name="recent_app_switcher_summary">Změnit styl přepínače aplikací (vyžaduje restart UI)</string>
-	
 	<string name="disable_bootanimation_title">Vypnout startovací animaci</string>
 	<string name="disable_bootanimation_summary">Heteráku :D</string>
-	
   <string name="disable_bootaudio_title">Vypnout startovací zvuk</string>
 	<string name="disable_bootaudio_summary">Ticho!</string>
 	<string name="disable_bootaudio_summary_disabled">Pro zapnutí startovacího zvuku musí být MP3 soubor umístěn v \n/system/media/boot_audio.mp3</string>
-
 	<string name="disable_bugmailer_title">Vypnout bugmailer</string>
-
-	<string name="lcd_density_title">Hustota displeje</string>
+  <string name="lcd_density_title">Hustota displeje</string>
 	<string name="lcd_density_summary">Kolik bodů na palec se zobrazuje</string>
-	
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animace</string>
 	<string name="crt_on_title">CRT animace při zapnutí</string>
 	<string name="crt_off_title">CRT animace při vypnutí</string>
-	
 	<!-- LCD Density -->
 	<string name="lcd_density_wizard">Průvodce nastavením hustoty displeje</string>
 	<string name="follow_through_title">Je nutné projít celý postup!</string>
@@ -132,168 +114,141 @@
 	<string name="open_market_summary">Pro návrat po dokončení stačí stisknout tlačítko zpět.</string>
 	<string name="custom_density_title">5. Změnit hostotu displeje na libovolnou hodnotu!</string>
 	<string name="custom_density_summary">Pokud se vyskytnou jakékoliv problémy s kompatibilitou Obchodu Play, je třeba zopakovat tyto kroky.</string>
-	
-    <!-- Lockscreens -->
-    <string name="pref_lockscreen_layout_title">Styl zámku obrazovky</string>
-    <string name="pref_lockscreen_layout_summary">Po změně stylu je třeba se posunout dolů v nastavení a vybrat správné hodnoty (cíle) zámku obrazovky</string>
-    
-    <string name="title_pref_lockscreen_quad_targets">4 položky</string>	
-    <string name="summary_pref_lockscreen_quad_targets">Přidává telefon a zprávy na zámek obrazovky</string>
-
-    <string name="title_pref_lockscreen_octo_targets">8 položek</string>	
-    <string name="summary_pref_lockscreen_octo_targets">Přidává mnoho zástupců na zámek obrazovky</string>
-
-    <string name="title_pref_lockscreen_menu_unlock">Odemčení tlačítkem menu</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Tlačítko menu odemkne obrazovku (vyžaduje restart)</string>
-    <string name="title_lockscreen_user_timeout_override">Čekat na zamknutí obrazovky</string>
-    <string name="summary_lockscreen_user_timeout_override">Pokud dojde k ručnímu vypnutí obrazovky, zařízení nebude zamknuto dokud nevyprší nastavený čas pro automatické vypínání obrazovky. Výchozí chování používá časovač pouze se zapnutým displejem.</string>
-    <string name="show_lock_before_unlock_title">Zobrazit zámek obrazovky před bezpečným odemčením</string>
-    <string name="show_lock_before_unlock_summary">Zobrazit klasický zámek obrazovky před bezpečnostním odemčením zařízení</string>
-    <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
-    <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
-    <string name="lockscreen_weather_title">Počasí na zamčené obrazovce</string>
-    <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
-    <string name="volume_wake_title">Probuzení tlačítky hlasitosti</string>
-    <string name="volume_wake_summary">Stisknutím tlačítka hlasitosti ve vypnutém stavu dojde k zapnutí obrazovky.</string>
-    <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
-    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
-    <string name="lockscreen_show_nav_title">Skrýt navigační lištu</string>
-    <string name="lockscreen_show_nav_summary">Skrýt navigační lištu (pokud to zařízení podporuje) na zamčené obrazovce.</string>
-    <string name="custom_app_n_dialog_title">Zvolit akci pro položku %1$s</string>
-    <string name="custom_app_n">Vlastní aplikace %1$s</string>
-    <string name="lockscreen_targets">Položky zámku obrazovky</string>
-    <string name="lockscreen_action_unlock">Odemčení</string>
-    <string name="lockscreen_action_sound">Přepínač zvuku</string>
-    <string name="lockscreen_action_camera">Fotoaparát</string>
-    <string name="lockscreen_action_mms">SMS</string>
-    <string name="lockscreen_action_phone">Telefon</string>
-    <string name="lockscreen_action_none">Prázdné</string>
-    <string name="lockscreen_landscape_title">Rotovat zamknutou obrazovkou</string>
-    <string name="lockscreen_landscape_summary">Povoluje rotaci displeje při zamknuté obrazovce</string>
-    <string name="lockscreen_quick_unlock_control_title">Rychlé odemčení zadáním pinu</string>
-    <string name="lockscreen_quick_unlock_control_summary">Odemknout obrazovku zadáním pinu, bez nutnosti mačkat potvrzovací tlačítko</string>
-    <string name="enable_fast_torch_title">Zapnout rychlou svítilnu</string>
-    <string name="enable_fast_torch_summary">Během vypnuté obrazovky je možné přidržet zapínací tlačítko pro rozsvícení svítilny. Puštěním tlačítka dojde k jejímu vypnutí.</string>
-    <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
-    <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
-    <string name="lockscreen_text_color_title">Barva textu na zamknuté obrazovce</string>
-    <string name="lockscreen_calendar">Kalendář na zamknuté obrazovce</string>
-    <string name="lockscreen_calendar_title">Povoleno</string>
-    <string name="lockscreen_calendar_summary">Zobrazovat budoucí události z kalendáře na zamknuté obrazovce.</string>
-    <string name="lockscreen_calendar_sources_title">Vybrat kalendáře</string>
-    <string name="lockscreen_calendar_sources_summary">Vybrat kalendáře, ze kterých se mají události zobrazovat.</string>
-    <string name="lockscreen_calendar_range_title">Časový rozsah</string>
-    <string name="lockscreen_calendar_range_summary">Zvolit časový rozsah pro události.</string>
-    <string name="lockscreen_calendar_use_colors_title">Použít barvy</string>
-    <string name="lockscreen_calendar_use_colors_summary">Pokud je zapnuto, události budou mít barvu jako jednotlivé kalendáře.</string>
-    <string name="lockscreen_calendar_hide_ongoing_title">Skrýt probíhající události</string>
-    <string name="lockscreen_calendar_hide_ongoing_summary">Pokud je zapnuto, již probíhající události se nebudou zobrazovat.</string>
-    <string name="lockscreen_calendar_flip_title">Několik událostí</string>
-    <string name="lockscreen_calendar_flip_summary">Pokud je povoleno, dojde ke střídání jednotlivých událostí v příštích 24 hodinách.</string>
-    <string name="lockscreen_calendar_interval_title">Interval střídání</string>
-    <string name="lockscreen_calendar_interval_summary">Zvolit rychlost střídání v sekundách.</string>
-    
-    <!-- Power Menu -->
-    <string name="title_show_power_saver">Zobrazovat spořič energie</string>
-    <string name="summary_show_power_saver">Pro zobrazení v menu napájení musí být spořič energie aktivní.</string>
-    <string name="title_show_screenshot">Zobrazovat snímek obrazovky</string>
-    <string name="title_show_torch_toggle">Zobrazovat přepínač svítilny</string>
-    <string name="title_show_airplane_toggle">Zobrazovat přepínač letového módu</string>
-    <string name="title_show_navbar_hide">Zobrazovat přepínač navigační lišty</string>
-    
-    <!-- Power Saving -->
-    <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
-    <string name="summary_pref_powersaving_pref_mode">@null</string>
-    
-    <string name="title_pref_powersaving_data_screen_off">Chování dat</string>
-    <string name="summary_pref_powersaving_data_screen_off">Prováděná akce s daty při vypnuté obrazovce</string>
-        
-    <string name="title_pref_powersaving_data_screen_off_delay">Prodleva provedené akce</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">Doba před provedením požadované akce</string>
-
-    <string name="title_pref_powersaving_sync_screen_off">Chování synchronizace</string>
-    <string name="summary_pref_powersaving_sync_screen_off">Prováděná akce se synchronizací při vypnuté obrazovce</string>
-    
-    <string name="title_pref_powersaving_sync_screen_off_delay">Interval synchronizace</string>
-    <string name="summary_pref_powersaving_sync_screen_off_delay">Doba před provedením vynucené synchronizace</string>
-    
-    <string name="powersaver_data_cat">Data</string>
-    <string name="powersaver_sync_cat">Synchronizace</string>
-    
-    <string name="screen_off_wifi_action">Wi-Fi při vypnuté obrazovce</string>
-    <string name="sync_data_usage">Datové spojení pro synchronizaci</string>
-    <string name="sync_mobile_data_preference">Mobilní data pro synchronizaci</string>
-    <!--  LED -->
-    <string name="title_led_on">Doba svícení LEDky</string>
-    <string name="summary_led_on">@null</string>
-    <string name="title_led_off">Doba mezi rozsvícením LEDky</string>
-    <string name="summary_led_off">@null</string>
-    <string name="led_color_title">Barva LEDky</string>
-    <string name="led_color_summary">Změní výchozí barvu LEDky. Aplikace mohou snadno potlačit toto nastavení jejich vlastní barvou.</string>
-    <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
-    <string name="summary_led_screen_on">@null</string>
-
-    <!--  Statusbar | General -->
-    <string name="title_settings_behavior">Použít standardní chování</string>
-    <string name="summary_settings_behavior">Při standardním chování jsou dlouhým stiskem vyvolány přepínače a krátkým nastavení. Pokud je tato volba neaktivní, dlouhé stisknutí vyvolá nastavení a krátké přepínače.</string>
-
-    <string name="title_auto_hide_toggles">Automaticky schovávat přepínače</string>
-    <string name="summary_auto_hide_toggles">Po zavření notifikační lišty budou přepínače skryty</string>
-
-    <string name="title_status_bar_brightness_toggle">Zapnout změnu jasu</string>
-    <string name="summary_status_bar_brightness_toggle">Jemným posunutím prstu po stavové liště dojde ke změně jasu.</string>
-
-    <string name="icon_transparency_title">Průhlednost notifikačních ikon</string>
-
-    <string name="adb_icon_title">Zapnout ikonu Ladění USB</string>
-    <string name="adb_icon_summary">Wutang</string>
-
-    <string name="statusbar_transparency">Průhlednost</string>
-    <string name="statusbar_transparency_summary">Zapnutí této volby může mít vliv na výkon a výdrž baterie. (vyžaduje restart UI)</string>
-
-    <string name="statusbar_layout">Rozložení notifikačního panelu</string>
-    <string name="statusbar_layout_summary">Mění rozložení notifikačního vysouvacího panelu (vyžaduje restart UI)</string>
-    <string name="statusbar_fontsize">Velikost písma ve stavové liště</string>
-    <string name="statusbar_fontsize_summary">Mění velikost textu položek ve stavové liště</string>
-
-    <!-- Statusbar | Battery -->
-    <string name="battery_icon">Styl ikony baterie</string>
-    <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_bar">Pozice pruhu baterie</string>
-    <string name="battery_bar_color">Barva pruhu baterie</string>
-    <string name="battery_bar_cat">Možnosti pruhu baterie</string>
-    <string name="battery_bar_style_title">Styl pruhu baterie</string>
-    <string name="battery_bar_thickness_title">Tloušťka pruhu baterie</string>
-    <string name="battery_bar_animate_title">Animace při nabíjení</string>
-    <string name="battery_bar_animate_summary">Povolení animace způsobuje horší odezvy systému. Zapínat pouze na vlastní nebezpečí.</string>
-    
-
-    <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Styl hodin</string>
-    <string name="title_clock_ampm_entries">AM/PM styl</string>
-    <string name="colors">Barvy</string>
-    <string name="clock_color_title">Barva hodin</string>
-    <string name="reset_color_title">Vyresetovat barvu</string>
-    <string name="enable_alarm_title">Zapnout ikonu budíku</string>
-    <string name="enable_alarm_summary">Po vypnutí/zapnutí je nutné znovu nastavit budík, aby se změna projevila. Případně vyrestartovat.</string>
-    <string name="enable_clock_weekday">Den v týdnu</string>
-    <string name="enable_clock_weekday_summary">Zobrazuje den v týdnu před hodinami</string>
-
-    <!-- Statusbar | Toggles -->
-    <string name="toggle_style_title">Styl přepínačů</string>
-    <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
-
-    <string name="alternate_button_layout_title">Alternativní přepínače</string>
-    <string name="alternate_button_layout_summary">Místo přepínačů se použijí tlačítka.</string>
-    
-    <string name="enabled_toggles_title">Zapnuté přepínače</string>
-    <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
-    <string name="toggles_order_title">Pořadí přepínačů</string>
-    <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
-    <string name="brightness_location_title">Pozice nastavení jasu</string>
-    <string name="reset_toggles_title">Vyresetovat přepínače</string>
-    <string name="reset_toggles_summary">Vyresetovat všechny přepínače a jejich pořadí</string>
-
+  <!-- Lockscreens -->
+  <string name="pref_lockscreen_layout_title">Styl zámku obrazovky</string>
+  <string name="pref_lockscreen_layout_summary">Po změně stylu je třeba se posunout dolů v nastavení a vybrat správné hodnoty (cíle) zámku obrazovky</string>
+  <string name="title_pref_lockscreen_quad_targets">4 položky</string>	
+  <string name="summary_pref_lockscreen_quad_targets">Přidává telefon a zprávy na zámek obrazovky</string>
+  <string name="title_pref_lockscreen_octo_targets">8 položek</string>	
+  <string name="summary_pref_lockscreen_octo_targets">Přidává mnoho zástupců na zámek obrazovky</string>
+  <string name="title_pref_lockscreen_menu_unlock">Odemčení tlačítkem menu</string>
+  <string name="summary_pref_lockscreen_menu_unlock">Tlačítko menu odemkne obrazovku (vyžaduje restart)</string>
+  <string name="title_lockscreen_user_timeout_override">Čekat na zamknutí obrazovky</string>
+  <string name="summary_lockscreen_user_timeout_override">Pokud dojde k ručnímu vypnutí obrazovky, zařízení nebude zamknuto dokud nevyprší nastavený čas pro automatické vypínání obrazovky. Výchozí chování používá časovač pouze se zapnutým displejem.</string>
+  <string name="show_lock_before_unlock_title">Zobrazit zámek obrazovky před bezpečným odemčením</string>
+  <string name="show_lock_before_unlock_summary">Zobrazit klasický zámek obrazovky před bezpečnostním odemčením zařízení</string>
+  <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
+  <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
+  <string name="lockscreen_weather_title">Počasí na zamčené obrazovce</string>
+  <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
+  <string name="volume_wake_title">Probuzení tlačítky hlasitosti</string>
+  <string name="volume_wake_summary">Stisknutím tlačítka hlasitosti ve vypnutém stavu dojde k zapnutí obrazovky.</string>
+  <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
+  <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
+  <string name="lockscreen_show_nav_title">Skrýt navigační lištu</string>
+  <string name="lockscreen_show_nav_summary">Skrýt navigační lištu (pokud to zařízení podporuje) na zamčené obrazovce.</string>
+  <string name="custom_app_n_dialog_title">Zvolit akci pro položku %1$s</string>
+  <string name="custom_app_n">Vlastní aplikace %1$s</string>
+  <string name="lockscreen_targets">Položky zámku obrazovky</string>
+  <string name="lockscreen_action_unlock">Odemčení</string>
+  <string name="lockscreen_action_sound">Přepínač zvuku</string>
+  <string name="lockscreen_action_camera">Fotoaparát</string>
+  <string name="lockscreen_action_mms">SMS</string>
+  <string name="lockscreen_action_phone">Telefon</string>
+  <string name="lockscreen_action_none">Prázdné</string>
+  <string name="lockscreen_landscape_title">Rotovat zamknutou obrazovkou</string>
+  <string name="lockscreen_landscape_summary">Povoluje rotaci displeje při zamknuté obrazovce</string>
+  <string name="lockscreen_quick_unlock_control_title">Rychlé odemčení zadáním pinu</string>
+  <string name="lockscreen_quick_unlock_control_summary">Odemknout obrazovku zadáním pinu, bez nutnosti mačkat potvrzovací tlačítko</string>
+  <string name="enable_fast_torch_title">Zapnout rychlou svítilnu</string>
+  <string name="enable_fast_torch_summary">Během vypnuté obrazovky je možné přidržet zapínací tlačítko pro rozsvícení svítilny. Puštěním tlačítka dojde k jejímu vypnutí.</string>
+  <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
+  <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
+  <string name="lockscreen_text_color_title">Barva textu na zamknuté obrazovce</string>
+  <string name="lockscreen_calendar">Kalendář na zamknuté obrazovce</string>
+  <string name="lockscreen_calendar_title">Povoleno</string>
+  <string name="lockscreen_calendar_summary">Zobrazovat budoucí události z kalendáře na zamknuté obrazovce.</string>
+  <string name="lockscreen_calendar_sources_title">Vybrat kalendáře</string>
+  <string name="lockscreen_calendar_sources_summary">Vybrat kalendáře, ze kterých se mají události zobrazovat.</string>
+  <string name="lockscreen_calendar_range_title">Časový rozsah</string>
+  <string name="lockscreen_calendar_range_summary">Zvolit časový rozsah pro události.</string>
+  <string name="lockscreen_calendar_use_colors_title">Použít barvy</string>
+  <string name="lockscreen_calendar_use_colors_summary">Pokud je zapnuto, události budou mít barvu jako jednotlivé kalendáře.</string>
+  <string name="lockscreen_calendar_hide_ongoing_title">Skrýt probíhající události</string>
+  <string name="lockscreen_calendar_hide_ongoing_summary">Pokud je zapnuto, již probíhající události se nebudou zobrazovat.</string>
+  <string name="lockscreen_calendar_flip_title">Několik událostí</string>
+  <string name="lockscreen_calendar_flip_summary">Pokud je povoleno, dojde ke střídání jednotlivých událostí v příštích 24 hodinách.</string>
+  <string name="lockscreen_calendar_interval_title">Interval střídání</string>
+  <string name="lockscreen_calendar_interval_summary">Zvolit rychlost střídání v sekundách.</string>
+  <!-- Power Menu -->
+  <string name="title_show_power_saver">Zobrazovat spořič energie</string>
+  <string name="summary_show_power_saver">Pro zobrazení v menu napájení musí být spořič energie aktivní.</string>
+  <string name="title_show_screenshot">Zobrazovat snímek obrazovky</string>
+  <string name="title_show_torch_toggle">Zobrazovat přepínač svítilny</string>
+  <string name="title_show_airplane_toggle">Zobrazovat přepínač letového módu</string>
+  <string name="title_show_navbar_hide">Zobrazovat přepínač navigační lišty</string>
+  <!-- Power Saving -->
+  <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
+  <string name="summary_pref_powersaving_pref_mode">@null</string>
+  <string name="title_pref_powersaving_data_screen_off">Chování dat</string>
+  <string name="summary_pref_powersaving_data_screen_off">Prováděná akce s daty při vypnuté obrazovce</string>
+  <string name="title_pref_powersaving_data_screen_off_delay">Prodleva provedené akce</string>
+  <string name="summary_pref_powersaving_data_screen_off_delay">Doba před provedením požadované akce</string>
+  <string name="title_pref_powersaving_sync_screen_off">Chování synchronizace</string>
+  <string name="summary_pref_powersaving_sync_screen_off">Prováděná akce se synchronizací při vypnuté obrazovce</string>
+  <string name="title_pref_powersaving_sync_screen_off_delay">Interval synchronizace</string>
+  <string name="summary_pref_powersaving_sync_screen_off_delay">Doba před provedením vynucené synchronizace</string>
+  <string name="powersaver_data_cat">Data</string>
+  <string name="powersaver_sync_cat">Synchronizace</string>
+  <string name="screen_off_wifi_action">Wi-Fi při vypnuté obrazovce</string>
+  <string name="sync_data_usage">Datové spojení pro synchronizaci</string>
+  <string name="sync_mobile_data_preference">Mobilní data pro synchronizaci</string>
+  <!--  LED -->
+  <string name="title_led_on">Doba svícení LEDky</string>
+  <string name="summary_led_on">@null</string>
+  <string name="title_led_off">Doba mezi rozsvícením LEDky</string>
+  <string name="summary_led_off">@null</string>
+  <string name="led_color_title">Barva LEDky</string>
+  <string name="led_color_summary">Změní výchozí barvu LEDky. Aplikace mohou snadno potlačit toto nastavení jejich vlastní barvou.</string>
+  <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
+  <string name="summary_led_screen_on">@null</string>
+  <!--  Statusbar | General -->
+  <string name="title_settings_behavior">Použít standardní chování</string>
+  <string name="summary_settings_behavior">Při standardním chování jsou dlouhým stiskem vyvolány přepínače a krátkým nastavení. Pokud je tato volba neaktivní, dlouhé stisknutí vyvolá nastavení a krátké přepínače.</string>
+  <string name="title_auto_hide_toggles">Automaticky schovávat přepínače</string>
+  <string name="summary_auto_hide_toggles">Po zavření notifikační lišty budou přepínače skryty</string>
+  <string name="title_status_bar_brightness_toggle">Zapnout změnu jasu</string>
+  <string name="summary_status_bar_brightness_toggle">Jemným posunutím prstu po stavové liště dojde ke změně jasu.</string>
+  <string name="icon_transparency_title">Průhlednost notifikačních ikon</string>
+  <string name="adb_icon_title">Zapnout ikonu Ladění USB</string>
+  <string name="adb_icon_summary">Wutang</string>
+  <string name="statusbar_transparency">Průhlednost</string>
+  <string name="statusbar_transparency_summary">Zapnutí této volby může mít vliv na výkon a výdrž baterie. (vyžaduje restart UI)</string>
+  <string name="statusbar_layout">Rozložení notifikačního panelu</string>
+  <string name="statusbar_layout_summary">Mění rozložení notifikačního vysouvacího panelu (vyžaduje restart UI)</string>
+  <string name="statusbar_fontsize">Velikost písma ve stavové liště</string>
+  <string name="statusbar_fontsize_summary">Mění velikost textu položek ve stavové liště</string>
+  <!-- Statusbar | Battery -->
+  <string name="battery_icon">Styl ikony baterie</string>
+  <string name="battery_summary_text_widget">@null</string>
+  <string name="battery_bar">Pozice pruhu baterie</string>
+  <string name="battery_bar_color">Barva pruhu baterie</string>
+  <string name="battery_bar_cat">Možnosti pruhu baterie</string>
+  <string name="battery_bar_style_title">Styl pruhu baterie</string>
+  <string name="battery_bar_thickness_title">Tloušťka pruhu baterie</string>
+  <string name="battery_bar_animate_title">Animace při nabíjení</string>
+  <string name="battery_bar_animate_summary">Povolení animace způsobuje horší odezvy systému. Zapínat pouze na vlastní nebezpečí.</string>
+  <!-- Statusbar | Clock -->
+  <string name="clock_title_enable">Styl hodin</string>
+  <string name="title_clock_ampm_entries">AM/PM styl</string>
+  <string name="colors">Barvy</string>
+  <string name="clock_color_title">Barva hodin</string>
+  <string name="reset_color_title">Vyresetovat barvu</string>
+  <string name="enable_alarm_title">Zapnout ikonu budíku</string>
+  <string name="enable_alarm_summary">Po vypnutí/zapnutí je nutné znovu nastavit budík, aby se změna projevila. Případně vyrestartovat.</string>
+  <string name="enable_clock_weekday">Den v týdnu</string>
+  <string name="enable_clock_weekday_summary">Zobrazuje den v týdnu před hodinami</string>
+  <!-- Statusbar | Toggles -->
+  <string name="toggle_style_title">Styl přepínačů</string>
+  <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
+  <string name="toggles_layout_title">Vzhled přepínačů</string>
+  <string name="enabled_toggles_title">Zapnuté přepínače</string>
+  <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
+  <string name="toggles_order_title">Pořadí přepínačů</string>
+  <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
+  <string name="brightness_location_title">Pozice nastavení jasu</string>
+  <string name="reset_toggles_title">Vyresetovat přepínače</string>
+  <string name="reset_toggles_summary">Vyresetovat všechny přepínače a jejich pořadí</string>
 	<!-- Statusbar | Signal -->
 	<string name="signal_style">Styl ukazatele signálu</string>
 	<string name="signal_color_title">Barva ukazatele signálu</string>
@@ -301,23 +256,20 @@
 	<string name="hide_signal_summary">Skryje také ukazatel dat (prozatím). Později bude možné skrývat odděleně.</string>
   <string name="wifi_signal_style">Textový styl ukazatele WiFi</string>
 	<string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
-
-    <!-- Color Picker -->
-    <string name="dialog_color_picker">Výběr barvy</string>
-    <string name="press_color_to_apply">Stisknutím se barva aplikuje</string>   
-    <string name="arrow_right">→</string> 
-    <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#FF000000</string>
-    <string name="set">Nastavit</string>
-    <string name="ics_color">!!!</string>
-    
-    <!-- Shortcut picker -->
-    <string name="use_custom_app_title">Použít vlastní aplikaci</string>
+  <!-- Color Picker -->
+  <string name="dialog_color_picker">Výběr barvy</string>
+  <string name="press_color_to_apply">Stisknutím se barva aplikuje</string>   
+  <string name="arrow_right">→</string> 
+  <string name="arrow_down">↓</string>
+  <string name="hex">Hex:</string>
+  <string name="hex_hint">#FF000000</string>
+  <string name="set">Nastavit</string>
+  <string name="ics_color">!!!</string>
+  <!-- Shortcut picker -->
+  <string name="use_custom_app_title">Použít vlastní aplikaci</string>
 	<string name="use_custom_app_summary">Místo přehledu posledních otevřených aplikací použít vlastní aplikaci</string>
 	<string name="select_custom_app_title">Vybrat vlastní aplikaci</string>
 	<string name="group_applications">Aplikace</string>
-	
 	<!-- Weather -->
 	<string name="weather_enable">Zapnout počasí</string>
 	<string name="weather_enable_summary">Určuje kdy a kde se mají zobrazovat informace o počasí.</string>
@@ -334,21 +286,18 @@
 	<string name="weather_statusbar_style">Styl počasí ve stavové liště</string>
 	<string name="weather_start_custom_app">Spustit vlastní aplikaci</string>
 	<string name="weather_start_custom_app_summary">Po kliknutí na obrázek počasí spustit vlastní aplikaci.</string>
-        <string name="weather_custom_app_title">Vlastní aplikace</string>
-        <string name="weather_custom_app_dialog_title">Vybrat aplikaci</string>
+  <string name="weather_custom_app_title">Vlastní aplikace</string>
+  <string name="weather_custom_app_dialog_title">Vybrat aplikaci</string>
 	<string name="weather_custom_app_dialog_message">Název balíčku (prozatím).</string>
-	<string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>
-	
+	<string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>	
 	<!-- Dialog Titles -->
 	<string name="dt_free_memory">Minfree Taskkiller</string>
-
 	<!-- Preference Categories -->
 	<string name="prefcat_cpu">Nastavení CPU</string>
 	<string name="prefcat_free_memory">Volná paměť</string>
 	<string name="pc_tweaks">Vylepšení</string>
 	<string name="pc_init_d">Zapnout/vypnout vylepšení</string>
 	<string name="pc_init_d_tweaks">Přizpůsobit vylepšení</string>
-
 	<!-- Preference Titles -->
 	<!-- Main -->
 	<string name="pt_performance">Výkon</string>
@@ -393,7 +342,6 @@
   <string name="pref_scrollingcache_default_enable">Zapnuto jako výchozí</string>
   <string name="pref_scrollingcache_default_disable">Vypnuto jako výchozí</string>
   <string name="pref_scrollingcache_force_disable">Vynutit vypnutí</string>
-
 	<!-- Preference Summaries -->
 	<!-- Main -->
 	<string name="ps_performance">Nastavení CPU, volná paměť a přizpůsobení startovacího nastavení.</string>
@@ -431,21 +379,17 @@
 	<string name="ps_free_memory">Množství paměti, které minfree taskkiler ponechá volné |
 		Aktuálně: %s</string>
 	<string name="ps_free_memory_boot">Použít výše uvedené množství při startu</string>
-
 	<!-- Toast Messages -->
 	<string name="toast_min_max_error01">Maximální frekvence CPU nemůže být nižší než minimální.</string>
 	<string name="toast_min_max_error02">Minimální frekvence CPU nemůže být vyšší než maximální.</string>
-
 	<!-- list_voltage -->
 	<string name="freq">Frekvence</string>
 	<string name="current">aktuálně mV</string>
 	<string name="saved">uloženo mV</string>
-
 	<!-- voltage -->
 	<string name="error_values">Hodnoty způsobující chybu</string>
 	<string name="set_boot">Nastavit při startu</string>
 	<string name="apply_values">Použít hodnoty</string>
-	
 	<string name="dpi">DPI</string>
 	<string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
 	<string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
@@ -456,7 +400,7 @@
 	<string name="devs">Vývojáři</string>
 	<string name="aokp">Android Open Kang Project</string>
 	<string name="aokp_website_title">Web AOKP</string>
-	<string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+	<string name="aokp_website_summary">www.aokp.co - Zde jsou k nalezení nejnovější verze.</string>
 	<string name="aokp_source_title">AOKP Source</string>
 	<string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlídnout nejnovější verzi na github.com/aokp</string>
   <string name="aokp_review_title">AOKP Code Review</string>
@@ -476,64 +420,64 @@
   <string name="color_red_title">Červená</string>
   <string name="color_green_title">Zelená</string>
   <string name="color_blue_title">Modrá</string>
+  <string name="gamma_dss_title">Přizpůsobení gama hodnot</string>
   <string name="reset_defaults">Zpět k výchozím hodnotám</string>
-
   <!-- Weather Codes -->
   <string name="weather_0">Tornádo</string>
   <string name="weather_1">Tropická bouře</string>
   <string name="weather_2">Hurikán</string>
   <string name="weather_3">Těžké bouřky</string>
-    <string name="weather_4">Bouřky</string>
-    <string name="weather_5">Déšť se sněhem</string>
-    <string name="weather_6">Déšť se sněhem</string>
-    <string name="weather_7">Déšť se sněhem</string>
-    <string name="weather_8">Mrznoucí mrholení</string>
-    <string name="weather_9">Mrholení</string>
-    <string name="weather_10">Mrznoucí déšť</string>
-    <string name="weather_11">Přeháňky</string>
-    <string name="weather_12">Přeháňky</string>
-    <string name="weather_13">Sněhové přeháňky</string>
-    <string name="weather_14">Lehké přeháňky se sněhem</string>
-    <string name="weather_15">Zvířený sníh</string>
-    <string name="weather_16">Sněžení</string>
-    <string name="weather_17">Krupobití</string>
-    <string name="weather_18">Plískanice</string>
-    <string name="weather_19">Prašno</string>
-    <string name="weather_20">Mlhavo</string>
-    <string name="weather_21">Opar</string>
-    <string name="weather_22">Zakouřeno</string>
-    <string name="weather_23">Bouřlivo</string>
-    <string name="weather_24">Větrno</string>
-    <string name="weather_25">Chladno</string>
-    <string name="weather_26">Zataženo</string>
-    <!-- mostly cloudy (night) -->
-    <string name="weather_27">Převážně zataženo</string>
-    <!-- mostly cloudy (day) -->
-    <string name="weather_28">Převážně zataženo</string>
-    <!-- partly cloudy (night) -->
-    <string name="weather_29">Částečně zataženo</string>
-    <!-- partly cloudy (day) -->
-    <string name="weather_30">Částečně zataženo</string>
-    <!-- clear (night) -->
-    <string name="weather_31">Jasno</string>
-    <string name="weather_32">Slunečno</string>
-    <!-- fair (night) -->
-    <string name="weather_33">Hezky</string>
-    <!-- fair (day) -->
-    <string name="weather_34">Hezky</string>
-    <string name="weather_35">Déšť se sněhem</string>
-    <string name="weather_36">Horko</string>
-    <string name="weather_37">Ojedinělé bouřky</string>
-    <string name="weather_38">Rozptýlené bouřky</string>
-    <string name="weather_39">Rozptýlené bouřky</string>
-    <string name="weather_40">Rozptýlené přeháňky</string>
-    <string name="weather_41">Těžké sněžení</string>
-    <string name="weather_42">Rozptýlené sněhové přeháňky</string>
-    <string name="weather_43">Rozptýlené sněhové přeháňky</string>
-    <string name="weather_44">Polojasno</string>
-    <string name="weather_45">Bouřkové přeháňky</string>
-    <string name="weather_46">Sněhové přeháňky</string>
-    <string name="weather_47">Ojedinělé bouřky</string>
-    <!-- Forecase unavailable -->
-    <string name="weather_3200"></string>
+  <string name="weather_4">Bouřky</string>
+  <string name="weather_5">Déšť se sněhem</string>
+  <string name="weather_6">Déšť se sněhem</string>
+  <string name="weather_7">Déšť se sněhem</string>
+  <string name="weather_8">Mrznoucí mrholení</string>
+  <string name="weather_9">Mrholení</string>
+  <string name="weather_10">Mrznoucí déšť</string>
+  <string name="weather_11">Přeháňky</string>
+  <string name="weather_12">Přeháňky</string>
+  <string name="weather_13">Sněhové přeháňky</string>
+  <string name="weather_14">Lehké přeháňky se sněhem</string>
+  <string name="weather_15">Zvířený sníh</string>
+  <string name="weather_16">Sněžení</string>
+  <string name="weather_17">Krupobití</string>
+  <string name="weather_18">Plískanice</string>
+  <string name="weather_19">Prašno</string>
+  <string name="weather_20">Mlhavo</string>
+  <string name="weather_21">Opar</string>
+  <string name="weather_22">Zakouřeno</string>
+  <string name="weather_23">Bouřlivo</string>
+  <string name="weather_24">Větrno</string>
+  <string name="weather_25">Chladno</string>
+  <string name="weather_26">Zataženo</string>
+  <!-- mostly cloudy (night) -->
+  <string name="weather_27">Převážně zataženo</string>
+  <!-- mostly cloudy (day) -->
+  <string name="weather_28">Převážně zataženo</string>
+  <!-- partly cloudy (night) -->
+  <string name="weather_29">Částečně zataženo</string>
+  <!-- partly cloudy (day) -->
+  <string name="weather_30">Částečně zataženo</string>
+  <!-- clear (night) -->
+  <string name="weather_31">Jasno</string>
+  <string name="weather_32">Slunečno</string>
+  <!-- fair (night) -->
+  <string name="weather_33">Hezky</string>
+  <!-- fair (day) -->
+  <string name="weather_34">Hezky</string>
+  <string name="weather_35">Déšť se sněhem</string>
+  <string name="weather_36">Horko</string>
+  <string name="weather_37">Ojedinělé bouřky</string>
+  <string name="weather_38">Rozptýlené bouřky</string>
+  <string name="weather_39">Rozptýlené bouřky</string>
+  <string name="weather_40">Rozptýlené přeháňky</string>
+  <string name="weather_41">Těžké sněžení</string>
+  <string name="weather_42">Rozptýlené sněhové přeháňky</string>
+  <string name="weather_43">Rozptýlené sněhové přeháňky</string>
+  <string name="weather_44">Polojasno</string>
+  <string name="weather_45">Bouřkové přeháňky</string>
+  <string name="weather_46">Sněhové přeháňky</string>
+  <string name="weather_47">Ojedinělé bouřky</string>
+  <!-- Forecase unavailable -->
+  <string name="weather_3200"></string>
 </resources>

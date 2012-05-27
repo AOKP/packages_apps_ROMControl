@@ -10,12 +10,16 @@ import java.util.ArrayList;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.appwidget.AppWidgetHost;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProviderInfo;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
@@ -43,7 +47,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -66,9 +69,17 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
 
-
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
+    private static final int REQUEST_CREATE_APPWIDGET = 5;
+    private static final int REQUEST_PICK_APPWIDGET = 9;
+    public static final int APP_WIDGET_HOST_ID = 2112;
+
+    public static final String ACTION_ALLOCATE_ID = "com.android.systemui.ACTION_ALLOCATE_ID";
+    public static final String ACTION_DEALLOCATE_ID = "com.android.systemui.ACTION_DEALLOCATE_ID";
+    public static final String ACTION_SEND_ID = "com.android.systemui.ACTION_SEND_ID";
+
+    public static final String PREFS_NAV_BAR = "navbar";
 
     // move these later
     ColorPickerPreference mNavigationBarColor;
@@ -84,6 +95,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarWidth;
 
     private int mPendingIconIndex = -1;
+    private int mPendingWidgetDrawer = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
 
     private static class NavBarCustomAction {
@@ -92,7 +104,27 @@ public class Navbar extends AOKPPreferenceFragment implements
         int iconIndex = -1;
     }
 
+    Preference mPendingPreference;
     private ShortcutPickerHelper mPicker;
+
+    BroadcastReceiver mWidgetIdReceiver = new BroadcastReceiver() {
+
+        public void onReceive(Context context, Intent intent) {
+
+            Log.i(TAG, "widget id receiver go!");
+
+            widgetIds[mPendingWidgetDrawer] = intent.getIntExtra(
+                    AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
+            String summary = intent.getStringExtra("summary");
+            mPendingPreference.setSummary(summary);
+
+            SharedPreferences prefs = context.getSharedPreferences(PREFS_NAV_BAR,
+                    Context.MODE_WORLD_WRITEABLE);
+            prefs.edit().putString(mPendingPreference.getKey(), summary).apply();
+
+            saveWidgets();
+        };
+    };
 
     private static final String TAG = "NavBar";
 
@@ -165,6 +197,9 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         refreshSettings();
         setHasOptionsMenu(true);
+
+        IntentFilter filter = new IntentFilter(ACTION_SEND_ID);
+        mContext.registerReceiver(mWidgetIdReceiver, filter);
     }
 
     @Override
@@ -225,6 +260,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
 
+        String key = preference.getKey();
         if (preference == mEnableNavigationBar) {
 
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -234,18 +270,34 @@ public class Navbar extends AOKPPreferenceFragment implements
             new AlertDialog.Builder(getActivity())
                     .setTitle(getResources().getString(R.string.navbar_enable_dialog_title))
                     .setMessage(getResources().getString(R.string.navbar_enable_dialog_msg))
-                    .setNegativeButton(getResources().getString(R.string.navbar_enable_dialog_negative), null)
+                    .setNegativeButton(
+                            getResources().getString(R.string.navbar_enable_dialog_negative), null)
                     .setCancelable(false)
-                    .setPositiveButton(getResources().getString(R.string.navbar_enable_dialog_Positive), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            PowerManager pm = (PowerManager) getActivity()
-                                    .getSystemService(Context.POWER_SERVICE);
-                            pm.reboot("New navbar");
-                        }
-                    })
+                    .setPositiveButton(
+                            getResources().getString(R.string.navbar_enable_dialog_Positive),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    PowerManager pm = (PowerManager) getActivity()
+                                            .getSystemService(Context.POWER_SERVICE);
+                                    pm.reboot("New navbar");
+                                }
+                            })
                     .create()
                     .show();
+
+            return true;
+
+        } else if (key.startsWith("navbar_widget_")) {
+            mPendingPreference = preference;
+            mPendingWidgetDrawer = Integer.parseInt(key.substring("navbar_widget_".length()));
+            Log.i(TAG, "pending widget: " + mPendingWidgetDrawer);
+            // selectWidget();
+
+            // send intent to pick a new widget
+            Intent send = new Intent();
+            send.setAction(ACTION_ALLOCATE_ID);
+            mContext.sendBroadcast(send);
 
             return true;
         }
@@ -273,7 +325,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_TINT, intHex);
             return true;
 
-        }  else if (preference == mNavigationBarGlowColor) {
+        } else if (preference == mNavigationBarGlowColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
@@ -435,11 +487,17 @@ public class Navbar extends AOKPPreferenceFragment implements
                 if (f.exists())
                     f.delete();
 
-                Toast.makeText(getActivity(), mPendingIconIndex + getResources().getString(R.string.lockscreen_custom_app_icon_successfully),
+                Toast.makeText(
+                        getActivity(),
+                        mPendingIconIndex
+                                + getResources().getString(
+                                        R.string.lockscreen_custom_app_icon_successfully),
                         Toast.LENGTH_LONG).show();
                 refreshSettings();
 
             }
+        } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -539,7 +597,35 @@ public class Navbar extends AOKPPreferenceFragment implements
             }
         }
 
+        targetGroup = (PreferenceGroup) findPreference("navbar_widgets");
+        targetGroup.removeAll();
+
+        widgetIds = new int[4];
+        String settingWidgets = Settings.System.getString(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_WIDGETS);
+        Log.i(TAG, "widgets: " + settingWidgets);
+        if (settingWidgets != null && settingWidgets.length() > 0) {
+            String[] split = settingWidgets.split("\\|");
+            for (int i = 0; i < split.length; i++) {
+                if (split[i].length() > 0)
+                    widgetIds[i] = Integer.parseInt(split[i]);
+            }
+        }
+
+        SharedPreferences prefs = mContext.getSharedPreferences(PREFS_NAV_BAR,
+                Context.MODE_WORLD_WRITEABLE);
+        for (int i = 0; i < widgetIds.length; i++) {
+            Preference p = new Preference(mContext);
+            p.setKey("navbar_widget_" + i);
+            p.setTitle("Widget " + i);
+            if (widgetIds[i] != -1)
+                p.setSummary(prefs.getString("navbar_widget_" + i, "None"));
+            targetGroup.addPreference(p);
+        }
+
     }
+
+    int widgetIds[];
 
     private Drawable resize(Drawable image) {
         int size = 50;
@@ -853,4 +939,16 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         return iloveyou;
     }
+
+    private void saveWidgets() {
+        StringBuilder widgetString = new StringBuilder();
+        for (int i = 0; i < widgetIds.length; i++) {
+            widgetString.append(widgetIds[i]);
+            if (i != (widgetIds.length - 1))
+                widgetString.append("|");
+        }
+        Settings.System.putString(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDGETS,
+                widgetString.toString());
+    }
+
 }

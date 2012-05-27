@@ -72,4 +72,11 @@
 			android:title="@string/navigation_bar_height_title" />
 
 	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="navbar_widgets"
+		android:title="@string/navbar_widgets">
+
+	</PreferenceCategory>
+
 </PreferenceScreen>

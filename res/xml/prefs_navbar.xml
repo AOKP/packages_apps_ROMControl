@@ -71,5 +71,10 @@
 			android:key="navigation_bar_height"
 			android:title="@string/navigation_bar_height_title" />
 
+                <CheckBoxPreference
+                        android:key="combined_bar_auto_hide"
+                        android:title="@string/combined_bar_auto_hide_title"
+                        android:summary="@string/combined_bar_auto_hide_summary" />
+
 	</PreferenceCategory>
 </PreferenceScreen>

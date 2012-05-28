@@ -65,6 +65,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
+    private static final String COMBINED_BAR_AUTO_HIDE = "combined_bar_auto_hide";
 
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -82,6 +83,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     CheckBoxPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarWidth;
+    CheckBoxPreference mCombinedBarAutoHide;
 
     private int mPendingIconIndex = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
@@ -142,6 +144,15 @@ public class Navbar extends AOKPPreferenceFragment implements
         mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
 
+        mCombinedBarAutoHide = (CheckBoxPreference) findPreference(COMBINED_BAR_AUTO_HIDE);
+        mCombinedBarAutoHide.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.COMBINED_BAR_AUTO_HIDE, 0) == 1);
+
+        // Only tablets need this
+        if (!mTablet) {
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mCombinedBarAutoHide);
+        }
+
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
         mEnableNavigationBar = (CheckBoxPreference) findPreference("enable_nav_bar");
@@ -162,7 +173,6 @@ public class Navbar extends AOKPPreferenceFragment implements
             Log.e("NavBar", "is tablet");
             prefs.removePreference(mNavBarMenuDisplay);
         }
-
         refreshSettings();
         setHasOptionsMenu(true);
     }
@@ -248,6 +258,11 @@ public class Navbar extends AOKPPreferenceFragment implements
                     .show();
 
             return true;
+
+        } else if (preference == mCombinedBarAutoHide) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.COMBINED_BAR_AUTO_HIDE, checked ? 1 : 0);
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -328,6 +343,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                     height);
             toggleBar();
             return true;
+
         } else if ((preference.getKey().startsWith("navbar_action"))
                 || (preference.getKey().startsWith("navbar_longpress"))) {
             boolean longpress = preference.getKey().startsWith("navbar_longpress_");
@@ -573,7 +589,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                 return getResources().getDrawable(R.drawable.ic_sysbar_search);
             } else if (uri.equals("**menu**")) {
 
-                return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
+                return getResources().getDrawable(R.drawable.ic_sysbar_menu_land_big);
             } else if (uri.equals("**kill**")) {
 
                 return getResources().getDrawable(R.drawable.ic_sysbar_killtask);

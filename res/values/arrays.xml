@@ -343,7 +343,8 @@
 
     <string-array name="pref_lockscreen_options_values" translatable="false">
 		<item>2</item>
-		<item>6</item>
+		<item>4</item>
+		<item>5</item>
 		<item>8</item>
 		<item>1</item>
 		<item>0</item>
@@ -352,6 +353,7 @@
         <string-array name="pref_lockscreen_options_entries">
 		<item>Stock</item>
 		<item>Quad</item>
+		<item>Hepta</item>
 		<item>Octo</item>
 		<item>AOSP</item>
 		<item>Honeycomb</item>

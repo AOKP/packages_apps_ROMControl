@@ -343,18 +343,26 @@
 
     <string-array name="pref_lockscreen_options_values" translatable="false">
 		<item>2</item>
-		<item>6</item>
-		<item>8</item>
 		<item>1</item>
 		<item>0</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
 		<item>Stock</item>
-		<item>Quad</item>
-		<item>Octo</item>
 		<item>AOSP</item>
 		<item>Honeycomb</item>
+		<item>3 Targets</item>
+		<item>4 Targets</item>
+		<item>5 Targets</item>
+		<item>6 Targets</item>
+		<item>7 Targets</item>
+		<item>8 Targets</item>
 	</string-array>
 
 	<string-array name="pref_lockscreen_calendar_interval_values" translatable="false">

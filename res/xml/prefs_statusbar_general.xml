@@ -48,4 +48,10 @@
         android:entries="@array/statusbar_layout_entries"
         android:entryValues="@array/statusbar_layout_values" />
 
+     <CheckBoxPreference
+        android:key="status_bar_notif_count"
+        android:title="@string/status_bar_notif_count_title"
+        android:summary="@string/status_bar_notif_count_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

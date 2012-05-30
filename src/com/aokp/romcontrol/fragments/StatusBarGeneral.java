@@ -27,12 +27,14 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
     private static final String PREF_TRANSPARENCY = "status_bar_transparency";
     private static final String PREF_LAYOUT = "status_bar_layout";
     private static final String PREF_FONTSIZE = "status_bar_fontsize";
+    private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
     CheckBoxPreference mDefaultSettingsButtonBehavior;
     CheckBoxPreference mAutoHideToggles;
     CheckBoxPreference mStatusBarBrightnessToggle;
     SeekBarPreference mIconAlpha;
     CheckBoxPreference mAdbIcon;
+    CheckBoxPreference mStatusBarNotifCount;
     ListPreference mTransparency;
     ListPreference mLayout;
     ListPreference mFontsize;
@@ -85,7 +87,12 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
         mLayout.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUS_BAR_LAYOUT,
                 0)));
-        
+
+        mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
+        mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
+                .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
+                0) == 1);
+
         mFontsize = (ListPreference) findPreference(PREF_FONTSIZE);
         mFontsize.setOnPreferenceChangeListener(this);
         mFontsize.setValue(Integer.toString(Settings.System.getInt(getActivity()
@@ -133,6 +140,12 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
                     Settings.Secure.ADB_ICON, checked ? 1 : 0);
             return true;
             
+        } else if (preference == mStatusBarNotifCount) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NOTIF_COUNT,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

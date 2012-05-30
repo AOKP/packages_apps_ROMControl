@@ -95,6 +95,10 @@
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_summary">Adjust how fast your buttons animate after you touch them. Lowering the speed can improve performance.</string>
 
+    <string name="combined_bar_title">Combined Bar</string>
+    <string name="combined_bar_auto_hide_title">Auto Hide</string>
+    <string name="combined_bar_auto_hide_summary">Allow Combined Bar to hide when showing a fullscreen app</string>
+
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotation delay</string>
     <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>

@@ -440,17 +440,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         PreferenceGroup targetGroup = (PreferenceGroup) findPreference("lockscreen_targets");
         targetGroup.removeAll();
 
-        // quad only uses first 4, but we make the system think there's 6 for
-        // the alternate layout
-        // so only show 4
-        if (lockscreenTargets == 6) {
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[4], "**null**");
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_CUSTOM_APP_ACTIVITIES[5], "**null**");
-            lockscreenTargets = 4;
-        }
-
         PackageManager pm = mContext.getPackageManager();
         Resources res = mContext.getResources();
 

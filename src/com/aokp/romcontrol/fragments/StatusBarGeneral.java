@@ -61,7 +61,7 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
         mStatusBarBrightnessToggle = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_TOGGLE);
         mStatusBarBrightnessToggle.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE,
-                0) == 1);
+                1) == 1);
         
         float defaultAlpha = Settings.System.getFloat(getActivity()
                 .getContentResolver(), Settings.System.STATUS_BAR_ICON_TRANSPARENCY,
@@ -107,7 +107,6 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
             Preference preference) {
         if (preference == mDefaultSettingsButtonBehavior) {
 
-            Log.e("LOL", "b");
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUSBAR_SETTINGS_BEHAVIOR,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
@@ -115,7 +114,6 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
 
         } else if (preference == mAutoHideToggles) {
 
-            Log.e("LOL", "m");
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUSBAR_QUICKTOGGLES_AUTOHIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
@@ -123,7 +121,6 @@ public class StatusBarGeneral extends AOKPPreferenceFragment implements
 
         } else if (preference == mStatusBarBrightnessToggle) {
 
-            Log.e("LOL", "m");
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_BRIGHTNESS_TOGGLE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);

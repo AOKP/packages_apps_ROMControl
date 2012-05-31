@@ -73,6 +73,9 @@
   <string name="long_press_home_summary">Co se stane po dlouhém stisku tlačítka domů. Pro uplatnění změny je vyžadován restart.</string>
   <string name="glow_times_title">Animace světelného efektu tlačítek</string>
   <string name="glow_times_summary">Přizpůsobení délky trvání světelného efektu po klepnutí na tlačítka. Snížení rychlosti může zvýšit výkon.</string>
+  <string name="combined_bar_title">Kombinovaná lišta</string>
+  <string name="combined_bar_auto_hide_title">Automaticky skrývat</string>
+  <string name="combined_bar_auto_hide_summary">Povolit kombinované liště skrývat se, pokud je spuštěna aplikace na celou obrazovku</string>
   <!-- UI -->
   <string name="rotation_animation_delay_title">Prodleva rotace</string>
   <string name="rotation_animation_delay_summary">Počet milisekund po které musí zůstat telefon v klidu, než dojde k otočení obrazovky. Výchozí hodnota je 200ms.</string>

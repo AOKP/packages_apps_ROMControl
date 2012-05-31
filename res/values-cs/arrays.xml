@@ -167,10 +167,14 @@
 
 	<string-array name="pref_lockscreen_options_entries">
 		<item>Výchozí</item>
-		<item>Quad</item>
-		<item>Octo</item>
 		<item>AOSP</item>
     <item>Honeycomb</item>
+    <item>3 položky</item>
+		<item>4 položky</item>
+		<item>5 položek</item>
+		<item>6 položek</item>
+		<item>7 položek</item>
+		<item>8 položek</item>
 	</string-array>
   
   <string-array name="pref_lockscreen_calendar_interval_entries">

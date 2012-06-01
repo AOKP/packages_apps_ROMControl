@@ -77,4 +77,11 @@
                         android:summary="@string/combined_bar_auto_hide_summary" />
 
 	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="navbar_widgets"
+		android:title="@string/navbar_widgets">
+
+	</PreferenceCategory>
+
 </PreferenceScreen>

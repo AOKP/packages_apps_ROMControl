@@ -307,18 +307,29 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         } else if (preference == mGlowTimes) {
             // format is (on|off) both in MS
-            int breakIndex = ((String) newValue).indexOf("|");
             String value = (String) newValue;
+            String[] breakIndex = value.split("\\|");
+            String[] glowArray = getResources().getStringArray(R.array.glow_times_values);
 
-            int offTime = Integer.parseInt(value.substring(breakIndex + 1));
-            int onTime = Integer.parseInt(value.substring(0, breakIndex));
+            int resId;
+            int offTime = Integer.valueOf(breakIndex[0]);
+            int onTime = Integer.valueOf(breakIndex[1]);
+
+            if (glowArray[0].equals(value)) {
+                resId = R.string.glow_times_off;
+            } else if (glowArray[1].equals(value)) {
+                resId = R.string.glow_times_superquick;
+            } else if (glowArray[2].equals(value)) {
+                resId = R.string.glow_times_quick;
+            } else {
+                resId = R.string.glow_times_normal;
+            }
+            mGlowTimes.setSummary(getResources().getString(resId));
 
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[0],
-                    offTime);
+                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[0], offTime);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[1],
-                    onTime);
+                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[1], onTime);
             return true;
         } else if (preference == mButtonAlpha) {
             float val = Float.parseFloat((String) newValue);

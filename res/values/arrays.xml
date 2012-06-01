@@ -538,10 +538,10 @@
 	</string-array>
 
 	<string-array name="glow_times_entries">
-		<item>Off</item>
-		<item>Super quick</item>
-		<item>Quick</item>
-		<item>Normal</item>
+		<item>@string/glow_times_off</item>
+		<item>@string/glow_times_superquick</item>
+		<item>@string/glow_times_quick</item>
+		<item>@string/glow_times_normal</item>
 	</string-array>
 
 	<string-array name="glow_times_values" translatable="false">

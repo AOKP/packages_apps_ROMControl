@@ -98,7 +98,10 @@
     <string name="long_press_home_summary">What to do when long pressing the home softkey. Reboot required to reflect changes.</string>
 
     <string name="glow_times_title">Button glow animation</string>
-    <string name="glow_times_summary">Adjust how fast your buttons animate after you touch them. Lowering the speed can improve performance.</string>
+    <string name="glow_times_off">Off</string>
+    <string name="glow_times_superquick">Super quick</string>
+    <string name="glow_times_quick">Quick</string>
+    <string name="glow_times_normal">Normal</string>
 
     <string name="combined_bar_title">Combined Bar</string>
     <string name="combined_bar_auto_hide_title">Auto Hide</string>

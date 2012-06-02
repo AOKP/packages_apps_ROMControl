@@ -17,6 +17,7 @@
     <string name="battery">Batterie</string>
     <string name="nav_bar">Barre de navigation</string>
     <string name="tools">Outils</string>
+    <string name="weather">Météo</string>
         
     <string name="header_summary_battery">Batterie bar, mod batterie 1%, etc</string>
     <string name="header_summary_general_ui">Animation de démarrage, bug mailer, la rotation, etc</string>
@@ -27,9 +28,20 @@
     <string name="header_summary_led">Modifier les paramètres par défaut d\'Android</string>
     <string name="header_summary_general">Comportement du bouton réglages</string>
     <string name="header_summary_toggles">Personnaliser les interrupteurs</string>
-    <string name="header_summary_clock">Localisation de l\'horloge, AM/PM, couleur</string>    
+    <string name="header_summary_clock">Localisation de l\'horloge, AM/PM, couleur</string>
+    <string name="header_summary_weather">Activer la météo dans la barre de notifications</string>
     <string name="advanced_settings">Paramètres avancés</string>
     <string name="misc_short">Autres</string>
+    
+    <!-- Menu Strings -->
+    <string name="menu_lockscreens_remove_wallpaper">Réinitialiser fond d'écran verouillage'</string>
+    <string name="menu_main_activity_change_locale">Langue</string>
+    <string name="menu_nav_bar_reset">Reset nav bar</string>
+    <string name="menu_weather_get_weather">Obtenir la météo</string>
+
+    <!-- General Strings -->
+    <string name="cancel">Annuler</string>
+    <string name="ok">OK</string>
     
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Paramètres du menu</string>
@@ -123,6 +135,32 @@
     <!-- Power Menu -->
     <string name="title_show_power_saver">"Afficher l'économiseur d'énergie"</string>
     <string name="title_show_screenshot">"Afficher la capture d'écran"</string>
+    
+    <!-- Weather -->
+    <string name="weather_enable">Activer la météo</string>
+	<string name="weather_enable_summary">Permet d'afficher la météo dans la barre de notifications et/ou sur le verrou d'écran'</string>
+	<string name="weather_use_custom_location">Utiliser un autre lieu</string>
+	<string name="weather_use_custom_location_summary">Choisir un lieu ci dessous au lieu de la localisation pour les prévisions météo</string>
+	<string name="weather_custom_location_dialog_title">Choisissez un lieu</string>
+	<string name="weather_custom_location_dialog_message">Suivez les exemples! Choisir un lieu invalide va stopper les mises à jour de la météo et peut causer des comportements étranges.\n\nExemples: New York,NY // New York, NY // 10033 // Marseille, France</string>
+	<string name="weather_custom_location_title">Choisir le lieu</string>
+	<string name="weather_show_location_title">Afficher le lieu</string>
+	<string name="weather_show_location_summary">Affiche la ville ou la commune à côté de la météo</string>
+	<string name="weather_refresh_interval">Intervalle d'actualisation'</string>
+	<string name="weather_refresh_interval_minutes">" minutes"</string>
+	<string name="weather_use_celcius">Unités métriques</string>
+	<string name="weather_use_celcius_summary">Si vous ne l'activez pas, la température restera en degrés Fahrenheit au lieu de degrés Celsius et la vitesse en mph au lieu de km/h'</string>
+	<string name="weather_statusbar_style">Style de la météo dans la barre de notifications</string>
+    <string name="weather_start_custom_app">Lancer une application</string>
+    <string name="weather_start_custom_app_summary">Ouvre l'application de votre choix quand vous cliquez sur l'image de la météo.</string>
+    <string name="weather_custom_app_title">Choisir l'application'</string>
+    <string name="weather_custom_app_dialog_title">Choisissez une application</string>
+	<string name="weather_custom_app_dialog_message">Package name for now.</string>
+	<string name="weather_refreshing">Atcualisation de la météo</string>
+    <string name="weather_loc_warning_title">Impossible d'obtenir la localisation'</string>
+    <string name="weather_loc_warning_msg">"La localisation réseau est désactivée. Cela empêche la possibilité d'avoir la météo de votre localisation. Choisissez un lieu ou activez la localisation réseau."</string>
+    <string name="weather_loc_warning_positive">"Activer la localistion réseau"</string>
+    <string name="weather_loc_warning_negative">"Don't enable."</string>
     
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">"Activer l'économiseur d'énergie"</string>
@@ -309,5 +347,67 @@
     <string name="error_values">Erreur d\'obtention des valeurs</string>
     <string name="set_boot">Appliquer au démarrage</string>
     <string name="apply_values">Appliquer les valeurs</string>
+    
+    <!-- Weather Codes -->
+    <string name="weather_0">Tornades</string>
+    <string name="weather_1">Tempête tropicale</string>
+    <string name="weather_2">Ouragan</string>
+    <string name="weather_3">Orage sévère</string>
+    <string name="weather_4">Orage</string>
+    <string name="weather_5">Pluie et neige</string>
+    <string name="weather_6">Pluie et verglas</string>
+    <string name="weather_7">Neige et verglas</string>
+    <string name="weather_8">Bruine verglaçante</string>
+    <string name="weather_9">Bruine</string>
+    <string name="weather_10">Pluie verglaçante</string>
+    <string name="weather_11">Averses</string>
+    <string name="weather_12">Averses</string>
+    <string name="weather_13">Averses de neige</string>
+    <string name="weather_14">Averses de neige légère</string>
+    <string name="weather_15">Rafales de neige</string>
+    <string name="weather_16">Neige</string>
+    <string name="weather_17">Grêle</string>
+    <string name="weather_18">Verglas</string>
+    <string name="weather_19">Dust</string>
+    <string name="weather_20">Brumeux</string>
+    <string name="weather_21">Brouillard</string>
+    <string name="weather_22">Enfumé</string>
+    <string name="weather_23">Vent</string>
+    <string name="weather_24">Vent</string>
+    <string name="weather_25">Froid</string>
+    <string name="weather_26">Nuageux</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">Très nuageux</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">Éclaircies</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">Quelques nuages</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">Éclaircies</string>
+    <!-- clear (night) -->
+    <string name="weather_31">Dégagé</string>
+    <string name="weather_32">Ensoleillé</string>
+    <!-- fair (night) -->
+    <string name="weather_33">Pas de nuages</string>
+    <!-- fair (day) -->
+    <string name="weather_34">Beau temps</string>
+    <string name="weather_35">Pluie et grêle</string>
+    <string name="weather_36">Chaud</string>
+    <string name="weather_37">Orages isolés</string>
+    <string name="weather_38">Orages dispersés</string>
+    <string name="weather_39">Orages Dispersés</string>
+    <string name="weather_40">Averses dispersées</string>
+    <string name="weather_41">Fortes chutes de neige</string>
+    <string name="weather_42">Chutes de neige dispersées</string>
+    <string name="weather_43">Chutes de neige dispersées</string>
+    <string name="weather_44">Eclaircies</string>
+    <string name="weather_45">Averses orageuses</string>
+    <string name="weather_46">Chutes de neige</string>
+    <string name="weather_47">Averses orageuses isolées</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Impossible d'obtenir la localisation pour avoir la météo'</string>
     
 </resources>

@@ -35,7 +35,7 @@
   <!-- Menu Strings -->
   <string name="menu_lockscreens_remove_wallpaper">Obnovit pozadí zamknuté obrazovky</string>
   <string name="menu_main_activity_change_locale">Jazyk</string>
-  <string name="menu_nav_bar_reset">Obnovit navigačřní lištu</string>
+  <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
   <string name="menu_weather_get_weather">Načíst počasí</string>
   <!-- General Strings -->
   <string name="cancel">Zrušit</string>
@@ -65,7 +65,7 @@
   <string name="navbar_action_recents">Přepínač aplikací</string>
   <string name="navbar_action_search">Hledat</string>
   <string name="navbar_action_menu">Menu</string>
-  <string name="navbar_action_kill">Kilnout aplikaci</string>
+  <string name="navbar_action_kill">Ukončit aplikaci</string>
   <string name="navbar_action_power">Napájení</string>
   <string name="navbar_action_none">Prázdné</string>
   <string name="button_transparency_title">Průhlednost navigační lišty</string>
@@ -221,6 +221,8 @@
   <string name="statusbar_layout_summary">Mění rozložení notifikačního vysouvacího panelu (vyžaduje restart UI)</string>
   <string name="statusbar_fontsize">Velikost písma ve stavové liště</string>
   <string name="statusbar_fontsize_summary">Mění velikost textu položek ve stavové liště</string>
+  <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
+  <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
   <!-- Statusbar | Battery -->
   <string name="battery_icon">Styl ikony baterie</string>
   <string name="battery_summary_text_widget">@null</string>

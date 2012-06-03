@@ -26,6 +26,8 @@
     <string name="header_summary_lockscreens">Styl odblokowania ekranu, aplikacje w blokadzie ekranu</string>
     <string name="header_summary_power_menu">Opcje Power menu</string>
     <string name="header_summary_powersaver">Automatycznie wyłącz dane pakietowe aby oszczędzać baterię</string>
+    <string name="header_summary_led">Zmień domyślne ustawienia</string>
+    <string name="header_summary_general">Pasek powiadomień, ustaw przeźroczystość, jasność, debugowanie USB</string>
     
     <string name="advanced_settings">Zaawansowane ustawienia</string>
     <string name="misc_short">Różne</string>

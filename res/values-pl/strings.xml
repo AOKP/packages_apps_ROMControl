@@ -146,7 +146,7 @@
     <string name="clear_market_data_cleared">Wyczyszczono</string>
     <string name="open_market_title">4. Otwórz Market i kliknij akceptuj</string>
     <string name="open_market_summary">Kliknij cofnij aby powrócić tu po zakończeniu.</string>
-    <string name="custom_density_title">5. Ustaw gstość na jaką chcesz!</string>
+    <string name="custom_density_title">5. Ustaw gęstość na jaką chcesz!</string>
     <string name="custom_density_summary">Jeśli kiedykolwiek miałeś jakieś błędy z kompatybilnością marketu, upewnij się aby wrócić tu i dokończyć proces.</string>
 
     <!-- Lockscreens -->

@@ -343,10 +343,36 @@
     <string name="set">Ustaw</string>
     <string name="ics_color">Przywróć</string>
     
-     <!-- Shortcut picker -->
+    <!-- Shortcut picker -->
     <string name="use_custom_app_title">Użyj niestandardowej aplikacji</string>
     <string name="use_custom_app_summary">Użyj niestandardowej aplikacji zamiast niedawno użytej aplikacji</string>
     <string name="select_custom_app_title">Wybierz niestandardową aplikację</string>
     <string name="group_applications">Aplikacje</string>
+    
+    <!-- Weather -->
+    <string name="weather_enable">Włącz pogodę</string>
+    <string name="weather_enable_summary">Czy wyciągnąć informacje o pogodzie i wyświetlić je w całym ROMie.</string>
+    <string name="weather_use_custom_location">Użyj własnej lokalizacji</string>
+    <string name="weather_use_custom_location_summary">Ustawienie własnej lokalizacji może oszczędzać baterię. Inaczej będzie używana lokalizacja według sieci.</string>
+    <string name="weather_custom_location_dialog_title">Ustaw swoją lokalizację</string>
+    <string name="weather_custom_location_dialog_message">Upewnij się, że wpisujesz jak na przykładach! Błędne ustawienie lokalizacji spowoduje brak wyświetlania pogody.\n\nPrzykład: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_title">Własna lokalizacja</string>
+    <string name="weather_show_location_title">Pokaż lokalizację</string>
+    <string name="weather_show_location_summary">Pokazuje twoją lokalizację.</string>
+    <string name="weather_refresh_interval">Częstotliwośc odświeżania</string>
+    <string name="weather_refresh_interval_minutes">" minuty"</string>
+    <string name="weather_use_celcius">Metryczne wskaźniki</string>
+    <string name="weather_use_celcius_summary">Włączając tą opcję pokaże temperaturę w stopniach Celsiusza, prędkość wiatru w km/h.</string>
+    <string name="weather_statusbar_style">Styl pogody na pasku powiadomień</string>
+    <string name="weather_start_custom_app">Włącz własną aplikację</string>
+    <string name="weather_start_custom_app_summary">Klikając na obrazek pogody włączy się ustawiona przez nas aplikacja.</string>
+    <string name="weather_custom_app_title">Własna aplikacja</string>
+    <string name="weather_custom_app_dialog_title">Wybierz swoją aplikację</string>
+    <string name="weather_custom_app_dialog_message">Nazwa pakietu do teraz.</string>
+    <string name="weather_refreshing">Żądanie aktualizacji pogody!</string>
+    <string name="weather_loc_warning_title">Nie można odnależć lokalizacji!</string>
+    <string name="weather_loc_warning_msg">"Odnajdowanie lokalizacji przez sieć jest teraz wyłączone. Co powoduje błąd odczytu pogody. Ustaw własną lokalizację ręcznie lub włącz określanie lokalizacji poprzez sieć."</string>
+    <string name="weather_loc_warning_positive">"Włącz określanie lokalizacji przez sieć"</string>
+    <string name="weather_loc_warning_negative">"Nie włączaj."</string>
     
 </resources>

@@ -375,4 +375,95 @@
     <string name="weather_loc_warning_positive">"Włącz określanie lokalizacji przez sieć"</string>
     <string name="weather_loc_warning_negative">"Nie włączaj."</string>
     
+    <!-- Dialog Titles -->
+    <string name="dt_free_memory">Minfree Taskkiller</string>
+
+    <!-- Preference Categories -->
+    <string name="prefcat_cpu">Ustaw CPU</string>
+    <string name="prefcat_free_memory">Zwolnij pamięć</string>
+    <string name="pc_tweaks">Tweaki</string>
+    <string name="pc_init_d">Włącz/Wyłącz Tweaki</string>
+    <string name="pc_init_d_tweaks">Dostosuj Tweaki</string>
+
+    <!-- Preference Titles -->
+    <!-- Main -->
+    <string name="pt_performance">Wydajność</string>
+    <string name="pt_customization">Dostosowywanie</string>
+    <string name="pt_tools">Narzędzia</string>
+    <string name="pt_mod_version">Wersja modyfikacji</string>
+    <!-- Customization -->
+    <string name="pt_liberty_customizer">Liberty Customizer</string>
+    <string name="pt_lockscreen">Ustawienia blokady ekranu</string>
+    <string name="pt_ui_status_bar">Pasek stanu</string>
+    <string name="pt_pulldown_text">Tekst rozwijanego paska</string>
+    <string name="pt_theme_manager">Manager motywów</string>
+    <!-- Tools -->
+    <string name="pt_spare_parts">Zamienniki</string>
+    <string name="pt_dev_tools">Narzędzia developerskie</string>
+    <string name="pt_dsp_manager">DSP Manager</string>
+    <string name="pt_testing_menu">Menu testów</string>
+    <!-- Start up tweaks -->
+    <string name="pt_init_d">Tweaki startowe</string>
+    <string name="pt_enable_init_d">Włącz tweaki startowe</string>
+    <string name="pt_zipalign">Zipalign aplikacji</string>
+    <string name="pt_enable_sd_boost">Włącz przyśpieszanie SD</string>
+    <string name="pt_sd_boost">Read ahead value</string>
+    <string name="pt_fix_permissions">Napraw uprawnienia</string>
+    <string name="pt_clear_cache">Wyczyśc pamięć cache</string>
+    <string name="pt_enable_sysctl">Włącz sysctl</string>
+    <string name="pt_enable_cron">Włącz kolejkowanie zadań</string>
+    <!-- Performance -->
+    <string name="pt_set_cpu_activity">Ustaw CPU</string>
+    <string name="pt_free_memory">Zwolnij pamięć</string>
+    <string name="pt_free_memory_boot">Ustaw przy starcie</string>
+    <!-- Cpu -->
+    <string name="pt_set_max">Max CPU</string>
+    <string name="pt_set_min">Min CPU</string>
+    <string name="pt_set_gov">Zarządca</string>
+    <string name="pt_cpu_boot">Ustaw przy starcie</string>
+    <string name="pt_volt_control">Kontrola napięcia</string>
+    <!-- Scrolling Cache -->
+    <string name="pref_scrollingcache_title">Przewijanie cache</string>
+    <string name="pref_scrollingcache_summary">Przewijanie cache może poprawić wydajność przewijania kosztem pamięci</string>
+    <string name="pref_scrollingcache_force_enable">Wymuszone włączenie</string>
+    <string name="pref_scrollingcache_default_enable">Domyślne włączenie</string>
+    <string name="pref_scrollingcache_default_disable">Domyślne wyłączenie</string>
+    <string name="pref_scrollingcache_force_disable">Wymuszone wyłączenie</string>
+
+    <!-- Preference Summaries -->
+    <!-- Main -->
+    <string name="ps_performance">Ustaw CPU, zwolnij pamięć &amp; dostosuj ustawienia startowe.</string>
+    <string name="ps_customization">Dostosuj blokadę ekranu &amp; pasek stanu, powiadomienia. Instalowanie aplikacji z Liberty Customizer</string>
+    <string name="ps_tools">Różne narzędzia systemowe</string>
+    <!-- Customization -->
+    <string name="ps_liberty_customizer">Dostosuj ROM według upodobań</string>
+    <string name="ps_lockscreen">Zmień styl blokady ekranu i zarządzaj widżetami</string>
+    <string name="ps_ui_status_bar">Dostosuj pasek stanu</string>
+    <string name="ps_pulldown_text">Zmień tekst paska rozwijanego.</string>
+    <string name="ps_theme_manager">Zainstaluj motywy z Liberty ROM</string>
+    <!-- Tools -->
+    <string name="ps_spare_parts">Różne tweaki i dostosowywanie</string>
+    <string name="ps_dev_tools">Narzędzia dla developerów i zaawansowanych użytkowników</string>
+    <string name="ps_dsp_manager">Samodzielny equalizer</string>
+    <string name="ps_testing_menu">Informacje o telefonie, baterii, statystyki użycia</string>
+    <!-- Start up tweaks -->
+    <string name="ps_init_d">Skonfiguruj tweaki, które będą uruchamianie przy starcie (init.d)</string>
+    <string name="ps_enable_init_d">Włącz/wyłącz tweaki startowe</string>
+    <string name="ps_zipalign">Zipalignuj każdą nową aplikację przy każdym starcie systemu</string>
+    <string name="ps_enable_sd_boost">Włącz/wyłącz przyśpieszanie karty SD</string>
+    <string name="ps_sd_boost">Ustaw wartość odczytu naprzód w kB</string>
+    <string name="ps_fix_permissions">Napraw uprawnienia dla każdej aplikacji przy każdym starcie systemu</string>
+    <string name="ps_clear_cache">Wyczyść cache danych przy każdym starcie systemu</string>
+    <string name="ps_enable_sysctl">Włącz sysctl tweak przy starcie systemu</string>
+    <string name="ps_enable_cron">Włącz zaplanowane zadania crona</string>
+    <!-- CPU -->
+    <string name="ps_set_max">Ustaw maksymalną częstotliwość zegara CPU\nCurrent: %s</string>
+    <string name="ps_set_min">Ustaw minimalną częstotliwość zegara CPU\nCurrent: %s</string>
+    <string name="ps_set_gov">Ustaw aktualnego zarządcę\nCurrent: %s</string>
+    <string name="ps_cpu_boot">Zastosuj przy starcie</string>
+    <!-- Performance -->
+    <string name="ps_set_cpu_activity">Ustaw min/max częstotliwość i zarządcę procesora</string>
+    <string name="ps_free_memory">Ilość pamięci RAM, minimalna pamięć do zabijania aplikacji będzie zachowana|Aktualnie: %s</string>
+    <string name="ps_free_memory_boot">Zastosuj powyższą wartość przy starcie systemu</string>
+    
 </resources>

@@ -466,4 +466,98 @@
     <string name="ps_free_memory">Ilość pamięci RAM, minimalna pamięć do zabijania aplikacji będzie zachowana|Aktualnie: %s</string>
     <string name="ps_free_memory_boot">Zastosuj powyższą wartość przy starcie systemu</string>
     
+    <!-- Toast Messages -->
+    <string name="toast_min_max_error01">Maksymalna wartość CPU nie może być niższa jak minimalna</string>
+    <string name="toast_min_max_error02">Minimalna wartośc CPU nie może być wyższa jak maksymalna</string>
+
+    <!-- list_voltage -->
+    <string name="freq">Częstotliwość</string>
+    <string name="current">mV aktualnie</string>
+    <string name="saved">mV zapisane</string>
+
+    <!-- voltage -->
+    <string name="error_values">Błąd uzyskiwania wartości</string>
+    <string name="set_boot">Ustaw przy starcie</string>
+    <string name="apply_values">Zastosuj wartość</string>
+
+    <!-- Kernel Tweaks -->
+    <string name="pt_fast_charge_boot">Szybkie ładowanie</string>
+    <string name="ps_fast_charge_boot">Włącz szybkie ładowanie przy starcie systemu</string>
+    <string name="fast_charge_warning">NIE BĘDZIESZ W STANIE POŁĄCZYĆ SIĘ Z KOMPUTEREM PO KAŻDYM RESTARCIE!\n\nTa opcja włączy szybkie ładowanie przy każdym starcie systemu. Gdy szybkie ładowanie jest włączone, możesz *tylko* ładować baterię telefonu!</string>
+    <string name="fast_charge_notification_title">Szybkie ładowanie jest włączone!</string>
+    <string name="fast_charge_notification_message">Telefon jest tylko w trybie ładowania!</string>
+
+    <string name="kernel">Tweaki Kernela (jeśli kernel je wspiera)</string>
+    <string name="color_tuning_title_head">Mnożnik dostrajania kolorów</string>
+    <string name="color_tuning_summary_head">Kalibruj mnożnik dostrajania kolorów ekranu</string>
+    <string name="gamma_tuning_title_head">Dostosowywanie koloru Gamma</string>
+    <string name="gamma_tuning_summary_head">Kalibrowanie koloru Gamma</string>
+    <string name="color_red_title">Czerwony</string>
+    <string name="color_green_title">Zielony</string>
+    <string name="color_blue_title">Niebieski</string>
+    <string name="gamma_dss_title">Regulacja programowa Gamma</string>
+    <string name="reset_defaults">Ustawienia domyślne</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">Tornado</string>
+    <string name="weather_1">Burza Tropikalna</string>
+    <string name="weather_2">Huragan</string>
+    <string name="weather_3">Ciężkie burze</string>
+    <string name="weather_4">Burze</string>
+    <string name="weather_5">Mieszane deszcz i śnieg</string>
+    <string name="weather_6">Mieszane deszcz i deszcz ze śniegiem</string>
+    <string name="weather_7">Mieszane śnieg i deszcz ze śniegiem</string>
+    <string name="weather_8">Marznąca mżawka</string>
+    <string name="weather_9">Mżawka</string>
+    <string name="weather_10">Marznący deszcz</string>
+    <string name="weather_11">Ulewy</string>
+    <string name="weather_12">Ulewy</string>
+    <string name="weather_13">Rozrzedzony śnieg</string>
+    <string name="weather_14">Lekkie opady śniegu</string>
+    <string name="weather_15">Zamiecie śnieżne</string>
+    <string name="weather_16">Śnieg</string>
+    <string name="weather_17">Grad</string>
+    <string name="weather_18">Deszcz ze śniegiem</string>
+    <string name="weather_19">Zamiecie</string>
+    <string name="weather_20">Mgły</string>
+    <string name="weather_21">Lekkie mgły</string>
+    <string name="weather_22">Zadymki</string>
+    <string name="weather_23">Plucha</string>
+    <string name="weather_24">Wietrznie</string>
+    <string name="weather_25">Zimno</string>
+    <string name="weather_26">Pochmurnie</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">Silne zachmurzenie</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">Silne zachmurzenie</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">Zachmurzenie umiarkowane</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">Zachmurzenie umiarkowane</string>
+    <!-- clear (night) -->
+    <string name="weather_31">Czyste niebo</string>
+    <string name="weather_32">Słonecznie</string>
+    <!-- fair (night) -->
+    <string name="weather_33">Jasno</string>
+    <!-- fair (day) -->
+    <string name="weather_34">Jasno</string>
+    <string name="weather_35">Mieszane deszcz i grad</string>
+    <string name="weather_36">Gorąco</string>
+    <string name="weather_37">Przelotne burze</string>
+    <string name="weather_38">Rozproszone burze</string>
+    <string name="weather_39">Rozproszone burze</string>
+    <string name="weather_40">Przelotne deszcze</string>
+    <string name="weather_41">Duże opady śniegu</string>
+    <string name="weather_42">Przelotne opady śniegu</string>
+    <string name="weather_43">Przelotne opady śniegu</string>
+    <string name="weather_44">Częsciowe zachmurzenie</string>
+    <string name="weather_45">Thundershowers</string>
+    <string name="weather_46">Opady śniegu</string>
+    <string name="weather_47">Miejscowe burze</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Nie można pobrać informacji o lokalizacji dla aktualizacji pogody</string>
+
 </resources>

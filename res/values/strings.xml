@@ -106,7 +106,7 @@
     <string name="rotation_animation_delay_summary">The number of milliseconds for which the device posture must be stable before an orientation change occurs. 200 ms default.</string>
 
 	<string name="ime_switcher_title">Show IME Switcher</string>
-	<string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+	<string name="ime_switcher_summary">In statusbar, while typing</string>
 
 	<string name="custom_carrier_label_title">Custom carrier label</string>
 	<string name="custom_carrier_label_empty">Please enter a new one!</string>

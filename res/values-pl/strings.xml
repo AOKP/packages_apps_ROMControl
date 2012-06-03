@@ -28,15 +28,69 @@
     <string name="header_summary_powersaver">Automatycznie wyłącz dane pakietowe aby oszczędzać baterię</string>
     <string name="header_summary_led">Zmień domyślne ustawienia</string>
     <string name="header_summary_general">Pasek powiadomień, ustaw przeźroczystość, jasność, debugowanie USB</string>
+    <string name="header_summary_toggles">Dostosuj przełączniki</string>
+    <string name="header_summary_clock">Styl, kolor wyświetlania zegara</string>
+    <string name="header_summary_weather">Opcje ustawień pogody</string>
+    <string name="header_summary_signal">Styl, kolor wyświetlania zasięgu</string>
     
     <string name="advanced_settings">Zaawansowane ustawienia</string>
     <string name="misc_short">Różne</string>
+    
+    <!-- Menu Strings -->
+    <string name="menu_lockscreens_remove_wallpaper">Resetuj tapetę blokady ekranu</string>
+    <string name="menu_main_activity_change_locale">Lokalizacja</string>
+    <string name="menu_nav_bar_reset">Resetuj pasek nawi</string>
+    <string name="menu_weather_get_weather">Aktualizuj pogodę</string>
+
+    <!-- General Strings -->
+    <string name="cancel">Anuluj</string>
+    <string name="ok">OK</string>
     
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Ustawienia menu</string>
     <string name="summary_pref_menu_display">Pozycja przycisku menu</string>
     <string name="navigation_bar">Pasek nawigacyjny</string>
-    <string name="navigation_bar_tint_title">Odcień paska nawigacji</string>
+    <string name="navigation_bar_tint_title">Kolor paska nawigacyjnego</string>
+    <string name="navigation_bar_glow_tint_title">Kolor poblasku paska nawigacyjnego</string>
+    <string name="navigation_bar_glow_tint_summary">Kiedy przytrzymasz przycisk, pojawia się poblask wokół niego. Ustaw kolor tego poblasku.</string>
+    <string name="navigation_bar_height_title">Wysokość paska nawigacyjnego</string>
+    <string name="navigation_bar_width_title">Szerokość paska nawigacyjnego</string>
+    <string name="navbar_order_title">Przyciski paska nawigacyjnego</string>
+    <string name="navbar_order_summary">Dopasuj przyciski paska nawigacyjnego</string>
+    <string name="navbar_button_cat">Przyciski paska nawigacyjnego</string>
+    <string name="navbar_qty_title">Ilość przyciskówy</string>
+    <string name="navbar_qty_summary">Wybierz ilość przycisków paska nawigacyjnego</string>
+    <string name="enabled_navbar_buttons_title">Włączone przyciski</string>
+    <string name="enabled_navbar_buttons_summary">Wybierz przyciski, które chcesz włączyć</string>
+    <string name="navbar_action_title">Przycisk %1$s akcja &amp; ikona</string>
+    <string name="navbar_longpress_title">Przycisk %1$s akcja przytrzymania</string>
+    
+     <string name="navbar_action_home">Strona główna</ string>
+     <string name="navbar_action_back">Powrót</ string>
+     <string name="navbar_action_recents">Ostatnio używane aplikacje</ string>
+     <string name="navbar_action_search">Szukaj</ string>
+     <string name="navbar_action_menu">Menu</ string>
+     <string name="navbar_action_kill"> Zabij zadanie </ string>
+     <string name="navbar_action_power">Power menu</ string>
+     <string name="navbar_action_none">Pusty</ string>
+
+    <string name="navbar_enable_bar">Włącz pasek</string>
+    <string name="navbar_enable_dialog_title">Wymagany restart urządzenia!</string>
+    <string name="navbar_enable_dialog_msg">Proszę zrestartować urządzenie aby poprawnie włączyć/wyłączyć pasek nawigacyjny!</string>
+    <string name="navbar_enable_dialog_negative">Zrestartuję później</string>
+    <string name="navbar_enable_dialog_Positive">Restartuj teraz!</string>
+
+    <string name="button_transparency_title">Przeźroczystość przycisków</string>
+
+    <string name="long_press_home_title">Długie przytrzymanie przycisku Home</string>
+    <string name="long_press_home_summary">Jaka akcja ma być wykonana po długim przytrzymaniu przycisku Home. Wymaga restartu urządzenia!</string>
+
+    <string name="glow_times_title">Animacja poblasku przycisków</string>
+    <string name="glow_times_summary">Ustaw szybkość animacji po dotknięciu przycisków. Niższa prędkość daje lepszą wydajność.</string>
+
+    <string name="combined_bar_title">Pasek kombinowany</string>
+    <string name="combined_bar_auto_hide_title">Automatycznie ukryj</string>
+    <string name="combined_bar_auto_hide_summary">Pozwól paskowi na ukrywanie kiedy wyświetlana jest aplikacja na pełnym ekranie</string>
 
     <string name="title_pref_navigation_menu_display">Widoczność menu</string>
     <string name="summary_pref_navigation_menu_display">Jak i kiedy chcesz żeby przyciski menu się pojawiały?</string>
@@ -49,13 +103,51 @@
 	<string name="ime_switcher_summary">W obszarze powiadomień (wymaga restartu)</string>
 
 	<string name="custom_carrier_label_title">Własna nazwa operatora</string>
-	<string name="longpress_to_kill_title">Wciśnij wstecz żeby zamknąć</string>
-	<string name="longpress_to_kill_summary">Trzymanie przycisku wstecz zamknie aktywny program</string>
+	<string name="custom_carrier_label_empty">Proszę wprowadzić nową nazwę!</string>
+        <string name="custom_carrier_label_warning">Własna nazwa nie została określona. Po określeniu nazwy nie da się powrócić do poprzedniej bez wykonania resetu ustawień (wipe data)</string>
+	<string name="longpress_to_kill_title">Wciśnij wstecz żeby zabić</string>
+	<string name="longpress_to_kill_summary">Trzymanie przycisku wstecz zabije aktywny program</string>
+		
+    <string name="enable_volume_options">Włącz opcje głośności</string>
+
+    <string name="rotate_180_title">Zezwól na obrót o 180°</string>
+    <string name="rotate_180_summary">Pozwala urządzeniu na obrót ekranu góra/dół!</string>
+
+    <string name="recent_app_switcher_title">Ostatnio używane aplikacje</string>
+    <string name="recent_app_switcher_summary">Wybierz styl wyświetlania ostatnio używanych aplikacji (wymaga restartu)</string>
+
+    <string name="disable_bootanimation_title">Wyłącz animację startową</string>
+    <string name="disable_bootanimation_summary">Wyłączona.</string>
+
+    <string name="disable_bootaudio_title">Wyłącz dźwięk startowy</string>
+    <string name="disable_bootaudio_summary">Cisza.</string>
+    <string name="disable_bootaudio_summary_disabled">Żeby włączyć dźwięk startowy, trzeba mieć plik MP3 w \n/system/media/boot_audio.mp3</string>
+
+    <string name="disable_bugmailer_title">Wyłącz mailowe raportowanie błędów</string>
+
+    <string name="lcd_density_title">Gęstość LCD</string>
+    <string name="lcd_density_summary">nieznana</string>
 
 	<!-- CRT animations -->
 	<string name="crt_animations_header">Opcje animacji CRT</string>
 	<string name="crt_on_title">Animacja CRT przy włączaniu ekranu</string>
 	<string name="crt_off_title">Animacja CRT przy wyłączaniu ekranu</string>
+
+    <!-- LCD Density -->
+    <string name="current_lcd_density">"Aktualna gęstość LCD: "</string>
+    <string name="lcd_density_wizard">Kreator gęstości LCD</string>
+    <string name="follow_through_title">Wykonuj kroki!</string>
+    <string name="follow_through_summary">Upewnij się, że wykonujesz dokładnie kolejno wszystkie kroki, to bardzo ważne!</string>
+    <string name="stock_density_title">1. Zmień gęstość LCD na domyślną</string>
+    <string name="stock_density_summary">Tablety i starsze telefony używają 160. Wikszość telefonów używa 240. Galaxy Nexus używa 320 domyślnie.</string>
+    <string name="reboot_title">2. Restart!</string>
+    <string name="reboot_summary">Wróć tutaj po restarcie i dokończ reszt kroków!</string>
+    <string name="clear_market_data_title">3. Wyczyść dane z marketu</string>
+    <string name="clear_market_data_cleared">Wyczyszczono</string>
+    <string name="open_market_title">4. Otwórz Market i kliknij akceptuj</string>
+    <string name="open_market_summary">Kliknij cofnij aby powrócić tu po zakończeniu.</string>
+    <string name="custom_density_title">5. Ustaw gstość na jaką chcesz!</string>
+    <string name="custom_density_summary">Jeśli kiedykolwiek miałeś jakieś błędy z kompatybilnością marketu, upewnij się aby wrócić tu i dokończyć proces.</string>
 
     <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">Odblokowywanie przyciskiem menu</string>

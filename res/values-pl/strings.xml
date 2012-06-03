@@ -16,6 +16,13 @@
     <string name="clock">Zegar</string>
     <string name="battery">Bateria</string>
     
+    <string name="header_summary_battery">Pasek baterii, 1% wskaźnik baterii, itp</string>
+    <string name="header_summary_general_ui">Animacja startowa, mailowe raportowanie błędów, rotacja, IME przełącznik, itp</string>
+    <string name="header_summary_navigation_bar">Przyciski do wyświetlania, kolor paska nawigacji, itp</string>
+    <string name="header_summary_lockscreens">Styl odblokowania ekranu, aplikacje w blokadzie ekranu</string>
+    <string name="header_summary_power_menu">Opcje Power menu</string>
+    <string name="header_summary_powersaver">Automatycznie wyłącz dane pakietowe aby oszczędzać baterię</string>
+    
     <string name="advanced_settings">Zaawansowane ustawienia</string>
     <string name="misc_short">Różne</string>
     

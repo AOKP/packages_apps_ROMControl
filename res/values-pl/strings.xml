@@ -70,7 +70,7 @@
      <string name="navbar_action_recents">Ostatnio używane aplikacje</ string>
      <string name="navbar_action_search">Szukaj</ string>
      <string name="navbar_action_menu">Menu</ string>
-     <string name="navbar_action_kill"> Zabij zadanie </ string>
+     <string name="navbar_action_kill">Zabij zadanie</ string>
      <string name="navbar_action_power">Power menu</ string>
      <string name="navbar_action_none">Pusty</ string>
 
@@ -155,14 +155,81 @@
     
     <string name="title_lockscreen_user_timeout_override">Opóźnij zablokowanie ekranu</string>
     <string name="summary_lockscreen_user_timeout_override">Użyj czasu wygaszania ekranu systemu Android po tym jak sam wyłączysz ekran.</string>
+
+    <string name="pref_lockscreen_layout_title">Styl blokady ekranu</string>
+    <string name="pref_lockscreen_layout_summary">Po zmianie stylu pamiętaj aby na dole ustawić skróty do wybranych aplikacji</string>
+
+    <string name="title_pref_lockscreen_quad_targets">Cztery skróty</string>
+    <string name="summary_pref_lockscreen_quad_targets">Dodaje aplikację Telefon i SMS do skrótów</string>
+
+    <string name="title_pref_lockscreen_octo_targets">Osiem skrótów</string>
+    <string name="summary_pref_lockscreen_octo_targets">Dodaje osiem skrótów do blokady ekranu</string>
     
+    <string name="show_lock_before_unlock_title">Pokaż blokadę ekranu zanim odblokuje</string>
+    <string name="show_lock_before_unlock_summary">Pokaż standardową blokadę przed blokadą SIM</string>
+    <string name="lockscreen_battery_title">Wskaźnik baterii na ekranie blokady</string>
+    <string name="lockscreen_battery_summary">Pokazuje procentowy wskażnik baterii na ekranie blokady telefonu</string>
+    <string name="lockscreen_weather_title">Pogoda na ekranie blokady</string>
+    <string name="lockscreen_weather_summary">Pokazuje pogodę na ekranie blokady. Trzeba włączyć pogodę w opcjach ROM Kontroler aby tego użyć</string>
+    <string name="volume_wake_title">Przycisk głośności</string>
+    <string name="volume_wake_summary">Włącza wyświetlacz po przyciśnięciu przycisku głośności.</string>
+    <string name="volume_music_controls_title">Następny utwór</string>
+    <string name="volume_music_controls_summary">Długie przytrzymanie przycisku głośności zmienia utwór na następny przy wygaszonym ekranie. Wzbudzanie ekranu nie działa gdy muzyka jest odtwarzana.</string>
+    <string name="lockscreen_show_nav_title">Ukryj pasek nawigacyjny</string>
+    <string name="lockscreen_show_nav_summary">Ukrywa pasek nawigacyjny (jeśli jest włączony) na ekranie blokady.</string>
+    <string name="custom_app_n_dialog_title">Wybierz akcję dla skrótu %1$s</string>
+    <string name="custom_app_n">Własna aplikacja %1$s</string>
+    <string name="lockscreen_targets">Skróty ekranu blokady</string>
+    <string name="lockscreen_action_unlock">Odblokuj</string>
+    <string name="lockscreen_action_sound">Przełącznik dźwięku</string>
+    <string name="lockscreen_action_camera">Aparat</string>
+    <string name="lockscreen_action_mms">SMS</string>
+    <string name="lockscreen_action_phone">Telefon</string>
+    <string name="lockscreen_action_none">Pusty</string>
+    <string name="lockscreen_custom_app_icon_no_sd">Zamontuj kartę SD aby użyć tej opcji</string>
+    <string name="lockscreen_custom_app_icon_successfully">"ikon zostało ustawionych!"</string>
+    <string name="lockscreen_custom_app_icon_failed">"Błąd ustawienia ikony! Czy zamontowałeś kartę SD?"</string>
+    <string name="lockscreen_landscape_title">Pozioma blokada ekranu</string>
+    <string name="lockscreen_landscape_summary">Blokada ekranu w pozycji poziomej będzie włączona</string>
+    <string name="lockscreen_quick_unlock_control_title">Szybki kod odblokowania</string>
+    <string name="lockscreen_quick_unlock_control_summary">USzybkie odblokowywanie kodem bez przyciskania przycisku zatwierdź.</string>
+    <string name="enable_fast_torch_title">Szybka latarka</string>
+    <string name="enable_fast_torch_summary">Przy wyłączonym ekranie trzymanie przycisku załączania telefonu włączy latarkę, a jego puszczenie ją wyłączy.</string>
+    <string name="lockscreen_wallpaper_title">Tapeta blokady ekranu</string>
+    <string name="lockscreen_wallpaper_summary">Usuwanie lub ustawianie tapety ekranu blokady</string>
+    <string name="lockscreen_wallpaper_no_external_storage">Niedostępna pamięć zewnętrzna (/sdcard). Proszę włożyć pamięć!</string>
+    <string name="lockscreen_wallpaper_not_set_sd">"Nie ustawiono tapety (karta SD zamontowana?)"</string>
+    <string name="lockscreen_wallpaper_set_successfully">"Ustawiono tapetę"</string>
+    <string name="lockscreen_wallpaper_not_set">"Nie ustawiono tapety (!!!)"</string>
+    <string name="lockscreen_text_color_title">Kolor tekstu na ekranie blokady</string>
+    <string name="lockscreen_calendar">Kalendarz na ekranie blokady</string>
+    <string name="lockscreen_calendar_title">Włącz</string>
+    <string name="lockscreen_calendar_summary">Pokazuje zbliżające się zdarzenia z Twojego kalendarza na ekranie blokady telefonu.</string>
+    <string name="lockscreen_calendar_sources_title">Źródło kalendarza</string>
+    <string name="lockscreen_calendar_sources_summary">Wybierz kalendarz, który chcesz zobaczyć.</string>
+    <string name="lockscreen_calendar_dialog">Wybierz, którego kalendarzu używać</string>
+    <string name="lockscreen_calendar_close">Zamknij</string>
+    <string name="lockscreen_calendar_range_title">Zakresy czasowe</string>
+    <string name="lockscreen_calendar_range_summary">Ustaw zakres czasu do wyświetlania.</string>
+    <string name="lockscreen_calendar_use_colors_title">Użyj koloru</string>
+    <string name="lockscreen_calendar_use_colors_summary">Zdarzenie będzie oznaczone kolorem tak jak w kalendarzu.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Ukryj bieżące wydarzenia</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Ukrywa aktualnie rozpoczęte zdarzenia.</string>
+    <string name="lockscreen_calendar_flip_title">Wiele zdarzeń</string>
+    <string name="lockscreen_calendar_flip_summary">Jeśli opcja jest włączona, widget wyświetla wiele zdarzeń przez przerzucania między nimi.</string>
+    <string name="lockscreen_calendar_interval_title">Częstotliwość przerzucania</string>
+    <string name="lockscreen_calendar_interval_summary">Wybierz prędkość animacji w sekundach.</string>
+   
     <!-- Power Menu -->
     <string name="title_show_power_saver">Pokaż opcje oszczedzania energii</string>
+    <string name="summary_show_power_saver">Włącz opcję oszczędzania enegrii aby zobaczyć ją w power menu.</string>
     <string name="title_show_screenshot">Pokaż opcje screenshot</string>
+    <string name="title_show_torch_toggle">Pokaż opcję Latarka</string>
+    <string name="title_show_airplane_toggle">Pokaż opcję Tryb samolotowy</string>
+    <string name="title_show_navbar_hide">Pokaż opcję Pasek nawigacyjny</string>
     
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Włącz oszczędzanie energii</string>
-    <string name="summary_pref_powersaving_pref_mode">@null</string>
     
     <string name="title_pref_powersaving_data_screen_off">Dane Mobilne - Działanie po wyłączeniu ekranu</string>
     <string name="summary_pref_powersaving_data_screen_off">Co zrobić z danymi po wyłączeniu ekranu</string>
@@ -175,12 +242,13 @@
     
     <string name="title_pref_powersaving_sync_screen_off_delay">Czas pomiędzy synchronizacjami</string>
     <string name="summary_pref_powersaving_sync_screen_off_delay">Jak często uruchamiać synchronizację?</string>
-
-    <string name="title_pref_navigation_layout">Wygląd paska nawigacyjnego</string>
-    <string name="summary_pref_navigation_layout">Zmiana wyglądu wymaga restartu!</string>
     
     <string name="powersaver_data_cat">Dane</string>
     <string name="powersaver_sync_cat">Synchronizacja</string>
+    
+    <string name="screen_off_wifi_action">Opcje Wi-Fi przy wyłączonym ekranie</string>
+    <string name="sync_data_usage">Synchronizacja użycia danych</string>
+    <string name="sync_mobile_data_preference">Preferencje synchronizacji użycia danych pakietowych</string>
 
     <!--  LED -->
     <string name="title_led_on">Czas do włączenia powiadomienia LED</string>
@@ -188,18 +256,47 @@
     <string name="title_led_off">Czas do wyłączenia powiadomienia LED</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">Kolor LED</string>
+    <string name="led_color_summary">Zmiana koloru LED. Można łatwo zmienić kolor świecenia LED.</string>
+    <string name="title_led_screen_on">LED świeci przy włączonym ekranie</string>
+    <string name="summary_led_screen_on">@null</string>
 
     <!--  Statusbar | General -->
     <string name="title_settings_behavior">Użyj domyślnych ustawień</string>
     <string name="summary_settings_behavior">Domyślne zachowanie to przytrzymanie żeby włączyć/wyłączyć przełącznik i jedno kliknięcie żeby wejść do ustawień. Odznacz jeśli chcesz te opcje na odwrót</string>
 
     <string name="title_auto_hide_toggles">Automatycznie chowaj przełączniki</string>
-    <string name="summary_auto_hide_toggles">After collapse toggles will hide</string>
+    <string name="summary_auto_hide_toggles">Po opadnięciu przełączniki zostaną ukryte</string>
+    <string name="title_status_bar_brightness_toggle">Włącz kontrolę jasności</string>
+    <string name="summary_status_bar_brightness_toggle">Przesuń powoli palcem po pasku stanu aby ustawić jasność ekranu</string>
+
+    <string name="icon_transparency_title">Przeźroczystość ikon na pasku stanu</string>
+
+    <string name="adb_icon_title">Włącz ikonę debugowania USB</string>
+    <string name="adb_icon_summary">Wutang</string>
+
+    <string name="statusbar_transparency">Przeźroczystość</string>
+    <string name="statusbar_transparency_summary">Ustaw przeźroczystość paska stanu (wymaga restartu)</string>
+
+    <string name="statusbar_layout">Układ szuflady stanu</string>
+    <string name="statusbar_layout_summary">Ustaw układ szuflady stanu (wymaga restartu)</string>
+    <string name="statusbar_fontsize">Czcionka paska stanu</string>
+    <string name="statusbar_fontsize_summary">Zmień wielkość czcionki tekstu elementów na pasku stanu</string>
+
+    <string name="status_bar_notif_count_title">Pokaż liczbę powiadomień</string>
+    <string name="status_bar_notif_count_summary">Wyświetla liczbę oczekujących powiadomień na pasku stanu</string>
 
     <!-- Statusbar | Battery -->
+    <string name="battery_icon">Ikona baterii</string>
     <string name="battery_title_text_widget">Pokaż tekst zamiast baterii</string>
     <string name="battery_summary_text_widget">@null</string>
     <string name="battery_title_text_widget_center">Wyśrodkuj tekst</string>
+    <string name="battery_bar">Miejsce paska baterii</string>
+    <string name="battery_bar_color">Kolor paska baterii</string>
+    <string name="battery_bar_cat">Opcje paska baterii</string>
+    <string name="battery_bar_style_title">Styl paska baterii</string>
+    <string name="battery_bar_thickness_title">Grubość paska baterii</string>
+    <string name="battery_bar_animate_title">Animacja ładowania</string>
+    <string name="battery_bar_animate_summary">Animacja ładowania może doprowadzić do błędów. Włącz na własną odpowiedzialność.</String>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Pokaż zegar</string>
@@ -209,23 +306,47 @@
     <string name="reset_color_title">Domyślny kolor</string>
     <string name="enable_alarm_title">Włącz ikone alarmu</string>
     <string name="enable_alarm_summary">Po włączeniu/wyłączeniu musisz zrestartować telefon aby dokonać zmian</string>
+    <string name="enable_clock_weekday">Dzień tygodnia</string>
+    <string name="enable_clock_weekday_summary">Wyświetla dzień tygodnia przed godziną.</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Styl przełączników</string>
     <string name="toggle_style_summary">Wybierz co ma być wyświetlane obok przełączników.</string>
-
     <string name="alternate_button_layout_title">Alternatywne przełączniki</string>
-    <string name="alternate_button_layout_summary">Użyj przycisków zamiast przełączników.</string>
-    
+    <string name="alternate_button_layout_summary">Użyj przycisków zamiast przełączników.</string>  
     <string name="enabled_toggles_title">Włącz przełączniki</string>
     <string name="enabled_toggles_summary">Wybierz przełączniki które mają być wyświetlane</string>
     <string name="toggles_order_title">Pozycje przełączników</string>
     <string name="toggles_order_summary">Zmień pozycje w której wyświetlane są przełączniki</string>
     <string name="brightness_location_title">Lokalizacja ustawień jasności ekranu</string>
+    <string name="toggles_layout_title">Układ przełączników</string>
+    <string name="toggles_display_dialog">Wybierz przełączniki które mają być używane</string>
+    <string name="toggles_display_close">Zamknij</string>
+    <string name="reset_toggles_title">Resetuj przełączniki</string>
+    <string name="reset_toggles_summary">Resetuj wszystkie przełączniki i ich układ</string>
     
+    <!-- Statusbar | Signal -->
+    <string name="signal_style">Styl tekstu zasięgu</string>
+    <string name="signal_color_title">Kolor zasięgu</string>
+    <string name="hide_signal_title">Ukryj kreski zasięgu</string>
+    <string name="hide_signal_summary">Będzie również ukrywać wskaźnik danych. Będzie w stanie oddzielić to później.</string>
+    <string name="wifi_signal_style">Styl zasięgu WiFi</string>
+    <string name="wifi_signal_color_title">Kolor zasięgu WiFi</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Paleta wyboru koloru</string>
-    <string name="press_color_to_apply">Kliknij w kolor aby aktywować</string>   
+    <string name="press_color_to_apply">Kliknij w kolor aby aktywować</string> 
+    <string name="arrow_right">›</string>
+    <string name="arrow_down">ˇ</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Ustaw</string>
+    <string name="ics_color">Przywróć</string>
+    
+     <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Użyj niestandardowej aplikacji</string>
+    <string name="use_custom_app_summary">Użyj niestandardowej aplikacji zamiast niedawno użytej aplikacji</string>
+    <string name="select_custom_app_title">Wybierz niestandardową aplikację</string>
+    <string name="group_applications">Aplikacje</string>
     
 </resources>

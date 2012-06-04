@@ -318,13 +318,13 @@ public class Navbar extends AOKPPreferenceFragment implements
         		PreferenceGroup targetGroup = (PreferenceGroup) findPreference("navbar_widgets");
         		Preference p = new Preference(mContext);
         		p.setKey("navbar_widget_add");
-                p.setTitle("Add new widget");
-                p.setSummary("Press to add another widget");
+                p.setTitle(getResources().getString(R.string.navigation_bar_add_new_widget_title));
+                p.setSummary(getResources().getString(R.string.navigation_bar_add_new_widget_summary));
                 targetGroup.addPreference(p);
                 mPendingWidgetDrawer = mWidgetIdQty;    
         		mPendingPreference = preference;
         		mPendingPreference.setKey("navbar_widget_" + mWidgetIdQty);
-        		mPendingPreference.setTitle("Widget " + (mWidgetIdQty + 1));
+        		mPendingPreference.setTitle(getResources().getString(R.string.navigation_bar_widget) + (mWidgetIdQty + 1));
         		mWidgetIdQty++;
         	} else {
         		mPendingPreference = preference;
@@ -692,7 +692,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         for (int i = 0; i < (mWidgetIdQty); i++) {
             Preference p = new Preference(mContext);
             p.setKey("navbar_widget_" + i);
-            p.setTitle("Widget " + (i + 1));
+            p.setTitle(getResources().getString(R.string.navigation_bar_widget) + (i + 1));
             if (widgetIds[i] != -1)
                 p.setSummary(prefs.getString("navbar_widget_" + i, "None"));
             targetGroup.addPreference(p);
@@ -702,8 +702,8 @@ public class Navbar extends AOKPPreferenceFragment implements
         widgetIds[mWidgetIdQty] = -1;
         Preference p = new Preference(mContext);
         p.setKey("navbar_widget_add");
-        p.setTitle("Add new widget");
-        p.setSummary("Press to add another widget");
+        p.setTitle(getResources().getString(R.string.navigation_bar_add_new_widget_title));
+        p.setSummary(getResources().getString(R.string.navigation_bar_add_new_widget_summary));
         targetGroup.addPreference(p);
 
     }

@@ -56,6 +56,10 @@
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_width_title">Navigation bar width</string>
 
+    <string name="navigation_bar_add_new_widget_title">Add new widget</string>
+    <string name="navigation_bar_add_new_widget_summary">Press to add another widget</string>
+    <string name="navigation_bar_widget">"Widget "</string>
+
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
 
@@ -155,14 +159,26 @@
 	<string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
 	<string name="stock_density_title">1. Change LCD Density to stock value</string>
 	<string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
+	<string name="stock_density_changed_summary">"Density set to: "</string>
 	<string name="reboot_title">2. Reboot!</string>
 	<string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
 	<string name="clear_market_data_title">3. Clear market data</string>
 	<string name="clear_market_data_cleared">Market data cleared</string>
+	<string name="clear_market_data_donot_cleared">"Market data couldn't be cleared, please clear it yourself!"</string>
 	<string name="open_market_title">4. Open Market and hit accept</string>
 	<string name="open_market_summary">Press back when done to return here.</string>
+	<string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
 	<string name="custom_density_title">5. Change density to whatever you like!</string>
 	<string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
+	<string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
+	<string name="custom_density">custom</string>
+	<string name="set_custom_density_title">Set custom density</string>
+	<string name="set_custom_density_set">Set</string>
+	<string name="custom_density_dialog_title">"WARNING!"</string>
+	<string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+	<string name="custom_density_dialog_button_got">Got it!</string>
+	<string name="custom_density_dialog_button_reboot">Reboot now</string>
+
 
     <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Lockscreen style</string>

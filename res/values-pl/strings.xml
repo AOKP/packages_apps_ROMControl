@@ -15,6 +15,10 @@
     <string name="toggles_layout">Przełączniki</string>
     <string name="clock">Zegar</string>
     <string name="battery">Bateria</string>
+    <string name="nav_bar">Pasek nawigacyjny</string>
+    <string name="tools">Narzędzia</string>
+    <string name="weather">Pogoda</string>
+    <string name="signal">Zasięg</string>
     
     <string name="advanced_settings">Zaawansowane ustawienia</string>
     <string name="misc_short">Różne</string>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ROM Kontroler</string>
-
-    <!-- Main -->
     <string name="user_interface">Interfejs użytkownika</string>
     <string name="general_ui">Ogólny interfejs</string>
     <string name="lockscreen_options">Blokada ekranu</string>
@@ -19,7 +17,6 @@
     <string name="tools">Narzędzia</string>
     <string name="weather">Pogoda</string>
     <string name="signal">Zasięg</string>
-    
     <string name="header_summary_battery">Pasek baterii, 1% wskaźnik baterii, itp</string>
     <string name="header_summary_general_ui">Animacja startowa, mailowe raportowanie błędów, rotacja, IME przełącznik, itp</string>
     <string name="header_summary_navigation_bar">Przyciski do wyświetlania, kolor paska nawigacji, itp</string>
@@ -32,108 +29,80 @@
     <string name="header_summary_clock">Styl, kolor wyświetlania zegara</string>
     <string name="header_summary_weather">Opcje ustawień pogody</string>
     <string name="header_summary_signal">Styl, kolor wyświetlania zasięgu</string>
-    
     <string name="advanced_settings">Zaawansowane ustawienia</string>
     <string name="misc_short">Różne</string>
-    
-    <!-- Menu Strings -->
     <string name="menu_lockscreens_remove_wallpaper">Resetuj tapetę blokady ekranu</string>
-    <string name="menu_main_activity_change_locale">Lokalizacja</string>
+    <string name="menu_main_activity_change_locale">Język</string>
     <string name="menu_nav_bar_reset">Resetuj pasek nawi</string>
     <string name="menu_weather_get_weather">Aktualizuj pogodę</string>
-
-    <!-- General Strings -->
     <string name="cancel">Anuluj</string>
     <string name="ok">OK</string>
-    
-    <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Ustawienia menu</string>
     <string name="summary_pref_menu_display">Pozycja przycisku menu</string>
     <string name="navigation_bar">Pasek nawigacyjny</string>
     <string name="navigation_bar_tint_title">Kolor paska nawigacyjnego</string>
-    <string name="navigation_bar_glow_tint_title">Kolor poblasku paska nawigacyjnego</string>
-    <string name="navigation_bar_glow_tint_summary">Kiedy przytrzymasz przycisk, pojawia się poblask wokół niego. Ustaw kolor tego poblasku.</string>
+    <string name="navigation_bar_glow_tint_title">Kolor blasku paska nawigacyjnego</string>
+    <string name="navigation_bar_glow_tint_summary">Kiedy przytrzymasz przycisk, pojawia się blask wokół niego. Ustaw kolor tego blasku.</string>
     <string name="navigation_bar_height_title">Wysokość paska nawigacyjnego</string>
     <string name="navigation_bar_width_title">Szerokość paska nawigacyjnego</string>
     <string name="navbar_order_title">Przyciski paska nawigacyjnego</string>
     <string name="navbar_order_summary">Dopasuj przyciski paska nawigacyjnego</string>
     <string name="navbar_button_cat">Przyciski paska nawigacyjnego</string>
-    <string name="navbar_qty_title">Ilość przyciskówy</string>
+    <string name="navbar_qty_title">Ilość przycisków</string>
     <string name="navbar_qty_summary">Wybierz ilość przycisków paska nawigacyjnego</string>
     <string name="enabled_navbar_buttons_title">Włączone przyciski</string>
     <string name="enabled_navbar_buttons_summary">Wybierz przyciski, które chcesz włączyć</string>
     <string name="navbar_action_title">Przycisk %1$s akcja &amp; ikona</string>
     <string name="navbar_longpress_title">Przycisk %1$s akcja przytrzymania</string>
-    
-     <string name="navbar_action_home">Strona główna</ string>
-     <string name="navbar_action_back">Powrót</ string>
-     <string name="navbar_action_recents">Ostatnio używane aplikacje</ string>
-     <string name="navbar_action_search">Szukaj</ string>
-     <string name="navbar_action_menu">Menu</ string>
-     <string name="navbar_action_kill">Zabij zadanie</ string>
-     <string name="navbar_action_power">Power menu</ string>
-     <string name="navbar_action_none">Pusty</ string>
-
+    <string name="navbar_action_home">Ekran domowy</string>
+    <string name="navbar_action_back">Powrót</string>
+    <string name="navbar_action_recents">Ostatnio używane aplikacje</string>
+    <string name="navbar_action_search">Szukaj</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_kill">Zakończ zadanie</string>     
+    <string name="navbar_action_power">Power menu</string>
+    <string name="navbar_action_none">Pusty</string>
     <string name="navbar_enable_bar">Włącz pasek</string>
     <string name="navbar_enable_dialog_title">Wymagany restart urządzenia!</string>
     <string name="navbar_enable_dialog_msg">Proszę zrestartować urządzenie aby poprawnie włączyć/wyłączyć pasek nawigacyjny!</string>
     <string name="navbar_enable_dialog_negative">Zrestartuję później</string>
     <string name="navbar_enable_dialog_Positive">Restartuj teraz!</string>
-
     <string name="button_transparency_title">Przeźroczystość przycisków</string>
-
     <string name="long_press_home_title">Długie przytrzymanie przycisku Home</string>
     <string name="long_press_home_summary">Jaka akcja ma być wykonana po długim przytrzymaniu przycisku Home. Wymaga restartu urządzenia!</string>
-
-    <string name="glow_times_title">Animacja poblasku przycisków</string>
+    <string name="glow_times_title">Animacja blasku przycisków</string>
     <string name="glow_times_summary">Ustaw szybkość animacji po dotknięciu przycisków. Niższa prędkość daje lepszą wydajność.</string>
-
     <string name="combined_bar_title">Pasek kombinowany</string>
     <string name="combined_bar_auto_hide_title">Automatycznie ukryj</string>
     <string name="combined_bar_auto_hide_summary">Pozwól paskowi na ukrywanie kiedy wyświetlana jest aplikacja na pełnym ekranie</string>
-
     <string name="title_pref_navigation_menu_display">Widoczność menu</string>
     <string name="summary_pref_navigation_menu_display">Jak i kiedy chcesz żeby przyciski menu się pojawiały?</string>
-
-    <!-- UI -->
     <string name="rotation_animation_delay_title">Opóźnienie obrotu</string>
     <string name="rotation_animation_delay_summary">Czas w jakim urzadzenie musi być w danej pozycji aby ekran się obrócił. 200 ms domyślnie.</string>
+    <string name="ime_switcher_title">Pokaż przełącznik metody wprowadzania</string>
+    <string name="ime_switcher_summary">W obszarze powiadomień (wymaga restartu)</string>
 
-	<string name="ime_switcher_title">Pokaż przełącznik metody wprowadzania</string>
-	<string name="ime_switcher_summary">W obszarze powiadomień (wymaga restartu)</string>
-
-	<string name="custom_carrier_label_title">Własna nazwa operatora</string>
-	<string name="custom_carrier_label_empty">Proszę wprowadzić nową nazwę!</string>
-        <string name="custom_carrier_label_warning">Własna nazwa nie została określona. Po określeniu nazwy nie da się powrócić do poprzedniej bez wykonania resetu ustawień (wipe data)</string>
-	<string name="longpress_to_kill_title">Wciśnij wstecz żeby zabić</string>
-	<string name="longpress_to_kill_summary">Trzymanie przycisku wstecz zabije aktywny program</string>
-		
+    <string name="custom_carrier_label_title">Własna nazwa operatora</string>
+    <string name="custom_carrier_label_empty">Proszę wprowadzić nową nazwę!</string>
+    <string name="custom_carrier_label_warning">Własna nazwa nie została określona. Po określeniu nazwy nie da się powrócić do poprzedniej bez wykonania resetu ustawień (wipe data)</string>
+    <string name="longpress_to_kill_title">Wciśnij wstecz żeby zakończyć</string>
+    <string name="longpress_to_kill_summary">Trzymanie przycisku wstecz zakończy aktywny program</string>
     <string name="enable_volume_options">Włącz opcje głośności</string>
-
     <string name="rotate_180_title">Zezwól na obrót o 180°</string>
     <string name="rotate_180_summary">Pozwala urządzeniu na obrót ekranu góra/dół!</string>
-
     <string name="recent_app_switcher_title">Ostatnio używane aplikacje</string>
     <string name="recent_app_switcher_summary">Wybierz styl wyświetlania ostatnio używanych aplikacji (wymaga restartu)</string>
-
     <string name="disable_bootanimation_title">Wyłącz animację startową</string>
     <string name="disable_bootanimation_summary">Wyłączona.</string>
-
     <string name="disable_bootaudio_title">Wyłącz dźwięk startowy</string>
     <string name="disable_bootaudio_summary">Cisza.</string>
     <string name="disable_bootaudio_summary_disabled">Żeby włączyć dźwięk startowy, trzeba mieć plik MP3 w \n/system/media/boot_audio.mp3</string>
-
     <string name="disable_bugmailer_title">Wyłącz mailowe raportowanie błędów</string>
-
     <string name="lcd_density_title">Gęstość LCD</string>
     <string name="lcd_density_summary">nieznana</string>
-
-	<!-- CRT animations -->
-	<string name="crt_animations_header">Opcje animacji CRT</string>
-	<string name="crt_on_title">Animacja CRT przy włączaniu ekranu</string>
-	<string name="crt_off_title">Animacja CRT przy wyłączaniu ekranu</string>
-
-    <!-- LCD Density -->
+    <string name="crt_animations_header">Opcje animacji CRT</string>
+    <string name="crt_on_title">Animacja CRT przy włączaniu ekranu</string>
+    <string name="crt_off_title">Animacja CRT przy wyłączaniu ekranu</string>
     <string name="current_lcd_density">"Aktualna gęstość LCD: "</string>
     <string name="lcd_density_wizard">Kreator gęstości LCD</string>
     <string name="follow_through_title">Wykonuj kroki!</string>
@@ -148,23 +117,16 @@
     <string name="open_market_summary">Kliknij cofnij aby powrócić tu po zakończeniu.</string>
     <string name="custom_density_title">5. Ustaw gęstość na jaką chcesz!</string>
     <string name="custom_density_summary">Jeśli kiedykolwiek miałeś jakieś błędy z kompatybilnością marketu, upewnij się aby wrócić tu i dokończyć proces.</string>
-
-    <!-- Lockscreens -->
     <string name="title_pref_lockscreen_menu_unlock">Odblokowywanie przyciskiem menu</string>
     <string name="summary_pref_lockscreen_menu_unlock">Przycisk menu oblokowuje urządzenie (wymaga restartu)</string>
-    
     <string name="title_lockscreen_user_timeout_override">Opóźnij zablokowanie ekranu</string>
     <string name="summary_lockscreen_user_timeout_override">Użyj czasu wygaszania ekranu systemu Android po tym jak sam wyłączysz ekran.</string>
-
     <string name="pref_lockscreen_layout_title">Styl blokady ekranu</string>
     <string name="pref_lockscreen_layout_summary">Po zmianie stylu pamiętaj aby na dole ustawić skróty do wybranych aplikacji</string>
-
     <string name="title_pref_lockscreen_quad_targets">Cztery skróty</string>
     <string name="summary_pref_lockscreen_quad_targets">Dodaje aplikację Telefon i SMS do skrótów</string>
-
     <string name="title_pref_lockscreen_octo_targets">Osiem skrótów</string>
     <string name="summary_pref_lockscreen_octo_targets">Dodaje osiem skrótów do blokady ekranu</string>
-    
     <string name="show_lock_before_unlock_title">Pokaż blokadę ekranu zanim odblokuje</string>
     <string name="show_lock_before_unlock_summary">Pokaż standardową blokadę przed blokadą SIM</string>
     <string name="lockscreen_battery_title">Wskaźnik baterii na ekranie blokady</string>
@@ -192,7 +154,7 @@
     <string name="lockscreen_landscape_title">Pozioma blokada ekranu</string>
     <string name="lockscreen_landscape_summary">Blokada ekranu w pozycji poziomej będzie włączona</string>
     <string name="lockscreen_quick_unlock_control_title">Szybki kod odblokowania</string>
-    <string name="lockscreen_quick_unlock_control_summary">USzybkie odblokowywanie kodem bez przyciskania przycisku zatwierdź.</string>
+    <string name="lockscreen_quick_unlock_control_summary">Szybkie odblokowywanie kodem bez przyciskania przycisku zatwierdź.</string>
     <string name="enable_fast_torch_title">Szybka latarka</string>
     <string name="enable_fast_torch_summary">Przy wyłączonym ekranie trzymanie przycisku załączania telefonu włączy latarkę, a jego puszczenie ją wyłączy.</string>
     <string name="lockscreen_wallpaper_title">Tapeta blokady ekranu</string>
@@ -219,86 +181,60 @@
     <string name="lockscreen_calendar_flip_summary">Jeśli opcja jest włączona, widget wyświetla wiele zdarzeń przez przerzucania między nimi.</string>
     <string name="lockscreen_calendar_interval_title">Częstotliwość przerzucania</string>
     <string name="lockscreen_calendar_interval_summary">Wybierz prędkość animacji w sekundach.</string>
-   
-    <!-- Power Menu -->
-    <string name="title_show_power_saver">Pokaż opcje oszczedzania energii</string>
+    <string name="title_show_power_saver">Pokaż opcję Oszczędzanie energii</string>
     <string name="summary_show_power_saver">Włącz opcję oszczędzania enegrii aby zobaczyć ją w power menu.</string>
-    <string name="title_show_screenshot">Pokaż opcje screenshot</string>
+    <string name="title_show_screenshot">Pokaż opcję Screenshot</string>
     <string name="title_show_torch_toggle">Pokaż opcję Latarka</string>
     <string name="title_show_airplane_toggle">Pokaż opcję Tryb samolotowy</string>
     <string name="title_show_navbar_hide">Pokaż opcję Pasek nawigacyjny</string>
-    
-    <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Włącz oszczędzanie energii</string>
-    
-    <string name="title_pref_powersaving_data_screen_off">Dane Mobilne - Działanie po wyłączeniu ekranu</string>
-    <string name="summary_pref_powersaving_data_screen_off">Co zrobić z danymi po wyłączeniu ekranu</string>
-        
+    <string name="title_pref_powersaving_data_screen_off">Dane pakietowe - Działanie po wyłączeniu ekranu</string>
+    <string name="summary_pref_powersaving_data_screen_off">Włącz/wyłącz dane po wyłączeniu ekranu</string>
     <string name="title_pref_powersaving_data_screen_off_delay">Opóźnienie działania</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">Jak długo czekać aby wykonać działanie</string>
-
     <string name="title_pref_powersaving_sync_screen_off">Synchronizacja - Działanie po wyłączeniu ekranu</string>
     <string name="summary_pref_powersaving_sync_screen_off">Co zrobić z synchronizacją danych?</string>
-    
     <string name="title_pref_powersaving_sync_screen_off_delay">Czas pomiędzy synchronizacjami</string>
     <string name="summary_pref_powersaving_sync_screen_off_delay">Jak często uruchamiać synchronizację?</string>
-    
     <string name="powersaver_data_cat">Dane</string>
     <string name="powersaver_sync_cat">Synchronizacja</string>
-    
     <string name="screen_off_wifi_action">Opcje Wi-Fi przy wyłączonym ekranie</string>
     <string name="sync_data_usage">Synchronizacja użycia danych</string>
     <string name="sync_mobile_data_preference">Preferencje synchronizacji użycia danych pakietowych</string>
-
-    <!--  LED -->
     <string name="title_led_on">Czas do włączenia powiadomienia LED</string>
     <string name="summary_led_on">@null</string>
     <string name="title_led_off">Czas do wyłączenia powiadomienia LED</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">Kolor LED</string>
     <string name="led_color_summary">Zmiana koloru LED. Można łatwo zmienić kolor świecenia LED.</string>
-    <string name="title_led_screen_on">LED świeci przy włączonym ekranie</string>
+    <string name="title_led_screen_on">LED przy włączonym ekranie</string>
     <string name="summary_led_screen_on">@null</string>
-
-    <!--  Statusbar | General -->
     <string name="title_settings_behavior">Użyj domyślnych ustawień</string>
     <string name="summary_settings_behavior">Domyślne zachowanie to przytrzymanie żeby włączyć/wyłączyć przełącznik i jedno kliknięcie żeby wejść do ustawień. Odznacz jeśli chcesz te opcje na odwrót</string>
-
     <string name="title_auto_hide_toggles">Automatycznie chowaj przełączniki</string>
     <string name="summary_auto_hide_toggles">Po opadnięciu przełączniki zostaną ukryte</string>
     <string name="title_status_bar_brightness_toggle">Włącz kontrolę jasności</string>
     <string name="summary_status_bar_brightness_toggle">Przesuń powoli palcem po pasku stanu aby ustawić jasność ekranu</string>
-
     <string name="icon_transparency_title">Przeźroczystość ikon na pasku stanu</string>
-
-    <string name="adb_icon_title">Włącz ikonę debugowania USB</string>
+    <string name="adb_icon_title">Ikona debugowania USB</string>
     <string name="adb_icon_summary">Wutang</string>
-
     <string name="statusbar_transparency">Przeźroczystość</string>
     <string name="statusbar_transparency_summary">Ustaw przeźroczystość paska stanu (wymaga restartu)</string>
-
     <string name="statusbar_layout">Układ szuflady stanu</string>
     <string name="statusbar_layout_summary">Ustaw układ szuflady stanu (wymaga restartu)</string>
     <string name="statusbar_fontsize">Czcionka paska stanu</string>
     <string name="statusbar_fontsize_summary">Zmień wielkość czcionki tekstu elementów na pasku stanu</string>
-
     <string name="status_bar_notif_count_title">Pokaż liczbę powiadomień</string>
     <string name="status_bar_notif_count_summary">Wyświetla liczbę oczekujących powiadomień na pasku stanu</string>
-
-    <!-- Statusbar | Battery -->
     <string name="battery_icon">Ikona baterii</string>
-    <string name="battery_title_text_widget">Pokaż tekst zamiast baterii</string>
     <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_title_text_widget_center">Wyśrodkuj tekst</string>
     <string name="battery_bar">Miejsce paska baterii</string>
     <string name="battery_bar_color">Kolor paska baterii</string>
     <string name="battery_bar_cat">Opcje paska baterii</string>
     <string name="battery_bar_style_title">Styl paska baterii</string>
     <string name="battery_bar_thickness_title">Grubość paska baterii</string>
     <string name="battery_bar_animate_title">Animacja ładowania</string>
-    <string name="battery_bar_animate_summary">Animacja ładowania może doprowadzić do błędów. Włącz na własną odpowiedzialność.</String>
-
-    <!-- Statusbar | Clock -->
+    <string name="battery_bar_animate_summary">Animacja ładowania może wpływać na interfejs użytkownika. Włączasz na własną odpowiedzialność.</string>
     <string name="clock_title_enable">Pokaż zegar</string>
     <string name="title_clock_ampm_entries">Styl AM/PM</string>
     <string name="colors">Kolory</string>
@@ -308,12 +244,8 @@
     <string name="enable_alarm_summary">Po włączeniu/wyłączeniu musisz zrestartować telefon aby dokonać zmian</string>
     <string name="enable_clock_weekday">Dzień tygodnia</string>
     <string name="enable_clock_weekday_summary">Wyświetla dzień tygodnia przed godziną.</string>
-
-    <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Styl przełączników</string>
     <string name="toggle_style_summary">Wybierz co ma być wyświetlane obok przełączników.</string>
-    <string name="alternate_button_layout_title">Alternatywne przełączniki</string>
-    <string name="alternate_button_layout_summary">Użyj przycisków zamiast przełączników.</string>  
     <string name="enabled_toggles_title">Włącz przełączniki</string>
     <string name="enabled_toggles_summary">Wybierz przełączniki które mają być wyświetlane</string>
     <string name="toggles_order_title">Pozycje przełączników</string>
@@ -324,32 +256,24 @@
     <string name="toggles_display_close">Zamknij</string>
     <string name="reset_toggles_title">Resetuj przełączniki</string>
     <string name="reset_toggles_summary">Resetuj wszystkie przełączniki i ich układ</string>
-    
-    <!-- Statusbar | Signal -->
     <string name="signal_style">Styl tekstu zasięgu</string>
     <string name="signal_color_title">Kolor zasięgu</string>
     <string name="hide_signal_title">Ukryj kreski zasięgu</string>
     <string name="hide_signal_summary">Będzie również ukrywać wskaźnik danych. Będzie w stanie oddzielić to później.</string>
     <string name="wifi_signal_style">Styl zasięgu WiFi</string>
     <string name="wifi_signal_color_title">Kolor zasięgu WiFi</string>
-
-    <!-- Color Picker -->
     <string name="dialog_color_picker">Paleta wyboru koloru</string>
-    <string name="press_color_to_apply">Kliknij w kolor aby aktywować</string> 
+    <string name="press_color_to_apply">Kliknij w kolor aby aktywować</string>
     <string name="arrow_right">›</string>
     <string name="arrow_down">ˇ</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Ustaw</string>
-    <string name="ics_color">Przywróć</string>
-    
-    <!-- Shortcut picker -->
+    <string name="ics_color">ICS</string>
     <string name="use_custom_app_title">Użyj niestandardowej aplikacji</string>
     <string name="use_custom_app_summary">Użyj niestandardowej aplikacji zamiast niedawno użytej aplikacji</string>
     <string name="select_custom_app_title">Wybierz niestandardową aplikację</string>
     <string name="group_applications">Aplikacje</string>
-    
-    <!-- Weather -->
     <string name="weather_enable">Włącz pogodę</string>
     <string name="weather_enable_summary">Czy wyciągnąć informacje o pogodzie i wyświetlić je w całym ROMie.</string>
     <string name="weather_use_custom_location">Użyj własnej lokalizacji</string>
@@ -374,79 +298,60 @@
     <string name="weather_loc_warning_msg">"Odnajdowanie lokalizacji przez sieć jest teraz wyłączone. Co powoduje błąd odczytu pogody. Ustaw własną lokalizację ręcznie lub włącz określanie lokalizacji poprzez sieć."</string>
     <string name="weather_loc_warning_positive">"Włącz określanie lokalizacji przez sieć"</string>
     <string name="weather_loc_warning_negative">"Nie włączaj."</string>
-    
-    <!-- Dialog Titles -->
     <string name="dt_free_memory">Minfree Taskkiller</string>
-
-    <!-- Preference Categories -->
     <string name="prefcat_cpu">Ustaw CPU</string>
     <string name="prefcat_free_memory">Zwolnij pamięć</string>
     <string name="pc_tweaks">Tweaki</string>
     <string name="pc_init_d">Włącz/Wyłącz Tweaki</string>
     <string name="pc_init_d_tweaks">Dostosuj Tweaki</string>
-
-    <!-- Preference Titles -->
-    <!-- Main -->
     <string name="pt_performance">Wydajność</string>
     <string name="pt_customization">Dostosowywanie</string>
     <string name="pt_tools">Narzędzia</string>
     <string name="pt_mod_version">Wersja modyfikacji</string>
-    <!-- Customization -->
     <string name="pt_liberty_customizer">Liberty Customizer</string>
     <string name="pt_lockscreen">Ustawienia blokady ekranu</string>
     <string name="pt_ui_status_bar">Pasek stanu</string>
     <string name="pt_pulldown_text">Tekst rozwijanego paska</string>
     <string name="pt_theme_manager">Manager motywów</string>
-    <!-- Tools -->
     <string name="pt_spare_parts">Zamienniki</string>
     <string name="pt_dev_tools">Narzędzia developerskie</string>
     <string name="pt_dsp_manager">DSP Manager</string>
     <string name="pt_testing_menu">Menu testów</string>
-    <!-- Start up tweaks -->
     <string name="pt_init_d">Tweaki startowe</string>
     <string name="pt_enable_init_d">Włącz tweaki startowe</string>
     <string name="pt_zipalign">Zipalign aplikacji</string>
     <string name="pt_enable_sd_boost">Włącz przyśpieszanie SD</string>
     <string name="pt_sd_boost">Read ahead value</string>
     <string name="pt_fix_permissions">Napraw uprawnienia</string>
-    <string name="pt_clear_cache">Wyczyśc pamięć cache</string>
+    <string name="pt_clear_cache">Wyczyść pamięć cache</string>
     <string name="pt_enable_sysctl">Włącz sysctl</string>
     <string name="pt_enable_cron">Włącz kolejkowanie zadań</string>
-    <!-- Performance -->
     <string name="pt_set_cpu_activity">Ustaw CPU</string>
     <string name="pt_free_memory">Zwolnij pamięć</string>
     <string name="pt_free_memory_boot">Ustaw przy starcie</string>
-    <!-- Cpu -->
     <string name="pt_set_max">Max CPU</string>
     <string name="pt_set_min">Min CPU</string>
     <string name="pt_set_gov">Zarządca</string>
     <string name="pt_cpu_boot">Ustaw przy starcie</string>
     <string name="pt_volt_control">Kontrola napięcia</string>
-    <!-- Scrolling Cache -->
     <string name="pref_scrollingcache_title">Przewijanie cache</string>
     <string name="pref_scrollingcache_summary">Przewijanie cache może poprawić wydajność przewijania kosztem pamięci</string>
     <string name="pref_scrollingcache_force_enable">Wymuszone włączenie</string>
     <string name="pref_scrollingcache_default_enable">Domyślne włączenie</string>
     <string name="pref_scrollingcache_default_disable">Domyślne wyłączenie</string>
     <string name="pref_scrollingcache_force_disable">Wymuszone wyłączenie</string>
-
-    <!-- Preference Summaries -->
-    <!-- Main -->
     <string name="ps_performance">Ustaw CPU, zwolnij pamięć &amp; dostosuj ustawienia startowe.</string>
     <string name="ps_customization">Dostosuj blokadę ekranu &amp; pasek stanu, powiadomienia. Instalowanie aplikacji z Liberty Customizer</string>
     <string name="ps_tools">Różne narzędzia systemowe</string>
-    <!-- Customization -->
     <string name="ps_liberty_customizer">Dostosuj ROM według upodobań</string>
     <string name="ps_lockscreen">Zmień styl blokady ekranu i zarządzaj widżetami</string>
     <string name="ps_ui_status_bar">Dostosuj pasek stanu</string>
     <string name="ps_pulldown_text">Zmień tekst paska rozwijanego.</string>
     <string name="ps_theme_manager">Zainstaluj motywy z Liberty ROM</string>
-    <!-- Tools -->
     <string name="ps_spare_parts">Różne tweaki i dostosowywanie</string>
     <string name="ps_dev_tools">Narzędzia dla developerów i zaawansowanych użytkowników</string>
     <string name="ps_dsp_manager">Samodzielny equalizer</string>
     <string name="ps_testing_menu">Informacje o telefonie, baterii, statystyki użycia</string>
-    <!-- Start up tweaks -->
     <string name="ps_init_d">Skonfiguruj tweaki, które będą uruchamianie przy starcie (init.d)</string>
     <string name="ps_enable_init_d">Włącz/wyłącz tweaki startowe</string>
     <string name="ps_zipalign">Zipalignuj każdą nową aplikację przy każdym starcie systemu</string>
@@ -456,37 +361,26 @@
     <string name="ps_clear_cache">Wyczyść cache danych przy każdym starcie systemu</string>
     <string name="ps_enable_sysctl">Włącz sysctl tweak przy starcie systemu</string>
     <string name="ps_enable_cron">Włącz zaplanowane zadania crona</string>
-    <!-- CPU -->
-    <string name="ps_set_max">Ustaw maksymalną częstotliwość zegara CPU\nCurrent: %s</string>
-    <string name="ps_set_min">Ustaw minimalną częstotliwość zegara CPU\nCurrent: %s</string>
-    <string name="ps_set_gov">Ustaw aktualnego zarządcę\nCurrent: %s</string>
+    <string name="ps_set_max">Ustaw maksymalną częstotliwość zegara CPU\nAktualnie: %s</string>
+    <string name="ps_set_min">Ustaw minimalną częstotliwość zegara CPU\nAktualnie: %s</string>
+    <string name="ps_set_gov">Ustaw aktualnego zarządcę\nAktualnie: %s</string>
     <string name="ps_cpu_boot">Zastosuj przy starcie</string>
-    <!-- Performance -->
     <string name="ps_set_cpu_activity">Ustaw min/max częstotliwość i zarządcę procesora</string>
-    <string name="ps_free_memory">Ilość pamięci RAM, minimalna pamięć do zabijania aplikacji będzie zachowana|Aktualnie: %s</string>
+    <string name="ps_free_memory">Ilość pamięci RAM, minimalna pamięć do zakończenia aplikacji będzie zachowana|Aktualnie: %s</string>
     <string name="ps_free_memory_boot">Zastosuj powyższą wartość przy starcie systemu</string>
-    
-    <!-- Toast Messages -->
     <string name="toast_min_max_error01">Maksymalna wartość CPU nie może być niższa jak minimalna</string>
     <string name="toast_min_max_error02">Minimalna wartośc CPU nie może być wyższa jak maksymalna</string>
-
-    <!-- list_voltage -->
     <string name="freq">Częstotliwość</string>
     <string name="current">mV aktualnie</string>
     <string name="saved">mV zapisane</string>
-
-    <!-- voltage -->
     <string name="error_values">Błąd uzyskiwania wartości</string>
     <string name="set_boot">Ustaw przy starcie</string>
     <string name="apply_values">Zastosuj wartość</string>
-
-    <!-- Kernel Tweaks -->
     <string name="pt_fast_charge_boot">Szybkie ładowanie</string>
     <string name="ps_fast_charge_boot">Włącz szybkie ładowanie przy starcie systemu</string>
     <string name="fast_charge_warning">NIE BĘDZIESZ W STANIE POŁĄCZYĆ SIĘ Z KOMPUTEREM PO KAŻDYM RESTARCIE!\n\nTa opcja włączy szybkie ładowanie przy każdym starcie systemu. Gdy szybkie ładowanie jest włączone, możesz *tylko* ładować baterię telefonu!</string>
     <string name="fast_charge_notification_title">Szybkie ładowanie jest włączone!</string>
     <string name="fast_charge_notification_message">Telefon jest tylko w trybie ładowania!</string>
-
     <string name="kernel">Tweaki Kernela (jeśli kernel je wspiera)</string>
     <string name="color_tuning_title_head">Mnożnik dostrajania kolorów</string>
     <string name="color_tuning_summary_head">Kalibruj mnożnik dostrajania kolorów ekranu</string>
@@ -497,8 +391,6 @@
     <string name="color_blue_title">Niebieski</string>
     <string name="gamma_dss_title">Regulacja programowa Gamma</string>
     <string name="reset_defaults">Ustawienia domyślne</string>
-
-    <!-- Weather Codes -->
     <string name="weather_0">Tornado</string>
     <string name="weather_1">Burza Tropikalna</string>
     <string name="weather_2">Huragan</string>
@@ -526,20 +418,13 @@
     <string name="weather_24">Wietrznie</string>
     <string name="weather_25">Zimno</string>
     <string name="weather_26">Pochmurnie</string>
-    <!-- mostly cloudy (night) -->
     <string name="weather_27">Silne zachmurzenie</string>
-    <!-- mostly cloudy (day) -->
     <string name="weather_28">Silne zachmurzenie</string>
-    <!-- partly cloudy (night) -->
     <string name="weather_29">Zachmurzenie umiarkowane</string>
-    <!-- partly cloudy (day) -->
     <string name="weather_30">Zachmurzenie umiarkowane</string>
-    <!-- clear (night) -->
-    <string name="weather_31">Czyste niebo</string>
+    <string name="weather_31">Bezchmurnie</string>
     <string name="weather_32">Słonecznie</string>
-    <!-- fair (night) -->
     <string name="weather_33">Jasno</string>
-    <!-- fair (day) -->
     <string name="weather_34">Jasno</string>
     <string name="weather_35">Mieszane deszcz i grad</string>
     <string name="weather_36">Gorąco</string>
@@ -554,10 +439,6 @@
     <string name="weather_45">Thundershowers</string>
     <string name="weather_46">Opady śniegu</string>
     <string name="weather_47">Miejscowe burze</string>
-    <!-- Forecase unavailable -->
     <string name="weather_3200"></string>
-
-    <!-- Miscellaneous -->
     <string name="location_unavailable">Nie można pobrać informacji o lokalizacji dla aktualizacji pogody</string>
-
 </resources>

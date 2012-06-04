@@ -56,6 +56,10 @@
     <string name="navigation_bar_height_title">导航栏高度</string>
     <string name="navigation_bar_width_title">导航栏宽度</string>
 
+    <string name="navigation_bar_add_new_widget_title">添加小部件</string>
+    <string name="navigation_bar_add_new_widget_summary">添加新的导航栏小部件</string>
+    <string name="navigation_bar_widget">"小部件 "</string>
+
     <string name="title_pref_navigation_menu_display">显示菜单键</string>
     <string name="summary_pref_navigation_menu_display">菜单键的显示样式(需要重启)</string>
 
@@ -82,7 +86,9 @@
     <string name="navbar_action_power">电源</string>
     <string name="navbar_action_none">空</string>
 
-    <string name="navbar_enable_bar">启用导航栏</string>
+	<string name="navbar_enable_bar">启用导航栏</string>
+	<string name="navbar_widgets">导航栏小部件</string>
+	<string name="navbar_widgets_reset">重置导航栏小部件</string>
 
     <string name="navbar_enable_dialog_title">一定要重启的，亲！</string>
     <string name="navbar_enable_dialog_msg">请重新启动以启用/禁用此属性</string>
@@ -276,6 +282,9 @@
     <string name="statusbar_layout_summary">改变通知布局 (需要重启UI)</string>
     <string name="statusbar_fontsize">状态栏字体大小</string>
     <string name="statusbar_fontsize_summary">改变状态栏文字的大小</string>
+
+    <string name="status_bar_notif_count_title">显示通知数量</string>
+    <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
 
     <!-- Statusbar | Battery 状态栏|电量 -->
     <string name="battery_icon">电量图标风格</string>
@@ -488,11 +497,12 @@
     <string name="kernel">内核优化(如果支持)</string>
     <string name="color_tuning_title_head">颜色增益调整</string>
     <string name="color_tuning_summary_head">调整屏幕颜色增益(Multiplier)</string>
-    <string name="gamma_tuning_title_head">颜色灰度系数调整</string>
-    <string name="gamma_tuning_summary_head">调整屏幕颜色灰度系数(Gamma)</string>
+    <string name="gamma_tuning_title_head">颜色灰阶调整</string>
+    <string name="gamma_tuning_summary_head">调整屏幕颜色灰阶(Gamma)</string>
     <string name="color_red_title">红</string>
     <string name="color_green_title">绿</string>
     <string name="color_blue_title">蓝</string>
+    <string name="gamma_dss_title">软件调节灰阶</string>
     <string name="reset_defaults">重置为默认值</string>
 
     <!-- Weather Codes 天气代码 -->

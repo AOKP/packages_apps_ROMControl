@@ -284,19 +284,16 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-    <string-array name="pref_lockscreen_options_values">
-        <item>2</item>
-        <item>6</item>
-        <item>8</item>
-        <item>1</item>
-        <item>0</item>
-    </string-array>
     <string-array name="pref_lockscreen_options_entries">
-        <item>默认</item>
-        <item>四键</item>
-        <item>八键</item>
-        <item>原生</item>
-        <item>蜂巢</item>
+	<item>默认</item>
+	<item>原生</item>
+	<item>蜂巢</item>
+	<item>3 键</item>
+	<item>4 键</item>
+	<item>5 键</item>
+	<item>6 键</item>
+	<item>7 键</item>
+	<item>8 键</item>
     </string-array>
     <string-array name="pref_lockscreen_calendar_interval_values">
         <item>1000</item>
@@ -546,21 +543,11 @@
         <item>近期任务</item>
         <item>搜索</item>
         <item>菜单</item>
+	<item>小部件</item>
         <item>关闭进程</item>
         <item>电源</item>
         <item>自定义程序</item>
         <item>空</item>
-    </string-array>
-    <string-array name="navbar_button_values">
-        <item>**home**</item>
-        <item>**back**</item>
-        <item>**recents**</item>
-        <item>**search**</item>
-        <item>**menu**</item>
-        <item>**kill**</item>
-        <item>**power**</item>
-        <item>**app**</item>
-        <item>**null**</item>
     </string-array>
     <string-array name="recent_app_switcher_entries">
         <item>默认</item>

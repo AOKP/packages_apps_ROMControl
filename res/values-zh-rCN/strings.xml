@@ -56,6 +56,10 @@
     <string name="navigation_bar_height_title">导航栏高度</string>
     <string name="navigation_bar_width_title">导航栏宽度</string>
 
+    <string name="navigation_bar_add_new_widget_title">添加小部件</string>
+    <string name="navigation_bar_add_new_widget_summary">添加新的导航栏小部件</string>
+    <string name="navigation_bar_widget">"小部件 "</string>
+
     <string name="title_pref_navigation_menu_display">显示菜单键</string>
     <string name="summary_pref_navigation_menu_display">菜单键的显示样式(需要重启)</string>
 
@@ -82,7 +86,9 @@
     <string name="navbar_action_power">电源</string>
     <string name="navbar_action_none">空</string>
 
-    <string name="navbar_enable_bar">启用导航栏</string>
+	<string name="navbar_enable_bar">启用导航栏</string>
+	<string name="navbar_widgets">导航栏小部件</string>
+	<string name="navbar_widgets_reset">重置导航栏小部件</string>
 
     <string name="navbar_enable_dialog_title">一定要重启的，亲！</string>
     <string name="navbar_enable_dialog_msg">请重新启动以启用/禁用此属性</string>
@@ -141,14 +147,25 @@
 	<string name="follow_through_summary">确保一步一步完成</string>
 	<string name="stock_density_title">1. 改变密度为默认值</string>
 	<string name="stock_density_summary">平板以及旧款电话 160，大多数电话 240，Galaxy Nexus 使用 320 为默认值</string>
+	<string name="stock_density_changed_summary">密度设置为：</string>
 	<string name="reboot_title">2. 点我重启</string>
 	<string name="reboot_summary">回到此菜单，完成其余的步骤</string>
 	<string name="clear_market_data_title">3. 清理Play商店数据</string>
-	<string name="clear_market_data_cleared">Play商店数据清除</string>
+	<string name="clear_market_data_cleared">Play商店数据已清除</string>
+	<string name="clear_market_data_donot_cleared">Play商店数据无法清除，请手动清除！</string>
 	<string name="open_market_title">4. 打开Play商店选择接受</string>
 	<string name="open_market_summary">然后回到此菜单</string>
+	<string name="open_market_summary_could_not_open">无法打开Play商店！如果你确定已经安装，请手动打开。</string>
 	<string name="custom_density_title">5. 再选择你需要的密度</string>
 	<string name="custom_density_summary">如果你遇到市场兼容问题，回到这里，重复步骤</string>
+	<string name="custom_density_summary_invalid">无效的密度！</string>
+	<string name="custom_density">自定义</string>
+	<string name="set_custom_density_title">设置自定义密度</string>
+	<string name="set_custom_density_set">设置</string>
+	<string name="custom_density_dialog_title">警告！</string>
+	<string name="custom_density_dialog_summary">改变 LCD 密度可能导致应用程序意外关闭。如果你遇到应用程序不兼容的情况请回到这里，重新从第一步开始。</string>
+	<string name="custom_density_dialog_button_got">确定改变！</string>
+	<string name="custom_density_dialog_button_reboot">立即重启</string>
 
     <!-- Lockscreens 锁屏选项 -->
     <string name="pref_lockscreen_layout_title">锁屏风格</string>
@@ -276,6 +293,9 @@
     <string name="statusbar_layout_summary">改变通知布局 (需要重启UI)</string>
     <string name="statusbar_fontsize">状态栏字体大小</string>
     <string name="statusbar_fontsize_summary">改变状态栏文字的大小</string>
+
+    <string name="status_bar_notif_count_title">显示通知数量</string>
+    <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
 
     <!-- Statusbar | Battery 状态栏|电量 -->
     <string name="battery_icon">电量图标风格</string>
@@ -488,11 +508,12 @@
     <string name="kernel">内核优化(如果支持)</string>
     <string name="color_tuning_title_head">颜色增益调整</string>
     <string name="color_tuning_summary_head">调整屏幕颜色增益(Multiplier)</string>
-    <string name="gamma_tuning_title_head">颜色灰度系数调整</string>
-    <string name="gamma_tuning_summary_head">调整屏幕颜色灰度系数(Gamma)</string>
+    <string name="gamma_tuning_title_head">颜色灰阶调整</string>
+    <string name="gamma_tuning_summary_head">调整屏幕颜色灰阶(Gamma)</string>
     <string name="color_red_title">红</string>
     <string name="color_green_title">绿</string>
     <string name="color_blue_title">蓝</string>
+    <string name="gamma_dss_title">软件调节灰阶</string>
     <string name="reset_defaults">重置为默认值</string>
 
     <!-- Weather Codes 天气代码 -->

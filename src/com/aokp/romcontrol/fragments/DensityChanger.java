@@ -112,7 +112,7 @@ public class DensityChanger extends AOKPPreferenceFragment implements
                 mContext.startActivity(openMarket);
             } else {
                 preference
-                        .setSummary("Coulnd't open the market! If you're sure it's installed, open it yourself from the launcher.");
+                        .setSummary(getResources().getString(R.string.open_market_summary_could_not_open));
             }
             return true;
 
@@ -130,9 +130,9 @@ public class DensityChanger extends AOKPPreferenceFragment implements
                 final View textEntryView = factory.inflate(
                         R.layout.alert_dialog_text_entry, null);
                 return new AlertDialog.Builder(getActivity())
-                        .setTitle("Set custom density")
+                        .setTitle(getResources().getString(R.string.set_custom_density_title))
                         .setView(textEntryView)
-                        .setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getResources().getString(R.string.set_custom_density_set), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 EditText dpi = (EditText) textEntryView.findViewById(R.id.dpi_edit);
                                 Editable text = dpi.getText();
@@ -142,12 +142,12 @@ public class DensityChanger extends AOKPPreferenceFragment implements
                                     newDensityValue = Integer.parseInt(text.toString());
                                     showDialog(DIALOG_WARN_DENSITY);
                                 } catch (Exception e) {
-                                    mCustomDensity.setSummary("INVALID DENSITY!");
+                                    mCustomDensity.setSummary(getResources().getString(R.string.custom_density_summary_invalid));
                                 }
 
                             }
                         })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
 
                                 dialog.dismiss();
@@ -155,11 +155,11 @@ public class DensityChanger extends AOKPPreferenceFragment implements
                         }).create();
             case DIALOG_WARN_DENSITY:
                 return new AlertDialog.Builder(getActivity())
-                        .setTitle("WARNING!")
+                        .setTitle(getResources().getString(R.string.custom_density_dialog_title))
                         .setMessage(
-                                "Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1.")
+                                getResources().getString(R.string.custom_density_dialog_summary))
                         .setCancelable(false)
-                        .setNeutralButton("Got it!", new DialogInterface.OnClickListener() {
+                        .setNeutralButton(getResources().getString(R.string.custom_density_dialog_button_got), new DialogInterface.OnClickListener() {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -169,7 +169,7 @@ public class DensityChanger extends AOKPPreferenceFragment implements
 
                             }
                         })
-                        .setPositiveButton("Reboot now", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getResources().getString(R.string.custom_density_dialog_button_reboot), new DialogInterface.OnClickListener() {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -179,7 +179,7 @@ public class DensityChanger extends AOKPPreferenceFragment implements
                                 pm.reboot("Resetting density");
                             }
                         })
-                        .setNegativeButton("Cancel",
+                        .setNegativeButton(getResources().getString(R.string.cancel),
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -195,7 +195,7 @@ public class DensityChanger extends AOKPPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mCustomDensity) {
             String strValue = (String) newValue;
-            if (strValue.equals("custom")) {
+            if (strValue.equals(getResources().getString(R.string.custom_density))) {
                 showDialog(DIALOG_DENSITY);
                 return true;
             } else {
@@ -206,7 +206,7 @@ public class DensityChanger extends AOKPPreferenceFragment implements
         } else if (preference == mStockDensity) {
             newDensityValue = Integer.parseInt((String) newValue);
             setLcdDensity(newDensityValue);
-            mStockDensity.setSummary("Density set to: " + newDensityValue);
+            mStockDensity.setSummary(getResources().getString(R.string.stock_density_changed_summary) + newDensityValue);
             return true;
         }
 
@@ -246,8 +246,8 @@ public class DensityChanger extends AOKPPreferenceFragment implements
         }
 
         protected void onPostExecute(Boolean result) {
-            mClearMarketData.setSummary(result ? "Market data cleared."
-                    : "Market data couldn't be cleared, please clear it yourself!");
+            mClearMarketData.setSummary(result ? getResources().getString(R.string.clear_market_data_cleared)
+                    : getResources().getString(R.string.clear_market_data_donot_cleared));
         }
     }
 }

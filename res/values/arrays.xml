@@ -563,7 +563,7 @@
 		<item>300</item>
 		<item>320</item>
 		<item>340</item>
-		<item>custom</item>
+		<item>@string/custom_density</item>
 	</string-array>
 
 	<string-array name="weather_interval_entries">

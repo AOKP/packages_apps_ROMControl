@@ -146,10 +146,14 @@
     </string-array>
     <string-array name="pref_lockscreen_options_entries">
         <item>系統預設（雙鍵）</item>
-        <item>四鍵</item>
-        <item>八鍵</item>
         <item>傳統</item>
         <item>Honeycomb</item>
+        <item>3 鍵</item>
+        <item>4 鍵</item>
+        <item>5 鍵</item>
+        <item>6 鍵</item>
+        <item>7 鍵</item>
+        <item>8 鍵</item>
     </string-array>
     <string-array name="pref_lockscreen_calendar_interval_entries">
         <item>1.0 秒</item>
@@ -274,6 +278,7 @@
         <item>最近開啟程式</item>
         <item>搜尋</item>
         <item>選單</item>
+        <item>導航列小工具</item>
         <item>關閉程式</item>
         <item>電源</item>
         <item>自訂應用程式</item>

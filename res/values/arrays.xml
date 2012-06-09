@@ -737,4 +737,28 @@
 	    <item>0</item>
 	    <item>1</item>
 	</string-array>
+
+	<string-array name="less_notification_sounds_entries">
+	    <item>Default behavior</item>
+	    <item>3s</item>
+	    <item>5s</item>
+	    <item>10s</item>
+	    <item>15s</item>
+	    <item>30s</item>
+	    <item>45s</item>
+	    <item>1m</item>
+	    <item>2m</item>
+	</string-array>
+
+	<string-array name="less_notification_sounds_values" translatable="false">
+	    <item>0</item>
+	    <item>3000</item>
+	    <item>5000</item>
+	    <item>10000</item>
+	    <item>15000</item>
+	    <item>30000</item>
+	    <item>45000</item>
+	    <item>60000</item>
+	    <item>120000</item>
+	</string-array>
 </resources>

@@ -122,6 +122,9 @@
 
     <string name="enable_volume_options">Enable Volume Options</string>
 
+    <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
+    <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set value</string>
+
 	<string name="rotate_180_title">Allow 180° rotation</string>
 	<string name="rotate_180_summary">Allow your device to rotate upside down!</string>
 

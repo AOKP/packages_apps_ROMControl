@@ -68,6 +68,13 @@
   <string name="navbar_action_kill">Ukončit aplikaci</string>
   <string name="navbar_action_power">Napájení</string>
   <string name="navbar_action_none">Prázdné</string>
+  <string name="navbar_enable_bar">Povolit lištu</string>
+	<string name="navbar_widgets">Widgety v navigační liště</string>
+	<string name="navbar_widgets_reset">Resetovat widgety v navigační liště</string>
+  <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
+  <string name="navbar_enable_dialog_msg">Pro správné zapnutí/vypnutí navigační lišty je třeba restartovat!</string>
+  <string name="navbar_enable_dialog_negative">Restartovat později</string>
+  <string name="navbar_enable_dialog_Positive">Restartovat nyní!</string>
   <string name="button_transparency_title">Průhlednost navigační lišty</string>
   <string name="long_press_home_title">Akce při dlouhém podržení tlačítka domů</string>
   <string name="long_press_home_summary">Co se stane po dlouhém stisku tlačítka domů. Pro uplatnění změny je vyžadován restart.</string>
@@ -80,7 +87,7 @@
   <string name="rotation_animation_delay_title">Prodleva rotace</string>
   <string name="rotation_animation_delay_summary">Počet milisekund po které musí zůstat telefon v klidu, než dojde k otočení obrazovky. Výchozí hodnota je 200ms.</string>
 	<string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
-	<string name="ime_switcher_summary">Během psaní ve stavové liště (vyžaduje restart)</string>
+	<string name="ime_switcher_summary">Během psaní ve stavové liště</string>
 	<string name="custom_carrier_label_title">Vlastní název operátora</string>
   <string name="custom_carrier_label_empty">Vložit nový název!</string>
 	<string name="custom_carrier_label_warning">Vlastní název není nastaven. Jakmile je definován, nelze to vzít zpátky do provedení plného wipu.</string>

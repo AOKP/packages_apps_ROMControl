@@ -24,6 +24,7 @@ import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 public class UserInterface extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -40,6 +41,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     private static final String PREF_180 = "rotate_180";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
+    private static final String PREF_SCROLL_FRICTION = "scroll_friction";
 
     CheckBoxPreference mCrtOnAnimation;
     CheckBoxPreference mCrtOffAnimation;
@@ -55,6 +57,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     CheckBoxPreference mDisableBootAudio;
     CheckBoxPreference mDisableBugMailer;
     ListPreference mRecentAppSwitcher;
+    SeekBarPreference mScrollFriction;
 
     String mCustomLabelText = null;
     int newDensityValue;
@@ -107,6 +110,14 @@ public class UserInterface extends AOKPPreferenceFragment implements
         mRecentAppSwitcher.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.RECENT_APP_SWITCHER,
                 0)));
+
+        float defaultFriction = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.SCROLL_FRICTION,
+                0.015f);
+
+        mScrollFriction = (SeekBarPreference) findPreference(PREF_SCROLL_FRICTION);
+        mScrollFriction.setInitValue((int) (defaultFriction * 5000));
+        mScrollFriction.setOnPreferenceChangeListener(this);
 
         mLcdDensity = findPreference("lcd_density_setup");
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
@@ -326,6 +337,11 @@ public class UserInterface extends AOKPPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.RECENT_APP_SWITCHER, val);
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mScrollFriction) {
+            float val = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.SCROLL_FRICTION,val / 5000);
             return true;
         }
         return false;

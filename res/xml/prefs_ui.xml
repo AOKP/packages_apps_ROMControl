@@ -2,38 +2,38 @@
 <PreferenceScreen
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<CheckBoxPreference
-		android:key="disable_bootanimation"
-		android:title="@string/disable_bootanimation_title" />
+                <CheckBoxPreference
+                        android:key="disable_bootanimation"
+                        android:title="@string/disable_bootanimation_title" />
 
-	<CheckBoxPreference
-		android:key="disable_bootaudio"
-		android:title="@string/disable_bootaudio_title" />
+                <CheckBoxPreference
+                        android:key="disable_bootaudio"
+                        android:title="@string/disable_bootaudio_title" />
 
-	<CheckBoxPreference
-		android:key="disable_bugmailer"
-		android:title="@string/disable_bugmailer_title" />
+                <CheckBoxPreference
+                        android:key="disable_bugmailer"
+                        android:title="@string/disable_bugmailer_title" />
 
-	<CheckBoxPreference
-		android:key="rotate_180"
-		android:title="@string/rotate_180_title"
-		android:summary="@string/rotate_180_summary" />
+                <CheckBoxPreference
+                        android:key="rotate_180"
+                        android:title="@string/rotate_180_title"
+                        android:summary="@string/rotate_180_summary" />
 
-	<ListPreference
-		android:key="recent_app_switcher"
-		android:title="@string/recent_app_switcher_title"
-		android:summary="@string/recent_app_switcher_summary"
-		android:entries="@array/recent_app_switcher_entries"
-        android:entryValues="@array/recent_app_switcher_values" />
+                <ListPreference
+                        android:key="recent_app_switcher"
+                        android:title="@string/recent_app_switcher_title"
+                        android:summary="@string/recent_app_switcher_summary"
+                        android:entries="@array/recent_app_switcher_entries"
+                        android:entryValues="@array/recent_app_switcher_values" />
 
-	<Preference
-		android:key="lcd_density_setup"
-		android:title="@string/lcd_density_title"
-		android:summary="@string/lcd_density_summary" />
+	        <Preference
+                        android:key="lcd_density_setup"
+                        android:title="@string/lcd_density_title"
+                        android:summary="@string/lcd_density_summary" />
 
-	<PreferenceCategory
-		android:key="crt"
-		android:title="@string/crt_animations_header">
+	        <PreferenceCategory
+	                android:key="crt"
+		        android:title="@string/crt_animations_header">
 
 		<CheckBoxPreference
 			android:key="crt_on"
@@ -49,12 +49,17 @@
 		android:key="misc"
 		android:title="@string/misc_short">
 
+                <com.aokp.romcontrol.widgets.SeekBarPreference
+			android:key="scroll_friction"
+			android:title="@string/scroll_friction_title" />
+
+
 		<CheckBoxPreference
 			android:key="ime_switcher"
 			android:title="@string/ime_switcher_title"
 			android:summary="@string/ime_switcher_summary" />
 
-         <CheckBoxPreference
+                <CheckBoxPreference
 			android:key="enable_volume_options"
 			android:title="@string/enable_volume_options" />
 

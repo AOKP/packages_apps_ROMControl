@@ -79,6 +79,10 @@
   <string name="long_press_home_title">Akce při dlouhém podržení tlačítka domů</string>
   <string name="long_press_home_summary">Co se stane po dlouhém stisku tlačítka domů. Pro uplatnění změny je vyžadován restart.</string>
   <string name="glow_times_title">Animace světelného efektu tlačítek</string>
+  <string name="glow_times_off">Vypnuta</string>
+  <string name="glow_times_superquick">Hodně rychlá</string>
+  <string name="glow_times_quick">Rychlá</string>
+  <string name="glow_times_normal">Normální</string>
   <string name="glow_times_summary">Přizpůsobení délky trvání světelného efektu po klepnutí na tlačítka. Snížení rychlosti může zvýšit výkon.</string>
   <string name="combined_bar_title">Kombinovaná lišta</string>
   <string name="combined_bar_auto_hide_title">Automaticky skrývat</string>
@@ -94,6 +98,8 @@
 	<string name="longpress_to_kill_title">Podržet zpět pro ukončení</string>
 	<string name="longpress_to_kill_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
+  <string name="less_notification_sounds_title">Méně častá zvuková upozornění</string>
+  <string name="less_notification_sounds_summary">Omezit zvuková upozornění jednotlivých aplikací, aby hrála pouze jednou za nastavený čas.</string>
 	<string name="rotate_180_title">Umožnit rotaci o 180°</string>
 	<string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
   <string name="recent_app_switcher_title">Styl přepínače aplikací</string>

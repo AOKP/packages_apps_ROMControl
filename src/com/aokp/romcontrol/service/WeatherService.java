@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
@@ -27,8 +28,11 @@ public class WeatherService extends IntentService {
 
     public static final String TAG = "WeatherService";
 
-    public static final String INTENT_REQUEST_WEATHER = "com.aokp.romcontrol.INTENT_WEATHER_REQUEST";
-    public static final String INTENT_UPDATE_WEATHER = "com.aokp.romcontrol.INTENT_WEATHER_UPDATE";
+    public static final String INTENT_WEATHER_REQUEST = "com.aokp.romcontrol.INTENT_WEATHER_REQUEST";
+    public static final String INTENT_WEATHER_UPDATE = "com.aokp.romcontrol.INTENT_WEATHER_UPDATE";
+    public static final String INTENT_EXTRA_ISMANUAL = "com.aokp.romcontrol.INTENT_EXTRA_ISMANUAL";
+    public static final String INTENT_EXTRA_TYPE = "com.aokp.romcontrol.INTENT_EXTRA_TYPE";
+    public static final String INTENT_EXTRA_NEWLOCATION = "com.aokp.romcontrol.INTENT_EXTRA_NEWLOCATION";
 
     public static final String EXTRA_CITY = "city";
     public static final String EXTRA_FORECAST_DATE = "forecast_date";
@@ -81,23 +85,33 @@ public class WeatherService extends IntentService {
             stopSelf();
             return;
         }
-        
-        if (action != null && action.equals(INTENT_REQUEST_WEATHER)) {
+
+        if (action != null && action.equals(INTENT_WEATHER_REQUEST)) {
             // custom location
             boolean useCustomLoc = WeatherPrefs.getUseCustomLocation(getApplicationContext());
             String customLoc = WeatherPrefs.getCustomLocation(getApplicationContext());
+            boolean manual = false;
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                manual = extras.getBoolean(INTENT_EXTRA_ISMANUAL, false);
+            }
             if (customLoc != null && useCustomLoc) {
+                if (manual) {
+                    makeToast(context.getString(R.string.weather_refreshing));
+                }
                 woeid = YahooPlaceFinder.GeoCode(getApplicationContext(), customLoc);
                 // network location
             } else {
                 // do not attempt to get a location without data
                 boolean networkAvailable = Helpers.isNetworkAvailable(getApplicationContext());
                 if(networkAvailable) {
-					makeToast(context.getString(R.string.weather_refreshing));
+                    if (manual) {
+                        makeToast(context.getString(R.string.weather_refreshing));
+                    }
                     final LocationManager locationManager = (LocationManager) this
                             .getSystemService(Context.LOCATION_SERVICE);
-                    if (!intent.hasExtra("newlocation")) {
-                        intent.putExtra("newlocation", true);
+                    if (!intent.hasExtra(INTENT_EXTRA_NEWLOCATION)) {
+                        intent.putExtra(INTENT_EXTRA_NEWLOCATION, true);
                         PendingIntent pi = PendingIntent.getService(getApplicationContext(), 0, intent,
                                 PendingIntent.FLAG_CANCEL_CURRENT);
                         locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, pi);
@@ -120,10 +134,12 @@ public class WeatherService extends IntentService {
                         e.printStackTrace();
                     }
                 } else {
-                    makeToast(context.getString(R.string.location_unavailable));
-					stopSelf();
-					return;
-                }	
+                    if (manual) {
+                        makeToast(context.getString(R.string.location_unavailable));
+                    }
+                    stopSelf();
+                    return;
+                }
             }
             try {
                 w = parseXml(getDocument(woeid));
@@ -165,7 +181,7 @@ public class WeatherService extends IntentService {
     }
 
     private void sendBroadcast(WeatherInfo w) {
-        Intent broadcast = new Intent(INTENT_UPDATE_WEATHER);
+        Intent broadcast = new Intent(INTENT_WEATHER_UPDATE);
         try {
             broadcast.putExtra(EXTRA_CITY, w.city);
             broadcast.putExtra(EXTRA_CONDITION, w.condition);

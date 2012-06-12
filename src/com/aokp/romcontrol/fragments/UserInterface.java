@@ -40,6 +40,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     private static final String PREF_180 = "rotate_180";
     private static final String PREF_HOME_LONGPRESS = "long_press_home";
     private static final String PREF_RECENT_APP_SWITCHER = "recent_app_switcher";
+    private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
     CheckBoxPreference mCrtOnAnimation;
     CheckBoxPreference mCrtOffAnimation;
@@ -55,6 +56,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     CheckBoxPreference mDisableBootAudio;
     CheckBoxPreference mDisableBugMailer;
     ListPreference mRecentAppSwitcher;
+    ListPreference mAnnoyingNotifications;
 
     String mCustomLabelText = null;
     int newDensityValue;
@@ -106,6 +108,12 @@ public class UserInterface extends AOKPPreferenceFragment implements
         mRecentAppSwitcher.setOnPreferenceChangeListener(this);
         mRecentAppSwitcher.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.RECENT_APP_SWITCHER,
+                0)));
+
+        mAnnoyingNotifications = (ListPreference) findPreference(PREF_LESS_NOTIFICATION_SOUNDS);
+        mAnnoyingNotifications.setOnPreferenceChangeListener(this);
+        mAnnoyingNotifications.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
                 0)));
 
         mLcdDensity = findPreference("lcd_density_setup");
@@ -326,6 +334,11 @@ public class UserInterface extends AOKPPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.RECENT_APP_SWITCHER, val);
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mAnnoyingNotifications) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
             return true;
         }
         return false;

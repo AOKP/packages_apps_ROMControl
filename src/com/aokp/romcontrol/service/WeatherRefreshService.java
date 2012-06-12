@@ -55,7 +55,8 @@ public class WeatherRefreshService extends Service {
         }
 
         Intent i = new Intent(getApplicationContext(), WeatherRefreshService.class);
-        i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+        i.setAction(WeatherService.INTENT_WEATHER_REQUEST);
+        i.putExtra(WeatherService.INTENT_EXTRA_ISMANUAL, false);
 
         weatherRefreshIntent = PendingIntent.getService(getApplicationContext(), 0, i,
                 0);
@@ -77,9 +78,10 @@ public class WeatherRefreshService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         refreshIntervalInMinutes = WeatherPrefs.getRefreshInterval(mContext);
         if (intent.getAction() != null) {
-            if (intent.getAction().equals(WeatherService.INTENT_REQUEST_WEATHER)) {
+            if (intent.getAction().equals(WeatherService.INTENT_WEATHER_REQUEST)) {
                 Intent i = new Intent(getApplicationContext(), WeatherService.class);
-                i.setAction(WeatherService.INTENT_REQUEST_WEATHER);
+                i.setAction(WeatherService.INTENT_WEATHER_REQUEST);
+                i.putExtra(WeatherService.INTENT_EXTRA_ISMANUAL, false);
                 getApplicationContext().startService(i);
             }
         }

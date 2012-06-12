@@ -21,15 +21,16 @@ public class WeatherReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
-        if (action.equals(WeatherService.INTENT_REQUEST_WEATHER)) {
+        if (action.equals(WeatherService.INTENT_WEATHER_REQUEST)) {
 
             boolean updateweather = true;
+            boolean manual = false;
             Bundle extras = intent.getExtras();
             if (extras != null) {
-                String type = extras.getString(Intent.EXTRA_TEXT);
+                String type = extras.getString(WeatherService.INTENT_EXTRA_TYPE, "updateweather");
+                manual = extras.getBoolean(WeatherService.INTENT_EXTRA_ISMANUAL, false);
                 if (type != null) {
                     if (type.equals("startapp")) {
-
                         if (WeatherPrefs.getUseCustomApp(context.getApplicationContext())) {
                             Intent appintent = null;
                             try {
@@ -56,6 +57,7 @@ public class WeatherReceiver extends BroadcastReceiver {
                             Settings.System.USE_WEATHER, 0) != 0) {
                 Intent getWeatherNow = new Intent(context, WeatherService.class);
                 getWeatherNow.setAction(action);
+                getWeatherNow.putExtra(WeatherService.INTENT_EXTRA_ISMANUAL, manual);
                 context.startService(getWeatherNow);
             }
         }

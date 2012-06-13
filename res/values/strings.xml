@@ -257,6 +257,9 @@
     <string name="title_show_airplane_toggle">Show airplane toggle</string>
     <string name="title_show_navbar_hide">Show navigation bar toggle</string>
 
+    <!-- Clipboard -->
+    <string name="clipboard_notification">Copied to clipboard.</string>
+
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>

@@ -27,9 +27,9 @@
   <string name="header_summary_led">Změna výchozího nastavení Androidu</string>
   <string name="header_summary_general">Nastavení chování tlačítek</string>
   <string name="header_summary_toggles">Přizpůsobit přepínače</string>
-	<string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
-	<string name="header_summary_weather">Vypnout/zapnout, nastavení vlastní polohy nebo sítě a také intervalu</string>
-	<string name="header_summary_signal">Signál zobrazen v dBm</string>
+  <string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
+  <string name="header_summary_weather">Vypnout/zapnout, nastavení vlastní polohy nebo sítě a také intervalu</string>
+  <string name="header_summary_signal">Signál zobrazen v dBm</string>
   <string name="advanced_settings">Pokročilá nastavení</string>
   <string name="misc_short">Ostatní</string>
   <!-- Menu Strings -->
@@ -69,8 +69,8 @@
   <string name="navbar_action_power">Napájení</string>
   <string name="navbar_action_none">Prázdné</string>
   <string name="navbar_enable_bar">Povolit lištu</string>
-	<string name="navbar_widgets">Widgety v navigační liště</string>
-	<string name="navbar_widgets_reset">Resetovat widgety v navigační liště</string>
+  <string name="navbar_widgets">Widgety v navigační liště</string>
+  <string name="navbar_widgets_reset">Resetovat widgety v navigační liště</string>
   <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
   <string name="navbar_enable_dialog_msg">Pro správné zapnutí/vypnutí navigační lišty je třeba restartovat!</string>
   <string name="navbar_enable_dialog_negative">Restartovat později</string>
@@ -90,52 +90,52 @@
   <!-- UI -->
   <string name="rotation_animation_delay_title">Prodleva rotace</string>
   <string name="rotation_animation_delay_summary">Počet milisekund po které musí zůstat telefon v klidu, než dojde k otočení obrazovky. Výchozí hodnota je 200ms.</string>
-	<string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
-	<string name="ime_switcher_summary">Během psaní ve stavové liště</string>
-	<string name="custom_carrier_label_title">Vlastní název operátora</string>
+  <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
+  <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
+  <string name="custom_carrier_label_title">Vlastní název operátora</string>
   <string name="custom_carrier_label_empty">Vložit nový název!</string>
-	<string name="custom_carrier_label_warning">Vlastní název není nastaven. Jakmile je definován, nelze to vzít zpátky do provedení plného wipu.</string>
-	<string name="longpress_to_kill_title">Podržet zpět pro ukončení</string>
-	<string name="longpress_to_kill_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
+  <string name="custom_carrier_label_warning">Vlastní název není nastaven. Jakmile je definován, nelze to vzít zpátky do provedení plného wipu.</string>
+  <string name="longpress_to_kill_title">Podržet zpět pro ukončení</string>
+  <string name="longpress_to_kill_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
   <string name="less_notification_sounds_title">Méně častá zvuková upozornění</string>
   <string name="less_notification_sounds_summary">Omezit zvuková upozornění jednotlivých aplikací, aby hrála pouze jednou za nastavený čas.</string>
-	<string name="rotate_180_title">Umožnit rotaci o 180°</string>
-	<string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
+  <string name="rotate_180_title">Umožnit rotaci o 180°</string>
+  <string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
   <string name="recent_app_switcher_title">Styl přepínače aplikací</string>
   <string name="recent_app_switcher_summary">Změnit styl přepínače aplikací (vyžaduje restart UI)</string>
-	<string name="disable_bootanimation_title">Vypnout startovací animaci</string>
-	<string name="disable_bootanimation_summary">Heteráku :D</string>
+  <string name="disable_bootanimation_title">Vypnout startovací animaci</string>
+  <string name="disable_bootanimation_summary">Heteráku :D</string>
   <string name="disable_bootaudio_title">Vypnout startovací zvuk</string>
-	<string name="disable_bootaudio_summary">Ticho!</string>
-	<string name="disable_bootaudio_summary_disabled">Pro zapnutí startovacího zvuku musí být MP3 soubor umístěn v \n/system/media/boot_audio.mp3</string>
-	<string name="disable_bugmailer_title">Vypnout bugmailer</string>
+  <string name="disable_bootaudio_summary">Ticho!</string>
+  <string name="disable_bootaudio_summary_disabled">Pro zapnutí startovacího zvuku musí být MP3 soubor umístěn v \n/system/media/boot_audio.mp3</string>
+  <string name="disable_bugmailer_title">Vypnout bugmailer</string>
   <string name="lcd_density_title">Hustota displeje</string>
-	<string name="lcd_density_summary">Kolik bodů na palec se zobrazuje</string>
-	<!-- CRT animations -->
-	<string name="crt_animations_header">CRT animace</string>
-	<string name="crt_on_title">CRT animace při zapnutí</string>
-	<string name="crt_off_title">CRT animace při vypnutí</string>
-	<!-- LCD Density -->
-	<string name="lcd_density_wizard">Průvodce nastavením hustoty displeje</string>
-	<string name="follow_through_title">Je nutné projít celý postup!</string>
-	<string name="follow_through_summary">Následující kroky je nutné projít jeden po druhém. Před přechodem na další krok je nutné mít splněné všechny pokyny aktuálního kroku.</string>
-	<string name="stock_density_title">1. Změna hustoty displeje na výchozí hodnotu</string>
-	<string name="stock_density_summary">Tablety a starší telefony používají hustotu 160. Většina telefonů používá 240. Galaxy Nexus má výchozí hodnotu 320.</string>
-	<string name="reboot_title">2. Restart!</string>
-	<string name="reboot_summary">Po restartu je nutné se sem vrátit a dokončit ostatní kroky!</string>
-	<string name="clear_market_data_title">3. Vymazání dat Obchodu Play</string>
-	<string name="clear_market_data_cleared">Data Obchodu Play byla vymazána</string>
-	<string name="open_market_title">4. Otevřít Obchod Play a přijmout podmínky</string>
-	<string name="open_market_summary">Pro návrat po dokončení stačí stisknout tlačítko zpět.</string>
-	<string name="custom_density_title">5. Změnit hostotu displeje na libovolnou hodnotu!</string>
-	<string name="custom_density_summary">Pokud se vyskytnou jakékoliv problémy s kompatibilitou Obchodu Play, je třeba zopakovat tyto kroky.</string>
+  <string name="lcd_density_summary">Kolik bodů na palec se zobrazuje</string>
+  <!-- CRT animations -->
+  <string name="crt_animations_header">CRT animace</string>
+  <string name="crt_on_title">CRT animace při zapnutí</string>
+  <string name="crt_off_title">CRT animace při vypnutí</string>
+  <!-- LCD Density -->
+  <string name="lcd_density_wizard">Průvodce nastavením hustoty displeje</string>
+  <string name="follow_through_title">Je nutné projít celý postup!</string>
+  <string name="follow_through_summary">Následující kroky je nutné projít jeden po druhém. Před přechodem na další krok je nutné mít splněné všechny pokyny aktuálního kroku.</string>
+  <string name="stock_density_title">1. Změna hustoty displeje na výchozí hodnotu</string>
+  <string name="stock_density_summary">Tablety a starší telefony používají hustotu 160. Většina telefonů používá 240. Galaxy Nexus má výchozí hodnotu 320.</string>
+  <string name="reboot_title">2. Restart!</string>
+  <string name="reboot_summary">Po restartu je nutné se sem vrátit a dokončit ostatní kroky!</string>
+  <string name="clear_market_data_title">3. Vymazání dat Obchodu Play</string>
+  <string name="clear_market_data_cleared">Data Obchodu Play byla vymazána</string>
+  <string name="open_market_title">4. Otevřít Obchod Play a přijmout podmínky</string>
+  <string name="open_market_summary">Pro návrat po dokončení stačí stisknout tlačítko zpět.</string>
+  <string name="custom_density_title">5. Změnit hostotu displeje na libovolnou hodnotu!</string>
+  <string name="custom_density_summary">Pokud se vyskytnou jakékoliv problémy s kompatibilitou Obchodu Play, je třeba zopakovat tyto kroky.</string>
   <!-- Lockscreens -->
   <string name="pref_lockscreen_layout_title">Styl zámku obrazovky</string>
   <string name="pref_lockscreen_layout_summary">Po změně stylu je třeba se posunout dolů v nastavení a vybrat správné hodnoty (cíle) zámku obrazovky</string>
-  <string name="title_pref_lockscreen_quad_targets">4 položky</string>	
+  <string name="title_pref_lockscreen_quad_targets">4 položky</string>
   <string name="summary_pref_lockscreen_quad_targets">Přidává telefon a zprávy na zámek obrazovky</string>
-  <string name="title_pref_lockscreen_octo_targets">8 položek</string>	
+  <string name="title_pref_lockscreen_octo_targets">8 položek</string>
   <string name="summary_pref_lockscreen_octo_targets">Přidává mnoho zástupců na zámek obrazovky</string>
   <string name="title_pref_lockscreen_menu_unlock">Odemčení tlačítkem menu</string>
   <string name="summary_pref_lockscreen_menu_unlock">Tlačítko menu odemkne obrazovku (vyžaduje restart)</string>
@@ -151,6 +151,8 @@
   <string name="volume_wake_summary">Stisknutím tlačítka hlasitosti ve vypnutém stavu dojde k zapnutí obrazovky.</string>
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
   <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
+  <string name="lockscreen_stock_music_layout_title">Výchozí vzhled hudby</string>
+  <string name="lockscreen_stock_music_layout_summary">Použít při přehrávání hudby výchozí vzhled.</string>
   <string name="lockscreen_show_nav_title">Skrýt navigační lištu</string>
   <string name="lockscreen_show_nav_summary">Skrýt navigační lištu (pokud to zařízení podporuje) na zamčené obrazovce.</string>
   <string name="custom_app_n_dialog_title">Zvolit akci pro položku %1$s</string>
@@ -193,6 +195,7 @@
   <string name="title_show_torch_toggle">Zobrazovat přepínač svítilny</string>
   <string name="title_show_airplane_toggle">Zobrazovat přepínač letového módu</string>
   <string name="title_show_navbar_hide">Zobrazovat přepínač navigační lišty</string>
+  <string name="clipboard_notification">Zkopírováno do schránky.</string>
   <!-- Power Saving -->
   <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
   <string name="summary_pref_powersaving_pref_mode">@null</string>
@@ -267,17 +270,17 @@
   <string name="brightness_location_title">Pozice nastavení jasu</string>
   <string name="reset_toggles_title">Vyresetovat přepínače</string>
   <string name="reset_toggles_summary">Vyresetovat všechny přepínače a jejich pořadí</string>
-	<!-- Statusbar | Signal -->
-	<string name="signal_style">Styl ukazatele signálu</string>
-	<string name="signal_color_title">Barva ukazatele signálu</string>
-	<string name="hide_signal_title">Skrýt graficky ukazatel signálu</string>
-	<string name="hide_signal_summary">Skryje také ukazatel dat (prozatím). Později bude možné skrývat odděleně.</string>
+  <!-- Statusbar | Signal -->
+  <string name="signal_style">Styl ukazatele signálu</string>
+  <string name="signal_color_title">Barva ukazatele signálu</string>
+  <string name="hide_signal_title">Skrýt graficky ukazatel signálu</string>
+  <string name="hide_signal_summary">Skryje také ukazatel dat (prozatím). Později bude možné skrývat odděleně.</string>
   <string name="wifi_signal_style">Textový styl ukazatele WiFi</string>
-	<string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
+  <string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
   <!-- Color Picker -->
   <string name="dialog_color_picker">Výběr barvy</string>
-  <string name="press_color_to_apply">Stisknutím se barva aplikuje</string>   
-  <string name="arrow_right">→</string> 
+  <string name="press_color_to_apply">Stisknutím se barva aplikuje</string>
+  <string name="arrow_right">→</string>
   <string name="arrow_down">↓</string>
   <string name="hex">Hex:</string>
   <string name="hex_hint">#FF000000</string>
@@ -285,73 +288,73 @@
   <string name="ics_color">!!!</string>
   <!-- Shortcut picker -->
   <string name="use_custom_app_title">Použít vlastní aplikaci</string>
-	<string name="use_custom_app_summary">Místo přehledu posledních otevřených aplikací použít vlastní aplikaci</string>
-	<string name="select_custom_app_title">Vybrat vlastní aplikaci</string>
-	<string name="group_applications">Aplikace</string>
-	<!-- Weather -->
-	<string name="weather_enable">Zapnout počasí</string>
-	<string name="weather_enable_summary">Určuje kdy a kde se mají zobrazovat informace o počasí.</string>
-	<string name="weather_use_custom_location">Použít vlastní polohu</string>
-	<string name="weather_use_custom_location_summary">Nastavení vlastní polohy může ušetřit trochu baterie. Jinak se používá zjištění polohy podle sítě.</string>
-	<string name="weather_custom_location_dialog_title">Nastavit polohu</string>
-	<string name="weather_custom_location_dialog_message">Je nutné dodržet formát z příkladů! Nastavení špatné polohy způsobí nefunkčnost stahování informací o počasí, a také může způsobit nečekané chování.\n\nPříklady: New York,NY // New York, NY // 10033 // London, England</string>
-	<string name="weather_custom_location_title">Vlastní poloha</string>
-	<string name="weather_show_location_title">Zobrazit polohu</string>
-	<string name="weather_show_location_summary">Zobrazit aktuální polohu.</string>
-	<string name="weather_refresh_interval">Interval obnovení</string>
-	<string name="weather_use_celcius">Metrické jednotky (naše české)</string>
-	<string name="weather_use_celcius_summary">Povolením této volby dojde k zobrazování teploty ve stupních Celsia místo Fahrenheitech a rychlost větru v km/h místo m/h.</string>
-	<string name="weather_statusbar_style">Styl počasí ve stavové liště</string>
-	<string name="weather_start_custom_app">Spustit vlastní aplikaci</string>
-	<string name="weather_start_custom_app_summary">Po kliknutí na obrázek počasí spustit vlastní aplikaci.</string>
+  <string name="use_custom_app_summary">Místo přehledu posledních otevřených aplikací použít vlastní aplikaci</string>
+  <string name="select_custom_app_title">Vybrat vlastní aplikaci</string>
+  <string name="group_applications">Aplikace</string>
+  <!-- Weather -->
+  <string name="weather_enable">Zapnout počasí</string>
+  <string name="weather_enable_summary">Určuje kdy a kde se mají zobrazovat informace o počasí.</string>
+  <string name="weather_use_custom_location">Použít vlastní polohu</string>
+  <string name="weather_use_custom_location_summary">Nastavení vlastní polohy může ušetřit trochu baterie. Jinak se používá zjištění polohy podle sítě.</string>
+  <string name="weather_custom_location_dialog_title">Nastavit polohu</string>
+  <string name="weather_custom_location_dialog_message">Je nutné dodržet formát z příkladů! Nastavení špatné polohy způsobí nefunkčnost stahování informací o počasí, a také může způsobit nečekané chování.\n\nPříklady: New York,NY // New York, NY // 10033 // London, England</string>
+  <string name="weather_custom_location_title">Vlastní poloha</string>
+  <string name="weather_show_location_title">Zobrazit polohu</string>
+  <string name="weather_show_location_summary">Zobrazit aktuální polohu.</string>
+  <string name="weather_refresh_interval">Interval obnovení</string>
+  <string name="weather_use_celcius">Metrické jednotky (naše české)</string>
+  <string name="weather_use_celcius_summary">Povolením této volby dojde k zobrazování teploty ve stupních Celsia místo Fahrenheitech a rychlost větru v km/h místo m/h.</string>
+  <string name="weather_statusbar_style">Styl počasí ve stavové liště</string>
+  <string name="weather_start_custom_app">Spustit vlastní aplikaci</string>
+  <string name="weather_start_custom_app_summary">Po kliknutí na obrázek počasí spustit vlastní aplikaci.</string>
   <string name="weather_custom_app_title">Vlastní aplikace</string>
   <string name="weather_custom_app_dialog_title">Vybrat aplikaci</string>
-	<string name="weather_custom_app_dialog_message">Název balíčku (prozatím).</string>
-	<string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>	
-	<!-- Dialog Titles -->
-	<string name="dt_free_memory">Minfree Taskkiller</string>
-	<!-- Preference Categories -->
-	<string name="prefcat_cpu">Nastavení CPU</string>
-	<string name="prefcat_free_memory">Volná paměť</string>
-	<string name="pc_tweaks">Vylepšení</string>
-	<string name="pc_init_d">Zapnout/vypnout vylepšení</string>
-	<string name="pc_init_d_tweaks">Přizpůsobit vylepšení</string>
-	<!-- Preference Titles -->
-	<!-- Main -->
-	<string name="pt_performance">Výkon</string>
-	<string name="pt_customization">Přizpůsobení</string>
-	<string name="pt_tools">Nástroje</string>
-	<string name="pt_mod_version">Verze ROM</string>
-	<!-- Customization -->
-	<string name="pt_liberty_customizer">Liberty Customizer</string>
-	<string name="pt_lockscreen">Lockscreen Settings</string>
-	<string name="pt_ui_status_bar">Status Bar</string>
-	<string name="pt_pulldown_text">Pulldown Text</string>
-	<string name="pt_theme_manager">Theme Manager</string>
-	<!-- Tools -->
-	<string name="pt_spare_parts">Spare Parts</string>
-	<string name="pt_dev_tools">Dev Tools</string>
-	<string name="pt_dsp_manager">DSP Manager</string>
-	<string name="pt_testing_menu">Testing Menu</string>
-	<!-- Start up tweaks -->
-	<string name="pt_init_d">Startovací tweaky</string>
-	<string name="pt_enable_init_d">Zapnout tweaky při startu</string>
-	<string name="pt_zipalign">Zipalignovat apky</string>
-	<string name="pt_enable_sd_boost">Zapnout zrychlení SD</string>
-	<string name="pt_sd_boost">Hodnota předběžného čtení</string>
-	<string name="pt_fix_permissions">Opravit oprávnění</string>
-	<string name="pt_clear_cache">Vymazat cache</string>
-	<string name="pt_enable_sysctl">Zapnout sysctl</string>
-	<string name="pt_enable_cron">Zapnout plánované úlohy</string>
-	<!-- Performance -->
-	<string name="pt_set_cpu_activity">Nastavení CPU</string>
-	<string name="pt_free_memory">Volná paměť</string>
-	<string name="pt_free_memory_boot">Nastavit při startu</string>
-	<!-- Cpu -->
-	<string name="pt_set_max">Maximální frekvence CPU</string>
-	<string name="pt_set_min">Minimální frekvence CPU</string>
-	<string name="pt_set_gov">Metoda škálování (governor)</string>
-	<string name="pt_cpu_boot">Nastavit při startu</string>
+  <string name="weather_custom_app_dialog_message">Název balíčku (prozatím).</string>
+  <string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>
+  <!-- Dialog Titles -->
+  <string name="dt_free_memory">Minfree Taskkiller</string>
+  <!-- Preference Categories -->
+  <string name="prefcat_cpu">Nastavení CPU</string>
+  <string name="prefcat_free_memory">Volná paměť</string>
+  <string name="pc_tweaks">Vylepšení</string>
+  <string name="pc_init_d">Zapnout/vypnout vylepšení</string>
+  <string name="pc_init_d_tweaks">Přizpůsobit vylepšení</string>
+  <!-- Preference Titles -->
+  <!-- Main -->
+  <string name="pt_performance">Výkon</string>
+  <string name="pt_customization">Přizpůsobení</string>
+  <string name="pt_tools">Nástroje</string>
+  <string name="pt_mod_version">Verze ROM</string>
+  <!-- Customization -->
+  <string name="pt_liberty_customizer">Liberty Customizer</string>
+  <string name="pt_lockscreen">Lockscreen Settings</string>
+  <string name="pt_ui_status_bar">Status Bar</string>
+  <string name="pt_pulldown_text">Pulldown Text</string>
+  <string name="pt_theme_manager">Theme Manager</string>
+  <!-- Tools -->
+  <string name="pt_spare_parts">Spare Parts</string>
+  <string name="pt_dev_tools">Dev Tools</string>
+  <string name="pt_dsp_manager">DSP Manager</string>
+  <string name="pt_testing_menu">Testing Menu</string>
+  <!-- Start up tweaks -->
+  <string name="pt_init_d">Startovací tweaky</string>
+  <string name="pt_enable_init_d">Zapnout tweaky při startu</string>
+  <string name="pt_zipalign">Zipalignovat apky</string>
+  <string name="pt_enable_sd_boost">Zapnout zrychlení SD</string>
+  <string name="pt_sd_boost">Hodnota předběžného čtení</string>
+  <string name="pt_fix_permissions">Opravit oprávnění</string>
+  <string name="pt_clear_cache">Vymazat cache</string>
+  <string name="pt_enable_sysctl">Zapnout sysctl</string>
+  <string name="pt_enable_cron">Zapnout plánované úlohy</string>
+  <!-- Performance -->
+  <string name="pt_set_cpu_activity">Nastavení CPU</string>
+  <string name="pt_free_memory">Volná paměť</string>
+  <string name="pt_free_memory_boot">Nastavit při startu</string>
+  <!-- Cpu -->
+  <string name="pt_set_max">Maximální frekvence CPU</string>
+  <string name="pt_set_min">Minimální frekvence CPU</string>
+  <string name="pt_set_gov">Metoda škálování (governor)</string>
+  <string name="pt_cpu_boot">Nastavit při startu</string>
   <string name="pt_volt_control">Nastavení voltáže</string>
   <!-- Scrolling Cache -->
   <string name="pref_scrollingcache_title">Mezipaměť skrolování</string>
@@ -360,67 +363,67 @@
   <string name="pref_scrollingcache_default_enable">Zapnuto jako výchozí</string>
   <string name="pref_scrollingcache_default_disable">Vypnuto jako výchozí</string>
   <string name="pref_scrollingcache_force_disable">Vynutit vypnutí</string>
-	<!-- Preference Summaries -->
-	<!-- Main -->
-	<string name="ps_performance">Nastavení CPU, volná paměť a přizpůsobení startovacího nastavení.</string>
-	<string name="ps_customization">Přizpůsobení zamknuté obrazovky a stavové lišty. Instalovat blur/aosp aplikace s Liberty přizpůsobením</string>
-	<string name="ps_tools">Různé systémové nástroje</string>
-	<!-- Customization -->
-	<string name="ps_liberty_customizer">Přizpůsobení ROM vlastním potřebám</string>
-	<string name="ps_lockscreen">Change lockscreen styles and manage widgets
-	</string>
-	<string name="ps_ui_status_bar">Přizpůsobení stavové lišty</string>
-	<string name="ps_pulldown_text">Změnit text ve vysouvací liště.</string>
-	<string name="ps_theme_manager">Instalovat vlastní téma vzhledu pro Liberty ROM</string>
-	<!-- Tools -->
-	<string name="ps_spare_parts">Různá přizpůsobení a tweaky</string>
-	<string name="ps_dev_tools">Nástroje pro vývojáře a pokročilé uživatele</string>
-	<string name="ps_dsp_manager">Stand alone equalizer</string>
-	<string name="ps_testing_menu">Informace o telefonu, baterii, statistiky užívání</string>
-	<!-- Start up tweaks -->
-	<string name="ps_init_d">Konfigurovat tweaky spouštěné při každém startu (init.d)</string>
-	<string name="ps_enable_init_d">Zapnout/vypnout startovací tweaky</string>
-	<string name="ps_zipalign">Zipalignovat všechny nezalignované aplikace při startu</string>
-	<string name="ps_enable_sd_boost">Zapnout/vypnout zrychlení SD karty</string>
-	<string name="ps_sd_boost">Nastavit hodnotu předběžného čtení v kb</string>
-	<string name="ps_fix_permissions">Opravit oprávnění aplikací při každém startu</string>
-	<string name="ps_clear_cache">Vymazat cache při každém startu</string>
-	<string name="ps_enable_sysctl">Zapnout tweaky sysctl při startu</string>
-	<string name="ps_enable_cron">Zapnout naplánované úlohy cronu</string>
-	<!-- CPU -->
-	<string name="ps_set_max">Nastavit maximální frekvenci škálování\nAktuálně: %s</string>
-	<string name="ps_set_min">Nastavit minimální frekvenci škálování\nAktuálně: %s</string>
-	<string name="ps_set_gov">Nastavit metodu škálování\nAktuálně: %s</string>
-	<string name="ps_cpu_boot">Nastavit hodnoty CPU při startu</string>
-	<!-- Performance -->
-	<string name="ps_set_cpu_activity">Nastavit minimální/maximální frekvenci a metodu škálování (governor)</string>
-	<string name="ps_free_memory">Množství paměti, které minfree taskkiler ponechá volné |
-		Aktuálně: %s</string>
-	<string name="ps_free_memory_boot">Použít výše uvedené množství při startu</string>
-	<!-- Toast Messages -->
-	<string name="toast_min_max_error01">Maximální frekvence CPU nemůže být nižší než minimální.</string>
-	<string name="toast_min_max_error02">Minimální frekvence CPU nemůže být vyšší než maximální.</string>
-	<!-- list_voltage -->
-	<string name="freq">Frekvence</string>
-	<string name="current">aktuálně mV</string>
-	<string name="saved">uloženo mV</string>
-	<!-- voltage -->
-	<string name="error_values">Hodnoty způsobující chybu</string>
-	<string name="set_boot">Nastavit při startu</string>
-	<string name="apply_values">Použít hodnoty</string>
-	<string name="dpi">DPI</string>
-	<string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
-	<string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
-	<string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
-	<string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
-	<string name="donate_khasmek">@null</string>
-	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
-	<string name="devs">Vývojáři</string>
-	<string name="aokp">Android Open Kang Project</string>
-	<string name="aokp_website_title">Web AOKP</string>
-	<string name="aokp_website_summary">www.aokp.co - Zde jsou k nalezení nejnovější verze.</string>
-	<string name="aokp_source_title">AOKP Source</string>
-	<string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlídnout nejnovější verzi na github.com/aokp</string>
+  <!-- Preference Summaries -->
+  <!-- Main -->
+  <string name="ps_performance">Nastavení CPU, volná paměť a přizpůsobení startovacího nastavení.</string>
+  <string name="ps_customization">Přizpůsobení zamknuté obrazovky a stavové lišty. Instalovat blur/aosp aplikace s Liberty přizpůsobením</string>
+  <string name="ps_tools">Různé systémové nástroje</string>
+  <!-- Customization -->
+  <string name="ps_liberty_customizer">Přizpůsobení ROM vlastním potřebám</string>
+  <string name="ps_lockscreen">Change lockscreen styles and manage widgets
+  </string>
+  <string name="ps_ui_status_bar">Přizpůsobení stavové lišty</string>
+  <string name="ps_pulldown_text">Změnit text ve vysouvací liště.</string>
+  <string name="ps_theme_manager">Instalovat vlastní téma vzhledu pro Liberty ROM</string>
+  <!-- Tools -->
+  <string name="ps_spare_parts">Různá přizpůsobení a tweaky</string>
+  <string name="ps_dev_tools">Nástroje pro vývojáře a pokročilé uživatele</string>
+  <string name="ps_dsp_manager">Stand alone equalizer</string>
+  <string name="ps_testing_menu">Informace o telefonu, baterii, statistiky užívání</string>
+  <!-- Start up tweaks -->
+  <string name="ps_init_d">Konfigurovat tweaky spouštěné při každém startu (init.d)</string>
+  <string name="ps_enable_init_d">Zapnout/vypnout startovací tweaky</string>
+  <string name="ps_zipalign">Zipalignovat všechny nezalignované aplikace při startu</string>
+  <string name="ps_enable_sd_boost">Zapnout/vypnout zrychlení SD karty</string>
+  <string name="ps_sd_boost">Nastavit hodnotu předběžného čtení v kb</string>
+  <string name="ps_fix_permissions">Opravit oprávnění aplikací při každém startu</string>
+  <string name="ps_clear_cache">Vymazat cache při každém startu</string>
+  <string name="ps_enable_sysctl">Zapnout tweaky sysctl při startu</string>
+  <string name="ps_enable_cron">Zapnout naplánované úlohy cronu</string>
+  <!-- CPU -->
+  <string name="ps_set_max">Nastavit maximální frekvenci škálování\nAktuálně: %s</string>
+  <string name="ps_set_min">Nastavit minimální frekvenci škálování\nAktuálně: %s</string>
+  <string name="ps_set_gov">Nastavit metodu škálování\nAktuálně: %s</string>
+  <string name="ps_cpu_boot">Nastavit hodnoty CPU při startu</string>
+  <!-- Performance -->
+  <string name="ps_set_cpu_activity">Nastavit minimální/maximální frekvenci a metodu škálování (governor)</string>
+  <string name="ps_free_memory">Množství paměti, které minfree taskkiler ponechá volné |
+    Aktuálně: %s</string>
+  <string name="ps_free_memory_boot">Použít výše uvedené množství při startu</string>
+  <!-- Toast Messages -->
+  <string name="toast_min_max_error01">Maximální frekvence CPU nemůže být nižší než minimální.</string>
+  <string name="toast_min_max_error02">Minimální frekvence CPU nemůže být vyšší než maximální.</string>
+  <!-- list_voltage -->
+  <string name="freq">Frekvence</string>
+  <string name="current">aktuálně mV</string>
+  <string name="saved">uloženo mV</string>
+  <!-- voltage -->
+  <string name="error_values">Hodnoty způsobující chybu</string>
+  <string name="set_boot">Nastavit při startu</string>
+  <string name="apply_values">Použít hodnoty</string>
+  <string name="dpi">DPI</string>
+  <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+  <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+  <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+  <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+  <string name="donate_khasmek">@null</string>
+  <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+  <string name="devs">Vývojáři</string>
+  <string name="aokp">Android Open Kang Project</string>
+  <string name="aokp_website_title">Web AOKP</string>
+  <string name="aokp_website_summary">www.aokp.co - Zde jsou k nalezení nejnovější verze.</string>
+  <string name="aokp_source_title">AOKP Source</string>
+  <string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlídnout nejnovější verzi na github.com/aokp</string>
   <string name="aokp_review_title">AOKP Code Review</string>
   <string name="aokp_review_summary">Gerrit server AOKP pro odesílání a testování pačů</string>
   <string name="aokp_irc_title">Připojit se k nám na IRC</string>

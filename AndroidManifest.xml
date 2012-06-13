@@ -171,6 +171,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.Scroller"
+            android:label="@string/scroller_options" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.About"
             android:label="@string/about_aokp" >
             <intent-filter>

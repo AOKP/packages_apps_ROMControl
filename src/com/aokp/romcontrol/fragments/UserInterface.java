@@ -52,6 +52,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     ListPreference mAnimationRotationDelay;
     ListPreference mHomeLongpress;
     Preference mLcdDensity;
+    Preference mScroller;
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mDisableBootAudio;
     CheckBoxPreference mDisableBugMailer;
@@ -62,6 +63,7 @@ public class UserInterface extends AOKPPreferenceFragment implements
     int newDensityValue;
 
     DensityChanger densityFragment;
+    Scroller scrollerFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -125,6 +127,9 @@ public class UserInterface extends AOKPPreferenceFragment implements
         }
 
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
+
+        mScroller = findPreference("scroll_setup");
+        mScroller.setSummary(R.string.scroll_summary);
 
         mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
@@ -304,6 +309,11 @@ public class UserInterface extends AOKPPreferenceFragment implements
         } else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
                     .startPreferenceFragment(new DensityChanger(), true);
+            return true;
+
+        } else if (preference == mScroller) {
+            ((PreferenceActivity) getActivity())
+                    .startPreferenceFragment(new Scroller(), true);
             return true;
         }
 

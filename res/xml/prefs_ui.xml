@@ -31,6 +31,11 @@
 		android:title="@string/lcd_density_title"
 		android:summary="@string/lcd_density_summary" />
 
+        <Preference
+                android:key="scroll_setup"
+                android:title="@string/scroll_title"
+                android:summary="@string/scroll_summary" />
+
 	<PreferenceCategory
 		android:key="crt"
 		android:title="@string/crt_animations_header">

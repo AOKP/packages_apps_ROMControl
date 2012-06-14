@@ -193,6 +193,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ClipboardShare"
+            android:label="Clipboard Share" >
+            <intent-filter>
+                       <action android:name="android.intent.action.SEND"/>
+                       <category android:name="android.intent.category.ALTERNATIVE"/>
+                       <category android:name="android.intent.category.DEFAULT"/>
+                       <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name=".service.BootReceiver"

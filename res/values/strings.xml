@@ -125,44 +125,44 @@
     <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
     <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set value</string>
 
-	<string name="rotate_180_title">Allow 180° rotation</string>
-	<string name="rotate_180_summary">Allow your device to rotate upside down!</string>
+    <string name="rotate_180_title">Allow 180° rotation</string>
+    <string name="rotate_180_summary">Allow your device to rotate upside down!</string>
 
-	<string name="recent_app_switcher_title">Recents window style</string>
-	<string name="recent_app_switcher_summary">Change the recents window style (requires UI restart)</string>
+    <string name="recent_app_switcher_title">Recents window style</string>
+    <string name="recent_app_switcher_summary">Change the recents window style (requires UI restart)</string>
 
-	<string name="disable_bootanimation_title">Disable boot animation</string>
-	<string name="disable_bootanimation_summary">Jerk.</string>
+    <string name="disable_bootanimation_title">Disable boot animation</string>
+    <string name="disable_bootanimation_summary">Jerk.</string>
 
-	<string name="disable_bootaudio_title">Disable boot audio</string>
-	<string name="disable_bootaudio_summary">Quiet.</string>
-	<string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/boot_audio.mp3</string>
+    <string name="disable_bootaudio_title">Disable boot audio</string>
+    <string name="disable_bootaudio_summary">Quiet.</string>
+    <string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/boot_audio.mp3</string>
 
-	<string name="disable_bugmailer_title">Disable bugmailer</string>
+    <string name="disable_bugmailer_title">Disable bugmailer</string>
 
-	<string name="lcd_density_title">LCD Density</string>
-	<string name="lcd_density_summary">unknown</string>
+    <string name="lcd_density_title">LCD Density</string>
+    <string name="lcd_density_summary">unknown</string>
 
-	<!-- CRT animations -->
-	<string name="crt_animations_header">CRT animations</string>
-	<string name="crt_on_title">CRT on animation</string>
-	<string name="crt_off_title">CRT off animation</string>
+    <!-- CRT animations -->
+    <string name="crt_animations_header">CRT animations</string>
+    <string name="crt_on_title">CRT on animation</string>
+    <string name="crt_off_title">CRT off animation</string>
 
-	<!-- LCD Density -->
-	<string name="current_lcd_density">"Current LCD Density: "</string>
-	<string name="lcd_density_wizard">LCD Density Wizard</string>
-	<string name="follow_through_title">Follow through!</string>
-	<string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
-	<string name="stock_density_title">1. Change LCD Density to stock value</string>
-	<string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
-	<string name="reboot_title">2. Reboot!</string>
-	<string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
-	<string name="clear_market_data_title">3. Clear market data</string>
-	<string name="clear_market_data_cleared">Market data cleared</string>
-	<string name="open_market_title">4. Open Market and hit accept</string>
-	<string name="open_market_summary">Press back when done to return here.</string>
-	<string name="custom_density_title">5. Change density to whatever you like!</string>
-	<string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
+    <!-- LCD Density -->
+    <string name="current_lcd_density">"Current LCD Density: "</string>
+    <string name="lcd_density_wizard">LCD Density Wizard</string>
+    <string name="follow_through_title">Follow through!</string>
+    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
+    <string name="stock_density_title">1. Change LCD Density to stock value</string>
+    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
+    <string name="reboot_title">2. Reboot!</string>
+    <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
+    <string name="clear_market_data_title">3. Clear market data</string>
+    <string name="clear_market_data_cleared">Market data cleared</string>
+    <string name="open_market_title">4. Open Market and hit accept</string>
+    <string name="open_market_summary">Press back when done to return here.</string>
+    <string name="custom_density_title">5. Change density to whatever you like!</string>
+    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
 
     <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Lockscreen style</string>
@@ -240,6 +240,9 @@
     <string name="title_show_torch_toggle">Show torch toggle</string>
     <string name="title_show_airplane_toggle">Show airplane toggle</string>
     <string name="title_show_navbar_hide">Show navigation bar toggle</string>
+
+    <!-- Share to Clipboard -->
+    <string name="clipboard_notification">Copied to clipboard.</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>

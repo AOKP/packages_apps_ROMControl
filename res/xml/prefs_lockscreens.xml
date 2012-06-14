@@ -38,6 +38,11 @@
         android:title="@string/volume_music_controls_title"
         android:summary="@string/volume_music_controls_summary" />
 
+    <CheckBoxPreference
+        android:key="lockscreen_stock_music_layout"
+        android:title="@string/lockscreen_stock_music_layout_title"
+        android:summary="@string/lockscreen_stock_music_layout_summary" />
+
     <PreferenceCategory
         android:key="weather_cat"
         android:title="@string/lockscreen_weather_cat">
@@ -119,3 +124,4 @@
 
     </PreferenceCategory>
 </PreferenceScreen>
+

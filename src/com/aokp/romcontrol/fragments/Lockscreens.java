@@ -74,6 +74,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_CALENDAR_USE_COLORS = "lockscreen_calendar_use_colors";
     private static final String PREF_LOCKSCREEN_CALENDAR_INTERVAL = "lockscreen_calendar_interval";
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
+    private static final String PREF_STOCK_MUSIC_LAYOUT = "lockscreen_stock_music_layout";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -99,6 +100,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     ListPreference mCalendarRange;
     CheckBoxPreference mLockscreenCalendarHideOngoing;
     CheckBoxPreference mLockscreenCalendarUseColors;
+    CheckBoxPreference mStockMusicLayout;
 
     ArrayList<String> keys = new ArrayList<String>();
 
@@ -170,6 +172,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
         mVolumeMusic.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.VOLUME_MUSIC_CONTROLS, 0) == 1);
+
+        mStockMusicLayout = (CheckBoxPreference) findPreference(PREF_STOCK_MUSIC_LAYOUT);
+        mStockMusicLayout.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_STOCK_MUSIC_LAYOUT, 0) == 1);
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -338,6 +344,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             }
 
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+            return true;
+        } else if (preference == mStockMusicLayout) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_STOCK_MUSIC_LAYOUT,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (keys.contains(preference.getKey())) {
             Log.e("RC_Lockscreens", "key: " + preference.getKey());
@@ -508,3 +519,4 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         }
     }
 }
+

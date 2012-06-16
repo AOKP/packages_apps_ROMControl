@@ -117,6 +117,9 @@
 
     <string name="enable_volume_options">启用音量选项</string>
 
+    <string name="less_notification_sounds_title">限制通知提示音</string>
+    <string name="less_notification_sounds_summary">在设定时间内应用程序通知提示音只响应一次。</string>
+
 	<string name="rotate_180_title">允许 180° 旋转</string>
 	<string name="rotate_180_summary">允许设备倒置显示</string>
 
@@ -191,6 +194,8 @@
     <string name="volume_wake_summary">通过音量键唤醒屏幕</string>
     <string name="volume_music_controls_title">音量键控制音乐</string>
     <string name="volume_music_controls_summary">长按音量键切换歌曲</string>
+    <string name="lockscreen_stock_music_layout_title">默认音乐界面</string>
+    <string name="lockscreen_stock_music_layout_summary">当播放音乐时使用默认界面</string>
     <string name="lockscreen_show_nav_title">隐藏导航栏</string>
     <string name="lockscreen_show_nav_summary">锁屏时隐藏导航栏 (需要设备支持)</string>
     <string name="custom_app_n_dialog_title">选择目标 %1$s 的行为</string>

@@ -275,4 +275,15 @@
         <item>WebOS 风格</item>
         <item>Sense 4 风格</item>
     </string-array>
+    <string-array name="less_notification_sounds_entries">
+	<item>默认</item>
+	<item>3 秒</item>
+	<item>5 秒</item>
+	<item>10 秒</item>
+	<item>15 秒</item>
+	<item>30 秒</item>
+	<item>45 秒</item>
+	<item>1 分钟</item>
+	<item>2 分钟</item>
+    </string-array>
 </resources>

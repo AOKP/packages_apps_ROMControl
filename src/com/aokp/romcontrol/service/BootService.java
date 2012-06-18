@@ -132,6 +132,7 @@ public class BootService extends Service {
         GammaTuningPreference.restore(service);
 
         if (Settings.System.getInt(getContentResolver(), Settings.System.USE_WEATHER, 0) != 0) {
+            sendLastWeatherBroadcast();
             Intent startRefresh = new Intent(getApplicationContext(),
                     WeatherRefreshService.class);
             getApplicationContext().startService(startRefresh);
@@ -140,6 +141,29 @@ public class BootService extends Service {
         bootThread.start();
         // Stop the service
         stopSelf();
+    }
+
+    private void sendLastWeatherBroadcast() {
+        SharedPreferences settings = 
+            getApplicationContext().getSharedPreferences(WeatherService.PREFS_NAME, 0);
+
+        Intent broadcast = new Intent(WeatherService.INTENT_WEATHER_UPDATE);
+        try {
+            broadcast.putExtra(WeatherService.EXTRA_CITY, settings.getString("city", ""));
+            broadcast.putExtra(WeatherService.EXTRA_CONDITION, settings.getString("condition", ""));
+            broadcast.putExtra(WeatherService.EXTRA_LAST_UPDATE, settings.getString("timestamp", ""));
+            broadcast.putExtra(WeatherService.EXTRA_CONDITION_CODE, settings.getString("condition_code", ""));
+            broadcast.putExtra(WeatherService.EXTRA_FORECAST_DATE, settings.getString("forecast_date", ""));
+            broadcast.putExtra(WeatherService.EXTRA_HUMIDITY, settings.getString("humidity", ""));
+            broadcast.putExtra(WeatherService.EXTRA_TEMP, settings.getString("temp", ""));
+            broadcast.putExtra(WeatherService.EXTRA_WIND, settings.getString("wind", ""));
+            broadcast.putExtra(WeatherService.EXTRA_LOW, settings.getString("low", ""));
+            broadcast.putExtra(WeatherService.EXTRA_HIGH, settings.getString("high", ""));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+        getApplicationContext().sendBroadcast(broadcast);
     }
 
     @Override

@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.service;
 
 import android.app.IntentService;
@@ -23,6 +22,8 @@ import org.w3c.dom.Document;
 
 import java.io.IOException;
 
+import java.lang.StringBuilder;
+
 public class WeatherService extends IntentService {
     Handler mMainThreadHandler = null;
 
@@ -37,6 +38,7 @@ public class WeatherService extends IntentService {
     public static final String EXTRA_CITY = "city";
     public static final String EXTRA_FORECAST_DATE = "forecast_date";
     public static final String EXTRA_CONDITION = "condition";
+    public static final String EXTRA_LAST_UPDATE = "datestamp";
     public static final String EXTRA_CONDITION_CODE = "condition_code";
     public static final String EXTRA_TEMP = "temp";
     public static final String EXTRA_HUMIDITY = "humidity";
@@ -145,6 +147,7 @@ public class WeatherService extends IntentService {
                 w = parseXml(getDocument(woeid));
                 if (w != null) {
                     sendBroadcast(w);
+                    updateLatest(w);
                 }
             } catch (Exception e) {
                 Log.e(TAG, "ohnoes: " + e.getMessage());
@@ -182,9 +185,11 @@ public class WeatherService extends IntentService {
 
     private void sendBroadcast(WeatherInfo w) {
         Intent broadcast = new Intent(INTENT_WEATHER_UPDATE);
+        w.timestamp = Helpers.getTimestamp(getApplicationContext());
         try {
             broadcast.putExtra(EXTRA_CITY, w.city);
             broadcast.putExtra(EXTRA_CONDITION, w.condition);
+            broadcast.putExtra(EXTRA_LAST_UPDATE, w.timestamp);
             broadcast.putExtra(EXTRA_CONDITION_CODE, w.condition_code);
             broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
             broadcast.putExtra(EXTRA_HUMIDITY, w.humidity);
@@ -197,7 +202,24 @@ public class WeatherService extends IntentService {
         }
         getApplicationContext().sendBroadcast(broadcast);
     }
-    
+
+    private void updateLatest(WeatherInfo w) {
+        StringBuilder weatherData = new StringBuilder();
+        weatherData
+            .append("city=" + w.city)
+            .append("|condition=" + w.condition)
+            .append("|timestamp=" + w.timestamp)
+            .append("|condition_code=" + w.condition_code)
+            .append("|forecast_date=" + w.forecast_date)
+            .append("|humidity=" + w.humidity)
+            .append("|temp=" + w.temp)
+            .append("|wind=" + w.wind)
+            .append("|low=" + w.low)
+            .append("|high=" + w.high);
+        Settings.System.putString(getContentResolver(),
+               Settings.System.WEATHER_LATEST_DATA, weatherData.toString());
+    }
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         return super.onStartCommand(intent, flags, startId);

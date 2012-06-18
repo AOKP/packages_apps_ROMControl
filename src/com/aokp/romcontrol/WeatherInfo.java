@@ -3,16 +3,17 @@ package com.aokp.romcontrol;
 
 import android.content.Context;
 import android.util.Log;
+import java.lang.Class;
 
 public class WeatherInfo {
 
     private static final String NODATA = "No data";
 
     public String city, forecast_date, condition, condition_code, temp, temp_unit, humidity, wind,
-            wind_dir, speed_unit, low, high;
+            wind_dir, speed_unit, low, high, timestamp;
 
     public WeatherInfo() {
-        this.city = this.forecast_date = this.condition = this.condition_code = this.temp = this.temp_unit = this.humidity = this.wind = this.wind_dir = this.speed_unit = this.low = this.high = NODATA;
+        this.city = this.forecast_date = this.condition = this.condition_code = this.temp = this.temp_unit = this.humidity = this.wind = this.wind_dir = this.speed_unit = this.low = this.high = this.timestamp = NODATA;
     }
 
     public WeatherInfo(String city, String fdate, String condition, String condition_code,
@@ -29,6 +30,7 @@ public class WeatherInfo {
         this.speed_unit = speed_unit;
         this.low = low + "°" + temp_unit;
         this.high = high + "°" + temp_unit;
+        this.timestamp = "";
     }
 
     /**

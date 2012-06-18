@@ -22,6 +22,8 @@ import com.aokp.romcontrol.xml.WeatherXmlParser;
 import org.w3c.dom.Document;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 
 public class WeatherService extends IntentService {
     Handler mMainThreadHandler = null;
@@ -37,6 +39,7 @@ public class WeatherService extends IntentService {
     public static final String EXTRA_CITY = "city";
     public static final String EXTRA_FORECAST_DATE = "forecast_date";
     public static final String EXTRA_CONDITION = "condition";
+    public static final String EXTRA_LAST_UPDATE = "datestamp";
     public static final String EXTRA_CONDITION_CODE = "condition_code";
     public static final String EXTRA_TEMP = "temp";
     public static final String EXTRA_HUMIDITY = "humidity";
@@ -180,11 +183,30 @@ public class WeatherService extends IntentService {
         return null;
     }
 
+    private String getCurrentTime() {
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int hours = calendar.get(Calendar.HOUR);
+        int minutes = calendar.get(Calendar.MINUTE);
+        int seconds = calendar.get(Calendar.SECOND);
+        String am_pm;
+        if(calendar.get(Calendar.AM_PM) == 0) {
+            am_pm = "AM";
+        } else {
+            am_pm = "PM";
+        }
+        String currentTimeString = String.format("%1d:%02d:%02d %2s", hours, minutes, seconds, am_pm);
+        return currentTimeString;
+    }
+
     private void sendBroadcast(WeatherInfo w) {
         Intent broadcast = new Intent(INTENT_WEATHER_UPDATE);
+        String currentTimeString = getCurrentTime();
         try {
             broadcast.putExtra(EXTRA_CITY, w.city);
             broadcast.putExtra(EXTRA_CONDITION, w.condition);
+            broadcast.putExtra(EXTRA_LAST_UPDATE, currentTimeString);
             broadcast.putExtra(EXTRA_CONDITION_CODE, w.condition_code);
             broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
             broadcast.putExtra(EXTRA_HUMIDITY, w.humidity);

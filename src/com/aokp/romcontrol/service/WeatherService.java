@@ -22,6 +22,8 @@ import com.aokp.romcontrol.xml.WeatherXmlParser;
 import org.w3c.dom.Document;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.util.Date;
 
 public class WeatherService extends IntentService {
     Handler mMainThreadHandler = null;
@@ -37,6 +39,7 @@ public class WeatherService extends IntentService {
     public static final String EXTRA_CITY = "city";
     public static final String EXTRA_FORECAST_DATE = "forecast_date";
     public static final String EXTRA_CONDITION = "condition";
+    public static final String EXTRA_LAST_UPDATE = "datestamp";
     public static final String EXTRA_CONDITION_CODE = "condition_code";
     public static final String EXTRA_TEMP = "temp";
     public static final String EXTRA_HUMIDITY = "humidity";
@@ -180,11 +183,19 @@ public class WeatherService extends IntentService {
         return null;
     }
 
+    private String getCurrentTime() {
+        Date date = new Date();
+        String currentTimeString = DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
+        return currentTimeString;
+    }
+
     private void sendBroadcast(WeatherInfo w) {
         Intent broadcast = new Intent(INTENT_WEATHER_UPDATE);
+        String currentTimeString = getCurrentTime();
         try {
             broadcast.putExtra(EXTRA_CITY, w.city);
             broadcast.putExtra(EXTRA_CONDITION, w.condition);
+            broadcast.putExtra(EXTRA_LAST_UPDATE, currentTimeString);
             broadcast.putExtra(EXTRA_CONDITION_CODE, w.condition_code);
             broadcast.putExtra(EXTRA_FORECAST_DATE, w.forecast_date);
             broadcast.putExtra(EXTRA_HUMIDITY, w.humidity);

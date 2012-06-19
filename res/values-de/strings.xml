@@ -36,6 +36,16 @@
     <string name="advanced_settings">Erweiterte Einstellungen</string>
     <string name="misc_short">Sonstiges</string>
 
+    <!-- Menu Strings -->
+    <string name="menu_lockscreens_remove_wallpaper">Lockscreen Hintergrund zurücksetzen</string>
+    <string name="menu_main_activity_change_locale">Sprache</string>
+    <string name="menu_nav_bar_reset">Reset nav bar</string>
+    <string name="menu_weather_get_weather">Wetter abrufen</string>
+
+    <!-- General Strings -->
+    <string name="cancel">Abbrechen</string>
+    <string name="ok">OK</string>
+
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Position des Menüs</string>
     <string name="summary_pref_menu_display">Beachte, Deine Menü-Buttons zu entfernen, wenn Du den großen Menü-Button verwendest!</string>
@@ -45,6 +55,10 @@
     <string name="navigation_bar_glow_tint_summary">Wenn ein Knopf gedrückt wird, leuchtet dieser auf. Hier kann die Farbe des Aufleuchtens eingestellt werden</string>
     <string name="navigation_bar_height_title">Höhe der Navigationsleiste</string>
     <string name="navigation_bar_width_title">Breite der Navigationsleiste</string>
+
+    <string name="navigation_bar_add_new_widget_title">Neues Widget hinzufügen</string>
+    <string name="navigation_bar_add_new_widget_summary">Klicken um ein weiteres Widget hinzuzufügen</string>
+    <string name="navigation_bar_widget">"Widget "</string>
 
     <string name="title_pref_navigation_menu_display">Sichtbarkeit des Menüs</string>
     <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü-Buttons erscheinen?</string>
@@ -72,13 +86,30 @@
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_none">Leer</string>
 
+	<string name="navbar_enable_bar">Leiste aktivieren</string>
+
+	<string name="navbar_widgets">Navigation Bar Widgets</string>
+	<string name="navbar_widgets_reset">Reset navbar widgets</string>
+
+    <string name="navbar_enable_dialog_title">Neustart benötigt!</string>
+    <string name="navbar_enable_dialog_msg">Bitte neustarten um die Navigationsleiste ordnungsgemäß zu aktivieren/deaktivieren</string>
+    <string name="navbar_enable_dialog_negative">Neustart später ausführen</string>
+    <string name="navbar_enable_dialog_Positive">Neustart durchführen!</string>
+
     <string name="button_transparency_title">Transparenz der Navigations-Buttons</string>
 
     <string name="long_press_home_title">Langes Drücken der Home-Taste</string>
     <string name="long_press_home_summary">Aktion, die bei langem Drücken der Home-Taste ausgeführt werden soll. (Neustart erforderlich)</string>
 
-    <string name="glow_times_title">Button Animation (leuchten)</string>
-    <string name="glow_times_summary">Animationsgeschwindigkeit der Buttons anpassen. Verringern der Geschwindigkeit kann die Leistung verbessern.</string>
+    <string name="glow_times_title">Button glow animation</string>
+    <string name="glow_times_off">Aus</string>
+    <string name="glow_times_superquick">Sehr schnell</string>
+    <string name="glow_times_quick">Schnell</string>
+    <string name="glow_times_normal">Normal</string>
+
+    <string name="combined_bar_title">Gemeinsame Leisten</string>
+    <string name="combined_bar_auto_hide_title">Auto-Verstecken</string>
+    <string name="combined_bar_auto_hide_summary">Allow Combined Bar to hide when showing a fullscreen app</string>
 
     <!-- UI -->
     <string name="rotation_animation_delay_title">Rotations-Verzögerung</string>
@@ -95,14 +126,21 @@
 
     <string name="enable_volume_options">Aktiviere Volumen Optionen</string>
 
+  <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
+    <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set value</string>
+
     <string name="rotate_180_title">180° Rotation erlauben</string>
     <string name="rotate_180_summary">Erlaube Deinem Gerät eine 180° Rotation!</string>
 
-    <string name="horizontal_recents_task_panel_title">Horizontaler Task-Bildschirm</string>
-    <string name="horizontal_recents_task_panel_summary">WebOS-Aussehen für den Task-Wechsler. Die Benutzeroberfläche wird neu starten und in 10 Sekunden wieder erscheinen. Falls nicht, führe ein Neustart durch.</string>
+	<string name="recent_app_switcher_title">Aussehn von Kürzlich verwendet</string>
+	<string name="recent_app_switcher_summary">Ändern des Aussehenes von "Kürzlich verwendet" (Neustart benötigt)</string>
 
     <string name="disable_bootanimation_title">Boot-Animation deaktivieren</string>
     <string name="disable_bootanimation_summary">Deaktiviert die ROM-Animation beim Startvorgang.</string>
+
+	<string name="disable_bootaudio_title">Boot-Ton deaktivieren</string>
+	<string name="disable_bootaudio_summary">Still.</string>
+	<string name="disable_bootaudio_summary_disabled">Zum Aktivieren des Boot-Tons, muss eine MP3 Datei unter \n/system/media/boot_audio.mp3 vorhanden sein</string>
 
     <string name="disable_bugmailer_title">Fehlerberichte deaktivieren</string>
 
@@ -115,19 +153,31 @@
     <string name="crt_off_title">Ausschalt-Animation (CRT)</string>
 
     <!-- LCD Density -->
+	<string name="current_lcd_density">"Aktuelle LCD Pixeldichte: "</string>
     <string name="lcd_density_wizard">Assistent für LCD Pixeldichte</string>
     <string name="follow_through_title">Alle Schritte vollständig durchführen!</string>
     <string name="follow_through_summary">Stelle sicher, dass Du alle Schritte nach und nach durchführst und erst nach Abschließen eines Schrittes zum Nächsten übergehst.</string>
     <string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
     <string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
+	<string name="stock_density_changed_summary">"Pixeldichte festlegen: "</string>
     <string name="reboot_title">2. Neustarten!</string>
     <string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
     <string name="clear_market_data_title">3. Lösche die Daten vom Google Play Store</string>
     <string name="clear_market_data_cleared">Google Play Store Daten gelöscht</string>
+	<string name="clear_market_data_donot_cleared">"Market data couldn't be cleared, please clear it yourself!"</string>
     <string name="open_market_title">4. Google Play Store öffnen und akzeptieren drücken</string>
     <string name="open_market_summary">Zurück drücken um zum Assistenten zurückzukehren</string>
+	<string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
     <string name="custom_density_title">5. Die Pixeldichte auf einen eigenen Wert ändern!</string>
     <string name="custom_density_summary">Sollten Kompatibilitätsprobleme mit Google Play Store auftreten, wiederhole die hier genannten Schritte.</string>
+	<string name="custom_density_summary_invalid">"UNGÜLTIGE PIXELDICHTE!"</string>
+	<string name="custom_density">eigene</string>
+	<string name="set_custom_density_title">Eigene Pixeldichte</string>
+	<string name="set_custom_density_set">Festlegen</string>
+	<string name="custom_density_dialog_title">"WARNUNG!"</string>
+	<string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+	<string name="custom_density_dialog_button_got">Got it!</string>
+	<string name="custom_density_dialog_button_reboot">Nun Neustarten</string>
 
     <!-- Lockscreens -->
     <string name="pref_lockscreen_layout_title">Aussehen der Bildschirmsperre</string>
@@ -144,7 +194,7 @@
     <string name="title_lockscreen_user_timeout_override">Wartezeit zum Sperren des Bildschirms</string>
     <string name="summary_lockscreen_user_timeout_override">Android\'s Timeout Einstellung verwenden, nachdem der Bildschirm manuell ausgeschaltet wurde. Normalerweise wird das Telefon sofort gesperrt, wenn der Bildschirm manuell ausgeschaltet wird.</string>
     <string name="show_lock_before_unlock_title">Bildschirmsperre vor dem Entsperren</string>
-    <string name="show_lock_before_unlock_summary">Zeige die standard Bildschirmsperre vor dem sicheren Entsperren.</string>
+    <string name="show_lock_before_unlock_summary">Zeige die Standard Bildschirmsperre vor dem Entsperren.</string>
     <string name="lockscreen_battery_title">Batterie Prozentanzeige</string>
     <string name="lockscreen_battery_summary">Immer die aktuelle Kapazität der Batterie in der Bildschirmsperre anzeigen (in Prozent).</string>
     <string name="lockscreen_weather_title">Wetter</string>
@@ -153,6 +203,8 @@
     <string name="volume_wake_summary">Betätigen der Lautstärketasten lässt den ausgeschalteten Bildschirm wieder einschalten.</string>
     <string name="volume_music_controls_title">Musik-Steuerung mit Lautstärketasten</string>
     <string name="volume_music_controls_summary">Lautstärketasten gedrückt halten um Lieder zu überspringen wenn der Bildschirm ausgeschaltet ist. Aufwachen mit Lautsärketasten funktioniert nicht, wenn Musik gespielt wird.</string>
+    <string name="lockscreen_stock_music_layout_title">Standard Musik Layout</string>
+    <string name="lockscreen_stock_music_layout_summary">Verwende das Standard Aussehen beim Musik abspielen.</string>
     <string name="lockscreen_show_nav_title">Navigationsleiste verstecken</string>
     <string name="lockscreen_show_nav_summary">Versteckt die Navigationsleiste in der Bildschirmsperre. (Falls das Gerät es unterstützt)</string>
     <string name="custom_app_n_dialog_title">Auszuführende Aktion für Verknüpfung %1$s wählen</string>
@@ -164,6 +216,9 @@
     <string name="lockscreen_action_mms">Nachrichten</string>
     <string name="lockscreen_action_phone">Telefon</string>
     <string name="lockscreen_action_none">Leer</string>
+    <string name="lockscreen_custom_app_icon_no_sd">Lege eine SD-Karte ein um diese Funktion zu nutzen</string>
+    <string name="lockscreen_custom_app_icon_successfully">"'s Icons erfolgreich festgelegt!"</string>
+    <string name="lockscreen_custom_app_icon_failed">"Icons festlegen fehlgeschlagen! SD-Karte eingehängt?"</string>
     <string name="lockscreen_landscape_title">Horizontale Bildschirmsperre</string>
     <string name="lockscreen_landscape_summary">Horizontale Ausrichtung der Bildschirmsperre aktivieren</string>
     <string name="lockscreen_quick_unlock_control_title">Schnelles Entsperren</string>
@@ -172,29 +227,39 @@
     <string name="enable_fast_torch_summary">Während der Bildschirm ausgeschaltet ist, den An-/Aus-Schalter lange gedrückt halten, um das LED Licht anzuschalten. Geht beim Loslassen des Schalters wieder aus.</string>
     <string name="lockscreen_wallpaper_title">Hintergrund wählen</string>
     <string name="lockscreen_wallpaper_summary">Wähle für den im Menü gewählten Hintergrund einen Alternativen für die Bildschirmsperre.</string>
+    <string name="lockscreen_wallpaper_no_external_storage">No external storage available (/sdcard) to use this feature. Please insert it or fix your ROM!</string>
+    <string name="lockscreen_wallpaper_not_set_sd">"Hintergrund nicht festgelegt (SD-Karte eingehängt?)"</string>
+    <string name="lockscreen_wallpaper_set_successfully">"Hintergrund erfolgreich festgelegt"</string>
+    <string name="lockscreen_wallpaper_not_set">"Hintergrund nicht festgelegt (!!!)"</string>
     <string name="lockscreen_text_color_title">Text Farbe</string>
-    <string name="lockscreen_calendar">Lockscreen Kalender</string>
+    <string name="lockscreen_calendar">Kalender</string>
     <string name="lockscreen_calendar_title">Aktivieren</string>
-    <string name="lockscreen_calendar_summary">Zeige kommende Veranstaltungen auf dem Entsperrbildschirm.</string>
-    <string name="lockscreen_calendar_sources_title">Kalender Quelle</string>
-    <string name="lockscreen_calendar_sources_summary">Wähle die Kalender die angezeigt werden sollen.</string>
+    <string name="lockscreen_calendar_summary">Zeige zukünftige Ereignisse in der Bildschirmsperre.</string>
+    <string name="lockscreen_calendar_sources_title">Quellen</string>
+    <string name="lockscreen_calendar_sources_summary">Wähle die Quellen der zu verwendeten Kalender.</string>
+    <string name="lockscreen_calendar_dialog">Wähle den zu verwendeten Kalender</string>
+    <string name="lockscreen_calendar_close">Schließen</string>
     <string name="lockscreen_calendar_range_title">Zeitspanne</string>
     <string name="lockscreen_calendar_range_summary">Wähle die anzuzeigende Zeitspanne.</string>
     <string name="lockscreen_calendar_use_colors_title">Benutze Farben</string>
-    <string name="lockscreen_calendar_use_colors_summary">Wenn aktiviert, werden Veranstaltungen wie in Ihrem Kalender eingefärbt.</string>
-    <string name="lockscreen_calendar_hide_ongoing_title">Verstecke laufende Veranstaltungen</string>
-    <string name="lockscreen_calendar_hide_ongoing_summary">Wenn aktiviert, werden laufende Veranstaltungen ausgeblendet.</string>
-    <string name="lockscreen_calendar_flip_title">Mehrere Veranstaltungen</string>
-    <string name="lockscreen_calendar_flip_summary">Wenn aktiviert, werden mehrere Veranstaltungen durch Umschalten angezeigt.</string>
+    <string name="lockscreen_calendar_use_colors_summary">Wenn aktiviert, werden Ereignisse wie in Ihrem Kalender eingefärbt.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Verstecke laufende Ereignisse</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Wenn aktiviert, werden laufende Ereignisse ausgeblendet.</string>
+    <string name="lockscreen_calendar_flip_title">Mehrere Ereignisse</string>
+    <string name="lockscreen_calendar_flip_summary">Wenn aktiviert, werden mehrere Ereignisse durch Umschalten angezeigt.</string>
     <string name="lockscreen_calendar_interval_title">Umschaltinterval</string>
     <string name="lockscreen_calendar_interval_summary">Wähle die Animationsgeschwindigkeit in Sekunden.</string>
 
     <!-- Power Menu -->
     <string name="title_show_power_saver">Stromsparmodus anzeigen</string>
+    <string name="summary_show_power_saver">Du musst den Stromsparmodus zunächst aktivieren um ihn im An-/Aus-Schalter Menü zu sehen.</string>
     <string name="title_show_screenshot">Screenshot anzeigen</string>
     <string name="title_show_torch_toggle">Taschenlampe anzeigen</string>
     <string name="title_show_airplane_toggle">Flugmodus anzeigen</string>
     <string name="title_show_navbar_hide">Navigationsleiste anzeigen</string>
+
+    <!-- Share to Clipboard -->
+    <string name="clipboard_notification">Zur Zwischenablage hinzugefügt.</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Stromsparmodus aktivieren</string>
@@ -225,6 +290,7 @@
     <string name="title_led_off">LED AUS Dauer</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">LED Farbe</string>
+    <string name="led_color_summary">This will change the default LED color. Apps can easily override this setting with their own color.</string>
     <string name="title_led_screen_on">LED-Blitz während der Bildschirm aktiv ist</string>
     <string name="summary_led_screen_on">@null</string>
 
@@ -250,6 +316,9 @@
     <string name="statusbar_layout_summary">Das Layout der Benachrichtungsleiste ändern. (Neustart erforderlich)</string>
     <string name="statusbar_fontsize">Statusbar-Schriftgröße</string>
     <string name="statusbar_fontsize_summary">Ändert die Größe der Textelemente</string>
+
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Aussehen des Batteriesymbols</string>
@@ -278,8 +347,7 @@
     <string name="toggle_style_title">Aussehen der Schalter</string>
     <string name="toggle_style_summary">Die Schalter entweder mit Symbolen oder Text anzeigen.</string>
 
-    <string name="alternate_button_layout_title">Alternative Schalter</string>
-    <string name="alternate_button_layout_summary">Kleine An-/Aus-Schalter verwenden.</string>
+    <string name="toggles_layout_title">Toggle Layout</string>
 
     <string name="enabled_toggles_title">Aktivierte Schalter</string>
     <string name="enabled_toggles_summary">Die anzuzeigenden Schalter wählen.</string>
@@ -328,6 +396,7 @@
     <string name="weather_show_location_title">Standort anzeigen</string>
     <string name="weather_show_location_summary">Zeigt Deinen Standort an.</string>
     <string name="weather_refresh_interval">Aktualisierungsintervall</string>
+    <string name="weather_refresh_interval_minutes">" Minuten"</string>
     <string name="weather_use_celcius">Metrische Einheiten</string>
     <string name="weather_use_celcius_summary">Zeigt die Temperatur in Celsius statt Fahrenheit und die Windgeschwindigkeit in km/h statt mph.</string>
     <string name="weather_statusbar_style">Wetter-Aussehen in Benachrichtungsleiste</string>
@@ -336,7 +405,12 @@
     <string name="weather_custom_app_title">benutzerdefinierte Anwendung</string>
     <string name="weather_custom_app_dialog_title">Wähle eine Anwendung</string>
     <string name="weather_custom_app_dialog_message">Momentaner Paketname.</string>
-	
+    <string name="weather_refreshing">Requesting weather update!</string>
+    <string name="weather_loc_warning_title">Cannot retrieve location!</string>
+    <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network."</string>
+    <string name="weather_loc_warning_positive">"Enable network location"</string>
+    <string name="weather_loc_warning_negative">"Nicht aktivieren."</string>
+
 <!-- Dialog Titles -->
     <string name="dt_free_memory">Minfree Taskkiller</string>
 
@@ -383,6 +457,7 @@
     <string name="pt_set_min">Min. CPU</string>
     <string name="pt_set_gov">Governor</string>
     <string name="pt_cpu_boot">Beim Startvorgang festlegen</string>
+        <string name="pt_volt_control">Voltage control</string>
     <!-- Scrolling Cache -->
     <string name="pref_scrollingcache_title">Cache für Bildlauf</string>
     <string name="pref_scrollingcache_summary">Der Cache für Bildlauf kann die Scroll-Leistung verbessern auf Kosten des Speichers.</string>
@@ -455,10 +530,14 @@
 
     <string name="about_aokp">Über AOKP</string>
     <string name="about_aokp_summary">@null</string>
-
+ 
     <!--  Kernel Tweaks -->
     <string name="pt_fast_charge_boot">Fast Charge</string>
     <string name="ps_fast_charge_boot">Aktiviere Fast Charge beim Start</string>
+   <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
+    <string name="fast_charge_notification_title">Fast Charge ist AN!</string>
+    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
+
     <string name="kernel">Kernel Tweaks (wenn unterstützt)</string>
     <string name="color_tuning_title_head">Farbmultiplikator-Tuning</string>
     <string name="color_tuning_summary_head">Kalibriere Bildschirmfarbmultiplikatoren</string>
@@ -467,6 +546,7 @@
     <string name="color_red_title">Rot</string>
     <string name="color_green_title">Grün</string>
     <string name="color_blue_title">Blau</string>
+    <string name="gamma_dss_title">Software Gamma Anpassung</string>
     <string name="reset_defaults">Auf Standard zurücksetzten</string>
 
     <!-- Weather Codes -->
@@ -527,4 +607,9 @@
     <string name="weather_47">örtliche Gewitter</string>
     <!-- Forecase unavailable -->
     <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Es konnten keine Standortinformatioen für das Wetter Update gefunden werden</string>
+
+
 </resources>

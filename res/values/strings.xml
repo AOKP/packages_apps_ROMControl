@@ -200,6 +200,8 @@
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
 	<string name="lockscreen_weather_title">Lockscreen Weather</string>
     <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
+    <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
+    <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
     <string name="volume_wake_title">Volume wake</string>
     <string name="volume_wake_summary">Tapping the volume keys while your phone is off will turn the screen on.</string>
     <string name="volume_music_controls_title">Volume music controls</string>

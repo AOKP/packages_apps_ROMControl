@@ -71,6 +71,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_LOCKSCREEN_WEATHER = "lockscreen_weather";
+    private static final String PREF_LOCKSCREEN_WEATHER_TYPE = "lockscreen_weather_type";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
 
     private static final String PREF_LOCKSCREEN_CALENDAR = "enable_calendar";
@@ -98,6 +99,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenLandscape;
     CheckBoxPreference mLockscreenBattery;
     CheckBoxPreference mLockscreenWeather;
+    ListPreference mLockscreenWeatherType;
     CheckBoxPreference mShowLockBeforeUnlock;
     ColorPickerPreference mLockscreenTextColor;
     CheckBoxPreference mLockscreenCalendar;
@@ -151,6 +153,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockscreenWeather = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_WEATHER);
         mLockscreenWeather.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_WEATHER, 0) == 1);
+
+        mLockscreenWeatherType = (ListPreference) findPreference(PREF_LOCKSCREEN_WEATHER_TYPE);
+        mLockscreenWeatherType.setOnPreferenceChangeListener(this);
+        mLockscreenWeatherType.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_WEATHER_TYPE, 0) + "");
 
         mShowLockBeforeUnlock = (CheckBoxPreference) findPreference(PREF_SHOW_LOCK_BEFORE_UNLOCK);
         mShowLockBeforeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -684,6 +691,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 refreshSettings();
             }
             return true;
+        } else if (preference == mLockscreenWeatherType) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_WEATHER_TYPE, val);
+            return true;
+
         }
 
         return false;

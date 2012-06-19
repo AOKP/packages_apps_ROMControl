@@ -761,4 +761,15 @@
 	    <item>60000</item>
 	    <item>120000</item>
 	</string-array>
+
+    <string-array name="pref_lockscreen_weather_type_entries">
+        <item>Weather Panel</item>
+        <item>Text</item>
+    </string-array>
+
+    <string-array name="pref_lockscreen_weather_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
 </resources>

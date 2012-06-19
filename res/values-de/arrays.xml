@@ -156,18 +156,22 @@
 
 	<!-- long press home -->
 	<string-array name="long_press_home_entries">
+		<item>Telefon standard</item>
 		<item>Nichts tun</item>
+		<item>Kürzlich verwendet (vor ICS)</item>
 		<item>Kürzlich verwendet</item>
-		<item>Kamera</item>
-		<item>Benutzerdefinierte Anwendung</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
-		<item>Standard</item>
-		<item>Vierfach</item>
-		<item>Achtfach</item>
-		<item>AOSP</item>
-		<item>Honeycomb</item>
+            <item>Stock</item>
+            <item>AOSP</item>
+            <item>Honeycomb</item>
+            <item>3 Verknüpfungen</item>
+            <item>4 Verknüpfungen</item>
+            <item>5 Verknüpfungen</item>
+            <item>6 Verknüpfungen</item>
+            <item>7 Verknüpfungen</item>
+            <item>8 Verknüpfungen</item>
 	</string-array>
 
 	<string-array name="pref_lockscreen_calendar_interval_entries">

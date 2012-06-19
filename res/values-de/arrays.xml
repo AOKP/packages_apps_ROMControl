@@ -9,13 +9,13 @@
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>LTE ausschalten</item>
 		<item>Mobile Daten ausschalten</item>
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>Mobile Daten ausschalten</item>
 		<item>In 2G-Modus wechseln</item>
 	</string-array>
@@ -46,7 +46,7 @@
 	</string-array>
 
 	<string-array name="pref_powersaving_sync_screen_off_entries">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>Autosync ausschalten</item>
 		<item>Autosync mit Verzögerung ausschalten</item>
 	</string-array>
@@ -65,7 +65,7 @@
 	</string-array>
 
 	<string-array name="powersaving_sync_data_mobile_mode_entries">
-		<item>Nur 2G</item>
+		<item>Nur 2G/1x</item>
 		<item>3G bezorzugen</item>
 	</string-array>
 	
@@ -96,17 +96,17 @@
 	</string-array>
 
 	<string-array name="statusbar_transparency_entries">
-		<item>No transparency</item>
+		<item>Keine Transparenz</item>
 		<item>25%</item>
 		<item>50%</item>
 		<item>75%</item>
-		<item>Full transparency</item>
+		<item>Volle Transparenz</item>
 	</string-array>
 
 	<string-array name="statusbar_layout_entries">
-		<item>Regular layout</item>
-		<item>Reversed</item>
-		<item>Traditional</item>
+		<item>Normales Layout</item>
+		<item>Umgekehrt</item>
+		<item>Traditionell</item>
 	</string-array>
 
 	<!-- clock stuff -->
@@ -150,24 +150,28 @@
 
 	<!-- toggle style -->
 	<string-array name="toggle_style_entries">
-		<item>Nur Icon</item>
+		<item>Nur Symbol</item>
 		<item>Nur Text</item>
 	</string-array>
 
 	<!-- long press home -->
 	<string-array name="long_press_home_entries">
-		<item>Nichts tun</item>
-		<item>Kürzlich verwendet</item>
-		<item>Kamera</item>
-		<item>Benutzerdefinierte Anwendung</item>
+		<item>Standard</item>
+		<item>Keine Aktion</item>
+		<item>Kürzliche Apps (Pre-ICS)</item>
+		<item>Kürzliche Apps</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
 		<item>Standard</item>
-		<item>Vierfach</item>
-		<item>Achtfach</item>
 		<item>AOSP</item>
 		<item>Honeycomb</item>
+		<item>3 Ziele</item>
+		<item>4 Ziele</item>
+		<item>5 Ziele</item>
+		<item>6 Ziele</item>
+		<item>7 Ziele</item>
+		<item>8 Ziele</item>
 	</string-array>
 
 	<string-array name="pref_lockscreen_calendar_interval_entries">
@@ -202,7 +206,7 @@
 	<string-array name="battery_bar_entries">
 		<item>Verstecken</item>
 		<item>Statusleiste</item>
-		<item>Oben Kante der Navigationsleiste</item>
+		<item>Obere Kante der Navigationsleiste</item>
 		<item>Untere Kante der Navigationsleiste</item>
 	</string-array>
 	
@@ -223,31 +227,9 @@
 		<item>Leer</item>
 	</string-array>
 
-	<string-array name="glow_times_entries">
+<string-array name="weather_interval_entries">
 		<item>Aus</item>
-		<item>Sehr schnell</item>
-		<item>Schnell</item>
-		<item>Normal</item>
-	</string-array>
-
-	<string-array name="lcd_density_entries">
-		<item>160</item>
-		<item>180</item>
-		<item>200</item>	
-		<item>220</item>
-		<item>240</item>
-		<item>241</item>
-		<item>260</item>
-		<item>280</item>
-		<item>300</item>
-		<item>320</item>
-		<item>340</item>
-		<item>Benutzerdefiniert</item>
-	</string-array>
-	
-	<string-array name="weather_interval_entries">
-		<item>Aus</item>
-		<item>1 Minuten</item>
+		<item>1 Minute</item>
 		<item>5 Minuten</item>
 		<item>10 Minuten</item>
 		<item>30 Minuten</item>
@@ -268,14 +250,14 @@
 	</string-array>
 
 	<string-array name="wifi_signal_style_entries">
-		<item>Zeige Signal als Empfangsbalken</item>
-		<item>Zeige Signal als Text</item>
+		<item>Empfangsbalken anzeigen</item>
+		<item>Empfang als Text anzeigen</item>
 	</string-array>
 
 	<string-array name="weather_statusbar_location_entries">
-		<item>Über Carrier-Text</item>
+		<item>Über dem Anbieter</item>
 		<item>Wetterleiste</item>
-		<item>Deaktivert</item>
+		<item>Deaktiviert</item>
 	</string-array>
 
 	<string-array name="navigation_bar_width_entries">
@@ -299,9 +281,29 @@
 		<item>Kürzlich verwendet</item>
 		<item>Suche</item>
 		<item>Menü</item>
-		<item>Task beenden</item>
+		<item>Toggle Widgets</item>
+
+		<item>App beenden</item>
 		<item>Power</item>
 		<item>Benutzerdefinierte Anwendung</item>
 		<item>Leer</item>
+	</string-array>
+
+<string-array name="recent_app_switcher_entries">
+		<item>Standard</item>
+		<item>WebOS Style</item>
+		<item>Sense 4 Style</item>
+	</string-array>
+
+<string-array name="less_notification_sounds_entries">
+	    <item>Standard</item>
+	    <item>3s</item>
+	    <item>5s</item>
+	    <item>10s</item>
+	    <item>15s</item>
+	    <item>30s</item>
+	    <item>45s</item>
+	    <item>1m</item>
+	    <item>2m</item>
 	</string-array>
 </resources>

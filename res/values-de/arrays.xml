@@ -9,13 +9,13 @@
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>LTE ausschalten</item>
 		<item>Mobile Daten ausschalten</item>
 	</string-array>
 
 	<string-array name="pref_powersaving_data_screen_off_entries">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>Mobile Daten ausschalten</item>
 		<item>In 2G-Modus wechseln</item>
 	</string-array>
@@ -46,7 +46,7 @@
 	</string-array>
 
 	<string-array name="pref_powersaving_sync_screen_off_entries">
-		<item>Nichts tun</item>
+		<item>Keine Aktion</item>
 		<item>Autosync ausschalten</item>
 		<item>Autosync mit Verzögerung ausschalten</item>
 	</string-array>
@@ -96,17 +96,26 @@
 	</string-array>
 
 	<string-array name="statusbar_transparency_entries">
-		<item>No transparency</item>
+		<item>Keine Transparenz</item>
 		<item>25%</item>
 		<item>50%</item>
 		<item>75%</item>
-		<item>Full transparency</item>
+		<item>Vollständig Transparent</item>
+	</string-array>
+
+<string-array name="statusbar_fontsize_entries">
+		<item>8dp</item>
+		<item>12dp</item>
+		<item>14dp</item>
+		<item>16dp(Standard)</item>
+		<item>20dp</item>
+		<item>24dp</item>
 	</string-array>
 
 	<string-array name="statusbar_layout_entries">
-		<item>Regular layout</item>
-		<item>Reversed</item>
-		<item>Traditional</item>
+		<item>Normales Layout</item>
+		<item>Umgekehrt</item>
+		<item>Traditionell</item>
 	</string-array>
 
 	<!-- clock stuff -->
@@ -135,19 +144,6 @@
 		<item>Nicht anzeigen</item>
 	</string-array>
 
-	<!-- animation rotation -->
-	<string-array name="rotation_animation_delay_entries">
-		<item>10 ms</item>
-		<item>25 ms</item>
-		<item>50 ms</item>
-		<item>75 ms</item>
-		<item>100 ms</item>
-		<item>150 ms</item>
-		<item>200 ms</item>
-		<item>250 ms</item>
-		<item>300 ms</item>
-	</string-array>
-
 	<!-- toggle style -->
 	<string-array name="toggle_style_entries">
 		<item>Nur Icon</item>
@@ -156,10 +152,10 @@
 
 	<!-- long press home -->
 	<string-array name="long_press_home_entries">
-		<item>Nichts tun</item>
+		<item>Standard</item>
+		<item>Keine Aktion</item>
+		<item>Kürzlich verwendet (Pre-ICS)</item>
 		<item>Kürzlich verwendet</item>
-		<item>Kamera</item>
-		<item>Benutzerdefinierte Anwendung</item>
 	</string-array>
 
         <string-array name="pref_lockscreen_options_entries">
@@ -211,9 +207,7 @@
 		<item>Mittig</item>
 	</string-array>
 
-
-	
-	<string-array name="lockscreen_choice_entries">
+<string-array name="lockscreen_choice_entries">
 		<item>Entsperren</item>
 		<item>Ton an/aus</item>
 		<item>Telefon</item>
@@ -230,22 +224,7 @@
 		<item>Normal</item>
 	</string-array>
 
-	<string-array name="lcd_density_entries">
-		<item>160</item>
-		<item>180</item>
-		<item>200</item>	
-		<item>220</item>
-		<item>240</item>
-		<item>241</item>
-		<item>260</item>
-		<item>280</item>
-		<item>300</item>
-		<item>320</item>
-		<item>340</item>
-		<item>Benutzerdefiniert</item>
-	</string-array>
-	
-	<string-array name="weather_interval_entries">
+<string-array name="weather_interval_entries">
 		<item>Aus</item>
 		<item>1 Minuten</item>
 		<item>5 Minuten</item>
@@ -273,7 +252,7 @@
 	</string-array>
 
 	<string-array name="weather_statusbar_location_entries">
-		<item>Über Carrier-Text</item>
+		<item>Über Anbieter-Text</item>
 		<item>Wetterleiste</item>
 		<item>Deaktivert</item>
 	</string-array>

@@ -69,6 +69,27 @@ public class WeatherInfo {
         else
             return "";
     }
+    
+    public static String getTranslatedDirectionString(Context mContext, String direction) {
+        if (direction.equals("N"))
+            return mContext.getResources().getString(R.string.direction_north);
+        else if (direction.equals("NE"))
+            return mContext.getResources().getString(R.string.direction_north_east);
+        else if (direction.equals("E"))
+            return mContext.getResources().getString(R.string.direction_east);
+        else if (direction.equals("SE"))
+            return mContext.getResources().getString(R.string.direction_south_east);
+        else if (direction.equals("S"))
+            return mContext.getResources().getString(R.string.direction_south);
+        else if (direction.equals("SW"))
+            return mContext.getResources().getString(R.string.direction_south_west);
+        else if (direction.equals("W"))
+            return mContext.getResources().getString(R.string.direction_west);
+        else if (direction.equals("NW"))
+            return mContext.getResources().getString(R.string.direction_north_west);
+        else
+            return "";
+    }
 
     private String trimSpeed(String speed) {
         return String.valueOf(Math.round(Float.parseFloat(speed)));

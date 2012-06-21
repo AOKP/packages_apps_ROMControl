@@ -106,6 +106,7 @@ public class WeatherXmlParser {
             if (temNode != null) {
                 strWindSpeed = temNode.getNamedItem(ATT_YAHOO_SPEED).getNodeValue();
                 strWindDir = temNode.getNamedItem(ATT_YAHOO_DIRECTION).getNodeValue();
+                strWindDir = WeatherInfo.getTranslatedDirectionString(mContext, strWindDir);
             }
             
             NamedNodeMap fcNode = root.getElementsByTagName(PARAM_YAHOO_FORECAST).item(0).getAttributes();

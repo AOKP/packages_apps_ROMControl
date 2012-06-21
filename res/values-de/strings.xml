@@ -527,4 +527,15 @@
     <string name="weather_47">örtliche Gewitter</string>
     <!-- Forecase unavailable -->
     <string name="weather_3200"></string>
+
+    <!-- cardinal directions -->
+    <string name="direction_north">N</string>
+    <string name="direction_north_east">NO</string>
+    <string name="direction_east">O</string>
+    <string name="direction_south_east">SO</string>
+    <string name="direction_south">S</string>
+    <string name="direction_south_west">SW</string>
+    <string name="direction_west">W</string>
+    <string name="direction_north_west">NW</string>
+
 </resources>

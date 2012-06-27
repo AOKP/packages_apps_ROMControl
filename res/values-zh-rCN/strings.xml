@@ -100,7 +100,14 @@
     <string name="long_press_home_summary">选择长按主屏幕键的行为(需要重启)</string>
 
     <string name="glow_times_title">虚拟按键发光动画</string>
-    <string name="glow_times_summary">调整虚拟按键按下后的动画速度，降低速度可以提高性能</string>
+    <string name="glow_times_off">关闭</string>
+    <string name="glow_times_superquick">超快</string>
+    <string name="glow_times_quick">快速</string>
+    <string name="glow_times_normal">正常</string>
+
+    <string name="combined_bar_title">组合栏</string>
+    <string name="combined_bar_auto_hide_title">自动隐藏</string>
+    <string name="combined_bar_auto_hide_summary">当运行全屏应用程序时隐藏组合栏</string>
 
     <!-- UI 界面 -->
     <string name="rotation_animation_delay_title">旋转延时</string>
@@ -116,6 +123,9 @@
 	<string name="longpress_to_kill_summary">长按返回键将会强行关闭当前程序</string>
 
     <string name="enable_volume_options">启用音量选项</string>
+
+    <string name="less_notification_sounds_title">限制通知提示音</string>
+    <string name="less_notification_sounds_summary">在设定时间内应用程序通知提示音只响应一次。</string>
 
 	<string name="rotate_180_title">允许 180° 旋转</string>
 	<string name="rotate_180_summary">允许设备倒置显示</string>
@@ -191,6 +201,8 @@
     <string name="volume_wake_summary">通过音量键唤醒屏幕</string>
     <string name="volume_music_controls_title">音量键控制音乐</string>
     <string name="volume_music_controls_summary">长按音量键切换歌曲</string>
+    <string name="lockscreen_stock_music_layout_title">默认音乐界面</string>
+    <string name="lockscreen_stock_music_layout_summary">当播放音乐时使用默认界面</string>
     <string name="lockscreen_show_nav_title">隐藏导航栏</string>
     <string name="lockscreen_show_nav_summary">锁屏时隐藏导航栏 (需要设备支持)</string>
     <string name="custom_app_n_dialog_title">选择目标 %1$s 的行为</string>
@@ -243,6 +255,9 @@
     <string name="title_show_torch_toggle">显示手电筒开关</string>
     <string name="title_show_airplane_toggle">显示飞行模式开关</string>
     <string name="title_show_navbar_hide">显示导航键开关</string>
+
+    <!-- Share to Clipboard 分享到剪贴板 -->
+    <string name="clipboard_notification">复制到剪贴板</string>
 
     <!-- Power Saving 省电模式 -->
     <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
@@ -572,4 +587,8 @@
     <string name="weather_45">雷阵雨</string>
     <string name="weather_46">阵雪</string>
     <string name="weather_47">地区性雷雨</string>
+
+    <!-- Miscellaneous 杂项 -->
+    <string name="location_unavailable">无法获取当前位置的天气信息</string>
+
 </resources>

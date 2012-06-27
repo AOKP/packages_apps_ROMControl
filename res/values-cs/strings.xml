@@ -147,6 +147,8 @@
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
   <string name="lockscreen_weather_title">Počasí na zamčené obrazovce</string>
   <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
+  <string name="lockscreen_weather_type_title">Styl počasí na zamčené obrazovce</string>
+  <string name="lockscreen_weather_type_summary">Nastavuje zobrazení grafické nebo textové podoby informace o počasí.</string>
   <string name="volume_wake_title">Probuzení tlačítky hlasitosti</string>
   <string name="volume_wake_summary">Stisknutím tlačítka hlasitosti ve vypnutém stavu dojde k zapnutí obrazovky.</string>
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>

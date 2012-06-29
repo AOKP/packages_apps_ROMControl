@@ -101,18 +101,12 @@ public class WeatherService extends IntentService {
                 manual = extras.getBoolean(INTENT_EXTRA_ISMANUAL, false);
             }
             if (customLoc != null && useCustomLoc) {
-                if (manual) {
-                    makeToast(context.getString(R.string.weather_refreshing));
-                }
                 woeid = YahooPlaceFinder.GeoCode(getApplicationContext(), customLoc);
                 // network location
             } else {
                 // do not attempt to get a location without data
                 boolean networkAvailable = Helpers.isNetworkAvailable(getApplicationContext());
                 if(networkAvailable) {
-                    if (manual) {
-                        makeToast(context.getString(R.string.weather_refreshing));
-                    }
                     final LocationManager locationManager = (LocationManager) this
                             .getSystemService(Context.LOCATION_SERVICE);
 

@@ -49,6 +49,7 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     protected boolean hasHardwareButtons;
     protected boolean hasFastCharge;
     protected boolean hasColorTuning;
+    protected boolean hasVolumeWake;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
         hasHardwareButtons = getResources().getBoolean(R.bool.has_hardware_buttons);
         hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
         hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
+        hasVolumeWake = getResources().getBoolean(R.bool.has_volume_wake);
         mContext = getActivity().getApplicationContext();
         super.onCreate(savedInstanceState);
     }

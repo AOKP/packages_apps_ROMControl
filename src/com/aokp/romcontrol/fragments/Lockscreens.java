@@ -223,6 +223,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     .removePreference(findPreference(Settings.System.ENABLE_FAST_TORCH));
         }
 
+        if (!hasVolumeWake) {
+            ((PreferenceGroup) findPreference("advanced_cat"))
+                    .removePreference(findPreference(Settings.System.VOLUME_WAKE_SCREEN));
+        }
+
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
 

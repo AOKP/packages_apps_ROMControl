@@ -14,4 +14,7 @@
 
     <!-- Whether can use color tuning -->
     <bool name="has_color_tuning">true</bool>
+
+    <!-- Whether can use Volume wake -->
+    <bool name="has_volume_wake">true</bool>
 </resources>

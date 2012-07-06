@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pref_navigation_menu_entries">
+        <item>Po prawej</item>
+        <item>Po lewej</item>
+        <item>Po obu stronach</item>
+        <item>Usuń</item>
+    </string-array>
+
+    <string-array name="pref_powersaving_data_screen_off_entries_cdma">
+        <item>Nic nie rób</item>
+        <item>Wyłącz LTE</item>
+        <item>Wyłacz transmisję danych</item>
+    </string-array>
+
+    <string-array name="pref_powersaving_data_screen_off_entries">
+        <item>Nic nie rób</item>
+        <item>Wyłacz transmisję danych</item>
+        <item>Przejdź na sieć 2G</item>
+    </string-array>
+
+    <string-array name="pref_powersaving_data_screen_off_delay_entries">
+        <item>Nie czekaj (od razu)</item>
+        <item>10 sekund</item>
+        <item>30 sekund</item>
+        <item>45 sekund</item>
+        <item>1 minuta</item>
+        <item>5 minut</item>
+        <item>10 minut</item>
+        <item>15 minut</item>
+        <item>30 minut</item>
+    </string-array>
+
+    <string-array name="pref_powersaving_sync_screen_off_interval_entries">
+        <item>15 minut</item>
+        <item>30 minut</item>
+        <item>1 godzina</item>
+        <item>2 godziny</item>
+        <item>3 godziny</item>
+        <item>4 godziny</item>
+        <item>5 godzin</item>
+        <item>6 godzin</item>
+        <item>8 godzin</item>
+        <item>12 godzin</item>
+    </string-array>
+
+    <string-array name="pref_powersaving_sync_screen_off_entries">
+        <item>Nic nie rób</item>
+        <item>Wyłącz automatyczną synchronizację</item>
+        <item>Synchronizuj automatycznie w odstępach czasu</item>
+    </string-array>
+
+    <string-array name="powersaving_screen_off_wifi_entries">
+        <item>Nic nie rób</item>
+        <item>Wyłącz Wi-Fi</item>
+        <item>Włącz Wi-Fi</item>
+    </string-array>
+
+    <string-array name="powersaving_sync_data_mode_entries">
+        <item>Nic nie rób</item>
+        <item>Tylko Wi-Fi</item>
+        <item>Priorytet dla Wi-Fi</item>
+        <item>Tylko transmisja danych</item>
+    </string-array>
+
+    <string-array name="powersaving_sync_data_mobile_mode_entries">
+        <item>Tylko 2G/1x</item>
+        <item>Priorytet dla 3G</item>
+    </string-array>
+
+    <string-array name="led_entries">
+        <item>0,5 sekundy</item>
+        <item>1 sekunda</item>
+        <item>1,5 sekundy</item>
+        <item>2 sekundy</item>
+        <item>2,5 sekundy</item>
+        <item>3 sekundy</item>
+        <item>3,5 sekundy</item>
+        <item>4 sekundy</item>
+        <item>4,5 sekundy</item>
+        <item>5 sekund</item>
+        <item>5,5 sekundy</item>
+        <item>6 sekund</item>
+        <item>7 sekund</item>
+        <item>8 sekund</item>
+        <item>9 sekund</item>
+        <item>10 sekund</item>
+    </string-array>
+
+    <string-array name="pref_navigation_menu_display_entries">
+        <item>Domyślne zachowanie ICS</item>
+        <item>Zawsze pokazuj niewidoczne ikony</item>
+        <item>Zawsze pokazuj</item>
+        <item>Domyślne zachowanie ICS z pokazywaniem niewidocznych ikon</item>
+    </string-array>
+
+    <string-array name="statusbar_transparency_entries">
+        <item>Brak przezroczystości</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+        <item>Pełna przezroczystość</item>
+    </string-array>
+
+    <string-array name="statusbar_fontsize_entries">
+        <item>8dp</item>
+        <item>12dp</item>
+        <item>14dp</item>
+        <item>16dp (domyślnie)</item>
+        <item>20dp</item>
+        <item>24dp</item>
+    </string-array>
+
+    <string-array name="statusbar_layout_entries">
+        <item>Standardowy układ</item>
+        <item>Odwrócony</item>
+        <item>Tradycyjny</item>
+    </string-array>
+
+    <string-array name="clock_style_entries">
+        <item>Zegar po prawej</item>
+        <item>Zegar pośrodku</item>
+        <item>Brak zegara</item>
+    </string-array>
+
+    <string-array name="clock_ampm_entries">
+        <item>Nie pokazuj</item>
+        <item>Małe AM/PM</item>
+        <item>Normalne AM/PM</item>
+    </string-array>
+
+    <string-array name="clock_weekday_entries">
+        <item>Nie pokazuj</item>
+        <item>Skrócona nazwa</item>
+        <item>Normalna nazwa</item>
+    </string-array>
+
+    <string-array name="brightness_location_entries">
+        <item>Na górze</item>
+        <item>Na dole</item>
+        <item>Nie pokazuj</item>
+    </string-array>
+
+    <string-array name="toggle_style_entries">
+        <item>Ikona</item>
+        <item>Tekst</item>
+    </string-array>
+
+    <string-array name="long_press_home_entries">
+        <item>Domyślnie dla telefonu</item>
+        <item>Nic nie rób</item>
+        <item>Ostatnie aplikacje (układ sprzed ICS)</item>
+        <item>Ostatnie aplikacje</item>
+    </string-array>
+
+    <string-array name="pref_lockscreen_options_entries">
+        <item>Standardowe</item>
+        <item>AOSP</item>
+        <item>Honeycomb</item>
+        <item>3 cele</item>
+        <item>4 cele</item>
+        <item>5 celów</item>
+        <item>6 celów</item>
+        <item>7 celów</item>
+        <item>8 celów</item>
+    </string-array>
+
+    <string-array name="pref_lockscreen_calendar_interval_entries">
+        <item>1 sekunda</item>
+        <item>1,5 sekundy</item>
+        <item>2 sekundy</item>
+        <item>2,5 sekundy</item>
+        <item>3 sekundy</item>
+        <item>3,5 sekundy</item>
+        <item>4 sekundy</item>
+    </string-array>
+
+    <string-array name="pref_lockscreen_calendar_range_entries">
+        <item>1 dzień</item>
+        <item>2 dni</item>
+        <item>3 dni</item>
+        <item>4 dni</item>
+        <item>5 dni</item>
+        <item>6 dni</item>
+        <item>1 tydzień</item>
+    </string-array>
+
+    <string-array name="battery_icon_entries">
+        <item>Tylko ikona</item>
+        <item>Tylko tekst</item>
+        <item>Ikona z tekstem</item>
+        <item>Ikona z wyśrodkowanym tekstem</item>
+        <item>CircleMOD</item>
+        <item>Ukryj</item>
+    </string-array>
+
+    <string-array name="battery_bar_entries">
+        <item>Ukryj</item>
+        <item>Pasek stanu</item>
+        <item>Na górze paska nawigacji</item>
+        <item>Na dole paska nawigacji</item>
+    </string-array>
+
+    <string-array name="battery_bar_style_entries">
+        <item>Normalny</item>
+        <item>Wyśrodkowany</item>
+    </string-array>
+
+    <string-array name="available_toggles_values">
+        <item>Auto-obracanie</item>
+        <item>BT</item>
+        <item>GPS</item>
+        <item>Wi-Fi</item>
+        <item>Tryb samolotowy</item>
+        <item>Wibracja</item>
+        <item>Wybiszenie</item>
+        <item>Latarka</item>
+        <item>Synchronizacja</item>
+        <item>Lans</item>
+    </string-array>
+
+    <string-array name="lockscreen_choice_entries">
+        <item>Odblokowanie</item>
+        <item>Przełącznik dźwięku</item>
+        <item>Telefon</item>
+        <item>Aparat</item>
+        <item>SMS</item>
+        <item>Własna aplikacja</item>
+        <item>Puste</item>
+    </string-array>
+
+    <string-array name="weather_interval_entries">
+        <item>Wyłączone</item>
+        <item>1 minuta</item>
+        <item>5 minut</item>
+        <item>10 minut</item>
+        <item>30 minut</item>
+        <item>45 minut</item>
+        <item>60 minut</item>
+        <item>2 godziny</item>
+        <item>3 godziny</item>
+        <item>4 godziny</item>
+        <item>6 godzin</item>
+        <item>8 godzin</item>
+    </string-array>
+
+    <string-array name="signal_style_entries">
+        <item>Pokazuj słupki zasięgu</item>
+        <item>Pokazuj tekst zasięgu</item>
+        <item>Pokazuj w/dBm</item>
+    </string-array>
+
+    <string-array name="wifi_signal_style_entries">
+        <item>Pokazuj słupki zasięgu</item>
+        <item>Pokazuj tekst zasięgu</item>
+    </string-array>
+
+    <string-array name="weather_statusbar_location_entries">
+        <item>Ponad tekstem operatora</item>
+        <item>Panel pogodowy</item>
+        <item>Wyłączone</item>
+    </string-array>
+
+    <string-array name="navigation_bar_width_entries">
+        <item>42 dp (domyślnie)</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+
+    <string-array name="navigation_bar_height_entries">
+        <item>48 dp (domyślnie)</item>
+        <item>42 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+
+    <string-array name="navbar_button_entries">
+        <item>Ekran główny</item>
+        <item>Powrót</item>
+        <item>Ostatnie aplikacje</item>
+        <item>Wyszukiwarka</item>
+        <item>Menu</item>
+        <item>Przełącznik widżetów</item>
+        <item>Zabij aplikację</item>
+        <item>Zasilanie</item>
+        <item>Własna aplikacja</item>
+        <item>Puste</item>
+    </string-array>
+
+    <string-array name="recent_app_switcher_entries">
+        <item>Standardowy</item>
+        <item>Układ WebOS</item>
+        <item>Układ Sense 4</item>
+    </string-array>
+
+    <string-array name="less_notification_sounds_entries">
+        <item>Domyśkne zachowanie</item>
+        <item>3s</item>
+        <item>5s</item>
+        <item>10s</item>
+        <item>15s</item>
+        <item>30s</item>
+        <item>45s</item>
+        <item>1m</item>
+        <item>2m</item>
+    </string-array>
+
+    <string-array name="pref_lockscreen_weather_type_entries">
+        <item>Panel pogodowy</item>
+        <item>Tekst</item>
+    </string-array>
+</resources>

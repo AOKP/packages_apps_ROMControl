@@ -68,7 +68,7 @@
 		<item>Nur 2G</item>
 		<item>3G bezorzugen</item>
 	</string-array>
-	
+
 	<string-array name="led_entries">
 		<item>0.5 Sekunden</item>
 		<item>1 Sekunde</item>
@@ -162,32 +162,36 @@
 		<item>Benutzerdefinierte Anwendung</item>
 	</string-array>
 
-        <string-array name="pref_lockscreen_options_entries">
+	<string-array name="pref_lockscreen_options_entries">
 		<item>Standard</item>
-		<item>Vierfach</item>
-		<item>Achtfach</item>
 		<item>AOSP</item>
 		<item>Honeycomb</item>
+		<item>3 Ziele</item>
+		<item>4 Ziele</item>
+		<item>5 Ziele</item>
+		<item>6 Ziele</item>
+		<item>7 Ziele</item>
+		<item>8 Ziele</item>
 	</string-array>
 
 	<string-array name="pref_lockscreen_calendar_interval_entries">
 		<item>1 Sekunde</item>
 		<item>1.5 Sekunden</item>
-        	<item>2 Sekunden</item>
-	        <item>2.5 Sekunden</item>
-	        <item>3 Sekunden</item>
-	        <item>3.5 Sekunden</item>
-	        <item>4 Sekunden</item>
+		<item>2 Sekunden</item>
+		<item>2.5 Sekunden</item>
+		<item>3 Sekunden</item>
+		<item>3.5 Sekunden</item>
+		<item>4 Sekunden</item>
 	</string-array>
 
 	<string-array name="pref_lockscreen_calendar_range_entries">
 		<item>1 Tag</item>
 		<item>2 Tage</item>
-        	<item>3 Tage</item>
-        	<item>4 Tage</item>
-        	<item>5 Tage</item>
-        	<item>6 Tage</item>
-        	<item>1 Woche</item>
+		<item>3 Tage</item>
+		<item>4 Tage</item>
+		<item>5 Tage</item>
+		<item>6 Tage</item>
+		<item>1 Woche</item>
 	</string-array>
 
 	<string-array name="battery_icon_entries">
@@ -205,14 +209,14 @@
 		<item>Oben Kante der Navigationsleiste</item>
 		<item>Untere Kante der Navigationsleiste</item>
 	</string-array>
-	
+
 	<string-array name="battery_bar_style_entries">
 		<item>Normal</item>
 		<item>Mittig</item>
 	</string-array>
 
 
-	
+
 	<string-array name="lockscreen_choice_entries">
 		<item>Entsperren</item>
 		<item>Ton an/aus</item>
@@ -244,7 +248,7 @@
 		<item>340</item>
 		<item>Benutzerdefiniert</item>
 	</string-array>
-	
+
 	<string-array name="weather_interval_entries">
 		<item>Aus</item>
 		<item>1 Minuten</item>

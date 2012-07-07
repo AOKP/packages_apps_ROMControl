@@ -503,4 +503,15 @@
   <string name="weather_47">Ojedinělé bouřky</string>
   <!-- Forecase unavailable -->
   <string name="weather_3200"></string>
+  <!-- Miscellaneous -->
+  <string name="location_unavailable">Nelze získat informace o poloze pro aktualizaci počasí</string>
+  <!-- cardinal directions -->
+  <string name="direction_north">S</string>
+  <string name="direction_north_east">SV</string>
+  <string name="direction_east">V</string>
+  <string name="direction_south_east">JV</string>
+  <string name="direction_south">J</string>
+  <string name="direction_south_west">JZ</string>
+  <string name="direction_west">Z</string>
+  <string name="direction_north_west">SZ</string>
 </resources>

@@ -6,7 +6,7 @@
     <string name="user_interface">Interfejs użytkownika</string>
     <string name="general_ui">Ogólny interfejs</string>
     <string name="lockscreen_options">Blokada ekranu</string>
-    <string name="power_menu_optons">Power menu</string>
+    <string name="power_menu_optons">Menu zasilania</string>
     <string name="functionality">Funkcjonalność</string>
     <string name="power_saver">Oszczędzanie energii</string>
     <string name="led_options">Opcje dla LED</string>
@@ -30,7 +30,7 @@
     <string name="header_summary_general">Zachowanie przycisku ustawień</string>
     <string name="header_summary_toggles">Dostosuj przełączniki</string>
     <string name="header_summary_clock">Pozycja zegara, kolor, itp.</string>
-    <string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
+    <string name="header_summary_weather">Włączenie/wyłączenie, ustawienie własnej lokalizacji, konfiguracja odświeżania itp.</string>
     <string name="header_summary_signal">Siła sygnału w dBm, styl wyświetlania</string>
     
     <string name="advanced_settings">Zaawansowane ustawienia</string>
@@ -66,16 +66,16 @@
     <string name="navbar_order_title">Kolejność przycisków</string>
     <string name="navbar_order_summary">Dostosuj kolejność przycisków ekranowych</string>
 
-    <string name="navbar_button_cat">Przyciski paska nawigacji</string>
+    <string name="navbar_button_cat">Przyciski paska nawigacyjnego</string>
 
     <string name="navbar_qty_title">Ilość przycisków</string>
-    <string name="navbar_qty_summary">Wybierz ilość przycisków nawigacji</string>
+    <string name="navbar_qty_summary">Wybierz ilość przycisków nawigacyjnych</string>
 
     <string name="enabled_navbar_buttons_title">Włączone przyciski</string>
     <string name="enabled_navbar_buttons_summary">Wybierz, które przyciski ekranowe chcesz mieć wyświetlane</string>
 
-    <string name="navbar_action_title">Akcja i ikona przycisku \"%1$\"</string>
-    <string name="navbar_longpress_title">Akcja długiego przyciśnięcia \"%1$\"</string>
+    <string name="navbar_action_title">Akcja i ikona przycisku \"%1$s\"</string>
+    <string name="navbar_longpress_title">Akcja długiego przyciśnięcia \"%1$s\"</string>
 
     <string name="navbar_action_home">Ekran główny</string>
     <string name="navbar_action_back">Powrót</string>
@@ -84,15 +84,15 @@
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_kill">Zabij aplikację</string>
     <string name="navbar_action_power">Zasilanie</string>
-    <string name="navbar_action_none">Pust</string>
+    <string name="navbar_action_none">Puste</string>
 
     <string name="navbar_enable_bar">Włącz pasek</string>
 
-    <string name="navbar_widgets">Widżety paska nawigacji</string>
+    <string name="navbar_widgets">Widżety paska nawigacyjnego</string>
     <string name="navbar_widgets_reset">Resetuj widżety</string>
 
     <string name="navbar_enable_dialog_title">Wymagany restart urządzenia!</string>
-    <string name="navbar_enable_dialog_msg">Zrestartuj urządzenie po włączeniu/wyłączeniu paska nawigacji, by działał on prawidłowo!</string>
+    <string name="navbar_enable_dialog_msg">Zrestartuj urządzenie po włączeniu/wyłączeniu paska nawigacyjnego, by działał on prawidłowo!</string>
     <string name="navbar_enable_dialog_negative">Zrobię to później</string>
     <string name="navbar_enable_dialog_Positive">Restartuj teraz!</string>
 
@@ -199,7 +199,7 @@
     <string name="lockscreen_battery_summary">Zawsze pokazuj stan naładowania baterii na blokadzie ekranu</string>
     <string name="lockscreen_weather_title">Pogoda na blokadzie ekranu</string>
     <string name="lockscreen_weather_summary">Pokazuj informacje pogodową na blokadzie ekranu. Musisz mieć włączoną usługę pogody w Kontrolerze ROM-u.</string>
-    <string name="lockscreen_weather_type_title">Styl pogody na blokadzie keranu</string>
+    <string name="lockscreen_weather_type_title">Styl pogody na blokadzie ekranu</string>
     <string name="lockscreen_weather_type_summary">Pogoda w formie graficznej czy tekstowej</string>
     <string name="volume_wake_title">Budzenie przyciskami głośności</string>
     <string name="volume_wake_summary">Naciśnięcie przycisku zmiany głośności w trybie uśpienia włączy ekran</string>
@@ -323,9 +323,9 @@
     <string name="status_bar_notif_count_summary">Wyświetl ilość oczekujących powiadomień</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_title_text_widget">Pokaż tekst zamiast baterii</string>
+    <string name="battery_icon">Pokaż tekst zamiast baterii</string>
     <string name="battery_summary_text_widget">@null</string>
-    <string name="battery_title_text_widget_center">Wyśrodkuj tekst</string>
+    <string name="battery_bar">Lokalizacja paska baterii</string>
     <string name="battery_bar_color">Kolor paska baterii</string>
     <string name="battery_bar_cat">Opcje paska baterii</string>
     <string name="battery_bar_style_title">Styl paska baterii</string>
@@ -401,7 +401,7 @@
     <string name="weather_custom_app_title">Własna aplikacja</string>
     <string name="weather_custom_app_dialog_title">Wybierz swoją aplikację</string>
     <string name="weather_custom_app_dialog_message">Nazwa pakietu</string>
-    <string name="weather_refreshing">Zaktualizuj pogodę</string>
+    <string name="weather_refreshing">Aktualizacja pogody</string>
     <string name="weather_loc_warning_title">Nie udało się pobrać lokalizacji!</string>
     <string name="weather_loc_warning_msg">"Pobieranie lokalizacji z sieci komórkowej jest aktualnie wyłączone. To uniemożliwia pobranie pogody dla twojej obecnej lokalizacji. UStaw własną lokalizację lub włącz pobieranie lokalizacji z sieci komórkowej."</string>
     <string name="weather_loc_warning_positive">Włącz lokalizację sieci komórkowej</string>
@@ -432,8 +432,8 @@
     <string name="pt_enable_cron">Włącz zaplanowane zadania</string>
     <!-- Performance -->
     <string name="pt_set_cpu_activity">Ustaw CPU</string>
-    <string name="pt_free_memory">Free memory</string>
-    <string name="pt_free_memory_boot">Set at boot</string>
+    <string name="pt_free_memory">Wolna pamięć</string>
+    <string name="pt_free_memory_boot">Ustaw przy starcie</string>
     <!-- Cpu -->
     <string name="pt_set_max">Maksymalna częstotliwość CPU</string>
     <string name="pt_set_min">Minimalna częstotliwość CPU</string>
@@ -463,9 +463,9 @@
     <string name="ps_enable_sysctl">Włącz usprawnienia sysctl przy uruchomieniu systemu</string>
     <string name="ps_enable_cron">Włącz zaplanowane zadania cron</string>
     <!-- CPU -->
-    <string name="ps_set_max">Ustaw maksymalną częstotliwość skalowania CPU\Obecna: %s</string>
-    <string name="ps_set_min">Ustaw minimalną częstotliwość skalowania CPU\Obecna: %s</string>
-    <string name="ps_set_gov">Ustaw metodę skalowania (governor)\Obecna: %s</string>
+    <string name="ps_set_max">Ustaw maksymalną częstotliwość skalowania CPU\nObecna: %s</string>
+    <string name="ps_set_min">Ustaw minimalną częstotliwość skalowania CPU\nObecna: %s</string>
+    <string name="ps_set_gov">Ustaw metodę skalowania (governor)\nObecna: %s</string>
     <string name="ps_cpu_boot">Zastosuj ustawienia CPU przy uruchomieniu</string>
     <!-- Performance -->
     <string name="ps_set_cpu_activity">Ustaw minimalne/maksymalne częstotliwości CPU i metodę skalowania

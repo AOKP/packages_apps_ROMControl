@@ -209,12 +209,12 @@
 
     <string-array name="available_toggles_values">
         <item>Auto-obracanie</item>
-        <item>BT</item>
+        <item>Bluetooth</item>
         <item>GPS</item>
         <item>Wi-Fi</item>
         <item>Tryb samolotowy</item>
         <item>Wibracja</item>
-        <item>Wybiszenie</item>
+        <item>Wyciszenie</item>
         <item>Latarka</item>
         <item>Synchronizacja</item>
         <item>Lans</item>

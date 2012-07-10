@@ -59,7 +59,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        mTablet = Settings.System.getInt(getContentResolver(), Settings.System.IS_TABLET, 0) == 1;
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());

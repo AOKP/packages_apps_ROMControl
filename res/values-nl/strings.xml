@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">ROM Control</string>
 
     <!-- Main -->
     <string name="user_interface">Gebruikers Interface (UI)</string>
@@ -15,68 +16,256 @@
     <string name="clock">Klok</string>
     <string name="battery">Batterij</string>
     <string name="nav_bar">Navigatiebalk</string>
-
+    <string name="tools">Tools</string>
+    <string name="weather">Weer</string>
+    <string name="signal">Connectiviteit</string>
+	
+	<string name="header_summary_battery">Verander de weergave van de batterij</string>
+    <string name="header_summary_general_ui">Boot animatie, bug mailer, rotatie, IME schakelaar, etc</string>
+    <string name="header_summary_navigation_bar">Weergegeven knoppen, nav balk kleur, volgorde</string>
+    <string name="header_summary_lockscreens">Eigen snelkoppelingen, weergave</string>
+    <string name="header_summary_power_menu">Wat te weergeven in het power menu</string>
+    <string name="header_summary_powersaver">Automatisch uitschakelen van verbindingen</string>
+    <string name="header_summary_led">Wijzig de standaard LED instellingen voor Android</string>
+    <string name="header_summary_general">Wijzig algemene instellingen</string>
+    <string name="header_summary_toggles">Wijzig de schakelaars</string>
+	<string name="header_summary_clock">Tijdzone, 12- en 24-uurs klok, kleur</string>
+	<string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
+	<string name="header_summary_signal">Weergave van de signaalsterkte</string>
+	
     <string name="advanced_settings">Geavanceerde instellingen</string>
     <string name="misc_short">Overig</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_lockscreens_remove_wallpaper">Herstel lockscreen wallpaper</string>
+    <string name="menu_main_activity_change_locale"></string>
+    <string name="menu_nav_bar_reset">Herstel nav bar</string>
+    <string name="menu_weather_get_weather">Update weer</string>
+
+    <!-- General Strings -->
+    <string name="cancel">Annuleer</string>
+    <string name="ok">OK</string>
 
     <!-- Navigation Bar -->
     <string name="title_pref_menu_display">Menu-instellingen</string>
     <string name="summary_pref_menu_display">Positie van legacy menuknop</string>
     <string name="navigation_bar">Navigatiebalk</string>
     <string name="navigation_bar_tint_title">Kleur Navigatiebalk</string>
-
+    <string name="navigation_bar_glow_tint_title">Navigatiebalk gloed kleur</string>
+    <string name="navigation_bar_glow_tint_summary">Er wordt een gloed weergeven wanneer u op een knop drukt, hiermee wijzigt u de kleur van deze gloed.</string>
+    <string name="navigation_bar_height_title">Navigatiebalk hoogte</string>
+    <string name="navigation_bar_width_title">Navigatiebalk breedte</string>
+	
+	<string name="navigation_bar_add_new_widget_title">Voeg een widget toe</string>
+    <string name="navigation_bar_add_new_widget_summary">Druk om nog een widget toe te voegen</string>
+    <string name="navigation_bar_widget">"Widget "</string>
+	
     <string name="title_pref_navigation_menu_display">Zichtbaarheid Menu</string>
     <string name="summary_pref_navigation_menu_display">Hoe en wanneer moeten de menuknoppen verschijnen?</string>
 
     <string name="navbar_order_title">Volgorde navigatieknoppen</string>
     <string name="navbar_order_summary">Pas de volgorde van de softwareknoppen aan</string>
 
+    <string name="navbar_button_cat">Navigatiebalk knoppen</string>
+
+	<string name="navbar_qty_title">Aantal navigatiebalk knoppen</string>
+    <string name="navbar_qty_summary">Kies het aantal navigatiebalk knoppen</string>
+	
     <string name="enabled_navbar_buttons_title">Ingeschakelde knoppen</string>
     <string name="enabled_navbar_buttons_summary">Kies welke knoppen zichtbaar zijn</string>
 
-    <string name="long_press_home_title">Long press home action</string>
-    <string name="long_press_home_summary">What to do when long pressing the home softkey</string>
+	<string name="navbar_action_title">Knop %1$s actie &amp; icoon</string>
+    <string name="navbar_longpress_title">Knop %1$s actie voor lang indrukken</string>
+	
+    <string name="navbar_action_home">Home</string>
+    <string name="navbar_action_back">Terug</string>
+    <string name="navbar_action_recents">Recente app\'s</string>
+    <string name="navbar_action_search">Zoeken</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_kill">Beëindig taak</string>
+    <string name="navbar_action_power">Aan/uit knop</string>
+    <string name="navbar_action_none">Geen actie</string>
 
-    <!-- UI -->
-    <string name="rotation_animation_delay_title">Rotatievertraging</string>
+	<string name="navbar_enable_bar">Balk inschakelen</string>
+
+	<string name="navbar_widgets">Navigatiebalk widgets</string>
+	<string name="navbar_widgets_reset">Herstel navigatiebalk widgets</string>
+
+    <string name="navbar_enable_dialog_title">Herstart vereist!</string>
+    <string name="navbar_enable_dialog_msg">Herstart om de navigatiebalk correct in of uit te schakelen!</string>
+    <string name="navbar_enable_dialog_negative">Ik zal later herstarten</string>
+    <string name="navbar_enable_dialog_Positive">Herstart nu!</string>
+
+    <string name="button_transparency_title">Knop doorzichtigheid</string>
+	
+    <string name="long_press_home_title">Actie voor het lang indrukken van de home knop</string>
+    <string name="long_press_home_summary">Wat te doen na het lang indrukken van de home knop</string>
+
+	<string name="glow_times_title">Gloed animatie</string>
+    <string name="glow_times_off">Uitgeschakeld</string>
+    <string name="glow_times_superquick">Super snel</string>
+    <string name="glow_times_quick">Snel</string>
+    <string name="glow_times_normal">Normaal</string>
+
+    <string name="combined_bar_title">Gecombineerde balk</string>
+    <string name="combined_bar_auto_hide_title">Automatisch verbergen</string>
+    <string name="combined_bar_auto_hide_summary">De balk automatisch verbergen wanneer een app fullscreen draait</string>
+   
+   <!-- UI -->
+	<string name="rotation_animation_delay_title">Rotatievertraging</string>
     <string name="rotation_animation_delay_summary">Tijdsduur in milliseconden die het device stabiel moet zijn voordat een rotatie plaatsvind. Standaard 200ms. </string>
 
 	<string name="ime_switcher_title">Toon IME wissel</string>
 	<string name="ime_switcher_summary">In statusbar, tijdens  het  typen (reboot vereist)</string>
-
+	
 	<string name="custom_carrier_label_title">Aangepast provider label</string>
-	<string name="longpress_to_kill_title">Hou \'terug\' vast voor afsluiten</string>
+	<string name="custom_carrier_label_empty">Voer a.u.b. een nieuwe label in!</string>
+	<string name="custom_carrier_label_warning">Op dit moment is er geen aangepast label in gebruik, na het instellen van een label kan dit alleen ongedaan worden gemaakt met een wipe!</string>
+
+	<string name="longpress_to_kill_title">Houd \'terug\' vast voor afsluiten</string>
 	<string name="longpress_to_kill_summary">Langdrukken op de terug-knop sluit de huidige activitei af.</string>
+
+	<string name="enable_volume_options">Activeer uitgebreide volume opties</string>
+
+	<string name="less_notification_sounds_title">Beperk meldingsgeluiden</string>
+    <string name="less_notification_sounds_summary">Beperk het aantal meldingen per ingestelde tijdwaarde voor alle app\'s.</string>
+
+	<string name="rotate_180_title">180° Rotatie activeren</string>
+	<string name="rotate_180_summary">Het toestel is nu ook op zijn kop te gebruiken!</string>
+
+	<string name="recent_app_switcher_title">Recente apps scherm stijl</string>
+	<string name="recent_app_switcher_summary">Verander de stijl van het recente apps scherm (reboot vereist)</string>
+		
+	<string name="disable_bootanimation_title">Boot animatie uitschakelen</string>
+	<string name="disable_bootanimation_summary">Eikel.</string>
+
+	<string name="disable_bootaudio_title">Boot audio uitschakelen</string>
+	<string name="disable_bootaudio_summary">Uitgeschakeld.</string>
+	<string name="disable_bootaudio_summary_disabled">Om boot audio te gebruiken, dient het volgende bestand aanwezig te zijn \n/system/media/boot_audio.mp3</string>
+
+	<string name="disable_bugmailer_title">Bugmailer uitschakelen</string>
+
+	<string name="lcd_density_title">LCD dichtheid</string>
+	<string name="lcd_density_summary">unknown</string>
 
 	<!-- CRT animations -->
 	<string name="crt_animations_header">CRT animaties</string>
 	<string name="crt_on_title">CRT aan animatie</string>
 	<string name="crt_off_title">CRT uit animatie</string>
 
+	<!-- LCD Density -->
+	<string name="current_lcd_density">"Huidige LCD dichtheid: "</string>
+	<string name="lcd_density_wizard">LCD dichtheid wizard</string>
+	<string name="follow_through_title">Volg alle stappen!</string>
+	<string name="follow_through_summary">Zorg ervoor dat u de stappen heeft voltooid alvorens door te gaan naar de volgende.</string>
+	<string name="stock_density_title">1. Verander de standaard LCD dichtheid</string>
+	<string name="stock_density_summary">Tablets en oudere telefoons gebruiken 160, nieuwere modellen 240. De Galaxy Nexus gebruikt standaard 320.</string>
+	<string name="stock_density_changed_summary">"Dichtheid gewijzigd naar: "</string>
+	<string name="reboot_title">2. Herstart!</string>
+	<string name="reboot_summary">Herstart de telefoon alvorens de volgende stappen te voltooien!</string>
+	<string name="clear_market_data_title">3. Verwijder de Play Store data</string>
+	<string name="clear_market_data_cleared">Play store data verwijderd</string>
+	<string name="clear_market_data_donot_cleared">"Play store data kon niet verwijderd worden, verwijder de data a.u.b. handmatig!"</string>
+	<string name="open_market_title">4. Open de Play store en accepteer de voorwaarden</string>
+	<string name="open_market_summary">Druk op de terug knop om hier terug te komen.</string>
+	<string name="open_market_summary_could_not_open">"De play store kon niet geopend worden, open heb a.u.b. handmatig."</string>
+	<string name="custom_density_title">5. Wijzig de LCD dichtheid naar de gewenste waarde!</string>
+	<string name="custom_density_summary">Wanneer u problemen ondervindt met de Play store, dient u alle stappen opnieuw te volgen.</string>
+	<string name="custom_density_summary_invalid">"ONGELDIGE WAARDE!"</string>
+	<string name="custom_density">custom</string>
+	<string name="set_custom_density_title">Set custom density</string>
+	<string name="set_custom_density_set">Set</string>
+	<string name="custom_density_dialog_title">"WAARSCHUWING!"</string>
+	<string name="custom_density_dialog_summary">"Het wijzigen van de LCD dichtheid kan ervoor zorgen dat app\'s zich onverwacht gaan gedragen, wanneer dat het geval is dient u de stappen opnieuw te volgen."</string>
+	<string name="custom_density_dialog_button_got">Begrepen!</string>
+	<string name="custom_density_dialog_button_reboot">Herstart nu</string>	
+
+	
     <!-- Lockscreens -->
+	<string name="pref_lockscreen_layout_title">Lockscreen stijl</string>
+    <string name="pref_lockscreen_layout_summary">Vergeet niet uw snelkoppelingen aantepassen na het wijzigen van de stijl</string>
+	
     <string name="title_pref_lockscreen_quad_targets">Quad Targets</string>
     <string name="summary_pref_lockscreen_quad_targets">Voegt Telefoon- en SMS-snelkoppelingen toe aan het lockscreen</string>
 
-    <string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Legacy menuicoon unlocked het scherm (reboot vereist)</string>
+	<string name="title_pref_lockscreen_octo_targets">Octo Targets</string>
+    <string name="summary_pref_lockscreen_octo_targets">Voegt veel te veel snelkoppelingen toe aan de lockscreen</string>
 
+	<string name="title_pref_lockscreen_menu_unlock">Menu unlock</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Legacy menuicoon unlocked het scherm (reboot vereist)</string>
     <string name="title_lockscreen_user_timeout_override">Wacht voor lockscreen</string>
     <string name="summary_lockscreen_user_timeout_override">Gebruik Android\'s timeoutinstelling bij het handmatig uitzetten van het scherm. Standaard wordt de vertraging alleen gebruikt als het scherm uit zichzelf uit gaat.</string>
+	<string name="show_lock_before_unlock_title">Laat het lockscreen zien alvorens te unlocken</string>
+    <string name="show_lock_before_unlock_summary">Laat het standaard lockscreen zien voordat de beveiligde zichtbaar is</string>
+    <string name="lockscreen_battery_title">Lockscreen batterij percentage</string>
+    <string name="lockscreen_battery_summary">Weergeeft het batterij percentage op de lockscreen</string>
+	<string name="lockscreen_weather_title">Lockscreen weer</string>
+    <string name="lockscreen_weather_summary">Weergeeft weerinformatie op de lockscreen. De ROMControl weer service dient ingeschakeld te zijn</string>
+    <string name="lockscreen_weather_type_title">Lockscreen weer weergave</string>
+    <string name="lockscreen_weather_type_summary">Weergave van het weer in tekst of grafische vorm.</string>
+    <string name="volume_wake_title">Volume wake</string>
+    <string name="volume_wake_summary">Het indrukken van de volume knoppen zal het scherm activeren.</string>
+    <string name="volume_music_controls_title">Volume muziek controle</string>
+    <string name="volume_music_controls_summary">Het lang indrukken van volume knoppen zal een nummer overslaan, volume wake zal niet werken wanneer muziek speelt.</string>
+    <string name="lockscreen_stock_music_layout_title">Standaard muziek weergave</string>
+    <string name="lockscreen_stock_music_layout_summary">Gebruik de standaard weergave wanneer muziek wordt afgespeeld</string>
+    <string name="lockscreen_show_nav_title">Verberg navigatiebalk</string>
+    <string name="lockscreen_show_nav_summary">Verbergt de navigatiebalk op de lockscreen.</string>
+    <string name="custom_app_n_dialog_title">Actie voor snelkoppeling %1$s</string>
+    <string name="custom_app_n">Eigen app %1$s</string>
+    <string name="lockscreen_targets">Lockscreen snelkoppelingen</string>
+    <string name="lockscreen_action_unlock">Ontgrendel</string>
+    <string name="lockscreen_action_sound">Geluid</string>
+    <string name="lockscreen_action_camera">Camera</string>
+    <string name="lockscreen_action_mms">SMS</string>
+    <string name="lockscreen_action_phone">Telefoon</string>
+    <string name="lockscreen_action_none">Empty</string>
+    <string name="lockscreen_custom_app_icon_no_sd">Plaats een SD kaart om deze functie te gebruiken</string>
+    <string name="lockscreen_custom_app_icon_successfully">"'s icoon is succesvol ingesteld!"</string>
+    <string name="lockscreen_custom_app_icon_failed">"Het icoon is niet ingesteld, is de SD kaart geplaatst?"</string>
+    <string name="lockscreen_landscape_title">Horizontale lockscreen</string>
+    <string name="lockscreen_landscape_summary">Hierdoor zal de horizontale weergave worden aangezet.</string>
+    <string name="lockscreen_quick_unlock_control_title">Snelle PIN ontgrendeling</string>
+    <string name="lockscreen_quick_unlock_control_summary">Ontgrendel de lockscreen zonder enter te gebruiken.</string>
+    <string name="enable_fast_torch_title">Gebruik snelle zaklamp</string>
+    <string name="enable_fast_torch_summary">Wanneer de powerknop lang word ingedrukt met de lockscreen geäctiveerd, zullen de LEDs gaan branden</string>
+    <string name="lockscreen_wallpaper_title">Kies lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">U kunt de wallpaper verwijderen vanuit het menu in dit scherm.</string>
+    <string name="lockscreen_wallpaper_no_external_storage">Geen SD kaart aanwezig om deze functie te gebruiken, plaats uw SD kaart.</string>
+    <string name="lockscreen_wallpaper_not_set_sd">"De wallpaper is niet ingesteld, is uw SD kaart geplaatst?"</string>
+    <string name="lockscreen_wallpaper_set_successfully">"De wallpaper is succesvol ingesteld!"</string>
+    <string name="lockscreen_wallpaper_not_set">"De wallpaper is niet ingesteld (!!!)"</string>
+    <string name="lockscreen_text_color_title">Lockscreen tekst kleur</string>
+    <string name="lockscreen_calendar">Lockscreen agenda</string>
+    <string name="lockscreen_calendar_title">Inschakelen</string>
+    <string name="lockscreen_calendar_summary">Weergeeft opkomendende gebeurtenissen op uw lockscreen.</string>
+    <string name="lockscreen_calendar_sources_title">Weer te geven agenda\'s</string>
+    <string name="lockscreen_calendar_sources_summary">Selecteer de weer te geven agenda\'s.</string>
+    <string name="lockscreen_calendar_dialog">Kies de weer te geven agenda\'s</string>
+    <string name="lockscreen_calendar_close">Sluiten</string>
+    <string name="lockscreen_calendar_range_title">Tijdbereik</string>
+    <string name="lockscreen_calendar_range_summary">Selecteer de weer te geven tijdbereik.</string>
+    <string name="lockscreen_calendar_use_colors_title">Gebruik kleuren</string>
+    <string name="lockscreen_calendar_use_colors_summary">Wanneer ingeschakeld zullen de gebeurtenissen dezelfde kleur hebben als in uw agenda.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Verberg huidige gebeurtenissen</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Wanneer ingeschakeld zullen de huidige gebeurtenissen niet worden weergeven.</string>
+    <string name="lockscreen_calendar_flip_title">Meerdere gebeurtenissen</string>
+    <string name="lockscreen_calendar_flip_summary">Wanneer ingeschakeld zal de widget meerdere gebeurtenissen weergeven.</string>
+    <string name="lockscreen_calendar_interval_title">Flip interval</string>
+    <string name="lockscreen_calendar_interval_summary">Kies de animatiesnelheid.</string>
 
-    <string name="sms_picker_title">Aangepaste SMS app</string>
-    <string name="sms_picker_summary">Kies een aangepaste app om te starten als SMS wordt gekozen</string>
-
-    <string name="volume_wake_title">Volumewake</string>
-    <string name="volume_wake_summary">Tapping the volume keys while your phone is off</string>
-
-    <string name="volume_music_controls_title">Volume muziekcontrole</string>
-    <string name="volume_music_controls_summary">Long press volumeknoppen skipped nummer</string>
-
-    <!-- Power Menu -->
-    <string name="title_show_power_saver">Toon power saver</string>
-    <string name="title_show_screenshot">Toon screenshot</string>
-
-    <!-- Power Saving -->
+	<!-- Power Menu -->
+    <string name="title_show_power_saver">Toon power saver schakelaar</string>
+    <string name="summary_show_power_saver">U moet power saver in schakelen alvorens deze optie te gebruiken.</string>
+    <string name="title_show_screenshot">Toon screenshot knop</string>
+    <string name="title_show_torch_toggle">Toon zaklamp schakelaar</string>
+    <string name="title_show_airplane_toggle">Toon vliegmodus schakelaar</string>
+    <string name="title_show_navbar_hide">Toon navigatiebalk schakelaar</string>
+	
+	<!-- Share to Clipboard -->
+    <string name="clipboard_notification">Gekopieërd naar het klembord.</string>
+	
+	<!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Schakel power saver in</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
 
@@ -95,12 +284,19 @@
     <string name="powersaver_data_cat">Data</string>
     <string name="powersaver_sync_cat">Sync</string>
 
+	<string name="screen_off_wifi_action">Wi-Fi actie bij uitschakelen scherm</string>
+    <string name="sync_data_usage">Gebruik data bij syncen</string>
+    <string name="sync_mobile_data_preference">Sync mobiele data modus</string>
+	
     <!--  LED -->
     <string name="title_led_on">LEDknipper duur AAN</string>
     <string name="summary_led_on">@null</string>
     <string name="title_led_off">LEDknipper duur UIT</string>
     <string name="summary_led_off">@null</string>
     <string name="led_color_title">LEDkleur</string>
+	<string name="led_color_summary">Deze optie wijzigt de LEDkleur, apps kunnen deze instelling negeren.</string>
+    <string name="title_led_screen_on">LEDknipper scherm AAN</string>
+    <string name="summary_led_screen_on">@null</string>
 
     <!--  Statusbar | General -->
     <string name="title_settings_behavior"> Gebruik standaardinstellingen</string>
@@ -140,8 +336,8 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Kleurkiezer</string>
     <string name="press_color_to_apply">Klik op kleur om te selecteren</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
+    <string name="arrow_right">?</string>
+    <string name="arrow_down">?</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Selecteer</string>

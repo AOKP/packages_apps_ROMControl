@@ -13,4 +13,10 @@
     android:id="@+id/functionality"
     android:title="MAOR STUFF NEEDED TO COMPILE" />
 
+<header
+    android:id="@+id/statusbar_clock"
+    android:title="@string/clock"
+    android:fragment="com.aokp.romcontrol.fragments.StatusBarClock"
+    android:summary="@string/header_summary_clock" />
+
 </preference-headers>

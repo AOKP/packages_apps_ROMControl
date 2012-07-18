@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<ListPreference
+		android:entries="@array/clock_style_entries"
+		android:entryValues="@array/clock_style_values"
+		android:key="clock_style"
+		android:title="@string/clock_title_enable" />
+
+	<ListPreference
+		android:entries="@array/clock_ampm_entries"
+		android:entryValues="@array/clock_ampm_values"
+		android:key="clock_am_pm_style"
+		android:title="@string/title_clock_ampm_entries" />
+
+	<ListPreference
+		android:key="clock_weekday"
+		android:title="@string/enable_clock_weekday"
+		android:summary="@string/enable_clock_weekday_summary"
+		android:entries="@array/clock_weekday_entries"
+		android:entryValues="@array/clock_weekday_values" />
+
+</PreferenceScreen>

@@ -6,6 +6,8 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
+    <string name="clock">Clock</string>
+    <string name="header_summary_clock">Clock location, AM/PM style, color</string>
 
 	<string name="devs">Developers</string>
 	<string name="aokp">Android Open Kang Project</string>
@@ -26,5 +28,11 @@
 	<string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
 	<string name="donate_khasmek">http://nyan.cat</string>
 	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Clock style</string>
+    <string name="title_clock_ampm_entries">AM/PM style</string>
+    <string name="enable_clock_weekday">Day of the week</string>
+    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
 
 </resources>

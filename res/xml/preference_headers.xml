@@ -1,22 +1,19 @@
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
-<header android:title="This is ROM Control!" />
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
 
-<header
-    android:id="@+id/led"
-    android:title="LEDs go here, maybe?" />
-
-<header
-    android:id="@+id/power_saver"
-    android:title="this could be power saving" />
-
-<header
-    android:id="@+id/functionality"
-    android:title="MAOR STUFF NEEDED TO COMPILE" />
-
-<header
-    android:id="@+id/statusbar_clock"
-    android:title="@string/clock"
-    android:fragment="com.aokp.romcontrol.fragments.StatusBarClock"
-    android:summary="@string/header_summary_clock" />
+    <header
+        android:id="@+id/statusbar"
+        android:title="@string/header_statusbar" />
+    <header
+        android:id="@+id/statusbar_clock"
+        android:fragment="com.aokp.romcontrol.fragments.StatusBarClock"
+        android:summary="@string/header_summary_clock"
+        android:icon="@drawable/ic_rom_control_clock"
+        android:title="@string/clock" />
+    <header
+        android:id="@+id/statusbar_toggles"
+        android:fragment="com.aokp.romcontrol.fragments.StatusBarToggles"
+        android:icon="@drawable/ic_rom_control_toggles"
+        android:summary="@string/header_summary_toggles"
+        android:title="@string/toggles_layout" />
 
 </preference-headers>

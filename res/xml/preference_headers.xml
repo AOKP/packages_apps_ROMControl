@@ -28,5 +28,15 @@
         android:fragment="com.aokp.romcontrol.fragments.StatusBarBattery"
         android:icon="@drawable/ic_rom_control_battery"
         android:summary="@string/header_summary_battery" />
+    <header
+        android:id="@+id/navbar"
+        android:title="@string/header_navbar" />
+
+     <header
+        android:id="@+id/nav_bar"
+        android:fragment="com.aokp.romcontrol.fragments.Navbar"
+        android:title="@string/nav_bar"
+        android:icon="@drawable/ic_rom_control_navigation_bar"
+        android:summary="@string/header_summary_navigation_bar" />
 
 </preference-headers>

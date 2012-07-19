@@ -8,19 +8,32 @@
     <string name="ok">OK</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Statusbar</string>
+    <string name="header_navbar">Navigation bar</string>
     <string name="toggles_layout">Toggles</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
+    <string name="nav_bar">Navigation bar</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
     <string name="header_summary_toggles">Customize toggles</string>
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
-	<string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
+    <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
+    <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_nav_bar_reset">Reset nav bar</string>
 
     <!-- General Strings -->
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
+    <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+    <string name="select_custom_app_title">Select custom application</string>
+    <string name="group_applications">Applications</string>
 
     <!-- About -->
     <string name="devs">Developers</string>
@@ -102,5 +115,41 @@
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
     <string name="ics_color">!!!</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar">Navigation bar</string>
+    <string name="navbar_button_cat">Navigation bar buttons</string>
+    <string name="title_pref_menu_display">Menu location</string>
+    <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
+    <string name="title_pref_navigation_menu_display">Menu visibility</string>
+    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
+    <string name="navbar_qty_title">Navigation button quantity</string>
+    <string name="navbar_qty_summary">Choose the number of navigation buttons</string>
+    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
+    <string name="navbar_longpress_title">Button %1$s longpress action</string>
+    <string name="navbar_action_home">Home</string>
+    <string name="navbar_action_back">Back</string>
+    <string name="navbar_action_recents">Recents</string>
+    <string name="navbar_action_search">Search</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_power">Power</string>
+    <string name="navbar_action_none">Empty</string>
+    <string name="navbar_widgets">Navigation Bar Widgets</string>
+    <string name="navbar_enable_bar">Enable bar</string>
+    <string name="navigation_bar_height_title">Navigation bar height</string>
+    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
+    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
+    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
+    <string name="navigation_bar_width_title">Navigation bar width.</string>
+    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
+    <string name="navbar_enable_dialog_title">Reboot required!</string>
+    <string name="navbar_enable_dialog_msg">Please reboot to enable/disable the navigation bar properly!</string>
+    <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
+    <string name="navbar_enable_dialog_Positive">Reboot now!</string>
+    <string name="navbar_height_dialog_title">Reboot required!</string>
+    <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
+    <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
+    <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
 
 </resources>

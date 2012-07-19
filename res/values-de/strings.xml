@@ -176,7 +176,7 @@
     <string name="lockscreen_calendar">Lockscreen Kalender</string>
     <string name="lockscreen_calendar_title">Aktivieren</string>
     <string name="lockscreen_calendar_summary">Zeige kommende Veranstaltungen auf dem Entsperrbildschirm.</string>
-    <string name="lockscreen_calendar_sources_title">Kalender Quelle</string>
+    <string name="lockscreen_calendar_sources_title">Kalenderquelle</string>
     <string name="lockscreen_calendar_sources_summary">Wähle die Kalender die angezeigt werden sollen.</string>
     <string name="lockscreen_calendar_range_title">Zeitspanne</string>
     <string name="lockscreen_calendar_range_summary">Wähle die anzuzeigende Zeitspanne.</string>

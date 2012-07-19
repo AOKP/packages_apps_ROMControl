@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <CheckBoxPreference
+		android:key="enable_nav_bar"
+		android:title="@string/navbar_enable_bar" />
+
+	<ListPreference
+		android:entries="@array/pref_navigation_menu_entries"
+		android:entryValues="@array/pref_navigation_menu_values"
+		android:key="pref_menu_display"
+		android:title="@string/title_pref_menu_display"
+		android:summary="@string/summary_pref_menu_display" />
+
+	<ListPreference
+		android:entries="@array/pref_navigation_menu_display_entries"
+		android:entryValues="@array/pref_navigation_menu_display_values"
+		android:key="navbar_menu_display"
+		android:title="@string/title_pref_navigation_menu_display"
+		android:summary="@string/summary_pref_navigation_menu_display" />
+	<ListPreference
+		android:entries="@array/navigation_bar_qty_entries"
+		android:entryValues="@array/navigation_bar_qty_values"
+		android:key="navbar_qty"
+		android:title="@string/navbar_qty_title"
+		android:summary="@string/navbar_qty_summary" />
+
+	<PreferenceCategory
+		android:key="navbar_buttons"
+		android:title="@string/navbar_button_cat">
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="advanced_cat"
+		android:title="@string/advanced_settings">
+
+		<ListPreference
+			android:entries="@array/navigation_bar_height_entries"
+			android:entryValues="@array/navigation_bar_height"
+			android:key="navigation_bar_height"
+			android:title="@string/navigation_bar_height_title"
+                        android:summary="@string/navigation_bar_height_summary" />
+
+		<ListPreference
+			android:entries="@array/navigation_bar_height_landscape_entries"
+			android:entryValues="@array/navigation_bar_height_landscape"
+			android:key="navigation_bar_height_landscape"
+			android:title="@string/navigation_bar_height_landscape_title"
+                        android:summary="@string/navigation_bar_height_landscape_summary" />
+
+		<ListPreference
+			android:entries="@array/navigation_bar_width_entries"
+			android:entryValues="@array/navigation_bar_width"
+			android:key="navigation_bar_width"
+			android:title="@string/navigation_bar_width_title"
+                        android:summary="@string/navigation_bar_width_summary" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

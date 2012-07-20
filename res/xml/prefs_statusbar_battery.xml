@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<ListPreference
+			android:key="battery_icon_list"
+			android:title="@string/battery_icon"
+			android:entries="@array/battery_icon_entries"
+			android:entryValues="@array/battery_icon_values" />
+
+        <CheckBoxPreference
+			android:key="battery_not"
+			android:title="@string/battery_not_title"
+			android:summary="@string/battery_not_summary" />
+
+</PreferenceScreen>

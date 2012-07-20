@@ -16,4 +16,11 @@
         android:summary="@string/header_summary_toggles"
         android:title="@string/toggles_layout" />
 
+    <header
+        android:id="@+id/statusbar_battery"
+        android:title="@string/battery"
+        android:fragment="com.aokp.romcontrol.fragments.StatusBarBattery"
+        android:icon="@drawable/ic_rom_control_battery"
+        android:summary="@string/header_summary_battery" />
+
 </preference-headers>

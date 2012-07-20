@@ -1,4 +1,10 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+    <header
+        android:id="@+id/user_interface"
+        android:fragment="com.aokp.romcontrol.fragments.UserInterface"
+        android:title="@string/general_ui"
+        android:icon="@drawable/ic_rom_control_general_ui"
+        android:summary="@string/header_summary_general_ui" />
 
     <header
         android:id="@+id/statusbar"

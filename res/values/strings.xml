@@ -9,6 +9,7 @@
     <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Statusbar</string>
     <string name="toggles_layout">Toggles</string>
+    <string name="general_ui">General UI</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
 
@@ -41,6 +42,9 @@
     <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
     <string name="donate_khasmek">http://nyan.cat</string>
     <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+
+    <!-- General UI -->
+    <string name="enable_volume_options">Enable Volume Panel</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>

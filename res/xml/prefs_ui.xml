@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory
+		android:key="misc"
+		android:title="@string/misc_short">
+
+         <CheckBoxPreference
+			android:key="enable_volume_options"
+			android:title="@string/enable_volume_options" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

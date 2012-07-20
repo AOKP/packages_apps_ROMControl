@@ -29,7 +29,15 @@
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".fragments.UserInterface"
+            android:label="User Interface" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".fragments.StatusBarClock"
             android:label="Statusbar Clock" >

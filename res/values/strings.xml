@@ -9,6 +9,7 @@
     <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Statusbar</string>
     <string name="toggles_layout">Toggles</string>
+    <string name="general_ui">General UI</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
 
@@ -16,11 +17,12 @@
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
     <string name="header_summary_toggles">Customize toggles</string>
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
-	<string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
+    <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
 
     <!-- General Strings -->
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
+    <string name="enable_volume_options">Enable Volume Panel</string>
 
     <!-- About -->
     <string name="devs">Developers</string>

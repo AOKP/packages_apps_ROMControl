@@ -13,4 +13,37 @@
 			android:title="@string/battery_not_title"
 			android:summary="@string/battery_not_summary" />
 
+	<PreferenceCategory
+		android:key="battery_bar_cat"
+		android:title="@string/battery_bar_cat">
+
+		<ListPreference
+			android:key="battery_bar_list"
+			android:title="@string/battery_bar"
+			android:entries="@array/battery_bar_entries"
+			android:entryValues="@array/battery_bar_values" />
+
+		<ListPreference
+			android:key="battery_bar_style"
+			android:title="@string/battery_bar_style_title"
+			android:entries="@array/battery_bar_style_entries"
+			android:entryValues="@array/battery_bar_style_values" />
+
+		<CheckBoxPreference
+			android:key="battery_bar_animate"
+			android:title="@string/battery_bar_animate_title"
+			android:summary="@string/battery_bar_animate_summary" />
+
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="battery_bar_color"
+			android:title="@string/battery_bar_color"
+			android:defaultValue="#33B5E5" />
+
+		<ListPreference
+			android:key="battery_bar_thickness"
+			android:title="@string/battery_bar_thickness_title"
+			android:entries="@array/battery_bar_thickness_entries"
+			android:entryValues="@array/battery_bar_thickness_values" />
+	</PreferenceCategory>
+
 </PreferenceScreen>

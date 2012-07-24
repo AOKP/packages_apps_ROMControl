@@ -12,14 +12,26 @@ import android.provider.Settings;
 
 import com.aokp.romcontrol.R;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBarBattery extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_BATT_ICON = "battery_icon_list";
     private static final String PREF_BATT_NOT = "battery_not";
+    private static final String PREF_BATT_BAR = "battery_bar_list";
+    private static final String PREF_BATT_BAR_STYLE = "battery_bar_style";
+    private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
+    private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
+    private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
 
     ListPreference mBatteryIcon;
     CheckBoxPreference mBatteryNotification;
+    ListPreference mBatteryBar;
+    ListPreference mBatteryBarStyle;
+    ListPreference mBatteryBarThickness;
+    CheckBoxPreference mBatteryBarChargingAnimation;
+    ColorPickerPreference mBatteryBarColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +51,35 @@ public class StatusBarBattery extends PreferenceFragment implements
         mBatteryNotification.setChecked(Settings.System.getInt(
                 getActivity().getContentResolver(),
                 Settings.System.NOTIFICATION_BATTERY_DISPLAY, 0) == 1);
+
+        mBatteryBar = (ListPreference) findPreference(PREF_BATT_BAR);
+        mBatteryBar.setOnPreferenceChangeListener(this);
+        mBatteryBar.setValue((Settings.System
+                .getInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_BATTERY_BAR, 0))
+                + "");
+
+        mBatteryBarStyle = (ListPreference) findPreference(PREF_BATT_BAR_STYLE);
+        mBatteryBarStyle.setOnPreferenceChangeListener(this);
+        mBatteryBarStyle.setValue((Settings.System.getInt(getActivity()
+                .getContentResolver(),
+                Settings.System.STATUSBAR_BATTERY_BAR_STYLE, 0))
+                + "");
+
+        mBatteryBarColor = (ColorPickerPreference) findPreference(PREF_BATT_BAR_COLOR);
+        mBatteryBarColor.setOnPreferenceChangeListener(this);
+
+        mBatteryBarChargingAnimation = (CheckBoxPreference) findPreference(PREF_BATT_ANIMATE);
+        mBatteryBarChargingAnimation.setChecked(Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, 0) == 1);
+
+        mBatteryBarThickness = (ListPreference) findPreference(PREF_BATT_BAR_WIDTH);
+        mBatteryBarThickness.setOnPreferenceChangeListener(this);
+        mBatteryBarThickness.setValue((Settings.System.getInt(getActivity()
+                .getContentResolver(),
+                Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1))
+                + "");
     }
 
     @Override
@@ -51,6 +92,12 @@ public class StatusBarBattery extends PreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 
+        } else if (preference == mBatteryBarChargingAnimation) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -62,6 +109,34 @@ public class StatusBarBattery extends PreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             return Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_ICON, val);
+        } else if (preference == mBatteryBarColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer
+                    .valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR_COLOR, intHex);
+            return true;
+
+        } else if (preference == mBatteryBar) {
+
+            int val = Integer.parseInt((String) newValue);
+            return Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR, val);
+
+        } else if (preference == mBatteryBarStyle) {
+
+            int val = Integer.parseInt((String) newValue);
+            return Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR_STYLE, val);
+
+        } else if (preference == mBatteryBarThickness) {
+
+            int val = Integer.parseInt((String) newValue);
+            return Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
+
         }
         return false;
     }

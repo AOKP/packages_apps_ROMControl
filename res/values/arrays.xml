@@ -116,10 +116,10 @@
 	</string-array>
     
 	<string-array name="pref_navigation_menu_display_entries">
-		<item>Default ICS behavior</item>
+		<item>Default JB behavior</item>
 		<item>Always show invisible icons</item>
 		<item>Always show</item>
-		<item>Default ICS with invisible icons when hidden</item>
+		<item>Default JB with invisible icons when hidden</item>
 	</string-array>
 
 	<string-array name="pref_navigation_menu_display_values" translatable="false">

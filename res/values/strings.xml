@@ -76,7 +76,6 @@
     <string name="toggle_data">Data</string>
     <string name="toggle_nfc">NFC</string>
     <string name="toggle_silent">Silent</string>
-    <string name="toggle_swagger">Swagger</string>
     <string name="toggle_sync">Sync</string>
     <string name="toggle_torch">Torch</string>
     <string name="toggle_2g">2G</string>
@@ -84,6 +83,9 @@
     <string name="toggle_vibrate">Vibrate</string>
     <string name="toggle_wifi_ap">Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_mediaplay">Media play</string>
+    <string name="toggle_medianext">Media next</string>
+    <string name="toggle_mediaprevious">Media previous</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>

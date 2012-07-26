@@ -28,6 +28,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     public static final String TAG = "UserInterface";
 
     private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
+    private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
     CheckBoxPreference mEnableVolumeOptions;
 
@@ -41,6 +42,11 @@ public class UserInterface extends AOKPPreferenceFragment {
         mEnableVolumeOptions = (CheckBoxPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
         mEnableVolumeOptions.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.ENABLE_VOLUME_OPTIONS, 0) == 1);
+
+        mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
+        mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
+                .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
+                0) == 1);
     }
 
     @Override
@@ -51,6 +57,12 @@ public class UserInterface extends AOKPPreferenceFragment {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.ENABLE_VOLUME_OPTIONS, checked ? 1 : 0);
+            return true;
+
+        } else if (preference == mStatusBarNotifCount) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NOTIF_COUNT,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
             }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

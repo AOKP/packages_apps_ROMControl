@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.R;
 
 public class ImageListPreference extends ListPreference {
     private int[] resourceIds = null;
@@ -19,7 +19,7 @@ public class ImageListPreference extends ListPreference {
     private int mSummaryImageResourceId;
     /**
      * Constructor of the ImageListPreference. Initializes the custom images.
-     * 
+     *
      * @param context application context.
      * @param attrs custom xml attributes.
      */

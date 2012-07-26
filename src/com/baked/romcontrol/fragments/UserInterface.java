@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.fragments;
+package com.baked.romcontrol.fragments;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,10 +20,10 @@ import android.provider.Settings;
 import android.text.Spannable;
 import android.widget.EditText;
 
-import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.BAKEDPreferenceFragment;
+import com.baked.romcontrol.R;
 
-public class UserInterface extends AOKPPreferenceFragment {
+public class UserInterface extends BAKEDPreferenceFragment {
 
     public static final String TAG = "UserInterface";
 

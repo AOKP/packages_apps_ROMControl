@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.fragments;
+package com.baked.romcontrol.fragments;
 
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -10,7 +10,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 

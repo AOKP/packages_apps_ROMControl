@@ -1,4 +1,4 @@
-package com.aokp.romcontrol;
+package com.baked.romcontrol;
 /*
  * Copyright (C) 2010 The Android Open Source Project
  *
@@ -21,7 +21,7 @@ import android.app.Dialog;
 
 /**
  * Letting the class, assumed to be Fragment, create a Dialog on it. Should be useful
- * you want to utilize some capability in {@link AOKPPreferenceFragment} but don't want
+ * you want to utilize some capability in {@link BAKEDPreferenceFragment} but don't want
  * the class inherit the class itself (See {@link ProxySelector} for example).
  */
 public interface DialogCreatable {

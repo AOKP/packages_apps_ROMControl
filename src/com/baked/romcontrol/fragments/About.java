@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.fragments;
+package com.baked.romcontrol.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 
-import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.BAKEDPreferenceFragment;
+import com.baked.romcontrol.R;
 
-public class About extends AOKPPreferenceFragment {
+public class About extends BAKEDPreferenceFragment {
 
     public static final String TAG = "About";
 
@@ -37,7 +37,7 @@ public class About extends AOKPPreferenceFragment {
             launchUrl("http://aokp.co/");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/aokp");
-	} else if (preference == mReviewUrl) {
+        } else if (preference == mReviewUrl) {
             launchUrl("http://gerrit.aokp.co");
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=teamkang");

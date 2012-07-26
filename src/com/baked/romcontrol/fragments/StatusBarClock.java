@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.fragments;
+package com.baked.romcontrol.fragments;
 
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -10,10 +10,10 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 
-import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.BAKEDPreferenceFragment;
+import com.baked.romcontrol.R;
 
-public class StatusBarClock extends AOKPPreferenceFragment implements
+public class StatusBarClock extends BAKEDPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE = "clock_style";

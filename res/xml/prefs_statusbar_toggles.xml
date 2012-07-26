@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
-    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:baked="http://schemas.android.com/apk/res/com.baked.romcontrol">
 
     <Preference
         android:key="enable_toggles"
@@ -14,8 +14,8 @@
     <com.scheffsblend.smw.Preferences.ImageListPreference
         android:entries="@array/toggles_layout_entries"
         android:entryValues="@array/toggles_layout_entries"
-        aokp:entryImages="@array/toggles_layout_images"
-        aokp:summaryImage="@drawable/toggle_layout_summary"
+        baked:entryImages="@array/toggles_layout_images"
+        baked:summaryImage="@drawable/toggle_layout_summary"
         android:key="toggles_layout_preference"
         android:title="@string/toggles_layout_title" />
 

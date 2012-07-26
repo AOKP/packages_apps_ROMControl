@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol;
+package com.baked.romcontrol;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,9 +77,9 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             setTitle(R.string.app_name);
         }
 
-        if (getIntent().getAction().equals("com.aokp.romcontrol.START_NEW_FRAGMENT")) {
-            String className = getIntent().getStringExtra("aokp_fragment_name").toString();
-            if (!className.equals("com.aokp.romcontrol.ROMControlActivity")) {
+        if (getIntent().getAction().equals("com.baked.romcontrol.START_NEW_FRAGMENT")) {
+            String className = getIntent().getStringExtra("baked_fragment_name").toString();
+            if (!className.equals("com.baked.romcontrol.ROMControlActivity")) {
                 Bundle b = new Bundle();
                 b.putBoolean("started_from_shortcut", true);
                 // startPreferencePanel(className, b, 0, null, null, 0);

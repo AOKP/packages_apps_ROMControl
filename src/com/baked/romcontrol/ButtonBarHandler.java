@@ -1,4 +1,4 @@
-package com.aokp.romcontrol;
+package com.baked.romcontrol;
 
 /*
  * Copyright (C) 2011 The Android Open Source Project
@@ -19,7 +19,7 @@ package com.aokp.romcontrol;
 import android.widget.Button;
 
 /**
- * Interface letting {@link AOKPPreferenceFragment} access to bottom bar inside
+ * Interface letting {@link BAKEDPreferenceFragment} access to bottom bar inside
  * {@link android.preference.PreferenceActivity}.
  */
 public interface ButtonBarHandler {

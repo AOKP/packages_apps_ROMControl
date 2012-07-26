@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.widgets;
+package com.baked.romcontrol.widgets;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.R;
 
 public class DeveloperPreference extends Preference {
 

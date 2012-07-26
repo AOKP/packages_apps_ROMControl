@@ -26,7 +26,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.R;
 
 public class ColorPickerDialog
         extends
@@ -142,7 +142,7 @@ public class ColorPickerDialog
 
     /**
      * Set a OnColorChangedListener to get notified when the color selected by the user has changed.
-     * 
+     *
      * @param listener
      */
     public void setOnColorChangedListener(OnColorChangedListener listener) {

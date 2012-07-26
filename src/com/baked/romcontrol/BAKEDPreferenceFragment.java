@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aokp.romcontrol;
+package com.baked.romcontrol;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -38,7 +38,7 @@ import android.widget.Button;
 /**
  * Base class for Settings fragments, with some helper functions and dialog management.
  */
-public class AOKPPreferenceFragment extends PreferenceFragment implements DialogCreatable {
+public class BAKEDPreferenceFragment extends PreferenceFragment implements DialogCreatable {
 
     private static final String TAG = "SettingsPreferenceFragment";
     protected Context mContext;
@@ -194,9 +194,9 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
                     }
                 }
                 // This dialog fragment could be created from non-SettingsPreferenceFragment
-                if (mParentFragment instanceof AOKPPreferenceFragment) {
+                if (mParentFragment instanceof BAKEDPreferenceFragment) {
                     // restore mDialogFragment in mParentFragment
-                    ((AOKPPreferenceFragment) mParentFragment).mDialogFragment = this;
+                    ((BAKEDPreferenceFragment) mParentFragment).mDialogFragment = this;
                 }
             }
             return ((DialogCreatable) mParentFragment).onCreateDialog(mDialogId);
@@ -227,10 +227,10 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
             super.onDetach();
 
             // This dialog fragment could be created from non-SettingsPreferenceFragment
-            if (mParentFragment instanceof AOKPPreferenceFragment) {
+            if (mParentFragment instanceof BAKEDPreferenceFragment) {
                 // in case the dialog is not explicitly removed by removeDialog()
-                if (((AOKPPreferenceFragment) mParentFragment).mDialogFragment == this) {
-                    ((AOKPPreferenceFragment) mParentFragment).mDialogFragment = null;
+                if (((BAKEDPreferenceFragment) mParentFragment).mDialogFragment == this) {
+                    ((BAKEDPreferenceFragment) mParentFragment).mDialogFragment = null;
                 }
             }
         }

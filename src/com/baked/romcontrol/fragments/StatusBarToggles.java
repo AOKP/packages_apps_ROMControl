@@ -1,5 +1,5 @@
 
-package com.aokp.romcontrol.fragments;
+package com.baked.romcontrol.fragments;
 
 import java.util.ArrayList;
 
@@ -26,8 +26,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.widgets.TouchInterceptor;
+import com.baked.romcontrol.R;
+import com.baked.romcontrol.widgets.TouchInterceptor;
 import com.scheffsblend.smw.Preferences.ImageListPreference;
 
 public class StatusBarToggles extends PreferenceFragment implements OnPreferenceChangeListener {

@@ -257,4 +257,44 @@
 	<item>4</item>
     </string-array>
 
+    <!-- LED Values -->
+    <string-array name="led_entries">
+        <item>.5 seconds</item>
+        <item>1 second</item>
+        <item>1.5 seconds</item>
+        <item>2 seconds</item>
+        <item>2.5 seconds</item>
+        <item>3 seconds</item>
+        <item>3.5 seconds</item>
+        <item>4 seconds</item>
+        <item>4.5 seconds</item>
+        <item>5 seconds</item>
+        <item>5.5 seconds</item>
+        <item>6 seconds</item>
+        <item>7 seconds</item>
+        <item>8 seconds</item>
+        <item>9 seconds</item>
+        <item>10 seconds</item>
+    </string-array>
+
+    <!-- values must be in milliseconds!~@@#E!@ -->
+    <integer-array name="led_values" translatable="false">
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+        <item>5000</item>
+        <item>5500</item>
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+        <item>9000</item>
+        <item>10000</item>
+    </integer-array>
+
 </resources>

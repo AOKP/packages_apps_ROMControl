@@ -14,6 +14,7 @@
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="nav_bar">Navigation bar</string>
+    <string name="led_options">LED options</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
@@ -21,6 +22,7 @@
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
     <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
     <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
+    <string name="header_summary_led">Change default settings for Android to use</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -157,5 +159,10 @@
     <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
+
+    <!-- LED -->
+    <string name="led_on">LED On</string>
+    <string name="led_off">LED Off</string>
+    <string name="led_color_click">Click on the LED to change the color</string>
 
 </resources>

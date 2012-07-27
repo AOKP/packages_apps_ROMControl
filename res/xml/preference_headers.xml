@@ -7,6 +7,13 @@
         android:summary="@string/header_summary_general_ui" />
 
     <header
+        android:id="@+id/led"
+	android:fragment="com.aokp.romcontrol.fragments.LEDControl"
+	android:title="@string/led_options"
+	android:icon="@drawable/ic_rom_control_led"
+	android:summary="@string/header_summary_led" />
+
+    <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />
     <header

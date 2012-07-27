@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.widgets;
+package com.baked.romcontrol.widgets;
 
 import android.content.Context;
 import android.preference.ListPreference;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.aokp.romcontrol.R;
+import com.baked.romcontrol.R;
 
 public class NavBarItemPreference extends ListPreference {
 

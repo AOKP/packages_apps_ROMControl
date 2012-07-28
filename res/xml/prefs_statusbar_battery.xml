@@ -1,49 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
-	
-	<ListPreference
-			android:key="battery_icon_list"
-			android:title="@string/battery_icon"
-			android:entries="@array/battery_icon_entries"
-			android:entryValues="@array/battery_icon_values" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="battery_icon_list"
+        android:title="@string/battery_icon"
+        android:entries="@array/battery_icon_entries"
+        android:entryValues="@array/battery_icon_values" />
+
+    <PreferenceCategory android:title="@string/battery_text_color">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_text_only_color"
+            android:title="@string/battery_text_only_color"
+            android:defaultValue="@android:color/holo_blue_light"
+            android:persistent="true" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_charge_text_only_color"
+            android:title="@string/battery_charge_text_only_color"
+            android:defaultValue="#FF99CC00"
+            android:persistent="true" />
+
+    </PreferenceCategory>
+
+    <CheckBoxPreference
+        android:key="battery_not"
+        android:title="@string/battery_not_title"
+        android:summary="@string/battery_not_summary" />
+
+    <PreferenceCategory
+        android:key="battery_bar_cat"
+        android:title="@string/battery_bar_cat">
+
+        <ListPreference
+            android:key="battery_bar_list"
+            android:title="@string/battery_bar"
+            android:entries="@array/battery_bar_entries"
+            android:entryValues="@array/battery_bar_values" />
+
+        <ListPreference
+            android:key="battery_bar_style"
+            android:title="@string/battery_bar_style_title"
+            android:entries="@array/battery_bar_style_entries"
+            android:entryValues="@array/battery_bar_style_values" />
 
         <CheckBoxPreference
-			android:key="battery_not"
-			android:title="@string/battery_not_title"
-			android:summary="@string/battery_not_summary" />
+            android:key="battery_bar_animate"
+            android:title="@string/battery_bar_animate_title"
+            android:summary="@string/battery_bar_animate_summary" />
 
-	<PreferenceCategory
-		android:key="battery_bar_cat"
-		android:title="@string/battery_bar_cat">
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_bar_color"
+            android:title="@string/battery_bar_color"
+            android:defaultValue="#33B5E5"
+            android:persistent="true" />
 
-		<ListPreference
-			android:key="battery_bar_list"
-			android:title="@string/battery_bar"
-			android:entries="@array/battery_bar_entries"
-			android:entryValues="@array/battery_bar_values" />
+        <ListPreference
+            android:key="battery_bar_thickness"
+            android:title="@string/battery_bar_thickness_title"
+            android:entries="@array/battery_bar_thickness_entries"
+            android:entryValues="@array/battery_bar_thickness_values" />
 
-		<ListPreference
-			android:key="battery_bar_style"
-			android:title="@string/battery_bar_style_title"
-			android:entries="@array/battery_bar_style_entries"
-			android:entryValues="@array/battery_bar_style_values" />
-
-		<CheckBoxPreference
-			android:key="battery_bar_animate"
-			android:title="@string/battery_bar_animate_title"
-			android:summary="@string/battery_bar_animate_summary" />
-
-		<net.margaritov.preference.colorpicker.ColorPickerPreference
-			android:key="battery_bar_color"
-			android:title="@string/battery_bar_color"
-			android:defaultValue="#33B5E5" />
-
-		<ListPreference
-			android:key="battery_bar_thickness"
-			android:title="@string/battery_bar_thickness_title"
-			android:entries="@array/battery_bar_thickness_entries"
-			android:entryValues="@array/battery_bar_thickness_values" />
-	</PreferenceCategory>
+    </PreferenceCategory>
 
 </PreferenceScreen>

@@ -104,6 +104,9 @@
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
+    <string name="battery_text_color">Color for text only</string>
+    <string name="battery_charge_text_only_color">Battery charging text only color</string>
+    <string name="battery_text_only_color">Battery text only color</string>
     <string name="battery_not_title">Battery icon in notifications</string>
     <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
     <string name="battery_bar">Battery bar location</string>

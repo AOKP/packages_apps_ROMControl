@@ -122,7 +122,7 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
-    <string name="ics_color">!!!</string>
+    <string name="ics_color">Holo</string>
 
     <!-- Navigation Bar -->
     <string name="navigation_bar">Navigation bar</string>

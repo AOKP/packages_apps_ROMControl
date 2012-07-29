@@ -173,7 +173,10 @@
 
     <!-- LED -->
     <string name="led_on">LED On</string>
+    <string name="led_time_on">Time Light Is On</string>
     <string name="led_off">LED Off</string>
+    <string name="led_time_off">Time Light Is Off</string>
     <string name="led_color_click">Click on the LED to change the color</string>
+    <string name="title_led_screen_on">LED flash while screen ON</string>
 
 </resources>

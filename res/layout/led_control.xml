@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
-    
+
    <LinearLayout
         android:id="@+id/explainled"
         android:layout_marginTop="10dp"
@@ -60,6 +60,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/time_buttons"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttontext"
@@ -77,6 +78,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingLeft="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_buttons"
+        android:layout_marginTop="5dp" >
+        <Switch
+            android:id="@+id/led_screen_on"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_led_screen_on"/>
     </LinearLayout>
 
 </RelativeLayout>

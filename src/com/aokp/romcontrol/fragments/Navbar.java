@@ -57,6 +57,7 @@ import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.NavBarItemPreference;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 public class Navbar extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
@@ -85,6 +86,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
+    SeekBarPreference mButtonAlpha;
 
     private int mPendingIconIndex = -1;
     private int mPendingWidgetDrawer = -1;
@@ -135,6 +137,14 @@ public class Navbar extends AOKPPreferenceFragment implements
         mEnableNavigationBar = (CheckBoxPreference) findPreference("enable_nav_bar");
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
+
+	float defaultAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
+                0.6f);
+        mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
+        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
+        mButtonAlpha.setOnPreferenceChangeListener(this);
+
         // don't allow devices that must use a navigation bar to disable it
         if (hasNavBarByDefault || mTablet) {
             prefs.removePreference(mEnableNavigationBar);
@@ -285,10 +295,16 @@ public class Navbar extends AOKPPreferenceFragment implements
             }
             refreshSettings();
             return true;
+        } else if (preference == mButtonAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Log.e("R", "value: " + val / 100);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
+                    val / 100);
+            return true;
 
         }
-
-        return false;
+	return false;
     }
 
     public void toggleBar() {

@@ -133,6 +133,7 @@
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
     <string name="navbar_qty_title">Navigation button quantity</string>
     <string name="navbar_qty_summary">Choose the number of navigation buttons</string>
+    <string name="button_transparency_title">Nav button transparency</string>
     <string name="navbar_action_title">Button %1$s action &amp; icon</string>
     <string name="navbar_longpress_title">Button %1$s longpress action</string>
     <string name="navbar_action_home">Home</string>

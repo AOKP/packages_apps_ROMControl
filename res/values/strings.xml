@@ -7,6 +7,7 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
+    <string name="header_general">General</string>
     <string name="header_statusbar">Statusbar</string>
     <string name="header_navbar">Navigation bar</string>
     <string name="toggles_layout">Toggles</string>
@@ -14,6 +15,7 @@
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="nav_bar">Navigation bar</string>
+    <string name="power_menu_optons">Power menu options</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
@@ -21,6 +23,7 @@
     <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
     <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
     <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
+    <string name="header_summary_power_menu">What to display in your power menu</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -60,6 +63,13 @@
     <string name="enable_volume_options">Enable Volume Panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
+
+    <!-- Power Menu -->
+    <string name="title_show_screenshot">Show screenshot</string>
+    <string name="title_show_torch_toggle">Show torch toggle</string>
+    <string name="title_show_airplane_toggle">Show airplane toggle</string>
+    <!-- <string name="title_show_navbar_hide">Show navigation bar toggle</string> -->
+    <string name="title_show_profile_chooser">Show profile chooser</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>

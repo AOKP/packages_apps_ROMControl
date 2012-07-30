@@ -20,7 +20,7 @@
     </string-array>
     <string-array name="clock_ampm_values" translatable="false">
         <item>2</item>
-        <item>1</item>        
+        <item>1</item>
         <item>0</item>
         <item>3</item>
     </string-array>
@@ -102,79 +102,79 @@
         <item>4</item>
         <item>5</item>
     </string-array>
-    
+
     <!-- NavBar -->
     <string-array name="pref_navigation_menu_entries">
-		<item>Right</item>
-		<item>Left</item>
-		<item>Both</item>
-		<item>Remove</item>
-	</string-array>
+        <item>Right</item>
+        <item>Left</item>
+        <item>Both</item>
+        <item>Remove</item>
+    </string-array>
 
-	<!-- right is the default, easier to keep 0 as first index -->
-	<string-array name="pref_navigation_menu_values"
-		translatable="false">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>4</item>
-	</string-array>
-    
-	<string-array name="pref_navigation_menu_display_entries">
-		<item>Default JB behavior</item>
-		<item>Always show invisible icons</item>
-		<item>Always show</item>
-		<item>Default JB with invisible icons when hidden</item>
-	</string-array>
+    <!-- right is the default, easier to keep 0 as first index -->
+    <string-array name="pref_navigation_menu_values"
+        translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+    </string-array>
 
-	<string-array name="pref_navigation_menu_display_values" translatable="false">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-	</string-array>
-	
-	<string-array name="navigation_bar_qty_entries">
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-		<item>4</item>
-		<item>5</item>
-	</string-array>
+    <string-array name="pref_navigation_menu_display_entries">
+        <item>Default JB behavior</item>
+        <item>Always show invisible icons</item>
+        <item>Always show</item>
+        <item>Default JB with invisible icons when hidden</item>
+    </string-array>
 
-	<string-array name="navigation_bar_qty_values" translatable="false">
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-		<item>4</item>
-		<item>5</item>
-	</string-array>
+    <string-array name="pref_navigation_menu_display_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
-	<string-array name="navbar_button_entries">
-		<item>Home</item>
-		<item>Back</item>
-		<item>Recents</item>
-		<item>Search</item>
-		<item>Menu</item>
-		<item>Toggle Widgets</item>
-		<item>Kill app</item>
-		<item>Power</item>
-		<item>Custom app</item>
-		<item>Blank</item>
-	</string-array>
+    <string-array name="navigation_bar_qty_entries">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 
-	<string-array name="navbar_button_values" translatable="false">
-		<item>**home**</item>
-		<item>**back**</item>
-		<item>**recents**</item>
-		<item>**search**</item>
-		<item>**menu**</item>
-		<item>**widgets**</item>
-		<item>**kill**</item>
-		<item>**power**</item>
-		<item>**app**</item>
-		<item>**null**</item>
-	</string-array>
+    <string-array name="navigation_bar_qty_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="navbar_button_entries">
+        <item>Home</item>
+        <item>Back</item>
+        <item>Recents</item>
+        <item>Search</item>
+        <item>Menu</item>
+        <item>Toggle Widgets</item>
+        <item>Kill app</item>
+        <item>Power</item>
+        <item>Custom app</item>
+        <item>Blank</item>
+    </string-array>
+
+    <string-array name="navbar_button_values" translatable="false">
+        <item>**home**</item>
+        <item>**back**</item>
+        <item>**recents**</item>
+        <item>**search**</item>
+        <item>**menu**</item>
+        <item>**widgets**</item>
+        <item>**kill**</item>
+        <item>**power**</item>
+        <item>**app**</item>
+        <item>**null**</item>
+    </string-array>
 
     <string-array name="navigation_bar_width_entries">
         <item>42 dp (default)</item>
@@ -260,6 +260,26 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+    </string-array>
+
+    <string-array name="weather_interval_entries">
+        <item>@string/weather_refresh_manual</item>
+        <item>@string/weather_refresh_30min</item>
+        <item>@string/weather_refresh_60min</item>
+        <item>@string/weather_refresh_2hrs</item>
+        <item>@string/weather_refresh_4hrs</item>
+        <item>@string/weather_refresh_6hrs</item>
+        <item>@string/weather_refresh_8hrs</item>
+    </string-array>
+
+    <string-array name="weather_interval_values" translatable="false">
+        <item>0</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>240</item>
+        <item>360</item>
+        <item>480</item>
     </string-array>
 
 </resources>

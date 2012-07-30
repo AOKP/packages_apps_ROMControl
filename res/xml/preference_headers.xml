@@ -19,6 +19,13 @@
         android:icon="@drawable/ic_rom_control_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
+    <header
+        android:id="@+id/lockscreen_weather_panel"
+        android:fragment="com.baked.romcontrol.fragments.Weather"
+        android:title="@string/lockscreen_weather_title"
+        android:icon="@drawable/ic_rom_control_weather"
+        android:summary="@string/lockscreen_weather_summary" />
+
     <!-- Navbar section -->
     <header
         android:id="@+id/navbar"

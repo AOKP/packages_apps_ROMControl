@@ -173,6 +173,37 @@
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
 
+    <!-- Lock Screen Weather -->
+    <string name="lockscreen_weather_title">Weather</string>
+    <string name="lockscreen_weather_summary">Display weather information on the lock screen</string>
+    <string name="lockscreen_weather_enabled">Enabled</string>
+    <string name="weather_enable">Display weather</string>
+    <string name="weather_source">Yahoo! Weather</string>
+    <string name="weather_use_custom_location">Use custom location</string>
+    <string name="weather_geolocated">Geolocated using network</string>
+    <string name="weather_custom_location_dialog_title">Enter location</string>
+    <string name="weather_custom_location_hint">City, State/Country</string>
+    <string name="weather_custom_location_title">Location</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_timestamp_title">Show timestamp</string>
+    <string name="weather_refresh_interval">Update interval</string>
+    <string name="weather_use_metric">Use metric</string>
+    <string name="weather_retrieve_location_dialog_title">Cannot retrieve location!</string>
+    <string name="weather_retrieve_location_dialog_message">Network geolocation is disabled.\n\nSet a custom location or enable network location</string>
+    <string name="weather_retrieve_location_dialog_enable_button">Enable</string>
+    <string name="weather_invert_lowhigh">Invert low/high temperatures</string>
+    <string name="weather_progress_title">Verifying location</string>
+
+    <!-- Lock screen Weather - Update frequency -->
+    <string name="weather_refresh_manual">Manual</string>
+    <string name="weather_refresh_30min">30 minutes</string>
+    <string name="weather_refresh_60min">60 minutes</string>
+    <string name="weather_refresh_2hrs">2 hours</string>
+    <string name="weather_refresh_4hrs">4 hours</string>
+    <string name="weather_refresh_6hrs">6 hours</string>
+    <string name="weather_refresh_8hrs">8 hours</string>
+    <string name="unknown">Unknown</string>
+
     <string name="dpi">DPI</string>
 
 </resources>

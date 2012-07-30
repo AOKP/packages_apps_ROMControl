@@ -1,4 +1,10 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- General section -->
+    <header
+        android:id="@+id/general"
+        android:title="@string/header_general" />
+
     <header
         android:id="@+id/user_interface"
         android:fragment="com.baked.romcontrol.fragments.UserInterface"
@@ -7,14 +13,36 @@
         android:summary="@string/header_summary_general_ui" />
 
     <header
+        android:id="@+id/power_menu"
+        android:fragment="com.baked.romcontrol.fragments.PowerMenu"
+        android:title="@string/power_menu_optons"
+        android:icon="@drawable/ic_rom_control_power_menu"
+        android:summary="@string/header_summary_power_menu" />
+
+    <!-- Navbar section -->
+    <header
+        android:id="@+id/navbar"
+        android:title="@string/header_navbar" />
+
+    <header
+        android:id="@+id/nav_bar"
+        android:fragment="com.baked.romcontrol.fragments.Navbar"
+        android:title="@string/nav_bar"
+        android:icon="@drawable/ic_rom_control_navigation_bar"
+        android:summary="@string/header_summary_navigation_bar" />
+
+    <!-- Statusbar section -->
+    <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />
+
     <header
         android:id="@+id/statusbar_clock"
         android:fragment="com.baked.romcontrol.fragments.StatusBarClock"
         android:summary="@string/header_summary_clock"
         android:icon="@drawable/ic_rom_control_clock"
         android:title="@string/clock" />
+
     <header
         android:id="@+id/statusbar_toggles"
         android:fragment="com.baked.romcontrol.fragments.StatusBarToggles"
@@ -28,15 +56,5 @@
         android:fragment="com.baked.romcontrol.fragments.StatusBarBattery"
         android:icon="@drawable/ic_rom_control_battery"
         android:summary="@string/header_summary_battery" />
-    <header
-        android:id="@+id/navbar"
-        android:title="@string/header_navbar" />
-
-     <header
-        android:id="@+id/nav_bar"
-        android:fragment="com.baked.romcontrol.fragments.Navbar"
-        android:title="@string/nav_bar"
-        android:icon="@drawable/ic_rom_control_navigation_bar"
-        android:summary="@string/header_summary_navigation_bar" />
 
 </preference-headers>

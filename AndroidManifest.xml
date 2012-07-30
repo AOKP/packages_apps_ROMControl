@@ -73,5 +73,12 @@
                 <category android:name="com.baked.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".fragments.PowerMenu"
+            android:label="Power Menu" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

@@ -1,4 +1,13 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<header
+		android:id="@+id/about"
+		android:fragment="com.aokp.romcontrol.fragments.About"
+		android:title="@string/about_aokp"
+		android:summary="@string/about_aokp_summary" />
+
+	<header android:title="@string/user_interface" />
+	
     <header
         android:id="@+id/user_interface"
         android:fragment="com.aokp.romcontrol.fragments.UserInterface"

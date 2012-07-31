@@ -6,8 +6,8 @@
         <CheckBoxPreference android:key="show_screenshot"
             android:title="@string/title_show_screenshot" />
 
-        <CheckBoxPreference android:key="show_torch_toggle"
-            android:title="@string/title_show_torch_toggle" />
+        <CheckBoxPreference android:key="show_reboot_chooser"
+            android:title="@string/title_show_reboot_chooser" />
 
         <CheckBoxPreference android:key="show_airplane_toggle"
             android:title="@string/title_show_airplane_toggle" />
@@ -17,6 +17,9 @@
 
         <CheckBoxPreference android:key="show_profile_chooser"
             android:title="@string/title_show_profile_chooser" />
+
+        <CheckBoxPreference android:key="show_sound_chooser"
+            android:title="@string/title_show_sound_chooser" />
 
     </PreferenceCategory>
 

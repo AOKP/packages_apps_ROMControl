@@ -14,16 +14,18 @@ import com.baked.romcontrol.BAKEDPreferenceFragment;
 public class PowerMenu extends BAKEDPreferenceFragment {
 
     private static final String PREF_SCREENSHOT = "show_screenshot";
-    private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
+    private static final String PREF_REBOOT_CHOOSER = "show_reboot_chooser";
     // private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_SHOW_PROFILE_CHOOSER = "show_profile_chooser";
+    private static final String PREF_SHOW_SOUND_CHOOSER = "show_sound_chooser";
 
     CheckBoxPreference mShowScreenShot;
-    CheckBoxPreference mShowTorchToggle;
+    CheckBoxPreference mShowRebootChooser;
     CheckBoxPreference mShowAirplaneToggle;
     // CheckBoxPreference mShowNavBarHide;
     CheckBoxPreference mShowProfileChooser;
+    CheckBoxPreference mShowSoundChooser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,9 +38,9 @@ public class PowerMenu extends BAKEDPreferenceFragment {
         mShowScreenShot.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SCREENSHOT, 0) == 1);
 
-        mShowTorchToggle = (CheckBoxPreference) findPreference(PREF_TORCH_TOGGLE);
-        mShowTorchToggle.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE, 0) == 1);
+        mShowRebootChooser = (CheckBoxPreference) findPreference(PREF_REBOOT_CHOOSER);
+        mShowRebootChooser.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_REBOOT_CHOOSER, 1) == 1);
 
         mShowAirplaneToggle = (CheckBoxPreference) findPreference(PREF_AIRPLANE_TOGGLE);
         mShowAirplaneToggle.setChecked(Settings.System.getInt(getActivity()
@@ -52,9 +54,9 @@ public class PowerMenu extends BAKEDPreferenceFragment {
         mShowProfileChooser.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_PROFILE_CHOOSER, 0) == 1);
 
-        if(!hasTorch) {
-            getPreferenceScreen().removePreference(mShowTorchToggle);
-        }
+        mShowSoundChooser = (CheckBoxPreference) findPreference(PREF_SHOW_SOUND_CHOOSER);
+        mShowSoundChooser.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SOUND_CHOOSER, 1) == 1);
 
         // I took this code out to allow Tablets the ability to Hide Navbar.
         // Note going to completely delete it incase an issue arises and needs to
@@ -67,32 +69,44 @@ public class PowerMenu extends BAKEDPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
+
         if (preference == mShowScreenShot) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mShowTorchToggle) {
+
+        } else if (preference == mShowRebootChooser) {
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE,
+                    Settings.System.POWER_DIALOG_SHOW_REBOOT_CHOOSER,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+
         } else if (preference == mShowAirplaneToggle) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+
         /* } else if (preference == mShowNavBarHide) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true; */
+
         } else if (preference == mShowProfileChooser) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_PROFILE_CHOOSER,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+
+        } else if (preference == mShowSoundChooser) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_SOUND_CHOOSER,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
         }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

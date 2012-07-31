@@ -5,10 +5,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class About extends AOKPPreferenceFragment {
 
@@ -29,6 +34,20 @@ public class About extends AOKPPreferenceFragment {
         mReviewUrl = findPreference("aokp_review");
         mIrcUrl = findPreference("aokp_irc");
 
+        PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
+        ArrayList<Preference> devs = new ArrayList<Preference>();
+        for (int i = 0; i < devsGroup.getPreferenceCount(); i++) {
+            devs.add(devsGroup.getPreference(i));
+        }
+        devsGroup.removeAll();
+        devsGroup.setOrderingAsAdded(false);
+        Collections.shuffle(devs);
+        for(int i = 0; i < devs.size(); i++) {
+            Preference p = devs.get(i);
+            p.setOrder(i);
+
+            devsGroup.addPreference(p);
+        }
     }
 
     @Override
@@ -37,7 +56,7 @@ public class About extends AOKPPreferenceFragment {
             launchUrl("http://aokp.co/");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/aokp");
-	} else if (preference == mReviewUrl) {
+        } else if (preference == mReviewUrl) {
             launchUrl("http://gerrit.aokp.co");
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=teamkang");

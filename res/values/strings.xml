@@ -4,6 +4,7 @@
     <string name="app_name">ROM Control</string>
 
     <!-- Header Strings -->
+    <string name="user_interface">User Interface</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
@@ -57,7 +58,8 @@
     <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
     <string name="donate_khasmek">http://nyan.cat</string>
     <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
-
+    <string name="donate_adam">http://goo.gl/fRj57</string>
+    
     <!-- General UI -->
     <string name="enable_volume_options">Enable Volume Panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
@@ -133,8 +135,8 @@
     <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
     <string name="navbar_qty_title">Navigation button quantity</string>
     <string name="navbar_qty_summary">Choose the number of navigation buttons</string>
-    <string name="button_transparency_title">Nav button transparency</string>
     <string name="navbar_action_title">Button %1$s action &amp; icon</string>
+    <string name="button_transparency_title">Nav button transparency</string>
     <string name="navbar_longpress_title">Button %1$s longpress action</string>
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>

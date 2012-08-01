@@ -7,10 +7,6 @@
         android:title="@string/misc_short">
 
          <CheckBoxPreference
-            android:key="enable_volume_options"
-            android:title="@string/enable_volume_options" />
-
-         <CheckBoxPreference
             android:key="status_bar_notif_count"
             android:title="@string/status_bar_notif_count_title"
             android:summary="@string/status_bar_notif_count_summary"

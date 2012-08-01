@@ -1,24 +1,11 @@
 
 package com.aokp.romcontrol.fragments;
 
-import java.io.File;
-import java.util.ArrayList;
-
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.text.Spannable;
-import android.widget.EditText;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
@@ -27,12 +14,9 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     public static final String TAG = "UserInterface";
 
-    private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
-    CheckBoxPreference mEnableVolumeOptions;
     CheckBoxPreference mStatusBarNotifCount;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,32 +24,21 @@ public class UserInterface extends AOKPPreferenceFragment {
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_ui);
 
-        mEnableVolumeOptions = (CheckBoxPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
-        mEnableVolumeOptions.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ENABLE_VOLUME_OPTIONS, 0) == 1);
-
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
+        mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
-                0) == 1);
+                false));
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-         if (preference == mEnableVolumeOptions) {
-
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ENABLE_VOLUME_OPTIONS, checked ? 1 : 0);
-            return true;
-
-        } else if (preference == mStatusBarNotifCount) {
-            Settings.System.putInt(mContext.getContentResolver(),
+        if (preference == mStatusBarNotifCount) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
-            }
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

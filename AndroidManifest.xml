@@ -89,5 +89,24 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".fragments.Sound"
+            android:label="Sound Settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".service.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.aokp.romcontrol.service.AudioReciever.ACTION_REGISTER" />
+            </intent-filter>
+        </receiver>
+         <service
+            android:name=".service.HeadphoneService">
+        </service>
     </application>
 </manifest>

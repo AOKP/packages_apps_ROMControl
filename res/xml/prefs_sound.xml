@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:key="enable_volume_options"
+        android:title="@string/enable_volume_options" />
+
+    <ListPreference
+        android:defaultValue="-1"
+        android:entries="@array/headphone_audio_mode_entries"
+        android:entryValues="@array/headphone_audio_mode_values"
+        android:key="headphone_audio_mode"
+        android:summary="@string/summary_headphone_audio_mode"
+        android:title="@string/title_headphone_audio_mode" />
+
+</PreferenceScreen>

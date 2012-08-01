@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pref_lockscreen_menu_unlock"
+        android:title="@string/title_pref_lockscreen_menu_unlock"
+        android:summary="@string/summary_pref_lockscreen_menu_unlock" />
+
+    <PreferenceCategory
+        android:key="advanced_cat"
+        android:title="@string/advanced_settings">
+
+        <CheckBoxPreference
+            android:key="lockscreen_quick_unlock_control"
+            android:title="@string/lockscreen_quick_unlock_control_title"
+            android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

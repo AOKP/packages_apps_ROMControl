@@ -1,13 +1,13 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
 
-	<header
-		android:id="@+id/about"
-		android:fragment="com.aokp.romcontrol.fragments.About"
-		android:title="@string/about_aokp"
-		android:summary="@string/about_aokp_summary" />
+    <header
+	android:id="@+id/about"
+	android:fragment="com.aokp.romcontrol.fragments.About"
+	android:title="@string/about_aokp"
+	android:summary="@string/about_aokp_summary" />
 
-	<header android:title="@string/user_interface" />
-	
+    <header android:title="@string/user_interface" />
+
     <header
         android:id="@+id/user_interface"
         android:fragment="com.aokp.romcontrol.fragments.UserInterface"
@@ -16,11 +16,19 @@
         android:summary="@string/header_summary_general_ui" />
 
     <header
+        android:id="@+id/lockscreen"
+        android:fragment="com.aokp.romcontrol.fragments.Lockscreens"
+        android:title="@string/lockscreen_options"
+        android:icon="@drawable/ic_rom_control_lockscreens"
+        android:summary="@string/header_summary_lockscreens" />
+
+    <header
         android:id="@+id/led"
-		android:fragment="com.aokp.romcontrol.fragments.LEDControl"
-		android:title="@string/led_options"
-		android:icon="@drawable/ic_rom_control_led"
-		android:summary="@string/header_summary_led" />
+	android:fragment="com.aokp.romcontrol.fragments.LEDControl"
+	android:title="@string/led_options"
+	android:icon="@drawable/ic_rom_control_led"
+	android:summary="@string/header_summary_led" />
+
      <header
         android:id="@+id/nav_bar"
         android:fragment="com.aokp.romcontrol.fragments.Navbar"
@@ -31,6 +39,7 @@
      <header
         android:id="@+id/system"
         android:title="@string/header_system" />
+
      <header
         android:id="@+id/sound"
         android:fragment="com.aokp.romcontrol.fragments.Sound"
@@ -38,8 +47,16 @@
         android:summary="@string/header_summary_sound" />
 
     <header
+        android:id="@+id/led"
+	android:fragment="com.aokp.romcontrol.fragments.LEDControl"
+	android:title="@string/led_options"
+	android:icon="@drawable/ic_rom_control_led"
+	android:summary="@string/header_summary_led" />
+
+    <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />
+
     <header
         android:id="@+id/statusbar_clock"
         android:fragment="com.aokp.romcontrol.fragments.StatusBarClock"

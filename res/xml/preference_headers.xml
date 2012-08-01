@@ -17,10 +17,25 @@
 
     <header
         android:id="@+id/led"
-	android:fragment="com.aokp.romcontrol.fragments.LEDControl"
-	android:title="@string/led_options"
-	android:icon="@drawable/ic_rom_control_led"
-	android:summary="@string/header_summary_led" />
+		android:fragment="com.aokp.romcontrol.fragments.LEDControl"
+		android:title="@string/led_options"
+		android:icon="@drawable/ic_rom_control_led"
+		android:summary="@string/header_summary_led" />
+     <header
+        android:id="@+id/nav_bar"
+        android:fragment="com.aokp.romcontrol.fragments.Navbar"
+        android:title="@string/nav_bar"
+        android:icon="@drawable/ic_rom_control_navigation_bar"
+        android:summary="@string/header_summary_navigation_bar" />
+
+     <header
+        android:id="@+id/system"
+        android:title="@string/header_system" />
+     <header
+        android:id="@+id/sound"
+        android:fragment="com.aokp.romcontrol.fragments.Sound"
+        android:title="@string/sound"
+        android:summary="@string/header_summary_sound" />
 
     <header
         android:id="@+id/statusbar"
@@ -44,15 +59,5 @@
         android:fragment="com.aokp.romcontrol.fragments.StatusBarBattery"
         android:icon="@drawable/ic_rom_control_battery"
         android:summary="@string/header_summary_battery" />
-    <header
-        android:id="@+id/navbar"
-        android:title="@string/header_navbar" />
-
-     <header
-        android:id="@+id/nav_bar"
-        android:fragment="com.aokp.romcontrol.fragments.Navbar"
-        android:title="@string/nav_bar"
-        android:icon="@drawable/ic_rom_control_navigation_bar"
-        android:summary="@string/header_summary_navigation_bar" />
 
 </preference-headers>

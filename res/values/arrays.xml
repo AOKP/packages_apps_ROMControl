@@ -299,4 +299,15 @@
         <item>10000</item>
     </integer-array>
 
+    <string-array name="headphone_audio_mode_entries">
+        <item>@string/headphones_mode_no_action</item>
+        <item>@string/headphones_mode_vibrate</item>
+        <item>@string/headphones_mode_silent</item>
+    </string-array>
+
+    <string-array name="headphone_audio_mode_values" translatable="false">
+        <item>-1</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
 </resources>

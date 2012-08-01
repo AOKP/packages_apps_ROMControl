@@ -34,8 +34,6 @@
             android:label="User Interface" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="com.baked.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity
@@ -43,8 +41,6 @@
             android:label="Statusbar Clock" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="com.baked.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
          <activity
@@ -52,8 +48,6 @@
             android:label="Statusbar Toggles" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="com.baked.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity
@@ -61,8 +55,6 @@
             android:label="Statusbar Battery" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="com.baked.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity
@@ -70,7 +62,6 @@
             android:label="Navigation Bar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.baked.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity
@@ -78,7 +69,6 @@
             android:label="Lockscreen Weather" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.baked.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity

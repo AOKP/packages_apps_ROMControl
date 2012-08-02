@@ -76,9 +76,10 @@
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
     <!-- General UI -->
-    <string name="enable_volume_options">Enable Volume Panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
+	<string name="menu_permanent_override_title">Force show menu-button</string>
+	<string name="menu_permanent_override_summary">Force the menu button to show in the top-right hand corner of applications</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>
@@ -187,6 +188,7 @@
     <string name="title_led_screen_on">LED flash while screen ON</string>
 
     <!-- Sound -->
+    <string name="enable_volume_options">Enable Volume Panel</string>
     <string name="title_headphone_audio_mode">Headphones plugged in action</string>
     <string name="summary_headphone_audio_mode">What to do with sound when headphones are plugged in and out</string>
     <string name="title_bt_audio_mode">Bluetooth A2DP connected action</string>

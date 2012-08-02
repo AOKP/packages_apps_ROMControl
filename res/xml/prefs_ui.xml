@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory
         android:key="misc"
         android:title="@string/misc_short">
+
+         <CheckBoxPreference
+            android:key="disable_bootanimation"
+            android:title="@string/disable_bootanimation_title" />
 
          <CheckBoxPreference
             android:key="status_bar_notif_count"
@@ -13,9 +16,10 @@
             android:defaultValue="false" />
 
          <CheckBoxPreference
-            android:key="disable_bootanimation"
-            android:title="@string/disable_bootanimation_title" />
-
+            android:key="menu_permanent_override"
+            android:title="@string/menu_permanent_override_title"
+            android:summary="@string/menu_permanent_override_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -40,10 +40,6 @@ public class UserInterface extends BAKEDPreferenceFragment {
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_ui);
 
-        mEnableVolumeOptions = (CheckBoxPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
-        mEnableVolumeOptions.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ENABLE_VOLUME_OPTIONS, 0) == 1);
-
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
@@ -53,14 +49,7 @@ public class UserInterface extends BAKEDPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-         if (preference == mEnableVolumeOptions) {
-
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ENABLE_VOLUME_OPTIONS, checked ? 1 : 0);
-            return true;
-
-        } else if (preference == mStatusBarNotifCount) {
+         if (preference == mStatusBarNotifCount) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);

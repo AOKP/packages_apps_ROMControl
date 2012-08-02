@@ -22,6 +22,8 @@ import android.widget.EditText;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.CMDProcessor;
+import com.aokp.romcontrol.util.Helpers;
 
 public class UserInterface extends AOKPPreferenceFragment {
 
@@ -30,6 +32,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
+    CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mEnableVolumeOptions;
     CheckBoxPreference mStatusBarNotifCount;
 
@@ -48,6 +51,11 @@ public class UserInterface extends AOKPPreferenceFragment {
         mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
                 0) == 1);
+
+        mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
+        mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
+                if (mDisableBootAnimation.isChecked())
+                    mDisableBootAnimation.setSummary(R.string.disable_bootanimation_summary);
     }
 
     @Override
@@ -65,7 +73,25 @@ public class UserInterface extends AOKPPreferenceFragment {
                     Settings.System.STATUS_BAR_NOTIF_COUNT,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
+
+        } else if (preference == mDisableBootAnimation) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            if (checked) {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.unicorn");
+                Helpers.getMount("ro");
+                preference.setSummary(R.string.disable_bootanimation_summary);
+            } else {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
+                Helpers.getMount("ro");
+                preference.setSummary("");
             }
+            return true;
+        }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

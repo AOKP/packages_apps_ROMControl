@@ -6,6 +6,9 @@
     <!-- Whether device has camera flash or torch capabilities -->
     <bool name="has_torch">true</bool>
 
+    <!-- LED Flashlight -->
+    <bool name="has_led_flash">false</bool>
+
     <!-- Whether device has hardware buttons -->
     <bool name="has_hardware_buttons">true</bool>
 

@@ -15,7 +15,7 @@
     <header
         android:id="@+id/power_menu"
         android:fragment="com.baked.romcontrol.fragments.PowerMenu"
-        android:title="@string/power_menu_optons"
+        android:title="@string/power_menu_options"
         android:icon="@drawable/ic_rom_control_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
@@ -49,6 +49,13 @@
         android:summary="@string/header_summary_clock"
         android:icon="@drawable/ic_rom_control_clock"
         android:title="@string/clock" />
+
+    <header
+        android:id="@+id/statusbar_powerwidget"
+        android:fragment="com.baked.romcontrol.fragments.PowerWidget"
+        android:icon="@drawable/ic_rom_control_powerwidget"
+        android:summary="@string/header_summary_powerwidget"
+        android:title="@string/header_powerwidget" />
 
     <header
         android:id="@+id/statusbar_toggles"

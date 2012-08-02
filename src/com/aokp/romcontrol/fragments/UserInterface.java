@@ -1,6 +1,10 @@
 
 package com.aokp.romcontrol.fragments;
 
+import java.io.File;
+import java.util.Random;
+
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -9,6 +13,8 @@ import android.provider.Settings;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.CMDProcessor;
+import com.aokp.romcontrol.util.Helpers;
 
 public class UserInterface extends AOKPPreferenceFragment {
 
@@ -16,7 +22,10 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
+    CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mStatusBarNotifCount;
+
+    Random randomGenerator = new Random();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +37,15 @@ public class UserInterface extends AOKPPreferenceFragment {
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
                 false));
+
+        mDisableBootAnimation = (CheckBoxPreference)findPreference("disable_bootanimation");
+        mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
+        if (mDisableBootAnimation.isChecked()) {
+            Resources res = mContext.getResources();
+            String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
+            int randomInt = randomGenerator.nextInt(insults.length);
+            mDisableBootAnimation.setSummary(insults[randomInt]);
+        }
     }
 
     @Override
@@ -37,6 +55,25 @@ public class UserInterface extends AOKPPreferenceFragment {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mDisableBootAnimation) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            if (checked) {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.unicorn");
+                Helpers.getMount("ro");
+                Resources res = mContext.getResources();
+                String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
+                int randomInt = randomGenerator.nextInt(insults.length);
+                preference.setSummary(insults[randomInt]);
+            } else {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
+                Helpers.getMount("ro");
+                preference.setSummary("");
+            }
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

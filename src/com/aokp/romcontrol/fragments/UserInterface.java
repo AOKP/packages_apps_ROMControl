@@ -29,10 +29,11 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+    private static final String PREF_MENU_COMPACT_OVERRIDE = "menu_compact_override";
 
     CheckBoxPreference mEnableVolumeOptions;
     CheckBoxPreference mStatusBarNotifCount;
-
+    CheckBoxPreference mCompactMenuOverride;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,31 +42,44 @@ public class UserInterface extends AOKPPreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_ui);
 
         mEnableVolumeOptions = (CheckBoxPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
-        mEnableVolumeOptions.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ENABLE_VOLUME_OPTIONS, 0) == 1);
+        mEnableVolumeOptions.setChecked(Settings.System.getBoolean(getActivity()
+                .getContentResolver(),
+                Settings.System.ENABLE_VOLUME_OPTIONS, false));
 
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
-                .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
-                0) == 1);
+        mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
+                .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT, false));
+
+        mCompactMenuOverride = (CheckBoxPreference) findPreference(PREF_MENU_COMPACT_OVERRIDE);
+        mCompactMenuOverride.setChecked(Settings.System.getBoolean(mContext
+                .getContentResolver(), Settings.System.MENU_COMPACT_OVERRIDE, false));
+        if (!hasHardwareButtons) {
+            // these devices will always have the menu button
+            getPreferenceScreen().removePreference(mCompactMenuOverride);
+        }
+
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-         if (preference == mEnableVolumeOptions) {
+        if (preference == mEnableVolumeOptions) {
 
             boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.ENABLE_VOLUME_OPTIONS, checked ? 1 : 0);
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.ENABLE_VOLUME_OPTIONS, checked);
             return true;
 
         } else if (preference == mStatusBarNotifCount) {
-            Settings.System.putInt(mContext.getContentResolver(),
+            Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
-            }
+        } else if (preference == mCompactMenuOverride) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.MENU_COMPACT_OVERRIDE, checked);
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

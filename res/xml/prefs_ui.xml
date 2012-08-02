@@ -12,6 +12,10 @@
             android:summary="@string/status_bar_notif_count_summary"
             android:defaultValue="false" />
 
+         <CheckBoxPreference
+            android:key="disable_bootanimation"
+            android:title="@string/disable_bootanimation_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

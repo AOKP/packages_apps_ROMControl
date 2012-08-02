@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- boot animation stuff -->
+    <string-array name="disable_bootanimation_insults">
+        <item>Jerk!</item>
+        <item>ProTekk!</item>
+    </string-array>
+
     <!-- clock stuff -->
     <string-array name="clock_style_entries">
         <item>Right clock</item>

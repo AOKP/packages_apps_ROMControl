@@ -57,11 +57,13 @@ import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.NavBarItemPreference;
+import com.aokp.romcontrol.widgets.WidgetPagerPreference;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 public class Navbar extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
 
+    private static final String TAG = "NavBar";
     // move these later
 	private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
@@ -70,6 +72,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+    private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
@@ -87,6 +90,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
+	WidgetPagerPreference mWidgetPreference;
 
     private int mPendingIconIndex = -1;
     private int mPendingWidgetDrawer = -1;
@@ -100,8 +104,6 @@ public class Navbar extends AOKPPreferenceFragment implements
 
     Preference mPendingPreference;
     private ShortcutPickerHelper mPicker;
-
-    private static final String TAG = "NavBar";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -138,7 +140,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
 
-	float defaultAlpha = Settings.System.getFloat(getActivity()
+		float defaultAlpha = Settings.System.getFloat(getActivity()
                 .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                 0.6f);
         mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
@@ -158,6 +160,8 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
+        
+        mWidgetPreference = (WidgetPagerPreference) findPreference(NAVIGATION_BAR_WIDGETS);
 
         if (mTablet) {
             prefs.removePreference(mNavBarMenuDisplay);
@@ -201,6 +205,9 @@ public class Navbar extends AOKPPreferenceFragment implements
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[2], "");
                 refreshSettings();
+                return true;
+            case R.id.reset_widgets:
+                mWidgetPreference.resetNavBarWidgets();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -304,7 +311,8 @@ public class Navbar extends AOKPPreferenceFragment implements
             return true;
 
         }
-	return false;
+
+        return false;
     }
 
     public void toggleBar() {

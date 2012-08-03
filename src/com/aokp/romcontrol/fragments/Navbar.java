@@ -1,25 +1,14 @@
 
 package com.aokp.romcontrol.fragments;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ListFragment;
-import android.appwidget.AppWidgetHost;
-import android.appwidget.AppWidgetManager;
-import android.appwidget.AppWidgetProviderInfo;
-import android.content.BroadcastReceiver;
+import android.app.DialogFragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
@@ -46,11 +35,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
@@ -61,6 +46,11 @@ import com.aokp.romcontrol.widgets.NavBarItemPreference;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.net.URISyntaxException;
 
 public class Navbar extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
@@ -76,6 +66,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+    private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
@@ -96,6 +87,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
+    Preference mConfigureWidgets;
 
     private int mPendingIconIndex = -1;
     private int mPendingWidgetDrawer = -1;
@@ -178,6 +170,8 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
+        mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
+
         if (mTablet) {
             prefs.removePreference(mNavBarMenuDisplay);
         }
@@ -241,6 +235,12 @@ public class Navbar extends AOKPPreferenceFragment implements
             Helpers.restartSystemUI();
             showDialog(DIALOG_NAVBAR_ENABLE);
             return true;
+        } else if (preference == mConfigureWidgets) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            WidgetConfigurationFragment fragment = new WidgetConfigurationFragment();
+            ft.addToBackStack("config_widgets");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -368,7 +368,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                 return new AlertDialog.Builder(getActivity())
                         .setTitle(getResources().getString(R.string.navbar_enable_dialog_title))
                         .setMessage(getResources().getString(R.string.navbar_enable_dialog_msg))
-                        .setCancelable(false)    
+                        .setCancelable(false)
                         .setPositiveButton(
                                 getResources().getString(R.string.navbar_enable_dialog_Positive),
                                 new DialogInterface.OnClickListener() {
@@ -739,34 +739,6 @@ public class Navbar extends AOKPPreferenceFragment implements
     public void onResume() {
         super.onResume();
         refreshSettings();
-    }
-
-    public static class NavbarLayout extends ListFragment {
-        private static final String TAG = "NavbarLayout";
-
-        Context mContext;
-
-        /** Called when the activity is first created. */
-        @Override
-        public void onCreate(Bundle icicle) {
-            super.onCreate(icicle);
-
-            mContext = getActivity().getBaseContext();
-        }
-
-        public void onActivityCreated(Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-        };
-
-        @Override
-        public void onDestroy() {
-            super.onDestroy();
-        }
-
-        @Override
-        public void onResume() {
-            super.onResume();
-        }
     }
 
 }

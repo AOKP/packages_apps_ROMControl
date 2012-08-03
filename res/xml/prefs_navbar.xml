@@ -95,5 +95,14 @@
 			android:title="@string/button_transparency_title" />
 
         </PreferenceCategory>
+        
+        <PreferenceCategory
+            android:key="navbar_widgets_cat"
+            android:title="@string/navbar_widgets">
+				<Preference 
+				    android:key="navigation_bar_widgets"
+				    android:title="@string/navbar_widgets_title" />
+
+        </PreferenceCategory>
 
 </PreferenceScreen>

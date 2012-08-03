@@ -12,6 +12,7 @@ import android.provider.Settings;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.service.FlipService;
 import com.aokp.romcontrol.service.HeadphoneService;
 
 public class Sound extends AOKPPreferenceFragment {
@@ -19,10 +20,12 @@ public class Sound extends AOKPPreferenceFragment {
     private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
     private static final String PREF_HEADPHONES_PLUGGED_ACTION = "headphone_audio_mode";
     private static final String PREF_BT_CONNECTED_ACTION = "bt_audio_mode";
+    private static final String PREF_FLIP_ACTION = "flip_mode";
 
     CheckBoxPreference mEnableVolumeOptions;
     ListPreference mHeadphonesPluggedAction;
     ListPreference mBTPluggedAction;
+    ListPreference mFlipAction;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,9 @@ public class Sound extends AOKPPreferenceFragment {
 
         if (HeadphoneService.DEBUG)
             mContext.startService(new Intent(mContext, HeadphoneService.class));
+
+        if (FlipService.DEBUG)
+            mContext.startService(new Intent(mContext, FlipService.class));
     }
 
     @Override

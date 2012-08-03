@@ -13,6 +13,7 @@ public class BootReceiver extends BroadcastReceiver {
 
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
             context.startService(new Intent(context, HeadphoneService.class));
+            context.startService(new Intent(context, FlipService.class));
         }
     }
 

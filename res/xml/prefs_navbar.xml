@@ -60,5 +60,11 @@
 			android:title="@string/button_transparency_title" />
 
         </PreferenceCategory>
+        
+        <PreferenceCategory
+            android:key="navbar_widgets"
+            android:title="@string/navbar_widgets">
+
+        </PreferenceCategory>
 
 </PreferenceScreen>

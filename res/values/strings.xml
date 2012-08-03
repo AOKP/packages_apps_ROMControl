@@ -177,6 +177,10 @@
     <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
+    <string name="navbar_widgets_instructions">Swipe to view, Click to choose, Longclick to delete</string>
+    <string name="navbar_widgets_reset">Reset navbar widgets</string>
+    <string name="navbar_widget_summary">Widget %1$s of %2$s</string>
+    <string name="navbar_widget_summary_add">Click to add Widget</string>
 
     <!-- LED -->
     <string name="led_on">LED On</string>

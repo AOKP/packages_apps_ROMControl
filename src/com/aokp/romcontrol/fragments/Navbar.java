@@ -11,7 +11,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListFragment;
-import android.appwidget.AppWidgetHost;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
 import android.content.BroadcastReceiver;
@@ -39,6 +38,8 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -48,6 +49,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -57,10 +59,13 @@ import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import com.aokp.romcontrol.widgets.NavBarItemPreference;
+import com.aokp.romcontrol.widgets.WidgetPagerAdapter;
+import com.aokp.romcontrol.widgets.WidgetPagerPreference;
 
 public class Navbar extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
 
+    private static final String TAG = "NavBar";
     // move these later
 	private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
@@ -74,7 +79,19 @@ public class Navbar extends AOKPPreferenceFragment implements
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
     private static final int DIALOG_NAVBAR_ENABLE = 203;
     private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
-
+    
+    // Widgets
+    WidgetPagerPreference mWidgetPreference;
+    public static final String ACTION_ALLOCATE_ID = "com.android.systemui.ACTION_ALLOCATE_ID";
+    public static final String ACTION_DEALLOCATE_ID = "com.android.systemui.ACTION_DEALLOCATE_ID";
+    public static final String ACTION_SEND_ID = "com.android.systemui.ACTION_SEND_ID";
+    private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
+    public int mWidgetIdQty = 0;
+    int widgetIds[];
+    private int mPendingWidgetId = -1;
+    ViewPager mWidgetPager;
+    WidgetPagerAdapter mAdapter;
+    
     public static final String PREFS_NAV_BAR = "navbar";
 
     // move these later
@@ -85,9 +102,8 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
-
     private int mPendingIconIndex = -1;
-    private int mPendingWidgetDrawer = -1;
+    
     private NavBarCustomAction mPendingNavBarCustomAction = null;
 
     private static class NavBarCustomAction {
@@ -98,15 +114,13 @@ public class Navbar extends AOKPPreferenceFragment implements
 
     Preference mPendingPreference;
     private ShortcutPickerHelper mPicker;
-
-    private static final String TAG = "NavBar";
-
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_navbar);
-
+        
         PreferenceScreen prefs = getPreferenceScreen();
 
         mPicker = new ShortcutPickerHelper(this, this);
@@ -148,10 +162,13 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
+        
+        mWidgetPreference = (WidgetPagerPreference) findPreference(NAVIGATION_BAR_WIDGETS);
 
         if (mTablet) {
             prefs.removePreference(mNavBarMenuDisplay);
         }
+
         refreshSettings();
         setHasOptionsMenu(true);
     }
@@ -166,7 +183,6 @@ public class Navbar extends AOKPPreferenceFragment implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.reset:
-
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3);
 
@@ -191,6 +207,9 @@ public class Navbar extends AOKPPreferenceFragment implements
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[2], "");
                 refreshSettings();
+                return true;
+            case R.id.reset_widgets:
+                mWidgetPreference.resetNavBarWidgets();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -682,5 +701,4 @@ public class Navbar extends AOKPPreferenceFragment implements
             super.onResume();
         }
     }
-
 }

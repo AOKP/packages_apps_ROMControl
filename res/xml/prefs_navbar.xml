@@ -56,5 +56,14 @@
                         android:summary="@string/navigation_bar_width_summary" />
 
         </PreferenceCategory>
+        
+        <PreferenceCategory
+            android:key="navbar_widgets"
+            android:title="@string/navbar_widgets">
+            
+            <com.aokp.romcontrol.widgets.WidgetPagerPreference 
+                android:key="navigation_bar_widgets"/>
+
+        </PreferenceCategory>
 
 </PreferenceScreen>

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.appwidget.AppWidgetHost;
 import android.appwidget.AppWidgetManager;
@@ -76,9 +77,11 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+    private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
+    private static final int DIALOG_NAVBAR_ENABLE = 203;
     private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
 
     public static final String PREFS_NAV_BAR = "navbar";
@@ -95,6 +98,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
+    Preference mConfigureWidgets;
 
     private int mPendingIconIndex = -1;
     private int mPendingWidgetDrawer = -1;
@@ -177,6 +181,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
+        mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
         if (mTablet) {
             prefs.removePreference(mNavBarMenuDisplay);
         }
@@ -238,6 +243,13 @@ public class Navbar extends AOKPPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mConfigureWidgets) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            WidgetConfigurationFragment fragment = new WidgetConfigurationFragment();
+            ft.addToBackStack("config_widgets");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -362,6 +374,29 @@ public class Navbar extends AOKPPreferenceFragment implements
     @Override
     public Dialog onCreateDialog(int dialogId) {
         switch (dialogId) {
+            case DIALOG_NAVBAR_ENABLE:
+                return new AlertDialog.Builder(getActivity())
+                        .setTitle(getResources().getString(R.string.navbar_enable_dialog_title))
+                        .setMessage(getResources().getString(R.string.navbar_enable_dialog_msg))
+                        .setCancelable(false)
+                        .setPositiveButton(
+                                getResources().getString(R.string.navbar_enable_dialog_Positive),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        PowerManager pm = (PowerManager) getActivity()
+                                                .getSystemService(Context.POWER_SERVICE);
+                                        pm.reboot("New navbar");
+                                    }
+                                })
+                        .setNegativeButton(
+                                getResources().getString(R.string.navbar_enable_dialog_negative),
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                                        dialog.dismiss();
+                                    }
+                                }).create();
             case DIALOG_NAVBAR_HEIGHT_REBOOT:
                 return new AlertDialog.Builder(getActivity())
                         .setTitle(getResources().getString(R.string.navbar_height_dialog_title))

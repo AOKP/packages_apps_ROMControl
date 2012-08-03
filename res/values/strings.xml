@@ -190,4 +190,6 @@
     <string name="headphones_mode_no_action">No action</string>
     <string name="headphones_mode_vibrate">Vibrate mode</string>
     <string name="headphones_mode_silent">Silent mode</string>
+    <string name="title_flip_mode">Face down phone mode</string>
+    <string name="summary_flip_mode">What to do with sound when you flip your phone face down</string>
 </resources>

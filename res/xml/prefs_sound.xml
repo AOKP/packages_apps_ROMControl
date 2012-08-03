@@ -13,12 +13,20 @@
         android:summary="@string/summary_headphone_audio_mode"
         android:title="@string/title_headphone_audio_mode" />
     
-        <ListPreference
+    <ListPreference
         android:defaultValue="-1"
         android:entries="@array/headphone_audio_mode_entries"
         android:entryValues="@array/headphone_audio_mode_values"
         android:key="bt_audio_mode"
         android:summary="@string/summary_bt_audio_mode"
         android:title="@string/title_bt_audio_mode" />
+        
+    <ListPreference
+        android:defaultValue="-1"
+        android:entries="@array/headphone_audio_mode_entries"
+        android:entryValues="@array/headphone_audio_mode_values"
+        android:key="flip_mode"
+        android:summary="@string/summary_flip_mode"
+        android:title="@string/title_flip_mode" />
 
 </PreferenceScreen>

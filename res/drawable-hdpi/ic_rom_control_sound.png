@@ -1,0 +1,11 @@
+--2012-08-04 18:55:51--  http://i.imgur.com/IbyPU.png
+Resolving i.imgur.com... 72.21.81.253
+Connecting to i.imgur.com|72.21.81.253|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4136 (4.0K) [image/png]
+Saving to: `IbyPU.png'
+
+     0K ....                                                  100% 6.21M=0.001s
+
+2012-08-04 18:55:51 (6.21 MB/s) - `IbyPU.png' saved [4136/4136]
+

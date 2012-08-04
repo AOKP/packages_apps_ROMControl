@@ -7,6 +7,11 @@
         android:title="@string/title_pref_lockscreen_menu_unlock"
         android:summary="@string/summary_pref_lockscreen_menu_unlock" />
 
+    <CheckBoxPreference
+	android:key="lockscreen_battery"
+	android:title="@string/lockscreen_battery_title"
+	android:summary="@string/lockscreen_battery_summary" />
+
     <PreferenceCategory
         android:key="advanced_cat"
         android:title="@string/advanced_settings">

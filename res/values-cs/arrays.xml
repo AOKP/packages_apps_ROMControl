@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="clock_style_entries">
+		<item>Hodiny vpravo</item>
+		<item>Hodiny uprostřed</item>
+		<item>Bez hodin</item>
+	</string-array>
+  <string-array name="clock_ampm_entries">
+		<item>Nezobrazovat</item>
+		<item>Malé AM/PM</item>
+		<item>Normální AM/PM</item>
+	</string-array>
+  <string-array name="clock_weekday_entries">
+		<item>Nezobrazovat</item>
+		<item>Malý den</item>
+		<item>Normální den</item>
+	</string-array>
+  <string-array name="toggle_style_entries">
+		<item>Pouze ikony</item>
+		<item>Pouze text</item>
+	</string-array>
+  <string-array name="battery_icon_entries">
+		<item>Pouze ikona</item>
+		<item>Pouze text</item>
+		<item>Ikona s textem</item>
+		<item>Ikona s vycentrovaným textem</item>
+		<item>CircleMOD</item>
+		<item>Nezobrazovat</item>
+	</string-array>
+  <string-array name="pref_navigation_menu_entries">
+		<item>Vpravo</item>
+		<item>Vlevo</item>
+		<item>Po obou stranách</item>
+		<item>Nezobrazovat</item>
+	</string-array>
+  <string-array name="pref_navigation_menu_display_entries">
+		<item>Výchozí chování JB</item>
+		<item>Vždy zobrazovat neviditelné ikony</item>
+		<item>Vždy zobrazovat</item>
+		<item>Výchozí JB s neviditelnými ikonami pokud jsou schovány</item>
+	</string-array>
+  <string-array name="navbar_button_entries">
+		<item>Domů</item>
+		<item>Zpět</item>
+		<item>Přepínač aplikací</item>
+		<item>Hledat</item>
+		<item>Menu</item>
+    <item>Přepnout widgety</item>
+		<item>Ukončit aplikaci</item>
+		<item>Napájení</item>
+		<item>Vlastní aplikace</item>
+		<item>Prázdné</item>
+	</string-array>
+  <string-array name="navigation_bar_width_entries">
+		<item>42 bodů (výchozí)</item>
+		<item>36 bodů</item>
+		<item>30 bodů</item>
+		<item>24 bodů</item>
+	</string-array>
+  <string-array name="navigation_bar_height_entries">
+		<item>48 bodů (výchozí)</item>
+		<item>44 bodů</item>
+    <item>40 bodů</item>
+		<item>36 bodů</item>
+		<item>30 bodů</item>
+		<item>24 bodů</item>
+	</string-array>
+  <string-array name="navigation_bar_height_landscape_entries">
+    <item>48 bodů (výchozí)</item>
+    <item>42 bodů</item>
+    <item>36 bodů</item>
+    <item>30 bodů</item>
+    <item>24 bodů</item>
+  </string-array>
+  <string-array name="battery_bar_entries">
+		<item>Nezobrazovat</item>
+		<item>Ve stavové liště</item>
+		<item>Navrchu navigační lišty</item>
+		<item>Vespod navigační lišty</item>
+	</string-array>
+  <string-array name="battery_bar_style_entries">
+		<item>Normální</item>
+		<item>Na střed se zrcadlením</item>
+	</string-array>
+  <string-array name="battery_bar_thickness_entries">
+		<item>1 bod</item>
+		<item>2 body</item>
+		<item>3 body</item>
+		<item>4 body</item>
+	</string-array>
+  <string-array name="led_entries">
+		<item>0.5 sekundy</item>
+		<item>1 sekunda</item>
+		<item>1.5 sekundy</item>
+		<item>2 sekundy</item>
+		<item>2.5 sekundy</item>
+		<item>3 sekundy</item>
+		<item>3.5 sekundy</item>
+		<item>4 sekundy</item>
+		<item>4.5 sekundy</item>
+		<item>5 sekund</item>
+		<item>5.5 sekundy</item>
+		<item>6 sekund</item>
+		<item>7 sekund</item>
+		<item>8 sekund</item>
+		<item>9 sekund</item>
+		<item>10 sekund</item>
+	</string-array>
+  <string-array name="flip_entries">
+    <item>0.5 sekundy</item>
+		<item>1 sekunda</item>
+		<item>1.5 sekundy</item>
+		<item>2 sekundy</item>
+		<item>2.5 sekundy</item>
+		<item>3 sekundy</item>
+		<item>3.5 sekundy</item>
+		<item>4 sekundy</item>
+		<item>4.5 sekundy</item>
+		<item>5 sekund</item>
+		<item>5.5 sekundy</item>
+		<item>6 sekund</item>
+		<item>7 sekund</item>
+		<item>8 sekund</item>
+		<item>9 sekund</item>
+		<item>10 sekund</item>
+  </string-array>
+  <string-array name="flip_screenoff_entries">
+    <item>5 sekund</item>
+    <item>10 sekund</item>
+    <item>15 sekund</item>
+    <item>30 sekund</item>
+    <item>45 sekund</item>
+    <item>1 minuta</item>
+    <item>1.5 minuty</item>
+    <item>2 minuty</item>
+    <item>2.5 minuty</item>
+    <item>3 minuty</item>
+    <item>3.5 minuty</item>
+    <item>4 minuty</item>
+    <item>5 minut</item>
+  </string-array>
+</resources>

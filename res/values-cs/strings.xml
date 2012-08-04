@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Nastavení ROM</string>
+  <string name="user_interface">Uživatelské rozhraní</string>
+  <string name="cancel">Zrušit</string>
+  <string name="ok">OK</string>
+  <string name="menu_main_activity_change_locale">Prázdné!</string>
+  <string name="statusbar">Stavová lišta</string>
+  <string name="header_navbar">Navigační lišta</string>
+  <string name="toggles_layout">Přepínače</string>
+  <string name="general_ui">Hlavní nastavení</string>
+  <string name="clock">Hodiny</string>
+  <string name="battery">Baterie</string>
+  <string name="nav_bar">Navigační lišta</string>
+  <string name="led_options">Možnosti LED</string>
+  <string name="header_system">Systém</string>
+  <string name="sound">Zvuk</string>
+  
+  <string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
+  <string name="header_summary_toggles">Přizpůsobit přepínače</string>
+  <string name="header_summary_general_ui">Startovací animace, rotace, přepínač klávesnice, atd.</string>
+  <string name="header_summary_battery">Lišta baterie, % ukazatel baterie, atd.</string>
+  <string name="header_summary_navigation_bar">Tlačítka k zobrazení, barva navigační lišty, pořadí</string>
+  <string name="header_summary_led">Změna výchozího nastavení Androidu</string>
+  <string name="header_summary_sound">@null</string>
+  
+  <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
+  
+  <string name="advanced_settings">Pokročilá nastavení</string>
+  <string name="misc_short">Ostatní</string>
+  <string name="custom_app_icon_successfully">" ikona úspěšně nastavena!"</string>
+  
+  <string name="use_custom_app_title">Použít vlastní aplikaci</string>
+  <string name="use_custom_app_summary">Místo přehledu posledních otevřených aplikací použít vlastní aplikaci</string>
+  <string name="select_custom_app_title">Vybrat vlastní aplikaci</string>
+  <string name="group_applications">Aplikace</string>
+  
+  <string name="devs">Vývojáři</string>
+  <string name="aokp">Android Open Kang Project</string>
+  <string name="aokp_website_title">Web AOKP</string>
+  <string name="aokp_source_title">Zdroové kódy AOKP</string>
+  <string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlédnout nejnovější verzi na github.com/aokp</string>
+  <string name="aokp_review_title">Revize AOKP kódu</string>
+  <string name="aokp_review_summary">Gerrit server AOKP pro odesílání a testování pačů</string>
+  
+  <string name="enable_volume_options">Zapnout volby hlasitosti</string>
+  <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
+  <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
+  
+  <string name="toggle_style_title">Styl přepínačů</string>
+  <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
+  <string name="toggles_layout_title">Vzhled přepínačů</string>
+  <string name="enabled_toggles_title">Zapnuté přepínače</string>
+  <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
+  <string name="toggles_order_title">Pořadí přepínačů</string>
+  <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
+  <string name="brightness_location_title">Pozice nastavení jasu</string>
+  <string name="reset_toggles_title">Obnovit přepínače</string>
+  <string name="reset_toggles_summary">Obnovit všechny přepínače a jejich pořadí</string>
+  
+  <string name="clock_title_enable">Styl hodin</string>
+  <string name="title_clock_ampm_entries">AM/PM styl</string>
+  <string name="enable_clock_weekday">Den v týdnu</string>
+  <string name="enable_clock_weekday_summary">Zobrazit den v týdnu před hodinami</string>
+  
+  <string name="toggle_airplane_mode">Režim letadlo</string>
+  <string name="toggle_auto_rotate">Automatická rotace</string>
+  <string name="toggle_bluetooth">Bluetooth</string>
+  <string name="toggle_fast_charge">Rychlé nabíjení</string>
+  <string name="toggle_gps">GPS</string>
+  <string name="toggle_lte">LTE</string>
+  <string name="toggle_data">Data</string>
+  <string name="toggle_nfc">NFC</string>
+  <string name="toggle_silent">Tichý režim</string>
+  <string name="toggle_swagger">Swagger</string>
+  <string name="toggle_sync">Sync</string>
+  <string name="toggle_torch">Svítilna</string>
+  <string name="toggle_2g">2G</string>
+  <string name="toggle_usb_tether">USB tether</string>
+  <string name="toggle_vibrate">Vibrace</string>
+  <string name="toggle_wifi_ap">Tether</string>
+  <string name="toggle_wifi">Wi-Fi</string>
+  
+  <string name="battery_icon">Styl ikony baterie</string>
+  <string name="battery_summary_text_widget">@null</string>
+  <string name="battery_bar">Pozice pruhu baterie</string>
+  <string name="battery_bar_color">Barva pruhu baterie</string>
+  <string name="battery_bar_cat">Možnosti pruhu baterie</string>
+  <string name="battery_bar_style_title">Styl pruhu baterie</string>
+  <string name="battery_bar_thickness_title">Tloušťka pruhu baterie</string>
+  <string name="battery_bar_animate_title">Animace při nabíjení</string>
+  <string name="battery_bar_animate_summary">Povolení animace způsobuje horší odezvy systému. Zapínat pouze na vlastní nebezpečí.</string>
+  
+  <string name="dialog_color_picker">Výběr barvy</string>
+  <string name="press_color_to_apply">Stisknutím se barva aplikuje</string>
+  <string name="arrow_right">→</string>
+  <string name="arrow_down">↓</string>
+  <string name="hex">Hex:</string>
+  <string name="hex_hint">#FF000000</string>
+  <string name="set">Nastavit</string>
+  <string name="ics_color">Holo</string>
+  
+  <string name="navigation_bar">Navigační lišta</string>
+  <string name="navbar_button_cat">Tlačítka navigační lišty</string>
+  <string name="title_pref_menu_display">Umístění menu</string>
+  <string name="summary_pref_menu_display">Při používání velkého tlačítka menu je třeba odstranit postranní tlačítka menu!</string>
+  <string name="title_pref_navigation_menu_display">Viditelnost menu</string>
+  <string name="summary_pref_navigation_menu_display">Jak a kde se mají zobrazovat tlačítka menu?</string>
+  <string name="navbar_qty_title">Počet navigačních tlačítek</string>
+  <string name="navbar_qty_summary">Zvolit počet tlačítek v navigační liště</string>
+  <string name="navbar_action_title">Akce a ikona tlačítka %1$s</string>
+  <string name="button_transparency_title">Průhlednost tl. navigační lišty</string>
+  <string name="navbar_longpress_title">Akce dlouhého stisknutí tlačítka %1$s</string>
+  <string name="navbar_action_home">Domů</string>
+  <string name="navbar_action_back">Zpět</string>
+  <string name="navbar_action_recents">Přepínač aplikací</string>
+  <string name="navbar_action_search">Hledat</string>
+  <string name="navbar_action_menu">Menu</string>
+  <string name="navbar_action_kill">Ukončit aplikaci</string>
+  <string name="navbar_action_power">Napájení</string>
+  <string name="navbar_action_none">Prázdné</string>
+  <string name="navbar_widgets">Widgety v navigační liště</string>
+  <string name="navbar_enable_bar">Povolit lištu</string>
+  <string name="navigation_bar_height_title">Výška navigační lišty</string>
+  <string name="navigation_bar_height_summary">Výška navigační lišty v režimu na výšku</string>
+  <string name="navigation_bar_height_landscape_title">Výška navigační lišty v režimu na šířku</string>
+  <string name="navigation_bar_height_landscape_summary">Výška navigační lišty v režimu na šířku.</string>
+  <string name="navigation_bar_width_title">Šířka navigační lišty</string>
+  <string name="navigation_bar_width_summary">Šíčka navigační lišty když je zobrazena na straně.</string>
+  <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
+  <string name="navbar_enable_dialog_msg">Pro správné zapnutí/vypnutí navigační lišty je třeba restartovat!</string>
+  <string name="navbar_enable_dialog_negative">Restartovat později</string>
+  <string name="navbar_enable_dialog_Positive">Restartovat nyní!</string>
+  <string name="navbar_height_dialog_title">Vyžadován restart!</string>
+  <string name="navbar_height_dialog_summary">Pro správnou změnu šířky navigační lišty je třeba restartovat!</string>
+  <string name="navbar_height_dialog_button_later">Restartovat později</string>
+  <string name="navbar_height_dialog_button_reboot">Restartovat nyní!</string>
+  
+  <string name="led_on">LED svítí</string>
+  <string name="led_time_on">Doba po kterou LED svítí</string>
+  <string name="led_off">LED zhasnuta</string>
+  <string name="led_time_off">Doba po kterou je LED zhasnuta</string>
+  <string name="led_color_click">Kliknutím na LED je možné změnit barvu</string>
+  <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
+  
+  <string name="title_headphone_audio_mode">Akce připojení sluchátek</string>
+  <string name="summary_headphone_audio_mode">Co se děje se zvukem, když jsou připojena nebo odpojena sluchátka</string>
+  <string name="title_bt_audio_mode">Akce připojení Bluetooth A2DP</string>
+  <string name="summary_bt_audio_mode">Co se děje se zvukem, když je připojeno A2DP</string>
+  <string name="headphones_mode_no_action">Nic</string>
+  <string name="headphones_mode_vibrate">Vibrační režim</string>
+  <string name="headphones_mode_silent">Tichý režim</string>
+</resources>

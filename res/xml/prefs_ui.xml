@@ -12,6 +12,12 @@
             android:summary="@string/status_bar_notif_count_summary"
             android:defaultValue="false" />
 
+         <CheckBoxPreference
+            android:key="volume_rocker_wake"
+            android:title="@string/volume_rocker_wake_title"
+            android:summary="@string/volume_rocker_wake_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

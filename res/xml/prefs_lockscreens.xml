@@ -2,6 +2,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <CheckBoxPreference
+        android:key="lockscreen_battery"
+        android:title="@string/lockscreen_battery_title"
+        android:summary="@string/lockscreen_battery_summary" />
+
     <PreferenceCategory
         android:key="advanced_cat"
         android:title="@string/advanced_settings">

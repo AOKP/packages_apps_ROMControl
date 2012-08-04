@@ -22,6 +22,10 @@ import com.aokp.romcontrol.R;
 public class Lockscreens extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
+
+    CheckBoxPreference mLockscreenBattery;
+
     ArrayList<String> keys = new ArrayList<String>();
 
     @Override
@@ -32,6 +36,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_lockscreens);
+
+        mLockscreenBattery = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_BATTERY);
+        mLockscreenBattery.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_BATTERY, 0) == 1);
 
         for (String key : keys) {
             try {
@@ -51,10 +59,15 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (keys.contains(preference.getKey())) {
+        if (preference == mLockscreenBattery) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_BATTERY,
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (keys.contains(preference.getKey())) {
             Log.e("RC_Lockscreens", "key: " + preference.getKey());
             return Settings.System.putInt(getActivity().getContentResolver(), preference.getKey(),
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

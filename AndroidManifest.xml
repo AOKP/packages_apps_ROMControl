@@ -32,53 +32,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.UserInterface"
-            android:label="User Interface" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name=".fragments.UserInterface" />
         <activity
-            android:name=".fragments.StatusBarClock"
-            android:label="Statusbar Clock" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name=".fragments.StatusBarClock" />
          <activity
-            android:name=".fragments.StatusBarToggles"
-            android:label="Statusbar Toggles" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name=".fragments.StatusBarToggles" />
         <activity
-            android:name=".fragments.StatusBarBattery"
-            android:label="Statusbar Battery" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name=".fragments.StatusBarBattery" />
         <activity
-            android:name=".fragments.Navbar"
-            android:label="Navigation Bar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name=".fragments.Navbar" />
         <activity
-            android:name=".fragments.Weather"
-            android:label="Lockscreen Weather" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name=".fragments.Weather" />
         <activity
-            android:name=".fragments.PowerMenu"
-            android:label="Power Menu" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name=".fragments.Calendar" />
+        <activity
+            android:name=".fragments.PowerMenu" />
     </application>
 </manifest>

@@ -19,13 +19,6 @@
         android:icon="@drawable/ic_rom_control_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
-    <header
-        android:id="@+id/lockscreen_weather_panel"
-        android:fragment="com.baked.romcontrol.fragments.Weather"
-        android:title="@string/lockscreen_weather_title"
-        android:icon="@drawable/ic_rom_control_weather"
-        android:summary="@string/lockscreen_weather_summary" />
-
     <!-- Navbar section -->
     <header
         android:id="@+id/navbar"
@@ -37,6 +30,25 @@
         android:title="@string/nav_bar"
         android:icon="@drawable/ic_rom_control_navigation_bar"
         android:summary="@string/header_summary_navigation_bar" />
+
+    <!-- Lockscreen section -->
+    <header
+        android:id="@+id/lockscreen"
+        android:title="@string/header_lockscreen" />
+
+    <header
+        android:id="@+id/lockscreen_weather"
+        android:fragment="com.baked.romcontrol.fragments.Weather"
+        android:summary="@string/lockscreen_weather_summary"
+        android:icon="@drawable/ic_rom_control_weather"
+        android:title="@string/lockscreen_weather_title" />
+
+    <header
+        android:id="@+id/lockscreen_calendar"
+        android:fragment="com.baked.romcontrol.fragments.Calendar"
+        android:summary="@string/lockscreen_calendar_summary"
+        android:icon="@drawable/ic_rom_control_calendar"
+        android:title="@string/lockscreen_calendar_title" />
 
     <!-- Statusbar section -->
     <header

@@ -200,5 +200,7 @@
     <string name="summary_pref_lockscreen_menu_unlock">Legacy menu icon unlocks screen (requires reboot)</string>
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
+    <string name="lockscreen_battery_title">Lockscreen Battery Percentage</string>
+    <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
 
 </resources>

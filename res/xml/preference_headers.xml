@@ -7,7 +7,7 @@
 		android:summary="@string/about_aokp_summary" />
 
 	<header android:title="@string/user_interface" />
-	
+
     <header
         android:id="@+id/user_interface"
         android:fragment="com.aokp.romcontrol.fragments.UserInterface"
@@ -35,6 +35,7 @@
         android:id="@+id/sound"
         android:fragment="com.aokp.romcontrol.fragments.Sound"
         android:title="@string/sound"
+        android:icon="@drawable/ic_rom_control_sound"
         android:summary="@string/header_summary_sound" />
 
     <header

@@ -37,6 +37,7 @@
         android:id="@+id/sound"
         android:fragment="com.aokp.romcontrol.fragments.Sound"
         android:title="@string/sound"
+        android:icon="@drawable/ic_rom_control_sound"
         android:summary="@string/header_summary_sound" />
 
     <header

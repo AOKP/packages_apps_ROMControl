@@ -23,8 +23,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_MENU = "pref_lockscreen_menu_unlock";
+    private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
 
     CheckBoxPreference menuButtonLocation;
+    CheckBoxPreference mLockscreenBattery;
 
     ArrayList<String> keys = new ArrayList<String>();
 
@@ -40,6 +42,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         menuButtonLocation = (CheckBoxPreference) findPreference(PREF_MENU);
         menuButtonLocation.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_ENABLE_MENU_KEY, 1) == 1);
+
+        mLockscreenBattery = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_BATTERY);
+        mLockscreenBattery.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_BATTERY, 0) == 1);
 
         for (String key : keys) {
             try {
@@ -62,12 +68,17 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         if (preference == menuButtonLocation) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ENABLE_MENU_KEY,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mLockscreenBattery) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_BATTERY,
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
         } else if (keys.contains(preference.getKey())) {
             Log.e("RC_Lockscreens", "key: " + preference.getKey());
             return Settings.System.putInt(getActivity().getContentResolver(), preference.getKey(),
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

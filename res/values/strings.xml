@@ -18,6 +18,8 @@
     <string name="led_options">LED options</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
+    <string name="header_tools">Tools</string>
+    <string name="performance">Performance</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
@@ -27,6 +29,7 @@
     <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
     <string name="header_summary_led">Change default settings for Android to use</string>
     <string name="header_summary_sound">@null</string>
+    <string name="header_summary_performance">Enable fast charge</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -192,4 +195,13 @@
     <string name="headphones_mode_silent">Silent mode</string>
     <string name="title_flip_mode">Face down phone mode</string>
     <string name="summary_flip_mode">What to do with sound when you flip your phone face down</string>
+
+    <!-- Tools -->
+    <string name="kernel">Kernel Tweaks (if supported)</string>
+    <string name="pt_fast_charge_boot">Fast Charge</string>
+    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+    <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
+    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
+    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
+
 </resources>

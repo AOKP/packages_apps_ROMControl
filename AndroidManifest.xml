@@ -86,6 +86,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.Performance"
+            android:label="Performance" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <action android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.About"
             android:label="@string/about_aokp" >
             <intent-filter>

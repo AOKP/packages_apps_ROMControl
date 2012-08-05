@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="kernel"
+        android:title="@string/kernel">
+            <CheckBoxPreference
+                android:key="fast_charge_boot"
+                android:defaultValue="false"
+                android:title="@string/pt_fast_charge_boot"
+                android:summary="@string/ps_fast_charge_boot" />
+    </PreferenceCategory>
+</PreferenceScreen>

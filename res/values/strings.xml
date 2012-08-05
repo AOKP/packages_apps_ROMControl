@@ -19,6 +19,7 @@
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
     <string name="lockscreen_options">Lockscreen options</string>
+    <string name="weather">Weather</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
@@ -29,6 +30,7 @@
     <string name="header_summary_led">Change default settings for Android to use</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_lockscreens">Custom apps to launch, layout</string>
+    <string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -199,4 +201,107 @@
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
 
+    <!-- Weather -->
+    <string name="weather_enable">Enable weather</string>
+    <string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
+    <string name="weather_use_custom_location">Use custom location</string>
+    <string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise network-location is used to determine your location.</string>
+    <string name="weather_custom_location_dialog_title">Set your location</string>
+    <string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_title">Custom location</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Show your location.</string>
+    <string name="weather_refresh_interval">Refresh interval</string>
+    <string name="weather_refresh_interval_minutes">" minutes"</string>
+    <string name="weather_use_celcius">Metric units</string>
+    <string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
+    <string name="weather_statusbar_style">Statusbar weather style</string>
+    <string name="weather_start_custom_app">Start custom app</string>
+    <string name="weather_start_custom_app_summary">Start a custom app when clicking on the weather image.</string>
+    <string name="weather_custom_app_title">Custom app</string>
+    <string name="weather_custom_app_dialog_title">Choose your app</string>
+    <string name="weather_custom_app_dialog_message">Package name for now.</string>
+    <string name="weather_refreshing">Requesting weather update!</string>
+    <string name="weather_loc_warning_title">Cannot retrieve location!</string>
+    <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network."</string>
+    <string name="weather_loc_warning_positive">"Enable network location"</string>
+    <string name="weather_loc_warning_negative">"Don't enable."</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">Tornado</string>
+    <string name="weather_1">Tropical Storm</string>
+    <string name="weather_2">Hurricane</string>
+    <string name="weather_3">Severe Thunderstorms</string>
+    <string name="weather_4">Thunderstorms</string>
+    <string name="weather_5">Mixed Rain and Snow</string>
+    <string name="weather_6">Mixed Rain and Sleet</string>
+    <string name="weather_7">Mixed Snow and Sleet</string>
+    <string name="weather_8">Freezing Drizzle</string>
+    <string name="weather_9">Drizzle</string>
+    <string name="weather_10">Freezing Rain</string>
+    <string name="weather_11">Showers</string>
+    <string name="weather_12">Showers</string>
+    <string name="weather_13">Snow Flurries</string>
+    <string name="weather_14">Light Snow Showers</string>
+    <string name="weather_15">Blowing Snow</string>
+    <string name="weather_16">Snow</string>
+    <string name="weather_17">Hail</string>
+    <string name="weather_18">Sleet</string>
+    <string name="weather_19">Dust</string>
+    <string name="weather_20">Foggy</string>
+    <string name="weather_21">Haze</string>
+    <string name="weather_22">Smoky</string>
+    <string name="weather_23">Blustery</string>
+    <string name="weather_24">Windy</string>
+    <string name="weather_25">Cold</string>
+    <string name="weather_26">Cloudy</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">Mostly Cloudy</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">Mostly Cloudy</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">Partly Cloudy</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">Partly Cloudy</string>
+    <!-- clear (night) -->
+    <string name="weather_31">Clear</string>
+    <string name="weather_32">Sunny</string>
+    <!-- fair (night) -->
+    <string name="weather_33">Fair</string>
+    <!-- fair (day) -->
+    <string name="weather_34">Fair</string>
+    <string name="weather_35">Mixed Rain and Hail</string>
+    <string name="weather_36">Hot</string>
+    <string name="weather_37">Isolated Thunderstorms</string>
+    <string name="weather_38">Scattered Thunderstorms</string>
+    <string name="weather_39">Scattered Thunderstorms</string>
+    <string name="weather_40">Scattered Showers</string>
+    <string name="weather_41">Heavy Snow</string>
+    <string name="weather_42">Scattered Snow Showers</string>
+    <string name="weather_43">Scattered Snow Showers</string>
+    <string name="weather_44">Partly Cloudy</string>
+    <string name="weather_45">Thundershowers</string>
+    <string name="weather_46">Snow Showers</string>
+    <string name="weather_47">Isolated Thundershowers</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Unable to retrieve location information for weather update</string>
+
+     <!-- cardinal directions -->
+    <string name="direction_north">N</string>
+    <string name="direction_north_east">NE</string>
+    <string name="direction_east">E</string>
+    <string name="direction_south_east">SE</string>
+    <string name="direction_south">S</string>
+    <string name="direction_south_west">SW</string>
+    <string name="direction_west">W</string>
+    <string name="direction_north_west">NW</string>
+
+    <string name="lockscreen_weather_title">Lockscreen Weather</string>
+    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
+    <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
+    <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
+    <string name="menu_weather_get_weather">Get weather</string>
 </resources>

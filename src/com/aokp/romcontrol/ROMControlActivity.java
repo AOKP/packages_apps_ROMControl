@@ -35,6 +35,8 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.aokp.romcontrol.service.BootService;
+
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
 
     private static final String TAG = "ROM_Control";
@@ -59,7 +61,8 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
+        mTablet = Settings.System
+                .getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
@@ -87,6 +90,11 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 startWithFragment(className, null, null, 0);
                 finish(); // close current activity
             }
+        }
+
+        if (!BootService.servicesStarted) {
+            getApplicationContext().startService(
+                    new Intent(getApplicationContext(), BootService.class));
         }
     }
 

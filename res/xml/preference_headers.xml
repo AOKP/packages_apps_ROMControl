@@ -40,6 +40,13 @@
         android:icon="@drawable/ic_rom_control_sound"
         android:summary="@string/header_summary_sound" />
 
+      <header
+        android:id="@+id/weather"
+        android:fragment="com.aokp.romcontrol.fragments.Weather"
+        android:title="@string/weather"
+        android:summary="@string/header_summary_weather"
+        android:icon="@drawable/ic_rom_control_weather" />
+
     <header
         android:id="@+id/led"
         android:fragment="com.aokp.romcontrol.fragments.LEDControl"

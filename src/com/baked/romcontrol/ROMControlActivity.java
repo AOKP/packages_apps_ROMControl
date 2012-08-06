@@ -39,7 +39,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
     private static final String TAG = "ROM_Control";
 
-    private static boolean hasNotificationLed;
     private static String KEY_USE_ENGLISH_LOCALE = "use_english_locale";
 
     protected HashMap<Integer, Integer> mHeaderIndexMap = new HashMap<Integer, Integer>();
@@ -60,7 +59,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     public void onCreate(Bundle savedInstanceState) {
 
         mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
-        hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
         setLocale();

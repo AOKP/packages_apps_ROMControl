@@ -51,11 +51,11 @@ import android.widget.TextView;
 import com.android.internal.telephony.Phone;
 
 import com.baked.romcontrol.R;
-import com.baked.romcontrol.SettingsPreferenceFragment;
+import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.util.PowerWidgetUtil;
 import com.baked.romcontrol.widgets.TouchInterceptor;
 
-public class PowerWidget extends SettingsPreferenceFragment implements
+public class PowerWidget extends BAKEDPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "PowerWidget";
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
@@ -142,7 +142,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
         return true;
     }
 
-    public static class PowerWidgetChooser extends SettingsPreferenceFragment
+    public static class PowerWidgetChooser extends BAKEDPreferenceFragment
             implements Preference.OnPreferenceChangeListener {
 
         public PowerWidgetChooser() {

@@ -1,72 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:baked="http://schemas.android.com/apk/res/com.baked.romcontrol">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:key="aokp"
-        android:title="@string/aokp">
+    <Preference
+        android:key="baked_website"
+        android:title="@string/baked_website_title"
+        android:summary="@string/baked_website_summary" />
 
-        <Preference
-            android:key="aokp_website"
-            android:title="@string/aokp_website_title"
-            android:summary="@string/aokp_website_summary" />
+    <Preference
+        android:key="baked_source"
+        android:title="@string/baked_source_title"
+        android:summary="@string/baked_source_summary" />
 
-        <Preference
-            android:key="aokp_source"
-            android:title="@string/aokp_source_title"
-            android:summary="@string/aokp_source_summary" />
+    <Preference
+        android:key="baked_irc"
+        android:title="@string/baked_irc_title"
+        android:summary="@string/baked_irc_summary" />
 
-        <Preference
-            android:key="aokp_review"
-            android:title="@string/aokp_review_title"
-            android:summary="@string/aokp_review_summary" />
+    <Preference
+        android:id="@+id/aboutpage"
+        android:title="@string/baked_devs"
+        android:summary="@string/baked_devs_summary">
 
-        <Preference
-            android:key="aokp_irc"
-            android:title="@string/aokp_irc_title"
-            android:summary="@string/aokp_irc_summary" />
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.baked.romcontrol.AboutActivity"
+                android:targetPackage="com.baked.romcontrol" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="devs"
-        android:title="@string/devs">
-
-        <com.baked.romcontrol.widgets.DeveloperPreference
-            android:title="Roman"
-            baked:twitterHandle="romanbb"
-            baked:donateLink="@string/donate_roman" />
-
-        <com.baked.romcontrol.widgets.DeveloperPreference
-            android:title="Whitehawkx"
-            baked:twitterHandle="whitehawkx"
-            baked:donateLink="@string/donate_whitehawk" />
-
-        <com.baked.romcontrol.widgets.DeveloperPreference
-            android:title="Zaphod-Beeble"
-            baked:twitterHandle="Dont_Panic_Zaph"
-            baked:donateLink="@string/donate_zaph" />
-
-        <com.baked.romcontrol.widgets.DeveloperPreference
-            android:title="Jonathon Grigg"
-            baked:twitterHandle="jonathongrigg" />
-
-        <com.baked.romcontrol.widgets.DeveloperPreference
-            android:title="ProTekk"
-            baked:twitterHandle="protekkfzs"
-            baked:donateLink="@string/donate_protekk" />
-
-        <com.baked.romcontrol.widgets.DeveloperPreference
-            android:title="Khas Mek"
-            baked:twitterHandle="KhasMek"
-            baked:donateLink="@string/donate_khasmek" />
-
-        <com.baked.romcontrol.widgets.DeveloperPreference
-            android:title="sethyx"
-            baked:twitterHandle="sethyx"
-            baked:donateLink="@string/donate_sethyx" />
-
-    </PreferenceCategory>
-
+    </Preference>
 </PreferenceScreen>

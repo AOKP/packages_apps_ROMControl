@@ -1,4 +1,3 @@
-
 package com.baked.romcontrol.fragments;
 
 import android.content.Intent;
@@ -24,30 +23,27 @@ public class About extends BAKEDPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.prefs_about);
-        mSiteUrl = findPreference("aokp_website");
-        mSourceUrl = findPreference("aokp_source");
-        mReviewUrl = findPreference("aokp_review");
-        mIrcUrl = findPreference("aokp_irc");
+        mSiteUrl = findPreference("baked_website");
+        mSourceUrl = findPreference("baked_source");
+        mIrcUrl = findPreference("baked_irc");
 
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://aokp.co/");
+            launchUrl("http://teamicemods.com/");
         } else if (preference == mSourceUrl) {
-            launchUrl("http://github.com/aokp");
-        } else if (preference == mReviewUrl) {
-            launchUrl("http://gerrit.aokp.co");
+            launchUrl("http://github.com/teambaked");
         } else if (preference == mIrcUrl) {
-            launchUrl("http://webchat.freenode.net/?channels=teamkang");
+            launchUrl("http://webchat.freenode.net/?channels=teamBAKED");
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void launchUrl(String url) {
         Uri uriUrl = Uri.parse(url);
-        Intent donate = new Intent(Intent.ACTION_VIEW, uriUrl);
-        getActivity().startActivity(donate);
+        Intent launchIntent = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(launchIntent);
     }
 }

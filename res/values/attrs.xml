@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ListPreferenceMultiSelect">
-    	<attr format="string" name="checkAll" />
-    	<attr format="string" name="separator" />
+        <attr format="string" name="checkAll" />
+        <attr format="string" name="separator" />
     </declare-styleable>
-    
+
     <declare-styleable name="DeveloperPreference">
         <attr name="twitterHandle" format="string" />
         <attr name="donateLink" format="string" />
@@ -13,6 +13,15 @@
     <declare-styleable name="ImageListPreference">
         <attr name="summaryImage" format="reference" />
         <attr name="entryImages" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DeveloperPreference">
+        <attr name="devIcon" format="reference"/>
+        <attr name="devUrl" format="string"/>
+        <attr name="donate" format="string"/>
+        <attr name="email" format="string"/>
+        <attr name="market" format="string"/>
+        <attr name="twitter" format="string"/>
     </declare-styleable>
 
 </resources>

@@ -1,5 +1,13 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <!-- Mastur_mynds AboutPage app code -->
+    <header
+        android:id="@+id/about_page"
+        android:fragment="com.baked.romcontrol.fragments.About"
+        android:title="@string/teambaked_about_page"
+        android:icon="@drawable/ic_rom_control"
+        android:summary="@string/teambaked_about_summary" />
+
     <!-- General section -->
     <header
         android:id="@+id/general"
@@ -35,6 +43,20 @@
     <header
         android:id="@+id/lockscreen"
         android:title="@string/header_lockscreen" />
+
+    <header
+        android:id="@+id/lockscreen_targets"
+        android:fragment="com.baked.romcontrol.fragments.LockscreenTargets"
+        android:summary="@string/lockscreen_target_summary"
+        android:icon="@drawable/ic_rom_control_lockscreen_target"
+        android:title="@string/lockscreen_target_title" />
+
+    <header
+        android:id="@+id/lockscreen_extras"
+        android:fragment="com.baked.romcontrol.fragments.LockscreenInterface"
+        android:summary="@string/lockscreen_extra_summary"
+        android:icon="@drawable/ic_rom_control_lockscreen_extra"
+        android:title="@string/lockscreen_extra_title" />
 
     <header
         android:id="@+id/lockscreen_weather"

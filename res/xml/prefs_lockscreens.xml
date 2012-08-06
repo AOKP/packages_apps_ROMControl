@@ -2,6 +2,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Preference
+        android:key="wallpaper"
+        android:title="@string/lockscreen_wallpaper_title"
+        android:summary="@string/lockscreen_wallpaper_summary" />
+
     <CheckBoxPreference
         android:key="lockscreen_battery"
         android:title="@string/lockscreen_battery_title"
@@ -11,10 +16,10 @@
         android:key="advanced_cat"
         android:title="@string/advanced_settings">
 
-        <CheckBoxPreference
-            android:key="lockscreen_quick_unlock_control"
-            android:title="@string/lockscreen_quick_unlock_control_title"
-            android:summary="@string/lockscreen_quick_unlock_control_summary" />
+    <CheckBoxPreference
+        android:key="lockscreen_quick_unlock_control"
+        android:title="@string/lockscreen_quick_unlock_control_title"
+        android:summary="@string/lockscreen_quick_unlock_control_summary" />
 
     </PreferenceCategory>
 </PreferenceScreen>

@@ -220,6 +220,8 @@
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
     <string name="lockscreen_battery_title">Lockscreen Battery Percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
+    <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>

@@ -190,6 +190,17 @@
     <string name="headphones_mode_no_action">No action</string>
     <string name="headphones_mode_vibrate">Vibrate mode</string>
     <string name="headphones_mode_silent">Silent mode</string>
-    <string name="title_flip_mode">Face down phone mode</string>
+    <string name="title_flip_mode">Face down audio mode</string>
     <string name="summary_flip_mode">What to do with sound when you flip your phone face down</string>
+    <string name="flip_cat_title">Face Down Action</string>
+    <string name="title_up_sec">Face up seconds</string>
+    <string name="summary_up_sec">Time required for your phone to be considered face up</string>
+    <string name="title_down_sec">Face down seconds</string>
+    <string name="summary_down_sec">Time required for your phone to be considered face down</string>
+    <string name="flip_action_positive">OK</string>
+    <string name="flip_dialog_title">How it works</string>
+    <string name="flip_dialog_msg">Your phone will flip over to go to vibrate or silent on how you choose.  It 
+        requires .5 (default) seconds face up to trigger it is facing up and 1.5 (default) 
+        seconds to say it is down.</string>
+    
 </resources>

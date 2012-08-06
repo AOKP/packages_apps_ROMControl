@@ -9,20 +9,25 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
 public class FlipService extends Service {
-
+    
     final static String TAG = "FlipService";
     public final static boolean DEBUG = false;
-
-    public static final String KEY_FLIP_MODE = "flip_mode";
+    
+    public static final String KEY_FLIP_MODE = "flip_mode"; 
     public static final String DEFAULT_FLIP = "-1";
+    public static final String KEY_USER_UP_MS = "user_up_ms";
+    public static final String KEY_USER_DOWN_MS = "user_down_ms";
     public static final int MODE_VIBRATE = AudioManager.RINGER_MODE_VIBRATE;
     public static final int MODE_SILENT = AudioManager.RINGER_MODE_SILENT;
+    public static final String UP_MS_DEFAULT = "500";
+    public static final String DOWN_MS_DEFAULT = "1500";
 
     // int for limits on flip, thanks CM
     private static final int FACE_UP_LOWER_LIMIT = -45;
@@ -32,36 +37,41 @@ public class FlipService extends Service {
     private static final int TILT_UPPER_LIMIT = 45;
     private static final int TILT_LOWER_LIMIT = -45;
     private static final int SENSOR_SAMPLES = 3;
-
+    
     private boolean[] mSamples = new boolean[SENSOR_SAMPLES];
     private int mSampleIndex;
     private boolean wasFaceUp;
     private boolean wasFaceDown = false;
-    boolean switchSoundBack = false;
+    boolean switchSoundBack = false; 
     static boolean mRegistered = false;
-
+    Handler handler = new Handler();
+    private boolean faceUpIsRunning = false;
+    private boolean faceDownIsRunning = false;
+    private boolean cancelRunUp = false;
+    private boolean cancelRunDown = false;
+    
     // added to sort out context issues from inner classes
-    private FlipService service = this;
+    private FlipService service = this; 
     private AudioManager am;
-
+    
     //lets add some vibrate when you flip over!
     Vibrator vib;
     private int quick = 150;
     private int fastQuick = 50;
     private int pause = 150;
     private long[] pattern = {0, quick, pause, fastQuick, 0, quick};
-
+    
     private SensorEventListener sl = new SensorEventListener() {
 
         @Override
-        public void onAccuracyChanged(Sensor arg0, int arg1) {
+        public void onAccuracyChanged(Sensor arg0, int arg1) {            
         }
 
         @Override
         public void onSensorChanged(SensorEvent event) {
             float y = event.values[1];
             float z = event.values[2];
-
+            
             if (getUserFlipAudioMode(service) != -1){
                 if (!wasFaceUp) {
                     // Check if its face up enough.
@@ -75,21 +85,19 @@ public class FlipService extends Service {
                     for (boolean sample : mSamples) {
                            faceUp = faceUp && sample;
                     }
-
+                    
                     if (faceUp) {
                         //change back needs to be in here to detect when it
                         // has hit the limit to be face up
-                        if (wasFaceDown) {
-                            wasFaceDown = false;
-                            if (switchSoundBack && am.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
-                                switchSoundBack = false;
-                                am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-                                log("Flipped back face up! Ringer Normal!");
-                            }
-                        }
-                        wasFaceUp = true;
+                        cancelRunUp = true;
+                        handler.postDelayed(faceUpTimer, getUserUpMS(service));
                         for (int i = 0; i < SENSOR_SAMPLES; i++)
                             mSamples[i] = false;
+                    } else {
+                        if (faceUpIsRunning) {
+                            cancelRunUp = false;
+                            faceUpIsRunning = false;
+                        }
                     }
                 } else if (wasFaceUp) {
                     // Check if its face down enough. Note that wanted
@@ -111,55 +119,100 @@ public class FlipService extends Service {
                     if (faceDown) {
                         for (int i = 0; i < SENSOR_SAMPLES; i++)
                             mSamples[i] = false;
-                        switch (getUserFlipAudioMode(service)) {
-                            case MODE_SILENT:
-                                if (am.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
-                                    am.setRingerMode(MODE_SILENT);
-                                    switchSoundBack = true;
-                                    wasFaceUp = false;
-                                    wasFaceDown = true;
-                                    vib.vibrate(pattern, -1);
-                                    log("face over, lets go silent!");
-                                }
-                                break;
-                            case MODE_VIBRATE:
-                                if (am.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
-                                    am.setRingerMode(MODE_VIBRATE);
-                                    switchSoundBack = true;
-                                    wasFaceUp = false;
-                                    wasFaceDown = true;
-                                    vib.vibrate(pattern, -1);
-                                    log("face over, lets go vibrate!");
-                                }
-                                break;
+                        cancelRunDown = true;
+                        handler.postDelayed(faceDownTimer, getUserDownMS(service));
+                    } else {
+                        if (faceDownIsRunning) {
+                            cancelRunDown = false;
+                            wasFaceUp = false;
+                            faceDownIsRunning = false;
                         }
                     }
                 }
 
                 mSampleIndex = ((mSampleIndex + 1) % SENSOR_SAMPLES);
             }
-
+  
         }
-
+        
     };
-
+    
+    private Runnable faceUpTimer = new Runnable() {
+        public void run() {
+            faceUpIsRunning = true;
+            if (cancelRunUp) {
+                if (wasFaceDown) {
+                    wasFaceDown = false;
+                    if (switchSoundBack && am.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
+                        switchSoundBack = false;
+                        am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+                        log("Flipped back face up! Ringer Normal!");
+                    }   
+                }  
+                wasFaceUp = true; 
+            }
+        }
+    };
+    
+    private Runnable faceDownTimer = new Runnable() {
+        public void run() {
+            faceDownIsRunning = true;
+            if (cancelRunDown) {
+                switch (getUserFlipAudioMode(service)) {
+                case MODE_SILENT:
+                    if (am.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+                        am.setRingerMode(MODE_SILENT);
+                        switchSoundBack = true;
+                        wasFaceUp = false;
+                        wasFaceDown = true;
+                        vib.vibrate(pattern, -1);
+                        log("face over, lets go silent!");
+                    }
+                    break;
+                case MODE_VIBRATE:
+                    if (am.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+                        am.setRingerMode(MODE_VIBRATE);
+                        switchSoundBack = true;
+                        wasFaceUp = false;
+                        wasFaceDown = true;
+                        vib.vibrate(pattern, -1);
+                        log("face over, lets go vibrate!");
+                    }
+                    break;
+                }
+            }  
+        }
+    };
+    
     private SensorManager getSensorManager() {
         return (SensorManager) getSystemService(Context.SENSOR_SERVICE);
     }
-
+    
     @Override
     public void onDestroy() {
         getSensorManager().unregisterListener(sl);
         mRegistered = false;
         super.onDestroy();
     }
-
+    
     public static int getUserFlipAudioMode(Context c) {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
         return Integer.parseInt(prefs.getString(KEY_FLIP_MODE, DEFAULT_FLIP));
     }
 
+    public static int getUserUpMS(Context c) {
+        SharedPreferences prefs =
+                PreferenceManager.getDefaultSharedPreferences(c);
+        return Integer.parseInt(prefs.getString(KEY_USER_UP_MS, UP_MS_DEFAULT));
+    }
+    
+    public static int getUserDownMS(Context c) {
+        SharedPreferences prefs =
+                PreferenceManager.getDefaultSharedPreferences(c);
+        return Integer.parseInt(prefs.getString(KEY_USER_DOWN_MS, DOWN_MS_DEFAULT));
+    }
+    
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "User Flip Mode= " + getUserFlipAudioMode(service));
@@ -168,10 +221,10 @@ public class FlipService extends Service {
                     .getSystemService(Context.AUDIO_SERVICE);
             vib = (Vibrator) service
                     .getSystemService(Context.VIBRATOR_SERVICE);
-            getSensorManager().registerListener(sl,
+            getSensorManager().registerListener(sl, 
                     getSensorManager().getDefaultSensor(Sensor.TYPE_ORIENTATION),
-                    SensorManager.SENSOR_DELAY_NORMAL);
-
+                    SensorManager.SENSOR_DELAY_UI);
+            
             mRegistered = true;
             log("register sensor manager");
         }
@@ -182,7 +235,7 @@ public class FlipService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-
+    
     private static void log(String s) {
         if (DEBUG)
             Log.e(TAG, s);

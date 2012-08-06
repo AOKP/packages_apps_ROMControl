@@ -101,6 +101,16 @@
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ShareToClipboard"
+            android:label="Share To Clipboard" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>

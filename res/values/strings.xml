@@ -192,8 +192,20 @@
     <string name="headphones_mode_no_action">No action</string>
     <string name="headphones_mode_vibrate">Vibrate mode</string>
     <string name="headphones_mode_silent">Silent mode</string>
-    <string name="title_flip_mode">Face down phone mode</string>
+    <string name="title_flip_mode">Face down audio mode</string>
     <string name="summary_flip_mode">What to do with sound when you flip your phone face down</string>
+    <string name="flip_cat_title">Face Down Action</string>
+    <string name="title_timeout_sec">Screen Timeout</string>
+    <string name="summary_timeout_sec">Time the screen is off before the flip sensor is disabled</string>
+    <string name="title_down_sec">Face down seconds</string>
+    <string name="summary_down_sec">Time required for your phone to be considered face down</string>
+    <string name="flip_action_positive">OK</string>
+    <string name="flip_dialog_title">How it works</string>
+    <string name="flip_dialog_msg">Your phone will flip over to go to vibrate or silent on how you choose.  
+        It will take 1.5 (default) seconds to change once flipped over.  
+        It will then disable the flip once the screen is turned on after 15 (default) seconds.  
+        NOTE: **You will need to turn the screen back on once flipped over to get sound back once the 
+        screen timeout time has been reached.**</string>
 
     <!-- Lockscreen -->
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>

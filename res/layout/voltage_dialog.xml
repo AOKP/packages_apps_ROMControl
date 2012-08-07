@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout
+            android:id="@+id/voltageDialogLayout"
+            android:paddingTop="10.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/conditionText"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+        <EditText
+            android:id="@+id/voltageEdit"
+            android:paddingTop="10.0dip"
+            android:paddingRight="5.0dip"
+            android:layout_width="60.0dip"
+            android:layout_height="wrap_content"
+            android:maxLength="4"
+            android:layout_toRightOf="@+id/negativeText"
+            android:inputType="number" />
+        <SeekBar
+            android:id="@+id/voltageSeek"
+            android:paddingLeft="10.0dip"
+            android:paddingTop="12.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            android:layout_toRightOf="@+id/voltageEdit" />
+        <TextView
+            android:textSize="18.0dip"
+            android:typeface="monospace"
+            android:textColor="#ffffffff"
+            android:id="@+id/voltageMeter"
+            android:paddingLeft="14.0dip"
+            android:paddingTop="40.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#ffffffff"
+            android:shadowRadius="3.0"
+            android:layout_alignLeft="@+id/voltageSeek" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

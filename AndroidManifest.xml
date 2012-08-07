@@ -39,6 +39,7 @@
     <uses-permission android:name="android.permission.STATUS_BAR" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
         android:hardwareAccelerated="true"
@@ -64,7 +65,7 @@
         <activity
             android:name=".fragments.About" />
         <activity
-            android:name=".fragments.UserInterface" />
+            android:name=".fragments.StatusBarGeneral" />
         <activity
             android:name=".fragments.StatusBarClock" />
          <activity
@@ -83,5 +84,19 @@
             android:name=".fragments.LockscreenInterface" />
         <activity
             android:name=".fragments.LockscreenTargets" />
+        <activity
+            android:name=".fragments.Sound" />
+        <receiver
+            android:name=".service.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".service.HeadphoneService">
+        </service>
+        <service
+            android:name=".service.FlipService">
+        </service>
     </application>
 </manifest>

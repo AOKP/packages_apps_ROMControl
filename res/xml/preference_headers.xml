@@ -8,17 +8,17 @@
         android:icon="@drawable/ic_rom_control"
         android:summary="@string/teambaked_about_summary" />
 
-    <!-- General section -->
+    <!-- System -->
     <header
-        android:id="@+id/general"
-        android:title="@string/header_general" />
+        android:id="@+id/system"
+        android:title="@string/header_system" />
 
     <header
-        android:id="@+id/user_interface"
-        android:fragment="com.baked.romcontrol.fragments.UserInterface"
-        android:title="@string/general_ui"
-        android:icon="@drawable/ic_rom_control_general_ui"
-        android:summary="@string/header_summary_general_ui" />
+        android:id="@+id/sound"
+        android:fragment="com.baked.romcontrol.fragments.Sound"
+        android:title="@string/header_sound_title"
+        android:icon="@drawable/ic_rom_control_sound"
+        android:summary="@string/header_summary_sound" />
 
     <header
         android:id="@+id/power_menu"
@@ -78,13 +78,6 @@
         android:title="@string/header_statusbar" />
 
     <header
-        android:id="@+id/statusbar_clock"
-        android:fragment="com.baked.romcontrol.fragments.StatusBarClock"
-        android:summary="@string/header_summary_clock"
-        android:icon="@drawable/ic_rom_control_clock"
-        android:title="@string/clock" />
-
-    <header
         android:id="@+id/statusbar_powerwidget"
         android:fragment="com.baked.romcontrol.fragments.PowerWidget"
         android:icon="@drawable/ic_rom_control_powerwidget"
@@ -99,10 +92,24 @@
         android:title="@string/toggles_layout" />
 
     <header
+        android:id="@+id/statusbar_general"
+        android:fragment="com.baked.romcontrol.fragments.StatusBarGeneral"
+        android:title="@string/header_statusbar_general"
+        android:icon="@drawable/ic_rom_control_general"
+        android:summary="@string/header_summary_statusbar_general" />
+
+    <header
         android:id="@+id/statusbar_battery"
         android:title="@string/battery"
         android:fragment="com.baked.romcontrol.fragments.StatusBarBattery"
         android:icon="@drawable/ic_rom_control_battery"
         android:summary="@string/header_summary_battery" />
+
+    <header
+        android:id="@+id/statusbar_clock"
+        android:fragment="com.baked.romcontrol.fragments.StatusBarClock"
+        android:summary="@string/header_summary_clock"
+        android:icon="@drawable/ic_rom_control_clock"
+        android:title="@string/clock" />
 
 </preference-headers>

@@ -17,30 +17,46 @@
     <string name="baked_irc_summary">#teamBAKED @ irc.freenode.net</string>
 
     <!-- Header Strings -->
-    <string name="cancel">Cancel</string>
-    <string name="ok">OK</string>
-    <string name="menu_main_activity_change_locale">Blank!</string>
-    <string name="header_general">General</string>
+    <string name="header_system">System</string>
     <string name="header_statusbar">Statusbar</string>
     <string name="header_navbar">Navigation bar</string>
     <string name="header_powerwidget">Powerwidgets</string>
     <string name="header_lockscreen">Lockscreen</string>
-    <string name="toggles_layout">Toggles</string>
-    <string name="general_ui">General UI</string>
+    <string name="header_statusbar_general">Extras</string>
+    <string name="header_sound_title">Sound settings</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="nav_bar">Navigation bar</string>
+    <string name="toggles_layout">Toggles</string>
     <string name="power_menu_options">Power menu options</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="menu_main_activity_change_locale">Blank!</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
     <string name="header_summary_toggles">Customize toggles</string>
-    <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
+    <string name="header_summary_statusbar_general">Statusbar notification count and others eventually</string>
     <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
     <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
     <string name="header_summary_powerwidget">Customize powerwidgets</string>
     <string name="header_summary_power_menu">What to display in your power menu</string>
     <string name="header_summary_lockscreen">Make edits to you lockscreen</string>
+    <string name="header_summary_sound">Extra sound settings</string>
+    <string name="title_flip_mode">Face down audio mode</string>
+    <string name="summary_flip_mode">Choose what to do with sound when you flip your phone face down</string>
+    <string name="flip_cat_title">Face Down Action</string>
+    <string name="title_timeout_sec">Screen Timeout</string>
+    <string name="summary_timeout_sec">Time the screen is off before the flip sensor is disabled</string>
+    <string name="title_down_sec">Face down seconds</string>
+    <string name="summary_down_sec">Time required for your phone to be considered face down</string>
+    <string name="flip_action_positive">OK</string>
+    <string name="flip_dialog_title">How it works</string>
+    <string name="flip_dialog_msg">Your phone will flip over to go to vibrate or silent on how you choose.
+        It will take 1.5 (default) seconds to change once flipped over.
+        It will then disable the flip once the screen is turned on after 15 (default) seconds.
+        NOTE: **You will need to turn the screen back on once flipped over to get sound back once the
+        screen timeout time has been reached.**</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -49,6 +65,15 @@
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+
+    <!-- Sound -->
+    <string name="title_headphone_audio_mode">Headphones plugged in action</string>
+    <string name="summary_headphone_audio_mode">What to do with sound when headphones are plugged in and out</string>
+    <string name="title_bt_audio_mode">Bluetooth A2DP connected action</string>
+    <string name="summary_bt_audio_mode">What to do with sound when A2DP is connected</string>
+    <string name="headphones_mode_no_action">No action</string>
+    <string name="headphones_mode_vibrate">Vibrate mode</string>
+    <string name="headphones_mode_silent">Silent mode</string>
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>

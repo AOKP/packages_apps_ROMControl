@@ -23,14 +23,12 @@ import android.widget.EditText;
 import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.R;
 
-public class UserInterface extends BAKEDPreferenceFragment {
+public class StatusBarGeneral extends BAKEDPreferenceFragment {
 
     public static final String TAG = "UserInterface";
 
-    private static final String PREF_ENABLE_VOLUME_OPTIONS = "enable_volume_options";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
 
-    CheckBoxPreference mEnableVolumeOptions;
     CheckBoxPreference mStatusBarNotifCount;
 
 
@@ -38,7 +36,7 @@ public class UserInterface extends BAKEDPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.prefs_ui);
+        addPreferencesFromResource(R.xml.prefs_statusbar_general);
 
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext

@@ -1,4 +1,3 @@
-
 package com.baked.romcontrol;
 
 import android.content.Context;
@@ -13,16 +12,19 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 
 import com.baked.romcontrol.R;
 
 public class DeveloperPreference extends Preference implements OnClickListener {
-
     private Context mContext;
+
     private Drawable mDevIcon;
 
     private ImageView mAvatar;
@@ -30,6 +32,7 @@ public class DeveloperPreference extends Preference implements OnClickListener {
     private ImageView mBtnEmail;
     private ImageView mBtnMarket;
     private LinearLayout mTwitterRes;
+    private ProgressBar mLoading;
     private TextView mTitleRes;
 
     private String mDevUrl;
@@ -42,8 +45,7 @@ public class DeveloperPreference extends Preference implements OnClickListener {
         super(context, attrs);
         mContext = context;
 
-        TypedArray attributes = context.obtainStyledAttributes(attrs,
-                R.styleable.DeveloperPreference, 0, 0);
+        TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.DeveloperPreference, 0, 0);
         mDevIcon = attributes.getDrawable(R.styleable.DeveloperPreference_devIcon);
         mDevUrl = attributes.getString(R.styleable.DeveloperPreference_devUrl);
         mDonate = attributes.getString(R.styleable.DeveloperPreference_donate);
@@ -62,6 +64,7 @@ public class DeveloperPreference extends Preference implements OnClickListener {
         mBtnEmail = (ImageView) developer.findViewById(R.id.widget_developer_btn_email);
         mBtnMarket = (ImageView) developer.findViewById(R.id.widget_developer_btn_market);
         mTwitterRes = (LinearLayout) developer.findViewById(R.id.widget_developer_title);
+        mLoading = (ProgressBar) developer.findViewById(R.id.widget_developer_loading);
         mTitleRes = (TextView) developer.findViewById(R.id.widget_developer_name);
 
         return developer;
@@ -76,7 +79,24 @@ public class DeveloperPreference extends Preference implements OnClickListener {
         } else if (mDevUrl != null) {
             ImageLoader imageLoader = ImageLoader.getInstance();
             imageLoader.init(ImageLoaderConfiguration.createDefault(getContext()));
-            imageLoader.displayImage(mDevUrl, mAvatar);
+            imageLoader.displayImage(mDevUrl, mAvatar, new ImageLoadingListener() {
+
+                public void onLoadingStarted() {
+                    mLoading.setVisibility(View.VISIBLE);
+                }
+
+                public void onLoadingFailed(FailReason failReason) {
+                    mLoading.setVisibility(View.INVISIBLE);
+                }
+
+                public void onLoadingComplete() {
+                    mLoading.setVisibility(View.INVISIBLE);
+                }
+
+                public void onLoadingCancelled() {
+                    // Do nothing here unless you want to create a log report
+                }
+            });
         }
 
         if (mDonate != null) {

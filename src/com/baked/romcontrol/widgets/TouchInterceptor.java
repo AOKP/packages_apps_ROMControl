@@ -307,7 +307,8 @@ public class TouchInterceptor extends ListView {
 
         Context context = getContext();
         ImageView v = new ImageView(context);
-        int backGroundColor = 0xE0103010;
+        int backGroundColor = context.getResources().getColor(android.R.color.holo_blue_dark);
+        v.setAlpha((float) 0.7);
         v.setBackgroundColor(backGroundColor);
         v.setImageBitmap(bm);
         mDragBitmap = bm;
@@ -324,6 +325,7 @@ public class TouchInterceptor extends ListView {
 
     private void stopDragging() {
         if (mDragView != null) {
+            mDragView.setVisibility(GONE);
             WindowManager wm = (WindowManager) getContext().getSystemService("window");
             wm.removeView(mDragView);
             mDragView.setImageDrawable(null);

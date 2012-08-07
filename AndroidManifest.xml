@@ -110,13 +110,24 @@
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".fragments.performance.Performance"
+            android:label="Performance Settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-         <service
+        <service
+            android:name=".service.BootService">
+        </service> 
+        <service
             android:name=".service.HeadphoneService">
         </service>
          <service

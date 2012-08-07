@@ -19,6 +19,8 @@
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
     <string name="lockscreen_options">Lockscreen options</string>
+    <string name="tools">Tools</string>
+    <string name="performance">Performance</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
@@ -29,7 +31,7 @@
     <string name="header_summary_led">Change default settings for Android to use</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_lockscreens">Custom apps to launch, layout</string>
-
+    <string name="header_summary_performance">Set CPU, free memory &amp; other settings</string>
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
 
@@ -199,4 +201,31 @@
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
 
+    <!-- Performance -->
+    <string name="current_speed">Current Speed</string>
+    <string name="current_max">Current max:</string>
+    <string name="current_min">Current min:</string>
+    <string name="governor">Governor</string>
+    <string name="io">IO Scheduler</string>
+    <string name="sob">Set on boot</string>
+    <string name="dt_free_memory">Minfree Taskkiller</string>
+    <string name="prefcat_free_memory">Free Memory</string>
+    <string name="pt_free_memory">Free memory</string>
+    <string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep | Current: %s</string>
+    <string name="pt_free_memory_boot">Set at boot</string>
+    <string name="ps_free_memory_boot">Apply the amount above at boot</string>
+    <string name="pt_fast_charge_boot">Fast Charge</string>
+    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+    <string name="pt_volt_control">Voltage control</string>
+    <string name="ps_volt_control">Set voltages for each frequency</string>
+    <string name="error_values">Error getting values</string>
+    <string name="apply_values">Apply values</string>
+    <string name="freq">Frequency</string>
+    <string name="current">mV current</string>
+    <string name="saved">mV saved</string>
+    <string name="kernel">Kernel Tweaks (if supported)</string>
+    <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
+    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
+    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
+    <string name="prefcat_other_tweaks">Other tweaks</string>
 </resources>

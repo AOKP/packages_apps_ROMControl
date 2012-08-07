@@ -69,7 +69,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         mLedScreenOn = (Switch) mActivity.findViewById(R.id.led_screen_on);
         timeArray = mResources.getStringArray(R.array.led_entries);
         timeOutput = mResources.getIntArray(R.array.led_values);
-
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         defaultColor = mResources.getColor(com.android.internal.R.color.config_defaultNotificationColor);
 
         mLEDButton.setOnClickListener(new View.OnClickListener() {

@@ -78,4 +78,17 @@
         android:icon="@drawable/ic_rom_control_battery"
         android:summary="@string/header_summary_battery" />
 
+    <header
+        android:id="@+id/tools"
+        android:title="@string/tools" />
+
+    <header android:icon="@drawable/ic_rom_control_performance"
+            android:title="@string/performance">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.aokp.romcontrol.fragments.performance.Performance"
+                android:targetPackage="com.aokp.romcontrol" />
+    </header>
+
+
 </preference-headers>

@@ -138,46 +138,76 @@ public class Helpers {
         return ( cmd.su.runWaitFor("busybox mount -o remount," + mount + " /system").success() );
     }
     
-    public static String getFile(final String filename) {
-        String s = "";
-        final File f = new File(filename);
-
-        if (f.exists() && f.canRead()) {
+    public static String readOneLine(String fname) {
+        BufferedReader br;
+        String line = null;
+        try {
+            br = new BufferedReader(new FileReader(fname), 512);
             try {
-                final BufferedReader br = new BufferedReader(new FileReader(f),
-                        256);
-                String buffer = null;
-                while ((buffer = br.readLine()) != null) {
-                    s += buffer + "\n";
-                }
-
+                line = br.readLine();
+            } finally {
                 br.close();
-            } catch (final Exception e) {
-                Log.e(TAG, "Error reading file: " + filename, e);
-                s = null;
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "IO Exception when reading sys file", e);
+        }
+        return line;
+    }
+
+    public static boolean writeOneLine(String fname, String value) {
+        try {
+            FileWriter fw = new FileWriter(fname);
+            try {
+                fw.write(value);
+            } finally {
+                fw.close();
+            }
+        } catch (IOException e) {
+            String Error = "Error writing to " + fname + ". Exception: ";
+            Log.e(TAG, Error, e);
+            return false;
+        }
+        return true;
+    }
+
+    public static String[] getAvailableIOSchedulers() {
+        String [] schedulers = null;
+        String [] aux = readStringArray("/sys/block/mmcblk0/queue/scheduler");
+        if (aux != null) {
+            schedulers = new String[aux.length];
+            for (int i = 0; i < aux.length; i++) {
+                if (aux[i].charAt(0) == '[') {
+                    schedulers[i] = aux[i].substring(1, aux[i].length() - 1);
+                } else {
+                    schedulers[i] = aux[i];
+                }
             }
         }
-        return s;
+        return schedulers;
     }
-    
-    public static void writeNewFile(String filePath, String fileContents) {
-        File f = new File(filePath);
-        if (f.exists()) {
-            f.delete();
-        }
 
-        try{
-            // Create file 
-            FileWriter fstream = new FileWriter(f);
-            BufferedWriter out = new BufferedWriter(fstream);
-            out.write(fileContents);
-            //Close the output stream
-            out.close();
-        }catch (Exception e){
-            Log.d( TAG, "Failed to create " + filePath + " File contents: " + fileContents);  
+    private static String[] readStringArray(String fname) {
+        String line = readOneLine(fname);
+        if (line != null) {
+            return line.split(" ");
         }
+        return null;
     }
-    
+
+    public static String getIOScheduler() {
+        String scheduler = null;
+        String[] schedulers = readStringArray("/sys/block/mmcblk0/queue/scheduler");
+        if (schedulers != null) {
+            for (String s : schedulers) {
+                if (s.charAt(0) == '[') {
+                    scheduler = s.substring(1, s.length() - 1);
+                    break;
+                }
+            }
+        }
+        return scheduler;
+    }
+
     /**
      * Long toast message
      * 

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ROM Yönetimi</string>
+
+    <!-- Header Strings -->
+    <string name="cancel">İptal</string>
+    <string name="ok">Tamam</string>
+    <string name="menu_main_activity_change_locale">Blank!</string>
+    <string name="header_statusbar">Durum Çubuğu</string>
+    <string name="header_navbar">Yazılımsal Tuş</string>
+    <string name="toggles_layout">Kısayollar</string>
+    <string name="general_ui">Genel Ayarlar</string>
+    <string name="clock">Saat</string>
+    <string name="battery">Batarya</string>
+    <string name="nav_bar">Yazılımsal Tuş</string>
+    <string name="led_options">LED Seçenekleri</string>
+
+    <!-- Header Summaries -->
+    <string name="header_summary_clock">Saat konumu, AM/PM tarzı, Renk</string>
+    <string name="header_summary_toggles">Kısayolları Özelleştir</string>
+    <string name="header_summary_general_ui">Açılış animasyonu, hata raporu, dönüş, IME değiştirici, vs</string>
+    <string name="header_summary_battery">Pil çubuğu, 1% pil modu, vs</string>
+    <string name="header_summary_navigation_bar">Gösterilecek tuşlar, yazılımsal tuş rengi, sırası, yüksekliği</string>
+    <string name="header_summary_led">Android kullanımı için varsayılan ayarları değiştir</string>
+	
+	<!-- Menu Strings -->
+    <string name="menu_nav_bar_reset">Yazımsal Tuşları Sıfırla</string>
+
+    <!-- General Strings -->
+    <string name="advanced_settings">Gelişmiş Ayarlar</string>
+    <string name="misc_short">Çeşitli</string>
+    <string name="custom_app_icon_successfully">"Simge başarıyla uygulandı!"</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Özel uygulamalar kullan</string>
+    <string name="use_custom_app_summary">Son uygulamalar penceresi yerine özel uygulamalar kullan</string>
+    <string name="select_custom_app_title">Özel uygulamaları seçin</string>
+    <string name="group_applications">Uygulamalar</string>
+
+    <!-- About -->
+    <string name="devs">Geliştiriciler</string>
+    <string name="aokp">Android Open Kang Projesi</string>
+    <string name="aokp_website_title">AOKP Website</string>
+    <string name="aokp_website_summary">www.aokp.co - www.aokp.co - Yeni sürümleri burada bulabilirsiniz.</string>
+    <string name="aokp_source_title">AOKP Kaynak</string>
+    <string name="aokp_source_summary">AOKP tamamen açık kaynaklıdır. Her zaman en son kaynağı github.com/aokp adresinde bulabilirsiniz</string>
+    <string name="aokp_review_title">AOKP Kod İnceleme</string>
+    <string name="aokp_review_summary">AOKP yama ve kodları test etmek için Gerrit e gönderin</string>
+    <string name="aokp_irc_title">Sohbette bize katılın</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">AOKP Hakkında</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+    <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+    <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+    <string name="donate_khasmek">http://nyan.cat</string>
+	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+	<string name="donate_adam">http://goo.gl/fRj57</string>
+	<string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
+    <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
+    <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
+    <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
+    <string name="donate_sixstringsg">https://www.paypal.com/cgi-bin/webscr?cmd=_flow&amp;SESSION=U3KYhTz6itHx8bKvx-F79EFVY5sQKKQu9f1ftkJ1pevFN6wdaJLu8yz3Y3e&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d1e83f46a36995b3856cef1e18897ad75</string>
+    <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
+    <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
+    <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
+	    	
+	<!-- General UI -->
+    <string name="enable_volume_options">Ses Panelini Etkinleştir</string>
+    <string name="status_bar_notif_count_title">Bildirim Sayısını Göster</string>
+    <string name="status_bar_notif_count_summary">Durum çubuğunda bekleyen bildirimlerin sayısını göster</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Kısayol tarzı</string>
+    <string name="toggle_style_summary">Kısayol metin ya da ikon gösterimini belirleyin.</string>
+    <string name="toggles_layout_title">Kısayol Görünümü</string>
+    <string name="enabled_toggles_title">Aktif Kısayollar</string>
+    <string name="enabled_toggles_summary">Görüntülemek istediğiniz kısayolları seçin</string>
+    <string name="toggles_display_dialog">Kullanacağınız kısayolları seçin</string>
+    <string name="toggles_display_close">Kapat</string>
+    <string name="toggles_order_title">Kısayol sırası</string>
+    <string name="toggles_order_summary">Gösterilecek olan kısayolların sıralamasını seçin</string>
+    <string name="brightness_location_title">Parlaklık Konumu</string>
+    <string name="reset_toggles_title">Kısayolları sıfırla</string>
+    <string name="reset_toggles_summary">Tüm kısayol ve diziliş ayarlarını sıfırla</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Saat Tarzı</string>
+    <string name="title_clock_ampm_entries">AM/PM Tarzı</string>
+    <string name="enable_clock_weekday">Haftanın günü</string>
+    <string name="enable_clock_weekday_summary">Saatten önce kısaltılmış gün</string>
+    
+    <!-- Toggle Strings to be called from device overlays -->
+    <string name="toggle_airplane_mode">Uçak Modu</string>
+    <string name="toggle_auto_rotate">Oto-Çevirme</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_fast_charge">Hızlı Şarj</string>
+    <string name="toggle_gps">GPS</string>
+    <string name="toggle_lte">LTE</string>
+    <string name="toggle_data">Veri</string>
+    <string name="toggle_nfc">NFC</string>
+    <string name="toggle_silent">Sessiz</string>
+    <string name="toggle_swagger">Swagger</string>
+    <string name="toggle_sync">Senkr.</string>
+    <string name="toggle_torch">Fener</string>
+    <string name="toggle_2g">2G</string>
+    <string name="toggle_usb_tether">USB Pylş.</string>
+    <string name="toggle_vibrate">Titreşim</string>
+    <string name="toggle_wifi_ap">Paylaşım</string>
+    <string name="toggle_wifi">Wi-Fi</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">Batarya Simge Tarzı</string>
+    <string name="battery_not_title">Bildirimlerdeki batarya simgesi</string>
+    <string name="battery_not_summary">Bu seçenek işaretlendiğinde batarya simgesi bildirim çubuğunu indirdiğinizde de görülecektir.</string>
+    <string name="battery_bar">Batarya çubuk konumu</string>
+    <string name="battery_bar_color">Batarya çubuk rengi</string>
+    <string name="battery_bar_cat">Batarya çubuk seçenekleri</string>
+    <string name="battery_bar_style_title">Batarya çubuk tarzı</string>
+    <string name="battery_bar_thickness_title">Batarya çubuk kalınlığı</string>
+    <string name="battery_bar_animate_title">Şarj animasyonu</string>
+    <string name="battery_bar_animate_summary">Şarj animasyonu kötü kullanıcı deneyimlerine sebep olabilir. Kendi takdirinize kalmış.</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Renk Seçici</string>
+    <string name="press_color_to_apply">Onaylamak için rengin üstüne tıklayın</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Ayarla</string>
+    <string name="ics_color">Holo</string>
+	
+	<!-- Navigation Bar -->
+    <string name="navigation_bar">Yazılımsal Tuşlar</string>
+    <string name="navbar_button_cat">Yazılımsal Tuşlar</string>
+    <string name="title_pref_menu_display">Menü Konumu</string>
+    <string name="summary_pref_menu_display">Büyük menü botunları kullanıyorsanız menu butonlarını silmeyi unutmayın!</string>
+    <string name="title_pref_navigation_menu_display">Menü görünürlüğü</string>
+    <string name="summary_pref_navigation_menu_display">Menü butonlarının ne zaman ve nasıl görünmesini istiyorsunuz?</string>
+    <string name="navbar_qty_title">Yazılımsal Tuş Sayısı</string>
+    <string name="navbar_qty_summary">Yazılımsal tuş sayısını seçin</string>
+    <string name="button_transparency_title">Yazılımsal tuş şeffaflığı</string>
+    <string name="navbar_action_title">Tuş %1$s eylemi &amp; simgesi</string>
+    <string name="navbar_longpress_title">Tuş %1$s uzun basma eylemi</string>
+    <string name="navbar_action_home">AnaSayfa</string>
+    <string name="navbar_action_back">Geri</string>
+    <string name="navbar_action_recents">Son Uygulamalar</string>
+    <string name="navbar_action_search">Ara</string>
+    <string name="navbar_action_menu">Menü</string>
+    <string name="navbar_action_kill">Uygulama Sonlandır</string>
+    <string name="navbar_action_power">Güç</string>
+    <string name="navbar_action_none">Boş</string>
+    <string name="navbar_widgets">Yazılımsal Tuş Araçları</string>
+    <string name="navbar_enable_bar">Yazılımsal tuş çubuğu etkin</string>
+    <string name="navigation_bar_height_title">Yazılımsal Tuş Yüksekliği</string>
+    <string name="navigation_bar_height_summary">Dikey Moddayken Yazılımsal Tuş Yüksekliği.</string>
+    <string name="navigation_bar_height_landscape_title">Yatay Yazılımsal Tuş Yüksekliği</string>
+    <string name="navigation_bar_height_landscape_summary">Yatay Moddayken Yazılımsal Tuş Yüksekliği</string>
+    <string name="navigation_bar_width_title">Yazılımsal Tuş Kalınlığı</string>
+    <string name="navigation_bar_width_summary">Yatay moddaki tuş kalınlığı</string>
+    <string name="navbar_enable_dialog_title">Yeniden başlatmak gerektirir!</string>
+    <string name="navbar_enable_dialog_msg">Lütfen Aktif/Devre dışı yazılımsal tuşları doğru şekilde yeniden başlatın!</string>
+    <string name="navbar_enable_dialog_negative">Daha sonra yeniden başlat</string>
+    <string name="navbar_enable_dialog_Positive">Şimdi yeniden başlat!</string>
+    <string name="navbar_height_dialog_title">Yeniden başlatma gerektirir!</string>
+    <string name="navbar_height_dialog_summary">Yükseklik değişiminin düzgün bir şekilde eklenebilmesi için lütfen yeniden başlatın!</string>
+    <string name="navbar_height_dialog_button_later">Daha sonra yeniden başlat</string>
+    <string name="navbar_height_dialog_button_reboot">Şimdi yeniden başlat!</string>
+	
+    <!-- LED -->
+    <string name="led_on">LED Açık</string>
+    <string name="led_off">LED Kapalı</string>
+    <string name="led_color_click">LED rengini değiştirmek için tıkla</string>
+    <string name="title_led_screen_on">LED bildirimini ekran açık olduğunda da göster</string>     
+</resources>

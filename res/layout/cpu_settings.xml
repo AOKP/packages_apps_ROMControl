@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <TextView
+        android:id="@+id/current_speed"
+        android:textSize="56sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip" />
+    <TextView
+        android:id="@+id/current_speed_label"
+        android:text="@string/current_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dip">
+        <TextView
+            android:id="@+id/current_max_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_max"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/max_speed_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <SeekBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/max_slider"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dip">
+        <TextView
+            android:id="@+id/current_min_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_min"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/min_speed_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <SeekBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/min_slider"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dip"
+        android:layout_marginLeft="10dip">
+        <TextView
+            android:id="@+id/governor_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/governor"
+            android:textSize="14sp"
+            android:layout_marginRight="10dip" />
+        <Spinner
+            android:id="@+id/governor"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dip">
+        <TextView
+            android:id="@+id/io_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/io"
+            android:textSize="14sp"
+            android:layout_marginRight="10dip" />
+        <Spinner
+            android:id="@+id/io"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="35dip">
+        <TextView
+            android:id="@+id/set_on_boot_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sob"
+            android:textSize="14sp"
+            android:layout_marginRight="10dip" />
+        <Switch
+            android:id="@+id/set_on_boot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

@@ -128,6 +128,15 @@
                 <data android:mimeType="text/*" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="CreateShortcut"
+            android:theme="@style/Theme.CreateShortCut" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>

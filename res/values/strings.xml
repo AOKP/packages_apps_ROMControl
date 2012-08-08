@@ -318,4 +318,7 @@
     <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
     <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
     <string name="menu_weather_get_weather">Get weather</string>
+
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">Copied to clipboard.</string>
 </resources>

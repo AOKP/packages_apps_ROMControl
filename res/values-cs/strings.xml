@@ -16,6 +16,7 @@
   <string name="header_system">Systém</string>
   <string name="sound">Zvuk</string>
   <string name="lockscreen_options">Možnosti zamčené obrazovky</string>
+  <string name="weather">Počasí</string>
   
   <string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
   <string name="header_summary_toggles">Přizpůsobit přepínače</string>
@@ -25,6 +26,7 @@
   <string name="header_summary_led">Změna výchozího nastavení Androidu</string>
   <string name="header_summary_sound">@null</string>
   <string name="header_summary_lockscreens">Spouštění vlastních aplikací, rozložení</string>
+  <string name="header_summary_weather">Vypnout/zapnout, nastavení vlastní polohy a také intervalu obnovení</string>
   
   <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
   
@@ -169,4 +171,97 @@
   <string name="lockscreen_quick_unlock_control_summary">Odemknout obrazovku zadáním pinu, bez nutnosti mačkat potvrzovací tlačítko</string>
   <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
+  
+  <string name="weather_enable">Zapnout počasí</string>
+  <string name="weather_enable_summary">Určuje kdy a kde se mají zobrazovat informace o počasí.</string>
+  <string name="weather_use_custom_location">Použít vlastní polohu</string>
+  <string name="weather_use_custom_location_summary">Nastavení vlastní polohy může ušetřit trochu baterie. Jinak se používá zjištění polohy podle sítě.</string>
+  <string name="weather_custom_location_dialog_title">Nastavit polohu</string>
+  <string name="weather_custom_location_dialog_message">Je nutné dodržet formát z příkladů! Nastavení špatné polohy způsobí nefunkčnost stahování informací o počasí, a také může způsobit nečekané chování.\n\nPříklady: New York,NY // New York, NY // 10033 // London, England</string>
+  <string name="weather_custom_location_title">Vlastní poloha</string>
+  <string name="weather_show_location_title">Zobrazit polohu</string>
+  <string name="weather_show_location_summary">Zobrazit aktuální polohu.</string>
+  <string name="weather_refresh_interval">Interval obnovení</string>
+  <string name="weather_use_celcius">Metrické jednotky (naše české)</string>
+  <string name="weather_use_celcius_summary">Povolením této volby dojde k zobrazování teploty ve stupních Celsia místo Fahrenheitech a rychlost větru v km/h místo m/h.</string>
+  <string name="weather_statusbar_style">Styl počasí ve stavové liště</string>
+  <string name="weather_start_custom_app">Spustit vlastní aplikaci</string>
+  <string name="weather_start_custom_app_summary">Po kliknutí na obrázek počasí spustit vlastní aplikaci.</string>
+  <string name="weather_custom_app_title">Vlastní aplikace</string>
+  <string name="weather_custom_app_dialog_title">Vybrat aplikaci</string>
+  <string name="weather_custom_app_dialog_message">Název balíčku (prozatím).</string>
+  <string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>
+  <string name="weather_loc_warning_title">Polohu nelze zjistit!</string>
+  <string name="weather_loc_warning_msg">Získávání polohy ze sítě je momentálně vypnuto. Díky tomu není možné načíst počasí pro aktuální polohu. Pro zapnutí této funkce je nutné nastavit polohu ručně, nebo zapnout zjišťování polohy pomocí sítě.</string>
+  <string name="weather_loc_warning_positive">Zapnout polohu ze sítě</string>
+  <string name="weather_loc_warning_negative">Nezapínat</string>
+  
+  <string name="weather_0">Tornádo</string>
+  <string name="weather_1">Tropická bouře</string>
+  <string name="weather_2">Hurikán</string>
+  <string name="weather_3">Těžké bouřky</string>
+  <string name="weather_4">Bouřky</string>
+  <string name="weather_5">Déšť se sněhem</string>
+  <string name="weather_6">Déšť se sněhem</string>
+  <string name="weather_7">Déšť se sněhem</string>
+  <string name="weather_8">Mrznoucí mrholení</string>
+  <string name="weather_9">Mrholení</string>
+  <string name="weather_10">Mrznoucí déšť</string>
+  <string name="weather_11">Přeháňky</string>
+  <string name="weather_12">Přeháňky</string>
+  <string name="weather_13">Sněhové přeháňky</string>
+  <string name="weather_14">Lehké přeháňky se sněhem</string>
+  <string name="weather_15">Zvířený sníh</string>
+  <string name="weather_16">Sněžení</string>
+  <string name="weather_17">Krupobití</string>
+  <string name="weather_18">Plískanice</string>
+  <string name="weather_19">Prašno</string>
+  <string name="weather_20">Mlhavo</string>
+  <string name="weather_21">Opar</string>
+  <string name="weather_22">Zakouřeno</string>
+  <string name="weather_23">Bouřlivo</string>
+  <string name="weather_24">Větrno</string>
+  <string name="weather_25">Chladno</string>
+  <string name="weather_26">Zataženo</string>
+  <string name="weather_27">Převážně zataženo</string>
+  <string name="weather_28">Převážně zataženo</string>
+  <string name="weather_29">Částečně zataženo</string>
+  <string name="weather_30">Částečně zataženo</string>
+  <string name="weather_31">Jasno</string>
+  <string name="weather_32">Slunečno</string>
+  <string name="weather_33">Hezky</string>
+  <string name="weather_34">Hezky</string>
+  <string name="weather_35">Déšť se sněhem</string>
+  <string name="weather_36">Horko</string>
+  <string name="weather_37">Ojedinělé bouřky</string>
+  <string name="weather_38">Rozptýlené bouřky</string>
+  <string name="weather_39">Rozptýlené bouřky</string>
+  <string name="weather_40">Rozptýlené přeháňky</string>
+  <string name="weather_41">Těžké sněžení</string>
+  <string name="weather_42">Rozptýlené sněhové přeháňky</string>
+  <string name="weather_43">Rozptýlené sněhové přeháňky</string>
+  <string name="weather_44">Polojasno</string>
+  <string name="weather_45">Bouřkové přeháňky</string>
+  <string name="weather_46">Sněhové přeháňky</string>
+  <string name="weather_47">Ojedinělé bouřky</string>
+  <string name="weather_3200"></string>
+  
+  <string name="location_unavailable">Nelze získat informace o poloze pro aktualizaci počasí</string>
+  
+  <string name="direction_north">S</string>
+  <string name="direction_north_east">SV</string>
+  <string name="direction_east">V</string>
+  <string name="direction_south_east">JV</string>
+  <string name="direction_south">J</string>
+  <string name="direction_south_west">JZ</string>
+  <string name="direction_west">Z</string>
+  <string name="direction_north_west">SZ</string>
+  
+  <string name="lockscreen_weather_title">Počasí na zamčené obrazovce</string>
+  <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
+  <string name="lockscreen_weather_type_title">Styl počasí na zamčené obrazovce</string>
+  <string name="lockscreen_weather_type_summary">Nastavuje zobrazení grafické nebo textové podoby informace o počasí.</string>
+  <string name="menu_weather_get_weather">Načíst počasí</string>
+  
+  <string name="clipboard_notification">Zkopírováno do schránky.</string>
 </resources>

@@ -139,4 +139,18 @@
     <item>4 minuty</item>
     <item>5 minut</item>
   </string-array>
+  <string-array name="weather_interval_entries">
+    <item>Vypnuto</item>
+    <item>1 minuta</item>
+    <item>5 minut</item>
+    <item>10 minut</item>
+    <item>30 minut</item>
+    <item>45 minut</item>
+    <item>60 minut</item>
+    <item>2 hodiny</item>
+    <item>3 hodiny</item>
+    <item>4 hodiny</item>
+    <item>6 hodin</item>
+    <item>8 hodin</item>
+  </string-array>
 </resources>

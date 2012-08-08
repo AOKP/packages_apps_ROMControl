@@ -134,9 +134,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 recreate();
                 return true;
             case android.R.id.home:
-                Intent intent = new Intent(this, ROMControlActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                onBackPressed();
                 return true;
             default:
                 return super.onContextItemSelected(item);

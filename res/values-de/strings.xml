@@ -50,18 +50,18 @@
     <string name="summary_pref_navigation_menu_display">Wie und wann sollen die Menü-Buttons erscheinen?</string>
 
     <string name="navbar_order_title">Reihenfolge der Navigations-Buttons</string>
-    <string name="navbar_order_summary">Die Reihenfolge der Navigations-Buttonsanpassen.</string>
+    <string name="navbar_order_summary">Die Reihenfolge der Navigations-Buttons anpassen.</string>
 
-    <string name="navbar_button_cat">Navigationsleisten Knöpfe</string>
+    <string name="navbar_button_cat">Navigationsleistenknöpfe</string>
 
     <string name="navbar_qty_title">Anzahl der Navigationsknöpfe</string>
-    <string name="navbar_qty_summary">Wähle die Anzahl der Navigations Knöpfe</string>
+    <string name="navbar_qty_summary">Wähle die Anzahl der Navigationsknöpfe</string>
 
     <string name="enabled_navbar_buttons_title">Aktivierte Navigations-Buttons</string>
     <string name="enabled_navbar_buttons_summary">Auswählen, welche Navigations-Buttons sichtbar sein sollen.</string>
 
     <string name="navbar_action_title">Knopf %1$s Aktion &amp; Icon</string>
-    <string name="navbar_longpress_title">Knopf %1$s Aktion bei langem drücken</string>
+    <string name="navbar_longpress_title">Knopf %1$s Aktion bei langem Drücken</string>
 
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Zurück</string>
@@ -96,10 +96,10 @@
     <string name="enable_volume_options">Aktiviere Volumen Optionen</string>
 
     <string name="rotate_180_title">180° Rotation erlauben</string>
-    <string name="rotate_180_summary">Erlaube Deinem Gerät eine 180° Rotation!</string>
+    <string name="rotate_180_summary">Erlaube deinem Gerät eine 180° Rotation!</string>
 
     <string name="horizontal_recents_task_panel_title">Horizontaler Task-Bildschirm</string>
-    <string name="horizontal_recents_task_panel_summary">WebOS-Aussehen für den Task-Wechsler. Die Benutzeroberfläche wird neu starten und in 10 Sekunden wieder erscheinen. Falls nicht, führe ein Neustart durch.</string>
+    <string name="horizontal_recents_task_panel_summary">WebOS-Aussehen für den Task-Wechsler. Die Benutzeroberfläche wird neu starten und in 10 Sekunden wieder erscheinen. Falls nicht, führe einen Neustart durch.</string>
 
     <string name="disable_bootanimation_title">Boot-Animation deaktivieren</string>
     <string name="disable_bootanimation_summary">Deaktiviert die ROM-Animation beim Startvorgang.</string>
@@ -107,7 +107,7 @@
     <string name="disable_bugmailer_title">Fehlerberichte deaktivieren</string>
 
     <string name="lcd_density_title">LCD Pixeldichte</string>
-    <string name="lcd_density_summary">unbekannt</string>
+    <string name="lcd_density_summary">Ändert die Pixeldichte des Bildschirms</string>
 
     <!-- CRT animations -->
     <string name="crt_animations_header">An-/Aus-Animationen</string>
@@ -121,7 +121,7 @@
     <string name="stock_density_title">1. LCD Pixeldichte auf Standardwerte ändern</string>
     <string name="stock_density_summary">Tablets und ältere Telefone verwenden 160. Die meisten Telefone verwenden 240. Galaxy Nexus verwendet standardmäßig 320.</string>
     <string name="reboot_title">2. Neustarten!</string>
-    <string name="reboot_summary">Nach dem Neustart zum Assistenten zurückkehren und die übrigen Schritte durchführen!</string>
+    <string name="reboot_summary">Kehre nach dem Neustart zum Assistenten zurück, um die übrigen Schritte durchzuführen!</string>
     <string name="clear_market_data_title">3. Lösche die Daten vom Google Play Store</string>
     <string name="clear_market_data_cleared">Google Play Store Daten gelöscht</string>
     <string name="open_market_title">4. Google Play Store öffnen und akzeptieren drücken</string>
@@ -140,17 +140,17 @@
     <string name="summary_pref_lockscreen_octo_targets">Fügt sehr viele Verknüpfungen zur Bildschirmsperre hinzu.</string>
 
     <string name="title_pref_lockscreen_menu_unlock">Mit Menü-Taste entsperren</string>
-    <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt die Bildschirmsperre. (Neustart erforderlich)</string>
+    <string name="summary_pref_lockscreen_menu_unlock">Menü-Taste entsperrt den Bildschirm. (Neustart erforderlich)</string>
     <string name="title_lockscreen_user_timeout_override">Wartezeit zum Sperren des Bildschirms</string>
     <string name="summary_lockscreen_user_timeout_override">Android\'s Timeout Einstellung verwenden, nachdem der Bildschirm manuell ausgeschaltet wurde. Normalerweise wird das Telefon sofort gesperrt, wenn der Bildschirm manuell ausgeschaltet wird.</string>
     <string name="show_lock_before_unlock_title">Bildschirmsperre vor dem Entsperren</string>
-    <string name="show_lock_before_unlock_summary">Zeige die standard Bildschirmsperre vor dem sicheren Entsperren.</string>
+    <string name="show_lock_before_unlock_summary">Zeige die Standard Bildschirmsperre vor dem sicheren Entsperren.</string>
     <string name="lockscreen_battery_title">Batterie Prozentanzeige</string>
     <string name="lockscreen_battery_summary">Immer die aktuelle Kapazität der Batterie in der Bildschirmsperre anzeigen (in Prozent).</string>
     <string name="lockscreen_weather_title">Wetter</string>
     <string name="lockscreen_weather_summary">Wetter-Informationen in der Bildschirmsperre anzeigen. ROM-Control\'s Wetter-Service muss hierfür eingeschaltet sein.</string>
     <string name="volume_wake_title">Aufwachen mit Lautstärketasten</string>
-    <string name="volume_wake_summary">Betätigen der Lautstärketasten lässt den ausgeschalteten Bildschirm wieder einschalten.</string>
+    <string name="volume_wake_summary">Betätigen der Lautstärketasten schaltet den Bildschirm wieder ein.</string>
     <string name="volume_music_controls_title">Musik-Steuerung mit Lautstärketasten</string>
     <string name="volume_music_controls_summary">Lautstärketasten gedrückt halten um Lieder zu überspringen wenn der Bildschirm ausgeschaltet ist. Aufwachen mit Lautsärketasten funktioniert nicht, wenn Musik gespielt wird.</string>
     <string name="lockscreen_show_nav_title">Navigationsleiste verstecken</string>

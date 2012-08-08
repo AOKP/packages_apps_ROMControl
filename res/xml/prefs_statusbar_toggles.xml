@@ -29,6 +29,20 @@
             android:summary="@string/toggle_style_summary"
             android:title="@string/toggle_style_title" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="toggle_btn_enabled_color"
+            android:title="@string/toggle_btn_enabled_color_title"
+            android:defaultValue="#33B5E5" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="toggle_btn_disabled_color"
+            android:title="@string/toggle_btn_disabled_color_title"
+            android:defaultValue="#4C4C4C" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="toggle_btn_alpha"
+            android:title="@string/toggle_button_alpha_title" />
+
         <Preference
             android:key="reset_toggles"
             android:summary="@string/reset_toggles_summary"

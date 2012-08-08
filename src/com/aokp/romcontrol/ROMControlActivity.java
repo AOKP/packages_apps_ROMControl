@@ -80,14 +80,13 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             setTitle(R.string.app_name);
         }
 
-        if (getIntent().getAction().equals("com.aokp.romcontrol.START_NEW_FRAGMENT")) {
+        if ("com.aokp.romcontrol.START_NEW_FRAGMENT".equals(getIntent().getAction())) {
             String className = getIntent().getStringExtra("aokp_fragment_name").toString();
             if (!className.equals("com.aokp.romcontrol.ROMControlActivity")) {
                 Bundle b = new Bundle();
                 b.putBoolean("started_from_shortcut", true);
-                // startPreferencePanel(className, b, 0, null, null, 0);
                 isShortcut = true;
-                startWithFragment(className, null, null, 0);
+                startWithFragment(className, b, null, 0);
                 finish(); // close current activity
             }
         }
@@ -133,6 +132,11 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 boolean useEnglishLocale = p.getBoolean(KEY_USE_ENGLISH_LOCALE, false);
                 p.edit().putBoolean(KEY_USE_ENGLISH_LOCALE, !useEnglishLocale).apply();
                 recreate();
+                return true;
+            case android.R.id.home:
+                Intent intent = new Intent(this, ROMControlActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 return true;
             default:
                 return super.onContextItemSelected(item);

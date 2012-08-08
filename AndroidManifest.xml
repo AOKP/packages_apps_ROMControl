@@ -90,7 +90,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <action android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity

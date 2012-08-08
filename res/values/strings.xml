@@ -187,6 +187,8 @@
     <string name="title_led_screen_on">LED flash while screen ON</string>
 
     <!-- Sound -->
+    <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
+    <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set value</string>
     <string name="title_headphone_audio_mode">Headphones plugged in action</string>
     <string name="summary_headphone_audio_mode">What to do with sound when headphones are plugged in and out</string>
     <string name="title_bt_audio_mode">Bluetooth A2DP connected action</string>

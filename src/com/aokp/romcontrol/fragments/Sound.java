@@ -31,6 +31,7 @@ public class Sound extends AOKPPreferenceFragment
     private static final String PREF_FLIP_ACTION = "flip_mode";
     private static final String PREF_USER_TIMEOUT = "user_timeout";
     private static final String PREF_USER_DOWN_MS = "user_down_ms";
+    private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
     SharedPreferences prefs;
     CheckBoxPreference mEnableVolumeOptions;
@@ -39,6 +40,7 @@ public class Sound extends AOKPPreferenceFragment
     ListPreference mFlipAction;
     ListPreference mUserDownMS;
     ListPreference mFlipScreenOff;
+    ListPreference mAnnoyingNotifications;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,12 @@ public class Sound extends AOKPPreferenceFragment
         mEnableVolumeOptions.setChecked(Settings.System.getBoolean(getActivity()
                 .getContentResolver(),
                 Settings.System.ENABLE_VOLUME_OPTIONS, false));
+
+        mAnnoyingNotifications = (ListPreference) findPreference(PREF_LESS_NOTIFICATION_SOUNDS);
+        mAnnoyingNotifications.setOnPreferenceChangeListener(this);
+        mAnnoyingNotifications.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
+                0)));
 
         mFlipAction = (ListPreference) findPreference(PREF_FLIP_ACTION);
         mFlipAction.setOnPreferenceChangeListener(this);
@@ -108,6 +116,11 @@ public class Sound extends AOKPPreferenceFragment
                 mUserDownMS.setEnabled(false);
                 mFlipScreenOff.setEnabled(false);
             }
+            return true;
+        } else if (preference == mAnnoyingNotifications) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
             return true;
         }
         return false;

@@ -6,12 +6,11 @@
         android:title="@string/enable_volume_options" />
 
     <ListPreference
-        android:key="less_notification_sounds"
-        android:title="@string/less_notification_sounds_title"
-        android:summary="@string/less_notification_sounds_summary"
         android:entries="@array/less_notification_sounds_entries"
-        android:entryValues="@array/less_notification_sounds_values" />
-
+        android:entryValues="@array/less_notification_sounds_values"
+        android:key="less_notification_sounds"
+        android:summary="@string/less_notification_sounds_summary"
+        android:title="@string/less_notification_sounds_title" />
     <ListPreference
         android:defaultValue="-1"
         android:entries="@array/headphone_audio_mode_entries"
@@ -26,6 +25,12 @@
         android:key="bt_audio_mode"
         android:summary="@string/summary_bt_audio_mode"
         android:title="@string/title_bt_audio_mode" />
+    <ListPreference
+        android:entries="@array/phone_call_flip_entries"
+        android:entryValues="@array/phone_call_flip_values"
+        android:key="phone_ring_silence"
+        android:summary="@string/summary_phone_flip_mode"
+        android:title="@string/title_phone_flip_mode" />
 
     <PreferenceCategory
         android:key="flip_category"

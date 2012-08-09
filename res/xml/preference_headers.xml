@@ -4,6 +4,7 @@
         android:id="@+id/about"
         android:fragment="com.aokp.romcontrol.fragments.About"
         android:title="@string/about_aokp"
+	android:icon="@drawable/ic_rom_control_about"
         android:summary="@string/about_aokp_summary" />
 
     <header android:title="@string/user_interface" />
@@ -29,34 +30,16 @@
         android:icon="@drawable/ic_rom_control_navigation_bar"
         android:summary="@string/header_summary_navigation_bar" />
 
-     <header
-        android:id="@+id/system"
-        android:title="@string/header_system" />
-
-     <header
-        android:id="@+id/sound"
-        android:fragment="com.aokp.romcontrol.fragments.Sound"
-        android:title="@string/sound"
-        android:icon="@drawable/ic_rom_control_sound"
-        android:summary="@string/header_summary_sound" />
-
-      <header
-        android:id="@+id/weather"
-        android:fragment="com.aokp.romcontrol.fragments.Weather"
-        android:title="@string/weather"
-        android:summary="@string/header_summary_weather"
-        android:icon="@drawable/ic_rom_control_weather" />
-
-    <header
-        android:id="@+id/led"
-        android:fragment="com.aokp.romcontrol.fragments.LEDControl"
-        android:title="@string/led_options"
-        android:icon="@drawable/ic_rom_control_led"
-        android:summary="@string/header_summary_led" />
-
     <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />
+
+    <header
+        android:id="@+id/statusbar_battery"
+        android:title="@string/battery"
+        android:fragment="com.aokp.romcontrol.fragments.StatusBarBattery"
+        android:icon="@drawable/ic_rom_control_battery"
+        android:summary="@string/header_summary_battery" />
 
     <header
         android:id="@+id/statusbar_clock"
@@ -70,12 +53,32 @@
         android:icon="@drawable/ic_rom_control_toggles"
         android:summary="@string/header_summary_toggles"
         android:title="@string/toggles_layout" />
+     
+    <header
+        android:id="@+id/system"
+        android:title="@string/header_system" />
 
     <header
-        android:id="@+id/statusbar_battery"
-        android:title="@string/battery"
-        android:fragment="com.aokp.romcontrol.fragments.StatusBarBattery"
-        android:icon="@drawable/ic_rom_control_battery"
-        android:summary="@string/header_summary_battery" />
+        android:id="@+id/led"
+        android:fragment="com.aokp.romcontrol.fragments.LEDControl"
+        android:title="@string/led_options"
+        android:icon="@drawable/ic_rom_control_led"
+        android:summary="@string/header_summary_led" />
+
+    <header
+        android:id="@+id/sound"
+        android:fragment="com.aokp.romcontrol.fragments.Sound"
+        android:title="@string/sound"
+        android:icon="@drawable/ic_rom_control_sound"
+        android:summary="@string/header_summary_sound" />
+
+    <header
+        android:id="@+id/weather"
+        android:fragment="com.aokp.romcontrol.fragments.Weather"
+        android:title="@string/weather"
+        android:summary="@string/header_summary_weather"
+        android:icon="@drawable/ic_rom_control_weather" />
+
+
 
 </preference-headers>

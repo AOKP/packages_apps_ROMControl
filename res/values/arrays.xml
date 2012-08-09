@@ -204,6 +204,18 @@
         <item>30</item>
         <item>24</item>
     </string-array>
+    <string-array name="glow_times_entries">
+		<item>@string/glow_times_off</item>
+		<item>@string/glow_times_superquick</item>
+		<item>@string/glow_times_quick</item>
+		<item>@string/glow_times_normal</item>
+	</string-array>
+	<string-array name="glow_times_values" translatable="false">
+		<item>0|0</item>
+		<item>100|10</item>
+		<item>250|25</item>
+		<item>500|50</item>
+	</string-array>
     <string-array name="battery_bar_entries">
         <item>Hide</item>
         <item>Statusbar</item>

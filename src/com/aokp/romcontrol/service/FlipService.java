@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 public class FlipService extends Service {
@@ -31,6 +32,7 @@ public class FlipService extends Service {
     public static final int MODE_SILENT = AudioManager.RINGER_MODE_SILENT;
     public static final String TIMEOUT_MS_DEFAULT = "15000";
     public static final String DOWN_MS_DEFAULT = "1500";
+    public static final int INSTANT_OFF = 0;
 
     // int for limits on flip, thanks CM
     private static final int FACE_UP_LOWER_LIMIT = -45;
@@ -160,6 +162,26 @@ public class FlipService extends Service {
                     handler.postDelayed(screenOffTimer, getUserScreenTimeout(context));
                     mSecondReg = false;
                 }
+            } else if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(action)) {
+                final int state = intent.getIntExtra(TelephonyManager.EXTRA_STATE,
+                        TelephonyManager.CALL_STATE_IDLE);
+
+                if (state == TelephonyManager.CALL_STATE_RINGING 
+                        || state == TelephonyManager.CALL_STATE_OFFHOOK) {
+                    if (mSecondReg) {
+                        handler.postDelayed(screenOffTimer, INSTANT_OFF);
+                        mSecondReg = false;
+                    }
+                } else {
+                    if (!mSecondReg) {
+                        if (getUserFlipAudioMode(service) != -1) {
+                            getSensorManager().registerListener(sl,
+                                    getSensorManager().getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                                    SensorManager.SENSOR_DELAY_UI);
+                            mSecondReg = true;
+                        }
+                    }
+                }
             }
         }
     };
@@ -253,6 +275,7 @@ public class FlipService extends Service {
 
             filter.addAction(Intent.ACTION_SCREEN_OFF);
             filter.addAction(Intent.ACTION_SCREEN_ON);
+            filter.addAction(TelephonyManager.ACTION_PHONE_STATE_CHANGED);
             registerReceiver(screenReceiver, filter);
 
             mRegistered = true;

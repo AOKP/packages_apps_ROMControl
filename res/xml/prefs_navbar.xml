@@ -24,6 +24,17 @@
                 android:title="@string/navbar_qty_title"
                 android:summary="@string/navbar_qty_summary" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="nav_button_color"
+                android:title="@string/navigation_bar_tint_title"
+                android:defaultValue="#FFFFFF" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="nav_button_glow_color"
+                android:title="@string/navigation_bar_glow_tint_title"
+                android:summary="@string/navigation_bar_glow_tint_summary"
+                android:defaultValue="#FFFFFF" />
+
         <PreferenceCategory
                 android:key="navbar_buttons"
                 android:title="@string/navbar_button_cat">
@@ -33,6 +44,14 @@
         <PreferenceCategory
                 android:key="advanced_cat"
                 android:title="@string/advanced_settings">
+
+                <ListPreference
+                    android:entries="@array/glow_times_entries"
+                    android:entryValues="@array/glow_times_values"
+                    android:key="glow_times"
+                    android:title="@string/glow_times_title"
+                    android:defaultValue="100|10"
+                    android:persistent="false" />
 
                 <ListPreference
                         android:entries="@array/navigation_bar_height_entries"

@@ -31,6 +31,7 @@ public class Sound extends AOKPPreferenceFragment
     private static final String PREF_FLIP_ACTION = "flip_mode";
     private static final String PREF_USER_TIMEOUT = "user_timeout";
     private static final String PREF_USER_DOWN_MS = "user_down_ms";
+    private static final String PREF_PHONE_RING_SILENCE = "phone_ring_silence";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
     SharedPreferences prefs;
@@ -40,6 +41,7 @@ public class Sound extends AOKPPreferenceFragment
     ListPreference mFlipAction;
     ListPreference mUserDownMS;
     ListPreference mFlipScreenOff;
+    ListPreference mPhoneSilent;
     ListPreference mAnnoyingNotifications;
 
     @Override
@@ -70,6 +72,8 @@ public class Sound extends AOKPPreferenceFragment
         mFlipScreenOff = (ListPreference) findPreference(PREF_USER_TIMEOUT);
         mFlipScreenOff.setEnabled(Integer.parseInt(prefs.getString(PREF_FLIP_ACTION, "-1")) != -1);
 
+        mPhoneSilent = (ListPreference) findPreference(PREF_PHONE_RING_SILENCE);
+
         if (HeadphoneService.DEBUG)
             mContext.startService(new Intent(mContext, HeadphoneService.class));
 
@@ -96,7 +100,6 @@ public class Sound extends AOKPPreferenceFragment
         if (preference == mFlipAction) {
             int val = Integer.parseInt((String) newValue);
             if (val != -1) {
-                mContext.stopService(new Intent(mContext, FlipService.class));
                 mUserDownMS.setEnabled(true);
                 mFlipScreenOff.setEnabled(true);
                 AlertDialog.Builder ad = new AlertDialog.Builder(getActivity());
@@ -111,16 +114,27 @@ public class Sound extends AOKPPreferenceFragment
                             }
                         });
                 ad.show();
-                mContext.startService(new Intent(mContext, FlipService.class));
+                if (!FlipService.isStarted()) {
+                    mContext.startService(new Intent(mContext, FlipService.class));
+                }
             } else {
                 mUserDownMS.setEnabled(false);
                 mFlipScreenOff.setEnabled(false);
             }
             return true;
+            
         } else if (preference == mAnnoyingNotifications) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
+            
+        } else if (preference == mPhoneSilent) {
+            int val = Integer.parseInt((String) newValue);
+            if (val != 0) {
+                if (!FlipService.isStarted()) {
+                    mContext.startService(new Intent(mContext, FlipService.class));
+                }
+            }
             return true;
         }
         return false;

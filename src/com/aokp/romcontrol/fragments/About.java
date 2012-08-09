@@ -27,7 +27,7 @@ public class About extends AOKPPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTitle(R.string.title_about);
         addPreferencesFromResource(R.xml.prefs_about);
         mSiteUrl = findPreference("aokp_website");
         mSourceUrl = findPreference("aokp_source");

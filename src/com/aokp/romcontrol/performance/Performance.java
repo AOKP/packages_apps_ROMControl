@@ -1,27 +1,21 @@
-package com.aokp.romcontrol.fragments.performance;
+package com.aokp.romcontrol.performance;
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
+import com.aokp.romcontrol.AOKPActivity;
 import com.aokp.romcontrol.R;
 
 import java.util.ArrayList;
 
-public class Performance extends Activity {
+public class Performance extends AOKPActivity {
 
     ViewPager mViewPager;
     TabsAdapter mTabsAdapter;
@@ -36,7 +30,7 @@ public class Performance extends Activity {
         final ActionBar bar = getActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE, ActionBar.DISPLAY_SHOW_TITLE);
-        bar.setTitle(R.string.app_name);
+        bar.setTitle(R.string.title_performance);
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
         mTabsAdapter.addTab(bar.newTab().setText("CPU Settings"),

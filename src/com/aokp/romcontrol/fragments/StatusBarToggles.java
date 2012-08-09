@@ -57,7 +57,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTitle(R.string.title_statusbar_toggles);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_statusbar_toggles);
 

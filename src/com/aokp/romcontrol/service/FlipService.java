@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 public class FlipService extends Service {
@@ -31,6 +32,9 @@ public class FlipService extends Service {
     public static final int MODE_SILENT = AudioManager.RINGER_MODE_SILENT;
     public static final String TIMEOUT_MS_DEFAULT = "15000";
     public static final String DOWN_MS_DEFAULT = "1500";
+    public static final int INSTANT_OFF = 0;
+    public static final String KEY_PHONE_RING_SILENCE = "phone_ring_silence";
+    public static final String PHONE_SILENCE_OFF = "0";
 
     // int for limits on flip, thanks CM
     private static final int FACE_UP_LOWER_LIMIT = -45;
@@ -46,6 +50,7 @@ public class FlipService extends Service {
     private boolean wasFaceUp;
     private boolean wasFaceDown = false;
     boolean switchSoundBack = false;
+    boolean wentSilentFromRing = false;
     static boolean mRegistered = false;
     static boolean mSecondReg = true;
     Handler handler = new Handler();
@@ -126,7 +131,17 @@ public class FlipService extends Service {
                         for (int i = 0; i < SENSOR_SAMPLES; i++)
                             mSamples[i] = false;
                         cancelRunDown = true;
-                        handler.postDelayed(faceDownTimer, getUserDownMS(service));
+                        if (getUserFlipAudioMode(service) != -1) {
+                            handler.postDelayed(faceDownTimer, getUserDownMS(service));
+                        }
+                        // we can use the flip down to silent calls too!
+                        if (getUserCallSilent(service) == 1) {
+                            if (am.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+                                am.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+                                wentSilentFromRing = true;
+                            }
+                        }
+
                     } else {
                         if (faceDownIsRunning) {
                             cancelRunDown = false;
@@ -160,6 +175,44 @@ public class FlipService extends Service {
                     handler.postDelayed(screenOffTimer, getUserScreenTimeout(context));
                     mSecondReg = false;
                 }
+            } else if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(action)) {
+                final int state = intent.getIntExtra(TelephonyManager.EXTRA_STATE,
+                        TelephonyManager.CALL_STATE_IDLE);
+
+                if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
+                    if (mSecondReg) {
+                        handler.postDelayed(screenOffTimer, INSTANT_OFF);
+                        mSecondReg = false;
+                    }
+                } else if (state == TelephonyManager.CALL_STATE_RINGING) {
+                    if (getUserCallSilent(context) == 0) {
+                        if (mSecondReg) {
+                            handler.postDelayed(screenOffTimer, INSTANT_OFF);
+                            mSecondReg = false;
+                        }
+                    } else {
+                        if (!mSecondReg) {
+                            getSensorManager().registerListener(sl,
+                                    getSensorManager().getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                                    SensorManager.SENSOR_DELAY_UI);
+                            mSecondReg = true;
+                        }
+                    }
+                } else {
+                    if (!mSecondReg) {
+                        if (getUserFlipAudioMode(service) != -1) {
+                            getSensorManager().registerListener(sl,
+                                    getSensorManager().getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                                    SensorManager.SENSOR_DELAY_UI);
+                            mSecondReg = true;
+                        }
+                    }
+                    if (wentSilentFromRing) {
+                        am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+                        wentSilentFromRing = false;
+                    }
+                }
+
             }
         }
     };
@@ -235,6 +288,12 @@ public class FlipService extends Service {
         return Integer.parseInt(prefs.getString(KEY_USER_DOWN_MS, DOWN_MS_DEFAULT));
     }
 
+    public static int getUserCallSilent(Context c) {
+        SharedPreferences prefs =
+                PreferenceManager.getDefaultSharedPreferences(c);
+        return Integer.parseInt(prefs.getString(KEY_PHONE_RING_SILENCE, PHONE_SILENCE_OFF));
+    }
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "User Flip Mode= " + getUserFlipAudioMode(service));
@@ -253,12 +312,17 @@ public class FlipService extends Service {
 
             filter.addAction(Intent.ACTION_SCREEN_OFF);
             filter.addAction(Intent.ACTION_SCREEN_ON);
+            filter.addAction(TelephonyManager.ACTION_PHONE_STATE_CHANGED);
             registerReceiver(screenReceiver, filter);
 
             mRegistered = true;
             log("register sensor manager");
         }
         return START_STICKY;
+    }
+
+    public static boolean isStarted() {
+        return mRegistered;
     }
 
     @Override

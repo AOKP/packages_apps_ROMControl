@@ -4,21 +4,21 @@
     <string name="app_name">ROM Control</string>
 
     <!-- Header Strings -->
-    <string name="user_interface">User Interface</string>
+    <string name="user_interface">Interface</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">Statusbar</string>
-    <string name="header_navbar">Navigation bar</string>
+    <string name="header_navbar">Navigation Bar</string>
     <string name="toggles_layout">Toggles</string>
     <string name="general_ui">General UI</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
-    <string name="nav_bar">Navigation bar</string>
-    <string name="led_options">LED options</string>
+    <string name="nav_bar">Navigation Bar</string>
+    <string name="led_options">LED Options</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
-    <string name="lockscreen_options">Lockscreen options</string>
+    <string name="lockscreen_options">Lockscreen Options</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
     <string name="performance">Performance</string>
@@ -38,16 +38,16 @@
     <string name="title_clipboard_share">Share to Clipboard</string>
 
     <!-- Header Summaries -->
-    <string name="header_summary_clock">Clock location, AM/PM style, color</string>
-    <string name="header_summary_toggles">Customize toggles</string>
-    <string name="header_summary_general_ui">Boot animation, bug mailer, rotation, IME switcher, etc</string>
-    <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
-    <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
-    <string name="header_summary_led">Change default settings for Android to use</string>
+    <string name="header_summary_clock">@null</string>
+    <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_general_ui">@null</string>
+    <string name="header_summary_battery">@null</string>
+    <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_led">@null</string>
     <string name="header_summary_sound">@null</string>
-    <string name="header_summary_lockscreens">Custom apps to launch, layout</string>
-    <string name="header_summary_weather">Enable/disable, set custom location or network, and interval</string>
-    <string name="header_summary_performance">Set CPU, free memory &amp; other settings</string>
+    <string name="header_summary_performance">@null</string>
+    <string name="header_summary_lockscreens">@null</string>
+    <string name="header_summary_weather">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -126,10 +126,10 @@
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
 
     <!-- Toggle Strings to be called from device overlays -->
-    <string name="toggle_airplane_mode">Airplane mode</string>
-    <string name="toggle_auto_rotate">Auto rotate</string>
+    <string name="toggle_airplane_mode">Airplane Mode</string>
+    <string name="toggle_auto_rotate">Auto Rotate</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Fast charge</string>
+    <string name="toggle_fast_charge">Fast Charge</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Data</string>
@@ -139,7 +139,7 @@
     <string name="toggle_sync">Sync</string>
     <string name="toggle_torch">Torch</string>
     <string name="toggle_2g">2G</string>
-    <string name="toggle_usb_tether">USB tether</string>
+    <string name="toggle_usb_tether">USB Tether</string>
     <string name="toggle_vibrate">Vibrate</string>
     <string name="toggle_wifi_ap">Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>

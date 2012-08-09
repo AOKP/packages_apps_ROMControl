@@ -65,6 +65,10 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
             mActionBar.setDisplayHomeAsUpEnabled(true);
     }
 
+    public void setTitle(int resId) {
+        getActivity().setTitle(resId);
+    }
+
     /*
      * The name is intentionally made different from Activity#finish(), so that users won't
      * misunderstand its meaning.

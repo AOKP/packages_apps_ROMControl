@@ -58,6 +58,7 @@ public class Weather extends AOKPPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.title_weather);
         addPreferencesFromResource(R.xml.prefs_weather);
 
         prefs = getActivity().getSharedPreferences("weather", Context.MODE_WORLD_WRITEABLE);

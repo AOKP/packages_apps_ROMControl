@@ -289,6 +289,14 @@
         <item>1</item>
         <item>0</item>
     </string-array>
+    <string-array name="phone_call_flip_entries">
+        <item>Disabled</item>
+        <item>Enabled</item>
+    </string-array>
+    <string-array name="phone_call_flip_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
 
     <!-- Flip up/down arrays -->
     <string-array name="flip_entries">
@@ -329,8 +337,8 @@
         <item>9000</item>
         <item>10000</item>
     </string-array>
-
     <string-array name="flip_screenoff_entries">
+        <item>0 seconds (Instant Off)</item>
         <item>5 seconds</item>
         <item>10 second</item>
         <item>15 seconds</item>
@@ -348,6 +356,7 @@
 
     <!-- values must be in milliseconds!~@@#E!@ -->
     <string-array name="flip_screenoff_values" translatable="false">
+        <item>0</item>
         <item>5000</item>
         <item>10000</item>
         <item>15000</item>
@@ -378,7 +387,6 @@
         <item>6 hours</item>
         <item>8 hours</item>
     </string-array>
-
     <string-array name="weather_interval_values" translatable="false">
         <item>0</item>
         <item>1</item>
@@ -393,4 +401,5 @@
         <item>360</item>
         <item>480</item>
     </string-array>
+
 </resources>

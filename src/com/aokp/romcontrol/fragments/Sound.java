@@ -43,6 +43,7 @@ public class Sound extends AOKPPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.title_sound);
         addPreferencesFromResource(R.xml.prefs_sound);
         PreferenceManager.setDefaultValues(mContext, R.xml.prefs_sound, true);
         prefs = PreferenceManager.getDefaultSharedPreferences(mContext);

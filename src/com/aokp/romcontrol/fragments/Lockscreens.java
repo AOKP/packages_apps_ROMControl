@@ -61,7 +61,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTitle(R.string.title_lockscreens);
         keys.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
 
         // Load the preferences from an XML resource

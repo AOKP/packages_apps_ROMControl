@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name=".fragments.UserInterface"
-            android:label="User Interface" >
+            android:label="@string/title_ui" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +42,7 @@
         </activity>
         <activity
             android:name=".fragments.StatusBarClock"
-            android:label="Statusbar Clock" >
+            android:label="@string/title_statusbar_clock" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,7 +51,7 @@
         </activity>
          <activity
             android:name=".fragments.StatusBarToggles"
-            android:label="Statusbar Toggles" >
+            android:label="@string/title_statusbar_toggles" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,7 +60,7 @@
         </activity>
         <activity
             android:name=".fragments.StatusBarBattery"
-            android:label="Statusbar Battery" >
+            android:label="@string/title_statusbar_battery" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,7 +69,7 @@
         </activity>
         <activity
             android:name=".fragments.Navbar"
-            android:label="Navigation Bar" >
+            android:label="@string/title_navbar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
@@ -77,7 +77,7 @@
         </activity>
         <activity
             android:name=".fragments.LEDControl"
-            android:label="LED Control" >
+            android:label="@string/title_led" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -86,7 +86,7 @@
         </activity>
         <activity
             android:name=".fragments.Lockscreens"
-            android:label="Lockscreen Options" >
+            android:label="@string/title_lockscreens" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -95,14 +95,14 @@
         </activity>
         <activity
             android:name=".fragments.About"
-            android:label="@string/about_aokp" >
+            android:label="@string/title_about" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.Sound"
-            android:label="Sound Settings" >
+            android:label="@string/title_sound" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -111,15 +111,15 @@
         </activity>
         <activity
             android:name=".fragments.Weather"
-            android:label="Weather Settings" >
+            android:label="@string/title_weather" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.performance.Performance"
-            android:label="Performance Settings" >
+            android:name=".performance.Performance"
+            android:label="@string/title_performance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
@@ -127,7 +127,7 @@
         </activity>
         <activity
             android:name=".ShareToClipboard"
-            android:label="Share To Clipboard" >
+            android:label="@string/title_clipboard_share" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.ALTERNATIVE"/>

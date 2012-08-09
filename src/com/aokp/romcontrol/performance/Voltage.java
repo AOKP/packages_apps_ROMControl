@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.fragments.performance;
+package com.aokp.romcontrol.performance;
 
 public class Voltage {
     private String freq;

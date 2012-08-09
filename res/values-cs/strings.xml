@@ -61,7 +61,10 @@
   <string name="brightness_location_title">Pozice nastavení jasu</string>
   <string name="reset_toggles_title">Obnovit přepínače</string>
   <string name="reset_toggles_summary">Obnovit všechny přepínače a jejich pořadí</string>
-  
+  <string name="toggle_button_alpha_title">Průhlednost indikátoru přepínačů</string>
+  <string name="toggle_btn_enabled_color_title">Zapnout barvu indikátoru</string>
+  <string name="toggle_btn_disabled_color_title">Vypnout barvu indikátoru</string>
+    
   <string name="clock_title_enable">Styl hodin</string>
   <string name="title_clock_ampm_entries">AM/PM styl</string>
   <string name="enable_clock_weekday">Den v týdnu</string>

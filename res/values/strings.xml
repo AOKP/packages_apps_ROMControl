@@ -165,6 +165,7 @@
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_none">Empty</string>
     <string name="navbar_widgets">Navigation Bar Widgets</string>
+    <string name="navbar_widgets_reset">Reset navbar widgets</string>
     <string name="navbar_enable_bar">Enable bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
@@ -211,6 +212,8 @@
         It will then disable the flip once the screen is turned on after 15 (default) seconds.  
         NOTE: **You will need to turn the screen back on once flipped over to get sound back once the 
         screen timeout time has been reached.**</string>
+    <string name="summary_phone_flip_mode">Flip your phone to silent when receiving a call</string>
+    <string name="title_phone_flip_mode">Phone Call Silence</string>
 
     <!-- Lockscreen -->
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
@@ -306,7 +309,7 @@
     <!-- Miscellaneous -->
     <string name="location_unavailable">Unable to retrieve location information for weather update</string>
 
-     <!-- cardinal directions -->
+    <!-- cardinal directions -->
     <string name="direction_north">N</string>
     <string name="direction_north_east">NE</string>
     <string name="direction_east">E</string>
@@ -315,7 +318,6 @@
     <string name="direction_south_west">SW</string>
     <string name="direction_west">W</string>
     <string name="direction_north_west">NW</string>
-
     <string name="lockscreen_weather_title">Lockscreen Weather</string>
     <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
     <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
@@ -324,4 +326,5 @@
 
     <!-- Share to clipboard -->
     <string name="clipboard_notification">Copied to clipboard.</string>
+
 </resources>

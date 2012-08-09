@@ -19,6 +19,13 @@
         android:key="bt_audio_mode"
         android:summary="@string/summary_bt_audio_mode"
         android:title="@string/title_bt_audio_mode" />
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/phone_call_flip_entries"
+        android:entryValues="@array/phone_call_flip_values"
+        android:key="phone_ring_silence"
+        android:summary="@string/summary_phone_flip_mode"
+        android:title="@string/summary_phone_flip_mode" />
 
     <PreferenceCategory
         android:key="flip_category"

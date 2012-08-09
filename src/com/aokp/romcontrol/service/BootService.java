@@ -20,9 +20,9 @@ import java.util.List;
 
 import com.aokp.romcontrol.R;
 
-import com.aokp.romcontrol.fragments.performance.CPUSettings;
-import com.aokp.romcontrol.fragments.performance.Voltage;
-import com.aokp.romcontrol.fragments.performance.VoltageControlSettings;
+import com.aokp.romcontrol.performance.CPUSettings;
+import com.aokp.romcontrol.performance.Voltage;
+import com.aokp.romcontrol.performance.VoltageControlSettings;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.weather.WeatherRefreshService;
 import com.aokp.romcontrol.weather.WeatherService;

@@ -86,7 +86,7 @@
             android:title="@string/performance">
         <intent
                 android:action="android.intent.action.MAIN"
-                android:targetClass="com.aokp.romcontrol.fragments.performance.Performance"
+                android:targetClass="com.aokp.romcontrol.performance.Performance"
                 android:targetPackage="com.aokp.romcontrol" />
     </header>
 

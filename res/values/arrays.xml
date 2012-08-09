@@ -331,6 +331,7 @@
     </string-array>
 
     <string-array name="flip_screenoff_entries">
+        <item>0 seconds (Instant Off)</item>
         <item>5 seconds</item>
         <item>10 second</item>
         <item>15 seconds</item>
@@ -348,6 +349,7 @@
 
     <!-- values must be in milliseconds!~@@#E!@ -->
     <string-array name="flip_screenoff_values" translatable="false">
+        <item>0</item>
         <item>5000</item>
         <item>10000</item>
         <item>15000</item>

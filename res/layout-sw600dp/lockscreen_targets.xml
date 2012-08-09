@@ -19,14 +19,15 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2" />
+        android:layout_weight="0.1" />
 
     <com.android.internal.widget.multiwaveview.GlowPadView
         android:id="@+id/lock_target"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.6"
-        android:gravity="left|top"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center"
         prvandroid:targetDrawables="@*android:array/lockscreen_targets_with_camera"
         prvandroid:targetDescriptions="@*android:array/lockscreen_target_descriptions_with_camera"
         prvandroid:directionDescriptions="@*android:array/lockscreen_direction_descriptions"

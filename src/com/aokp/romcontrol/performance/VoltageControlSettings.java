@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.fragments.performance;
+package com.aokp.romcontrol.performance;
 
 import android.app.Activity;
 import android.app.AlertDialog;

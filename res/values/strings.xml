@@ -23,6 +23,20 @@
     <string name="tools">Tools</string>
     <string name="performance">Performance</string>
 
+    <!-- Activity titles defined in AndroidManifest.xml -->
+    <string name="title_about">About AOKP</string>
+    <string name="title_ui">General User Interface</string>
+    <string name="title_statusbar_clock">Statusbar Clock</string>
+    <string name="title_statusbar_toggles">Statusbar Toggles</string>
+    <string name="title_statusbar_battery">Statusbar Battery</string>
+    <string name="title_navbar">Navigation Bar</string>
+    <string name="title_led">LED Control</string>
+    <string name="title_lockscreens">Lockscreen Options</string>
+    <string name="title_sound">Sound Settings</string>
+    <string name="title_weather">Weather Settings</string>
+    <string name="title_performance">Performance Settings</string>
+    <string name="title_clipboard_share">Share to Clipboard</string>
+
     <!-- Header Summaries -->
     <string name="header_summary_clock">Clock location, AM/PM style, color</string>
     <string name="header_summary_toggles">Customize toggles</string>

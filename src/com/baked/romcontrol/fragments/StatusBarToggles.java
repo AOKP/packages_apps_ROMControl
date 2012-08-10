@@ -12,6 +12,7 @@ import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -38,6 +39,7 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
     private static final String PREF_TOGGLES_STYLE = "toggle_style";
     private static final String PREF_ALT_BUTTON_LAYOUT = "toggles_layout_preference";
+    private static final String PREF_TOGGLES_VISIBLE = "toggles_visible";
 
     Preference mEnabledToggles;
     Preference mLayout;
@@ -45,6 +47,7 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
     ImageListPreference mTogglesLayout;
     ListPreference mToggleStyle;
     Preference mResetToggles;
+    CheckBoxPreference mTogglesVisible;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,10 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_statusbar_toggles);
+
+        mTogglesVisible = (CheckBoxPreference) findPreference(PREF_TOGGLES_VISIBLE);
+        mTogglesVisible.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_DISPLAY, 0) == 1);
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
@@ -134,7 +141,14 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES, "WIFI");
             return true;
+
+        } else if (preference == mTogglesVisible) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_DISPLAY,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
         }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
     }

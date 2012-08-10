@@ -2,14 +2,22 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:baked="http://schemas.android.com/apk/res/com.baked.romcontrol">
 
+    <CheckBoxPreference
+        android:key="toggles_visible"
+        android:title="@string/toggles_visible_enabled"
+        android:defaultValue="true" />
+
     <Preference
         android:key="enable_toggles"
         android:summary="@string/enabled_toggles_summary"
-        android:title="@string/enabled_toggles_title" />
+        android:title="@string/enabled_toggles_title"
+        android:dependency="toggles_visible" />
+
     <Preference
         android:key="toggles"
         android:summary="@string/toggles_order_summary"
-        android:title="@string/toggles_order_title" />
+        android:title="@string/toggles_order_title"
+        android:dependency="toggles_visible" />
 
     <com.scheffsblend.smw.Preferences.ImageListPreference
         android:entries="@array/toggles_layout_entries"
@@ -17,23 +25,27 @@
         baked:entryImages="@array/toggles_layout_images"
         baked:summaryImage="@drawable/toggle_layout_summary"
         android:key="toggles_layout_preference"
-        android:title="@string/toggles_layout_title" />
+        android:title="@string/toggles_layout_title"
+        android:dependency="toggles_visible" />
 
     <PreferenceCategory
         android:key="advanced_cat"
         android:title="@string/advanced_settings" >
+
         <ListPreference
             android:entries="@array/toggle_style_entries"
             android:entryValues="@array/toggle_style_values"
             android:key="toggle_style"
             android:summary="@string/toggle_style_summary"
-            android:title="@string/toggle_style_title" />
+            android:title="@string/toggle_style_title"
+            android:dependency="toggles_visible" />
 
         <Preference
             android:key="reset_toggles"
             android:summary="@string/reset_toggles_summary"
-            android:title="@string/reset_toggles_title" >
-        </Preference>
+            android:title="@string/reset_toggles_title"
+            android:dependency="toggles_visible" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

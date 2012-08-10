@@ -94,6 +94,7 @@
     <string name="title_show_sound_chooser">Show vibrate/sound chooser</string>
 
     <!-- Statusbar | Toggles -->
+    <string name="toggles_visible_enabled">Show toggles</string>
     <string name="toggle_style_title">Toggle style</string>
     <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
     <string name="toggles_layout_title">Toggle Layout</string>

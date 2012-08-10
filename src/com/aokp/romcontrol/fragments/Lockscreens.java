@@ -73,6 +73,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_CALENDAR_HIDE_ONGOING = "lockscreen_calendar_hide_ongoing";
     private static final String PREF_LOCKSCREEN_CALENDAR_USE_COLORS = "lockscreen_calendar_use_colors";
     private static final String PREF_LOCKSCREEN_CALENDAR_INTERVAL = "lockscreen_calendar_interval";
+    private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -86,6 +87,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenBattery;
     ColorPickerPreference mLockscreenTextColor;
     CheckBoxPreference mLockscreenMenuUnlock;
+    CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mVolumeRockerWake;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
     CheckBoxPreference mLockscreenWeather;
@@ -165,6 +167,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mCalendarRange.setValue(Settings.System.getLong(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_CALENDAR_RANGE, 86400000) + "");
 
+        mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
+        mVolumeMusic.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, 0) == 1);
+
         mLockscreenWallpaper = findPreference("wallpaper");
 
         for (String key : keys) {
@@ -199,6 +205,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mVolumeMusic) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_MUSIC_CONTROLS,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLockScreenTimeoutUserOverride) {
             Settings.Secure.putInt(getActivity().getContentResolver(),

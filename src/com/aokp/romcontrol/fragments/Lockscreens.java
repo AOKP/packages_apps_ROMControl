@@ -45,6 +45,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+    private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -56,6 +57,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     Preference mLockscreenWallpaper;
 
     CheckBoxPreference mLockscreenBattery;
+    CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mVolumeRockerWake;
 
     ArrayList<String> keys = new ArrayList<String>();
@@ -77,6 +79,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mVolumeRockerWake.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                 false));
+
+        mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
+        mVolumeMusic.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, 0) == 1);
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -108,6 +114,13 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+
+        } else if (preference == mVolumeMusic) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_MUSIC_CONTROLS,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 
         } else if (preference == mLockscreenWallpaper) {

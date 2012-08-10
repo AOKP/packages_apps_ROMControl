@@ -57,13 +57,19 @@ import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.R;
 import com.baked.romcontrol.util.ShortcutPickerHelper;
 import com.baked.romcontrol.widgets.NavBarItemPreference;
+import com.baked.romcontrol.widgets.SeekBarPreference;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class Navbar extends BAKEDPreferenceFragment implements
         OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
 
     // move these later
-        private static final String PREF_MENU_UNLOCK = "pref_menu_display";
+    private static final String PREF_MENU_UNLOCK = "pref_menu_display";
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
+    private static final String PREF_NAV_COLOR = "nav_button_color";
+    private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
+    private static final String PREF_GLOW_TIMES = "glow_times";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
     private static final String ENABLE_NAVIGATION_BAR = "enable_navigation_bar";
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
@@ -78,6 +84,9 @@ public class Navbar extends BAKEDPreferenceFragment implements
     public static final String PREFS_NAV_BAR = "navbar";
 
     // move these later
+    ColorPickerPreference mNavigationBarColor;
+    ColorPickerPreference mNavigationBarGlowColor;
+    ListPreference mGlowTimes;
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     ListPreference mNavBarButtonQty;
@@ -85,6 +94,7 @@ public class Navbar extends BAKEDPreferenceFragment implements
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
+    SeekBarPreference mButtonAlpha;
 
     private int mPendingIconIndex = -1;
     private int mPendingWidgetDrawer = -1;
@@ -135,6 +145,23 @@ public class Navbar extends BAKEDPreferenceFragment implements
         mEnableNavigationBar = (CheckBoxPreference) findPreference("enable_nav_bar");
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
+
+        mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
+        mNavigationBarColor.setOnPreferenceChangeListener(this);
+
+        mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
+        mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
+
+        mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
+        mGlowTimes.setOnPreferenceChangeListener(this);
+
+        float defaultAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
+                0.6f);
+        mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
+        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
+        mButtonAlpha.setOnPreferenceChangeListener(this);
+
         // don't allow devices that must use a navigation bar to disable it
         if (hasNavBarByDefault || mTablet) {
             prefs.removePreference(mEnableNavigationBar);
@@ -154,6 +181,7 @@ public class Navbar extends BAKEDPreferenceFragment implements
         }
         refreshSettings();
         setHasOptionsMenu(true);
+        updateGlowTimesSummary();
     }
 
     @Override
@@ -166,7 +194,10 @@ public class Navbar extends BAKEDPreferenceFragment implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.reset:
-
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_TINT, Integer.MIN_VALUE);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_GLOW_TINT, Integer.MIN_VALUE);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3);
 
@@ -205,8 +236,8 @@ public class Navbar extends BAKEDPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-              showDialog(DIALOG_NAVBAR_ENABLE);
-             return true;
+            showDialog(DIALOG_NAVBAR_ENABLE);
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -285,9 +316,44 @@ public class Navbar extends BAKEDPreferenceFragment implements
             }
             refreshSettings();
             return true;
+        } else if (preference == mNavigationBarColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_TINT, intHex);
+            return true;
+        } else if (preference == mNavigationBarGlowColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_GLOW_TINT, intHex);
+            return true;
+        } else if (preference == mGlowTimes) {
+            // format is (on|off) both in MS
+            String value = (String) newValue;
+            String[] breakIndex = value.split("\\|");
+            int onTime = Integer.valueOf(breakIndex[0]);
+            int offTime = Integer.valueOf(breakIndex[1]);
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[0], offTime);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[1], onTime);
+            updateGlowTimesSummary();
+            return true;
+        } else if (preference == mButtonAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Log.e("R", "value: " + val / 100);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
+                    val / 100);
+            return true;
 
         }
-
         return false;
     }
 
@@ -354,6 +420,31 @@ public class Navbar extends BAKEDPreferenceFragment implements
                         .create();
         }
         return null;
+    }
+
+    private void updateGlowTimesSummary() {
+        int resId;
+        String combinedTime = Settings.System.getString(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_GLOW_DURATION[1]) + "|" +
+                Settings.System.getString(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_GLOW_DURATION[0]);
+
+        String[] glowArray = getResources().getStringArray(R.array.glow_times_values);
+
+        if (glowArray[0].equals(combinedTime)) {
+            resId = R.string.glow_times_off;
+            mGlowTimes.setValueIndex(0);
+        } else if (glowArray[1].equals(combinedTime)) {
+            resId = R.string.glow_times_superquick;
+            mGlowTimes.setValueIndex(1);
+        } else if (glowArray[2].equals(combinedTime)) {
+            resId = R.string.glow_times_quick;
+            mGlowTimes.setValueIndex(2);
+        } else {
+            resId = R.string.glow_times_normal;
+            mGlowTimes.setValueIndex(3);
+        }
+        mGlowTimes.setSummary(getResources().getString(resId));
     }
 
     public int mapChosenDpToPixels(int dp) {

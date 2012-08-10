@@ -12,12 +12,11 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.database.Cursor;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -33,6 +32,7 @@ import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
@@ -121,26 +121,42 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLockscreenWallpaper) {
-
-            int width = getActivity().getWallpaperDesiredMinimumWidth();
-            int height = getActivity().getWallpaperDesiredMinimumHeight();
             Display display = getActivity().getWindowManager().getDefaultDisplay();
-            float spotlightX = (float)display.getWidth() / width;
-            float spotlightY = (float)display.getHeight() / height;
+            int width = display.getWidth();
+            int height = display.getHeight();
+            Rect rect = new Rect();
+            Window window = getActivity().getWindow();
+            window.getDecorView().getWindowVisibleDisplayFrame(rect);
+            int statusBarHeight = rect.top;
+            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
+            int titleBarHeight = contentViewTop - statusBarHeight;
 
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
             intent.setType("image/*");
             intent.putExtra("crop", "true");
-            intent.putExtra("aspectX", width);
-            intent.putExtra("aspectY", height);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
             intent.putExtra("scale", true);
-            // intent.putExtra("return-data", false);
-            intent.putExtra("spotlightX", spotlightX);
-            intent.putExtra("spotlightY", spotlightY);
+            intent.putExtra("scaleUpIfNeeded", true);
+            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
             intent.putExtra(MediaStore.EXTRA_OUTPUT, getLockscreenExternalUri());
-            intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
+
+            if (mTablet) {
+                width = getActivity().getWallpaperDesiredMinimumWidth();
+                height = getActivity().getWallpaperDesiredMinimumHeight();
+                float spotlightX = (float)display.getWidth() / width;
+                float spotlightY = (float)display.getHeight() / height;
+                intent.putExtra("aspectX", width);
+                intent.putExtra("aspectY", height);
+                intent.putExtra("outputX", width);
+                intent.putExtra("outputY", height);
+                intent.putExtra("spotlightX", spotlightX);
+                intent.putExtra("spotlightY", spotlightY);
+            } else {
+                boolean isPortrait = getResources()
+                        .getConfiguration().orientation ==
+                        Configuration.ORIENTATION_PORTRAIT;
+                intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
+                intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
+            }
 
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             return true;
@@ -200,7 +216,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 Uri selectedImageUri = getLockscreenExternalUri();
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
 
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, wallpaperStream);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
             }
         }
     }

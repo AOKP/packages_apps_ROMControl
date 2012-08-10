@@ -27,9 +27,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.R;
+import com.baked.romcontrol.widgets.SeekBarPreference;
 import com.baked.romcontrol.widgets.TouchInterceptor;
 import com.scheffsblend.smw.Preferences.ImageListPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBarToggles extends PreferenceFragment implements OnPreferenceChangeListener {
 
@@ -40,6 +43,9 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
     private static final String PREF_TOGGLES_STYLE = "toggle_style";
     private static final String PREF_ALT_BUTTON_LAYOUT = "toggles_layout_preference";
     private static final String PREF_TOGGLES_VISIBLE = "toggles_visible";
+    private static final String PREF_TOGGLE_BTN_ENABLED_COLOR = "toggle_btn_enabled_color";
+    private static final String PREF_TOGGLE_BTN_DISABLED_COLOR = "toggle_btn_disabled_color";
+    private static final String PREF_TOGGLE_BTN_ALPHA = "toggle_btn_alpha";
 
     Preference mEnabledToggles;
     Preference mLayout;
@@ -48,6 +54,9 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
     ListPreference mToggleStyle;
     Preference mResetToggles;
     CheckBoxPreference mTogglesVisible;
+    SeekBarPreference mToggleBtnAlpha;
+    ColorPickerPreference mBtnEnabledColor;
+    ColorPickerPreference mBtnDisabledColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,6 +85,21 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
 
         mTogglesLayout = (ImageListPreference) findPreference(PREF_ALT_BUTTON_LAYOUT);
         mTogglesLayout.setOnPreferenceChangeListener(this);
+
+        mBtnEnabledColor = (ColorPickerPreference) findPreference(
+                PREF_TOGGLE_BTN_ENABLED_COLOR);
+        mBtnEnabledColor.setOnPreferenceChangeListener(this);
+
+        mBtnDisabledColor = (ColorPickerPreference) findPreference(
+                PREF_TOGGLE_BTN_DISABLED_COLOR);
+        mBtnDisabledColor.setOnPreferenceChangeListener(this);
+
+        float btnAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(),
+                Settings.System.STATUSBAR_TOGGLES_ALPHA, 0.7f);
+        mToggleBtnAlpha = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_ALPHA);
+        mToggleBtnAlpha.setInitValue((int) (btnAlpha * 100));
+        mToggleBtnAlpha.setOnPreferenceChangeListener(this);
 
         mLayout = findPreference("toggles");
 
@@ -175,6 +199,27 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_USE_BUTTONS,
                     val);
+
+        } else if (preference == mBtnEnabledColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_ENABLED_COLOR, intHex);
+
+        } else if (preference == mBtnDisabledColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_DISABLED_COLOR, intHex);
+
+        } else if (preference == mToggleBtnAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            result = Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_ALPHA, val / 100);
         }
         return result;
     }

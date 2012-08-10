@@ -107,6 +107,9 @@
     <string name="brightness_location_title">Brightness location</string>
     <string name="reset_toggles_title">Reset toggles</string>
     <string name="reset_toggles_summary">Reset all toggles and their order</string>
+    <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
+    <string name="toggle_btn_enabled_color_title">Toggle on color</string>
+    <string name="toggle_btn_disabled_color_title">Toggle off color</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

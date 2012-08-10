@@ -1,7 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.baked.romcontrol"
-        coreApp="true"
-        android:sharedUserId="android.uid.system" >
+        package="com.baked.romcontrol" >
 
     <original-package android:name="com.baked.romcontrol" />
 
@@ -93,10 +91,8 @@
             </intent-filter>
         </receiver>
         <service
-            android:name=".service.HeadphoneService">
-        </service>
+            android:name=".service.HeadphoneService" />
         <service
-            android:name=".service.FlipService">
-        </service>
+            android:name=".service.FlipService" />
     </application>
 </manifest>

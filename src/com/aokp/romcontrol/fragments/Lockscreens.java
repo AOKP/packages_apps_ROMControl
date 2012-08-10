@@ -45,6 +45,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+    private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -57,6 +58,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     CheckBoxPreference mLockscreenBattery;
     CheckBoxPreference mVolumeRockerWake;
+    CheckBoxPreference mLockScreenTimeoutUserOverride;
 
     ArrayList<String> keys = new ArrayList<String>();
 
@@ -77,6 +79,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mVolumeRockerWake.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                 false));
+
+        mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
+        mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
+                .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -109,7 +115,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     Settings.System.VOLUME_WAKE_SCREEN,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
-
+        } else if (preference == mLockScreenTimeoutUserOverride) {
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
         } else if (preference == mLockscreenWallpaper) {
 
             int width = getActivity().getWallpaperDesiredMinimumWidth();

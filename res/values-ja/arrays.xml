@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="clock_style_entries">
+        <item>右に表示</item>
+        <item>中央に表示</item>
+        <item>表示しない</item>
+    </string-array>
+    <string-array name="clock_ampm_entries">
+        <item>表示しない</item>
+        <item>AM/PM(小)</item>
+        <item>AM/PM(通常)</item>
+    </string-array>
+    <string-array name="clock_weekday_entries">
+        <item>表示しない</item>
+        <item>曜日を表示(小)</item>
+        <item>曜日を表示(大)</item>
+    </string-array>
+    <string-array name="toggle_style_entries">
+        <item>アイコンのみ</item>
+        <item>テキストのみ</item>
+    </string-array>
+    <string-array name="battery_icon_entries">
+        <item>アイコンのみ</item>
+        <item>残量テキストのみ</item>
+        <item>残量テキストつきアイコン</item>
+        <item>中央に残量テキストつきアイコン</item>
+        <item>サークル</item>
+        <item>表示しない</item>
+    </string-array>
+    <string-array name="pref_navigation_menu_entries">
+        <item>右</item>
+        <item>左</item>
+        <item>両サイド</item>
+        <item>消す</item>
+    </string-array>
+    <string-array name="pref_navigation_menu_display_entries">
+        <item>表示・配置ともJBデフォルト</item>
+        <item>常に非表示/常に配置</item>
+        <item>常に表示/常に配置</item>
+        <item>表示はJBデフォルト/隠れたときに非表示</item>
+    </string-array>
+    <string-array name="navbar_button_entries">
+        <item>ホーム</item>
+        <item>戻る</item>
+        <item>アプリ使用履歴</item>
+        <item>検索</item>
+        <item>メニュー</item>
+        <item>アプリ終了</item>
+        <item>電源</item>
+        <item>アプリ起動</item>
+        <item>空白</item>
+    </string-array>
+    <string-array name="navigation_bar_width_entries">
+        <item>42 dp (標準)</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    <string-array name="navigation_bar_height_entries">
+        <item>48 dp (標準)</item>
+        <item>42 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    <string-array name="navigation_bar_height_landscape_entries">
+        <item>48 dp (標準)</item>
+        <item>42 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+    </string-array>
+    <string-array name="battery_bar_entries">
+        <item>非表示</item>
+        <item>ステータスバー</item>
+        <item>ナビゲーションバーの上</item>
+        <item>ナビゲーションバーの下</item>
+    </string-array>
+    <string-array name="battery_bar_style_entries">
+        <item>標準</item>
+        <item>中央</item>
+    </string-array>
+    <string-array name="led_entries">
+        <item>0.5秒</item>
+        <item>1.0秒</item>
+        <item>1.5秒</item>
+        <item>2.0秒</item>
+        <item>2.5秒</item>
+        <item>3.0秒</item>
+        <item>3.5秒</item>
+        <item>4.0秒</item>
+        <item>4.5秒</item>
+        <item>5.0秒</item>
+        <item>5.5秒</item>
+        <item>6.0秒</item>
+        <item>7.0秒</item>
+        <item>8.0秒</item>
+        <item>9.0秒</item>
+        <item>10秒</item>
+    </string-array>
+    <string-array name="flip_entries">
+        <item>.5秒</item>
+        <item>1秒</item>
+        <item>1.5秒</item>
+        <item>2秒</item>
+        <item>2.5秒</item>
+        <item>3秒</item>
+        <item>3.5秒</item>
+        <item>4秒</item>
+        <item>4.5秒</item>
+        <item>5秒</item>
+        <item>5.5秒</item>
+        <item>6秒</item>
+        <item>7秒</item>
+        <item>8秒</item>
+        <item>9秒</item>
+        <item>10秒</item>
+    </string-array>
+    <string-array name="flip_screenoff_entries">
+        <item>5秒</item>
+        <item>10秒</item>
+        <item>15秒</item>
+        <item>30秒</item>
+        <item>45秒</item>
+        <item>1分</item>
+        <item>1.5分</item>
+        <item>2分</item>
+        <item>2.5分</item>
+        <item>3分</item>
+        <item>3.5分</item>
+        <item>4分</item>
+        <item>5分</item>
+    </string-array>
+    <string-array name="weather_interval_entries">
+        <item>自動更新しない</item>
+        <item>1分</item>
+        <item>5分</item>
+        <item>10分</item>
+        <item>30分</item>
+        <item>45分</item>
+        <item>60分</item>
+        <item>2時間</item>
+        <item>3時間</item>
+        <item>4時間</item>
+        <item>6時間</item>
+        <item>8時間</item>
+    </string-array>
+</resources>

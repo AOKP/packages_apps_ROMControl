@@ -83,6 +83,10 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
+    <string name="notification_wallpaper_title">Choose notification background</string>
+    <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
+    <string name="alpha_dialog_title">Set alpha value</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>

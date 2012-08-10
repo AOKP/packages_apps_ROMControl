@@ -17,6 +17,9 @@
   <string name="sound">Zvuk</string>
   <string name="lockscreen_options">Možnosti zamčené obrazovky</string>
   <string name="weather">Počasí</string>
+  <string name="tools">Nástroje</string>
+  <string name="performance">Výkon</string>
+  <string name="header_summary_performance">Nastavení CPU, volné paměti a další</string>
   
   <string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
   <string name="header_summary_toggles">Přizpůsobit přepínače</string>
@@ -50,6 +53,7 @@
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
   <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
   <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
+  <string name="disable_bootanimation_title">Vypnout startovací animaci</string>
   
   <string name="toggle_style_title">Styl přepínačů</string>
   <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
@@ -142,6 +146,14 @@
   <string name="navbar_height_dialog_summary">Pro správnou změnu šířky navigační lišty je třeba restartovat!</string>
   <string name="navbar_height_dialog_button_later">Restartovat později</string>
   <string name="navbar_height_dialog_button_reboot">Restartovat nyní!</string>
+  <string name="navigation_bar_tint_title">Barva tlačítek navigační lišty</string>
+  <string name="navigation_bar_glow_tint_title">Barva světelného efektu navigační lišty</string>
+  <string name="navigation_bar_glow_tint_summary">Při stisku tlačítka v navigační liště se zobrazuje svetělný efekt. Tato volba umožňuje změnit jeho barvu.</string>
+  <string name="glow_times_title">Animace světelného efektu tlačítek</string>
+  <string name="glow_times_off">Vypnuta</string>
+  <string name="glow_times_superquick">Hodně rychlá</string>
+  <string name="glow_times_quick">Rychlá</string>
+  <string name="glow_times_normal">Normální</string>
   
   <string name="led_on">LED svítí</string>
   <string name="led_time_on">Doba po kterou LED svítí</string>
@@ -150,6 +162,8 @@
   <string name="led_color_click">Kliknutím na LED je možné změnit barvu</string>
   <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
   
+  <string name="less_notification_sounds_title">Méně častá zvuková upozornění</string>
+  <string name="less_notification_sounds_summary">Omezit zvuková upozornění jednotlivých aplikací, aby hrála pouze jednou za zvolený čas.</string>
   <string name="title_headphone_audio_mode">Akce připojení sluchátek</string>
   <string name="summary_headphone_audio_mode">Co se děje se zvukem, když jsou připojena nebo odpojena sluchátka</string>
   <string name="title_bt_audio_mode">Akce připojení Bluetooth A2DP</string>
@@ -174,6 +188,10 @@
   <string name="lockscreen_quick_unlock_control_summary">Odemknout obrazovku zadáním pinu, bez nutnosti mačkat potvrzovací tlačítko</string>
   <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
+  <string name="volume_rocker_wake_title">Probuzení tlačítky hlasitosti</string>
+  <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
+  <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
+  <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
   
   <string name="weather_enable">Zapnout počasí</string>
   <string name="weather_enable_summary">Určuje kdy a kde se mají zobrazovat informace o počasí.</string>
@@ -267,4 +285,31 @@
   <string name="menu_weather_get_weather">Načíst počasí</string>
   
   <string name="clipboard_notification">Zkopírováno do schránky.</string>
+
+  <string name="current_speed">Aktuální rychlost</string>
+  <string name="current_max">Aktuální maximum:</string>
+  <string name="current_min">Aktuální minimum:</string>
+  <string name="governor">Governor</string>
+  <string name="io">IO Scheduler</string>
+  <string name="sob">Nastavit při startu</string>
+  <string name="dt_free_memory">Minfree Taskkiller</string>
+  <string name="prefcat_free_memory">Volná paměť</string>
+  <string name="pt_free_memory">Volná paměť</string>
+  <string name="ps_free_memory">Množství paměti, které minfree taskkiler ponechá volné | Aktuálně: %s</string>
+  <string name="pt_free_memory_boot">Nastavit při startu</string>
+  <string name="ps_free_memory_boot">Aplikovat nastavení při startu</string>
+  <string name="pt_fast_charge_boot">Rychlé nabíjení</string>
+  <string name="ps_fast_charge_boot">Zapnout rychlé nabíjení při startu</string>
+  <string name="pt_volt_control">Nastavení voltáže</string>
+  <string name="ps_volt_control">Nastavení voltáže pro jednotlivé frekvence</string>
+  <string name="not_supported">Aktuální kernel nepodporuje nastavení voltáže</string>
+  <string name="apply_values">Použít hodnoty</string>
+  <string name="freq">Frekvence</string>
+  <string name="current">Aktuálně mV</string>
+  <string name="saved">Uloženo mV</string>
+  <string name="kernel">Ladění kernelu (je-li podporováno)</string>
+  <string name="fast_charge_warning">PO STARTU NEBUDE MOŽNÉ PŘIPOJIT ZAŘÍZENÍ K PC!\n\nRychlé nabíjení bude nastaveno po každém startu. Pokud je tato volba aktivní, zařízení je možné *pouze* nabíjet!</string>
+  <string name="fast_charge_notification_title">Rychlé nabíjení je zapnuto!</string>
+  <string name="fast_charge_notification_message">Telefon je ve stavu nabíjení!</string>
+  <string name="prefcat_other_tweaks">Další tweaky</string>
 </resources>

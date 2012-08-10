@@ -153,4 +153,14 @@
     <item>6 hodin</item>
     <item>8 hodin</item>
   </string-array>
+  <string-array name="less_notification_sounds_entries">
+    <item>Normální chování</item>
+    <item>3s</item>
+    <item>5s</item>
+    <item>10s</item>
+    <item>15s</item>
+    <item>30s</item>
+    <item>45s</item>
+    <item>1m</item>
+    <item>2m</item>
 </resources>

@@ -46,6 +46,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
+    private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -57,6 +58,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     Preference mLockscreenWallpaper;
 
     CheckBoxPreference mLockscreenBattery;
+    CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mVolumeRockerWake;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
 
@@ -83,6 +85,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
         mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
                 .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
+
+        mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
+        mVolumeMusic.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, 0) == 1);
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -118,6 +124,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         } else if (preference == mLockScreenTimeoutUserOverride) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mVolumeMusic) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_MUSIC_CONTROLS,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLockscreenWallpaper) {

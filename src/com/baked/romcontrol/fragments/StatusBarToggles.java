@@ -34,7 +34,7 @@ import com.baked.romcontrol.widgets.TouchInterceptor;
 import com.scheffsblend.smw.Preferences.ImageListPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class StatusBarToggles extends PreferenceFragment implements OnPreferenceChangeListener {
+public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "TogglesLayout";
 
@@ -65,9 +65,9 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_statusbar_toggles);
 
-        mTogglesVisible = (CheckBoxPreference) findPreference(PREF_TOGGLES_VISIBLE);
-        mTogglesVisible.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_DISPLAY, 0) == 1);
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        mTogglesVisible = (CheckBoxPreference) prefSet.findPreference(PREF_TOGGLES_VISIBLE);
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
@@ -109,6 +109,7 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        boolean value;
         if (preference == mEnabledToggles) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -167,9 +168,10 @@ public class StatusBarToggles extends PreferenceFragment implements OnPreference
             return true;
 
         } else if (preference == mTogglesVisible) {
-            Settings.System.putInt(getActivity().getContentResolver(),
+            value = mTogglesVisible.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_DISPLAY,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    value ? 1 : 0);
             return true;
         }
 

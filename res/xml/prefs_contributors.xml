@@ -27,7 +27,10 @@
 
     <com.baked.romcontrol.DeveloperPreference
         baked:twitter="B_boytm"
-        baked:devUrl="https://twimg0-a.akamaihd.net/profile_images/2458035444/I1xkNEnd" />
+        baked:devUrl="https://twimg0-a.akamaihd.net/profile_images/2458035444/I1xkNEnd"
+        baked:market="http://play.google.com/store/apps/developer?id=B-boy%E2%84%A2"
+        baked:donate="http://bit.ly/PayPalLINK"
+        baked:email="teambakedrom@gmail.com"/>
 
     <com.baked.romcontrol.DeveloperPreference
         baked:twitter="codemonkeyjava"
@@ -36,5 +39,6 @@
     <com.baked.romcontrol.DeveloperPreference
         baked:twitter="nycbjr"
         baked:devUrl="https://lh4.googleusercontent.com/-OiMDAPxcbm8/ThsMbMs2OsI/AAAAAAAAAXM/eAQrRFIgUyY/s350/37744_411899016035_609706035_5029184_3412768_n.jpg" />
+
 
 </PreferenceScreen>

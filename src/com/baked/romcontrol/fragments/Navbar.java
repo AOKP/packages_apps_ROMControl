@@ -629,27 +629,30 @@ public class Navbar extends BAKEDPreferenceFragment implements
 
         if (uri.startsWith("**")) {
             if (uri.equals("**home**")) {
-
                 return getResources().getDrawable(R.drawable.ic_sysbar_home);
+
             } else if (uri.equals("**back**")) {
-
                 return getResources().getDrawable(R.drawable.ic_sysbar_back);
+
             } else if (uri.equals("**recents**")) {
-
                 return getResources().getDrawable(R.drawable.ic_sysbar_recent);
+
             } else if (uri.equals("**search**")) {
-
                 return getResources().getDrawable(R.drawable.ic_sysbar_search);
+
             } else if (uri.equals("**menu**")) {
-
                 return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
+
             } else if (uri.equals("**kill**")) {
-
                 return getResources().getDrawable(R.drawable.ic_sysbar_killtask);
-            } else if (uri.equals("**power**")) {
 
+            } else if (uri.equals("**power**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_power);
+
+            } else if (uri.equals("**notifications**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_notifications);
             }
+
         } else {
             try {
                 return mContext.getPackageManager().getActivityIcon(Intent.parseUri(uri, 0));
@@ -689,6 +692,8 @@ public class Navbar extends BAKEDPreferenceFragment implements
                 return getResources().getString(R.string.navbar_action_kill);
             else if (uri.equals("**power**"))
                 return getResources().getString(R.string.navbar_action_power);
+            else if (uri.equals("**notifications**"))
+                return getResources().getString(R.string.navbar_action_notifications);
             else if (uri.equals("**null**"))
                 return getResources().getString(R.string.navbar_action_none);
             else if (uri.equals("**widgets**"))

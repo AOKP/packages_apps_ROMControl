@@ -43,6 +43,12 @@
             android:key="toggle_btn_alpha"
             android:title="@string/toggle_button_alpha_title" />
 
+        <ListPreference
+            android:entries="@array/brightness_location_entries"
+            android:entryValues="@array/brightness_location_values"
+            android:key="brightness_location"
+            android:title="@string/brightness_location_title" />
+
         <Preference
             android:key="reset_toggles"
             android:summary="@string/reset_toggles_summary"

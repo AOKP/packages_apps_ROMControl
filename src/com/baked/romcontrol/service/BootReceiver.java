@@ -8,12 +8,7 @@ public class BootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        final String action = intent.getAction();
-
-        if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
-            context.startService(new Intent(context, HeadphoneService.class));
-            context.startService(new Intent(context, FlipService.class));
-        }
+        context.startService(new Intent(context, BootService.class));
     }
 
 }

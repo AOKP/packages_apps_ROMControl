@@ -14,6 +14,17 @@
         android:title="@string/header_system" />
 
     <header
+        android:id="@+id/tools"
+        android:icon="@drawable/ic_rom_control_performance"
+        android:title="@string/header_performance_title"
+        android:summary="@string/header_summary_performance">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.baked.romcontrol.performance.Performance"
+            android:targetPackage="com.baked.romcontrol" />
+    </header>
+
+    <header
         android:id="@+id/sound"
         android:fragment="com.baked.romcontrol.fragments.Sound"
         android:title="@string/header_sound_title"

@@ -19,11 +19,12 @@
     <!-- Header Strings -->
     <string name="header_system">System</string>
     <string name="header_statusbar">Statusbar</string>
-    <string name="header_navbar">Navigation bar</string>
+    <string name="header_navbar">Navbar</string>
     <string name="header_powerwidget">Powerwidgets</string>
     <string name="header_lockscreen">Lockscreen</string>
     <string name="header_statusbar_general">Extras</string>
     <string name="header_sound_title">Sound</string>
+    <string name="header_performance_title">Performance</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="nav_bar">Navbar</string>
@@ -43,6 +44,7 @@
     <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_lockscreen">@null</string>
     <string name="header_summary_sound">@null</string>
+    <string name="header_summary_performance">@null</string>
 
     <!-- Phone flip face down settings -->
     <string name="title_flip_mode">Face down audio mode</string>
@@ -398,6 +400,34 @@
     <string name="expanded_haptic_feedback_title">Haptic feedback</string>
     <string name="help_label">Help</string>
     <string name="lock_settings_picker_title">Choose screen lock</string>
+
+    <!-- Performance -->
+    <string name="current_speed">Current Speed</string>
+    <string name="current_max">Current max:</string>
+    <string name="current_min">Current min:</string>
+    <string name="governor">Governor</string>
+    <string name="io">IO Scheduler</string>
+    <string name="sob">Set on boot</string>
+    <string name="dt_free_memory">Minfree Taskkiller</string>
+    <string name="prefcat_free_memory">Free Memory</string>
+    <string name="pt_free_memory">Free memory</string>
+    <string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep | Current: %s</string>
+    <string name="pt_free_memory_boot">Set at boot</string>
+    <string name="ps_free_memory_boot">Apply the amount above at boot</string>
+    <string name="pt_fast_charge_boot">Fast Charge</string>
+    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+    <string name="pt_volt_control">Voltage control</string>
+    <string name="ps_volt_control">Set voltages for each frequency</string>
+    <string name="not_supported">Your kernel does not support voltage control</string>
+    <string name="apply_values">Apply values</string>
+    <string name="freq">Frequency</string>
+    <string name="current">mV current</string>
+    <string name="saved">mV saved</string>
+    <string name="kernel">Kernel Tweaks (if supported)</string>
+    <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
+    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
+    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
+    <string name="prefcat_other_tweaks">Other tweaks</string>
 
     <string name="dpi">DPI</string>
 

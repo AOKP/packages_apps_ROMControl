@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/prefcat_free_memory"
+        android:key="performance">
+        <ListPreference
+            android:key="free_memory"
+            android:title="@string/pt_free_memory"
+            android:summary="@string/ps_free_memory"
+            android:dialogTitle="@string/dt_free_memory"
+            android:persistent="true"
+            android:entries="@array/minfree"
+            android:entryValues="@array/minfree_values" />
+        <CheckBoxPreference
+            android:key="free_memory_boot"
+            android:defaultValue="false"
+            android:title="@string/pt_free_memory_boot"
+            android:summary="@string/ps_free_memory_boot" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="kernel"
+        android:title="@string/kernel">
+        <CheckBoxPreference
+            android:key="fast_charge_boot"
+            android:defaultValue="false"
+            android:title="@string/pt_fast_charge_boot"
+            android:summary="@string/ps_fast_charge_boot" />
+    </PreferenceCategory>
+</PreferenceScreen>

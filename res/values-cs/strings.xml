@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">Nastavení ROM</string>
-  <string name="user_interface">Uživatelské rozhraní</string>
+  <string name="user_interface">Rozhraní</string>
   <string name="cancel">Zrušit</string>
   <string name="ok">OK</string>
   <string name="menu_main_activity_change_locale">Prázdné!</string>
@@ -19,17 +19,30 @@
   <string name="weather">Počasí</string>
   <string name="tools">Nástroje</string>
   <string name="performance">Výkon</string>
-  <string name="header_summary_performance">Nastavení CPU, volné paměti a další</string>
   
-  <string name="header_summary_clock">Umístění hodin, AM/PM styl, barva</string>
-  <string name="header_summary_toggles">Přizpůsobit přepínače</string>
-  <string name="header_summary_general_ui">Startovací animace, rotace, přepínač klávesnice, atd.</string>
-  <string name="header_summary_battery">Lišta baterie, % ukazatel baterie, atd.</string>
-  <string name="header_summary_navigation_bar">Tlačítka k zobrazení, barva navigační lišty, pořadí</string>
-  <string name="header_summary_led">Změna výchozího nastavení Androidu</string>
+  <string name="title_about">O AOKP</string>
+  <string name="title_ui">Hlavní uživatelské rozhraní</string>
+  <string name="title_statusbar_clock">Hodiny ve stavové liště</string>
+  <string name="title_statusbar_toggles">Přepínače ve stavové liště</string>
+  <string name="title_statusbar_battery">Baterie ve stavové liště</string>
+  <string name="title_navbar">Navigační panel</string>
+  <string name="title_led">Ovládání LED</string>
+  <string name="title_lockscreens">Možnosti zamknuté obrazovky</string>
+  <string name="title_sound">Nastavení zvuku</string>
+  <string name="title_weather">Nastavení počasí</string>
+  <string name="title_performance">Nastavení výkonu</string>
+  <string name="title_clipboard_share">Sdílení do schránky</string>
+  
+  <string name="header_summary_clock">@null</string>
+  <string name="header_summary_toggles">@null</string>
+  <string name="header_summary_general_ui">@null</string>
+  <string name="header_summary_battery">@null</string>
+  <string name="header_summary_navigation_bar">@null</string>
+  <string name="header_summary_led">@null</string>
   <string name="header_summary_sound">@null</string>
-  <string name="header_summary_lockscreens">Spouštění vlastních aplikací, rozložení</string>
-  <string name="header_summary_weather">Vypnout/zapnout, nastavení vlastní polohy a také intervalu obnovení</string>
+  <string name="header_summary_performance">@null</string>
+  <string name="header_summary_lockscreens">@null</string>
+  <string name="header_summary_weather">@null</string>
   
   <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
   
@@ -48,12 +61,18 @@
   <string name="aokp_source_title">Zdroové kódy AOKP</string>
   <string name="aokp_source_summary">AOKP má otevřený kód. Vždy je možné si prohlédnout nejnovější verzi na github.com/aokp</string>
   <string name="aokp_review_title">Revize AOKP kódu</string>
-  <string name="aokp_review_summary">Gerrit server AOKP pro odesílání a testování pačů</string>
+  <string name="aokp_review_summary">Gerrit server AOKP pro odesílání a testování patchů</string>
+  <string name="aokp_irc_title">Připojit se na IRC</string>
+  <string name="about_aokp">O AOKP</string>
   
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
   <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
   <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
   <string name="disable_bootanimation_title">Vypnout startovací animaci</string>
+  <string name="notification_wallpaper_title">Zvolit pozadí notifikací</string>
+  <string name="notification_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
+  <string name="notif_wallpaper_alpha_title">Průhlednost pozadí notifikací</string>
+  <string name="alpha_dialog_title">Nastavit hodnotu průhlednosti</string>
   
   <string name="toggle_style_title">Styl přepínačů</string>
   <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
@@ -93,7 +112,8 @@
   <string name="toggle_wifi">Wi-Fi</string>
   
   <string name="battery_icon">Styl ikony baterie</string>
-  <string name="battery_summary_text_widget">@null</string>
+  <string name="battery_not_title">Ikona baterie ve stavové liště</string>
+  <string name="battery_not_summary">Baterie bude zobrazena na místě tlačítka pro vyčištění notifikací</string>
   <string name="battery_bar">Pozice pruhu baterie</string>
   <string name="battery_bar_color">Barva pruhu baterie</string>
   <string name="battery_bar_cat">Možnosti pruhu baterie</string>
@@ -129,6 +149,7 @@
   <string name="navbar_action_menu">Menu</string>
   <string name="navbar_action_kill">Ukončit aplikaci</string>
   <string name="navbar_action_power">Napájení</string>
+  <string name="navbar_action_notifications">Notifikace</string>
   <string name="navbar_action_none">Prázdné</string>
   <string name="navbar_widgets">Widgety v navigační liště</string>
   <string name="navbar_enable_bar">Povolit lištu</string>
@@ -184,6 +205,8 @@
     Výchozí doba pro přepnutí po otočení je 1,5 sekundy.
     Následně bude za 15 sekund (vychozí hodnota) od vypnutí obrazovky vypnut senzor otočení.
     POZOR: **Pro přepnutí zvukového režimu zpět je nutné opět zapnout telefon (pokud již vypršel čas senzoru otočení).**</string>
+  <string name="summary_phone_flip_mode">Přepnout telefon otočením do tichého režimu během příchozího hovoru</string>
+  <string name="title_phone_flip_mode">Tichý příchozí hovor</string>
   <string name="lockscreen_quick_unlock_control_title">Rychlé odemčení zadáním pinu</string>
   <string name="lockscreen_quick_unlock_control_summary">Odemknout obrazovku zadáním pinu, bez nutnosti mačkat potvrzovací tlačítko</string>
   <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
@@ -192,6 +215,8 @@
   <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
   <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
   <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
+  <string name="title_lockscreen_user_timeout_override">Čekat na zamknutí obrazovky</string>
+  <string name="summary_lockscreen_user_timeout_override">Pokud dojde k ručnímu vypnutí obrazovky, zařízení nebude zamknuto dokud nevyprší nastavený čas pro automatické vypínání obrazovky. Výchozí chování používá časovač pouze se zapnutým displejem.</string>
   
   <string name="weather_enable">Zapnout počasí</string>
   <string name="weather_enable_summary">Určuje kdy a kde se mají zobrazovat informace o počasí.</string>

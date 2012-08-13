@@ -21,6 +21,7 @@
     <string name="header_statusbar">Statusbar</string>
     <string name="header_navbar">Navbar</string>
     <string name="header_powerwidget">Powerwidgets</string>
+    <string name="header_tablet_powerwidget">Tablet PowerWidget</string>
     <string name="header_lockscreen">Lockscreen</string>
     <string name="header_statusbar_general">Extras</string>
     <string name="header_sound_title">Sound</string>
@@ -400,6 +401,7 @@
     <string name="expanded_haptic_feedback_title">Haptic feedback</string>
     <string name="help_label">Help</string>
     <string name="lock_settings_picker_title">Choose screen lock</string>
+    <string name="notification_drawer_title">Tablet notification drawer</string>
 
     <!-- Performance -->
     <string name="current_speed">Current Speed</string>

@@ -71,7 +71,11 @@
             android:name=".fragments.StatusBarGeneral" />
         <activity
             android:name=".fragments.StatusBarClock" />
-         <activity
+        <activity
+            android:name=".fragments.PowerWidget" />
+        <activity
+            android:name=".fragments.TabletPowerWidget" />
+        <activity
             android:name=".fragments.StatusBarToggles" />
         <activity
             android:name=".fragments.StatusBarBattery" />

@@ -38,11 +38,6 @@
         android:icon="@drawable/ic_rom_control_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
-    <!-- Navbar section -->
-    <header
-        android:id="@+id/navbar"
-        android:title="@string/header_navbar" />
-
     <header
         android:id="@+id/nav_bar"
         android:fragment="com.baked.romcontrol.fragments.Navbar"

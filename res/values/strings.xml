@@ -5,14 +5,14 @@
 
     <!-- AboutPage thanks mastur_mynd -->
     <string name="teambaked_about_page">About #teamBAKED</string>
-    <string name="teambaked_about_summary">Get all the info you want here</string>
+    <string name="teambaked_about_summary">@null</string>
     <string name="baked_devs">Developers of teambaked</string>
     <string name="baked_devs_summary">@null</string>
     <string name="baked">Black Android Kang Everyone Desires</string>
     <string name="baked_website_title">BAKED temp. Website</string>
     <string name="baked_website_summary">www.teamicemods.com - Find all releases &amp; changelogs here.</string>
     <string name="baked_source_title">BAKED Source</string>
-    <string name="baked_source_summary">BAKED is fully open source. All source is here github.com/teambaked</string>
+    <string name="baked_source_summary">BAKED is fully open source. http://github.com/TeamBAKED</string>
     <string name="baked_irc_title">Join us on IRC</string>
     <string name="baked_irc_summary">#teamBAKED @ irc.freenode.net</string>
 
@@ -23,26 +23,28 @@
     <string name="header_powerwidget">Powerwidgets</string>
     <string name="header_lockscreen">Lockscreen</string>
     <string name="header_statusbar_general">Extras</string>
-    <string name="header_sound_title">Sound settings</string>
+    <string name="header_sound_title">Sound</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
-    <string name="nav_bar">Navigation bar</string>
+    <string name="nav_bar">Navbar</string>
     <string name="toggles_layout">Toggles</string>
-    <string name="power_menu_options">Power menu options</string>
+    <string name="power_menu_options">Power Menu</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
 
     <!-- Header Summaries -->
-    <string name="header_summary_clock">Clock location, AM/PM style, color</string>
-    <string name="header_summary_toggles">Customize toggles</string>
-    <string name="header_summary_statusbar_general">Statusbar notification count and others eventually</string>
-    <string name="header_summary_battery">Battery bar, 1% battery mod, etc</string>
-    <string name="header_summary_navigation_bar">Buttons to display, nav bar color, order, height</string>
-    <string name="header_summary_powerwidget">Customize powerwidgets</string>
-    <string name="header_summary_power_menu">What to display in your power menu</string>
-    <string name="header_summary_lockscreen">Make edits to you lockscreen</string>
-    <string name="header_summary_sound">Extra sound settings</string>
+    <string name="header_summary_clock">@null</string>
+    <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_statusbar_general">@null</string>
+    <string name="header_summary_battery">@null</string>
+    <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_powerwidget">@null</string>
+    <string name="header_summary_power_menu">@null</string>
+    <string name="header_summary_lockscreen">@null</string>
+    <string name="header_summary_sound">@null</string>
+
+    <!-- Phone flip face down settings -->
     <string name="title_flip_mode">Face down audio mode</string>
     <string name="summary_flip_mode">Choose what to do with sound when you flip your phone face down</string>
     <string name="flip_cat_title">Face Down Action</string>
@@ -213,8 +215,8 @@
     <!-- LOCKSCREEN -->
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
-    <string name="lockscreen_target_title">Lockscreen shortcuts</string>
-    <string name="lockscreen_target_summary">View or change custom lock screen shortcuts</string>
+    <string name="lockscreen_target_title">Custom shortcuts</string>
+    <string name="lockscreen_target_summary">@null</string>
     <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
     <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
     <string name="lockscreen_target_reset_title">Reset</string>
@@ -224,8 +226,8 @@
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
 
     <!-- Lock Screen Weather -->
-    <string name="lockscreen_weather_title">Lockscreen weather</string>
-    <string name="lockscreen_weather_summary">Display weather information on the lock screen</string>
+    <string name="lockscreen_weather_title">Weather</string>
+    <string name="lockscreen_weather_summary">@null</string>
     <string name="lockscreen_weather_enabled">Enabled</string>
     <string name="weather_enable">Display weather</string>
     <string name="weather_source">Yahoo! Weather</string>
@@ -255,8 +257,8 @@
     <string name="unknown">Unknown</string>
 
     <!-- Lock screen Calendar -->
-    <string name="lockscreen_calendar_title">Lockscreen calendar</string>
-    <string name="lockscreen_calendar_summary">Display the next calendar event on the lock screen</string>
+    <string name="lockscreen_calendar_title">Calendar</string>
+    <string name="lockscreen_calendar_summary">@null</string>
     <string name="lockscreen_calendar_enabled">Enabled</string>
     <string name="calendar_title">Display next event</string>
     <string name="calendars_title">Event calendars</string>
@@ -290,8 +292,8 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Lock screen misc. settings -->
-    <string name="lockscreen_extra_title">Lockscreen misc settings</string>
-    <string name="lockscreen_extra_summary">Set various other lockscreen settings</string>
+    <string name="lockscreen_extra_title">Extra settings</string>
+    <string name="lockscreen_extra_summary">@null</string>
     <string name="lockscreen_battery_status_title">Battery status</string>
     <string name="lockscreen_battery_status_charging">Only when charging</string>
     <string name="lockscreen_battery_status_alwayson">Always on</string>

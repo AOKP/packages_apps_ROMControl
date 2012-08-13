@@ -196,7 +196,7 @@
     <string name="navigation_bar_width_title">Navigation bar width.</string>
     <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
     <string name="navbar_enable_dialog_title">Reboot required!</string>
-    <string name="navbar_enable_dialog_msg">Please reboot to enable/disable the navigation bar properly!</string>
+    <string name="navbar_enable_dialog_msg">You <b>should</b> reboot right now to make sure everything works properly!</string>
     <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
     <string name="navbar_enable_dialog_Positive">Reboot now!</string>
     <string name="navbar_height_dialog_title">Reboot required!</string>

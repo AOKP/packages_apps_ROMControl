@@ -35,6 +35,8 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.baked.romcontrol.R;
+
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
 
     private static final String TAG = "ROM_Control";
@@ -351,10 +353,9 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                         break;
 
                     case HEADER_TYPE_NORMAL:
-                        view = mInflater.inflate(
-                                com.android.internal.R.layout.preference_header_item, parent,
+                        view = mInflater.inflate(R.layout.preference_header_item, parent,
                                 false);
-                        holder.icon = (ImageView) view.findViewById(com.android.internal.R.id.icon);
+                        holder.icon = (ImageView) view.findViewById(R.id.icon);
                         holder.title = (TextView)
                                 view.findViewById(com.android.internal.R.id.title);
                         holder.summary = (TextView)

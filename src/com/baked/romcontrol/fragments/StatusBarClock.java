@@ -10,6 +10,8 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.R;
 
@@ -19,10 +21,12 @@ public class StatusBarClock extends BAKEDPreferenceFragment implements
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
     private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
+    private static final String PREF_CLOCK_COLOR = "clock_color";
 
     ListPreference mClockStyle;
     ListPreference mClockAmPmstyle;
     ListPreference mClockWeekday;
+    ColorPickerPreference mClockColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,9 @@ public class StatusBarClock extends BAKEDPreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_WEEKDAY,
                 0)));
 
+        mClockColor = (ColorPickerPreference) findPreference(PREF_CLOCK_COLOR);
+        mClockColor.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -71,6 +78,16 @@ public class StatusBarClock extends BAKEDPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_WEEKDAY, val);
+
+        } else if (preference == mClockColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
+            Log.e("BAKED", intHex + "");
         }
         return result;
     }

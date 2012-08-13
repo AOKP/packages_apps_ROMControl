@@ -19,6 +19,11 @@
 		<item>Pouze ikony</item>
 		<item>Pouze text</item>
 	</string-array>
+  <string-array name="brightness_location_entries">
+    <item>Nahoře</item>
+    <item>Dole</item>
+    <item>Nezobrazovat</item>
+  </string-array>
   <string-array name="battery_icon_entries">
 		<item>Pouze ikona</item>
 		<item>Pouze text</item>
@@ -48,6 +53,7 @@
     <item>Přepnout widgety</item>
 		<item>Ukončit aplikaci</item>
 		<item>Napájení</item>
+    <item>Notifikace</item>
 		<item>Vlastní aplikace</item>
 		<item>Prázdné</item>
 	</string-array>

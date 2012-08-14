@@ -2,12 +2,12 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="192dip">
+    android:layout_height="220dip">
     <ImageView
         android:id="@+id/widget_developer_photo"
         android:layout_width="match_parent"
-        android:layout_height="192dip"
-        android:scaleType="centerCrop"/>
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"/>
     <ProgressBar
         android:id="@+id/widget_developer_loading"
         style="?android:attr/progressBarStyleLarge"
@@ -34,8 +34,8 @@
             android:layout_centerInParent="true">
             <ImageView
                 android:id="@+id/widget_developer_ic_twitter"
-                android:layout_width="18dip"
-                android:layout_height="18dip"
+                android:layout_width="26dip"
+                android:layout_height="26dip"
                 android:src="@drawable/ic_twitter"/>
             <TextView
                 android:id="@+id/widget_developer_name"

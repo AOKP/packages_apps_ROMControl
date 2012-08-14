@@ -28,6 +28,11 @@
         android:title="@string/advanced_settings">
 
     <CheckBoxPreference
+        android:key="enable_fast_torch"
+        android:title="@string/enable_fast_torch_title"
+        android:summary="@string/enable_fast_torch_summary" />
+
+    <CheckBoxPreference
         android:key="lockscreen_quick_unlock_control"
         android:title="@string/lockscreen_quick_unlock_control_title"
         android:summary="@string/lockscreen_quick_unlock_control_summary" />

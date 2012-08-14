@@ -67,6 +67,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         super.onCreate(savedInstanceState);
         setTitle(R.string.title_lockscreens);
         keys.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+        keys.add(Settings.System.ENABLE_FAST_TORCH);
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_lockscreens);

@@ -16,6 +16,7 @@
 
 package com.baked.romcontrol;
 
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
@@ -28,11 +29,6 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnKeyListener;
 import android.widget.Button;
 
 /**
@@ -44,6 +40,8 @@ public class BAKEDPreferenceFragment extends PreferenceFragment implements Dialo
     protected Context mContext;
 
     private SettingsDialogFragment mDialogFragment;
+    protected ActionBar mActionBar;
+    protected boolean mShortcutFragment;
     protected boolean mTablet;
     protected boolean hasTorch;
     protected boolean hasHardwareButtons;
@@ -51,12 +49,22 @@ public class BAKEDPreferenceFragment extends PreferenceFragment implements Dialo
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasTorch = getResources().getBoolean(R.bool.has_torch);
         hasHardwareButtons = getResources().getBoolean(R.bool.has_hardware_buttons);
         hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
         mContext = getActivity().getApplicationContext();
-        super.onCreate(savedInstanceState);
+        mActionBar = getActivity().getActionBar();
+        if(getArguments() != null) {
+            mShortcutFragment = getArguments().getBoolean("started_from_shortcut", false);
+        }
+        if(!mShortcutFragment)
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void setTitle(int resId) {
+        getActivity().setTitle(resId);
     }
 
     /*

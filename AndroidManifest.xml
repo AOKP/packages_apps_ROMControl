@@ -60,11 +60,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AboutActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:name="AboutActivity" />
         <activity
             android:name=".fragments.About" />
         <activity
@@ -105,6 +101,14 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.baked.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="CreateShortcut"
+            android:theme="@style/Theme.CreateShortCut" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <receiver

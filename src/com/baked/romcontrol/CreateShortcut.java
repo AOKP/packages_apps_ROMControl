@@ -58,6 +58,8 @@ public class CreateShortcut extends LauncherActivity {
 
         if (c.equals("Performance"))
             return R.drawable.ic_rom_control_performance;
+        else if (c.equals("Navbar"))
+            return R.drawable.ic_rom_control_navigation_bar;
         else
             return R.mipmap.ic_launcher;
     }

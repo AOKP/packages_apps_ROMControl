@@ -1,26 +1,18 @@
-
 package com.baked.romcontrol;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.IWindowManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,6 +28,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.baked.romcontrol.R;
+import com.baked.romcontrol.service.BootService;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
 
@@ -77,15 +75,48 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             setTitle(R.string.app_name);
         }
 
-        if (getIntent().getAction().equals("com.baked.romcontrol.START_NEW_FRAGMENT")) {
+        if (!BootService.servicesStarted) {
+            getApplicationContext().startService(
+                    new Intent(getApplicationContext(), BootService.class));
+        }
+
+        if ("com.baked.romcontrol.START_NEW_FRAGMENT".equals(getIntent().getAction())) {
             String className = getIntent().getStringExtra("baked_fragment_name").toString();
-            if (!className.equals("com.baked.romcontrol.ROMControlActivity")) {
+            Class<?> cls = null;
+            try {
+                cls = Class.forName(className);
+            } catch (ClassNotFoundException e1) {
+                // can't find the class at all, die
+                return;
+            }
+
+            try {
+                cls.asSubclass(ROMControlActivity.class);
+                return;
+            } catch (ClassCastException e) {
+                // fall through
+            }
+
+            try {
+                cls.asSubclass(Fragment.class);
                 Bundle b = new Bundle();
                 b.putBoolean("started_from_shortcut", true);
-                // startPreferencePanel(className, b, 0, null, null, 0);
                 isShortcut = true;
-                startWithFragment(className, null, null, 0);
+                startWithFragment(className, b, null, 0);
                 finish(); // close current activity
+                return;
+            } catch (ClassCastException e) {
+            }
+
+            try {
+                cls.asSubclass(Activity.class);
+                isShortcut = true;
+                Intent activity = new Intent(getApplicationContext(), cls);
+                activity.putExtra("started_from_shortcut", true);
+                startActivity(activity);
+                finish(); // close current activity
+                return;
+            } catch (ClassCastException e) {
             }
         }
     }
@@ -125,6 +156,9 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 boolean useEnglishLocale = p.getBoolean(KEY_USE_ENGLISH_LOCALE, false);
                 p.edit().putBoolean(KEY_USE_ENGLISH_LOCALE, !useEnglishLocale).apply();
                 recreate();
+                return true;
+            case android.R.id.home:
+                onBackPressed();
                 return true;
             default:
                 return super.onContextItemSelected(item);

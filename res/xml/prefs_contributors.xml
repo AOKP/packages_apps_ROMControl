@@ -20,8 +20,8 @@
 
     <com.baked.romcontrol.DeveloperPreference
         baked:twitter="mastur_mynd"
-        baked:devUrl="https://lh3.googleusercontent.com/-MYkvegIo7Dg/AAAAAAAAAAI/AAAAAAAAAIo/VDrivEcLbSc/s250-c-k/photo.jpg"
-        baked:market="http://play.google.com/store"
+        baked:devUrl="https://lh6.googleusercontent.com/-MdQpQkBoRa0/TsGRKMCSVsI/AAAAAAAAADk/_aYCWAh00b8/s703/IMG_20110613_014521.jpg"
+        baked:market="https://play.google.com/store/apps/developer?id=Mastur+Mynd#?t=W251bGwsbnVsbCxudWxsLDEsImNvbS5tYXN0dXJteW5kLm1hc3R1cm1vZHMiXQ.."
         baked:donate="http://goo.gl/LNQtx"
         baked:email="masturmynd@gmail.com"/>
 
@@ -40,5 +40,8 @@
         baked:twitter="nycbjr"
         baked:devUrl="https://lh4.googleusercontent.com/-OiMDAPxcbm8/ThsMbMs2OsI/AAAAAAAAAXM/eAQrRFIgUyY/s350/37744_411899016035_609706035_5029184_3412768_n.jpg" />
 
+    <com.baked.romcontrol.DeveloperPreference
+        baked:twitter="Dreamsforgott3n"
+        baked:devUrl="https://twimg0-a.akamaihd.net/profile_images/1589629504/oqS1A0xh" />
 
 </PreferenceScreen>

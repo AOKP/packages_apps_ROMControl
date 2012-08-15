@@ -10,6 +10,7 @@ import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -43,6 +44,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     private static final String PREF_TOGGLE_BTN_ENABLED_COLOR = "toggle_btn_enabled_color";
     private static final String PREF_TOGGLE_BTN_DISABLED_COLOR = "toggle_btn_disabled_color";
     private static final String PREF_TOGGLE_BTN_ALPHA = "toggle_btn_alpha";
+    private static final String PREF_TOGGLE_BTN_BACKGROUND = "toggle_btn_background";
+    private static final String PREF_TOGGLE_TEXT_COLOR = "toggle_text_color";
 
     Preference mEnabledToggles;
     Preference mLayout;
@@ -51,8 +54,10 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     ListPreference mToggleStyle;
     Preference mResetToggles;
     SeekBarPreference mToggleBtnAlpha;
+    SeekBarPreference mBtnBackground;
     ColorPickerPreference mBtnEnabledColor;
     ColorPickerPreference mBtnDisabledColor;
+    ColorPickerPreference mToggleTextColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +95,17 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
         mToggleBtnAlpha = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_ALPHA);
         mToggleBtnAlpha.setInitValue((int) (btnAlpha * 100));
         mToggleBtnAlpha.setOnPreferenceChangeListener(this);
+
+        float btnBgAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(),
+                Settings.System.STATUSBAR_TOGGLES_BACKGROUND, 0.0f);
+        mBtnBackground = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_BACKGROUND);
+        mBtnBackground.setInitValue((int) (btnBgAlpha * 100));
+        mBtnBackground.setOnPreferenceChangeListener(this);
+
+        mToggleTextColor = (ColorPickerPreference) findPreference(
+                PREF_TOGGLE_TEXT_COLOR);
+        mToggleTextColor.setOnPreferenceChangeListener(this);
 
         mLayout = findPreference("toggles");
 
@@ -195,10 +211,22 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_DISABLED_COLOR, intHex);
+        } else if (preference == mToggleTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_TEXT_COLOR, intHex);
         } else if (preference == mToggleBtnAlpha) {
             float val = Float.parseFloat((String) newValue);
             result = Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_ALPHA, val / 100);
+        } else if (preference == mBtnBackground) {
+            float val = Float.parseFloat((String) newValue);
+            result = Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_BACKGROUND, val / 100);
         }
         return result;
     }

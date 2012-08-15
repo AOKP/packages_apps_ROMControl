@@ -118,6 +118,8 @@
     <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
     <string name="toggle_btn_enabled_color_title">Enabled indicator color</string>
     <string name="toggle_btn_disabled_color_title">Disabled indicator color</string>
+    <string name="toggle_btn_background_title">Toggle background alpha</string>
+    <string name="toggle_text_color_title">Toggle text color</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

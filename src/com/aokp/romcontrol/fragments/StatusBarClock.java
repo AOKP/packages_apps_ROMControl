@@ -13,15 +13,19 @@ import android.util.Log;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBarClock extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
+    private static final String PREF_COLOR_PICKER = "clock_color";
     private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
 
     ListPreference mClockStyle;
     ListPreference mClockAmPmstyle;
+    ColorPickerPreference mColorPicker;
     ListPreference mClockWeekday;
 
     @Override
@@ -42,6 +46,9 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
         mClockAmPmstyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE,
                 2)));
+
+        mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
+        mColorPicker.setOnPreferenceChangeListener(this);
 
         mClockWeekday = (ListPreference) findPreference(PREF_CLOCK_WEEKDAY);
         mClockWeekday.setOnPreferenceChangeListener(this);
@@ -67,6 +74,15 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_STYLE, val);
 
+        } else if (preference == mColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
+            Log.e("ROMAN", intHex + "");
         } else if (preference == mClockWeekday) {
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),

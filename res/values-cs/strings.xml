@@ -87,6 +87,8 @@
   <string name="toggle_button_alpha_title">Průhlednost indikátoru přepínačů</string>
   <string name="toggle_btn_enabled_color_title">Zapnout barvu indikátoru</string>
   <string name="toggle_btn_disabled_color_title">Vypnout barvu indikátoru</string>
+  <string name="toggle_btn_background_title">Průhlednost pozadí přepínače</string>
+  <string name="toggle_text_color_title">Barva textu přepínače</string>
     
   <string name="clock_title_enable">Styl hodin</string>
   <string name="title_clock_ampm_entries">AM/PM styl</string>
@@ -160,7 +162,7 @@
   <string name="navigation_bar_width_title">Šířka navigační lišty</string>
   <string name="navigation_bar_width_summary">Šíčka navigační lišty když je zobrazena na straně.</string>
   <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
-  <string name="navbar_enable_dialog_msg">Pro správné zapnutí/vypnutí navigační lišty je třeba restartovat!</string>
+  <string name="navbar_enable_dialog_msg">Pro správnou funkčnost navigační lišty je dobré vždy restartovat (ale né nutné).</string>
   <string name="navbar_enable_dialog_negative">Restartovat později</string>
   <string name="navbar_enable_dialog_Positive">Restartovat nyní!</string>
   <string name="navbar_height_dialog_title">Vyžadován restart!</string>

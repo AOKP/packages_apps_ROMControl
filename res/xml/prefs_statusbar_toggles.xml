@@ -40,6 +40,10 @@
             android:defaultValue="#4C4C4C" />
 
         <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="toggle_btn_background"
+            android:title="@string/toggle_btn_background_title" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
             android:key="toggle_btn_alpha"
             android:title="@string/toggle_button_alpha_title" />
 

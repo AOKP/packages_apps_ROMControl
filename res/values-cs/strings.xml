@@ -160,7 +160,7 @@
   <string name="navigation_bar_width_title">Šířka navigační lišty</string>
   <string name="navigation_bar_width_summary">Šíčka navigační lišty když je zobrazena na straně.</string>
   <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
-  <string name="navbar_enable_dialog_msg">Pro správné zapnutí/vypnutí navigační lišty je třeba restartovat!</string>
+  <string name="navbar_enable_dialog_msg">Pro správnou funkčnost navigační lišty je dobré vždy restartovat (ale né nutné).</string>
   <string name="navbar_enable_dialog_negative">Restartovat později</string>
   <string name="navbar_enable_dialog_Positive">Restartovat nyní!</string>
   <string name="navbar_height_dialog_title">Vyžadován restart!</string>

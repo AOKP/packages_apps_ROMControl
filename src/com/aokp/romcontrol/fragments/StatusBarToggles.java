@@ -10,6 +10,7 @@ import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -43,6 +44,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     private static final String PREF_TOGGLE_BTN_ENABLED_COLOR = "toggle_btn_enabled_color";
     private static final String PREF_TOGGLE_BTN_DISABLED_COLOR = "toggle_btn_disabled_color";
     private static final String PREF_TOGGLE_BTN_ALPHA = "toggle_btn_alpha";
+    private static final String PREF_TOGGLE_BTN_BACKGROUND = "toggle_btn_background";
 
     Preference mEnabledToggles;
     Preference mLayout;
@@ -51,6 +53,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     ListPreference mToggleStyle;
     Preference mResetToggles;
     SeekBarPreference mToggleBtnAlpha;
+    SeekBarPreference mBtnBackground;
     ColorPickerPreference mBtnEnabledColor;
     ColorPickerPreference mBtnDisabledColor;
 
@@ -92,6 +95,13 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
         mToggleBtnAlpha = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_ALPHA);
         mToggleBtnAlpha.setInitValue((int) (btnAlpha * 100));
         mToggleBtnAlpha.setOnPreferenceChangeListener(this);
+
+        float btnBgAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(),
+                Settings.System.STATUSBAR_TOGGLES_BACKGROUND, 0.0f);
+        mBtnBackground = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_BACKGROUND);
+        mBtnBackground.setInitValue((int) (btnBgAlpha * 100));
+        mBtnBackground.setOnPreferenceChangeListener(this);
 
         mLayout = findPreference("toggles");
 
@@ -203,6 +213,10 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
             float val = Float.parseFloat((String) newValue);
             result = Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_ALPHA, val / 100);
+        } else if (preference == mBtnBackground) {
+            float val = Float.parseFloat((String) newValue);
+            result = Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_BACKGROUND, val / 100);
         }
         return result;
     }

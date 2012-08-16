@@ -1,16 +1,11 @@
 package com.aokp.romcontrol.fragments;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
+import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.aokp.romcontrol.R;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -22,7 +17,6 @@ import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -35,15 +29,22 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
-import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.R;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 public class Lockscreens extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String TAG = "Lockscreens";
+    private static final boolean DEBUG = true;
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
+    private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
 
@@ -57,6 +58,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     Preference mLockscreenWallpaper;
 
     CheckBoxPreference mLockscreenBattery;
+    ColorPickerPreference mLockscreenTextColor;
     CheckBoxPreference mVolumeRockerWake;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
 
@@ -83,6 +85,9 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
         mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
                 .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
+
+        mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
+        mLockscreenTextColor.setOnPreferenceChangeListener(this);
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -198,6 +203,16 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean handled = false;
+        if (preference == mLockscreenTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
+            if (DEBUG) Log.d(TAG, String.format("new color hex value: %d", intHex));
+            return true;
+        }
         return false;
     }
 

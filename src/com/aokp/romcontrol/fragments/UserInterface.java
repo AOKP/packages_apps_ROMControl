@@ -28,6 +28,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.text.Spannable;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -36,6 +37,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
@@ -51,6 +53,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
+    private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -63,10 +66,12 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mStatusBarNotifCount;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
+    Preference mCustomLabel;
 
     Random randomGenerator = new Random();
 
     private int seekbarProgress;
+    String mCustomLabelText = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +96,9 @@ public class UserInterface extends AOKPPreferenceFragment {
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
 
+        mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
+        updateCustomLabelTextSummary();
+
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
@@ -101,6 +109,16 @@ public class UserInterface extends AOKPPreferenceFragment {
         }
 
         setHasOptionsMenu(true);
+    }
+
+    private void updateCustomLabelTextSummary() {
+        mCustomLabelText = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.CUSTOM_CARRIER_LABEL);
+        if (mCustomLabelText == null || mCustomLabelText.length() == 0) {
+            mCustomLabel.setSummary(R.string.custom_carrier_label_notset);
+        } else {
+            mCustomLabel.setSummary(mCustomLabelText);
+        }
     }
 
     @Override
@@ -205,6 +223,35 @@ public class UserInterface extends AOKPPreferenceFragment {
             .create()
             .show();
             return true;
+        } else if (preference == mCustomLabel) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_explain);
+
+            // Set an EditText view to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(mCustomLabelText != null ? mCustomLabelText : "");
+            alert.setView(input);
+
+            alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    String value = ((Spannable) input.getText()).toString();
+                    Settings.System.putString(getActivity().getContentResolver(),
+                            Settings.System.CUSTOM_CARRIER_LABEL, value);
+                    updateCustomLabelTextSummary();
+                    Intent i = new Intent();
+                    i.setAction("com.aokp.romcontrol.LABEL_CHANGED");
+                    mContext.sendBroadcast(i);
+                }
+            });
+            alert.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    // Canceled.
+                }
+            });
+
+            alert.show();
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

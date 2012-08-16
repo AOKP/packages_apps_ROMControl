@@ -25,6 +25,10 @@
             android:key="notification_wallpaper_alpha"
             android:title="@string/notif_wallpaper_alpha_title" />
 
+        <Preference
+            android:key="custom_carrier_label"
+            android:title="@string/custom_carrier_label_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

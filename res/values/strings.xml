@@ -258,6 +258,28 @@
     <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+    <string name="lockscreen_weather_cat">Weather</string>
+    <string name="lockscreen_weather_title">Enable</string>
+    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
+    <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
+    <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
+    <string name="lockscreen_calendar_cat">Calendar</string>
+    <string name="lockscreen_calendar_title">Enable</string>
+    <string name="lockscreen_calendar_summary">Show upcoming event(s) from your calendar on the lockscreen.</string>
+    <string name="lockscreen_calendar_sources_title">Calendar sources</string>
+    <string name="lockscreen_calendar_sources_summary">Select the calendars you want to see.</string>
+    <string name="lockscreen_calendar_dialog">Choose which calendars to use</string>
+    <string name="lockscreen_calendar_close">Close</string>
+    <string name="lockscreen_calendar_range_title">Time-range</string>
+    <string name="lockscreen_calendar_range_summary">Select the time-range to be displayed.</string>
+    <string name="lockscreen_calendar_use_colors_title">Use colors</string>
+    <string name="lockscreen_calendar_use_colors_summary">If enabled, events will be colored like in your calendar.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Hide ongoing events</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">If enabled, events which already started won\'t show up.</string>
+    <string name="lockscreen_calendar_flip_title">Multiple events</string>
+    <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
+    <string name="lockscreen_calendar_interval_title">Flip interval</string>
+    <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>
@@ -284,6 +306,7 @@
     <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network."</string>
     <string name="weather_loc_warning_positive">"Enable network location"</string>
     <string name="weather_loc_warning_negative">"Don't enable."</string>
+    <string name="menu_weather_get_weather">Get weather</string>
 
     <!-- Weather Codes -->
     <string name="weather_0">Tornado</string>
@@ -356,11 +379,6 @@
     <string name="direction_south_west">SW</string>
     <string name="direction_west">W</string>
     <string name="direction_north_west">NW</string>
-    <string name="lockscreen_weather_title">Lockscreen Weather</string>
-    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
-    <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
-    <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
-    <string name="menu_weather_get_weather">Get weather</string>
 
     <!-- Share to clipboard -->
     <string name="clipboard_notification">Copied to clipboard.</string>

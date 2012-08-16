@@ -16,47 +16,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
 
-   <LinearLayout
+    <LinearLayout
         android:id="@+id/explainled"
-        android:layout_marginTop="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ledphone">
+        android:layout_below="@id/ledphone"
+        android:layout_marginTop="10dp" >
 
         <TextView
-            android:layout_below="@id/ledphone"
-            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/led_color_click"/>
+            android:gravity="center"
+            android:text="@string/led_color_click" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/customLED"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/explainled"
+        android:layout_marginTop="10dp"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/app_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/led_custom_app" />
+
+        <Spinner
+            android:id="@+id/custom_apps"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/edit_button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/led_edit_button" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buttontext"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/explainled">
+        android:layout_below="@id/customLED"
+        android:layout_marginTop="10dp" >
 
         <TextView
             android:id="@+id/ontimeText"
-            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/led_on"/>
+            android:gravity="center"
+            android:text="@string/led_on" />
 
         <TextView
             android:id="@+id/offtimeText"
-            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:paddingLeft="10dp"
-            android:text="@string/led_off"/>
+            android:text="@string/led_off" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,27 +97,38 @@
             android:id="@+id/ontime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/offtime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="10dp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/time_buttons"
         android:layout_marginTop="5dp" >
+
         <Switch
             android:id="@+id/led_screen_on"
-            android:gravity="center"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_led_screen_on"/>
+            android:gravity="center"
+            android:text="@string/title_led_screen_on" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/led_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/led_test_notification"/>
+
 
 </RelativeLayout>

@@ -49,7 +49,7 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
 
     Preference mEnabledToggles;
     Preference mLayout;
-    // ListPreference mBrightnessLocation;
+    ListPreference mBrightnessLocation;
     ImageListPreference mTogglesLayout;
     ListPreference mToggleStyle;
     Preference mResetToggles;
@@ -71,12 +71,12 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
-        /* mBrightnessLocation = (ListPreference)
+        mBrightnessLocation = (ListPreference)
         findPreference(PREF_BRIGHTNESS_LOC);
         mBrightnessLocation.setOnPreferenceChangeListener(this);
         mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(),
-        Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 1))); */
+        Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 1)));
 
         mToggleStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
         mToggleStyle.setOnPreferenceChangeListener(this);
@@ -183,13 +183,13 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean result = false;
 
-        /* if (preference == mBrightnessLocation) {
+        if (preference == mBrightnessLocation) {
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
             Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
+         
 
-        } else */
-        if (preference == mToggleStyle) {
+        } else if (preference == mToggleStyle) {
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_STYLE, val);

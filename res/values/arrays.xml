@@ -51,7 +51,7 @@
         <item>1</item>
     </string-array>
 
-    <!-- Generic toggle oberlay. Should be set per device in overlay -->
+    <!-- Generic toggle overlay. Should be set per device in overlay -->
     <string-array name="available_toggles_entries" translatable="false">
         <item>ROTATE</item>
         <item>BT</item>
@@ -81,6 +81,20 @@
         <item>@string/toggle_medianext</item>
         <item>@string/toggle_mediaprevious</item>
     </string-array>
+
+    <!-- Brightness slider -->
+    <string-array name="brightness_location_entries">
+        <item>On top</item>
+        <item>On the bottom</item>
+        <item>Don\'t Show</item>
+    </string-array>
+
+    <string-array name="brightness_location_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>   
+
 
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">

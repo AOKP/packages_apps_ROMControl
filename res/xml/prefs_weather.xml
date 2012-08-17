@@ -31,7 +31,7 @@
         android:title="@string/weather_use_celcius"
         android:summary="@string/weather_use_celcius_summary" />
 
-<!--
+
     <CheckBoxPreference
         android:key="use_custom_app"
         android:dependency="enable_weather"
@@ -42,7 +42,7 @@
         android:key="custom_app"
         android:title="@string/weather_custom_app_title"
         android:dependency="use_custom_app" />
--->
+
 
     <ListPreference
         android:entries="@array/weather_interval_entries"
@@ -51,13 +51,13 @@
         android:key="refresh_interval"
         android:title="@string/weather_refresh_interval" />
 
-<!--
+
     <ListPreference
         android:entries="@array/weather_statusbar_location_entries"
         android:entryValues="@array/weather_statusbar_location_values"
         android:dependency="enable_weather"
         android:key="statusbar_location"
         android:title="@string/weather_statusbar_style" />
--->
+
 
 </PreferenceScreen>

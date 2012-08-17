@@ -50,6 +50,8 @@
 
     <com.baked.romcontrol.DeveloperPreference
         baked:twitter="ebs512"
-        baked:devUrl="https://twimg0-a.akamaihd.net/profile_images/1690610038/2Cab0XEa" />
+        baked:devUrl="https://twimg0-a.akamaihd.net/profile_images/1690610038/2Cab0XEa"
+        baked:donate="http://goo.gl/wvYGF"
+        baked:email="ebs512@gmail.com" />
 
 </PreferenceScreen>

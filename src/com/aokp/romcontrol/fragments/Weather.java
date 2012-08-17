@@ -43,7 +43,7 @@ public class Weather extends AOKPPreferenceFragment implements
     CheckBoxPreference mUseCustomLoc;
     CheckBoxPreference mShowLoc;
     CheckBoxPreference mUseCelcius;
-    // ListPreference mStatusBarLocation;
+    ListPreference mStatusBarLocation;
     ListPreference mWeatherSyncInterval;
     EditTextPreference mCustomWeatherLoc;
     // CheckBoxPreference mUseCustomApp;
@@ -70,11 +70,10 @@ public class Weather extends AOKPPreferenceFragment implements
         mWeatherSyncInterval.setSummary(Integer.toString(WeatherPrefs.getRefreshInterval(mContext))
                 + getResources().getString(R.string.weather_refresh_interval_minutes));
 
-        // mStatusBarLocation = (ListPreference)
-        // findPreference("statusbar_location");
-        // mStatusBarLocation.setOnPreferenceChangeListener(this);
-        // mStatusBarLocation.setValue(Settings.System.getInt(getContentResolver(),
-        // Settings.System.WEATHER_STATUSBAR_STYLE, 1) + "");
+        mStatusBarLocation = (ListPreference) findPreference("statusbar_location");
+        mStatusBarLocation.setOnPreferenceChangeListener(this);
+        mStatusBarLocation.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUSBAR_WEATHER_STYLE, 2) + "");
 
         mCustomWeatherLoc = (EditTextPreference) findPreference("custom_location");
         mCustomWeatherLoc.setOnPreferenceChangeListener(this);
@@ -230,15 +229,14 @@ public class Weather extends AOKPPreferenceFragment implements
             preference.setSummary(newVal);
             return WeatherPrefs.setCustomLocation(mContext, newVal);
 
-            // } else if (preference == mStatusBarLocation) {
-            //
-            // String newVal = (String) newValue;
-            // return Settings.System.putInt(getActivity().getContentResolver(),
-            // Settings.System.WEATHER_STATUSBAR_STYLE,
-            // Integer.parseInt(newVal));
-            // }
-        }
-        return false;
+         } else if (preference == mStatusBarLocation) {
+
+             String newVal = (String) newValue;
+             return Settings.System.putInt(getActivity().getContentResolver(),
+                     Settings.System.STATUSBAR_WEATHER_STYLE,
+                     Integer.parseInt(newVal));
+         }
+         return false;
     }
 
     @Override

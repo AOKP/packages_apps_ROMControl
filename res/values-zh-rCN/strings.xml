@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ROM 控制面板</string>
+    <string name="app_name">ROM控制</string>
 
-    <!-- Header Strings -->
+    <!-- Header Strings 标题文本 -->
     <string name="user_interface">界面</string>
     <string name="cancel">取消</string>
     <string name="ok">确认</string>
@@ -11,9 +11,9 @@
     <string name="header_statusbar">状态栏</string>
     <string name="header_navbar">导航栏</string>
     <string name="toggles_layout">开关</string>
-    <string name="general_ui">综合设置</string>
+    <string name="general_ui">常规界面</string>
     <string name="clock">时钟</string>
-    <string name="battery">电池</string>
+    <string name="battery">电量</string>
     <string name="nav_bar">导航栏</string>
     <string name="led_options">LED 选项</string>
     <string name="header_system">系统</string>
@@ -23,21 +23,21 @@
     <string name="tools">工具</string>
     <string name="performance">性能</string>
 
-    <!-- Activity titles defined in AndroidManifest.xml -->
+    <!-- Activity titles defined in AndroidManifest.xml Activity标题 -->
     <string name="title_about">关于 AOKP</string>
-    <string name="title_ui">用户界面综合设置</string>
+    <string name="title_ui">常规界面设置</string>
     <string name="title_statusbar_clock">状态栏时钟</string>
     <string name="title_statusbar_toggles">状态栏开关</string>
-    <string name="title_statusbar_battery">状态栏电池</string>
+    <string name="title_statusbar_battery">状态栏电量</string>
     <string name="title_navbar">导航栏</string>
     <string name="title_led">LED 控制</string>
     <string name="title_lockscreens">锁屏选项</string>
     <string name="title_sound">声音设置</string>
     <string name="title_weather">天气设置</string>
     <string name="title_performance">性能设置</string>
-    <string name="title_clipboard_share">分享到剪切板</string>
+    <string name="title_clipboard_share">分享到剪贴板</string>
 
-    <!-- Header Summaries -->
+    <!-- Header Summaries 标题说明 -->
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
@@ -49,114 +49,105 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
 
-    <!-- Menu Strings -->
+    <!-- Menu Strings 菜单文本 -->
     <string name="menu_nav_bar_reset">重置导航栏</string>
+    <string name="menu_user_interface_reset">重置背景壁纸</string>
+    <string name="menu_lockscreens_reset">重置锁屏壁纸</string>
 
-    <!-- General Strings -->
+    <!-- General Strings 常用文本 -->
     <string name="advanced_settings">高级设置</string>
-    <string name="misc_short">其他</string>
+    <string name="misc_short">其它</string>
     <string name="custom_app_icon_successfully">"的图标已成功设置！"</string>
 
-    <!-- Shortcut picker -->
+    <!-- Shortcut picker 快捷方式选择器 -->
     <string name="use_custom_app_title">使用自定义程序</string>
-    <string name="use_custom_app_summary">使用自定义程序代替最近使用程序列表</string>
+    <string name="use_custom_app_summary">使用自定义程序代替近期使用程序列表</string>
     <string name="select_custom_app_title">选择自定义程序</string>
     <string name="group_applications">应用程序</string>
 
-    <!-- About -->
+    <!-- About 关于 -->
     <string name="devs">开发团队</string>
-    <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP 网站</string>
     <string name="aokp_website_summary">www.aokp.co - 在这里可以找到最新发布的消息</string>
     <string name="aokp_source_title">AOKP 源代码</string>
-    <string name="aokp_source_summary">AOKP 完全开源。你可以在github.com/aokp找到最新的源代码。</string>
-    <string name="aokp_review_title">AOKP 代码审核平台</string>
-    <string name="aokp_review_summary">AOKP的Gerrit Review代码审核平台，用于提交与测试补丁。</string>
-    <string name="aokp_irc_title">加入到我们的IRC聊天室中</string>
-    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="aokp_source_summary">AOKP 完全开源，你随时可以在 github.com/aokp 找到最新的源代码</string>
+    <string name="aokp_review_title">AOKP 代码评审平台</string>
+    <string name="aokp_review_summary">AOKP 的 Gerrit ，用于评审提交代码和测试补丁</string>
+    <string name="aokp_irc_title">加入我们的 IRC 聊天室</string>
     <string name="about_aokp">关于 AOKP</string>
-    <string name="about_aokp_summary">@null</string>
-    <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
-    <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
-    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
-    <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
-    <string name="donate_khasmek">http://nyan.cat</string>
-    <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
-    <string name="donate_adam">http://goo.gl/fRj57</string>
-    <string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
-    <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
-    <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
-    <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
-    <string name="donate_sixstringsg">https://www.paypal.com/cgi-bin/webscr?cmd=_flow&amp;SESSION=U3KYhTz6itHx8bKvx-F79EFVY5sQKKQu9f1ftkJ1pevFN6wdaJLu8yz3Y3e&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d1e83f46a36995b3856cef1e18897ad75</string>
-    <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
-    <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
-    <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
-    <!-- General UI -->
+    <!-- General UI 常规界面 -->
     <string name="enable_volume_options">启用音量面板</string>
     <string name="status_bar_notif_count_title">显示通知数量</string>
-    <string name="status_bar_notif_count_summary">在状态栏中显示等待查看的通知数量</string>
+    <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
     <string name="disable_bootanimation_title">禁用开机动画</string>
-    <string name="notification_wallpaper_title">选择通知下拉菜单壁纸</string>
-    <string name="notification_wallpaper_summary">你可以在本页的菜单中移除所设置的壁纸</string>
+    <string name="notification_wallpaper_title">选择通知栏背景</string>
+    <string name="notification_wallpaper_summary">在本页面按菜单键可选择重置背景壁纸</string>
     <string name="notif_wallpaper_alpha_title">通知栏背景透明度</string>
     <string name="alpha_dialog_title">设置透明度</string>
+    <string name="custom_carrier_label_title">自定义运营商名称</string>
+    <string name="custom_carrier_label_explain">请输入新名称，输入空字符将恢复为原始名称。</string>
+    <string name="custom_carrier_label_notset">当前未自定义运营商名称</string>
 
-    <!-- Statusbar | Toggles -->
-    <string name="toggle_style_title">开关样式</string>
-    <string name="toggle_style_summary">选择使用图标或者文字作为开关显示</string>
-    <string name="toggles_layout_title">开关排版模式</string>
-    <string name="enabled_toggles_title">已启用的开关</string>
-    <string name="enabled_toggles_summary">选择需要显示的开关</string>
-    <string name="toggles_display_dialog">选择需要使用的开关</string>
+    <!-- Statusbar | Toggles 状态栏|开关-->
+    <string name="toggle_style_title">开关风格</string>
+    <string name="toggle_style_summary">显示开关的图标或文字</string>
+    <string name="toggles_layout_title">开关布局</string>
+    <string name="enabled_toggles_title">已启用开关</string>
+    <string name="enabled_toggles_summary">选择要显示的开关</string>
+    <string name="toggles_display_dialog">选择所需的开关</string>
     <string name="toggles_display_close">关闭</string>
-    <string name="toggles_order_title">开关顺序</string>
-    <string name="toggles_order_summary">调整开关顺序</string>
-    <string name="brightness_location_title">亮度条位置</string>
+    <string name="toggles_order_title">开关排序</string>
+    <string name="toggles_order_summary">排列要显示的切换开关顺序</string>
+    <string name="brightness_location_title">亮度调整的位置</string>
     <string name="reset_toggles_title">重置开关</string>
     <string name="reset_toggles_summary">重置所有开关的设置及顺序</string>
     <string name="toggle_button_alpha_title">开关指示器透明度</string>
     <string name="toggle_btn_enabled_color_title">已启用开关颜色</string>
     <string name="toggle_btn_disabled_color_title">未启用开关颜色</string>
+    <string name="toggle_btn_background_title">开关背景透明度</string>
+    <string name="toggle_text_color_title">开关文字颜色</string>
 
-    <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">时钟样式</string>
-    <string name="title_clock_ampm_entries">上午/下午样式</string>
-    <string name="enable_clock_weekday">日子显示</string>
-    <string name="enable_clock_weekday_summary">在时间前面显示当天为星期几</string>
+    <!-- Statusbar | Clock 状态栏|时钟 -->
+    <string name="clock_title_enable">时钟风格</string>
+    <string name="title_clock_ampm_entries">上午/下午 风格</string>
+    <string name="enable_clock_weekday">星期计数</string>
+    <string name="enable_clock_weekday_summary">在时间前简短显示星期几</string>
+    <string name="colors">颜色</string>
+    <string name="clock_color_title">时钟颜色</string>
 
-    <!-- Toggle Strings to be called from device overlays -->
+    <!-- Toggle Strings to be called from device overlays 开关文本 -->
     <string name="toggle_airplane_mode">飞行模式</string>
     <string name="toggle_auto_rotate">屏幕自动旋转</string>
     <string name="toggle_bluetooth">蓝牙</string>
     <string name="toggle_fast_charge">快速充电</string>
-    <string name="toggle_gps">GPS定位</string>
-    <string name="toggle_lte">LTE网络</string>
+    <string name="toggle_gps">GPS 定位</string>
+    <string name="toggle_lte">LTE 网络</string>
     <string name="toggle_data">数据网络</string>
-    <string name="toggle_nfc">NFC近场通讯</string>
+    <string name="toggle_nfc">NFC 近场通讯</string>
     <string name="toggle_silent">静音</string>
-    <string name="toggle_swagger">Swagger</string>
+    <string name="toggle_swagger">手机自爆</string>
     <string name="toggle_sync">数据同步</string>
-    <string name="toggle_torch">手电筒</string>
-    <string name="toggle_2g">2G模式</string>
-    <string name="toggle_usb_tether">USB 移动数据共享</string>
-    <string name="toggle_vibrate">震动</string>
-    <string name="toggle_wifi_ap">无线热点</string>
-    <string name="toggle_wifi">Wi-Fi无线网络</string>
+    <string name="toggle_torch">LED 灯光</string>
+    <string name="toggle_2g">2G 模式</string>
+    <string name="toggle_usb_tether">USB 网络共享</string>
+    <string name="toggle_vibrate">振动</string>
+    <string name="toggle_wifi_ap">Wi-Fi 热点</string>
+    <string name="toggle_wifi">Wi-Fi 无线网络</string>
 
-    <!-- Statusbar | Battery -->
-    <string name="battery_icon">电池图标样式</string>
-    <string name="battery_not_title">在下拉通知栏中显示电池图标</string>
-    <string name="battery_not_summary">电池图标将在下拉通知栏中“清除全部通知”图标原所在位置显示</string>
+    <!-- Statusbar | Battery 状态栏|电量 -->
+    <string name="battery_icon">电量图标风格</string>
+    <string name="battery_not_title">在下拉通知栏中显示电量图标</string>
+    <string name="battery_not_summary">电量图标将在下拉通知栏中“清除全部通知”图标位置显示</string>
     <string name="battery_bar">电量条位置</string>
     <string name="battery_bar_color">电量条颜色</string>
     <string name="battery_bar_cat">电量条选项</string>
-    <string name="battery_bar_style_title">电量条样式</string>
+    <string name="battery_bar_style_title">电量条风格</string>
     <string name="battery_bar_thickness_title">电量条厚度</string>
-    <string name="battery_bar_animate_title">充电动画效果</string>
-    <string name="battery_bar_animate_summary">充电动画效果可能会影响使用体验。请酌情使用该选项。</string>
+    <string name="battery_bar_animate_title">充电动画</string>
+    <string name="battery_bar_animate_summary">充电动画可能会给您不好的用户体验，请自行决定是否启用。</string>
 
-    <!-- Color Picker -->
+    <!-- Color Picker 颜色选择器-->
     <string name="dialog_color_picker">颜色选择器</string>
     <string name="press_color_to_apply">点击颜色应用</string>
     <string name="arrow_right">→</string>
@@ -164,189 +155,220 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">设置</string>
-    <string name="ics_color">Holo</string>
+    <string name="ics_color">默认</string>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar 导航栏 -->
     <string name="navigation_bar">导航栏</string>
-    <string name="navbar_button_cat">导航栏按钮</string>
+    <string name="navbar_button_cat">导航栏按键</string>
     <string name="title_pref_menu_display">菜单键位置</string>
-    <string name="summary_pref_menu_display">记得在使用大的菜单键时将原来的小菜单键隐藏起来！</string>
+    <string name="summary_pref_menu_display">使用大菜单键时请务必选择移除菜单键</string>
     <string name="title_pref_navigation_menu_display">菜单键可见性</string>
     <string name="summary_pref_navigation_menu_display">你想菜单键在什么情况下显示？</string>
-    <string name="navbar_qty_title">导航栏按钮数量</string>
-    <string name="navbar_qty_summary">设置导航栏按钮数量</string>
+    <string name="navbar_qty_title">导航栏按键数量</string>
+    <string name="navbar_qty_summary">设置导航栏按键数量</string>
     <string name="navbar_action_title">按键 %1$s 的行为与图标</string>
-    <string name="button_transparency_title">导航栏按钮透明度</string>
+    <string name="button_transparency_title">导航栏按键透明度</string>
     <string name="navbar_longpress_title">按键 %1$s 长按时的行为</string>
-    <string name="navbar_action_home">主页</string>
+    <string name="navbar_action_home">主屏幕</string>
     <string name="navbar_action_back">返回</string>
-    <string name="navbar_action_recents">最近使用程序</string>
+    <string name="navbar_action_recents">近期任务</string>
     <string name="navbar_action_search">搜索</string>
     <string name="navbar_action_menu">菜单</string>
-    <string name="navbar_action_kill">结束当前程序</string>
-    <string name="navbar_action_power">电源键</string>
+    <string name="navbar_action_kill">结束程序</string>
+    <string name="navbar_action_power">电源</string>
     <string name="navbar_action_notifications">通知栏</string>
-    <string name="navbar_action_none">空白</string>
+    <string name="navbar_action_none">空</string>
     <string name="navbar_widgets">导航栏小部件</string>
     <string name="navbar_enable_bar">启用导航栏</string>
-    <string name="navigation_bar_height_title">导航栏高度</string>
+    <string name="navigation_bar_height_title">导航栏高度（竖屏）</string>
     <string name="navigation_bar_height_summary">设置竖屏时导航栏高度</string>
-    <string name="navigation_bar_height_landscape_title">横屏时导航栏高度</string>
+    <string name="navigation_bar_height_landscape_title">导航栏高度（横屏）</string>
     <string name="navigation_bar_height_landscape_summary">设置横屏时导航栏高度</string>
     <string name="navigation_bar_width_title">导航栏宽度</string>
-    <string name="navigation_bar_width_summary">设置当导航栏在一侧时的宽度</string>
+    <string name="navigation_bar_width_summary">设置当导航栏在侧面时的宽度</string>
     <string name="navbar_enable_dialog_title">需要重启生效！</string>
-    <string name="navbar_enable_dialog_msg">你 <b>应该</b> 立刻重启以确保所有东西能够正常运作！</string>
-    <string name="navbar_enable_dialog_negative">我会稍后重启</string>
-    <string name="navbar_enable_dialog_Positive">立刻重启！</string>
+    <string name="navbar_enable_dialog_msg">你 <b>应该</b> 立刻重启以确保一切能够正常运行！</string>
+    <string name="navbar_enable_dialog_negative">稍后重启</string>
+    <string name="navbar_enable_dialog_Positive">立刻重启</string>
     <string name="navbar_height_dialog_title">需要重启生效！</string>
     <string name="navbar_height_dialog_summary">请重启以确保导航栏高度设置正常！</string>
-    <string name="navbar_height_dialog_button_later">我会稍后重启</string>
-    <string name="navbar_height_dialog_button_reboot">立刻重启！</string>
-    <string name="navigation_bar_tint_title">导航栏按钮颜色</string>
-    <string name="navigation_bar_glow_tint_title">导航栏按钮按下发光颜色</string>
-    <string name="navigation_bar_glow_tint_summary">当你按下一个按钮时，它的背景会发光。使用该选项来改变发光的颜色。</string>
-    <string name="glow_times_title">按钮发光动画</string>
+    <string name="navbar_height_dialog_button_later">稍后重启</string>
+    <string name="navbar_height_dialog_button_reboot">立刻重启</string>
+    <string name="navigation_bar_tint_title">导航栏按键颜色</string>
+    <string name="navigation_bar_glow_tint_title">导航栏按键按下发光颜色</string>
+    <string name="navigation_bar_glow_tint_summary">当你按下一个按键时，它的背景会发光。使用该选项来改变发光的颜色。</string>
+    <string name="glow_times_title">按键发光动画</string>
     <string name="glow_times_off">关闭</string>
     <string name="glow_times_superquick">超快</string>
     <string name="glow_times_quick">快</string>
     <string name="glow_times_normal">正常</string>
 
-    <!-- LED -->
+    <!-- LED 灯光 -->
     <string name="led_on">LED 点亮</string>
-    <string name="led_time_on">LED点亮时间长度</string>
+    <string name="led_time_on">LED 点亮时间长度</string>
     <string name="led_off">LED 熄灭</string>
-    <string name="led_time_off">LED熄灭时间长度</string>
-    <string name="led_color_click">点击LED以改变其颜色</string>
-    <string name="title_led_screen_on">屏幕点亮时仍然点亮LED</string>
+    <string name="led_time_off">LED 熄灭时间长度</string>
+    <string name="led_time_seconds">" 秒"</string>
+    <string name="led_color_click">点击 LED 以改变其颜色</string>
+    <string name="title_led_screen_on">屏幕开启时仍然点亮 LED</string>
+    <string name="led_custom_app">选择程序</string>
+    <string name="led_custom_default">默认</string>
+    <string name="led_change_app">变更</string>
+    <string name="led_delete_app">删除</string>
+    <string name="led_keep_app">保持</string>
+    <string name="led_custom_title">自定义 LED 程序</string>
+    <string name="led_custom_message">"你想要变更应用程序: "</string>
+    <string name="led_test_notification">测试 LED</string>
+    <string name="led_test_notification_message_now">"现在测试应用程序： "</string>
+    <string name="led_test_notification_message_note">".  请关闭屏幕后观察 LED 灯。在你观察完毕之前不要点击确定按钮。"</string>
+    <string name="led_test_ok">确定</string>
 
-    <!-- Sound -->
-    <string name="less_notification_sounds_title">重复通知铃声限制</string>
-    <string name="less_notification_sounds_summary">限制每个程序在设定限时内只播放一次通知铃声</string>
-    <string name="title_headphone_audio_mode">插入耳机时的动作</string>
+    <!-- Sound 声音 -->
+    <string name="less_notification_sounds_title">限制通知提示音</string>
+    <string name="less_notification_sounds_summary">在设定时间内应用程序通知提示音只响应一次。</string>
+    <string name="title_headphone_audio_mode">接入耳机时的动作</string>
     <string name="summary_headphone_audio_mode">设定在插入或拔出耳机时的声音设置</string>
-    <string name="title_bt_audio_mode">蓝牙A2DP连接时的动作</string>
-    <string name="summary_bt_audio_mode">设定在蓝牙A2DP连接时的声音设置</string>
+    <string name="title_bt_audio_mode">蓝牙 A2DP 连接时的动作</string>
+    <string name="summary_bt_audio_mode">设定在蓝牙 A2DP 音频设备连接时的声音设置</string>
     <string name="headphones_mode_no_action">不进行任何动作</string>
-    <string name="headphones_mode_vibrate">震动模式</string>
+    <string name="headphones_mode_vibrate">振动模式</string>
     <string name="headphones_mode_silent">静音模式</string>
     <string name="title_flip_mode">手机朝下时的声音模式</string>
     <string name="summary_flip_mode">设定在当你把手机翻面时的声音设置</string>
     <string name="flip_cat_title">手机朝下时的动作</string>
     <string name="title_timeout_sec">屏幕超时时间</string>
-    <string name="summary_timeout_sec">在翻面感应器关闭后屏幕熄灭的时间</string>
+    <string name="summary_timeout_sec">在翻转感应器关闭后屏幕熄灭的时间</string>
     <string name="title_down_sec">手机朝下判定时间</string>
     <string name="summary_down_sec">判定手机为朝下所需的时间</string>
     <string name="flip_action_positive">确定</string>
     <string name="flip_dialog_title">功能说明</string>
-    <string name="flip_dialog_msg">你的电话将会在你将它翻面后自动进入你所设定的震动或静音模式。
-        默认在翻面1.5秒后进入所选模式。
-		默认在进入所选模式后15秒以后，关闭翻面模式。
-        备注：**若要返回正常模式，你需要在进入翻面模式后，将屏幕点亮超过所设定的“屏幕超时时间”。</string>
-    <string name="summary_phone_flip_mode">来电响铃时翻面以进入静音状态</string>
+    <string name="flip_dialog_msg">你的手机将会在你将它翻转后自动进入所设定的振动或静音模式。\n默认在翻转1.5秒后进入所选模式。\n默认在进入所选模式后15秒以后，关闭翻转模式。\n备注：**若要返回正常模式，你需要在进入翻转模式后，将屏幕点亮超过所设定的“屏幕超时时间”。</string>
+    <string name="summary_phone_flip_mode">来电响铃时翻转进入静音状态</string>
     <string name="title_phone_flip_mode">来电响铃静音</string>
 
-    <!-- Lockscreen -->
+    <!-- Lockscreen 锁屏 -->
     <string name="lockscreen_quick_unlock_control_title">快速密码解锁</string>
-    <string name="lockscreen_quick_unlock_control_summary">在输入密码后无需点回车键直接解锁</string>
+    <string name="lockscreen_quick_unlock_control_summary">在输入密码后无需点击确认直接解锁</string>
     <string name="lockscreen_battery_title">锁屏电量百分比</string>
     <string name="lockscreen_battery_summary">总是在锁屏中显示电量百分比</string>
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">使用音量键唤醒设备</string>
     <string name="lockscreen_wallpaper_title">选择锁屏壁纸</string>
-    <string name="lockscreen_wallpaper_summary">你可以通过本页的菜单将锁屏壁纸移除</string>
+    <string name="lockscreen_wallpaper_summary">在本页面按菜单键可选择重置锁屏壁纸</string>
+    <string name="lockscreen_text_color_title">锁屏文字颜色</string>
     <string name="title_lockscreen_user_timeout_override">延时锁定屏幕</string>
     <string name="summary_lockscreen_user_timeout_override">在手动关闭屏幕后，使用安卓系统的延时设置进行屏幕锁定。默认的设置为当设备超时自动进入待机状态时，才会根据系统的延时设定进行锁定操作。</string>
+    <string name="lockscreen_weather_cat">天气</string>
+    <string name="lockscreen_weather_title">启用</string>
+    <string name="lockscreen_weather_summary">锁屏中显示天气，你需要在ROM控制中开启天气服务</string>
+    <string name="lockscreen_weather_type_title">锁屏天气风格</string>
+    <string name="lockscreen_weather_type_summary">选择可视化风格或文字风格的天气信息</string>
+    <string name="lockscreen_calendar_cat">日历</string>
+    <string name="lockscreen_calendar_title">启用</string>
+    <string name="lockscreen_calendar_summary">在锁屏界面显示日历</string>
+    <string name="lockscreen_calendar_sources_title">日历来源</string>
+    <string name="lockscreen_calendar_sources_summary">选择需查看的日历</string>
+    <string name="lockscreen_calendar_dialog">选择所需的日历</string>
+    <string name="lockscreen_calendar_close">关闭</string>
+    <string name="lockscreen_calendar_range_title">时间范围</string>
+    <string name="lockscreen_calendar_range_summary">选择显示的时间范围</string>
+    <string name="lockscreen_calendar_use_colors_title">使用颜色标识</string>
+    <string name="lockscreen_calendar_use_colors_summary">启用将日历中标识的颜色</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">不显示进行中的活动</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">启用将不显示已经在进行中的活动</string>
+    <string name="lockscreen_calendar_flip_title">多个活动</string>
+    <string name="lockscreen_calendar_flip_summary">启用将以弹出动画显示多个活动</string>
+    <string name="lockscreen_calendar_interval_title">弹出间隔</string>
+    <string name="lockscreen_calendar_interval_summary">选择弹出动画速度</string>
 
-    <!-- Weather -->
-    <string name="weather_enable">打开天气</string>
+    <!-- Weather 天气 -->
+    <string name="weather_enable">启用天气</string>
     <string name="weather_enable_summary">设定是否自动获取天气信息并在系统中显示</string>
-    <string name="weather_use_custom_location">使用自定义地点</string>
-    <string name="weather_use_custom_location_summary">设定自定义地点能稍微省电一些，否则将使用网络定位来设定你所在的位置。</string>
+    <string name="weather_use_custom_location">使用自定义位置</string>
+    <string name="weather_use_custom_location_summary">使用自定义的位置可节省一些电量；否则使用网络定位确定你的位置</string>
     <string name="weather_custom_location_dialog_title">设定你的位置</string>
-    <string name="weather_custom_location_dialog_message">请确保你所输入的格式与下面样板一致！设置错误的地点将会使你不能获取天气信息，并且可能导致无法预知的问题。\n\n样板： New York,NY // New York, NY // 10033 // London, England</string>
-    <string name="weather_custom_location_title">自定义地点</string>
-    <string name="weather_show_location_title">显示地点</string>
-    <string name="weather_show_location_summary">显示你的地点</string>
+    <string name="weather_custom_location_dialog_message">"务必遵循规则！设置一个无效的位置您将无法获得天气更新，并可能导致意外的行为。\n\n举例: New York，NY // New York， NY // 10033 // London， England"</string>
+    <string name="weather_custom_location_title">自定义位置</string>
+    <string name="weather_show_location_title">显示位置</string>
+    <string name="weather_show_location_summary">显示你的位置</string>
     <string name="weather_refresh_interval">刷新间隔</string>
     <string name="weather_refresh_interval_minutes">" 分钟"</string>
     <string name="weather_use_celcius">公制单位</string>
-    <string name="weather_use_celcius_summary">启用该选项将会使天气温度以摄氏度显示，风速以千米每小时显示。</string>
-    <string name="weather_statusbar_style">状态栏天气样式</string>
+    <string name="weather_use_celcius_summary">启用该选项将会使天气温度以摄氏度显示，风速以 km/h 显示。</string>
+    <string name="weather_statusbar_style">状态栏天气风格</string>
     <string name="weather_start_custom_app">启动自定义程序</string>
-    <string name="weather_start_custom_app_summary">在点击天气图标时启动自定义程序</string>
+    <string name="weather_start_custom_app_summary">点击天气图标时启动自定义应用程序</string>
     <string name="weather_custom_app_title">自定义程序</string>
     <string name="weather_custom_app_dialog_title">选择你的应用程序</string>
     <string name="weather_custom_app_dialog_message">暂时仅显示程序包名称</string>
     <string name="weather_refreshing">正在获取天气更新！</string>
     <string name="weather_loc_warning_title">无法获得地理位置信息！</string>
-    <string name="weather_loc_warning_msg">"通过网络获得地理位置的功能目前已被禁用。这将使天气功能无法获得你当前所在地的天气信息。请设置一个自定义地点，或打开从网络获得所在地理位置的功能。"</string>
+    <string name="weather_loc_warning_msg">"通过网络获得地理位置功能目前已禁用。无法从网络获得你当前的位置和天气信息。请设置自定义位置或启用从网络获得所在位置的功能。"</string>
     <string name="weather_loc_warning_positive">"打开网络位置"</string>
     <string name="weather_loc_warning_negative">"不使用网络位置"</string>
+    <string name="menu_weather_get_weather">获取天气信息</string>
 
-    <!-- Weather Codes -->
+    <!-- Weather Codes 天气代码 -->
     <string name="weather_0">龙卷风</string>
     <string name="weather_1">热带风暴</string>
     <string name="weather_2">飓风</string>
-    <string name="weather_3">剧烈的雷雨</string>
+    <string name="weather_3">强雷雨</string>
     <string name="weather_4">雷雨</string>
     <string name="weather_5">雨夹雪</string>
-    <string name="weather_6">雨夹雹</string>
-    <string name="weather_7">雪夹雹</string>
-    <string name="weather_8">寒冷的毛毛雨</string>
-    <string name="weather_9">毛毛雨</string>
+    <string name="weather_6">雨夹冰</string>
+    <string name="weather_7">雪夹冰</string>
+    <string name="weather_8">小冻雨</string>
+    <string name="weather_9">小雨</string>
     <string name="weather_10">冻雨</string>
     <string name="weather_11">阵雨</string>
     <string name="weather_12">阵雨</string>
-    <string name="weather_13">雪花</string>
-    <string name="weather_14">微量雪花</string>
-    <string name="weather_15">大雪</string>
+    <string name="weather_13">阵雪</string>
+    <string name="weather_14">小雪</string>
+    <string name="weather_15">中雪</string>
     <string name="weather_16">雪</string>
     <string name="weather_17">冰雹</string>
-    <string name="weather_18">雨雪</string>
-    <string name="weather_19">灰尘</string>
-    <string name="weather_20">大雾</string>
-    <string name="weather_21">烟雾</string>
-    <string name="weather_22">薄雾</string>
-    <string name="weather_23">烈风</string>
-    <string name="weather_24">大风</string>
+    <string name="weather_18">冰雨</string>
+    <string name="weather_19">沙尘</string>
+    <string name="weather_20">雾</string>
+    <string name="weather_21">霾</string>
+    <string name="weather_22">烟尘</string>
+    <string name="weather_23">大风</string>
+    <string name="weather_24">风</string>
     <string name="weather_25">寒冷</string>
     <string name="weather_26">多云</string>
     <!-- mostly cloudy (night) -->
-    <string name="weather_27">主要多云</string>
+    <string name="weather_27">大部多云</string>
     <!-- mostly cloudy (day) -->
-    <string name="weather_28">主要多云</string>
+    <string name="weather_28">大部多云</string>
     <!-- partly cloudy (night) -->
     <string name="weather_29">局部多云</string>
     <!-- partly cloudy (day) -->
     <string name="weather_30">局部多云</string>
     <!-- clear (night) -->
-    <string name="weather_31">晴朗</string>
-    <string name="weather_32">阳光普照</string>
+    <string name="weather_31">清新</string>
+    <string name="weather_32">明媚</string>
     <!-- fair (night) -->
-    <string name="weather_33">晴朗</string>
+    <string name="weather_33">晴</string>
     <!-- fair (day) -->
-    <string name="weather_34">晴朗</string>
-    <string name="weather_35">雨夹冰雹</string>
+    <string name="weather_34">晴</string>
+    <string name="weather_35">小雨夹雹</string>
     <string name="weather_36">炎热</string>
-    <string name="weather_37">局部风暴</string>
-    <string name="weather_38">零散雷雨</string>
-    <string name="weather_39">零散雷雨</string>
-    <string name="weather_40">零散阵雨</string>
+    <string name="weather_37">地区性雷雨</string>
+    <string name="weather_38">雷阵雨</string>
+    <string name="weather_39">雷阵雨</string>
+    <string name="weather_40">阵雨</string>
     <string name="weather_41">大雪</string>
-    <string name="weather_42">零散雨雪</string>
-    <string name="weather_43">零散雨雪</string>
+    <string name="weather_42">零星阵雪</string>
+    <string name="weather_43">零星阵雪</string>
     <string name="weather_44">局部多云</string>
     <string name="weather_45">雷阵雨</string>
-    <string name="weather_46">小雨夹雪</string>
-    <string name="weather_47">局部雷阵雨</string>
-    <!-- Forecase unavailable -->
-    <string name="weather_3200"></string>
+    <string name="weather_46">阵雪</string>
+    <string name="weather_47">地区性雷雨</string>
 
-    <!-- Miscellaneous -->
-    <string name="location_unavailable">无法为天气更新获得当前地理位置信息</string>
+    <!-- Miscellaneous 杂项 -->
+    <string name="location_unavailable">无法获取当前位置的天气信息</string>
 
-    <!-- cardinal directions -->
+    <!-- cardinal directions 基本方向 -->
     <string name="direction_north">北</string>
     <string name="direction_north_east">东北</string>
     <string name="direction_east">东</string>
@@ -355,21 +377,19 @@
     <string name="direction_south_west">西南</string>
     <string name="direction_west">西</string>
     <string name="direction_north_west">西北</string>
-    <string name="lockscreen_weather_title">锁屏天气</string>
-    <string name="lockscreen_weather_summary">在锁屏中显示天气信息。你需要先在ROM控制面板中启用天气服务。</string>
-    <string name="lockscreen_weather_type_title">锁屏天气样式</string>
-    <string name="lockscreen_weather_type_summary">选择显示图形天气或是文字天气信息</string>
-    <string name="menu_weather_get_weather">获取天气信息</string>
 
-    <!-- Share to clipboard -->
-    <string name="clipboard_notification">已复制到剪切板。</string>
+    <!-- Share to clipboard 分享到剪贴板 -->
+    <string name="clipboard_notification">复制到剪切板</string>
 
-    <!-- Performance -->
+    <!-- Performance 性能 -->
+    <string name="tab_cpu_settings">"CPU 设置"</string>
+    <string name="tab_voltage_settings">"电压设置"</string>
+    <string name="tab_other_settings">"其它设置"</string>
     <string name="current_speed">当前频率</string>
     <string name="current_max">当前最高频率:</string>
     <string name="current_min">当前最低频率:</string>
-    <string name="governor">Governor工作模式</string>
-    <string name="io">IO 调度器</string>
+    <string name="governor">调节器</string>
+    <string name="io">IO 调度</string>
     <string name="sob">启动时进行设置</string>
     <string name="dt_free_memory">系统内存清理器</string>
     <string name="prefcat_free_memory">空闲内存</string>
@@ -379,6 +399,10 @@
     <string name="ps_free_memory_boot">在启动时自动设置为上面的数值</string>
     <string name="pt_fast_charge_boot">快速充电</string>
     <string name="ps_fast_charge_boot">启动时自动启用快速充电</string>
+    <string name="ps_volt_mhz_voltage">" MHz 电压"</string>
+    <string name="ps_volt_save">"保存"</string>
+    <string name="ps_volt_current_voltage">"当前电压： "</string>
+    <string name="ps_volt_setting_to_apply">"设定电压： "</string>
     <string name="pt_volt_control">电压控制</string>
     <string name="ps_volt_control">为每个工作频率设置工作电压</string>
     <string name="not_supported">你的内核不支持电压控制</string>
@@ -386,10 +410,10 @@
     <string name="freq">频率</string>
     <string name="current">mV 当前设置</string>
     <string name="saved">mV 已保存设置</string>
-    <string name="kernel">内核微调设置 (如果支持的话)</string>
-    <string name="fast_charge_warning">每次重启以后，你都无法将手机连接到电脑进行数据传输！\n\n此选项将会在每次重启后打开快速充电模式。在该模式中，你*只能够*充电！</string>
+    <string name="kernel">内核微调设置 (如果支持)</string>
+    <string name="fast_charge_warning">开启快速充电后你将无法连接到电脑！\n\n该设置在每次重启后应用。开启后你将*只能*对手机充电！</string>
     <string name="fast_charge_notification_title">快速充电已启用！</string>
-    <string name="fast_charge_notification_message">设备正处于只允许充电状态！</string>
-    <string name="prefcat_other_tweaks">其他微调</string>
+    <string name="fast_charge_notification_message">设备正处于“仅充电”状态！</string>
+    <string name="prefcat_other_tweaks">其它微调</string>
 
 </resources>

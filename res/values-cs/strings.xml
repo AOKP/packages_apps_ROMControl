@@ -73,7 +73,10 @@
   <string name="notification_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
   <string name="notif_wallpaper_alpha_title">Průhlednost pozadí notifikací</string>
   <string name="alpha_dialog_title">Nastavit hodnotu průhlednosti</string>
-  
+  <string name="custom_carrier_label_title">Vlastní název operátora</string>
+  <string name="custom_carrier_label_explain">Vložit nový název. Vložením prázdného názvu dojde k návratu k výchozímu.</string>
+  <string name="custom_carrier_label_notset">Vlastní název není momentálně nastaven</string>
+
   <string name="toggle_style_title">Styl přepínačů</string>
   <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
   <string name="toggles_layout_title">Vzhled přepínačů</string>
@@ -94,6 +97,8 @@
   <string name="title_clock_ampm_entries">AM/PM styl</string>
   <string name="enable_clock_weekday">Den v týdnu</string>
   <string name="enable_clock_weekday_summary">Zobrazit den v týdnu před hodinami</string>
+  <string name="colors">Barvy</string>
+  <string name="clock_color_title">Barva hodin</string>
   
   <string name="toggle_airplane_mode">Režim letadlo</string>
   <string name="toggle_auto_rotate">Automatická rotace</string>
@@ -184,6 +189,14 @@
   <string name="led_time_off">Doba po kterou je LED zhasnuta</string>
   <string name="led_color_click">Kliknutím na LED je možné změnit barvu</string>
   <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
+  <string name="led_custom_app">Vybraná aplikace</string>
+  <string name="led_change_app">Změnit</string>
+  <string name="led_delete_app">Vymazat</string>
+  <string name="led_keep_app">Ponechat</string>
+  <string name="led_custom_title">Vlastní LED aplikace</string>
+  <string name="led_edit_button">-</string>
+  <string name="led_test_notification">Testovat LED</string>
+  <string name="led_test_ok">OK</string>
   
   <string name="less_notification_sounds_title">Méně častá zvuková upozornění</string>
   <string name="less_notification_sounds_summary">Omezit zvuková upozornění jednotlivých aplikací, aby hrála pouze jednou za zvolený čas.</string>
@@ -217,6 +230,7 @@
   <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
   <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
   <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
+  <string name="lockscreen_text_color_title">Barva textu na zamčené obrazovce</string>
   <string name="title_lockscreen_user_timeout_override">Čekat na zamknutí obrazovky</string>
   <string name="summary_lockscreen_user_timeout_override">Pokud dojde k ručnímu vypnutí obrazovky, zařízení nebude zamknuto dokud nevyprší nastavený čas pro automatické vypínání obrazovky. Výchozí chování používá časovač pouze se zapnutým displejem.</string>
   

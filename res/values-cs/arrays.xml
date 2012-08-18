@@ -112,6 +112,10 @@
 		<item>9 sekund</item>
 		<item>10 sekund</item>
 	</string-array>
+  <string-array name="phone_call_flip_entries">
+    <item>Zakázán</item>
+    <item>Povolen</item>
+  </string-array>
   <string-array name="flip_entries">
     <item>0.5 sekundy</item>
 		<item>1 sekunda</item>

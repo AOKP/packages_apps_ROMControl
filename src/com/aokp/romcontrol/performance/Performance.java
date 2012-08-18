@@ -33,11 +33,11 @@ public class Performance extends AOKPActivity {
         bar.setTitle(R.string.title_performance);
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
-        mTabsAdapter.addTab(bar.newTab().setText("CPU Settings"),
+        mTabsAdapter.addTab(bar.newTab().setText(getResources().getString(R.string.tab_cpu_settings)),
                 CPUSettings.class, null);
-        mTabsAdapter.addTab(bar.newTab().setText("Voltage Settings"),
+        mTabsAdapter.addTab(bar.newTab().setText(getResources().getString(R.string.tab_voltage_settings)),
                 VoltageControlSettings.class, null);
-        mTabsAdapter.addTab(bar.newTab().setText("Other Settings"),
+        mTabsAdapter.addTab(bar.newTab().setText(getResources().getString(R.string.tab_other_settings)),
                 OtherSettings.class, null);
 
         if (savedInstanceState != null) {

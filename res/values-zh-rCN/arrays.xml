@@ -15,20 +15,20 @@
     </string-array>
     <string-array name="clock_ampm_entries">
         <item>不显示</item>
-        <item>较小的上午/下午</item>
-        <item>正常大小的上午/下午</item>
+        <item>小号 上午/下午</item>
+        <item>正常 上午/下午</item>
         <item>ProTekk O\'Clock</item>
     </string-array>
     <string-array name="clock_weekday_entries">
         <item>不显示</item>
-        <item>显示较小的日子</item>
-        <item>显示正常大小的日子</item>
+        <item>小号</item>
+        <item>正常</item>
     </string-array>
 
     <!-- toggle style -->
     <string-array name="toggle_style_entries">
-        <item>使用图标</item>
-        <item>使用文字</item>
+        <item>仅图标</item>
+        <item>仅文字</item>
     </string-array>
 	<string-array name="toggles_layout_images">
         <item>@drawable/toggle_layout_switches</item>
@@ -61,28 +61,28 @@
 
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">
-        <item>只显示图标</item>
-        <item>只显示文字</item>
+        <item>仅图标</item>
+        <item>仅文字</item>
         <item>带文字的图标</item>
         <item>带居中文字的图标</item>
-        <item>CircleMOD</item>
+        <item>环形电量图标</item>
         <item>隐藏</item>
     </string-array>
 
     <!-- NavBar -->
     <string-array name="pref_navigation_menu_entries">
-        <item>右边显示</item>
-        <item>左边显示</item>
-        <item>两边都显示</item>
-        <item>移除，不显示</item>
+        <item>居右</item>
+        <item>居左</item>
+        <item>两侧</item>
+        <item>移除</item>
     </string-array>
 
     <!-- right is the default, easier to keep 0 as first index -->
     <string-array name="pref_navigation_menu_display_entries">
-        <item>默认果冻豆设置</item>
-        <item>总是显示隐藏图标</item>
-        <item>总是显示</item>
-        <item>默认果冻豆设置，有隐藏图标时显示隐藏图标</item>
+        <item>默认</item>
+        <item>总是隐藏按键</item>
+        <item>总是显示按键</item>
+        <item>需要时自动显示（默认隐藏）</item>
     </string-array>
     <string-array name="navigation_bar_qty_entries">
         <item>1</item>
@@ -92,17 +92,17 @@
         <item>5</item>
     </string-array>
     <string-array name="navbar_button_entries">
-        <item>主页</item>
+        <item>主屏幕</item>
         <item>返回</item>
-        <item>最近使用程序</item>
+        <item>近期任务</item>
         <item>搜索</item>
         <item>菜单</item>
-        <item>显示小部件</item>
-        <item>结束当前程序</item>
-        <item>电源键</item>
+        <item>小部件</item>
+        <item>结束程序</item>
+        <item>电源</item>
         <item>通知栏</item>
         <item>自定义程序</item>
-        <item>空白</item>
+        <item>空</item>
     </string-array>
     <string-array name="navigation_bar_width_entries">
         <item>42 dp (默认)</item>
@@ -139,7 +139,7 @@
     </string-array>
     <string-array name="battery_bar_style_entries">
         <item>正常</item>
-        <item>中线镜像</item>
+        <item>居中</item>
     </string-array>
     <string-array name="battery_bar_thickness_entries">
         <item>1 dp</item>

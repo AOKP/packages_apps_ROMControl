@@ -215,9 +215,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                 ad.setTitle(R.string.led_test_notification);
                 ad.setIcon(R.mipmap.ic_launcher);
                 String appName = unicornApps.get(place);
-                ad.setMessage("Now testing LED for: " + appName
-                        + ".  Please turn off your screen to see the LED. " +
-                        "Don't hit OK on this popup till you're done viewing the LED color.");
+                ad.setMessage(getResources().getString(R.string.led_test_notification_message_now) + appName
+                        + getResources().getString(R.string.led_test_notification_message_note));
                 ad.setPositiveButton(R.string.led_test_ok,
                         new DialogInterface.OnClickListener() {
                             @Override
@@ -324,7 +323,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private String getTimeString(int milliSeconds) {
         float seconds = (float) milliSeconds / 1000;
         DecimalFormat df = new DecimalFormat("0.#");
-        String time = df.format(seconds) + " seconds";
+        String time = df.format(seconds) + getResources().getString(R.string.led_time_seconds);
 
         return time;
     }
@@ -399,7 +398,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         String currentApps = Settings.System.getString(mActivity.getContentResolver(),
                 Settings.System.LED_CUSTOM_VALUES);
 
-        unicornApps.add("Default");
+        unicornApps.add(getResources().getString(R.string.led_custom_default));
         unicornApps.add("+App");
 
         if (DEBUG)
@@ -472,7 +471,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
             AlertDialog.Builder ad = new AlertDialog.Builder(mActivity);
             ad.setTitle(R.string.led_custom_title);
             ad.setIcon(R.mipmap.ic_launcher);
-            ad.setMessage("Would you like to change the app: " + selectedApp + "?");
+            ad.setMessage(getResources().getString(R.string.led_custom_message) + selectedApp + "?");
             ad.setPositiveButton(R.string.led_change_app,
                     new DialogInterface.OnClickListener() {
                         @Override

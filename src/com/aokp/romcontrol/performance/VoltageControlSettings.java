@@ -249,9 +249,9 @@ public class VoltageControlSettings extends Fragment {
                 });
 
                 dialog = new AlertDialog.Builder(mActivity)
-                        .setTitle(mVoltage.getFreq() + " MHz Voltage")
+                        .setTitle(mVoltage.getFreq() + getResources().getString(R.string.ps_volt_mhz_voltage))
                         .setView(voltageDialog)
-                        .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getResources().getString(R.string.ps_volt_save), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         removeDialog(id);
                         final String value = voltageEdit.getText().toString();
@@ -371,11 +371,11 @@ public class VoltageControlSettings extends Fragment {
             }
 
             public void setCurrentMV(final String currentMv) {
-               mCurrentMV.setText("Current voltage: " + currentMv + " mV");
+               mCurrentMV.setText(getResources().getString(R.string.ps_volt_current_voltage) + currentMv + " mV");
             }
 
             public void setSavedMV(final String savedMv) {
-               mSavedMV.setText("Setting to apply: " + savedMv + " mV");
+               mSavedMV.setText(getResources().getString(R.string.ps_volt_setting_to_apply) + savedMv + " mV");
             }
         }
     }

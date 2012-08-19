@@ -70,6 +70,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String PREF_LOCKSCREEN_MENU_UNLOCK = "lockscreen_menu_unlock";
+    private static final String PREF_SHOW_LOCK_BEFORE_UNLOCK = "show_lock_before_unlock";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_LOCKSCREEN_WEATHER = "lockscreen_weather";
     private static final String PREF_LOCKSCREEN_WEATHER_TYPE = "lockscreen_weather_type";
@@ -100,6 +101,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenMenuUnlock;
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mVolumeRockerWake;
+    CheckBoxPreference mShowLockBeforeUnlock;
     CheckBoxPreference mLockscreenWeather;
     ListPreference mLockscreenWeatherType;
     CheckBoxPreference mLockscreenCalendar;
@@ -140,6 +142,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mVolumeRockerWake = (CheckBoxPreference) findPreference(PREF_VOLUME_ROCKER_WAKE);
         mVolumeRockerWake.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN, false));
+
+        mShowLockBeforeUnlock = (CheckBoxPreference) findPreference(PREF_SHOW_LOCK_BEFORE_UNLOCK);
+        mShowLockBeforeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SHOW_LOCK_BEFORE_UNLOCK, 0) == 1);
 
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
@@ -236,6 +242,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mShowLockBeforeUnlock) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_LOCK_BEFORE_UNLOCK,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLockscreenTargets) {
             Intent i = new Intent(getActivity(), ROMControlActivity.class)

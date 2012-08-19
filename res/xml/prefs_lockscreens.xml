@@ -16,6 +16,11 @@
             android:title="@string/lockscreen_menu_unlock_title"
             android:summary="@string/lockscreen_menu_unlock_summary" />
 
+    <CheckBoxPreference
+        android:key="show_lock_before_unlock"
+        android:title="@string/show_lock_before_unlock_title"
+        android:summary="@string/show_lock_before_unlock_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

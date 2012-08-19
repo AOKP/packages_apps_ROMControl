@@ -23,6 +23,11 @@
         android:summary="@string/summary_lockscreen_user_timeout_override" />
 
     <CheckBoxPreference
+        android:key="show_lock_before_unlock"
+        android:title="@string/show_lock_before_unlock_title"
+        android:summary="@string/show_lock_before_unlock_summary" />
+
+    <CheckBoxPreference
         android:key="volume_rocker_wake"
         android:title="@string/volume_rocker_wake_title"
         android:summary="@string/volume_rocker_wake_summary"

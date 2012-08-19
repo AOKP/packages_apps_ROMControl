@@ -274,6 +274,8 @@
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
+    <string name="show_lock_before_unlock_title">Show lockscreen before unlock</string>
+    <string name="show_lock_before_unlock_summary">Show standard lockscreen before secure unlock</string>
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>

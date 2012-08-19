@@ -45,6 +45,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
+    private static final String PREF_SHOW_LOCK_BEFORE_UNLOCK = "show_lock_before_unlock";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
 
@@ -61,6 +62,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     ColorPickerPreference mLockscreenTextColor;
     CheckBoxPreference mVolumeRockerWake;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
+    CheckBoxPreference mShowLockBeforeUnlock;
 
     ArrayList<String> keys = new ArrayList<String>();
 
@@ -85,6 +87,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
         mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
                 .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
+
+        mShowLockBeforeUnlock = (CheckBoxPreference) findPreference(PREF_SHOW_LOCK_BEFORE_UNLOCK);
+        mShowLockBeforeUnlock.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SHOW_LOCK_BEFORE_UNLOCK, 0) == 1);
 
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
@@ -123,6 +129,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         } else if (preference == mLockScreenTimeoutUserOverride) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mShowLockBeforeUnlock) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_LOCK_BEFORE_UNLOCK,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLockscreenWallpaper) {

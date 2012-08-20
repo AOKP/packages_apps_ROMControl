@@ -54,6 +54,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String PREF_IME_SWITCHER = "ime_switcher";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -67,6 +68,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
+    CheckBoxPreference mShowImeSwitcher;
 
     Random randomGenerator = new Random();
 
@@ -98,6 +100,10 @@ public class UserInterface extends AOKPPreferenceFragment {
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
+        mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext().getContentResolver(),
+                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
@@ -222,6 +228,11 @@ public class UserInterface extends AOKPPreferenceFragment {
             })
             .create()
             .show();
+            return true;
+        } else if (preference == mShowImeSwitcher) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    isCheckBoxPreferenceChecked(preference));
             return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());

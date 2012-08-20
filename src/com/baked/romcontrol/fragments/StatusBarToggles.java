@@ -46,6 +46,8 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
     private static final String PREF_TOGGLE_BTN_ENABLED_COLOR = "toggle_btn_enabled_color";
     private static final String PREF_TOGGLE_BTN_DISABLED_COLOR = "toggle_btn_disabled_color";
     private static final String PREF_TOGGLE_BTN_ALPHA = "toggle_btn_alpha";
+    private static final String PREF_TOGGLE_BTN_BACKGROUND = "toggle_btn_background";
+    private static final String PREF_TOGGLE_TEXT_COLOR = "toggle_text_color";
 
     Preference mEnabledToggles;
     Preference mLayout;
@@ -55,8 +57,10 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
     Preference mResetToggles;
     CheckBoxPreference mTogglesVisible;
     SeekBarPreference mToggleBtnAlpha;
+    SeekBarPreference mBtnBackground;
     ColorPickerPreference mBtnEnabledColor;
     ColorPickerPreference mBtnDisabledColor;
+    ColorPickerPreference mToggleTextColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,6 +104,17 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
         mToggleBtnAlpha = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_ALPHA);
         mToggleBtnAlpha.setInitValue((int) (btnAlpha * 100));
         mToggleBtnAlpha.setOnPreferenceChangeListener(this);
+
+        float btnBgAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(),
+                Settings.System.STATUSBAR_TOGGLES_BACKGROUND, 0.0f);
+        mBtnBackground = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_BACKGROUND);
+        mBtnBackground.setInitValue((int) (btnBgAlpha * 100));
+        mBtnBackground.setOnPreferenceChangeListener(this);
+
+        mToggleTextColor = (ColorPickerPreference) findPreference(
+                PREF_TOGGLE_TEXT_COLOR);
+        mToggleTextColor.setOnPreferenceChangeListener(this);
 
         mLayout = findPreference("toggles");
 
@@ -187,7 +202,7 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
             Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
-         
+
 
         } else if (preference == mToggleStyle) {
             int val = Integer.parseInt((String) newValue);
@@ -222,6 +237,19 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
             float val = Float.parseFloat((String) newValue);
             result = Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_ALPHA, val / 100);
+
+        } else if (preference == mToggleTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_TEXT_COLOR, intHex);
+
+        } else if (preference == mBtnBackground) {
+            float val = Float.parseFloat((String) newValue);
+            result = Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_BACKGROUND, val / 100);
         }
         return result;
     }

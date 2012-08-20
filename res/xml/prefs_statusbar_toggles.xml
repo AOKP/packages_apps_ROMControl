@@ -41,6 +41,11 @@
             android:dependency="toggles_visible" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="toggle_text_color"
+            android:title="@string/toggle_text_color_title"
+            android:defaultValue="#33B5E5" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="toggle_btn_enabled_color"
             android:title="@string/toggle_btn_enabled_color_title"
             android:defaultValue="#33B5E5"
@@ -51,6 +56,10 @@
             android:title="@string/toggle_btn_disabled_color_title"
             android:defaultValue="#4C4C4C"
             android:dependency="toggles_visible" />
+
+        <com.baked.romcontrol.widgets.SeekBarPreference
+            android:key="toggle_btn_background"
+            android:title="@string/toggle_btn_background_title" />
 
         <com.baked.romcontrol.widgets.SeekBarPreference
             android:key="toggle_btn_alpha"

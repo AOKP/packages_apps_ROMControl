@@ -26,7 +26,7 @@
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">Sobre AOKP</string>
     <string name="title_ui">Ajustes interfaz de usuario</string>
-    <string name="title_statusbar_clock">Reloj en barra de estado</string>
+    <string name="title_statusbar_clock">Ajustes del reloj en la barra de estado</string>
     <string name="title_statusbar_toggles">Interruptores en barra de estado</string>
     <string name="title_statusbar_battery">Bateria en barra de estado</string>
     <string name="title_navbar">Barra de navegación</string>
@@ -59,22 +59,22 @@
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Usar aplicación personalizada</string>
-    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
-    <string name="select_custom_app_title">Seleccionar apliacación</string>
-    <string name="group_applications">Apliaciones</string>
+    <string name="use_custom_app_summary">Emplear aplicaciones personalizadas en lugar de aplicaciones recientes</string>
+    <string name="select_custom_app_title">Seleccionar aplicación</string>
+    <string name="group_applications">Aplicaciones</string>
 
     <!-- About -->
     <string name="devs">El equipo</string>
-    <string name="aokp">Android Open Kang Project</string>
-    <string name="aokp_website_title">AOKP Website</string>
-    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+    <string name="aokp">Proyecto Android Open Kang</string>
+    <string name="aokp_website_title">Pagina web de AOKP</string>
+    <string name="aokp_website_summary">www.aokp.co - Puede ver todos los nuevos lanzamientos aquí.</string>
     <string name="aokp_source_title">AOKP Source</string>
-    <string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
-    <string name="aokp_review_title">AOKP Code Review</string>
-    <string name="aokp_review_summary">AOKP\'s Gerrit Review instance for submitting and testing patches</string>
-    <string name="aokp_irc_title">Join us on IRC</string>
+    <string name="aokp_source_summary">AOKP es en sus totalidad de codigo abierto. Siempre puede comprobar el último código fuente en github.com/aokp</string>
+    <string name="aokp_review_title">AOKP revisión de codigo</string>
+    <string name="aokp_review_summary">AOKP\'s Gerrit Revisión e instancia para presentar y probar los parches</string>
+    <string name="aokp_irc_title">Únase a nosotros en el canal IRC</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">About AOKP</string>
+    <string name="about_aokp">Sobre AOKP</string>
     <string name="about_aokp_summary">@null</string>
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
@@ -93,75 +93,75 @@
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
     <!-- General UI -->
-    <string name="enable_volume_options">Enable Volume Panel</string>
-    <string name="status_bar_notif_count_title">Show notification count</string>
-    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
-    <string name="disable_bootanimation_title">Disable boot animation</string>
-    <string name="notification_wallpaper_title">Choose notification background</string>
-    <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
-    <string name="alpha_dialog_title">Set alpha value</string>
-    <string name="custom_carrier_label_title">Custom carrier label</string>
-    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
-    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="enable_volume_options">Activar panel de volumen</string>
+    <string name="status_bar_notif_count_title">Ver contador de notificaciones</string>
+    <string name="status_bar_notif_count_summary">Mostrar el número de notificaciones pendientes en la barra de estado</string>
+    <string name="disable_bootanimation_title">Desactivar animacion de inicio</string>
+    <string name="notification_wallpaper_title">Elige el fondo en las notificaciónes</string>
+    <string name="notification_wallpaper_summary">Se puede quitar el fondo de pantalla desde el menú de esta ventana</string>
+    <string name="notif_wallpaper_alpha_title">transparancia del fondo de las notificaciones</string>
+    <string name="alpha_dialog_title">Ajustar transparencia</string>
+    <string name="custom_carrier_label_title">personalizar nombre de la operadora</string>
+    <string name="custom_carrier_label_explain">Escribir el nuevo nombre. No poner nada volvera a poner la operadora por defecto.</string>
+    <string name="custom_carrier_label_notset">No se ha puesto ningun nombre personalizado de operadora</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_style_title">Toggle style</string>
-    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
-    <string name="toggles_layout_title">Toggle Layout</string>
-    <string name="enabled_toggles_title">Enabled toggles</string>
-    <string name="enabled_toggles_summary">Choose toggles to display</string>
-    <string name="toggles_display_dialog">Choose which toggles to use</string>
-    <string name="toggles_display_close">Close</string>
-    <string name="toggles_order_title">Toggle order</string>
-    <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
-    <string name="brightness_location_title">Brightness location</string>
-    <string name="reset_toggles_title">Reset toggles</string>
-    <string name="reset_toggles_summary">Reset all toggles and their order</string>
-    <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
-    <string name="toggle_btn_enabled_color_title">Enabled indicator color</string>
-    <string name="toggle_btn_disabled_color_title">Disabled indicator color</string>
-    <string name="toggle_btn_background_title">Toggle background alpha</string>
-    <string name="toggle_text_color_title">Toggle text color</string>
+    <string name="toggle_style_title">Aspecto de los interruptores</string>
+    <string name="toggle_style_summary">mostrar iconos o texto en los interruptores.</string>
+    <string name="toggles_layout_title">Tipo de interruptores</string>
+    <string name="enabled_toggles_title">Activar interruptores</string>
+    <string name="enabled_toggles_summary">Interruptores  que se visualizaran</string>
+    <string name="toggles_display_dialog">Escoger interruptores a visualizar</string>
+    <string name="toggles_display_close">Cerrar</string>
+    <string name="toggles_order_title">Orden de los interruptores</string>
+    <string name="toggles_order_summary">Escoger el orden de visualización de los interruptores</string>
+    <string name="brightness_location_title">Ubicación del brillo</string>
+    <string name="reset_toggles_title">Valor por defecto de interruptores</string>
+    <string name="reset_toggles_summary">Vuelve a poner los valores por defecto</string>
+    <string name="toggle_button_alpha_title">Transparencia de interruptores</string>
+    <string name="toggle_btn_enabled_color_title">Color de interruptor activo</string>
+    <string name="toggle_btn_disabled_color_title">Color de interruptor desactivado</string>
+    <string name="toggle_btn_background_title">Transparencia del fondo</string>
+    <string name="toggle_text_color_title">Color del texto</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Clock style</string>
-    <string name="title_clock_ampm_entries">AM/PM style</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
-    <string name="colors">Colors</string>
-    <string name="clock_color_title">Clock color</string>
+    <string name="clock_title_enable">Ubicación del reloj</string>
+    <string name="title_clock_ampm_entries">Formato AM/PM</string>
+    <string name="enable_clock_weekday">Dia de la semana</string>
+    <string name="enable_clock_weekday_summary">Muestra el dia de la semana antes de la hora</string>
+    <string name="colors">Color</string>
+    <string name="clock_color_title">Color de la hora</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Airplane Mode</string>
     <string name="toggle_auto_rotate">Auto Rotate</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Fast Charge</string>
+    <string name="toggle_fast_charge">Carga rapida</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
-    <string name="toggle_data">Data</string>
+    <string name="toggle_data">Datos</string>
     <string name="toggle_nfc">NFC</string>
-    <string name="toggle_silent">Silent</string>
+    <string name="toggle_silent">Silencio</string>
     <string name="toggle_swagger">Swagger</string>
-    <string name="toggle_sync">Sync</string>
-    <string name="toggle_torch">Torch</string>
+    <string name="toggle_sync">Sincronizar</string>
+    <string name="toggle_torch">Linterna</string>
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Tether</string>
-    <string name="toggle_vibrate">Vibrate</string>
+    <string name="toggle_vibrate">Vibrar</string>
     <string name="toggle_wifi_ap">Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_icon">Battery icon style</string>
-    <string name="battery_not_title">Battery icon in notifications</string>
+    <string name="battery_icon">Aspecto del indicador de bateria</string>
+    <string name="battery_not_title">Indicador de bateria en barra de notificaciones</string>
     <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
-    <string name="battery_bar">Battery bar location</string>
-    <string name="battery_bar_color">Battery bar color</string>
-    <string name="battery_bar_cat">Battery bar options</string>
-    <string name="battery_bar_style_title">Battery bar style</string>
-    <string name="battery_bar_thickness_title">Battery bar thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="battery_bar">Ubicación de la barra</string>
+    <string name="battery_bar_color">Color de la barra</string>
+    <string name="battery_bar_cat">Nivel de bateria en forma de barra</string>
+    <string name="battery_bar_style_title">Colocacion de la barra</string>
+    <string name="battery_bar_thickness_title">Ancho de la barra</string>
+    <string name="battery_bar_animate_title">Animación mientras carga la bateria</string>
+    <string name="battery_bar_animate_summary">La animación de carga puede dar lugar a una experiencia de usuario pobre. Activela solo si lo cree conveniente.</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -174,66 +174,66 @@
     <string name="ics_color">Holo</string>
 
     <!-- Navigation Bar -->
-    <string name="navigation_bar">Navigation bar</string>
+    <string name="navigation_bar">Barra de navegación</string>
     <string name="navbar_button_cat">Navigation bar buttons</string>
-    <string name="title_pref_menu_display">Menu location</string>
+    <string name="title_pref_menu_display">Ubicación del menú</string>
     <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
-    <string name="title_pref_navigation_menu_display">Menu visibility</string>
-    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
-    <string name="navbar_qty_title">Navigation button quantity</string>
-    <string name="navbar_qty_summary">Choose the number of navigation buttons</string>
-    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
-    <string name="button_transparency_title">Nav button transparency</string>
-    <string name="navbar_longpress_title">Button %1$s longpress action</string>
-    <string name="navbar_action_home">Home</string>
-    <string name="navbar_action_back">Back</string>
-    <string name="navbar_action_recents">Recents</string>
-    <string name="navbar_action_search">Search</string>
-    <string name="navbar_action_menu">Menu</string>
-    <string name="navbar_action_kill">Kill task</string>
-    <string name="navbar_action_power">Power</string>
-    <string name="navbar_action_notifications">Notifications</string>
-    <string name="navbar_action_none">Empty</string>
-    <string name="navbar_widgets">Navigation Bar Widgets</string>
-    <string name="navbar_enable_bar">Enable bar</string>
-    <string name="navigation_bar_height_title">Navigation bar height</string>
-    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
-    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
-    <string name="navigation_bar_width_title">Navigation bar width.</string>
+    <string name="title_pref_navigation_menu_display">Visibiliadad del menú</string>
+    <string name="summary_pref_navigation_menu_display">Como y cuando quiere que aparezca el menú</string>
+    <string name="navbar_qty_title">Numero de botones</string>
+    <string name="navbar_qty_summary">Numero de botones que se visualizaran</string>
+    <string name="navbar_action_title">Boton %1$s acción &amp; icono</string>
+    <string name="button_transparency_title">Tranparencia de la barra</string>
+    <string name="navbar_longpress_title">Boton %1$s Accion pulsación larga</string>
+    <string name="navbar_action_home">Inicio</string>
+    <string name="navbar_action_back">Volver</string>
+    <string name="navbar_action_recents">Recientes</string>
+    <string name="navbar_action_search">Busqueda</string>
+    <string name="navbar_action_menu">Menú</string>
+    <string name="navbar_action_kill">Matar aplicación</string>
+    <string name="navbar_action_power">Apagar</string>
+    <string name="navbar_action_notifications">Notificaciones</string>
+    <string name="navbar_action_none">Vacio</string>
+    <string name="navbar_widgets">Widgets barra de navegación</string>
+    <string name="navbar_enable_bar">Activar barra</string>
+    <string name="navigation_bar_height_title">Ajustar altura en modo retrato</string>
+    <string name="navigation_bar_height_summary">Para cambiar la altura de la barra en modo retrato.</string>
+    <string name="navigation_bar_height_landscape_title">Ajustar altura en modo apaisado</string>
+    <string name="navigation_bar_height_landscape_summary">Para cambiar la altura de la barra en modo apaisado.</string>
+    <string name="navigation_bar_width_title">Ajustar el ancho.</string>
     <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
-    <string name="navbar_enable_dialog_title">Reboot required!</string>
+    <string name="navbar_enable_dialog_title">¡Es necesiario reiniciar!</string>
     <string name="navbar_enable_dialog_msg">You <b>should</b> reboot right now to make sure everything works properly!</string>
-    <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
-    <string name="navbar_enable_dialog_Positive">Reboot now!</string>
-    <string name="navbar_height_dialog_title">Reboot required!</string>
-    <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
-    <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
-    <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_tint_title">Navigation bar color</string>
-    <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
-    <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
-    <string name="glow_times_title">Button glow animation</string>
-    <string name="glow_times_off">Off</string>
-    <string name="glow_times_superquick">Super quick</string>
-    <string name="glow_times_quick">Quick</string>
+    <string name="navbar_enable_dialog_negative">Reiniciar mas tarde</string>
+    <string name="navbar_enable_dialog_Positive">Reiniciar ahora</string>
+    <string name="navbar_height_dialog_title">¡Es necesario reiniciar!</string>
+    <string name="navbar_height_dialog_summary">¡Por favor, reinicie para que el cambio se haga efectivo!</string>
+    <string name="navbar_height_dialog_button_later">Reiniciar mas trade</string>
+    <string name="navbar_height_dialog_button_reboot">Reiniciar ahora</string>
+    <string name="navigation_bar_tint_title">Color de la barra de navegación</string>
+    <string name="navigation_bar_glow_tint_title">Color del boton al presionar</string>
+    <string name="navigation_bar_glow_tint_summary">Para modificar el color del resplandor al presionar el boton.</string>
+    <string name="glow_times_title">Animación del boton</string>
+    <string name="glow_times_off">Apagado</string>
+    <string name="glow_times_superquick">Muy rapida</string>
+    <string name="glow_times_quick">Rapida</string>
     <string name="glow_times_normal">Normal</string>
 
     <!-- LED -->
-    <string name="led_on">LED On</string>
-    <string name="led_time_on">Time Light Is On</string>
-    <string name="led_off">LED Off</string>
-    <string name="led_time_off">Time Light Is Off</string>
-    <string name="led_color_click">Click on the LED to change the color</string>
-    <string name="title_led_screen_on">LED flash while screen ON</string>
-    <string name="led_custom_app">Selected App</string>
-    <string name="led_change_app">Change</string>
-    <string name="led_delete_app">Delete</string>
-    <string name="led_keep_app">Keep</string>
+    <string name="led_on">LED Encendido</string>
+    <string name="led_time_on">Tiempo del led encendido</string>
+    <string name="led_off">LED Apagado</string>
+    <string name="led_time_off">Tiempo del led apagado</string>
+    <string name="led_color_click">Presionar el LED para cambiar el color</string>
+    <string name="title_led_screen_on">LED con la pantalla encendida</string>
+    <string name="led_custom_app">Seleccionar app</string>
+    <string name="led_change_app">Cambiar</string>
+    <string name="led_delete_app">Borrar</string>
+    <string name="led_keep_app">Mantener</string>
     <string name="led_custom_title">Custom LED Apps</string>
     <string name="led_edit_button">-</string>
-    <string name="led_test_notification">Test LED</string>
-    <string name="led_test_ok">OK</string>
+    <string name="led_test_notification">Probar LED</string>
+    <string name="led_test_ok">Acceptar</string>
 
     <!-- Sound -->
     <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
@@ -276,11 +276,11 @@
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
 
     <!-- Weather -->
-    <string name="weather_enable">Enable weather</string>
-    <string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
-    <string name="weather_use_custom_location">Use custom location</string>
-    <string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise network-location is used to determine your location.</string>
-    <string name="weather_custom_location_dialog_title">Set your location</string>
+    <string name="weather_enable">Activar tiempo</string>
+    <string name="weather_enable_summary">Para ver información del tiempo y mostrarla en la pantalla.</string>
+    <string name="weather_use_custom_location">Ubicacion personalizada</string>
+    <string name="weather_use_custom_location_summary">Poner una ubicación personalizada ahora bateria. De lo contrario se usara la ubicación de red para determinar su ubicación.</string>
+    <string name="weather_custom_location_dialog_title">Ajustar su ubicación</string>
     <string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
     <string name="weather_custom_location_title">Custom location</string>
     <string name="weather_show_location_title">Show location</string>

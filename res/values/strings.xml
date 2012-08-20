@@ -104,6 +104,8 @@
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="ime_switcher_title">Show IME Switcher</string>
+    <string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>

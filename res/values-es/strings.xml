@@ -67,14 +67,14 @@
     <string name="devs">El equipo</string>
     <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP Website</string>
-    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+    <string name="aokp_website_summary">www.aokp.co - buscar todos los nuevos lanzamientos aquí.</string>
     <string name="aokp_source_title">AOKP Source</string>
-    <string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
-    <string name="aokp_review_title">AOKP Code Review</string>
-    <string name="aokp_review_summary">AOKP\'s Gerrit Review instance for submitting and testing patches</string>
-    <string name="aokp_irc_title">Join us on IRC</string>
+    <string name="aokp_source_summary">AOKP es en sus totalidad de codigo abierto. Siempre puede comprobar el último código fuente en github.com/aokp</string>
+    <string name="aokp_review_title">AOKP revisión de codigo</string>
+    <string name="aokp_review_summary">AOKP\'s Gerrit Revisión e instancia para presentar y probar los parches</string>
+    <string name="aokp_irc_title">Únase a nosotros en el canal IRC</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">About AOKP</string>
+    <string name="about_aokp">Sobre AOKP</string>
     <string name="about_aokp_summary">@null</string>
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
@@ -93,61 +93,61 @@
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
     <!-- General UI -->
-    <string name="enable_volume_options">Enable Volume Panel</string>
-    <string name="status_bar_notif_count_title">Show notification count</string>
-    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
-    <string name="disable_bootanimation_title">Disable boot animation</string>
-    <string name="notification_wallpaper_title">Choose notification background</string>
-    <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
-    <string name="alpha_dialog_title">Set alpha value</string>
-    <string name="custom_carrier_label_title">Custom carrier label</string>
-    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
+    <string name="enable_volume_options">Activar panel de volumen</string>
+    <string name="status_bar_notif_count_title">Ver contador de notificaciones</string>
+    <string name="status_bar_notif_count_summary">Mostrar el número de notificaciones pendientes en la barra de estado</string>
+    <string name="disable_bootanimation_title">Desactivar boot animation</string>
+    <string name="notification_wallpaper_title">Elige el fondo en las notificaciónes</string>
+    <string name="notification_wallpaper_summary">Se puede quitar el fondo de pantalla en el menú de esta ventana</string>
+    <string name="notif_wallpaper_alpha_title">Color alpha para el fondo de las notificaciones</string>
+    <string name="alpha_dialog_title">Ajustar valor alpha</string>
+    <string name="custom_carrier_label_title">personalizar nombre de la operadora</string>
+    <string name="custom_carrier_label_explain">Entrar un nuevo nombre. No poner nada volvera a dejar la oparadora por defecto.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_style_title">Toggle style</string>
-    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
-    <string name="toggles_layout_title">Toggle Layout</string>
-    <string name="enabled_toggles_title">Enabled toggles</string>
-    <string name="enabled_toggles_summary">Choose toggles to display</string>
-    <string name="toggles_display_dialog">Choose which toggles to use</string>
-    <string name="toggles_display_close">Close</string>
-    <string name="toggles_order_title">Toggle order</string>
-    <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
-    <string name="brightness_location_title">Brightness location</string>
-    <string name="reset_toggles_title">Reset toggles</string>
+    <string name="toggle_style_title">Aspecto de los interruptores</string>
+    <string name="toggle_style_summary">mostrar iconos o texto en los interruptores.</string>
+    <string name="toggles_layout_title">Tipo de interrupores</string>
+    <string name="enabled_toggles_title">Activar interruptores</string>
+    <string name="enabled_toggles_summary">Interruptores  que se visualizaran</string>
+    <string name="toggles_display_dialog">Escoger interrupores a visualizar</string>
+    <string name="toggles_display_close">Cerrar</string>
+    <string name="toggles_order_title">Orden de los interruptores</string>
+    <string name="toggles_order_summary">Escoger el orden de visualización de los interruptores</string>
+    <string name="brightness_location_title">Ubicación del brillo</string>
+    <string name="reset_toggles_title">Valor por defecto de interruptores</string>
     <string name="reset_toggles_summary">Reset all toggles and their order</string>
-    <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
-    <string name="toggle_btn_enabled_color_title">Enabled indicator color</string>
-    <string name="toggle_btn_disabled_color_title">Disabled indicator color</string>
-    <string name="toggle_btn_background_title">Toggle background alpha</string>
-    <string name="toggle_text_color_title">Toggle text color</string>
+    <string name="toggle_button_alpha_title">Transparencia de interruptores</string>
+    <string name="toggle_btn_enabled_color_title">Color de interruptor activo</string>
+    <string name="toggle_btn_disabled_color_title">Color de interruptor desactivado</string>
+    <string name="toggle_btn_background_title">Transparencia del fondo</string>
+    <string name="toggle_text_color_title">Color del texto</string>
 
     <!-- Statusbar | Clock -->
-    <string name="clock_title_enable">Clock style</string>
-    <string name="title_clock_ampm_entries">AM/PM style</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
-    <string name="colors">Colors</string>
-    <string name="clock_color_title">Clock color</string>
+    <string name="clock_title_enable">Ubicación del reloj</string>
+    <string name="title_clock_ampm_entries">Tipo de hora AM/PM</string>
+    <string name="enable_clock_weekday">Dia de la semana</string>
+    <string name="enable_clock_weekday_summary">Muestra el dia de la semana antes de la hora</string>
+    <string name="colors">Colores</string>
+    <string name="clock_color_title">Color de la hora</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Airplane Mode</string>
     <string name="toggle_auto_rotate">Auto Rotate</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Fast Charge</string>
+    <string name="toggle_fast_charge">Carga rapida</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
-    <string name="toggle_data">Data</string>
+    <string name="toggle_data">Datos</string>
     <string name="toggle_nfc">NFC</string>
-    <string name="toggle_silent">Silent</string>
+    <string name="toggle_silent">Silencio</string>
     <string name="toggle_swagger">Swagger</string>
-    <string name="toggle_sync">Sync</string>
-    <string name="toggle_torch">Torch</string>
+    <string name="toggle_sync">Sincronizar</string>
+    <string name="toggle_torch">Linterna</string>
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Tether</string>
-    <string name="toggle_vibrate">Vibrate</string>
+    <string name="toggle_vibrate">Vibrar</string>
     <string name="toggle_wifi_ap">Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
 

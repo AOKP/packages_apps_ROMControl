@@ -143,6 +143,8 @@
     <string name="toggle_mediaplay">Media play</string>
     <string name="toggle_medianext">Media next</string>
     <string name="toggle_mediaprevious">Media previous</string>
+    <string name="toggle_btn_background_title">Toggle background alpha</string>
+    <string name="toggle_text_color_title">Toggle text color</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
@@ -199,7 +201,7 @@
     <string name="navigation_bar_width_title">Navigation bar width.</string>
     <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
     <string name="navbar_enable_dialog_title">Reboot required!</string>
-    <string name="navbar_enable_dialog_msg">Please reboot to enable/disable the navigation bar properly!</string>
+    <string name="navbar_enable_dialog_msg">You <b>should</b> reboot right now to make sure everything works properly!</string>
     <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
     <string name="navbar_enable_dialog_Positive">Reboot now!</string>
     <string name="navbar_height_dialog_title">Reboot required!</string>
@@ -227,6 +229,7 @@
     <string name="lockscreen_target_empty">Empty</string>
     <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <string name="display_lockscreen_rotation_title">Enable lockscreen rotation</string>
 
     <!-- Lock Screen Weather -->
     <string name="lockscreen_weather_title">Weather</string>
@@ -300,6 +303,8 @@
     <string name="lockscreen_battery_status_title">Battery status</string>
     <string name="lockscreen_battery_status_charging">Only when charging</string>
     <string name="lockscreen_battery_status_alwayson">Always on</string>
+    <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
+    <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
 
     <!-- Lock screen shortcuts -->
     <string name="wifi_save">Save</string>

@@ -93,7 +93,7 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </string-array>   
+    </string-array>
 
 
     <!-- Battery styles -->
@@ -195,6 +195,7 @@
         <item>36 dp</item>
         <item>30 dp</item>
         <item>24 dp</item>
+        <item> 2 dp</item>
     </string-array>
 
     <string-array name="navigation_bar_width" translatable="false">
@@ -202,6 +203,7 @@
         <item>36</item>
         <item>30</item>
         <item>24</item>
+        <item>2</item>
     </string-array>
 
     <string-array name="navigation_bar_height_entries">
@@ -211,6 +213,7 @@
         <item>36 dp</item>
         <item>30 dp</item>
         <item>24 dp</item>
+        <item> 2 dp</item>
     </string-array>
 
     <string-array name="navigation_bar_height" translatable="false">
@@ -220,6 +223,7 @@
         <item>36</item>
         <item>30</item>
         <item>24</item>
+        <item>2</item>
     </string-array>
 
     <string-array name="navigation_bar_height_landscape_entries">
@@ -228,6 +232,7 @@
          <item>36 dp</item>
          <item>30 dp</item>
          <item>24 dp</item>
+         <item> 2 dp</item>
      </string-array>
 
      <string-array name="navigation_bar_height_landscape" translatable="false">
@@ -236,6 +241,7 @@
          <item>36</item>
          <item>30</item>
          <item>24</item>
+         <item>2</item>
      </string-array>
 
     <string-array name="glow_times_entries">

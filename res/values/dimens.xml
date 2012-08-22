@@ -15,6 +15,10 @@
 -->
 
 <resources>
+
+    <dimen name="shortcut_picker_left_padding">70dip</dimen>
+    <dimen name="target_icon_size">40dip</dimen>
+
     <!-- height of a normal list item in edit playlist mode -->
     <dimen name="normal_height">64dip</dimen>
     <!-- height of an expanded list item in edit playlist mode -->

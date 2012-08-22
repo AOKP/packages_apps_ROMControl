@@ -35,6 +35,7 @@
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led">LED Control</string>
     <string name="title_lockscreens">Lockscreen Options</string>
+    <string name="title_lockscreens_targets">Lockscreen Targets</string>
     <string name="title_sound">Sound Settings</string>
     <string name="title_weather">Weather Settings</string>
     <string name="title_performance">Performance Settings</string>
@@ -447,6 +448,76 @@
     <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
+
+    <!-- Lockscreen Targets-->
+    <string name="custom_targets">Custom lockscreen targets</string>
+    <string name="lockscreen_target_info">Drag the unlock icon to targets to assign targets</string>
+    <string name="lockscreen_target_title">Lockscreen targets</string>
+    <string name="lockscreen_target_summary">View or change custom lock screen shortcuts</string>
+    <string name="number_of_targets_title">Lockscreen targets amount</string>
+    <string name="number_of_targets_summary">How many targets do you want?</string>
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
+    <string name="icon_picker_choose_icon_title">Choose icon</string>
+    <string name="icon_picker_alarm">Alarm</string>
+    <string name="icon_picker_browser">Browser</string>
+    <string name="icon_picker_calendar">Calendar</string>
+    <string name="icon_picker_camera">Camera</string>
+    <string name="icon_picker_email">Email</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">Gallery</string>
+    <string name="icon_picker_googleplus">Google Plus</string>
+    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_maps">Maps</string>
+    <string name="icon_picker_movie">Movie</string>
+    <string name="icon_picker_music">Music</string>
+    <string name="icon_picker_nav_normal">Navigation</string>
+    <string name="icon_picker_phone">Phone</string>
+    <string name="icon_picker_podcast">Podcast</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">Search</string>
+    <string name="icon_picker_sms">Messaging</string>
+    <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_title">Choose icon source</string>
+    <string name="icon_picker_system_icons_title">System icons</string>
+    <string name="icon_picker_aokp_icons_title">AOKP icons</string>
+    <string name="icon_picker_gallery_title">Gallery</string>
+
+    <string name="aokp_icon_picker_aokp">AOKP Now</string>
+    <string name="aokp_icon_picker_browser">Browser</string>
+    <string name="aokp_icon_picker_calendar">Calendar</string>
+    <string name="aokp_icon_picker_camera">Camera</string>
+    <string name="aokp_icon_picker_clock">Clock</string>
+    <string name="aokp_icon_picker_email">Email</string>
+    <string name="aokp_icon_picker_facebook">Facebook</string>
+    <string name="aokp_icon_picker_gallery">Gallery</string>
+    <string name="aokp_icon_picker_googleplus">Google Plus</string>
+    <string name="aokp_icon_picker_googletalk">Google Talk</string>
+    <string name="aokp_icon_picker_maps">Maps</string>
+    <string name="aokp_icon_picker_movie">Movie</string>
+    <string name="aokp_icon_picker_music">Music</string>
+    <string name="aokp_icon_picker_navigation">Navigation</string>
+    <string name="aokp_icon_picker_phone">Phone</string>
+    <string name="aokp_icon_picker_podcast">Podcast</string>
+    <string name="aokp_icon_picker_rss">Rss</string>
+    <string name="aokp_icon_picker_sms">Messaging</string>
+    <string name="aokp_icon_picker_unlock">Unlock</string>
+    <string name="aokp_icon_picker_video">Video</string>
+    <string name="aokp_icon_picker_title">Choose icon source</string>
+    <string name="aokp_icon_picker_system_icons_title">System icons</string>
+    <string name="aokp_icon_picker_gallery_title">Gallery</string>
+
+    <string name="icon_picker_pack_title">Icon pack</string>
+    <string name="lockscreen_target_empty">Empty</string>
+    <string name="profile_reset_title">Reset</string>
+    <string name="wifi_save">Save</string>
+    <string name="lockscreen_target_reset">Lockscreen shortcuts reset to default</string>
+    <string name="lockscreen_target_save">Lockscreen targets saved</string>
+    <string name="lockscreen_target_reset_title">Reset</string>
+    <string name="lockscreen_target_reset_message">Delete all user created lockscreen target and restore to default?</string>
+    <string name="lockscreen_target_edit_title">Edit target and icon</string>
+    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>

@@ -659,4 +659,150 @@
         <item>240</item>
         <item>320</item>
     </string-array>
+
+    <string-array name="lockscreen_icon_picker_labels" translatable="false">
+        <item>@string/icon_picker_alarm</item>
+        <item>@string/icon_picker_browser</item>
+        <item>@string/icon_picker_calendar</item>
+        <item>@string/icon_picker_camera</item>
+        <item>@string/icon_picker_email</item>
+        <item>@string/icon_picker_facebook</item>
+        <item>@string/icon_picker_gallery</item>
+        <item>@string/icon_picker_googleplus</item>
+        <item>@string/icon_picker_googletalk</item>
+        <item>@string/icon_picker_maps</item>
+        <item>@string/icon_picker_sms</item>
+        <item>@string/icon_picker_movie</item>
+        <item>@string/icon_picker_music</item>
+        <item>@string/icon_picker_nav_normal</item>
+        <item>@string/icon_picker_phone</item>
+        <item>@string/icon_picker_podcast</item>
+        <item>@string/icon_picker_rss</item>
+        <item>@string/icon_picker_search</item>
+        <item>@string/icon_picker_twitter</item>
+    </string-array>
+
+    <string-array name="lockscreen_icon_picker_icons" translatable="false">
+        <item>@*android:drawable/ic_lockscreen_alarm_normal</item>
+        <item>@*android:drawable/ic_lockscreen_browser2_normal</item>
+        <item>@*android:drawable/ic_lockscreen_calendar_normal</item>
+        <item>@*android:drawable/ic_lockscreen_camera2_normal</item>
+        <item>@*android:drawable/ic_lockscreen_email_normal</item>
+        <item>@*android:drawable/ic_lockscreen_facebook_normal</item>
+        <item>@*android:drawable/ic_lockscreen_gallery_normal</item>
+        <item>@*android:drawable/ic_lockscreen_gplus_normal</item>
+        <item>@*android:drawable/ic_lockscreen_gtalk_normal</item>
+        <item>@*android:drawable/ic_lockscreen_maps_normal</item>
+        <item>@*android:drawable/ic_lockscreen_sms2_normal</item>
+        <item>@*android:drawable/ic_lockscreen_movie_normal</item>
+        <item>@*android:drawable/ic_lockscreen_music_normal</item>
+        <item>@*android:drawable/ic_lockscreen_nav_normal</item>
+        <item>@*android:drawable/ic_lockscreen_phone2_normal</item>
+        <item>@*android:drawable/ic_lockscreen_podcast_normal</item>
+        <item>@*android:drawable/ic_lockscreen_rss_normal</item>
+        <item>@*android:drawable/ic_lockscreen_google_normal</item>
+        <item>@*android:drawable/ic_lockscreen_twitter_normal</item>
+    </string-array>
+
+    <string-array name="lockscreen_aokp_icon_picker_labels" translatable="false">
+        <item>@string/aokp_icon_picker_aokp</item>
+        <item>@string/aokp_icon_picker_browser</item>
+        <item>@string/aokp_icon_picker_browser</item>
+        <item>@string/aokp_icon_picker_calendar</item>
+        <item>@string/aokp_icon_picker_calendar</item>
+        <item>@string/aokp_icon_picker_camera</item>
+        <item>@string/aokp_icon_picker_camera</item>
+        <item>@string/aokp_icon_picker_camera</item>
+        <item>@string/aokp_icon_picker_camera</item>
+        <item>@string/aokp_icon_picker_clock</item>
+        <item>@string/aokp_icon_picker_clock</item>
+        <item>@string/aokp_icon_picker_email</item>
+        <item>@string/aokp_icon_picker_email</item>
+        <item>@string/aokp_icon_picker_facebook</item>
+        <item>@string/aokp_icon_picker_facebook</item>
+        <item>@string/aokp_icon_picker_gallery</item>
+        <item>@string/aokp_icon_picker_gallery</item>
+        <item>@string/aokp_icon_picker_googleplus</item>
+        <item>@string/aokp_icon_picker_googleplus</item>
+        <item>@string/aokp_icon_picker_unlock</item>
+        <item>@string/aokp_icon_picker_unlock</item>
+        <item>@string/aokp_icon_picker_maps</item>
+        <item>@string/aokp_icon_picker_maps</item>
+        <item>@string/aokp_icon_picker_sms</item>
+        <item>@string/aokp_icon_picker_sms</item>
+        <item>@string/aokp_icon_picker_movie</item>
+        <item>@string/aokp_icon_picker_movie</item>
+        <item>@string/aokp_icon_picker_music</item>
+        <item>@string/aokp_icon_picker_music</item>
+        <item>@string/aokp_icon_picker_navigation</item>
+        <item>@string/aokp_icon_picker_navigation</item>
+        <item>@string/aokp_icon_picker_phone</item>
+        <item>@string/aokp_icon_picker_phone</item>
+        <item>@string/aokp_icon_picker_podcast</item>
+        <item>@string/aokp_icon_picker_podcast</item>
+        <item>@string/aokp_icon_picker_rss</item>
+        <item>@string/aokp_icon_picker_rss</item>
+        <item>@string/aokp_icon_picker_googletalk</item>
+        <item>@string/aokp_icon_picker_googletalk</item>
+        <item>@string/aokp_icon_picker_video</item>
+    </string-array>
+
+    <string-array name="lockscreen_aokp_icon_picker_icons" translatable="false">
+        <item>@*android:drawable/ic_lockscreen_unlock_aokp_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_browser_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_browser_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_calender_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_calender_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_camera_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_camera_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_camera1_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_camera1_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_clock_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_clock_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_email_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_email_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_facebook_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_facebook_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_gallery_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_gallery_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_gplus_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_gplus_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_lock_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_lock_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_maps_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_maps_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_mms_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_mms_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_movies_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_movies_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_music_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_music_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_navigation_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_navigation_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_phone_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_phone_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_podcast_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_podcast_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_rss_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_rss_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_talk_bw_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_talk_color_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_video_color_normal</item>
+    </string-array>
+
+    <string-array name="lockscreen_target_amount_entries">
+        <item>3 Targets</item>
+        <item>4 Targets</item>
+        <item>5 Targets</item>
+        <item>6 Targets</item>
+        <item>8 Targets</item>
+    </string-array>
+
+    <string-array name="lockscreen_target_amount_values" translatable="false">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
 </resources>

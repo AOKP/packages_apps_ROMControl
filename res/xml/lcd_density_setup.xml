@@ -7,8 +7,6 @@
 		android:summary="@string/follow_through_summary" />
 
 	<ListPreference
-		android:entries="@array/lcd_density_stock_entries"
-		android:entryValues="@array/lcd_density_stock_values"
 		android:key="stock_density"
 		android:title="@string/stock_density_title"
 		android:summary="@string/stock_density_summary" />

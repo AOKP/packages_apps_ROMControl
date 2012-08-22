@@ -28,6 +28,7 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.aokp.romcontrol.fragments.LockscreenTargets;
 import com.aokp.romcontrol.service.BootService;
 
 import java.util.ArrayList;

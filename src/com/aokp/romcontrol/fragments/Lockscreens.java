@@ -20,7 +20,9 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
@@ -37,6 +39,8 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.ROMControlActivity;
+import com.aokp.romcontrol.fragments.LockscreenTargets;
 
 public class Lockscreens extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -46,6 +50,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
+    private static final String PREF_NUMBER_OF_TARGETS = "number_of_targets";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -55,10 +60,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String WALLPAPER_NAME = "lockscreen_wallpaper.jpg";
 
     Preference mLockscreenWallpaper;
+    Preference mLockscreenTargets;
 
     CheckBoxPreference mLockscreenBattery;
     CheckBoxPreference mVolumeRockerWake;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
+    ListPreference mTargetNumber;
 
     ArrayList<String> keys = new ArrayList<String>();
 
@@ -83,6 +90,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
         mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
                 .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
+
+        mTargetNumber = (ListPreference) findPreference(PREF_NUMBER_OF_TARGETS);
+        mTargetNumber.setOnPreferenceChangeListener(this);
+        mTargetNumber.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_TARGET_AMOUNT,
+                2)));
+
+        mLockscreenTargets = findPreference("lockscreen_targets");
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -114,6 +129,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+
+        } else if (preference == mLockscreenTargets) {
+            Intent i = new Intent(getActivity(), ROMControlActivity.class)
+                    .setAction("com.aokp.romcontrol.START_NEW_FRAGMENT")
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    .putExtra("aokp_fragment_name", LockscreenTargets.class.getName());
+            getActivity().startActivity(i);
             return true;
         } else if (preference == mLockScreenTimeoutUserOverride) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
@@ -170,6 +193,17 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     }
 
     @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+      if (preference == mTargetNumber) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_TARGET_AMOUNT, val);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.lockscreens, menu);
@@ -194,11 +228,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         File wallpaper = new File(dir, WALLPAPER_NAME);
 
         return Uri.fromFile(wallpaper);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

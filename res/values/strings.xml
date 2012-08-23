@@ -438,4 +438,119 @@
 
     <string name="dpi">DPI</string>
 
+    <!-- Promodder and initD arrays explainations -->
+    <string name="remove_logcat">Perminately remove log (persists through reboot)</string>
+    <string name="remove_logcat_till_reboot">Remove log till reboot (will NOT persist through reboot)</string>
+    <string name="enable_logcat">Enable logging (requires reboot)</string>
+    <string name="disable">Disable</string>
+    <string name="power_collapse_suspend">Power Collapse Suspend</string>
+    <string name="power_collapse">Power Collapse (Best)</string>
+    <string name="apps_sleep">Apps Sleep</string>
+    <string name="slow_clock">Slow Clock</string>
+    <string name="wait_for_interrupt">Wait For Interrupt</string>
+    <string name="sdcard_128_kb">128 kb</string>
+    <string name="sdcard_1024_kb">1024 kb</string>
+    <string name="sdcard_2048_kb">2048 kb (recommended)</string>
+    <string name="sdcard_3072_kb">3072 kb</string>
+    <string name="sdcard_4096_kb">4096 kb</string>
+    <string name="sdcard_5120_kb">5120 kb</string>
+    <string name="sdcard_6144_kb">6144 kb</string>
+    <string name="remove">Remove</string>
+    <string name="hsupa_disabled">HSUPA Disabled (Capped)</string>
+    <string name="hsupa_enabled">HSUPA Enabled</string>
+    <string name="hsupa_enabled_uncapped">HSUPA Enabled (Uncapped)</string>    <!-- Start up tweaks -->
+    <string name="ps_init_d">Configure Init.D/system tweaks that are run at boot time. Careful thin ice in here.</string>
+    <string name="ps_enable_init_d">Enable/disabe start-up tweaks</string>
+    <string name="ps_zipalign">Zipalign any unaligned apps on each boot</string>
+    <string name="ps_enable_sd_boost">Enable/disable SD card speed boost</string>
+    <string name="ps_sd_boost">Set value of read ahead in kb</string>
+    <string name="ps_fix_permissions">Fix permissions for apps on each boot</string>
+    <string name="ps_clear_cache">Clear data cache on each boot</string>
+    <string name="ps_enable_sysctl">Enable sysctl tweaks on boot</string>
+    <string name="ps_enable_cron">Enable scheduled cron jobs</string>
+
+    <!-- PropModder -->
+    <string name="propmodder_title">PropModder &amp; Init.D tweaks</string>
+    <string name="propmodder_title_summary">@null</string>
+    <string name="buildprop_title">Build.prop mods</string>
+    <string name="nonprop_cat_title">Mods involving init.d script</string>
+    <string name="pc_tweaks">Tweaks</string>
+    <string name="pc_init_d">Enable/Disable Tweaks</string>
+    <string name="pc_init_d_tweaks">Customize Tweaks</string>
+
+    <!-- Start up tweaks -->
+    <string name="pt_init_d">System Tweaks</string>
+    <string name="pt_enable_init_d">Enable start-up tweaks</string>
+    <string name="pt_zipalign">Zipalign apks</string>
+    <string name="pt_enable_sd_boost">Enable SD boost</string>
+    <string name="pt_sd_boost">Read ahead value</string>
+    <string name="pt_fix_permissions">Fix permissions</string>
+    <string name="pt_clear_cache">Clear cache</string>
+    <string name="pt_enable_sysctl">Enable sysctl</string>
+    <string name="pt_enable_cron">Enable scheduled tasks</string>
+
+    <!-- WARN THE MASSES THIS CAN BE DANGEROUS!!! -->
+    <string name="main_warning_title">YOU HAVE BEEN WARNED</string>
+    <string name="main_warning_summary">This area makes changes to your build.prop.  It hacks your \'/system/build.prop\' WE ARE NOT RESPONSIBLE FOR YOUR ACTIONS! Your device  your responsibility</string>
+    <string name="pref_wifi_scan_interval_title">Wifi scan interval</string>
+    <string name="pref_wifi_scan_interval_summary">The time between wifi scans when no stored access points are available (requires reboot)</string>
+    <string name="pref_wifi_scan_alt_summary">Time between wifi scans: %s</string>
+    <string name="pref_lcd_density_title">LCD density</string>
+    <string name="pref_lcd_density_summary">This is the screen density allowing more high definition look (requires reboot)</string>
+    <string name="pref_max_events_title">Windows Manager\'s max events per second</string>
+
+    <!--TODO find good explanation of this value -->
+    <string name="pref_max_events_summary">This is a runtime value that controls the number of events the system will allow in a second (requires reboot)</string>
+    <string name="pref_max_events_alt_summary">Max number of system events: %s</string>
+    <string name="pref_usb_mode_title">Default USB mode</string>
+    <string name="pref_usb_mode_summary">This decides what the default setting is when you plug in to a computer via USB (requires reboot)</string>
+    <string name="pref_ring_delay_title">Telephone ringer delay</string>
+    <string name="pref_ring_delay_summary">The amount of time from when the system registers an incoming phone call until the ringer starts (requires reboot)</string>
+    <string name="pref_ring_delay_alt_summary">Incoming call Delay: %s</string>
+    <string name="pref_vm_heapsize_title">Dalvik cache heapsize</string>
+    <string name="pref_vm_heapsize_summary">This controls the size of the cache the Dalvik VM has access to (requires reboot)</string>
+    <string name="pref_vm_heapsize_alt_summary">Dalvik VM cache size: %s</string>
+    <string name="propmodder_warning_title">ROOT IS REQUIRED</string>
+    <string name="propmodder_warning">This program changes system properties in /system/build.prop DO NOT USE if you don\'t know what you are doing. We (n00bware, makers of PropModder) are not responsible for your device PERIOD. You have been warned</string>
+    <string name="showbuild_title">Show build.prop</string>
+    <string name="showbuild_dialog">This is your /system/build.prop</string>
+    <string name="showbuild_loading">Loading build.prop\u2026</string>
+    <string name="showbuild_error">Error loading build.prop\u2026</string>
+    <string name="showbuild_unknown">Unknown</string>
+    <string name="showbuild_version">Version</string>
+    <string name="showbuild_label">This will show the build.prop so you can see whats in it</string>
+    <string name="pref_fast_up_title">HSUPA upload speed hack</string>
+    <string name="pref_fast_up_summary">*WARNING* if you change this value it will add the needed values to your build.prop if they are not already present (requires reboot)</string>
+    <string name="pref_fast_up_alt_summary">Fast up found active: %s</string>
+    <string name="pref_disable_boot_anim_title">Disable Boot Animation</string>
+    <string name="pref_disable_boot_anim_summary">Disable system boot animation (requires reboot)</string>
+    <string name="pref_prox_delay_title">Proximity sensor delay</string>
+    <string name="pref_prox_delay_summary">When you are in-call screen is off when the device moves away from your face this delay value controls how long before screen turns on (requires reboot)</string>
+    <string name="pref_prox_delay_alt_summary">Proximity sensor set to: %s</string>
+    <string name="pref_logcat_title">Disable logcat</string>
+    <string name="pref_logcat_summary_on">Logcat disabled, makes reading logcats diffucult</string>
+    <string name="pref_logcat_summary_off">Logcat visible, disabling does provide a slight boost in the system</string>
+    <string name="pref_mod_version_title">Change your Build Number</string>
+    <string name="pref_mod_version_summary">This is astetic and doesn\'t improve the system</string>
+    <string name="pref_mod_version_alt_summary">Build Number: %s</string>
+    <string name="pref_mod_version_default">PropModder!!!</string>
+    <string name="pref_sleep_title">PM Sleep mode</string>
+    <string name="pref_sleep_summary">Modify Nighttime sleep policy</string>
+    <string name="pref_sleep_alt_summary">Current Sleep Mode: %s</string>
+    <string name="pref_jit_title">Just In Time Complier</string>
+    <string name="pref_jit_summary">enables/disables JIT complier in dalvik vm</string>
+    <string name="pref_tcp_stack_title">Optimize TCP Stack</string>
+    <string name="pref_tcp_stack_summary">Modify the buffer-size for better performance</string>
+    <string name="pref_check_in_title">Check in service</string>
+    <string name="pref_check_in_summary">Stop sending system usage data to Google</string>
+    <string name="pref_sdcard_buffer_title">Sdcard speed hack</string>
+    <string name="pref_sdcard_buffer_summary">Modify the sdcard buffer-size for better performance</string>
+    <string name="pref_sdcard_buffer_alt_summary">Sdcard buffer size: %s</string>
+    <string name="pref_g_speed_title">3G Speed Hack</string>
+    <string name="pref_g_speed_summary">Uncap 3g speed</string>
+    <string name="pref_gpu_title">GPU Acceleration</string>
+    <string name="pref_gpu_summary">To enable hardware acceleration where the GPU controls the UI instead of the CPU</string>
+    <string name="pref_vvmail_title">VVMail (Sense ROMs ONLY)</string>
+    <string name="pref_vvmail_summary">force Sense ROMS compatibility with VVMail</string>
+
 </resources>

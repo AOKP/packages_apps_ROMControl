@@ -25,6 +25,13 @@
     </header>
 
     <header
+        android:id="@+id/propmodder_initd"
+        android:title="@string/propmodder_title"
+        android:fragment="com.baked.romcontrol.fragments.PropModder"
+        android:summary="@string/propmodder_title_summary"
+        android:icon="@drawable/ic_rom_control_propmodder" />
+
+    <header
         android:id="@+id/sound"
         android:fragment="com.baked.romcontrol.fragments.Sound"
         android:title="@string/header_sound_title"

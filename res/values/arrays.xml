@@ -628,4 +628,227 @@
         <item>2560,3840,6400,12800,12800,25600</item>
     </string-array>
 
+    <!-- Propmodder and initD support -->
+    <string-array name="entries_wifi_scan" translatable="false">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+        <item>150</item>
+        <item>210</item>
+        <item>240</item>
+        <item>270</item>
+        <item>300</item>
+        <item>330</item>
+        <item>360</item>
+        <item>390</item>
+        <item>420</item>
+    </string-array>
+
+    <string-array name="entries_ring_delay" translatable="false">
+        <item>0</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>800</item>
+        <item>900</item>
+        <item>1000</item>
+        <item>1050</item>
+        <item>1100</item>
+        <item>1200</item>
+        <item>1300</item>
+        <item>1400</item>
+        <item>1500</item>
+        <item>1600</item>
+        <item>1700</item>
+        <item>1800</item>
+        <item>1900</item>
+        <item>2000</item>
+    </string-array>
+
+    <string-array name="entries_max_events" translatable="false">
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>105</item>
+        <item>110</item>
+        <item>115</item>
+        <item>120</item>
+        <item>160</item>
+        <item>165</item>
+        <item>170</item>
+        <item>175</item>
+        <item>180</item>
+        <item>185</item>
+        <item>190</item>
+        <item>195</item>
+        <item>200</item>
+        <item>205</item>
+        <item>210</item>
+        <item>215</item>
+        <item>220</item>
+        <item>225</item>
+        <item>230</item>
+        <item>235</item>
+        <item>240</item>
+        <item>245</item>
+        <item>250</item>
+        <item>260</item>
+        <item>265</item>
+        <item>270</item>
+        <item>275</item>
+        <item>280</item>
+        <item>290</item>
+        <item>295</item>
+        <item>300</item>
+    </string-array>
+
+    <string-array name="entries_vm_heapsize" translatable="false">
+        <item>16m</item>
+        <item>24m</item>
+        <item>28m</item>
+        <item>32m</item>
+        <item>36m</item>
+        <item>42m</item>
+        <item>48m</item>
+        <item>52m</item>
+        <item>56m</item>
+        <item>64m</item>
+        <item>68m</item>
+        <item>72m</item>
+        <item>76m</item>
+        <item>84m</item>
+        <item>96m</item>
+        <item>128m</item>
+        <item>160m</item>
+        <item>192m</item>
+        <item>224m</item>
+        <item>256m</item>
+    </string-array>
+
+    <string-array name="entries_fast_up_explain">
+        <item>@string/remove</item>
+        <item>@string/hsupa_disabled</item>
+        <item>@string/hsupa_enabled</item>
+        <item>@string/hsupa_enabled_uncapped</item>
+    </string-array>
+
+    <string-array name="entries_fast_up" translatable="false">
+        <item>disable</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="entries_prox_delay_explain">
+        <item>Remove</item>
+        <item>0</item>
+        <item>50</item>
+        <item>75</item>
+        <item>125</item>
+        <item>150</item>
+        <item>175</item>
+        <item>200</item>
+        <item>225</item>
+        <item>250</item>
+        <item>275</item>
+        <item>300</item>
+        <item>325</item>
+        <item>350</item>
+        <item>375</item>
+        <item>400</item>
+        <item>425</item>
+        <item>450</item>
+        <item>475</item>
+        <item>500</item>
+    </string-array>
+
+    <string-array name="entries_prox_delay" translatable="false">
+        <item>disable</item>
+        <item>0</item>
+        <item>50</item>
+        <item>75</item>
+        <item>125</item>
+        <item>150</item>
+        <item>175</item>
+        <item>200</item>
+        <item>225</item>
+        <item>250</item>
+        <item>275</item>
+        <item>300</item>
+        <item>325</item>
+        <item>350</item>
+        <item>375</item>
+        <item>400</item>
+        <item>425</item>
+        <item>450</item>
+        <item>475</item>
+        <item>500</item>
+    </string-array>
+
+    <string-array name="entries_logcat_explain">
+        <item>@string/remove_logcat</item>
+        <item>@string/remove_logcat_till_reboot</item>
+        <item>@string/enable_logcat</item>
+    </string-array>
+
+    <string-array name="entries_logcat" translatable="false">
+        <item>disable</item>
+        <item>rm_log</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="entries_sleep_explain">
+        <item>@string/disable</item>
+        <item>@string/power_collapse_suspend</item>
+        <item>@string/power_collapse</item>
+        <item>@string/apps_sleep</item>
+        <item>@string/slow_clock</item>
+        <item>@string/wait_for_interrupt</item>
+    </string-array>
+
+    <string-array name="entries_sleep" translatable="false">
+        <item>disable</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        </string-array>
+
+    <string-array name="entries_sdcard_buffer_explain">
+        <item>@string/disable</item>
+        <item>@string/sdcard_128_kb</item>
+        <item>@string/sdcard_1024_kb</item>
+        <item>@string/sdcard_2048_kb</item>
+        <item>@string/sdcard_3072_kb</item>
+        <item>@string/sdcard_4096_kb</item>
+        <item>@string/sdcard_5120_kb</item>
+        <item>@string/sdcard_6144_kb</item>
+    </string-array>
+
+    <string-array name="entries_sdcard_buffer" translatable="false">
+        <item>disable</item>
+        <item>128</item>
+        <item>1024</item>
+        <item>2048</item>
+        <item>3072</item>
+        <item>4096</item>
+        <item>5120</item>
+        <item>6144</item>
+    </string-array>
+
+
 </resources>

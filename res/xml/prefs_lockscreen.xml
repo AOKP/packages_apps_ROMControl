@@ -31,6 +31,15 @@
         android:entries="@array/lockscreen_battery_status_entries"
         android:entryValues="@array/lockscreen_battery_status_values"/>
 
+    <CheckBoxPreference
+        android:key="lockscreen_quick_unlock_control"
+        android:title="@string/lockscreen_quick_unlock_control_title"
+        android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
+    <CheckBoxPreference
+        android:key="lockscreen_rotation"
+        android:title="@string/display_lockscreen_rotation_title" />
+
     <PreferenceCategory
         android:key="delay_and_timeout"
         android:title="@string/delay_and_timeout_title">

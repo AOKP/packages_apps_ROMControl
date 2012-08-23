@@ -17,24 +17,34 @@
 package com.baked.romcontrol.fragments;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
+import android.util.Log;
 import android.view.Display;
 import android.view.Window;
 import android.widget.Toast;
@@ -47,17 +57,24 @@ import com.baked.romcontrol.util.ColorPickerView;
 public class LockscreenInterface extends BAKEDPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenInterface";
-    private static final int LOCKSCREEN_BACKGROUND = 1024;
+    public static final int REQUEST_PICK_WALLPAPER = 199;
+    public static final int SELECT_WALLPAPER = 3;
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
+    private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
+    private static final String LOCKSCREEN_ROTATION_MODE = "Lock screen";
+
+    public final String WALLPAPER_NAME = "lockwallpaper.jpg";
+
     private ListPreference mCustomBackground;
     private ListPreference mBatteryStatus;
+    private CheckBoxPreference mLockScreenRotation;
     private Activity mActivity;
     ContentResolver mResolver;
 
-    private File wallpaperImage;
-    private File wallpaperTemporary;
     private boolean mIsScreenLarge;
+
+    ArrayList<String> keys = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,15 +82,25 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
         mActivity = getActivity();
         mResolver = mActivity.getContentResolver();
 
+        keys.add(Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+
         addPreferencesFromResource(R.xml.prefs_lockscreen);
+
+        mLockScreenRotation = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_ROTATION);
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
-        wallpaperImage = new File(mActivity.getFilesDir()+"/lockwallpaper");
-        wallpaperTemporary = new File(mActivity.getCacheDir()+"/lockwallpaper.tmp");
 
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         mBatteryStatus.setOnPreferenceChangeListener(this);
+
+        for (String key : keys) {
+            try {
+                ((CheckBoxPreference) findPreference(key)).setChecked(Settings.System.getInt(
+                        getActivity().getContentResolver(), key) == 1);
+             } catch (SettingNotFoundException e) {
+             }
+        }
 
         mIsScreenLarge = Utils.isTablet(getActivity());
 
@@ -81,18 +108,20 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
     }
 
     private void updateCustomBackgroundSummary() {
+        String wallpaperPath = "/data/data/com.baked.romcontrol/files/lockwallpaper.jpg";
+        File file = new File(wallpaperPath);
         int resId;
         String value = Settings.System.getString(getContentResolver(),
                 Settings.System.LOCKSCREEN_BACKGROUND);
-        if (value == null) {
-            resId = R.string.lockscreen_background_default_wallpaper;
-            mCustomBackground.setValueIndex(2);
-        } else if (value.isEmpty()) {
+        if (file.exists()) {
             resId = R.string.lockscreen_background_custom_image;
             mCustomBackground.setValueIndex(1);
-        } else {
+        } else if (value != null) {
             resId = R.string.lockscreen_background_color_fill;
             mCustomBackground.setValueIndex(0);
+        } else {
+            resId = R.string.lockscreen_background_default_wallpaper;
+            mCustomBackground.setValueIndex(2);
         }
         mCustomBackground.setSummary(getResources().getString(resId));
     }
@@ -124,31 +153,41 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
         }
     }
 
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == LOCKSCREEN_BACKGROUND) {
-            if (resultCode == Activity.RESULT_OK) {
-                if (wallpaperTemporary.exists()) {
-                    wallpaperTemporary.renameTo(wallpaperImage);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == REQUEST_PICK_WALLPAPER) {
+
+                FileOutputStream wallpaperStream = null;
+                try {
+                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
+                            Context.MODE_WORLD_READABLE);
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
                 }
-                wallpaperImage.setReadOnly();
+
+                Uri selectedImageUri = getLockscreenExternalUri();
+                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
+
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
                 Toast.makeText(mActivity, getResources().getString(R.string.
                         lockscreen_background_result_successful), Toast.LENGTH_LONG).show();
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.LOCKSCREEN_BACKGROUND,"");
                 updateCustomBackgroundSummary();
-            } else {
-                if (wallpaperTemporary.exists()) {
-                    wallpaperTemporary.delete();
-                }
-                Toast.makeText(mActivity, getResources().getString(R.string.
-                        lockscreen_background_result_not_successful), Toast.LENGTH_LONG).show();
             }
         }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mLockScreenRotation) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_ROTATION,
+                    mLockScreenRotation.isChecked() ? 1 : 0);
+            return true;
+
+        } else if (keys.contains(preference.getKey())) {
+            Log.e("RC_Lockscreens", "key: " + preference.getKey());
+            return Settings.System.putInt(getActivity().getContentResolver(), preference.getKey(),
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -179,59 +218,54 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
                         dialog.dismiss();
                     }
                 }).setView(colorView).show();
+                deleteWallpaper();
                 return false;
             //Launches intent for user to select an image/crop it to set as background
             case 1:
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                intent.setType("image/*");
-                intent.putExtra("crop", "true");
-                intent.putExtra("scale", true);
-                intent.putExtra("scaleUpIfNeeded", false);
-                intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-                Display display = mActivity.getWindowManager().getDefaultDisplay();
+                Display display = getActivity().getWindowManager().getDefaultDisplay();
                 int width = display.getWidth();
                 int height = display.getHeight();
                 Rect rect = new Rect();
-                Window window = mActivity.getWindow();
+                Window window = getActivity().getWindow();
                 window.getDecorView().getWindowVisibleDisplayFrame(rect);
                 int statusBarHeight = rect.top;
                 int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
                 int titleBarHeight = contentViewTop - statusBarHeight;
-                // Lock screen for tablets visible section are different in landscape/portrait,
-                // image need to be cropped correctly, like wallpaper setup for scrolling in background in home screen
-                // other wise it does not scale correctly
-                if (mIsScreenLarge) {
-                    width = mActivity.getWallpaperDesiredMinimumWidth();
-                    height = mActivity.getWallpaperDesiredMinimumHeight();
-                    float spotlightX = (float) display.getWidth() / width;
-                    float spotlightY = (float) display.getHeight() / height;
+
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                intent.setType("image/*");
+                intent.putExtra("crop", "true");
+                intent.putExtra("scale", true);
+                intent.putExtra("scaleUpIfNeeded", true);
+                intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, getLockscreenExternalUri());
+
+                if (mTablet) {
+                    width = getActivity().getWallpaperDesiredMinimumWidth();
+                    height = getActivity().getWallpaperDesiredMinimumHeight();
+                    float spotlightX = (float)display.getWidth() / width;
+                    float spotlightY = (float)display.getHeight() / height;
                     intent.putExtra("aspectX", width);
                     intent.putExtra("aspectY", height);
                     intent.putExtra("outputX", width);
                     intent.putExtra("outputY", height);
                     intent.putExtra("spotlightX", spotlightX);
                     intent.putExtra("spotlightY", spotlightY);
-
                 } else {
-                    boolean isPortrait = getResources().getConfiguration().orientation ==
-                        Configuration.ORIENTATION_PORTRAIT;
+                    boolean isPortrait = getResources()
+                            .getConfiguration().orientation ==
+                            Configuration.ORIENTATION_PORTRAIT;
                     intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
                     intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
                 }
-                try {
-                    wallpaperTemporary.createNewFile();
-                    wallpaperTemporary.setWritable(true, false);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(wallpaperTemporary));
-                    intent.putExtra("return-data", false);
-                    mActivity.startActivityFromFragment(this, intent, LOCKSCREEN_BACKGROUND);
-                } catch (IOException e) {
-                } catch (ActivityNotFoundException e) {
-                }
+
+                startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
                 return false;
             //Sets background color to default
             case 2:
                 Settings.System.putString(getContentResolver(),
                         Settings.System.LOCKSCREEN_BACKGROUND, null);
+                deleteWallpaper();
                 updateCustomBackgroundSummary();
                 break;
             }
@@ -245,5 +279,30 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    private void deleteWallpaper() {
+        mContext.deleteFile(WALLPAPER_NAME);
+    }
+
+    private Uri getLockscreenExternalUri() {
+        File dir = mContext.getExternalCacheDir();
+        File wallpaper = new File(dir, WALLPAPER_NAME);
+
+        return Uri.fromFile(wallpaper);
+    }
+
+    public void copy(File src, File dst) throws IOException {
+        InputStream in = new FileInputStream(src);
+        FileOutputStream out = new FileOutputStream(dst);
+
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+            out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
     }
 }

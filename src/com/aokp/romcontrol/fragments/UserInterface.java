@@ -15,6 +15,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -40,11 +42,14 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.Toast;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
+
+import java.util.List;
 
 public class UserInterface extends AOKPPreferenceFragment {
 
@@ -58,6 +63,7 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
+    private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
 
@@ -66,6 +72,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mStatusBarNotifCount;
     Preference mNotificationWallpaper;
+    Preference mCustomBootAnimation;
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
     CheckBoxPreference mShowImeSwitcher;
@@ -97,6 +104,8 @@ public class UserInterface extends AOKPPreferenceFragment {
             int randomInt = randomGenerator.nextInt(insults.length);
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
+
+        mCustomBootAnimation = findPreference("custom_bootanimation");
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -140,7 +149,7 @@ public class UserInterface extends AOKPPreferenceFragment {
             if (checked) {
                 Helpers.getMount("rw");
                 new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.unicorn");
+                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
                 Helpers.getMount("ro");
                 Resources res = mContext.getResources();
                 String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
@@ -149,9 +158,23 @@ public class UserInterface extends AOKPPreferenceFragment {
             } else {
                 Helpers.getMount("rw");
                 new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
+                        .runWaitFor("mv /system/media/bootanimation.backup /system/media/bootanimation.zip");
                 Helpers.getMount("ro");
                 preference.setSummary("");
+            }
+            return true;
+        } else if (preference == mCustomBootAnimation) {
+            PackageManager packageManager = getActivity().getPackageManager();
+            Intent test = new Intent(Intent.ACTION_GET_CONTENT);
+            test.setType("file/*");
+            List<ResolveInfo> list = packageManager.queryIntentActivities(test, PackageManager.GET_ACTIVITIES);
+            if(list.size() > 0) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                intent.setType("file/*");
+                startActivityForResult(intent, REQUEST_PICK_BOOT_ANIMATION);
+            } else {
+                //No app installed to handle the intent - file explorer required
+                Toast.makeText(mContext, R.string.install_file_manager_error, Toast.LENGTH_SHORT).show();
             }
             return true;
         } else if (preference == mNotificationWallpaper) {
@@ -311,6 +334,26 @@ public class UserInterface extends AOKPPreferenceFragment {
 
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
                 Helpers.restartSystemUI();
+            } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
+                if (data==null) {
+                    //Nothing returned by user, probably pressed back button in file manager
+                    return;
+                }
+
+                String path = data.getData().getEncodedPath();
+
+                Helpers.getMount("rw");
+                //backup old boot animation
+                new CMDProcessor().su.runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
+
+                //Copy new bootanimation, give proper permissions
+                new CMDProcessor().su.runWaitFor("cp "+ path +" /system/media/bootanimation.zip");
+                new CMDProcessor().su.runWaitFor("chmod 644 /system/media/bootanimation.zip");
+
+                //Update setting to reflect that boot animation is now enabled
+                mDisableBootAnimation.setChecked(false);
+
+                Helpers.getMount("ro");
             }
         }
     }

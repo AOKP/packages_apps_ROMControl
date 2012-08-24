@@ -57,6 +57,7 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
+    private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
 
@@ -65,6 +66,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mStatusBarNotifCount;
     Preference mNotificationWallpaper;
+    Preference mCustomBootAnimation;
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
 
@@ -95,6 +97,8 @@ public class UserInterface extends AOKPPreferenceFragment {
             int randomInt = randomGenerator.nextInt(insults.length);
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
+
+        mCustomBootAnimation = findPreference("custom_bootanimation");
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -147,6 +151,11 @@ public class UserInterface extends AOKPPreferenceFragment {
                 Helpers.getMount("ro");
                 preference.setSummary("");
             }
+            return true;
+        } else if (preference == mCustomBootAnimation) {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+            intent.setType("file/*");
+            startActivityForResult(intent, REQUEST_PICK_BOOT_ANIMATION);
             return true;
         } else if (preference == mNotificationWallpaper) {
             Display display = getActivity().getWindowManager().getDefaultDisplay();
@@ -300,6 +309,17 @@ public class UserInterface extends AOKPPreferenceFragment {
 
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
                 Helpers.restartSystemUI();
+            } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
+
+              String path = data.getDataString();
+              Helpers.getMount("rw");
+              //backup old boot animation
+              new CMDProcessor().su
+                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
+
+              new CMDProcessor().su
+                        .runWaitFor("cp "+ path +" /system/media/bootanimation.zip");
+              Helpers.getMount("ro");
             }
         }
     }

@@ -22,6 +22,11 @@
             android:title="@string/disable_bootanimation_title" />
 
         <Preference
+            android:key="custom_bootanimation"
+            android:title="@string/custom_bootanimation_title"
+            android:summary="@string/custom_bootanimation_summary" />
+
+        <Preference
             android:key="notification_wallpaper"
             android:title="@string/notification_wallpaper_title"
             android:summary="@string/notification_wallpaper_summary" />

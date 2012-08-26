@@ -82,16 +82,18 @@
   <string name="toggles_layout_title">Vzhled přepínačů</string>
   <string name="enabled_toggles_title">Zapnuté přepínače</string>
   <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
+  <string name="toggles_display_dialog">Vybrat používané přepínače</string>
+  <string name="toggles_display_close">Zavřít</string>
   <string name="toggles_order_title">Pořadí přepínačů</string>
   <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
   <string name="brightness_location_title">Pozice nastavení jasu</string>
   <string name="reset_toggles_title">Obnovit přepínače</string>
   <string name="reset_toggles_summary">Obnovit všechny přepínače a jejich pořadí</string>
-  <string name="toggle_button_alpha_title">Průhlednost indikátoru přepínačů</string>
-  <string name="toggle_btn_enabled_color_title">Barva indikátoru aktivní</string>
-  <string name="toggle_btn_disabled_color_title">Barva indikátoru neaktivní</string>
-  <string name="toggle_btn_background_title">Průhlednost pozadí přepínače</string>
-  <string name="toggle_text_color_title">Barva textu přepínače</string>
+  <string name="toggle_button_alpha_title">Průhlednost indikátorů přepínačů</string>
+  <string name="toggle_btn_enabled_color_title">Barva indikátorů aktivní</string>
+  <string name="toggle_btn_disabled_color_title">Barva indikátorů neaktivní</string>
+  <string name="toggle_btn_background_title">Průhlednost pozadí přepínačů</string>
+  <string name="toggle_text_color_title">Barva textu přepínačů</string>
     
   <string name="clock_title_enable">Styl hodin</string>
   <string name="title_clock_ampm_entries">AM/PM styl</string>

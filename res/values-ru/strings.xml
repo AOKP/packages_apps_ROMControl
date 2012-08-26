@@ -45,25 +45,6 @@
     <string name="misc_short">Разное</string>
     <string name="custom_app_icon_successfully">" установлена успешно!"</string>
 
-    <!-- Shortcut picker -->
-    <string name="use_custom_app_title">Use custom application</string>
-    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
-    <string name="select_custom_app_title">Select custom application</string>
-    <string name="group_applications">Applications</string>
-
-    <!-- General UI -->
-    <string name="enable_volume_options">Enable Volume Panel</string>
-    <string name="status_bar_notif_count_title">Show notification count</string>
-    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
-    <string name="disable_bootanimation_title">Disable boot animation</string>
-    <string name="notification_wallpaper_title">Choose notification background</string>
-    <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
-    <string name="alpha_dialog_title">Set alpha value</string>
-    <string name="custom_carrier_label_title">Custom carrier label</string>
-    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
-    <string name="custom_carrier_label_notset">Custom label currently not set</string>
-
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Стиль переключателей</string>
     <string name="toggle_style_summary">Отображать значки или текст</string>
@@ -111,16 +92,16 @@
     <string name="toggle_wifi">Wi-Fi</string>
 
     <!-- Statusbar | Battery -->
-    <string name="battery_icon">Battery icon style</string>
-    <string name="battery_not_title">Battery icon in notifications</string>
-    <string name="battery_not_summary">Battery icon will show up where the clear all button shows up</string>
-    <string name="battery_bar">Battery bar location</string>
-    <string name="battery_bar_color">Battery bar color</string>
-    <string name="battery_bar_cat">Battery bar options</string>
-    <string name="battery_bar_style_title">Battery bar style</string>
-    <string name="battery_bar_thickness_title">Battery bar thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="battery_icon">Стиль иконки батареи</string>
+    <string name="battery_not_title">Иконка батареи в уведомлениях</string>
+    <string name="battery_not_summary">Иконка батареи появится рядом с кнопкой удаления уведомлений</string>
+    <string name="battery_bar">Расположение полоски заряда</string>
+    <string name="battery_bar_color">Цвет полоски заряда</string>
+    <string name="battery_bar_cat">Опции полоски заряда</string>
+    <string name="battery_bar_style_title">Стиль полоски заряда</string>
+    <string name="battery_bar_thickness_title">Толщина полоски заряда</string>
+    <string name="battery_bar_animate_title">Анимация зарядки</string>
+    <string name="battery_bar_animate_summary">Анимация зарядки может создать плохое впечатление. Используйте по своему усмотрению.</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Выбор цвета</string>
@@ -131,216 +112,6 @@
     <string name="hex_hint">#FF000000</string>
     <string name="set">Установить</string>
     <string name="ics_color">Holo</string>
-
-    <!-- Navigation Bar -->
-    <string name="navigation_bar">Navigation bar</string>
-    <string name="navbar_button_cat">Navigation bar buttons</string>
-    <string name="title_pref_menu_display">Menu location</string>
-    <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
-    <string name="title_pref_navigation_menu_display">Menu visibility</string>
-    <string name="summary_pref_navigation_menu_display">How and when do you want the menu buttons to appear?</string>
-    <string name="navbar_qty_title">Navigation button quantity</string>
-    <string name="navbar_qty_summary">Choose the number of navigation buttons</string>
-    <string name="navbar_action_title">Button %1$s action &amp; icon</string>
-    <string name="button_transparency_title">Nav button transparency</string>
-    <string name="navbar_longpress_title">Button %1$s longpress action</string>
-    <string name="navbar_action_home">Home</string>
-    <string name="navbar_action_back">Back</string>
-    <string name="navbar_action_recents">Recents</string>
-    <string name="navbar_action_search">Search</string>
-    <string name="navbar_action_menu">Menu</string>
-    <string name="navbar_action_kill">Kill task</string>
-    <string name="navbar_action_power">Power</string>
-    <string name="navbar_action_notifications">Notifications</string>
-    <string name="navbar_action_none">Empty</string>
-    <string name="navbar_widgets">Navigation Bar Widgets</string>
-    <string name="navbar_enable_bar">Enable bar</string>
-    <string name="navigation_bar_height_title">Navigation bar height</string>
-    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
-    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
-    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
-    <string name="navigation_bar_width_title">Navigation bar width.</string>
-    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
-    <string name="navbar_enable_dialog_title">Reboot required!</string>
-    <string name="navbar_enable_dialog_msg">You <b>should</b> reboot right now to make sure everything works properly!</string>
-    <string name="navbar_enable_dialog_negative">I\'ll reboot later</string>
-    <string name="navbar_enable_dialog_Positive">Reboot now!</string>
-    <string name="navbar_height_dialog_title">Reboot required!</string>
-    <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
-    <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
-    <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_tint_title">Navigation bar color</string>
-    <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
-    <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
-    <string name="glow_times_title">Button glow animation</string>
-    <string name="glow_times_off">Off</string>
-    <string name="glow_times_superquick">Super quick</string>
-    <string name="glow_times_quick">Quick</string>
-    <string name="glow_times_normal">Normal</string>
-
-    <!-- LED -->
-    <string name="led_on">LED On</string>
-    <string name="led_time_on">Time Light Is On</string>
-    <string name="led_off">LED Off</string>
-    <string name="led_time_off">Time Light Is Off</string>
-    <string name="led_color_click">Click on the LED to change the color</string>
-    <string name="title_led_screen_on">LED flash while screen ON</string>
-    <string name="led_custom_app">Selected App</string>
-    <string name="led_change_app">Change</string>
-    <string name="led_delete_app">Delete</string>
-    <string name="led_keep_app">Keep</string>
-    <string name="led_custom_title">Custom LED Apps</string>
-    <string name="led_edit_button">-</string>
-    <string name="led_test_notification">Test LED</string>
-    <string name="led_test_ok">OK</string>
-
-    <!-- Sound -->
-    <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
-    <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set value</string>
-    <string name="title_headphone_audio_mode">Headphones plugged in action</string>
-    <string name="summary_headphone_audio_mode">What to do with sound when headphones are plugged in and out</string>
-    <string name="title_bt_audio_mode">Bluetooth A2DP connected action</string>
-    <string name="summary_bt_audio_mode">What to do with sound when A2DP is connected</string>
-    <string name="headphones_mode_no_action">No action</string>
-    <string name="headphones_mode_vibrate">Vibrate mode</string>
-    <string name="headphones_mode_silent">Silent mode</string>
-    <string name="title_flip_mode">Face down audio mode</string>
-    <string name="summary_flip_mode">What to do with sound when you flip your phone face down</string>
-    <string name="flip_cat_title">Face Down Action</string>
-    <string name="title_timeout_sec">Screen Timeout</string>
-    <string name="summary_timeout_sec">Time the screen is off before the flip sensor is disabled</string>
-    <string name="title_down_sec">Face down seconds</string>
-    <string name="summary_down_sec">Time required for your phone to be considered face down</string>
-    <string name="flip_action_positive">OK</string>
-    <string name="flip_dialog_title">How it works</string>
-    <string name="flip_dialog_msg">Your phone will flip over to go to vibrate or silent on how you choose.
-        It will take 1.5 (default) seconds to change once flipped over.
-        It will then disable the flip once the screen is turned on after 15 (default) seconds.
-        NOTE: **You will need to turn the screen back on once flipped over to get sound back once the
-        screen timeout time has been reached.**</string>
-    <string name="summary_phone_flip_mode">Flip your phone to silent when receiving a call</string>
-    <string name="title_phone_flip_mode">Phone Call Silence</string>
-
-    <!-- Lockscreen -->
-    <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
-    <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
-    <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
-    <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
-    <string name="volume_rocker_wake_title">Volume wake</string>
-    <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
-    <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
-    <string name="lockscreen_text_color_title">Lockscreen text color</string>
-    <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
-    <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
-    <string name="lockscreen_weather_cat">Weather</string>
-    <string name="lockscreen_weather_title">Enable</string>
-    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
-    <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
-    <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
-    <string name="lockscreen_calendar_cat">Calendar</string>
-    <string name="lockscreen_calendar_title">Enable</string>
-    <string name="lockscreen_calendar_summary">Show upcoming event(s) from your calendar on the lockscreen.</string>
-    <string name="lockscreen_calendar_sources_title">Calendar sources</string>
-    <string name="lockscreen_calendar_sources_summary">Select the calendars you want to see.</string>
-    <string name="lockscreen_calendar_dialog">Choose which calendars to use</string>
-    <string name="lockscreen_calendar_close">Close</string>
-    <string name="lockscreen_calendar_range_title">Time-range</string>
-    <string name="lockscreen_calendar_range_summary">Select the time-range to be displayed.</string>
-    <string name="lockscreen_calendar_use_colors_title">Use colors</string>
-    <string name="lockscreen_calendar_use_colors_summary">If enabled, events will be colored like in your calendar.</string>
-    <string name="lockscreen_calendar_hide_ongoing_title">Hide ongoing events</string>
-    <string name="lockscreen_calendar_hide_ongoing_summary">If enabled, events which already started won\'t show up.</string>
-    <string name="lockscreen_calendar_flip_title">Multiple events</string>
-    <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
-    <string name="lockscreen_calendar_interval_title">Flip interval</string>
-    <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
-
-    <!-- Weather -->
-    <string name="weather_enable">Enable weather</string>
-    <string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
-    <string name="weather_use_custom_location">Use custom location</string>
-    <string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise network-location is used to determine your location.</string>
-    <string name="weather_custom_location_dialog_title">Set your location</string>
-    <string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
-    <string name="weather_custom_location_title">Custom location</string>
-    <string name="weather_show_location_title">Show location</string>
-    <string name="weather_show_location_summary">Show your location.</string>
-    <string name="weather_refresh_interval">Refresh interval</string>
-    <string name="weather_refresh_interval_minutes">" minutes"</string>
-    <string name="weather_use_celcius">Metric units</string>
-    <string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
-    <string name="weather_statusbar_style">Statusbar weather style</string>
-    <string name="weather_start_custom_app">Start custom app</string>
-    <string name="weather_start_custom_app_summary">Start a custom app when clicking on the weather image.</string>
-    <string name="weather_custom_app_title">Custom app</string>
-    <string name="weather_custom_app_dialog_title">Choose your app</string>
-    <string name="weather_custom_app_dialog_message">Package name for now.</string>
-    <string name="weather_refreshing">Requesting weather update!</string>
-    <string name="weather_loc_warning_title">Cannot retrieve location!</string>
-    <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network."</string>
-    <string name="weather_loc_warning_positive">"Enable network location"</string>
-    <string name="weather_loc_warning_negative">"Don't enable."</string>
-    <string name="menu_weather_get_weather">Get weather</string>
-
-    <!-- Weather Codes -->
-    <string name="weather_0">Tornado</string>
-    <string name="weather_1">Tropical Storm</string>
-    <string name="weather_2">Hurricane</string>
-    <string name="weather_3">Severe Thunderstorms</string>
-    <string name="weather_4">Thunderstorms</string>
-    <string name="weather_5">Mixed Rain and Snow</string>
-    <string name="weather_6">Mixed Rain and Sleet</string>
-    <string name="weather_7">Mixed Snow and Sleet</string>
-    <string name="weather_8">Freezing Drizzle</string>
-    <string name="weather_9">Drizzle</string>
-    <string name="weather_10">Freezing Rain</string>
-    <string name="weather_11">Showers</string>
-    <string name="weather_12">Showers</string>
-    <string name="weather_13">Snow Flurries</string>
-    <string name="weather_14">Light Snow Showers</string>
-    <string name="weather_15">Blowing Snow</string>
-    <string name="weather_16">Snow</string>
-    <string name="weather_17">Hail</string>
-    <string name="weather_18">Sleet</string>
-    <string name="weather_19">Dust</string>
-    <string name="weather_20">Foggy</string>
-    <string name="weather_21">Haze</string>
-    <string name="weather_22">Smoky</string>
-    <string name="weather_23">Blustery</string>
-    <string name="weather_24">Windy</string>
-    <string name="weather_25">Cold</string>
-    <string name="weather_26">Cloudy</string>
-    <!-- mostly cloudy (night) -->
-    <string name="weather_27">Mostly Cloudy</string>
-    <!-- mostly cloudy (day) -->
-    <string name="weather_28">Mostly Cloudy</string>
-    <!-- partly cloudy (night) -->
-    <string name="weather_29">Partly Cloudy</string>
-    <!-- partly cloudy (day) -->
-    <string name="weather_30">Partly Cloudy</string>
-    <!-- clear (night) -->
-    <string name="weather_31">Clear</string>
-    <string name="weather_32">Sunny</string>
-    <!-- fair (night) -->
-    <string name="weather_33">Fair</string>
-    <!-- fair (day) -->
-    <string name="weather_34">Fair</string>
-    <string name="weather_35">Mixed Rain and Hail</string>
-    <string name="weather_36">Hot</string>
-    <string name="weather_37">Isolated Thunderstorms</string>
-    <string name="weather_38">Scattered Thunderstorms</string>
-    <string name="weather_39">Scattered Thunderstorms</string>
-    <string name="weather_40">Scattered Showers</string>
-    <string name="weather_41">Heavy Snow</string>
-    <string name="weather_42">Scattered Snow Showers</string>
-    <string name="weather_43">Scattered Snow Showers</string>
-    <string name="weather_44">Partly Cloudy</string>
-    <string name="weather_45">Thundershowers</string>
-    <string name="weather_46">Snow Showers</string>
-    <string name="weather_47">Isolated Thundershowers</string>
-    <!-- Forecase unavailable -->
-    <string name="weather_3200"></string>
 
     <!-- Miscellaneous -->
     <string name="location_unavailable">Не удаётся определить местоположение для получения погоды</string>

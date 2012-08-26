@@ -50,6 +50,7 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     public static final String TAG = "UserInterface";
 
+    private static final String PREF_180 = "rotate_180";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
@@ -62,6 +63,7 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
+    CheckBoxPreference mAllow180Rotation;
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mStatusBarNotifCount;
     Preference mNotificationWallpaper;
@@ -81,6 +83,11 @@ public class UserInterface extends AOKPPreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_ui);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
+        mAllow180Rotation.setChecked(Settings.System.getInt(mContext
+                .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_ANGLES, (1 | 2 | 8)) == (1 | 2 | 4 | 8));
+
 
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
@@ -124,7 +131,13 @@ public class UserInterface extends AOKPPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mStatusBarNotifCount) {
+        if (preference == mAllow180Rotation) {
+
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.ACCELEROMETER_ROTATION_ANGLES, checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8 ));
+            return true;
+        } else if (preference == mStatusBarNotifCount) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_COUNT,
                     ((CheckBoxPreference) preference).isChecked());

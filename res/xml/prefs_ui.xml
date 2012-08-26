@@ -13,6 +13,11 @@
             android:defaultValue="false" />
 
          <CheckBoxPreference
+            android:key="rotate_180"
+            android:title="@string/rotate_180_title"
+            android:summary="@string/rotate_180_summary" />
+
+         <CheckBoxPreference
             android:key="disable_bootanimation"
             android:title="@string/disable_bootanimation_title" />
 

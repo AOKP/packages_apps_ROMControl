@@ -1,96 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- boot animation stuff -->
-    <string-array name="disable_bootanimation_insults">
-        <item>Jerk!</item>
-        <item>ProTekk!</item>
-    </string-array>
-
     <!-- clock stuff -->
     <string-array name="clock_style_entries">
-        <item>Right clock</item>
-        <item>Center clock</item>
-        <item>No clock</item>
+        <item>Справа</item>
+        <item>Слева</item>
+        <item>Без часов</item>
     </string-array>
     <string-array name="clock_ampm_entries">
-        <item>Don\'t show</item>
-        <item>Small AM/PM</item>
-        <item>Regular AM/PM</item>
+        <item>Не отображать</item>
+        <item>Маленькое AM/PM</item>
+        <item>Обычное AM/PM</item>
         <item>ProTekk O\'Clock</item>
     </string-array>
     <string-array name="clock_weekday_entries">
-        <item>Don\'t show</item>
-        <item>Small weekday</item>
-        <item>Regular weekday</item>
+        <item>Не показывать</item>
+        <item>Маленький день недели</item>
+        <item>Обычный день недели</item>
     </string-array>
 
     <!-- toggle style -->
     <string-array name="toggle_style_entries">
-        <item>Icon only</item>
-        <item>Text only</item>
-    </string-array>
-    <string-array name="toggles_layout_images">
-        <item>@drawable/toggle_layout_switches</item>
-        <item>@drawable/toggle_layout_buttons</item>
-    </string-array>
-    <string-array name="toggles_layout_entries">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
-
-    <!-- Generic toggle overlay. Should be set per device in overlay -->
-    <string-array name="available_toggles_values">
-        <item>@string/toggle_auto_rotate</item>
-        <item>@string/toggle_bluetooth</item>
-        <item>@string/toggle_gps</item>
-        <item>@string/toggle_wifi</item>
-        <item>@string/toggle_airplane_mode</item>
-        <item>@string/toggle_vibrate</item>
-        <item>@string/toggle_silent</item>
-        <item>@string/toggle_torch</item>
-        <item>@string/toggle_sync</item>
-        <item>@string/toggle_swagger</item>
+        <item>Только иконка</item>
+        <item>Только текст</item>
     </string-array>
 
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries">
-        <item>On top</item>
-        <item>On the bottom</item>
-        <item>Don\'t Show</item>
+        <item>Сверху</item>
+        <item>Снизу</item>
+        <item>Не отображать</item>
     </string-array>
 
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">
-        <item>Icon only</item>
-        <item>Text only</item>
-        <item>Icon with text</item>
-        <item>Icon with centered text</item>
+        <item>Только иконка</item>
+        <item>Только текст</item>
+        <item>Иконка с текстом</item>
+        <item>Иконка с текстом посередине</item>
         <item>CircleMOD</item>
-        <item>Hide</item>
+        <item>Скрыть</item>
     </string-array>
 
     <!-- NavBar -->
     <string-array name="pref_navigation_menu_entries">
-        <item>Right</item>
-        <item>Left</item>
-        <item>Both</item>
-        <item>Remove</item>
+        <item>Справа</item>
+        <item>Слева</item>
+        <item>Везде</item>
+        <item>Удалить</item>
     </string-array>
 
     <!-- right is the default, easier to keep 0 as first index -->
     <string-array name="pref_navigation_menu_display_entries">
-        <item>Default JB behavior</item>
-        <item>Always show invisible icons</item>
-        <item>Always show</item>
-        <item>Default JB with invisible icons when hidden</item>
-    </string-array>
-    <string-array name="navigation_bar_qty_entries">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
+        <item>Стандартное поведение JB</item>
+        <item>Всегда показывать невидимые иконки</item>
+        <item>Всегда показывать</item>
+        <item>Стандартное поведение JB с невидимыми иконками</item>
     </string-array>
     <string-array name="navbar_button_entries">
         <item>Home</item>
@@ -105,186 +70,140 @@
         <item>Custom app</item>
         <item>Blank</item>
     </string-array>
-    <string-array name="navigation_bar_width_entries">
-        <item>42 dp (default)</item>
-        <item>36 dp</item>
-        <item>30 dp</item>
-        <item>24 dp</item>
-    </string-array>
-    <string-array name="navigation_bar_height_entries">
-        <item>48 dp (default)</item>
-        <item>44 dp</item>
-        <item>40 dp</item>
-        <item>36 dp</item>
-        <item>30 dp</item>
-        <item>24 dp</item>
-    </string-array>
-    <string-array name="navigation_bar_height_landscape_entries">
-        <item>48 dp (default)</item>
-        <item>42 dp</item>
-        <item>36 dp</item>
-        <item>30 dp</item>
-        <item>24 dp</item>
-    </string-array>
-    <string-array name="glow_times_entries">
-		<item>@string/glow_times_off</item>
-		<item>@string/glow_times_superquick</item>
-		<item>@string/glow_times_quick</item>
-		<item>@string/glow_times_normal</item>
-	</string-array>
     <string-array name="battery_bar_entries">
-        <item>Hide</item>
-        <item>Statusbar</item>
-        <item>Top of navbar</item>
-        <item>Bottom of navbar</item>
+        <item>Скрыть</item>
+        <item>Статусбар</item>
+        <item>Над навбаром</item>
+        <item>Под навбаром</item>
     </string-array>
     <string-array name="battery_bar_style_entries">
-        <item>Regular</item>
-        <item>Center-mirrored</item>
-    </string-array>
-    <string-array name="battery_bar_thickness_entries">
-        <item>1 dp</item>
-        <item>2 dp</item>
-        <item>3 dp</item>
-        <item>4 dp</item>
+        <item>По умолчанию</item>
+        <item>По центру</item>
     </string-array>
 
     <!-- LED Values -->
     <string-array name="led_entries">
-        <item>.2 seconds</item>
-        <item>.5 seconds</item>
-        <item>1 second</item>
-        <item>1.5 seconds</item>
-        <item>2 seconds</item>
-        <item>2.5 seconds</item>
-        <item>3 seconds</item>
-        <item>3.5 seconds</item>
-        <item>4 seconds</item>
-        <item>4.5 seconds</item>
-        <item>5 seconds</item>
-        <item>5.5 seconds</item>
-        <item>6 seconds</item>
-        <item>7 seconds</item>
-        <item>8 seconds</item>
-        <item>9 seconds</item>
-        <item>10 seconds</item>
+        <item>.2 секунды</item>
+        <item>.5 секунды</item>
+        <item>1 секунда</item>
+        <item>1.5 секунды</item>
+        <item>2 секунды</item>
+        <item>2.5 секунды</item>
+        <item>3 секунды</item>
+        <item>3.5 секунды</item>
+        <item>4 секунды</item>
+        <item>4.5 секунды</item>
+        <item>5 секунд</item>
+        <item>5.5 секунды</item>
+        <item>6 секунд</item>
+        <item>7 секунд</item>
+        <item>8 секунд</item>
+        <item>9 секунд</item>
+        <item>10 секунд</item>
     </string-array>
 
-    <string-array name="headphone_audio_mode_entries">
-        <item>@string/headphones_mode_no_action</item>
-        <item>@string/headphones_mode_vibrate</item>
-        <item>@string/headphones_mode_silent</item>
-    </string-array>
     <string-array name="phone_call_flip_entries">
-        <item>Disabled</item>
-        <item>Enabled</item>
+        <item>Отключено</item>
+        <item>Включено</item>
     </string-array>
 
     <!-- Flip up/down arrays -->
     <string-array name="flip_entries">
-        <item>.5 seconds</item>
-        <item>1 second</item>
-        <item>1.5 seconds</item>
-        <item>2 seconds</item>
-        <item>2.5 seconds</item>
-        <item>3 seconds</item>
-        <item>3.5 seconds</item>
-        <item>4 seconds</item>
-        <item>4.5 seconds</item>
-        <item>5 seconds</item>
-        <item>5.5 seconds</item>
-        <item>6 seconds</item>
-        <item>7 seconds</item>
-        <item>8 seconds</item>
-        <item>9 seconds</item>
-        <item>10 seconds</item>
+        <item>.5 секунды</item>
+        <item>1 секунда</item>
+        <item>1.5 секунды</item>
+        <item>2 секунды</item>
+        <item>2.5 секунды</item>
+        <item>3 секунды</item>
+        <item>3.5 секунды</item>
+        <item>4 секунды</item>
+        <item>4.5 секунды</item>
+        <item>5 секунд</item>
+        <item>5.5 секунды</item>
+        <item>6 секунд</item>
+        <item>7 секунд</item>
+        <item>8 секунд</item>
+        <item>9 секунд</item>
+        <item>10 секунд</item>
     </string-array>
 
     <!-- values must be in milliseconds!~@@#E!@ -->
     <string-array name="flip_screenoff_entries">
-        <item>0 seconds (Instant Off)</item>
-        <item>5 seconds</item>
-        <item>10 second</item>
-        <item>15 seconds</item>
-        <item>30 seconds</item>
-        <item>45 seconds</item>
-        <item>1 minute</item>
-        <item>1.5 minutes</item>
-        <item>2 minutes</item>
-        <item>2.5 minutes</item>
-        <item>3 minutes</item>
-        <item>3.5 minutes</item>
-        <item>4 minutes</item>
-        <item>5 minutes</item>
+        <item>Немедленно выключать</item>
+        <item>5 секунд</item>
+        <item>10 секунд</item>
+        <item>15 секунд</item>
+        <item>30 секунд</item>
+        <item>45 секунд</item>
+        <item>1 минута</item>
+        <item>1.5 минуты</item>
+        <item>2 минуты</item>
+        <item>2.5 минуты</item>
+        <item>3 минуты</item>
+        <item>3.5 минуты</item>
+        <item>4 минуты</item>
+        <item>5 минут</item>
     </string-array>
 
     <!-- weather arrays -->
     <string-array name="weather_interval_entries">
-        <item>Off</item>
-        <item>1 minutes</item>
-        <item>5 minutes</item>
-        <item>10 minutes</item>
-        <item>30 minutes</item>
-        <item>45 minutes</item>
-        <item>60 minutes</item>
-        <item>2 hours</item>
-        <item>3 hours</item>
-        <item>4 hours</item>
-        <item>6 hours</item>
-        <item>8 hours</item>
+        <item>Отключено</item>
+        <item>1 минута</item>
+        <item>5 минуты</item>
+        <item>10 минуты</item>
+        <item>30 минуты</item>
+        <item>45 минуты</item>
+        <item>60 минуты</item>
+        <item>2 часа</item>
+        <item>3 часа</item>
+        <item>4 часа</item>
+        <item>6 часов</item>
+        <item>8 часов</item>
     </string-array>
 
     <string-array name="weather_statusbar_location_entries">
-		<item>Above carrier text</item>
-		<item>Weather panel</item>
-		<item>Disabled</item>
+		<item>Над оператором</item>
+		<item>Панель погоды</item>
+		<item>Отключено</item>
 	</string-array>
 
     <string-array name="pref_lockscreen_weather_type_entries">
-        <item>Weather Panel</item>
-        <item>Text</item>
+        <item>Панель погоды</item>
+        <item>Текст</item>
     </string-array>
 
     <!-- lockscreen calendar arrays -->
     <string-array name="pref_lockscreen_calendar_interval_entries">
-        <item>1 second</item>
-        <item>1.5 seconds</item>
-        <item>2 seconds</item>
-        <item>2.5 seconds</item>
-        <item>3 seconds</item>
-        <item>3.5 seconds</item>
-        <item>4 seconds</item>
+        <item>1 секунда</item>
+        <item>1.5 секунды</item>
+        <item>2 секунды</item>
+        <item>2.5 секунды</item>
+        <item>3 секунды</item>
+        <item>3.5 секунды</item>
+        <item>4 секунды</item>
     </string-array>
 
     <string-array name="pref_lockscreen_calendar_range_entries">
-        <item>1 day</item>
-        <item>2 days</item>
-        <item>3 days</item>
-        <item>4 days</item>
-        <item>5 days</item>
-        <item>6 days</item>
-        <item>1 week</item>
-    </string-array>
-
-    <string-array name="minfree">
-        <item>25mb</item>
-        <item>50mb</item>
-        <item>75mb</item>
-        <item>80mb</item>
-        <item>100mb</item>
+        <item>1 день</item>
+        <item>2 дня</item>
+        <item>3 дня</item>
+        <item>4 дня</item>
+        <item>5 дней</item>
+        <item>6 дней</item>
+        <item>1 неделя</item>
     </string-array>
 
 
     <string-array name="less_notification_sounds_entries">
-        <item>Default behavior</item>
-        <item>3s</item>
-        <item>5s</item>
-        <item>10s</item>
-        <item>15s</item>
-        <item>30s</item>
-        <item>45s</item>
-        <item>1m</item>
-        <item>2m</item>
+        <item>По умолчанию</item>
+        <item>3сек</item>
+        <item>5сек</item>
+        <item>10сек</item>
+        <item>15сек</item>
+        <item>30сек</item>
+        <item>45сек</item>
+        <item>1мин</item>
+        <item>2мин</item>
     </string-array>
 
 </resources>

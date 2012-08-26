@@ -65,29 +65,29 @@
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_style_title">Toggle style</string>
-    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
-    <string name="toggles_layout_title">Toggle Layout</string>
-    <string name="enabled_toggles_title">Enabled toggles</string>
-    <string name="enabled_toggles_summary">Choose toggles to display</string>
-    <string name="toggles_display_dialog">Choose which toggles to use</string>
-    <string name="toggles_display_close">Close</string>
-    <string name="toggles_order_title">Toggle order</string>
-    <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
-    <string name="brightness_location_title">Brightness location</string>
-    <string name="reset_toggles_title">Reset toggles</string>
-    <string name="reset_toggles_summary">Reset all toggles and their order</string>
-    <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
-    <string name="toggle_btn_enabled_color_title">Enabled indicator color</string>
-    <string name="toggle_btn_disabled_color_title">Disabled indicator color</string>
-    <string name="toggle_btn_background_title">Toggle background alpha</string>
-    <string name="toggle_text_color_title">Toggle text color</string>
+    <string name="toggle_style_title">Стиль переключателей</string>
+    <string name="toggle_style_summary">Отображать значки или текст</string>
+    <string name="toggles_layout_title">Тип переключателей</string>
+    <string name="enabled_toggles_title">Активные переключатели</string>
+    <string name="enabled_toggles_summary">Выберите переключатели для отображения</string>
+    <string name="toggles_display_dialog">Активные переключатели</string>
+    <string name="toggles_display_close">Закрыть</string>
+    <string name="toggles_order_title">Сортировать переключатели</string>
+    <string name="toggles_order_summary">Выберите в каком порядке отображать переключатели</string>
+    <string name="brightness_location_title">Положение автоподсветки</string>
+    <string name="reset_toggles_title">Сбросить переключатели</string>
+    <string name="reset_toggles_summary">Сбросить все переключатели и их порядок</string>
+    <string name="toggle_button_alpha_title">Прозрачные переключатели</string>
+    <string name="toggle_btn_enabled_color_title">Цвет активного индикатора</string>
+    <string name="toggle_btn_disabled_color_title">Цвет неактивного индикатора</string>
+    <string name="toggle_btn_background_title">Прозрачность фона переключателей</string>
+    <string name="toggle_text_color_title">Цвет текста переключателей</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Отображение часов</string>
     <string name="title_clock_ampm_entries">Стиль AM/PM режима</string>
     <string name="enable_clock_weekday">День недели</string>
-    <string name="enable_clock_weekday_summary">Сокращённый день недели перед часами</string>
+    <string name="enable_clock_weekday_summary">Короткий день недели перед часами</string>
     <string name="colors">Цвета</string>
     <string name="clock_color_title">Цвет часов</string>
 
@@ -343,7 +343,7 @@
     <string name="weather_3200"></string>
 
     <!-- Miscellaneous -->
-    <string name="location_unavailable">Не удаётся найти местоположение для получения погоды</string>
+    <string name="location_unavailable">Не удаётся определить местоположение для получения погоды</string>
 
     <!-- cardinal directions -->
     <string name="direction_north">С</string>
@@ -371,16 +371,16 @@
     <string name="ps_free_memory">Количество RAM, которое будет поддерживать minfree taskkiller | Текущее: %s</string>
     <string name="pt_free_memory_boot">Устанавливать при загрузке</string>
     <string name="ps_free_memory_boot">Устанавливать указанное значение при загрузке</string>
-    <string name="pt_fast_charge_boot">Fast Charge</string>
-    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
-    <string name="pt_volt_control">Voltage control</string>
-    <string name="ps_volt_control">Set voltages for each frequency</string>
-    <string name="not_supported">Your kernel does not support voltage control</string>
-    <string name="apply_values">Apply values</string>
-    <string name="freq">Frequency</string>
+    <string name="pt_fast_charge_boot">Быстрая зарядка</string>
+    <string name="ps_fast_charge_boot">включить быструю зарядку при включении</string>
+    <string name="pt_volt_control">Управление напряжением</string>
+    <string name="ps_volt_control">Установить напряжения для каждой частоты</string>
+    <string name="not_supported">Ваше ядро не поддерживает управление напряжением</string>
+    <string name="apply_values">Применить значения</string>
+    <string name="freq">Частота</string>
     <string name="current">mV current</string>
     <string name="saved">mV saved</string>
-    <string name="kernel">Kernel Tweaks (if supported)</string>
+    <string name="kernel">Твики ядра (если поддерживается)</string>
     <string name="fast_charge_warning">ВЫ НЕ СМОЖЕТЕ ПОДКЛЮЧИТЬ ТЕЛЕФОН К КОМПЬЮТЕРУ ДАЖЕ ПОСЛЕ ПЕРЕЗАГРУЗКИ!\n\nЭта настройка будет включать быструю зарядку при каждой загрузке системы. Пока быстрая зарядка включена, вы сможете *только* заряжать телефон!</string>
     <string name="fast_charge_notification_title">Быстрая зарядка включена!</string>
     <string name="fast_charge_notification_message">Телефон в режиме только зарядки!</string>

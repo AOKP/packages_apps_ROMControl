@@ -16,17 +16,11 @@
 
 package com.baked.romcontrol.fragments;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -39,14 +33,28 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.Display;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.Window;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import android.widget.Toast;
 
 import com.baked.romcontrol.R;
@@ -54,11 +62,15 @@ import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.Utils;
 import com.baked.romcontrol.util.ColorPickerView;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class LockscreenInterface extends BAKEDPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenInterface";
+    private static final boolean DEBUG = true;
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int SELECT_WALLPAPER = 3;
+    private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     public static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
     private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
@@ -75,6 +87,8 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
     private boolean mIsScreenLarge;
 
     ArrayList<String> keys = new ArrayList<String>();
+    
+    ColorPickerPreference mLockscreenTextColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -101,6 +115,9 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
              } catch (SettingNotFoundException e) {
              }
         }
+        
+        mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
+        mLockscreenTextColor.setOnPreferenceChangeListener(this);
 
         mIsScreenLarge = Utils.isTablet(getActivity());
 
@@ -276,6 +293,14 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
+            return true;
+        }else if (preference == mLockscreenTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
+            if (DEBUG) Log.d(TAG, String.format("new color hex value: %d", intHex));
             return true;
         }
         return false;

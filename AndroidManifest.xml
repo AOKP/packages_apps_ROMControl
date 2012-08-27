@@ -175,6 +175,15 @@
                 <action android:name="com.aokp.romcontrol.INTENT_WEATHER_REQUEST" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".performance.RebootReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.aokp.romcontrol.ACTION_DAILY_REBOOT" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".performance.DailyRebootScheduleService" />
         <service android:name=".service.BootService" />
         <service android:name=".service.HeadphoneService" />
         <service android:name=".service.FlipService" />

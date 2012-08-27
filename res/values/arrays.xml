@@ -850,5 +850,11 @@
         <item>6144</item>
     </string-array>
 
+    <!-- boot animation stuff -->
+    <string-array name="disable_bootanimation_insults">
+        <item>Jerk!</item>
+        <item>Iphone Lover!</item>
+    </string-array>
+
 
 </resources>

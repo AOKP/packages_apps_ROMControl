@@ -53,6 +53,7 @@
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="disable_bootanimation_title">Disable boot animation</string>
 
     <!-- Phone flip face down settings -->
     <string name="title_flip_mode">Face down audio mode</string>

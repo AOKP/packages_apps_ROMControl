@@ -12,10 +12,14 @@
         android:summary="@string/ime_switcher_summary"
         android:defaultValue="true" />
 
-     <CheckBoxPreference
+    <CheckBoxPreference
         android:key="status_bar_notif_count"
         android:title="@string/status_bar_notif_count_title"
         android:summary="@string/status_bar_notif_count_summary"
         android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="disable_bootanimation"
+        android:title="@string/disable_bootanimation_title" />
 
 </PreferenceScreen>

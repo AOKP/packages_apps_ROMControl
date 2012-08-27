@@ -21,6 +21,7 @@ import java.util.List;
 import com.aokp.romcontrol.R;
 
 import com.aokp.romcontrol.performance.CPUSettings;
+import com.aokp.romcontrol.performance.DailyRebootScheduleService;
 import com.aokp.romcontrol.performance.Voltage;
 import com.aokp.romcontrol.performance.VoltageControlSettings;
 import com.aokp.romcontrol.util.CMDProcessor;
@@ -30,12 +31,14 @@ import com.aokp.romcontrol.weather.WeatherService;
 public class BootService extends Service {
 
     public static boolean servicesStarted = false;
-    public static SharedPreferences preferences;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        new BootWorker().execute();
-        return START_NOT_STICKY;
+        if(intent == null) {
+            stopSelf();
+        }
+        new BootWorker(this).execute();
+        return START_STICKY;
     }
 
     @Override
@@ -45,10 +48,15 @@ public class BootService extends Service {
 
     class BootWorker extends AsyncTask<Void, Void, Void> {
 
+        Context c;
+        
+        public BootWorker(Context c) {
+            this.c = c;
+        }
+        
         @Override
         protected Void doInBackground(Void... args) {
-            Context c = getApplicationContext();
-            preferences = PreferenceManager.getDefaultSharedPreferences(c);
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
             final CMDProcessor cmd = new CMDProcessor();
 
             if (HeadphoneService.getUserHeadphoneAudioMode(c) != -1
@@ -86,13 +94,13 @@ public class BootService extends Service {
                     if (new File("/sys/devices/system/cpu/cpu1").exists()) {
                         cmd.su.runWaitFor("busybox echo " + max +
                                 " > " + CPUSettings.MAX_FREQ
-                                .replace("cpu0", "cpu1"));
+                                        .replace("cpu0", "cpu1"));
                         cmd.su.runWaitFor("busybox echo " + min +
                                 " > " + CPUSettings.MIN_FREQ
-                                .replace("cpu0", "cpu1"));
+                                        .replace("cpu0", "cpu1"));
                         cmd.su.runWaitFor("busybox echo " + gov +
                                 " > " + CPUSettings.GOVERNOR
-                                .replace("cpu0", "cpu1"));
+                                        .replace("cpu0", "cpu1"));
                     }
                 }
             }
@@ -100,7 +108,7 @@ public class BootService extends Service {
             if (preferences.getBoolean(VoltageControlSettings
                     .KEY_APPLY_BOOT, false)) {
                 final List<Voltage> volts = VoltageControlSettings
-                    .getVolts(preferences);
+                        .getVolts(preferences);
                 final StringBuilder sb = new StringBuilder();
                 for (final Voltage volt : volts) {
                     sb.append(volt.getSavedMV() + " ");
@@ -109,8 +117,8 @@ public class BootService extends Service {
                         " > " + VoltageControlSettings.MV_TABLE0);
                 if (new File(VoltageControlSettings.MV_TABLE1).exists()) {
                     cmd.su.runWaitFor("busybox echo " +
-                    sb.toString() + " > " +
-                    VoltageControlSettings.MV_TABLE1);
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE1);
                 }
             }
 
@@ -169,6 +177,11 @@ public class BootService extends Service {
                 }
             }
 
+            if (DailyRebootScheduleService.isDailyRebootEnabled(getApplicationContext())) {
+                getApplicationContext().startService(
+                        new Intent(getApplicationContext(), DailyRebootScheduleService.class));
+            }
+
             return null;
         }
 
@@ -178,7 +191,11 @@ public class BootService extends Service {
             servicesStarted = true;
             stopSelf();
         }
-
+    }
+    
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 
     private void sendLastWeatherBroadcast() {

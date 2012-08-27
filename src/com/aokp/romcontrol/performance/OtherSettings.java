@@ -1,40 +1,48 @@
+
 package com.aokp.romcontrol.performance;
 
-import java.io.File;
-
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
+import android.text.format.DateFormat;
 import android.util.Log;
-
-import com.aokp.romcontrol.R;
+import android.widget.TimePicker;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
 
-public class OtherSettings extends AOKPPreferenceFragment implements OnSharedPreferenceChangeListener, OnPreferenceChangeListener {
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class OtherSettings extends AOKPPreferenceFragment implements
+        OnSharedPreferenceChangeListener, OnPreferenceChangeListener {
 
     public static final String TAG = "OtherSettings";
 
     public static final String KEY_MINFREE = "free_memory";
     public static final String KEY_FASTCHARGE = "fast_charge_boot";
     public static final String MINFREE = "/sys/module/lowmemorykiller/parameters/minfree";
+    public static final String KEY_DAILY_REBOOT = "daily_reboot";
 
     private ListPreference mFreeMem;
     private CheckBoxPreference mFastCharge;
+    private CheckBoxPreference mDailyReboot;
     private SharedPreferences preferences;
 
     @Override
@@ -69,6 +77,31 @@ public class OtherSettings extends AOKPPreferenceFragment implements OnSharedPre
             ((PreferenceGroup) findPreference("kernel")).removePreference(mFastCharge);
         }
 
+        mDailyReboot = (CheckBoxPreference) findPreference(KEY_DAILY_REBOOT);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateRebootSummary();
+    }
+
+    public void updateRebootSummary() {
+        if (mDailyReboot.isChecked()) {
+            int[] rebootTime = DailyRebootScheduleService.getUserSpecifiedRebootTime(mContext);
+            java.text.DateFormat f = DateFormat.getTimeFormat(mContext);
+            GregorianCalendar d = new GregorianCalendar();
+            d.set(Calendar.HOUR_OF_DAY, rebootTime[0]);
+            d.set(Calendar.MINUTE, rebootTime[1]);
+            Resources res = getResources();
+            mDailyReboot
+                    .setSummary(String.format(
+                            res.getString(R.string.performance_daily_reboot_summary),
+                            f.format(d.getTime())));
+        } else {
+            mDailyReboot.setSummary(mContext
+                    .getString(R.string.performance_daily_reboot_summary_unscheduled));
+        }
     }
 
     @Override
@@ -102,6 +135,19 @@ public class OtherSettings extends AOKPPreferenceFragment implements OnSharedPre
                         .show();
                 return true;
             }
+        } else if (preference == mDailyReboot) {
+            if (((CheckBoxPreference) preference).isChecked()) {
+                getFragmentManager().beginTransaction()
+                        .addToBackStack("timepicker").add(new TimePickerFragment(), "timepicker")
+                        .commit();
+            } else {
+                updateRebootSummary();
+                // send intent to unschedule
+                Intent schedule = new Intent(getActivity().getApplicationContext(),
+                        DailyRebootScheduleService.class);
+                getActivity().getApplicationContext().startService(schedule);
+            }
+            return true;
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -137,4 +183,29 @@ public class OtherSettings extends AOKPPreferenceFragment implements OnSharedPre
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
     }
+
+    public class TimePickerFragment extends DialogFragment
+            implements TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current time as the default values for the picker
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
+
+            // Create a new instance of TimePickerDialog and return it
+            return new TimePickerDialog(getActivity(), this, hour, minute,
+                    DateFormat.is24HourFormat(getActivity()));
+        }
+
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            DailyRebootScheduleService.setUserSpecifiedRebootTime(getActivity(), hourOfDay, minute);
+            Intent schedule = new Intent(getActivity().getApplicationContext(),
+                    DailyRebootScheduleService.class);
+            getActivity().getApplicationContext().startService(schedule);
+            OtherSettings.this.updateRebootSummary();
+        }
+    }
+
 }

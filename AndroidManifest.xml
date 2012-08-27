@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="AboutActivity">
+            android:name=".AboutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
@@ -180,7 +180,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="CreateShortcut"
+            android:name=".CreateShortcut"
             android:theme="@style/Theme.CreateShortCut" >
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />

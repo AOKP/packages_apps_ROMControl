@@ -442,5 +442,7 @@
     <string name="fast_charge_notification_title">Fast Charge is ON!</string>
     <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
     <string name="prefcat_other_tweaks">Other tweaks</string>
-
+    <string name="performance_daily_reboot_title">Daily reboot</string>
+    <string name="performance_daily_reboot_summary">Reboot scheduled at %1$s</string>
+    <string name="performance_daily_reboot_summary_unscheduled">Not shceduled</string>
 </resources>

@@ -123,6 +123,7 @@
     <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
     <string name="toggle_btn_enabled_color_title">Toggle on color</string>
     <string name="toggle_btn_disabled_color_title">Toggle off color</string>
+    <string name="toggle_text_color_title">Toggle text color</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
@@ -359,6 +360,9 @@
     <string name="slide_lock_delay_5m">5 minutes</string>
     <string name="slide_lock_delay_10m">10 minutes</string>
     <string name="slide_lock_delay_30m">30 minutes</string>
+
+    <!-- String for IconPicker -->
+    <string name="lockscreen_text_color_title">Lockscreen text color</string>
 
     <!-- String for IconPicker -->
     <string name="icon_picker_title">Choose icon source</string>

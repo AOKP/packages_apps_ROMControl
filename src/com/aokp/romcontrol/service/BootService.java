@@ -21,6 +21,7 @@ import java.util.List;
 import com.aokp.romcontrol.R;
 
 import com.aokp.romcontrol.performance.CPUSettings;
+import com.aokp.romcontrol.performance.DailyRebootService;
 import com.aokp.romcontrol.performance.Voltage;
 import com.aokp.romcontrol.performance.VoltageControlSettings;
 import com.aokp.romcontrol.util.CMDProcessor;
@@ -86,13 +87,13 @@ public class BootService extends Service {
                     if (new File("/sys/devices/system/cpu/cpu1").exists()) {
                         cmd.su.runWaitFor("busybox echo " + max +
                                 " > " + CPUSettings.MAX_FREQ
-                                .replace("cpu0", "cpu1"));
+                                        .replace("cpu0", "cpu1"));
                         cmd.su.runWaitFor("busybox echo " + min +
                                 " > " + CPUSettings.MIN_FREQ
-                                .replace("cpu0", "cpu1"));
+                                        .replace("cpu0", "cpu1"));
                         cmd.su.runWaitFor("busybox echo " + gov +
                                 " > " + CPUSettings.GOVERNOR
-                                .replace("cpu0", "cpu1"));
+                                        .replace("cpu0", "cpu1"));
                     }
                 }
             }
@@ -100,7 +101,7 @@ public class BootService extends Service {
             if (preferences.getBoolean(VoltageControlSettings
                     .KEY_APPLY_BOOT, false)) {
                 final List<Voltage> volts = VoltageControlSettings
-                    .getVolts(preferences);
+                        .getVolts(preferences);
                 final StringBuilder sb = new StringBuilder();
                 for (final Voltage volt : volts) {
                     sb.append(volt.getSavedMV() + " ");
@@ -109,8 +110,8 @@ public class BootService extends Service {
                         " > " + VoltageControlSettings.MV_TABLE0);
                 if (new File(VoltageControlSettings.MV_TABLE1).exists()) {
                     cmd.su.runWaitFor("busybox echo " +
-                    sb.toString() + " > " +
-                    VoltageControlSettings.MV_TABLE1);
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE1);
                 }
             }
 
@@ -167,6 +168,11 @@ public class BootService extends Service {
                     cmd.su.runWaitFor("busybox echo " + values +
                             " > /sys/module/lowmemorykiller/parameters/minfree");
                 }
+            }
+
+            if (DailyRebootService.isDailyRebootEnabled(getApplicationContext())) {
+                getApplicationContext().startService(
+                        new Intent(getApplicationContext(), DailyRebootService.class));
             }
 
             return null;

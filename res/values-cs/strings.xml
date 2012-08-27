@@ -321,10 +321,6 @@
   <string name="direction_west">Z</string>
   <string name="direction_north_west">SZ</string>
   
-  <string name="lockscreen_weather_title">Počasí na zamčené obrazovce</string>
-  <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
-  <string name="lockscreen_weather_type_title">Styl počasí na zamčené obrazovce</string>
-  <string name="lockscreen_weather_type_summary">Nastavuje zobrazení grafické nebo textové podoby informace o počasí.</string>
   <string name="menu_weather_get_weather">Načíst počasí</string>
   
   <string name="clipboard_notification">Zkopírováno do schránky.</string>
@@ -355,4 +351,30 @@
   <string name="fast_charge_notification_title">Rychlé nabíjení je zapnuto!</string>
   <string name="fast_charge_notification_message">Telefon je ve stavu nabíjení!</string>
   <string name="prefcat_other_tweaks">Další tweaky</string>
+
+  <string name="lockscreen_weather_cat">Počasí</string>
+  <string name="lockscreen_weather_title">Zapnout</string>
+  <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
+  <string name="lockscreen_weather_type_title">Styl počasí na zamčené obrazovce</string>
+  <string name="lockscreen_weather_type_summary">Nastavuje zobrazení grafické nebo textové podoby informace o počasí.</string>
+  <string name="lockscreen_calendar_cat">Kalendář</string>
+  <string name="lockscreen_calendar_title">Zapnout</string>
+  <string name="lockscreen_calendar_summary">Zobrazit nadcházející události z kalendáře na zamřené obrazovce.</string>
+  <string name="lockscreen_calendar_sources_title">Zdroje kalendáře</string>
+  <string name="lockscreen_calendar_sources_summary">Vybrat kalendáře k zobrazení.</string>
+  <string name="lockscreen_calendar_dialog">Vybrat kalendáře k zobrazení</string>
+  <string name="lockscreen_calendar_close">Zavřít</string>
+  <string name="lockscreen_calendar_range_title">Časový rozsah</string>
+  <string name="lockscreen_calendar_range_summary">Vybrat časový rozsah pro zobrazované události.</string>
+  <string name="lockscreen_calendar_use_colors_title">Použít barvy</string>
+  <string name="lockscreen_calendar_use_colors_summary">Použijí se barvy jednotlivých kalendářů.</string>
+  <string name="lockscreen_calendar_hide_ongoing_title">Skrýt probíhající události</string>
+  <string name="lockscreen_calendar_hide_ongoing_summary">Aktuálně probíhající události se nebudou zobrazovat.</string>
+  <string name="lockscreen_calendar_flip_title">Více událostí</string>
+  <string name="lockscreen_calendar_flip_summary">Více událostí bude zobrazeno s postupným střídáním.</string>
+  <string name="lockscreen_calendar_interval_title">Interval střídání</string>
+  <string name="lockscreen_calendar_interval_summary">Zvolit rychlost střídání.</string>
+
+   <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
+   <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
 </resources>

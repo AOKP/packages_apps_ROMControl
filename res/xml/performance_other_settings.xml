@@ -27,4 +27,12 @@
             android:title="@string/pt_fast_charge_boot"
             android:summary="@string/ps_fast_charge_boot" />
     </PreferenceCategory>
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_short">
+        <CheckBoxPreference
+            android:key="daily_reboot"
+            android:defaultValue="false"
+            android:title="@string/performance_daily_reboot_title" />
+    </PreferenceCategory>
 </PreferenceScreen>

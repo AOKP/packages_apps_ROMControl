@@ -39,6 +39,13 @@
         android:summary="@string/header_summary_sound" />
 
     <header
+        android:id="@+id/system_extra"
+        android:fragment="com.baked.romcontrol.fragments.SystemExtra"
+        android:title="@string/header_system_extra"
+        android:icon="@drawable/ic_rom_control_general"
+        android:summary="@string/header_summary_system_extra" />
+
+    <header
         android:id="@+id/power_menu"
         android:fragment="com.baked.romcontrol.fragments.PowerMenu"
         android:title="@string/power_menu_options"
@@ -103,13 +110,6 @@
         android:icon="@drawable/ic_rom_control_toggles"
         android:summary="@string/header_summary_toggles"
         android:title="@string/toggles_layout" />
-
-    <header
-        android:id="@+id/statusbar_general"
-        android:fragment="com.baked.romcontrol.fragments.StatusBarGeneral"
-        android:title="@string/header_statusbar_general"
-        android:icon="@drawable/ic_rom_control_general"
-        android:summary="@string/header_summary_statusbar_general" />
 
     <header
         android:id="@+id/statusbar_battery"

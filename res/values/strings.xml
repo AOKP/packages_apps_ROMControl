@@ -23,7 +23,7 @@
     <string name="header_powerwidget">Powerwidgets</string>
     <string name="header_tablet_powerwidget">Tablet PowerWidget</string>
     <string name="header_lockscreen">Lockscreen</string>
-    <string name="header_statusbar_general">Extras</string>
+    <string name="header_system_extra">Extras</string>
     <string name="header_sound_title">Sound</string>
     <string name="header_performance_title">Performance</string>
     <string name="clock">Clock</string>
@@ -38,7 +38,7 @@
     <!-- Header Summaries -->
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
-    <string name="header_summary_statusbar_general">@null</string>
+    <string name="header_summary_system_extra">@null</string>
     <string name="header_summary_battery">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_powerwidget">@null</string>
@@ -46,6 +46,13 @@
     <string name="header_summary_lockscreen">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
+
+    <!-- System | Extras -->
+    <string name="ime_switcher_title">Show IME Switcher</string>
+    <string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
 
     <!-- Phone flip face down settings -->
     <string name="title_flip_mode">Face down audio mode</string>
@@ -115,10 +122,6 @@
     <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
     <string name="toggle_btn_enabled_color_title">Toggle on color</string>
     <string name="toggle_btn_disabled_color_title">Toggle off color</string>
-
-    <!-- Statusbar | Extras -->
-    <string name="ime_switcher_title">Show IME Switcher</string>
-    <string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

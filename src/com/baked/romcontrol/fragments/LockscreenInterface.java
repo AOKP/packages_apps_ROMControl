@@ -66,6 +66,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LockscreenInterface extends BAKEDPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
     private static final String TAG = "LockscreenInterface";
     private static final boolean DEBUG = true;
     public static final int REQUEST_PICK_WALLPAPER = 199;
@@ -87,7 +88,7 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
     private boolean mIsScreenLarge;
 
     ArrayList<String> keys = new ArrayList<String>();
-    
+
     ColorPickerPreference mLockscreenTextColor;
 
     @Override
@@ -101,6 +102,8 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
         addPreferencesFromResource(R.xml.prefs_lockscreen);
 
         mLockScreenRotation = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_ROTATION);
+        mLockScreenRotation.setChecked(Settings.System.getInt(mResolver,
+                Settings.System.LOCKSCREEN_ROTATION, 0) == 1);
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
@@ -115,7 +118,7 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
              } catch (SettingNotFoundException e) {
              }
         }
-        
+
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
 
@@ -287,6 +290,7 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
                 break;
             }
             return true;
+
         } else if (preference == mBatteryStatus) {
             int value = Integer.valueOf((String) objValue);
             int index = mBatteryStatus.findIndexOfValue((String) objValue);
@@ -294,6 +298,7 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
                     Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
+
         }else if (preference == mLockscreenTextColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(objValue)));
             preference.setSummary(hex);

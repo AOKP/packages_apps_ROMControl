@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Control de Rom</string>
+
+    <!-- Header Strings -->
+    <string name="user_interface">Interfaz de usuario</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">Acceptar</string>
+    <string name="menu_main_activity_change_locale">Blank!</string>
+    <string name="header_statusbar">Barra de estado</string>
+    <string name="header_navbar">Barra de navegación</string>
+    <string name="toggles_layout">Inrerruptores</string>
+    <string name="general_ui">Cambios visuales</string>
+    <string name="clock">Reloj</string>
+    <string name="battery">Batería</string>
+    <string name="nav_bar">Barra de navegación</string>
+    <string name="led_options">Opciones LED</string>
+    <string name="header_system">Sistema</string>
+    <string name="sound">Sonido</string>
+    <string name="lockscreen_options">Opciones pantalla de desbloqueo</string>
+    <string name="weather">El tiempo</string>
+    <string name="tools">Herramientas</string>
+    <string name="performance">Rendimiento</string>
+
+    <!-- Activity titles defined in AndroidManifest.xml -->
+    <string name="title_about">Sobre AOKP</string>
+    <string name="title_ui">Ajustes interfaz de usuario</string>
+    <string name="title_statusbar_clock">Ajustes del reloj en barra de estado</string>
+    <string name="title_statusbar_toggles">Interruptores en barra de estado</string>
+    <string name="title_statusbar_battery">Batería en barra de estado</string>
+    <string name="title_navbar">Barra de navegación</string>
+    <string name="title_led">Ajustes LED</string>
+    <string name="title_lockscreens">Ajustes pantalla de desbloqueo</string>
+    <string name="title_sound">Ajustes de sonido</string>
+    <string name="title_weather">Configuración del tiempo</string>
+    <string name="title_performance">Ajustes de rendimiento</string>
+    <string name="title_clipboard_share">Compartir portapapeles</string>
+
+    <!-- Header Summaries -->
+    <string name="header_summary_clock">@null</string>
+    <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_general_ui">@null</string>
+    <string name="header_summary_battery">@null</string>
+    <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_led">@null</string>
+    <string name="header_summary_sound">@null</string>
+    <string name="header_summary_performance">@null</string>
+    <string name="header_summary_lockscreens">@null</string>
+    <string name="header_summary_weather">@null</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_nav_bar_reset">Volver a valores por defecto</string>
+    <string name="menu_user_interface_reset">Reset notification wallpaper</string>
+    <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
+
+    <!-- General Strings -->
+    <string name="advanced_settings">Ajustes avanzados</string>
+    <string name="misc_short">Detalles</string>
+    <string name="custom_app_icon_successfully">"'s cambio realizado!"</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Usar aplicación personalizada</string>
+    <string name="use_custom_app_summary">Usar una aplicación personalizada en vez del diálogo de aplicaciones recientes</string>
+    <string name="select_custom_app_title">Seleccionar aplicación</string>
+    <string name="group_applications">Aplicaciones</string>
+
+    <!-- About -->
+    <string name="devs">El equipo</string>
+    <string name="aokp">Proyecto Android Open Kang</string>
+    <string name="aokp_website_title">Página web de AOKP</string>
+    <string name="aokp_website_summary">www.aokp.co - Encuentre todos los nuevos lanzamientos aquí.</string>
+    <string name="aokp_source_title">AOKP Source</string>
+    <string name="aokp_source_summary">AOKP es totalmente de código abierto. Siempre puede comprobar el último código fuente en github.com/aokp</string>
+    <string name="aokp_review_title">AOKP revisión de código</string>
+    <string name="aokp_review_summary">Plataforma de revisiones Gerrit de AOKP para presentar y probar parches</string>
+    <string name="aokp_irc_title">Únase a nosotros en el canal IRC</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">Acerca de AOKP</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+    <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+    <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+    <string name="donate_khasmek">http://nyan.cat</string>
+    <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+    <string name="donate_adam">http://goo.gl/fRj57</string>
+    <string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
+    <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
+    <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
+    <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
+    <string name="donate_sixstringsg">https://www.paypal.com/cgi-bin/webscr?cmd=_flow&amp;SESSION=U3KYhTz6itHx8bKvx-F79EFVY5sQKKQu9f1ftkJ1pevFN6wdaJLu8yz3Y3e&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d1e83f46a36995b3856cef1e18897ad75</string>
+    <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
+    <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
+    <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
+
+    <!-- General UI -->
+    <string name="enable_volume_options">Activar panel de volumen</string>
+    <string name="status_bar_notif_count_title">Mostrar contador de notificaciones</string>
+    <string name="status_bar_notif_count_summary">Muestra el número de notificaciones pendientes en la barra de estado</string>
+    <string name="disable_bootanimation_title">Desactivar animación de arranque</string>
+    <string name="custom_bootanimation_title">Animación de arranque personalizada</string>
+    <string name="custom_bootanimation_summary">Selecciones bootanimation.zip de la tarjeta SD. Se realizara una copia de la anterior animación de arranque en /system/media.</string>
+    <string name="install_file_manager_error">Ninguna aplicación disponible para abrir archivos zip. Por favor instale un explorador de archivos .</string>
+    <string name="notification_wallpaper_title">Elige el fondo en las notificaciónes</string>
+    <string name="notification_wallpaper_summary">Puede quitar el fondo de pantalla en el menú de esta ventana</string>
+    <string name="notif_wallpaper_alpha_title">Transparencia del fondo del panel de notificaciones</string>
+    <string name="alpha_dialog_title">Ajustar transparencia</string>
+    <string name="custom_carrier_label_title">Personalizar nombre de la operadora</string>
+    <string name="custom_carrier_label_explain">Por favor escriba una etiqueta. Si no escribe nada volverá a la etiqueta por defecto.</string>
+    <string name="custom_carrier_label_notset">No se fijó ninguna etiqueta personalizada</string>    
+    <string name="ime_switcher_title">Ver método de escritura</string>
+    <string name="ime_switcher_summary">Aparecera en la barra de estado mientras escribe (Reiniciar para aplicar el cambio)</string>
+    <string name="rotate_180_title">Permitir rotación de 180 grados</string>
+    <string name="rotate_180_summary">Permite a su dispositivo rotar 180 grados!</string>
+    
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Aspecto de los interruptores</string>
+    <string name="toggle_style_summary">mostrar iconos o texto en los interruptores.</string>
+    <string name="toggles_layout_title">Tipo de interruptores</string>
+    <string name="enabled_toggles_title">Activar interruptores</string>
+    <string name="enabled_toggles_summary">Interruptores  que se visualizaran</string>
+    <string name="toggles_display_dialog">Escoger interruptores a visualizar</string>
+    <string name="toggles_display_close">Cerrar</string>
+    <string name="toggles_order_title">Orden de los interruptores</string>
+    <string name="toggles_order_summary">Escoger el orden de visualización de los interruptores</string>
+    <string name="brightness_location_title">Ubicación del brillo</string>
+    <string name="reset_toggles_title">Valor por defecto de interruptores</string>
+    <string name="reset_toggles_summary">Pone por defecto los interruptores y sus posiciones</string>
+    <string name="toggle_button_alpha_title">Transparencia de interruptores</string>
+    <string name="toggle_btn_enabled_color_title">Color de interruptor activo</string>
+    <string name="toggle_btn_disabled_color_title">Color de interruptor desactivado</string>
+    <string name="toggle_btn_background_title">Transparencia del fondo</string>
+    <string name="toggle_text_color_title">Color del texto</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Ubicación del reloj</string>
+    <string name="title_clock_ampm_entries">Formato AM/PM</string>
+    <string name="enable_clock_weekday">Día de la semana</string>
+    <string name="enable_clock_weekday_summary">Tipo de abreviación del día de la semana antes de la hora</string>
+    <string name="colors">Color</string>
+    <string name="clock_color_title">Color de la hora</string>
+
+    <!-- Toggle Strings to be called from device overlays -->
+    <string name="toggle_airplane_mode">Modo Vuelo</string>
+    <string name="toggle_auto_rotate">Auto Rotar</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_fast_charge">Carga rápida</string>
+    <string name="toggle_gps">GPS</string>
+    <string name="toggle_lte">LTE</string>
+    <string name="toggle_data">Datos</string>
+    <string name="toggle_nfc">NFC</string>
+    <string name="toggle_silent">Silencio</string>
+    <string name="toggle_swagger">Swagger</string>
+    <string name="toggle_sync">Sync</string>
+    <string name="toggle_torch">Linterna</string>
+    <string name="toggle_2g">2G</string>
+    <string name="toggle_usb_tether">USB Tether</string>
+    <string name="toggle_vibrate">Vibrar</string>
+    <string name="toggle_wifi_ap">Tether</string>
+    <string name="toggle_wifi">Wi-Fi</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">Aspecto del indicador de batería</string>
+    <string name="battery_not_title">Indicador de batería en panel de notificaciones</string>
+    <string name="battery_not_summary">El icono de la batería se mostrará donde aparece el botón de limpiar notificaciones </string>
+    <string name="battery_bar">Ubicación de la barra de batería</string>
+    <string name="battery_bar_color">Color de la barra de batería</string>
+    <string name="battery_bar_cat">Opciones de la barra de batería</string>
+    <string name="battery_bar_style_title">Aspecto de la barra de batería</string>
+    <string name="battery_bar_thickness_title">Ancho de la barra</string>
+    <string name="battery_bar_animate_title">Animación de carga</string>
+    <string name="battery_bar_animate_summary">La animación de carga puede dar lugar a una experiencia de usuario pobre. Actívela solo si lo cree conveniente.</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Selector de color</string>
+    <string name="press_color_to_apply">Pulse sobre el Color para aplicar</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">Holo</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar">Barra de navegación</string>
+    <string name="navbar_button_cat">Botones de la barra de navegación</string>
+    <string name="title_pref_menu_display">Posición del menú</string>
+    <string name="summary_pref_menu_display">¡Recuerde quitar los botones de menú si está usando el botón grande de menú!</string>
+    <string name="title_pref_navigation_menu_display">Visibilidad del menú</string>
+    <string name="summary_pref_navigation_menu_display">Como y cuando quiere que aparezca el menú</string>
+    <string name="navbar_qty_title">Número de botones</string>
+    <string name="navbar_qty_summary">Elija el número de botones de navegación</string>
+    <string name="navbar_action_title">Acción del botón %1$s e icono</string>
+    <string name="button_transparency_title">Tranparencia de la barra</string>
+    <string name="navbar_longpress_title">Boton %1$s Accion pulsación larga</string>
+    <string name="navbar_action_home">Inicio</string>
+    <string name="navbar_action_back">Volver</string>
+    <string name="navbar_action_recents">Recientes</string>
+    <string name="navbar_action_search">Búsqueda</string>
+    <string name="navbar_action_menu">Menú</string>
+    <string name="navbar_action_kill">Matar aplicación</string>
+    <string name="navbar_action_power">Apagar</string>
+    <string name="navbar_action_notifications">Notificaciones</string>
+    <string name="navbar_action_none">Vacío</string>
+    <string name="navbar_widgets">Widgets barra de navegación</string>
+    <string name="navbar_enable_bar">Activar barra</string>
+    <string name="navigation_bar_height_title">Altura de la barra de navegación</string>
+    <string name="navigation_bar_height_summary">Ajuste la altura de la barra de navegación en modo retrato. </string>
+    <string name="navigation_bar_height_landscape_title">Altura de la barra de navegación apaisada</string>
+    <string name="navigation_bar_height_landscape_summary">Ajuste la altura de la barra de navegación en modo apaisado.</string>
+    <string name="navigation_bar_width_title">Ancho de la barra de navegación</string>
+    <string name="navigation_bar_width_summary">Ancho de la barra de navegación cuando está a lo largo de un lateral.</string>
+    <string name="navbar_enable_dialog_title">¡Es necesiario reiniciar!</string>
+    <string name="navbar_enable_dialog_msg">¡<b>Debería</b> reiniciar ahora mismo para asegurarse de que todo funciona correctamente!</string>
+    <string name="navbar_enable_dialog_negative">Reiniciar mas tarde</string>
+    <string name="navbar_enable_dialog_Positive">Reiniciar ahora</string>
+    <string name="navbar_height_dialog_title">¡Es necesario reiniciar!</string>
+    <string name="navbar_height_dialog_summary">¡Por favor, reinicie para que el cambio se haga efectivo!</string>
+    <string name="navbar_height_dialog_button_later">Reiniciar mas trade</string>
+    <string name="navbar_height_dialog_button_reboot">Reiniciar ahora</string>
+    <string name="navigation_bar_tint_title">Color de la barra de navegación</string>
+    <string name="navigation_bar_glow_tint_title">Color del resplandor de la barra de navegación</string>
+    <string name="navigation_bar_glow_tint_summary">Cuando presiona un botón hay un resplandor. Aquí puede cambiar el color de ese resplandor.</string>
+    <string name="glow_times_title">Animación del resplandor de los botonoes</string>
+    <string name="glow_times_off">Apagado</string>
+    <string name="glow_times_superquick">Muy rápida</string>
+    <string name="glow_times_quick">Rápida</string>
+    <string name="glow_times_normal">Normal</string>
+
+    <!-- LED -->
+    <string name="led_on">LED encendido</string>
+    <string name="led_time_on">Tiempo del led encendido</string>
+    <string name="led_off">LED apagado</string>
+    <string name="led_time_off">Tiempo del led apagado</string>
+    <string name="led_time_seconds">" segundos"</string>
+    <string name="led_color_click">Presionar en el LED para cambiar el color</string>
+    <string name="title_led_screen_on">LED con la pantalla encendida</string>
+    <string name="led_custom_app">Aplicación seleccionada</string>
+    <string name="led_custom_default">Por defecto</string>
+    <string name="led_change_app">Cambiar</string>
+    <string name="led_delete_app">Borrar</string>
+    <string name="led_keep_app">Mantener</string>
+    <string name="led_custom_title">Apliación personalizada para el led</string>
+    <string name="led_custom_message">"Quiere cambiar la aplicación: "</string>
+    <string name="led_edit_button">-</string>
+    <string name="led_test_notification">Probar LED</string>
+    <string name="led_test_notification_message_now">"Probando LED para: "</string>
+    <string name="led_test_notification_message_note">".Por favor, apague su pantalla pera ver el LED. Hagalo antes de acceptar este mensaje ya que sino no se mostrara el color elegido para el LED."</string>
+    <string name="led_test_ok">Acceptar</string>
+
+    <!-- Sound -->
+    <string name="less_notification_sounds_title">Notificaciones menos habituales</string>
+    <string name="less_notification_sounds_summary">"Limite la notificación en cada aplicación, suena una vez por el valor establecido</string>
+    <string name="title_headphone_audio_mode">Acción al conectar auriculares</string>
+    <string name="summary_headphone_audio_mode">Qué hacer con el sonido cuando los auriculares están conectados</string>
+    <string name="title_bt_audio_mode">Acción al conectar Bluetooth A2DP</string>
+    <string name="summary_bt_audio_mode">Que hacer con el sonido cuando A2DP es conectado</string>
+    <string name="headphones_mode_no_action">Ninguna acción</string>
+    <string name="headphones_mode_vibrate">Modo vibración</string>
+    <string name="headphones_mode_silent">Modo silencio</string>
+    <string name="title_flip_mode">Modo de audio boca abajo</string>
+    <string name="summary_flip_mode">Qué hacer con el sonido cuando se coloca el teléfono boca abajo</string>
+    <string name="flip_cat_title">Acción telefono boca abajo</string>
+    <string name="title_timeout_sec">Tiempo de espera de la pantalla</string>
+    <string name="summary_timeout_sec">Tiempo de espera con pantalla apagada para que el sensor flip se desactive</string>
+    <string name="title_down_sec">Como funciona</string>
+    <string name="summary_down_sec">El tiempo necesario para que su teléfono sea considerado boca abajo</string>
+    <string name="flip_action_positive">Acceptar</string>
+    <string name="flip_dialog_title">Como funciona</string>
+    <string name="flip_dialog_msg">El teléfono dará la vuelta para ir a vibrar o en silencio sobre la forma que usted elija. Tomará 1,5 (por defecto) segundos para cambiar cuando volcó. A continuación, se desactivará la tapa una vez que la pantalla se enciende después de 15 (por defecto) segundos.. NOTA: **Usted tendrá que encender la pantalla de nuevo una vez que se volcó para conseguir el sonido de nuevo una vez que el tiempo de espera de pantalla se ha alcanzado.**</string>
+    <string name="summary_phone_flip_mode">Gire el teléfono para silenciar el sonido cuando recibe una llamada</string>
+    <string name="title_phone_flip_mode">Silenciar llamadas</string>
+
+    <!-- Lockscreen -->
+    <string name="lockscreen_quick_unlock_control_title">Desbloqueo rápido</string>
+    <string name="lockscreen_quick_unlock_control_summary">Desbloquear pantalla con contraseña o pin sin pulsar el botón ENTER</string>
+    <string name="lockscreen_menu_unlock_title">Desbloquear con menú</string>
+    <string name="lockscreen_menu_unlock_summary">Usar los botones de menú para desbloquear la pantalla</string>
+    <string name="lockscreen_battery_title">Porcentaje de batería en pantalla de desbloqueo</string>
+    <string name="lockscreen_battery_summary">Mostrar siempre el porcentaje de la batería en pantalla de desbloqueo</string>
+    <string name="volume_rocker_wake_title">Desboquear con volumen</string>
+    <string name="volume_rocker_wake_summary">Desbloquear pantalla con los botones de volumen</string>
+    <string name="lockscreen_wallpaper_title">Fondo de pantalla de desbloqueo </string>
+    <string name="lockscreen_wallpaper_summary">Puede quitar el fondo de pantalla desde el menú de esta pantalla</string>
+    <string name="lockscreen_text_color_title">Color de texto de Pantalla de desbloqueo</string>
+    <string name="title_lockscreen_user_timeout_override">Esperar para bloquear la pantalla</string>
+    <string name="summary_lockscreen_user_timeout_override">"Utilice la configuración de tiempo de espera de Android de forma manual después de apagar la pantalla. El comportamiento por defecto es usar el retraso sólo cuando la pantalla se agota por sí misma."</string>
+    <string name="lockscreen_weather_cat">El tiempo</string>
+    <string name="lockscreen_weather_title">Activado</string>
+    <string name="lockscreen_weather_summary">Ver información meteorologica en la pantalla de desbloqueo. Debe activar la información meteorologica en ROMControl para poder usar esta opción</string>
+    <string name="lockscreen_weather_type_title">Tiempo en pantalla de desbloqueo</string>
+    <string name="lockscreen_weather_type_summary">Mostrar información del tiempo con texto o de forma grafica.</string>
+    <string name="lockscreen_calendar_cat">Calendario</string>
+    <string name="lockscreen_calendar_title">Activado</string>
+    <string name="lockscreen_calendar_summary">Muestra eventos del calendario en la pantalla de desbloqueo</string>
+    <string name="lockscreen_calendar_sources_title">Escoger calendario</string>
+    <string name="lockscreen_calendar_sources_summary">Seleccione los calendarios que desea ver.</string>
+    <string name="lockscreen_calendar_dialog">Elegir los calendarios que se usaran</string>
+    <string name="lockscreen_calendar_close">Cerrar</string>
+    <string name="lockscreen_calendar_range_title">Rango de tiempo</string>
+    <string name="lockscreen_calendar_range_summary">Seleccionar el rango de tiempo que sera mostrado.</string>
+    <string name="lockscreen_calendar_use_colors_title">Emplear colores</string>
+    <string name="lockscreen_calendar_use_colors_summary">Si activa esta opción Los eventos del calendario se mostraran en color.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">No mostrar los eventos empezados</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Si se activa esta opción no se mostraran los eventos ya iniciados.</string>
+    <string name="lockscreen_calendar_flip_title">Eventos multiples</string>
+    <string name="lockscreen_calendar_flip_summary">Si activa esta opcion el widget mostrara multiples eventos al deslizar el dedo sobre ello.</string>
+    <string name="lockscreen_calendar_interval_title">Intervalo de transición de eventos</string>
+    <string name="lockscreen_calendar_interval_summary">Escoja la velocidad de animación entre eventos en segundos.</string>
+
+    <!-- Weather -->
+    <string name="weather_enable">Activar tiempo</string>
+    <string name="weather_enable_summary">Para ver información del tiempo y mostrarla en la pantalla.</string>
+    <string name="weather_use_custom_location">Ubicacion personalizada</string>
+    <string name="weather_use_custom_location_summary">Poniendo una ubicación personalizada puede ahorrar batería. De lo contrario se usará la ubicación por red para determinar su ubicación.</string>
+    <string name="weather_custom_location_dialog_title">Elegir su ubicación</string>
+    <string name="weather_custom_location_dialog_message">¡Asegúrese de seguir los ejemplos! Una ubicación errónea detendrá las actualizaciones del tiempo y puede causar un comportamiento inesperado.\n\nEjemplos: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_title">Ubicación personalizada</string>
+    <string name="weather_show_location_title">Mostrar ubicación</string>
+    <string name="weather_show_location_summary">Muestra su ubicación.</string>
+    <string name="weather_refresh_interval">Intervalo de actualización</string>
+    <string name="weather_refresh_interval_minutes">" minutos"</string>
+    <string name="weather_use_celcius">Unidades métricas</string>
+    <string name="weather_use_celcius_summary">Activando esta opción se mostrarán las temperaturas en Celsius en vez de en Fahrenheits y la velocidad del viento en km/h en vez de en mph.</string>
+    <string name="weather_statusbar_style">Aspecto del tiempo en la barra de estado</string>
+    <string name="weather_start_custom_app">Iniciar aplicación personalizada</string>
+    <string name="weather_start_custom_app_summary">Inicia la aplicación seleccionada al pulsar sobre la imagen del tiempo.</string>
+    <string name="weather_custom_app_title">Aplicación personalizada</string>
+    <string name="weather_custom_app_dialog_title">Elija la aplicación</string>
+    <string name="weather_custom_app_dialog_message">Package name for now.</string>
+    <string name="weather_refreshing">¡Actualizar el tiempo ahora!</string>
+    <string name="weather_loc_warning_title">¡imposible recuperar la ubicación!</string>
+    <string name="weather_loc_warning_msg">La obtención de ubicación de red está actualmente desactivada. Esto rompe la capacidad de obtener el tiempo en su ubicación actual. Por favor, establecer una ubicación personalizada o permitir la obtención de su ubicación en la red.</string>
+    <string name="weather_loc_warning_positive">Habilitar ubicación de red</string>
+    <string name="weather_loc_warning_negative">No habilitar</string>
+    <string name="menu_weather_get_weather">Actualizar ahora</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">Tornado</string>
+    <string name="weather_1">Tormenta Tropical</string>
+    <string name="weather_2">huracán</string>
+    <string name="weather_3">Tormentas severas</string>
+    <string name="weather_4">Tormentas</string>
+    <string name="weather_5">Lluvia y nieve</string>
+    <string name="weather_6">Lluvia y aguanieve</string>
+    <string name="weather_7">Lluvia y aguanieve</string>
+    <string name="weather_8">Llovizna helada</string>
+    <string name="weather_9">Llovizna</string>
+    <string name="weather_10">Lluvia helada</string>
+    <string name="weather_11">Chubascos</string>
+    <string name="weather_12">Chubascos</string>
+    <string name="weather_13">Copos de nieve</string>
+    <string name="weather_14">Nevadas ligeras</string>
+    <string name="weather_15">Viento y Nieve</string>
+    <string name="weather_16">Nieve</string>
+    <string name="weather_17">Granizo</string>
+    <string name="weather_18">Aguanieve</string>
+    <string name="weather_19">Polvo</string>
+    <string name="weather_20">Nebuloso</string>
+    <string name="weather_21">Neblina</string>
+    <string name="weather_22">Ahumado</string>
+    <string name="weather_23">Tempestuoso</string>
+    <string name="weather_24">Ventoso</string>
+    <string name="weather_25">Frío</string>
+    <string name="weather_26">Nublado</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">Muy nublado</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">Muy nublado</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">Parcialmente nublado</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">Parcialmente nublado</string>
+    <!-- clear (night) -->
+    <string name="weather_31">Claro</string>
+    <string name="weather_32">soleado</string>
+    <!-- fair (night) -->
+    <string name="weather_33">razonable</string>
+    <!-- fair (day) -->
+    <string name="weather_34">Razonable</string>
+    <string name="weather_35">Lluvia y Granizo</string>
+    <string name="weather_36">Caluroso</string>
+    <string name="weather_37">Soleado</string>
+    <string name="weather_38">Parcialmente nublado</string>
+    <string name="weather_39">Parcialmente nublado</string>
+    <string name="weather_40">Lluvia ligera</string>
+    <string name="weather_41">Fuertes nevadas</string>
+    <string name="weather_42">Chubascos de nieve</string>
+    <string name="weather_43">Chubascos de nieve</string>
+    <string name="weather_44">Mayormente nublado</string>
+    <string name="weather_45">Tormentas</string>
+    <string name="weather_46">Chubascos de nieve</string>
+    <string name="weather_47">Tormentas aisladas</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Imposible localizar su ubicación para las actualizaciones del tiempo</string>
+
+    <!-- cardinal directions -->
+    <string name="direction_north">N</string>
+    <string name="direction_north_east">NE</string>
+    <string name="direction_east">E</string>
+    <string name="direction_south_east">SE</string>
+    <string name="direction_south">S</string>
+    <string name="direction_south_west">SO</string>
+    <string name="direction_west">O</string>
+    <string name="direction_north_west">NO</string>
+   
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">Copiado al portapapeles.</string>
+
+    <!-- Performance -->
+    <string name="tab_cpu_settings">"Ajustar CPU"</string>
+    <string name="tab_voltage_settings">"Ajustar voltajes"</string>
+    <string name="tab_other_settings">"Otros ajustes"</string>
+    <string name="current_speed">Velocidad actual</string>
+    <string name="current_max">Velociad máxima:</string>
+    <string name="current_min">Velocidad mínima:</string>
+    <string name="governor">Governor</string>
+    <string name="io">IO Scheduler</string>
+    <string name="sob">Aplicar al iniciar</string>
+    <string name="dt_free_memory">Memoria mínima </string>
+    <string name="prefcat_free_memory">Memoria libre</string>
+    <string name="pt_free_memory">Memoria libre</string>
+    <string name="ps_free_memory">Cantidad mínima de memoria RAM que debe quedar libre  | Valor actual: %s</string>
+    <string name="pt_free_memory_boot">Aplicar al iniciar</string>
+    <string name="ps_free_memory_boot">Aplicar esa cantidad al inicio</string>
+    <string name="pt_fast_charge_boot">Carga rápida</string>
+    <string name="ps_fast_charge_boot">Activa la carga rápidad al iniciar</string>
+    <string name="ps_volt_mhz_voltage">" MHz Voltaje"</string>
+    <string name="ps_volt_save">"Guardar"</string>
+    <string name="ps_volt_current_voltage">"Voltaje actual: "</string>
+    <string name="ps_volt_setting_to_apply">"Voltaje a aplicar: "</string>
+    <string name="pt_volt_control">Control de voltaje</string>
+    <string name="ps_volt_control">Establecer voltajes para cada frecuencia</string>
+    <string name="not_supported">Su kernel no soporta el ajuste de voltaje</string>
+    <string name="apply_values">Aplicar valores</string>
+    <string name="freq">Frequencia</string>
+    <string name="current">mV Actuales</string>
+    <string name="saved">mV Guardados</string>
+    <string name="kernel">Ajustes del kernel (si es soportado)</string>
+    <string name="fast_charge_warning">¡NO PODRÁ CONECTARSE A SU PC DESPUÉS DE CADA REINICIO!\n \n Esta opción activará la carga rápida en cada reinicio. ¡Mientras la carga rápida esté activada, la función del USB será *exclusivamente* cargar el dispositivo!</string>
+    <string name="fast_charge_notification_title">¡Carga rápida activada!</string>
+    <string name="fast_charge_notification_message">¡El teléfono se encuentra en modo sólo carga!</string>
+    <string name="prefcat_other_tweaks">Otros ajustes</string>
+
+</resources>

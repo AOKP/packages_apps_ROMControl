@@ -25,6 +25,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
@@ -269,4 +271,12 @@ public class BAKEDPreferenceFragment extends PreferenceFragment implements Dialo
         }
     }
 
+    protected boolean isCheckBoxPrefernceChecked(Preference p) {
+        if(p instanceof CheckBoxPreference) {
+            return ((CheckBoxPreference) p).isChecked();
+
+        } else {
+            return false;
+        }
+    }
 }

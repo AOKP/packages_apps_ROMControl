@@ -28,9 +28,10 @@ public class StatusBarGeneral extends BAKEDPreferenceFragment {
     public static final String TAG = "UserInterface";
 
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+    private static final String PREF_IME_SWITCHER = "ime_switcher";
 
     CheckBoxPreference mStatusBarNotifCount;
-
+    CheckBoxPreference mShowImeSwitcher;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,10 @@ public class StatusBarGeneral extends BAKEDPreferenceFragment {
         mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
                 0) == 1);
+
+        mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
+        mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
     }
 
     @Override
@@ -52,7 +57,13 @@ public class StatusBarGeneral extends BAKEDPreferenceFragment {
                     Settings.System.STATUS_BAR_NOTIF_COUNT,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
-            }
+
+        } else if (preference == mShowImeSwitcher) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    isCheckBoxPrefernceChecked(preference));
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

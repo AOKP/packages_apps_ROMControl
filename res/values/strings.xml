@@ -116,6 +116,10 @@
     <string name="toggle_btn_enabled_color_title">Toggle on color</string>
     <string name="toggle_btn_disabled_color_title">Toggle off color</string>
 
+    <!-- Statusbar | Extras -->
+    <string name="ime_switcher_title">Show IME Switcher</string>
+    <string name="ime_switcher_summary">In statusbar, while typing (requires reboot)</string>
+
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
     <string name="clock_color_title">Clock color</string>

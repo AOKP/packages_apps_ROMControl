@@ -61,6 +61,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
+    private static final String PREF_LOCKSCREEN_MENU_UNLOCK = "lockscreen_menu_unlock";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
     private static final String PREF_LOCKSCREEN_WEATHER = "lockscreen_weather";
@@ -84,6 +85,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     CheckBoxPreference mLockscreenBattery;
     ColorPickerPreference mLockscreenTextColor;
+    CheckBoxPreference mLockscreenMenuUnlock;
     CheckBoxPreference mVolumeRockerWake;
     CheckBoxPreference mLockScreenTimeoutUserOverride;
     CheckBoxPreference mLockscreenWeather;
@@ -111,10 +113,13 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockscreenBattery.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_BATTERY, false));
 
+        mLockscreenMenuUnlock = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_MENU_UNLOCK);
+        mLockscreenMenuUnlock.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_MENU_UNLOCK, 0) == 1);
+
         mVolumeRockerWake = (CheckBoxPreference) findPreference(PREF_VOLUME_ROCKER_WAKE);
         mVolumeRockerWake.setChecked(Settings.System.getBoolean(mContext
-                .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
-                false));
+                .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN, false));
 
         mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
         mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
@@ -185,7 +190,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     Settings.System.LOCKSCREEN_BATTERY,
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
-
+        } else if (preference == mLockscreenMenuUnlock) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_MENU_UNLOCK,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
         } else if (preference == mVolumeRockerWake) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,

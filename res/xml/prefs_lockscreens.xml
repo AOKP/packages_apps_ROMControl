@@ -18,6 +18,11 @@
         android:summary="@string/lockscreen_battery_summary" />
 
     <CheckBoxPreference
+        android:key="lockscreen_menu_unlock"
+        android:title="@string/lockscreen_menu_unlock_title"
+        android:summary="@string/lockscreen_menu_unlock_summary" />
+
+    <CheckBoxPreference
         android:key="lockscreen_user_timeout_override"
         android:title="@string/title_lockscreen_user_timeout_override"
         android:summary="@string/summary_lockscreen_user_timeout_override" />

@@ -274,6 +274,8 @@
     <!-- Lockscreen -->
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
+    <string name="lockscreen_menu_unlock_title">Menu unlock</string>
+    <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="volume_rocker_wake_title">Volume wake</string>

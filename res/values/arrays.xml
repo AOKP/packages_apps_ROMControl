@@ -312,6 +312,24 @@
         <item>10000</item>
     </integer-array>
 
+    <!-- LED brightness entries -->
+    <string-array name="led_brightness_entries">
+        <item>low</item>
+        <item>medium</item>
+        <item>high</item>
+        <item>very high</item>
+        <item>laserbeam</item>
+    </string-array>
+
+    <!-- LED brightness values -->
+    <integer-array name="led_brightness_values" translatable="false">
+        <item>10</item>
+        <item>31</item>
+        <item>60</item>
+        <item>90</item>
+        <item>127</item>
+    </integer-array>
+
     <string-array name="headphone_audio_mode_entries">
         <item>@string/headphones_mode_no_action</item>
         <item>@string/headphones_mode_vibrate</item>

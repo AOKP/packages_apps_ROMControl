@@ -108,10 +108,28 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/led_brightness"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_below="@id/time_buttons"
+        android:layout_marginTop="5dp" >
+
+        <Button
+            android:id="@+id/button_led_brightness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/led_change_brightness"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/screen_on"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/led_brightness"
         android:layout_marginTop="5dp" >
 
         <Switch
@@ -127,7 +145,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayout1"
+        android:layout_below="@id/screen_on"
         android:layout_marginTop="5dp" >
 
 

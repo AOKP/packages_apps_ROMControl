@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -40,6 +41,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
+import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 import android.widget.Switch;
 
@@ -65,6 +68,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private static final boolean DEBUG = false;
 
     private static final String PROP_CHARGING_LED = "persist.sys.enable-charging-led";
+    private static final String PROP_LED_BRIGHTNESS = "persist.sys.led-brightness";
 
     private Button mOnTime;
     private Button mOffTime;
@@ -74,6 +78,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private Switch mChargingLedOn;
     private ImageView mLEDButton;
     private Spinner mListApps;
+    private Button mLedBrightness;
+    private NumberPicker mBrightnessNumberpicker;
     private ArrayAdapter<CharSequence> listAdapter;
 
     private ViewGroup mContainer;
@@ -85,6 +91,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private int userColor;
     private String[] timeArray;
     private int[] timeOutput;
+    private String[] brightnessArray;
+    private int[] brightnessOutput;
     private boolean blinkOn;
     private boolean stopLed;
     private boolean mRegister = false;
@@ -116,8 +124,11 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         mLedScreenOn = (Switch) mActivity.findViewById(R.id.led_screen_on);
         mChargingLedOn = (Switch) mActivity.findViewById(R.id.charging_led_on);
         mListApps = (Spinner) mActivity.findViewById(R.id.custom_apps);
+        mLedBrightness = (Button) mActivity.findViewById(R.id.button_led_brightness);
         timeArray = mResources.getStringArray(R.array.led_entries);
         timeOutput = mResources.getIntArray(R.array.led_values);
+        brightnessArray = mResources.getStringArray(R.array.led_brightness_entries);
+        brightnessOutput = mResources.getIntArray(R.array.led_brightness_values);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
         defaultColor = mResources
                 .getColor(com.android.internal.R.color.config_defaultNotificationColor);
@@ -253,6 +264,32 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                 ad.show();
             }
         });
+
+        mLedBrightness.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog.Builder b = new AlertDialog.Builder(mActivity);
+                b.setTitle(R.string.led_change_brightness);
+                b.setSingleChoiceItems(brightnessArray, Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LED_BRIGHTNESS, 1), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int item) {
+                        Helpers.setSystemProp(PROP_LED_BRIGHTNESS, String.valueOf(brightnessOutput[item]));
+                        Settings.System.putInt(mActivity.getContentResolver(),
+                                Settings.System.LED_BRIGHTNESS, item);
+                    }
+                });
+                b.setPositiveButton(com.android.internal.R.string.ok,
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alert = b.create();
+                alert.show();
+            }
+        });
+
 
         refreshSettings();
         startLed();

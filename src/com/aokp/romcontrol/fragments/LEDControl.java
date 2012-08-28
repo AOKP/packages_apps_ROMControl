@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -40,6 +41,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
+import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 import android.widget.Switch;
 
@@ -64,6 +67,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private static final String TAG = "LEDControl";
     private static final boolean DEBUG = false;
 
+    private static final String PROP_LED_BRIGHTNESS = "persist.sys.led-brightness";
+
     private Button mOnTime;
     private Button mOffTime;
     private Button mEditApp;
@@ -71,6 +76,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private Switch mLedScreenOn;
     private ImageView mLEDButton;
     private Spinner mListApps;
+    private Button mLedBrightness;
+    private NumberPicker mBrightnessNumberpicker;
     private ArrayAdapter<CharSequence> listAdapter;
 
     private ViewGroup mContainer;
@@ -112,6 +119,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         mLEDButton = (ImageView) mActivity.findViewById(R.id.ledbutton);
         mLedScreenOn = (Switch) mActivity.findViewById(R.id.led_screen_on);
         mListApps = (Spinner) mActivity.findViewById(R.id.custom_apps);
+        mLedBrightness = (Button) mActivity.findViewById(R.id.button_led_brightness);
         timeArray = mResources.getStringArray(R.array.led_entries);
         timeOutput = mResources.getIntArray(R.array.led_values);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -240,6 +248,41 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                 ad.show();
             }
         });
+
+        mLedBrightness.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Builder builder = new AlertDialog.Builder(mActivity);
+                builder.setTitle(R.string.led_change_brightness);
+                builder.setPositiveButton(com.android.internal.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Helpers.setSystemProp(PROP_LED_BRIGHTNESS, String.valueOf(mBrightnessNumberpicker.getValue()));
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton(com.android.internal.R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                LayoutInflater inflater = (LayoutInflater) mActivity.getSystemService(mActivity.LAYOUT_INFLATER_SERVICE);
+                View layout = inflater.inflate(R.layout.dialog_led_brightness,
+                        (ViewGroup) mActivity.findViewById(R.id.led_brightness_layout_root));
+
+                mBrightnessNumberpicker = (NumberPicker) layout.findViewById(R.id.led_brightness_numberPicker);
+
+                mBrightnessNumberpicker.setMinValue(0);
+                mBrightnessNumberpicker.setMaxValue(127);
+                mBrightnessNumberpicker.setWrapSelectorWheel(false);
+                mBrightnessNumberpicker.setValue(Integer.parseInt(Helpers.getSystemProp(PROP_LED_BRIGHTNESS, "31")));
+
+                builder.setView(layout);
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
 
         refreshSettings();
         startLed();

@@ -15,7 +15,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-     <ListPreference
+    <ListPreference
         android:key="lockscreen_background"
         android:persistent="false"
         android:dialogTitle="@string/lockscreen_custom_background_title"
@@ -23,12 +23,12 @@
         android:entries="@array/lockscreen_background_entries"
         android:entryValues="@array/lockscreen_background_values"/>
 
-      <net.margaritov.preference.colorpicker.ColorPickerPreference
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="lockscreen_text_color"
         android:title="@string/lockscreen_text_color_title"
         android:defaultValue="#ffffffff" />
 
-     <ListPreference
+    <ListPreference
         android:key="lockscreen_battery_status"
         android:persistent="false"
         android:dialogTitle="@string/lockscreen_battery_status_title"

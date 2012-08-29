@@ -55,6 +55,9 @@
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
 
+    <!-- system text color test -->
+    <string name="primary_text_colors">Change system wide text colors</string>
+
     <!-- Phone flip face down settings -->
     <string name="title_flip_mode">Face down audio mode</string>
     <string name="summary_flip_mode">Choose what to do with sound when you flip your phone face down</string>
@@ -123,6 +126,16 @@
     <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
     <string name="toggle_btn_enabled_color_title">Toggle on color</string>
     <string name="toggle_btn_disabled_color_title">Toggle off color</string>
+
+    <!-- text color size option from aokp -->
+    <string name="statusbar_fontsize">Statusbar Font Size</string>
+    <string name="statusbar_fontsize_summary">Change the size of text elements on statusbar</string>
+
+    <!-- merge of statusbar wallpaper by xoomdev -->
+    <string name="notification_wallpaper_title">Choose notification background</string>
+    <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
+    <string name="alpha_dialog_title">Set alpha value</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

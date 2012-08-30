@@ -46,7 +46,10 @@
 
     <com.baked.romcontrol.DeveloperPreference
         baked:twitter="jdlogan151"
-        baked:devUrl="https://twimg0-a.akamaihd.net/profile_images/2505519871/99o42byebdzleg5upz95.jpeg" />
+        baked:devUrl="https://si0.twimg.com/profile_images/2507190187/iwol8noe8h5vfx2pjlnt.jpeg"
+	baked:donate="http://bit.ly/TzKEw9"
+	baked:email="jermaine151@gmail.com" />
+
 
     <com.baked.romcontrol.DeveloperPreference
         baked:twitter="ebs512"

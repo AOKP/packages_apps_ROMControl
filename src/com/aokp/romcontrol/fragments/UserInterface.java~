@@ -276,12 +276,12 @@ public class UserInterface extends AOKPPreferenceFragment {
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
                     isCheckBoxPrefernceChecked(preference));
             return true;
-        } else if (preference == mRecentKillAll) {
-	    boolean checked = ((CheckBoxPreference) preference).isChecked();
-	    Settings.System.putInt(getActivity().getContentResolver(),
-	            Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
-	    Helpers.restartSystemUI();
-	    return true;
+       } else if (preference == mRecentKillAll) {
+	   boolean checked = ((CheckBoxPreference) preference).isChecked();
+	   Settings.System.putInt(getActivity().getContentResolver(),
+	           Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
+	   Helpers.restartSystemUI();
+	   return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 

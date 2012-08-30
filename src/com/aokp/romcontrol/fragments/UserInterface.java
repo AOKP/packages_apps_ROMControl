@@ -61,6 +61,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
+    private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -78,6 +79,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
     CheckBoxPreference mShowImeSwitcher;
+    CheckBoxPreference mRecentKillAll;
 
     Random randomGenerator = new Random();
 
@@ -120,6 +122,10 @@ public class UserInterface extends AOKPPreferenceFragment {
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
+
+        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRecentKillAll.setChecked(Settings.System.getInt(getActivity  ().getContentResolver(),
+                Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
@@ -269,6 +275,12 @@ public class UserInterface extends AOKPPreferenceFragment {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
                     isCheckBoxPrefernceChecked(preference));
+            return true;
+        } else if (preference == mRecentKillAll) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
+            Helpers.restartSystemUI();
             return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());

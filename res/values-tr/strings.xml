@@ -51,6 +51,8 @@
 	
 	<!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Yazımsal Tuşları Sıfırla</string>
+	<string name="menu_user_interface_reset">Bildirim Çubuğu duvar kağıdını sıfırla</string>
+    <string name="menu_lockscreens_reset">Kilit ekranı duvar kağıdını sıfırla</string>
 
     <!-- General Strings -->
     <string name="advanced_settings">Gelişmiş Ayarlar</string>
@@ -69,9 +71,9 @@
     <string name="aokp_website_title">AOKP Website</string>
     <string name="aokp_website_summary">www.aokp.co - www.aokp.co - Yeni sürümleri burada bulabilirsiniz.</string>
     <string name="aokp_source_title">AOKP Kaynak</string>
-    <string name="aokp_source_summary">AOKP tamamen açık kaynaklıdır. Her zaman en son kaynağı github.com/aokp adresinde bulabilirsiniz</string>
+    <string name="aokp_source_summary">AOKP açık kaynaklıdır. Her zaman en son kaynağı github.com/aokp adresinde bulabilirsiniz</string>
     <string name="aokp_review_title">AOKP Kod İnceleme</string>
-    <string name="aokp_review_summary">AOKP yama ve kodları test etmek için Gerrit e gönderin</string>
+    <string name="aokp_review_summary">AOKP yama ve kodları test etmek için Gerrit\'e gönderin</string>
     <string name="aokp_irc_title">Sohbette bize katılın</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">AOKP Hakkında</string>
@@ -102,8 +104,10 @@
     <string name="notif_wallpaper_alpha_title">Durum çubuğu arkaplan ışığı</string>
     <string name="alpha_dialog_title">Işığın değerini ayarla</string>
 	<string name="custom_carrier_label_title">Özelleştirilmiş operatör yazısı</string>
-	<string name="custom_carrier_label_explain">Lütfen yeni bir yazı giriniz. Boş girildiği zaman tekrar standart hale dönecektir .</string>
+	<string name="custom_carrier_label_explain">Lütfen yeni bir yazı giriniz. Boş girildiği zaman tekrar eski hale dönecektir .</string>
 	<string name="custom_carrier_label_notset">Özel operatör yazısı şu anda ayarlanamadı</string>
+	<string name="ime_switcher_title">Klavye Giriş Yöntemi Değiştiriciyi Göster</string>
+    <string name="ime_switcher_summary">Yazı yazarken Durum Çubuğunda(Yeniden başlatma gerekir)</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Kısayol tarzı</string>
@@ -224,15 +228,20 @@
 	<string name="led_time_on">Zaman ışığı açık</string>
     <string name="led_off">LED Kapalı</string>
 	<string name="led_time_off">Zaman ışığı kapalı</string>
+	<string name="led_time_seconds">" saniye"</string>
     <string name="led_color_click">LED rengini değiştirmek için tıkla</string>
     <string name="title_led_screen_on">LED bildirimini ekran açık olduğunda da göster</string> 
 	<string name="led_custom_app">Seçilen Uygulamalar</string>	
+	<string name="led_custom_default">Default</string>
 	<string name="led_change_app">Değiştir</string>
 	<string name="led_delete_app">Sil</string>
 	<string name="led_keep_app">Koru</string>
-	<string name="led_custom_title">Özel LED Uygulamaları</string>
+	<string name="led_custom_title">Özel LED Uyg.</string>
+	<string name="led_custom_message">"Değiştirmek istediğiniz uygulama: "</string>
 	<string name="led_edit_button">-</string>
 	<string name="led_test_notification">LED\'i test et</string>
+	<string name="led_test_notification_message_now">"LED şimdi şunun için test ediliyor: "</string>
+    <string name="led_test_notification_message_note">".  LED\'i görmek için ekranı kapatınız. LED rengini görene kadar OK tuşuna basmayınız."</string>
 	<string name="led_test_ok">OK</string> 
     
     <!-- Sound -->
@@ -274,6 +283,30 @@
     <string name="title_lockscreen_user_timeout_override">Ekranın kapanmasını bekle</string>
     <string name="summary_lockscreen_user_timeout_override">Ekranı manuel olarak kapatırsanız Android\'in zaman aşımı kullanılacak. Standart davranış sadece ekranın otomatik olarak kapanmasında gecikme yapar.</string>
 	<string name="lockscreen_text_color_title">Kilit ekranı metin rengi</string>
+<string name="title_lockscreen_user_timeout_override">Ekran kilidini bekle</string>
+    <string name="summary_lockscreen_user_timeout_override">Ekran el ile kapatıldığı zaman standart Android zaman aşımı süresi kullanılacak. Standart davranış ise sadece otomatik olarak kapanan ekranda gecikme kullanır.</string>
+    <string name="lockscreen_weather_cat">Hava Durumu</string>
+    <string name="lockscreen_weather_title">Aktif</string>
+    <string name="lockscreen_weather_summary">Kilit ekranında Hava Durumu\'nu göster. Bunu kullanabilmek için ROM Kontrol\'den Hava Durumu servisini açmanız gerekir. </string>
+    <string name="lockscreen_weather_type_title">Kilit ekranı Hava Durumu tarzı</string>
+    <string name="lockscreen_weather_type_summary">Grafiksel ya da metin şeklinde Hava Durumu bilgisi.</string>
+    <string name="lockscreen_calendar_cat">Takvim</string>
+    <string name="lockscreen_calendar_title">Aktif</string>
+    <string name="lockscreen_calendar_summary">Kilit ekranında yaklaşan etkinlikleri göster.</string>
+    <string name="lockscreen_calendar_sources_title">Takvim kaynağı</string>
+    <string name="lockscreen_calendar_sources_summary">Görmek istediğiniz takvimleri seçin.</string>
+    <string name="lockscreen_calendar_dialog">Hangi takvimi kullanacaksınız?</string>
+    <string name="lockscreen_calendar_close">Kapat</string>
+    <string name="lockscreen_calendar_range_title">Zaman aralığı</string>
+    <string name="lockscreen_calendar_range_summary">Gösterilecek zaman aralığını seçin.</string>
+    <string name="lockscreen_calendar_use_colors_title">Renk kullan</string>
+    <string name="lockscreen_calendar_use_colors_summary">Bunu seçerseniz etkinlikler takvimde renkli olacak.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Devam eden etkinlikleri gizle</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Bunu seçerseniz başlamış olan etkinlikler gösterilmeyecek.</string>
+    <string name="lockscreen_calendar_flip_title">Çoklu etkinlik</string>
+    <string name="lockscreen_calendar_flip_summary">Bunu seçerseniz widget\'da etkinlikler sırayla döndürülecekler.</string>
+    <string name="lockscreen_calendar_interval_title">Döndürme sıklığı</string>
+    <string name="lockscreen_calendar_interval_summary">Saniye bazında animasyon hızı seçin.</string>
 	
 	<!-- Weather -->
 	<string name="weather_enable">Hava Durumu aktif</string>
@@ -300,6 +333,7 @@
     <string name="weather_loc_warning_msg">"Ağ dan konum alma özelliği şu anda devre dışı. Mevcut konumunuzdaki geçerli hava alma yeteneğini önler. Özel bir konum ayarlamak veya ağ dan konumunuzu belirlemek için etkinleştirin."</string>
     <string name="weather_loc_warning_positive">"Ağ konumunu etkinleştir"</string>
     <string name="weather_loc_warning_negative">"Etkinleştirme."</string>
+	<string name="menu_weather_get_weather">Hava Durumu\'nu al</string>
 	
 	<!-- Weather Codes -->
 	<string name="weather_0">Kasırga</string>
@@ -372,16 +406,14 @@
     <string name="direction_south_west">GB</string>
     <string name="direction_west">B</string>
     <string name="direction_north_west">KB</string>
-	<string name="lockscreen_weather_title">Kilit Ekranı Hava Durumu</string>
-    <string name="lockscreen_weather_summary">Kilit Ekranında Hava Durumu Bilgisini göster. Aktif olması için ROM Yönetimi Hava Durumu servisinin çalışması gerekir</string>
-	<string name="lockscreen_weather_type_title">Kilit Ekr.Hava Durumu Tarzı</string>
-	<string name="lockscreen_weather_type_summary">Hava Durumu bilgisini grafik yada yazı olarak göster.</string>
-	<string name="menu_weather_get_weather">Hava Durumunu Al</string>
 	
 	<!-- Share to clipboard -->
 	<string name="clipboard_notification">Panoya kopyalandı.</string>
 	
 	<!-- Performance -->
+	<string name="tab_cpu_settings">"CPU Ayarları"</string>
+    <string name="tab_voltage_settings">"Voltaj Ayarları"</string>
+    <string name="tab_other_settings">"Diğer Ayarlar"</string>
     <string name="current_speed">Geçerli Hız</string>
     <string name="current_max">En Fazla:</string>
     <string name="current_min">En Düşük:</string>
@@ -396,6 +428,10 @@
     <string name="ps_free_memory_boot">Açlışta bu ayarları uygula</string>
     <string name="pt_fast_charge_boot">Hızlı Şarj</string>
     <string name="ps_fast_charge_boot">Hızlı şarj açılışta etkin kıl</string>
+	<string name="ps_volt_mhz_voltage">" MHz Voltaj"</string>
+    <string name="ps_volt_save">"Kaydet"</string>
+    <string name="ps_volt_current_voltage">"Geçerli voltaj: "</string>
+    <string name="ps_volt_setting_to_apply">"Kabul edilecek: "</string>
     <string name="pt_volt_control">Voltaj Kontrolü</string>
     <string name="ps_volt_control">Her bir frekans için voltajı ayarlayın</string>
     <string name="not_supported">Kullandığınız kernel voltaj kontolünü destelememektedir</string>

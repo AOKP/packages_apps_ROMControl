@@ -260,6 +260,7 @@
     <string name="led_test_notification_message_now">"Now testing LED for: "</string>
     <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup till you're done viewing the LED color."</string>
     <string name="led_test_ok">OK</string>
+    <string name="title_charging_led_on">Enable LED while charging</string>
 
     <!-- Sound -->
     <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>

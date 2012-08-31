@@ -120,13 +120,31 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/title_led_screen_on" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginTop="5dp" >
+
+
+        <Switch
+            android:id="@+id/charging_led_on"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title_charging_led_on" />
+
     </LinearLayout>
 
     <Button
         android:id="@+id/led_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout2"
         android:layout_centerHorizontal="true"
         android:text="@string/led_test_notification"/>
 

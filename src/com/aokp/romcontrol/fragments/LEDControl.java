@@ -64,11 +64,14 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private static final String TAG = "LEDControl";
     private static final boolean DEBUG = false;
 
+    private static final String PROP_CHARGING_LED = "persist.sys.enable-charging-led";
+
     private Button mOnTime;
     private Button mOffTime;
     private Button mEditApp;
     private Button mLedTest;
     private Switch mLedScreenOn;
+    private Switch mChargingLedOn;
     private ImageView mLEDButton;
     private Spinner mListApps;
     private ArrayAdapter<CharSequence> listAdapter;
@@ -111,6 +114,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         mLedTest = (Button) mActivity.findViewById(R.id.led_test);
         mLEDButton = (ImageView) mActivity.findViewById(R.id.ledbutton);
         mLedScreenOn = (Switch) mActivity.findViewById(R.id.led_screen_on);
+        mChargingLedOn = (Switch) mActivity.findViewById(R.id.charging_led_on);
         mListApps = (Spinner) mActivity.findViewById(R.id.custom_apps);
         timeArray = mResources.getStringArray(R.array.led_entries);
         timeOutput = mResources.getIntArray(R.array.led_values);
@@ -177,6 +181,15 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                     Log.i(TAG, "LED flash when screen ON is set to: " + checked);
             }
         });
+
+        mChargingLedOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Helpers.setSystemProp(PROP_CHARGING_LED, checked ? "1" : "0");
+                if (DEBUG)
+                    Log.i(TAG, "Charging LED is set to: " + checked);
+            }
+        });
+
 
         parseExistingAppList();
 
@@ -343,6 +356,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         mLEDButton.setColorFilter(userColor, PorterDuff.Mode.MULTIPLY);
         mLedScreenOn.setChecked(Settings.Secure.getInt(mActivity.getContentResolver(),
                 Settings.Secure.LED_SCREEN_ON, 0) == 1);
+        mChargingLedOn.setChecked(Integer.parseInt(Helpers.getSystemProp(PROP_CHARGING_LED, "0")) == 1);
     }
 
     private void saveCustomApps() {

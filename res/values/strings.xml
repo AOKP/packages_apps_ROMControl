@@ -127,11 +127,8 @@
     <string name="toggle_btn_enabled_color_title">Toggle on color</string>
     <string name="toggle_btn_disabled_color_title">Toggle off color</string>
 
-    <!-- text color size option from aokp -->
-    <string name="statusbar_fontsize">Statusbar Font Size</string>
-    <string name="statusbar_fontsize_summary">Change the size of text elements on statusbar</string>
+    <!-- Merge of statusbar wallpaper by xoomdev -->
 
-    <!-- merge of statusbar wallpaper by xoomdev -->
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>

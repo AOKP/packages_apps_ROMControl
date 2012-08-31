@@ -72,7 +72,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     private static final int SELECT_WALLPAPER = 5;
 
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
-    //private static final String PREF_FONTSIZE = "status_bar_fontsize";
+   
 
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mShowImeSwitcher;
@@ -80,7 +80,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     Preference mCustomLabel;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
-    //ListPreference mFontsize;
+    
 
 
 
@@ -123,11 +123,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
-       // mFontsize = (ListPreference) findPreference(PREF_FONTSIZE);
-        //mFontsize.setOnPreferenceChangeListener(this);
-        //mFontsize.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                //.getContentResolver(), Settings.System.STATUSBAR_FONT_SIZE,
-                //16)));
+       
 
         if (mTablet) {
             prefs.removePreference(mNotificationWallpaper);
@@ -296,19 +292,6 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.user_interface, menu);
     }
-
-    //public boolean onPreferenceChange(Preference preference, Object newValue) {
-        //boolean result = false;
-
-        //if (preference == mFontsize) {
-           // int val = Integer.parseInt((String) newValue);
-           // result = Settings.System.putInt(getActivity().getContentResolver(),
-                   // Settings.System.STATUSBAR_FONT_SIZE, val);
-            //Helpers.restartSystemUI();
-           // return result;
-        //}
-
-    //}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -62,6 +63,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+    private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -80,6 +82,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     Preference mCustomLabel;
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mRecentKillAll;
+    CheckBoxPreference mKillAppLongpressBack;
 
     Random randomGenerator = new Random();
 
@@ -127,6 +130,16 @@ public class UserInterface extends AOKPPreferenceFragment {
         mRecentKillAll.setChecked(Settings.System.getInt(getActivity  ().getContentResolver(),
                 Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
 
+        mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
+                updateKillAppLongpressBackOptions();
+
+        boolean hasNavBarByDefault = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+
+        if (hasNavBarByDefault || mTablet) {
+            ((PreferenceGroup) findPreference("misc")).removePreference(mKillAppLongpressBack);
+        }
+
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
@@ -137,6 +150,16 @@ public class UserInterface extends AOKPPreferenceFragment {
         }
 
         setHasOptionsMenu(true);
+    }
+
+    private void writeKillAppLongpressBackOptions() {
+        Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_BACK, mKillAppLongpressBack.isChecked() ? 1 : 0);
+    }
+
+    private void updateKillAppLongpressBackOptions() {
+        mKillAppLongpressBack.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_BACK, 0) != 0);
     }
 
     private void updateCustomLabelTextSummary() {
@@ -282,6 +305,8 @@ public class UserInterface extends AOKPPreferenceFragment {
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
             Helpers.restartSystemUI();
             return true;
+        } else if (preference == mKillAppLongpressBack) {
+            writeKillAppLongpressBackOptions();
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 

@@ -115,6 +115,8 @@
     <string name="rotate_180_summary">Allow your device to rotate upside down!</string>
     <string name="recent_kill_all">Enable kill-all-button</string>
     <string name="recent_kill_all_summary">Displays a button to kill all apps on recents window (requires UI restart)</string>
+    <string name="kill_app_longpress_back">Allow killing of current app by longpressing back button</string>
+    <string name="kill_app_longpress_back_summary">Allows you to end the application focuses on your phone by longpressing the back button.</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>

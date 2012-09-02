@@ -72,7 +72,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     private static final int SELECT_WALLPAPER = 5;
 
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
-   
+
 
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mShowImeSwitcher;
@@ -80,7 +80,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     Preference mCustomLabel;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
-    
+
 
 
 
@@ -123,7 +123,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
-       
+
 
         if (mTablet) {
             prefs.removePreference(mNotificationWallpaper);
@@ -163,7 +163,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             if (checked) {
                 Helpers.getMount("rw");
                 new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.bakedjerky");
+                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.baked");
                 Helpers.getMount("ro");
                 Resources res = mContext.getResources();
                 String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
@@ -172,7 +172,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             } else {
                 Helpers.getMount("rw");
                 new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.unicorn /system/media/bootanimation.zip");
+                        .runWaitFor("mv /system/media/bootanimation.baked /system/media/bootanimation.zip");
                 Helpers.getMount("ro");
                 preference.setSummary("");
             }
@@ -290,7 +290,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.user_interface, menu);
+        inflater.inflate(R.menu.system_extra, menu);
     }
 
     @Override

@@ -166,9 +166,12 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         CMDProcessor cmd = new CMDProcessor();
         cmd.su.runWaitFor("busybox echo " + mMaxFreqSetting + " > " + MAX_FREQ);
         cmd.su.runWaitFor("busybox echo " + mMinFreqSetting + " > " + MIN_FREQ);
-        String cpu1 = MAX_FREQ.replace("cpu0", "cpu1");
-        cmd.su.runWaitFor("busybox echo " + cpu1Max + " > " + cpu1);
-        cmd.su.runWaitFor("busybox echo " + cpu1Max + " > " + cpu1);
+        if (new File("/sys/devices/system/cpu/cpu1").isDirectory()) {
+            String cpu1MaxPath = MAX_FREQ.replace("cpu0", "cpu1");
+            String cpu1MinPath = MIN_FREQ.replace("cpu0", "cpu1");
+            cmd.su.runWaitFor("busybox echo " + cpu1Max + " > " + cpu1MaxPath);
+            cmd.su.runWaitFor("busybox echo " + cpu1Min + " > " + cpu1MinPath);
+        }
     }
 
     public class GovListener implements OnItemSelectedListener {

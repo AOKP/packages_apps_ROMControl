@@ -80,10 +80,10 @@ public class PropModder extends BAKEDPreferenceFragment implements
     private static final String WIFI_SCAN_PROP = "wifi.supplicant_scan_interval";
     private static final String WIFI_SCAN_PERSIST_PROP = "persist.wifi_scan_interval";
     private static final String WIFI_SCAN_DEFAULT = System.getProperty(WIFI_SCAN_PROP);
-    /* private static final String LCD_DENSITY_PREF = "pref_lcd_density";
+    private static final String LCD_DENSITY_PREF = "pref_lcd_density";
     private static final String LCD_DENSITY_PROP = "ro.sf.lcd_density";
     private static final String LCD_DENSITY_PERSIST_PROP = "persist.lcd_density";
-    private static final String LCD_DENSITY_DEFAULT = System.getProperty(LCD_DENSITY_PROP); */
+    private static final String LCD_DENSITY_DEFAULT = System.getProperty(LCD_DENSITY_PROP);
     private static final String MAX_EVENTS_PREF = "pref_max_events";
     private static final String MAX_EVENTS_PROP = "windowsmgr.max_events_per_sec";
     private static final String MAX_EVENTS_PERSIST_PROP = "persist.max_events";
@@ -169,7 +169,7 @@ public class PropModder extends BAKEDPreferenceFragment implements
 
     private PreferenceScreen mRebootMsg;
     private ListPreference mWifiScanPref;
-    // private ListPreference mLcdDensityPref;
+    private ListPreference mLcdDensityPref;
     private ListPreference mMaxEventsPref;
     private ListPreference mRingDelayPref;
     private ListPreference mVmHeapsizePref;
@@ -209,8 +209,8 @@ public class PropModder extends BAKEDPreferenceFragment implements
         mWifiScanPref = (ListPreference) prefSet.findPreference(WIFI_SCAN_PREF);
         mWifiScanPref.setOnPreferenceChangeListener(this);
 
-        /* mLcdDensityPref = (ListPreference) prefSet.findPreference(LCD_DENSITY_PREF);
-        mLcdDensityPref.setOnPreferenceChangeListener(this); */
+        mLcdDensityPref = (ListPreference) prefSet.findPreference(LCD_DENSITY_PREF);
+        mLcdDensityPref.setOnPreferenceChangeListener(this);
 
         mMaxEventsPref = (ListPreference) prefSet.findPreference(MAX_EVENTS_PREF);
         mMaxEventsPref.setOnPreferenceChangeListener(this);
@@ -361,9 +361,9 @@ public class PropModder extends BAKEDPreferenceFragment implements
             if (preference == mWifiScanPref) {
                 return doMod(WIFI_SCAN_PERSIST_PROP, WIFI_SCAN_PROP,
                         newValue.toString());
-            // } else if (preference == mLcdDensityPref) {
-                // return doMod(LCD_DENSITY_PERSIST_PROP, LCD_DENSITY_PROP,
-                        // newValue.toString());
+            } else if (preference == mLcdDensityPref) {
+                return doMod(LCD_DENSITY_PERSIST_PROP, LCD_DENSITY_PROP,
+                        newValue.toString());
             } else if (preference == mMaxEventsPref) {
                 return doMod(MAX_EVENTS_PERSIST_PROP, MAX_EVENTS_PROP,
                         newValue.toString());
@@ -529,13 +529,13 @@ public class PropModder extends BAKEDPreferenceFragment implements
         } else {
             mWifiScanPref.setValue(WIFI_SCAN_DEFAULT);
         }
-        // String lcd = Helpers.findBuildPropValueOf(LCD_DENSITY_PROP);
-        // if (!lcd.equals(DISABLE)) {
-            // mLcdDensityPref.setValue(lcd);
-            // mLcdDensityPref.setSummary(String.format(getString(R.string.pref_lcd_density_alt_summary), lcd));
-        // } else {
-            // mLcdDensityPref.setValue(LCD_DENSITY_DEFAULT);
-        // }
+        String lcd = Helpers.findBuildPropValueOf(LCD_DENSITY_PROP);
+        if (!lcd.equals(DISABLE)) {
+            mLcdDensityPref.setValue(lcd);
+            mLcdDensityPref.setSummary(String.format(getString(R.string.pref_lcd_density_alt_summary), lcd));
+        } else {
+            mLcdDensityPref.setValue(LCD_DENSITY_DEFAULT);
+        }
         String maxE = Helpers.findBuildPropValueOf(MAX_EVENTS_PROP);
         if (!maxE.equals(DISABLE)) {
             mMaxEventsPref.setValue(maxE);

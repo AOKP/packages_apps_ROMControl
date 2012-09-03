@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ROM Vezérlés</string>
+
+    <!-- Header Strings -->
+    <string name="user_interface">Felhasználói felület</string>
+    <string name="cancel">Mégse</string>
+    <string name="ok">OK</string>
+    <string name="menu_main_activity_change_locale">Üres!</string>
+    <string name="header_statusbar">Statusbar</string>
+    <string name="header_navbar">Navigációs sáv</string>
+    <string name="toggles_layout">Kapcsolók</string>
+    <string name="general_ui">Általános felület</string>
+    <string name="clock">Óra</string>
+    <string name="battery">Akkumulátor</string>
+    <string name="nav_bar">Navigációs sáv</string>
+    <string name="power_menu">Kikapcsolási Menü</string>
+    <string name="led_options">LED Opciók</string>
+    <string name="header_system">Rendszer</string>
+    <string name="sound">Hang</string>
+    <string name="lockscreen_options">Zárképernyő</string>
+    <string name="weather">Időjárás</string>
+    <string name="tools">Eszközők</string>
+    <string name="performance">Teljesítmény</string>
+
+    <!-- Activity titles defined in AndroidManifest.xml -->
+    <string name="title_about">AOKP-ról</string>
+    <string name="title_ui">Általános felhasználói felület</string>
+    <string name="title_statusbar_clock">Állapotsáv Óra</string>
+    <string name="title_statusbar_toggles">Állapotsáv Kapcsolók</string>
+    <string name="title_statusbar_battery">Állapotsáv Akkumulátor</string>
+    <string name="title_navbar">Navigációs sáv</string>
+    <string name="title_led">LED Vezérlés</string>
+    <string name="title_sound">Hang beállítások</string>
+    <string name="title_lockscreens">Képernyőzár beállítások</string>
+    <string name="title_weather">Időjárás beállítások</string>
+    <string name="title_performance">Teljesítmény beállítások</string>
+    <string name="title_clipboard_share">Megosztás vágólapra</string>
+
+    <!-- Header Summaries -->
+    <string name="header_summary_clock">@null</string>
+    <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_general_ui">@null</string>
+    <string name="header_summary_battery">@null</string>
+    <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_led">@null</string>
+    <string name="header_summary_sound">@null</string>
+    <string name="header_summary_performance">@null</string>
+    <string name="header_summary_lockscreens">@null</string>
+    <string name="header_summary_weather">@null</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_nav_bar_reset">Navigációs sáv alaphelyzetbe</string>
+    <string name="menu_user_interface_reset">Értesítési háttér alaphelyzetbe</string>
+    <string name="menu_lockscreens_reset">Zárképernyő háttér alaphelyzetbe</string>
+
+    <!-- General Strings -->
+    <string name="advanced_settings">Speciális beállítások</string>
+    <string name="misc_short">Vegyes</string>
+    <string name="custom_app_icon_successfully">"sikeres ikon állítás!"</string>
+
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Energia takarékos mód</string>
+    <string name="title_show_screenshot">Képernyőkép</string>
+    <string name="title_show_torch_toggle">Zseblámpa kapcsoló</string>
+    <string name="title_show_airplane_toggle">Repülőgép üzemmód</string>
+    <string name="title_show_navbar_hide">Navigációs sáv mutatása</string>
+
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Energia takarékosmód engedélyezése</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+
+    <string name="title_pref_powersaving_data_screen_off">Adat kikapcsolt képernyőnél</string>
+    <string name="summary_pref_powersaving_data_screen_off">Mit tegyen kikapcsolt képernyőnél az adattal</string>
+
+    <string name="title_pref_powersaving_data_screen_off_delay">Adatforgalom késleltetése</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Mennyit várjon az adatforgalom előtt?</string>
+
+    
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Egyedi alkalmazás használata</string>
+    <string name="use_custom_app_summary">Egyéni alkalmazás indítása a feladatválasztó helyett</string>
+    <string name="select_custom_app_title">Válaszd ki!</string>
+    <string name="group_applications">Alkalmazások</string>
+
+    <!-- About -->
+    <string name="devs">The Crew</string>
+    <string name="aokp">Android Open Kang Project</string>
+    <string name="aokp_website_title">AOKP Website</string>
+    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+    <string name="aokp_source_title">AOKP Source</string>
+    <string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
+    <string name="aokp_review_title">AOKP Code Review</string>
+    <string name="aokp_review_summary">AOKP\'s Gerrit Review instance for submitting and testing patches</string>
+    <string name="aokp_irc_title">Join us on IRC</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">About AOKP</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+    <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+    <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+    <string name="donate_khasmek">http://nyan.cat</string>
+    <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+    <string name="donate_adam">http://goo.gl/fRj57</string>
+    <string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
+    <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
+    <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
+    <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
+    <string name="donate_sixstringsg">https://www.paypal.com/cgi-bin/webscr?cmd=_flow&amp;SESSION=U3KYhTz6itHx8bKvx-F79EFVY5sQKKQu9f1ftkJ1pevFN6wdaJLu8yz3Y3e&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d1e83f46a36995b3856cef1e18897ad75</string>
+    <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
+    <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
+    <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
+
+    <!-- General UI -->
+    <string name="enable_volume_options">Hang panel engedélyezése</string>
+    <string name="status_bar_notif_count_title">Értesítésí számláló</string>
+    <string name="status_bar_notif_count_summary">Megjelenití az értesítések számát a navigációs sávon</string>
+    <string name="disable_bootanimation_title">Bootanimáció tiltása</string>
+    <string name="custom_bootanimation_title">Egyedi bootanimáció</string>
+    <string name="custom_bootanimation_summary">Bootanimáció zip kiválasztása. Eredeti mentési helye /system/media.</string>
+    <string name="install_file_manager_error">Alkalmazás nem található. Telepíts fájlkezelőt.</string>
+    <string name="notification_wallpaper_title">Értesítési háttér választása</string>
+    <string name="notification_wallpaper_summary">El tudod távolítani az ablak hátterét</string>
+    <string name="notif_wallpaper_alpha_title">Áttetszősége</string>
+    <string name="alpha_dialog_title">Áttetszőség mértéke</string>
+    <string name="custom_carrier_label_title">Egyedi szolgáltató név</string>
+    <string name="custom_carrier_label_explain">Adja meg egy újat. Üresen hagyva visszaáll az eredetire.</string>
+    <string name="custom_carrier_label_notset">Nincs beállított egyedi felírta</string>
+    <string name="ime_switcher_title">Aktuális IME váltó</string>
+    <string name="ime_switcher_summary">Állapotsoron, gépelés közben (újraindítás szükséges)</string>
+    <string name="rotate_180_title">180 fokos forgatás engedélyezése</string>
+    <string name="rotate_180_summary">Engedélyezi a készülék megfordítását!</string>
+    <string name="recent_kill_all">Engedélyezi a "kill-all-button"-t</string>
+    <string name="recent_kill_all_summary">Összes alkalmazás bezárását engedélyező gomb megjelenítése.</string>
+
+    <!-- Állapotsor | Kapcsolók -->
+    <string name="toggle_style_title">Kapcsoló stílusa</string>
+    <string name="toggle_style_summary">Ikon vagy szöveg.</string>
+    <string name="toggles_layout_title">Toggle tipusa</string>
+    <string name="enabled_toggles_title">Kapcsolók engedélyezése</string>
+    <string name="enabled_toggles_summary">Engedélyezett kapcsolók</string>
+    <string name="toggles_display_dialog">Válaszd ki a kapcsolókat.</string>
+    <string name="toggles_display_close">Bezárás</string>
+    <string name="toggles_order_title">Kapcsoló sorrend</string>
+    <string name="toggles_order_summary">Válaszd ki a sorrendet</string>
+    <string name="brightness_location_title">Fényerő helye</string>
+    <string name="reset_toggles_title">Kapcsolók alaphelyzetbe</string>
+    <string name="reset_toggles_summary">Alaphelyzetbe rakja a kapcsolókat</string>
+    <string name="toggle_button_alpha_title">Kapcsolók áttetszősége</string>
+    <string name="toggle_btn_enabled_color_title">Indikátor színének engedélyezése</string>
+    <string name="toggle_btn_disabled_color_title">Indikátor szinének tiltása</string>
+    <string name="toggle_btn_background_title">Kapcsolók hátterének áttetszősége</string>
+    <string name="toggle_text_color_title">Kapcsoló szöveg szín</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Óra stílus</string>
+    <string name="title_clock_ampm_entries">AM/PM </string>
+    <string name="enable_clock_weekday">A hét napja</string>
+    <string name="enable_clock_weekday_summary">Rövidített nap kijelzése az óra előtt</string>
+    <string name="colors">Színek</string>
+    <string name="clock_color_title">Óra színe</string>
+
+    <!-- Toggle Strings to be called from device overlays -->
+    <string name="toggle_airplane_mode">Repülőgép mód</string>
+    <string name="toggle_auto_rotate">Autó forgatás</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_fast_charge">Gyors töltés</string>
+    <string name="toggle_gps">GPS</string>
+    <string name="toggle_lte">LTE</string>
+    <string name="toggle_data">Data</string>
+    <string name="toggle_nfc">NFC</string>
+    <string name="toggle_silent">Néma</string>
+    <string name="toggle_swagger">Swagger</string>
+    <string name="toggle_sync">Sync</string>
+    <string name="toggle_torch">Zseblámpa</string>
+    <string name="toggle_2g">2G</string>
+    <string name="toggle_usb_tether">USB Tether</string>
+    <string name="toggle_vibrate">Rezgő</string>
+    <string name="toggle_wifi_ap">Tether</string>
+    <string name="toggle_wifi">Wi-Fi</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">Akksi ikon stílusa</string>
+    <string name="battery_not_title">Akksi ikon az értesítési sávon</string>
+    <string name="battery_not_summary">Akksi ikon megjelenítése a törlés gombnál</string>
+    <string name="battery_bar">Akksi sáv helye</string>
+    <string name="battery_bar_color">Akksi sáv színe</string>
+    <string name="battery_bar_cat">Akksi sáv beállítás</string>
+    <string name="battery_bar_style_title">Stílusa</string>
+    <string name="battery_bar_thickness_title">Vastagsága</string>
+    <string name="battery_bar_animate_title">Töltési animáció</string>
+    <string name="battery_bar_animate_summary">Akadozhat! Ha nem tetszik, kapcsold ki.</string>
+
+    <!-- Statusbar | Signal -->
+    <string name="signal_style">Jel szöveg stílusa</string>
+    <string name="signal_color_title">Jel színe</string>
+    <string name="hide_signal_title">Jel elrejtése</string>
+    <string name="hide_signal_summary">Frissíti mikor változik a jelerősség</string>
+    <string name="wifi_signal_style">WiFi jel szöveg stílusa</string>
+    <string name="wifi_signal_color_title">WiFi jel színe</string>
+    
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Színválasztó</string>
+    <string name="press_color_to_apply">Válaszd ki a színt!</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Beállít</string>
+    <string name="ics_color">Holo</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar">Navigációs sáv</string>
+    <string name="navbar_button_cat">Navigációs sáv gombok</string>
+    <string name="title_pref_menu_display">Menü helye</string>
+    <string name="summary_pref_menu_display">Ne felejtsd el eltávolítani a menü gomgot, ha nagy menü ikonokat használsz!</string>
+    <string name="title_pref_navigation_menu_display">Menü kinézete</string>
+    <string name="summary_pref_navigation_menu_display">Hogyan és mikor jelenjen meg a menü gomb?</string>
+    <string name="navbar_qty_title">Navigációs gombok száma</string>
+    <string name="navbar_qty_summary">Válaszd ki a navigációs gombok számát</string>
+    <string name="navbar_action_title">Gomb %1$s esemény &amp; ikon</string>
+    <string name="button_transparency_title">Nav gombok áttetszősége</string>
+    <string name="navbar_longpress_title">Gomb %1$s hosszan nyomva</string>
+    <string name="navbar_action_home">Kezdőlap</string>
+    <string name="navbar_action_back">Vissza</string>
+    <string name="navbar_action_recents">Legutóbbiak</string>
+    <string name="navbar_action_search">Keresés</string>
+    <string name="navbar_action_menu">Menü</string>
+    <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_power">Teljesítmény</string>
+    <string name="navbar_action_notifications">Értesítések</string>
+    <string name="navbar_action_none">Üres</string>
+    <string name="navbar_widgets">Navigációs sáv Widgetek</string>
+    <string name="navbar_enable_bar">Sáv engedélyezése</string>
+    <string name="navigation_bar_height_title">Navigációs sáv magassága</string>
+    <string name="navigation_bar_height_summary">Navigációs sáv magassága állóhelyzetben.</string>
+    <string name="navigation_bar_height_landscape_title">Navigációs sáv magassága fekvőhelyzetben</string>
+    <string name="navigation_bar_height_landscape_summary">Navigációs sáv magasságának beállítása fekvőhelyzetben.</string>
+    <string name="navigation_bar_width_title">Navigációs sáv szélessége.</string>
+    <string name="navigation_bar_width_summary">Navigációs sáv magassága oldal nézetben.</string>
+    <string name="navbar_enable_dialog_title">Újraindítás szükséges!</string>
+    <string name="navbar_enable_dialog_msg">Újraindítás <b>szükséges</b> , hogy minden jól mükődjön!</string>
+    <string name="navbar_enable_dialog_negative">Újraindítás később</string>
+    <string name="navbar_enable_dialog_Positive">Újraindítás most!</string>
+    <string name="navbar_height_dialog_title">Újraindítás szükséges!</string>
+    <string name="navbar_height_dialog_summary">Kérlek indítsd újra a magasság beállításához!</string>
+    <string name="navbar_height_dialog_button_later">Újraindítás később</string>
+    <string name="navbar_height_dialog_button_reboot">Újraindítás most!</string>
+    <string name="navigation_bar_tint_title">Navigációs sáv színe</string>
+    <string name="navigation_bar_glow_tint_title">Navigációs sáv fénye</string>
+    <string name="navigation_bar_glow_tint_summary">Gomb megnyomásának a háttér színe.</string>
+    <string name="glow_times_title">Gomb fényének animációja</string>
+    <string name="glow_times_off">Ki</string>
+    <string name="glow_times_superquick">Szuper gyors</string>
+    <string name="glow_times_quick">Gyors</string>
+    <string name="glow_times_normal">Normál</string>
+
+    <!-- LED -->
+    <string name="led_on">LED Be</string>
+    <string name="led_time_on">Bekapcsolás ideje</string>
+    <string name="led_off">LED Ki</string>
+    <string name="led_time_off">Kikapcsolás ideje</string>
+    <string name="led_time_seconds">" mp"</string>
+    <string name="led_color_click">Nyomj a LED-re a szín választáshoz</string>
+    <string name="title_led_screen_on">LED villan mialatt a képernyő bekapcsol</string>
+    <string name="led_custom_app">Kiválasztott alkalmazás</string>
+    <string name="led_custom_default">Alaphelyzet</string>
+    <string name="led_change_app">Választás</string>
+    <string name="led_delete_app">Törlés</string>
+    <string name="led_keep_app">Marad</string>
+    <string name="led_custom_title">Egyedi LED Alkalmazások</string>
+    <string name="led_custom_message">"Kiválasztott alkalmazás: "</string>
+    <string name="led_edit_button">-</string>
+    <string name="led_test_notification">LED teszt</string>
+    <string name="led_test_notification_message_now">"LED tesztelése: "</string>
+    <string name="led_test_notification_message_note">".  Kapcsold ki a képernyőt, hogy lásd a LED-et. "</string>
+    <string name="led_test_ok">OK</string>
+    <string name="title_charging_led_on">LED világít töltés alatt (újraindítás szükséges)</string>
+    <string name="led_change_brightness">Change brightness</string>
+    <string name="led_brightness_default">Alapértelmezett fényerő: 31</string>
+
+    <!-- Sound -->
+    <string name="less_notification_sounds_title">Ritkán használt értesítési hangok</string>
+    <string name="less_notification_sounds_summary">Korlátozza egyes alkalmazások hangját a beállított értékre</string>
+    <string name="title_headphone_audio_mode">Fejhallgató csatlakozásának jelzése</string>
+    <string name="summary_headphone_audio_mode">Milyen hangot adjon a fejhallgató csatlakozásakor</string>
+    <string name="title_bt_audio_mode">Bluetooth A2DP csatlakozási jelzés</string>
+    <string name="summary_bt_audio_mode">Milyen hangot adjon A2DP csatlakozásakor</string>
+    <string name="headphones_mode_no_action">Nincs értesítés</string>
+    <string name="headphones_mode_vibrate">Rezgés</string>
+    <string name="headphones_mode_silent">Néma</string>
+    <string name="title_flip_mode">Telefon felfordítása</string>
+    <string name="summary_flip_mode">Milyen hangot adjon a telefon felfordítására</string>
+    <string name="flip_cat_title">Felfordítási értesítés</string>
+    <string name="title_timeout_sec">Képernyő kikapcsolása</string>
+    <string name="summary_timeout_sec">Mennyi idő után kapcsoljon ki a szenzor mükődése a felfordítás után</string>
+    <string name="title_down_sec">Felfordítási mp-e</string>
+    <string name="summary_down_sec">Mennyi idő teljen el a telefon felfordítása után</string>
+    <string name="flip_action_positive">OK</string>
+    <string name="flip_dialog_title">Mükődése</string>
+    <string name="flip_dialog_msg">Telefon felfordítására rezeg vagy némít.
+        Alapértelmezés 1,5 mp a telefon felfordítására.
+        15 mp után visszaáll.</string>
+    <string name="summary_phone_flip_mode">Fordítsd fel a telefont hívás közben</string>
+    <string name="title_phone_flip_mode">Telefon hívás némítás</string>
+
+    <!-- Lockscreen -->
+    <string name="lockscreen_quick_unlock_control_title">Gyors pin feloldás</string>
+    <string name="lockscreen_quick_unlock_control_summary">Feloldás jelszó/pin segítségével enter nélkül</string>
+    <string name="lockscreen_menu_unlock_title">Menü feloldás</string>
+    <string name="lockscreen_menu_unlock_summary">Menü gombbal baló feloldás</string>
+    <string name="lockscreen_battery_title">Zárképernyő akksi százalék</string>
+    <string name="lockscreen_battery_summary">Mutatja a akksi százalékot a zárképernyőn</string>
+    <string name="volume_rocker_wake_title">Hangerő feloldás</string>
+    <string name="volume_rocker_wake_summary">Képernyő felélesztése a hangerő gombokra</string>
+    <string name="volume_music_controls_title">Hangerő zene vezérlés</string>
+    <string name="volume_music_controls_summary">Hosszan nyomva a hangerő gombot lépteti a következő számra kikapcsolt képernyőnél. Hangerő gombra való ébresztés nem müködik zene lejátszás közben.</string>
+    <string name="lockscreen_wallpaper_title">Zárképernyő háttérkép választása</string>
+    <string name="lockscreen_wallpaper_summary">Meg tudod változtatni a háttérképét</string>
+    <string name="lockscreen_text_color_title">Zárképernyő szöveg szín</string>
+    <string name="title_lockscreen_user_timeout_override">Vár a zárképernyőre</string>
+    <string name="summary_lockscreen_user_timeout_override">Az Android késleltetésének használata a kijelző manuális kikapcs. után. Alapért. csak akkor használjuk a késleltetést, ha a kijelző magától kapcsol ki.</string>
+    <string name="lockscreen_weather_cat">Időjárás</string>
+    <string name="lockscreen_weather_title">Engedélyez</string>
+    <string name="lockscreen_weather_summary">Időjárás a zárképernyőn. RomControlban engedélyezni kell a mükődését.</string>
+    <string name="lockscreen_weather_type_title">Zárképernyő időjárás stílusa</string>
+    <string name="lockscreen_weather_type_summary">Grafikus vagy szöveges kijelzés</string>
+    <string name="lockscreen_calendar_cat">Naptár</string>
+    <string name="lockscreen_calendar_title">Engedélyez</string>
+    <string name="lockscreen_calendar_summary">Naptár események megjelenítése a zárképernyőn.</string>
+    <string name="lockscreen_calendar_sources_title">Naptár forrása</string>
+    <string name="lockscreen_calendar_sources_summary">Válaszd ki mit akarsz látni.</string>
+    <string name="lockscreen_calendar_dialog">Válaszd ki a használni kivánt naptárt</string>
+    <string name="lockscreen_calendar_close">Bezárás</string>
+    <string name="lockscreen_calendar_range_title">Időtartomány</string>
+    <string name="lockscreen_calendar_range_summary">Mekkora időtartományt jelezzen ki.</string>
+    <string name="lockscreen_calendar_use_colors_title">Szinek használata</string>
+    <string name="lockscreen_calendar_use_colors_summary">Ha engedélyezed, akkor a naptár szineit használja.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Folyamatban lévő események elrejtése</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Ha engedélyezed, akkor a folyamatban lévő eseményeket nem jelzi ki.</string>
+    <string name="lockscreen_calendar_flip_title">Több esemény</string>
+    <string name="lockscreen_calendar_flip_summary">Ha engedélyezed, vált az események közt.</string>
+    <string name="lockscreen_calendar_interval_title">Váltás üteme</string>
+    <string name="lockscreen_calendar_interval_summary">Váltási animáció sebessége mp-ben.</string>
+
+    <!-- Weather -->
+    <string name="weather_enable">Időjárás engedélyezése</string>
+    <string name="weather_enable_summary">Időjárási információk megjelenítése az egész ROM-ban.</string>
+    <string name="weather_use_custom_location">Egyéni hely használata</string>
+    <string name="weather_use_custom_location_summary">Egyéni hely beállításával energiát takarit meg. Egyébként a hálózat-választó határozza meg a helyet.</string>
+    <string name="weather_custom_location_dialog_title">Hely beállítása</string>
+    <string name="weather_custom_location_dialog_message">Ügyelj a helyes megadásra! Helytelen megadás esetén nem frissül az időjárás.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_title">Saját hely</string>
+    <string name="weather_show_location_title">Hely mutatása</string>
+    <string name="weather_show_location_summary">Mutatja a helyet.</string>
+    <string name="weather_refresh_interval">Fríssitési gyakoriság</string>
+    <string name="weather_refresh_interval_minutes">" perc"</string>
+    <string name="weather_use_celcius">Metrikus egység</string>
+	<string name="weather_use_celcius_summary">Engedélyezve Celiusban és km/h-ban jeleniti meg az adatokat.</string>
+	<string name="weather_statusbar_style">Statusbar időjárás stílusa</string>
+    <string name="weather_start_custom_app">Egyéni alkalmazás indítása</string>
+    <string name="weather_start_custom_app_summary">Alkalmazás indítása, ha az időjárásra nyomsz.</string>
+    <string name="weather_custom_app_title">Egyéni alkalmazás</string>
+    <string name="weather_custom_app_dialog_title">Válaszd ki az alkalmazást</string>
+	<string name="weather_custom_app_dialog_message">Jelenlegi csomag neve.</string>
+	<string name="weather_refreshing">Időjárás frissítése!</string>
+    <string name="weather_loc_warning_title">Nem lehet helyet betölteni!</string>
+    <string name="weather_loc_warning_msg">"Hálózati helymeghatározás le van tiltva. Állíts be egyéni helyet vagy engedélyezd a hálózati meghatározást."</string>
+    <string name="weather_loc_warning_positive">"Hálózat engedélyezése"</string>
+    <string name="weather_loc_warning_negative">"Nem engedélyezi."</string>
+    <string name="menu_weather_get_weather">Időjárás beállítása</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">Tornádo</string>
+    <string name="weather_1">Tropusi vihar</string>
+    <string name="weather_2">Hurrikán</string>
+    <string name="weather_3">Súlyos Zivatarok</string>
+    <string name="weather_4">Zivatarok</string>
+    <string name="weather_5">Havas Eső</string>
+    <string name="weather_6">Eső, Ónos Eső</string>
+    <string name="weather_7">Hó, Ónos Eső</string>
+    <string name="weather_8">Ónos Szitálás</string>
+    <string name="weather_9">Szemerkélés</string>
+    <string name="weather_10">Ónos Eső</string>
+    <string name="weather_11">Záporok</string>
+    <string name="weather_12">Záporok</string>
+    <string name="weather_13">Hózáporok</string>
+    <string name="weather_14">Könnyű Havazás</string>
+    <string name="weather_15">Hófúvás</string>
+    <string name="weather_16">Havazás</string>
+    <string name="weather_17">Jégeső</string>
+    <string name="weather_18">Ónos Eső</string>
+    <string name="weather_19">Por</string>
+    <string name="weather_20">Ködös</string>
+    <string name="weather_21">Köd</string>
+    <string name="weather_22">Szmogos</string>
+    <string name="weather_23">Nagyon Szeles</string>
+    <string name="weather_24">Szeles</string>
+    <string name="weather_25">Hideg</string>
+    <string name="weather_26">Felhős</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">Többnyire Felhős</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">Többnyire Felhős</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">Részben Felhős</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">Részben Felhős</string>
+    <!-- clear (night) -->
+    <string name="weather_31">Tiszta idő</string>
+    <string name="weather_32">Napos</string>
+    <!-- fair (night) -->
+    <string name="weather_33">Tiszta idő</string>
+    <!-- fair (day) -->
+    <string name="weather_34">Tiszta idő</string>
+    <string name="weather_35">Eső, Jeges Eső</string>
+    <string name="weather_36">Hőség</string>
+    <string name="weather_37">Elszigetelt Zivatarok</string>
+    <string name="weather_38">Elszórt Zivatarok</string>
+    <string name="weather_39">Elszórt Zivatarok</string>
+    <string name="weather_40">Elszórt Havazás</string>
+    <string name="weather_41">Erős Havazás</string>
+    <string name="weather_42">Elszórtan Hózáporok</string>
+    <string name="weather_43">Elszórtan Hózáporok</string>
+    <string name="weather_44">Felhős</string>
+    <string name="weather_45">Mennydőrgés, Esők</string>
+    <string name="weather_46">Hóesés</string>
+    <string name="weather_47">Elszigetelt Mennydőrgés, Esők</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Helymeghatározás sikertelen</string>
+
+    <!-- cardinal directions -->
+    <string name="direction_north">N</string>
+    <string name="direction_north_east">NE</string>
+    <string name="direction_east">E</string>
+    <string name="direction_south_east">SE</string>
+    <string name="direction_south">S</string>
+    <string name="direction_south_west">SW</string>
+    <string name="direction_west">W</string>
+    <string name="direction_north_west">NW</string>
+
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">Másolva a vágólapra.</string>
+
+    <!-- Performance -->
+    <string name="tab_cpu_settings">"CPU Beállítások"</string>
+    <string name="tab_voltage_settings">"Feszültség beállítások"</string>
+    <string name="tab_other_settings">"Egyéb beállítások"</string>
+    <string name="current_speed">Jelenlegi Sebesség</string>
+    <string name="current_max">Jelenlegi max:</string>
+    <string name="current_min">Jelenlegi min:</string>
+    <string name="governor">Governor</string>
+    <string name="io">IO Ütemező</string>
+    <string name="sob">Beállítás indításnál</string>
+    <string name="dt_free_memory">Minfree Taskkiller</string>
+    <string name="prefcat_free_memory">Szabad Memória</string>
+    <string name="pt_free_memory">Szabad Memória</string>
+    <string name="ps_free_memory">Minimum memória beállítása | Jelenleg: %s</string>
+    <string name="pt_free_memory_boot">Beállítás indításnál</string>
+    <string name="ps_free_memory_boot">Érték beállítása indításnál</string>
+    <string name="pt_fast_charge_boot">Gyors töltés</string>
+    <string name="ps_fast_charge_boot">Gyors töltés engedélyezése indításnál</string>
+    <string name="ps_volt_mhz_voltage">" MHz Feszültség"</string>
+    <string name="ps_volt_save">"Mentés"</string>
+    <string name="ps_volt_current_voltage">"Jelenlegi feszültség: "</string>
+    <string name="ps_volt_setting_to_apply">"Beállítás alkalmazása: "</string>
+    <string name="pt_volt_control">Feszültség szabályozás</string>
+    <string name="ps_volt_control">Feszültségek állítása a frekvenciákhoz</string>
+    <string name="not_supported">A kerneled nem támogatja a feszültség állítást</string>
+    <string name="apply_values">Alkalmazott érték</string>
+    <string name="freq">Frekvencia</string>
+    <string name="current">mV jelenleg</string>
+    <string name="saved">mV mentett</string>
+    <string name="kernel">Kernel Tweaks (ha támogatott)</string>
+    <string name="fast_charge_warning">NEM LESZ KÉPES CSATLAKOZNI PC-HEZ ÚJRAINDÍTÁS UTÁN!\n\nAmig a gyors töltés be van kapcsolva, csak tölt!</string>
+    <string name="fast_charge_notification_title">Gyors töltés BE!</string>
+    <string name="fast_charge_notification_message">Telefon csak töltés módban!</string>
+    <string name="prefcat_other_tweaks">Egyéb tweakek</string>
+
+</resources>

@@ -25,7 +25,7 @@
     <header
 		android:id="@+id/power_menu"
 		android:fragment="com.aokp.romcontrol.fragments.PowerMenu"
-		android:title="@string/power_menu_optons"
+		android:title="@string/power_menu"
 		android:icon="@drawable/ic_rom_control_power_menu"
 		android:summary="@string/header_summary_power_menu" />
 

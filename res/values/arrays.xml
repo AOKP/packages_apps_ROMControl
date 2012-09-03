@@ -7,6 +7,14 @@
         <item>ProTekk!</item>
     </string-array>
 
+    <!-- boot audio stuff -->
+    <string-array name="disable_bootaudio_insults">
+        <item>Blame xoomdev</item>
+        <item>Blame Khasmek</item>
+        <item>Blame Protekk</item>
+        <item>Blame Roman</item>
+    </string-array>
+
     <!-- clock stuff -->
     <string-array name="clock_style_entries">
         <item>Right clock</item>

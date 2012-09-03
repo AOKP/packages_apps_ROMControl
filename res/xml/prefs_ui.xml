@@ -26,6 +26,15 @@
             android:title="@string/custom_bootanimation_title"
             android:summary="@string/custom_bootanimation_summary" />
 
+         <CheckBoxPreference
+            android:key="disable_bootaudio"
+            android:title="@string/disable_bootaudio_title" />
+
+        <Preference
+            android:key="custom_bootaudio"
+            android:title="@string/custom_bootaudio_title"
+            android:summary="@string/custom_bootaudio_summary" />
+
         <Preference
             android:key="notification_wallpaper"
             android:title="@string/notification_wallpaper_title"

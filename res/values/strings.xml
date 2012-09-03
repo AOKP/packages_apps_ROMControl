@@ -101,6 +101,9 @@
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="custom_bootanimation_title">Custom boot animation</string>
     <string name="custom_bootanimation_summary">Select bootanimation zip from sdcard. Previous bootanimation will be backed up to /system/media.</string>
+    <string name="disable_bootaudio_title">Disable boot sounds</string>
+    <string name="custom_bootaudio_title">Custom boot sounds</string>
+    <string name="custom_bootaudio_summary">Select mp3 from sdcard. Previous boot sounds will be backed up to /system/media.</string>
     <string name="install_file_manager_error">No application found to pick the zip file. Please install a file manager.</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>

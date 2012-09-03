@@ -66,6 +66,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
+    private static final int REQUEST_PICK_BOOT_AUDIO = 204;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
 
@@ -80,6 +81,8 @@ public class UserInterface extends AOKPPreferenceFragment {
     Preference mCustomLabel;
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mRecentKillAll;
+    Preference mCustomBootAudio;
+    CheckBoxPreference mDisableBootAudio;
 
     Random randomGenerator = new Random();
 
@@ -115,6 +118,18 @@ public class UserInterface extends AOKPPreferenceFragment {
         }
 
         mCustomBootAnimation = findPreference("custom_bootanimation");
+
+
+        mDisableBootAudio = (CheckBoxPreference)findPreference("disable_bootaudio");
+        mDisableBootAudio.setChecked(!new File("/system/media/boot_audio.mp3").exists());
+        if (mDisableBootAudio.isChecked()) {
+            Resources res = mContext.getResources();
+            String[] insults = res.getStringArray(R.array.disable_bootaudio_insults);
+            int randomInt = randomGenerator.nextInt(insults.length);
+            mDisableBootAudio.setSummary(insults[randomInt]);
+        }
+
+        mCustomBootAudio = findPreference("custom_bootaudio");
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -191,6 +206,39 @@ public class UserInterface extends AOKPPreferenceFragment {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
                 intent.setType("file/*");
                 startActivityForResult(intent, REQUEST_PICK_BOOT_ANIMATION);
+            } else {
+                //No app installed to handle the intent - file explorer required
+                Toast.makeText(mContext, R.string.install_file_manager_error, Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        } else if (preference == mDisableBootAudio) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            if (checked) {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/boot_audio.mp3 /system/media/boot_audio.backup");
+                Helpers.getMount("ro");
+                Resources res = mContext.getResources();
+                String[] insults = res.getStringArray(R.array.disable_bootaudio_insults);
+                int randomInt = randomGenerator.nextInt(insults.length);
+                preference.setSummary(insults[randomInt]);
+            } else {
+                Helpers.getMount("rw");
+                new CMDProcessor().su
+                        .runWaitFor("mv /system/media/boot_audio.backup /system/media/boot_audio.mp3");
+                Helpers.getMount("ro");
+                preference.setSummary("");
+            }
+            return true;
+        } else if (preference == mCustomBootAudio) {
+            PackageManager packageManager = getActivity().getPackageManager();
+            Intent test = new Intent(Intent.ACTION_GET_CONTENT);
+            test.setType("file/*");
+            List<ResolveInfo> list = packageManager.queryIntentActivities(test, PackageManager.GET_ACTIVITIES);
+            if(list.size() > 0) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                intent.setType("file/*");
+                startActivityForResult(intent, REQUEST_PICK_BOOT_AUDIO);
             } else {
                 //No app installed to handle the intent - file explorer required
                 Toast.makeText(mContext, R.string.install_file_manager_error, Toast.LENGTH_SHORT).show();
@@ -374,6 +422,26 @@ public class UserInterface extends AOKPPreferenceFragment {
                 //Copy new bootanimation, give proper permissions
                 new CMDProcessor().su.runWaitFor("cp "+ path +" /system/media/bootanimation.zip");
                 new CMDProcessor().su.runWaitFor("chmod 644 /system/media/bootanimation.zip");
+
+                //Update setting to reflect that boot animation is now enabled
+                mDisableBootAnimation.setChecked(false);
+
+                Helpers.getMount("ro");
+            } else if (requestCode == REQUEST_PICK_BOOT_AUDIO) {
+                if (data==null) {
+                    //Nothing returned by user, probably pressed back button in file manager
+                    return;
+                }
+
+                String path = data.getData().getEncodedPath();
+
+                Helpers.getMount("rw");
+                //backup old boot sounds
+                new CMDProcessor().su.runWaitFor("mv /system/media/boot_audio.mp3 /system/media/boot_audio.backup");
+
+                //Copy new bootanimation, give proper permissions
+                new CMDProcessor().su.runWaitFor("cp "+ path +" /system/media/boot_audio.mp3");
+                new CMDProcessor().su.runWaitFor("chmod 644 /system/media/boot_audio.mp3");
 
                 //Update setting to reflect that boot animation is now enabled
                 mDisableBootAnimation.setChecked(false);

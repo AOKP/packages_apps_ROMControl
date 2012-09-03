@@ -16,6 +16,7 @@
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>
     <string name="nav_bar">Navigation Bar</string>
+    <string name="power_menu">Power menu</string>
     <string name="led_options">LED Options</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
@@ -31,6 +32,7 @@
     <string name="title_statusbar_toggles">Statusbar Toggles</string>
     <string name="title_statusbar_battery">Statusbar Battery</string>
     <string name="title_navbar">Navigation Bar</string>
+    <string name="title_power_menu">Power Menu</string>
     <string name="title_led">LED Control</string>
     <string name="title_lockscreens">Lockscreen Options</string>
     <string name="title_sound">Sound Settings</string>
@@ -45,6 +47,7 @@
     <string name="header_summary_battery">@null</string>
     <string name="header_summary_signal">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>

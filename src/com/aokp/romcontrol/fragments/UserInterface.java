@@ -1,10 +1,12 @@
 
 package com.aokp.romcontrol.fragments;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
@@ -21,10 +23,15 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
@@ -32,6 +39,7 @@ import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.Spannable;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -39,10 +47,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
@@ -50,7 +62,13 @@ import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 public class UserInterface extends AOKPPreferenceFragment {
 
@@ -83,6 +101,18 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
+    ImageView view;
+    TextView error;
+
+    private AnimationDrawable mAnimationPart1;
+    private AnimationDrawable mAnimationPart2;
+    private String mPartName1;
+    private String mPartName2;
+    private int delay;
+    private int height;
+    private int width;
+    private String errormsg;
+    private String bootAniPath;
 
     Random randomGenerator = new Random();
 
@@ -390,20 +420,68 @@ public class UserInterface extends AOKPPreferenceFragment {
                     return;
                 }
 
-                String path = data.getData().getEncodedPath();
+                bootAniPath = data.getData().getEncodedPath();
 
-                Helpers.getMount("rw");
-                //backup old boot animation
-                new CMDProcessor().su.runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Bootanimation");
+                builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Helpers.getMount("rw");
+                        //backup old boot animation
+                        new CMDProcessor().su.runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
 
-                //Copy new bootanimation, give proper permissions
-                new CMDProcessor().su.runWaitFor("cp "+ path +" /system/media/bootanimation.zip");
-                new CMDProcessor().su.runWaitFor("chmod 644 /system/media/bootanimation.zip");
+                        //Copy new bootanimation, give proper permissions
+                        new CMDProcessor().su.runWaitFor("cp "+ bootAniPath +" /system/media/bootanimation.zip");
+                        new CMDProcessor().su.runWaitFor("chmod 644 /system/media/bootanimation.zip");
 
-                //Update setting to reflect that boot animation is now enabled
-                mDisableBootAnimation.setChecked(false);
+                        //Update setting to reflect that boot animation is now enabled
+                        mDisableBootAnimation.setChecked(false);
 
-                Helpers.getMount("ro");
+                        Helpers.getMount("ro");
+
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
+                View layout = inflater.inflate(R.layout.dialog_bootanimation_preview,
+                        (ViewGroup) getActivity().findViewById(R.id.bootanimation_layout_root));
+
+                error = (TextView) layout.findViewById(R.id.textViewError);
+
+                view = (ImageView) layout.findViewById(R.id.imageViewPreview);
+                view.setVisibility(View.GONE);
+
+                Display display = getActivity().getWindowManager().getDefaultDisplay();
+                Point size = new Point();
+                display.getSize(size);
+
+                view.setLayoutParams(new LinearLayout.LayoutParams(size.x/2, size.y/2));
+
+                error.setText("Creating preview...");
+
+                builder.setView(layout);
+
+                AlertDialog dialog = builder.create();
+
+                dialog.setOwnerActivity(getActivity());
+
+                dialog.show();
+
+                Thread thread = new Thread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        createPreview(bootAniPath);
+                    }
+                });
+                thread.start();
+
             }
         }
     }
@@ -421,4 +499,128 @@ public class UserInterface extends AOKPPreferenceFragment {
         in.close();
         out.close();
     }
+
+    private void createPreview(String path) {
+        File zip = new File(path);
+
+        ZipFile zipfile = null;
+        String desc = "";
+        try {
+            zipfile = new ZipFile(zip);
+            ZipEntry ze = zipfile.getEntry("desc.txt");
+            InputStream in = zipfile.getInputStream(ze);
+            InputStreamReader is = new InputStreamReader(in);
+            StringBuilder sb = new StringBuilder();
+            BufferedReader br = new BufferedReader(is);
+            String read = br.readLine();
+            while(read != null) {
+                sb.append(read);
+                sb.append("\n");
+                read = br.readLine();
+            }
+            desc = sb.toString();
+            br.close();
+            is.close();
+            in.close();
+
+        } catch (Exception e1) {
+            errormsg = "Error reading zip file";
+            errorHandler.sendEmptyMessage(0);
+            return;
+        }
+
+        String[] info = desc.replace("\\r", "").split("\\n");
+
+        width = Integer.parseInt(info[0].split(" ")[0]);
+        height = Integer.parseInt(info[0].split(" ")[1]);
+        delay = Integer.parseInt(info[0].split(" ")[2]);
+
+        mPartName1 = info[1].split(" ")[3];
+
+        try {
+            if (info.length > 2) {
+                mPartName2 = info[2].split(" ")[3];
+            }
+            else {
+                mPartName2 = "";
+            }
+        }
+        catch (Exception e)
+        {
+            mPartName2 = "";
+        }
+
+        BitmapFactory.Options opt = new BitmapFactory.Options();
+        opt.inSampleSize = 4;
+
+        mAnimationPart1 = new AnimationDrawable();
+        mAnimationPart2 = new AnimationDrawable();
+
+        try
+        {
+            for (Enumeration<? extends ZipEntry> e = zipfile.entries(); e.hasMoreElements();) {
+                ZipEntry entry = (ZipEntry) e.nextElement();
+                if (entry.isDirectory()) {
+                    continue;
+                }
+                String partname = entry.getName().split("/")[0];
+                if (mPartName1.equalsIgnoreCase(partname)) {
+                    InputStream is = zipfile.getInputStream(entry);
+                    mAnimationPart1.addFrame(new BitmapDrawable(getResources(), BitmapFactory.decodeStream(is, null, opt)), delay);
+                    is.close();
+                }
+                else if (mPartName2.equalsIgnoreCase(partname)) {
+                    InputStream is = zipfile.getInputStream(entry);
+                    mAnimationPart2.addFrame(new BitmapDrawable(getResources(), BitmapFactory.decodeStream(is, null, opt)), delay);
+                    is.close();
+                }
+            }
+        } catch (IOException e1) {
+            errormsg = "Error creating preview";
+            errorHandler.sendEmptyMessage(0);
+            return;
+        }
+
+        if (mPartName2.length() > 0) {
+            Log.d(TAG, "Multipart Animation");
+            mAnimationPart1.setOneShot(true);
+            mAnimationPart2.setOneShot(false);
+
+            mAnimationPart1.setOnAnimationFinishedListener(new AnimationDrawable.OnAnimationFinishedListener() {
+
+                @Override
+                public void onAnimationFinished() {
+                    Log.d(TAG, "First part finished");
+                    view.setImageDrawable(mAnimationPart2);
+                    mAnimationPart1.stop();
+                    mAnimationPart2.start();
+                }
+            });
+
+        }
+        else {
+            mAnimationPart1.setOneShot(false);
+        }
+
+        finishedHandler.sendEmptyMessage(0);
+
+    }
+
+    private Handler errorHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            view.setVisibility(View.GONE);
+            error.setText(errormsg);
+        }
+    };
+
+    private Handler finishedHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            view.setImageDrawable(mAnimationPart1);
+            view.setVisibility(View.VISIBLE);
+            error.setVisibility(View.GONE);
+            mAnimationPart1.start();
+        }
+    };
 }

@@ -125,4 +125,11 @@
         android:icon="@drawable/ic_rom_control_clock"
         android:title="@string/clock" />
 
+    <header
+        android:id="@+id/statusbar_extra"
+        android:fragment="com.baked.romcontrol.fragments.StatusBarExtra"
+        android:summary="@string/header_summary_system_extra"
+        android:icon="@drawable/ic_rom_control_general"
+        android:title="@string/header_system_extra" />
+
 </preference-headers>

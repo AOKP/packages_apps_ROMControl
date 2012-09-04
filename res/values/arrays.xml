@@ -296,6 +296,19 @@
         <item>4</item>
     </string-array>
 
+    <!-- notification background -->
+    <string-array name="notification_background_entries">
+        <item>@string/notif_background_color_fill</item>
+        <item>@string/notif_background_custom_image</item>
+        <item>@string/notif_background_default</item>
+    </string-array>
+
+    <string-array name="notification_background_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Lockscreen delay -->
     <string-array name="lockscreen_delay_entries">
         <item>@string/slide_lock_delay_none</item>

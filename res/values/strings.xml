@@ -23,7 +23,7 @@
     <string name="header_powerwidget">Powerwidgets</string>
     <string name="header_tablet_powerwidget">Tablet PowerWidget</string>
     <string name="header_lockscreen">Lockscreen</string>
-    <string name="header_system_extra">Extras</string>
+    <string name="header_system_extra">Misc settings</string>
     <string name="header_sound_title">Sound</string>
     <string name="header_performance_title">Performance</string>
     <string name="clock">Clock</string>
@@ -127,12 +127,14 @@
     <string name="toggle_btn_enabled_color_title">Toggle on color</string>
     <string name="toggle_btn_disabled_color_title">Toggle off color</string>
 
-    <!-- Merge of statusbar wallpaper by xoomdev -->
-
+    <!-- Statusbar | wallpaper by xoomdev -->
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
     <string name="alpha_dialog_title">Set alpha value</string>
+    <string name="notif_background_default">Default background</string>
+    <string name="notif_background_color_fill">Color fill</string>
+    <string name="notif_background_custom_image">Custom image</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
@@ -316,7 +318,7 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Lock screen misc. settings -->
-    <string name="lockscreen_extra_title">Extra settings</string>
+    <string name="lockscreen_extra_title">Misc settings</string>
     <string name="lockscreen_extra_summary">@null</string>
     <string name="lockscreen_battery_status_title">Battery status</string>
     <string name="lockscreen_battery_status_charging">Only when charging</string>

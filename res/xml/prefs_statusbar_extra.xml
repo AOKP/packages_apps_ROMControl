@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="custom_carrier_label"
+        android:title="@string/custom_carrier_label_title" />
+
+    <CheckBoxPreference
+        android:key="ime_switcher"
+        android:title="@string/ime_switcher_title"
+        android:summary="@string/ime_switcher_summary"
+        android:defaultValue="true" />
+
+    <CheckBoxPreference
+        android:key="status_bar_notif_count"
+        android:title="@string/status_bar_notif_count_title"
+        android:summary="@string/status_bar_notif_count_summary"
+        android:defaultValue="false" />
+
+    <ListPreference
+        android:key="notification_wallpaper"
+        android:persistent="false"
+        android:dialogTitle="@string/notification_wallpaper_title"
+        android:title="@string/notification_wallpaper_title"
+        android:entries="@array/notification_background_entries"
+        android:entryValues="@array/notification_background_values" />
+
+    <Preference
+        android:key="notification_wallpaper_alpha"
+        android:title="@string/notif_wallpaper_alpha_title" />
+
+</PreferenceScreen>

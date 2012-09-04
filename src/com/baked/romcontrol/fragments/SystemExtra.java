@@ -35,7 +35,10 @@ public class SystemExtra extends BAKEDPreferenceFragment {
 
     public static final String TAG = "SystemExtra";
 
+    private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+
     CheckBoxPreference mDisableBootAnimation;
+    CheckBoxPreference mRecentKillAll;
 
     Random randomGenerator = new Random();
 
@@ -47,6 +50,10 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_system_extra);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRecentKillAll.setChecked(Settings.System.getInt(getActivity  ().getContentResolver(),
+                Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
 
         mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
         mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
@@ -79,6 +86,13 @@ public class SystemExtra extends BAKEDPreferenceFragment {
                 Helpers.getMount("ro");
                 preference.setSummary("");
             }
+            return true;
+
+        } else if (preference == mRecentKillAll) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
+            Helpers.restartSystemUI();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

@@ -53,6 +53,13 @@
         android:icon="@drawable/ic_rom_control_toggles"
         android:summary="@string/header_summary_toggles"
         android:title="@string/toggles_layout" />
+
+    <header
+        android:id="@+id/statusbar_battery"
+        android:title="@string/signal"
+        android:fragment="com.roman.romcontrol.fragments.StatusBarSignal"
+        android:icon="@drawable/ic_rom_control_signal"
+        android:summary="@string/header_summary_signal" />
      
     <header
         android:id="@+id/system"

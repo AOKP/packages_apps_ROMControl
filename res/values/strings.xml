@@ -23,9 +23,11 @@
     <string name="header_powerwidget">Powerwidgets</string>
     <string name="header_tablet_powerwidget">Tablet PowerWidget</string>
     <string name="header_lockscreen">Lockscreen</string>
-    <string name="header_system_extra">Misc settings</string>
+    <string name="header_system_extra">System Settings</string>
+    <string name="header_statusbar_extra">Statusbar Settings</string>
     <string name="header_sound_title">Sound</string>
     <string name="header_performance_title">Performance</string>
+    <string name="header_lockscreen_extra_title">Lockscreen Settings</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="nav_bar">Navbar</string>
@@ -39,6 +41,7 @@
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_system_extra">@null</string>
+    <string name="header_summary_statusbar_extra">@null</string>
     <string name="header_summary_battery">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_powerwidget">@null</string>
@@ -46,6 +49,7 @@
     <string name="header_summary_lockscreen">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
+    <string name="header_summary_lockscreen_extra">@null</string>
 
     <!-- System | Extras -->
     <string name="ime_switcher_title">Show IME Switcher</string>
@@ -320,8 +324,6 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
     <!-- Lock screen misc. settings -->
-    <string name="lockscreen_extra_title">Misc settings</string>
-    <string name="lockscreen_extra_summary">@null</string>
     <string name="lockscreen_battery_status_title">Battery status</string>
     <string name="lockscreen_battery_status_charging">Only when charging</string>
     <string name="lockscreen_battery_status_alwayson">Always on</string>

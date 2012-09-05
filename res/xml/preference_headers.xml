@@ -39,13 +39,6 @@
         android:summary="@string/header_summary_sound" />
 
     <header
-        android:id="@+id/system_extra"
-        android:fragment="com.baked.romcontrol.fragments.SystemExtra"
-        android:title="@string/header_system_extra"
-        android:icon="@drawable/ic_rom_control_general"
-        android:summary="@string/header_summary_system_extra" />
-
-    <header
         android:id="@+id/power_menu"
         android:fragment="com.baked.romcontrol.fragments.PowerMenu"
         android:title="@string/power_menu_options"
@@ -58,6 +51,13 @@
         android:title="@string/nav_bar"
         android:icon="@drawable/ic_rom_control_navigation_bar"
         android:summary="@string/header_summary_navigation_bar" />
+
+    <header
+        android:id="@+id/system_extra"
+        android:fragment="com.baked.romcontrol.fragments.SystemExtra"
+        android:title="@string/header_system_extra"
+        android:icon="@drawable/ic_rom_control_general"
+        android:summary="@string/header_summary_system_extra" />
 
     <!-- Lockscreen section -->
     <header
@@ -72,13 +72,6 @@
         android:title="@string/lockscreen_target_title" />
 
     <header
-        android:id="@+id/lockscreen_extras"
-        android:fragment="com.baked.romcontrol.fragments.LockscreenInterface"
-        android:summary="@string/lockscreen_extra_summary"
-        android:icon="@drawable/ic_rom_control_lockscreen_extra"
-        android:title="@string/lockscreen_extra_title" />
-
-    <header
         android:id="@+id/lockscreen_weather"
         android:fragment="com.baked.romcontrol.fragments.Weather"
         android:summary="@string/lockscreen_weather_summary"
@@ -91,6 +84,13 @@
         android:summary="@string/lockscreen_calendar_summary"
         android:icon="@drawable/ic_rom_control_calendar"
         android:title="@string/lockscreen_calendar_title" />
+
+    <header
+        android:id="@+id/lockscreen_extras"
+        android:fragment="com.baked.romcontrol.fragments.LockscreenInterface"
+        android:summary="@string/header_summary_lockscreen_extra"
+        android:icon="@drawable/ic_rom_control_general"
+        android:title="@string/header_lockscreen_extra_title" />
 
     <!-- Statusbar section -->
     <header
@@ -128,8 +128,8 @@
     <header
         android:id="@+id/statusbar_extra"
         android:fragment="com.baked.romcontrol.fragments.StatusBarExtra"
-        android:summary="@string/header_summary_system_extra"
+        android:summary="@string/header_summary_statusbar_extra"
         android:icon="@drawable/ic_rom_control_general"
-        android:title="@string/header_system_extra" />
+        android:title="@string/header_statusbar_extra" />
 
 </preference-headers>

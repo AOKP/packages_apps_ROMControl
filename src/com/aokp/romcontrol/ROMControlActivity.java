@@ -212,7 +212,14 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 if (mVibrator == null || !mVibrator.hasVibrator()) {
                     target.remove(i);
                 }
+            } else if (header.id == R.id.hardware_keys) {
+                final int deviceKeys = getResources().getInteger(
+                      com.android.internal.R.integer.config_deviceHardwareKeys);
+                if (deviceKeys == 0) {
+                      target.remove(i);
+                }
             }
+
         }
         updateHeaderList(target);
         mHeaders = target;

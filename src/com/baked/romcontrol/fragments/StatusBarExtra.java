@@ -341,6 +341,10 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
 
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
+
+                Settings.System.putString(getContentResolver(),
+                        Settings.System.NOTIF_BACKGROUND, null);
+
                 updateCustomBackgroundSummary();
                 Helpers.restartSystemUI();
             }

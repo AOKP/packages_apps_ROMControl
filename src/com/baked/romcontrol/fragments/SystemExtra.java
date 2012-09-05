@@ -36,9 +36,11 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     public static final String TAG = "SystemExtra";
 
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+    private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
+    CheckBoxPreference mKillAppLongpressBack;
 
     Random randomGenerator = new Random();
 
@@ -50,6 +52,15 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_system_extra);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
+                updateKillAppLongpressBackOptions();
+
+        boolean hasNavBarByDefault = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+        if (hasNavBarByDefault || mTablet) {
+            ((PreferenceGroup) findPreference("misc")).removePreference(mKillAppLongpressBack);
+        }
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getInt(getActivity  ().getContentResolver(),
@@ -63,6 +74,16 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             int randomInt = randomGenerator.nextInt(insults.length);
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
+    }
+
+    private void writeKillAppLongpressBackOptions() {
+        Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_BACK, mKillAppLongpressBack.isChecked() ? 1 : 0);
+    }
+
+    private void updateKillAppLongpressBackOptions() {
+        mKillAppLongpressBack.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_BACK, 0) != 0);
     }
 
     @Override
@@ -87,6 +108,9 @@ public class SystemExtra extends BAKEDPreferenceFragment {
                 preference.setSummary("");
             }
             return true;
+
+        } else if (preference == mKillAppLongpressBack) {
+            writeKillAppLongpressBackOptions();
 
         } else if (preference == mRecentKillAll) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();

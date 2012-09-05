@@ -16,11 +16,11 @@
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>
     <string name="nav_bar">Navigation Bar</string>
-    <string name="power_menu">Power menu</string>
-    <string name="led_options">LED Options</string>
+    <string name="power_menu">Power Menu</string>
+    <string name="led_options">LED</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
-    <string name="lockscreen_options">Lockscreen Options</string>
+    <string name="lockscreen_options">Lockscreen</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
     <string name="performance">Performance</string>

@@ -184,8 +184,11 @@ public class LockscreenInterface extends BAKEDPreferenceFragment implements
 
                 Uri selectedImageUri = getLockscreenExternalUri();
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
+
+                Settings.System.putString(getContentResolver(),
+                        Settings.System.LOCKSCREEN_BACKGROUND, null);
+
                 Toast.makeText(mActivity, getResources().getString(R.string.
                         lockscreen_background_result_successful), Toast.LENGTH_LONG).show();
                 updateCustomBackgroundSummary();

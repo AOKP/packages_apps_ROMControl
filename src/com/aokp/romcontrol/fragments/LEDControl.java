@@ -393,7 +393,12 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         mLEDButton.setColorFilter(userColor, PorterDuff.Mode.MULTIPLY);
         mLedScreenOn.setChecked(Settings.Secure.getInt(mActivity.getContentResolver(),
                 Settings.Secure.LED_SCREEN_ON, 0) == 1);
-        mChargingLedOn.setChecked(Integer.parseInt(Helpers.getSystemProp(PROP_CHARGING_LED, "0")) == 1);
+
+        String charging_led_enabled = Helpers.getSystemProp(PROP_CHARGING_LED, "0");
+        if (charging_led_enabled.length() == 0) {
+            charging_led_enabled = "0";
+        }
+        mChargingLedOn.setChecked(Integer.parseInt(charging_led_enabled) == 1);
     }
 
     private void saveCustomApps() {

@@ -95,7 +95,6 @@
         <item>3</item>
     </string-array>
 
-
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">
         <item>Icon only</item>
@@ -168,7 +167,7 @@
         <item>Recents</item>
         <item>Search</item>
         <item>Menu</item>
-        <item>Toggle Widgets</item>
+        <!-- <item>Toggle Widgets</item> -->
         <item>Kill app</item>
         <item>Power</item>
         <item>Notifications</item>
@@ -182,7 +181,7 @@
         <item>**recents**</item>
         <item>**search**</item>
         <item>**menu**</item>
-        <item>**widgets**</item>
+        <!-- <item>**widgets**</item> -->
         <item>**kill**</item>
         <item>**power**</item>
         <item>**notifications**</item>
@@ -195,7 +194,7 @@
         <item>36 dp</item>
         <item>30 dp</item>
         <item>24 dp</item>
-        <item> 2 dp</item>
+        <item> 6 dp</item>
     </string-array>
 
     <string-array name="navigation_bar_width" translatable="false">
@@ -203,7 +202,7 @@
         <item>36</item>
         <item>30</item>
         <item>24</item>
-        <item>2</item>
+        <item>6</item>
     </string-array>
 
     <string-array name="navigation_bar_height_entries">
@@ -213,7 +212,7 @@
         <item>36 dp</item>
         <item>30 dp</item>
         <item>24 dp</item>
-        <item> 2 dp</item>
+        <item> 6 dp</item>
     </string-array>
 
     <string-array name="navigation_bar_height" translatable="false">
@@ -223,26 +222,26 @@
         <item>36</item>
         <item>30</item>
         <item>24</item>
-        <item>2</item>
+        <item>6</item>
     </string-array>
 
     <string-array name="navigation_bar_height_landscape_entries">
-         <item>48 dp (default)</item>
-         <item>42 dp</item>
-         <item>36 dp</item>
-         <item>30 dp</item>
-         <item>24 dp</item>
-         <item> 2 dp</item>
-     </string-array>
+        <item>48 dp (default)</item>
+        <item>42 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+        <item> 6 dp</item>
+    </string-array>
 
-     <string-array name="navigation_bar_height_landscape" translatable="false">
-         <item>48</item>
-         <item>42</item>
-         <item>36</item>
-         <item>30</item>
-         <item>24</item>
-         <item>2</item>
-     </string-array>
+    <string-array name="navigation_bar_height_landscape" translatable="false">
+        <item>48</item>
+        <item>42</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+        <item>6</item>
+    </string-array>
 
     <string-array name="glow_times_entries">
         <item>@string/glow_times_off</item>

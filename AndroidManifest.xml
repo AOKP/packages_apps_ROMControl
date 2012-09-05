@@ -112,6 +112,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.HardwareKeys"
+            android:label="@string/title_hardwarekeys" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.Sound"
             android:label="@string/title_sound" >
             <intent-filter>

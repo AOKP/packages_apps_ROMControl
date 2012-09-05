@@ -109,7 +109,7 @@
     <string name="title_show_screenshot">Show screenshot</string>
     <string name="title_show_reboot_chooser">Show reboot chooser</string>
     <string name="title_show_airplane_toggle">Show airplane toggle</string>
-    <!-- <string name="title_show_navbar_hide">Show navigation bar toggle</string> -->
+    <string name="title_show_navbar_hide">Show navigation bar toggle</string>
     <string name="title_show_profile_chooser">Show profile chooser</string>
     <string name="title_show_sound_chooser">Show vibrate/sound chooser</string>
 

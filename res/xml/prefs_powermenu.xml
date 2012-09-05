@@ -12,8 +12,8 @@
         <CheckBoxPreference android:key="show_airplane_toggle"
             android:title="@string/title_show_airplane_toggle" />
 
-        <!-- <CheckBoxPreference android:key="show_navbar_hide"
-            android:title="@string/title_show_navbar_hide" /> -->
+        <CheckBoxPreference android:key="show_navbar_hide"
+            android:title="@string/title_show_navbar_hide" />
 
         <CheckBoxPreference android:key="show_profile_chooser"
             android:title="@string/title_show_profile_chooser" />

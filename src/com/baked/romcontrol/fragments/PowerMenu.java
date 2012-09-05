@@ -46,9 +46,9 @@ public class PowerMenu extends BAKEDPreferenceFragment {
         mShowAirplaneToggle.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE, 1) == 1);
 
-        /* mShowNavBarHide = (CheckBoxPreference) findPreference(PREF_NAVBAR_HIDE);
+        mShowNavBarHide = (CheckBoxPreference) findPreference(PREF_NAVBAR_HIDE);
         mShowNavBarHide.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, 0) == 1); */
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, 0) == 1);
 
         mShowProfileChooser = (CheckBoxPreference) findPreference(PREF_SHOW_PROFILE_CHOOSER);
         mShowProfileChooser.setChecked(Settings.System.getInt(getActivity()
@@ -88,11 +88,11 @@ public class PowerMenu extends BAKEDPreferenceFragment {
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 
-        /* } else if (preference == mShowNavBarHide) {
+        } else if (preference == mShowNavBarHide) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true; */
+            return true;
 
         } else if (preference == mShowProfileChooser) {
             Settings.System.putInt(getActivity().getContentResolver(),

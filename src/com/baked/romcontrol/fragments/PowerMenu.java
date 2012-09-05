@@ -15,7 +15,7 @@ public class PowerMenu extends BAKEDPreferenceFragment {
 
     private static final String PREF_SCREENSHOT = "show_screenshot";
     private static final String PREF_REBOOT_CHOOSER = "show_reboot_chooser";
-    // private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
+    private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_SHOW_PROFILE_CHOOSER = "show_profile_chooser";
     private static final String PREF_SHOW_SOUND_CHOOSER = "show_sound_chooser";
@@ -23,7 +23,7 @@ public class PowerMenu extends BAKEDPreferenceFragment {
     CheckBoxPreference mShowScreenShot;
     CheckBoxPreference mShowRebootChooser;
     CheckBoxPreference mShowAirplaneToggle;
-    // CheckBoxPreference mShowNavBarHide;
+    CheckBoxPreference mShowNavBarHide;
     CheckBoxPreference mShowProfileChooser;
     CheckBoxPreference mShowSoundChooser;
 

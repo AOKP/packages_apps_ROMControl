@@ -41,6 +41,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     private static final String TAG = "ROM_Control";
 
     private static boolean hasNotificationLed;
+    private static boolean deviceKeys;
     private static String KEY_USE_ENGLISH_LOCALE = "use_english_locale";
 
     protected HashMap<Integer, Integer> mHeaderIndexMap = new HashMap<Integer, Integer>();
@@ -64,6 +65,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
         mTablet = Settings.System
                 .getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
+        deviceKeys = getResources().getBoolean(R.bool.has_hardware_buttons);
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
@@ -212,7 +214,12 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 if (mVibrator == null || !mVibrator.hasVibrator()) {
                     target.remove(i);
                 }
+            } else if (header.id == R.id.hardware_keys) {
+                if (!deviceKeys) {
+                      target.remove(i);
+                }
             }
+
         }
         updateHeaderList(target);
         mHeaders = target;

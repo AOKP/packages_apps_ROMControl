@@ -30,6 +30,7 @@
     <string name="header_lockscreen_extra_title">Lockscreen Settings</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
+    <string name="signal">Signal</string>
     <string name="nav_bar">Navbar</string>
     <string name="toggles_layout">Toggles</string>
     <string name="power_menu_options">Power Menu</string>
@@ -50,6 +51,7 @@
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreen_extra">@null</string>
+    <string name="header_summary_signal">@null</string>
 
     <!-- System | Extras -->
     <string name="ime_switcher_title">Show IME Switcher</string>
@@ -150,6 +152,14 @@
     <string name="title_clock_ampm_entries">AM/PM style</string>
     <string name="enable_clock_weekday">Day of the week</string>
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+
+    <!-- Statusbar | Signal -->
+    <string name="signal_style">Signal Text Style</string>
+    <string name="signal_color_title">Signal color</string>
+    <string name="hide_signal_title">Hide signal bars</string>
+    <string name="hide_signal_summary">Will also hide data indicator for now. Will be able to separate later.</string>
+    <string name="wifi_signal_style">WiFi Signal Text Style</string>
+    <string name="wifi_signal_color_title">WiFi Signal color</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Airplane mode</string>

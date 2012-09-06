@@ -116,6 +116,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.StatusBarSignal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.Navbar"
             android:label="@string/header_navbar">
             <intent-filter>

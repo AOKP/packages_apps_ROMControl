@@ -39,7 +39,7 @@ public class ShowBuildProp extends AlertActivity {
     private static final String TAG = "PropModder :ShowBuildProp";
     private static final String MOUNT_RW = "busybox mount -o rw,remount -t yaffs2 /dev/block/mtdblock1 /system";
     private static final String MOUNT_RO = "busybox mount -o ro,remount -t yaffs2 /dev/block/mtdblock1 /system";
-    private static final String SHOWBUILD_PATH = "/system/tmp/showbuild";
+    private static final String SHOWBUILD_PATH = "/data/data/com.baked.romcontrol/showbuild";
 
     private final CMDProcessor cmd = new CMDProcessor();
 

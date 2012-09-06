@@ -2,18 +2,24 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference
-        android:key="recent_kill_all"
-        android:title="@string/recent_kill_all"
-        android:summary="@string/recent_kill_all_summary" />
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_short">
 
-    <CheckBoxPreference
-        android:key="kill_app_longpress_back"
-        android:title="@string/kill_app_longpress_back"
-        android:summary="@string/kill_app_longpress_back_summary"/>
+        <CheckBoxPreference
+            android:key="recent_kill_all"
+            android:title="@string/recent_kill_all"
+            android:summary="@string/recent_kill_all_summary" />
 
-    <CheckBoxPreference
-        android:key="disable_bootanimation"
-        android:title="@string/disable_bootanimation_title" />
+        <CheckBoxPreference
+            android:key="kill_app_longpress_back"
+            android:title="@string/kill_app_longpress_back"
+            android:summary="@string/kill_app_longpress_back_summary"/>
+
+        <CheckBoxPreference
+            android:key="disable_bootanimation"
+            android:title="@string/disable_bootanimation_title" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

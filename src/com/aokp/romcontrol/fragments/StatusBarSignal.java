@@ -52,6 +52,11 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mHideSignal.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_HIDE_SIGNAL_BARS,
                 0) != 0);
+
+        mAltSignal = (CheckBoxPreference) findPreference("alt_signal");
+        mAltSignal.setChecked(Settings.System.getBoolean(getContentResolver(),
+                Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT,false));
+
     }
 
     @Override
@@ -62,6 +67,10 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
                     Settings.System.STATUSBAR_HIDE_SIGNAL_BARS,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
 
+            return true;
+        } else if (preference == mAltSignal) {
+            Settings.System.putBoolean(getContentResolver(),
+                    Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT,mAltSignal.isChecked());
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -75,6 +84,7 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SIGNAL_TEXT, val);
             return true;
+
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));

@@ -273,6 +273,7 @@
     <string name="navbar_action_recents">Recents</string>
     <string name="navbar_action_search">Search</string>
     <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_notifications">Notifications</string>

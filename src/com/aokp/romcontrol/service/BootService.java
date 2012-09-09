@@ -94,6 +94,28 @@ public class BootService extends Service {
                                 " > " + CPUSettings.GOVERNOR
                                 .replace("cpu0", "cpu1"));
                     }
+                    if (new File("/sys/devices/system/cpu/cpu2").exists()) {
+                        cmd.su.runWaitFor("busybox echo " + max +
+                                " > " + CPUSettings.MAX_FREQ
+                                .replace("cpu0", "cpu2"));
+                        cmd.su.runWaitFor("busybox echo " + min +
+                                " > " + CPUSettings.MIN_FREQ
+                                .replace("cpu0", "cpu2"));
+                        cmd.su.runWaitFor("busybox echo " + gov +
+                                " > " + CPUSettings.GOVERNOR
+                                .replace("cpu0", "cpu2"));
+                    }
+                    if (new File("/sys/devices/system/cpu/cpu3").exists()) {
+                        cmd.su.runWaitFor("busybox echo " + max +
+                                " > " + CPUSettings.MAX_FREQ
+                                .replace("cpu0", "cpu3"));
+                        cmd.su.runWaitFor("busybox echo " + min +
+                                " > " + CPUSettings.MIN_FREQ
+                                .replace("cpu0", "cpu3"));
+                        cmd.su.runWaitFor("busybox echo " + gov +
+                                " > " + CPUSettings.GOVERNOR
+                                .replace("cpu0", "cpu3"));
+                    }
                 }
             }
 
@@ -109,8 +131,18 @@ public class BootService extends Service {
                         " > " + VoltageControlSettings.MV_TABLE0);
                 if (new File(VoltageControlSettings.MV_TABLE1).exists()) {
                     cmd.su.runWaitFor("busybox echo " +
-                    sb.toString() + " > " +
-                    VoltageControlSettings.MV_TABLE1);
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE1);
+                }
+                if (new File(VoltageControlSettings.MV_TABLE2).exists()) {
+                    cmd.su.runWaitFor("busybox echo " +
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE2);
+                }
+                if (new File(VoltageControlSettings.MV_TABLE3).exists()) {
+                    cmd.su.runWaitFor("busybox echo " +
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE3);
                 }
             }
 

@@ -62,8 +62,6 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
 
     private String mMaxFreqSetting;
     private String mMinFreqSetting;
-    private String cpu1Max;
-    private String cpu1Min;
 
     private CurCPUThread mCurCPUThread;
     private static SharedPreferences preferences;
@@ -167,10 +165,16 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         cmd.su.runWaitFor("busybox echo " + mMaxFreqSetting + " > " + MAX_FREQ);
         cmd.su.runWaitFor("busybox echo " + mMinFreqSetting + " > " + MIN_FREQ);
         if (new File("/sys/devices/system/cpu/cpu1").isDirectory()) {
-            String cpu1MaxPath = MAX_FREQ.replace("cpu0", "cpu1");
-            String cpu1MinPath = MIN_FREQ.replace("cpu0", "cpu1");
-            cmd.su.runWaitFor("busybox echo " + cpu1Max + " > " + cpu1MaxPath);
-            cmd.su.runWaitFor("busybox echo " + cpu1Min + " > " + cpu1MinPath);
+            cmd.su.runWaitFor("busybox echo " + mMaxFreqSetting + " > " + MAX_FREQ.replace("cpu0", "cpu1"));
+            cmd.su.runWaitFor("busybox echo " + mMinFreqSetting + " > " + MIN_FREQ.replace("cpu0", "cpu1"));
+        }
+        if (new File("/sys/devices/system/cpu/cpu2").isDirectory()) {
+            cmd.su.runWaitFor("busybox echo " + mMaxFreqSetting + " > " + MAX_FREQ.replace("cpu0", "cpu2"));
+            cmd.su.runWaitFor("busybox echo " + mMinFreqSetting + " > " + MIN_FREQ.replace("cpu0", "cpu2"));
+        }
+        if (new File("/sys/devices/system/cpu/cpu3").isDirectory()) {
+            cmd.su.runWaitFor("busybox echo " + mMaxFreqSetting + " > " + MAX_FREQ.replace("cpu0", "cpu3"));
+            cmd.su.runWaitFor("busybox echo " + mMinFreqSetting + " > " + MIN_FREQ.replace("cpu0", "cpu3"));
         }
     }
 
@@ -179,6 +183,15 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
             String selected = parent.getItemAtPosition(pos).toString();
             CMDProcessor cmd = new CMDProcessor();
             cmd.su.runWaitFor("busybox echo " + selected + " > " + GOVERNOR);
+            if (new File("/sys/devices/system/cpu/cpu1").exists()) {
+                cmd.su.runWaitFor("busybox echo " + selected + " > " + GOVERNOR.replace("cpu0", "cpu1"));
+            }
+            if (new File("/sys/devices/system/cpu/cpu2").exists()) {
+                cmd.su.runWaitFor("busybox echo " + selected + " > " + GOVERNOR.replace("cpu0", "cpu2"));
+            }
+            if (new File("/sys/devices/system/cpu/cpu3").exists()) {
+                cmd.su.runWaitFor("busybox echo " + selected + " > " + GOVERNOR.replace("cpu0", "cpu3"));
+            }
             final SharedPreferences.Editor editor = preferences.edit();
             editor.putString(GOV_PREF, selected);
             editor.commit();
@@ -237,9 +250,6 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         }
         mMaxSpeedText.setText(toMHz(current));
         mMaxFreqSetting = current;
-        if (new File("/sys/devices/system/cpu/cpu1").isDirectory()) {
-            cpu1Max = current;
-        }
         final SharedPreferences.Editor editor = preferences.edit();
         editor.putString(MAX_CPU, current);
         editor.commit();
@@ -257,9 +267,6 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         }
         mMinSpeedText.setText(toMHz(current));
         mMinFreqSetting = current;
-        if (new File("/sys/devices/system/cpu/cpu1").isDirectory()) {
-            cpu1Min = current;
-        }
         final SharedPreferences.Editor editor = preferences.edit();
         editor.putString(MIN_CPU, current);
         editor.commit();

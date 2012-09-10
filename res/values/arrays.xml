@@ -183,6 +183,39 @@
         <item>**app**</item>
         <item>**null**</item>
     </string-array>
+    <string-array name="navring_dialog_entries">
+        <item>None</item>
+        <item>Take Screenshot</item>
+        <item>Kill App</item>
+        <item>Screen Off</item>
+        <item>Google Now</item>
+        <item>Select Application</item>
+    </string-array>
+
+    <string-array name="navring_dialog_values">
+        <item>none</item>
+        <item>screenshot</item>
+        <item>killcurrent</item>
+        <item>screenoff</item>
+        <item>assist</item>
+        <item>app</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_entries">
+        <item>1 target</item>
+        <item>2 targets</item>
+        <item>3 targets</item>
+        <item>4 targets</item>
+        <item>5 targets</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
     <string-array name="navigation_bar_width_entries">
         <item>42 dp (default)</item>
         <item>36 dp</item>

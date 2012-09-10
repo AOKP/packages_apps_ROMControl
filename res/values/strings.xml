@@ -298,6 +298,27 @@
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
 
+    <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
+    <string name="interface_softkey_settings">Softkey Settings</string>
+    <string name="interface_softkeys_pref_default_title">No Activity Selected</string>
+    <string name="interface_softkeys_pref_default_summary">Tap the settings icon to select a custom long press activity</string>
+    <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
+    <string name="interface_softkeys_reboot_title">Reboot Menu</string>
+    <string name="interface_softkeys_screenshot_title">Screenshot</string>
+    <string name="interface_softkeys_screenoff_title">Screen Off</string>
+    <string name="interface_softkeys_kill_process_title">Kill App</string>
+    <string name="interface_softkey_package_removed">The previously selected package was not found</string>
+    <string name="interface_navring_settings_title">Navigation bar ring</string>
+    <string name="interface_navring_settings_summary">Edit your custom nav ring apps</string>
+    <string name="title_navring_amount">Number of nav ring targets</string>
+    <string name="summary_navring_amount">How many ring targets you want? *Changing this will reset your current targets and restart your System UI*</string>
+    <string name="interface_navring_custom_pref_summary">Release on target to launch </string>
+    <string name="interface_navring_pref_default_summary">Tap to select a custom ring target activity</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">Ring Targets</string>
+    <string name="navbar_ring">Custom Ring Targets</string>
+
     <!-- LED -->
     <string name="led_on">LED On</string>
     <string name="led_time_on">Time Light Is On</string>

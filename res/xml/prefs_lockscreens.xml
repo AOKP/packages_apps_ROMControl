@@ -13,6 +13,11 @@
         android:defaultValue="#ffffffff" />
 
     <CheckBoxPreference
+        android:key="lockscreen_auto_rotate"
+        android:title="@string/lockscreen_auto_rotate_title"
+        android:summary="@string/lockscreen_auto_rotate_summary" />
+
+    <CheckBoxPreference
         android:key="lockscreen_battery"
         android:title="@string/lockscreen_battery_title"
         android:summary="@string/lockscreen_battery_summary" />

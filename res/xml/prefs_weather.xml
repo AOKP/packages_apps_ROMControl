@@ -29,6 +29,14 @@
         android:hint="@string/weather_custom_location_hint"
         android:title="@string/weather_custom_location_title" />
 
+    <ListPreference
+        android:key="icon_style"
+        android:persistent="false"
+        android:dependency="enable_weather"
+        android:entries="@array/weather_icons_styles"
+        android:entryValues="@array/weather_icons_values"
+        android:title="@string/weather_icons_style" />
+
     <CheckBoxPreference
         android:key="use_metric"
         android:persistent="false"

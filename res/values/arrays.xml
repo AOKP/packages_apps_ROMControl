@@ -431,6 +431,18 @@
         <item>480</item>
     </string-array>
 
+    <string-array name="weather_icons_styles">
+        <item>@string/weather_icons_stock</item>
+        <item>@string/weather_icons_fancy</item>
+        <item>@string/weather_icons_white_highres</item>
+    </string-array>
+
+    <string-array name="weather_icons_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Lockscreen calendar -->
     <string-array name="calendar_lookahead_entries">
         <item>@string/calendar_lookahead_3hrs</item>

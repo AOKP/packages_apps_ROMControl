@@ -289,6 +289,11 @@
     <string name="weather_retrieve_location_dialog_enable_button">Enable</string>
     <string name="weather_invert_lowhigh">Invert low/high temperatures</string>
     <string name="weather_progress_title">Verifying location</string>
+    <string name="weather_icons_style">Weather icon style</string>
+    <string name="weather_icons_fancy">Fancy icons</string>
+    <string name="weather_icons_stock">White icons</string>
+    <string name="weather_icons_white_highres">Highres white icons</string>
+
 
     <!-- Lock screen Weather - Update frequency -->
     <string name="weather_refresh_manual">Manual</string>

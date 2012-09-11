@@ -57,6 +57,7 @@ public class Weather extends BAKEDPreferenceFragment implements
     public static final String KEY_ENABLE_WEATHER = "enable_weather";
     public static final String KEY_REFRESH_INTERVAL = "refresh_interval";
     public static final String KEY_INVERT_LOWHIGH = "invert_lowhigh";
+    public static final String KEY_ICON_STYLE = "icon_style";
     private static final int WEATHER_CHECK = 0;
 
     private CheckBoxPreference mEnableWeather;
@@ -66,6 +67,7 @@ public class Weather extends BAKEDPreferenceFragment implements
     private CheckBoxPreference mUseMetric;
     private CheckBoxPreference mInvertLowHigh;
     private ListPreference mWeatherSyncInterval;
+    private ListPreference mWeatherIconStyle;
     private EditTextPreference mCustomWeatherLoc;
     private Context mContext;
     private ContentResolver mResolver;
@@ -114,6 +116,13 @@ public class Weather extends BAKEDPreferenceFragment implements
         mWeatherSyncInterval.setValue(String.valueOf(weatherInterval));
         mWeatherSyncInterval.setSummary(mapUpdateValue(weatherInterval));
         mWeatherSyncInterval.setOnPreferenceChangeListener(this);
+
+        mWeatherIconStyle = (ListPreference) findPreference(KEY_ICON_STYLE);
+        mWeatherIconStyle.setOnPreferenceChangeListener(this);
+        mWeatherIconStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.LOCKSCREEN_WEATHER_ICON_STYLE,
+                0)));
+        mWeatherIconStyle.setSummary(mWeatherIconStyle.getEntry());
 
         if (!Settings.Secure.isLocationProviderEnabled(mResolver,
                 LocationManager.NETWORK_PROVIDER)
@@ -173,12 +182,21 @@ public class Weather extends BAKEDPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+
         if (preference == mWeatherSyncInterval) {
             int newVal = Integer.parseInt((String) newValue);
             Settings.System.putInt(mResolver, Settings.System.WEATHER_UPDATE_INTERVAL, newVal);
             mWeatherSyncInterval.setValue((String) newValue);
             mWeatherSyncInterval.setSummary(mapUpdateValue(newVal));
             preference.setSummary(mapUpdateValue(newVal));
+
+        } else  if (preference == mWeatherIconStyle) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_WEATHER_ICON_STYLE, val);
+            mWeatherIconStyle.setSummary(mWeatherIconStyle.getEntries()[val]);
+            return true;
+
         }
         return false;
     }

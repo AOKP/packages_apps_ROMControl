@@ -64,6 +64,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_IME_SWITCHER = "ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+    private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -83,6 +84,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
+    CheckBoxPreference mTabletui;
 
     Random randomGenerator = new Random();
 
@@ -132,6 +134,15 @@ public class UserInterface extends AOKPPreferenceFragment {
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
+
+        mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
+        mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.MODE_TABLET_UI, false));
+        } else if (preference == mTabletui) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                Settings.System.MODE_TABLET_UI,
+                ((CheckBoxPreference) preference).isChecked());
+            return true;
 
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -204,6 +215,11 @@ public class UserInterface extends AOKPPreferenceFragment {
                 Helpers.getMount("ro");
                 preference.setSummary("");
             }
+            return true;
+        } else if (preference == mMode_tabletui) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.MODE_TABLET_UI,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mCustomBootAnimation) {
             PackageManager packageManager = getActivity().getPackageManager();

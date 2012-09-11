@@ -55,6 +55,12 @@
             android:title="@string/kill_app_longpress_back"
             android:summary="@string/kill_app_longpress_back_summary"/>
 
+        <CheckBoxPreference
+            android:key="MODE_TABLET_UI"
+            android:title="@string/tablet_ui"
+            android:summary="@string/tablet_ui_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

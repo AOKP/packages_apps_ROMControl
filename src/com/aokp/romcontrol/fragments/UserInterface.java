@@ -32,8 +32,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
@@ -82,6 +84,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_IME_SWITCHER = "ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+    private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -103,6 +106,8 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mKillAppLongpressBack;
     ImageView view;
     TextView error;
+    CheckBoxPreference mTabletui;
+    Preference mLcdDensity;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -118,6 +123,10 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     private int seekbarProgress;
     String mCustomLabelText = null;
+
+    int newDensityValue;
+
+    DensityChanger densityFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -147,6 +156,16 @@ public class UserInterface extends AOKPPreferenceFragment {
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
 
+        mLcdDensity = findPreference("lcd_density_setup");
+        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
+        try {
+            newDensityValue = Integer.parseInt(currentProperty);
+        } catch (Exception e) {
+            getPreferenceScreen().removePreference(mLcdDensity);
+        }
+
+        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
+
         mCustomBootAnimation = findPreference("custom_bootanimation");
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
@@ -163,6 +182,10 @@ public class UserInterface extends AOKPPreferenceFragment {
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
 
+        mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
+        mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.MODE_TABLET_UI, false));
+
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
 
@@ -177,6 +200,8 @@ public class UserInterface extends AOKPPreferenceFragment {
         if (mTablet) {
             prefs.removePreference(mNotificationWallpaper);
             prefs.removePreference(mWallpaperAlpha);
+        } else {
+            prefs.removePreference(mTabletui);
         }
 
         setHasOptionsMenu(true);
@@ -234,6 +259,11 @@ public class UserInterface extends AOKPPreferenceFragment {
                 Helpers.getMount("ro");
                 preference.setSummary("");
             }
+            return true;
+        } else if (preference == mTabletui) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.MODE_TABLET_UI,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mCustomBootAnimation) {
             PackageManager packageManager = getActivity().getPackageManager();
@@ -366,6 +396,10 @@ public class UserInterface extends AOKPPreferenceFragment {
             });
 
             alert.show();
+        } else if (preference == mLcdDensity) {
+            ((PreferenceActivity) getActivity())
+                    .startPreferenceFragment(new DensityChanger(), true);
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

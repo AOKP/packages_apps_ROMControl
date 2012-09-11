@@ -22,11 +22,4 @@ public class SoftReferenceHashTable<K,V> {
             mTable.remove(key);
         return ret;
     }
-    
-    public V remove(K k) {
-        SoftReference<V> v = mTable.remove(k);
-        if (v == null)
-            return null;
-        return v.get();
-    }
 }

@@ -55,7 +55,8 @@ public class BootService extends Service {
                 c.startService(new Intent(c, HeadphoneService.class));
             }
 
-            if (FlipService.getUserFlipAudioMode(c) != -1)
+            if (FlipService.getUserFlipAudioMode(c) != -1
+                    || FlipService.getUserCallSilent(c) != 0)
                 c.startService(new Intent(c, FlipService.class));
 
             if (preferences.getBoolean("cpu_boot", false)) {
@@ -67,43 +68,47 @@ public class BootService extends Service {
                         "gov", null);
                 final String io = preferences.getString("io", null);
                 if (max != null && min != null && gov != null) {
-                    boolean mIsTegra3 = c.getResources().getBoolean(
-                                com.android.internal.R.bool.config_isTegra3);
-                    int numOfCpu = 1;
-                    String numOfCpus = Helpers.readOneLine(CPUSettings.NUM_OF_CPUS);
-                    String[] cpuCount = numOfCpus.split("-");
-                    
-                    if (cpuCount.length > 1) {
-                        try {
-                            int cpuStart = Integer.parseInt(cpuCount[0]);
-                            int cpuEnd = Integer.parseInt(cpuCount[1]);
-
-                            numOfCpu = cpuEnd - cpuStart + 1;
-
-                            if (numOfCpu < 0)
-                                numOfCpu = 1;
-                        } catch (NumberFormatException ex) {
-                            numOfCpu = 1;
-                        }
-                    }
-
-                    for (int i = 0; i < numOfCpu; i++) {
-                        cmd.su.runWaitFor("busybox echo " + max +
-                            " > " + CPUSettings.MAX_FREQ
-                            .replace("cpu0", "cpu" + i));
-                        
-                        cmd.su.runWaitFor("busybox echo " + min +
-                            " > " + CPUSettings.MIN_FREQ
-                            .replace("cpu0", "cpu" + i));
-                        
-                        cmd.su.runWaitFor("busybox echo " + gov +
-                            " > " + CPUSettings.GOVERNOR.
-                            replace("cpu0", "cpu" + i));
-                    }
-                    
+                    cmd.su.runWaitFor("busybox echo " + max +
+                            " > " + CPUSettings.MAX_FREQ);
+                    cmd.su.runWaitFor("busybox echo " + min +
+                            " > " + CPUSettings.MIN_FREQ);
+                    cmd.su.runWaitFor("busybox echo " + gov +
+                            " > " + CPUSettings.GOVERNOR);
                     cmd.su.runWaitFor("busybox echo " + io +
-                        " > " + CPUSettings.IO_SCHEDULER);
-
+                            " > " + CPUSettings.IO_SCHEDULER);
+                    if (new File("/sys/devices/system/cpu/cpu1").exists()) {
+                        cmd.su.runWaitFor("busybox echo " + max +
+                                " > " + CPUSettings.MAX_FREQ
+                                .replace("cpu0", "cpu1"));
+                        cmd.su.runWaitFor("busybox echo " + min +
+                                " > " + CPUSettings.MIN_FREQ
+                                .replace("cpu0", "cpu1"));
+                        cmd.su.runWaitFor("busybox echo " + gov +
+                                " > " + CPUSettings.GOVERNOR
+                                .replace("cpu0", "cpu1"));
+                    }
+                    if (new File("/sys/devices/system/cpu/cpu2").exists()) {
+                        cmd.su.runWaitFor("busybox echo " + max +
+                                " > " + CPUSettings.MAX_FREQ
+                                .replace("cpu0", "cpu2"));
+                        cmd.su.runWaitFor("busybox echo " + min +
+                                " > " + CPUSettings.MIN_FREQ
+                                .replace("cpu0", "cpu2"));
+                        cmd.su.runWaitFor("busybox echo " + gov +
+                                " > " + CPUSettings.GOVERNOR
+                                .replace("cpu0", "cpu2"));
+                    }
+                    if (new File("/sys/devices/system/cpu/cpu3").exists()) {
+                        cmd.su.runWaitFor("busybox echo " + max +
+                                " > " + CPUSettings.MAX_FREQ
+                                .replace("cpu0", "cpu3"));
+                        cmd.su.runWaitFor("busybox echo " + min +
+                                " > " + CPUSettings.MIN_FREQ
+                                .replace("cpu0", "cpu3"));
+                        cmd.su.runWaitFor("busybox echo " + gov +
+                                " > " + CPUSettings.GOVERNOR
+                                .replace("cpu0", "cpu3"));
+                    }
                 }
             }
 
@@ -119,8 +124,18 @@ public class BootService extends Service {
                         " > " + VoltageControlSettings.MV_TABLE0);
                 if (new File(VoltageControlSettings.MV_TABLE1).exists()) {
                     cmd.su.runWaitFor("busybox echo " +
-                    sb.toString() + " > " +
-                    VoltageControlSettings.MV_TABLE1);
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE1);
+                }
+                if (new File(VoltageControlSettings.MV_TABLE2).exists()) {
+                    cmd.su.runWaitFor("busybox echo " +
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE2);
+                }
+                if (new File(VoltageControlSettings.MV_TABLE3).exists()) {
+                    cmd.su.runWaitFor("busybox echo " +
+                            sb.toString() + " > " +
+                            VoltageControlSettings.MV_TABLE3);
                 }
             }
 

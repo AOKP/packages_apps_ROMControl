@@ -53,6 +53,8 @@ public class VoltageControlSettings extends Fragment {
     public static final String KEY_APPLY_BOOT = "apply_voltages_at_boot";
     public static final String MV_TABLE0 = "/sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table";
     public static final String MV_TABLE1 = "/sys/devices/system/cpu/cpu1/cpufreq/UV_mV_table";
+    public static final String MV_TABLE2 = "/sys/devices/system/cpu/cpu2/cpufreq/UV_mV_table";
+    public static final String MV_TABLE3 = "/sys/devices/system/cpu/cpu3/cpufreq/UV_mV_table";
     public static final int DIALOG_EDIT_VOLT = 0;
     private List<Voltage> mVoltages;
     private ListAdapter mAdapter;
@@ -104,6 +106,16 @@ public class VoltageControlSettings extends Fragment {
                     new CMDProcessor().su.runWaitFor("busybox echo "
                             + sb.toString()
                             + " > " + MV_TABLE1);
+                }
+                if (new File(MV_TABLE2).exists()) {
+                    new CMDProcessor().su.runWaitFor("busybox echo "
+                            + sb.toString()
+                            + " > " + MV_TABLE2);
+                }
+                if (new File(MV_TABLE3).exists()) {
+                    new CMDProcessor().su.runWaitFor("busybox echo "
+                            + sb.toString()
+                            + " > " + MV_TABLE3);
                 }
                 final List<Voltage> volts = getVolts(preferences);
                 mVoltages.clear();

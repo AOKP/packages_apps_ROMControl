@@ -139,6 +139,8 @@
     <string name="recent_kill_all_summary">Displays a button to kill all apps on recents window (requires UI restart)</string>
     <string name="kill_app_longpress_back">Hold back to kill</string>
     <string name="kill_app_longpress_back_summary">Holding back will kill the current activity</string>
+    <string name="tablet_ui">Enable Tablet UI</string>
+    <string name="tablet_ui_summary">This Will Allow Tablet UI (requires reboot)</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>

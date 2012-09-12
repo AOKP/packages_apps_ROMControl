@@ -153,6 +153,16 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <!-- vibration manager -->
+        <activity android:name=".fragments.Vibrations"
+                android:label="@string/vibrations">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <provider android:name=".vibrations.VibrationsProvider"
+			android:authorities="com.aokp.romcontrol.Vibrations" /> 
         <activity
             android:name="CreateShortcut"
             android:theme="@style/Theme.CreateShortCut" >

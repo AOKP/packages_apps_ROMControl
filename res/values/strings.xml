@@ -53,6 +53,7 @@
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
+    <string name="header_summary_vibrations">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -243,7 +244,7 @@
     <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
     <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
     <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
-    <string name="navigation_bar_width_title">Navigation bar width.</string>
+    <string name="navigation_bar_width_title">Navigation bar width</string>
     <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
     <string name="navbar_enable_dialog_title">Reboot required!</string>
     <string name="navbar_enable_dialog_msg">You <b>should</b> reboot right now to make sure everything works properly!</string>
@@ -491,4 +492,32 @@
     <string name="performance_daily_reboot_title">Daily reboot</string>
     <string name="performance_daily_reboot_summary">Reboot scheduled at %1$s</string>
     <string name="performance_daily_reboot_summary_unscheduled">Not scheduled</string>
+
+    <!-- Custom vibrations -->
+    <string name="vibrations">Vibrations</string>
+    <string name="vib_new">New/Reset</string>
+    <string name="vib_load">Load</string>
+    <string name="vib_rec">Record</string>
+    <string name="vib_TAP">TAP!</string>
+    <string name="vib_stop">Stop</string>
+    <string name="vib_play">Play</string>
+    <string name="vib_save">Save</string>
+    <string name="vib_del">Delete</string>
+
+    <string name="vib_dialog_text_entry">Save vibration</string>
+    <string name="vib_dialog_name">Name:</string>
+    <string name="vib_cur_loaded_title">Loaded:</string>
+    <string name="help">Help</string>
+    <string name="vibration_detailed_help">You can create your custom vibration patterns in 5 simple steps:\n
+        - Tap New/Reset\n
+		- Tap Record\n
+		- Record your pattern by hitting the TAP! button\n
+		- Tap Stop\n
+		- Tap Save, enter a name and hit OK\n\n
+		You can check what you just recorded by tapping the Play button.\n
+		If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it will be overwritten, even if you choose another name).\n
+		To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default vibration.\n\n
+		You can choose the default vibration for your phone calls in Phone/Settings or in Settings/Sound.\n
+		You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
+
 </resources>

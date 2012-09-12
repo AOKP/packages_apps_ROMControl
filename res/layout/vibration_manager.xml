@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:divider="@android:drawable/divider_horizontal_dark"
+        android:dividerPadding="2dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:showDividers="middle" >
+
+        <Button
+            android:id="@+id/button_new"
+            style="@style/VibButton"
+            android:text="@string/vib_new" />
+
+        <Button
+            android:id="@+id/button_load"
+            style="@style/VibButton"
+            android:text="@string/vib_load" />
+
+        <Button
+            android:id="@+id/button_del"
+            style="@style/VibButton"
+            android:text="@string/vib_del" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="8dp"
+        android:text="@string/vib_cur_loaded_title" />
+
+    <TextView
+        android:id="@+id/vib_cur_loaded_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp" />
+
+    <LinearLayout
+        android:id="@+id/pattern_bar"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@drawable/pattern_bar_bg"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button_tap"
+        style="@style/VibButton"
+        android:layout_margin="16dp"
+        android:padding="40dp"
+        android:text="@string/vib_TAP" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="16dp" >
+
+        <Button
+            android:id="@+id/button_rec"
+            style="@style/VibButton"
+            android:text="@string/vib_rec"
+            android:textColor="#ffff0000" />
+
+        <Button
+            android:id="@+id/button_stop"
+            style="@style/VibButton"
+            android:text="@string/vib_stop" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/button_play"
+            style="@style/VibButton"
+            android:enabled="false"
+            android:text="@string/vib_play" />
+
+        <Button
+            android:id="@+id/button_save"
+            style="@style/VibButton"
+            android:enabled="false"
+            android:text="@string/vib_save" />
+    </LinearLayout>
+
+</LinearLayout>

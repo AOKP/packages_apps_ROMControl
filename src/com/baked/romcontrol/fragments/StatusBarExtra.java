@@ -52,6 +52,8 @@ import com.baked.romcontrol.util.CMDProcessor;
 import com.baked.romcontrol.util.ColorPickerView;
 import com.baked.romcontrol.util.Helpers;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBarExtra extends BAKEDPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -62,6 +64,7 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
+    private static final String PREF_EXPANDED_CLOCK_COLOR = "expanded_clock_color";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -75,6 +78,8 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     Preference mCustomLabel;
     ListPreference mNotificationBackground;
     Preference mWallpaperAlpha;
+    ColorPickerPreference mExpandedClockColor;
+
     private Activity mActivity;
 
     private int seekbarProgress;
@@ -107,6 +112,10 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         mNotificationBackground.setOnPreferenceChangeListener(this);
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+
+        mExpandedClockColor = (ColorPickerPreference) findPreference(PREF_EXPANDED_CLOCK_COLOR);
+        mExpandedClockColor.setOnPreferenceChangeListener(this);
+
 
         if (mTablet) {
             prefs.removePreference(mNotificationBackground);
@@ -241,9 +250,22 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mNotificationBackground) {
-            int indexOf = mNotificationBackground.findIndexOfValue(objValue.toString());
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+
+        if (preference == mExpandedClockColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_EXPANDED_CLOCK_COLOR, intHex);
+            Log.e("BAKED", intHex + "");
+
+
+      }  else if (preference == mNotificationBackground) {
+            int indexOf = mNotificationBackground.findIndexOfValue(newValue.toString());
             switch (indexOf) {
                 //Displays color dialog when user has chosen color fill
                 case 0:

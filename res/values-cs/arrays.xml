@@ -95,7 +95,8 @@
 		<item>4 body</item>
 	</string-array>
   <string-array name="led_entries">
-		<item>0.5 sekundy</item>
+		<item>0.2 sekundy</item>
+    <item>0.5 sekundy</item>
 		<item>1 sekunda</item>
 		<item>1.5 sekundy</item>
 		<item>2 sekundy</item>
@@ -173,5 +174,48 @@
     <item>45s</item>
     <item>1m</item>
     <item>2m</item>
+  </string-array>
+  <string-array name="weather_statusbar_location_entries">
+    <item>Pod názvem operátora</item>
+    <item>Panel počasí</item>
+    <item>Vypnuto</item>
+  </string-array>
+  <string-array name="pref_lockscreen_weather_type_entries">
+    <item>Panel počasí</item>
+    <item>Text</item>
+  </string-array>
+  <string-array name="pref_lockscreen_calendar_interval_entries">
+    <item>1 sekunda</item>
+    <item>1.5 sekundy</item>
+    <item>2 sekundy</item>
+    <item>2.5 sekundy</item>
+    <item>3 sekundy</item>
+    <item>3.5 sekundy</item>
+    <item>4 sekundy</item>
+  </string-array>
+  <string-array name="pref_lockscreen_calendar_range_entries">
+    <item>1 den</item>
+    <item>2 dny</item>
+    <item>3 dny</item>
+    <item>4 dny</item>
+    <item>5 dní</item>
+    <item>6 ddní</item>
+    <item>týden</item>
+  </string-array>
+  <string-array name="signal_style_entries">
+    <item>Zobrazit ukazatel signálu</item>
+    <item>Zobrazit signál textově</item>
+    <item>Zobrazit s dBm</item>
+  </string-array>
+  <string-array name="wifi_signal_style_entries">
+    <item>Zobrazit ukazatel signálu</item>
+    <item>Zobrazit signál textově</item>
+  </string-array>
+  <string-array name="led_brightness_entries">
+    <item>slabý</item>
+    <item>střední</item>
+    <item>vysoký</item>
+    <item>velmi vysoký</item>
+    <item>paprsek laseru</item>
   </string-array>
 </resources>

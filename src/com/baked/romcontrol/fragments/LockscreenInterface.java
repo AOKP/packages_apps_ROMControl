@@ -57,8 +57,8 @@ import java.util.ArrayList;
 import com.baked.romcontrol.R;
 import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.Utils;
-import com.baked.romcontrol.util.ColorPickerView;
 
+import net.margaritov.preference.colorpicker.ColorPickerView;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LockscreenInterface extends BAKEDPreferenceFragment implements

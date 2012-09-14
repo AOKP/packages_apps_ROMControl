@@ -49,8 +49,9 @@ import android.widget.EditText;
 import com.baked.romcontrol.R;
 import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.util.CMDProcessor;
-import com.baked.romcontrol.util.ColorPickerView;
 import com.baked.romcontrol.util.Helpers;
+
+import net.margaritov.preference.colorpicker.ColorPickerView;
 
 public class StatusBarExtra extends BAKEDPreferenceFragment implements
         Preference.OnPreferenceChangeListener {

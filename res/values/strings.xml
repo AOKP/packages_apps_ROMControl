@@ -117,6 +117,9 @@
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
     <!-- General UI -->
+    <string name="bootani_cat">Boot Animation</string>
+    <string name="navbar_cat">NavBar</string>
+    <string name="notification_cat">Notification</string>
     <string name="enable_volume_options">Enable Volume Panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>

@@ -190,7 +190,7 @@ public class UserInterface extends AOKPPreferenceFragment {
                 com.android.internal.R.bool.config_showNavigationBar);
 
         if (hasNavBarByDefault || mTablet) {
-            ((PreferenceGroup) findPreference("misc")).removePreference(mKillAppLongpressBack);
+            ((PreferenceGroup) findPreference("navbar")).removePreference(mKillAppLongpressBack);
         }
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);

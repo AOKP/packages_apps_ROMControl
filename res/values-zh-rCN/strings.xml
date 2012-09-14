@@ -14,8 +14,10 @@
     <string name="general_ui">常规界面</string>
     <string name="clock">时钟</string>
     <string name="battery">电量</string>
+    <string name="signal">信号</string>
     <string name="nav_bar">导航栏</string>
-    <string name="led_options">LED 选项</string>
+    <string name="power_menu">电源菜单</string>
+    <string name="led_options">灯光</string>
     <string name="header_system">系统</string>
     <string name="sound">声音</string>
     <string name="lockscreen_options">锁屏选项</string>
@@ -30,7 +32,8 @@
     <string name="title_statusbar_toggles">状态栏开关</string>
     <string name="title_statusbar_battery">状态栏电量</string>
     <string name="title_navbar">导航栏</string>
-    <string name="title_led">LED 控制</string>
+    <string name="title_power_menu">电源菜单</string>
+    <string name="title_led">灯光</string>
     <string name="title_lockscreens">锁屏选项</string>
     <string name="title_sound">声音设置</string>
     <string name="title_weather">天气设置</string>
@@ -59,6 +62,22 @@
     <string name="misc_short">其它</string>
     <string name="custom_app_icon_successfully">"的图标已成功设置！"</string>
 
+    <!-- Power Menu 电源菜单 -->
+    <string name="title_show_power_saver">显示省电模式</string>
+    <string name="title_show_screenshot">显示屏幕截图</string>
+    <string name="title_show_torch_toggle">显示手电筒开关</string>
+    <string name="title_show_airplane_toggle">显示飞行模式开关</string>
+    <string name="title_show_navbar_hide">显示导航栏开关</string>
+
+    <!-- Power Saving 省电模式 -->
+    <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
+
+    <string name="title_pref_powersaving_data_screen_off">屏幕关闭移动数据活动</string>
+    <string name="summary_pref_powersaving_data_screen_off">屏幕关闭后移动数据状态</string>
+
+    <string name="title_pref_powersaving_data_screen_off_delay">移动数据活动延时</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">移动数据活动生效前的等待时间</string>
+
     <!-- Shortcut picker 快捷方式选择器 -->
     <string name="use_custom_app_title">使用自定义程序</string>
     <string name="use_custom_app_summary">使用自定义程序代替近期使用程序列表</string>
@@ -81,6 +100,8 @@
     <string name="status_bar_notif_count_title">显示通知数量</string>
     <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
     <string name="disable_bootanimation_title">禁用开机动画</string>
+    <string name="custom_bootanimation_title">自定义开机动画</string>
+    <string name="custom_bootanimation_summary">从SD卡选择开机动画的ZIP文件，原开机动画将备份在/system/media目录</string>
     <string name="notification_wallpaper_title">选择通知栏背景</string>
     <string name="notification_wallpaper_summary">在本页面按菜单键可选择重置背景壁纸</string>
     <string name="notif_wallpaper_alpha_title">通知栏背景透明度</string>
@@ -88,6 +109,14 @@
     <string name="custom_carrier_label_title">自定义运营商名称</string>
     <string name="custom_carrier_label_explain">请输入新名称，输入空字符将恢复为原始名称。</string>
     <string name="custom_carrier_label_notset">当前未自定义运营商名称</string>
+    <string name="ime_switcher_title">显示输入法切换</string>
+    <string name="ime_switcher_summary">输入时状态栏显示键盘图标（需重启）</string>
+    <string name="rotate_180_title">允许 180° 旋转</string>
+    <string name="rotate_180_summary">允许设备倒置显示</string>
+    <string name="recent_kill_all">启用“全部结束”按钮</string>
+    <string name="recent_kill_all_summary">在系统的近期任务界面显示“全部结束”按钮（将重启用户界面）</string>
+    <string name="kill_app_longpress_back">长按返回键结束程序</string>
+    <string name="kill_app_longpress_back_summary">长时间按住返回键可以强行结束当前程序</string>
 
     <!-- Statusbar | Toggles 状态栏|开关-->
     <string name="toggle_style_title">开关风格</string>
@@ -146,6 +175,14 @@
     <string name="battery_bar_thickness_title">电量条厚度</string>
     <string name="battery_bar_animate_title">充电动画</string>
     <string name="battery_bar_animate_summary">充电动画可能会给您不好的用户体验，请自行决定是否启用。</string>
+
+    <!-- Statusbar | Signal 状态栏|信号 -->
+    <string name="signal_style">信号显示风格</string>
+    <string name="signal_color_title">信号颜色</string>
+    <string name="hide_signal_title">隐藏信号图标</string>
+    <string name="hide_signal_summary">当信号发生变化时生效</string>
+    <string name="wifi_signal_style">WiFi 信号显示风格</string>
+    <string name="wifi_signal_color_title">WiFi 信号颜色</string>
 
     <!-- Color Picker 颜色选择器-->
     <string name="dialog_color_picker">颜色选择器</string>
@@ -222,6 +259,9 @@
     <string name="led_test_notification_message_now">"现在测试应用程序： "</string>
     <string name="led_test_notification_message_note">".  请关闭屏幕后观察 LED 灯。在你观察完毕之前不要点击确定按钮。"</string>
     <string name="led_test_ok">确定</string>
+    <string name="title_charging_led_on">充电指示灯（需重启）</string>
+    <string name="led_change_brightness">更改亮度</string>
+    <string name="led_brightness_default">默认亮度： 31</string>
 
     <!-- Sound 声音 -->
     <string name="less_notification_sounds_title">限制通知提示音</string>
@@ -249,10 +289,14 @@
     <!-- Lockscreen 锁屏 -->
     <string name="lockscreen_quick_unlock_control_title">快速密码解锁</string>
     <string name="lockscreen_quick_unlock_control_summary">在输入密码后无需点击确认直接解锁</string>
+    <string name="lockscreen_menu_unlock_title">菜单键解锁</string>
+    <string name="lockscreen_menu_unlock_summary">通过菜单键解锁屏幕</string>
     <string name="lockscreen_battery_title">锁屏电量百分比</string>
     <string name="lockscreen_battery_summary">总是在锁屏中显示电量百分比</string>
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">使用音量键唤醒设备</string>
+    <string name="volume_music_controls_title">音量键控制音乐</string>
+    <string name="volume_music_controls_summary">锁屏时长按音量键可以切换歌曲，当音乐正在播放时音量键唤醒功能无效。</string>
     <string name="lockscreen_wallpaper_title">选择锁屏壁纸</string>
     <string name="lockscreen_wallpaper_summary">在本页面按菜单键可选择重置锁屏壁纸</string>
     <string name="lockscreen_text_color_title">锁屏文字颜色</string>

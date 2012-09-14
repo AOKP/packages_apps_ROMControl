@@ -160,6 +160,15 @@
         <item>10 秒</item>
     </string-array>
 
+    <!-- LED brightness entries -->
+    <string-array name="led_brightness_entries">
+        <item>暗</item>
+        <item>中</item>
+        <item>亮</item>
+        <item>非常亮</item>
+        <item>激光</item>
+    </string-array>
+
     <string-array name="headphone_audio_mode_entries">
         <item>@string/headphones_mode_no_action</item>
         <item>@string/headphones_mode_vibrate</item>
@@ -275,5 +284,14 @@
         <item>45秒</item>
         <item>1分钟</item>
         <item>2分钟</item>
+    </string-array>
+    <string-array name="signal_style_entries">
+        <item>显示信号图标</item>
+        <item>显示信号文本</item>
+        <item>显示 w/dBm</item>
+    </string-array>
+    <string-array name="wifi_signal_style_entries">
+        <item>显示信号图标</item>
+        <item>显示信号文本</item>
     </string-array>
 </resources>

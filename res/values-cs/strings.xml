@@ -107,7 +107,6 @@
   <string name="open_market_summary_could_not_open">Obchod Play nelze otevřít! Pokud je opravdu nainstalován, je třeba ho otevřít z Launcheru.</string>
   <string name="custom_density_title">5. Změnit hostotu displeje na libovolnou hodnotu!</string>
   <string name="custom_density_summary">Pokud se vyskytnou jakékoliv problémy s kompatibilitou Obchodu Play, je třeba zopakovat tyto kroky.</string>
-  <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
   <string name="custom_density_summary_invalid">CHYBNÁ HUSTOTA!</string>
   <string name="custom_density">vlastní</string>
   <string name="set_custom_density_title">Nastavit vlastní hustotu</string>
@@ -226,7 +225,7 @@
   <string name="glow_times_quick">Rychlá</string>
   <string name="glow_times_normal">Normální</string>
   
-  <string name="navbar_ring_cat">Položky kruhů v navigační liště</string>
+  <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>
   <string name="interface_softkeys_pref_default_title">Nevybrána žádná aktivita</string>
   <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat akitivitu dlouhého stisku</string>

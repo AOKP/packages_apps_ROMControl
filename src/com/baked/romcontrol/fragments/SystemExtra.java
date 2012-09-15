@@ -37,10 +37,12 @@ public class SystemExtra extends BAKEDPreferenceFragment {
 
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+    private static final String PREF_SHOW_OVERFLOW_MENU = "show_overflow_menu";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
+    CheckBoxPreference mShowActionOverflow;
 
     Random randomGenerator = new Random();
 
@@ -53,8 +55,17 @@ public class SystemExtra extends BAKEDPreferenceFragment {
 
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
+        mKillAppLongpressBack = (CheckBoxPreference) findPreference(
+                PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
+
+        mShowActionOverflow = (CheckBoxPreference) findPreference(
+                PREF_SHOW_OVERFLOW_MENU);
+        mShowActionOverflow.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1));
+        if (!hasHardwareButtons) {
+            prefs.removePreference(mShowActionOverflow);
+        }
 
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -63,7 +74,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         }
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
-        mRecentKillAll.setChecked(Settings.System.getInt(getActivity  ().getContentResolver(),
+        mRecentKillAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
 
         mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
@@ -117,6 +128,13 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
             Helpers.restartSystemUI();
+            return true;
+
+        } else if (preference == mShowActionOverflow) {
+            boolean enabled = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    enabled ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

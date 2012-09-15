@@ -62,6 +62,7 @@
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="kill_app_longpress_back">Hold back to kill</string>
     <string name="kill_app_longpress_back_summary">Holding back will kill the current activity</string>
+    <string name="show_overflow_menu_title">Show ui overflow menu button</string>
 
     <!-- system text color test -->
     <string name="primary_text_colors">Change system wide text colors</string>

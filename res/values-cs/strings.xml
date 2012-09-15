@@ -48,6 +48,7 @@
   <string name="header_summary_performance">@null</string>
   <string name="header_summary_lockscreens">@null</string>
   <string name="header_summary_weather">@null</string>
+  <string name="header_summary_vibrations">@null</string>
   
   <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
   <string name="menu_user_interface_reset">Obnovit pozadí notifikací</string>
@@ -72,6 +73,9 @@
   <string name="aokp_irc_title">Připojit se na IRC</string>
   <string name="about_aokp">O AOKP</string>
   
+  <string name="bootani_cat">Startovací animace</string>
+  <string name="navbar_cat">Navigační lišta</string>
+  <string name="notification_cat">Notifikace</string>
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
   <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
   <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
@@ -192,6 +196,7 @@
   <string name="navbar_action_recents">Přepínač aplikací</string>
   <string name="navbar_action_search">Hledat</string>
   <string name="navbar_action_menu">Menu</string>
+  <string name="navbar_action_ime">Otevřít metody vstupu</string>
   <string name="navbar_action_kill">Ukončit aplikaci</string>
   <string name="navbar_action_power">Napájení</string>
   <string name="navbar_action_notifications">Notifikace</string>
@@ -221,6 +226,26 @@
   <string name="glow_times_quick">Rychlá</string>
   <string name="glow_times_normal">Normální</string>
   
+  <string name="navbar_ring_cat">Položky kruhů v navigační liště</string>
+  <string name="interface_softkey_settings">Nastavení tlačítek</string>
+  <string name="interface_softkeys_pref_default_title">Nevybrána žádná aktivita</string>
+  <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat akitivitu dlouhého stisku</string>
+  <string name="interface_softkeys_activity_dialog_title">Vybrat aktivitu</string>
+  <string name="interface_softkeys_reboot_title">Menu restartování</string>
+  <string name="interface_softkeys_screenshot_title">Snímek obrazovky</string>
+  <string name="interface_softkeys_screenoff_title">Vypnutí obrazovky</string>
+  <string name="interface_softkeys_kill_process_title">Ukončit aplikaci</string>
+  <string name="interface_softkey_package_removed">Předchozí vybraný balíček nebyl nalezen</string>
+  <string name="interface_navring_settings_title">Kruh navigační lišty</string>
+  <string name="interface_navring_settings_summary">Upravit vlastní aplikace kruhu navigační lišty</string>
+  <string name="title_navring_amount">Počet položek kruhu</string>
+  <string name="summary_navring_amount">Kolik je potřeba položek na kruhu? *Změna způsobí obnovení aktuálních položek a restartuje uživatelské rozhraní*</string>
+  <string name="interface_navring_custom_pref_summary">Uvolněním na položce dojde k aktivaci </string>
+  <string name="interface_navring_pref_default_summary">Dotykem je možné vybrat vlasní aktivitu na položce</string>
+  <string name="interface_navring_assist_title">Google Now</string>
+  <string name="interface_navring">Položky kruhu</string>
+  <string name="navbar_ring">Vlastní položky kruhu</string>
+   
   <string name="led_on">LED svítí</string>
   <string name="led_time_on">Doba po kterou LED svítí</string>
   <string name="led_off">LED zhasnuta</string>
@@ -267,6 +292,8 @@
   <string name="lockscreen_quick_unlock_control_summary">Odemknout obrazovku zadáním pinu, bez nutnosti mačkat potvrzovací tlačítko</string>
   <string name="lockscreen_menu_unlock_title">Odemčení tlačítkem menu</string>
   <string name="lockscreen_menu_unlock_summary">Tlačítko menu odemkne obrazovku</string>
+  <string name="lockscreen_auto_rotate_title">Povolit rotaci zamčené obrazovky</string>
+  <string name="lockscreen_auto_rotate_summary">Zamčená obrazovka se bude natáčet podle zařízení. Tato volba je nezávislá na automatickém otočení v nastavení obrazovky.</string>
   <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
   <string name="volume_rocker_wake_title">Probuzení tlačítky hlasitosti</string>
@@ -430,7 +457,7 @@
   <string name="kill_app_longpress_back_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="tablet_ui">Vynutit tabletové UI</string>
   <string name="tablet_ui_summary">Přepne do tabletového rozhraní (vyžaduje restart)</string>
-  <string name="bootanimation_preview">Náhled startovací animace/string>
+  <string name="bootanimation_preview">Náhled startovací animace</string>
   <string name="apply">Použít</string>
   <string name="creating_preview">Vytváření náhledu...</string>
   <string name="error_reading_zip_file">Chyba při čtení zip souboru</string>
@@ -445,6 +472,8 @@
 
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
   <string name="volume_music_controls_summary">Dlouhým stisknutím tlačítek hlasitosti dojde k přeskočení skladeb, pokud je vypnut displej. Probouzení tlačítky hlasitosti nebude fungovat, pokud bude přehrávána hudba.</string>
+  <string name="lockscreen_stock_music_layout_title">Vychozí rozložení hudby</string>
+  <string name="lockscreen_stock_music_layout_summary">Použít výchozí rozložení při přehrávání hudby.</string>
 
   <string name="title_show_power_saver">Zobrazovat spořič energie</string>
   <string name="summary_show_power_saver">Pro zobrazení v menu napájení musí být spořič energie aktivní.</string>
@@ -463,4 +492,29 @@
   <string name="performance_daily_reboot_title">Denní restart</string>
   <string name="performance_daily_reboot_summary">Restart naplánován na %1$s</string>
   <string name="performance_daily_reboot_summary_unscheduled">Nenaplánován</string>
+
+  <string name="vibrations">Vibrace</string>
+  <string name="vib_new">Nový/Reset</string>
+  <string name="vib_load">Načíst</string>
+  <string name="vib_rec">Nahrát</string>
+  <string name="vib_TAP">STISK!</string>
+  <string name="vib_stop">Zastavit</string>
+  <string name="vib_play">Spustit</string>
+  <string name="vib_save">Uložit</string>
+  <string name="vib_del">Smazat</string>
+  <string name="vib_dialog_text_entry">Uložit vibrační vzor</string>
+  <string name="vib_dialog_name">Název:</string>
+  <string name="vib_cur_loaded_title">Načteno:</string>
+  <string name="help">Nápověda</string>
+  <string name="vibration_detailed_help">Vytvářet vlastní vibrační vzory je možné v 5 jednoduchých krocích:\n
+    - Stisknout Nový/Reset\n
+    - Stisknout Nahrát\n
+    - Nahrát vzor mačkáním tlačítka STISK!\n
+    - Stisknout Zastavit\n
+    - Stisknout Uložit, zadat název a opět stisknout OK\n\n
+    Zkontrolovat aktuální vzor je možné ihned tlačítkem Spustit.\n
+    Upravení existujícího vzoru je možné stisknutím Načíst, vybráním uloženého vzoru, znovu-nahráním a opětovným uložením (vzorb bude přepsán, i když bude zvoleno jiné jméno).\n
+    Pro smazání vibračního vzoru je třeba strisknout Smazat, vybrat vzor a poté znovu stisknout Smazat. Výchozí vibrace nemůže být smazána.\n\n
+    Výchozí vibraci pro příchozí hovory je možné zvolit v nastavení hovorů, nebo nastavení zvuku.\n 
+    Též je možné přiřadit vibrační vzory jednotlivým kontaktům: po načtení kontaktu stiskem Menu/Nastavit vibrační vzor.</string>
 </resources>

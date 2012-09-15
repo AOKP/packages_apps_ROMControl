@@ -218,4 +218,19 @@
     <item>velmi vysoký</item>
     <item>paprsek laseru</item>
   </string-array>
+  <string-array name="navring_dialog_entries">
+    <item>Nic</item>
+    <item>Pořídit snímek obrazovky</item>
+    <item>Ukončit aplikaci</item>
+    <item>Vypnout obrazovku</item>
+    <item>Google Now</item>
+    <item>Vybrat aplikaci</item>
+  </string-array>
+  <string-array name="pref_navring_amount_entries">
+    <item>1 položka</item>
+    <item>2 položky</item>
+    <item>3 položky</item>
+    <item>4 položky</item>
+    <item>5 položek</item>
+  </string-array>
 </resources>

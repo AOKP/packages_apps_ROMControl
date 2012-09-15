@@ -84,6 +84,35 @@
   <string name="custom_carrier_label_explain">Vložit nový název. Vložením prázdného názvu dojde k návratu k výchozímu.</string>
   <string name="custom_carrier_label_notset">Vlastní název není momentálně nastaven</string>
 
+  <string name="lcd_density_title">Hustota displeje</string>
+  <string name="lcd_density_summary"></string>
+  <string name="current_lcd_density">"Aktuální hustota displeje: "</string>
+  <string name="lcd_density_wizard">Průvodce nastavením hustoty displeje</string>
+  <string name="follow_through_title">Je nutné projít celý postup!</string>
+  <string name="follow_through_summary">Následující kroky je nutné projít jeden po druhém. Před přechodem na další krok je třeba mít splněné všechny pokyny aktuálního kroku.</string>
+  <string name="stock_density_title">1. Změna hustoty displeje na výchozí hodnotu</string>
+  <string name="stock_density_summary">Tablety a starší telefony používají hustotu 160. Většina telefonů používá 240. Galaxy Nexus má výchozí hodnotu 320.</string>
+  <string name="stock_density_changed_summary">"Hustota nastavena na: "</string>
+  <string name="reboot_title">2. Restart!</string>
+  <string name="reboot_summary">Po restartu je nutné se vrátit do tohoto nastavení a dokončit ostatní kroky!</string>
+  <string name="clear_market_data_title">3. Vymazání dat Obchodu Play</string>
+  <string name="clear_market_data_cleared">Data Obchodu Play byla vymazána</string>
+  <string name="clear_market_data_donot_cleared">Data obchodu Play nemohla být vymazána, je nutné je smazat ručně!</string>
+  <string name="open_market_title">4. Otevřít Obchod Play a přijmout podmínky</string>
+  <string name="open_market_summary">Pro návrat po dokončení stačí stisknout tlačítko zpět.</string>
+  <string name="open_market_summary_could_not_open">Obchod Play nelze otevřít! Pokud je opravdu nainstalován, je třeba ho otevřít z Launcheru.</string>
+  <string name="custom_density_title">5. Změnit hostotu displeje na libovolnou hodnotu!</string>
+  <string name="custom_density_summary">Pokud se vyskytnou jakékoliv problémy s kompatibilitou Obchodu Play, je třeba zopakovat tyto kroky.</string>
+  <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
+  <string name="custom_density_summary_invalid">CHYBNÁ HUSTOTA!</string>
+  <string name="custom_density">vlastní</string>
+  <string name="set_custom_density_title">Nastavit vlastní hustotu</string>
+  <string name="set_custom_density_set">Nastavit</string>
+  <string name="custom_density_dialog_title">POZOR!</string>
+  <string name="custom_density_dialog_summary">Změna hustoty displeje může způsobit neočekávané chování. Pokud dojde k problémům s kompatibilitou aplikací z Obchodu Play, je nutné vrátit se do tohoto nastavení a opakovat korky od bodu 1.</string>
+  <string name="custom_density_dialog_button_got">Jít do toho!</string>
+  <string name="custom_density_dialog_button_reboot">Restartovat nyní</string>
+
   <string name="toggle_style_title">Styl přepínačů</string>
   <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
   <string name="toggles_layout_title">Vzhled přepínačů</string>
@@ -387,40 +416,51 @@
   <string name="lockscreen_calendar_interval_title">Interval střídání</string>
   <string name="lockscreen_calendar_interval_summary">Zvolit rychlost střídání.</string>
 
-   <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
-   <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
-   <string name="rotate_180_title">Umožnit rotaci o 180°</string>
-   <string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
-   <string name="custom_bootanimation_title">Vlastní startovací animace</string>
-   <string name="custom_bootanimation_summary">Vybrat zip se startovací animací z úložiště. Předchozí animace bude zálohována do /system/media.</string>
-   <string name="install_file_manager_error">Nebyla nalezena aplikace pro vybrání zip souboru. Je nutné nainstalovat nějaký správce souborů.</string>
+  <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
+  <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
+  <string name="rotate_180_title">Umožnit rotaci o 180°</string>
+  <string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
+  <string name="custom_bootanimation_title">Vlastní startovací animace</string>
+  <string name="custom_bootanimation_summary">Vybrat zip se startovací animací z úložiště. Předchozí animace bude zálohována do /system/media.</string>
+  <string name="install_file_manager_error">Nebyla nalezena aplikace pro vybrání zip souboru. Je nutné nainstalovat nějaký správce souborů.</string>
 
-   <string name="recent_kill_all">Zapnout tlačítko zavření všech aplikací</string>
-   <string name="recent_kill_all_summary">Zobrazuje tlačítko pro zavření všech aplikací v přehledu všech spuštěných aplikací (vyžaduje restart UI)</string>
-   <string name="kill_app_longpress_back">Podržet zpět pro ukončení</string>
-   <string name="kill_app_longpress_back_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
+  <string name="recent_kill_all">Zapnout tlačítko zavření všech aplikací</string>
+  <string name="recent_kill_all_summary">Zobrazuje tlačítko pro zavření všech aplikací v přehledu všech spuštěných aplikací (vyžaduje restart UI)</string>
+  <string name="kill_app_longpress_back">Podržet zpět pro ukončení</string>
+  <string name="kill_app_longpress_back_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
+  <string name="tablet_ui">Vynutit tabletové UI</string>
+  <string name="tablet_ui_summary">Přepne do tabletového rozhraní (vyžaduje restart)</string>
+  <string name="bootanimation_preview">Náhled startovací animace/string>
+  <string name="apply">Použít</string>
+  <string name="creating_preview">Vytváření náhledu...</string>
+  <string name="error_reading_zip_file">Chyba při čtení zip souboru</string>
+  <string name="error_creating_preview">Chyba při vytváření náhledu</string>
 
-   <string name="signal_style">Styl ukazatele signálu</string>
-   <string name="signal_color_title">Barva ukazatele signálu</string>
-   <string name="hide_signal_title">Skrýt graficky ukazatel signálu</string>
-   <string name="hide_signal_summary">Aktualizuje se při změně síly signálu</string>
-   <string name="wifi_signal_style">Textový styl ukazatele WiFi</string>
-   <string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
+  <string name="signal_style">Styl ukazatele signálu</string>
+  <string name="signal_color_title">Barva ukazatele signálu</string>
+  <string name="hide_signal_title">Skrýt graficky ukazatel signálu</string>
+  <string name="hide_signal_summary">Aktualizuje se při změně síly signálu</string>
+  <string name="wifi_signal_style">Textový styl ukazatele WiFi</string>
+  <string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
 
-   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
-   <string name="volume_music_controls_summary">Dlouhým stisknutím tlačítek hlasitosti dojde k přeskočení skladeb, pokud je vypnut displej. Probouzení tlačítky hlasitosti nebude fungovat, pokud bude přehrávána hudba.</string>
+  <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
+  <string name="volume_music_controls_summary">Dlouhým stisknutím tlačítek hlasitosti dojde k přeskočení skladeb, pokud je vypnut displej. Probouzení tlačítky hlasitosti nebude fungovat, pokud bude přehrávána hudba.</string>
 
-   <string name="title_show_power_saver">Zobrazovat spořič energie</string>
-   <string name="summary_show_power_saver">Pro zobrazení v menu napájení musí být spořič energie aktivní.</string>
-   <string name="title_show_screenshot">Zobrazovat snímek obrazovky</string>
-   <string name="title_show_torch_toggle">Zobrazovat přepínač svítilny</string>
-   <string name="title_show_airplane_toggle">Zobrazovat přepínač letového módu</string>
-   <string name="title_show_navbar_hide">Zobrazovat přepínač navigační lišty</string>
+  <string name="title_show_power_saver">Zobrazovat spořič energie</string>
+  <string name="summary_show_power_saver">Pro zobrazení v menu napájení musí být spořič energie aktivní.</string>
+  <string name="title_show_screenshot">Zobrazovat snímek obrazovky</string>
+  <string name="title_show_torch_toggle">Zobrazovat přepínač svítilny</string>
+  <string name="title_show_airplane_toggle">Zobrazovat přepínač letového módu</string>
+  <string name="title_show_navbar_hide">Zobrazovat přepínač navigační lišty</string>
 
-   <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
-   <string name="summary_pref_powersaving_pref_mode">@null</string>
-   <string name="title_pref_powersaving_data_screen_off">Chování dat</string>
-   <string name="summary_pref_powersaving_data_screen_off">Prováděná akce s daty při vypnuté obrazovce</string>
-   <string name="title_pref_powersaving_data_screen_off_delay">Prodleva provedené akce</string>
-   <string name="summary_pref_powersaving_data_screen_off_delay">Doba před provedením požadované akce</string>
+  <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
+  <string name="summary_pref_powersaving_pref_mode">@null</string>
+  <string name="title_pref_powersaving_data_screen_off">Chování dat</string>
+  <string name="summary_pref_powersaving_data_screen_off">Prováděná akce s daty při vypnuté obrazovce</string>
+  <string name="title_pref_powersaving_data_screen_off_delay">Prodleva provedené akce</string>
+  <string name="summary_pref_powersaving_data_screen_off_delay">Doba před provedením požadované akce</string>
+
+  <string name="performance_daily_reboot_title">Denní restart</string>
+  <string name="performance_daily_reboot_summary">Restart naplánován na %1$s</string>
+  <string name="performance_daily_reboot_summary_unscheduled">Nenaplánován</string>
 </resources>

@@ -258,6 +258,8 @@
     <string name="glow_times_superquick">Super quick</string>
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
+    <string name="force_tablet_ui">Force Tablet UI</string>
+    <string name="force_tablet_ui_summary">This will force the device to use the Tablet UI (requires reboot)</string>
 
     <!-- LOCKSCREEN -->
     <!-- Lock Screen Shortcuts -->

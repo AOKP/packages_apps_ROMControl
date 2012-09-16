@@ -24,6 +24,12 @@
             android:key="disable_bootanimation"
             android:title="@string/disable_bootanimation_title" />
 
+        <CheckBoxPreference
+            android:key="force_tablet_ui"
+            android:title="@string/force_tablet_ui"
+            android:summary="@string/force_tablet_ui_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

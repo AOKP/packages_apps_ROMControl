@@ -38,11 +38,13 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_SHOW_OVERFLOW_MENU = "show_overflow_menu";
+    private static final String PREF_FORCE_TABLET_UI = "force_tablet_ui";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
     CheckBoxPreference mShowActionOverflow;
+    CheckBoxPreference mForceTabletUI;
 
     Random randomGenerator = new Random();
 
@@ -85,6 +87,17 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             int randomInt = randomGenerator.nextInt(insults.length);
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
+
+        mForceTabletUI = (CheckBoxPreference) findPreference(PREF_FORCE_TABLET_UI);
+        mForceTabletUI.setChecked(Settings.System.getInt(mContext.getContentResolver(), 
+            Settings.System.FORCE_TABLET_UI, 0) == 1);
+
+        /*
+        if (mTablet) {
+            // if it's a tablet not reason to show the force of a tablet ui
+            pref.removePreference(mForceTabletUI);
+        }
+        */
     }
 
     private void writeKillAppLongpressBackOptions() {
@@ -135,6 +148,11 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.UI_FORCE_OVERFLOW_BUTTON,
                     enabled ? 1 : 0);
+            return true;
+        } else if (preference == mForceTabletUI) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putInt(mContext.getContentResolver(), 
+                Settings.System.FORCE_TABLET_UI, checked ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

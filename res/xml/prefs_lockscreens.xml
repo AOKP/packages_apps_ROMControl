@@ -66,7 +66,6 @@
 
     </PreferenceCategory>
     
-
     <PreferenceCategory
         android:key="weather_cat"
         android:title="@string/lockscreen_weather_cat">
@@ -145,6 +144,11 @@
                 android:key="lockscreen_auto_rotate"
                 android:title="@string/lockscreen_auto_rotate_title"
                 android:summary="@string/lockscreen_auto_rotate_summary" />
+
+    <CheckBoxPreference
+            android:key="lockscreen_vibrate"
+            android:title="@string/lockscreen_vibrate_disabled_title"
+            android:summary="@string/lockscreen_vibrate_disabled_summary" />
 
     </PreferenceCategory>
 

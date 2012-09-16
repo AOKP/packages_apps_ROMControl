@@ -449,6 +449,8 @@
     <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
+    <string name="lockscreen_vibrate_disabled_title">LockScreen Vibrate</string>
+    <string name="lockscreen_vibrate_disabled_summary">Vibrate On/Off</string>
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>

@@ -21,6 +21,11 @@
             android:title="@string/title_lockscreen_user_timeout_override"
             android:summary="@string/summary_lockscreen_user_timeout_override" />
 
+    <CheckBoxPreference
+            android:key="lockscreen_vibrate"
+            android:title="@string/lockscreen_vibrate_disabled_title"
+            android:summary="@string/lockscreen_vibrate_disabled_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -66,7 +71,6 @@
 
     </PreferenceCategory>
     
-
     <PreferenceCategory
         android:key="weather_cat"
         android:title="@string/lockscreen_weather_cat">

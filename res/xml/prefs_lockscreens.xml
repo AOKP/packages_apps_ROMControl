@@ -2,51 +2,70 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference
-        android:key="wallpaper"
-        android:title="@string/lockscreen_wallpaper_title"
-        android:summary="@string/lockscreen_wallpaper_summary" />
+    <PreferenceCategory
+            android:key="security"
+            android:title="security_cat">
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="lockscreen_text_color"
-        android:title="@string/lockscreen_text_color_title"
-        android:defaultValue="#ffffffff" />
+        <CheckBoxPreference
+            android:key="lockscreen_quick_unlock_control"
+            android:title="@string/lockscreen_quick_unlock_control_title"
+            android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
+        <CheckBoxPreference
+            android:key="lockscreen_menu_unlock"
+            android:title="@string/lockscreen_menu_unlock_title"
+            android:summary="@string/lockscreen_menu_unlock_summary" />
+
+        <CheckBoxPreference
+            android:key="lockscreen_user_timeout_override"
+            android:title="@string/title_lockscreen_user_timeout_override"
+            android:summary="@string/summary_lockscreen_user_timeout_override" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="layout"
+        android:title="layout_cat">
+
+        <Preference
+            android:key="wallpaper"
+            android:title="@string/lockscreen_wallpaper_title"
+            android:summary="@string/lockscreen_wallpaper_summary" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_text_color"
+            android:title="@string/lockscreen_text_color_title"
+            android:defaultValue="#ffffffff" />
+
+        <CheckBoxPreference
+            android:key="lockscreen_battery"
+            android:title="@string/lockscreen_battery_title"
+            android:summary="@string/lockscreen_battery_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="music"
+        android:title="music_cat">
+
+        <CheckBoxPreference
+            android:key="lockscreen_stock_music_layout"
+            android:title="@string/lockscreen_stock_music_layout_title"
+            android:summary="@string/lockscreen_stock_music_layout_summary" />
+
+        <CheckBoxPreference
+            android:key="volume_rocker_wake"
+            android:title="@string/volume_rocker_wake_title"
+            android:summary="@string/volume_rocker_wake_summary"
+            android:defaultValue="false" />
 
     <CheckBoxPreference
-        android:key="lockscreen_auto_rotate"
-        android:title="@string/lockscreen_auto_rotate_title"
-        android:summary="@string/lockscreen_auto_rotate_summary" />
+            android:key="volume_music_controls"
+            android:title="@string/volume_music_controls_title"
+            android:summary="@string/volume_music_controls_summary" />
 
-    <CheckBoxPreference
-        android:key="lockscreen_battery"
-        android:title="@string/lockscreen_battery_title"
-        android:summary="@string/lockscreen_battery_summary" />
-
-    <CheckBoxPreference
-        android:key="lockscreen_menu_unlock"
-        android:title="@string/lockscreen_menu_unlock_title"
-        android:summary="@string/lockscreen_menu_unlock_summary" />
-
-    <CheckBoxPreference
-        android:key="lockscreen_user_timeout_override"
-        android:title="@string/title_lockscreen_user_timeout_override"
-        android:summary="@string/summary_lockscreen_user_timeout_override" />
-
-    <CheckBoxPreference
-        android:key="volume_rocker_wake"
-        android:title="@string/volume_rocker_wake_title"
-        android:summary="@string/volume_rocker_wake_summary"
-        android:defaultValue="false" />
-
-    <CheckBoxPreference
-        android:key="volume_music_controls"
-        android:title="@string/volume_music_controls_title"
-        android:summary="@string/volume_music_controls_summary" />
-
-    <CheckBoxPreference
-        android:key="lockscreen_stock_music_layout"
-        android:title="@string/lockscreen_stock_music_layout_title"
-        android:summary="@string/lockscreen_stock_music_layout_summary" />
+    </PreferenceCategory>
+    
 
     <PreferenceCategory
         android:key="weather_cat"
@@ -119,14 +138,14 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="advanced_cat"
-        android:title="@string/advanced_settings">
-
-    <CheckBoxPreference
-        android:key="lockscreen_quick_unlock_control"
-        android:title="@string/lockscreen_quick_unlock_control_title"
-        android:summary="@string/lockscreen_quick_unlock_control_summary" />
+            android:key="misc"
+            android:title="misc_cat">
+   
+            <CheckBoxPreference
+                android:key="lockscreen_auto_rotate"
+                android:title="@string/lockscreen_auto_rotate_title"
+                android:summary="@string/lockscreen_auto_rotate_summary" />        
 
     </PreferenceCategory>
-</PreferenceScreen>
 
+</PreferenceScreen>

@@ -91,13 +91,11 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         mForceTabletUI = (CheckBoxPreference) findPreference(PREF_FORCE_TABLET_UI);
         mForceTabletUI.setChecked(Settings.System.getInt(mContext.getContentResolver(), 
             Settings.System.FORCE_TABLET_UI, 0) == 1);
-
-        /*
+        
         if (mTablet) {
             // if it's a tablet not reason to show the force of a tablet ui
-            pref.removePreference(mForceTabletUI);
+            prefs.removePreference(mForceTabletUI);
         }
-        */
     }
 
     private void writeKillAppLongpressBackOptions() {
@@ -153,6 +151,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(mContext.getContentResolver(), 
                 Settings.System.FORCE_TABLET_UI, checked ? 1 : 0);
+            Helpers.restartSystemUI();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

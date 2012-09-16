@@ -16,6 +16,11 @@
             android:title="@string/lockscreen_menu_unlock_title"
             android:summary="@string/lockscreen_menu_unlock_summary" />
 
+    <CheckBoxPreference
+            android:key="lockscreen_vibrate"
+            android:title="@string/lockscreen_vibrate_disabled_title"
+            android:summary="@string/lockscreen_vibrate_disabled_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

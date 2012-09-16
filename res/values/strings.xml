@@ -314,6 +314,10 @@
     <string name="interface_softkeys_reboot_title">Reboot Menu</string>
     <string name="interface_softkeys_screenshot_title">Screenshot</string>
     <string name="interface_softkeys_screenoff_title">Screen Off</string>
+    <string name="interface_softkeys_ime_switcher_title">Open IME Switcher</string>
+    <string name="interface_softkeys_ring_vib_title">Toggle Ring/Vib</string>
+    <string name="interface_softkeys_ring_silent_title">Toggle Ring/Silent</string>
+    <string name="interface_softkeys_ring_vib_silent_title">Toggle Ring/Vib/Silent</string>
     <string name="interface_softkeys_kill_process_title">Kill App</string>
     <string name="interface_softkey_package_removed">The previously selected package was not found</string>
     <string name="interface_navring_settings_title">Navigation bar ring</string>

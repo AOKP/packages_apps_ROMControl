@@ -29,18 +29,30 @@ public class NavRingPreference extends Preference {
 
     private static String REBOOT_VAL = Settings.System.SYSTEMUI_SOFTKEY_REBOOT;
     private static String SCREENSHOT_VAL = Settings.System.SYSTEMUI_SOFTKEY_SCREENSHOT;
+    private static String IMESWITCHER_VAL = Settings.System.SYSTEMUI_SOFTKEY_IME_SWITCHER;
+    private static String RINGVIB_VAL = Settings.System.SYSTEMUI_SOFTKEY_RING_VIB;
+    private static String RINGSILENT_VAL = Settings.System.SYSTEMUI_SOFTKEY_RING_SILENT;
+    private static String RINGVIBSILENT_VAL = Settings.System.SYSTEMUI_SOFTKEY_RING_VIB_SILENT;
     private static String KILLCURRENT_VAL = Settings.System.SYSTEMUI_SOFTKEY_KILL_PROCESS;
     private static String SCREENOFF_VAL = Settings.System.SYSTEMUI_SOFTKEY_SCREENOFF;
     private static String ASSIST_VAL = Settings.System.SYSTEMUI_NAVRING_ASSIST;
 
     private static int REBOOT_TITLE = R.string.interface_softkeys_reboot_title;
     private static int SCREENSHOT_TITLE = R.string.interface_softkeys_screenshot_title;
+    private static int IMESWITCHER_TITLE = R.string.interface_softkeys_ime_switcher_title;
+    private static int RINGVIB_TITLE = R.string.interface_softkeys_ring_vib_title;
+    private static int RINGSILENT_TITLE = R.string.interface_softkeys_ring_silent_title;
+    private static int RINGVIBSILENT_TITLE = R.string.interface_softkeys_ring_vib_silent_title;
     private static int KILLCURRENT_TITLE = R.string.interface_softkeys_kill_process_title;
     private static int SCREENOFF_TITLE = R.string.interface_softkeys_screenoff_title;
     private static int ASSIST_TITLE = R.string.interface_navring_assist_title;
 
     private static int REBOOT_ICON = R.drawable.ic_navbar_power;
     private static int KILLCURRENT_ICON = R.drawable.ic_navbar_killtask;
+    private static int IMESWITCHER_ICON = R.drawable.ic_sysbar_ime_switcher;
+    private static int RINGVIB_ICON = R.drawable.ic_navbar_vib;
+    private static int RINGSILENT_ICON = R.drawable.ic_navbar_silent;
+    private static int RINGVIBSILENT_ICON = R.drawable.ic_navbar_ring_vib_silent;
     private static int SCREENSHOT_ICON = R.drawable.ic_navbar_screenshot;
     private static int SCREENOFF_ICON = R.drawable.ic_navbar_power;
     private static int ASSIST_ICON = R.drawable.ic_navbar_googlenow;
@@ -113,6 +125,14 @@ public class NavRingPreference extends Preference {
                     .append(" ")
                     .append(mRes.getString(SCREENSHOT_TITLE));
             setSummary(builder.toString());
+        } else if (uriValue.equals(IMESWITCHER_VAL)) {
+            setTitle(mRes.getString(IMESWITCHER_TITLE));
+            setIcon(mRes.getDrawable(IMESWITCHER_ICON));
+            StringBuilder builder = new StringBuilder();
+            builder.append(mRes.getString(CUSTOM_SUMMARY))
+                    .append(" ")
+                    .append(mRes.getString(IMESWITCHER_TITLE));
+            setSummary(builder.toString());
         } else if (uriValue.equals(KILLCURRENT_VAL)) {
             setTitle(mRes.getString(KILLCURRENT_TITLE));
             setIcon(mRes.getDrawable(KILLCURRENT_ICON));
@@ -120,6 +140,30 @@ public class NavRingPreference extends Preference {
             builder.append(mRes.getString(CUSTOM_SUMMARY))
                     .append(" ")
                     .append(mRes.getString(KILLCURRENT_TITLE));
+            setSummary(builder.toString());
+        } else if (uriValue.equals(RINGVIB_VAL)) {
+            setTitle(mRes.getString(RINGVIB_TITLE));
+            setIcon(mRes.getDrawable(RINGVIB_ICON));
+            StringBuilder builder = new StringBuilder();
+            builder.append(mRes.getString(CUSTOM_SUMMARY))
+                    .append(" ")
+                    .append(mRes.getString(RINGVIB_TITLE));
+            setSummary(builder.toString());
+        } else if (uriValue.equals(RINGSILENT_VAL)) {
+            setTitle(mRes.getString(RINGSILENT_TITLE));
+            setIcon(mRes.getDrawable(RINGSILENT_ICON));
+            StringBuilder builder = new StringBuilder();
+            builder.append(mRes.getString(CUSTOM_SUMMARY))
+                    .append(" ")
+                    .append(mRes.getString(RINGSILENT_TITLE));
+            setSummary(builder.toString());
+        } else if (uriValue.equals(RINGVIBSILENT_VAL)) {
+            setTitle(mRes.getString(RINGVIBSILENT_TITLE));
+            setIcon(mRes.getDrawable(RINGVIBSILENT_ICON));
+            StringBuilder builder = new StringBuilder();
+            builder.append(mRes.getString(CUSTOM_SUMMARY))
+                    .append(" ")
+                    .append(mRes.getString(RINGVIBSILENT_TITLE));
             setSummary(builder.toString());
         } else if (uriValue.equals(SCREENOFF_VAL)) {
             setTitle(mRes.getString(SCREENOFF_TITLE));

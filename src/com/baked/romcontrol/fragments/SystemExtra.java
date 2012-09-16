@@ -151,7 +151,6 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(mContext.getContentResolver(), 
                 Settings.System.FORCE_TABLET_UI, checked ? 1 : 0);
-            Helpers.restartSystemUI();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

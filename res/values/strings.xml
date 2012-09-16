@@ -378,6 +378,12 @@
     <string name="title_phone_flip_mode">Phone Call Silence</string>
 
     <!-- Lockscreen -->
+    <string name="lockscreen_security_cat">Security</string>
+    <string name="lockscreen_layout_cat">Layout</string>
+    <string name="lockscreen_music_cat">Music</string>
+    <string name="lockscreen_weather_cat">Weather</string>
+    <string name="lockscreen_calendar_cat">Calendar</string>
+
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
     <string name="lockscreen_menu_unlock_title">Menu unlock</string>
@@ -397,12 +403,10 @@
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="title_lockscreen_user_timeout_override">Wait to lock screen</string>
     <string name="summary_lockscreen_user_timeout_override">Use Android\'s timeout setting after you manually turn the screen off. The default behavior is to use the delay only when the screen times out by itself.</string>
-    <string name="lockscreen_weather_cat">Weather</string>
     <string name="lockscreen_weather_title">Enable</string>
     <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
     <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
     <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
-    <string name="lockscreen_calendar_cat">Calendar</string>
     <string name="lockscreen_calendar_title">Enable</string>
     <string name="lockscreen_calendar_summary">Show upcoming event(s) from your calendar on the lockscreen.</string>
     <string name="lockscreen_calendar_sources_title">Calendar sources</string>

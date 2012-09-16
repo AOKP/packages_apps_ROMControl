@@ -155,7 +155,7 @@
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
 
     <!-- Notification status bar clock color -->
-    <string name="expanded_clock_color_title">Notification Clock Color</string>
+    <string name="expanded_clock_color_title">Statusbar expanded clock/date color</string>
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Signal Text Style</string>
@@ -230,6 +230,7 @@
     <string name="navbar_action_recents">Recents</string>
     <string name="navbar_action_search">Search</string>
     <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_notifications">Notifications</string>

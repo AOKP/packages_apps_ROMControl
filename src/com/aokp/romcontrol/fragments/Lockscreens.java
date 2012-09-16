@@ -76,6 +76,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
     private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
     private static final String PREF_STOCK_MUSIC_LAYOUT = "lockscreen_stock_music_layout";
+    private static final String PREF_LOCKSCREEN_VIBRATE = "lockscreen_vibrate";
+    
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -103,6 +105,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenCalendarUseColors;
     CheckBoxPreference mLockscreenAutoRotate;
     CheckBoxPreference mStockMusicLayout;
+    CheckBoxPreference mLockscreenVibrate;
 
     ArrayList<String> keys = new ArrayList<String>();
 
@@ -183,6 +186,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mStockMusicLayout.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_STOCK_MUSIC_LAYOUT, 0) == 1);
 
+	mLockscreenVibrate = (CheckBoxPreference) findPreference(PREF_LOCKSCREEN_VIBRATE);
+	mLockscreenVibrate.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+		Settings.System.LOCKSCREEN_VIBRATE_DISABLED, 1) == 1);
+
         mLockscreenWallpaper = findPreference("wallpaper");
 
         for (String key : keys) {
@@ -262,6 +269,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_CALENDAR_USE_COLORS,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+	} else if (preference == mLockscreenVibrate) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_VIBRATE_DISABLED,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mCalendarSources) {

@@ -160,7 +160,7 @@ public class NavRingTargets extends AOKPPreferenceFragment
                     public void onClick(DialogInterface dialog, int which) {
                         // TODO Auto-generated method stub
                         String pressed = (String) item_values[which];
-                        if (pressed.equals(item_values[5])) {
+                        if (pressed.equals(item_values[item_values.length - 1])) {
                             callActivityDialog(pref);
                         } else {
                             pref.loadCustomApp(pressed);

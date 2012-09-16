@@ -188,6 +188,8 @@
     <string-array name="navring_dialog_entries">
         <item>None</item>
         <item>Take Screenshot</item>
+        <item>Open IME Switcher</item>
+        <item>Ring/Vib</item>
         <item>Kill App</item>
         <item>Screen Off</item>
         <item>Google Now</item>
@@ -197,6 +199,8 @@
     <string-array name="navring_dialog_values">
         <item>none</item>
         <item>screenshot</item>
+        <item>ime_switcher</item>
+        <item>ring_vib</item>
         <item>killcurrent</item>
         <item>screenoff</item>
         <item>assist</item>

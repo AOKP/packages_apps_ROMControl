@@ -245,6 +245,8 @@
     <string name="hide_signal_summary">Updates when signal strength changes</string>
     <string name="wifi_signal_style">WiFi signal text style</string>
     <string name="wifi_signal_color_title">WiFi signal color</string>
+    <string name="alt_signal_title">Alt signal layout</string>
+    <string name="alt_signal_summary">Use alternate (GB style) signal cluster</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

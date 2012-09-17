@@ -85,6 +85,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
+    private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -107,6 +108,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     ImageView view;
     TextView error;
     CheckBoxPreference mTabletui;
+    CheckBoxPreference mDualpane;
     Preference mLcdDensity;
 
     private AnimationDrawable mAnimationPart1;
@@ -186,6 +188,11 @@ public class UserInterface extends AOKPPreferenceFragment {
         mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                         Settings.System.MODE_TABLET_UI, false));
 
+        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
+        mDualpane.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
+                        com.android.internal.R.bool.preferences_prefer_dual_pane));
+
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
 
@@ -263,6 +270,11 @@ public class UserInterface extends AOKPPreferenceFragment {
         } else if (preference == mTabletui) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.MODE_TABLET_UI,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mDualpane) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.FORCE_DUAL_PANEL,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mCustomBootAnimation) {

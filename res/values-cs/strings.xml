@@ -252,12 +252,15 @@
   <string name="led_color_click">Kliknutím na LED je možné změnit barvu</string>
   <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
   <string name="led_custom_app">Vybraná aplikace</string>
+  <string name="led_custom_default">Výchozí</string>
   <string name="led_change_app">Změnit</string>
   <string name="led_delete_app">Vymazat</string>
   <string name="led_keep_app">Ponechat</string>
   <string name="led_custom_title">Vlastní LED aplikace</string>
   <string name="led_edit_button">-</string>
   <string name="led_test_notification">Testovat LED</string>
+  <string name="led_test_notification_message_now">"Testuje se LED pro: "</string>
+  <string name="led_test_notification_message_note">".  Pro testování LED Je nutné vypnout obrazovku. Tlačítko OK musí být zmáčknuto až po otestování LED."</string>
   <string name="led_test_ok">OK</string>
   <string name="title_charging_led_on">Zapnout LED během nabíjení (vyžaduje restart)</string>
   <string name="led_change_brightness">Změnit jas</string>

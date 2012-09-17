@@ -150,6 +150,8 @@
     <string name="creating_preview">Creating preview...</string>
     <string name="error_reading_zip_file">Error reading zip file</string>
     <string name="error_creating_preview">Error creating preview</string>
+    <string name="multipane_ui">Enable Dual panel</string>
+    <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>

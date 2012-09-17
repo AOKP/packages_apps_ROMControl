@@ -252,12 +252,15 @@
   <string name="led_color_click">Kliknutím na LED je možné změnit barvu</string>
   <string name="title_led_screen_on">Blikat LEDkou při zapnuté obrazovce</string>
   <string name="led_custom_app">Vybraná aplikace</string>
+  <string name="led_custom_default">Výchozí</string>
   <string name="led_change_app">Změnit</string>
   <string name="led_delete_app">Vymazat</string>
   <string name="led_keep_app">Ponechat</string>
   <string name="led_custom_title">Vlastní LED aplikace</string>
   <string name="led_edit_button">-</string>
   <string name="led_test_notification">Testovat LED</string>
+  <string name="led_test_notification_message_now">"Testuje se LED pro: "</string>
+  <string name="led_test_notification_message_note">".  Pro testování LED Je nutné vypnout obrazovku. Tlačítko OK musí být zmáčknuto až po otestování LED."</string>
   <string name="led_test_ok">OK</string>
   <string name="title_charging_led_on">Zapnout LED během nabíjení (vyžaduje restart)</string>
   <string name="led_change_brightness">Změnit jas</string>
@@ -287,6 +290,13 @@
     POZOR: **Pro přepnutí zvukového režimu zpět je nutné opět zapnout telefon (pokud již vypršel čas senzoru otočení).**</string>
   <string name="summary_phone_flip_mode">Přepnout telefon otočením do tichého režimu během příchozího hovoru</string>
   <string name="title_phone_flip_mode">Tichý příchozí hovor</string>
+  
+  <string name="lockscreen_security_cat">Zabezpečení</string>
+  <string name="lockscreen_layout_cat">Rozložení</string>
+  <string name="lockscreen_music_cat">Hudba</string>
+  <string name="lockscreen_weather_cat">Počasí</string>
+  <string name="lockscreen_calendar_cat">Kalendář</string> 
+  
   <string name="lockscreen_quick_unlock_control_title">Rychlé odemčení zadáním pinu</string>
   <string name="lockscreen_quick_unlock_control_summary">Odemknout obrazovku zadáním pinu, bez nutnosti mačkat potvrzovací tlačítko</string>
   <string name="lockscreen_menu_unlock_title">Odemčení tlačítkem menu</string>
@@ -419,12 +429,10 @@
   <string name="fast_charge_notification_message">Telefon je ve stavu nabíjení!</string>
   <string name="prefcat_other_tweaks">Další tweaky</string>
 
-  <string name="lockscreen_weather_cat">Počasí</string>
   <string name="lockscreen_weather_title">Zapnout</string>
   <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
   <string name="lockscreen_weather_type_title">Styl počasí na zamčené obrazovce</string>
   <string name="lockscreen_weather_type_summary">Nastavuje zobrazení grafické nebo textové podoby informace o počasí.</string>
-  <string name="lockscreen_calendar_cat">Kalendář</string>
   <string name="lockscreen_calendar_title">Zapnout</string>
   <string name="lockscreen_calendar_summary">Zobrazit nadcházející události z kalendáře na zamřené obrazovce.</string>
   <string name="lockscreen_calendar_sources_title">Zdroje kalendáře</string>
@@ -468,6 +476,8 @@
   <string name="hide_signal_summary">Aktualizuje se při změně síly signálu</string>
   <string name="wifi_signal_style">Textový styl ukazatele WiFi</string>
   <string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
+  <string name="alt_signal_title">Jiný styl signálu</string>
+  <string name="alt_signal_summary">Použít alternativní styl signálu (jako v GB)</string>
 
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
   <string name="volume_music_controls_summary">Dlouhým stisknutím tlačítek hlasitosti dojde k přeskočení skladeb, pokud je vypnut displej. Probouzení tlačítky hlasitosti nebude fungovat, pokud bude přehrávána hudba.</string>

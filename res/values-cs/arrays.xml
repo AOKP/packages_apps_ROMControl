@@ -51,7 +51,8 @@
 		<item>Hledat</item>
 		<item>Menu</item>
     <item>Přepnout widgety</item>
-		<item>Ukončit aplikaci</item>
+		<item>Otevřít metody vstupu</item>
+    <item>Ukončit aplikaci</item>
 		<item>Napájení</item>
     <item>Notifikace</item>
 		<item>Vlastní aplikace</item>
@@ -221,6 +222,10 @@
   <string-array name="navring_dialog_entries">
     <item>Nic</item>
     <item>Pořídit snímek obrazovky</item>
+    <item>Otevřít metody vstupu</item>
+    <item>Hlasitý/vibrace</item>
+    <item>Hlasitý/tichý</item>
+    <item>Hlasitý/vibrace/tichý</item>
     <item>Ukončit aplikaci</item>
     <item>Vypnout obrazovku</item>
     <item>Google Now</item>

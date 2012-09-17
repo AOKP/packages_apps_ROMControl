@@ -7,14 +7,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Hashtable;
 
 import junit.framework.Assert;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.params.HttpClientParams;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -29,6 +34,7 @@ import android.graphics.BitmapFactory.Options;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Looper;
@@ -376,23 +382,31 @@ public final class UrlImageViewHelper {
                             is = ContactsContract.Contacts.openContactPhotoInputStream(cr, Uri.parse(url));
                         }
                         else {
-                            URL u = new URL(url);
-                            HttpURLConnection urlConnection = (HttpURLConnection)u.openConnection();
-                            
+                            final AndroidHttpClient client = AndroidHttpClient.newInstance(context.getPackageName());
+                            HttpGet get = new HttpGet(url);
+                            final HttpParams httpParams = new BasicHttpParams();
+                            HttpClientParams.setRedirecting(httpParams, true);
+
                             if (mRequestPropertiesCallback != null) {
                                 ArrayList<NameValuePair> props = mRequestPropertiesCallback.getHeadersForRequest(context, url);
                                 if (props != null) {
                                     for (NameValuePair pair: props) {
-                                        urlConnection.addRequestProperty(pair.getName(), pair.getValue());
+                                        httpParams.setParameter(pair.getName(), pair.getValue());
                                     }
                                 }
                             }
 
-                            if (urlConnection.getResponseCode() != HttpURLConnection.HTTP_OK)
+                            get.setParams(httpParams);
+                            HttpResponse resp = client.execute(get);
+                            int status = resp.getStatusLine().getStatusCode();
+
+                            if (status != HttpURLConnection.HTTP_OK) {
                                 return null;
-                            is = urlConnection.getInputStream();
+                            }
+                            HttpEntity entity = resp.getEntity();
+                            is = entity.getContent();
                         }
-                        
+
                         if (is != null) {
                             FileOutputStream fos = new FileOutputStream(filename);
                             copyStream(is, fos);

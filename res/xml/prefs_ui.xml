@@ -82,6 +82,12 @@
             android:summary="@string/tablet_ui_summary"
             android:defaultValue="false" />
 
+        <CheckBoxPreference
+            android:key="force_dualpanel"
+            android:title="@string/multipane_ui"
+            android:summary="@string/multipane_ui_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="lcd_density_setup"
             android:title="@string/lcd_density_title"

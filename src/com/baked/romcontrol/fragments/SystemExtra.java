@@ -45,6 +45,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     CheckBoxPreference mKillAppLongpressBack;
     CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mForceTabletUI;
+    Preference mLcdDensity;
 
     Random randomGenerator = new Random();
 
@@ -56,6 +57,15 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_system_extra);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mLcdDensity = findPreference("lcd_density_setup");
+        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
+        try {
+            newDensityValue = Integer.parseInt(currentProperty);
+        } catch (Exception e) {
+            getPreferenceScreen().removePreference(mLcdDensity);
+        }
+        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(
                 PREF_KILL_APP_LONGPRESS_BACK);
@@ -89,9 +99,9 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         }
 
         mForceTabletUI = (CheckBoxPreference) findPreference(PREF_FORCE_TABLET_UI);
-        mForceTabletUI.setChecked(Settings.System.getInt(mContext.getContentResolver(), 
+        mForceTabletUI.setChecked(Settings.System.getInt(mContext.getContentResolver(),
             Settings.System.FORCE_TABLET_UI, 0) == 1);
-        
+
         if (mTablet) {
             // if it's a tablet not reason to show the force of a tablet ui
             prefs.removePreference(mForceTabletUI);
@@ -149,8 +159,13 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             return true;
         } else if (preference == mForceTabletUI) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putInt(mContext.getContentResolver(), 
+            Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.FORCE_TABLET_UI, checked ? 1 : 0);
+            return true;
+
+        } else if (preference == mLcdDensity) {
+            ((PreferenceActivity) getActivity())
+                    .startPreferenceFragment(new DensityChanger(), true);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

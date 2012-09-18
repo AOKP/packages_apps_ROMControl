@@ -162,6 +162,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="fragments.DensityChanger">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".util.ShowBuildProp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

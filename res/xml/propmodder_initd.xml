@@ -43,14 +43,6 @@
             android:entryValues="@array/entries_wifi_scan"
             android:persistent="true" />
 
-        <ListPreference android:key="pref_lcd_density"
-            android:dialogTitle="@string/pref_lcd_density_title"
-            android:title="@string/pref_lcd_density_title"
-            android:summary="@string/pref_lcd_density_summary"
-            android:entries="@array/entries_lcd_density"
-            android:entryValues="@array/entries_lcd_density"
-            android:persistent="true" />
-
         <ListPreference android:key="pref_max_events"
             android:dialogTitle="@string/pref_max_events_title"
             android:title="@string/pref_max_events_title"

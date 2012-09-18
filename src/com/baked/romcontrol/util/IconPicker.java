@@ -48,7 +48,7 @@ public class IconPicker {
     private Activity mParent;
     private Resources mResources;
     private OnIconPickListener mIconListener;
-    private static final String ICON_ACTION = "com.baked.ACTION_PICK_ICON";
+    private static final String ICON_ACTION = "com.cyanogenmod.ACTION_PICK_ICON";
     public static final String RESOURCE_NAME = "resource_name";
     public static final String PACKAGE_NAME = "package_name";
     public static final int REQUEST_PICK_SYSTEM = 0;

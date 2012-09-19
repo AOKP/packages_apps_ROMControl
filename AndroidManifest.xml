@@ -138,6 +138,7 @@
         <activity
             android:name=".ShareToClipboard"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:icon="@android:drawable/ic_menu_paste"
             android:label="@string/title_clipboard_share" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>

@@ -57,6 +57,13 @@
         android:summary="@string/header_summary_navigation_bar" />
 
     <header
+        android:id="@+id/hardware_keys"
+        android:fragment="com.baked.romcontrol.fragments.HardwareKeys"
+        android:title="@string/hardware_keys_title"
+        android:icon="@drawable/ic_rom_control_hardware_keys"
+        android:summary="@string/header_summary_hardware_keys" />
+
+    <header
         android:id="@+id/system_extra"
         android:fragment="com.baked.romcontrol.fragments.SystemExtra"
         android:title="@string/header_system_extra"

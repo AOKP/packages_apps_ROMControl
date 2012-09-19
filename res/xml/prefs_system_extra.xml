@@ -7,10 +7,6 @@
         android:title="@string/misc_short">
 
         <CheckBoxPreference
-            android:key="show_overflow_menu"
-            android:title="@string/show_overflow_menu_title" />
-
-        <CheckBoxPreference
             android:key="recent_kill_all"
             android:title="@string/recent_kill_all"
             android:summary="@string/recent_kill_all_summary" />

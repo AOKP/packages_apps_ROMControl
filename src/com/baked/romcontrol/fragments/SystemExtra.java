@@ -18,6 +18,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -37,17 +38,18 @@ public class SystemExtra extends BAKEDPreferenceFragment {
 
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-    private static final String PREF_SHOW_OVERFLOW_MENU = "show_overflow_menu";
     private static final String PREF_FORCE_TABLET_UI = "force_tablet_ui";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
-    CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mForceTabletUI;
     Preference mLcdDensity;
 
     Random randomGenerator = new Random();
+
+    int newDensityValue;
+    DensityChanger densityFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,14 +72,6 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(
                 PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
-
-        mShowActionOverflow = (CheckBoxPreference) findPreference(
-                PREF_SHOW_OVERFLOW_MENU);
-        mShowActionOverflow.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1));
-        if (!hasHardwareButtons) {
-            prefs.removePreference(mShowActionOverflow);
-        }
 
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -151,12 +145,6 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             Helpers.restartSystemUI();
             return true;
 
-        } else if (preference == mShowActionOverflow) {
-            boolean enabled = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.UI_FORCE_OVERFLOW_BUTTON,
-                    enabled ? 1 : 0);
-            return true;
         } else if (preference == mForceTabletUI) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(mContext.getContentResolver(),

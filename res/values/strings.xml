@@ -27,7 +27,9 @@
     <string name="header_statusbar_extra">Statusbar Settings</string>
     <string name="header_sound_title">Sound</string>
     <string name="header_performance_title">Performance</string>
+    <string name="header_control">Control</string>
     <string name="header_lockscreen_extra_title">Lockscreen Settings</string>
+    <string name="title_hardwarekeys">Hardware Keys</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>
@@ -52,6 +54,7 @@
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreen_extra">@null</string>
     <string name="header_summary_signal">@null</string>
+    <string name="header_summary_hardware_keys">@null</string>
 
     <!-- System | Extras -->
     <string name="ime_switcher_title">Show IME Switcher</string>
@@ -62,7 +65,6 @@
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="kill_app_longpress_back">Hold back to kill</string>
     <string name="kill_app_longpress_back_summary">Holding back will kill the current activity</string>
-    <string name="show_overflow_menu_title">Show ui overflow menu button</string>
 
     <!-- system text color test -->
     <string name="primary_text_colors">Change system wide text colors</string>
@@ -633,5 +635,28 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
+
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_bindings_title">Key actions</string>
+    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
+    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
+    <string name="hardware_keys_menu_press_title">Menu key</string>
+    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
+    <string name="hardware_keys_assist_press_title">Search key</string>
+    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
+    <string name="hardware_keys_app_switch_press_title">App switch key</string>
+    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
+    <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
+    <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
+    <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
+    <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_menu">Open/close menu</string>
+    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
+    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_additional_options_title">Additional options</string>
 
 </resources>

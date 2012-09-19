@@ -193,12 +193,22 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
      * Populate the activity with the top-level headers.
      */
     @Override
-    public void onBuildHeaders(List<Header> headers) {
-        loadHeadersFromResource(R.xml.preference_headers, headers);
-
-        updateHeaderList(headers);
-
-        mHeaders = headers;
+    public void onBuildHeaders(List<Header> target) {
+        loadHeadersFromResource(R.xml.preference_headers, target);
+        for (int i=0; i<target.size(); i++) {
+            Header header = target.get(i);
+            if (header.id == R.id.statusbar_powerwidget) {
+                if (mTablet) {
+                    target.remove(i);
+                }
+            } else if (header.id == R.id.tablet_statusbar_powerwidget) {
+                if (!mTablet) {
+                    target.remove(i);
+                }
+            }
+        }
+        updateHeaderList(target);
+        mHeaders = target;
     }
 
     /**

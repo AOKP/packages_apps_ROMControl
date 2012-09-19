@@ -8,10 +8,9 @@
         android:icon="@drawable/ic_rom_control"
         android:summary="@string/teambaked_about_summary" />
 
-    <!-- System -->
     <header
-        android:id="@+id/system"
-        android:title="@string/header_system" />
+        android:id="@+id/control_settings"
+        android:title="@string/header_control" />
 
     <header
         android:id="@+id/tools"
@@ -30,6 +29,11 @@
         android:fragment="com.baked.romcontrol.fragments.PropModder"
         android:summary="@string/propmodder_title_summary"
         android:icon="@drawable/ic_rom_control_propmodder" />
+
+    <!-- System -->
+    <header
+        android:id="@+id/system"
+        android:title="@string/header_system" />
 
     <header
         android:id="@+id/sound"
@@ -103,6 +107,13 @@
         android:icon="@drawable/ic_rom_control_powerwidget"
         android:summary="@string/header_summary_powerwidget"
         android:title="@string/header_powerwidget" />
+
+    <header
+        android:id="@+id/tablet_statusbar_powerwidget"
+        android:fragment="com.baked.romcontrol.fragments.TabletPowerWidget"
+        android:icon="@drawable/ic_rom_control_powerwidget"
+        android:summary="@string/header_summary_powerwidget"
+        android:title="@string/header_tablet_powerwidget" />
 
     <header
         android:id="@+id/statusbar_toggles"

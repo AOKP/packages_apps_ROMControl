@@ -53,12 +53,22 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     Locale defaultLocale;
 
     boolean mTablet;
+    boolean isTablet;
+    boolean isPhablet;
+    boolean isPhone;
     protected boolean isShortcut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        mTablet = Settings.System.getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
+        mTablet = Settings.System.getBoolean(getContentResolver(),
+                Settings.System.TABLET_UI, false);
+        isPhone = Settings.System.getInt(this.getContentResolver(),
+                Settings.System.FORCE_TABLET_UI, 0) == 0;
+        isPhablet = Settings.System.getInt(this.getContentResolver(),
+                Settings.System.FORCE_TABLET_UI, 0) == 2;
+        isTablet = Settings.System.getInt(this.getContentResolver(),
+                Settings.System.FORCE_TABLET_UI, 0) == 1;
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
         setLocale();
@@ -197,20 +207,23 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
         loadHeadersFromResource(R.xml.preference_headers, target);
         for (int i=0; i<target.size(); i++) {
             Header header = target.get(i);
+            final int deviceKeys = getResources().getInteger(
+                    com.android.internal.R.integer.config_deviceHardwareKeys);
+            final boolean hasHardwareKeys = getResources().getBoolean(
+                    R.bool.has_hardware_buttons);
             if (header.id == R.id.hardware_keys) {
-                final int deviceKeys = getResources().getInteger(
-                        com.android.internal.R.integer.config_deviceHardwareKeys);
-                final boolean hasHardwareKeys = getResources().getBoolean(
-                        R.bool.has_hardware_buttons);
                 if (deviceKeys == 0 || hasHardwareKeys == false) {
                     target.remove(i);
                 }
             } else if (header.id == R.id.statusbar_powerwidget) {
-                if (mTablet) {
+                if (isTablet) {
                     target.remove(i);
                 }
             } else if (header.id == R.id.tablet_statusbar_powerwidget) {
-                if (!mTablet) {
+                if (isPhablet) {
+                    target.remove(i);
+                }
+                if (isPhone) {
                     target.remove(i);
                 }
             }

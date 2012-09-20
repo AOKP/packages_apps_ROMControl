@@ -48,6 +48,9 @@ public class BAKEDPreferenceFragment extends PreferenceFragment implements Dialo
     protected boolean hasTorch;
     protected boolean hasHardwareButtons;
     protected boolean hasFastCharge;
+    protected boolean isTablet;
+    protected boolean isPhablet;
+    protected boolean isPhone;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,12 @@ public class BAKEDPreferenceFragment extends PreferenceFragment implements Dialo
         hasTorch = getResources().getBoolean(R.bool.has_torch);
         hasHardwareButtons = getResources().getBoolean(R.bool.has_hardware_buttons);
         hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
+        isPhone = Settings.System.getInt(this.getContentResolver(),
+                Settings.System.FORCE_TABLET_UI, 0) == 0;
+        isPhablet = Settings.System.getInt(this.getContentResolver(),
+                Settings.System.FORCE_TABLET_UI, 0) == 2;
+        isTablet = Settings.System.getInt(this.getContentResolver(),
+                Settings.System.FORCE_TABLET_UI, 0) == 1;
         mContext = getActivity().getApplicationContext();
         mActionBar = getActivity().getActionBar();
         if(getArguments() != null) {

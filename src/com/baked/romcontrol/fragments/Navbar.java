@@ -177,8 +177,11 @@ public class Navbar extends BAKEDPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
-        if (mTablet) {
+        if (isTablet) {
             prefs.removePreference(mNavBarMenuDisplay);
+            prefs.removePreference(mNavigationBarHeight);
+            prefs.removePreference(mNavigationBarHeightLandscape);
+            prefs.removePreference(mNavigationBarWidth);
         }
         refreshSettings();
         setHasOptionsMenu(true);

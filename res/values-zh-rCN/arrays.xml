@@ -89,11 +89,32 @@
         <item>搜索</item>
         <item>菜单</item>
         <item>小部件</item>
+        <item>打开输入法选择器</item>
         <item>结束程序</item>
         <item>电源</item>
         <item>通知栏</item>
         <item>自定义程序</item>
         <item>空</item>
+    </string-array>
+        <string-array name="navring_dialog_entries">
+        <item>无</item>
+        <item>屏幕截图</item>
+        <item>打开输入法选择器</item>
+        <item>铃声/振动</item>
+        <item>铃声/静音</item>
+        <item>铃声/振动/静音</item>
+        <item>强行结束程序</item>
+        <item>关闭屏幕</item>
+        <item>Google Now</item>
+        <item>选择程序</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_entries">
+        <item>1 目标</item>
+        <item>2 目标</item>
+        <item>3 目标</item>
+        <item>4 目标</item>
+        <item>5 目标</item>
     </string-array>
     <string-array name="navigation_bar_width_entries">
         <item>42 dp (默认)</item>

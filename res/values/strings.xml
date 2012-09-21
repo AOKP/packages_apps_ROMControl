@@ -21,13 +21,13 @@
     <string name="header_statusbar">Statusbar</string>
     <string name="header_navbar">Navbar</string>
     <string name="header_powerwidget">Powerwidgets</string>
-    <string name="header_tablet_powerwidget">Tablet PowerWidget</string>
+    <string name="header_tablet_powerwidget">Tablet PowerWidgets</string>
     <string name="header_lockscreen">Lockscreen</string>
     <string name="header_system_extra">System Settings</string>
     <string name="header_statusbar_extra">Statusbar Settings</string>
     <string name="header_sound_title">Sound</string>
-    <string name="header_performance_title">Performance</string>
-    <string name="header_control">Control</string>
+    <string name="header_performance_title">Control cpu</string>
+    <string name="header_performance">Performance</string>
     <string name="header_lockscreen_extra_title">Lockscreen Settings</string>
     <string name="title_hardwarekeys">Hardware Keys</string>
     <string name="clock">Clock</string>
@@ -262,7 +262,7 @@
     <string name="glow_times_quick">Quick</string>
     <string name="glow_times_normal">Normal</string>
     <string name="force_tablet_ui">Force Tablet UI</string>
-    <string name="force_tablet_ui_summary">This will force the device to use the Tablet UI (requires reboot)</string>
+    <string name="force_tablet_ui_summary">This will force the device to use the Tablet UI (requires reboot). **If setting this on a high dpi device please change to a lower screen density before setting this to on</string>
 
     <!-- LOCKSCREEN -->
     <!-- Lock Screen Shortcuts -->
@@ -523,7 +523,7 @@
     <string name="ps_enable_cron">Enable scheduled cron jobs</string>
 
     <!-- PropModder -->
-    <string name="propmodder_title">PropModder &amp; Init.D tweaks</string>
+    <string name="propmodder_title">PropModder/Init.D</string>
     <string name="propmodder_title_summary">@null</string>
     <string name="buildprop_title">Build.prop mods</string>
     <string name="nonprop_cat_title">Mods involving init.d script</string>

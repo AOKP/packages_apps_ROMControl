@@ -1,5 +1,6 @@
 package com.baked.romcontrol;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -60,6 +61,9 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         mTablet = Settings.System.getBoolean(getContentResolver(),
                 Settings.System.TABLET_UI, false);
@@ -216,15 +220,16 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                     target.remove(i);
                 }
             } else if (header.id == R.id.statusbar_powerwidget) {
-                if (isTablet) {
+                if (isTablet || mTablet) {
                     target.remove(i);
+                } else {
+                    target.get(i);
                 }
             } else if (header.id == R.id.tablet_statusbar_powerwidget) {
-                if (isPhablet) {
+                if (isPhablet || isPhone) {
                     target.remove(i);
-                }
-                if (isPhone) {
-                    target.remove(i);
+                } else {
+                    target.get(i);
                 }
             }
         }

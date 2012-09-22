@@ -45,12 +45,15 @@
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
+    <string name="header_summary_signal">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
+    <string name="header_summary_vibrations">@null</string>
 
     <!-- Menu Strings 菜单文本 -->
     <string name="menu_nav_bar_reset">重置导航栏</string>
@@ -71,6 +74,7 @@
 
     <!-- Power Saving 省电模式 -->
     <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
 
     <string name="title_pref_powersaving_data_screen_off">屏幕关闭移动数据活动</string>
     <string name="summary_pref_powersaving_data_screen_off">屏幕关闭后移动数据状态</string>
@@ -96,12 +100,16 @@
     <string name="about_aokp">关于 AOKP</string>
 
     <!-- General UI 常规界面 -->
+    <string name="bootani_cat">开机动画</string>
+    <string name="navbar_cat">导航栏</string>
+    <string name="notification_cat">通知栏</string>
     <string name="enable_volume_options">启用音量面板</string>
     <string name="status_bar_notif_count_title">显示通知数量</string>
     <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
     <string name="disable_bootanimation_title">禁用开机动画</string>
     <string name="custom_bootanimation_title">自定义开机动画</string>
     <string name="custom_bootanimation_summary">从SD卡选择开机动画的ZIP文件，原开机动画将备份在/system/media目录</string>
+    <string name="install_file_manager_error">未找到可选择 ZIP 文件的应用程序，请至少安装一款文件管理程序。</string>
     <string name="notification_wallpaper_title">选择通知栏背景</string>
     <string name="notification_wallpaper_summary">在本页面按菜单键可选择重置背景壁纸</string>
     <string name="notif_wallpaper_alpha_title">通知栏背景透明度</string>
@@ -117,6 +125,42 @@
     <string name="recent_kill_all_summary">在系统的近期任务界面显示“全部结束”按钮（将重启用户界面）</string>
     <string name="kill_app_longpress_back">长按返回键结束程序</string>
     <string name="kill_app_longpress_back_summary">长时间按住返回键可以强行结束当前程序</string>
+    <string name="tablet_ui">强制使用平板界面</string>
+    <string name="tablet_ui_summary">可强制使用平板设备专用的界面（需重启）</string>
+    <string name="bootanimation_preview">预览开机动画</string>
+    <string name="apply">应用</string>
+    <string name="creating_preview">正在创建预览...</string>
+    <string name="error_reading_zip_file">读取 ZIP 文件错误</string>
+    <string name="error_creating_preview">创建预览错误</string>
+
+    <!-- LCD Density 密度 -->
+    <string name="lcd_density_title">LCD 密度</string>
+    <string name="lcd_density_summary">未知</string>
+    <string name="current_lcd_density">"当前 LCD 密度："</string>
+    <string name="lcd_density_wizard">LCD 密度设置向导</string>
+    <string name="follow_through_title">务必遵循!</string>
+    <string name="follow_through_summary">确保一步一步完成</string>
+    <string name="stock_density_title">1. 改变密度为默认值</string>
+    <string name="stock_density_summary">平板以及旧款电话 160，大多数电话 240，Galaxy Nexus 使用 320 为默认值</string>
+    <string name="stock_density_changed_summary">"密度设置为："</string>
+    <string name="reboot_title">2. 点我重启</string>
+    <string name="reboot_summary">回到此菜单，完成其余的步骤</string>
+    <string name="clear_market_data_title">3. 清理Play商店数据</string>
+    <string name="clear_market_data_cleared">Play商店数据已清除</string>
+    <string name="clear_market_data_donot_cleared">"Play商店数据无法清除，请手动清除！"</string>
+    <string name="open_market_title">4. 打开Play商店选择接受</string>
+    <string name="open_market_summary">然后回到此菜单</string>
+    <string name="open_market_summary_could_not_open">"无法打开Play商店！如果你确定已经安装，请手动打开。"</string>
+    <string name="custom_density_title">5. 再选择你需要的密度</string>
+    <string name="custom_density_summary">如果你遇到市场兼容问题，回到这里，重复步骤</string>
+    <string name="custom_density_summary_invalid">"无效的密度！"</string>
+    <string name="custom_density">自定义</string>
+    <string name="set_custom_density_title">设置自定义密度</string>
+    <string name="set_custom_density_set">设置</string>
+    <string name="custom_density_dialog_title">"警告！"</string>
+    <string name="custom_density_dialog_summary">"改变 LCD 密度可能导致应用程序意外关闭。如果你遇到应用程序不兼容的情况请回到这里，重新从第一步开始。"</string>
+    <string name="custom_density_dialog_button_got">确定改变！</string>
+    <string name="custom_density_dialog_button_reboot">立即重启</string>
 
     <!-- Statusbar | Toggles 状态栏|开关-->
     <string name="toggle_style_title">开关风格</string>
@@ -183,6 +227,8 @@
     <string name="hide_signal_summary">当信号发生变化时生效</string>
     <string name="wifi_signal_style">WiFi 信号显示风格</string>
     <string name="wifi_signal_color_title">WiFi 信号颜色</string>
+    <string name="alt_signal_title">更改信号布局</string>
+    <string name="alt_signal_summary">使用网络与信号分离的布局（姜饼风格）</string>
 
     <!-- Color Picker 颜色选择器-->
     <string name="dialog_color_picker">颜色选择器</string>
@@ -211,6 +257,7 @@
     <string name="navbar_action_recents">近期任务</string>
     <string name="navbar_action_search">搜索</string>
     <string name="navbar_action_menu">菜单</string>
+    <string name="navbar_action_ime">打开输入法选择器</string>
     <string name="navbar_action_kill">结束程序</string>
     <string name="navbar_action_power">电源</string>
     <string name="navbar_action_notifications">通知栏</string>
@@ -239,6 +286,31 @@
     <string name="glow_times_superquick">超快</string>
     <string name="glow_times_quick">快</string>
     <string name="glow_times_normal">正常</string>
+
+    <!-- Nav Ring Targets 导航环目标 -->
+    <string name="navbar_ring_cat">导航环目标</string>
+    <string name="interface_softkey_settings">按钮设置</string>
+    <string name="interface_softkeys_pref_default_title">未选择程序</string>
+    <string name="interface_softkeys_pref_default_summary">点击设置按钮选择一个想要在长按时出现的程序</string>
+    <string name="interface_softkeys_activity_dialog_title">选择程序</string>
+    <string name="interface_softkeys_reboot_title">重启菜单</string>
+    <string name="interface_softkeys_screenshot_title">屏幕截图</string>
+    <string name="interface_softkeys_screenoff_title">关闭屏幕</string>
+    <string name="interface_softkeys_ime_switcher_title">打开输入法选择器</string>
+    <string name="interface_softkeys_ring_vib_title">铃声/振动</string>
+    <string name="interface_softkeys_ring_silent_title">铃声/静音</string>
+    <string name="interface_softkeys_ring_vib_silent_title">铃声/振动/静音</string>
+    <string name="interface_softkeys_kill_process_title">强行结束程序</string>
+    <string name="interface_softkey_package_removed">找不到之前选择的程序</string>
+    <string name="interface_navring_settings_title">导航环</string>
+    <string name="interface_navring_settings_summary">自定义导航环应用程序</string>
+    <string name="title_navring_amount">导航环目标数量</string>
+    <string name="summary_navring_amount">你想显示多少个导航环目标？\n*改变此选项将重置当前目标程序并重启用户界面*</string>
+    <string name="interface_navring_custom_pref_summary">触摸并移动到目标上松开时将运行 </string>
+    <string name="interface_navring_pref_default_summary">点击选择一个自定义程序用于导航环目标</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">导航环目标</string>
+    <string name="navbar_ring">自定义导航环目标</string>
 
     <!-- LED 灯光 -->
     <string name="led_on">LED 点亮</string>
@@ -287,27 +359,35 @@
     <string name="title_phone_flip_mode">来电响铃静音</string>
 
     <!-- Lockscreen 锁屏 -->
+    <string name="lockscreen_security_cat">安全</string>
+    <string name="lockscreen_layout_cat">布局</string>
+    <string name="lockscreen_music_cat">音乐</string>
+    <string name="lockscreen_weather_cat">天气</string>
+    <string name="lockscreen_calendar_cat">日历</string>
+
     <string name="lockscreen_quick_unlock_control_title">快速密码解锁</string>
     <string name="lockscreen_quick_unlock_control_summary">在输入密码后无需点击确认直接解锁</string>
     <string name="lockscreen_menu_unlock_title">菜单键解锁</string>
     <string name="lockscreen_menu_unlock_summary">通过菜单键解锁屏幕</string>
+    <string name="lockscreen_auto_rotate_title">允许锁屏时旋转</string>
+    <string name="lockscreen_auto_rotate_summary">允许在锁屏状态时旋转屏幕，该选项独立生效，与显示界面的自动旋转无关。</string>
     <string name="lockscreen_battery_title">锁屏电量百分比</string>
     <string name="lockscreen_battery_summary">总是在锁屏中显示电量百分比</string>
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">使用音量键唤醒设备</string>
     <string name="volume_music_controls_title">音量键控制音乐</string>
     <string name="volume_music_controls_summary">锁屏时长按音量键可以切换歌曲，当音乐正在播放时音量键唤醒功能无效。</string>
+    <string name="lockscreen_stock_music_layout_title">原生音乐布局</string>
+    <string name="lockscreen_stock_music_layout_summary">当音乐播放时使用原生布局</string>
     <string name="lockscreen_wallpaper_title">选择锁屏壁纸</string>
     <string name="lockscreen_wallpaper_summary">在本页面按菜单键可选择重置锁屏壁纸</string>
     <string name="lockscreen_text_color_title">锁屏文字颜色</string>
     <string name="title_lockscreen_user_timeout_override">延时锁定屏幕</string>
     <string name="summary_lockscreen_user_timeout_override">在手动关闭屏幕后，使用安卓系统的延时设置进行屏幕锁定。默认的设置为当设备超时自动进入待机状态时，才会根据系统的延时设定进行锁定操作。</string>
-    <string name="lockscreen_weather_cat">天气</string>
     <string name="lockscreen_weather_title">启用</string>
     <string name="lockscreen_weather_summary">锁屏中显示天气，你需要在ROM控制中开启天气服务</string>
     <string name="lockscreen_weather_type_title">锁屏天气风格</string>
     <string name="lockscreen_weather_type_summary">选择可视化风格或文字风格的天气信息</string>
-    <string name="lockscreen_calendar_cat">日历</string>
     <string name="lockscreen_calendar_title">启用</string>
     <string name="lockscreen_calendar_summary">在锁屏界面显示日历</string>
     <string name="lockscreen_calendar_sources_title">日历来源</string>
@@ -459,5 +539,36 @@
     <string name="fast_charge_notification_title">快速充电已启用！</string>
     <string name="fast_charge_notification_message">设备正处于“仅充电”状态！</string>
     <string name="prefcat_other_tweaks">其它微调</string>
+    <string name="performance_daily_reboot_title">每日重启</string>
+    <string name="performance_daily_reboot_summary">重启预定于 %1$s</string>
+    <string name="performance_daily_reboot_summary_unscheduled">未预定时间</string>
+
+    <!-- Custom vibrations 自定义振动-->
+    <string name="vibrations">振动</string>
+    <string name="defaultvibrationname">"'默认'"</string>
+    <string name="vib_new">新建/重置</string>
+    <string name="vib_load">读取</string>
+    <string name="vib_rec">录制</string>
+    <string name="vib_TAP">点我！</string>
+    <string name="vib_stop">停止</string>
+    <string name="vib_play">预览</string>
+    <string name="vib_save">保存</string>
+    <string name="vib_del">删除</string>
+
+    <string name="vib_dialog_text_entry">保存振动</string>
+    <string name="vib_dialog_name">名称：</string>
+    <string name="vib_cur_loaded_title">读取：</string>
+    <string name="help">帮助</string>
+    <string name="vibration_detailed_help">仅需5步，你就可以创建自定义的振动效果：\n
+        - 点击“新建/重置”\n
+		- 点击“录制”\n
+		- 记录你每次点击“点我！”按钮时的振动效果并显示图形\n
+		- 点击“停止”\n
+		- 点击“保存”，输入名称并点击“确定”\n\n
+		你可以点击“播放”按钮来感受录制的振动效果。\n
+		如果你想更改已保存的振动效果，点击“读取”，选择一个已保存的振动效果，重新录制，然后再次保存（它将覆盖旧的内容，除非你输入了不同的名称）。\n
+		删除振动效果，只需点击“删除”，选择需要删除的振动效果并点击“删除”，默认振动效果无法删除。\n\n
+		你可以将自定义的振动效果用于来电：拨号程序/设置 或者 系统设置/声音\n
+		你可以将自定义的振动效果用于某个联系人：显示联系人后点击菜单键/设置振动效果</string>
 
 </resources>

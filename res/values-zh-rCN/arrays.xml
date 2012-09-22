@@ -75,13 +75,6 @@
         <item>总是显示按键</item>
         <item>需要时自动显示（默认隐藏）</item>
     </string-array>
-    <string-array name="navigation_bar_qty_entries">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
     <string-array name="navbar_button_entries">
         <item>主屏幕</item>
         <item>返回</item>
@@ -89,11 +82,32 @@
         <item>搜索</item>
         <item>菜单</item>
         <item>小部件</item>
+        <item>打开输入法选择器</item>
         <item>结束程序</item>
         <item>电源</item>
         <item>通知栏</item>
         <item>自定义程序</item>
         <item>空</item>
+    </string-array>
+        <string-array name="navring_dialog_entries">
+        <item>无</item>
+        <item>屏幕截图</item>
+        <item>打开输入法选择器</item>
+        <item>铃声/振动</item>
+        <item>铃声/静音</item>
+        <item>铃声/振动/静音</item>
+        <item>强行结束程序</item>
+        <item>关闭屏幕</item>
+        <item>Google Now</item>
+        <item>选择程序</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_entries">
+        <item>1 目标</item>
+        <item>2 目标</item>
+        <item>3 目标</item>
+        <item>4 目标</item>
+        <item>5 目标</item>
     </string-array>
     <string-array name="navigation_bar_width_entries">
         <item>42 dp (默认)</item>
@@ -131,12 +145,6 @@
     <string-array name="battery_bar_style_entries">
         <item>正常</item>
         <item>居中</item>
-    </string-array>
-    <string-array name="battery_bar_thickness_entries">
-        <item>1 dp</item>
-        <item>2 dp</item>
-        <item>3 dp</item>
-        <item>4 dp</item>
     </string-array>
 
     <!-- LED Values -->
@@ -264,14 +272,6 @@
         <item>5 天</item>
         <item>6 天</item>
         <item>1 周</item>
-    </string-array>
-
-    <string-array name="minfree">
-        <item>25mb</item>
-        <item>50mb</item>
-        <item>75mb</item>
-        <item>80mb</item>
-        <item>100mb</item>
     </string-array>
 
     <string-array name="less_notification_sounds_entries">

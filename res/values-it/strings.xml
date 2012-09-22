@@ -59,7 +59,7 @@
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Usa un\'applicazione personalizzata</string>
-    <string name="use_custom_app_summary">Usa un\'applicazione personalizzata invece che la finestra applicazioni recenti</string>
+    <string name="use_custom_app_summary">Usa un\'applicazione personalizzata della finestra applicazioni recenti</string>
     <string name="select_custom_app_title">Scegli un\'applicazione personalizzata</string>
     <string name="group_applications">Applicazioni</string>
 
@@ -69,12 +69,12 @@
     <string name="aokp_website_title">Sito AOKP</string>
     <string name="aokp_website_summary">www.aokp.co - Trova tutte le nuove uscite qui.</string>
     <string name="aokp_source_title">Codice sorgente AOKP</string>
-    <string name="aokp_source_summary">AOKP e\' completamente open source. Puoi sempre trovare il codice sorgente piu\' nuovo su github.com/aokp</string>
+    <string name="aokp_source_summary">AOKP e\' completamente open source. Puoi sempre trovare il codice sorgente piu\' aggiornato su github.com/aokp</string>
     <string name="aokp_review_title">Recensione codice AOKP</string>
-    <string name="aokp_review_summary">Instanza AOKP per la recensione e l\'invio di codice</string>
+    <string name="aokp_review_summary">Instanza AOKP per la recensione e l\'invio del codice</string>
     <string name="aokp_irc_title">Raggiungici su IRC</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">Circa AOKP</string>
+    <string name="about_aokp">Su AOKP</string>
     <string name="about_aokp_summary">@null</string>
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
@@ -170,7 +170,7 @@
     <string name="arrow_down">.</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
-    <string name="set">Set</string>
+    <string name="set">Imposta</string>
     <string name="ics_color">Holo</string>
 
     <!-- Navigation Bar -->
@@ -299,87 +299,87 @@
 
     <!-- Weather -->
     <string name="weather_enable">Attiva Meteo</string>
-    <string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
-    <string name="weather_use_custom_location">Use custom location</string>
-    <string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise network-location is used to determine your location.</string>
-    <string name="weather_custom_location_dialog_title">Set your location</string>
-    <string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
-    <string name="weather_custom_location_title">Custom location</string>
-    <string name="weather_show_location_title">Show location</string>
-    <string name="weather_show_location_summary">Show your location.</string>
-    <string name="weather_refresh_interval">Refresh interval</string>
-    <string name="weather_refresh_interval_minutes">" minutes"</string>
+    <string name="weather_enable_summary">In modo da recuperare le informazioni meteo e di visualizzarlo in tutta la ROM.</string>
+    <string name="weather_use_custom_location">Usa posizione personalizzata</string>
+    <string name="weather_use_custom_location_summary">Impostando una posizione personalizzata puoi risparmiare batteria. In caso contrario la posizione di rete viene utilizzata per determinare la tua posizione.</string>
+    <string name="weather_custom_location_dialog_title">Imposta la tua posizione.</string>
+    <string name="weather_custom_location_dialog_message">Assicurati di seguire gli esempi! Impostando una posizione non valida vi impedirà di ottenere gli aggiornamenti meteo e puo\' causare un comportamento imprevisto.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_title">Posizione personalizzata</string>
+    <string name="weather_show_location_title">Mostra posizione</string>
+    <string name="weather_show_location_summary">Mostra la tua posizione.</string>
+    <string name="weather_refresh_interval">Aggiorna intervallo</string>
+    <string name="weather_refresh_interval_minutes">" minuti"</string>
     <string name="weather_use_celcius">Unita\' metriche</string>
-    <string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
+    <string name="weather_use_celcius_summary">L\' attivazione di questa fara\' visualizzare la temperatura in gradi Celsius piuttosto che in Fahrenheit e velocita\' del vento in km / h piuttosto che mph.</string>
     <string name="weather_statusbar_style">Stile meteo barra di stato</string>
-    <string name="weather_start_custom_app">Start custom app</string>
-    <string name="weather_start_custom_app_summary">Start a custom app when clicking on the weather image.</string>
-    <string name="weather_custom_app_title">Custom app</string>
-    <string name="weather_custom_app_dialog_title">Choose your app</string>
+    <string name="weather_start_custom_app">Avvia app personalizzata</string>
+    <string name="weather_start_custom_app_summary">Avvia un app personalizzata cliccando sull\' immagine del meteo.</string>
+    <string name="weather_custom_app_title">App personalizzata</string>
+    <string name="weather_custom_app_dialog_title">Scegli la tua app</string>
     <string name="weather_custom_app_dialog_message">Package name for now.</string>
     <string name="weather_refreshing">Requesting weather update!</string>
-    <string name="weather_loc_warning_title">Cannot retrieve location!</string>
-    <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network."</string>
-    <string name="weather_loc_warning_positive">"Enable network location"</string>
-    <string name="weather_loc_warning_negative">"Don't enable."</string>
-    <string name="menu_weather_get_weather">Get weather</string>
+    <string name="weather_loc_warning_title">Impossibile recuperare la posizione!</string>
+    <string name="weather_loc_warning_msg">"Ottenere posizione dalla rete" e\' attualmente disattivato. Questo impossibilita ottenere il meteo per la posizione corrente. Si prega di impostare una posizione personalizzata o attivare "Ottenere la posizione dalla rete".</string>
+    <string name="weather_loc_warning_positive">"Attiva posizione di rete"</string>
+    <string name="weather_loc_warning_negative">"Non attivare."</string>
+    <string name="menu_weather_get_weather">Meteo</string>
 
     <!-- Weather Codes -->
     <string name="weather_0">Tornado</string>
-    <string name="weather_1">Tropical Storm</string>
-    <string name="weather_2">Hurricane</string>
-    <string name="weather_3">Severe Thunderstorms</string>
-    <string name="weather_4">Thunderstorms</string>
-    <string name="weather_5">Mixed Rain and Snow</string>
-    <string name="weather_6">Mixed Rain and Sleet</string>
-    <string name="weather_7">Mixed Snow and Sleet</string>
-    <string name="weather_8">Freezing Drizzle</string>
-    <string name="weather_9">Drizzle</string>
-    <string name="weather_10">Freezing Rain</string>
-    <string name="weather_11">Showers</string>
-    <string name="weather_12">Showers</string>
-    <string name="weather_13">Snow Flurries</string>
-    <string name="weather_14">Light Snow Showers</string>
-    <string name="weather_15">Blowing Snow</string>
-    <string name="weather_16">Snow</string>
-    <string name="weather_17">Hail</string>
-    <string name="weather_18">Sleet</string>
-    <string name="weather_19">Dust</string>
-    <string name="weather_20">Foggy</string>
-    <string name="weather_21">Haze</string>
-    <string name="weather_22">Smoky</string>
+    <string name="weather_1">Tempesta Tropicale</string>
+    <string name="weather_2">Uragano</string>
+    <string name="weather_3">Forti Temporali</string>
+    <string name="weather_4">Temporali</string>
+    <string name="weather_5">Pioggia mista e Neve</string>
+    <string name="weather_6">Pioggia mista e Nevischio</string>
+    <string name="weather_7">Neve mista e Nevischio</string>
+    <string name="weather_8">Pioggerella Congelata</string>
+    <string name="weather_9">Pioggerella</string>
+    <string name="weather_10">Pioggia Congelata</string>
+    <string name="weather_11">Acquazzone</string>
+    <string name="weather_12">Acquazzone</string>
+    <string name="weather_13">Nevicate</string>
+    <string name="weather_14">Leggere Nevicate</string>
+    <string name="weather_15">Tormente di Neve</string>
+    <string name="weather_16">Neve</string>
+    <string name="weather_17">Grandine</string>
+    <string name="weather_18">Nevischio</string>
+    <string name="weather_19">Polvere</string>
+    <string name="weather_20">Nebbioso</string>
+    <string name="weather_21">Foschia</string>
+    <string name="weather_22">Fumoso</string>
     <string name="weather_23">Blustery</string>
-    <string name="weather_24">Windy</string>
-    <string name="weather_25">Cold</string>
-    <string name="weather_26">Cloudy</string>
+    <string name="weather_24">Ventoso</string>
+    <string name="weather_25">Freddo</string>
+    <string name="weather_26">Nuvoloso</string>
     <!-- mostly cloudy (night) -->
-    <string name="weather_27">Mostly Cloudy</string>
+    <string name="weather_27">Prevalentemente Nuvoloso</string>
     <!-- mostly cloudy (day) -->
-    <string name="weather_28">Mostly Cloudy</string>
+    <string name="weather_28">Prevalentemente Nuvoloso</string>
     <!-- partly cloudy (night) -->
-    <string name="weather_29">Partly Cloudy</string>
+    <string name="weather_29">Parzialmente Nuvoloso</string>
     <!-- partly cloudy (day) -->
-    <string name="weather_30">Partly Cloudy</string>
+    <string name="weather_30">Parzialmente Nuvoloso</string>
     <!-- clear (night) -->
-    <string name="weather_31">Clear</string>
-    <string name="weather_32">Sunny</string>
+    <string name="weather_31">Chiaro</string>
+    <string name="weather_32">Soleggiato</string>
     <!-- fair (night) -->
-    <string name="weather_33">Fair</string>
+    <string name="weather_33">Bello</string>
     <!-- fair (day) -->
-    <string name="weather_34">Fair</string>
-    <string name="weather_35">Mixed Rain and Hail</string>
-    <string name="weather_36">Hot</string>
-    <string name="weather_37">Isolated Thunderstorms</string>
-    <string name="weather_38">Scattered Thunderstorms</string>
-    <string name="weather_39">Scattered Thunderstorms</string>
-    <string name="weather_40">Scattered Showers</string>
-    <string name="weather_41">Heavy Snow</string>
-    <string name="weather_42">Scattered Snow Showers</string>
-    <string name="weather_43">Scattered Snow Showers</string>
-    <string name="weather_44">Partly Cloudy</string>
-    <string name="weather_45">Thundershowers</string>
-    <string name="weather_46">Snow Showers</string>
-    <string name="weather_47">Isolated Thundershowers</string>
+    <string name="weather_34">Bello</string>
+    <string name="weather_35">Pioggia mista a Grandine</string>
+    <string name="weather_36">Caldo</string>
+    <string name="weather_37">Temporali Isolati</string>
+    <string name="weather_38">Temporali Sparsi</string>
+    <string name="weather_39">Temporali Sparsi</string>
+    <string name="weather_40">Acquazzoni Sparsi</string>
+    <string name="weather_41">Pesanti Nevicate</string>
+    <string name="weather_42">Nevicate Sparse</string>
+    <string name="weather_43">Nevicate Sparse</string>
+    <string name="weather_44">Parzialmente Nuvoloso</string>
+    <string name="weather_45">Rovesci Temporaleschi</string>
+    <string name="weather_46">Nevicate</string>
+    <string name="weather_47">Rovesci Sparsi</string>
     <!-- Forecase unavailable -->
     <string name="weather_3200"></string>
 
@@ -415,17 +415,17 @@
     <string name="pt_fast_charge_boot">Ricarica rapida</string>
     <string name="ps_fast_charge_boot">Attiva ricarica rapida all\'avvio</string>
     <string name="pt_volt_control">Voltage control</string>
-    <string name="ps_volt_control">Set voltages for each frequency</string>
-    <string name="not_supported">Your kernel does not support voltage control</string>
-    <string name="apply_values">Apply values</string>
-    <string name="freq">Frequency</string>
-    <string name="current">mV current</string>
-    <string name="saved">mV saved</string>
-    <string name="kernel">Kernel Tweaks (if supported)</string>
+    <string name="ps_volt_control">Imposta voltaggi per ciascuna frequenza</string>
+    <string name="not_supported">Il tuo kernel non supporta voltage control</string>
+    <string name="apply_values">Applica valori</string>
+    <string name="freq">Frequenza</string>
+    <string name="current">mV attuale</string>
+    <string name="saved">mV salvato</string>
+    <string name="kernel">Kernel Tweaks (se supportato)</string>
     <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
-    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
-    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
-    <string name="prefcat_other_tweaks">Other tweaks</string>
+    <string name="fast_charge_notification_title">Ricarica rapida ATTIVA!</string>
+    <string name="fast_charge_notification_message">Telefono in modalita\' solo-ricarica!</string>
+    <string name="prefcat_other_tweaks">Altri tweaks</string>
 
 </resources>
 

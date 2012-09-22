@@ -166,6 +166,7 @@
     <string name="clear_market_data_title">3. Clear market data</string>
     <string name="clear_market_data_cleared">Market data cleared</string>
     <string name="clear_market_data_donot_cleared">"Market data couldn't be cleared, please clear it yourself!"</string>
+    <string name="dpi">DPI</string>
     <string name="open_market_title">4. Open Market and hit accept</string>
     <string name="open_market_summary">Press back when done to return here.</string>
     <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>

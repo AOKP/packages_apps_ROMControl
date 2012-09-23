@@ -14,6 +14,7 @@
     <string name="general_ui">Általános felület</string>
     <string name="clock">Óra</string>
     <string name="battery">Akkumulátor</string>
+    <string name="signal">Jel</string>
     <string name="nav_bar">Navigációs sáv</string>
     <string name="power_menu">Kikapcsolási Menü</string>
     <string name="led_options">LED Opciók</string>
@@ -31,6 +32,7 @@
     <string name="title_statusbar_toggles">Állapotsáv Kapcsolók</string>
     <string name="title_statusbar_battery">Állapotsáv Akkumulátor</string>
     <string name="title_navbar">Navigációs sáv</string>
+    <string name="title_power_menu">Power Menü</string>
     <string name="title_led">LED Vezérlés</string>
     <string name="title_sound">Hang beállítások</string>
     <string name="title_lockscreens">Képernyőzár beállítások</string>
@@ -43,12 +45,15 @@
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
+    <string name="header_summary_signal">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
+    <string name="header_summary_vibrations">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Navigációs sáv alaphelyzetbe</string>
@@ -115,7 +120,9 @@
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
     <!-- General UI -->
-    <string name="enable_volume_options">Hang panel engedélyezése</string>
+     <string name="bootani_cat">Bootanimáció</string>
+    <string name="navbar_cat">Értesítési sáv</string>
+    <string name="notification_cat">Értesítés</string><string name="enable_volume_options">Hang panel engedélyezése</string>
     <string name="status_bar_notif_count_title">Értesítésí számláló</string>
     <string name="status_bar_notif_count_summary">Megjelenití az értesítések számát a navigációs sávon</string>
     <string name="disable_bootanimation_title">Bootanimáció tiltása</string>
@@ -132,9 +139,47 @@
     <string name="ime_switcher_title">Aktuális IME váltó</string>
     <string name="ime_switcher_summary">Állapotsoron, gépelés közben (újraindítás szükséges)</string>
     <string name="rotate_180_title">180 fokos forgatás engedélyezése</string>
-    <string name="rotate_180_summary">Engedélyezi a készülék megfordítását!</string>
+    <string name="rotate_180_summary">Engedélyezi a képernyő megfordítását!</string>
     <string name="recent_kill_all">Engedélyezi a "kill-all-button"-t</string>
     <string name="recent_kill_all_summary">Összes alkalmazás bezárását engedélyező gomb megjelenítése.</string>
+    <string name="kill_app_longpress_back">Vissza gombra kill</string>
+    <string name="kill_app_longpress_back_summary">Vissza gombra fogja bezárni a futó alkalmazást</string>
+    <string name="tablet_ui">Tábla mód</string>
+    <string name="tablet_ui_summary">Tábla módba fogja állítani (újra indítás szüksége)</string>
+    <string name="bootanimation_preview">Bootanimáció előnézet</string>
+    <string name="apply">Mehet</string>
+    <string name="creating_preview">Előnézet készítés...</string>
+    <string name="error_reading_zip_file">Hiba a zip olvasásakor</string>
+    <string name="error_creating_preview">Hiba az előnézet készítéskor</string>
+
+    <!-- LCD Density -->
+    <string name="lcd_density_title">LCD febontás</string>
+    <string name="lcd_density_summary">ismeretlen</string>
+    <string name="current_lcd_density">"Jelenlegi LCD felbontás: "</string>
+    <string name="lcd_density_wizard">LCD felbontás varázsló</string>
+    <string name="follow_through_title">Kövesd!</string>
+    <string name="follow_through_summary">Lépésről-lépésre haladj végig az utasításokon.</string>
+    <string name="stock_density_title">1. Állítsd a felbontást gyári értékre</string>
+    <string name="stock_density_summary">Táblák és régi telefonok 160. Legtöbb telefon 240. Galaxy Nexus 320.</string>
+    <string name="stock_density_changed_summary">"Felbontás állítva: "</string>
+    <string name="reboot_title">2. Újraindítás!</string>
+    <string name="reboot_summary">Újra indítás után folytasd a lépéseket!</string>
+    <string name="clear_market_data_title">3. Market adat törlése</string>
+    <string name="clear_market_data_cleared">Market adat törölve</string>
+    <string name="clear_market_data_donot_cleared">"Nem sikerült a törlés, kérlek csináld meg magadnak!"</string>
+    <string name="open_market_title">4. Nyísd meg a marketet és fogadd el.</string>
+    <string name="open_market_summary">Lépj ki és folytasd itt.</string>
+    <string name="open_market_summary_could_not_open">"Nem sikerült megnyitni a marketet! Ha telepítve van, nyisd meg."</string>
+    <string name="custom_density_title">5. Állítsd a felbontást amire akarod!</string>
+    <string name="custom_density_summary">Ha kompatibilitási problémák vannak, ismételd meg a lépéseket.</string>
+    <string name="custom_density_summary_invalid">"ELFOGADHATATLAN ÉRTÉK!"</string>
+    <string name="custom_density">egyedi</string>
+    <string name="set_custom_density_title">Egyedi felbontás beállítás</string>
+    <string name="set_custom_density_set">Beállítás</string>
+    <string name="custom_density_dialog_title">"FIGYELMEZTETÉS!"</string>
+    <string name="custom_density_dialog_summary">"A megváltoztatott LCD felbontás gondot okozhat némely alkalmazásnál. Abban az esetben kezd az első lépésnél."</string>
+    <string name="custom_density_dialog_button_got">Megvan!</string>
+    <string name="custom_density_dialog_button_reboot">Újraindítás most</string>
 
     <!-- Állapotsor | Kapcsolók -->
     <string name="toggle_style_title">Kapcsoló stílusa</string>
@@ -201,6 +246,8 @@
     <string name="hide_signal_summary">Frissíti mikor változik a jelerősség</string>
     <string name="wifi_signal_style">WiFi jel szöveg stílusa</string>
     <string name="wifi_signal_color_title">WiFi jel színe</string>
+    <string name="alt_signal_title">Alt jel elrendezés</string>
+    <string name="alt_signal_summary">Alternativ (GB) jel használata</string>
     
 
     <!-- Color Picker -->
@@ -230,6 +277,7 @@
     <string name="navbar_action_recents">Legutóbbiak</string>
     <string name="navbar_action_search">Keresés</string>
     <string name="navbar_action_menu">Menü</string>
+    <string name="navbar_action_ime">IME váltó megnyitása</string>
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Teljesítmény</string>
     <string name="navbar_action_notifications">Értesítések</string>
@@ -259,6 +307,32 @@
     <string name="glow_times_quick">Gyors</string>
     <string name="glow_times_normal">Normál</string>
 
+    <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">Navigációs sáv gyűrű esemény</string>
+    <string name="interface_softkey_settings">Softkey Beállítások</string>
+    <string name="interface_softkeys_pref_default_title">Nincs Aktivitás választva</string>
+    <string name="interface_softkeys_pref_default_summary">Éríntsd meg a beállitás ikont, hogy a hosszú nyomásra mi történjen</string>
+    <string name="interface_softkeys_activity_dialog_title">Aktivitás választás</string>
+    <string name="interface_softkeys_reboot_title">Újraindítás Menü</string>
+    <string name="interface_softkeys_screenshot_title">Képernyőkép</string>
+    <string name="interface_softkeys_screenoff_title">Képernyő KI</string>
+    <string name="interface_softkeys_ime_switcher_title">IME választó</string>
+    <string name="interface_softkeys_ring_vib_title">Csöngés/Rezgés kapcsoló</string>
+    <string name="interface_softkeys_ring_silent_title">Rezgés/Néma kapcsoló</string>
+    <string name="interface_softkeys_ring_vib_silent_title">Csöngés/Rezgés/Néma kapcsoló</string>
+    <string name="interface_softkeys_kill_process_title">Kill App</string>
+    <string name="interface_softkey_package_removed">A korábban kiválasztott csomag nem található</string>
+    <string name="interface_navring_settings_title">Navigációs sáv gyűrű</string>
+    <string name="interface_navring_settings_summary">Egyéni gyűrű alkalmazások szerkesztése</string>
+    <string name="title_navring_amount">Gyűrűk száma</string>
+    <string name="summary_navring_amount">Hány eseményt akarsz rajta? *A változtatás hatására alaphelyzetbe kerülnek az események és újra indul a SystemUI*</string>
+    <string name="interface_navring_custom_pref_summary">Esemény indításának engedélyezése </string>
+    <string name="interface_navring_pref_default_summary">Éríntsd meg a kivánt gyűrűt az eseményhez</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">Gyűrű események</string>
+    <string name="navbar_ring">Egyéni gyűrű események</string>
+
+
     <!-- LED -->
     <string name="led_on">LED Be</string>
     <string name="led_time_on">Bekapcsolás ideje</string>
@@ -280,7 +354,7 @@
     <string name="led_test_notification_message_note">".  Kapcsold ki a képernyőt, hogy lásd a LED-et. "</string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">LED világít töltés alatt (újraindítás szükséges)</string>
-    <string name="led_change_brightness">Change brightness</string>
+    <string name="led_change_brightness">Fényerő állítás</string>
     <string name="led_brightness_default">Alapértelmezett fényerő: 31</string>
 
     <!-- Sound -->
@@ -309,10 +383,17 @@
     <string name="title_phone_flip_mode">Telefon hívás némítás</string>
 
     <!-- Lockscreen -->
+    <string name="lockscreen_security_cat">Biztonság</string>
+    <string name="lockscreen_layout_cat">Elrendezés</string>
+    <string name="lockscreen_music_cat">Zene</string>
+    <string name="lockscreen_weather_cat">Időjárás</string>
+    <string name="lockscreen_calendar_cat">Naptár</string>
     <string name="lockscreen_quick_unlock_control_title">Gyors pin feloldás</string>
     <string name="lockscreen_quick_unlock_control_summary">Feloldás jelszó/pin segítségével enter nélkül</string>
     <string name="lockscreen_menu_unlock_title">Menü feloldás</string>
     <string name="lockscreen_menu_unlock_summary">Menü gombbal baló feloldás</string>
+    <string name="lockscreen_auto_rotate_title">Zárképernyő forgatásának engedélyezése</string>
+    <string name="lockscreen_auto_rotate_summary">Zárképernyő forog a készülék tájolása szerint. Ez független a kijelző Auto-forgatásástól.</string>
     <string name="lockscreen_battery_title">Zárképernyő akksi százalék</string>
     <string name="lockscreen_battery_summary">Mutatja a akksi százalékot a zárképernyőn</string>
     <string name="volume_rocker_wake_title">Hangerő feloldás</string>
@@ -324,12 +405,10 @@
     <string name="lockscreen_text_color_title">Zárképernyő szöveg szín</string>
     <string name="title_lockscreen_user_timeout_override">Vár a zárképernyőre</string>
     <string name="summary_lockscreen_user_timeout_override">Az Android késleltetésének használata a kijelző manuális kikapcs. után. Alapért. csak akkor használjuk a késleltetést, ha a kijelző magától kapcsol ki.</string>
-    <string name="lockscreen_weather_cat">Időjárás</string>
     <string name="lockscreen_weather_title">Engedélyez</string>
     <string name="lockscreen_weather_summary">Időjárás a zárképernyőn. RomControlban engedélyezni kell a mükődését.</string>
     <string name="lockscreen_weather_type_title">Zárképernyő időjárás stílusa</string>
     <string name="lockscreen_weather_type_summary">Grafikus vagy szöveges kijelzés</string>
-    <string name="lockscreen_calendar_cat">Naptár</string>
     <string name="lockscreen_calendar_title">Engedélyez</string>
     <string name="lockscreen_calendar_summary">Naptár események megjelenítése a zárképernyőn.</string>
     <string name="lockscreen_calendar_sources_title">Naptár forrása</string>
@@ -482,6 +561,35 @@
     <string name="fast_charge_warning">NEM LESZ KÉPES CSATLAKOZNI PC-HEZ ÚJRAINDÍTÁS UTÁN!\n\nAmig a gyors töltés be van kapcsolva, csak tölt!</string>
     <string name="fast_charge_notification_title">Gyors töltés BE!</string>
     <string name="fast_charge_notification_message">Telefon csak töltés módban!</string>
-    <string name="prefcat_other_tweaks">Egyéb tweakek</string>
+    <string name="prefcat_other_tweaks">Egyéb tweakek</string><string name="performance_daily_reboot_title">Napi újraindítás</string>
+    <string name="performance_daily_reboot_summary">Újraindítás ütemezése %1$s</string>
+    <string name="performance_daily_reboot_summary_unscheduled">Nem ütemezett</string>
+
+    <!-- Custom vibrations -->
+    <string name="vibrations">Rezgések</string>
+    <string name="vib_new">Új/Alaphelyzet</string>
+    <string name="vib_load">Betölt</string>
+    <string name="vib_rec">Felvétel</string>
+    <string name="vib_TAP">Érints!</string>
+    <string name="vib_stop">Stop</string>
+    <string name="vib_play">Lejátszás</string>
+    <string name="vib_save">Mentés</string>
+    <string name="vib_del">Törlés</string>
+
+    <string name="vib_dialog_text_entry">Rezgés mentése</string>
+    <string name="vib_dialog_name">Név:</string>
+    <string name="vib_cur_loaded_title">Betölött:</string>
+    <string name="help">Segítség</string>
+    <string name="vibration_detailed_help">Egyéni rezgési minták készítése 5 egyszerű lépésben:\n
+        - Érintsd Új/Alaphelyzet\n
+		- Érints Felvétel\n
+		- Rögzítsd a mintád nyomkodva az Érintés! gombot\n
+		- Érintsd Stop\n
+		- Érintsd a Mentést, nevezd el és nyomj OK\n\n
+		A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
+		Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented (felülírja, akkor is ha átnevezed).\n
+		Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
+		Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
+		Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
 
 </resources>

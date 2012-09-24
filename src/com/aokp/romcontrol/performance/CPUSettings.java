@@ -25,6 +25,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 
 import com.aokp.romcontrol.R;
 
@@ -78,6 +79,12 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         String availableFrequenciesLine = Helpers.readOneLine(STEPS);
         if (availableFrequenciesLine != null) {
             availableFrequencies = availableFrequenciesLine.split(" ");
+	    Arrays.sort(availableFrequencies, new Comparator<String>() {
+                @Override
+                public int compare(String object1, String object2) {
+                return Integer.valueOf(object1).compareTo(Integer.valueOf(object2));
+                }
+            });
         }
         int frequenciesNum = availableFrequencies.length - 1;
 

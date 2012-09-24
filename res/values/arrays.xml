@@ -176,6 +176,7 @@
         <item>**back**</item>
         <item>**recents**</item>
         <item>**search**</item>
+        <item>**screenshot**</item>
         <item>**menu**</item>
         <item>**widgets**</item>
         <item>**ime**</item>
@@ -269,17 +270,17 @@
         <item>24</item>
     </string-array>
     <string-array name="glow_times_entries" translatable="false">
-		<item>@string/glow_times_off</item>
-		<item>@string/glow_times_superquick</item>
-		<item>@string/glow_times_quick</item>
-		<item>@string/glow_times_normal</item>
-	</string-array>
-	<string-array name="glow_times_values" translatable="false">
-		<item>0|0</item>
-		<item>100|10</item>
-		<item>250|25</item>
-		<item>500|50</item>
-	</string-array>
+        <item>@string/glow_times_off</item>
+        <item>@string/glow_times_superquick</item>
+        <item>@string/glow_times_quick</item>
+        <item>@string/glow_times_normal</item>
+    </string-array>
+    <string-array name="glow_times_values" translatable="false">
+        <item>0|0</item>
+        <item>100|10</item>
+        <item>250|25</item>
+        <item>500|50</item>
+    </string-array>
     <string-array name="battery_bar_entries" translatable="false">
         <item>@string/dont_show</item>
         <item>@string/statusbar</item>
@@ -497,16 +498,16 @@
     </string-array>
 
     <string-array name="weather_statusbar_location_entries" translatable="false">
-		<item>@string/above_carrier_text</item>
-		<item>@string/weather_panel</item>
-		<item>@string/disabled</item>
-	</string-array>
+        <item>@string/above_carrier_text</item>
+        <item>@string/weather_panel</item>
+        <item>@string/disabled</item>
+    </string-array>
 
-	<string-array name="weather_statusbar_location_values" translatable="false">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-	</string-array>
+    <string-array name="weather_statusbar_location_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
     <string-array name="pref_lockscreen_weather_type_entries" translatable="false">
         <item>@string/weather_panel</item>

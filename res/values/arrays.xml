@@ -157,6 +157,7 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
     <string-array name="navbar_button_entries" translatable="false">
         <item>@string/home</item>
         <item>@string/back</item>
@@ -170,12 +171,14 @@
         <item>@string/notifications</item>
         <item>@string/custom_app</item>
         <item>@string/blank</item>
+
     </string-array>
     <string-array name="navbar_button_values" translatable="false">
         <item>**home**</item>
         <item>**back**</item>
         <item>**recents**</item>
         <item>**search**</item>
+        <item>**screenshot**</item>
         <item>**menu**</item>
         <item>**widgets**</item>
         <item>**ime**</item>

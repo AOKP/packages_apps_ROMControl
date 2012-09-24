@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.baked.romcontrol" >
+        package="com.baked.romcontrol">
 
     <original-package android:name="com.baked.romcontrol" />
 
@@ -138,12 +138,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".fragments.LockscreenTargets">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".fragments.Sound">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -168,10 +162,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.LockscreenTargets">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.HardwareKeys">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
         <activity

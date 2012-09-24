@@ -14,10 +14,13 @@
  * limitations under the License.
  */
 
-package com.baked.romcontrol.util;
+package com.baked.romcontrol.fragments;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -48,12 +51,13 @@ public class IconPicker {
     private Activity mParent;
     private Resources mResources;
     private OnIconPickListener mIconListener;
-    private static final String ICON_ACTION = "com.cyanogenmod.ACTION_PICK_ICON";
+    private static final String ICON_ACTION = "com.baked.romcontrol.ACTION_PICK_ICON";
     public static final String RESOURCE_NAME = "resource_name";
     public static final String PACKAGE_NAME = "package_name";
     public static final int REQUEST_PICK_SYSTEM = 0;
-    public static final int REQUEST_PICK_GALLERY = 1;
-    public static final int REQUEST_PICK_ICON_PACK = 2;
+    public static final int REQUEST_PICK_BAKED = 1;
+    public static final int REQUEST_PICK_GALLERY = 2;
+    public static final int REQUEST_PICK_ICON_PACK = 3;
 
     public interface OnIconPickListener {
         void iconPicked(int requestCode, int resultCode, Intent in);
@@ -71,18 +75,20 @@ public class IconPicker {
 
     public void pickIcon(final int fragmentId, final File image) {
         Intent iconPack = new Intent(ICON_ACTION);
-        ArrayList<String> items = new ArrayList<String>();
-        items.add(mResources.getString(R.string.icon_picker_system_icons_title));
-        items.add(mResources.getString(R.string.icon_picker_gallery_title));
+        final Map<String, Integer> items = new HashMap<String, Integer>();
+        items.put(mResources.getString(R.string.icon_picker_system_icons_title), REQUEST_PICK_SYSTEM);
+        items.put(mResources.getString(R.string.icon_picker_baked_icons_title), REQUEST_PICK_BAKED);
+        items.put(mResources.getString(R.string.icon_picker_gallery_title), REQUEST_PICK_GALLERY);
         ComponentName aInfo = iconPack.resolveActivity(mParent.getPackageManager());
         if (aInfo != null) {
-            items.add(mResources.getString(R.string.icon_picker_pack_title));
+            items.put(mResources.getString(R.string.icon_picker_pack_title), REQUEST_PICK_ICON_PACK);
         }
         new AlertDialog.Builder(mParent)
         .setTitle(R.string.icon_picker_title)
-        .setItems(items.toArray(new String[items.size()]), new DialogInterface.OnClickListener() {
+        .setItems(items.keySet().toArray(new String[items.size()]), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
-                showChosen(item, image, fragmentId);
+                ArrayList<Integer> values = new ArrayList<Integer>(items.values());
+                showChosen(values.get(item), image, fragmentId);
             }
         }).show();
     }
@@ -101,7 +107,24 @@ public class IconPicker {
     private void showChosen(final int type, File image, int fragmentId) {
         if (type == REQUEST_PICK_SYSTEM) {
             ListView listie = new ListView(mParent);
-            listie.setAdapter(new IconAdapter());
+            listie.setAdapter(new IconAdapter(type));
+            final Dialog dialog = new Dialog(mParent);
+            dialog.setTitle(R.string.icon_picker_choose_icon_title);
+            dialog.setContentView(listie);
+            listie.setOnItemClickListener(new OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                        int position, long id) {
+                    Intent in = new Intent();
+                    in.putExtra("resource_name", ((IconAdapter) parent.getAdapter()).getItemReference(position));
+                    mIconListener.iconPicked(type, Activity.RESULT_OK, in);
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+        } else if (type == REQUEST_PICK_BAKED) {
+            ListView listie = new ListView(mParent);
+            listie.setAdapter(new IconAdapter(type));
             final Dialog dialog = new Dialog(mParent);
             dialog.setTitle(R.string.icon_picker_choose_icon_title);
             dialog.setContentView(listie);
@@ -145,10 +168,15 @@ public class IconPicker {
         String[] labels;
         TypedArray icons;
 
-        public IconAdapter() {
+        public IconAdapter(int type) {
+        if (type == IconPicker.REQUEST_PICK_SYSTEM) {
             labels = mResources.getStringArray(R.array.lockscreen_icon_picker_labels);
             icons = mResources.obtainTypedArray(R.array.lockscreen_icon_picker_icons);
+        } else if (type == IconPicker.REQUEST_PICK_BAKED) {
+            labels = mResources.getStringArray(R.array.lockscreen_baked_icon_picker_labels);
+            icons = mResources.obtainTypedArray(R.array.lockscreen_baked_icon_picker_icons);
         }
+    }
 
         @Override
         public int getCount() {

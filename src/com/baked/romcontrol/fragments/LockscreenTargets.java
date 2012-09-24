@@ -54,15 +54,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.internal.widget.LockPatternUtils;
 import com.android.internal.widget.multiwaveview.GlowPadView;
 import com.android.internal.widget.multiwaveview.TargetDrawable;
-
 import com.baked.romcontrol.R;
-import com.baked.romcontrol.util.IconPicker;
-import com.baked.romcontrol.util.ShortcutPickHelper;
+import com.baked.romcontrol.BAKEDPreferenceFragment;
 import com.baked.romcontrol.Utils;
+import com.baked.romcontrol.fragments.IconPicker;
+import com.baked.romcontrol.fragments.ShortcutPickHelper;
 
-public class LockscreenTargets extends Fragment implements ShortcutPickHelper.OnPickListener,
+public class LockscreenTargets extends BAKEDPreferenceFragment implements ShortcutPickHelper.OnPickListener,
     GlowPadView.OnTriggerListener, IconPicker.OnIconPickListener {
 
     private GlowPadView mWaveView;
@@ -304,14 +305,14 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
     private void resetAll() {
         new AlertDialog.Builder(mActivity)
         .setTitle(R.string.lockscreen_target_reset_title)
-        .setIcon(android.R.drawable.ic_dialog_alert)
+        .setIconAttribute(android.R.attr.alertDialogIcon)
         .setMessage(R.string.lockscreen_target_reset_message)
         .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                initializeView("empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
-                        "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
-                        "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
-                        "component=com.android.gallery3d/com.android.camera.CameraLauncher;S.icon_resource=ic_lockscreen_camera_normal;end");
+                initializeView("empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;"
+                        + "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;"
+                        + "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;"
+                        + "component=com.android.gallery3d/com.android.camera.CameraLauncher;S.icon_resource=ic_lockscreen_camera_normal;end");
                 saveAll();
                 Toast.makeText(mActivity, R.string.lockscreen_target_reset, Toast.LENGTH_LONG).show();
             }
@@ -428,8 +429,10 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
             mDialogLabel.setText(EMPTY_LABEL);
             mDialogLabel.setTag(GlowPadView.EMPTY_TARGET);
             mDialogIcon.setImageResource(R.drawable.ic_empty);
-        } else if (requestCode == IconPicker.REQUEST_PICK_SYSTEM || requestCode == IconPicker.REQUEST_PICK_GALLERY
-                || requestCode == IconPicker.REQUEST_PICK_ICON_PACK) {
+        } else if (requestCode == IconPicker.REQUEST_PICK_SYSTEM ||
+                    requestCode == IconPicker.REQUEST_PICK_BAKED ||
+                    requestCode == IconPicker.REQUEST_PICK_GALLERY ||
+                    requestCode == IconPicker.REQUEST_PICK_ICON_PACK) {
             mIconPicker.onActivityResult(requestCode, resultCode, data);
         } else if (requestCode != Activity.RESULT_CANCELED && resultCode != Activity.RESULT_CANCELED) {
             mPicker.onActivityResult(requestCode, resultCode, data);
@@ -447,7 +450,8 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = target;
-        if ((target != 0 && (mIsScreenLarge || !mIsLandscape)) || (target != 2 && !mIsScreenLarge && mIsLandscape)) {
+        if ((target != 0 && (mIsScreenLarge || !mIsLandscape)) ||
+                    (target != 2 && !mIsScreenLarge && mIsLandscape)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
             builder.setTitle(R.string.lockscreen_target_edit_title);
             builder.setMessage(R.string.lockscreen_target_edit_msg);
@@ -532,7 +536,7 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
                 if (mImageTmp.exists()) {
                     mImageTmp.renameTo(mImage);
                 }
-                mImage.setReadOnly();
+                mImage.setReadable(true, false);
                 iconType = GlowPadView.ICON_FILE;
                 iconSource = mImage.toString();
                 ic = new BitmapDrawable(getResources(), BitmapFactory.decodeFile(mImage.toString()));
@@ -543,6 +547,11 @@ public class LockscreenTargets extends Fragment implements ShortcutPickHelper.On
                 return;
             }
         } else if (requestCode == IconPicker.REQUEST_PICK_SYSTEM) {
+            String resourceName = in.getStringExtra(IconPicker.RESOURCE_NAME);
+            ic = mResources.getDrawable(mResources.getIdentifier(resourceName, "drawable", "android")).mutate();
+            iconType = GlowPadView.ICON_RESOURCE;
+            iconSource = resourceName;
+        } else if (requestCode == IconPicker.REQUEST_PICK_BAKED) {
             String resourceName = in.getStringExtra(IconPicker.RESOURCE_NAME);
             ic = mResources.getDrawable(mResources.getIdentifier(resourceName, "drawable", "android")).mutate();
             iconType = GlowPadView.ICON_RESOURCE;

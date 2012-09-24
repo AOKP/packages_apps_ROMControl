@@ -2,6 +2,23 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <ListPreference
+        android:key="notification_wallpaper"
+        android:persistent="false"
+        android:dialogTitle="@string/notification_wallpaper_title"
+        android:title="@string/notification_wallpaper_title"
+        android:entries="@array/notification_background_entries"
+        android:entryValues="@array/notification_background_values" />
+
+    <Preference
+        android:key="notification_wallpaper_alpha"
+        android:title="@string/notif_wallpaper_alpha_title" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="expanded_clock_color"
+        android:title="@string/expanded_clock_color_title"
+        android:defaultValue="@android:color/holo_blue_light" />
+
     <Preference
         android:key="custom_carrier_label"
         android:title="@string/custom_carrier_label_title" />
@@ -17,23 +34,5 @@
         android:title="@string/status_bar_notif_count_title"
         android:summary="@string/status_bar_notif_count_summary"
         android:defaultValue="false" />
-
-    <ListPreference
-        android:key="notification_wallpaper"
-        android:persistent="false"
-        android:dialogTitle="@string/notification_wallpaper_title"
-        android:title="@string/notification_wallpaper_title"
-        android:entries="@array/notification_background_entries"
-        android:entryValues="@array/notification_background_values" />
-
-    <Preference
-        android:key="notification_wallpaper_alpha"
-        android:title="@string/notif_wallpaper_alpha_title" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="expanded_clock_color"
-        android:title="@string/expanded_clock_color_title"
-        android:defaultValue="@android:color/holo_blue_light" />
-
 
 </PreferenceScreen>

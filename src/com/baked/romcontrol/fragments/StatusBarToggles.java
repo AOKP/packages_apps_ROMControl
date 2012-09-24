@@ -17,6 +17,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -79,8 +80,7 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
         findPreference(PREF_BRIGHTNESS_LOC);
         mBrightnessLocation.setOnPreferenceChangeListener(this);
         mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                .getContentResolver(),
-        Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 1)));
+                .getContentResolver(),Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 1)));
 
         mToggleStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
         mToggleStyle.setOnPreferenceChangeListener(this);
@@ -119,6 +119,21 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
         mLayout = findPreference("toggles");
 
         mResetToggles = findPreference("reset_toggles");
+
+        if (isTablet) {
+            mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                    .getContentResolver(),Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mBrightnessLocation);
+            mBtnBackground.setInitValue((int) (btnBgAlpha * 0));
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mBtnBackground);
+        }
+        if (mTablet) {
+            mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                    .getContentResolver(),Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mBrightnessLocation);
+            mBtnBackground.setInitValue((int) (btnBgAlpha * 0));
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mBtnBackground);
+        }
 
     }
 
@@ -439,7 +454,7 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
         if (clusterfuck == null) {
             Log.e(TAG, "clusterfuck was null");
             // return null;
-            clusterfuck = "WIFI|BT|GPS|ROTATE|VIBRATE|SYNC|SILENT";
+            clusterfuck = "WIFI|BT|GPS|ROTATE|SYNC|SILENT";
         }
 
         String[] togglesStringArray = clusterfuck.split("\\|");

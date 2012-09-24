@@ -177,11 +177,23 @@ public class Navbar extends BAKEDPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
-        if (isTablet) {
+        if (mTablet) {
+            prefs.removePreference(menuDisplayLocation);
             prefs.removePreference(mNavBarMenuDisplay);
-            prefs.removePreference(mNavigationBarHeight);
-            prefs.removePreference(mNavigationBarHeightLandscape);
-            prefs.removePreference(mNavigationBarWidth);
+            prefs.removePreference(mNavBarButtonQty);
+            prefs.removePreference((PreferenceGroup) findPreference("navbar_buttons"));
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeight);
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeightLandscape);
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarWidth);
+        }
+        if (isTablet) {
+            prefs.removePreference(menuDisplayLocation);
+            prefs.removePreference(mNavBarMenuDisplay);
+            prefs.removePreference(mNavBarButtonQty);
+            prefs.removePreference((PreferenceGroup) findPreference("navbar_buttons"));
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeight);
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeightLandscape);
+            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarWidth);
         }
         refreshSettings();
         setHasOptionsMenu(true);
@@ -368,12 +380,10 @@ public class Navbar extends BAKEDPreferenceFragment implements
             case DIALOG_NAVBAR_HEIGHT_REBOOT:
                 return new AlertDialog.Builder(getActivity())
                         .setTitle(getResources().getString(R.string.navbar_height_dialog_title))
-                        .setMessage(
-                                getResources().getString(R.string.navbar_height_dialog_summary))
+                        .setMessage(getResources().getString(R.string.navbar_height_dialog_summary))
                         .setCancelable(false)
-                        .setNeutralButton(
-                                getResources()
-                                        .getString(R.string.navbar_height_dialog_button_later),
+                        .setNeutralButton(getResources().getString(
+                                R.string.navbar_height_dialog_button_later),
                                 new DialogInterface.OnClickListener() {
 
                                     @Override
@@ -381,9 +391,8 @@ public class Navbar extends BAKEDPreferenceFragment implements
                                         dialog.dismiss();
                                     }
                                 })
-                        .setPositiveButton(
-                                getResources().getString(
-                                        R.string.navbar_height_dialog_button_reboot),
+                        .setPositiveButton(getResources().getString(
+                                R.string.navbar_height_dialog_button_reboot),
                                 new DialogInterface.OnClickListener() {
 
                                     @Override
@@ -466,22 +475,16 @@ public class Navbar extends BAKEDPreferenceFragment implements
                 Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
 
-                Settings.System.putString(
-                        getContentResolver(),
+                Settings.System.putString(getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex],
-                        Uri.fromFile(
-                                new File(mContext.getFilesDir(), iconName)).getPath());
+                        Uri.fromFile(new File(mContext.getFilesDir(), iconName)).getPath());
 
                 File f = new File(selectedImageUri.getPath());
                 if (f.exists())
                     f.delete();
 
-                Toast.makeText(
-                        getActivity(),
-                        mPendingIconIndex
-                                + getResources().getString(
-                                        R.string.custom_app_icon_successfully),
-                        Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), mPendingIconIndex + getResources().getString(
+                        R.string.custom_app_icon_successfully), Toast.LENGTH_LONG).show();
                 refreshSettings();
             }
         } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
@@ -682,11 +685,8 @@ public class Navbar extends BAKEDPreferenceFragment implements
                 mPendingNavBarCustomAction.activitySettingName, uri)) {
             if (mPendingNavBarCustomAction.iconIndex != -1) {
                 if (bmp == null) {
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex],
-                                    "");
+                    Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
                 } else {
                     String iconName = getIconFileName(mPendingNavBarCustomAction.iconIndex);
                     FileOutputStream iconStream = null;
@@ -696,11 +696,9 @@ public class Navbar extends BAKEDPreferenceFragment implements
                         return; // NOOOOO
                     }
                     bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-                    Settings.System
-                            .putString(
-                                    getContentResolver(),
-                                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex],
-                                    Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
+                    Settings.System.putString(getContentResolver(),
+                            Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex],
+                            Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
                 }
             }
             mPendingNavBarCustomAction.preference.setSummary(friendlyName);

@@ -20,6 +20,7 @@
     <!-- height of an expanded list item in edit playlist mode -->
     <dimen name="expanded_height">128dip</dimen>
     <dimen name="header_icon_width">28dp</dimen>
+    <!-- Lockscreen targets -->
     <dimen name="shortcut_picker_left_padding">70dip</dimen>
 
     <dimen name="navigation_bar_48">48.0dip</dimen>

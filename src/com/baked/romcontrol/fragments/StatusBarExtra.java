@@ -11,6 +11,7 @@ import java.net.URISyntaxException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -42,9 +43,10 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-import android.widget.EditText;
+import android.widget.Toast;
 
 import com.baked.romcontrol.R;
 import com.baked.romcontrol.BAKEDPreferenceFragment;
@@ -67,11 +69,6 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     private static final String PREF_EXPANDED_CLOCK_COLOR = "expanded_clock_color";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
-    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
-    private static final int SELECT_ACTIVITY = 4;
-    private static final int SELECT_WALLPAPER = 5;
-
-    private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mShowImeSwitcher;
@@ -81,6 +78,8 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     ColorPickerPreference mExpandedClockColor;
 
     private Activity mActivity;
+    private File wallpaperImage;
+    private File wallpaperTemporary;
 
     private int seekbarProgress;
 
@@ -111,6 +110,9 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         mNotificationBackground = (ListPreference) findPreference(PREF_NOTIFICATION_WALLPAPER);
         mNotificationBackground.setOnPreferenceChangeListener(this);
 
+        wallpaperImage = new File(mActivity.getFilesDir()+"/notifwallpaper");
+        wallpaperTemporary = new File(mActivity.getCacheDir()+"/notifwallpaper.tmp");
+
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
         mExpandedClockColor = (ColorPickerPreference) findPreference(PREF_EXPANDED_CLOCK_COLOR);
@@ -126,20 +128,18 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     }
 
     private void updateCustomBackgroundSummary() {
-        String wallpaperPath = "/data/data/com.baked.romcontrol/files/notification_wallpaper.jpg";
-        File file = new File(wallpaperPath);
         int resId;
         String value = Settings.System.getString(getContentResolver(),
                 Settings.System.NOTIF_BACKGROUND);
-        if (file.exists()) {
-            resId = R.string.notif_background_custom_image;
-            mNotificationBackground.setValueIndex(1);
-        } else if (value != null) {
-            resId = R.string.notif_background_color_fill;
-            mNotificationBackground.setValueIndex(0);
-        } else {
+        if (value == null) {
             resId = R.string.notif_background_default;
             mNotificationBackground.setValueIndex(2);
+        } else if (value.isEmpty()) {
+            resId = R.string.notif_background_custom_image;
+            mNotificationBackground.setValueIndex(1);
+        } else {
+            resId = R.string.notif_background_color_fill;
+            mNotificationBackground.setValueIndex(0);
         }
         mNotificationBackground.setSummary(getResources().getString(resId));
     }
@@ -263,7 +263,6 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
                     Settings.System.STATUSBAR_EXPANDED_CLOCK_COLOR, intHex);
             Log.e("BAKED", intHex + "");
 
-
       }  else if (preference == mNotificationBackground) {
             int indexOf = mNotificationBackground.findIndexOfValue(newValue.toString());
             switch (indexOf) {
@@ -291,42 +290,43 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
                             dialog.dismiss();
                         }
                     }).setView(colorView).show();
-                    deleteWallpaper();
                     return false;
                  //Launches intent for user to select an image/crop it to set as background
                 case 1:
-                    Display display = getActivity().getWindowManager().getDefaultDisplay();
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                    intent.setType("image/*");
+                    intent.putExtra("crop", "true");
+                    intent.putExtra("scale", true);
+                    intent.putExtra("scaleUpIfNeeded", false);
+                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+                    Display display = mActivity.getWindowManager().getDefaultDisplay();
                     int width = display.getWidth();
                     int height = display.getHeight();
                     Rect rect = new Rect();
-                    Window window = getActivity().getWindow();
+                    Window window = mActivity.getWindow();
                     window.getDecorView().getWindowVisibleDisplayFrame(rect);
                     int statusBarHeight = rect.top;
                     int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
                     int titleBarHeight = contentViewTop - statusBarHeight;
-
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                    intent.setType("image/*");
-                    intent.putExtra("crop", "true");
-                    boolean isPortrait = getResources()
-                            .getConfiguration().orientation
-                            == Configuration.ORIENTATION_PORTRAIT;
+                    boolean isPortrait = getResources().getConfiguration().orientation ==
+                            Configuration.ORIENTATION_PORTRAIT;
                     intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
                     intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
-                    intent.putExtra("outputX", width);
-                    intent.putExtra("outputY", height);
-                    intent.putExtra("scale", true);
-                    intent.putExtra("scaleUpIfNeeded", true);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getNotificationExternalUri());
-                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
 
-                    startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
-                    return true;
+                    try {
+                        wallpaperTemporary.createNewFile();
+                        wallpaperTemporary.setWritable(true, false);
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(wallpaperTemporary));
+                        intent.putExtra("return-data", false);
+                        mActivity.startActivityFromFragment(this, intent, REQUEST_PICK_WALLPAPER);
+                    } catch (IOException e) {
+                    } catch (ActivityNotFoundException e) {
+                    }
+                    return false;
                 //Sets background color to default
                 case 2:
                     Settings.System.putString(getContentResolver(),
                             Settings.System.NOTIF_BACKGROUND, null);
-                    deleteWallpaper();
                     updateCustomBackgroundSummary();
                     break;
             }
@@ -336,54 +336,26 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         return false;
     }
 
-    private void deleteWallpaper() {
-        mContext.deleteFile(WALLPAPER_NAME);
-    }
-
-    private Uri getNotificationExternalUri() {
-        File dir = mContext.getExternalCacheDir();
-        File wallpaper = new File(dir, WALLPAPER_NAME);
-
-        return Uri.fromFile(wallpaper);
-    }
-
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == REQUEST_PICK_WALLPAPER) {
-
-                FileOutputStream wallpaperStream = null;
-                try {
-                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_WORLD_READABLE);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
+        if (requestCode == REQUEST_PICK_WALLPAPER) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (wallpaperTemporary.exists()) {
+                    wallpaperTemporary.renameTo(wallpaperImage);
                 }
-
-                Uri selectedImageUri = getNotificationExternalUri();
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
-
+                wallpaperImage.setReadable(true, false);
+                Toast.makeText(mActivity, getResources().getString(R.string.
+                        lockscreen_background_result_successful), Toast.LENGTH_LONG).show();
                 Settings.System.putString(getContentResolver(),
-                        Settings.System.NOTIF_BACKGROUND, null);
-
+                        Settings.System.NOTIF_BACKGROUND,"");
                 updateCustomBackgroundSummary();
                 Helpers.restartSystemUI();
+            } else {
+                if (wallpaperTemporary.exists()) {
+                    wallpaperTemporary.delete();
+                }
+                Toast.makeText(mActivity, getResources().getString(R.string.
+                        lockscreen_background_result_not_successful), Toast.LENGTH_LONG).show();
             }
         }
-    }
-
-    public void copy(File src, File dst) throws IOException {
-        InputStream in = new FileInputStream(src);
-        FileOutputStream out = new FileOutputStream(dst);
-
-        // Transfer bytes from in to out
-        byte[] buf = new byte[1024];
-        int len;
-        while ((len = in.read(buf)) > 0) {
-            out.write(buf, 0, len);
-        }
-        in.close();
-        out.close();
     }
 }

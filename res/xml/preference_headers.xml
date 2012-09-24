@@ -8,9 +8,10 @@
         android:icon="@drawable/ic_rom_control"
         android:summary="@string/teambaked_about_summary" />
 
+    <!-- Performance -->
     <header
-        android:id="@+id/control_settings"
-        android:title="@string/header_control" />
+        android:id="@+id/header_performance"
+        android:title="@string/header_performance" />
 
     <header
         android:id="@+id/tools"
@@ -32,7 +33,7 @@
 
     <!-- System -->
     <header
-        android:id="@+id/system"
+        android:id="@+id/header_system"
         android:title="@string/header_system" />
 
     <header
@@ -70,9 +71,9 @@
         android:icon="@drawable/ic_rom_control_general"
         android:summary="@string/header_summary_system_extra" />
 
-    <!-- Lockscreen section -->
+    <!-- Lockscreen -->
     <header
-        android:id="@+id/lockscreen"
+        android:id="@+id/header_lockscreen"
         android:title="@string/header_lockscreen" />
 
     <header
@@ -103,9 +104,9 @@
         android:icon="@drawable/ic_rom_control_general"
         android:title="@string/header_lockscreen_extra_title" />
 
-    <!-- Statusbar section -->
+    <!-- Statusbar -->
     <header
-        android:id="@+id/statusbar"
+        android:id="@+id/header_statusbar"
         android:title="@string/header_statusbar" />
 
     <header

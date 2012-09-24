@@ -23,6 +23,10 @@
         android:entries="@array/lockscreen_background_entries"
         android:entryValues="@array/lockscreen_background_values"/>
 
+    <Preference
+        android:key="lockscreen_wallpaper_alpha"
+        android:title="@string/lockscreen_wallpaper_alpha_title" />
+
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="lockscreen_text_color"
         android:title="@string/lockscreen_text_color_title"

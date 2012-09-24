@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.baked.romcontrol.util;
+package com.baked.romcontrol.fragments;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.baked.romcontrol.R;
-import com.baked.romcontrol.util.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
+import com.baked.romcontrol.fragments.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
 
 public class ShortcutPickHelper {
 

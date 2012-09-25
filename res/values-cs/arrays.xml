@@ -60,6 +60,7 @@
 	</string-array>
   <string-array name="navigation_bar_width_entries">
 		<item>42 bodů (výchozí)</item>
+    <item>40 bodů</item>
 		<item>36 bodů</item>
 		<item>30 bodů</item>
 		<item>24 bodů</item>
@@ -67,6 +68,7 @@
   <string-array name="navigation_bar_height_entries">
 		<item>48 bodů (výchozí)</item>
 		<item>44 bodů</item>
+    <item>42 bodů</item>
     <item>40 bodů</item>
 		<item>36 bodů</item>
 		<item>30 bodů</item>
@@ -74,7 +76,9 @@
 	</string-array>
   <string-array name="navigation_bar_height_landscape_entries">
     <item>48 bodů (výchozí)</item>
+    <item>44 bodů</item>
     <item>42 bodů</item>
+    <item>40 bodů</item>
     <item>36 bodů</item>
     <item>30 bodů</item>
     <item>24 bodů</item>

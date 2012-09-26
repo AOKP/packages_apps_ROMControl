@@ -1,6 +1,7 @@
 
 package com.aokp.romcontrol.service;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
@@ -183,9 +184,15 @@ public class BootService extends Service {
                         .setWhen(System.currentTimeMillis())
                         .getNotification();
 
-                NotificationManager nm = (NotificationManager) getApplicationContext()
-                        .getSystemService(Context.NOTIFICATION_SERVICE);
-                nm.notify(1337, n);
+                SharedPreferences prefs = getSharedPreferences("prefs", Activity.MODE_PRIVATE);
+                if (prefs.getInt("launched", 0) == 0) {
+                        NotificationManager nm = (NotificationManager) getApplicationContext()
+                              .getSystemService(Context.NOTIFICATION_SERVICE);
+                        nm.notify(1337, n);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putInt("launched", 1);
+                        editor.commit();
+                }
             } else {
                 try {
                     File fastcharge = new File("/sys/kernel/fastcharge",

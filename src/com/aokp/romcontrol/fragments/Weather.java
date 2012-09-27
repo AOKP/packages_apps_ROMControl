@@ -34,6 +34,9 @@ import com.aokp.romcontrol.weather.WeatherPrefs;
 import com.aokp.romcontrol.weather.WeatherRefreshService;
 import com.aokp.romcontrol.weather.WeatherService;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Weather extends AOKPPreferenceFragment implements
         ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
@@ -99,7 +102,13 @@ public class Weather extends AOKPPreferenceFragment implements
 
         mCustomWeatherApp = (Preference) findPreference(WeatherPrefs.KEY_CUSTOM_APP);
         mCustomWeatherApp.setOnPreferenceChangeListener(this);
-        mCustomWeatherApp.setSummary(mPicker.getFriendlyNameForUri(WeatherPrefs.getCustomApp(mContext)));
+        Pattern r = Pattern.compile("^#Intent");
+        Matcher m = r.matcher(mPicker.getFriendlyNameForUri(WeatherPrefs.getCustomApp(mContext)));
+        if(m.find( )) {
+            mCustomWeatherApp.setSummary("");
+        } else {
+            mCustomWeatherApp.setSummary(mPicker.getFriendlyNameForUri(WeatherPrefs.getCustomApp(mContext)));
+        }
 
         setHasOptionsMenu(true);
 

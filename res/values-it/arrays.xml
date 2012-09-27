@@ -59,32 +59,6 @@
         <item>1</item>
     </string-array>
 
-    <!-- Generic toggle overlay. Should be set per device in overlay -->
-    <string-array name="available_toggles_entries" translatable="false">
-        <item>ROTATE</item>
-        <item>BT</item>
-        <item>GPS</item>
-        <item>WIFI</item>
-        <item>AIRPLANE_MODE</item>
-        <item>VIBRATE</item>
-        <item>SILENT</item>
-        <item>TORCH</item>
-        <item>SYNC</item>
-        <item>SWAGGER</item>
-    </string-array>
-    <string-array name="available_toggles_values">
-        <item>@string/toggle_auto_rotate</item>
-        <item>@string/toggle_bluetooth</item>
-        <item>@string/toggle_gps</item>
-        <item>@string/toggle_wifi</item>
-        <item>@string/toggle_airplane_mode</item>
-        <item>@string/toggle_vibrate</item>
-        <item>@string/toggle_silent</item>
-        <item>@string/toggle_torch</item>
-        <item>@string/toggle_sync</item>
-        <item>@string/toggle_swagger</item>
-    </string-array>
-
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries">
         <item>In alto</item>

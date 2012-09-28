@@ -85,6 +85,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
+    private static final String PREF_SHOW_OVERFLOW = "show_overflow";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -106,6 +107,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mKillAppLongpressBack;
     ImageView view;
     TextView error;
+    CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mTabletui;
     Preference mLcdDensity;
 
@@ -118,6 +120,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private int width;
     private String errormsg;
     private String bootAniPath;
+
 
     Random randomGenerator = new Random();
 
@@ -181,6 +184,11 @@ public class UserInterface extends AOKPPreferenceFragment {
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
+
+        mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
+        mShowActionOverflow.setChecked((Settings.System.getInt(getActivity().
+                        getApplicationContext().getContentResolver(),
+                        Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1));
 
         mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
         mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
@@ -258,6 +266,19 @@ public class UserInterface extends AOKPPreferenceFragment {
                         .runWaitFor("mv /system/media/bootanimation.backup /system/media/bootanimation.zip");
                 Helpers.getMount("ro");
                 preference.setSummary("");
+            }
+            return true;
+        } else if (preference == mShowActionOverflow) {
+            boolean enabled = mShowActionOverflow.isChecked();
+            Settings.System.putInt(getContentResolver(), Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    enabled ? 1 : 0);
+            // Show toast appropriately
+            if (enabled) {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
+                        Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
+                        Toast.LENGTH_LONG).show();
             }
             return true;
         } else if (preference == mTabletui) {

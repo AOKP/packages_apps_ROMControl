@@ -228,18 +228,21 @@
     </string-array>
     <string-array name="navigation_bar_width_entries" translatable="false">
         <item>@string/size_42_dp_default</item>
+        <item>@string/size_40_dp</item>
         <item>@string/size_36_dp</item>
         <item>@string/size_30_dp</item>
         <item>@string/size_24_dp</item>
     </string-array>
     <string-array name="navigation_bar_width" translatable="false">
         <item>42</item>
+        <item>40</item>
         <item>36</item>
         <item>30</item>
         <item>24</item>
     </string-array>
     <string-array name="navigation_bar_height_entries" translatable="false">
         <item>@string/size_48_dp_default</item>
+        <item>@string/size_42_dp</item>
         <item>@string/size_44_dp</item>
         <item>@string/size_40_dp</item>
         <item>@string/size_36_dp</item>
@@ -249,6 +252,7 @@
     <string-array name="navigation_bar_height" translatable="false">
         <item>48</item>
         <item>44</item>
+        <item>42</item>
         <item>40</item>
         <item>36</item>
         <item>30</item>
@@ -256,14 +260,18 @@
     </string-array>
     <string-array name="navigation_bar_height_landscape_entries" translatable="false">
         <item>@string/size_48_dp_default</item>
+        <item>@string/size_44_dp</item>
         <item>@string/size_42_dp</item>
+        <item>@string/size_40_dp</item>
         <item>@string/size_36_dp</item>
         <item>@string/size_30_dp</item>
         <item>@string/size_24_dp</item>
     </string-array>
     <string-array name="navigation_bar_height_landscape" translatable="false">
         <item>48</item>
+        <item>44</item>
         <item>42</item>
+        <item>40</item>
         <item>36</item>
         <item>30</item>
         <item>24</item>

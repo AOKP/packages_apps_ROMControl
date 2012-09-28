@@ -24,4 +24,14 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:key="show_overflow"
+            android:title="@string/show_overflow_title"
+            android:summary="@string/show_overflow_summary"
+            android:defaultValue="false"
+            />
 </LinearLayout>

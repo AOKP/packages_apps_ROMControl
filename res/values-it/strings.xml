@@ -426,6 +426,197 @@
     <string name="fast_charge_notification_title">Ricarica rapida ATTIVA!</string>
     <string name="fast_charge_notification_message">Telefono in modalita\' solo-ricarica!</string>
     <string name="prefcat_other_tweaks">Altri tweaks</string>
+    <string name="performance_daily_reboot_title">Daily reboot</string>
+    <string name="performance_daily_reboot_summary">Reboot scheduled at %1$s</string>
+    <string name="performance_daily_reboot_summary_unscheduled">Not scheduled</string>
+
+    <!-- Custom vibrations -->
+    <string name="vibrations">Vibrations</string>
+    <string name="defaultvibrationname">"'Default'"</string>
+    <string name="vib_new">New/Reset</string>
+    <string name="vib_load">Load</string>
+    <string name="vib_rec">Record</string>
+    <string name="vib_TAP">TAP!</string>
+    <string name="vib_stop">Stop</string>
+    <string name="vib_play">Play</string>
+    <string name="vib_save">Save</string>
+    <string name="vib_del">Delete</string>
+
+    <string name="vib_dialog_text_entry">Save vibration</string>
+    <string name="vib_dialog_name">Name:</string>
+    <string name="vib_cur_loaded_title">Loaded:</string>
+    <string name="help">Help</string>
+    <string name="vibration_detailed_help">You can create your custom vibration patterns in 5 simple steps:\n
+        - Tap New/Reset\n
+        - Tap Record\n
+        - Record your pattern by hitting the TAP! button\n
+        - Tap Stop\n
+        - Tap Save, enter a name and hit OK\n\n
+        You can check what you just recorded by tapping the Play button.\n
+        If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it will be overwritten, even if you choose another name).\n
+        To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default vibration.\n\n
+        You can choose the default vibration for your phone calls in Phone/Settings or in Settings/Sound.\n
+        You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
+
+    <!-- boot animation stuff -->
+    <string name="insult_jerk">Jerk!</string>
+    <string name="insult_protekk">ProTekk!</string>
+
+    <!-- clock stuff -->
+    <string name="right_clock">Right clock</string>
+    <string name="center_clock">Center clock</string>
+    <string name="no_clock">No clock</string>
+    <string name="dont_show">Don\'t show</string>
+    <string name="small_am_pm">Small AM/PM</string>
+    <string name="regular_am_pm">Regular AM/PM</string>
+    <string name="protekk_oclock">ProTekk O\'Clock</string>
+    <string name="small_weekday">Small weekday</string>
+    <string name="regular_weekday">Regular weekday</string>
+
+    <!-- toggle style -->
+    <string name="icon_only">Icon only</string>
+    <string name="text_only">Text only</string>
+
+    <!-- Brightness slider -->
+    <string name="on_top">On top</string>
+    <string name="on_the_bottom">On the bottom</string>
+
+    <!-- Battery styles -->
+    <string name="icon_with_text">Icon with text</string>
+    <string name="icon_with_centered_text">Icon with centered text</string>
+    <string name="circlemod">CircleMOD</string>
+
+    <!-- NavBar -->
+    <string name="right">Right</string>
+    <string name="left">Left</string>
+    <string name="both">Both</string>
+    <string name="default_jb_behavior">Default JB behavior</string>
+    <string name="always_show_invincible_icons">Always show invisible icons</string>
+    <string name="always_show">Always show</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">Default JB with invisible icons when hidden</string>
+    <string name="home">Home</string>
+    <string name="back">Back</string>
+    <string name="recents">Recents</string>
+    <string name="search">Search</string>
+    <string name="menu">Menu</string>
+    <string name="toggle_widgets">Toggle Widgets</string>
+    <string name="open_ime_switcher">Open IME Switcher</string>
+    <string name="kill_app">Kill app</string>
+    <string name="power">Power</string>
+    <string name="notifications">Notifications</string>
+    <string name="custom_app">Custom app</string>
+    <string name="blank">Blank</string>
+    <string name="none">None</string>
+    <string name="take_screenshot">Take Screenshot</string>
+    <string name="ring_vib">Ring/Vib</string>
+    <string name="ring_silent">Ring/Silent</string>
+    <string name="ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="screen_off">Screen Off</string>
+    <string name="google_now">Google Now</string>
+    <string name="select_application">Select Application</string>
+    <string name="one_target">1 target</string>
+    <string name="two_targets">2 targets</string>
+    <string name="three_targets">3 targets</string>
+    <string name="four_targets">4 targets</string>
+    <string name="five_targets">5 targets</string>
+    <string name="size_42_dp_default">42 dp (default)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (default)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="top_of_navbar">Top of navbar</string>
+    <string name="bottom_of_navbar">Bottom of navbar</string>
+    <string name="regular">Regular</string>
+    <string name="center_mirrored">Center-mirrored</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- LED Values -->
+    <string name="time_0_2_seconds">.2 seconds</string>
+    <string name="time_0_5_seconds">.5 seconds</string>
+    <string name="time_1_second">1 second</string>
+    <string name="time_1_5_seconds">1.5 seconds</string>
+    <string name="time_2_seconds">2 seconds</string>
+    <string name="time_2_5_seconds">2.5 seconds</string>
+    <string name="time_3_seconds">3 seconds</string>
+    <string name="time_3_5_seconds">3.5 seconds</string>
+    <string name="time_4_seconds">4 seconds</string>
+    <string name="time_4_5_seconds">4.5 seconds</string>
+    <string name="time_5_seconds">5 seconds</string>
+    <string name="time_5_5_seconds">5.5 seconds</string>
+    <string name="time_6_seconds">6 seconds</string>
+    <string name="time_7_seconds">7 seconds</string>
+    <string name="time_8_seconds">8 seconds</string>
+    <string name="time_9_seconds">9 seconds</string>
+    <string name="time_10_seconds">10 seconds</string>
+
+    <!-- LED brightness entries -->
+    <string name="low">low</string>
+    <string name="medium">medium</string>
+    <string name="high">high</string>
+    <string name="very_high">very high</string>
+    <string name="laserbeam">laserbeam</string>
+
+    <!-- Flip phone entries -->
+    <string name="disabled">Disabled</string>
+    <string name="enabled">Enabled</string>
+    <string name="time_0_seconds_instant_off">0 seconds (Instant Off)</string>
+    <string name="time_15_seconds">15 seconds</string>
+    <string name="time_30_seconds">30 seconds</string>
+    <string name="time_45_seconds">45 seconds</string>
+    <string name="time_1_minute">1 minute</string>
+    <string name="time_1_5_minutes">1.5 minutes</string>
+    <string name="time_2_minutes">2 minutes</string>
+    <string name="time_2_5_minutes">2.5 minutes</string>
+    <string name="time_3_minutes">3 minutes</string>
+    <string name="time_3_5_minutes">3.5 minutes</string>
+    <string name="time_4_minutes">4 minutes</string>
+    <string name="time_5_minutes">5 minutes</string>
+
+    <!-- weather arrays -->
+    <string name="off">Off</string>
+    <string name="time_10_minutes">10 minutes</string>
+    <string name="time_30_minutes">30 minutes</string>
+    <string name="time_45_minutes">45 minutes</string>
+    <string name="time_60_minutes">60 minutes</string>
+    <string name="time_2_hours">2 hours</string>
+    <string name="time_3_hours">3 hours</string>
+    <string name="time_4_hours">4 hours</string>
+    <string name="time_6_hours">6 hours</string>
+    <string name="time_8_hours">8 hours</string>
+    <string name="above_carrier_text">Above carrier text</string>
+    <string name="weather_panel">Weather panel</string>
+    <string name="text">Text</string>
+
+    <!-- lockscreen calendar arrays -->
+    <string name="time_1_day">1 day</string>
+    <string name="time_2_days">2 days</string>
+    <string name="time_3_days">3 days</string>
+    <string name="time_4_days">4 days</string>
+    <string name="time_5_days">5 days</string>
+    <string name="time_6_days">6 days</string>
+    <string name="time_1_week">1 week</string>
+
+    <!-- minfree -->
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+
+    <!-- less notification sounds -->
+    <string name="default_behavior">Default behavior</string>
+
+    <!-- signal style -->
+    <string name="show_signal_bars">Show signal bars</string>
+    <string name="show_signal_text">Show signal text</string>
+    <string name="show_with_dbm">Show with dBm</string>
 
 </resources>
 

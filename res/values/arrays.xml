@@ -32,7 +32,7 @@
     </string-array>
     <string-array name="clock_weekday_entries" translatable="false">
         <item>@string/dont_show</item>
-        <item>s@string/mall_weekday</item>
+        <item>@string/small_weekday</item>
         <item>@string/regular_weekday</item>
     </string-array>
     <string-array name="clock_weekday_values" translatable="false">

@@ -85,6 +85,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
+    private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -104,6 +105,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
+    CheckBoxPreference mUseAltResolver;
     ImageView view;
     TextView error;
     CheckBoxPreference mTabletui;
@@ -185,6 +187,10 @@ public class UserInterface extends AOKPPreferenceFragment {
         mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
         mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                         Settings.System.MODE_TABLET_UI, false));
+        
+        mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
+        mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
 
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -399,6 +405,11 @@ public class UserInterface extends AOKPPreferenceFragment {
         } else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
                     .startPreferenceFragment(new DensityChanger(), true);
+            return true;
+        } else if (preference == mUseAltResolver) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
+                    isCheckBoxPrefernceChecked(preference));
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

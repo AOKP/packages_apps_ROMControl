@@ -1,0 +1,10 @@
+Change-Id: I8bcb8192511633e4019caf14f5dd33042fb88119
+Code-Review+1: Will DeBerry <hillbillyhacker86@gmail.com>
+Verified+1: Will DeBerry <hillbillyhacker86@gmail.com>
+Code-Review+2: Dirk Rettschlag (MarcLandis) <dirk.rettschlag@gmail.com>
+Verified+1: Dirk Rettschlag (MarcLandis) <dirk.rettschlag@gmail.com>
+Submitted-by: Dirk Rettschlag (MarcLandis) <dirk.rettschlag@gmail.com>
+Submitted-at: Sat, 29 Sep 2012 17:30:24 +0100
+Reviewed-on: http://gerrit.sudoservers.com/3763
+Project: AOKP/packages_apps_ROMControl
+Branch: refs/heads/jb

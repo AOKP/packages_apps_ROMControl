@@ -93,6 +93,12 @@
             android:title="@string/lcd_density_title"
             android:summary="@string/lcd_density_summary" />
 
+        <CheckBoxPreference
+            android:key="use_alt_resolver"
+            android:title="@string/alt_resolver"
+            android:summary="@string/alt_resolver_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

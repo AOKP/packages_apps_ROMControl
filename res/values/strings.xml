@@ -152,6 +152,8 @@
     <string name="error_creating_preview">Error creating preview</string>
     <string name="multipane_ui">Enable Dual panel</string>
     <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
+    <string name="alt_resolver">Use Alt Default App Grid</string>
+    <string name="alt_resolver_summary">Use Alternate (GB style) Default App Picker</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>

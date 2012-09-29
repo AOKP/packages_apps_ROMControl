@@ -324,6 +324,7 @@
 
     <!-- LED Values -->
     <string-array name="led_entries" translatable="false">
+        <item>@string/time_0_seconds_off</item>
         <item>@string/time_0_2_seconds</item>
         <item>@string/time_0_5_seconds</item>
         <item>@string/time_1_second</item>
@@ -345,6 +346,7 @@
 
     <!-- values must be in milliseconds!~@@#E!@ -->
     <integer-array name="led_values" translatable="false">
+        <item>0</item>
         <item>200</item>
         <item>500</item>
         <item>1000</item>

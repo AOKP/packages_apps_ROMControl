@@ -678,6 +678,7 @@
     <string name="size_4_dp">4 dp</string>
 
     <!-- LED Values -->
+    <string name="time_0_seconds_off">Off</string>
     <string name="time_0_2_seconds">.2 seconds</string>
     <string name="time_0_5_seconds">.5 seconds</string>
     <string name="time_1_second">1 second</string>

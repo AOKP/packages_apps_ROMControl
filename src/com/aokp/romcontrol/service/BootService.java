@@ -155,21 +155,21 @@ public class BootService extends Service {
                             VoltageControlSettings.MV_TABLE3);
                 }
             }
+            boolean FChargeOn = preferences.getBoolean("fast_charge_boot", false);
+            try {
+                File fastcharge = new File("/sys/kernel/fast_charge",
+                        "force_fast_charge");
+                FileWriter fwriter = new FileWriter(fastcharge);
+                BufferedWriter bwriter = new BufferedWriter(fwriter);
+                bwriter.write(FChargeOn ? "1" : "0");
+                bwriter.close();
+                Intent i = new Intent();
+                i.setAction("com.aokp.romcontrol.FCHARGE_CHANGED");
+                c.sendBroadcast(i);
+            } catch (IOException e) {
+            }
 
-            if (preferences.getBoolean("fast_charge_boot", false)) {
-                try {
-                    File fastcharge = new File("/sys/kernel/fastcharge",
-                            "force_fast_charge");
-                    FileWriter fwriter = new FileWriter(fastcharge);
-                    BufferedWriter bwriter = new BufferedWriter(fwriter);
-                    bwriter.write("1");
-                    bwriter.close();
-                    Intent i = new Intent();
-                    i.setAction("com.aokp.romcontrol.FCHARGE_CHANGED");
-                    c.sendBroadcast(i);
-                } catch (IOException e) {
-                }
-
+            if (FChargeOn) {
                 // add notification to warn user they can only charge
                 CharSequence contentTitle = c
                         .getText(R.string.fast_charge_notification_title);
@@ -187,19 +187,6 @@ public class BootService extends Service {
                 NotificationManager nm = (NotificationManager) getApplicationContext()
                         .getSystemService(Context.NOTIFICATION_SERVICE);
                 nm.notify(1337, n);
-            } else {
-                try {
-                    File fastcharge = new File("/sys/kernel/fastcharge",
-                            "force_fast_charge");
-                    FileWriter fwriter = new FileWriter(fastcharge);
-                    BufferedWriter bwriter = new BufferedWriter(fwriter);
-                    bwriter.write("0");
-                    bwriter.close();
-                    Intent i = new Intent();
-                    i.setAction("com.aokp.romcontrol.FCHARGE_CHANGED");
-                    c.sendBroadcast(i);
-                } catch (IOException e) {
-                }
             }
 
             if (preferences.getBoolean("free_memory_boot", false)) {

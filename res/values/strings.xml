@@ -638,6 +638,7 @@
     <string name="back">Back</string>
     <string name="recents">Recents</string>
     <string name="search">Search</string>
+    <string name="screenshot">ScreenShot</string>
     <string name="menu">Menu</string>
     <string name="toggle_widgets">Toggle Widgets</string>
     <string name="open_ime_switcher">Open IME Switcher</string>

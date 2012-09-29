@@ -162,6 +162,7 @@
         <item>@string/back</item>
         <item>@string/recents</item>
         <item>@string/search</item>
+        <item>@string/screenshot</item>
         <item>@string/menu</item>
         <item>@string/toggle_widgets</item>
         <item>@string/open_ime_switcher</item>

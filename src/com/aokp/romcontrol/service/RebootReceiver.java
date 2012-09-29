@@ -1,5 +1,4 @@
-
-package com.aokp.romcontrol.performance;
+package com.aokp.romcontrol.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

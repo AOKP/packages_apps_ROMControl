@@ -1,5 +1,4 @@
-
-package com.aokp.romcontrol.performance;
+package com.aokp.romcontrol.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -25,16 +24,17 @@ import android.widget.TimePicker;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.service.DailyRebootScheduleService;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class OtherSettings extends AOKPPreferenceFragment implements
+public class PerformanceMisc extends AOKPPreferenceFragment implements
         OnSharedPreferenceChangeListener, OnPreferenceChangeListener {
 
-    public static final String TAG = "OtherSettings";
+    public static final String TAG = "PerformanceMisc";
 
     public static final String KEY_MINFREE = "free_memory";
     public static final String KEY_FASTCHARGE = "fast_charge_boot";
@@ -205,30 +205,30 @@ public class OtherSettings extends AOKPPreferenceFragment implements
             Intent schedule = new Intent(getActivity(),
                     DailyRebootScheduleService.class);
             getActivity().startService(schedule);
-            OtherSettings.this.updateRebootSummary();
+            PerformanceMisc.this.updateRebootSummary();
         }
     }
 
     public static boolean isDailyRebootEnabled(Context c) {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
-        return prefs.getBoolean(OtherSettings.KEY_DAILY_REBOOT, false);
+        return prefs.getBoolean(PerformanceMisc.KEY_DAILY_REBOOT, false);
     }
 
     public static int[] getUserSpecifiedRebootTime(Context c) {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
         int[] time = new int[2];
-        time[0] = prefs.getInt(OtherSettings.KEY_DAILY_REBOOT + "_hour", 1);
-        time[1] = prefs.getInt(OtherSettings.KEY_DAILY_REBOOT + "_minute", 0);
+        time[0] = prefs.getInt(PerformanceMisc.KEY_DAILY_REBOOT + "_hour", 1);
+        time[1] = prefs.getInt(PerformanceMisc.KEY_DAILY_REBOOT + "_minute", 0);
         return time;
     }
 
     public static void setUserSpecifiedRebootTime(Context c, int hour, int minutes) {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
-        prefs.edit().putInt(OtherSettings.KEY_DAILY_REBOOT + "_hour", hour).
-                putInt(OtherSettings.KEY_DAILY_REBOOT + "_minute", minutes).commit();
+        prefs.edit().putInt(PerformanceMisc.KEY_DAILY_REBOOT + "_hour", hour).
+                putInt(PerformanceMisc.KEY_DAILY_REBOOT + "_minute", minutes).commit();
     }
 
 }

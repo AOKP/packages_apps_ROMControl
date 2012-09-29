@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.performance;
+package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;

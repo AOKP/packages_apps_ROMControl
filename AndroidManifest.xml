@@ -128,14 +128,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".performance.Performance"
-            android:label="@string/title_performance" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".ShareToClipboard"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:icon="@drawable/ic_menu_clipboard"
@@ -180,6 +172,27 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".fragments.CPUSettings"
+            android:label="@string/title_cpu_settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.VoltageControlSettings"
+            android:label="@string/title_voltage_control_settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.PerformanceMisc"
+            android:label="@string/title_performance_misc_settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>
@@ -194,14 +207,14 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".performance.RebootReceiver"
+            android:name=".service.RebootReceiver"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.aokp.romcontrol.ACTION_DAILY_REBOOT" />
                 <action android:name="android.intent.action.SCREEN_OFF" />
             </intent-filter>
         </receiver>
-        <service android:name=".performance.DailyRebootScheduleService" />
+        <service android:name=".service.DailyRebootScheduleService" />
         <service android:name=".service.BootService" />
         <service android:name=".service.HeadphoneService" />
         <service android:name=".service.FlipService" />

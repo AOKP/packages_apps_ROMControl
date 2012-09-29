@@ -1,5 +1,4 @@
-
-package com.aokp.romcontrol.performance;
+package com.aokp.romcontrol.service;
 
 import android.app.AlarmManager;
 import android.app.IntentService;
@@ -16,6 +15,8 @@ import android.util.Log;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import com.aokp.romcontrol.fragments.PerformanceMisc;
 
 public class DailyRebootScheduleService extends IntentService {
 
@@ -57,12 +58,12 @@ public class DailyRebootScheduleService extends IntentService {
             return;
         }
 
-        if (OtherSettings.isDailyRebootEnabled(this)) {
+        if (PerformanceMisc.isDailyRebootEnabled(this)) {
             if (intent.hasExtra("reschedule")) {
                 if (rescheduledCount > 4) {
                     log("too many reschedule attempts, not rebooting today");
                     // reboot tomorrow!
-                    int[] rebootTime = OtherSettings.getUserSpecifiedRebootTime(this);
+                    int[] rebootTime = PerformanceMisc.getUserSpecifiedRebootTime(this);
                     Calendar cal = Calendar.getInstance();
                     boolean nextDay = cal.get(Calendar.HOUR_OF_DAY) > rebootTime[0]
                             && cal.get(Calendar.MINUTE) > rebootTime[1];
@@ -83,7 +84,7 @@ public class DailyRebootScheduleService extends IntentService {
                 if (rescheduledCount == 0) {
                     // regular schedule
                     rescheduledCount++;
-                    int[] rebootTime = OtherSettings.getUserSpecifiedRebootTime(this);
+                    int[] rebootTime = PerformanceMisc.getUserSpecifiedRebootTime(this);
                     Calendar cal = Calendar.getInstance();
                     boolean nextDay = cal.get(Calendar.HOUR_OF_DAY) >= rebootTime[0]
                             && cal.get(Calendar.MINUTE) >= rebootTime[1];
@@ -116,7 +117,7 @@ public class DailyRebootScheduleService extends IntentService {
     }
 
     private Date scheduleReboot() {
-        int[] rebootTime = OtherSettings.getUserSpecifiedRebootTime(this);
+        int[] rebootTime = PerformanceMisc.getUserSpecifiedRebootTime(this);
         Calendar cal = Calendar.getInstance();
         boolean nextDay = cal.get(Calendar.HOUR_OF_DAY) > rebootTime[0]
                 & cal.get(Calendar.MINUTE) > rebootTime[1];

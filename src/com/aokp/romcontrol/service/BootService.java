@@ -19,12 +19,11 @@ import java.io.IOException;
 import java.util.List;
 
 import com.aokp.romcontrol.R;
-
-import com.aokp.romcontrol.performance.CPUSettings;
-import com.aokp.romcontrol.performance.DailyRebootScheduleService;
-import com.aokp.romcontrol.performance.OtherSettings;
-import com.aokp.romcontrol.performance.Voltage;
-import com.aokp.romcontrol.performance.VoltageControlSettings;
+import com.aokp.romcontrol.Voltage;
+import com.aokp.romcontrol.fragments.CPUSettings;
+import com.aokp.romcontrol.fragments.PerformanceMisc;
+import com.aokp.romcontrol.fragments.VoltageControlSettings;
+import com.aokp.romcontrol.service.DailyRebootScheduleService;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.weather.WeatherRefreshService;
@@ -198,7 +197,7 @@ public class BootService extends Service {
                 }
             }
 
-            if (OtherSettings.isDailyRebootEnabled(c)) {
+            if (PerformanceMisc.isDailyRebootEnabled(c)) {
                 c.startService(
                         new Intent(c, DailyRebootScheduleService.class));
             }

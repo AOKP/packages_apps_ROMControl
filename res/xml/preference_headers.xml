@@ -102,16 +102,30 @@
 
 
     <header
-        android:id="@+id/tools"
-        android:title="@string/tools" />
+        android:id="@+id/performance"
+        android:title="@string/performance" />
 
-    <header android:icon="@drawable/ic_rom_control_performance"
-            android:title="@string/performance">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.aokp.romcontrol.performance.Performance"
-                android:targetPackage="com.aokp.romcontrol" />
-    </header>
+    <header
+        android:id="@+id/cpu_settings"
+        android:fragment="com.aokp.romcontrol.fragments.CPUSettings"
+        android:title="@string/cpu_settings"
+        android:summary="@string/header_summary_cpu_settings"
+        android:icon="@drawable/ic_rom_control_performance" />
+        
+
+    <header
+        android:id="@+id/voltage_control_settings"
+        android:fragment="com.aokp.romcontrol.fragments.VoltageControlSettings"
+        android:title="@string/voltage_control_settings"
+        android:summary="@string/header_summary_voltage_control_settings"
+        android:icon="@drawable/ic_rom_control_performance" />
+
+    <header
+        android:id="@+id/performance_misc_settings"
+        android:fragment="com.aokp.romcontrol.fragments.PerformanceMisc"
+        android:title="@string/performance_misc_settings"
+        android:summary="@string/header_summary_performance_misc_settings"
+        android:icon="@drawable/ic_rom_control_performance" />
 
 
 </preference-headers>

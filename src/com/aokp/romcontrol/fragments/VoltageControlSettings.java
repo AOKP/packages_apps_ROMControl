@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.performance;
+package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -44,6 +44,7 @@ import java.util.List;
 
 import com.aokp.romcontrol.R;
 
+import com.aokp.romcontrol.Voltage;
 import com.aokp.romcontrol.util.CMDProcessor;
 
 public class VoltageControlSettings extends Fragment {

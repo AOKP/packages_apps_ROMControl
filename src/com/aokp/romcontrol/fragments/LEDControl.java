@@ -50,7 +50,6 @@ import com.aokp.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
-import com.aokp.romcontrol.performance.CPUSettings.GovListener;
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 

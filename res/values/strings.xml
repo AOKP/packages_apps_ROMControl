@@ -22,8 +22,10 @@
     <string name="sound">Sound</string>
     <string name="lockscreen_options">Lockscreen</string>
     <string name="weather">Weather</string>
-    <string name="tools">Tools</string>
     <string name="performance">Performance</string>
+    <string name="cpu_settings">CPU Settings</string>
+    <string name="voltage_control_settings">Voltage Control</string>
+    <string name="performance_misc_settings">Misc Tweaks</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">About AOKP</string>
@@ -37,7 +39,9 @@
     <string name="title_lockscreens">Lockscreen Options</string>
     <string name="title_sound">Sound Settings</string>
     <string name="title_weather">Weather Settings</string>
-    <string name="title_performance">Performance Settings</string>
+    <string name="title_cpu_settings">CPU Settings</string>
+    <string name="title_voltage_control_settings">Voltage Control Settings</string>
+    <string name="title_performance_misc_settings">Other Performance Settings</string>
     <string name="title_clipboard_share">Share to Clipboard</string>
 
     <!-- Header Summaries -->
@@ -54,6 +58,9 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
+    <string name="header_summary_cpu_settings">@null</string>
+    <string name="header_summary_voltage_control_settings">@null</string>
+    <string name="header_summary_performance_misc_settings">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>

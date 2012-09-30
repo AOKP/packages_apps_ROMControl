@@ -499,15 +499,19 @@ public class Navbar extends AOKPPreferenceFragment implements
                     return; // NOOOOO
                 }
 
-                Uri selectedImageUri = data.getData();
-                Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
+                Uri selectedImageUri = getTempFileUri();
                 try {
+                    Log.e(TAG, "Selected image path: " + selectedImageUri.getPath());
                     Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
                 } catch (NullPointerException npe) {
                     Log.e(TAG, "SeletedImageUri was null.");
+                    super.onActivityResult(requestCode, resultCode, data);
+                    return;
                 }
-
+                Settings.System.putString(
+                        getContentResolver(),
+                        Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex], "");
                 Settings.System.putString(
                         getContentResolver(),
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingIconIndex],
@@ -742,6 +746,10 @@ public class Navbar extends AOKPPreferenceFragment implements
                         return; // NOOOOO
                     }
                     bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                    Settings.System
+                            .putString(
+                                    getContentResolver(),
+                                    Settings.System.NAVIGATION_CUSTOM_APP_ICONS[mPendingNavBarCustomAction.iconIndex], "");
                     Settings.System
                             .putString(
                                     getContentResolver(),

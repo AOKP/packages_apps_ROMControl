@@ -76,7 +76,6 @@ public class BootService extends Service {
                         "gov", null);
                 final String io = preferences.getString("io", null);
                 
-                Log.d("BOOT", "DEBUG: Got boot for ROM " + max + ", " + min + ", " + gov);
                 boolean mIsTegra3 = c.getResources().getBoolean(
                                         com.android.internal.R.bool.config_isTegra3);
                 int numOfCpu = 1;

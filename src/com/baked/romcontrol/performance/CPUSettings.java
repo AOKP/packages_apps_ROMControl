@@ -244,7 +244,6 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
             CMDProcessor cmd = new CMDProcessor();
             cmd.su.runWaitFor("busybox echo " + selected + " > " + IO_SCHEDULER);
             
-            Log.d(TAG, "DEBUG: Setting io " + selected);
             final SharedPreferences.Editor editor = preferences.edit();
             editor.putString(IO_PREF, selected);
             editor.commit();
@@ -289,7 +288,6 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         mMaxSpeedText.setText(toMHz(current));
         mMaxFreqSetting = current;
 
-        Log.d(TAG, "DEBUG: Setting max cpu " + current);
         final SharedPreferences.Editor editor = preferences.edit();
         editor.putString(MAX_CPU, current);
         editor.commit();

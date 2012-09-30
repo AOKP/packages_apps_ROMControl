@@ -21,6 +21,7 @@ import java.util.List;
 import com.baked.romcontrol.R;
 
 import com.baked.romcontrol.performance.CPUSettings;
+import com.baked.romcontrol.performance.OtherSettings;
 import com.baked.romcontrol.performance.Voltage;
 import com.baked.romcontrol.performance.VoltageControlSettings;
 import com.baked.romcontrol.util.CMDProcessor;
@@ -29,12 +30,14 @@ import com.baked.romcontrol.util.Helpers;
 public class BootService extends Service {
 
     public static boolean servicesStarted = false;
-    public static SharedPreferences preferences;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        new BootWorker().execute();
-        return START_NOT_STICKY;
+        if (intent == null) {
+            stopSelf();
+        }
+        new BootWorker(this).execute();
+        return START_STICKY;
     }
 
     @Override
@@ -44,10 +47,15 @@ public class BootService extends Service {
 
     class BootWorker extends AsyncTask<Void, Void, Void> {
 
+        Context c;
+
+        public BootWorker(Context c) {
+            this.c = c;
+        }
+
         @Override
         protected Void doInBackground(Void... args) {
-            Context c = getApplicationContext();
-            preferences = PreferenceManager.getDefaultSharedPreferences(c);
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
             final CMDProcessor cmd = new CMDProcessor();
 
             if (HeadphoneService.getUserHeadphoneAudioMode(c) != -1
@@ -67,6 +75,7 @@ public class BootService extends Service {
                 final String gov = preferences.getString(
                         "gov", null);
                 final String io = preferences.getString("io", null);
+                
                 Log.d("BOOT", "DEBUG: Got boot for ROM " + max + ", " + min + ", " + gov);
                 boolean mIsTegra3 = c.getResources().getBoolean(
                                         com.android.internal.R.bool.config_isTegra3);
@@ -146,27 +155,28 @@ public class BootService extends Service {
                 }
             }
 
-            if (preferences.getBoolean("fast_charge_boot", false)) {
-                try {
-                    File fastcharge = new File("/sys/kernel/fastcharge",
-                            "force_fast_charge");
-                    FileWriter fwriter = new FileWriter(fastcharge);
-                    BufferedWriter bwriter = new BufferedWriter(fwriter);
-                    bwriter.write("1");
-                    bwriter.close();
-                    Intent i = new Intent();
-                    i.setAction("com.baked.romcontrol.FCHARGE_CHANGED");
-                    getApplicationContext().sendBroadcast(i);
-                } catch (IOException e) {
-                }
+            boolean FChargeOn = preferences.getBoolean("fast_charge_boot", false);
+            try {
+                File fastcharge = new File("/sys/kernel/fast_charge",
+                        "force_fast_charge");
+                FileWriter fwriter = new FileWriter(fastcharge);
+                BufferedWriter bwriter = new BufferedWriter(fwriter);
+                bwriter.write(FChargeOn ? "1" : "0");
+                bwriter.close();
+                Intent i = new Intent();
+                i.setAction("com.baked.romcontrol.FCHARGE_CHANGED");
+                c.sendBroadcast(i);
+            } catch (IOException e) {
+            }
 
+            if (FChargeOn) {
                 // add notification to warn user they can only charge
-                CharSequence contentTitle = getApplicationContext()
+                CharSequence contentTitle = c
                         .getText(R.string.fast_charge_notification_title);
-                CharSequence contentText = getApplicationContext()
+                CharSequence contentText = c
                         .getText(R.string.fast_charge_notification_message);
 
-                Notification n = new Notification.Builder(getApplicationContext())
+                Notification n = new Notification.Builder(c)
                         .setAutoCancel(true)
                         .setContentTitle(contentTitle)
                         .setContentText(contentText)
@@ -177,19 +187,6 @@ public class BootService extends Service {
                 NotificationManager nm = (NotificationManager) getApplicationContext()
                         .getSystemService(Context.NOTIFICATION_SERVICE);
                 nm.notify(1337, n);
-            } else {
-                try {
-                    File fastcharge = new File("/sys/kernel/fastcharge",
-                            "force_fast_charge");
-                    FileWriter fwriter = new FileWriter(fastcharge);
-                    BufferedWriter bwriter = new BufferedWriter(fwriter);
-                    bwriter.write("0");
-                    bwriter.close();
-                    Intent i = new Intent();
-                    i.setAction("com.baked.romcontrol.FCHARGE_CHANGED");
-                    getApplicationContext().sendBroadcast(i);
-                } catch (IOException e) {
-                }
             }
 
             if (preferences.getBoolean("free_memory_boot", false)) {

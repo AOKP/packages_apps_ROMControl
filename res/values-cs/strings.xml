@@ -137,6 +137,8 @@
   <string name="creating_preview">Vytváření náhledu...</string>
   <string name="error_reading_zip_file">Chyba při čtení zip souboru</string>
   <string name="error_creating_preview">Chyba při vytváření náhledu</string>
+  <string name="multipane_ui">Zapnout dvojitý panel</string>
+  <string name="multipane_ui_summary">Zapne/vypne zobrazení dvojitého panelu - jako na tabletech (vyžaduje restart)</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>
@@ -254,6 +256,7 @@
   <string name="navbar_action_back">Zpět</string>
   <string name="navbar_action_recents">Přepínač aplikací</string>
   <string name="navbar_action_search">Hledat</string>
+  <string name="navbar_action_screenshot">Snímek obrazovky</string>
   <string name="navbar_action_menu">Menu</string>
   <string name="navbar_action_ime">Otevřít metody vstupu</string>
   <string name="navbar_action_kill">Ukončit aplikaci</string>
@@ -583,6 +586,7 @@
   <string name="back">Zpět</string>
   <string name="recents">Přepínač aplikací</string>
   <string name="search">Hledat</string>
+  <string name="screenshot">Snímek obrazovky</string>
   <string name="menu">Menu</string>
   <string name="toggle_widgets">Přepnout widgety</string>
   <string name="open_ime_switcher">Otevřít metody vstupu</string>
@@ -622,6 +626,7 @@
   <string name="size_3_dp">3 body</string>
   <string name="size_4_dp">4 body</string>
   <!--LED Values-->
+  <string name="time_0_seconds_off">Vypnuto</string>
   <string name="time_0_2_seconds">200 ms</string>
   <string name="time_0_5_seconds">500 ms</string>
   <string name="time_1_second">1 s</string>

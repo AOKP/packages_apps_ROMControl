@@ -25,9 +25,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 
 import com.baked.romcontrol.R;
-
 import com.baked.romcontrol.util.CMDProcessor;
 import com.baked.romcontrol.util.Helpers;
 
@@ -86,6 +86,12 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         String availableFrequenciesLine = Helpers.readOneLine(STEPS);
         if (availableFrequencies != null) {
             availableFrequencies = availableFrequenciesLine.split(" ");
+            Arrays.sort(availableFrequencies, new Comparator<String>() {
+                @Override
+                public int compare(String object1, String object2) {
+                    return Integer.valueOf(object1).compareTo(Integer.valueOf(object2));
+                }
+            });
         }
         int frequenciesNum = availableFrequencies.length - 1;
 
@@ -115,7 +121,7 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
                 int cpuEnd = Integer.parseInt(cpuCount[1]);
 
                 mNumOfCpu = cpuEnd - cpuStart + 1;
-                
+
                 if (mNumOfCpu < 0)
                     mNumOfCpu = 1;
             } catch (NumberFormatException ex) {
@@ -204,7 +210,7 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
             cmd.su.runWaitFor("busybox echo " + mMaxFreqSetting + " > " + MAX_FREQ.replace("cpu0", "cpu" + i));
             cmd.su.runWaitFor("busybox echo " + mMinFreqSetting + " > " + MIN_FREQ.replace("cpu0", "cpu" + i));
         }
-        
+
         if (mIsTegra3) {
             cmd.su.runWaitFor("busybox echo " + mMaxFreqSetting + " > " + TEGRA_MAX_FREQ);
         }
@@ -214,13 +220,13 @@ public class CPUSettings extends Fragment implements SeekBar.OnSeekBarChangeList
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             String selected = parent.getItemAtPosition(pos).toString();
             CMDProcessor cmd = new CMDProcessor();
-            
+
             // do this on all cpu's since MSM can have different governors on each cpu
             //  and it doesn't hurt other devices to do it
             for (int i = 0; i < mNumOfCpu; i++) {
                 cmd.su.runWaitFor("busybox echo " + selected + " > " + GOVERNOR.replace("cpu0", "cpu" + i));
             }
-            
+
             final SharedPreferences.Editor editor = preferences.edit();
             editor.putString(GOV_PREF, selected);
             editor.commit();

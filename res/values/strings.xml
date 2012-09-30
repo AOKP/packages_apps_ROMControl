@@ -811,12 +811,12 @@
     <string name="size_44_dp">44 dp</string>
     <string name="size_40_dp">40 dp</string>
     <string name="size_42_dp">42 dp</string>
+    <string name="size_0_dp">0 dp (off)</string>
     <string name="statusbar">Statusbar</string>
     <string name="top_of_navbar">Top of navbar</string>
     <string name="bottom_of_navbar">Bottom of navbar</string>
     <string name="regular">Regular</string>
     <string name="center_mirrored">Center-mirrored</string>
-    <string name="size_0_dp">0 dp (off)</string>
     <string name="size_1_dp">1 dp</string>
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>

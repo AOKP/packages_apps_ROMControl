@@ -221,7 +221,6 @@
         <item>@string/four_targets</item>
         <item>@string/five_targets</item>
     </string-array>
-
     <string-array name="pref_navring_amount_values" translatable="false">
         <item>1</item>
         <item>2</item>

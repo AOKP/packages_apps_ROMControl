@@ -551,6 +551,8 @@ public class Navbar extends AOKPPreferenceFragment implements
                 return getResources().getDimensionPixelSize(R.dimen.navigation_bar_30);
             case 24:
                 return getResources().getDimensionPixelSize(R.dimen.navigation_bar_24);
+            case 0:
+                return getResources().getDimensionPixelSize(R.dimen.navigation_bar_0);
         }
         return -1;
     }

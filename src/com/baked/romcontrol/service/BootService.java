@@ -1,6 +1,6 @@
 
 package com.baked.romcontrol.service;
-
+import android.util.Log;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.Service;
@@ -67,48 +67,55 @@ public class BootService extends Service {
                 final String gov = preferences.getString(
                         "gov", null);
                 final String io = preferences.getString("io", null);
-                if (max != null && min != null && gov != null) {
-                    boolean mIsTegra3 = c.getResources().getBoolean(
-                                com.android.internal.R.bool.config_isTegra3);
-                    int numOfCpu = 1;
-                    String numOfCpus = Helpers.readOneLine(CPUSettings.NUM_OF_CPUS);
-                    String[] cpuCount = numOfCpus.split("-");
-                    
-                    if (cpuCount.length > 1) {
-                        try {
-                            int cpuStart = Integer.parseInt(cpuCount[0]);
-                            int cpuEnd = Integer.parseInt(cpuCount[1]);
+                Log.d("BOOT", "DEBUG: Got boot for ROM " + max + ", " + min + ", " + gov);
+                boolean mIsTegra3 = c.getResources().getBoolean(
+                                        com.android.internal.R.bool.config_isTegra3);
+                int numOfCpu = 1;
+                String numOfCpus = Helpers.readOneLine(CPUSettings.NUM_OF_CPUS);
+                String[] cpuCount = numOfCpus.split("-");
+    
+                if (cpuCount.length > 1) {
+                    try {
+                        int cpuStart = Integer.parseInt(cpuCount[0]);
+                        int cpuEnd = Integer.parseInt(cpuCount[1]);
 
-                            numOfCpu = cpuEnd - cpuStart + 1;
+                        numOfCpu = cpuEnd - cpuStart + 1;
 
-                            if (numOfCpu < 0)
-                                numOfCpu = 1;
-                        } catch (NumberFormatException ex) {
+                        if (numOfCpu < 0)
                             numOfCpu = 1;
-                        }
+                    } catch (NumberFormatException ex) {
+                        numOfCpu = 1;
                     }
+                }
 
-                    for (int i = 0; i < numOfCpu; i++) {
+                for (int i = 0; i < numOfCpu; i++) {
+                    if (max != null) {
                         cmd.su.runWaitFor("busybox echo " + max +
                             " > " + CPUSettings.MAX_FREQ
                             .replace("cpu0", "cpu" + i));
-                        
+                    }
+                    
+                    if (min != null) {
                         cmd.su.runWaitFor("busybox echo " + min +
                             " > " + CPUSettings.MIN_FREQ
                             .replace("cpu0", "cpu" + i));
-                        
+                    }
+                    
+                    if (gov != null) {
                         cmd.su.runWaitFor("busybox echo " + gov +
                             " > " + CPUSettings.GOVERNOR.
                             replace("cpu0", "cpu" + i));
                     }
+                }
 
-                    if (mIsTegra3) {
-                        cmd.su.runWaitFor("busybox echo " + max + 
-                            " > " + CPUSettings.TEGRA_MAX_FREQ);
-                    }
-                    
+                if (mIsTegra3 && max != null) {
+                    cmd.su.runWaitFor("busybox echo " + max + 
+                        " > " + CPUSettings.TEGRA_MAX_FREQ);
+                }
+                
+                if (io != null) {
                     cmd.su.runWaitFor("busybox echo " + io +
-                            " > " + CPUSettings.IO_SCHEDULER);
+                        " > " + CPUSettings.IO_SCHEDULER);
                 }
             }
 

@@ -17,12 +17,14 @@ public class PowerMenu extends PreferenceFragment {
     //private static final String PREF_POWER_SAVER = "show_power_saver";
     private static final String PREF_SCREENSHOT = "show_screenshot";
     //private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
+    private static final String PREF_EXPANDED_DESKTOP = "show_expanded_desktop";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
 
     //CheckBoxPreference mShowPowerSaver;
     CheckBoxPreference mShowScreenShot;
     //CheckBoxPreference mShowTorchToggle;
+    CheckBoxPreference mExpandedDesktop;
     CheckBoxPreference mShowAirplaneToggle;
     CheckBoxPreference mShowNavBarHide;
 
@@ -55,6 +57,11 @@ public class PowerMenu extends PreferenceFragment {
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
                 0) == 1);
 
+        mExpandedDesktop = (CheckBoxPreference) findPreference(PREF_EXPANDED_DESKTOP);
+        mExpandedDesktop.setChecked((Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_EXPANDED_DESKTOP_ENABLED,
+                0) == 1));
+
         mShowAirplaneToggle = (CheckBoxPreference) findPreference(PREF_AIRPLANE_TOGGLE);
         mShowAirplaneToggle.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
@@ -85,6 +92,11 @@ public class PowerMenu extends PreferenceFragment {
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
             */
+        } else if (preference == mExpandedDesktop) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_EXPANDED_DESKTOP_ENABLED,
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+            return true;
         } else if (preference == mShowAirplaneToggle) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,

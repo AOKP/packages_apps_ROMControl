@@ -3,13 +3,16 @@
 
     <CheckBoxPreference android:key="show_screenshot"
         android:title="@string/title_show_screenshot" />
-<!--
+
     <CheckBoxPreference android:key="show_power_saver"
         android:title="@string/title_show_power_saver" />
 
     <CheckBoxPreference android:key="show_torch_toggle"
         android:title="@string/title_show_torch_toggle" />
--->
+
+    <CheckBoxPreference android:key="show_expanded_desktop"
+        android:title="@string/title_show_expanded_desktop" />
+
     <CheckBoxPreference android:key="show_airplane_toggle"
         android:title="@string/title_show_airplane_toggle" />
 

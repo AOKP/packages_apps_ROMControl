@@ -39,11 +39,13 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_FORCE_TABLET_UI = "force_tablet_ui";
+    private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
     CheckBoxPreference mForceTabletUI;
+    CheckBoxPreference mUseAltResolver;
     Preference mLcdDensity;
 
     Random randomGenerator = new Random();
@@ -95,6 +97,10 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         mForceTabletUI = (CheckBoxPreference) findPreference(PREF_FORCE_TABLET_UI);
         mForceTabletUI.setChecked(Settings.System.getInt(mContext.getContentResolver(),
             Settings.System.FORCE_TABLET_UI, 0) == 1);
+
+        mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
+        mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
 
         if (mTablet) {
             // if it's a tablet not reason to show the force of a tablet ui
@@ -154,6 +160,12 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         } else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
                     .startPreferenceFragment(new DensityChanger(), true);
+            return true;
+
+        } else if (preference == mUseAltResolver) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
+                    isCheckBoxPrefernceChecked(preference));
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

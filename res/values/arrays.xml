@@ -244,8 +244,8 @@
     </string-array>
     <string-array name="navigation_bar_height_entries" translatable="false">
         <item>@string/size_48_dp_default</item>
-        <item>@string/size_42_dp</item>
         <item>@string/size_44_dp</item>
+        <item>@string/size_42_dp</item>
         <item>@string/size_40_dp</item>
         <item>@string/size_36_dp</item>
         <item>@string/size_30_dp</item>

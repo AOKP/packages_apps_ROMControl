@@ -426,60 +426,60 @@
   <string name="menu_weather_get_weather">Meteo</string>
   <!--Weather Codes-->
   <string name="weather_0">Tornado</string>
-  <string name="weather_1">Tempesta Tropicale</string>
+  <string name="weather_1">Tempesta tropicale</string>
   <string name="weather_2">Uragano</string>
-  <string name="weather_3">Forti Temporali</string>
+  <string name="weather_3">Forti temporali</string>
   <string name="weather_4">Temporali</string>
-  <string name="weather_5">Pioggia mista e Neve</string>
-  <string name="weather_6">Pioggia mista e Nevischio</string>
-  <string name="weather_7">Neve mista e Nevischio</string>
-  <string name="weather_8">Pioggerella Congelata</string>
-  <string name="weather_9">Pioggerella</string>
-  <string name="weather_10">Pioggia Congelata</string>
-  <string name="weather_11">Acquazzone</string>
-  <string name="weather_12">Acquazzone</string>
-  <string name="weather_13">Nevicate</string>
-  <string name="weather_14">Leggere Nevicate</string>
-  <string name="weather_15">Tormente di Neve</string>
+  <string name="weather_5">Pioggia mista a neve</string>
+  <string name="weather_6">Pioggia mista a nevischio</string>
+  <string name="weather_7">Neve mista a nevischio</string>
+  <string name="weather_8">Nevischio ghiacciato</string>
+  <string name="weather_9">Leggera pioggia</string>
+  <string name="weather_10">Leggera pioggia ghiacciata</string>
+  <string name="weather_11">Pioggia</string>
+  <string name="weather_12">Pioggia</string>
+  <string name="weather_13">Rovesci di neve</string>
+  <string name="weather_14">Rovesci di neve leggeri</string>
+  <string name="weather_15">Vento e neve</string>
   <string name="weather_16">Neve</string>
   <string name="weather_17">Grandine</string>
   <string name="weather_18">Nevischio</string>
-  <string name="weather_19">Polvere</string>
-  <string name="weather_20">Nebbioso</string>
+  <string name="weather_19">Pulviscolo</string>
+  <string name="weather_20">Nebbia</string>
   <string name="weather_21">Foschia</string>
   <string name="weather_22">Fumoso</string>
-  <string name="weather_23">Blustery</string>
+  <string name="weather_23">Burrascoso</string>
   <string name="weather_24">Ventoso</string>
   <string name="weather_25">Freddo</string>
   <string name="weather_26">Nuvoloso</string>
   <!--mostly cloudy (night)-->
-  <string name="weather_27">Prevalentemente Nuvoloso</string>
+  <string name="weather_27">Prevalentemente nuvoloso</string>
   <!--mostly cloudy (day)-->
-  <string name="weather_28">Prevalentemente Nuvoloso</string>
+  <string name="weather_28">Prevalentemente nuvoloso</string>
   <!--partly cloudy (night)-->
-  <string name="weather_29">Parzialmente Nuvoloso</string>
+  <string name="weather_29">Parzialmente nuvoloso</string>
   <!--partly cloudy (day)-->
-  <string name="weather_30">Parzialmente Nuvoloso</string>
+  <string name="weather_30">Parzialmente nuvoloso</string>
   <!--clear (night)-->
-  <string name="weather_31">Chiaro</string>
+  <string name="weather_31">Sereno</string>
   <string name="weather_32">Soleggiato</string>
   <!--fair (night)-->
-  <string name="weather_33">Bello</string>
+  <string name="weather_33">Poco nuvoloso</string>
   <!--fair (day)-->
-  <string name="weather_34">Bello</string>
-  <string name="weather_35">Pioggia mista a Grandine</string>
+  <string name="weather_34">Poco nuvoloso</string>
+  <string name="weather_35">Pioggia mista a grandine</string>
   <string name="weather_36">Caldo</string>
-  <string name="weather_37">Temporali Isolati</string>
-  <string name="weather_38">Temporali Sparsi</string>
-  <string name="weather_39">Temporali Sparsi</string>
-  <string name="weather_40">Acquazzoni Sparsi</string>
-  <string name="weather_41">Pesanti Nevicate</string>
-  <string name="weather_42">Nevicate Sparse</string>
-  <string name="weather_43">Nevicate Sparse</string>
-  <string name="weather_44">Parzialmente Nuvoloso</string>
-  <string name="weather_45">Rovesci Temporaleschi</string>
+  <string name="weather_37">Temporali isolati</string>
+  <string name="weather_38">Temporali sparsi</string>
+  <string name="weather_39">Temporali sparsi</string>
+  <string name="weather_40">Piogge sparse</string>
+  <string name="weather_41">Forti nevicate</string>
+  <string name="weather_42">Nevicate sparse</string>
+  <string name="weather_43">Nevicate sparse</string>
+  <string name="weather_44">Parzialmente nuvoloso</string>
+  <string name="weather_45">Temporali e piogge</string>
   <string name="weather_46">Nevicate</string>
-  <string name="weather_47">Rovesci Sparsi</string>
+  <string name="weather_47">Temporali e piogge isolati</string>
   <!--Forecase unavailable-->
   <string name="weather_3200"/>
   <!--Miscellaneous-->
@@ -535,15 +535,15 @@
   <!--Custom vibrations-->
   <string name="vibrations">Vibrazioni</string>
   <string name="defaultvibrationname">\'Default\'</string>
-  <string name="vib_new">Nuova/Resetta</string>
-  <string name="vib_load">Carica</string>
+  <string name="vib_new">Nuova/Reset</string>
+  <string name="vib_load">Apri</string>
   <string name="vib_rec">Registra</string>
   <string name="vib_TAP">TAP!</string>
   <string name="vib_stop">Stop</string>
   <string name="vib_play">Play</string>
   <string name="vib_save">Salva</string>
   <string name="vib_del">Elimina</string>
-  <string name="vib_dialog_text_entry">Salve vibrazione</string>
+  <string name="vib_dialog_text_entry">Salva vibrazione</string>
   <string name="vib_dialog_name">Nome:</string>
   <string name="vib_cur_loaded_title">Caricata:</string>
   <string name="help">Aiuto</string>
@@ -575,7 +575,7 @@
   <string name="right">Destra</string>
   <string name="left">Sinistra</string>
   <string name="both">Entrambi</string>
-  <string name="default_jb_behavior">Comportamento JB standard</string>
+  <string name="default_jb_behavior">JB default</string>
   <string name="always_show_invincible_icons">Visualizza sempre icone nascoste</string>
   <string name="always_show">Visualizza sempre</string>
   <string name="default_jb_with_invincible_icons_when_hidden">JB standard con icone invisibili quando nascoste</string>
@@ -635,16 +635,16 @@
   <string name="time_5_seconds">5 secondi</string>
   <string name="time_5_5_seconds">5.5 secondi</string>
   <string name="time_6_seconds">6 secondi</string>
-  <string name="time_7_seconds">7 seconds</string>
+  <string name="time_7_seconds">7 secondi</string>
   <string name="time_8_seconds">8 secondi</string>
   <string name="time_9_seconds">9 secondi</string>
   <string name="time_10_seconds">10 secondi</string>
   <!--LED brightness entries-->
-  <string name="low">basso</string>
-  <string name="medium">medio</string>
-  <string name="high">alto</string>
-  <string name="very_high">moltro alto</string>
-  <string name="laserbeam">raggio laser</string>
+  <string name="low">Basso</string>
+  <string name="medium">Medio</string>
+  <string name="high">Alto</string>
+  <string name="very_high">Molto alto</string>
+  <string name="laserbeam">Raggio laser</string>
   <!--Flip phone entries-->
   <string name="disabled">Disabilitato</string>
   <string name="enabled">Abilitato</string>

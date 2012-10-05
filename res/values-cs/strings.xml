@@ -139,6 +139,8 @@
   <string name="error_creating_preview">Chyba při vytváření náhledu</string>
   <string name="multipane_ui">Zapnout dvojitý panel</string>
   <string name="multipane_ui_summary">Zapne/vypne zobrazení dvojitého panelu - jako na tabletech (vyžaduje restart)</string>
+  <string name="alt_resolver">Alt. výchozí aplikace</string>
+  <string name="alt_resolver_summary">Použít alternativní výběr výchozí aplikace (GB styl)</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>

@@ -132,6 +132,10 @@
     <string name="creating_preview">正在创建预览...</string>
     <string name="error_reading_zip_file">读取 ZIP 文件错误</string>
     <string name="error_creating_preview">创建预览错误</string>
+    <string name="multipane_ui">启用双面板</string>
+    <string name="multipane_ui_summary">启用双面板视图（需重启）</string>
+    <string name="alt_resolver">更改默认应用程序网格布局</string>
+    <string name="alt_resolver_summary">使用循环应用程序选择器（姜饼风格）</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -256,6 +260,7 @@
     <string name="navbar_action_back">返回</string>
     <string name="navbar_action_recents">近期任务</string>
     <string name="navbar_action_search">搜索</string>
+    <string name="navbar_action_screenshot">屏幕截图</string>
     <string name="navbar_action_menu">菜单</string>
     <string name="navbar_action_ime">打开输入法选择器</string>
     <string name="navbar_action_kill">结束程序</string>
@@ -570,5 +575,169 @@
 		删除振动效果，只需点击“删除”，选择需要删除的振动效果并点击“删除”，默认振动效果无法删除。\n\n
 		你可以将自定义的振动效果用于来电：拨号程序/设置 或者 系统设置/声音\n
 		你可以将自定义的振动效果用于某个联系人：显示联系人后点击菜单键/设置振动效果</string>
+
+    <!-- boot animation stuff 开机动画选项 -->
+    <string name="insult_jerk">囧</string>
+    <string name="insult_protekk">ProTekk!</string>
+
+    <!-- clock stuff 时钟选项 -->
+    <string name="right_clock">时钟右置</string>
+    <string name="center_clock">时钟中置</string>
+    <string name="no_clock">不显示时钟</string>
+    <string name="dont_show">不显示</string>
+    <string name="small_am_pm">小号 上午/下午</string>
+    <string name="regular_am_pm">正常 上午/下午</string>
+    <string name="protekk_oclock">脑残时钟</string>
+    <string name="small_weekday">小号 星期</string>
+    <string name="regular_weekday">正常 星期</string>
+
+    <!-- toggle style 开关风格 -->
+    <string name="icon_only">仅图标</string>
+    <string name="text_only">仅文字</string>
+
+    <!-- Brightness slider 亮度条 -->
+    <string name="on_top">在顶部显示</string>
+    <string name="on_the_bottom">在底部显示</string>
+
+    <!-- Battery styles 电量风格 -->
+    <string name="icon_with_text">带文字的图标</string>
+    <string name="icon_with_centered_text">带居中文字的图标</string>
+    <string name="circlemod">环形电量图标</string>
+
+    <!-- NavBar 导航栏 -->
+    <string name="right">居右</string>
+    <string name="left">居左</string>
+    <string name="both">两侧</string>
+    <string name="default_jb_behavior">Jelly Bean 默认</string>
+    <string name="always_show_invincible_icons">总是隐藏按键</string>
+    <string name="always_show">总是显示按键</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">需要时自动显示（默认隐藏）</string>
+    <string name="home">主屏幕</string>
+    <string name="back">返回</string>
+    <string name="recents">近期任务</string>
+    <string name="search">搜索</string>
+    <string name="screenshot">屏幕截图</string>
+    <string name="menu">菜单</string>
+    <string name="toggle_widgets">小部件</string>
+    <string name="open_ime_switcher">打开输入法选择器</string>
+    <string name="kill_app">结束程序</string>
+    <string name="power">电源</string>
+    <string name="notifications">通知</string>
+    <string name="custom_app">自定义程序</string>
+    <string name="blank">空</string>
+    <string name="none">无</string>
+    <string name="take_screenshot">屏幕截图</string>
+    <string name="ring_vib">铃声/振动</string>
+    <string name="ring_silent">铃声/静音</string>
+    <string name="ring_vib_silent">铃声/振动/静音</string>
+    <string name="screen_off">关闭屏幕</string>
+    <string name="google_now">Google Now</string>
+    <string name="select_application">选择程序</string>
+    <string name="one_target">1 目标</string>
+    <string name="two_targets">2 目标</string>
+    <string name="three_targets">3 目标</string>
+    <string name="four_targets">4 目标</string>
+    <string name="five_targets">5 目标</string>
+    <string name="size_42_dp_default">42 dp (默认)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (默认)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">状态栏</string>
+    <string name="top_of_navbar">导航栏顶部</string>
+    <string name="bottom_of_navbar">导航栏底部</string>
+    <string name="regular">正常</string>
+    <string name="center_mirrored">居中</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- LED Values 灯光值-->
+    <string name="time_0_seconds_off">关闭</string>
+    <string name="time_0_2_seconds">.2 秒</string>
+    <string name="time_0_5_seconds">.5 秒</string>
+    <string name="time_1_second">1 秒</string>
+    <string name="time_1_5_seconds">1.5 秒</string>
+    <string name="time_2_seconds">2 秒</string>
+    <string name="time_2_5_seconds">2.5 秒</string>
+    <string name="time_3_seconds">3 秒</string>
+    <string name="time_3_5_seconds">3.5 秒</string>
+    <string name="time_4_seconds">4 秒</string>
+    <string name="time_4_5_seconds">4.5 秒</string>
+    <string name="time_5_seconds">5 秒</string>
+    <string name="time_5_5_seconds">5.5 秒</string>
+    <string name="time_6_seconds">6 秒</string>
+    <string name="time_7_seconds">7 秒</string>
+    <string name="time_8_seconds">8 秒</string>
+    <string name="time_9_seconds">9 秒</string>
+    <string name="time_10_seconds">10 秒</string>
+
+    <!-- LED brightness entries 灯光亮度 -->
+    <string name="low">暗</string>
+    <string name="medium">中</string>
+    <string name="high">亮</string>
+    <string name="very_high">非常亮</string>
+    <string name="laserbeam">激光</string>
+
+    <!-- Flip phone entries -->
+    <string name="disabled">禁用</string>
+    <string name="enabled">启用</string>
+    <string name="time_0_seconds_instant_off">0 秒 (立即关闭)</string>
+    <string name="time_15_seconds">15 秒</string>
+    <string name="time_30_seconds">30 秒</string>
+    <string name="time_45_seconds">45 秒</string>
+    <string name="time_1_minute">1 分钟</string>
+    <string name="time_1_5_minutes">1.5 分钟</string>
+    <string name="time_2_minutes">2 分钟</string>
+    <string name="time_2_5_minutes">2.5 分钟</string>
+    <string name="time_3_minutes">3 分钟</string>
+    <string name="time_3_5_minutes">3.5 分钟</string>
+    <string name="time_4_minutes">4 分钟</string>
+    <string name="time_5_minutes">5 分钟</string>
+
+    <!-- weather arrays 天气 -->
+    <string name="off">关闭</string>
+    <string name="time_10_minutes">10 分钟</string>
+    <string name="time_30_minutes">30 分钟</string>
+    <string name="time_45_minutes">45 分钟</string>
+    <string name="time_60_minutes">60 分钟</string>
+    <string name="time_2_hours">2 小时</string>
+    <string name="time_3_hours">3 小时</string>
+    <string name="time_4_hours">4 小时</string>
+    <string name="time_6_hours">6 小时</string>
+    <string name="time_8_hours">8 小时</string>
+    <string name="above_carrier_text">运营商之上</string>
+    <string name="weather_panel">天气面板</string>
+    <string name="text">文字</string>
+
+    <!-- lockscreen calendar arrays 锁屏日历 -->
+    <string name="time_1_day">1 天</string>
+    <string name="time_2_days">2 天</string>
+    <string name="time_3_days">3 天</string>
+    <string name="time_4_days">4 天</string>
+    <string name="time_5_days">5 天</string>
+    <string name="time_6_days">6 天</string>
+    <string name="time_1_week">1 周</string>
+
+    <!-- minfree 空闲内存 -->
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+
+    <!-- less notification sounds 限制通知音 -->
+    <string name="default_behavior">默认设置</string>
+
+    <!-- signal style -->
+    <string name="show_signal_bars">显示信号图标</string>
+    <string name="show_signal_text">显示信号文本</string>
+    <string name="show_with_dbm">显示 w/dBm</string>
+
+
 
 </resources>

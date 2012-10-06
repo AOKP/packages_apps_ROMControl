@@ -15,6 +15,12 @@
         android:title="@string/notif_wallpaper_alpha_title" />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="statusbar_background_color"
+        android:title="@string/statusbar_background_color"
+        android:defaultValue="#000000"
+        alphaSlider="true" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="expanded_clock_color"
         android:title="@string/expanded_clock_color_title"
         android:defaultValue="@android:color/holo_blue_light" />

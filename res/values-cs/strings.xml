@@ -141,6 +141,10 @@
   <string name="multipane_ui_summary">Zapne/vypne zobrazení dvojitého panelu - jako na tabletech (vyžaduje restart)</string>
   <string name="alt_resolver">Alt. výchozí aplikace</string>
   <string name="alt_resolver_summary">Použít alternativní výběr výchozí aplikace (GB styl)</string>
+  <string name="show_overflow_title">Zobrazit tlačítko menu</string>
+  <string name="show_overflow_summary">Zobrazit v aplikacích tlačítko menu s 3 tečkami</string>
+  <string name="show_overflow_toast_enable">Tlačítko menu nebude vidět, dokud nedojde k restartování aplikací</string>
+  <string name="show_overflow_toast_disable">Tlačítko menu bude vidět, dokud nedojde k restartování aplikací</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>

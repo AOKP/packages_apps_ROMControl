@@ -88,6 +88,12 @@
             android:summary="@string/multipane_ui_summary"
             android:defaultValue="false" />
 
+        <CheckBoxPreference
+            android:key="hide_extras"
+            android:title="@string/hide_extras"
+            android:summary="@string/hide_extras_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="lcd_density_setup"
             android:title="@string/lcd_density_title"

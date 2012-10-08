@@ -147,6 +147,8 @@
     <string name="kill_app_longpress_back_summary">Holding back will kill the current activity</string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
+    <string name="hide_extras">Hide Extras</string>
+    <string name="hide_extras_summary">Hide some sytembar stuff i.e. the compat. mode button(requires UI restart)</string>
     <string name="bootanimation_preview">Bootanimation preview</string>
     <string name="apply">Apply</string>
     <string name="creating_preview">Creating preview...</string>

@@ -85,6 +85,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
+    private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
@@ -112,6 +113,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     TextView error;
     CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mTabletui;
+    CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
     CheckBoxPreference mVibrateOnExpand;
     Preference mLcdDensity;
@@ -198,6 +200,10 @@ public class UserInterface extends AOKPPreferenceFragment {
         mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
         mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                         Settings.System.MODE_TABLET_UI, false));
+
+        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
 
         mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
         mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
@@ -305,6 +311,12 @@ public class UserInterface extends AOKPPreferenceFragment {
                     ((CheckBoxPreference) preference).isChecked());
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3);
+            return true;
+        } else if (preference == mHideExtras) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
+                    ((CheckBoxPreference) preference).isChecked());
+            Helpers.restartSystemUI();
             return true;
         } else if (preference == mDualpane) {
             Settings.System.putBoolean(mContext.getContentResolver(),

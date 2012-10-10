@@ -32,10 +32,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
@@ -84,8 +82,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_IME_SWITCHER = "ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-    private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
-    private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
+    private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
 
@@ -111,9 +108,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     ImageView view;
     TextView error;
     CheckBoxPreference mShowActionOverflow;
-    CheckBoxPreference mTabletui;
-    CheckBoxPreference mDualpane;
-    Preference mLcdDensity;
+    CheckBoxPreference mHideExtras;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -130,10 +125,6 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     private int seekbarProgress;
     String mCustomLabelText = null;
-
-    int newDensityValue;
-
-    DensityChanger densityFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -163,16 +154,6 @@ public class UserInterface extends AOKPPreferenceFragment {
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
 
-        mLcdDensity = findPreference("lcd_density_setup");
-        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
-        try {
-            newDensityValue = Integer.parseInt(currentProperty);
-        } catch (Exception e) {
-            getPreferenceScreen().removePreference(mLcdDensity);
-        }
-
-        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
-
         mCustomBootAnimation = findPreference("custom_bootanimation");
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
@@ -194,18 +175,14 @@ public class UserInterface extends AOKPPreferenceFragment {
                         getApplicationContext().getContentResolver(),
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1));
 
-        mTabletui = (CheckBoxPreference) findPreference(PREF_MODE_TABLET_UI);
-        mTabletui.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                        Settings.System.MODE_TABLET_UI, false));
+
+        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
 
         mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
         mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                         Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
-
-        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
-        mDualpane.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                        Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
-                        com.android.internal.R.bool.preferences_prefer_dual_pane)));
 
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -221,8 +198,6 @@ public class UserInterface extends AOKPPreferenceFragment {
         if (mTablet) {
             prefs.removePreference(mNotificationWallpaper);
             prefs.removePreference(mWallpaperAlpha);
-        } else {
-            prefs.removePreference(mTabletui);
         }
 
         setHasOptionsMenu(true);
@@ -294,17 +269,11 @@ public class UserInterface extends AOKPPreferenceFragment {
                         Toast.LENGTH_LONG).show();
             }
             return true;
-        } else if (preference == mTabletui) {
+        } else if (preference == mHideExtras) {
             Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.MODE_TABLET_UI,
+                    Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
                     ((CheckBoxPreference) preference).isChecked());
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3);
-            return true;
-        } else if (preference == mDualpane) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.FORCE_DUAL_PANEL,
-                    ((CheckBoxPreference) preference).isChecked());
+            Helpers.restartSystemUI();
             return true;
         } else if (preference == mCustomBootAnimation) {
             PackageManager packageManager = getActivity().getPackageManager();
@@ -437,10 +406,6 @@ public class UserInterface extends AOKPPreferenceFragment {
             });
 
             alert.show();
-        } else if (preference == mLcdDensity) {
-            ((PreferenceActivity) getActivity())
-                    .startPreferenceFragment(new DensityChanger(), true);
-            return true;
         } else if (preference == mUseAltResolver) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.ACTIVITY_RESOLVER_USE_ALT,

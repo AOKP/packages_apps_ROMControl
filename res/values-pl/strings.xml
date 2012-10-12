@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ROM Control</string>
+
+    <!-- Header Strings -->
+    <string name="user_interface">Interfejs</string>
+    <string name="cancel">Anuluj</string>
+    <string name="ok">OK</string>
+    <string name="menu_main_activity_change_locale">Czysty!</string>
+    <string name="header_statusbar">Pasek statusu</string>
+    <string name="header_navbar">Belka nawigacyjna</string>
+    <string name="toggles_layout">Przełączniki</string>
+    <string name="general_ui">Ogólny wygląd</string>
+    <string name="clock">Zegar</string>
+    <string name="battery">Bateria</string>
+    <string name="signal">Sygnał</string>
+    <string name="nav_bar">Belka nawigacyjna</string>
+    <string name="power_menu">Power Menu</string>
+    <string name="led_options">LED</string>
+    <string name="header_system">System</string>
+    <string name="sound">Dźwięki</string>
+    <string name="lockscreen_options">Ekran blokady</string>
+    <string name="weather">Pogoda</string>
+    <string name="tools">Narzędzia</string>
+    <string name="performance">Wydajność</string>
+
+    <!-- Activity titles defined in AndroidManifest.xml -->
+    <string name="title_about">O AOKP...</string>
+    <string name="title_ui">Ogólny interfejs użytkownika</string>
+    <string name="title_statusbar_clock">Zegarek paska statusu</string>
+    <string name="title_statusbar_toggles">Przełączniki paska statusu</string>
+    <string name="title_statusbar_battery">Wskaźnik baterii na pasku statusu</string>
+    <string name="title_navbar">Belka nawigacyjna</string>
+    <string name="title_power_menu">Power Menu</string>
+    <string name="title_led">Kontrola diody LED</string>
+    <string name="title_lockscreens">Opcje ekranu blokady</string>
+    <string name="title_sound">Ustawienia systemu dźwiękowego</string>
+    <string name="title_weather">Ustawienia pogody</string>
+    <string name="title_performance">Ustawienia wydajności</string>
+    <string name="title_clipboard_share">Udostępnij do schowka</string>
+
+    <!-- Header Summaries -->
+    <string name="header_summary_clock">@null</string>
+    <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_general_ui">@null</string>
+    <string name="header_summary_battery">@null</string>
+    <string name="header_summary_signal">@null</string>
+    <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_power_menu">@null</string>
+    <string name="header_summary_led">@null</string>
+    <string name="header_summary_sound">@null</string>
+    <string name="header_summary_performance">@null</string>
+    <string name="header_summary_lockscreens">@null</string>
+    <string name="header_summary_weather">@null</string>
+    <string name="header_summary_vibrations">@null</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_nav_bar_reset">Restartuj navbar</string>
+    <string name="menu_user_interface_reset">Restartuj tapetę notyfikacji</string>
+    <string name="menu_lockscreens_reset">Restartuj tapetę ekranu blokady</string>
+
+    <!-- General Strings -->
+    <string name="advanced_settings">Ustawienia zaawansowane</string>
+    <string name="misc_short">Różne</string>
+    <string name="custom_app_icon_successfully">"'s ikona ustawiona pomyślnie!"</string>
+
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">Pokaż oszczędzacz baterii</string>
+    <string name="title_show_screenshot">Pokaż zrzut ekranu</string>
+    <string name="title_show_torch_toggle">Pokaż przełącznik latarki</string>
+    <string name="title_show_airplane_toggle">Pokaż przełącznik trybu sam.</string>
+    <string name="title_show_navbar_hide">Pokaż przełącznik belki naw.</string>
+
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">Aktywuj oszczędzacz energii</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+
+    <string name="title_pref_powersaving_data_screen_off">Działanie danych podczas uśpienia</string>
+    <string name="summary_pref_powersaving_data_screen_off">Co zrobić z połączeniem gdy telefon przejdzie w stan uśpienia?</string>
+
+    <string name="title_pref_powersaving_data_screen_off_delay">Zwłoka dla danych</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Ile czasu czekać na wykonanie akcji?</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Użyj niestandardowej aplikacji</string>
+    <string name="use_custom_app_summary">Użyj niestandardowej aplikacji zamiast systemowego menedżera zadań</string>
+    <string name="select_custom_app_title">Wybierz niestandardową aplikację</string>
+    <string name="group_applications">Aplikacje</string>
+
+    <!-- About -->
+    <string name="devs">Developerzy</string>
+    <string name="aokp">Android Open Kang Project</string>
+    <string name="aokp_website_title">Strona www AOKP</string>
+    <string name="aokp_website_summary">www.aokp.co - Tutaj są wszystkie nowe wydania.</string>
+    <string name="aokp_source_title">Źródła AOKP</string>
+    <string name="aokp_source_summary">AOKP jest projektem Otwartoźródłowym. Źródła znajdziesz na github.com/aokp</string>
+    <string name="aokp_review_title">AOKP Gerrit</string>
+    <string name="aokp_review_summary">Gerrit AOKP dla developerów zawierający patche i zmiany</string>
+    <string name="aokp_irc_title">Dołącz do nas na IRC</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">O AOKP...</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+    <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+    <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+    <string name="donate_khasmek">http://nyan.cat</string>
+    <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+    <string name="donate_adam">http://goo.gl/fRj57</string>
+    <string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
+    <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
+    <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
+    <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
+    <string name="donate_sixstringsg">https://www.paypal.com/cgi-bin/webscr?cmd=_flow&amp;SESSION=U3KYhTz6itHx8bKvx-F79EFVY5sQKKQu9f1ftkJ1pevFN6wdaJLu8yz3Y3e&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d1e83f46a36995b3856cef1e18897ad75</string>
+    <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
+    <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
+    <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
+
+    <!-- General UI -->
+    <string name="bootani_cat">Boot Animacja</string>
+    <string name="navbar_cat">NavBar</string>
+    <string name="notification_cat">Powiadomienia</string>
+    <string name="enable_volume_options">Aktywuj panel głośności</string>
+    <string name="status_bar_notif_count_title">Pokaż licznik powiadomień</string>
+    <string name="status_bar_notif_count_summary">Pokaż liczbę oczekujących powiadomień</string>
+    <string name="disable_bootanimation_title">Wyłącz boot animację</string>
+    <string name="custom_bootanimation_title">Niestandardowa boot animacja</string>
+    <string name="custom_bootanimation_summary">Wybierz plik zip boot animacji. Poprzednia bootanimacja zostanie zachowana w /system/media.</string>
+    <string name="install_file_manager_error">Brak aplikacji do wyboru pliku. Zainstaluj proszę menedżer plików.</string>
+    <string name="notification_wallpaper_title">Wybierz tapetę powiadomień</string>
+    <string name="notification_wallpaper_summary">Możesz usunąć tapetę z menu tego okna</string>
+    <string name="notif_wallpaper_alpha_title">Przezroczystość tła powiadomień</string>
+    <string name="alpha_dialog_title">Ustaw wartość przezroczystości</string>
+    <string name="custom_carrier_label_title">Własny tekst operatora</string>
+    <string name="custom_carrier_label_explain">Wpisz nowy tekst. Zostaw puste by przywrócić domyślny tekst.</string>
+    <string name="custom_carrier_label_notset">Nie ustawiono własnego tekstu</string>
+    <string name="ime_switcher_title">Pokaż przeł. klawiatury</string>
+    <string name="ime_switcher_summary">W pasku powiadomień, podczas pisania (wymagany reboot)</string>
+    <string name="rotate_180_title">Pozwalaj na rotację 180 stopni</string>
+    <string name="rotate_180_summary">Ekran będzie mógł się obrócić do góry nogami!</string>
+    <string name="recent_kill_all">Aktywuj przycisk zabij-wszystko</string>
+    <string name="recent_kill_all_summary">Pokaże przycisk zabicia wszystkich aplikacji w men. zadań (wym. ponowne uruchomienie UI)</string>
+    <string name="kill_app_longpress_back">Przytrzymaj wstecz by zabić</string>
+    <string name="kill_app_longpress_back_summary">Przytrzymanie wstecz zabije aktywną aplikację</string>
+    <string name="tablet_ui">Wymuś Tablet UI</string>
+    <string name="tablet_ui_summary">Pozwoli użyć Tablet UI (wymagany reboot)</string>
+    <string name="bootanimation_preview">Podgląd boot animacji</string>
+    <string name="apply">Zastosuj</string>
+    <string name="creating_preview">Tworzenie podglądu...</string>
+    <string name="error_reading_zip_file">Błąd odczytu pliku zip</string>
+    <string name="error_creating_preview">Błąd podczas tworzenia podglądu</string>
+    <string name="multipane_ui">Aktywuj dwa panele</string>
+    <string name="multipane_ui_summary">To włączy dwa panele (wymagany reboot)</string>
+    <string name="alt_resolver">Użyj innej siatki aplikacji</string>
+    <string name="alt_resolver_summary">Użyj siatki aplikacji w stylu Gingerbread</string>
+
+    <!-- LCD Density -->
+    <string name="lcd_density_title">Gęstość pikseli LCD (DPI)</string>
+    <string name="lcd_density_summary">unknown</string>
+    <string name="current_lcd_density">"Aktualne DPI: "</string>
+    <string name="lcd_density_wizard">Przewodnik po DPI</string>
+    <string name="follow_through_title">Podążaj za mną!</string>
+    <string name="follow_through_summary">Upewnij się, że wykonujesz wszystko krok po kroku i wykonujesz każdy dobrze przed kontynuacją.</string>
+    <string name="stock_density_title">1. Ustaw DPI na domyślną wartość</string>
+    <string name="stock_density_summary">Tablety i starsze telefony używają DPI 160. Więkośc telefonów używa 240 DPI. Galaxy Nexus używa domyślnie 320 DPI.</string>
+    <string name="stock_density_changed_summary">"Ustaw DPI na: "</string>
+    <string name="reboot_title">2. Uruchom ponownie</string>
+    <string name="reboot_summary">Wróć tutaj po ponownym uruchomieniu by, wykonać następne kroki</string>
+    <string name="clear_market_data_title">3. Wyczyść dane marketu</string>
+    <string name="clear_market_data_cleared">Dane marketu wyczyszczone</string>
+    <string name="clear_market_data_donot_cleared">"Dane marketu nie mogłby zostać usunięte, zrób to samodzielnie."</string>
+    <string name="dpi">DPI</string>
+    <string name="open_market_title">4. Otwórz market i kliknij Akceptuj</string>
+    <string name="open_market_summary">Kliknij wstecz, by wrócic tutaj gdy zrobione.</string>
+    <string name="open_market_summary_could_not_open">"Nie można otworzyć marketu! Jeśli jesteś pewny, że jest zainstalowany, otwórz go samodzielnie."</string>
+    <string name="custom_density_title">5. Zmień DPI na jakie sobie życzysz</string>
+    <string name="custom_density_summary">Jeśli miałeś problemy z kompatybilnością w Markecie, wróć tutaj i ponów procedurę</string>
+    <string name="custom_density_summary_invalid">"NIEPRAWIDŁOWE DPI!"</string>
+    <string name="custom_density">własne</string>
+    <string name="set_custom_density_title">Ustaw własne DPI</string>
+    <string name="set_custom_density_set">Ustaw</string>
+    <string name="custom_density_dialog_title">"UWAGA!"</string>
+    <string name="custom_density_dialog_summary">"Zmiana DPI może powodować nagłe zatrzymanie aplikacji. Jeśli napotkałeś błędy niekompatybilności wróć tutaj i ponów procedurę od punktu 1."</string>
+    <string name="custom_density_dialog_button_got">Mamy to!</string>
+    <string name="custom_density_dialog_button_reboot">Uruchom ponownie</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">Styl przełączników</string>
+    <string name="toggle_style_summary">Styl ikonowy lub tekstowy.</string>
+    <string name="toggles_layout_title">Układ przełączników</string>
+    <string name="enabled_toggles_title">Aktywne przełączniki</string>
+    <string name="enabled_toggles_summary">Wybierz przełączniki do wyświetlenia</string>
+    <string name="toggles_display_dialog">Wybierz przełączniki do użycia</string>
+    <string name="toggles_display_close">Zamknij</string>
+    <string name="toggles_order_title">Kolejność przełączników</string>
+    <string name="toggles_order_summary">Wybierz, w jakiej kolejności przełączniki mają być wyświetlane</string>
+    <string name="brightness_location_title">Lokalizacja jasności</string>
+    <string name="reset_toggles_title">Resetuj przełączniki</string>
+    <string name="reset_toggles_summary">Ustanawia domyślną kolejność i rodzaje przełączników</string>
+    <string name="toggle_button_alpha_title">Przezroczystość wzkaźnika przełącznika</string>
+    <string name="toggle_btn_enabled_color_title">Kolor aktywnego wskaźnika</string>
+    <string name="toggle_btn_disabled_color_title">Kolor nieaktywnego wskaźnika</string>
+    <string name="toggle_btn_background_title">Przezroczystość tła przełączników</string>
+    <string name="toggle_text_color_title">Kolor tekstu przełączników</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">Styl zegarka</string>
+    <string name="title_clock_ampm_entries">Styl AM/PM</string>
+    <string name="enable_clock_weekday">Dzień tygodnia</string>
+    <string name="enable_clock_weekday_summary">Skrócona nazwa dnia tygodnia obok zegarka</string>
+    <string name="colors">Kolory</string>
+    <string name="clock_color_title">Kolor zegarka</string>
+
+    <!-- Toggle Strings to be called from device overlays -->
+    <string name="toggle_airplane_mode">Tryb samolotowy</string>
+    <string name="toggle_auto_rotate">Auto rotacja</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_fast_charge">Szybkie ładowanie</string>
+    <string name="toggle_gps">GPS</string>
+    <string name="toggle_lte">LTE</string>
+    <string name="toggle_data">Transfer danych</string>
+    <string name="toggle_nfc">NFC</string>
+    <string name="toggle_silent">Cichy</string>
+    <string name="toggle_swagger">Swagger</string>
+    <string name="toggle_sync">Synchronizacja</string>
+    <string name="toggle_torch">Latarka</string>
+    <string name="toggle_2g">2G</string>
+    <string name="toggle_usb_tether">Tethering USB</string>
+    <string name="toggle_vibrate">Wibracje</string>
+    <string name="toggle_wifi_ap">Tethering Wi-Fi</string>
+    <string name="toggle_wifi">Wi-Fi</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">Styl ikony baterii</string>
+    <string name="battery_not_title">Ikona baterii w pasku powiadomień</string>
+    <string name="battery_not_summary">Ikona baterii pojawi się w miejscu przycisku czyszczenia powiadomień</string>
+    <string name="battery_bar">Lokalizacja ikony baterii</string>
+    <string name="battery_bar_color">Kolor paska baterii</string>
+    <string name="battery_bar_cat">Opcje ikony baterii</string>
+    <string name="battery_bar_style_title">Styl paska baterii</string>
+    <string name="battery_bar_thickness_title">Grubość paska baterii</string>
+    <string name="battery_bar_animate_title">Animacja ładowania</string>
+    <string name="battery_bar_animate_summary">Animacja ładowania może powodować problemy w użytkowaniu telefonu.</string>
+
+    <!-- Statusbar | Signal -->
+    <string name="signal_style">Styl sygnału</string>
+    <string name="signal_color_title">Kolor sygnału</string>
+    <string name="hide_signal_title">Ukryj paski sygnału</string>
+    <string name="hide_signal_summary">Aktualizuje gdy siła sygnału ulegnie zmianie</string>
+    <string name="wifi_signal_style">Styl syngału WiFi</string>
+    <string name="wifi_signal_color_title">Kolor sygnału WiFi</string>
+    <string name="alt_signal_title">Alternatywny styl sygnału</string>
+    <string name="alt_signal_summary">Użyj stylu syngału w stylu Gingerbread</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Wybierz kolor</string>
+    <string name="press_color_to_apply">Kliknij kolor by zatwierdzić</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Ustaw</string>
+    <string name="ics_color">Holo</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar">Belka nawigacyjna</string>
+    <string name="navbar_button_cat">Przyciki belki nawigacji</string>
+    <string name="title_pref_menu_display">Lokalizacja menu</string>
+    <string name="summary_pref_menu_display">Pamiętaj o usunięciu swoich przycisków menu jeśli \ używasz dużego przycisku menu!</string>
+    <string name="title_pref_navigation_menu_display">Widoczność menu</string>
+    <string name="summary_pref_navigation_menu_display">Jak i kiedy chciałbyś, aby przyciski menu się pojawiały?</string>
+    <string name="navbar_qty_title">Ilość przycisków nawigacji</string>
+    <string name="navbar_qty_summary">Wybierz liczbę przycisków nawigacji</string>
+    <string name="navbar_action_title">Akcja %1$s przycisku &amp; ikona</string>
+    <string name="button_transparency_title">Przezroczystość przycisku nawigacji</string>
+    <string name="navbar_longpress_title">Akcja przytrzymania przycisku %1$s</string>
+    <string name="navbar_action_home">Dom</string>
+    <string name="navbar_action_back">Wstecz</string>
+    <string name="navbar_action_recents">Ostatnie</string>
+    <string name="navbar_action_search">Szukaj</string>
+    <string name="navbar_action_screenshot">Zrzut ekranu</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_ime">Otwórz selektor klawiatury</string>
+    <string name="navbar_action_kill">Zabij proces</string>
+    <string name="navbar_action_power">Wyłącz</string>
+    <string name="navbar_action_notifications">Powiadomienia</string>
+    <string name="navbar_action_none">Pusty</string>
+    <string name="navbar_widgets">Widżety belki nawigacyjnej</string>
+    <string name="navbar_enable_bar">Aktywuj belkę naw.</string>
+    <string name="navigation_bar_height_title">Wysokość belki (pion)</string>
+    <string name="navigation_bar_height_summary">Wysokość belki naw. w trybie pionowym</string>
+    <string name="navigation_bar_height_landscape_title">Wysokość belki (poziom)</string>
+    <string name="navigation_bar_height_landscape_summary">Wysokość belki w trybie poziomym</string>
+    <string name="navigation_bar_width_title">Szerokość belki nawigacyjnej</string>
+    <string name="navigation_bar_width_summary">Szerokość belki, jeśli nie wypełnia przestrzeni</string>
+    <string name="navbar_enable_dialog_title">Wymagany reboot!</string>
+    <string name="navbar_enable_dialog_msg"><b>Powinieneś</b> uruchomić ponownie teraz by upewnić się że wszystko gra!</string>
+    <string name="navbar_enable_dialog_negative">Później</string>
+    <string name="navbar_enable_dialog_Positive">Teraz</string>
+    <string name="navbar_height_dialog_title">Reboot required!</string>
+    <string name="navbar_height_dialog_summary">Uruchom ponownie by zastosować szerokość belki</string>
+    <string name="navbar_height_dialog_button_later">Później</string>
+    <string name="navbar_height_dialog_button_reboot">Teraz</string>
+    <string name="navigation_bar_tint_title">Kolor belki nawigacyjnej</string>
+    <string name="navigation_bar_glow_tint_title">Kolor poświaty belki</string>
+    <string name="navigation_bar_glow_tint_summary">Przy przyciskaniu na belce tworzy się poświata. Uzyj tego by zmienić kolor poświaty.</string>
+    <string name="glow_times_title">Animacja poświaty</string>
+    <string name="glow_times_off">Wyłączona</string>
+    <string name="glow_times_superquick">Super szybka</string>
+    <string name="glow_times_quick">Szybka</string>
+    <string name="glow_times_normal">Normalna</string>
+
+    <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">Cele pierścieni belki</string>
+    <string name="interface_softkey_settings">Ustawienia Softkeya</string>
+    <string name="interface_softkeys_pref_default_title">Nie wybrano aktywności</string>
+    <string name="interface_softkeys_pref_default_summary">Stuknij ikonę ustawień by wybrać właśną aktywność po przytrzymaniu</string>
+    <string name="interface_softkeys_activity_dialog_title">Wybierz aktywność</string>
+    <string name="interface_softkeys_reboot_title">Menu Reboot</string>
+    <string name="interface_softkeys_screenshot_title">Screenshot</string>
+    <string name="interface_softkeys_screenoff_title">Wyłącz ekran</string>
+    <string name="interface_softkeys_ime_switcher_title">Otwórz selektor klawiatury</string>
+    <string name="interface_softkeys_ring_vib_title">Przełącz Dzwonek/Wibra</string>
+    <string name="interface_softkeys_ring_silent_title">Przełącz Dzwonek/Cichy</string>
+    <string name="interface_softkeys_ring_vib_silent_title">Przełącz Dzwonek/Wibra/Cichy</string>
+    <string name="interface_softkeys_kill_process_title">Zabij aplikację</string>
+    <string name="interface_softkey_package_removed">Poprzednio wybrana aplikacja nie została odnaleziona</string>
+    <string name="interface_navring_settings_title">Pierścienie belki nawigacji</string>
+    <string name="interface_navring_settings_summary">Edytuj swoje własne aplikacje belki </string>
+    <string name="title_navring_amount">Liczna celów pierścieni belki</string>
+    <string name="summary_navring_amount">Jak dużo celów pierścienia chcesz? *Zmiana spowoduje reset aktualnych celów i zrestartuje interejs*</string>
+    <string name="interface_navring_custom_pref_summary">Zwolnij na celu by uruchomić </string>
+    <string name="interface_navring_pref_default_summary">Stuknij by wybrać własną aktywność celu pierścienia</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">Cele pierścieni</string>
+    <string name="navbar_ring">Własne cele pierścieni</string>
+
+    <!-- LED -->
+    <string name="led_on">LED Włączony</string>
+    <string name="led_time_on">Czas świecenia</string>
+    <string name="led_off">LED Wyłączony</string>
+    <string name="led_time_off">Czas nie-świecenia</string>
+    <string name="led_time_seconds">" sekund"</string>
+    <string name="led_color_click">Kliknij na diodzie by zmienić kolor</string>
+    <string name="title_led_screen_on">Miganie diodą gdy ekran włączony</string>
+    <string name="led_custom_app">Wybrana aplikacja</string>
+    <string name="led_custom_default">Domyślne</string>
+    <string name="led_change_app">Zmień</string>
+    <string name="led_delete_app">Usuń</string>
+    <string name="led_keep_app">Zostaw</string>
+    <string name="led_custom_title">Własna aplikacja do LED</string>
+    <string name="led_custom_message">"Czy chciałbyś zmienić aplikację: "</string>
+    <string name="led_edit_button">-</string>
+    <string name="led_test_notification">Testuj diodę LED</string>
+    <string name="led_test_notification_message_now">"Testowanie diody LED: "</string>
+    <string name="led_test_notification_message_note">".  Wyłącz ekran by zobaczyć miganie. Nie klikaj OK dopóki nie sprawdzisz ustawienia LED."</string>
+    <string name="led_test_ok">OK</string>
+    <string name="title_charging_led_on">Włącz LED podczas ładowania (wymagany reboot)</string>
+    <string name="led_change_brightness">Zmień jasność</string>
+    <string name="led_brightness_default">Domyślna jasność: 31</string>
+
+    <!-- Sound -->
+    <string name="less_notification_sounds_title">Rzadsze dźwięki powiadomień</string>
+    <string name="less_notification_sounds_summary">Pozwoli to zachować odstęp między kolejnymi dźwiękami powiadomień</string>
+    <string name="title_headphone_audio_mode">Akcja podłączenia słuchawek</string>
+    <string name="summary_headphone_audio_mode">Co uczynić z dzwiękiem podczas podłączenia słuchawki</string>
+    <string name="title_bt_audio_mode">Akcja podłączenia słuchawki BT</string>
+    <string name="summary_bt_audio_mode">Co uczynić z dzwiękiem podczas podłączenia słuchawki Bluetooth</string>
+    <string name="headphones_mode_no_action">Brak akcji</string>
+    <string name="headphones_mode_vibrate">Tryb wibracji</string>
+    <string name="headphones_mode_silent">Tryb cichy</string>
+    <string name="title_flip_mode">Tryb etykiety</string>
+    <string name="summary_flip_mode">Co uczynić z dźwiękiem gdy telefon zostanie położony ekranem w dół</string>
+    <string name="flip_cat_title">Akcja etykiety</string>
+    <string name="title_timeout_sec">Czas wygaszenia ekranu</string>
+    <string name="summary_timeout_sec">Czas gdy ekran wyłączony przed wyłączeniem czujnika rotacji</string>
+    <string name="title_down_sec">Czas do etykiety</string>
+    <string name="summary_down_sec">Czas wymagany do postawienia telefonu ekranem w dół</string>
+    <string name="flip_action_positive">OK</string>
+    <string name="flip_dialog_title">Jak to działa ?</string>
+    <string name="flip_dialog_msg">Twój telefon przełączy się na wibracje lub tryb cichy jeśli to ustawisz.
+        To trwa 1.5 (domyślnie) sekundy by zmienić po przerzuceniu.
+        Zostanie wyłączone po 15 sekundach (domyślnie) od włączenia ekranu
+        UWAGA: **Musisz włączyć ekran po czasie wygaszenia by powrócić do stanu sprzed ustawienia etykiety.**</string>
+    <string name="summary_phone_flip_mode">Obróć telefon by wyciszyć dzwonek połączenia</string>
+    <string name="title_phone_flip_mode">Wyciszenie rozmowy</string>
+
+    <!-- Lockscreen -->
+    <string name="lockscreen_security_cat">Bezpieczeństwo</string>
+    <string name="lockscreen_layout_cat">Styl</string>
+    <string name="lockscreen_music_cat">Muzyka</string>
+    <string name="lockscreen_weather_cat">Pogoda</string>
+    <string name="lockscreen_calendar_cat">Kalendarz</string>
+
+    <string name="lockscreen_quick_unlock_control_title">Szybkie odblokowanie PIN</string>
+    <string name="lockscreen_quick_unlock_control_summary">Oblokowanie PINu bez potrzeby zatwierdzania</string>
+    <string name="lockscreen_menu_unlock_title">Przycisk menu</string>
+    <string name="lockscreen_menu_unlock_summary">Użyj przycisku menu by odblokować telefon</string>
+    <string name="lockscreen_auto_rotate_title">Pozwól na obrót ekr. blokady</string>
+    <string name="lockscreen_auto_rotate_summary">Ekran blokady będzie mógł się automatycznie obrócić. Jest to niezależne od Auto rotacji w ust. ekranu</string>
+    <string name="lockscreen_battery_title">Procentowy wskaźnik baterii</string>
+    <string name="lockscreen_battery_summary">Zawsze pokazuj wskaźnik baterii na ekranie blokady</string>
+    <string name="volume_rocker_wake_title">Obudź klawiszami głoś.</string>
+    <string name="volume_rocker_wake_summary">Wybudza po kliknięciu przycisków głośności</string>
+    <string name="volume_music_controls_title">Zmiana utworu</string>
+    <string name="volume_music_controls_summary">Przytrzymaj przycisk ściszania/podgłaśniania podczas uśpienia by zmienić utwór. Wybudzenie ekranu nie będzie możliwe używając tych przycisków.</string>
+    <string name="lockscreen_stock_music_layout_title">Standardowy styl muzyki</string>
+    <string name="lockscreen_stock_music_layout_summary">Użyj standardowego stylu muzyki na ekranie blokady</string>
+    <string name="lockscreen_wallpaper_title">Wybierz tapetę ekr. blokady</string>
+    <string name="lockscreen_wallpaper_summary">Możesz usunąć tapetę z ekranu blokady używając tej opcji</string>
+    <string name="lockscreen_text_color_title">Kolor tekstu ekranu blokady</string>
+    <string name="title_lockscreen_user_timeout_override">Poczekaj na ekran blokady</string>
+    <string name="summary_lockscreen_user_timeout_override">Użyj czasu oczekiwania Androida gdy wygaszono ekran. Domyślnym zachowaniem jest użycie tego czasu tylko gdy nie został ręcznie uśpiony.</string>
+    <string name="lockscreen_weather_title">Aktywuj</string>
+    <string name="lockscreen_weather_summary">Pokaż informacje pogodowe na ekranie blokady. Musisz włączyć usługę pogodą w ustawieniach ROM Control</string>
+    <string name="lockscreen_weather_type_title">Styl pogody</string>
+    <string name="lockscreen_weather_type_summary">Wybierz między tekstowym a graficznym stylem.</string>
+    <string name="lockscreen_calendar_title">Aktywuj</string>
+    <string name="lockscreen_calendar_summary">Pokazuje nadchodzące wydarzenia z kalendarza na ekranie blokady</string>
+    <string name="lockscreen_calendar_sources_title">Źródła kalendarza</string>
+    <string name="lockscreen_calendar_sources_summary">Wybierz, z jakich kalendarzy mają być brane dane</string>
+    <string name="lockscreen_calendar_dialog">Wybierz jakich kalendarzy używać</string>
+    <string name="lockscreen_calendar_close">Zamknij</string>
+    <string name="lockscreen_calendar_range_title">Zakres czasu</string>
+    <string name="lockscreen_calendar_range_summary">Wybierz z jakiego zakresu czasu mają być wyświetlane wydarzenia.</string>
+    <string name="lockscreen_calendar_use_colors_title">Użyj kolorów</string>
+    <string name="lockscreen_calendar_use_colors_summary">Jeśli aktywne, wydarzenia będą kolorowane jak w kalendarzu.</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">Ukryj trwające wydarzenia</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Jeśli aktywne, aktualnie trwające wydarzenia nie będą pokazane.</string>
+    <string name="lockscreen_calendar_flip_title">Wielokrotne wydarzenia</string>
+    <string name="lockscreen_calendar_flip_summary">Jeśli aktywne, widżet będzie pokazywał wielokrotne wydarzenia.</string>
+    <string name="lockscreen_calendar_interval_title">Interwał zmiany</string>
+    <string name="lockscreen_calendar_interval_summary">Wybierz interwał czasowy do zmiany aktualnie wyświetlanego wydarzenia</string>
+
+    <!-- Weather -->
+    <string name="weather_enable">Włącz pogodę</string>
+    <string name="weather_enable_summary">Udostępniane będą informacje pogodowę dla komponentów ROMu.</string>
+    <string name="weather_use_custom_location">Użyj własnej lokalizacji</string>
+    <string name="weather_use_custom_location_summary">Ustawienie własnej lokalizacji może oszędzić baterię. Inaczej będzie automatycznie ustalana.</string>
+    <string name="weather_custom_location_dialog_title">Ustaw swoją lokalizację</string>
+    <string name="weather_custom_location_dialog_message">Podążaj za przykładem! Ustawienie nieprawidłowej lokalizacji uniemożliwi pobranie informacji pogodowych i może wywoływać niespodziewane reakcje.\n\nPrzykłady: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_title">Własna lokalizacja</string>
+    <string name="weather_show_location_title">Pokaż lokalizację</string>
+    <string name="weather_show_location_summary">Pokaż swoją lokalizację</string>
+    <string name="weather_refresh_interval">Interwał odświeżania</string>
+    <string name="weather_refresh_interval_minutes">" minut"</string>
+    <string name="weather_use_celcius">Jednostki metryczne</string>
+    <string name="weather_use_celcius_summary">Włączenie tego będzie pokazywało temperaturę w stopniach Celsjusza zamiast Fahrenheita i prędkość wiatru w km/h zamiast mph.</string>
+    <string name="weather_statusbar_style">Styl pogody na pasku statusu</string>
+    <string name="weather_start_custom_app">Uruchom własną aplikację</string>
+    <string name="weather_start_custom_app_summary">Uruchomi wybraną aplikację po kliknięciu ikony pogodowej.</string>
+    <string name="weather_custom_app_title">Własna aplikacja</string>
+    <string name="weather_custom_app_dialog_title">Wybierz swoją apliację</string>
+    <string name="weather_custom_app_dialog_message">Nazwa aplikacji.</string>
+    <string name="weather_refreshing">Odświeżanie pogody...</string>
+    <string name="weather_loc_warning_title">Nie można ustalić lokalizacji.</string>
+    <string name="weather_loc_warning_msg">"Uzyskiwanie lokalizacji z sieci jest wyłączone. To uniemożliwia pobranie informacji pogodowej z twojej lokalizacji. Ustaw własną lokalizację albo ustaw automatyczną lokalizaję po sieci."</string>
+    <string name="weather_loc_warning_positive">"Włącz lokalizację sieciową"</string>
+    <string name="weather_loc_warning_negative">"Nie włączaj."</string>
+    <string name="menu_weather_get_weather">Pobierz informacje pogodowe</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">Tornado</string>
+    <string name="weather_1">Tropikalny sztorm</string>
+    <string name="weather_2">Huragan</string>
+    <string name="weather_3">Gwałtowne burze z piorunami</string>
+    <string name="weather_4">Burze z piorunami</string>
+    <string name="weather_5">Deszcz i deszcz ze śniegiem</string>
+    <string name="weather_6">Deszcz ze śniegiem</string>
+    <string name="weather_7">Śnieg z deszczem ze śniegiem</string>
+    <string name="weather_8">Mroźna mżawka</string>
+    <string name="weather_9">Mżawka</string>
+    <string name="weather_10">Mroźny deszcz</string>
+    <string name="weather_11">Ulewa</string>
+    <string name="weather_12">Ulewa</string>
+    <string name="weather_13">Przelotne opady śniegu</string>
+    <string name="weather_14">Opady jasnego śniegu</string>
+    <string name="weather_15">Mroźny śnieg</string>
+    <string name="weather_16">Śnieg</string>
+    <string name="weather_17">Grad</string>
+    <string name="weather_18">Deszcz ze śniegiem</string>
+    <string name="weather_19">Zakurzenie</string>
+    <string name="weather_20">Mgliście</string>
+    <string name="weather_21">Mgiełkowato</string>
+    <string name="weather_22">Dymnie</string>
+    <string name="weather_23">Przenikliwie</string>
+    <string name="weather_24">Wiatrzyście</string>
+    <string name="weather_25">Zimno</string>
+    <string name="weather_26">Chmurzyście</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">Liczne zachmurzenia</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">Liczne zachmurzenia</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">Umiarkowane zachmurzenie</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">Umiarkowane zachmurzenie</string>
+    <!-- clear (night) -->
+    <string name="weather_31">Czyste niebo</string>
+    <string name="weather_32">Słonecznie</string>
+    <!-- fair (night) -->
+    <string name="weather_33">Małe zachmurzenie</string>
+    <!-- fair (day) -->
+    <string name="weather_34">Małe zachmurzenie</string>
+    <string name="weather_35">Opady deszczu i gradu</string>
+    <string name="weather_36">Gorąco</string>
+    <string name="weather_37">Izolowane burze z błyskawicami</string>
+    <string name="weather_38">Rzadkie burze z piorunami</string>
+    <string name="weather_39">Rzadkie burze z piorunami</string>
+    <string name="weather_40">Rzadka ulewa</string>
+    <string name="weather_41">Gwałtowny śnieg</string>
+    <string name="weather_42">Rzadkie ulewy śnieżne</string>
+    <string name="weather_43">Rzadkie ulewy śnieżne</string>
+    <string name="weather_44">Umiarkowane zachmurzenie</string>
+    <string name="weather_45">Ulewa z błyskawicami</string>
+    <string name="weather_46">Gwałtowny śnieg</string>
+    <string name="weather_47">Izolowane ulewy burz z błyskawicami</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Uzyskanie lokalizacji nie powiodło się.</string>
+
+    <!-- cardinal directions -->
+    <string name="direction_north">N</string>
+    <string name="direction_north_east">NE</string>
+    <string name="direction_east">E</string>
+    <string name="direction_south_east">SE</string>
+    <string name="direction_south">S</string>
+    <string name="direction_south_west">SW</string>
+    <string name="direction_west">W</string>
+    <string name="direction_north_west">NW</string>
+
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">Skopiowano do schowka.</string>
+
+    <!-- Performance -->
+    <string name="tab_cpu_settings">"Ustawienia CPU"</string>
+    <string name="tab_voltage_settings">"Ustawienia napięcia"</string>
+    <string name="tab_other_settings">"Inne ustawienia"</string>
+    <string name="current_speed">Obecna prędkość</string>
+    <string name="current_max">Obecne max:</string>
+    <string name="current_min">Obecne min:</string>
+    <string name="governor">Zarządca CPU</string>
+    <string name="io">IO Scheduler</string>
+    <string name="sob">Ustaw przy starcie</string>
+    <string name="dt_free_memory">Minfree Taskkiller</string>
+    <string name="prefcat_free_memory">Wolna pamięć</string>
+    <string name="pt_free_memory">Wolna pamięć</string>
+    <string name="ps_free_memory">Wartość minfree dla task killera | Obecna: %s</string>
+    <string name="pt_free_memory_boot">Ustaw przy starcie</string>
+    <string name="ps_free_memory_boot">Ustaw wartość przy starcie</string>
+    <string name="pt_fast_charge_boot">Szybkie ładowanie</string>
+    <string name="ps_fast_charge_boot">Aktywuj szybkie ładowanie przy starcie</string>
+    <string name="ps_volt_mhz_voltage">" Napięcie MHz"</string>
+    <string name="ps_volt_save">"Zapisz"</string>
+    <string name="ps_volt_current_voltage">"Obecne napięcie: "</string>
+    <string name="ps_volt_setting_to_apply">"Ustawienie do zapisu: "</string>
+    <string name="pt_volt_control">Kontrola napięcia</string>
+    <string name="ps_volt_control">Ustaw napięcie dla określonej częstotliwości</string>
+    <string name="not_supported">Twój kernel nie obsługuje kontroli napięć.</string>
+    <string name="apply_values">Zapisz wartości</string>
+    <string name="freq">Częstotliwość</string>
+    <string name="current">mV obecnych</string>
+    <string name="saved">mV zapisanych</string>
+    <string name="kernel">Tweaki w kernelu (jeśli wspierane)</string>
+    <string name="fast_charge_warning">NIE BĘDZIESZ MÓGŁ PODŁĄCZYĆ DO KOMPUTERA PO KAŻDYM URUCHOMIENIU!\n\nTo ustawienie będzie aktywowane po każdym uruchomieniu. Podczas gdy szybkie ładowanie jest włączone, będziesz mógł *tylko* naładować telefon!</string>
+    <string name="fast_charge_notification_title">Szybkie ładowanie jest WŁĄCZONE!</string>
+    <string name="fast_charge_notification_message">Telefon w trybie tylko-do-ładowania!</string>
+    <string name="prefcat_other_tweaks">Inne tweaki</string>
+    <string name="performance_daily_reboot_title">Dzienny reboot</string>
+    <string name="performance_daily_reboot_summary">Reboot zaplanowany na %1$s</string>
+    <string name="performance_daily_reboot_summary_unscheduled">Nie zaplanowany</string>
+
+    <!-- Custom vibrations -->
+    <string name="vibrations">Wibracje</string>
+    <string name="defaultvibrationname">"'Domyślne'"</string>
+    <string name="vib_new">Nowy/Reset</string>
+    <string name="vib_load">Wczytaj</string>
+    <string name="vib_rec">Nagraj</string>
+    <string name="vib_TAP">TAP!</string>
+    <string name="vib_stop">Stop</string>
+    <string name="vib_play">Odtwórz</string>
+    <string name="vib_save">Zapisz</string>
+    <string name="vib_del">Kasuj</string>
+
+    <string name="vib_dialog_text_entry">Zapisz wibrację</string>
+    <string name="vib_dialog_name">Nazwa:</string>
+    <string name="vib_cur_loaded_title">Załadowana:</string>
+    <string name="help">Pomoc</string>
+    <string name="vibration_detailed_help">Możesz stworzyć swoje własne ścieżki wibracji w 5 prostych krokach:\n
+        - Stuknij Nowy/Reset\n
+		- Stuknij Nagraj\n
+		- Nagraj ścieżkę klikając na przycisk TAP!\n
+		- Stuknij Stop\n
+		- Stuknij Zapisz, wpisz nazwę i kliknij OK\n\n
+		Możesz sprawdzić swoją ścieżkę klikając Odtwórz.\n
+		Jeśli życzysz sobie zmodyfikować istniejącą ścieżkę stuknij Wczytaj, wybierz ścieżkę, nagraj ponownie, i ponownie zapisz (zostanie nadpisana na starą).\n
+		Aby usunąć ścieżkę, stuknij Kasuj, wybierz swoją ścieżkę i ponownie stuknij Kasuj. Nie możesz usunąć domyślnej wibracji.\n\n
+		Możesz przypisać swoją ścieżkę wibracji do rozmów telefonicznych w ustawieniach dźwięku.\n
+		Możesz również przypisać swoje ścieżki wibracji do określonych kontatków w aplikacji Osoby: po wyświetleniu kontaktu stuknij Menu/Ustaw wibrację.</string>
+
+    <!-- boot animation stuff -->
+    <string name="insult_jerk">Jerk!</string>
+    <string name="insult_protekk">ProTekk!</string>
+
+    <!-- clock stuff -->
+    <string name="right_clock">Zegar z prawej</string>
+    <string name="center_clock">Wyśrodkowany zegar</string>
+    <string name="no_clock">Brak zegara</string>
+    <string name="dont_show">Nie pokazuj</string>
+    <string name="small_am_pm">Małe AM/PM</string>
+    <string name="regular_am_pm">Pełne AM/PM</string>
+    <string name="protekk_oclock">ProTekk O\'Clock</string>
+    <string name="small_weekday">Mały dzień tygodnia</string>
+    <string name="regular_weekday">Duży dzień tygodnia</string>
+
+    <!-- toggle style -->
+    <string name="icon_only">Tylko ikona</string>
+    <string name="text_only">Tylko tekst</string>
+
+    <!-- Brightness slider -->
+    <string name="on_top">Na górze</string>
+    <string name="on_the_bottom">Na dole</string>
+
+    <!-- Battery styles -->
+    <string name="icon_with_text">Ikona z tekstem</string>
+    <string name="icon_with_centered_text">Ikona z wyśrodkowanym tekstem</string>
+    <string name="circlemod">CircleMOD</string>
+
+    <!-- NavBar -->
+    <string name="right">Prawy</string>
+    <string name="left">Lewy</string>
+    <string name="both">Obydwie strony</string>
+    <string name="default_jb_behavior">Domyślne zachowanie JB</string>
+    <string name="always_show_invincible_icons">Zawsze wyświetlaj niewidzialne ikony</string>
+    <string name="always_show">Zawsze wyświetlaj</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">Domyślne JB z niewidzialnymi ikonami gdy są ukryte</string>
+    <string name="home">Dom</string>
+    <string name="back">Wstecz</string>
+    <string name="recents">Ostatnie</string>
+    <string name="search">Szukaj</string>
+    <string name="screenshot">Zrzut ekranu</string>
+    <string name="menu">Menu</string>
+    <string name="toggle_widgets">Przełącz widżety</string>
+    <string name="open_ime_switcher">Otwórz selektor klawiatury</string>
+    <string name="kill_app">Zabij aplikację</string>
+    <string name="power">Power menu</string>
+    <string name="notifications">Powiadomienia</string>
+    <string name="custom_app">Własna aplikacja</string>
+    <string name="blank">Pusto</string>
+    <string name="none">Nic</string>
+    <string name="take_screenshot">Wykonaj Screenshot</string>
+    <string name="ring_vib">Dzwonek/Wibra</string>
+    <string name="ring_silent">Dzwonek/Cichy</string>
+    <string name="ring_vib_silent">Dzwonek/Wibra/Cichy</string>
+    <string name="screen_off">Wyłącz ekran</string>
+    <string name="google_now">Google Now</string>
+    <string name="select_application">Wybierz aplikację</string>
+    <string name="one_target">1 cel</string>
+    <string name="two_targets">2 cele</string>
+    <string name="three_targets">3 cele</string>
+    <string name="four_targets">4 cele</string>
+    <string name="five_targets">5 celi</string>
+    <string name="size_42_dp_default">42 dp (domyślne)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (domyślne)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">Pasek powiadomień</string>
+    <string name="top_of_navbar">Górna belka nawigacji</string>
+    <string name="bottom_of_navbar">Dół belki nawigacji</string>
+    <string name="regular">Regularny</string>
+    <string name="center_mirrored">Wyśrodkowany-lustrzany</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- LED Values -->
+    <string name="time_0_seconds_off">Wyłączony</string>
+    <string name="time_0_2_seconds">.2 sekundy</string>
+    <string name="time_0_5_seconds">.5 sekundy</string>
+    <string name="time_1_second">1 sekunda</string>
+    <string name="time_1_5_seconds">1.5 sekundy</string>
+    <string name="time_2_seconds">2 sekundy</string>
+    <string name="time_2_5_seconds">2.5 sekundy</string>
+    <string name="time_3_seconds">3 sekundy</string>
+    <string name="time_3_5_seconds">3.5 sekundy</string>
+    <string name="time_4_seconds">4 sekundy</string>
+    <string name="time_4_5_seconds">4.5 sekundy</string>
+    <string name="time_5_seconds">5 sekund</string>
+    <string name="time_5_5_seconds">5.5 sekundy</string>
+    <string name="time_6_seconds">6 sekund</string>
+    <string name="time_7_seconds">7 sekund</string>
+    <string name="time_8_seconds">8 sekund</string>
+    <string name="time_9_seconds">9 sekund</string>
+    <string name="time_10_seconds">10 sekund</string>
+
+    <!-- LED brightness entries -->
+    <string name="low">niska</string>
+    <string name="medium">średnia</string>
+    <string name="high">wysoka</string>
+    <string name="very_high">bardzo wysoka</string>
+    <string name="laserbeam">wypalająca oczy</string>
+
+    <!-- Flip phone entries -->
+    <string name="disabled">Wyłączone</string>
+    <string name="enabled">Włączone</string>
+    <string name="time_0_seconds_instant_off">0 seconds (Od razu)</string>
+    <string name="time_15_seconds">15 sekund</string>
+    <string name="time_30_seconds">30 sekund</string>
+    <string name="time_45_seconds">45 sekund</string>
+    <string name="time_1_minute">1 minuta</string>
+    <string name="time_1_5_minutes">1.5 minuty</string>
+    <string name="time_2_minutes">2 minuty</string>
+    <string name="time_2_5_minutes">2.5 minuty</string>
+    <string name="time_3_minutes">3 minuty</string>
+    <string name="time_3_5_minutes">3.5 minuty</string>
+    <string name="time_4_minutes">4 minuty</string>
+    <string name="time_5_minutes">5 minut</string>
+
+    <!-- weather arrays -->
+    <string name="off">Wyłączone</string>
+    <string name="time_10_minutes">10 minut</string>
+    <string name="time_30_minutes">30 minut</string>
+    <string name="time_45_minutes">45 minut</string>
+    <string name="time_60_minutes">60 minut</string>
+    <string name="time_2_hours">2 godziny</string>
+    <string name="time_3_hours">3 godziny</string>
+    <string name="time_4_hours">4 godziny</string>
+    <string name="time_6_hours">6 godzin</string>
+    <string name="time_8_hours">8 godzin</string>
+    <string name="above_carrier_text">Nad tekstem operatora</string>
+    <string name="weather_panel">Panel pogodowy</string>
+    <string name="text">Tekst</string>
+
+    <!-- lockscreen calendar arrays -->
+    <string name="time_1_day">1 dzień</string>
+    <string name="time_2_days">2 dni</string>
+    <string name="time_3_days">3 dni</string>
+    <string name="time_4_days">4 dni</string>
+    <string name="time_5_days">5 dni</string>
+    <string name="time_6_days">6 dni</string>
+    <string name="time_1_week">1 tydzień</string>
+
+    <!-- minfree -->
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+
+    <!-- less notification sounds -->
+    <string name="default_behavior">Domyślne zachowanie</string>
+
+    <!-- signal style -->
+    <string name="show_signal_bars">Pokazuj paski sygnału</string>
+    <string name="show_signal_text">Pokazuj tekst sygnału</string>
+    <string name="show_with_dbm">Pokazuj w dBm</string>
+
+
+
+</resources>

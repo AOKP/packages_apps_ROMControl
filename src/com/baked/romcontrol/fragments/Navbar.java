@@ -190,20 +190,12 @@ public class Navbar extends BAKEDPreferenceFragment implements
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
 
         if (mTablet) {
-            prefs.removePreference(menuDisplayLocation);
             prefs.removePreference(mNavBarMenuDisplay);
-            prefs.removePreference(mNavBarButtonQty);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeight);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeightLandscape);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarWidth);
+            prefs.removePreference(mNavigationBarBgColor);
         }
         if (isTablet) {
-            prefs.removePreference(menuDisplayLocation);
             prefs.removePreference(mNavBarMenuDisplay);
-            prefs.removePreference(mNavBarButtonQty);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeight);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarHeightLandscape);
-            ((PreferenceGroup) findPreference("advanced_cat")).removePreference(mNavigationBarWidth);
+            prefs.removePreference(mNavigationBarBgColor);
         }
         refreshSettings();
         setHasOptionsMenu(true);

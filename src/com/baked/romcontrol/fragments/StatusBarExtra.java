@@ -126,6 +126,7 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         if (mTablet) {
             prefs.removePreference(mNotificationBackground);
             prefs.removePreference(mWallpaperAlpha);
+            prefs.removePreference(mStatusbarBgColor);
         }
 
         updateCustomBackgroundSummary();

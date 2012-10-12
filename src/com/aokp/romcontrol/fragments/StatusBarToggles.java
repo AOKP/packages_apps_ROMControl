@@ -431,10 +431,11 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
         String[] togglesStringArray = clusterfuck.split("\\|");
         ArrayList<String> iloveyou = new ArrayList<String>();
         for (String s : togglesStringArray) {
-            Log.e(TAG, "adding: " + s);
-            iloveyou.add(s);
+            if(s != null && s != "") {
+                Log.e(TAG, "adding: " + s);
+                iloveyou.add(s);
+            }
         }
-
         return iloveyou;
     }
 }

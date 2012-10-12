@@ -40,12 +40,14 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_FORCE_TABLET_UI = "force_tablet_ui";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
+    private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mKillAppLongpressBack;
     CheckBoxPreference mForceTabletUI;
     CheckBoxPreference mUseAltResolver;
+    CheckBoxPreference mVibrateOnExpand;
     Preference mLcdDensity;
 
     Random randomGenerator = new Random();
@@ -94,13 +96,17 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
 
+        mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
+        mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.VIBRATE_NOTIF_EXPAND, true));
+
         mForceTabletUI = (CheckBoxPreference) findPreference(PREF_FORCE_TABLET_UI);
         mForceTabletUI.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-            Settings.System.FORCE_TABLET_UI, 0) == 1);
+                Settings.System.FORCE_TABLET_UI, 0) == 1);
 
         mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
         mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                        Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
+                Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
 
         if (mTablet) {
             // if it's a tablet not reason to show the force of a tablet ui
@@ -170,6 +176,13 @@ public class SystemExtra extends BAKEDPreferenceFragment {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.ACTIVITY_RESOLVER_USE_ALT,
                     isCheckBoxPrefernceChecked(preference));
+            return true;
+
+        } else if (preference == mVibrateOnExpand) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.VIBRATE_NOTIF_EXPAND,
+                    ((CheckBoxPreference) preference).isChecked());
+            Helpers.restartSystemUI();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

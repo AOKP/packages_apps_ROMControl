@@ -27,6 +27,11 @@
             android:defaultValue="false" />
 
         <CheckBoxPreference
+            android:key="vibrate_notif_expand"
+            android:title="@string/vibrate_notif_expand_title"
+            android:summary="@string/vibrate_notif_expand_summary" />
+
+        <CheckBoxPreference
             android:key="force_tablet_ui"
             android:title="@string/force_tablet_ui"
             android:summary="@string/force_tablet_ui_summary"

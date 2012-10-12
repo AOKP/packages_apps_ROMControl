@@ -111,6 +111,8 @@
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
   <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
   <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
+  <string name="vibrate_notif_expand_title">Vibrovat při vytažení</string>
+  <string name="vibrate_notif_expand_summary">Vibrovat při vytažení notifikační lišty (vyžaduje restart UI)</string>
   <string name="disable_bootanimation_title">Vypnout startovací animaci</string>
   <string name="custom_bootanimation_title">Vlastní startovací animace</string>
   <string name="custom_bootanimation_summary">Vybrat zip se startovací animací z úložiště. Předchozí animace bude zálohována do /system/media.</string>
@@ -132,6 +134,8 @@
   <string name="kill_app_longpress_back_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="tablet_ui">Vynutit tabletové UI</string>
   <string name="tablet_ui_summary">Přepne do tabletového rozhraní (vyžaduje restart)</string>
+  <string name="hide_extras">Skrýt pomůcky</string>
+  <string name="hide_extras_summary">Skrýt některé položky systémové lišty (např. tlačítko kompatibility) (vyžaduje restart UI)</string>
   <string name="bootanimation_preview">Náhled startovací animace</string>
   <string name="apply">Použít</string>
   <string name="creating_preview">Vytváření náhledu...</string>
@@ -141,6 +145,10 @@
   <string name="multipane_ui_summary">Zapne/vypne zobrazení dvojitého panelu - jako na tabletech (vyžaduje restart)</string>
   <string name="alt_resolver">Alt. výchozí aplikace</string>
   <string name="alt_resolver_summary">Použít alternativní výběr výchozí aplikace (GB styl)</string>
+  <string name="show_overflow_title">Zobrazit tlačítko menu</string>
+  <string name="show_overflow_summary">Zobrazit v aplikacích tlačítko menu s 3 tečkami</string>
+  <string name="show_overflow_toast_enable">Tlačítko menu nebude vidět, dokud nedojde k restartování aplikací</string>
+  <string name="show_overflow_toast_disable">Tlačítko menu bude vidět, dokud nedojde k restartování aplikací</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>
@@ -289,6 +297,14 @@
   <string name="glow_times_superquick">Hodně rychlá</string>
   <string name="glow_times_quick">Rychlá</string>
   <string name="glow_times_normal">Normální</string>
+  <string name="navbar_widgets_instructions">Posunutím zobrazit - zvolit kliknutím</string>
+  <string name="navbar_widgets_reset">Obnovit widgety</string>
+  <string name="navbar_widget_summary">Widget %1$s z %2$s</string>
+  <string name="navbar_widget_summary_add">Kliknutím přidat widget</string>
+  <string name="navbar_widgets_title">Nastavení widgetů</string>
+  <string name="navbar_widgets_shiftLeft">Posunout vlevo</string>
+  <string name="navbar_widgets_shiftRight">Posunout vpravo</string>
+  <string name="navbar_widgets_delete">Smazat widget</string>
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>

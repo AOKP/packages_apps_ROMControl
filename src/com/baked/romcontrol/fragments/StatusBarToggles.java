@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -80,7 +81,7 @@ public class StatusBarToggles extends BAKEDPreferenceFragment implements OnPrefe
         findPreference(PREF_BRIGHTNESS_LOC);
         mBrightnessLocation.setOnPreferenceChangeListener(this);
         mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                .getContentResolver(),Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 1)));
+                .getContentResolver(),Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
 
         mToggleStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
         mToggleStyle.setOnPreferenceChangeListener(this);

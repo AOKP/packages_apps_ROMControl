@@ -154,7 +154,11 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         } else if (preference == mForceTabletUI) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.FORCE_TABLET_UI, checked ? 1 : 0);
+                    Settings.System.FORCE_TABLET_UI, checked ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_BACKGROUND, 0 / 100);
             return true;
 
         } else if (preference == mLcdDensity) {

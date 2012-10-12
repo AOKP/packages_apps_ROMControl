@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.appwidget.AppWidgetHost;
 import android.appwidget.AppWidgetManager;
@@ -77,9 +78,11 @@ public class Navbar extends BAKEDPreferenceFragment implements
     private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
     private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
     private static final String NAVIGATION_BAR_BACKGROUND_COLOR = "navigation_bar_background_color";
+    private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
+    private static final int DIALOG_NAVBAR_ENABLE = 203;
     private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
     private static final int DEFAULT_NAVBAR_BG_COLOR = 0xFF000000;
 
@@ -98,6 +101,7 @@ public class Navbar extends BAKEDPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
+    Preference mConfigureWidgets;
 
     private int mPendingIconIndex = -1;
     private int mPendingWidgetDrawer = -1;
@@ -183,6 +187,8 @@ public class Navbar extends BAKEDPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
 
+        mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
+
         if (mTablet) {
             prefs.removePreference(menuDisplayLocation);
             prefs.removePreference(mNavBarMenuDisplay);
@@ -260,6 +266,14 @@ public class Navbar extends BAKEDPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
+            return true;
+
+        } else if (preference == mConfigureWidgets) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            WidgetConfigurationFragment fragment = new WidgetConfigurationFragment();
+            ft.addToBackStack("config_widgets");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

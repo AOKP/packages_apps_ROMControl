@@ -162,18 +162,19 @@
     </string-array>
 
     <string-array name="navbar_button_entries">
-        <item>Home</item>
-        <item>Back</item>
-        <item>Recents</item>
-        <item>Search</item>
-        <item>Menu</item>
-        <!-- <item>Toggle Widgets</item> -->
-        <item>Open IME Switcher</item>
-        <item>Kill app</item>
-        <item>Power</item>
-        <item>Notifications</item>
-        <item>Custom app</item>
-        <item>Blank</item>
+        <item>@string/navbar_action_home</item>
+        <item>@string/navbar_action_back</item>
+        <item>@string/navbar_action_recents</item>
+        <item>@string/navbar_action_search</item>
+        <item>@string/navbar_action_screenshot</item>
+        <item>@string/navbar_action_menu</item>
+        <!-- <item>@string/navbar_action_widgets</item> -->
+        <item>@string/navbar_action_ime</item>
+        <item>@string/navbar_action_kill</item>
+        <item>@string/navbar_action_power</item>
+        <item>@string/navbar_action_notifications</item>
+        <item>@string/navbar_action_custom</item>
+        <item>@string/navbar_action_none</item>
     </string-array>
 
     <string-array name="navbar_button_values" translatable="false">
@@ -181,6 +182,7 @@
         <item>**back**</item>
         <item>**recents**</item>
         <item>**search**</item>
+        <item>**screenshot**</item>
         <item>**menu**</item>
         <!-- <item>**widgets**</item> -->
         <item>**ime**</item>

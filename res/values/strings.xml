@@ -235,12 +235,15 @@
     <string name="navbar_action_back">Back</string>
     <string name="navbar_action_recents">Recents</string>
     <string name="navbar_action_search">Search</string>
+    <string name="navbar_action_screenshot">Screenshot</string>
     <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_widgets">Toggle widgets</string>
     <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_notifications">Notifications</string>
-    <string name="navbar_action_none">Empty</string>
+    <string name="navbar_action_custom">Custom app</string>
+    <string name="navbar_action_none">Blank</string>
     <string name="navbar_widgets">Navigation Bar Widgets</string>
     <string name="navbar_enable_bar">Enable bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>

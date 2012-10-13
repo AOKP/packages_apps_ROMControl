@@ -286,26 +286,10 @@ public class WidgetConfigurationFragment extends DialogFragment {
             if (pos < mWidgets.size()) {
                 if (mWidgets != null && mWidgets.get(pos) != null) {
                     int validHeight = mWidgets.get(pos).getHeight();
-                    setSavedHeight(pos, validHeight);
                     return validHeight;
-                } else {
-                    return getSavedHeight(pos);
                 }
-            } else {
-                return -1;
             }
-        }
-
-        private void setSavedHeight(int pos, int height) {
-            SharedPreferences prefs = mContext.getSharedPreferences("widget_adapter",
-                    Context.MODE_WORLD_WRITEABLE);
-            prefs.edit().putInt("widget_pos_" + pos, height).commit();
-        }
-
-        private int getSavedHeight(int pos) {
-            SharedPreferences prefs = mContext.getSharedPreferences("widget_adapter",
-                    Context.MODE_WORLD_WRITEABLE);
-            return prefs.getInt("widget_pos_" + pos, 100);
+            return -1;
         }
 
         /**
@@ -408,10 +392,8 @@ public class WidgetConfigurationFragment extends DialogFragment {
                     if (mPreview == null) {
                         try {
                             mPreview =  mContext.getPackageManager().getApplicationIcon(info.provider.getPackageName());
-                            mHeight = mPreview.getMinimumHeight();
                         } catch (NameNotFoundException e) {
                             mPreview = mContext.getResources().getDrawable(R.drawable.widget_na);
-                            mHeight = mPreview.getMinimumHeight();
                         }
                         
                     }

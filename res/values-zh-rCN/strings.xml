@@ -106,6 +106,8 @@
     <string name="enable_volume_options">启用音量面板</string>
     <string name="status_bar_notif_count_title">显示通知数量</string>
     <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
+    <string name="vibrate_notif_expand_title">展开振动</string>
+    <string name="vibrate_notif_expand_summary">当展开通知栏时振动（将重启用户界面）</string>
     <string name="disable_bootanimation_title">禁用开机动画</string>
     <string name="custom_bootanimation_title">自定义开机动画</string>
     <string name="custom_bootanimation_summary">从SD卡选择开机动画的ZIP文件，原开机动画将备份在/system/media目录</string>
@@ -118,7 +120,7 @@
     <string name="custom_carrier_label_explain">请输入新名称，输入空字符将恢复为原始名称。</string>
     <string name="custom_carrier_label_notset">当前未自定义运营商名称</string>
     <string name="ime_switcher_title">显示输入法切换</string>
-    <string name="ime_switcher_summary">输入时状态栏显示键盘图标（需重启）</string>
+    <string name="ime_switcher_summary">输入时状态栏显示键盘图标</string>
     <string name="rotate_180_title">允许 180° 旋转</string>
     <string name="rotate_180_summary">允许设备倒置显示</string>
     <string name="recent_kill_all">启用“全部结束”按钮</string>
@@ -127,6 +129,8 @@
     <string name="kill_app_longpress_back_summary">长时间按住返回键可以强行结束当前程序</string>
     <string name="tablet_ui">强制使用平板界面</string>
     <string name="tablet_ui_summary">可强制使用平板设备专用的界面（需重启）</string>
+    <string name="hide_extras">隐藏多余内容</string>
+    <string name="hide_extras_summary">隐藏系统栏的一些内容，为更改密度或强制使用平板界面提高兼容性（将重启用户界面）</string>
     <string name="bootanimation_preview">预览开机动画</string>
     <string name="apply">应用</string>
     <string name="creating_preview">正在创建预览...</string>
@@ -136,6 +140,10 @@
     <string name="multipane_ui_summary">启用双面板视图（需重启）</string>
     <string name="alt_resolver">更改默认应用程序网格布局</string>
     <string name="alt_resolver_summary">使用循环应用程序选择器（姜饼风格）</string>
+    <string name="show_overflow_title">显示菜单按钮</string>
+    <string name="show_overflow_summary">无论是否存在导航栏均在应用程序中显示内置的菜单按钮（3个点）</string>
+    <string name="show_overflow_toast_enable">在应用程序重新运行前菜单按钮可能依然显示</string>
+    <string name="show_overflow_toast_disable">在应用程序重新运行前菜单按钮可能依然隐藏</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -291,6 +299,14 @@
     <string name="glow_times_superquick">超快</string>
     <string name="glow_times_quick">快</string>
     <string name="glow_times_normal">正常</string>
+    <string name="navbar_widgets_instructions">猛击图标 - 选择程序</string>
+    <string name="navbar_widgets_reset">重置小部件</string>
+    <string name="navbar_widget_summary">小部件 %1$s / %2$s</string>
+    <string name="navbar_widget_summary_add">点击添加小部件</string>
+    <string name="navbar_widgets_title">配置小部件</string>
+    <string name="navbar_widgets_shiftLeft">左移</string>
+    <string name="navbar_widgets_shiftRight">右移</string>
+    <string name="navbar_widgets_delete">删除小部件</string>
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
@@ -387,8 +403,6 @@
     <string name="lockscreen_wallpaper_title">选择锁屏壁纸</string>
     <string name="lockscreen_wallpaper_summary">在本页面按菜单键可选择重置锁屏壁纸</string>
     <string name="lockscreen_text_color_title">锁屏文字颜色</string>
-    <string name="title_lockscreen_user_timeout_override">延时锁定屏幕</string>
-    <string name="summary_lockscreen_user_timeout_override">在手动关闭屏幕后，使用安卓系统的延时设置进行屏幕锁定。默认的设置为当设备超时自动进入待机状态时，才会根据系统的延时设定进行锁定操作。</string>
     <string name="lockscreen_weather_title">启用</string>
     <string name="lockscreen_weather_summary">锁屏中显示天气，你需要在ROM控制中开启天气服务</string>
     <string name="lockscreen_weather_type_title">锁屏天气风格</string>
@@ -409,6 +423,81 @@
     <string name="lockscreen_calendar_flip_summary">启用将以弹出动画显示多个活动</string>
     <string name="lockscreen_calendar_interval_title">弹出间隔</string>
     <string name="lockscreen_calendar_interval_summary">选择弹出动画速度</string>
+
+    <!-- Lockscreen Targets 锁屏目标-->
+    <string name="custom_targets">自定义锁屏目标</string>
+    <string name="lockscreen_target_info">为拖拽解锁分配目标</string>
+    <string name="lockscreen_target_title">锁屏目标</string>
+    <string name="lockscreen_target_summary">查看或自定义锁屏界面的快捷方式</string>
+    <string name="number_of_targets_title">锁屏目标数量</string>
+    <string name="number_of_targets_summary">你需要几个锁屏目标？</string>
+    <string name="picker_activities">活动</string>
+    <string name="select_custom_activity_title">选择自定义程序</string>
+    <string name="icon_picker_choose_icon_title">选择图标</string>
+    <string name="icon_picker_alarm">提示</string>
+    <string name="icon_picker_browser">浏览器</string>
+    <string name="icon_picker_calendar">日历</string>
+    <string name="icon_picker_camera">相机</string>
+    <string name="icon_picker_email">Email</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">图库</string>
+    <string name="icon_picker_googleplus">Google +</string>
+    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_maps">地图</string>
+    <string name="icon_picker_movie">电影</string>
+    <string name="icon_picker_music">音乐</string>
+    <string name="icon_picker_nav_normal">导航</string>
+    <string name="icon_picker_phone">电话</string>
+    <string name="icon_picker_podcast">播客</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">搜索</string>
+    <string name="icon_picker_sms">信息</string>
+    <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_title">选择图标源</string>
+    <string name="icon_picker_system_icons_title">系统图标</string>
+    <string name="icon_picker_aokp_icons_title">AOKP 图标</string>
+    <string name="icon_picker_gallery_title">图库</string>
+
+    <string name="aokp_icon_picker_aokp">AOKP Now</string>
+    <string name="aokp_icon_picker_browser">浏览器</string>
+    <string name="aokp_icon_picker_calendar">日历</string>
+    <string name="aokp_icon_picker_camera">相机</string>
+    <string name="aokp_icon_picker_clock">时钟</string>
+    <string name="aokp_icon_picker_email">Email</string>
+    <string name="aokp_icon_picker_facebook">Facebook</string>
+    <string name="aokp_icon_picker_gallery">图库</string>
+    <string name="aokp_icon_picker_googleplus">Google +</string>
+    <string name="aokp_icon_picker_googletalk">Google Talk</string>
+    <string name="aokp_icon_picker_maps">地图</string>
+    <string name="aokp_icon_picker_movie">电影</string>
+    <string name="aokp_icon_picker_music">音乐</string>
+    <string name="aokp_icon_picker_navigation">导航</string>
+    <string name="aokp_icon_picker_phone">电话</string>
+    <string name="aokp_icon_picker_podcast">播客</string>
+    <string name="aokp_icon_picker_rss">Rss</string>
+    <string name="aokp_icon_picker_sms">信息</string>
+    <string name="aokp_icon_picker_unlock">解锁</string>
+    <string name="aokp_icon_picker_video">视频</string>
+    <string name="aokp_icon_picker_title">选择图标源</string>
+    <string name="aokp_icon_picker_system_icons_title">系统图标</string>
+    <string name="aokp_icon_picker_gallery_title">图标</string>
+
+    <string name="icon_picker_pack_title">图标包</string>
+    <string name="lockscreen_target_empty">空</string>
+    <string name="profile_reset_title">重置</string>
+    <string name="wifi_save">保存</string>
+    <string name="lockscreen_target_reset">锁屏界面快捷方式恢复默认</string>
+    <string name="lockscreen_target_save">锁屏界面目标已保存</string>
+    <string name="lockscreen_target_reset_title">重置</string>
+    <string name="lockscreen_target_reset_message">删除用户创建的所有锁屏目标并恢复默认？</string>
+    <string name="lockscreen_target_edit_title">编辑目标与图标</string>
+    <string name="lockscreen_target_edit_msg">选择或更改需要的程序及相关图标</string>
+
+    <string name="aokp_3targets">3 目标</string>
+    <string name="aokp_4targets">4 目标</string>
+    <string name="aokp_5targets">5 目标</string>
+    <string name="aokp_6targets">6 目标</string>
+    <string name="aokp_8targets">8 目标</string>
 
     <!-- Weather 天气 -->
     <string name="weather_enable">启用天气</string>

@@ -85,6 +85,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
+    private static final String PREF_LEFTY_MODE = "lefty_mode";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
@@ -115,6 +116,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mRamBar;
     CheckBoxPreference mKillAppLongpressBack;
     CheckBoxPreference mUseAltResolver;
+    CheckBoxPreference mLeftyMode;
     ImageView view;
     TextView error;
     CheckBoxPreference mShowActionOverflow;
@@ -195,6 +197,10 @@ public class UserInterface extends AOKPPreferenceFragment {
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
+
+        mLeftyMode = (CheckBoxPreference) findPreference(PREF_LEFTY_MODE);
+        mLeftyMode.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.NAVIGATION_BAR_LEFTY_MODE, false));
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
@@ -437,7 +443,13 @@ public class UserInterface extends AOKPPreferenceFragment {
             .create()
             .show();
             return true;
-        } else if (preference == mShowImeSwitcher) {
+        } else if (preference == mLeftyMode) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_LEFTY_MODE,
+                    isCheckBoxPrefernceChecked(preference));
+            Helpers.restartSystemUI();
+            return true;
+        }else if (preference == mShowImeSwitcher) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
                     isCheckBoxPrefernceChecked(preference));

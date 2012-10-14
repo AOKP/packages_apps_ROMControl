@@ -2,19 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
         <com.aokp.romcontrol.widgets.NavBarItemPreference
-            android:key="interface_navring_5_release"
-            android:title="@string/interface_softkeys_pref_default_title"
-            android:entries="@array/navring_dialog_entries"
-            android:entryValues="@array/navring_dialog_values" />
-
-        <com.aokp.romcontrol.widgets.NavBarItemPreference
-            android:key="interface_navring_4_release"
-            android:title="@string/interface_softkeys_pref_default_title"
-            android:entries="@array/navring_dialog_entries"
-            android:entryValues="@array/navring_dialog_values" />
-
-        <com.aokp.romcontrol.widgets.NavBarItemPreference
-            android:key="interface_navring_3_release"
+            android:key="interface_navring_1_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:entries="@array/navring_dialog_entries"
             android:entryValues="@array/navring_dialog_values" />
@@ -26,7 +14,19 @@
             android:entryValues="@array/navring_dialog_values" />
 
         <com.aokp.romcontrol.widgets.NavBarItemPreference
-            android:key="interface_navring_1_release"
+            android:key="interface_navring_3_release"
+            android:title="@string/interface_softkeys_pref_default_title"
+            android:entries="@array/navring_dialog_entries"
+            android:entryValues="@array/navring_dialog_values" />
+
+        <com.aokp.romcontrol.widgets.NavBarItemPreference
+            android:key="interface_navring_4_release"
+            android:title="@string/interface_softkeys_pref_default_title"
+            android:entries="@array/navring_dialog_entries"
+            android:entryValues="@array/navring_dialog_values" />
+
+        <com.aokp.romcontrol.widgets.NavBarItemPreference
+            android:key="interface_navring_5_release"
             android:title="@string/interface_softkeys_pref_default_title"
             android:entries="@array/navring_dialog_entries"
             android:entryValues="@array/navring_dialog_values" />

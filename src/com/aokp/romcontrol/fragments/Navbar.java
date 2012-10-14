@@ -441,7 +441,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.SYSTEMUI_NAVRING_2, "none");
             Settings.System.putString(getActivity().getContentResolver(),
-                    Settings.System.SYSTEMUI_NAVRING_3, "assist");
+                    Settings.System.SYSTEMUI_NAVRING_3, "none");
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.SYSTEMUI_NAVRING_4, "none");
             Settings.System.putString(getActivity().getContentResolver(),

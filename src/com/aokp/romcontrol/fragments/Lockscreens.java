@@ -63,7 +63,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String PREF_LOCKSCREEN_MENU_UNLOCK = "lockscreen_menu_unlock";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
-    private static final String PREF_USER_OVERRIDE = "lockscreen_user_timeout_override";
     private static final String PREF_LOCKSCREEN_WEATHER = "lockscreen_weather";
     private static final String PREF_LOCKSCREEN_WEATHER_TYPE = "lockscreen_weather_type";
     private static final String PREF_LOCKSCREEN_CALENDAR = "enable_calendar";
@@ -91,7 +90,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenMenuUnlock;
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mVolumeRockerWake;
-    CheckBoxPreference mLockScreenTimeoutUserOverride;
     CheckBoxPreference mLockscreenWeather;
     ListPreference mLockscreenWeatherType;
     CheckBoxPreference mLockscreenCalendar;
@@ -130,10 +128,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mVolumeRockerWake = (CheckBoxPreference) findPreference(PREF_VOLUME_ROCKER_WAKE);
         mVolumeRockerWake.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN, false));
-
-        mLockScreenTimeoutUserOverride = (CheckBoxPreference) findPreference(PREF_USER_OVERRIDE);
-        mLockScreenTimeoutUserOverride.setChecked(Settings.Secure.getInt(getActivity()
-                .getContentResolver(), Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE, 0) == 1);
 
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
@@ -227,11 +221,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.VOLUME_MUSIC_CONTROLS,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mLockScreenTimeoutUserOverride) {
-            Settings.Secure.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.LOCK_SCREEN_LOCK_USER_OVERRIDE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mLockscreenWeather) {

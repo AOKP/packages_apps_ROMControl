@@ -79,6 +79,12 @@
             android:title="@string/ime_switcher_title"
             android:summary="@string/ime_switcher_summary"
             android:defaultValue="true" />
+        
+        <CheckBoxPreference
+            android:key="lefty_mode"
+            android:title="@string/lefty_mode_title"
+            android:summary="@string/lefty_mode_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

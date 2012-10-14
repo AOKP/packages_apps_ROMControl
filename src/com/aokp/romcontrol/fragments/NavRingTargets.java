@@ -84,20 +84,20 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
                          Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
 
         if (mNavRingAmount == 1) {
-            prefs.removePreference(mRing1);
             prefs.removePreference(mRing2);
+            prefs.removePreference(mRing3);
             prefs.removePreference(mRing4);
             prefs.removePreference(mRing5);
         } else if (mNavRingAmount == 2) {
-            prefs.removePreference(mRing1);
+            prefs.removePreference(mRing3);
             prefs.removePreference(mRing4);
             prefs.removePreference(mRing5);
         } else if (mNavRingAmount == 3) {
-            prefs.removePreference(mRing1);
+            prefs.removePreference(mRing4);
             prefs.removePreference(mRing5);
         } else if (mNavRingAmount == 4) {
             prefs.removePreference(mRing5);
-        }
+        } 
 
     }
 

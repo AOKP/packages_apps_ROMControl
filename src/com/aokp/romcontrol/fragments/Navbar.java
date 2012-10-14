@@ -682,6 +682,8 @@ public class Navbar extends AOKPPreferenceFragment implements
                 return getResources().getDrawable(R.drawable.ic_sysbar_power);
             } else if (uri.equals("**notifications**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_notifications);
+            } else if (uri.equals("**widgets**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_widget);
             }
         } else {
             try {

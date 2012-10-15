@@ -68,11 +68,13 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_EXPANDED_CLOCK_COLOR = "expanded_clock_color";
     private static final String PREF_STATUSBAR_BACKGROUND_COLOR = "statusbar_background_color";
+    private static final String PREF_STATUSBAR_BRIGHTNESS_SLIDER = "statusbar_brightness_slider";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
 
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mShowImeSwitcher;
+    CheckBoxPreference mStatusBarBrightnessSlider;
     Preference mCustomLabel;
     ListPreference mNotificationBackground;
     Preference mWallpaperAlpha;
@@ -101,6 +103,10 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         mStatusBarNotifCount.setChecked(Settings.System.getInt(mContext
                 .getContentResolver(), Settings.System.STATUS_BAR_NOTIF_COUNT,
                 0) == 1);
+
+        mStatusBarBrightnessSlider = (CheckBoxPreference) findPreference(PREF_STATUSBAR_BRIGHTNESS_SLIDER);
+        mStatusBarBrightnessSlider.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_BRIGHTNESS_SLIDER, true));
 
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
@@ -171,6 +177,12 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         } else if (preference == mShowImeSwitcher) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    isCheckBoxPrefernceChecked(preference));
+            return true;
+
+        } else if (preference == mStatusBarBrightnessSlider) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_BRIGHTNESS_SLIDER,
                     isCheckBoxPrefernceChecked(preference));
             return true;
 

@@ -126,6 +126,8 @@
 
     <!-- Statusbar -->
     <string name="statusbar_background_color">Statusbar background color</string>
+    <string name="statusbar_brightness_slider_title">Statusbar brightness slider</string>
+    <string name="statusbar_brightness_slider_summary">Whether the Statusbar brightness slider is on when you slide across the statusbar</string>
     <!-- Statusbar | Toggles -->
     <string name="toggles_visible_enabled">Show toggles</string>
     <string name="toggle_style_title">Toggle style</string>

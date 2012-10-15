@@ -168,7 +168,7 @@
         <item>@string/navbar_action_search</item>
         <item>@string/navbar_action_screenshot</item>
         <item>@string/navbar_action_menu</item>
-        <!-- <item>@string/navbar_action_widgets</item> -->
+        <item>@string/navbar_action_widgets</item>
         <item>@string/navbar_action_ime</item>
         <item>@string/navbar_action_kill</item>
         <item>@string/navbar_action_power</item>
@@ -184,7 +184,7 @@
         <item>**search**</item>
         <item>**screenshot**</item>
         <item>**menu**</item>
-        <!-- <item>**widgets**</item> -->
+        <item>**widgets**</item>
         <item>**ime**</item>
         <item>**kill**</item>
         <item>**power**</item>

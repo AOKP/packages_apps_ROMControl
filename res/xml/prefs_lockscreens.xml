@@ -63,6 +63,34 @@
     
 
     <PreferenceCategory
+        android:key="targets"
+        android:title="@string/custom_targets">
+
+    <ListPreference
+        android:entries="@array/lockscreen_target_amount_entries"
+        android:entryValues="@array/lockscreen_target_amount_values"
+        android:key="number_of_targets"
+        android:title="@string/number_of_targets_title"
+        android:summary="@string/number_of_targets_summary" />
+
+    <Preference
+        android:key="lockscreen_targets"
+        android:summary="@string/lockscreen_target_summary"
+        android:title="@string/lockscreen_target_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="advanced_cat"
+        android:title="@string/advanced_settings">
+
+    <CheckBoxPreference
+        android:key="lockscreen_quick_unlock_control"
+        android:title="@string/lockscreen_quick_unlock_control_title"
+        android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="weather_cat"
         android:title="@string/lockscreen_weather_cat">
         

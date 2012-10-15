@@ -190,11 +190,9 @@ public class Navbar extends BAKEDPreferenceFragment implements
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
 
         if (mTablet) {
-            prefs.removePreference(mNavBarMenuDisplay);
             prefs.removePreference(mNavigationBarBgColor);
         }
         if (isTablet) {
-            prefs.removePreference(mNavBarMenuDisplay);
             prefs.removePreference(mNavigationBarBgColor);
         }
         refreshSettings();
@@ -661,7 +659,7 @@ public class Navbar extends BAKEDPreferenceFragment implements
                 return getResources().getDrawable(R.drawable.ic_sysbar_screenshot);
             } else if (uri.equals("**menu**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
-             } else if (uri.equals("**ime**")) {
+            } else if (uri.equals("**ime**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_ime_switcher);
             } else if (uri.equals("**kill**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_killtask);

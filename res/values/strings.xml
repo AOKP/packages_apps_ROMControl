@@ -518,6 +518,11 @@
     <string name="lockscreen_target_edit_title">Edit target and icon</string>
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
 
+    <string name="aokp_3targets">3 Targets</string>
+    <string name="aokp_4targets">4 Targets</string>
+    <string name="aokp_5targets">5 Targets</string>
+    <string name="aokp_6targets">6 Targets</string>
+    <string name="aokp_8targets">8 Targets</string>
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>

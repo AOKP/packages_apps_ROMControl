@@ -791,11 +791,11 @@
     </string-array>
 
     <string-array name="lockscreen_target_amount_entries">
-        <item>3 Targets</item>
-        <item>4 Targets</item>
-        <item>5 Targets</item>
-        <item>6 Targets</item>
-        <item>8 Targets</item>
+        <item>@string/aokp_3targets</item>
+        <item>@string/aokp_4targets</item>
+        <item>@string/aokp_5targets</item>
+        <item>@string/aokp_6targets</item>
+        <item>@string/aokp_8targets</item>
     </string-array>
 
     <string-array name="lockscreen_target_amount_values" translatable="false">

@@ -397,8 +397,6 @@
   <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
   <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
   <string name="lockscreen_text_color_title">Barva textu na zamčené obrazovce</string>
-  <string name="title_lockscreen_user_timeout_override">Čekat na zamknutí obrazovky</string>
-  <string name="summary_lockscreen_user_timeout_override">Pokud dojde k ručnímu vypnutí obrazovky, zařízení nebude zamknuto dokud nevyprší nastavený čas pro automatické vypínání obrazovky. Výchozí chování používá časovač pouze se zapnutým displejem.</string>
   <string name="lockscreen_weather_title">Zapnout</string>
   <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
   <string name="lockscreen_weather_type_title">Styl počasí na zamčené obrazovce</string>

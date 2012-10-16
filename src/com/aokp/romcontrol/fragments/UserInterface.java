@@ -83,6 +83,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+    private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_MODE_TABLET_UI = "mode_tabletui";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
@@ -107,6 +108,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     Preference mCustomLabel;
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mRecentKillAll;
+    CheckBoxPreference mRamBar;
     CheckBoxPreference mKillAppLongpressBack;
     CheckBoxPreference mUseAltResolver;
     ImageView view;
@@ -186,8 +188,12 @@ public class UserInterface extends AOKPPreferenceFragment {
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
-        mRecentKillAll.setChecked(Settings.System.getInt(getActivity  ().getContentResolver(),
-                Settings.System.RECENT_KILL_ALL_BUTTON, 0) == 1);
+        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+                Settings.System.RECENT_KILL_ALL_BUTTON, false));
+
+        mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
+        mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+                Settings.System.RAM_USAGE_BAR, false));
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
@@ -419,9 +425,13 @@ public class UserInterface extends AOKPPreferenceFragment {
             return true;
         } else if (preference == mRecentKillAll) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? 1 : 0);
-            Helpers.restartSystemUI();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
+            return true;
+        } else if (preference == mRamBar) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RAM_USAGE_BAR, checked ? true : false);
             return true;
         } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();

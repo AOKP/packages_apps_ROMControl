@@ -97,12 +97,14 @@
 
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">
-        <item>Icon only</item>
-        <item>Text only</item>
-        <item>Icon with text</item>
-        <item>Icon with centered text</item>
-        <item>CircleMOD</item>
-        <item>Hide</item>
+        <item>@string/icon_only</item>
+        <item>@string/icon_with_percent</item>
+        <item>@string/icon_with_percent_center</item>
+        <item>@string/text_only</item>
+        <item>@string/circle_mod</item>
+        <item>@string/cm_circle_wo_percent</item>
+        <item>@string/cm_circle_with_percent</item>
+        <item>@string/battery_hide</item>
     </string-array>
 
     <string-array name="battery_icon_values" translatable="false">
@@ -112,6 +114,8 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
 
     <!-- NavBar -->

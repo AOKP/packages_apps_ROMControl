@@ -96,7 +96,6 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     private ShortcutPickerHelper mPicker;
     private IconPicker mIconPicker;
     private ArrayList<TargetInfo> mTargetStore = new ArrayList<TargetInfo>();
-    private int mTargetOffset;
     private int mTargetInset;
     private boolean mIsLandscape;
     private boolean mIsScreenLarge;
@@ -137,7 +136,6 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         mIsScreenLarge = isScreenLarge();
         mResources = getResources();
         mIsLandscape = mResources.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-        mTargetOffset = mIsLandscape && !mIsScreenLarge ? 2 : 0;
         mTargetInset = mResources.getDimensionPixelSize(com.android.internal.R.dimen.lockscreen_target_inset);
         mIconPicker = new IconPicker(mActivity, this);
         mPicker = new ShortcutPickerHelper(this, this);
@@ -224,11 +222,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         final PackageManager packMan = mActivity.getPackageManager();
         final Drawable activeBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_target_activated);
         final String[] targetStore = input.split("\\|");
-        //Shift by 2 targets for phones in landscape
-        if (mIsLandscape && !mIsScreenLarge) {
-            mTargetStore.add(new TargetInfo(null));
-            mTargetStore.add(new TargetInfo(null));
-        }
+
         //Add the unlock icon
         Drawable unlockFront = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_normal);
         Drawable unlockBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_activated);
@@ -243,7 +237,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
             total = 8;
         }
 
-        for (int cc = 0; cc < total - mTargetOffset - 1; cc++) {
+        for (int cc = 0; cc < total - 1; cc++) {
             String uri = GlowPadView.EMPTY_TARGET;
             Drawable front = null;
             Drawable back = activeBack;
@@ -397,7 +391,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         ArrayList<String> existingImages = new ArrayList<String>();
         int maxTargets = Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGET_AMOUNT, 2);
 
-        for (int i = mTargetOffset + 1; i <= mTargetOffset + maxTargets; i++) {
+        for (int i = 1; i <= maxTargets; i++) {
             String uri = mTargetStore.get(i).uri;
             String type = mTargetStore.get(i).iconType;
             String source = mTargetStore.get(i).iconSource;
@@ -543,7 +537,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = target;
-        if ((target != 0 && (mIsScreenLarge || !mIsLandscape)) || (target != 2 && !mIsScreenLarge && mIsLandscape)) {
+        if (target != 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
             builder.setTitle(R.string.lockscreen_target_edit_title);
             builder.setMessage(R.string.lockscreen_target_edit_msg);

@@ -8,7 +8,12 @@
         android:entries="@array/battery_icon_entries"
         android:entryValues="@array/battery_icon_values" />
 
-    <PreferenceCategory android:title="@string/battery_text_color">
+    <CheckBoxPreference
+        android:key="battery_not"
+        android:title="@string/battery_not_title"
+        android:summary="@string/battery_not_summary" />
+
+    <PreferenceCategory android:title="@string/battery_color">
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="battery_text_only_color"
@@ -22,12 +27,19 @@
             android:defaultValue="#FF99CC00"
             android:persistent="true" />
 
-    </PreferenceCategory>
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_cmcircle_ring_color"
+            android:title="@string/battery_cm_circle_ring_color"
+            android:defaultValue="@android:color/holo_blue_light"
+            android:persistent="true" />
 
-    <CheckBoxPreference
-        android:key="battery_not"
-        android:title="@string/battery_not_title"
-        android:summary="@string/battery_not_summary" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_cmcircle_ring_color_charge"
+            android:title="@string/battery_cm_circle_ring_color_charge"
+            android:defaultValue="@android:color/holo_blue_light"
+            android:persistent="true" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="battery_bar_cat"

@@ -15,6 +15,7 @@ public class PowerMenu extends BAKEDPreferenceFragment {
 
     private static final String PREF_SCREENSHOT = "show_screenshot";
     private static final String PREF_REBOOT_CHOOSER = "show_reboot_chooser";
+    private static final String PREF_SHOW_EXPANDED_DESKTOP_TOGGLE = "show_expanded_desktop_toggle";
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_SHOW_PROFILE_CHOOSER = "show_profile_chooser";
@@ -22,6 +23,7 @@ public class PowerMenu extends BAKEDPreferenceFragment {
 
     CheckBoxPreference mShowScreenShot;
     CheckBoxPreference mShowRebootChooser;
+    CheckBoxPreference mShowExpandedDesktopToggle;
     CheckBoxPreference mShowAirplaneToggle;
     CheckBoxPreference mShowNavBarHide;
     CheckBoxPreference mShowProfileChooser;
@@ -41,6 +43,10 @@ public class PowerMenu extends BAKEDPreferenceFragment {
         mShowRebootChooser = (CheckBoxPreference) findPreference(PREF_REBOOT_CHOOSER);
         mShowRebootChooser.setChecked(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_REBOOT_CHOOSER, 1) == 1);
+
+        mShowExpandedDesktopToggle = (CheckBoxPreference) findPreference(PREF_SHOW_EXPANDED_DESKTOP_TOGGLE);
+        mShowExpandedDesktopToggle.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_EXPANDED_DESKTOP_TOGGLE, 0) == 1);
 
         mShowAirplaneToggle = (CheckBoxPreference) findPreference(PREF_AIRPLANE_TOGGLE);
         mShowAirplaneToggle.setChecked(Settings.System.getInt(getActivity()
@@ -79,6 +85,12 @@ public class PowerMenu extends BAKEDPreferenceFragment {
         } else if (preference == mShowRebootChooser) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_REBOOT_CHOOSER,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+
+        } else if (preference == mShowExpandedDesktopToggle) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_EXPANDED_DESKTOP_TOGGLE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             return true;
 

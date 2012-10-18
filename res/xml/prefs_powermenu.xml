@@ -9,6 +9,9 @@
         <CheckBoxPreference android:key="show_reboot_chooser"
             android:title="@string/title_show_reboot_chooser" />
 
+        <CheckBoxPreference android:key="show_expanded_desktop_toggle"
+            android:title="@string/title_show_expanded_desktop_toggle" />
+
         <CheckBoxPreference android:key="show_airplane_toggle"
             android:title="@string/title_show_airplane_toggle" />
 

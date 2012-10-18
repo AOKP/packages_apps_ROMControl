@@ -60,10 +60,6 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mTogglesPerRow.setOnPreferenceChangeListener(this);
         mTogglesPerRow.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.QUICK_TOGGLES_PER_ROW, 3) + "");
-
-        int mTabletui = Settings.System.getInt(mContext.getContentResolver(),
-                           Settings.System.TABLET_UI, 0);
-
         mLayout = findPreference("toggles");
 
     }

@@ -199,10 +199,8 @@
         <item>@string/home</item>
         <item>@string/back</item>
         <item>@string/recents</item>
-        <item>@string/search</item>
         <item>@string/screenshot</item>
         <item>@string/menu</item>
-        <item>@string/toggle_widgets</item>
         <item>@string/open_ime_switcher</item>
         <item>@string/kill_app</item>
         <item>@string/power</item>
@@ -214,10 +212,8 @@
         <item>**home**</item>
         <item>**back**</item>
         <item>**recents**</item>
-        <item>**search**</item>
         <item>**screenshot**</item>
         <item>**menu**</item>
-        <item>**widgets**</item>
         <item>**ime**</item>
         <item>**kill**</item>
         <item>**power**</item>

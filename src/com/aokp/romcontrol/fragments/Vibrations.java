@@ -35,11 +35,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.aokp.romcontrol.AOKPActivity;
 import com.aokp.romcontrol.vibrations.VibrationRecorder;
 import com.aokp.romcontrol.R;
 
-public class Vibrations extends AOKPPreferenceFragment {
+public class Vibrations extends AOKPActivity {
     private static final String TAG = "Vibrations";
 
     private final int DIALOG_SAVE = 0;
@@ -49,7 +49,6 @@ public class Vibrations extends AOKPPreferenceFragment {
     private final int VIB_CANCEL = 11;
     private final int VIB_DEL = 12;
 
-    Activity mActivity;
     VibrationRecorder mRecorder;
     Button mTapButton;
     Button mRecButton;
@@ -98,40 +97,22 @@ public class Vibrations extends AOKPPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.vibrations);
-        mActivity = getActivity();
-        sharedPrefs = mActivity.getSharedPreferences("vibrations", 0);
-        mRecorder = new VibrationRecorder(mActivity);
-        setHasOptionsMenu(true);
-    }
+        sharedPrefs = this.getSharedPreferences("vibrations", 0);
+        mRecorder = new VibrationRecorder(this);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.vibration_manager, container, false);
-    }
+        setContentView(R.layout.vibration_manager);
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.vibrations, menu);
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        mTapButton = (Button) mActivity.findViewById(R.id.button_tap);
-        mRecButton = (Button) mActivity.findViewById(R.id.button_rec);
-        mPlayButton = (Button) mActivity.findViewById(R.id.button_play);
-        mStopButton = (Button) mActivity.findViewById(R.id.button_stop);
-        mSaveButton = (Button) mActivity.findViewById(R.id.button_save);
-        mLoadButton = (Button) mActivity.findViewById(R.id.button_load);
-        mDelButton = (Button) mActivity.findViewById(R.id.button_del);
-        mNewButton = (Button) mActivity.findViewById(R.id.button_new);
-        mHelpButton = (Button) mActivity.findViewById(R.id.help_vibrations);
-        mCurLoadedText = (TextView) mActivity.findViewById(R.id.vib_cur_loaded_name);
-        mPatternBar = (LinearLayout) mActivity.findViewById(R.id.pattern_bar);
+        mTapButton = (Button) this.findViewById(R.id.button_tap);
+        mRecButton = (Button) this.findViewById(R.id.button_rec);
+        mPlayButton = (Button) this.findViewById(R.id.button_play);
+        mStopButton = (Button) this.findViewById(R.id.button_stop);
+        mSaveButton = (Button) this.findViewById(R.id.button_save);
+        mLoadButton = (Button) this.findViewById(R.id.button_load);
+        mDelButton = (Button) this.findViewById(R.id.button_del);
+        mNewButton = (Button) this.findViewById(R.id.button_new);
+        mHelpButton = (Button) this.findViewById(R.id.help_vibrations);
+        mCurLoadedText = (TextView) this.findViewById(R.id.vib_cur_loaded_name);
+        mPatternBar = (LinearLayout) this.findViewById(R.id.pattern_bar);
         mCurLoadedText.setText("-");
         mTapButton.setEnabled(false);
         mStopButton.setEnabled(false);
@@ -211,7 +192,7 @@ public class Vibrations extends AOKPPreferenceFragment {
         mSaveButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog(DIALOG_SAVE);
+                showDia(DIALOG_SAVE);
                 mTapButton.setEnabled(false);
                 mStopButton.setEnabled(false);
                 mPlayButton.setEnabled(true);
@@ -236,30 +217,37 @@ public class Vibrations extends AOKPPreferenceFragment {
 
         if (sharedPrefs.getBoolean("firststart", true)) {
             sharedPrefs.edit().putBoolean("firststart", false).apply();
-            showDialog(DIALOG_HELP);
+            showDia(DIALOG_HELP);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater mi = getMenuInflater();
+        mi.inflate(R.menu.vibrations, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.help_vibrations:
-                showDialog(DIALOG_HELP);
+                showDia(DIALOG_HELP);
                 return true;
             default:
                 return false;
         }
     }
 
-    @Override
-    protected void showDialog(int id) {
+    protected void showDia(int id) {
         switch (id) {
             case DIALOG_SAVE:
-                LayoutInflater factory = LayoutInflater.from(mActivity);
+                LayoutInflater factory = LayoutInflater.from(this);
                 final View textEntryView = factory.inflate(R.layout.vib_dialog_text_entry, null);
                 final EditText name = (EditText) textEntryView.findViewById(R.id.vib_edit);
                 name.setText(mRecorder.getLoadedPatternName());
-                final AlertDialog saveDialog = new AlertDialog.Builder(mActivity)
+                final AlertDialog saveDialog = new AlertDialog.Builder(this)
                         .setTitle(R.string.vib_dialog_text_entry)
                         .setView(textEntryView)
                         .setPositiveButton(com.android.internal.R.string.ok,
@@ -290,13 +278,13 @@ public class Vibrations extends AOKPPreferenceFragment {
                 break;
 
             case DIALOG_HELP:
-                final ScrollView sView = new ScrollView(mActivity);
+                final ScrollView sView = new ScrollView(this);
                 sView.setPadding(8, 8, 8, 8);
-                final TextView helpView = new TextView(mActivity);
+                final TextView helpView = new TextView(this);
                 helpView.setText(R.string.vibration_detailed_help);
                 helpView.setTextSize(12);
                 sView.addView(helpView);
-                new AlertDialog.Builder(mActivity)
+                new AlertDialog.Builder(this)
                         .setTitle(R.string.help)
                         .setPositiveButton(android.R.string.ok, null)
                         .setView(sView).show();
@@ -314,6 +302,10 @@ public class Vibrations extends AOKPPreferenceFragment {
 
     void updatePatternBar(VibrationPattern pattern) {
         mPatternBar.removeAllViews();
+        if (pattern == null) {
+            mPatternBar.setVisibility(View.INVISIBLE);
+            return;
+        }
         double fullWidth = mPatternBar.getWidth();
         double fullLength = ((double) pattern.getLength()) / 10;
         double ratio = fullWidth/fullLength;
@@ -321,7 +313,7 @@ public class Vibrations extends AOKPPreferenceFragment {
         for (int i = 0; i<pattern.getPattern().length; i++) {
             final int mWidth = (int) (((double) pattern.getPattern()[i] / 10) * ratio);
             Log.d(TAG, "mWidth = " + Integer.toString(mWidth));
-            final View view = new View(mActivity) {
+            final View view = new View(this) {
                 @Override
                 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                     // Adjust width as necessary

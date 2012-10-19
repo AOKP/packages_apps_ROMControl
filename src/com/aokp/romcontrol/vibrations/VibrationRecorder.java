@@ -63,6 +63,8 @@ public class VibrationRecorder {
             } else {
                 mCurrentPattern = new VibrationPattern("<New>", mCapturedTimes, mContext);
             }
+        } else {
+            mCurrentPattern = null;
         }
     }
 

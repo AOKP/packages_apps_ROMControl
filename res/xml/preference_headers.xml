@@ -95,10 +95,14 @@
 
     <header
         android:id="@+id/vibrations"
-        android:fragment="com.aokp.romcontrol.fragments.Vibrations"
         android:title="@string/vibrations"
         android:summary="@string/header_summary_vibrations"
-        android:icon="@drawable/ic_rom_control_vibrations" />
+        android:icon="@drawable/ic_rom_control_vibrations" >
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.aokp.romcontrol.fragments.Vibrations"
+                android:targetPackage="com.aokp.romcontrol" />
+    </header>
 
 
     <header

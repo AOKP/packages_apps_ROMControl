@@ -101,7 +101,7 @@
     <string name="aokp_review_summary">AOKP\'s Gerrit Review instance for submitting and testing patches</string>
     <string name="aokp_irc_title">Join us on IRC</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">About AOKP</string>
+    <string name="about_aokp">AOKP-ról</string>
     <string name="about_aokp_summary">@null</string>
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
@@ -125,12 +125,14 @@
     <string name="notification_cat">Értesítés</string><string name="enable_volume_options">Hang panel engedélyezése</string>
     <string name="status_bar_notif_count_title">Értesítésí számláló</string>
     <string name="status_bar_notif_count_summary">Megjelenití az értesítések számát a navigációs sávon</string>
+    <string name="vibrate_notif_expand_title">Rezgés nyitásra</string>
+    <string name="vibrate_notif_expand_summary">Rezeg mikor szétnyitod az értesítést (UI újraindítás szükséges)</string>
     <string name="disable_bootanimation_title">Bootanimáció tiltása</string>
     <string name="custom_bootanimation_title">Egyedi bootanimáció</string>
     <string name="custom_bootanimation_summary">Bootanimáció zip kiválasztása. Eredeti mentési helye /system/media.</string>
     <string name="install_file_manager_error">Alkalmazás nem található. Telepíts fájlkezelőt.</string>
     <string name="notification_wallpaper_title">Értesítési háttér választása</string>
-    <string name="notification_wallpaper_summary">El tudod távolítani az ablak hátterét</string>
+    <string name="notification_wallpaper_summary">Egyedi hátteret tudsz adni az értesítési sávnak</string>
     <string name="notif_wallpaper_alpha_title">Áttetszősége</string>
     <string name="alpha_dialog_title">Áttetszőség mértéke</string>
     <string name="custom_carrier_label_title">Egyedi szolgáltató név</string>
@@ -146,11 +148,21 @@
     <string name="kill_app_longpress_back_summary">Vissza gombra fogja bezárni a futó alkalmazást</string>
     <string name="tablet_ui">Tábla mód</string>
     <string name="tablet_ui_summary">Tábla módba fogja állítani (újra indítás szüksége)</string>
+    <string name="hide_extras">Extrák elrejtése</string>
+    <string name="hide_extras_summary">Némely extra alkalmazás elrejtése (UI újraindítás szükséges)</string>
     <string name="bootanimation_preview">Bootanimáció előnézet</string>
     <string name="apply">Mehet</string>
     <string name="creating_preview">Előnézet készítés...</string>
     <string name="error_reading_zip_file">Hiba a zip olvasásakor</string>
     <string name="error_creating_preview">Hiba az előnézet készítéskor</string>
+    <string name="multipane_ui">Dupla panel engedélyezés</string>
+    <string name="multipane_ui_summary">Engedélyezi/Tiltja a dupla paneles nézetet (újraindítás szükséges) </string>
+    <string name="alt_resolver">Másik alapértelmezett alkalmazás rács</string>
+    <string name="alt_resolver_summary">Másik (GB) alapértelemezett alkalmazás választó</string>
+    <string name="show_overflow_title">Mutassa a menü UI túlnyúlását</string>
+    <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
+    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
+    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD febontás</string>
@@ -184,7 +196,7 @@
     <!-- Állapotsor | Kapcsolók -->
     <string name="toggle_style_title">Kapcsoló stílusa</string>
     <string name="toggle_style_summary">Ikon vagy szöveg.</string>
-    <string name="toggles_layout_title">Toggle tipusa</string>
+    <string name="toggles_layout_title">Kapcsoló tipusa</string>
     <string name="enabled_toggles_title">Kapcsolók engedélyezése</string>
     <string name="enabled_toggles_summary">Engedélyezett kapcsolók</string>
     <string name="toggles_display_dialog">Válaszd ki a kapcsolókat.</string>
@@ -306,6 +318,14 @@
     <string name="glow_times_superquick">Szuper gyors</string>
     <string name="glow_times_quick">Gyors</string>
     <string name="glow_times_normal">Normál</string>
+    <string name="navbar_widgets_instructions">Söprésre nézet - Nyomásra választás</string>
+    <string name="navbar_widgets_reset">Modulok alaphelyzetbe</string>
+    <string name="navbar_widget_summary">Modul %1$s / %2$s</string>
+    <string name="navbar_widget_summary_add">Nyomd meg a modul hozzáadásához</string>
+    <string name="navbar_widgets_title">Modul beállítása</string>
+    <string name="navbar_widgets_shiftLeft">Balra</string>
+    <string name="navbar_widgets_shiftRight">Jobbra</string>
+    <string name="navbar_widgets_delete">Modul törlése</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigációs sáv gyűrű esemény</string>
@@ -400,6 +420,8 @@
     <string name="volume_rocker_wake_summary">Képernyő felélesztése a hangerő gombokra</string>
     <string name="volume_music_controls_title">Hangerő zene vezérlés</string>
     <string name="volume_music_controls_summary">Hosszan nyomva a hangerő gombot lépteti a következő számra kikapcsolt képernyőnél. Hangerő gombra való ébresztés nem müködik zene lejátszás közben.</string>
+    <string name="lockscreen_stock_music_layout_title">Gyári zene elrendezés</string>
+    <string name="lockscreen_stock_music_layout_summary">Gyári elrendezés használata lejátszás közben.</string>
     <string name="lockscreen_wallpaper_title">Zárképernyő háttérkép választása</string>
     <string name="lockscreen_wallpaper_summary">Meg tudod változtatni a háttérképét</string>
     <string name="lockscreen_text_color_title">Zárképernyő szöveg szín</string>
@@ -425,6 +447,77 @@
     <string name="lockscreen_calendar_flip_summary">Ha engedélyezed, vált az események közt.</string>
     <string name="lockscreen_calendar_interval_title">Váltás üteme</string>
     <string name="lockscreen_calendar_interval_summary">Váltási animáció sebessége mp-ben.</string>
+
+    <!-- Lockscreen Targets-->
+    <string name="custom_targets">Egyéni zárképernyő elemek</string>
+    <string name="lockscreen_target_info">Érintsd meg a zárkioldó ikont az hozzá rendeléshez</string>
+    <string name="lockscreen_target_title">Zárképernyő elemek</string>
+    <string name="lockscreen_target_summary">Nézd vagy változtasd meg az elemeket</string>
+    <string name="number_of_targets_title">Zárképernyő elemek száma</string>
+    <string name="number_of_targets_summary">Hány elemet akarsz?</string>
+    <string name="picker_activities">Tevékenységek</string>
+    <string name="select_custom_activity_title">Egyéni tevékenység választása</string>
+    <string name="icon_picker_choose_icon_title">Ikon választás</string>
+    <string name="icon_picker_alarm">Ébresztő</string>
+    <string name="icon_picker_browser">Böngésző</string>
+    <string name="icon_picker_calendar">Naptár</string>
+    <string name="icon_picker_camera">Kamera</string>
+    <string name="icon_picker_email">Email</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">Galéria</string>
+    <string name="icon_picker_googleplus">Google Plus</string>
+    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_maps">Térkép</string>
+    <string name="icon_picker_movie">Film</string>
+    <string name="icon_picker_music">Zene</string>
+    <string name="icon_picker_nav_normal">Navigáció</string>
+    <string name="icon_picker_phone">Telefon</string>
+    <string name="icon_picker_podcast">Podcast</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">Keresés</string>
+    <string name="icon_picker_sms">Üzenet</string>
+    <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_title">Ikon forrás választás</string>
+    <string name="icon_picker_system_icons_title">Rendszer ikonok</string>
+    <string name="icon_picker_aokp_icons_title">AOKP ikonok</string>
+    <string name="icon_picker_gallery_title">Galéria</string>
+
+    <string name="aokp_icon_picker_aokp">AOKP Now</string>
+    <string name="aokp_icon_picker_browser">Böngésző</string>
+    <string name="aokp_icon_picker_calendar">Naptár</string>
+    <string name="aokp_icon_picker_camera">Kamera</string>
+    <string name="aokp_icon_picker_clock">Óra</string>
+    <string name="aokp_icon_picker_email">Email</string>
+    <string name="aokp_icon_picker_facebook">Facebook</string>
+    <string name="aokp_icon_picker_gallery">Galéria</string>
+    <string name="aokp_icon_picker_googleplus">Google Plus</string>
+    <string name="aokp_icon_picker_googletalk">Google Talk</string>
+    <string name="aokp_icon_picker_maps">Térkép</string>
+    <string name="aokp_icon_picker_movie">Film</string>
+    <string name="aokp_icon_picker_music">Zene</string>
+    <string name="aokp_icon_picker_navigation">Navigáció</string>
+    <string name="aokp_icon_picker_phone">Telefon</string>
+    <string name="aokp_icon_picker_podcast">Podcast</string>
+    <string name="aokp_icon_picker_rss">Rss</string>
+    <string name="aokp_icon_picker_sms">Messaging</string>
+    <string name="aokp_icon_picker_unlock">Nyítás</string>
+    <string name="aokp_icon_picker_video">Video</string>
+    <string name="aokp_icon_picker_title">Ikon forrás választása</string>
+    <string name="aokp_icon_picker_system_icons_title">Rendszer ikonok</string>
+    <string name="aokp_icon_picker_gallery_title">Galéria</string>
+
+    <string name="icon_picker_pack_title">Ikon csomag</string>
+    <string name="lockscreen_target_empty">Üres</string>
+    <string name="profile_reset_title">Alaphelyzet</string>
+    <string name="wifi_save">Mentés</string>
+    <string name="lockscreen_target_reset">Zárképernyő elemek alaphelyzetbe</string>
+    <string name="lockscreen_target_save">Zárképernyő elemek mentése</string>
+    <string name="lockscreen_target_reset_title">Alaphelyzet</string>
+    <string name="lockscreen_target_reset_message">Törlöd az összes beállítást és minden alaphelyzetbe?</string>
+    <string name="lockscreen_target_edit_title">Elem és ikon szerkesztés</string>
+    <string name="lockscreen_target_edit_msg">Válaszd ki vagy módosítsd a kívánt alkalmazást vagy tevékenységet és az ikonjait</string>
+
+
 
     <!-- Weather -->
     <string name="weather_enable">Időjárás engedélyezése</string>
@@ -516,14 +609,14 @@
     <string name="location_unavailable">Helymeghatározás sikertelen</string>
 
     <!-- cardinal directions -->
-    <string name="direction_north">N</string>
-    <string name="direction_north_east">NE</string>
-    <string name="direction_east">E</string>
-    <string name="direction_south_east">SE</string>
-    <string name="direction_south">S</string>
-    <string name="direction_south_west">SW</string>
-    <string name="direction_west">W</string>
-    <string name="direction_north_west">NW</string>
+    <string name="direction_north">É</string>
+    <string name="direction_north_east">ÉK</string>
+    <string name="direction_east">K</string>
+    <string name="direction_south_east">DK</string>
+    <string name="direction_south">D</string>
+    <string name="direction_south_west">DNY</string>
+    <string name="direction_west">NY</string>
+    <string name="direction_north_west">ÉNY</string>
 
     <!-- Share to clipboard -->
     <string name="clipboard_notification">Másolva a vágólapra.</string>
@@ -581,15 +674,177 @@
     <string name="vib_cur_loaded_title">Betölött:</string>
     <string name="help">Segítség</string>
     <string name="vibration_detailed_help">Egyéni rezgési minták készítése 5 egyszerű lépésben:\n
-        - Érintsd Új/Alaphelyzet\n
-		- Érints Felvétel\n
+        - Nyomd meg az Új/Alaphelyzet gombot\n
+		- Utána a Felvétel-t\n
 		- Rögzítsd a mintád nyomkodva az Érintés! gombot\n
-		- Érintsd Stop\n
-		- Érintsd a Mentést, nevezd el és nyomj OK\n\n
+		- Nyomd meg a Stop-ot\n
+		- Érintsd a Mentést, nevezd el és nyomj egy OK-t\n\n
 		A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
 		Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented (felülírja, akkor is ha átnevezed).\n
 		Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
 		Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
 		Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
+
+    <!-- boot animation stuff -->
+    <string name="insult_jerk">Jerk!</string>
+    <string name="insult_protekk">ProTekk!</string>
+
+    <!-- clock stuff -->
+    <string name="right_clock">Jobb oldalon</string>
+    <string name="center_clock">Középen</string>
+    <string name="no_clock">Nincs óra</string>
+    <string name="dont_show">Ne mutasd</string>
+    <string name="small_am_pm">Kis AM/PM</string>
+    <string name="regular_am_pm">Normál AM/PM</string>
+    <string name="protekk_oclock">ProTekk Óra</string>
+    <string name="small_weekday">Kis hétköznap</string>
+    <string name="regular_weekday">Normál hétköznap</string>
+
+    <!-- toggle style -->
+    <string name="icon_only">Csak ikon</string>
+    <string name="text_only">Csak szöveg</string>
+
+    <!-- Brightness slider -->
+    <string name="on_top">Felül</string>
+    <string name="on_the_bottom">Alsó részen</string>
+
+    <!-- Battery styles -->
+    <string name="icon_with_text">Ikon szöveggel</string>
+    <string name="icon_with_centered_text">Ikon szöveg középpel</string>
+    <string name="circlemod">KörMOD</string>
+
+    <!-- NavBar -->
+    <string name="right">Jobb</string>
+    <string name="left">Bal</string>
+    <string name="both">Együtt</string>
+    <string name="default_jb_behavior">Alapértelmezett JB müködés</string>
+    <string name="always_show_invincible_icons">Mindig mutasd a láthatatlan ikonokat</string>
+    <string name="always_show">Mindig mutat</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">Alapértelmezett JB láthatatlan ikonokkal rejtetten</string>
+    <string name="home">Kezdőképernyő</string>
+    <string name="back">Vissza</string>
+    <string name="recents">Legutóbbiak</string>
+    <string name="search">Keresés</string>
+    <string name="screenshot">Képernyőkép</string>
+    <string name="menu">Menü</string>
+    <string name="toggle_widgets">Widget kapcsolók</string>
+    <string name="open_ime_switcher">IME váltó megnyítása</string>
+    <string name="kill_app">Kill app</string>
+    <string name="power">Kikapcsolás</string>
+    <string name="notifications">Értesítések</string>
+    <string name="custom_app">Saját alkalmazás</string>
+    <string name="blank">Üres</string>
+    <string name="none">Nincs</string>
+    <string name="take_screenshot">Képernyőkép készítés</string>
+    <string name="ring_vib">Cseng/Rezeg</string>
+    <string name="ring_silent">Cseng/Néma</string>
+    <string name="ring_vib_silent">Cseng/Rezeg/Néma</string>
+    <string name="screen_off">Képernyő Ki</string>
+    <string name="google_now">Google Now</string>
+    <string name="select_application">Alkalmazás választás</string>
+    <string name="one_target">1 cél</string>
+    <string name="two_targets">2 cél</string>
+    <string name="three_targets">3 cél</string>
+    <string name="four_targets">4 cél</string>
+    <string name="five_targets">5 cél</string>
+    <string name="size_42_dp_default">42 dp (alapértelmezett)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (alapértelmezett)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="top_of_navbar">Navbar tetején</string>
+    <string name="bottom_of_navbar">Navbar alján</string>
+    <string name="regular">Normál</string>
+    <string name="center_mirrored">Közép-tükrőzés</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- LED Values -->
+    <string name="time_0_seconds_off">Ki</string>
+    <string name="time_0_2_seconds">.2 mp</string>
+    <string name="time_0_5_seconds">.5 mp</string>
+    <string name="time_1_second">1 mp</string>
+    <string name="time_1_5_seconds">1.5 mp</string>
+    <string name="time_2_seconds">2 mp</string>
+    <string name="time_2_5_seconds">2.5 mp</string>
+    <string name="time_3_seconds">3 mp</string>
+    <string name="time_3_5_seconds">3.5 mp</string>
+    <string name="time_4_seconds">4 mp</string>
+    <string name="time_4_5_seconds">4.5 mp</string>
+    <string name="time_5_seconds">5 mp</string>
+    <string name="time_5_5_seconds">5.5 mp</string>
+    <string name="time_6_seconds">6 mp</string>
+    <string name="time_7_seconds">7 mp</string>
+    <string name="time_8_seconds">8 mp</string>
+    <string name="time_9_seconds">9 mp</string>
+    <string name="time_10_seconds">10 mp</string>
+
+    <!-- LED brightness entries -->
+    <string name="low">alacsony</string>
+    <string name="medium">közepes</string>
+    <string name="high">magas</string>
+    <string name="very_high">nagyon magas</string>
+    <string name="laserbeam">lézerfény</string>
+
+    <!-- Flip phone entries -->
+    <string name="disabled">Tiltva</string>
+    <string name="enabled">Engedélyezve</string>
+    <string name="time_0_seconds_instant_off">0 mp (Azonnali Ki)</string>
+    <string name="time_15_seconds">15 mp</string>
+    <string name="time_30_seconds">30 mp</string>
+    <string name="time_45_seconds">45 mp</string>
+    <string name="time_1_minute">1 perc</string>
+    <string name="time_1_5_minutes">1.5 perc</string>
+    <string name="time_2_minutes">2 perc</string>
+    <string name="time_2_5_minutes">2.5 perc</string>
+    <string name="time_3_minutes">3 perc</string>
+    <string name="time_3_5_minutes">3.5 perc</string>
+    <string name="time_4_minutes">4 perc</string>
+    <string name="time_5_minutes">5 perc</string>
+
+    <!-- weather arrays -->
+    <string name="off">Ki</string>
+    <string name="time_10_minutes">10 perc</string>
+    <string name="time_30_minutes">30 perc</string>
+    <string name="time_45_minutes">45 perc</string>
+    <string name="time_60_minutes">60 perc</string>
+    <string name="time_2_hours">2 óra</string>
+    <string name="time_3_hours">3 óra</string>
+    <string name="time_4_hours">4 óra</string>
+    <string name="time_6_hours">6 óra</string>
+    <string name="time_8_hours">8 óra</string>
+    <string name="above_carrier_text">Szolgáltató felirat felett</string>
+    <string name="weather_panel">Időjárás panel</string>
+    <string name="text">Szöveg</string>
+
+    <!-- lockscreen calendar arrays -->
+    <string name="time_1_day">1 nap</string>
+    <string name="time_2_days">2 nap</string>
+    <string name="time_3_days">3 nap</string>
+    <string name="time_4_days">4 nap</string>
+    <string name="time_5_days">5 nap</string>
+    <string name="time_6_days">6 nap</string>
+    <string name="time_1_week">1 hét</string>
+
+    <!-- minfree -->
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+
+    <!-- less notification sounds -->
+    <string name="default_behavior">Alapértelmezett viselkedés</string>
+
+    <!-- signal style -->
+    <string name="show_signal_bars">Jel sáv mutatása</string>
+    <string name="show_signal_text">Jel szöveg mutatása</string>
+    <string name="show_with_dbm">Jel dBm-mel</string>
 
 </resources>

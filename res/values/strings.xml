@@ -480,6 +480,7 @@
     <string name="icon_picker_search">Search</string>
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_unlock">Unlock</string>
     <string name="icon_picker_title">Choose icon source</string>
     <string name="icon_picker_system_icons_title">System icons</string>
     <string name="icon_picker_aokp_icons_title">AOKP icons</string>
@@ -515,6 +516,8 @@
     <string name="wifi_save">Save</string>
     <string name="lockscreen_target_reset">Lockscreen shortcuts reset to default</string>
     <string name="lockscreen_target_save">Lockscreen targets saved</string>
+    <string name="lockscreen_target_save_error_title">Error saving targets</string>
+    <string name="lockscreen_target_save_error_msg">You must have at least one target that unlocks the screen!</string>
     <string name="lockscreen_target_reset_title">Reset</string>
     <string name="lockscreen_target_reset_message">Delete all user created lockscreen target and restore to default?</string>
     <string name="lockscreen_target_edit_title">Edit target and icon</string>

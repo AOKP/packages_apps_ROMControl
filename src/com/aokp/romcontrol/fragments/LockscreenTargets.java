@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -66,29 +68,42 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
      */
     public final static String DEFAULT_TRI =
             "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.android.gallery3d/com.android.camera.CameraLauncher;S.icon_resource=ic_lockscreen_camera_normal;end";
-
 
     /**
      * Default stock configuration for lockscreen targets with Google now at left
      * @hide
      */
     public final static String DEFAULT_LEFT =
-            "empty|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "end|empty|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end";
 
     /**
-     * Default stock configuration for lockscreen targets with Google now at left
+     * Default stock configuration for lockscreen targets with 5 0r 8 targets
      * @hide
      */
     public final static String DEFAULT_NORMAL =
-            "empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.android.gallery3d/com.android.camera.CameraLauncher;S.icon_resource=ic_lockscreen_camera_normal;end";
+
+    public final static String[] NO_LOCK_CMP = {
+        "com.android.systemui.RingVibSilentToggle",
+        "com.android.systemui.RingVibToggle",
+        "com.android.systemui.RingSilentToggle",
+    };
+
+    private final static List<String> NO_LOCK_LIST = Arrays.asList(NO_LOCK_CMP);
 
     private GlowPadView mWaveView;
     private ImageButton mDialogIcon;
@@ -141,7 +156,10 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         mPicker = new ShortcutPickerHelper(this, this);
         mImageTmp = new File(mActivity.getCacheDir() + "/target.tmp");
         EMPTY_LABEL = mActivity.getResources().getString(R.string.lockscreen_target_empty);
-        maxTargets = Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGET_AMOUNT, 2);
+        maxTargets = Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGET_AMOUNT, 3);
+        if(maxTargets < 3){
+            maxTargets = 3;
+        }
 
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.lockscreen_targets, container, false);
         Configuration config = mResources.getConfiguration();
@@ -223,21 +241,16 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         final Drawable activeBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_target_activated);
         final String[] targetStore = input.split("\\|");
 
-        //Add the unlock icon
-        Drawable unlockFront = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_normal);
-        Drawable unlockBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_activated);
-        mTargetStore.add(new TargetInfo(getLayeredDrawable(unlockBack, unlockFront, 0, true)));
-
         int total = 0;
-        if (maxTargets == 2) {
+        if (maxTargets <= 3) {
             total = 4;
-        } else if (maxTargets == 3 || maxTargets == 5) {
+        } else if (maxTargets == 4 || maxTargets == 6) {
             total = 6;
-        } else if (maxTargets == 4 || maxTargets == 7) {
+        } else if (maxTargets == 5 || maxTargets == 8) {
             total = 8;
         }
 
-        for (int cc = 0; cc < total - 1; cc++) {
+        for (int cc = 0; cc < total; cc++) {
             String uri = GlowPadView.EMPTY_TARGET;
             Drawable front = null;
             Drawable back = activeBack;
@@ -295,6 +308,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
                             }
                         }
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
             } else if (cc >= maxTargets) {
@@ -367,12 +381,12 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         .setMessage(R.string.lockscreen_target_reset_message)
         .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-               String targets = DEFAULT_TRI;
-                  if (maxTargets == 2) {
+                String targets = DEFAULT_TRI;
+                if (maxTargets == 3) {
                      targets = DEFAULT_TRI;
-                } else if (maxTargets == 3 || maxTargets == 5) {
+                } else if (maxTargets == 4 || maxTargets == 6) {
                      targets = DEFAULT_LEFT;
-                } else if (maxTargets == 4 || maxTargets == 7) {
+                } else if (maxTargets == 5 || maxTargets == 8) {
                      targets = DEFAULT_NORMAL;
                 }
                 initializeView(targets);
@@ -389,36 +403,63 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     private void saveAll() {
         StringBuilder targetLayout = new StringBuilder();
         ArrayList<String> existingImages = new ArrayList<String>();
-        int maxTargets = Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGET_AMOUNT, 2);
+        int maxTargets = Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGET_AMOUNT, 3);
+        if(maxTargets < 3){
+            maxTargets = 3;
+        }
 
-        for (int i = 1; i <= maxTargets; i++) {
+        boolean foundUnlock = false;
+        for (int i = 0; i <= maxTargets - 1; i++) {
             String uri = mTargetStore.get(i).uri;
-            String type = mTargetStore.get(i).iconType;
-            String source = mTargetStore.get(i).iconSource;
-            existingImages.add(source);
-            if (!uri.equals(GlowPadView.EMPTY_TARGET) && type != null) {
-                try {
-                    Intent in = Intent.parseUri(uri, 0);
-                    in.putExtra(type, source);
-                    String pkgName = mTargetStore.get(i).pkgName;
-                    if (pkgName != null) {
-                        in.putExtra(GlowPadView.ICON_PACKAGE, mTargetStore.get(i).pkgName);
-                    } else {
-                        in.removeExtra(GlowPadView.ICON_PACKAGE);
-                    }
-                    uri = in.toUri(0);
-                } catch (URISyntaxException e) {
+            if(uri != null && !uri.equals(GlowPadView.EMPTY_TARGET)){
+                String className = "";
+                try{
+                    className = Intent.parseUri(uri, 0).getComponent().getClassName();
+                }catch(Exception ee){}
+                if(!NO_LOCK_LIST.contains(className)){
+                    foundUnlock = true;
+                    break;
                 }
             }
-            targetLayout.append(uri);
-            targetLayout.append("|");
         }
-        targetLayout.deleteCharAt(targetLayout.length() - 1);
-        Settings.System.putString(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGETS, targetLayout.toString());
-        for (File pic : mActivity.getFilesDir().listFiles()) {
-            if (pic.getName().startsWith("lockscreen_") && !existingImages.contains(pic.toString())) {
-                pic.delete();
+
+        if(foundUnlock){
+            for (int i = 0; i <= maxTargets - 1; i++) {
+                String uri = mTargetStore.get(i).uri;
+                String type = mTargetStore.get(i).iconType;
+                String source = mTargetStore.get(i).iconSource;
+                existingImages.add(source);
+                if (!uri.equals(GlowPadView.EMPTY_TARGET) && type != null) {
+                    try {
+                        Intent in = Intent.parseUri(uri, 0);
+                        in.putExtra(type, source);
+                        String pkgName = mTargetStore.get(i).pkgName;
+                        if (pkgName != null) {
+                            in.putExtra(GlowPadView.ICON_PACKAGE, mTargetStore.get(i).pkgName);
+                        } else {
+                            in.removeExtra(GlowPadView.ICON_PACKAGE);
+                        }
+                        uri = in.toUri(0);
+                    } catch (URISyntaxException e) {
+                    }
+                }
+                targetLayout.append(uri);
+                targetLayout.append("|");
             }
+            targetLayout.deleteCharAt(targetLayout.length() - 1);
+            Settings.System.putString(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGETS, targetLayout.toString());
+            for (File pic : mActivity.getFilesDir().listFiles()) {
+                if (pic.getName().startsWith("lockscreen_") && !existingImages.contains(pic.toString())) {
+                    pic.delete();
+                }
+            }
+        }else{
+            new AlertDialog.Builder(mActivity)
+            .setTitle(R.string.lockscreen_target_save_error_title)
+            .setIconAttribute(android.R.attr.alertDialogIcon)
+            .setMessage(R.string.lockscreen_target_save_error_msg)
+            .setPositiveButton(R.string.ok, null)
+            .create().show();
         }
     }
 
@@ -521,7 +562,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         } else if (requestCode == IconPicker.REQUEST_PICK_SYSTEM || requestCode == IconPicker.REQUEST_PICK_AOKP || requestCode == IconPicker.REQUEST_PICK_GALLERY
                 || requestCode == IconPicker.REQUEST_PICK_ICON_PACK) {
             mIconPicker.onActivityResult(requestCode, resultCode, data);
-        } else if (requestCode != Activity.RESULT_CANCELED && resultCode != Activity.RESULT_CANCELED) {
+        } else if (requestCode != Activity.RESULT_CANCELED && resultCode != Activity.RESULT_CANCELED){
             mPicker.onActivityResult(requestCode, resultCode, data);
         }
     }
@@ -537,7 +578,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = target;
-        if (target != 0) {
+        if (target >= 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
             builder.setTitle(R.string.lockscreen_target_edit_title);
             builder.setMessage(R.string.lockscreen_target_edit_msg);

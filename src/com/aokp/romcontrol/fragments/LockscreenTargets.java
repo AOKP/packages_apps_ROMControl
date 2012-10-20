@@ -66,6 +66,8 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
      */
     public final static String DEFAULT_TRI =
             "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.android.gallery3d/com.android.camera.CameraLauncher;S.icon_resource=ic_lockscreen_camera_normal;end";
@@ -76,16 +78,20 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
      * @hide
      */
     public final static String DEFAULT_LEFT =
-            "empty|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "end|empty|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end";
 
     /**
-     * Default stock configuration for lockscreen targets with Google now at left
+     * Default stock configuration for lockscreen targets with 5 0r 8 targets
      * @hide
      */
     public final static String DEFAULT_NORMAL =
-            "empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
+            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.android.gallery3d/com.android.camera.CameraLauncher;S.icon_resource=ic_lockscreen_camera_normal;end";
@@ -223,21 +229,16 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         final Drawable activeBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_target_activated);
         final String[] targetStore = input.split("\\|");
 
-        //Add the unlock icon
-        Drawable unlockFront = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_normal);
-        Drawable unlockBack = mResources.getDrawable(com.android.internal.R.drawable.ic_lockscreen_unlock_activated);
-        mTargetStore.add(new TargetInfo(getLayeredDrawable(unlockBack, unlockFront, 0, true)));
-
         int total = 0;
-        if (maxTargets == 2) {
+        if (maxTargets == 3) {
             total = 4;
-        } else if (maxTargets == 3 || maxTargets == 5) {
+        } else if (maxTargets == 4 || maxTargets == 6) {
             total = 6;
-        } else if (maxTargets == 4 || maxTargets == 7) {
+        } else if (maxTargets == 5 || maxTargets == 8) {
             total = 8;
         }
 
-        for (int cc = 0; cc < total - 1; cc++) {
+        for (int cc = 0; cc < total; cc++) {
             String uri = GlowPadView.EMPTY_TARGET;
             Drawable front = null;
             Drawable back = activeBack;
@@ -368,11 +369,11 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                String targets = DEFAULT_TRI;
-                  if (maxTargets == 2) {
+                  if (maxTargets == 3) {
                      targets = DEFAULT_TRI;
-                } else if (maxTargets == 3 || maxTargets == 5) {
+                } else if (maxTargets == 4 || maxTargets == 6) {
                      targets = DEFAULT_LEFT;
-                } else if (maxTargets == 4 || maxTargets == 7) {
+                } else if (maxTargets == 5 || maxTargets == 8) {
                      targets = DEFAULT_NORMAL;
                 }
                 initializeView(targets);
@@ -391,7 +392,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
         ArrayList<String> existingImages = new ArrayList<String>();
         int maxTargets = Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGET_AMOUNT, 2);
 
-        for (int i = 1; i <= maxTargets; i++) {
+        for (int i = 0; i <= maxTargets - 1; i++) {
             String uri = mTargetStore.get(i).uri;
             String type = mTargetStore.get(i).iconType;
             String source = mTargetStore.get(i).iconSource;
@@ -537,7 +538,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = target;
-        if (target != 0) {
+        if (target >= 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
             builder.setTitle(R.string.lockscreen_target_edit_title);
             builder.setMessage(R.string.lockscreen_target_edit_msg);

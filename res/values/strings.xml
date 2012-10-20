@@ -480,6 +480,7 @@
     <string name="icon_picker_search">Search</string>
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_unlock">Unlock</string>
     <string name="icon_picker_title">Choose icon source</string>
     <string name="icon_picker_system_icons_title">System icons</string>
     <string name="icon_picker_aokp_icons_title">AOKP icons</string>

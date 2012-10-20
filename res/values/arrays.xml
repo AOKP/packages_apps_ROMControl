@@ -680,6 +680,7 @@
         <item>@string/icon_picker_rss</item>
         <item>@string/icon_picker_search</item>
         <item>@string/icon_picker_twitter</item>
+        <item>@string/icon_picker_unlock</item>
     </string-array>
 
     <string-array name="lockscreen_icon_picker_icons" translatable="false">
@@ -702,6 +703,7 @@
         <item>@*android:drawable/ic_lockscreen_rss_normal</item>
         <item>@*android:drawable/ic_lockscreen_google_normal</item>
         <item>@*android:drawable/ic_lockscreen_twitter_normal</item>
+        <item>@*android:drawable/ic_lockscreen_unlock_normal</item>
     </string-array>
 
     <string-array name="lockscreen_aokp_icon_picker_labels" translatable="false">
@@ -799,10 +801,10 @@
     </string-array>
 
     <string-array name="lockscreen_target_amount_values" translatable="false">
-        <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
-        <item>7</item>
+        <item>6</item>
+        <item>8</item>
     </string-array>
 </resources>

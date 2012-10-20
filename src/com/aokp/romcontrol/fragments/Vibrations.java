@@ -100,6 +100,8 @@ public class Vibrations extends AOKPActivity {
         sharedPrefs = this.getSharedPreferences("vibrations", 0);
         mRecorder = new VibrationRecorder(this);
 
+        setContentView(R.layout.vibration_manager);
+
         mTapButton = (Button) this.findViewById(R.id.button_tap);
         mRecButton = (Button) this.findViewById(R.id.button_rec);
         mPlayButton = (Button) this.findViewById(R.id.button_play);
@@ -217,8 +219,6 @@ public class Vibrations extends AOKPActivity {
             sharedPrefs.edit().putBoolean("firststart", false).apply();
             showDia(DIALOG_HELP);
         }
-
-        setContentView(R.layout.vibration_manager);
     }
 
     @Override
@@ -302,6 +302,10 @@ public class Vibrations extends AOKPActivity {
 
     void updatePatternBar(VibrationPattern pattern) {
         mPatternBar.removeAllViews();
+        if (pattern == null) {
+            mPatternBar.setVisibility(View.INVISIBLE);
+            return;
+        }
         double fullWidth = mPatternBar.getWidth();
         double fullLength = ((double) pattern.getLength()) / 10;
         double ratio = fullWidth/fullLength;

@@ -124,7 +124,9 @@
     <string name="rotate_180_title">允许 180° 旋转</string>
     <string name="rotate_180_summary">允许设备倒置显示</string>
     <string name="recent_kill_all">启用“全部结束”按钮</string>
-    <string name="recent_kill_all_summary">在系统的近期任务界面显示“全部结束”按钮（将重启用户界面）</string>
+    <string name="recent_kill_all_summary">在系统的近期任务界面显示“全部结束”按钮</string>
+    <string name="ram_bar">近期 RAM 栏</string>
+    <string name="ram_bar_summary">在近期任务显示 RAM 使用情况</string>
     <string name="kill_app_longpress_back">长按返回键结束程序</string>
     <string name="kill_app_longpress_back_summary">长时间按住返回键可以强行结束当前程序</string>
     <string name="tablet_ui">强制使用平板界面</string>

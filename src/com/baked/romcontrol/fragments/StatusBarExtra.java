@@ -177,13 +177,13 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         } else if (preference == mShowImeSwitcher) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
-                    isCheckBoxPrefernceChecked(preference));
+                    checkBoxChecked(preference));
             return true;
 
         } else if (preference == mStatusBarBrightnessSlider) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_BRIGHTNESS_SLIDER,
-                    isCheckBoxPrefernceChecked(preference));
+                    checkBoxChecked(preference));
             return true;
 
         } else if (preference == mWallpaperAlpha) {

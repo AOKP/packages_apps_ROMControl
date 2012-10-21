@@ -73,6 +73,8 @@
     <string name="force_tablet_ui_summary">This will force the device to use the Tablet UI (requires reboot). **If setting this on a high dpi device please change to a lower screen density before setting this to on</string>
     <string name="vibrate_notif_expand_title">Vibrate on expand</string>
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
+    <string name="clock_date_opens_title">Clock/Date opens</string>
+    <string name="clock_date_opens_summary">Notification pulldown clock opens alarms, date opens calendar (requires UI restart)</string>
 
     <!-- system text color test -->
     <string name="primary_text_colors">Change system wide text colors</string>

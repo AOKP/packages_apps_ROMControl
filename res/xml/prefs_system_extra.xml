@@ -32,6 +32,11 @@
             android:summary="@string/vibrate_notif_expand_summary" />
 
         <CheckBoxPreference
+            android:key="clock_date_opens"
+            android:title="@string/clock_date_opens_title"
+            android:summary="@string/clock_date_opens_summary" />
+
+        <CheckBoxPreference
             android:key="force_tablet_ui"
             android:title="@string/force_tablet_ui"
             android:summary="@string/force_tablet_ui_summary"

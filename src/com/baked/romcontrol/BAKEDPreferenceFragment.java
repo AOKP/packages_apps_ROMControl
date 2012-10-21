@@ -280,8 +280,8 @@ public class BAKEDPreferenceFragment extends PreferenceFragment implements Dialo
         }
     }
 
-    protected boolean isCheckBoxPrefernceChecked(Preference p) {
-        if(p instanceof CheckBoxPreference) {
+    protected boolean checkBoxChecked(Preference p) {
+        if (p instanceof CheckBoxPreference) {
             return ((CheckBoxPreference) p).isChecked();
 
         } else {

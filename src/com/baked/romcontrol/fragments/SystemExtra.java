@@ -41,6 +41,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     private static final String PREF_FORCE_TABLET_UI = "force_tablet_ui";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
+    private static final String PREF_CLOCK_DATE_OPENS = "clock_date_opens";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
@@ -48,6 +49,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     CheckBoxPreference mForceTabletUI;
     CheckBoxPreference mUseAltResolver;
     CheckBoxPreference mVibrateOnExpand;
+    CheckBoxPreference mClockDateOpens;
     Preference mLcdDensity;
 
     Random randomGenerator = new Random();
@@ -99,6 +101,10 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
         mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.VIBRATE_NOTIF_EXPAND, true));
+
+        mClockDateOpens = (CheckBoxPreference) findPreference(PREF_CLOCK_DATE_OPENS);
+        mClockDateOpens.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.CLOCK_DATE_OPENS, true));
 
         mForceTabletUI = (CheckBoxPreference) findPreference(PREF_FORCE_TABLET_UI);
         mForceTabletUI.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -175,12 +181,19 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         } else if (preference == mUseAltResolver) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.ACTIVITY_RESOLVER_USE_ALT,
-                    isCheckBoxPrefernceChecked(preference));
+                    checkBoxChecked(preference));
             return true;
 
         } else if (preference == mVibrateOnExpand) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VIBRATE_NOTIF_EXPAND,
+                    ((CheckBoxPreference) preference).isChecked());
+            Helpers.restartSystemUI();
+            return true;
+
+        } else if (preference == mClockDateOpens) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.CLOCK_DATE_OPENS,
                     ((CheckBoxPreference) preference).isChecked());
             Helpers.restartSystemUI();
             return true;

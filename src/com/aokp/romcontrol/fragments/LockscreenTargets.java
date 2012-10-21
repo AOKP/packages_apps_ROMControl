@@ -68,7 +68,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
      */
     public final static String DEFAULT_TRI =
             "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
-            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "component=com.android.systemui/.LockscreenUnlock;S.icon_resource=ic_lockscreen_unlock;" +
             "end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
@@ -80,7 +80,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
      */
     public final static String DEFAULT_LEFT =
             "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
-            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "component=com.android.systemui/.LockscreenUnlock;S.icon_resource=ic_lockscreen_unlock;" +
             "end|empty|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end";
@@ -91,7 +91,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
      */
     public final static String DEFAULT_NORMAL =
             "#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
-            "component=com.android.systemui/.GoToHomescreen;S.icon_resource=ic_lockscreen_unlock;" +
+            "component=com.android.systemui/.LockscreenUnlock;S.icon_resource=ic_lockscreen_unlock;" +
             "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +
             "component=com.google.android.googlequicksearchbox/.SearchActivity;S.icon_resource=ic_lockscreen_google_normal;" +
             "end|empty|#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;" +

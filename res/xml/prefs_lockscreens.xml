@@ -80,17 +80,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="advanced_cat"
-        android:title="@string/advanced_settings">
-
-    <CheckBoxPreference
-        android:key="lockscreen_quick_unlock_control"
-        android:title="@string/lockscreen_quick_unlock_control_title"
-        android:summary="@string/lockscreen_quick_unlock_control_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="weather_cat"
         android:title="@string/lockscreen_weather_cat">
         

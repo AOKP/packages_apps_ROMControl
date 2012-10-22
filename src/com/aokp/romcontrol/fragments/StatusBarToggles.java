@@ -49,6 +49,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     private static final String PREF_TOGGLE_BTN_BACKGROUND = "toggle_btn_background";
     private static final String PREF_TOGGLE_TEXT_COLOR = "toggle_text_color";
     private static final String PREF_HAPTIC_FEEDBACK_TOGGLES_ENABLED = "toggles_haptic_feedback";
+    private static final String PREF_SETTINGS_BUTTON_BEHAVIOR = "settings_behavior";
+    private static final String PREF_TOGGLES_AUTOHIDE = "toggles_autohide";
 
     Preference mEnabledToggles;
     Preference mLayout;
@@ -62,6 +64,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     ColorPickerPreference mBtnDisabledColor;
     ColorPickerPreference mToggleTextColor;
     CheckBoxPreference mHapticFeedback;
+    CheckBoxPreference mDefaultSettingsButtonBehavior;
+    CheckBoxPreference mTogglesAutoHide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -117,6 +121,19 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
         mBtnBackground = (SeekBarPreference) findPreference(PREF_TOGGLE_BTN_BACKGROUND);
         mBtnBackground.setInitValue((int) (btnBgAlpha * 100));
         mBtnBackground.setOnPreferenceChangeListener(this);
+
+        mDefaultSettingsButtonBehavior = (CheckBoxPreference) findPreference(PREF_SETTINGS_BUTTON_BEHAVIOR);
+        mDefaultSettingsButtonBehavior.setChecked(Settings.System.getBoolean(mContext
+                .getContentResolver(), Settings.System.STATUSBAR_SETTINGS_BEHAVIOR, true));
+            if (mDefaultSettingsButtonBehavior.isChecked()) {
+                mDefaultSettingsButtonBehavior.setSummary(R.string.summary_settings_behavior_default);
+            } else {
+                mDefaultSettingsButtonBehavior.setSummary(R.string.summary_settings_behavior_reverse);
+            }
+
+        mTogglesAutoHide = (CheckBoxPreference) findPreference(PREF_TOGGLES_AUTOHIDE);
+        mTogglesAutoHide.setChecked(Settings.System.getBoolean(mContext
+                .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_AUTOHIDE, false));
 
         mToggleTextColor = (ColorPickerPreference) findPreference(
                 PREF_TOGGLE_TEXT_COLOR);
@@ -190,6 +207,23 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
         } else if (preference == mResetToggles) {
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_TOGGLES, "WIFI");
+            return true;
+        } else if (preference == mTogglesAutoHide) {
+
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.STATUSBAR_TOGGLES_AUTOHIDE,
+                    ((CheckBoxPreference) preference).isChecked() ? true : false);
+            return true;
+        } else if (preference == mDefaultSettingsButtonBehavior) {
+
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.STATUSBAR_SETTINGS_BEHAVIOR,
+                    ((CheckBoxPreference) preference).isChecked() ? true : false);
+            if (mDefaultSettingsButtonBehavior.isChecked()) {
+                mDefaultSettingsButtonBehavior.setSummary(R.string.summary_settings_behavior_default);
+            } else {
+                mDefaultSettingsButtonBehavior.setSummary(R.string.summary_settings_behavior_reverse);
+            }
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

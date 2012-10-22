@@ -131,6 +131,8 @@
   <string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
   <string name="recent_kill_all">Zapnout tlačítko zavření všech aplikací</string>
   <string name="recent_kill_all_summary">Zobrazuje tlačítko pro zavření všech aplikací v přehledu všech spuštěných aplikací (vyžaduje restart UI)</string>
+  <string name="ram_bar">Lišta s RAM</string>
+  <string name="ram_bar_summary">Zobrazuje použitou RAM v okně s běžícími aplikacemi</string>
   <string name="kill_app_longpress_back">Podržet zpět pro ukončení</string>
   <string name="kill_app_longpress_back_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="tablet_ui">Vynutit tabletové UI</string>
@@ -447,6 +449,7 @@
   <string name="icon_picker_search">Hledat</string>
   <string name="icon_picker_sms">Zprávy SMS/MMS</string>
   <string name="icon_picker_twitter">Twitter</string>
+  <string name="icon_picker_unlock">Odemknout</string>
   <string name="icon_picker_title">Zvolit zdroj ikony</string>
   <string name="icon_picker_system_icons_title">Systémové ikony</string>
   <string name="icon_picker_aokp_icons_title">AOKP ikony</string>
@@ -480,6 +483,8 @@
   <string name="wifi_save">Uložit</string>
   <string name="lockscreen_target_reset">Položky zamčené obrazovky obnoveny do výchozího stavu</string>
   <string name="lockscreen_target_save">Položky zamčené obrazovky uloženy</string>
+  <string name="lockscreen_target_save_error_title">Chyba při ukládání</string>
+  <string name="lockscreen_target_save_error_msg">Je potřeba minimálně jedna položka, která odemkne obrazovku!</string>
   <string name="lockscreen_target_reset_title">Obnovit</string>
   <string name="lockscreen_target_reset_message">Smazat všechny uživatelsky vytvořené položky a vrátit se k výchozím hodnotám?</string>
   <string name="lockscreen_target_edit_title">Upravit položku a její ikonu</string>

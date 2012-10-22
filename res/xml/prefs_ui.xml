@@ -77,22 +77,10 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="misc"
-        android:title="@string/misc_short">
-
+        android:key="tabletUI"
+        android:title="@string/tabletUI_cat">
 
          <CheckBoxPreference
-            android:key="rotate_180"
-            android:title="@string/rotate_180_title"
-            android:summary="@string/rotate_180_summary" />
-
-        <CheckBoxPreference
-            android:key="show_overflow"
-            android:title="@string/show_overflow_title"
-            android:summary="@string/show_overflow_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
             android:key="mode_tabletui"
             android:title="@string/tablet_ui"
             android:summary="@string/tablet_ui_summary"
@@ -114,6 +102,23 @@
             android:key="lcd_density_setup"
             android:title="@string/lcd_density_title"
             android:summary="@string/lcd_density_summary" />
+
+     </PreferenceCategory>
+
+     <PreferenceCategory
+            android:key="misc"
+            android:title="@string/misc_short">
+
+         <CheckBoxPreference
+            android:key="rotate_180"
+            android:title="@string/rotate_180_title"
+            android:summary="@string/rotate_180_summary" />
+
+        <CheckBoxPreference
+            android:key="show_overflow"
+            android:title="@string/show_overflow_title"
+            android:summary="@string/show_overflow_summary"
+            android:defaultValue="false" />
 
         <CheckBoxPreference
             android:key="use_alt_resolver"

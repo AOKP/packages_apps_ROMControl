@@ -1,0 +1,9 @@
+Change-Id: I1e8b4da3352b157ad4d287b9fdb101432fe2245d
+Code-Review+2: Gergely Szell (sethyx) <sethyx@gmail.com>
+Verified+1: Gergely Szell (sethyx) <sethyx@gmail.com>
+Code-Review+1: Brandon McAnsh <bmc08gt.teamb00sted@gmail.com>
+Submitted-by: Gergely Szell (sethyx) <sethyx@gmail.com>
+Submitted-at: Mon, 22 Oct 2012 14:24:27 +0100
+Reviewed-on: http://gerrit.sudoservers.com/4126
+Project: AOKP/packages_apps_ROMControl
+Branch: refs/heads/jb

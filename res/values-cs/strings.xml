@@ -447,6 +447,7 @@
   <string name="icon_picker_search">Hledat</string>
   <string name="icon_picker_sms">Zprávy SMS/MMS</string>
   <string name="icon_picker_twitter">Twitter</string>
+  <string name="icon_picker_unlock">Odemknout</string>
   <string name="icon_picker_title">Zvolit zdroj ikony</string>
   <string name="icon_picker_system_icons_title">Systémové ikony</string>
   <string name="icon_picker_aokp_icons_title">AOKP ikony</string>
@@ -480,6 +481,8 @@
   <string name="wifi_save">Uložit</string>
   <string name="lockscreen_target_reset">Položky zamčené obrazovky obnoveny do výchozího stavu</string>
   <string name="lockscreen_target_save">Položky zamčené obrazovky uloženy</string>
+  <string name="lockscreen_target_save_error_title">Chyba při ukládání</string>
+  <string name="lockscreen_target_save_error_msg">Je potřeba minimálně jedna položka, která odemkne obrazovku!</string>
   <string name="lockscreen_target_reset_title">Obnovit</string>
   <string name="lockscreen_target_reset_message">Smazat všechny uživatelsky vytvořené položky a vrátit se k výchozím hodnotám?</string>
   <string name="lockscreen_target_edit_title">Upravit položku a její ikonu</string>

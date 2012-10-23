@@ -860,6 +860,8 @@
     <string name="show_signal_text">Show signal text</string>
     <string name="show_with_dbm">Show with dBm</string>
 
-
+    <!-- haptic feedback on toggle press -->
+    <string name="toggles_enable_haptic_feedback_title">Enable haptic feedback</string>
+    <string name="toggles_enable_haptic_feedback_summary">Use haptic feedback when pressing toggles</string>
 
 </resources>

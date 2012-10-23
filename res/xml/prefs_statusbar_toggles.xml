@@ -3,13 +3,20 @@
     xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol">
 
     <Preference
-        android:key="enable_toggles"
+        android:key="enabled_toggles"
         android:summary="@string/enabled_toggles_summary"
         android:title="@string/enabled_toggles_title" />
+
     <Preference
         android:key="toggles"
         android:summary="@string/toggles_order_summary"
         android:title="@string/toggles_order_title" />
+
+    <CheckBoxPreference
+        android:key="toggles_haptic_feedback"
+        android:title="@string/toggles_enable_haptic_feedback_title"
+        android:summary="@string/toggles_enable_haptic_feedback_summary"
+        android:defaultValue="false" />
 
     <com.scheffsblend.smw.Preferences.ImageListPreference
         android:entries="@array/toggles_layout_entries"

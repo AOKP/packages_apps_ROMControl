@@ -4,7 +4,7 @@
         android:id="@+id/about"
         android:fragment="com.aokp.romcontrol.fragments.About"
         android:title="@string/about_aokp"
-	android:icon="@drawable/ic_rom_control_about"
+        android:icon="@drawable/ic_rom_control_about"
         android:summary="@string/about_aokp_summary" />
 
     <header android:title="@string/user_interface" />

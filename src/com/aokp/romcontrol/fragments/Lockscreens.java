@@ -338,41 +338,26 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             return true;
         } else if (preference == mLockscreenWallpaper) {
             Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
-            Rect rect = new Rect();
-            Window window = getActivity().getWindow();
-            window.getDecorView().getWindowVisibleDisplayFrame(rect);
-            int statusBarHeight = rect.top;
-            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
-            int titleBarHeight = contentViewTop - statusBarHeight;
+
+            int width = getActivity().getWallpaperDesiredMinimumWidth();
+            int height = getActivity().getWallpaperDesiredMinimumHeight();
+
+            float spotlightX = (float)display.getWidth() / width;
+            float spotlightY = (float)display.getHeight() / height;
 
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
             intent.setType("image/*");
             intent.putExtra("crop", "true");
             intent.putExtra("scale", true);
             intent.putExtra("scaleUpIfNeeded", true);
+            intent.putExtra("aspectX", width);
+            intent.putExtra("aspectY", height);
+            intent.putExtra("outputX", width);
+            intent.putExtra("outputY", height);
+            intent.putExtra("spotlightX", spotlightX);
+            intent.putExtra("spotlightY", spotlightY);
             intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
             intent.putExtra(MediaStore.EXTRA_OUTPUT, getLockscreenExternalUri());
-
-            if (mTablet) {
-                width = getActivity().getWallpaperDesiredMinimumWidth();
-                height = getActivity().getWallpaperDesiredMinimumHeight();
-                float spotlightX = (float)display.getWidth() / width;
-                float spotlightY = (float)display.getHeight() / height;
-                intent.putExtra("aspectX", width);
-                intent.putExtra("aspectY", height);
-                intent.putExtra("outputX", width);
-                intent.putExtra("outputY", height);
-                intent.putExtra("spotlightX", spotlightX);
-                intent.putExtra("spotlightY", spotlightY);
-            } else {
-                boolean isPortrait = getResources()
-                        .getConfiguration().orientation ==
-                        Configuration.ORIENTATION_PORTRAIT;
-                intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
-                intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
-            }
 
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             return true;

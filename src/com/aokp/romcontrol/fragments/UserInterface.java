@@ -541,12 +541,9 @@ public class UserInterface extends AOKPPreferenceFragment {
                 builder.setPositiveButton(R.string.apply, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Helpers.getMount("rw");
-                        //backup old boot animation
-                        new CMDProcessor().su.runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
-
-                        //Copy new bootanimation, give proper permissions
-                        new CMDProcessor().su.runWaitFor("cp "+ bootAniPath +" /system/media/bootanimation.zip");
-                        new CMDProcessor().su.runWaitFor("chmod 644 /system/media/bootanimation.zip");
+                        //Set new bootanimation, give proper permissions
+                        new CMDProcessor().su.runWaitFor("cp "+ bootAniPath +" /data/local/bootanimation.zip");
+                        new CMDProcessor().su.runWaitFor("chmod 644 /data/local/bootanimation.zip");
 
                         //Update setting to reflect that boot animation is now enabled
                         mDisableBootAnimation.setChecked(false);

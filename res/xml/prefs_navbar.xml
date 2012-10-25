@@ -91,6 +91,16 @@
                         android:summary="@string/navigation_bar_width_summary" />
 
 		<com.aokp.romcontrol.widgets.SeekBarPreference
+			android:key="width_port"
+			android:title="@string/width_port_title"
+			android:summary="@string/width_port_summary" />
+
+		<com.aokp.romcontrol.widgets.SeekBarPreference
+			android:key="width_land"
+			android:title="@string/width_land_title"
+			android:summary="@string/width_land_summary" />
+
+		<com.aokp.romcontrol.widgets.SeekBarPreference
 			android:key="button_transparency"
 			android:title="@string/button_transparency_title" />
 

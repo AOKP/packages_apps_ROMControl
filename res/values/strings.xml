@@ -286,6 +286,10 @@
     <string name="navbar_qty_summary">Choose the number of navigation buttons</string>
     <string name="navbar_action_title">Button %1$s action &amp; icon</string>
     <string name="button_transparency_title">Nav button transparency</string>
+    <string name="width_port_title">Combined bar width port</string>
+    <string name="width_land_title">Combined bar width land</string>
+    <string name="width_port_summary">100 is 70 percent of screen width, 5 is 30 percent of screen width, 0 will default to per button width</string>
+    <string name="width_land_summary">100 is 70 percent of screen width, 5 is 30 percent of screen width, 0 will default to per button width</string>
     <string name="navbar_longpress_title">Button %1$s longpress action</string>
     <string name="navbar_action_home">Home</string>
     <string name="navbar_action_back">Back</string>

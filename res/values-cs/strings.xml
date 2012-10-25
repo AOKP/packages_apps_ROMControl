@@ -192,6 +192,11 @@
   <string name="toggles_display_close">Zavřít</string>
   <string name="toggles_order_title">Pořadí přepínačů</string>
   <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
+  <string name="title_settings_behavior">Použít výchozí chování nastavení</string>
+  <string name="summary_settings_behavior_default">Krátký stisk pro nastavení, dlouhý pro přepínače</string>
+  <string name="summary_settings_behavior_reverse">Krátký stisk pro přepínače, dlouhý pro nastavení</string>
+  <string name="title_toggles_autohide">Automaticky skrývat přepínače</string>
+  <string name="summary_toggles_autohide">Skrýt přepínače po zavření notifikační lišty.</string>
   <string name="brightness_location_title">Pozice nastavení jasu</string>
   <string name="reset_toggles_title">Obnovit přepínače</string>
   <string name="reset_toggles_summary">Obnovit všechny přepínače a jejich pořadí</string>
@@ -421,6 +426,8 @@
   <string name="lockscreen_calendar_flip_summary">Více událostí bude zobrazeno s postupným střídáním.</string>
   <string name="lockscreen_calendar_interval_title">Interval střídání</string>
   <string name="lockscreen_calendar_interval_summary">Zvolit rychlost střídání.</string>
+  <string name="use_lockscreen_themes_title">Umožnit použít téma na zamčené obrazovce</string>
+  <string name="use_lockscreen_themes_summary">Témata z témat vzhledu mohou měnit vzhled zamčené obrazovky (pokud to podporují). Pozor: Mohou se vyskytnout problémy, je nutné restartovat.</string>
   <!-- Lockscreen Targets-->
   <string name="custom_targets">Vlastní položky zamčené obrazovky</string>
   <string name="lockscreen_target_info">Posunutím odemykacího kruhu na cílovou položku je možné provést její přiřazení</string>  
@@ -793,4 +800,7 @@
   <string name="show_signal_bars">Zobrazit ukazatel signálu</string>
   <string name="show_signal_text">Zobrazit signál textově</string>
   <string name="show_with_dbm">Zobrazit s dBm</string>
+  <!-- haptic feedback on toggle press -->
+  <string name="toggles_enable_haptic_feedback_title">Zapnout hmatovou odezvu</string>
+  <string name="toggles_enable_haptic_feedback_summary">Použít hmatovou odezvu při stisku přepínačů</string>
 </resources>

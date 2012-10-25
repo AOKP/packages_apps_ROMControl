@@ -201,7 +201,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
         mUseLSThemes = (CheckBoxPreference)findPreference(PREF_USE_LOCKSCREEN_THEMES);
         mUseLSThemes.setChecked(Settings.System.getBoolean(mContext
-                .getContentResolver(), Settings.System.USE_LOCKSCREEN_THEMES, false));
+                .getContentResolver(), Settings.System.USE_LOCKSCREEN_THEMES, true));
 
         mLockscreenWallpaper = findPreference("wallpaper");
 

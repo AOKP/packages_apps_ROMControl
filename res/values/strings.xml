@@ -456,8 +456,6 @@
     <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
-    <string name="use_lockscreen_themes_title">Allow theming of lockscreen</string>
-    <string name="use_lockscreen_themes_summary">Theme chooser themes if supported by the theme will theme lockscreen assets. Warning: There may be issues, reboot required to take effect.</string>
 
     <!-- Lockscreen Targets-->
     <string name="custom_targets">Custom lockscreen targets</string>

@@ -158,10 +158,6 @@
                 android:title="@string/lockscreen_auto_rotate_title"
                 android:summary="@string/lockscreen_auto_rotate_summary" />
 
-            <CheckBoxPreference
-                android:key="use_lockscreen_themes"
-                android:title="@string/use_lockscreen_themes_title"
-                android:summary="@string/use_lockscreen_themes_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -84,7 +84,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
     private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
     private static final String PREF_STOCK_MUSIC_LAYOUT = "lockscreen_stock_music_layout";
-    private static final String PREF_USE_LOCKSCREEN_THEMES = "use_lockscreen_themes";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -112,7 +111,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenCalendarUseColors;
     CheckBoxPreference mLockscreenAutoRotate;
     CheckBoxPreference mStockMusicLayout;
-    CheckBoxPreference mUseLSThemes;
 
     ListPreference mTargetNumber;
 
@@ -198,10 +196,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mStockMusicLayout = (CheckBoxPreference) findPreference(PREF_STOCK_MUSIC_LAYOUT);
         mStockMusicLayout.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_STOCK_MUSIC_LAYOUT, 0) == 1);
-
-        mUseLSThemes = (CheckBoxPreference)findPreference(PREF_USE_LOCKSCREEN_THEMES);
-        mUseLSThemes.setChecked(Settings.System.getBoolean(mContext
-                .getContentResolver(), Settings.System.USE_LOCKSCREEN_THEMES, false));
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -376,11 +370,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             Log.e("RC_Lockscreens", "key: " + preference.getKey());
             return Settings.System.putInt(getActivity().getContentResolver(), preference.getKey(),
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
-        } else if (preference == mUseLSThemes) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.USE_LOCKSCREEN_THEMES,
-                    ((CheckBoxPreference) preference).isChecked());
-            return true;
         }
         
         return super.onPreferenceTreeClick(preferenceScreen, preference);

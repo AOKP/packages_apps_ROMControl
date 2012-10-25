@@ -90,9 +90,23 @@
                         android:title="@string/navigation_bar_width_title"
                         android:summary="@string/navigation_bar_width_summary" />
 
-		<com.aokp.romcontrol.widgets.SeekBarPreference
-			android:key="button_transparency"
-			android:title="@string/button_transparency_title" />
+        <Preference
+            android:key="width_help"
+            android:enabled="false"
+            android:title="@string/navbar_width_help_title"
+            android:summary="@string/navbar_width_help_summary" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="width_port"
+            android:title="@string/width_port_title" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="width_land"
+            android:title="@string/width_land_title" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="button_transparency"
+            android:title="@string/button_transparency_title" />
 
         </PreferenceCategory>
         

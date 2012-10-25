@@ -192,6 +192,11 @@
   <string name="toggles_display_close">Zavřít</string>
   <string name="toggles_order_title">Pořadí přepínačů</string>
   <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
+  <string name="title_settings_behavior">Použít výchozí chování nastavení</string>
+  <string name="summary_settings_behavior_default">Krátký stisk pro nastavení, dlouhý pro přepínače</string>
+  <string name="summary_settings_behavior_reverse">Krátký stisk pro přepínače, dlouhý pro nastavení</string>
+  <string name="title_toggles_autohide">Automaticky skrývat přepínače</string>
+  <string name="summary_toggles_autohide">Skrýt přepínače po zavření notifikační lišty.</string>
   <string name="brightness_location_title">Pozice nastavení jasu</string>
   <string name="reset_toggles_title">Obnovit přepínače</string>
   <string name="reset_toggles_summary">Obnovit všechny přepínače a jejich pořadí</string>
@@ -265,6 +270,10 @@
   <string name="navbar_qty_summary">Zvolit počet tlačítek v navigační liště</string>
   <string name="navbar_action_title">Akce a ikona tlačítka %1$s</string>
   <string name="button_transparency_title">Průhlednost tl. navigační lišty</string>
+  <string name="navbar_width_help_title">Nápověda k šířce kombinované navigační lišty</string>
+  <string name="navbar_width_help_summary">100 je 70\%% šířky displeje, 5 je 30\%% šířky displeje. 0 je výchozí šířka podle tlačítek.</string>
+  <string name="width_port_title">Šířka kombinované lišty na šířku</string>
+  <string name="width_land_title">Šířka kombinované lišty na výšku</string>
   <string name="navbar_longpress_title">Akce dlouhého stisknutí tlačítka %1$s</string>
   <string name="navbar_action_home">Domů</string>
   <string name="navbar_action_back">Zpět</string>
@@ -793,4 +802,7 @@
   <string name="show_signal_bars">Zobrazit ukazatel signálu</string>
   <string name="show_signal_text">Zobrazit signál textově</string>
   <string name="show_with_dbm">Zobrazit s dBm</string>
+  <!-- haptic feedback on toggle press -->
+  <string name="toggles_enable_haptic_feedback_title">Zapnout hmatovou odezvu</string>
+  <string name="toggles_enable_haptic_feedback_summary">Použít hmatovou odezvu při stisku přepínačů</string>
 </resources>

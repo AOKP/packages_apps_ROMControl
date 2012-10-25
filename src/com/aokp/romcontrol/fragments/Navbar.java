@@ -190,14 +190,14 @@ public class Navbar extends AOKPPreferenceFragment implements
                 .getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH_PORT,
                 0f);
         mWidthPort = (SeekBarPreference) findPreference("width_port");
-        mWidthPort.setInitValue((int) ((defaultPort * 0.5f) * 5f));
+        mWidthPort.setInitValue((int) (defaultPort * 2.5f));
         mWidthPort.setOnPreferenceChangeListener(this);
 
         float defaultLand = Settings.System.getFloat(getActivity()
                 .getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH_LAND,
                 0f);
         mWidthLand = (SeekBarPreference) findPreference("width_land");
-        mWidthLand.setInitValue((int) ((defaultLand * 0.5f) * 5f));
+        mWidthLand.setInitValue((int) (defaultLand * 2.5f));
         mWidthLand.setOnPreferenceChangeListener(this);
 
         // don't allow devices that must use a navigation bar to disable it
@@ -421,13 +421,13 @@ public class Navbar extends AOKPPreferenceFragment implements
             float val = Float.parseFloat((String) newValue);
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_WIDTH_PORT,
-                    (val * 0.2f) * 2f);
+                    val * 0.4f);
             return true;
         } else if (preference == mWidthLand) {
             float val = Float.parseFloat((String) newValue);
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_WIDTH_LAND,
-                    (val * 0.2f) * 2f);
+                    val * 0.4f);
             return true;
 
         }

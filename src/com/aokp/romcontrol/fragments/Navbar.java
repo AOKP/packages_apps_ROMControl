@@ -282,11 +282,12 @@ public class Navbar extends AOKPPreferenceFragment implements
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mNavRingTargets) {
-            Intent i = new Intent(getActivity(), ROMControlActivity.class)
-                    .setAction("com.aokp.romcontrol.START_NEW_FRAGMENT")
-                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    .putExtra("aokp_fragment_name", NavRingTargets.class.getName());
-                    getActivity().startActivity(i);
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            NavRingTargets fragment = new NavRingTargets();
+            ft.addToBackStack("config_nav_ring");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
+            return true;
         } else if (preference == mConfigureWidgets) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             WidgetConfigurationFragment fragment = new WidgetConfigurationFragment();

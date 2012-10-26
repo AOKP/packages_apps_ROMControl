@@ -725,6 +725,7 @@
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>
     <string name="insult_protekk">ProTekk!</string>
+    <string name="insult_unicorns">Concede pink unicorns are for little girls</string>
 
     <!-- clock stuff -->
     <string name="right_clock">Right clock</string>

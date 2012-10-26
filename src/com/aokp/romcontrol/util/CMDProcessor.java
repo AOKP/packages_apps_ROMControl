@@ -7,9 +7,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStream;
 
+import com.aokp.romcontrol.objects.EasyPair;
+
 public class CMDProcessor {
 
-    private static final String TAG = "CMD Processor";
+    private final String TAG = getClass().getSimpleName();
+    private static final boolean DEBUG = false;
     private Boolean can_su;
     public SH sh;
     public SH su;
@@ -28,6 +31,7 @@ public class CMDProcessor {
     }
 
     public class CommandResult {
+        private final String resultTag = TAG + '.' + getClass().getSimpleName();
         public final String stdout;
         public final String stderr;
         public final Integer exit_value;
@@ -41,10 +45,18 @@ public class CMDProcessor {
             exit_value = exit_value_in;
             stdout = stdout_in;
             stderr = stderr_in;
+            if (DEBUG)
+                Log.d(TAG, resultTag + "( exit_value=" + exit_value
+                    + ", stdout=" + stdout
+                    + ", stderr=" + stderr + " )");
         }
 
         public boolean success() {
             return exit_value != null && exit_value == 0;
+        }
+
+        public EasyPair<String, String> getOutput() {
+            return new EasyPair<String, String>(stdout, stderr);
         }
     }
 
@@ -59,7 +71,6 @@ public class CMDProcessor {
             String out = null;
             StringBuffer buffer = null;
             final DataInputStream dis = new DataInputStream(is);
-
             try {
                 if (dis.available() > 0) {
                     buffer = new StringBuffer(dis.readLine());
@@ -94,6 +105,7 @@ public class CMDProcessor {
         }
 
         public CommandResult runWaitFor(final String s) {
+            if (DEBUG) Log.d(TAG, "runWaitFor( " + s + " )");
             final Process process = run(s);
             Integer exit_value = null;
             String stdout = null;
@@ -101,10 +113,8 @@ public class CMDProcessor {
             if (process != null) {
                 try {
                     exit_value = process.waitFor();
-
                     stdout = getStreamLines(process.getInputStream());
                     stderr = getStreamLines(process.getErrorStream());
-
                 } catch (final InterruptedException e) {
                     Log.e(TAG, "runWaitFor " + e.toString());
                 } catch (final NullPointerException e) {
@@ -119,14 +129,12 @@ public class CMDProcessor {
         if (can_su == null || force_check) {
             final CommandResult r = su.runWaitFor("id");
             final StringBuilder out = new StringBuilder();
-
             if (r.stdout != null) {
                 out.append(r.stdout).append(" ; ");
             }
             if (r.stderr != null) {
                 out.append(r.stderr);
             }
-
             Log.d(TAG, "canSU() su[" + r.exit_value + "]: " + out);
             can_su = r.success();
         }

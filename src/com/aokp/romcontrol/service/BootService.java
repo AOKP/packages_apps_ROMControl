@@ -3,6 +3,7 @@ package com.aokp.romcontrol.service;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -176,13 +177,21 @@ public class BootService extends Service {
                 CharSequence contentText = c
                         .getText(R.string.fast_charge_notification_message);
 
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), com.aokp.romcontrol.ROMControlActivity.class);
+                intent.setAction("com.aokp.romcontrol.START_NEW_FRAGMENT");
+                intent.putExtra("aokp_fragment_name", com.aokp.romcontrol.performance.Performance.class.getName());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                 Notification n = new Notification.Builder(c)
                         .setAutoCancel(true)
                         .setContentTitle(contentTitle)
                         .setContentText(contentText)
+                        .setContentIntent(PendingIntent.getActivity(c, 0, intent, PendingIntent.FLAG_ONE_SHOT))
                         .setSmallIcon(R.drawable.ic_rom_control_general)
                         .setWhen(System.currentTimeMillis())
-                        .getNotification();
+                        .build();
 
                 NotificationManager nm = (NotificationManager) getApplicationContext()
                         .getSystemService(Context.NOTIFICATION_SERVICE);

@@ -7,6 +7,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -238,16 +239,17 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mLockscreenTargets) {
-            Intent i = new Intent(getActivity(), ROMControlActivity.class)
-                    .setAction("com.aokp.romcontrol.START_NEW_FRAGMENT")
-                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    .putExtra("aokp_fragment_name", LockscreenTargets.class.getName());
-            getActivity().startActivity(i);
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            LockscreenTargets fragment = new LockscreenTargets();
+            ft.addToBackStack("lockscreen_targets");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
             Intent w = new Intent(getActivity().getApplicationContext(),
-                        WeatherRefreshService.class);
-                w.setAction(WeatherService.INTENT_WEATHER_REQUEST);
-                w.putExtra(WeatherService.INTENT_EXTRA_ISMANUAL, true);
-                getActivity().getApplicationContext().startService(w);
+                    WeatherRefreshService.class);		
+            w.setAction(WeatherService.INTENT_WEATHER_REQUEST);		
+            w.putExtra(WeatherService.INTENT_EXTRA_ISMANUAL, true);		
+            getActivity().getApplicationContext().startService(w);
+            return true;
         } else if (preference == mVolumeMusic) {
 
             Settings.System.putInt(getActivity().getContentResolver(),

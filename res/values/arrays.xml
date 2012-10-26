@@ -807,4 +807,18 @@
         <item>6</item>
         <item>8</item>
     </string-array>
+    <string-array name="notification_action_entries" translatable="false">
+        <item>@string/alarm</item>
+        <item>@string/today</item>
+        <item>@string/event</item>
+        <item>@string/voiceassist</item>
+        <item>@string/custom_app</item>
+    </string-array>
+    <string-array name="notification_action_values" translatable="false">
+        <item>**alarm**</item>
+        <item>**today**</item>
+        <item>**event**</item>
+        <item>**assist**</item>
+        <item>**app**</item>
+    </string-array>
 </resources>

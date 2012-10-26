@@ -7,6 +7,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStream;
 
+import com.aokp.romcontrol.objects.EasyPair;
+
 public class CMDProcessor {
 
     private static final String TAG = "CMD Processor";
@@ -41,6 +43,10 @@ public class CMDProcessor {
             exit_value = exit_value_in;
             stdout = stdout_in;
             stderr = stderr_in;
+        }
+
+        public EasyPair<String, String> getOutput() {
+            return new EasyPair<String, String>(stdout, stderr);
         }
 
         public boolean success() {

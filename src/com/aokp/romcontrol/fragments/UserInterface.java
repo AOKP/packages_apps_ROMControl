@@ -29,6 +29,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.Rect;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -67,6 +68,7 @@ import com.aokp.romcontrol.util.Helpers;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.StringBuilder;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -130,8 +132,10 @@ public class UserInterface extends AOKPPreferenceFragment {
     private String errormsg;
     private String bootAniPath;
 
-
-    Random randomGenerator = new Random();
+    private Random randomGenerator = new Random();
+    // previous random; so we don't repeat
+    private static int mLastRandomInsultIndex = -1;
+    private String[] mInsults;
 
     private int seekbarProgress;
     String mCustomLabelText = null;
@@ -148,6 +152,8 @@ public class UserInterface extends AOKPPreferenceFragment {
         addPreferencesFromResource(R.xml.prefs_ui);
 
         PreferenceScreen prefs = getPreferenceScreen();
+        mInsults = mContext.getResources().getStringArray(
+                R.array.disable_bootanimation_insults);
 
         mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
         mAllow180Rotation.setChecked(Settings.System.getInt(mContext
@@ -280,23 +286,8 @@ public class UserInterface extends AOKPPreferenceFragment {
                     ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mDisableBootAnimation) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            if (checked) {
-                Helpers.getMount("rw");
-                new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
-                Helpers.getMount("ro");
-                Resources res = mContext.getResources();
-                String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
-                int randomInt = randomGenerator.nextInt(insults.length);
-                preference.setSummary(insults[randomInt]);
-            } else {
-                Helpers.getMount("rw");
-                new CMDProcessor().su
-                        .runWaitFor("mv /system/media/bootanimation.backup /system/media/bootanimation.zip");
-                Helpers.getMount("ro");
-                preference.setSummary("");
-            }
+            // preform bootanimation operations off UI thread
+            new BootAnimationBackupTask().execute(mDisableBootAnimation);
             return true;
         } else if (preference == mShowActionOverflow) {
             boolean enabled = mShowActionOverflow.isChecked();
@@ -737,4 +728,89 @@ public class UserInterface extends AOKPPreferenceFragment {
             mAnimationPart1.start();
         }
     };
+
+    /**
+     * Handles on/installed : off/backed up operations for Boot Animations
+     * on a new worker thread
+     *
+     * @params checkbox CheckBoxPreference controling
+     *                  bootanimations enable/disable
+     */
+    class BootAnimationBackupTask extends AsyncTask<CheckBoxPreference, String, Boolean> {
+        private CheckBoxPreference mPreference;
+
+        // worker thread (cannot access UI thread)
+        @Override
+        protected Boolean doInBackground(CheckBoxPreference... checkbox) {
+            CMDProcessor term = new CMDProcessor();
+            mPreference = checkbox[0];
+            // mount /system
+            Helpers.getMount("rw");
+            // check if value exists
+            if (!term.su.runWaitFor(
+                    "grep -q \"debug.sf.nobootanimation\" /system/build.prop")
+                    .success()) {
+                // if not add value
+                term.su.runWaitFor("echo debug.sf.nobootanimation="
+                    + String.valueOf(mPreference.isChecked() ? 1 : 0)
+                    + " >> /system/build.prop");
+            }
+            // execute script
+            term.su.runWaitFor(getBootAnimationCommand(mPreference.isChecked()));
+            // unmount /system
+            Helpers.getMount("ro");
+            return mPreference.isChecked();
+        }
+
+        /**
+         * from here we update the CheckBox to reflect our changes
+         */
+        // UI thread
+        @Override
+        protected void onPostExecute(Boolean checked) {
+            if (checked) {
+                // do not show same insult as last time
+                int newInsult = randomGenerator.nextInt(mInsults.length);
+                while (newInsult == mLastRandomInsultIndex)
+                    newInsult = randomGenerator.nextInt(mInsults.length);
+
+                // update our static index reference
+                mLastRandomInsultIndex = newInsult;
+                mPreference.setSummary(mInsults[newInsult]);
+            } else {
+                mPreference.setSummary("");
+            }
+        }
+
+        /**
+         * creates a small script to perform all root
+         * operations needed to disable/enable bootanimations
+         *
+         * @param checked state of CheckBox
+         * @return script to turn bootanimations on/off
+         */
+        private String getBootAnimationCommand(boolean checked) {
+            StringBuilder sb = new StringBuilder(0);
+            String storedLocation = "/system/media/bootanimation.backup";
+            String activeLocation = "/system/media/bootanimation.zip";
+            if (checked) {
+                /* make backup */
+                sb.append("mv " + activeLocation + " " + storedLocation + ";\n");
+            } else {
+                /* apply backup */
+                sb.append("mv " + storedLocation + " " + activeLocation + ";\n");
+            }
+            /*
+             * use sed to replace build.prop property
+             * debug.sf.nobootanimation=[1|0]
+             *
+             * without we get the Android shine animation when
+             * /system/media/bootanimation.zip is not found
+             */
+            sb.append("busybox sed -i \"/debug.sf.nobootanimation/ c ");
+            sb.append("debug.sf.nobootanimation" + "=").append(String.valueOf(checked ? 1 : 0));
+            sb.append("\" " + "/system/build.prop");
+            return sb.toString();
+        }
+    }
 }

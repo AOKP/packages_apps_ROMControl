@@ -119,6 +119,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mDualpane;
     CheckBoxPreference mVibrateOnExpand;
     Preference mLcdDensity;
+    Preference mScroller;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -139,6 +140,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     int newDensityValue;
 
     DensityChanger densityFragment;
+    Scroller scrollerFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -177,6 +179,9 @@ public class UserInterface extends AOKPPreferenceFragment {
         }
 
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
+
+        mScroller = findPreference("scroll_setup");
+        mScroller.setSummary(R.string.scroll_summary);
 
         mCustomBootAnimation = findPreference("custom_bootanimation");
 
@@ -478,6 +483,11 @@ public class UserInterface extends AOKPPreferenceFragment {
                     Settings.System.VIBRATE_NOTIF_EXPAND,
                     ((CheckBoxPreference) preference).isChecked());
             Helpers.restartSystemUI();
+            return true;
+
+        } else if (preference == mScroller) {
+            ((PreferenceActivity) getActivity())
+                    .startPreferenceFragment(new Scroller(), true);
             return true;
         }
 

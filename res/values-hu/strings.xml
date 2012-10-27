@@ -144,6 +144,8 @@
     <string name="rotate_180_summary">Engedélyezi a képernyő megfordítását!</string>
     <string name="recent_kill_all">Engedélyezi a "kill-all-button"-t</string>
     <string name="recent_kill_all_summary">Összes alkalmazás bezárását engedélyező gomb megjelenítése.</string>
+    <string name="ram_bar">Memória sáv</string>
+    <string name="ram_bar_summary">Memória használat mutatása a Legutóbbi menüben </string>
     <string name="kill_app_longpress_back">Vissza gombra kill</string>
     <string name="kill_app_longpress_back_summary">Vissza gombra fogja bezárni a futó alkalmazást</string>
     <string name="tablet_ui">Tábla mód</string>
@@ -203,6 +205,11 @@
     <string name="toggles_display_close">Bezárás</string>
     <string name="toggles_order_title">Kapcsoló sorrend</string>
     <string name="toggles_order_summary">Válaszd ki a sorrendet</string>
+    <string name="title_settings_behavior">Alapértelmezett beállítási viselkedés</string>
+    <string name="summary_settings_behavior_default">Rövid nyomás Beállítások, hosszan Váltás</string>
+    <string name="summary_settings_behavior_reverse">Rövid nyomás Váltás, hosszan Beállítások</string>
+    <string name="title_toggles_autohide">Kapcsolók automatikus elrejtése</string>
+    <string name="summary_toggles_autohide">Fiók zárás után elrejti a kapcsolókat.</string>
     <string name="brightness_location_title">Fényerő helye</string>
     <string name="reset_toggles_title">Kapcsolók alaphelyzetbe</string>
     <string name="reset_toggles_summary">Alaphelyzetbe rakja a kapcsolókat</string>
@@ -219,6 +226,14 @@
     <string name="enable_clock_weekday_summary">Rövidített nap kijelzése az óra előtt</string>
     <string name="colors">Színek</string>
     <string name="clock_color_title">Óra színe</string>
+    <string name="alarm">Riasztások</string>
+    <string name="today">Naptár mai nap</string>
+    <string name="event">Naptár új esemény</string>
+    <string name="voiceassist">Hang utasítások</string>
+    <string name="title_date_longclick">Dátum hosszú éritése</string>
+    <string name="title_date_shortclick">Dátum rövid érintése</string>
+    <string name="title_clock_longclick">Óra rövid érintése</string>
+    <string name="title_clock_shortclick">Óra hosszú érintése</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Repülőgép mód</string>
@@ -450,7 +465,7 @@
 
     <!-- Lockscreen Targets-->
     <string name="custom_targets">Egyéni zárképernyő elemek</string>
-    <string name="lockscreen_target_info">Érintsd meg a zárkioldó ikont az hozzá rendeléshez</string>
+    <string name="lockscreen_target_info">Érintsd meg a zárkioldó ikont a hozzá rendeléshez</string>
     <string name="lockscreen_target_title">Zárképernyő elemek</string>
     <string name="lockscreen_target_summary">Nézd vagy változtasd meg az elemeket</string>
     <string name="number_of_targets_title">Zárképernyő elemek száma</string>
@@ -846,5 +861,9 @@
     <string name="show_signal_bars">Jel sáv mutatása</string>
     <string name="show_signal_text">Jel szöveg mutatása</string>
     <string name="show_with_dbm">Jel dBm-mel</string>
+
+    <!-- haptic feedback on toggle press -->
+    <string name="toggles_enable_haptic_feedback_title">Tapintási visszajelzés</string>
+    <string name="toggles_enable_haptic_feedback_summary">Visszajelzés, ha használod a kapcsolót</string>
 
 </resources>

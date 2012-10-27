@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ROMControl</string>
+    <string name="app_name">Control de Rom</string>
 
     <!-- Header Strings -->
     <string name="user_interface">Interfaz de usuario</string>
@@ -35,6 +35,7 @@
     <string name="title_power_menu">Menú apagar</string>
     <string name="title_led">Ajustes LED</string>
     <string name="title_lockscreens">Ajustes pantalla de desbloqueo</string>
+    <string name="title_lockscreens_targets">Círculos de desbloqueo</string>
     <string name="title_sound">Ajustes de sonido</string>
     <string name="title_weather">Configuración del tiempo</string>
     <string name="title_performance">Ajustes de rendimiento</string>
@@ -53,6 +54,7 @@
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
+    <string name="header_summary_vibrations">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Volver a valores por defecto</string>
@@ -93,7 +95,7 @@
     <string name="aokp_website_title">Página web de AOKP</string>
     <string name="aokp_website_summary">www.aokp.co - Encuentre todos los nuevos lanzamientos aquí.</string>
     <string name="aokp_source_title">AOKP Source</string>
-    <string name="aokp_source_summary">AOKP es totalmente de código abierto. Siempre puede comprobar el último código fuente en github.com/aokp</string>
+    <string name="aokp_source_summary">AOKP es de codigo abierto. Siempre puede comprobar el último código fuente en github.com/aokp</string>
     <string name="aokp_review_title">AOKP revisión de código</string>
     <string name="aokp_review_summary">Plataforma de revisiones Gerrit de AOKP para presentar y probar parches</string>
     <string name="aokp_irc_title">Únase a nosotros en el canal IRC</string>
@@ -117,9 +119,14 @@
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
     <!-- General UI -->
+    <string name="bootani_cat">Boot Animation</string>
+    <string name="navbar_cat">NavBar</string>
+    <string name="notification_cat">Notification</string>
     <string name="enable_volume_options">Activar panel de volumen</string>
     <string name="status_bar_notif_count_title">Mostrar contador de notificaciones</string>
     <string name="status_bar_notif_count_summary">Muestra el número de notificaciones pendientes en la barra de estado</string>
+    <string name="vibrate_notif_expand_title">Vibrar al expandir</string>
+    <string name="vibrate_notif_expand_summary">Vibrar al ampliar</string>
     <string name="disable_bootanimation_title">Desactivar animación de arranque</string>
     <string name="custom_bootanimation_title">Animación de arranque personalizada</string>
     <string name="custom_bootanimation_summary">Seleccione bootanimation.zip de la tarjeta SD. Se realizara una copia de la anterior animación de arranque en /system/media.</string>
@@ -139,6 +146,53 @@
     <string name="recent_kill_all_summary">Muestra un botón que mata todas las aplicaciones de la ventana aplicaciones recientes (Necesita reiniciar la interfaz)</string>
     <string name="kill_app_longpress_back">Pulsación larga en botón atrás para matar </string>
     <string name="kill_app_longpress_back_summary">Mantener pulsado el botón atrás matara la aplicación actual </string>
+    <string name="tablet_ui">Forzar interfaz de tablet</string>
+    <string name="tablet_ui_summary">Esto cambiará la interfaz a modo tablet (necesita reiniciar)</string>
+    <string name="hide_extras">No mostrar Extras</string>
+    <string name="hide_extras_summary">Hide some sytembar stuff i.e. the compat. mode button(requires UI restart)</string>
+    <string name="bootanimation_preview">Vista previa</string>
+    <string name="apply">Aplicar</string>
+    <string name="creating_preview">Creando vista previa...</string>
+    <string name="error_reading_zip_file">Error leyendo el archivo zip</string>
+    <string name="error_creating_preview">Error creando vista previa</string>
+    <string name="multipane_ui">Activar panel dual</string>
+    <string name="multipane_ui_summary">Esta opción activara /desactivara la vista de panel dual (necesita reiniciar)</string>
+    <string name="alt_resolver">Use Alt Default App Grid</string>
+    <string name="alt_resolver_summary">Use Alternate (GB style) Default App Picker</string>
+    <string name="show_overflow_title">Show Menu UI Overflow</string>
+    <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
+    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
+    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
+
+    <!-- LCD Density -->
+    <string name="lcd_density_title">Densidad LCD</string>
+    <string name="lcd_density_summary">desconocida</string>
+    <string name="current_lcd_density">"Densidad LCD actual: "</string>
+    <string name="lcd_density_wizard">Asistente de densidad LCD</string>
+    <string name="follow_through_title">¡Siga estas instrucciones!</string>
+    <string name="follow_through_summary">Asegúrese de que ha realizado correctamente todos los pasos antes de iniciar el siguiente.</string>
+    <string name="stock_density_title">1. Poner densidad LCD por defecto</string>
+    <string name="stock_density_summary">Los tablet y teléfonos antiguos usan 160. Otros muchos usan 240. El Galaxy Nexus usa 320.</string>
+    <string name="stock_density_changed_summary">"Densidad actual: "</string>
+    <string name="reboot_title">2. Reiniciar!</string>
+    <string name="reboot_summary">¡Regrese a esta pantalla después de reiniciar y complete el resto de los pasos!</string>
+    <string name="clear_market_data_title">3. Borrar datos del market</string>
+    <string name="clear_market_data_cleared">Datos del market borrados</string>
+    <string name="clear_market_data_donot_cleared">"Los datos del market no se pueden borrar, hágalo manualmente!"</string>
+    <string name="dpi">DPI</string>
+    <string name="open_market_title">4. Abra el market y dele a aceptar</string>
+    <string name="open_market_summary">Presione atrás para volver a esta pantalla.</string>
+    <string name="open_market_summary_could_not_open">"¡No se puede abrir el market! Si está seguro de tenerlo instalado, ábralo desde el lanzador."</string>
+    <string name="custom_density_title">5. Ponga la densidad deseada!</string>
+    <string name="custom_density_summary">Si tiene problemas de compatibilidad con el market, regrese a esta pantalla y repita el ultimo paso.</string>
+    <string name="custom_density_summary_invalid">"¡DENSIDAD NO VALIDA!"</string>
+    <string name="custom_density">Personalizar</string>
+    <string name="set_custom_density_title">Ajustar densidad personalizada</string>
+    <string name="set_custom_density_set">Set</string>
+    <string name="custom_density_dialog_title">"¡ATENCIÓN!"</string>
+    <string name="custom_density_dialog_summary">"Cambiar de la densidad LCD puede provocar comportamientos inesperados. Si tiene problemas de compatibilidad con alguna aplicación regrese a esta pantalla y repita todos los pasos."</string>
+    <string name="custom_density_dialog_button_got">Got it!</string>
+    <string name="custom_density_dialog_button_reboot">Reiniciar ahora</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Aspecto de los interruptores</string>
@@ -205,6 +259,8 @@
     <string name="hide_signal_summary">Actualización de los cambios de intensidad de la señal</string>
     <string name="wifi_signal_style">Estilo de señal WiFi</string>
     <string name="wifi_signal_color_title">Color de señal WiFi</string>
+    <string name="alt_signal_title">Alt signal layout</string>
+    <string name="alt_signal_summary">Use alternate (GB style) signal cluster</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de color</string>
@@ -232,7 +288,9 @@
     <string name="navbar_action_back">Volver</string>
     <string name="navbar_action_recents">Recientes</string>
     <string name="navbar_action_search">Búsqueda</string>
+    <string name="navbar_action_screenshot">Captura de pantalla</string>
     <string name="navbar_action_menu">Menú</string>
+    <string name="navbar_action_ime">Abrir selector de escritura</string>
     <string name="navbar_action_kill">Matar aplicación</string>
     <string name="navbar_action_power">Apagar</string>
     <string name="navbar_action_notifications">Notificaciones</string>
@@ -261,6 +319,39 @@
     <string name="glow_times_superquick">Muy rápida</string>
     <string name="glow_times_quick">Rápida</string>
     <string name="glow_times_normal">Normal</string>
+    <string name="navbar_widgets_instructions">Swipe to view - Click to choose</string>
+    <string name="navbar_widgets_reset">Reset widgets</string>
+    <string name="navbar_widget_summary">Widget %1$s of %2$s</string>
+    <string name="navbar_widget_summary_add">Click to add Widget</string>
+    <string name="navbar_widgets_title">Configure widgets</string>
+    <string name="navbar_widgets_shiftLeft">Shift left</string>
+    <string name="navbar_widgets_shiftRight">Shift right</string>
+    <string name="navbar_widgets_delete">Delete widget</string>
+
+        <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">Círculos de barra de navegación</string>
+    <string name="interface_softkey_settings">Configuración de círculos</string>
+    <string name="interface_softkeys_pref_default_title">Ninguna actividad seleccionada</string>
+    <string name="interface_softkeys_pref_default_summary">Presione el icono para personalizar la actividad de pulsación larga</string>
+    <string name="interface_softkeys_activity_dialog_title">Seleccionar actividad</string>
+    <string name="interface_softkeys_reboot_title">Reiniciar menú</string>
+    <string name="interface_softkeys_screenshot_title">Captura de pantalla</string>
+    <string name="interface_softkeys_screenoff_title">Apagar pantalla</string>
+    <string name="interface_softkeys_ime_switcher_title">Abrir selector de escritura</string>
+    <string name="interface_softkeys_ring_vib_title">Interruptor Tono/Vibr</string>
+    <string name="interface_softkeys_ring_silent_title">Interruptor Tono/Silencio</string>
+    <string name="interface_softkeys_ring_vib_silent_title">Interruptor Tono/Vibr/Silencio</string>
+    <string name="interface_softkeys_kill_process_title">Matar aplicación</string>
+    <string name="interface_softkey_package_removed">El paquete seleccionado no esta disponible </string>
+    <string name="interface_navring_settings_title">Círculos de barra de navegación</string>
+    <string name="interface_navring_settings_summary">Seleccione la aplicaciones personalizadas de los círculos</string>
+    <string name="title_navring_amount">Numero de círculos</string>
+    <string name="summary_navring_amount">¿Cuantos círculos desea mostrar? *Los cambios realizados reiniciaran la interfaz*</string>
+    <string name="interface_navring_custom_pref_summary">Este círculo iniciara </string>
+    <string name="interface_navring_pref_default_summary">Presione para seleccionar la activada o aplicación del circulo</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">Círculos cargados</string>
+    <string name="navbar_ring">Círculos personalizados </string>
 
     <!-- LED -->
     <string name="led_on">LED encendido</string>
@@ -305,32 +396,39 @@
     <string name="summary_down_sec">El tiempo necesario para que su teléfono sea considerado boca abajo</string>
     <string name="flip_action_positive">Aceptar</string>
     <string name="flip_dialog_title">Como funciona</string>
-    <string name="flip_dialog_msg">El teléfono dará la vuelta para ir a vibrar o en silencio sobre la forma que usted elija. Tomará 1,5 (por defecto) segundos para cambiar cuando volcó. A continuación, se desactivará la tapa una vez que la pantalla se enciende después de 15 (por defecto) segundos.. NOTA: **Usted tendrá que encender la pantalla de nuevo una vez que se volcó para conseguir el sonido de nuevo una vez que el tiempo de espera de pantalla se ha alcanzado.**</string>
-    <string name="summary_phone_flip_mode">Gire el teléfono para silenciar el sonido cuando recibe una llamada</string>
+    <string name="flip_dialog_msg">Al dar la vuelta al teléfono vibrara o se silenciara según escoja una u otra opción. Tardara 1,5s (por defecto) para considerarse boca abajo. Esta opción quedara desactivada si enciende la pantalla antes de 15s (por defecto)  NOTA: **Tendrá que encender la pantalla de nuevo cuando haya entrado en modo boca abajo para conseguir el sonido de nuevo si el tiempo de espera de pantalla se ha superado.**</string>
+    <string name="summary_phone_flip_mode">Gire el teléfono para silenciar el sonido cuando reciba una llamada</string>
     <string name="title_phone_flip_mode">Silenciar llamadas</string>
 
     <!-- Lockscreen -->
+    <string name="lockscreen_security_cat">Seguridad</string>
+    <string name="lockscreen_layout_cat">Layout</string>
+    <string name="lockscreen_music_cat">Musica</string>
+    <string name="lockscreen_weather_cat">El tiempo</string>
+    <string name="lockscreen_calendar_cat">Calendario</string>
     <string name="lockscreen_quick_unlock_control_title">Desbloqueo rápido</string>
-    <string name="lockscreen_quick_unlock_control_summary">Desbloquear pantalla con contraseña o pin sin pulsar el botón ENTER</string>
+    <string name="lockscreen_quick_unlock_control_summary">Desbloquear pantalla con contraseña o pin sin pulsar el botón INTRO</string>
     <string name="lockscreen_menu_unlock_title">Desbloquear con menú</string>
     <string name="lockscreen_menu_unlock_summary">Usar los botones de menú para desbloquear la pantalla</string>
+    <string name="lockscreen_auto_rotate_title">Permitir rotación de pantalla de desbloqueo</string>
+    <string name="lockscreen_auto_rotate_summary">La pantalla de desbloqueo podrá rotar según su orientación. Este ajuste es independiente a la rotación de la pantalla principal</string>
     <string name="lockscreen_battery_title">Porcentaje de batería en pantalla de desbloqueo</string>
     <string name="lockscreen_battery_summary">Mostrar siempre el porcentaje de la batería en pantalla de desbloqueo</string>
     <string name="volume_rocker_wake_title">Desbloquear con volumen</string>
     <string name="volume_rocker_wake_summary">Desbloquear pantalla con los botones de volumen</string>
     <string name="volume_music_controls_title">Control de volumen de musica</string>
     <string name="volume_music_controls_summary">La pulsación larga pasara a la siguiente pista mientras la pantalla esta apagada. El desbloqueo de pantalla con el control de volumen no funcionara mientras se escucha musica.</string>
+    <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
+    <string name="lockscreen_stock_music_layout_summary">Use the stock layout
     <string name="lockscreen_wallpaper_title">Fondo de pantalla de desbloqueo </string>
     <string name="lockscreen_wallpaper_summary">Puede quitar el fondo de pantalla desde el menú de esta pantalla</string>
     <string name="lockscreen_text_color_title">Color de texto de Pantalla de desbloqueo</string>
     <string name="title_lockscreen_user_timeout_override">Esperar para bloquear la pantalla</string>
-    <string name="summary_lockscreen_user_timeout_override">"Utilice la configuración de tiempo de espera de Android de forma manual después de apagar la pantalla. El comportamiento por defecto es usar el retraso sólo cuando la pantalla se agota por sí misma."</string>
-    <string name="lockscreen_weather_cat">El tiempo</string>
+    <string name="summary_lockscreen_user_timeout_override">"Utilice la configuración de tiempo de espera de android de forma manual después de apagar la pantalla. El comportamiento por defecto es usar el retraso sólo cuando la pantalla se agota por sí misma."</string>
     <string name="lockscreen_weather_title">Activado</string>
     <string name="lockscreen_weather_summary">Ver información meteorológica en la pantalla de desbloqueo. Debe activar la información meteorológica en ROMControl para poder usar esta opción</string>
     <string name="lockscreen_weather_type_title">Tiempo en pantalla de desbloqueo</string>
     <string name="lockscreen_weather_type_summary">Mostrar información del tiempo con texto o de forma gráfica.</string>
-    <string name="lockscreen_calendar_cat">Calendario</string>
     <string name="lockscreen_calendar_title">Activado</string>
     <string name="lockscreen_calendar_summary">Muestra eventos del calendario en la pantalla de desbloqueo</string>
     <string name="lockscreen_calendar_sources_title">Escoger calendario</string>
@@ -484,5 +582,200 @@
     <string name="fast_charge_notification_title">¡Carga rápida activada!</string>
     <string name="fast_charge_notification_message">¡El teléfono se encuentra en modo sólo carga!</string>
     <string name="prefcat_other_tweaks">Otros ajustes</string>
+    <string name="performance_daily_reboot_title">Reinicio diario</string>
+    <string name="performance_daily_reboot_summary">Reinicio programado: %1$s</string>
+    <string name="performance_daily_reboot_summary_unscheduled">Reinicio no programado</string>
+
+    <!-- Custom vibrations -->
+    <string name="vibrations">Vibracion</string>
+    <string name="defaultvibrationname">"'por defecto'"</string>
+    <string name="vib_new">Nuevo</string>
+    <string name="vib_load">Cargar</string>
+    <string name="vib_rec">Grabar</string>
+    <string name="vib_TAP">TAP!</string>
+    <string name="vib_stop">Parar</string>
+    <string name="vib_play">Escuchar</string>
+    <string name="vib_save">Guardar</string>
+    <string name="vib_del">Borrar</string>
+
+    <string name="vib_dialog_text_entry">Guardar vibración</string>
+    <string name="vib_dialog_name">Nombre:</string>
+    <string name="vib_cur_loaded_title">Cargado:</string>
+    <string name="help">Ayuda</string>
+    <string name="vibration_detailed_help">Puede crear un patrón de vibración personalizado en 5 sencillos pasos:\n
+        - Presione Nuevo/Reiniciar\n
+		- Presione grabar\n
+		- Grabe su patrón presionando el botón TAP\n
+		- Presione parar\n
+		- Presione guardar, Escriba un nombre y dele a aceptar\n\n
+		Puede comprobar lo que ha grabado dándole al botón escuchar.\n
+		Puede modificar un patrón existente. Presione cargar, escoja el patrón, Vuelva a grabarlo y guárdelo nuevamente (se sobrescribirá, incluso si usted elige otro nombre).\n
+		Para borrar un patrón, Presione borrar, escoja el patrón de vibración y dele a eliminar. No se puede eliminar los patrones de vibración por defecto.\n\n
+		Puede escoger la vibración para llamadas desde/Ajustes/Sonido.\n
+		Puede asignar una vibración personalizada a un contacto desde la aplicación contactos: Después de cargar un contacto vaya a Menú/Ajustar vibración.</string>
+
+    <!-- boot animation stuff -->
+    <string name="insult_jerk">Jerk!</string>
+    <string name="insult_protekk">ProTekk!</string>
+
+    <!-- clock stuff -->
+    <string name="right_clock">Derecha</string>
+    <string name="center_clock">Centrado</string>
+    <string name="no_clock">Sin reloj</string>
+    <string name="dont_show">No mostrar</string>
+    <string name="small_am_pm">AM/PM pequeño</string>
+    <string name="regular_am_pm">AM/PM normal</string>
+    <string name="protekk_oclock">ProTekk O\'Clock</string>
+    <string name="small_weekday">Día de la semana pequeño</string>
+    <string name="regular_weekday">Día de la semana normal</string>
+
+    <!-- toggle style -->
+    <string name="icon_only">Solo icono</string>
+    <string name="text_only">Solo texto</string>
+
+    <!-- Brightness slider -->
+    <string name="on_top">Arriba</string>
+    <string name="on_the_bottom">Abajo</string>
+
+    <!-- Battery styles -->
+    <string name="icon_with_text">Icono con texto</string>
+    <string name="icon_with_centered_text">Icono con texto centrado</string>
+    <string name="circlemod">CircleMOD</string>
+
+    <!-- NavBar -->
+    <string name="right">Derecha</string>
+    <string name="left">Izquierda</string>
+    <string name="both">Ambos lados</string>
+    <string name="default_jb_behavior">Default JB behavior</string>
+    <string name="always_show_invincible_icons">Mostrar siempre iconos invisibles</string>
+    <string name="always_show">Mostrar siempre</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">Comportamiento por defecto de JB cuando los iconos no se muestran</string>
+    <string name="home">Inicio</string>
+    <string name="back">Atrás</string>
+    <string name="recents">Recientes</string>
+    <string name="search">Buscar</string>
+    <string name="screenshot">Captura de pantalla</string>
+    <string name="menu">Menú</string>
+    <string name="toggle_widgets">Interruptores widgets</string>
+    <string name="open_ime_switcher">Abrir Selector de escritura</string>
+    <string name="kill_app">Matar app</string>
+    <string name="power">Apagado</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="custom_app">App personalizada</string>
+    <string name="blank">Vacío</string>
+    <string name="none">Nada</string>
+    <string name="take_screenshot">Capturar pantalla</string>
+    <string name="ring_vib">Tono/Vib</string>
+    <string name="ring_silent">Tono/Silencio</string>
+    <string name="ring_vib_silent">Tono/Vib/Silencio</string>
+    <string name="screen_off">Pantalla apagada</string>
+    <string name="google_now">Google Now</string>
+    <string name="select_application">Seleccionar aplicación</string>
+    <string name="one_target">1 circulo</string>
+    <string name="two_targets">2 círculos</string>
+    <string name="three_targets">3 círculos</string>
+    <string name="four_targets">4 círculos</string>
+    <string name="five_targets">5 círculos</string>
+    <string name="size_42_dp_default">42 dp (por defecto)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (por defecto)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">Barra de estado</string>
+    <string name="top_of_navbar">barra de navegación arriba</string>
+    <string name="bottom_of_navbar">barra de navegación abajo</string>
+    <string name="regular">Normal</string>
+    <string name="center_mirrored">Centrado</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- LED Values -->
+    <string name="time_0_seconds_off">apagar</string>
+    <string name="time_0_2_seconds">.2 segundos</string>
+    <string name="time_0_5_seconds">.5 segundos</string>
+    <string name="time_1_second">1 segundo</string>
+    <string name="time_1_5_seconds">1.5 segundos</string>
+    <string name="time_2_seconds">2 segundos</string>
+    <string name="time_2_5_seconds">2.5 segundos</string>
+    <string name="time_3_seconds">3 segundos</string>
+    <string name="time_3_5_seconds">3.5 segundos</string>
+    <string name="time_4_seconds">4 segundos</string>
+    <string name="time_4_5_seconds">4.5 segundos</string>
+    <string name="time_5_seconds">5 segundos</string>
+    <string name="time_5_5_seconds">5.5 segundos</string>
+    <string name="time_6_seconds">6 segundos</string>
+    <string name="time_7_seconds">7 segundos</string>
+    <string name="time_8_seconds">8 segundos</string>
+    <string name="time_9_seconds">9 segundos</string>
+    <string name="time_10_seconds">10 segundos</string>
+
+    <!-- LED brightness entries -->
+    <string name="low">bajo</string>
+    <string name="medium">medio</string>
+    <string name="high">alto</string>
+    <string name="very_high">muy alto</string>
+    <string name="laserbeam">rayo láser</string>
+
+    <!-- Flip phone entries -->
+    <string name="disabled">Desactivar</string>
+    <string name="enabled">Activar</string>
+    <string name="time_0_seconds_instant_off">0 segundos (inmediato)</string>
+    <string name="time_15_seconds">15 segundos</string>
+    <string name="time_30_seconds">30 segundos</string>
+    <string name="time_45_seconds">45 segundos</string>
+    <string name="time_1_minute">1 minuto</string>
+    <string name="time_1_5_minutes">1.5 minutos</string>
+    <string name="time_2_minutes">2 minutos</string>
+    <string name="time_2_5_minutes">2.5 minutos</string>
+    <string name="time_3_minutes">3 minutos</string>
+    <string name="time_3_5_minutes">3.5 minutos</string>
+    <string name="time_4_minutes">4 minutos</string>
+    <string name="time_5_minutes">5 minutos</string>
+
+    <!-- weather arrays -->
+    <string name="off">Off</string>
+    <string name="time_10_minutes">10 minutos</string>
+    <string name="time_30_minutes">30 minutos</string>
+    <string name="time_45_minutes">45 minutos</string>
+    <string name="time_60_minutes">60 minutos</string>
+    <string name="time_2_hours">2 horas</string>
+    <string name="time_3_hours">3 horas</string>
+    <string name="time_4_hours">4 horas</string>
+    <string name="time_6_hours">6 horas</string>
+    <string name="time_8_hours">8 horas</string>
+    <string name="above_carrier_text">Texto encima de operadora</string>
+    <string name="weather_panel">Panel meteorológico</string>
+    <string name="text">Texto</string>
+
+    <!-- lockscreen calendar arrays -->
+    <string name="time_1_day">1 día</string>
+    <string name="time_2_days">2 días</string>
+    <string name="time_3_days">3 días</string>
+    <string name="time_4_days">4 días</string>
+    <string name="time_5_days">5 días</string>
+    <string name="time_6_days">6 días</string>
+    <string name="time_1_week">1 semana</string>
+
+    <!-- minfree -->
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+
+    <!-- less notification sounds -->
+    <string name="default_behavior">comportamiento predeterminado</string>
+
+    <!-- signal style -->
+    <string name="show_signal_bars">Ver como barra</string>
+    <string name="show_signal_text">Ver como texto</string>
+    <string name="show_with_dbm">Ver dBm</string>
+
+
 
 </resources>

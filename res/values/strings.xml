@@ -688,6 +688,12 @@
     <string name="performance_daily_reboot_summary">Reboot scheduled at %1$s</string>
     <string name="performance_daily_reboot_summary_unscheduled">Not scheduled</string>
 
+    <!-- Location of sysfs arrays of CPU voltage table (can be changed in device overlays) -->
+    <string name="cpu0_mv_table">"/sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table"</string>
+    <string name="cpu1_mv_table">"/sys/devices/system/cpu/cpu1/cpufreq/UV_mV_table"</string>
+    <string name="cpu2_mv_table">"/sys/devices/system/cpu/cpu2/cpufreq/UV_mV_table"</string>
+    <string name="cpu3_mv_table">"/sys/devices/system/cpu/cpu3/cpufreq/UV_mV_table"</string>
+
     <!-- Custom vibrations -->
     <string name="vibrations">Vibrations</string>
     <string name="defaultvibrationname">"'Default'"</string>

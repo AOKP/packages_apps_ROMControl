@@ -158,6 +158,11 @@
                 android:title="@string/lockscreen_auto_rotate_title"
                 android:summary="@string/lockscreen_auto_rotate_summary" />
 
+            <CheckBoxPreference
+                android:key="alt_lockscreen"
+                android:title="@string/alt_lockscreen_title"
+                android:summary="@string/alt_lockscreen_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -85,6 +85,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
     private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
     private static final String PREF_STOCK_MUSIC_LAYOUT = "lockscreen_stock_music_layout";
+    private static final String PREF_ALT_LOCKSCREEN = "alt_lockscreen";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -112,6 +113,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenCalendarUseColors;
     CheckBoxPreference mLockscreenAutoRotate;
     CheckBoxPreference mStockMusicLayout;
+    CheckBoxPreference mAltLockscreen;
 
     ListPreference mTargetNumber;
 
@@ -197,6 +199,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mStockMusicLayout = (CheckBoxPreference) findPreference(PREF_STOCK_MUSIC_LAYOUT);
         mStockMusicLayout.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_STOCK_MUSIC_LAYOUT, 0) == 1);
+
+        mAltLockscreen = (CheckBoxPreference) findPreference(PREF_ALT_LOCKSCREEN);
+        mAltLockscreen.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_ALT_LOCKSCREEN, false));
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -367,6 +373,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_STOCK_MUSIC_LAYOUT,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mAltLockscreen) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.USE_ALT_LOCKSCREEN,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (keys.contains(preference.getKey())) {
             Log.e("RC_Lockscreens", "key: " + preference.getKey());

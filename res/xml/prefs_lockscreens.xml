@@ -158,6 +158,16 @@
                 android:title="@string/lockscreen_auto_rotate_title"
                 android:summary="@string/lockscreen_auto_rotate_summary" />
 
+            <CheckBoxPreference
+                android:key="alt_lockscreen"
+                android:title="@string/alt_lockscreen_title"
+                android:summary="@string/alt_lockscreen_summary" />
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="alt_lock_bg_color"
+                android:title="@string/alt_lock_bg_color_title"
+                android:defaultValue="#D2000000" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

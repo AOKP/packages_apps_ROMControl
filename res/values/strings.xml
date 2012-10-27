@@ -473,6 +473,9 @@
     <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
+    <string name="alt_lockscreen_title">Use alt lockscreen</string>
+    <string name="alt_lockscreen_summary">This should not go here</string>
+    <string name="alt_lock_bg_color_title">Alt lock background color</string>
 
     <!-- Lockscreen Targets-->
     <string name="custom_targets">Custom lockscreen targets</string>

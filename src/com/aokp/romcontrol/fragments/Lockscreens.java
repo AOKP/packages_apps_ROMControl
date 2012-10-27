@@ -30,6 +30,8 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceGroup;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.CalendarContract.Calendars;
@@ -85,6 +87,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
     private static final String PREF_LOCKSCREEN_AUTO_ROTATE = "lockscreen_auto_rotate";
     private static final String PREF_STOCK_MUSIC_LAYOUT = "lockscreen_stock_music_layout";
+    private static final String PREF_CIRCLES_LOCK_BG_COLOR = "circles_lock_bg_color";
+    private static final String PREF_CIRCLES_LOCK_RING_COLOR = "circles_lock_ring_color";
+    private static final String PREF_CIRCLES_LOCK_HALO_COLOR = "circles_lock_halo_color";
+    private static final String PREF_CIRCLES_LOCK_WAVE_COLOR = "circles_lock_wave_color";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -112,6 +118,10 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     CheckBoxPreference mLockscreenCalendarUseColors;
     CheckBoxPreference mLockscreenAutoRotate;
     CheckBoxPreference mStockMusicLayout;
+    ColorPickerPreference mCirclesLockBgColor;
+    ColorPickerPreference mCirclesLockRingColor;
+    ColorPickerPreference mCirclesLockHaloColor;
+    ColorPickerPreference mCirclesLockWaveColor;
 
     ListPreference mTargetNumber;
 
@@ -198,6 +208,18 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mStockMusicLayout.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_STOCK_MUSIC_LAYOUT, 0) == 1);
 
+        mCirclesLockBgColor = (ColorPickerPreference) findPreference(PREF_CIRCLES_LOCK_BG_COLOR);
+        mCirclesLockBgColor.setOnPreferenceChangeListener(this);
+
+        mCirclesLockRingColor = (ColorPickerPreference) findPreference(PREF_CIRCLES_LOCK_RING_COLOR);
+        mCirclesLockRingColor.setOnPreferenceChangeListener(this);
+
+        mCirclesLockHaloColor = (ColorPickerPreference) findPreference(PREF_CIRCLES_LOCK_HALO_COLOR);
+        mCirclesLockHaloColor.setOnPreferenceChangeListener(this);
+
+        mCirclesLockWaveColor = (ColorPickerPreference) findPreference(PREF_CIRCLES_LOCK_WAVE_COLOR);
+        mCirclesLockWaveColor.setOnPreferenceChangeListener(this);
+
         mLockscreenWallpaper = findPreference("wallpaper");
 
         for (String key : keys) {
@@ -207,6 +229,22 @@ public class Lockscreens extends AOKPPreferenceFragment implements
              } catch (SettingNotFoundException e) {
              }
         }
+
+        boolean circlesEnabled = Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_CIRCLES_LOCKSCREEN, false);
+
+        if (circlesEnabled) {
+            PreferenceCategory targetsCategory = (PreferenceCategory) findPreference("targets");
+            getPreferenceScreen().removePreference(targetsCategory);
+            PreferenceCategory musicCat = (PreferenceCategory) findPreference ("music");
+            musicCat.removePreference(mStockMusicLayout);
+        }
+        if (!circlesEnabled) {
+            PreferenceCategory circlesCategory = (PreferenceCategory) findPreference("circles_lockscreen");
+            getPreferenceScreen().removePreference(circlesCategory);
+        }
+
+
         setHasOptionsMenu(true);
     }
 
@@ -434,6 +472,34 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_TARGET_AMOUNT, val);
+            return true;
+        } else if (preference == mCirclesLockBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CIRCLES_LOCK_BG_COLOR, intHex);
+            return true;
+        } else if (preference == mCirclesLockRingColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CIRCLES_LOCK_RING_COLOR, intHex);
+            return true;
+        } else if (preference == mCirclesLockHaloColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CIRCLES_LOCK_HALO_COLOR, intHex);
+            return true;
+        } else if (preference == mCirclesLockWaveColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CIRCLES_LOCK_WAVE_COLOR, intHex);
             return true;
         }
         return false;

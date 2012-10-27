@@ -159,5 +159,30 @@
                 android:summary="@string/lockscreen_auto_rotate_summary" />
 
     </PreferenceCategory>
+    <PreferenceCategory
+            android:key="circles_lockscreen"
+            android:title="@string/circles_lock_cat_title">
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="circles_lock_bg_color"
+                android:title="@string/circles_lock_bg_color_title"
+                android:defaultValue="#D2000000" />
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="circles_lock_ring_color"
+                android:title="@string/circles_lock_ring_color_title"
+                android:defaultValue="#FFFFFFFF" />
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="circles_lock_halo_color"
+                android:title="@string/circles_lock_halo_color_title"
+                android:defaultValue="#FFFFFFFF" />
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="circles_lock_wave_color"
+                android:title="@string/circles_lock_wave_color_title"
+                android:defaultValue="#D2FFFFFF" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

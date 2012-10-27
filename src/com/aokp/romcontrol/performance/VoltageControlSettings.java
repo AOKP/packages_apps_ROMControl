@@ -51,16 +51,17 @@ public class VoltageControlSettings extends Fragment {
     private static final String TAG = "VoltageControlActivity";
 
     public static final String KEY_APPLY_BOOT = "apply_voltages_at_boot";
-    public static final String MV_TABLE0 = "/sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table";
-    public static final String MV_TABLE1 = "/sys/devices/system/cpu/cpu1/cpufreq/UV_mV_table";
-    public static final String MV_TABLE2 = "/sys/devices/system/cpu/cpu2/cpufreq/UV_mV_table";
-    public static final String MV_TABLE3 = "/sys/devices/system/cpu/cpu3/cpufreq/UV_mV_table";
+    public static String MV_TABLE0 = VoltageControlTables.TABLE0();
+    public static String MV_TABLE1 = VoltageControlTables.TABLE1();
+    public static String MV_TABLE2 = VoltageControlTables.TABLE2();
+    public static String MV_TABLE3 = VoltageControlTables.TABLE3();
     public static final int DIALOG_EDIT_VOLT = 0;
     private List<Voltage> mVoltages;
     private ListAdapter mAdapter;
     private static SharedPreferences preferences;
     private Voltage mVoltage;
     private Activity mActivity;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle savedInstanceState) {
@@ -391,5 +392,6 @@ public class VoltageControlSettings extends Fragment {
             }
         }
     }
+ 
 }
 

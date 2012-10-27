@@ -1,265 +1,283 @@
+
 package com.aokp.romcontrol.fragments;
 
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
+import android.app.Activity;
 import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.content.res.Resources;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceGroup;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.util.Log;
+import android.util.TypedValue;
 
-import com.aokp.romcontrol.R;
+import java.net.URISyntaxException;
+
 import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.util.NavRingPreference;
+import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.ShortcutPickerHelper;
+import com.aokp.romcontrol.widgets.NavBarItemPreference;
 
-import java.util.ArrayList;
-import java.util.List;
+public class NavRingTargets extends AOKPPreferenceFragment implements
+        ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
-public class NavRingTargets extends AOKPPreferenceFragment 
-        implements Preference.OnPreferenceChangeListener {
-    Context mContext;
-    ContentResolver mResolver;
-    LayoutInflater mInflate;
-    Preference mRingGroup1;
-    Preference mRingGroup2;
-    Preference mRingGroup3;
-    Preference mRingGroup4;
-    Preference mRingGroup5;
-    NavRingPreference mRing1;
-    NavRingPreference mRing2;
-    NavRingPreference mRing3;
-    NavRingPreference mRing4;
-    NavRingPreference mRing5;
-    Resources mRes;
-    public List<AppPackage> components;
-    public AppArrayAdapter mAdapter;
-    public ListView mListView;
+    private ShortcutPickerHelper mPicker;
+    private Preference mPreference;
+    private String mString;
+
     private int mNavRingAmount;
 
+    NavBarItemPreference mRing1;
+    NavBarItemPreference mRing2;
+    NavBarItemPreference mRing3;
+    NavBarItemPreference mRing4;
+    NavBarItemPreference mRing5;
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext = (Context) getActivity();
-        mRes = mContext.getResources();
-        mResolver = mContext.getContentResolver();
-        populateActionAdapter();
+        setTitle(R.string.title_navring);
+        // Load the preferences from an XML resource
+        addPreferencesFromResource(R.xml.prefs_navring);
+
         PreferenceScreen prefs = getPreferenceScreen();
 
-        addPreferencesFromResource(R.xml.navring_settings);
-
-        mRing1 = (NavRingPreference) findPreference("interface_navring_1_release");
-        mRing1.setTargetUri(Settings.System.SYSTEMUI_NAVRING_1, new WidgetListener());
-
-        mRing2 = (NavRingPreference) findPreference("interface_navring_2_release");
-        mRing2.setTargetUri(Settings.System.SYSTEMUI_NAVRING_2, new WidgetListener());
-
-        mRing3 = (NavRingPreference) findPreference("interface_navring_3_release");
-        mRing3.setTargetUri(Settings.System.SYSTEMUI_NAVRING_3, new WidgetListener());
-
-        mRing4 = (NavRingPreference) findPreference("interface_navring_4_release");
-        mRing4.setTargetUri(Settings.System.SYSTEMUI_NAVRING_4, new WidgetListener());
-
-        mRing5 = (NavRingPreference) findPreference("interface_navring_5_release");
-        mRing5.setTargetUri(Settings.System.SYSTEMUI_NAVRING_5, new WidgetListener());
-
-        mNavRingAmount = Settings.System.getInt(mContext.getContentResolver(),
-                         Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
-        
-        PreferenceGroup RingGroup1 = (PreferenceGroup) findPreference("interface_navring_1");
-        PreferenceGroup RingGroup2 = (PreferenceGroup) findPreference("interface_navring_2");
-        PreferenceGroup RingGroup4 = (PreferenceGroup) findPreference("interface_navring_4");
-        PreferenceGroup RingGroup5 = (PreferenceGroup) findPreference("interface_navring_5");
-
-        if (mNavRingAmount == 1) {
-        RingGroup1.removeAll();
-        RingGroup2.removeAll();
-        RingGroup4.removeAll();
-        RingGroup5.removeAll();
-        } else if (mNavRingAmount == 2) {
-        RingGroup1.removeAll();
-        RingGroup4.removeAll();
-        RingGroup5.removeAll();
-        } else if (mNavRingAmount == 3) {
-        RingGroup1.removeAll();
-        RingGroup5.removeAll();
-        } else if (mNavRingAmount == 4) {
-        RingGroup5.removeAll();
-        }
+        mPicker = new ShortcutPickerHelper(this, this);
 
         String target3 = Settings.System.getString(mContext.getContentResolver(), Settings.System.SYSTEMUI_NAVRING_3);
         if (target3 == null || target3.equals("")) {
             Settings.System.putString(mContext.getContentResolver(), Settings.System.SYSTEMUI_NAVRING_3, "assist");
         }
+
+        mRing1 = (NavBarItemPreference) findPreference("interface_navring_1_release");
+        mRing1.setOnPreferenceChangeListener(this);
+        mRing1.setSummary(getProperSummary(mRing1));
+        mRing1.setIcon(resize(getNavbarIconImage(mRing1)));
+
+        mRing2 = (NavBarItemPreference) findPreference("interface_navring_2_release");
+        mRing2.setOnPreferenceChangeListener(this);
+        mRing2.setSummary(getProperSummary(mRing2));
+        mRing2.setIcon(resize(getNavbarIconImage(mRing2)));
+
+        mRing3 = (NavBarItemPreference) findPreference("interface_navring_3_release");
+        mRing3.setOnPreferenceChangeListener(this);
+        mRing3.setSummary(getProperSummary(mRing3));
+        mRing3.setIcon(resize(getNavbarIconImage(mRing3)));
+
+        mRing4 = (NavBarItemPreference) findPreference("interface_navring_4_release");
+        mRing4.setOnPreferenceChangeListener(this);
+        mRing4.setSummary(getProperSummary(mRing4));
+        mRing4.setIcon(resize(getNavbarIconImage(mRing4)));
+
+        mRing5 = (NavBarItemPreference) findPreference("interface_navring_5_release");
+        mRing5.setOnPreferenceChangeListener(this);
+        mRing5.setSummary(getProperSummary(mRing5));
+        mRing5.setIcon(resize(getNavbarIconImage(mRing5)));
+
+        mNavRingAmount = Settings.System.getInt(mContext.getContentResolver(),
+                         Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
+
+        if (mNavRingAmount == 1) {
+            prefs.removePreference(mRing1);
+            prefs.removePreference(mRing2);
+            prefs.removePreference(mRing4);
+            prefs.removePreference(mRing5);
+        } else if (mNavRingAmount == 2) {
+            prefs.removePreference(mRing1);
+            prefs.removePreference(mRing4);
+            prefs.removePreference(mRing5);
+        } else if (mNavRingAmount == 3) {
+            prefs.removePreference(mRing1);
+            prefs.removePreference(mRing5);
+        } else if (mNavRingAmount == 4) {
+            prefs.removePreference(mRing5);
+        }
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
+        boolean result = false;
+
+        if (preference == mRing1) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_1;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_1, (String) newValue);
+            mRing1.setSummary(getProperSummary(mRing1));
+            mRing1.setIcon(resize(getNavbarIconImage(mRing1)));
+            }
+        } else if (preference == mRing2) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_2;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_2, (String) newValue);
+            mRing2.setSummary(getProperSummary(mRing2));
+            mRing2.setIcon(resize(getNavbarIconImage(mRing2)));
+            }
+        } else if (preference == mRing3) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_3;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_3, (String) newValue);
+            mRing3.setSummary(getProperSummary(mRing3));
+            mRing3.setIcon(resize(getNavbarIconImage(mRing3)));
+            }
+        } else if (preference == mRing4) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_4;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_4, (String) newValue);
+            mRing4.setSummary(getProperSummary(mRing4));
+            mRing4.setIcon(resize(getNavbarIconImage(mRing4)));
+            }
+        } else if (preference == mRing5) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_5;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_5, (String) newValue);
+            mRing5.setSummary(getProperSummary(mRing5));
+            mRing5.setIcon(resize(getNavbarIconImage(mRing5)));
+            }
+        }
+        return result;
     }
 
-    class WidgetListener implements View.OnClickListener {
+    public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
+          mPreference.setSummary(friendlyName);
+          Settings.System.putString(getContentResolver(), mString, (String) uri);
+          mPreference.setIcon(resize(getNavbarIconImage(mPreference)));
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == ShortcutPickerHelper.REQUEST_PICK_SHORTCUT
+                    || requestCode == ShortcutPickerHelper.REQUEST_PICK_APPLICATION
+                    || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
+                mPicker.onActivityResult(requestCode, resultCode, data);
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
-        @Override
-        public void onClick(View v) {
-            // TODO Auto-generated method stub
-            String tag = (String) v.getTag();
-            NavRingPreference n = null;
-            if (tag != null) {
-                if (tag.equals(mRing1.getTargetUri())) {
-                    n = mRing1;
-                } else if (tag.equals(mRing2.getTargetUri())) {
-                    n = mRing2;
-                } else if (tag.equals(mRing3.getTargetUri())) {
-                    n = mRing3;
-                } else if (tag.equals(mRing4.getTargetUri())) {
-                    n = mRing4;
-                } else if (tag.equals(mRing5.getTargetUri())) {
-                    n = mRing5;
+    private String getProperSummary(Preference preference) {
+        if (preference == mRing1) {
+            mString = Settings.System.SYSTEMUI_NAVRING_1;
+        } else if (preference == mRing2) {
+            mString = Settings.System.SYSTEMUI_NAVRING_2;
+        } else if (preference == mRing3) {
+            mString = Settings.System.SYSTEMUI_NAVRING_3;
+        } else if (preference == mRing4) {
+            mString = Settings.System.SYSTEMUI_NAVRING_4;
+        } else if (preference == mRing5) {
+            mString = Settings.System.SYSTEMUI_NAVRING_5;
+        }
+
+        String uri = Settings.System.getString(getActivity().getContentResolver(),mString);
+        String empty = "none";
+
+        if (uri == null)
+            return empty;
+
+        if (uri.equals("none")) {
+                return getResources().getString(R.string.none);
+        } else if (uri.equals("screenshot")) {
+                return getResources().getString(R.string.take_screenshot);
+        } else if (uri.equals("ime_switcher")) {
+                return getResources().getString(R.string.open_ime_switcher);
+        } else if (uri.equals("ring_vib")) {
+                return getResources().getString(R.string.ring_vib);
+        } else if (uri.equals("ring_silent")) {
+                return getResources().getString(R.string.ring_silent);
+        } else if (uri.equals("ring_vib_silent")) {
+                return getResources().getString(R.string.ring_vib_silent);
+        } else if (uri.equals("killcurrent")) {
+                return getResources().getString(R.string.kill_app);
+        } else if (uri.equals("screenoff")) {
+                return getResources().getString(R.string.screen_off);
+        } else if (uri.equals("assist")) {
+                return getResources().getString(R.string.google_now);
+        } else {
+                return mPicker.getFriendlyNameForUri(uri);
+        }
+   }
+
+    private Drawable getNavbarIconImage(Preference preference) {
+        if (preference == mRing1) {
+            mString = Settings.System.SYSTEMUI_NAVRING_1;
+        } else if (preference == mRing2) {
+            mString = Settings.System.SYSTEMUI_NAVRING_2;
+        } else if (preference == mRing3) {
+            mString = Settings.System.SYSTEMUI_NAVRING_3;
+        } else if (preference == mRing4) {
+            mString = Settings.System.SYSTEMUI_NAVRING_4;
+        } else if (preference == mRing5) {
+            mString = Settings.System.SYSTEMUI_NAVRING_5;
+        }
+
+        String uri = Settings.System.getString(getActivity().getContentResolver(),mString);
+
+        if (uri == null)
+            return getResources().getDrawable(R.drawable.ic_sysbar_null);
+
+
+            if (uri.equals("none")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_null);
+            } else if (uri.equals("screenshot")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_screenshot);
+            } else if (uri.equals("ime_switcher")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_ime_switcher);
+            } else if (uri.equals("ring_vib")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_vib);
+            } else if (uri.equals("ring_silent")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_silent);
+            } else if (uri.equals("ring_vib_silent")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_ring_vib_silent);
+            } else if (uri.equals("killcurrent")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_killtask);
+            } else if (uri.equals("screenoff")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_power);
+            } else if (uri.equals("assist")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_googlenow);
+            } else {
+                try {
+                   return mContext.getPackageManager().getActivityIcon(Intent.parseUri(uri, 0));
+                } catch (NameNotFoundException e) {
+                   e.printStackTrace();
+                } catch (URISyntaxException e) {
+                   e.printStackTrace();
                 }
-                callInitDialog(n);
             }
-        }
-    }
+        return getResources().getDrawable(R.drawable.ic_sysbar_null);
+     }
 
-    public void callInitDialog(final NavRingPreference preference) {
-        final NavRingPreference pref = (NavRingPreference) preference;
-        final CharSequence[] item_entries = mRes.getStringArray(R.array.navring_dialog_entries);
-        final CharSequence[] item_values = mRes.getStringArray(R.array.navring_dialog_values);
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setTitle(mRes.getString(R.string.interface_softkeys_activity_dialog_title))
-                .setNegativeButton(mRes.getString(com.android.internal.R.string.cancel),
-                        new Dialog.OnClickListener() {
+    private Drawable resize(Drawable image) {
+        int size = 50;
+        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size, getResources()
+                .getDisplayMetrics());
 
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // TODO Auto-generated method stub
-                                dialog.dismiss();
-                            }
-                        })
-                .setItems(item_entries, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // TODO Auto-generated method stub
-                        String pressed = (String) item_values[which];
-                        if (pressed.equals(item_values[item_values.length - 1])) {
-                            callActivityDialog(pref);
-                        } else {
-                            pref.loadCustomApp(pressed);
-                            pref.setTargetValue(pressed);
-
-                        }
-                    }
-                }).create().show();
-    }
-
-    public void populateActionAdapter() {
-        components = new ArrayList<AppPackage>();
-
-        PackageManager pm = mContext.getPackageManager();
-        Intent intent = new Intent(Intent.ACTION_MAIN, null);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-        List<ResolveInfo> activities = pm.queryIntentActivities(intent, 0);
-        for (ResolveInfo info : activities) {
-            AppPackage ap = new AppPackage(info, pm);
-            components.add(ap);
-        }
-        mAdapter = new AppArrayAdapter(mContext, components);
-        View dialog = View.inflate(mContext, R.layout.activity_dialog, null);
-        mListView = (ListView) dialog.findViewById(R.id.dialog_list);
-        mListView.setAdapter(mAdapter);
-    }
-
-    public void callActivityDialog(final NavRingPreference caller) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setAdapter(mListView.getAdapter(), new Dialog.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // TODO Auto-generated method stub
-                AppPackage app = (AppPackage) mListView.getAdapter().getItem(which);
-                caller.setResourcesFromPackage(app);
-            }
-        })
-                .setTitle(mRes.getString(R.string.interface_softkeys_activity_dialog_title))
-                .setNegativeButton(mRes.getString(com.android.internal.R.string.cancel),
-                        new Dialog.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // TODO Auto-generated method stub
-                                dialog.dismiss();
-                            }
-                        })
-                .create().show();
-    }
-
-    public class AppPackage {
-        public ComponentName component;
-        public String appName;
-        public Drawable icon;
-
-        AppPackage(ResolveInfo ri, PackageManager pm) {
-            component = new ComponentName(ri.activityInfo.packageName,
-                    ri.activityInfo.name);
-            appName = ri.activityInfo.loadLabel(pm).toString();
-            icon = ri.activityInfo.loadIcon(pm);
-        }
-
-        public String getComponentName() {
-            return component.flattenToString();
-        }
-
-        public Drawable getIcon() {
-            return icon;
-        }
-
-        public String getName() {
-            return appName;
-        }
-    }
-
-    public class AppArrayAdapter extends ArrayAdapter {
-        public final List<AppPackage> apps;
-        public final Context mContext;
-
-        public AppArrayAdapter(Context context, List<AppPackage> objects) {
-            super(context, R.layout.activity_item, objects);
-            this.mContext = context;
-            this.apps = objects;
-            // TODO Auto-generated constructor stub
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View itemRow = convertView;
-            AppPackage ap = (AppPackage) apps.get(position);
-
-            itemRow = ((LayoutInflater) mContext
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE))
-                    .inflate(R.layout.activity_item, null);
-
-            ((ImageView) itemRow.findViewById(R.id.icon)).setImageDrawable(ap.getIcon());
-            ((TextView) itemRow.findViewById(R.id.title)).setText(ap.getName());
-
-            return itemRow;
-        }
+        Bitmap d = ((BitmapDrawable) image).getBitmap();
+        Bitmap bitmapOrig = Bitmap.createScaledBitmap(d, px, px, false);
+        return new BitmapDrawable(mContext.getResources(), bitmapOrig);
     }
 }

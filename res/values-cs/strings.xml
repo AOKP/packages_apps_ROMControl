@@ -33,6 +33,7 @@
   <string name="title_led">Ovládání LED</string>
   <string name="title_lockscreens">Možnosti zamčené obrazovky</string>
   <string name="title_lockscreens_targets">Položky zamčené obrazovky</string>
+  <string name="title_navring">Navigační kruh</string>
   <string name="title_sound">Nastavení zvuku</string>
   <string name="title_weather">Nastavení počasí</string>
   <string name="title_performance">Nastavení výkonu</string>
@@ -212,6 +213,15 @@
   <string name="enable_clock_weekday_summary">Zobrazit den v týdnu před hodinami</string>
   <string name="colors">Barvy</string>
   <string name="clock_color_title">Barva hodin</string>
+  <string name="alarm">Budíky</string>
+  <string name="nothing">Nic</string>
+  <string name="today">Dnešní kalendář</string>
+  <string name="event">Nová událost v kalendáři</string>
+  <string name="voiceassist">Hlasové příkazy</string>
+  <string name="title_date_longclick">Akce dlouhého stisknutí data</string>
+  <string name="title_date_shortclick">Akce krátkého stisknutí data</string>
+  <string name="title_clock_longclick">Akce dlouhého stisknutí hodin</string>
+  <string name="title_clock_shortclick">Akce krátkého stisknutí hodin</string>
   <!--Toggle Strings to be called from device overlays-->
   <string name="toggle_airplane_mode">Režim letadlo</string>
   <string name="toggle_auto_rotate">Automatická rotace</string>
@@ -321,6 +331,7 @@
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>
+  <string name="interface_softkeys_pref_default_title">Dotykem vybrat aktivitu</string>
   <string name="interface_softkeys_pref_default_title">Nevybrána žádná aktivita</string>
   <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat akitivitu dlouhého stisku</string>
   <string name="interface_softkeys_activity_dialog_title">Vybrat aktivitu</string>

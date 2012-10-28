@@ -573,6 +573,10 @@
     <string name="weather_loc_warning_positive">"Enable network location"</string>
     <string name="weather_loc_warning_negative">"Don't enable."</string>
     <string name="menu_weather_get_weather">Get weather</string>
+    <string name="weather_statusbar_hide">Weather panel hide options</string>
+    <string name="always_on">Always visible</string>
+    <string name="same_toggles">Hide with toggles</string>
+    <string name="opposite_toggles">Hide opposite of toggles</string>
 
     <!-- Weather Codes -->
     <string name="weather_0">Tornado</string>

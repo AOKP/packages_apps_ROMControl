@@ -419,7 +419,7 @@
     <string name="volume_music_controls_title">Control de volumen de musica</string>
     <string name="volume_music_controls_summary">La pulsación larga pasara a la siguiente pista mientras la pantalla esta apagada. El desbloqueo de pantalla con el control de volumen no funcionara mientras se escucha musica.</string>
     <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
-    <string name="lockscreen_stock_music_layout_summary">Use the stock layout
+    <string name="lockscreen_stock_music_layout_summary">Use the stock layout</string>
     <string name="lockscreen_wallpaper_title">Fondo de pantalla de desbloqueo </string>
     <string name="lockscreen_wallpaper_summary">Puede quitar el fondo de pantalla desde el menú de esta pantalla</string>
     <string name="lockscreen_text_color_title">Color de texto de Pantalla de desbloqueo</string>
@@ -775,7 +775,5 @@
     <string name="show_signal_bars">Ver como barra</string>
     <string name="show_signal_text">Ver como texto</string>
     <string name="show_with_dbm">Ver dBm</string>
-
-
 
 </resources>

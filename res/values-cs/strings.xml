@@ -332,7 +332,6 @@
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>
   <string name="interface_softkeys_pref_default_title">Dotykem vybrat aktivitu</string>
-  <string name="interface_softkeys_pref_default_title">Nevybrána žádná aktivita</string>
   <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat akitivitu dlouhého stisku</string>
   <string name="interface_softkeys_activity_dialog_title">Vybrat aktivitu</string>
   <string name="interface_softkeys_reboot_title">Menu restartování</string>

@@ -44,6 +44,7 @@ public class Weather extends AOKPPreferenceFragment implements
     CheckBoxPreference mShowLoc;
     CheckBoxPreference mUseCelcius;
     ListPreference mStatusBarLocation;
+    ListPreference mPanelHideStatus;
     ListPreference mWeatherSyncInterval;
     EditTextPreference mCustomWeatherLoc;
     ListPreference mWeatherShortClick;
@@ -65,6 +66,8 @@ public class Weather extends AOKPPreferenceFragment implements
 
         prefs = getActivity().getSharedPreferences("weather", Context.MODE_WORLD_WRITEABLE);
 
+        PreferenceScreen mRemove = getPreferenceScreen();
+
         mPicker = new ShortcutPickerHelper(this, this);
 
         mWeatherSyncInterval = (ListPreference) findPreference("refresh_interval");
@@ -76,6 +79,15 @@ public class Weather extends AOKPPreferenceFragment implements
         mStatusBarLocation.setOnPreferenceChangeListener(this);
         mStatusBarLocation.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUSBAR_WEATHER_STYLE, 2) + "");
+
+        mPanelHideStatus = (ListPreference) findPreference("weather_hide");
+        mPanelHideStatus.setOnPreferenceChangeListener(this);
+        mPanelHideStatus.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUSBAR_WEATHER_HIDE, 0) + "");
+
+	    if (mTablet) {
+            mRemove.removePreference(mPanelHideStatus);
+        }
 
         mCustomWeatherLoc = (EditTextPreference) findPreference("custom_location");
         mCustomWeatherLoc.setOnPreferenceChangeListener(this);
@@ -253,6 +265,13 @@ public class Weather extends AOKPPreferenceFragment implements
             result = Settings.System.putString(getContentResolver(), Settings.System.WEATHER_PANEL_LONGCLICK, (String) newValue);
             mWeatherLongClick.setSummary(getProperSummary(mWeatherLongClick));
             }
+
+         } else if (preference == mPanelHideStatus) {
+
+             String newVal = (String) newValue;
+             return Settings.System.putInt(getActivity().getContentResolver(),
+                     Settings.System.STATUSBAR_WEATHER_HIDE,
+                     Integer.parseInt(newVal));
          }
          return false;
     }

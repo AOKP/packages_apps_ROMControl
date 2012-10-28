@@ -808,6 +808,7 @@
         <item>8</item>
     </string-array>
     <string-array name="notification_action_entries" translatable="false">
+        <item>@string/nothing</item>
         <item>@string/alarm</item>
         <item>@string/today</item>
         <item>@string/event</item>
@@ -815,6 +816,7 @@
         <item>@string/custom_app</item>
     </string-array>
     <string-array name="notification_action_values" translatable="false">
+        <item>**nothing**</item>
         <item>**alarm**</item>
         <item>**today**</item>
         <item>**event**</item>

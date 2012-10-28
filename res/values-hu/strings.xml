@@ -8,7 +8,7 @@
     <string name="cancel">Mégse</string>
     <string name="ok">OK</string>
     <string name="menu_main_activity_change_locale">Üres!</string>
-    <string name="header_statusbar">Statusbar</string>
+    <string name="header_statusbar">Állapotsáv</string>
     <string name="header_navbar">Navigációs sáv</string>
     <string name="toggles_layout">Kapcsolók</string>
     <string name="general_ui">Általános felület</string>
@@ -36,6 +36,8 @@
     <string name="title_led">LED Vezérlés</string>
     <string name="title_sound">Hang beállítások</string>
     <string name="title_lockscreens">Képernyőzár beállítások</string>
+    <string name="title_lockscreens_targets">Zárképernyő elemek</string>
+    <string name="title_navring">Navigációs gyűrű</string>
     <string name="title_weather">Időjárás beállítások</string>
     <string name="title_performance">Teljesítmény beállítások</string>
     <string name="title_clipboard_share">Megosztás vágólapra</string>
@@ -122,7 +124,9 @@
     <!-- General UI -->
      <string name="bootani_cat">Bootanimáció</string>
     <string name="navbar_cat">Értesítési sáv</string>
-    <string name="notification_cat">Értesítés</string><string name="enable_volume_options">Hang panel engedélyezése</string>
+    <string name="notification_cat">Értesítés</string>
+    <string name="tabletUI_cat">Tábla mód</string>
+    <string name="enable_volume_options">Hang panel engedélyezése</string>
     <string name="status_bar_notif_count_title">Értesítésí számláló</string>
     <string name="status_bar_notif_count_summary">Megjelenití az értesítések számát a navigációs sávon</string>
     <string name="vibrate_notif_expand_title">Rezgés nyitásra</string>
@@ -138,7 +142,7 @@
     <string name="custom_carrier_label_title">Egyedi szolgáltató név</string>
     <string name="custom_carrier_label_explain">Adja meg egy újat. Üresen hagyva visszaáll az eredetire.</string>
     <string name="custom_carrier_label_notset">Nincs beállított egyedi felírta</string>
-    <string name="ime_switcher_title">Aktuális IME váltó</string>
+    <string name="ime_switcher_title">Aktuális billentyűzet váltó</string>
     <string name="ime_switcher_summary">Állapotsoron, gépelés közben (újraindítás szükséges)</string>
     <string name="rotate_180_title">180 fokos forgatás engedélyezése</string>
     <string name="rotate_180_summary">Engedélyezi a képernyő megfordítását!</string>
@@ -181,6 +185,7 @@
     <string name="clear_market_data_title">3. Market adat törlése</string>
     <string name="clear_market_data_cleared">Market adat törölve</string>
     <string name="clear_market_data_donot_cleared">"Nem sikerült a törlés, kérlek csináld meg magadnak!"</string>
+    <string name="dpi">DPI</string>
     <string name="open_market_title">4. Nyísd meg a marketet és fogadd el.</string>
     <string name="open_market_summary">Lépj ki és folytasd itt.</string>
     <string name="open_market_summary_could_not_open">"Nem sikerült megnyitni a marketet! Ha telepítve van, nyisd meg."</string>
@@ -227,6 +232,7 @@
     <string name="colors">Színek</string>
     <string name="clock_color_title">Óra színe</string>
     <string name="alarm">Riasztások</string>
+    <string name="nothing">Semmi</string>
     <string name="today">Naptár mai nap</string>
     <string name="event">Naptár új esemény</string>
     <string name="voiceassist">Hang utasítások</string>
@@ -298,13 +304,18 @@
     <string name="navbar_qty_summary">Válaszd ki a navigációs gombok számát</string>
     <string name="navbar_action_title">Gomb %1$s esemény &amp; ikon</string>
     <string name="button_transparency_title">Nav gombok áttetszősége</string>
+    <string name="navbar_width_help_title">Navigációs sáv kombinált szélesség segítség</string>
+    <string name="navbar_width_help_summary">100 a 70\%% képernyő szélesség, 5 a 30\%% képernyő szélesség. 0 alapértelmezésben egy gomb szélesség.</string>
+    <string name="width_port_title">Kombinált sáv szélesség állóhelyzetben</string>
+    <string name="width_land_title">Kombinált sáv szélesség fekvőhelyzetben</string>
     <string name="navbar_longpress_title">Gomb %1$s hosszan nyomva</string>
     <string name="navbar_action_home">Kezdőlap</string>
     <string name="navbar_action_back">Vissza</string>
     <string name="navbar_action_recents">Legutóbbiak</string>
     <string name="navbar_action_search">Keresés</string>
+    <string name="navbar_action_screenshot">Képernyőkép</string>
     <string name="navbar_action_menu">Menü</string>
-    <string name="navbar_action_ime">IME váltó megnyitása</string>
+    <string name="navbar_action_ime">Billentyűzet váltó megnyitása</string>
     <string name="navbar_action_kill">Kill task</string>
     <string name="navbar_action_power">Teljesítmény</string>
     <string name="navbar_action_notifications">Értesítések</string>
@@ -351,7 +362,7 @@
     <string name="interface_softkeys_reboot_title">Újraindítás Menü</string>
     <string name="interface_softkeys_screenshot_title">Képernyőkép</string>
     <string name="interface_softkeys_screenoff_title">Képernyő KI</string>
-    <string name="interface_softkeys_ime_switcher_title">IME választó</string>
+    <string name="interface_softkeys_ime_switcher_title">Billentyűzet választó</string>
     <string name="interface_softkeys_ring_vib_title">Csöngés/Rezgés kapcsoló</string>
     <string name="interface_softkeys_ring_silent_title">Rezgés/Néma kapcsoló</string>
     <string name="interface_softkeys_ring_vib_silent_title">Csöngés/Rezgés/Néma kapcsoló</string>
@@ -364,8 +375,8 @@
     <string name="interface_navring_custom_pref_summary">Esemény indításának engedélyezése </string>
     <string name="interface_navring_pref_default_summary">Éríntsd meg a kivánt gyűrűt az eseményhez</string>
     <string name="interface_navring_assist_title">Google Now</string>
-    <string name="interface_navring">Gyűrű események</string>
-    <string name="navbar_ring">Egyéni gyűrű események</string>
+    <string name="interface_navring">Gyűrű elemek</string>
+    <string name="navbar_ring">Egyéni gyűrű elemek</string>
 
 
     <!-- LED -->
@@ -440,8 +451,6 @@
     <string name="lockscreen_wallpaper_title">Zárképernyő háttérkép választása</string>
     <string name="lockscreen_wallpaper_summary">Meg tudod változtatni a háttérképét</string>
     <string name="lockscreen_text_color_title">Zárképernyő szöveg szín</string>
-    <string name="title_lockscreen_user_timeout_override">Vár a zárképernyőre</string>
-    <string name="summary_lockscreen_user_timeout_override">Az Android késleltetésének használata a kijelző manuális kikapcs. után. Alapért. csak akkor használjuk a késleltetést, ha a kijelző magától kapcsol ki.</string>
     <string name="lockscreen_weather_title">Engedélyez</string>
     <string name="lockscreen_weather_summary">Időjárás a zárképernyőn. RomControlban engedélyezni kell a mükődését.</string>
     <string name="lockscreen_weather_type_title">Zárképernyő időjárás stílusa</string>
@@ -492,6 +501,7 @@
     <string name="icon_picker_search">Keresés</string>
     <string name="icon_picker_sms">Üzenet</string>
     <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_unlock">Feloldás</string>
     <string name="icon_picker_title">Ikon forrás választás</string>
     <string name="icon_picker_system_icons_title">Rendszer ikonok</string>
     <string name="icon_picker_aokp_icons_title">AOKP ikonok</string>
@@ -527,10 +537,18 @@
     <string name="wifi_save">Mentés</string>
     <string name="lockscreen_target_reset">Zárképernyő elemek alaphelyzetbe</string>
     <string name="lockscreen_target_save">Zárképernyő elemek mentése</string>
+    <string name="lockscreen_target_save_error_title">Hibás elem mentés</string>
+    <string name="lockscreen_target_save_error_msg">Legalább egy elem kell a képernyő feloldásához!</string>
     <string name="lockscreen_target_reset_title">Alaphelyzet</string>
     <string name="lockscreen_target_reset_message">Törlöd az összes beállítást és minden alaphelyzetbe?</string>
     <string name="lockscreen_target_edit_title">Elem és ikon szerkesztés</string>
     <string name="lockscreen_target_edit_msg">Válaszd ki vagy módosítsd a kívánt alkalmazást vagy tevékenységet és az ikonjait</string>
+
+    <string name="aokp_3targets">3 Elem</string>
+    <string name="aokp_4targets">4 Elem</string>
+    <string name="aokp_5targets">5 Elem</string>
+    <string name="aokp_6targets">6 Elem</string>
+    <string name="aokp_8targets">8 Elem</string>
 
 
 
@@ -669,12 +687,14 @@
     <string name="fast_charge_warning">NEM LESZ KÉPES CSATLAKOZNI PC-HEZ ÚJRAINDÍTÁS UTÁN!\n\nAmig a gyors töltés be van kapcsolva, csak tölt!</string>
     <string name="fast_charge_notification_title">Gyors töltés BE!</string>
     <string name="fast_charge_notification_message">Telefon csak töltés módban!</string>
-    <string name="prefcat_other_tweaks">Egyéb tweakek</string><string name="performance_daily_reboot_title">Napi újraindítás</string>
+    <string name="prefcat_other_tweaks">Egyéb tweakek</string>
+    <string name="performance_daily_reboot_title">Napi újraindítás</string>
     <string name="performance_daily_reboot_summary">Újraindítás ütemezése %1$s</string>
     <string name="performance_daily_reboot_summary_unscheduled">Nem ütemezett</string>
 
     <!-- Custom vibrations -->
     <string name="vibrations">Rezgések</string>
+    <string name="defaultvibrationname">"'Alapértelmezett'"</string>
     <string name="vib_new">Új/Alaphelyzet</string>
     <string name="vib_load">Betölt</string>
     <string name="vib_rec">Felvétel</string>
@@ -735,7 +755,7 @@
     <string name="default_jb_behavior">Alapértelmezett JB müködés</string>
     <string name="always_show_invincible_icons">Mindig mutasd a láthatatlan ikonokat</string>
     <string name="always_show">Mindig mutat</string>
-    <string name="default_jb_with_invincible_icons_when_hidden">Alapértelmezett JB láthatatlan ikonokkal rejtetten</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">JB alapértelmezett láthatatlan ikonok rejtetten</string>
     <string name="home">Kezdőképernyő</string>
     <string name="back">Vissza</string>
     <string name="recents">Legutóbbiak</string>
@@ -743,7 +763,7 @@
     <string name="screenshot">Képernyőkép</string>
     <string name="menu">Menü</string>
     <string name="toggle_widgets">Widget kapcsolók</string>
-    <string name="open_ime_switcher">IME váltó megnyítása</string>
+    <string name="open_ime_switcher">Billentyűzet váltó megnyítása</string>
     <string name="kill_app">Kill app</string>
     <string name="power">Kikapcsolás</string>
     <string name="notifications">Értesítések</string>
@@ -757,11 +777,11 @@
     <string name="screen_off">Képernyő Ki</string>
     <string name="google_now">Google Now</string>
     <string name="select_application">Alkalmazás választás</string>
-    <string name="one_target">1 cél</string>
-    <string name="two_targets">2 cél</string>
-    <string name="three_targets">3 cél</string>
-    <string name="four_targets">4 cél</string>
-    <string name="five_targets">5 cél</string>
+    <string name="one_target">1 elem</string>
+    <string name="two_targets">2 elem</string>
+    <string name="three_targets">3 elem</string>
+    <string name="four_targets">4 elem</string>
+    <string name="five_targets">5 elem</string>
     <string name="size_42_dp_default">42 dp (alapértelmezett)</string>
     <string name="size_36_dp">36 dp</string>
     <string name="size_30_dp">30 dp</string>
@@ -770,7 +790,7 @@
     <string name="size_44_dp">44 dp</string>
     <string name="size_40_dp">40 dp</string>
     <string name="size_42_dp">42 dp</string>
-    <string name="statusbar">Statusbar</string>
+    <string name="statusbar">Állapotsáv</string>
     <string name="top_of_navbar">Navbar tetején</string>
     <string name="bottom_of_navbar">Navbar alján</string>
     <string name="regular">Normál</string>

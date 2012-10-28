@@ -35,6 +35,8 @@
     <string name="title_power_menu">电源菜单</string>
     <string name="title_led">灯光</string>
     <string name="title_lockscreens">锁屏选项</string>
+    <string name="title_lockscreens_targets">锁屏目标</string>
+    <string name="title_navring">导航环</string>
     <string name="title_sound">声音设置</string>
     <string name="title_weather">天气设置</string>
     <string name="title_performance">性能设置</string>
@@ -103,6 +105,7 @@
     <string name="bootani_cat">开机动画</string>
     <string name="navbar_cat">导航栏</string>
     <string name="notification_cat">通知栏</string>
+    <string name="tabletUI_cat">平板界面</string>
     <string name="enable_volume_options">启用音量面板</string>
     <string name="status_bar_notif_count_title">显示通知数量</string>
     <string name="status_bar_notif_count_summary">在状态栏显示未查看的通知数量</string>
@@ -186,6 +189,11 @@
     <string name="toggles_display_close">关闭</string>
     <string name="toggles_order_title">开关排序</string>
     <string name="toggles_order_summary">排列要显示的切换开关顺序</string>
+    <string name="title_settings_behavior">设置图标默认行为</string>
+    <string name="summary_settings_behavior_default">短按通知栏设置图标进入系统设置，长按显示快捷开关</string>
+    <string name="summary_settings_behavior_reverse">短按通知栏设置图标显示快捷开关，长按进入系统设置</string>
+    <string name="title_toggles_autohide">自动隐藏快捷开关</string>
+    <string name="summary_toggles_autohide">通知栏收起后快捷开关将隐藏</string>
     <string name="brightness_location_title">亮度调整的位置</string>
     <string name="reset_toggles_title">重置开关</string>
     <string name="reset_toggles_summary">重置所有开关的设置及顺序</string>
@@ -202,6 +210,14 @@
     <string name="enable_clock_weekday_summary">在时间前简短显示星期几</string>
     <string name="colors">颜色</string>
     <string name="clock_color_title">时钟颜色</string>
+    <string name="alarm">提醒</string>
+    <string name="today">今日日程</string>
+    <string name="event">新日程事件</string>
+    <string name="voiceassist">语音命令</string>
+    <string name="title_date_longclick">长按日期动作</string>
+    <string name="title_date_shortclick">短按日期动作</string>
+    <string name="title_clock_longclick">长按时钟动作</string>
+    <string name="title_clock_shortclick">短按时钟动作</string>
 
     <!-- Toggle Strings to be called from device overlays 开关文本 -->
     <string name="toggle_airplane_mode">飞行模式</string>
@@ -265,6 +281,10 @@
     <string name="navbar_qty_summary">设置导航栏按键数量</string>
     <string name="navbar_action_title">按键 %1$s 的行为与图标</string>
     <string name="button_transparency_title">导航栏按键透明度</string>
+    <string name="navbar_width_help_title">导航栏组合高度帮助</string>
+    <string name="navbar_width_help_summary">100 是屏幕高度的 70\%% 。5 是屏幕高度的 30\%% 。0 默认是按钮高度。</string>
+    <string name="width_port_title">竖屏组合高度</string>
+    <string name="width_land_title">横屏组合高度</string>
     <string name="navbar_longpress_title">按键 %1$s 长按时的行为</string>
     <string name="navbar_action_home">主屏幕</string>
     <string name="navbar_action_back">返回</string>
@@ -313,7 +333,7 @@
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
     <string name="interface_softkey_settings">按钮设置</string>
-    <string name="interface_softkeys_pref_default_title">未选择程序</string>
+    <string name="interface_softkeys_pref_default_title">点击并选择程序</string>
     <string name="interface_softkeys_pref_default_summary">点击设置按钮选择一个想要在长按时出现的程序</string>
     <string name="interface_softkeys_activity_dialog_title">选择程序</string>
     <string name="interface_softkeys_reboot_title">重启菜单</string>
@@ -455,6 +475,7 @@
     <string name="icon_picker_search">搜索</string>
     <string name="icon_picker_sms">信息</string>
     <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_unlock">解锁</string>
     <string name="icon_picker_title">选择图标源</string>
     <string name="icon_picker_system_icons_title">系统图标</string>
     <string name="icon_picker_aokp_icons_title">AOKP 图标</string>
@@ -490,6 +511,8 @@
     <string name="wifi_save">保存</string>
     <string name="lockscreen_target_reset">锁屏界面快捷方式恢复默认</string>
     <string name="lockscreen_target_save">锁屏界面目标已保存</string>
+    <string name="lockscreen_target_save_error_title">保存目标出错</string>
+    <string name="lockscreen_target_save_error_msg">你必须至少有一个目标用来解锁屏幕！</string>
     <string name="lockscreen_target_reset_title">重置</string>
     <string name="lockscreen_target_reset_message">删除用户创建的所有锁屏目标并恢复默认？</string>
     <string name="lockscreen_target_edit_title">编辑目标与图标</string>
@@ -824,11 +847,13 @@
     <!-- less notification sounds 限制通知音 -->
     <string name="default_behavior">默认设置</string>
 
-    <!-- signal style -->
+    <!-- signal style 信号风格 -->
     <string name="show_signal_bars">显示信号图标</string>
     <string name="show_signal_text">显示信号文本</string>
     <string name="show_with_dbm">显示 w/dBm</string>
 
-
+    <!-- haptic feedback on toggle press 开关触感反馈 -->
+    <string name="toggles_enable_haptic_feedback_title">启用触感反馈</string>
+    <string name="toggles_enable_haptic_feedback_summary">使用开关时将有触感反馈</string>
 
 </resources>

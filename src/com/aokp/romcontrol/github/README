@@ -1,0 +1,39 @@
+Dynamic Changelog flow
+
+Main: GithubViewer is both main entry and base class for launching
+        tasks to populate the screen
+
+First Screen:  all projects in repositories from provided github organization
+                 populated through DisplayProjectsListTask which generates a
+                 list populated with Projects;
+               When a project is selected we display all commits to the project
+                 thirty at a time. These are populated from CommitsFragment
+
+CommitsFragment: shows all commits from either our generated list or Github
+                   API
+                 all commits from either GetJSONChangelogTask which generates a list
+                   populated with ChangelogObjects or GetCommitsInProjectTask;
+                   When selected we show CommitViewerDialog
+
+CommitViewerDialog : shows all available infomation about commit
+
+DownloadImageTask: gets an image from a URL provided
+
+FindMissingCommitData: is an abstract class to provide the GithubObject associated
+                       with a commit back to the UI thread; with the hope being
+                       we can find any missing values needed
+
+Config: applet wide variables and configuration, URLs to github orgs.
+
+CommitObject: is the base object our objects extend
+
+CommitInterface: this interface allows casting from one object to another
+
+ChangelogObject: an object containing all available infomation from our
+                 generated denseChangelog.sh; ***Notable missing gravatar urls***
+
+GithubObject: an object containing all available information we could gather
+              from api.github.com about a commit
+
+FavPackagesStorage: This is a file backed ArrayList that keeps selected favorite
+                      projects. The path is /sdcard/aokp/.fav_packages

@@ -155,6 +155,17 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <!-- Changelog
+             *till we can nest fragments (4.2) our context needs
+              prevent us from allowing rotation* -->
+        <activity
+            android:name=".github.GithubViewer"
+            android:label="@string/dynamic_changelog_title"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <!-- vibration manager -->
         <activity android:name=".fragments.Vibrations"
                 android:label="@string/vibrations">

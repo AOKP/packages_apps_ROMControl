@@ -823,4 +823,14 @@
         <item>**assist**</item>
         <item>**app**</item>
     </string-array>
+    <string-array name="weather_action_entries" translatable="false">
+        <item>@string/nothing</item>
+        <item>@string/update</item>
+        <item>@string/custom_app</item>
+    </string-array>
+    <string-array name="weather_action_values" translatable="false">
+        <item>**nothing**</item>
+        <item>**update**</item>
+        <item>**app**</item>
+    </string-array>
 </resources>

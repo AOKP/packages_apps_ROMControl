@@ -10,6 +10,7 @@ import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -67,6 +68,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
     CheckBoxPreference mDefaultSettingsButtonBehavior;
     CheckBoxPreference mTogglesAutoHide;
 
+    protected Vibrator vib;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,9 +77,18 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements OnPrefer
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_statusbar_toggles);
 
+        // if you have a reference to both the Preference, and its parent (a PreferenceCategory, or PreferenceScreen)
+        // myPreferenceScreen.remove(myPreference);
         mHapticFeedback = (CheckBoxPreference) findPreference(PREF_HAPTIC_FEEDBACK_TOGGLES_ENABLED);
         mHapticFeedback.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
                 Settings.System.HAPTIC_FEEDBACK_TOGGLES_ENABLED, false));
+
+        vib = (Vibrator) mContext.getSystemService(mContext.VIBRATOR_SERVICE);
+        boolean hasVib = vib.hasVibrator();
+        if(vib != null && hasVib == false) {
+            PreferenceScreen preferenceScreen = getPreferenceScreen();
+            preferenceScreen.removePreference(mHapticFeedback);
+        }
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 

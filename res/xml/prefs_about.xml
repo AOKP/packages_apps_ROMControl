@@ -22,6 +22,11 @@
             android:title="@string/aokp_irc_title"
             android:summary="@string/aokp_irc_summary" />
 
+        <Preference
+            android:key="aokp_dynamic_changelog"
+            android:title="@string/dynamic_changelog_title"
+            android:summary="@string/dynamic_changelog_summary" />
+
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="AOKP"
             aokp:nameDev="AOKP"
@@ -212,5 +217,4 @@
             aokp:twitterHandle="championswimmer"
             aokp:githubLink="@string/github_championswimmer" />
     </PreferenceCategory>
-
 </PreferenceScreen>

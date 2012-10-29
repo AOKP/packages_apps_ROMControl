@@ -167,6 +167,7 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".fragments.StatusBarToggles"
             android:label="@string/title_statusbar_toggles">
@@ -174,6 +175,16 @@
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="com.aokp.romcontrol.SHORTCUT"/>
+            </intent-filter>
+        </activity>
+
+        <!-- github viewer -->
+        <activity
+            android:name=".github.GithubViewer"
+            android:label="@string/dynamic_changelog_title"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 

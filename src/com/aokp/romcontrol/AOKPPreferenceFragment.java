@@ -153,7 +153,6 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     }
 
     // Dialog management
-
     protected void showDialog(int dialogId) {
         if (mDialogFragment != null) {
             Log.e(TAG, "Old dialog fragment not null!");

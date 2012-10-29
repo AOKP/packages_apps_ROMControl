@@ -1,6 +1,7 @@
 
 package com.aokp.romcontrol.fragments;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class About extends AOKPPreferenceFragment {
     Preference mSourceUrl;
     Preference mReviewUrl;
     Preference mIrcUrl;
+    Preference mDynamicChangelog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class About extends AOKPPreferenceFragment {
         mSourceUrl = findPreference("aokp_source");
         mReviewUrl = findPreference("aokp_review");
         mIrcUrl = findPreference("aokp_irc");
+        mDynamicChangelog = findPreference("aokp_dynamic_changelog");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -45,7 +48,6 @@ public class About extends AOKPPreferenceFragment {
         for(int i = 0; i < devs.size(); i++) {
             Preference p = devs.get(i);
             p.setOrder(i);
-
             devsGroup.addPreference(p);
         }
     }
@@ -60,6 +62,13 @@ public class About extends AOKPPreferenceFragment {
             launchUrl("http://gerrit.aokp.co");
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=teamkang");
+        } else if (preference == mDynamicChangelog) {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            DynamicChangelog changelogFragment = new DynamicChangelog();
+            transaction.addToBackStack(null);
+            transaction.replace(this.getId(), changelogFragment);
+            transaction.commit();
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/extended_commit_info_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/extended_commit_info_layout_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:id="@+id/scrollview_can_have_only_one_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/author_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/author_title"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/author_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:id="@+id/author_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingLeft="14.5sp"
+                    android:paddingRight="7.25sp"
+                    android:paddingTop="14.5sp"
+                    android:paddingBottom="14.5sp"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/commit_author"
+                    android:paddingLeft="7.25sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/committer_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/commit_committer_title"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/committer_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="7.25sp"
+                    android:paddingRight="3.75sp"
+                    android:src="@drawable/committer_arrow"
+                    android:layout_gravity="center|right" />
+
+                <ImageView
+                    android:id="@+id/committer_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingLeft="14.5sp"
+                    android:paddingRight="7.25sp"
+                    android:paddingTop="14.5sp"
+                    android:paddingBottom="14.5sp"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/commit_committer"
+                    android:paddingLeft="7.25sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/commit_message"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/commit_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="7.25sp"
+                android:paddingLeft="7.25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/commit_date"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/commit_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="7.25sp"
+                android:paddingLeft="7.25sp"
+                android:paddingTop="7.25sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/commit_sha"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/commit_sha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="7.25sp"
+                android:paddingLeft="7.25sp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -792,6 +792,7 @@
     <string name="bottom_of_navbar">Bottom of navbar</string>
     <string name="regular">Regular</string>
     <string name="center_mirrored">Center-mirrored</string>
+    <string name="size_0_dp">0 dp (off)</string>
     <string name="size_1_dp">1 dp</string>
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>

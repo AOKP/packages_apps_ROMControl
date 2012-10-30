@@ -18,9 +18,6 @@ import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class StatusBarClock extends AOKPPreferenceFragment implements
         ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 

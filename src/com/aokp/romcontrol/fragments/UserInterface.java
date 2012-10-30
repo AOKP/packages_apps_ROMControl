@@ -347,12 +347,6 @@ public class UserInterface extends AOKPPreferenceFragment {
             Display display = getActivity().getWindowManager().getDefaultDisplay();
             int width = display.getWidth();
             int height = display.getHeight();
-            Rect rect = new Rect();
-            Window window = getActivity().getWindow();
-            window.getDecorView().getWindowVisibleDisplayFrame(rect);
-            int statusBarHeight = rect.top;
-            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
-            int titleBarHeight = contentViewTop - statusBarHeight;
 
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
             intent.setType("image/*");
@@ -360,8 +354,8 @@ public class UserInterface extends AOKPPreferenceFragment {
             boolean isPortrait = getResources()
                     .getConfiguration().orientation
                     == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
-            intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
+            intent.putExtra("aspectX", isPortrait ? width : height);
+            intent.putExtra("aspectY", isPortrait ? height : width);
             intent.putExtra("outputX", width);
             intent.putExtra("outputY", height);
             intent.putExtra("scale", true);

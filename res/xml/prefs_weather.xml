@@ -57,5 +57,11 @@
         android:key="statusbar_location"
         android:title="@string/weather_statusbar_style" />
 
+    <ListPreference
+        android:entries="@array/weather_statusbar_hide_entries"
+        android:entryValues="@array/weather_statusbar_hide_values"
+        android:dependency="enable_weather"
+        android:key="weather_hide"
+        android:title="@string/weather_statusbar_hide" />
 
 </PreferenceScreen>

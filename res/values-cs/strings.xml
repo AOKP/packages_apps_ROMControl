@@ -218,10 +218,10 @@
   <string name="today">Dnešní kalendář</string>
   <string name="event">Nová událost v kalendáři</string>
   <string name="voiceassist">Hlasové příkazy</string>
-  <string name="title_date_longclick">Akce dlouhého stisknutí data</string>
-  <string name="title_date_shortclick">Akce krátkého stisknutí data</string>
-  <string name="title_clock_longclick">Akce dlouhého stisknutí hodin</string>
-  <string name="title_clock_shortclick">Akce krátkého stisknutí hodin</string>
+  <string name="title_date_longclick">Akce dlouhého stisku data</string>
+  <string name="title_date_shortclick">Akce krátkého stisku data</string>
+  <string name="title_clock_longclick">Akce dlouhého stisku hodin</string>
+  <string name="title_clock_shortclick">Akce krátkého stisku hodin</string>
   <!--Toggle Strings to be called from device overlays-->
   <string name="toggle_airplane_mode">Režim letadlo</string>
   <string name="toggle_auto_rotate">Automatická rotace</string>
@@ -284,7 +284,7 @@
   <string name="navbar_width_help_summary">100 je 70\%% šířky displeje, 5 je 30\%% šířky displeje. 0 je výchozí šířka podle tlačítek.</string>
   <string name="width_port_title">Šířka kombinované lišty na šířku</string>
   <string name="width_land_title">Šířka kombinované lišty na výšku</string>
-  <string name="navbar_longpress_title">Akce dlouhého stisknutí tlačítka %1$s</string>
+  <string name="navbar_longpress_title">Akce dlouhého stisku tlačítka %1$s</string>
   <string name="navbar_action_home">Domů</string>
   <string name="navbar_action_back">Zpět</string>
   <string name="navbar_action_recents">Přepínač aplikací</string>
@@ -414,7 +414,7 @@
   <string name="volume_rocker_wake_title">Probuzení tlačítky hlasitosti</string>
   <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
-  <string name="volume_music_controls_summary">Dlouhým stisknutím tlačítek hlasitosti dojde k přeskočení skladeb, pokud je vypnut displej. Probouzení tlačítky hlasitosti nebude fungovat, pokud bude přehrávána hudba.</string>
+  <string name="volume_music_controls_summary">Dlouhým stiskem tlačítek hlasitosti dojde k přeskočení skladeb, pokud je vypnut displej. Probouzení tlačítky hlasitosti nebude fungovat, pokud bude přehrávána hudba.</string>
   <string name="lockscreen_stock_music_layout_title">Vychozí rozložení hudby</string>
   <string name="lockscreen_stock_music_layout_summary">Použít výchozí rozložení při přehrávání hudby.</string>
   <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
@@ -529,17 +529,19 @@
   <string name="weather_use_celcius">Metrické jednotky (naše české)</string>
   <string name="weather_use_celcius_summary">Povolením této volby dojde k zobrazování teploty ve stupních Celsia místo Fahrenheitech a rychlost větru v km/h místo m/h.</string>
   <string name="weather_statusbar_style">Styl počasí ve stavové liště</string>
-  <string name="weather_start_custom_app">Spustit vlastní aplikaci</string>
-  <string name="weather_start_custom_app_summary">Po kliknutí na obrázek počasí spustit vlastní aplikaci.</string>
-  <string name="weather_custom_app_title">Vlastní aplikace</string>
-  <string name="weather_custom_app_dialog_title">Vybrat aplikaci</string>
-  <string name="weather_custom_app_dialog_message">Název balíčku (prozatím).</string>
+  <string name="title_weather_longclick">Akce krátkého stisku panelu počasí</string>
+  <string name="title_weather_shortclick">Akce dlouhého stisku panelu počasí</string>
+  <string name="update">Aktualizovat panel počasí</string>
   <string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>
   <string name="weather_loc_warning_title">Polohu nelze zjistit!</string>
   <string name="weather_loc_warning_msg">Získávání polohy ze sítě je momentálně vypnuto. Díky tomu není možné načíst počasí pro aktuální polohu. Pro zapnutí této funkce je nutné nastavit polohu ručně, nebo zapnout zjišťování polohy pomocí sítě.</string>
   <string name="weather_loc_warning_positive">Zapnout polohu ze sítě</string>
   <string name="weather_loc_warning_negative">Nezapínat</string>
   <string name="menu_weather_get_weather">Načíst počasí</string>
+  <string name="weather_statusbar_hide">Možnosti skrývání panelu počasí</string>
+  <string name="always_on">Vždy viditelný</string>
+  <string name="same_toggles">Skrývat s přepínači</string>
+  <string name="opposite_toggles">Skrývat opačně s přepínači</string>
   <!--Weather Codes-->
   <string name="weather_0">Tornádo</string>
   <string name="weather_1">Tropická bouře</string>
@@ -663,7 +665,7 @@
   <string name="vib_dialog_name">Název:</string>
   <string name="vib_cur_loaded_title">Načteno:</string>
   <string name="help">Nápověda</string>
-  <string name="vibration_detailed_help">Vytvářet vlastní vibrační vzory je možné v 5 jednoduchých krocích:\n\n    - Stisknout Nový/Reset\n\n    - Stisknout Nahrát\n\n    - Nahrát vzor mačkáním tlačítka STISK!\n\n    - Stisknout Zastavit\n\n    - Stisknout Uložit, zadat název a opět stisknout OK\n\n\n    Zkontrolovat aktuální vzor je možné ihned tlačítkem Spustit.\n\n    Upravení existujícího vzoru je možné stisknutím Načíst, vybráním uloženého vzoru, znovu-nahráním a opětovným uložením (vzorb bude přepsán, i když bude zvoleno jiné jméno).\n\n    Pro smazání vibračního vzoru je třeba strisknout Smazat, vybrat vzor a poté znovu stisknout Smazat. Výchozí vibrace nemůže být smazána.\n\n\n    Výchozí vibraci pro příchozí hovory je možné zvolit v nastavení hovorů, nebo nastavení zvuku.\n \n    Též je možné přiřadit vibrační vzory jednotlivým kontaktům: po načtení kontaktu stiskem Menu/Nastavit vibrační vzor.</string>
+  <string name="vibration_detailed_help">Vytvářet vlastní vibrační vzory je možné v 5 jednoduchých krocích:\n\n    - Stisknout Nový/Reset\n\n    - Stisknout Nahrát\n\n    - Nahrát vzor mačkáním tlačítka STISK!\n\n    - Stisknout Zastavit\n\n    - Stisknout Uložit, zadat název a opět stisknout OK\n\n\n    Zkontrolovat aktuální vzor je možné ihned tlačítkem Spustit.\n\n    Upravení existujícího vzoru je možné stiskem Načíst, vybráním uloženého vzoru, znovu-nahráním a opětovným uložením (vzorb bude přepsán, i když bude zvoleno jiné jméno).\n\n    Pro smazání vibračního vzoru je třeba strisknout Smazat, vybrat vzor a poté znovu stisknout Smazat. Výchozí vibrace nemůže být smazána.\n\n\n    Výchozí vibraci pro příchozí hovory je možné zvolit v nastavení hovorů, nebo nastavení zvuku.\n \n    Též je možné přiřadit vibrační vzory jednotlivým kontaktům: po načtení kontaktu stiskem Menu/Nastavit vibrační vzor.</string>
   <!--boot animation stuff-->
   <string name="insult_jerk">Jerk!</string>
   <string name="insult_protekk">ProTekk!</string>

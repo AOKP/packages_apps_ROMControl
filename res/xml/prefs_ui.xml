@@ -35,7 +35,7 @@
             android:key="notification_wallpaper_alpha"
             android:title="@string/notif_wallpaper_alpha_title" />
 
-         <CheckBoxPreference
+        <CheckBoxPreference
             android:key="status_bar_notif_count"
             android:title="@string/status_bar_notif_count_title"
             android:summary="@string/status_bar_notif_count_summary"
@@ -45,6 +45,12 @@
             android:key="vibrate_notif_expand"
             android:title="@string/vibrate_notif_expand_title"
             android:summary="@string/vibrate_notif_expand_summary" />
+
+        <CheckBoxPreference
+            android:key="notification_show_wifi_ssid"
+            android:title="@string/notification_show_wifi_ssid_title"
+            android:summary="@string/notification_show_wifi_ssid_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

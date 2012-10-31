@@ -91,11 +91,13 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
+    private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
+    
 
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
@@ -119,6 +121,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mDualpane;
     CheckBoxPreference mVibrateOnExpand;
     Preference mLcdDensity;
+    CheckBoxPreference mShowWifiName;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -234,6 +237,10 @@ public class UserInterface extends AOKPPreferenceFragment {
         mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
         mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.VIBRATE_NOTIF_EXPAND, true));
+
+        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+        mShowWifiName.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, false));
 
         if (mTablet) {
             prefs.removePreference(mNotificationWallpaper);
@@ -472,6 +479,11 @@ public class UserInterface extends AOKPPreferenceFragment {
                     Settings.System.VIBRATE_NOTIF_EXPAND,
                     ((CheckBoxPreference) preference).isChecked());
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mShowWifiName) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         }
 

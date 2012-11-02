@@ -27,6 +27,14 @@
             android:title="@string/lockscreen_wallpaper_title"
             android:summary="@string/lockscreen_wallpaper_summary" />
 
+        <Preference
+            android:key="lockscreen_clock_align"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_clock_align_title"
+            android:title="@string/lockscreen_clock_align_title"
+            android:entries="@array/lockscreen_clock_align_entries"
+            android:entryValues="@array/lockscreen_clock_align_values"/>
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lockscreen_text_color"
             android:title="@string/lockscreen_text_color_title"

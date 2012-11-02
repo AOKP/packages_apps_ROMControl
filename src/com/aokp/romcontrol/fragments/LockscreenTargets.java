@@ -576,6 +576,10 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     }
 
     @Override
+    public void onTargetChange(View view, final int target) {
+    }
+
+    @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = target;
         if (target >= 0) {

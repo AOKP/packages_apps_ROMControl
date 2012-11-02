@@ -71,6 +71,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final boolean DEBUG = true;
 
     private static final String PREF_LOCKSCREEN_BATTERY = "lockscreen_battery";
+    private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
     private static final String PREF_LOCKSCREEN_TEXT_COLOR = "lockscreen_text_color";
     private static final String PREF_LOCKSCREEN_MENU_UNLOCK = "lockscreen_menu_unlock";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
@@ -103,6 +104,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     Preference mLockscreenTargets;
 
     CheckBoxPreference mLockscreenBattery;
+    ListPreference mClockAlign;
     ColorPickerPreference mLockscreenTextColor;
     CheckBoxPreference mLockscreenMenuUnlock;
     CheckBoxPreference mVolumeMusic;
@@ -151,6 +153,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mVolumeRockerWake = (CheckBoxPreference) findPreference(PREF_VOLUME_ROCKER_WAKE);
         mVolumeRockerWake.setChecked(Settings.System.getBoolean(mContext
                 .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN, false));
+
+        mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
+        mClockAlign.setOnPreferenceChangeListener(this);
+        mClockAlign.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_CLOCK_ALIGN, 2) + "");
 
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
@@ -453,6 +460,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, intHex);
             if (DEBUG) Log.d(TAG, String.format("new color hex value: %d", intHex));
+        } else if (preference == mClockAlign) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
+                    mClockAlign.setSummary(mClockAlign.getEntries()[value]);
+            return true;
         } else if (preference == mLockscreenWeatherType) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),

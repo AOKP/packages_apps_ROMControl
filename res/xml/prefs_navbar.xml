@@ -51,6 +51,10 @@
                 android:title="@string/title_navring_amount"
                 android:summary="@string/summary_navring_amount" />
 
+        <CheckBoxPreference
+                android:key="enable_navring_long"
+                android:title="@string/navring_enable_long" />
+
         <Preference
                 android:key="navring_settings"
                 android:title="@string/interface_navring_settings_title"

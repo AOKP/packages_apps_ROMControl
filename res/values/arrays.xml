@@ -553,6 +553,19 @@
         <item>4000</item>
     </string-array>
 
+    <!-- lockscreen clock alignment arrays -->
+    <string-array name="lockscreen_clock_align_entries">
+        <item>@string/lockscreen_clock_align_left</item>
+        <item>@string/lockscreen_clock_align_center</item>
+        <item>@string/lockscreen_clock_align_right</item>
+    </string-array>
+
+    <string-array name="lockscreen_clock_align_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="pref_lockscreen_calendar_interval_entries" translatable="false">
         <item>@string/time_1_second</item>
         <item>@string/time_1_5_seconds</item>

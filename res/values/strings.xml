@@ -433,6 +433,10 @@
     <string name="lockscreen_weather_cat">Weather</string>
     <string name="lockscreen_calendar_cat">Calendar</string>
 
+    <string name="lockscreen_clock_align_title">Clock alignment</string>
+    <string name="lockscreen_clock_align_left">Left</string>
+    <string name="lockscreen_clock_align_center">Center</string>
+    <string name="lockscreen_clock_align_right">Right</string>
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
     <string name="lockscreen_menu_unlock_title">Menu unlock</string>

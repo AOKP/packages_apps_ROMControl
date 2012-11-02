@@ -38,12 +38,18 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     private String mString;
 
     private int mNavRingAmount;
+    private boolean mNavRingLong;
 
     NavBarItemPreference mRing1;
     NavBarItemPreference mRing2;
     NavBarItemPreference mRing3;
     NavBarItemPreference mRing4;
     NavBarItemPreference mRing5;
+    NavBarItemPreference mLongRing1;
+    NavBarItemPreference mLongRing2;
+    NavBarItemPreference mLongRing3;
+    NavBarItemPreference mLongRing4;
+    NavBarItemPreference mLongRing5;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,28 +92,110 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
         mRing5.setSummary(getProperSummary(mRing5));
         mRing5.setIcon(resize(getNavbarIconImage(mRing5)));
 
+        mLongRing1 = (NavBarItemPreference) findPreference("interface_navring_1_long");
+        mLongRing1.setOnPreferenceChangeListener(this);
+        mLongRing1.setSummary(getProperSummary(mLongRing1));
+        mLongRing1.setIcon(resize(getNavbarIconImage(mLongRing1)));
+
+        mLongRing2 = (NavBarItemPreference) findPreference("interface_navring_2_long");
+        mLongRing2.setOnPreferenceChangeListener(this);
+        mLongRing2.setSummary(getProperSummary(mLongRing2));
+        mLongRing2.setIcon(resize(getNavbarIconImage(mLongRing2)));
+
+        mLongRing3 = (NavBarItemPreference) findPreference("interface_navring_3_long");
+        mLongRing3.setOnPreferenceChangeListener(this);
+        mLongRing3.setSummary(getProperSummary(mLongRing3));
+        mLongRing3.setIcon(resize(getNavbarIconImage(mLongRing3)));
+
+        mLongRing4 = (NavBarItemPreference) findPreference("interface_navring_4_long");
+        mLongRing4.setOnPreferenceChangeListener(this);
+        mLongRing4.setSummary(getProperSummary(mLongRing4));
+        mLongRing4.setIcon(resize(getNavbarIconImage(mLongRing4)));
+
+        mLongRing5 = (NavBarItemPreference) findPreference("interface_navring_5_long");
+        mLongRing5.setOnPreferenceChangeListener(this);
+        mLongRing5.setSummary(getProperSummary(mLongRing5));
+        mLongRing5.setIcon(resize(getNavbarIconImage(mLongRing5)));
+
         mNavRingAmount = Settings.System.getInt(mContext.getContentResolver(),
                          Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
 
-        switch (mNavRingAmount) {
-        case NAVRING_ONE:
-            prefs.removePreference(mRing2);
-            prefs.removePreference(mRing3);
-            prefs.removePreference(mRing4);
-            prefs.removePreference(mRing5);
-        case NAVRING_TWO:
-            prefs.removePreference(mRing3);
-            prefs.removePreference(mRing4);
-            prefs.removePreference(mRing5);
-        case NAVRING_THREE:
-            prefs.removePreference(mRing4);
-            prefs.removePreference(mRing5);
-        case NAVRING_FOUR:
-            prefs.removePreference(mRing5);
-        default:
-            //leave them all
-        }
+        mNavRingLong = Settings.System.getBoolean(mContext.getContentResolver(),
+                         Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE, false);
 
+        if (mNavRingLong) {
+            switch (mNavRingAmount) {
+            case NAVRING_ONE:
+                prefs.removePreference(mRing2);
+                prefs.removePreference(mRing3);
+                prefs.removePreference(mRing4);
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing2);
+                prefs.removePreference(mLongRing3);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            case NAVRING_TWO:
+                prefs.removePreference(mRing3);
+                prefs.removePreference(mRing4);
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing3);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            case NAVRING_THREE:
+                prefs.removePreference(mRing4);
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            case NAVRING_FOUR:
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing5);
+            default:
+                //leave them all
+            }
+        } else {
+            switch (mNavRingAmount) {
+            case NAVRING_ONE:
+                prefs.removePreference(mRing2);
+                prefs.removePreference(mRing3);
+                prefs.removePreference(mRing4);
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing1);
+                prefs.removePreference(mLongRing2);
+                prefs.removePreference(mLongRing3);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            case NAVRING_TWO:
+                prefs.removePreference(mRing3);
+                prefs.removePreference(mRing4);
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing1);
+                prefs.removePreference(mLongRing2);
+                prefs.removePreference(mLongRing3);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            case NAVRING_THREE:
+                prefs.removePreference(mRing4);
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing1);
+                prefs.removePreference(mLongRing2);
+                prefs.removePreference(mLongRing3);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            case NAVRING_FOUR:
+                prefs.removePreference(mRing5);
+                prefs.removePreference(mLongRing1);
+                prefs.removePreference(mLongRing2);
+                prefs.removePreference(mLongRing3);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            default:
+                prefs.removePreference(mLongRing1);
+                prefs.removePreference(mLongRing2);
+                prefs.removePreference(mLongRing3);
+                prefs.removePreference(mLongRing4);
+                prefs.removePreference(mLongRing5);
+            }
+        }
     }
 
     @Override
@@ -169,6 +257,61 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
             mRing5.setSummary(getProperSummary(mRing5));
             mRing5.setIcon(resize(getNavbarIconImage(mRing5)));
             }
+        } else if (preference == mLongRing1) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_1;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_LONG_1, (String) newValue);
+            mLongRing1.setSummary(getProperSummary(mLongRing1));
+            mLongRing1.setIcon(resize(getNavbarIconImage(mLongRing1)));
+            }
+        } else if (preference == mLongRing2) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_2;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_LONG_2, (String) newValue);
+            mLongRing2.setSummary(getProperSummary(mLongRing2));
+            mLongRing2.setIcon(resize(getNavbarIconImage(mLongRing2)));
+            }
+        } else if (preference == mLongRing3) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_3;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_LONG_3, (String) newValue);
+            mLongRing3.setSummary(getProperSummary(mLongRing3));
+            mLongRing3.setIcon(resize(getNavbarIconImage(mLongRing3)));
+            }
+        } else if (preference == mLongRing4) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_4;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_LONG_4, (String) newValue);
+            mLongRing4.setSummary(getProperSummary(mLongRing4));
+            mLongRing4.setIcon(resize(getNavbarIconImage(mLongRing4)));
+            }
+        } else if (preference == mLongRing5) {
+            mPreference = preference;
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_5;
+            if (newValue.equals("app")) {
+             mPicker.pickShortcut();
+            } else {
+            result = Settings.System.putString(getContentResolver(),
+                       Settings.System.SYSTEMUI_NAVRING_LONG_5, (String) newValue);
+            mLongRing5.setSummary(getProperSummary(mLongRing5));
+            mLongRing5.setIcon(resize(getNavbarIconImage(mLongRing5)));
+            }
         }
         return result;
     }
@@ -200,6 +343,16 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
             mString = Settings.System.SYSTEMUI_NAVRING_4;
         } else if (preference == mRing5) {
             mString = Settings.System.SYSTEMUI_NAVRING_5;
+        } else if (preference == mLongRing1) {
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_1;
+        } else if (preference == mLongRing2) {
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_2;
+        } else if (preference == mLongRing3) {
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_3;
+        } else if (preference == mLongRing4) {
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_4;
+        } else if (preference == mLongRing5) {
+            mString = Settings.System.SYSTEMUI_NAVRING_LONG_5;
         }
 
         String uri = Settings.System.getString(getActivity().getContentResolver(),mString);
@@ -224,6 +377,8 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
                 return getResources().getString(R.string.kill_app);
         } else if (uri.equals("screenoff")) {
                 return getResources().getString(R.string.screen_off);
+        } else if (uri.equals("power")) {
+                return getResources().getString(R.string.menu_power);
         } else if (uri.equals("assist")) {
                 return getResources().getString(R.string.google_now);
         } else {
@@ -265,6 +420,8 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
             } else if (uri.equals("killcurrent")) {
                 return getResources().getDrawable(R.drawable.ic_navbar_killtask);
             } else if (uri.equals("screenoff")) {
+                return getResources().getDrawable(R.drawable.ic_navbar_power);
+            } else if (uri.equals("power")) {
                 return getResources().getDrawable(R.drawable.ic_navbar_power);
             } else if (uri.equals("assist")) {
                 return getResources().getDrawable(R.drawable.ic_navbar_googlenow);

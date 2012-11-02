@@ -355,7 +355,16 @@
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
     <string name="interface_softkey_settings">Softkey Settings</string>
-    <string name="interface_softkeys_pref_default_title">Click to select activity</string>
+    <string name="interface_softkeys_pref_default_1_title">Target 1 short press activity</string>
+    <string name="interface_softkeys_pref_long_1_title">Target 1 long press activity</string>
+    <string name="interface_softkeys_pref_default_2_title">Target 2 short press activity</string>
+    <string name="interface_softkeys_pref_long_2_title">Target 2 long press activity</string>
+    <string name="interface_softkeys_pref_default_3_title">Target 3 short press activity</string>
+    <string name="interface_softkeys_pref_long_3_title">Target 3 long press activity</string>
+    <string name="interface_softkeys_pref_default_4_title">Target 4 short press activity</string>
+    <string name="interface_softkeys_pref_long_4_title">Target 4 long press activity</string>
+    <string name="interface_softkeys_pref_default_5_title">Target 5 short press activity</string>
+    <string name="interface_softkeys_pref_long_5_title">Target 5 long press activity</string>
     <string name="interface_softkeys_pref_default_summary">Tap the settings icon to select a custom long press activity</string>
     <string name="interface_softkeys_activity_dialog_title">Select Activity</string>
     <string name="interface_softkeys_reboot_title">Reboot Menu</string>
@@ -769,6 +778,7 @@
     <string name="power">Power</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
+    <string name="menu_power">Power menu</string>
     <string name="blank">Blank</string>
     <string name="none">None</string>
     <string name="take_screenshot">Take Screenshot</string>

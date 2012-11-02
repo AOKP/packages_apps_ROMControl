@@ -3,31 +3,61 @@
 
         <com.aokp.romcontrol.widgets.NavBarItemPreference
             android:key="interface_navring_1_release"
-            android:title="@string/interface_softkeys_pref_default_title"
+            android:title="@string/interface_softkeys_pref_default_1_title"
+            android:entries="@array/navring_dialog_entries"
+            android:entryValues="@array/navring_dialog_values" />
+
+        <com.aokp.romcontrol.widgets.NavBarItemPreference
+            android:key="interface_navring_1_long"
+            android:title="@string/interface_softkeys_pref_long_1_title"
             android:entries="@array/navring_dialog_entries"
             android:entryValues="@array/navring_dialog_values" />
 
         <com.aokp.romcontrol.widgets.NavBarItemPreference
             android:key="interface_navring_2_release"
-            android:title="@string/interface_softkeys_pref_default_title"
+            android:title="@string/interface_softkeys_pref_default_2_title"
+            android:entries="@array/navring_dialog_entries"
+            android:entryValues="@array/navring_dialog_values" />
+
+        <com.aokp.romcontrol.widgets.NavBarItemPreference
+            android:key="interface_navring_2_long"
+            android:title="@string/interface_softkeys_pref_long_2_title"
             android:entries="@array/navring_dialog_entries"
             android:entryValues="@array/navring_dialog_values" />
 
         <com.aokp.romcontrol.widgets.NavBarItemPreference
             android:key="interface_navring_3_release"
-            android:title="@string/interface_softkeys_pref_default_title"
+            android:title="@string/interface_softkeys_pref_default_3_title"
+            android:entries="@array/navring_dialog_entries"
+            android:entryValues="@array/navring_dialog_values" />
+
+        <com.aokp.romcontrol.widgets.NavBarItemPreference
+            android:key="interface_navring_3_long"
+            android:title="@string/interface_softkeys_pref_long_3_title"
             android:entries="@array/navring_dialog_entries"
             android:entryValues="@array/navring_dialog_values" />
 
         <com.aokp.romcontrol.widgets.NavBarItemPreference
             android:key="interface_navring_4_release"
-            android:title="@string/interface_softkeys_pref_default_title"
+            android:title="@string/interface_softkeys_pref_default_4_title"
+            android:entries="@array/navring_dialog_entries"
+            android:entryValues="@array/navring_dialog_values" />
+
+        <com.aokp.romcontrol.widgets.NavBarItemPreference
+            android:key="interface_navring_4_long"
+            android:title="@string/interface_softkeys_pref_long_4_title"
             android:entries="@array/navring_dialog_entries"
             android:entryValues="@array/navring_dialog_values" />
 
         <com.aokp.romcontrol.widgets.NavBarItemPreference
             android:key="interface_navring_5_release"
-            android:title="@string/interface_softkeys_pref_default_title"
+            android:title="@string/interface_softkeys_pref_default_5_title"
+            android:entries="@array/navring_dialog_entries"
+            android:entryValues="@array/navring_dialog_values" />
+
+        <com.aokp.romcontrol.widgets.NavBarItemPreference
+            android:key="interface_navring_5_long"
+            android:title="@string/interface_softkeys_pref_long_5_title"
             android:entries="@array/navring_dialog_entries"
             android:entryValues="@array/navring_dialog_values" />
 

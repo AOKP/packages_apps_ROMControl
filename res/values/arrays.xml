@@ -167,7 +167,7 @@
         <item>@string/toggle_widgets</item>
         <item>@string/open_ime_switcher</item>
         <item>@string/kill_app</item>
-        <item>@string/power</item>
+        <item>@string/menu_power</item>
         <item>@string/notifications</item>
         <item>@string/custom_app</item>
         <item>@string/blank</item>
@@ -196,6 +196,7 @@
         <item>@string/ring_vib_silent</item>
         <item>@string/kill_app</item>
         <item>@string/screen_off</item>
+        <item>@string/power</item>
         <item>@string/google_now</item>
         <item>@string/select_application</item>
     </string-array>
@@ -209,6 +210,7 @@
         <item>ring_vib_silent</item>
         <item>killcurrent</item>
         <item>screenoff</item>
+        <item>power</item>
         <item>assist</item>
         <item>app</item>
     </string-array>

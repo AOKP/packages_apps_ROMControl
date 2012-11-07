@@ -3,6 +3,9 @@
     <!-- Whether or not to display the notification LED settings -->
     <bool name="has_notification_led">true</bool>
 
+    <!-- Whether or not to display the Spen settings -->
+    <bool name="config_stylusGestures">false</bool>
+
     <!-- Whether device has camera flash or torch capabilities -->
     <bool name="has_torch">true</bool>
 

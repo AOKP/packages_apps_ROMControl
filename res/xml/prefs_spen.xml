@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <CheckBoxPreference
+            android:key="enable_spen"
+            android:title= "@string/spen_enable"
+            android:summary= "@string/spen_enable_summary"  />
+
+        <ListPreference
+            android:key="spen_left"
+            android:dependency="enable_spen"
+            android:title="@string/spen_left_title"
+            android:entries="@array/navbar_button_entries"
+            android:entryValues="@array/navbar_button_values" />
+
+        <ListPreference
+            android:key="spen_right"
+            android:dependency="enable_spen"
+            android:title="@string/spen_right_title"
+            android:entries="@array/navbar_button_entries"
+            android:entryValues="@array/navbar_button_values" />
+
+        <ListPreference
+            android:key="spen_up"
+            android:dependency="enable_spen"
+            android:title="@string/spen_up_title"
+            android:entries="@array/navbar_button_entries"
+            android:entryValues="@array/navbar_button_values" />
+
+        <ListPreference
+            android:key="spen_down"
+            android:dependency="enable_spen"
+            android:title="@string/spen_down_title"
+            android:entries="@array/navbar_button_entries"
+            android:entryValues="@array/navbar_button_values" />
+
+        <ListPreference
+            android:key="spen_double"
+            android:dependency="enable_spen"
+            android:title="@string/spen_double_title"
+            android:entries="@array/navbar_button_entries"
+            android:entryValues="@array/navbar_button_values" />
+
+        <ListPreference
+            android:key="spen_long"
+            android:dependency="enable_spen"
+            android:title="@string/spen_long_title"
+            android:entries="@array/navbar_button_entries"
+            android:entryValues="@array/navbar_button_values" />
+
+</PreferenceScreen>

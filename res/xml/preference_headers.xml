@@ -80,6 +80,13 @@
         android:summary="@string/header_summary_led" />
 
     <header
+        android:id="@+id/spen"
+        android:fragment="com.aokp.romcontrol.fragments.SPenGestures"
+        android:title="@string/spen_options"
+        android:icon="@drawable/ic_rom_control_spen"
+        android:summary="@string/header_summary_spen" />
+
+    <header
         android:id="@+id/sound"
         android:fragment="com.aokp.romcontrol.fragments.Sound"
         android:title="@string/sound"

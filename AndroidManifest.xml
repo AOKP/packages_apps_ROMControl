@@ -80,6 +80,24 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.NavRingTargets"
+            android:label="@string/title_navring" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.SPenGestures"
+            android:label="@string/title_spen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.LEDControl"
             android:label="@string/title_led" >
             <intent-filter>

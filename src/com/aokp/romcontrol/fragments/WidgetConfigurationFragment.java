@@ -9,7 +9,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -27,7 +26,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 
-//import com.aokp.romcontrol.NavBarWidget;
+
 import com.aokp.romcontrol.R;
 
 import java.util.ArrayList;
@@ -42,13 +41,10 @@ public class WidgetConfigurationFragment extends DialogFragment {
     private ViewPager mViewPager;
     WidgetPagerAdapter mAdapter;
     Context mContext;
-    ImageView mWidgetView;
-    int[] mWidgetResId;
-    String[] mProvider;
     TextView mTitle;
     TextView mSummary;
     AppWidgetManager mAppWidgetManager;
-    View mView;
+    View mPrefView;
     ArrayList<NavBarWidget> mWidgets = new ArrayList<NavBarWidget>();
     protected int mCurrentPage;
 
@@ -62,8 +58,8 @@ public class WidgetConfigurationFragment extends DialogFragment {
             // Need to De-Allocate the ID that this was replacing.
             if (mWidgets.get(mCurrentPage).getWidgetId() != -1) {
                 Intent delete = new Intent();
-                delete.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
-                        mWidgets.get(mCurrentPage).getWidgetId());
+                int dealloc = mWidgets.get(mCurrentPage).getWidgetId();
+                delete.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, dealloc);
                 delete.setAction(ACTION_DEALLOCATE_ID);
                 mContext.sendBroadcast(delete);
                 mWidgets.remove(mCurrentPage);
@@ -71,7 +67,6 @@ public class WidgetConfigurationFragment extends DialogFragment {
             mWidgets.add(mCurrentPage ,new NavBarWidget(widgetId));
             saveWidgets();
             refreshParams();
-            mViewPager.setCurrentItem(0); // Hack to force a move.
             mViewPager.setCurrentItem(mCurrentPage);
             updateSummary(mCurrentPage);
         };
@@ -79,40 +74,40 @@ public class WidgetConfigurationFragment extends DialogFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.navbar_widgets, container, false);
-        mViewPager = (ViewPager) mView.findViewById(R.id.pager);
+        mPrefView = inflater.inflate(R.layout.navbar_widgets, container, false);
+        mViewPager = (ViewPager) mPrefView.findViewById(R.id.pager);
         mCurrentPage = 0;
-        ImageButton widgetbutton = (ImageButton) mView.findViewById(R.id.button_shift_left);
+        ImageButton widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_shift_left);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
                 shiftleftWidget(mCurrentPage);
             }
         });
-        widgetbutton = (ImageButton) mView.findViewById(R.id.button_shift_right);
+        widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_shift_right);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
                 shiftrightWidget(mCurrentPage);
             }
         });
-        widgetbutton = (ImageButton) mView.findViewById(R.id.button_delete);
+        widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_delete);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
                 removeWidget(mCurrentPage);
             }
         });
-        widgetbutton = (ImageButton) mView.findViewById(R.id.button_reset_widgets);
+        widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_reset_widgets);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
                 resetNavBarWidgets();
             }
         });
-        mTitle = (TextView) mView.findViewById(R.id.title);
-        mSummary = (TextView) mView.findViewById(R.id.summary);
-        return mView;
+        mTitle = (TextView) mPrefView.findViewById(R.id.title);
+        mSummary = (TextView) mPrefView.findViewById(R.id.summary);
+        return mPrefView;
     }
 
     @Override
@@ -124,13 +119,18 @@ public class WidgetConfigurationFragment extends DialogFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mContext = getActivity().getApplicationContext();
-        //mContext = getActivity().getBaseContext();
+        mContext = activity.getApplicationContext();
         IntentFilter filter = new IntentFilter(ACTION_SEND_ID);
         mContext.registerReceiver(mWidgetIdReceiver, filter);
         mAppWidgetManager = AppWidgetManager.getInstance(mContext);
     }
-    
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext.unregisterReceiver(mWidgetIdReceiver);
+    }
+
     private void shiftleftWidget(int page) {
         if (page > 0 && mWidgets.size() > 1 && (page < mWidgets.size()-1)) {
             NavBarWidget moveme = mWidgets.remove(page);
@@ -247,14 +247,13 @@ public class WidgetConfigurationFragment extends DialogFragment {
             mSummary.setText(mContext.getResources().getString(R.string.navbar_widget_summary_add));
             mTitle.setText("");
         }
-        mView.invalidate(); // force redraw
+        mPrefView.invalidate(); // force redraw
     }
 
     public SimpleOnPageChangeListener mNewPageListener = new SimpleOnPageChangeListener() {
 
         @Override
         public void onPageSelected(int page) {
-            Log.d(TAG, "Page Selected:" + page);
             int dp = mAdapter.getHeight(page);
             float px = dp * mContext.getResources().getDisplayMetrics().density;
             mCurrentPage = page;

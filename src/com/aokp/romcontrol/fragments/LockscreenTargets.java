@@ -105,7 +105,6 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
 
     private final static List<String> NO_LOCK_LIST = Arrays.asList(NO_LOCK_CMP);
 
-    private GlowPadView mWaveView;
     private ImageButton mDialogIcon;
     private Button mDialogLabel;
     private ShortcutPickerHelper mPicker;
@@ -115,6 +114,8 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     private boolean mIsLandscape;
     private boolean mIsScreenLarge;
     private ViewGroup mContainer;
+    private View mUnlockWidget;
+    private GlowPadView glowPadView;
     private Activity mActivity;
     private Resources mResources;
     private File mImageTmp;
@@ -195,9 +196,18 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mWaveView = ((GlowPadView) mActivity.findViewById(com.android.internal.R.id.unlock_widget));
-        mWaveView.setOnTriggerListener(this);
+        mUnlockWidget = mActivity.findViewById(com.android.internal.R.id.unlock_widget);
+        createUnlockMethods(mUnlockWidget);
         initializeView(Settings.System.getString(mActivity.getContentResolver(), Settings.System.LOCKSCREEN_TARGETS));
+    }
+
+    private void createUnlockMethods(View unlockWidget) {
+        if (unlockWidget instanceof GlowPadView) {
+            glowPadView = (GlowPadView) unlockWidget;
+            glowPadView.setOnTriggerListener(this);
+        } else {
+            throw new IllegalStateException("Unrecognized unlock widget: " + unlockWidget);
+        }
     }
 
     /**
@@ -330,7 +340,7 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
                 tDraw.add(new TargetDrawable(mResources, null));
             }
         }
-        mWaveView.setTargetResources(tDraw);
+        glowPadView.setTargetResources(tDraw);
     }
 
     @Override

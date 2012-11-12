@@ -335,9 +335,18 @@
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>
-  <string name="interface_softkeys_pref_default_title">Dotykem vybrat aktivitu</string>
-  <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat akitivitu dlouhého stisku</string>
-  <string name="interface_softkeys_activity_dialog_title">Vybrat aktivitu</string>
+  <string name="interface_softkeys_pref_default_1_title">Událost stisku 1. položky</string>
+  <string name="interface_softkeys_pref_long_1_title">Událost dlouhého stisku 1. položky</string>
+  <string name="interface_softkeys_pref_default_2_title">Událost stisku 2. položky</string>
+  <string name="interface_softkeys_pref_long_2_title">Událost dlouhého stisku 2. položky</string>
+  <string name="interface_softkeys_pref_default_3_title">Událost stisku 3. položy</string>
+  <string name="interface_softkeys_pref_long_3_title">Událost dlouhého stisku 3. položky</string>
+  <string name="interface_softkeys_pref_default_4_title">Událost stisku 4. položky</string>
+  <string name="interface_softkeys_pref_long_4_title">Událost dlouhého stisku 4. položky</string>
+  <string name="interface_softkeys_pref_default_5_title">Událost stisku 5. položky</string>
+  <string name="interface_softkeys_pref_long_5_title">Událost dlouhého stisku 5. položky</string>
+  <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat událost dlouhého stisku</string>
+  <string name="interface_softkeys_activity_dialog_title">Vybrat událost</string>
   <string name="interface_softkeys_reboot_title">Menu restartování</string>
   <string name="interface_softkeys_screenshot_title">Snímek obrazovky</string>
   <string name="interface_softkeys_screenoff_title">Vypnutí obrazovky</string>
@@ -356,6 +365,7 @@
   <string name="interface_navring_assist_title">Google Now</string>
   <string name="interface_navring">Položky kruhu</string>
   <string name="navbar_ring">Vlastní položky kruhu</string>
+  <string name="navring_enable_long">Zapnout dlouhý stisk pro kruh</string>
   <!--LED-->
   <string name="led_on">LED svítí</string>
   <string name="led_time_on">Doba po kterou LED svítí</string>
@@ -719,6 +729,7 @@
   <string name="power">Napájení</string>
   <string name="notifications">Notifikace</string>
   <string name="custom_app">Vlastní aplikace</string>
+  <string name="menu_power">Mmenu napájení</string>
   <string name="blank">Prázdné</string>
   <string name="none">Nic</string>
   <string name="take_screenshot">Pořídit snímek obrazovky</string>
@@ -746,6 +757,7 @@
   <string name="bottom_of_navbar">Vespod navigační lišty</string>
   <string name="regular">Normální</string>
   <string name="center_mirrored">Na střed se zrcadlením</string>
+  <string name="size_0_dp">0 bodů (vypnuto)</string>
   <string name="size_1_dp">1 bod</string>
   <string name="size_2_dp">2 body</string>
   <string name="size_3_dp">3 body</string>

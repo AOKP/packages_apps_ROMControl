@@ -73,6 +73,13 @@
         android:title="@string/header_system" />
 
     <header
+        android:id="@+id/softkey"
+        android:fragment="com.aokp.romcontrol.fragments.SoftKeyOptions"
+        android:title="@string/softkey_options"
+	android:icon="@drawable/ic_rom_control_softkey"
+        android:summary="@string/header_summary_softkey" />
+
+    <header
         android:id="@+id/led"
         android:fragment="com.aokp.romcontrol.fragments.LEDControl"
         android:title="@string/led_options"

@@ -3,6 +3,24 @@
     <!-- Whether or not to display the notification LED settings -->
     <bool name="has_notification_led">true</bool>
 
+    <!-- Whether or not to display the notification Softkey settings -->
+    <bool name="has_soft_keys">true</bool>
+
+    <!-- Whether or not device has home key -->
+    <bool name="has_home_key">true</bool>
+
+    <!-- Whether or not device has menu key -->
+    <bool name="has_menu_key">true</bool>
+
+    <!-- Whether or not device has back key -->
+    <bool name="has_back_key">true</bool>
+
+    <!-- Whether or not device has search key -->
+    <bool name="has_search_key">true</bool>
+
+    <!-- Whether or not device has recents key -->
+    <bool name="has_recents_key">false</bool>
+
     <!-- Whether device has camera flash or torch capabilities -->
     <bool name="has_torch">true</bool>
 

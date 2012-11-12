@@ -17,6 +17,7 @@
     <string name="signal">Signal</string>
     <string name="nav_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
+    <string name="softkey_options">Soft Key Options</string>
     <string name="led_options">LED</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
@@ -33,6 +34,7 @@
     <string name="title_statusbar_battery">Statusbar Battery</string>
     <string name="title_navbar">Navigation Bar</string>
     <string name="title_power_menu">Power Menu</string>
+    <string name="title_softkey">Soft Key Options</string>
     <string name="title_led">LED Control</string>
     <string name="title_lockscreens">Lockscreen Options</string>
     <string name="title_lockscreens_targets">Lockscreen Targets</string>
@@ -50,6 +52,7 @@
     <string name="header_summary_signal">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_power_menu">@null</string>
+    <string name="header_summary_softkey">@null</string>
     <string name="header_summary_led">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
@@ -389,6 +392,27 @@
     <string name="interface_navring">Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>
     <string name="navring_enable_long">Enable Longpress for navring</string>
+
+    <!-- Soft Key -->
+    <string name="softkey_home_short_title">Home key short press action</string>
+    <string name="softkey_home_long_title">Home key long press action</string>
+    <string name="softkey_home_double_title">Home key double click action</string>
+    <string name="softkey_menu_short_title">Menu key short press action</string>
+    <string name="softkey_menu_long_title">Menu key long press action</string>
+    <string name="softkey_menu_double_title">Menu key double click action</string>
+    <string name="softkey_back_short_title">Back key short press action</string>
+    <string name="softkey_back_long_title">Back key long press action</string>
+    <string name="softkey_back_double_title">Back key double click action</string>
+    <string name="softkey_search_short_title">Search key short press action</string>
+    <string name="softkey_search_long_title">Search key long press action</string>
+    <string name="softkey_search_double_title">Search key double click action</string>
+    <string name="softkey_recents_short_title">Recents key short press action</string>
+    <string name="softkey_recents_long_title">Recents key long press action</string>
+    <string name="softkey_recents_double_title">Recents key double click action</string>
+    <string name="softkey_enable">Enable Soft Key Options</string>
+    <string name="softkey_enable_summary">Set custom actions for Soft Keys</string>
+    <string name="softkey_enable_double_click">Enable Double Click Options</string>
+    <string name="softkey_enable_double_click_summary">There will be a slight delay in single click to allow time for double click</string>
 
     <!-- LED -->
     <string name="led_on">LED On</string>

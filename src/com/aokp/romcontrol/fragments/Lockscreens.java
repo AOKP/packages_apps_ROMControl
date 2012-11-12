@@ -208,8 +208,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mLockscreenTargets = findPreference("lockscreen_targets");
 
         mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
-        mVolumeMusic.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.VOLUME_MUSIC_CONTROLS, 0) == 1);
+        mVolumeMusic.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, false));
 
         mStockMusicLayout = (CheckBoxPreference) findPreference(PREF_STOCK_MUSIC_LAYOUT);
         mStockMusicLayout.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -318,9 +318,9 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             return true;
         } else if (preference == mVolumeMusic) {
 
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.VOLUME_MUSIC_CONTROLS,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mLockscreenWeather) {
 

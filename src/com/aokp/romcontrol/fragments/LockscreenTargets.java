@@ -665,10 +665,6 @@ public class LockscreenTargets extends AOKPPreferenceFragment implements Shortcu
     }
 
     @Override
-    public void onTargetChange(View v, int target) {
-    }
-
-    @Override
     public void iconPicked(int requestCode, int resultCode, Intent in) {
         Drawable ic = null;
         String iconType = null;

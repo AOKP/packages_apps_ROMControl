@@ -340,6 +340,19 @@
         <item>2</item>
     </string-array>
 
+    <!-- navbar/statusbar background -->
+    <string-array name="navbar_background_entries">
+        <item>@string/navbar_color</item>
+        <item>@string/navbar_defaultbg_plus_color</item>
+        <item>@string/navbar_defaultbg</item>
+    </string-array>
+
+    <string-array name="navbar_background_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Lockscreen delay -->
     <string-array name="lockscreen_delay_entries">
         <item>@string/slide_lock_delay_none</item>

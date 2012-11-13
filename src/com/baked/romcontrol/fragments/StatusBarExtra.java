@@ -67,6 +67,7 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_EXPANDED_CLOCK_COLOR = "expanded_clock_color";
+    private static final String PREF_STATUSBAR_BACKGROUND_STYLE = "statusbar_background_style";
     private static final String PREF_STATUSBAR_BACKGROUND_COLOR = "statusbar_background_color";
     private static final String PREF_STATUSBAR_BRIGHTNESS_SLIDER = "statusbar_brightness_slider";
 
@@ -77,6 +78,7 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
     CheckBoxPreference mStatusBarBrightnessSlider;
     Preference mCustomLabel;
     ListPreference mNotificationBackground;
+    ListPreference mStatusbarBgStyle;
     Preference mWallpaperAlpha;
     ColorPickerPreference mExpandedClockColor;
     ColorPickerPreference mStatusbarBgColor;
@@ -129,6 +131,9 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         mStatusbarBgColor = (ColorPickerPreference) findPreference(PREF_STATUSBAR_BACKGROUND_COLOR);
         mStatusbarBgColor.setOnPreferenceChangeListener(this);
 
+        mStatusbarBgStyle = (ListPreference) findPreference(PREF_STATUSBAR_BACKGROUND_STYLE);
+        mStatusbarBgStyle.setOnPreferenceChangeListener(this);
+
         if (mTablet) {
             prefs.removePreference(mNotificationBackground);
             prefs.removePreference(mWallpaperAlpha);
@@ -136,6 +141,17 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
         }
 
         updateCustomBackgroundSummary();
+        updateVisibility();
+    }
+
+    private void updateVisibility() {
+        int visible = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BACKGROUND_STYLE, 2);
+        if (visible == 2) {
+            mStatusbarBgColor.setEnabled(false);
+        } else {
+            mStatusbarBgColor.setEnabled(true);
+        }
     }
 
     private void updateCustomBackgroundSummary() {
@@ -279,6 +295,15 @@ public class StatusBarExtra extends BAKEDPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_EXPANDED_CLOCK_COLOR, intHex);
             Log.e("BAKED", intHex + "");
+
+        } else if (preference == mStatusbarBgStyle) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mStatusbarBgStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUSBAR_BACKGROUND_STYLE, value);
+            preference.setSummary(mStatusbarBgStyle.getEntries()[index]);
+            updateVisibility();
+            return true;
 
         } else if (preference == mStatusbarBgColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String

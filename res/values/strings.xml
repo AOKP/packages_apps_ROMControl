@@ -488,8 +488,11 @@
     <string name="circles_lock_cat_title">Circle lockscreen settings</string>
     <string name="circles_lock_bg_color_title">Background color</string>
     <string name="circles_lock_ring_color_title">Ring color</string>
+    <string name="circles_lock_ring_alpha_title">Ring alpha</string>
     <string name="circles_lock_halo_color_title">Halo color</string>
+    <string name="circles_lock_halo_alpha_title">Halo alpha</string>
     <string name="circles_lock_wave_color_title">Wave color</string>
+    <string name="circles_lock_wave_alpha_title">Wave alpha</string>
 
     <!-- Lockscreen Targets-->
     <string name="custom_targets">Custom lockscreen targets</string>

@@ -173,15 +173,27 @@
                 android:title="@string/circles_lock_ring_color_title"
                 android:defaultValue="#FFFFFFFF" />
 
+            <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="circles_lock_ring_alpha"
+                android:title="@string/circles_lock_ring_alpha_title" />
+
             <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="circles_lock_halo_color"
                 android:title="@string/circles_lock_halo_color_title"
                 android:defaultValue="#FFFFFFFF" />
 
+            <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="circles_lock_halo_alpha"
+                android:title="@string/circles_lock_halo_alpha_title" />
+
             <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="circles_lock_wave_color"
                 android:title="@string/circles_lock_wave_color_title"
                 android:defaultValue="#D2FFFFFF" />
+
+            <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="circles_lock_wave_alpha"
+                android:title="@string/circles_lock_wave_alpha_title" />
 
     </PreferenceCategory>
 

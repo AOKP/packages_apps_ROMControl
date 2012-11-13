@@ -63,6 +63,7 @@ import com.aokp.romcontrol.ROMControlActivity;
 import com.aokp.romcontrol.fragments.LockscreenTargets;
 import com.aokp.romcontrol.weather.WeatherRefreshService;
 import com.aokp.romcontrol.weather.WeatherService;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 public class Lockscreens extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -91,6 +92,9 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String PREF_CIRCLES_LOCK_RING_COLOR = "circles_lock_ring_color";
     private static final String PREF_CIRCLES_LOCK_HALO_COLOR = "circles_lock_halo_color";
     private static final String PREF_CIRCLES_LOCK_WAVE_COLOR = "circles_lock_wave_color";
+    private static final String PREF_CIRCLES_LOCK_RING_ALPHA = "circles_lock_ring_alpha";
+    private static final String PREF_CIRCLES_LOCK_HALO_ALPHA = "circles_lock_halo_alpha";
+    private static final String PREF_CIRCLES_LOCK_WAVE_ALPHA = "circles_lock_wave_alpha";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -122,6 +126,9 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     ColorPickerPreference mCirclesLockRingColor;
     ColorPickerPreference mCirclesLockHaloColor;
     ColorPickerPreference mCirclesLockWaveColor;
+    SeekBarPreference mCirclesRingAlpha;
+    SeekBarPreference mCirclesHaloAlpha;
+    SeekBarPreference mCirclesWaveAlpha;
 
     ListPreference mTargetNumber;
 
@@ -219,6 +226,27 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
         mCirclesLockWaveColor = (ColorPickerPreference) findPreference(PREF_CIRCLES_LOCK_WAVE_COLOR);
         mCirclesLockWaveColor.setOnPreferenceChangeListener(this);
+
+        float ringAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(),
+                Settings.System.CIRCLES_LOCK_RING_ALPHA, 1.0f);
+        mCirclesRingAlpha = (SeekBarPreference) findPreference(PREF_CIRCLES_LOCK_RING_ALPHA);
+        mCirclesRingAlpha.setInitValue((int) (ringAlpha * 100));
+        mCirclesRingAlpha.setOnPreferenceChangeListener(this);
+
+        float haloAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(),
+                Settings.System.CIRCLES_LOCK_HALO_ALPHA, 1.0f);
+        mCirclesHaloAlpha = (SeekBarPreference) findPreference(PREF_CIRCLES_LOCK_HALO_ALPHA);
+        mCirclesHaloAlpha.setInitValue((int) (haloAlpha * 100));
+        mCirclesHaloAlpha.setOnPreferenceChangeListener(this);
+
+        float waveAlpha = Settings.System.getFloat(getActivity()
+                .getContentResolver(),
+                Settings.System.CIRCLES_LOCK_WAVE_ALPHA, 0.15f);
+        mCirclesWaveAlpha = (SeekBarPreference) findPreference(PREF_CIRCLES_LOCK_WAVE_ALPHA);
+        mCirclesWaveAlpha.setInitValue((int) (waveAlpha * 100));
+        mCirclesWaveAlpha.setOnPreferenceChangeListener(this);
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -500,6 +528,21 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.CIRCLES_LOCK_WAVE_COLOR, intHex);
+            return true;
+        } else if (preference == mCirclesRingAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.CIRCLES_LOCK_RING_ALPHA, val / 100);
+            return true;
+        } else if (preference == mCirclesHaloAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.CIRCLES_LOCK_HALO_ALPHA, val / 100);
+            return true;
+        } else if (preference == mCirclesWaveAlpha) {
+            float val = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.CIRCLES_LOCK_WAVE_ALPHA, val / 100);
             return true;
         }
         return false;

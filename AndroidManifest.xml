@@ -129,14 +129,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".performance.Performance"
-            android:label="@string/title_performance" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".ShareToClipboard"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:icon="@drawable/ic_menu_clipboard"
@@ -163,8 +155,6 @@
                 <category android:name="com.aokp.romcontrol.SHORTCUT" />
             </intent-filter>
         </activity>
-        <provider android:name=".vibrations.VibrationsProvider"
-			android:authorities="com.aokp.romcontrol.Vibrations" /> 
         <activity
             android:name="CreateShortcut"
             android:theme="@style/Theme.CreateShortCut" >
@@ -181,32 +171,5 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <receiver
-            android:name=".service.BootReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".weather.WeatherReceiver"
-            android:enabled="true" >
-            <intent-filter>
-                <action android:name="com.aokp.romcontrol.INTENT_WEATHER_REQUEST" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".performance.RebootReceiver"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.aokp.romcontrol.ACTION_DAILY_REBOOT" />
-                <action android:name="android.intent.action.SCREEN_OFF" />
-            </intent-filter>
-        </receiver>
-        <service android:name=".performance.DailyRebootScheduleService" />
-        <service android:name=".service.BootService" />
-        <service android:name=".service.HeadphoneService" />
-        <service android:name=".service.FlipService" />
-        <service android:name=".weather.WeatherRefreshService" />
-        <service android:name=".weather.WeatherService" />
     </application>
 </manifest>

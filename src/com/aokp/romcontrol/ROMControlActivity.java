@@ -29,8 +29,6 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.aokp.romcontrol.service.BootService;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,15 +52,11 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
 
     Locale defaultLocale;
 
-    boolean mTablet;
     Vibrator mVibrator;
     protected boolean isShortcut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-        mTablet = Settings.System
-                .getBoolean(getContentResolver(), Settings.System.TABLET_UI, false);
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         defaultLocale = Locale.getDefault();
@@ -79,11 +73,6 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             // launch of
             // a specific settings screen.
             setTitle(R.string.app_name);
-        }
-
-        if (!BootService.servicesStarted) {
-            getApplicationContext().startService(
-                    new Intent(getApplicationContext(), BootService.class));
         }
 
         if ("com.aokp.romcontrol.START_NEW_FRAGMENT".equals(getIntent().getAction())) {

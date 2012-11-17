@@ -42,6 +42,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final String PREF_CLOCK_DATE_OPENS = "clock_date_opens";
+    private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
 
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mRecentKillAll;
@@ -50,6 +51,7 @@ public class SystemExtra extends BAKEDPreferenceFragment {
     CheckBoxPreference mUseAltResolver;
     CheckBoxPreference mVibrateOnExpand;
     CheckBoxPreference mClockDateOpens;
+    CheckBoxPreference mDualpane;
     Preference mLcdDensity;
 
     Random randomGenerator = new Random();
@@ -114,6 +116,11 @@ public class SystemExtra extends BAKEDPreferenceFragment {
         mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
 
+        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
+        mDualpane.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
+                com.android.internal.R.bool.preferences_prefer_dual_pane)));
+
         if (mTablet) {
             // if it's a tablet not reason to show the force of a tablet ui
             prefs.removePreference(mForceTabletUI);
@@ -173,7 +180,13 @@ public class SystemExtra extends BAKEDPreferenceFragment {
                     Settings.System.STATUSBAR_TOGGLES_BACKGROUND, 0 / 100);
             return true;
 
-        } else if (preference == mLcdDensity) {
+        } else if (preference == mDualpane) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                Settings.System.FORCE_DUAL_PANEL,
+                ((CheckBoxPreference) preference).isChecked());
+            return true;
+
+        }  else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
                     .startPreferenceFragment(new DensityChanger(), true);
             return true;

@@ -75,6 +75,8 @@
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="clock_date_opens_title">Clock/Date opens</string>
     <string name="clock_date_opens_summary">Notification pulldown clock opens alarms, date opens calendar (requires UI restart)</string>
+    <string name="multipane_ui">Enable Dual panel</string>
+    <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
 
     <!-- system text color test -->
     <string name="primary_text_colors">Change system wide text colors</string>

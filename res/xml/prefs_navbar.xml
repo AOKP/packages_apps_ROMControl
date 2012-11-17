@@ -1,46 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-        <CheckBoxPreference
-            android:key="enable_nav_bar"
-            android:title="@string/navbar_enable_bar" />
+    <CheckBoxPreference
+        android:key="enable_nav_bar"
+        android:title="@string/navbar_enable_bar" />
+
+    <ListPreference
+        android:entries="@array/pref_navigation_menu_entries"
+        android:entryValues="@array/pref_navigation_menu_values"
+        android:key="pref_menu_display"
+        android:title="@string/title_pref_menu_display"
+        android:summary="@string/summary_pref_menu_display" />
+
+    <ListPreference
+        android:entries="@array/pref_navigation_menu_display_entries"
+        android:entryValues="@array/pref_navigation_menu_display_values"
+        android:key="navbar_menu_display"
+        android:title="@string/title_pref_navigation_menu_display"
+        android:summary="@string/summary_pref_navigation_menu_display" />
+
+    <ListPreference
+        android:entries="@array/navigation_bar_qty_entries"
+        android:entryValues="@array/navigation_bar_qty_values"
+        android:key="navbar_qty"
+        android:title="@string/navbar_qty_title"
+        android:summary="@string/navbar_qty_summary" />
+
+    <PreferenceCategory android:title="@string/navbar_bg">
 
         <ListPreference
-            android:entries="@array/pref_navigation_menu_entries"
-            android:entryValues="@array/pref_navigation_menu_values"
-            android:key="pref_menu_display"
-            android:title="@string/title_pref_menu_display"
-            android:summary="@string/summary_pref_menu_display" />
-
-        <ListPreference
-            android:entries="@array/pref_navigation_menu_display_entries"
-            android:entryValues="@array/pref_navigation_menu_display_values"
-            android:key="navbar_menu_display"
-            android:title="@string/title_pref_navigation_menu_display"
-            android:summary="@string/summary_pref_navigation_menu_display" />
-
-        <ListPreference
-            android:entries="@array/navigation_bar_qty_entries"
-            android:entryValues="@array/navigation_bar_qty_values"
-            android:key="navbar_qty"
-            android:title="@string/navbar_qty_title"
-            android:summary="@string/navbar_qty_summary" />
+            android:key="navbar_bg_style"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:persistent="true"
+            android:entries="@array/navbar_background_entries"
+            android:entryValues="@array/navbar_background_values"
+            android:title="@string/navbar_background_style" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="navigation_bar_background_color"
+            android:shouldDisableView="true"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:persistent="true"
             android:title="@string/navbar_bg_color"
             android:defaultValue="#000000"
             alphaSlider="true" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/navbar_button_colors">
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="nav_button_color"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:persistent="true"
             android:title="@string/navigation_bar_tint_title"
-            android:defaultValue="#FFFFFF" />
+            android:defaultValue="#FFFFFF"
+            alphaSlider="true" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="nav_button_glow_color"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:persistent="true"
             android:title="@string/navigation_bar_glow_tint_title"
             android:summary="@string/navigation_bar_glow_tint_summary"
             android:defaultValue="#FFFFFF" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="navbar_buttons"

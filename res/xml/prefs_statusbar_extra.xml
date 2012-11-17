@@ -14,11 +14,25 @@
         android:key="notification_wallpaper_alpha"
         android:title="@string/notif_wallpaper_alpha_title" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="statusbar_background_color"
-        android:title="@string/statusbar_background_color"
-        android:defaultValue="#000000"
-        alphaSlider="true" />
+    <PreferenceCategory android:title="@string/statusbar_bg">
+
+        <ListPreference
+            android:key="statusbar_background_style"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:persistent="true"
+            android:entries="@array/navbar_background_entries"
+            android:entryValues="@array/navbar_background_values"
+            android:title="@string/statusbar_background_style" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="statusbar_background_color"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:persistent="true"
+            android:title="@string/statusbar_background_color"
+            android:defaultValue="#000000"
+            alphaSlider="true" />
+
+    </PreferenceCategory>
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="expanded_clock_color"

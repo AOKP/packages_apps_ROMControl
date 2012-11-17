@@ -130,6 +130,8 @@
     <string name="title_show_sound_chooser">Show vibrate/sound chooser</string>
 
     <!-- Statusbar -->
+    <string name="statusbar_bg">Statusbar background</string>
+    <string name="statusbar_background_style">Statusbar background style</string>
     <string name="statusbar_background_color">Statusbar background color</string>
     <string name="statusbar_brightness_slider_title">Statusbar brightness slider</string>
     <string name="statusbar_brightness_slider_summary">Whether the Statusbar brightness slider is on when you slide across the statusbar</string>
@@ -169,7 +171,7 @@
     <string name="enable_clock_weekday">Day of the week</string>
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
 
-    <!-- Notification status bar clock color -->
+    <!-- Statusbar | notification clock/date color -->
     <string name="expanded_clock_color_title">Statusbar expanded clock/date color</string>
 
     <!-- Statusbar | Signal -->
@@ -296,9 +298,15 @@
     <string name="navbar_widgets_shiftLeft">Shift left</string>
     <string name="navbar_widgets_shiftRight">Shift right</string>
     <string name="navbar_widgets_delete">Delete widget</string>
+    <string name="navbar_bg">Navbar background</string>
+    <string name="navbar_button_colors">Navbar button color</string>
+    <string name="navbar_background_style">Navbar background style</string>
+    <string name="navbar_color">Color/alpha only</string>
+    <string name="navbar_defaultbg_plus_color">Default Bg plus color/alpha</string>
+    <string name="navbar_defaultbg">Default Bg only</string>
 
     <!-- LOCKSCREEN -->
-    <!-- Lock Screen Shortcuts -->
+    <!-- Lockscreen Shortcuts -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
     <string name="lockscreen_target_title">Custom shortcuts</string>
     <string name="lockscreen_target_summary">@null</string>
@@ -311,7 +319,7 @@
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
     <string name="display_lockscreen_rotation_title">Enable lockscreen rotation</string>
 
-    <!-- Lock Screen Weather -->
+    <!-- Lockscreen Weather -->
     <string name="lockscreen_weather_title">Weather</string>
     <string name="lockscreen_weather_summary">@null</string>
     <string name="lockscreen_weather_enabled">Enabled</string>
@@ -337,7 +345,7 @@
     <string name="weather_icons_white_highres">Highres white icons</string>
 
 
-    <!-- Lock screen Weather - Update frequency -->
+    <!-- Lockscreen Weather - Update frequency -->
     <string name="weather_refresh_manual">Manual</string>
     <string name="weather_refresh_30min">30 minutes</string>
     <string name="weather_refresh_60min">60 minutes</string>
@@ -347,7 +355,7 @@
     <string name="weather_refresh_8hrs">8 hours</string>
     <string name="unknown">Unknown</string>
 
-    <!-- Lock screen Calendar -->
+    <!-- Lockscreen Calendar -->
     <string name="lockscreen_calendar_title">Calendar</string>
     <string name="lockscreen_calendar_summary">@null</string>
     <string name="lockscreen_calendar_enabled">Enabled</string>
@@ -360,7 +368,7 @@
     <string name="calendar_show_location_title">Event location</string>
     <string name="calendar_show_description_title">Event description</string>
 
-    <!-- Lock screen calendar - lookahead -->
+    <!-- Lockscreen calendar - lookahead -->
     <string name="calendar_lookahead_3hrs">3 hours</string>
     <string name="calendar_lookahead_6hrs">6 hours</string>
     <string name="calendar_lookahead_12hrs">12 hours</string>
@@ -368,12 +376,12 @@
     <string name="calendar_lookahead_3days">3 days</string>
     <string name="calendar_lookahead_1wk">1 week</string>
 
-    <!-- Lock screen calendar - event metadata -->
+    <!-- Lockscreen calendar - event metadata -->
     <string name="calendar_metadata_none">Do not show</string>
     <string name="calendar_metadata_first_line">Show first line</string>
     <string name="calendar_metadata_all">Show all</string>
 
-    <!-- Lock screen background -->
+    <!-- Lockscreen background -->
     <string name="lockscreen_custom_background_title">Background</string>
     <string name="lockscreen_custom_background_dialog_title">Choose color</string>
     <string name="lockscreen_background_result_successful">Background changed</string>
@@ -390,7 +398,7 @@
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
 
-    <!-- Lock screen shortcuts -->
+    <!-- Lockscreen shortcuts -->
     <!-- String for IconPicker -->
     <string name="wifi_save">Save</string>
     <string name="profile_applist_title">Applications</string>
@@ -426,6 +434,7 @@
     <string name="icon_picker_search">Search</string>
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_unlock">Unlock</string>
     <!-- String for Baked icons -->
     <string name="icon_picker_baked_icons_title">BAKED custom Icons</string>
     <string name="baked_icon_picker_browser">Browser</string>

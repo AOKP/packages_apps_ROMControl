@@ -73,6 +73,7 @@ public class Navbar extends BAKEDPreferenceFragment implements
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_GLOW_TIMES = "glow_times";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
+    private static final String PREF_NAVBAR_BG_STYLE = "navbar_bg_style";
     private static final String ENABLE_NAVIGATION_BAR = "enable_navigation_bar";
     private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
@@ -84,7 +85,6 @@ public class Navbar extends BAKEDPreferenceFragment implements
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
     private static final int DIALOG_NAVBAR_ENABLE = 203;
     private static final int DIALOG_NAVBAR_HEIGHT_REBOOT = 204;
-    private static final int DEFAULT_NAVBAR_BG_COLOR = 0xFF000000;
 
     public static final String PREFS_NAV_BAR = "navbar";
 
@@ -100,11 +100,13 @@ public class Navbar extends BAKEDPreferenceFragment implements
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
+    ListPreference mNavigationBarBgStyle;
     SeekBarPreference mButtonAlpha;
     Preference mConfigureWidgets;
 
     private int mPendingIconIndex = -1;
     private int mPendingWidgetDrawer = -1;
+    private int defaultBgColor = 0xFF000000;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
 
     private static class NavBarCustomAction {
@@ -154,6 +156,9 @@ public class Navbar extends BAKEDPreferenceFragment implements
         mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
 
+        mNavigationBarBgStyle = (ListPreference) findPreference(PREF_NAVBAR_BG_STYLE);
+        mNavigationBarBgStyle.setOnPreferenceChangeListener(this);
+
         mNavigationBarBgColor = (ColorPickerPreference) findPreference(NAVIGATION_BAR_BACKGROUND_COLOR);
         mNavigationBarBgColor.setOnPreferenceChangeListener(this);
 
@@ -189,15 +194,10 @@ public class Navbar extends BAKEDPreferenceFragment implements
 
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
 
-        if (mTablet) {
-            prefs.removePreference(mNavigationBarBgColor);
-        }
-        if (isTablet) {
-            prefs.removePreference(mNavigationBarBgColor);
-        }
         refreshSettings();
         setHasOptionsMenu(true);
         updateGlowTimesSummary();
+        updateVisibility();
     }
 
     @Override
@@ -239,7 +239,9 @@ public class Navbar extends BAKEDPreferenceFragment implements
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[2], "");
 
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_BACKGROUND_COLOR, DEFAULT_NAVBAR_BG_COLOR);
+                        Settings.System.NAVIGATION_BAR_BACKGROUND_STYLE, 2);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NAVIGATION_BAR_BACKGROUND_COLOR, defaultBgColor);
                 refreshSettings();
                 return true;
             default:
@@ -359,6 +361,17 @@ public class Navbar extends BAKEDPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_TINT, intHex);
             return true;
 
+        } else if (preference == mNavigationBarBgStyle) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mNavigationBarBgStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_BACKGROUND_STYLE, value);
+            preference.setSummary(mNavigationBarBgStyle.getEntries()[index]);
+            updateVisibility();
+            if (value == 2)
+                Helpers.restartSystemUI();
+            return true;
+
         } else if (preference == mNavigationBarBgColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));
@@ -434,6 +447,16 @@ public class Navbar extends BAKEDPreferenceFragment implements
                         .create();
         }
         return null;
+    }
+
+    private void updateVisibility() {
+        int visible = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_BACKGROUND_STYLE, 2);
+        if (visible == 2) {
+            mNavigationBarBgColor.setEnabled(false);
+        } else {
+            mNavigationBarBgColor.setEnabled(true);
+        }
     }
 
     private void updateGlowTimesSummary() {

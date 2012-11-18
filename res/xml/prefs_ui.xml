@@ -88,35 +88,6 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="tabletUI"
-        android:title="@string/tabletUI_cat">
-
-         <CheckBoxPreference
-            android:key="mode_tabletui"
-            android:title="@string/tablet_ui"
-            android:summary="@string/tablet_ui_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
-            android:key="force_dualpanel"
-            android:title="@string/multipane_ui"
-            android:summary="@string/multipane_ui_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
-            android:key="hide_extras"
-            android:title="@string/hide_extras"
-            android:summary="@string/hide_extras_summary"
-            android:defaultValue="false" />
-
-        <Preference
-            android:key="lcd_density_setup"
-            android:title="@string/lcd_density_title"
-            android:summary="@string/lcd_density_summary" />
-
-     </PreferenceCategory>
-
      <PreferenceCategory
             android:key="misc"
             android:title="@string/misc_short">
@@ -127,10 +98,15 @@
             android:summary="@string/rotate_180_summary" />
 
         <CheckBoxPreference
-            android:key="show_overflow"
-            android:title="@string/show_overflow_title"
-            android:summary="@string/show_overflow_summary"
+            android:key="volume_rocker_wake"
+            android:title="@string/volume_rocker_wake_title"
+            android:summary="@string/volume_rocker_wake_summary"
             android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="volume_music_controls"
+            android:title="@string/volume_music_controls_title"
+            android:summary="@string/volume_music_controls_summary" />
 
         <CheckBoxPreference
             android:key="use_alt_resolver"

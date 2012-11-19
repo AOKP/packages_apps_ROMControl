@@ -84,6 +84,10 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
+    private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+    private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
+    private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+    private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -103,6 +107,10 @@ public class UserInterface extends AOKPPreferenceFragment {
     TextView error;
     CheckBoxPreference mUseAltResolver;
     CheckBoxPreference mVibrateOnExpand;
+    CheckBoxPreference mVolumeRockerWake;
+    CheckBoxPreference mVolumeMusic;
+    CheckBoxPreference mRecentKillAll;
+    CheckBoxPreference mRamBar;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -163,6 +171,18 @@ public class UserInterface extends AOKPPreferenceFragment {
         mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
         mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.VIBRATE_NOTIF_EXPAND, true));
+
+        mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
+        mVolumeMusic.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, false));
+
+        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+                Settings.System.RECENT_KILL_ALL_BUTTON, false));
+
+        mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
+        mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+                Settings.System.RAM_USAGE_BAR, false));
 
         setHasOptionsMenu(true);
     }
@@ -339,6 +359,27 @@ public class UserInterface extends AOKPPreferenceFragment {
                     Settings.System.VIBRATE_NOTIF_EXPAND,
                     ((CheckBoxPreference) preference).isChecked());
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mVolumeRockerWake) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_WAKE_SCREEN,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mVolumeMusic) {
+
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_MUSIC_CONTROLS,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mRecentKillAll) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
+            return true;
+        } else if (preference == mRamBar) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RAM_USAGE_BAR, checked ? true : false);
             return true;
         }
 

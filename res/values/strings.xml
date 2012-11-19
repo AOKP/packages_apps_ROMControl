@@ -235,12 +235,12 @@
     <string name="colors">Colors</string>
     <string name="clock_color_title">Clock color</string>
     <string name="alarm">Alarms</string>
+    <string name="clock_options">Clock Options</string>
     <string name="nothing">Nothing</string>
     <string name="today">Calendar for today</string>
     <string name="event">Calendar new event</string>
     <string name="voiceassist">Voice commands</string>
-    <string name="title_date_longclick">Date long click actions</string>
-    <string name="title_date_shortclick">Date short click actions</string>
+    <string name="title_clock_doubleclick">Clock double click actions</string>
     <string name="title_clock_longclick">Clock long click actions</string>
     <string name="title_clock_shortclick">Clock short click actions</string>
 

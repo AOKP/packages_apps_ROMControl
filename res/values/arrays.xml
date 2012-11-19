@@ -209,7 +209,7 @@
         <item>**ring_silent**</item>
         <item>**ring_vib_silent**</item>
         <item>**kill**</item>
-        <item>**screenoff**</item>
+        <item>**power**</item>
         <item>**assist**</item>
         <item>**app**</item>
     </string-array>
@@ -762,6 +762,7 @@
     </string-array>
     <string-array name="notification_action_entries" translatable="false">
         <item>@string/nothing</item>
+        <item>@string/clock_options</item>
         <item>@string/alarm</item>
         <item>@string/today</item>
         <item>@string/event</item>
@@ -769,11 +770,12 @@
         <item>@string/custom_app</item>
     </string-array>
     <string-array name="notification_action_values" translatable="false">
-        <item>**nothing**</item>
+        <item>**null**</item>
+        <item>**clockoptions**</item>
         <item>**alarm**</item>
         <item>**today**</item>
         <item>**event**</item>
-        <item>**assist**</item>
+        <item>**voiceassist**</item>
         <item>**app**</item>
     </string-array>
     <string-array name="weather_action_entries" translatable="false">

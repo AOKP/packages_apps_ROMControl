@@ -31,6 +31,8 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
+    private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
+    private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
 
     CheckBoxPreference mStatusBarNotifCount;
     Preference mCustomLabel;
@@ -38,6 +40,8 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mVibrateOnExpand;
     CheckBoxPreference mVolumeRockerWake;
     CheckBoxPreference mVolumeMusic;
+    CheckBoxPreference mRecentKillAll;
+    CheckBoxPreference mRamBar;
 
     String mCustomLabelText = null;
 
@@ -71,6 +75,14 @@ public class UserInterface extends AOKPPreferenceFragment {
         mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
         mVolumeMusic.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
                 Settings.System.VOLUME_MUSIC_CONTROLS, false));
+
+        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+                Settings.System.RECENT_KILL_ALL_BUTTON, false));
+
+        mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
+        mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+                Settings.System.RAM_USAGE_BAR, false));
     }
 
     @Override
@@ -131,6 +143,16 @@ public class UserInterface extends AOKPPreferenceFragment {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.VOLUME_MUSIC_CONTROLS,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mRecentKillAll) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
+            return true;
+        } else if (preference == mRamBar) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.RAM_USAGE_BAR, checked ? true : false);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

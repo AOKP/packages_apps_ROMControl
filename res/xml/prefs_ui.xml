@@ -98,17 +98,6 @@
             android:summary="@string/rotate_180_summary" />
 
         <CheckBoxPreference
-            android:key="volume_rocker_wake"
-            android:title="@string/volume_rocker_wake_title"
-            android:summary="@string/volume_rocker_wake_summary"
-            android:defaultValue="false" />
-
-        <CheckBoxPreference
-            android:key="volume_music_controls"
-            android:title="@string/volume_music_controls_title"
-            android:summary="@string/volume_music_controls_summary" />
-
-        <CheckBoxPreference
             android:key="use_alt_resolver"
             android:title="@string/alt_resolver"
             android:summary="@string/alt_resolver_summary"

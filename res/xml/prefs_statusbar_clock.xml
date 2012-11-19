@@ -36,14 +36,8 @@
 	<ListPreference
 		android:entries="@array/notification_action_entries"
 		android:entryValues="@array/notification_action_values"
-		android:key="date_shortclick"
-		android:title="@string/title_date_shortclick" />
-
-	<ListPreference
-		android:entries="@array/notification_action_entries"
-		android:entryValues="@array/notification_action_values"
-		android:key="date_longclick"
-		android:title="@string/title_date_longclick" />
+		android:key="clock_doubleclick"
+		android:title="@string/title_clock_doubleclick" />
 
 	<PreferenceCategory
 		android:key="colors"

@@ -209,7 +209,7 @@
         <item>**ring_silent**</item>
         <item>**ring_vib_silent**</item>
         <item>**kill**</item>
-        <item>**screenoff**</item>
+        <item>**power**</item>
         <item>**assist**</item>
         <item>**app**</item>
     </string-array>

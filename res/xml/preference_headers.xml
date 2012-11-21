@@ -54,12 +54,6 @@
         android:summary="@string/header_summary_clock"
         android:icon="@drawable/ic_rom_control_clock"
         android:title="@string/clock" />
-    <header
-        android:id="@+id/statusbar_toggles"
-        android:fragment="com.aokp.romcontrol.fragments.StatusBarToggles"
-        android:icon="@drawable/ic_rom_control_toggles"
-        android:summary="@string/header_summary_toggles"
-        android:title="@string/toggles_layout" />
 
     <header
         android:id="@+id/statusbar_signal"
@@ -87,13 +81,6 @@
         android:summary="@string/header_summary_sound" />
 
     <header
-        android:id="@+id/weather"
-        android:fragment="com.aokp.romcontrol.fragments.Weather"
-        android:title="@string/weather"
-        android:summary="@string/header_summary_weather"
-        android:icon="@drawable/ic_rom_control_weather" />
-
-    <header
         android:id="@+id/vibrations"
         android:title="@string/vibrations"
         android:summary="@string/header_summary_vibrations"
@@ -103,19 +90,4 @@
                 android:targetClass="com.aokp.romcontrol.fragments.Vibrations"
                 android:targetPackage="com.aokp.romcontrol" />
     </header>
-
-
-    <header
-        android:id="@+id/tools"
-        android:title="@string/tools" />
-
-    <header android:icon="@drawable/ic_rom_control_performance"
-            android:title="@string/performance">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.aokp.romcontrol.performance.Performance"
-                android:targetPackage="com.aokp.romcontrol" />
-    </header>
-
-
 </preference-headers>

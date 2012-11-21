@@ -8,11 +8,6 @@
 			android:entries="@array/battery_icon_entries"
 			android:entryValues="@array/battery_icon_values" />
 
-        <CheckBoxPreference
-			android:key="battery_not"
-			android:title="@string/battery_not_title"
-			android:summary="@string/battery_not_summary" />
-
 	<PreferenceCategory
 		android:key="battery_bar_cat"
 		android:title="@string/battery_bar_cat">

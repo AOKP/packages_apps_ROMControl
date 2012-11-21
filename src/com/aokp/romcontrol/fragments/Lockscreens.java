@@ -66,6 +66,7 @@ public class Lockscreens extends AOKPPreferenceFragment {
 
     private static final String PREF_VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_VOLUME_MUSIC = "volume_music_controls";
+    private static final String PREF_QUICK_UNLOCK = "lockscreen_quick_unlock_control";
 
     public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -79,6 +80,7 @@ public class Lockscreens extends AOKPPreferenceFragment {
 
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mVolumeRockerWake;
+    CheckBoxPreference mQuickUnlock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,8 +95,11 @@ public class Lockscreens extends AOKPPreferenceFragment {
                 .getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN, false));
 
         mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
-        mVolumeMusic.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.VOLUME_MUSIC_CONTROLS, 0) == 1);
+        mVolumeMusic.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, false));
+
+        mQuickUnlock = (CheckBoxPreference) findPreference(PREF_QUICK_UNLOCK);
+        mQuickUnlock.setChecked(Settings.System.getBoolean(mContext.getContentResolver(), Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, false));
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
@@ -115,10 +120,14 @@ public class Lockscreens extends AOKPPreferenceFragment {
                     ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mVolumeMusic) {
-
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_MUSIC_CONTROLS,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mQuickUnlock) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mLockscreenWallpaper) {
             Display display = getActivity().getWindowManager().getDefaultDisplay();

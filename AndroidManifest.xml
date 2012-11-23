@@ -139,7 +139,8 @@
             </intent-filter>
         </activity>
         <provider android:name=".vibrations.VibrationsProvider"
-			android:authorities="com.aokp.romcontrol.Vibrations" /> 
+            android:exported="true"
+            android:authorities="com.aokp.romcontrol.Vibrations" /> 
         <activity
             android:name="CreateShortcut"
             android:theme="@style/Theme.CreateShortCut" >

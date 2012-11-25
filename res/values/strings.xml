@@ -262,6 +262,13 @@
     <string name="toggle_vibrate">Vibrate</string>
     <string name="toggle_wifi_ap">Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_user">User</string>
+    <string name="toggle_settings">Settings</string>
+    <string name="toggle_signal">Signal</string>
+    <string name="toggle_clock">Clock</string>
+    <string name="toggle_ime">IME</string>
+    <string name="toggle_battery">Battery</string>
+    <string name="toggle_brightness">Brightness</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>

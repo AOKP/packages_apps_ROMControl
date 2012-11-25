@@ -60,28 +60,32 @@
 
     <!-- Generic toggle overlay. Should be set per device in overlay -->
     <string-array name="available_toggles_entries" translatable="false">
-        <item>ROTATE</item>
-        <item>BT</item>
-        <item>GPS</item>
+        <item>USER</item>
+        <item>BRIGHTNESS</item>
+        <item>SETTINGS</item>
         <item>WIFI</item>
+        <item>SIGNAL</item>
+        <item>ROTATE</item>
+        <item>CLOCK</item>
+        <item>GPS</item>
+        <item>IME</item>
+        <item>BATTERY</item>
         <item>AIRPLANE_MODE</item>
-        <item>VIBRATE</item>
-        <item>SILENT</item>
-        <item>TORCH</item>
-        <item>SYNC</item>
-        <item>SWAGGER</item>
+        <item>BLUETOOTH</item>
     </string-array>
     <string-array name="available_toggles_values" translatable="false">
-        <item>@string/toggle_auto_rotate</item>
-        <item>@string/toggle_bluetooth</item>
-        <item>@string/toggle_gps</item>
+        <item>@string/toggle_user</item>
+        <item>@string/toggle_brightness</item>
+        <item>@string/toggle_settings</item>
         <item>@string/toggle_wifi</item>
+        <item>@string/toggle_signal</item>
+        <item>@string/toggle_auto_rotate</item>
+        <item>@string/toggle_clock</item>
+        <item>@string/toggle_gps</item>
+        <item>@string/toggle_ime</item>
+        <item>@string/toggle_battery</item>
         <item>@string/toggle_airplane_mode</item>
-        <item>@string/toggle_vibrate</item>
-        <item>@string/toggle_silent</item>
-        <item>@string/toggle_torch</item>
-        <item>@string/toggle_sync</item>
-        <item>@string/toggle_swagger</item>
+        <item>@string/toggle_bluetooth</item>
     </string-array>
 
     <!-- Brightness slider -->
@@ -90,7 +94,6 @@
         <item>@string/on_the_bottom</item>
         <item>@string/dont_show</item>
     </string-array>
-
     <string-array name="brightness_location_values" translatable="false">
         <item>1</item>
         <item>2</item>
@@ -198,7 +201,6 @@
         <item>@string/google_now</item>
         <item>@string/select_application</item>
     </string-array>
-
     <string-array name="navring_dialog_values" translatable="false">
         <item>**null**</item>
         <item>**screenshot**</item>
@@ -211,7 +213,6 @@
         <item>**assist**</item>
         <item>**app**</item>
     </string-array>
-
     <string-array name="pref_navring_amount_entries" translatable="false">
         <item>@string/one_target</item>
         <item>@string/two_targets</item>
@@ -219,7 +220,6 @@
         <item>@string/four_targets</item>
         <item>@string/five_targets</item>
     </string-array>
-
     <string-array name="pref_navring_amount_values" translatable="false">
         <item>1</item>
         <item>2</item>
@@ -512,36 +512,30 @@
         <item>360</item>
         <item>480</item>
     </string-array>
-
     <string-array name="weather_statusbar_location_entries" translatable="false">
         <item>@string/above_carrier_text</item>
         <item>@string/weather_panel</item>
         <item>@string/disabled</item>
     </string-array>
-
     <string-array name="weather_statusbar_location_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>
-
     <string-array name="weather_statusbar_hide_entries" translatable="false">
         <item>@string/always_on</item>
         <item>@string/same_toggles</item>
         <item>@string/opposite_toggles</item>
     </string-array>
-
     <string-array name="weather_statusbar_hide_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>
-
     <string-array name="pref_lockscreen_weather_type_entries" translatable="false">
         <item>@string/weather_panel</item>
         <item>@string/text</item>
     </string-array>
-
     <string-array name="pref_lockscreen_weather_type_values" translatable="false">
         <item>0</item>
         <item>1</item>
@@ -557,7 +551,6 @@
         <item>3500</item>
         <item>4000</item>
     </string-array>
-
     <string-array name="pref_lockscreen_calendar_interval_entries" translatable="false">
         <item>@string/time_1_second</item>
         <item>@string/time_1_5_seconds</item>
@@ -567,7 +560,6 @@
         <item>@string/time_3_5_seconds</item>
         <item>@string/time_4_seconds</item>
     </string-array>
-
     <string-array name="pref_lockscreen_calendar_range_values" translatable="false">
         <item>86400000</item>
         <item>172800000</item>
@@ -577,7 +569,6 @@
         <item>518400000</item>
         <item>604800000</item>
     </string-array>
-
     <string-array name="pref_lockscreen_calendar_range_entries" translatable="false">
         <item>@string/time_1_day</item>
         <item>@string/time_2_days</item>
@@ -587,7 +578,6 @@
         <item>@string/time_6_days</item>
         <item>@string/time_1_week</item>
     </string-array>
-
     <string-array name="minfree" translatable="false">
         <item>@string/size_25_mb</item>
         <item>@string/size_50_mb</item>
@@ -595,7 +585,6 @@
         <item>@string/size_80_mb</item>
         <item>@string/size_100_mb</item>
     </string-array>
-
     <string-array name="minfree_values" translatable="false">
         <item>1536,2048,4096,5120,5632,6144</item>
         <item>2560,3840,6400,7680,10240,12800</item>
@@ -603,7 +592,6 @@
         <item>2048,3072,6144,15360,17920,20480</item>
         <item>2560,3840,6400,12800,12800,25600</item>
     </string-array>
-
     <string-array name="less_notification_sounds_entries" translatable="false">
         <item>@string/default_behavior</item>
         <item>@string/time_3_seconds</item>
@@ -615,7 +603,6 @@
         <item>@string/time_1_minute</item>
         <item>@string/time_2_minutes</item>
     </string-array>
-
     <string-array name="less_notification_sounds_values" translatable="false">
         <item>0</item>
         <item>3000</item>
@@ -627,29 +614,24 @@
         <item>60000</item>
         <item>120000</item>
     </string-array>
-
     <string-array name="signal_style_entries" translatable="false">
         <item>@string/show_signal_bars</item>
         <item>@string/show_signal_text</item>
         <item>@string/show_with_dbm</item>
     </string-array>
-
     <string-array name="signal_style_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>
-
     <string-array name="wifi_signal_style_entries" translatable="false">
         <item>@string/show_signal_bars</item>
         <item>@string/show_signal_text</item>
     </string-array>
-
     <string-array name="wifi_signal_style_values" translatable="false">
         <item>0</item>
         <item>1</item>
     </string-array>
-
     <string-array name="lcd_density_entries" translatable="false">
         <item>160</item>
         <item>180</item>
@@ -664,19 +646,16 @@
         <item>340</item>
         <item>@string/custom_density</item>
     </string-array>
-
     <string-array name="lcd_density_stock_entries" translatable="false">
         <item>160 -- mdpi</item>
         <item>240 -- hdpi</item>
         <item>320 -- xhdpi</item>
     </string-array>
-
     <string-array name="lcd_density_stock_values" translatable="false">
         <item>160</item>
         <item>240</item>
         <item>320</item>
     </string-array>
-
     <string-array name="lockscreen_icon_picker_labels" translatable="false">
         <item>@string/icon_picker_alarm</item>
         <item>@string/icon_picker_browser</item>
@@ -699,7 +678,6 @@
         <item>@string/icon_picker_twitter</item>
         <item>@string/icon_picker_unlock</item>
     </string-array>
-
     <string-array name="lockscreen_aokp_icon_picker_labels" translatable="false">
         <item>@string/aokp_icon_picker_aokp</item>
         <item>@string/aokp_icon_picker_browser</item>
@@ -742,7 +720,6 @@
         <item>@string/aokp_icon_picker_googletalk</item>
         <item>@string/aokp_icon_picker_video</item>
     </string-array>
-
     <string-array name="lockscreen_target_amount_entries">
         <item>@string/aokp_3targets</item>
         <item>@string/aokp_4targets</item>
@@ -750,7 +727,6 @@
         <item>@string/aokp_6targets</item>
         <item>@string/aokp_8targets</item>
     </string-array>
-
     <string-array name="lockscreen_target_amount_values" translatable="false">
         <item>3</item>
         <item>4</item>
@@ -786,4 +762,5 @@
         <item>**update**</item>
         <item>**app**</item>
     </string-array>
+
 </resources>

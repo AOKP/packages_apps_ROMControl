@@ -11,11 +11,6 @@
             android:title="@string/lockscreen_quick_unlock_control_title"
             android:summary="@string/lockscreen_quick_unlock_control_summary" />
 
-        <CheckBoxPreference
-            android:key="lockscreen_menu_unlock"
-            android:title="@string/lockscreen_menu_unlock_title"
-            android:summary="@string/lockscreen_menu_unlock_summary" />
-
     </PreferenceCategory>
     <PreferenceCategory
         android:key="music"
@@ -31,16 +26,6 @@
             android:key="volume_music_controls"
             android:title="@string/volume_music_controls_title"
             android:summary="@string/volume_music_controls_summary" />
-
-    </PreferenceCategory>
-    <PreferenceCategory
-            android:key="misc"
-            android:title="@string/misc_short">
-
-            <CheckBoxPreference
-                android:key="lockscreen_auto_rotate"
-                android:title="@string/lockscreen_auto_rotate_title"
-                android:summary="@string/lockscreen_auto_rotate_summary" />
 
     </PreferenceCategory>
 </PreferenceScreen>

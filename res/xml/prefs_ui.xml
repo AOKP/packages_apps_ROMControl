@@ -68,12 +68,6 @@
             android:title="@string/kill_app_longpress_back"
             android:summary="@string/kill_app_longpress_back_summary" />
 
-        <CheckBoxPreference
-            android:key="lefty_mode"
-            android:title="@string/lefty_mode_title"
-            android:summary="@string/lefty_mode_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
 
      <PreferenceCategory

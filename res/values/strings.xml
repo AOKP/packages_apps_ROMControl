@@ -248,7 +248,7 @@
     <string name="toggle_airplane_mode">Airplane Mode</string>
     <string name="toggle_auto_rotate">Auto Rotate</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Fast Charge</string>
+    <string name="toggle_fcharge">Fast Charge</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Data</string>
@@ -260,7 +260,7 @@
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Tether</string>
     <string name="toggle_vibrate">Vibrate</string>
-    <string name="toggle_wifi_ap">Tether</string>
+    <string name="toggle_wifi_tether">Wifi Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
     <string name="toggle_user">User</string>
     <string name="toggle_settings">Settings</string>

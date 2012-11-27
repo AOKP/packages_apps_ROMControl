@@ -210,6 +210,8 @@
     <string name="enabled_toggles_title">Enabled toggles</string>
     <string name="enabled_toggles_summary">Choose toggles to display</string>
     <string name="toggles_display_dialog">Choose which toggles to use</string>
+    <string name="toggles_per_row_title">Toggles per row</string>
+    <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>

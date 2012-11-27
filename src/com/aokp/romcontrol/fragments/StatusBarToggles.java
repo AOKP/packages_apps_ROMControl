@@ -35,14 +35,17 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 
-public class StatusBarToggles extends AOKPPreferenceFragment {
+public class StatusBarToggles extends AOKPPreferenceFragment implements
+        OnPreferenceChangeListener {
 
     private static final String TAG = "TogglesLayout";
 
     private static final String PREF_ENABLE_TOGGLES = "enabled_toggles";
+    private static final String PREF_TOGGLES_PER_ROW = "toggles_per_row";
 
     Preference mEnabledToggles;
     Preference mLayout;
+    ListPreference mTogglesPerRow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,11 +56,26 @@ public class StatusBarToggles extends AOKPPreferenceFragment {
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
+        mTogglesPerRow = (ListPreference) findPreference(PREF_TOGGLES_PER_ROW);
+        mTogglesPerRow.setOnPreferenceChangeListener(this);
+        mTogglesPerRow.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QUICK_TOGGLES_PER_ROW, 3) + "");
+
         int mTabletui = Settings.System.getInt(mContext.getContentResolver(),
                            Settings.System.TABLET_UI, 0);
 
         mLayout = findPreference("toggles");
 
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mTogglesPerRow) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QUICK_TOGGLES_PER_ROW, val);
+        }
+        return false;
     }
 
     @Override

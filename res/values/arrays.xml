@@ -112,6 +112,18 @@
         <item>@string/toggle_lte</item>
     </string-array>
 
+    <!-- Toggles per row -->
+    <string-array name="toggles_per_row_entries" translatable="false">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="toggles_per_row_values" translatable="false">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries" translatable="false">
         <item>@string/on_top</item>

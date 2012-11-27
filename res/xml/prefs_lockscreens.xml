@@ -13,6 +13,21 @@
 
     </PreferenceCategory>
     <PreferenceCategory
+        android:key="layout"
+        android:title="@string/lockscreen_layout_cat">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_text_color"
+            android:title="@string/lockscreen_text_color_title"
+            android:defaultValue="#ffffffff" />
+
+        <CheckBoxPreference
+            android:key="lockscreen_battery"
+            android:title="@string/lockscreen_battery_title"
+            android:summary="@string/lockscreen_battery_summary" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
         android:key="music"
         android:title="@string/lockscreen_music_cat">
 
@@ -26,6 +41,16 @@
             android:key="volume_music_controls"
             android:title="@string/volume_music_controls_title"
             android:summary="@string/volume_music_controls_summary" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:key="misc"
+            android:title="@string/misc_short">
+
+            <CheckBoxPreference
+                android:key="lockscreen_auto_rotate"
+                android:title="@string/lockscreen_auto_rotate_title"
+                android:summary="@string/lockscreen_auto_rotate_summary" />
 
     </PreferenceCategory>
 </PreferenceScreen>

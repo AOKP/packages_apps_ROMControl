@@ -136,19 +136,19 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
     }
 
-    public static void addToggle(Context context, String key) {
+    public void addToggle(Context context, String key) {
         ArrayList<String> enabledToggles = getTogglesStringArray(context);
         enabledToggles.add(key);
         setTogglesFromStringArray(context, enabledToggles);
     }
 
-    public static void removeToggle(Context context, String key) {
+    public void removeToggle(Context context, String key) {
         ArrayList<String> enabledToggles = getTogglesStringArray(context);
         enabledToggles.remove(key);
         setTogglesFromStringArray(context, enabledToggles);
     }
 
-    public static class TogglesLayout extends ListFragment {
+    public class TogglesLayout extends ListFragment {
 
         private ListView mButtonList;
         private ButtonAdapter mButtonAdapter;
@@ -298,7 +298,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         }
     }
 
-    public static void setTogglesFromStringArray(Context c, ArrayList<String> newGoodies) {
+    public void setTogglesFromStringArray(Context c, ArrayList<String> newGoodies) {
         String newToggles = "";
 
         for (String s : newGoodies)
@@ -314,14 +314,14 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
                 newToggles);
     }
 
-    public static ArrayList<String> getTogglesStringArray(Context c) {
+    public ArrayList<String> getTogglesStringArray(Context c) {
         String clusterfuck = Settings.System.getString(c.getContentResolver(),
                 Settings.System.QUICK_TOGGLES);
 
         if (clusterfuck == null) {
             Log.e(TAG, "clusterfuck was null");
             // return null;
-            clusterfuck = "USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH";
+            clusterfuck = getResources().getString(R.string.toggle_default_entries);
         }
 
         String[] togglesStringArray = clusterfuck.split("\\|");

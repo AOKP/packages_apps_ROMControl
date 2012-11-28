@@ -194,6 +194,8 @@
   <string name="enabled_toggles_title">Zapnuté přepínače</string>
   <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
   <string name="toggles_display_dialog">Vybrat používané přepínače</string>
+  <string name="toggles_per_row_title">Přepínačů na řádek</string>
+  <string name="toggles_per_row_summary">Vybrat kolik se bude zobrazovat přepínačů na každém řádku</string>
   <string name="toggles_display_close">Zavřít</string>
   <string name="toggles_order_title">Pořadí přepínačů</string>
   <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
@@ -222,8 +224,7 @@
   <string name="today">Dnešní kalendář</string>
   <string name="event">Nová událost v kalendáři</string>
   <string name="voiceassist">Hlasové příkazy</string>
-  <string name="title_date_longclick">Akce dlouhého stisku data</string>
-  <string name="title_date_shortclick">Akce krátkého stisku data</string>
+  <string name="title_clock_doubleclick">Akce dvojitého stisku hodin</string>
   <string name="title_clock_longclick">Akce dlouhého stisku hodin</string>
   <string name="title_clock_shortclick">Akce krátkého stisku hodin</string>
   <!--Toggle Strings to be called from device overlays-->
@@ -240,10 +241,17 @@
   <string name="toggle_sync">Sync</string>
   <string name="toggle_torch">Svítilna</string>
   <string name="toggle_2g">2G</string>
-  <string name="toggle_usb_tether">USB tether</string>
+  <string name="toggle_usb_tether">USB tethering</string>
   <string name="toggle_vibrate">Vibrace</string>
-  <string name="toggle_wifi_ap">Tether</string>
+  <string name="toggle_wifi_tether">Wifi tethering</string>
   <string name="toggle_wifi">Wi-Fi</string>
+  <string name="toggle_user">Uživatel</string>
+  <string name="toggle_settings">Nastavení</string>
+  <string name="toggle_signal">Signál</string>
+  <string name="toggle_clock">Hodiny</string>
+  <string name="toggle_ime">Metody vstupu</string>
+  <string name="toggle_battery">Baterie</string>
+  <string name="toggle_brightness">Jas</string>
   <!--Statusbar | Battery-->
   <string name="battery_icon">Styl ikony baterie</string>
   <string name="battery_not_title">Ikona baterie ve stavové liště</string>
@@ -307,7 +315,7 @@
   <string name="navigation_bar_height_landscape_title">Výška navigační lišty v režimu na šířku</string>
   <string name="navigation_bar_height_landscape_summary">Výška navigační lišty v režimu na šířku.</string>
   <string name="navigation_bar_width_title">Šířka navigační lišty</string>
-  <string name="navigation_bar_width_summary">Šíčka navigační lišty když je zobrazena na straně.</string>
+  <string name="navigation_bar_width_summary">Šířka navigační lišty když je zobrazena na straně.</string>
   <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
   <string name="navbar_enable_dialog_msg">Pro správnou funkčnost navigační lišty je dobré vždy restartovat (ale né nutné).</string>
   <string name="navbar_enable_dialog_negative">Restartovat později</string>
@@ -356,6 +364,7 @@
   <string name="interface_navring_assist_title">Google Now</string>
   <string name="interface_navring">Položky kruhu</string>
   <string name="navbar_ring">Vlastní položky kruhu</string>
+  <string name="navring_enable_long">Zapnout dlouhý stisk pro navigační kruh</string>
   <!--LED-->
   <string name="led_on">LED svítí</string>
   <string name="led_time_on">Doba po kterou LED svítí</string>

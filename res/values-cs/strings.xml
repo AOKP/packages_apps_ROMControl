@@ -194,6 +194,8 @@
   <string name="enabled_toggles_title">Zapnuté přepínače</string>
   <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
   <string name="toggles_display_dialog">Vybrat používané přepínače</string>
+  <string name="toggles_per_row_title">Přepínačů na řádek</string>
+  <string name="toggles_per_row_summary">Vybrat kolik se bude zobrazovat přepínačů na každém řádku</string>
   <string name="toggles_display_close">Zavřít</string>
   <string name="toggles_order_title">Pořadí přepínačů</string>
   <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
@@ -307,7 +309,7 @@
   <string name="navigation_bar_height_landscape_title">Výška navigační lišty v režimu na šířku</string>
   <string name="navigation_bar_height_landscape_summary">Výška navigační lišty v režimu na šířku.</string>
   <string name="navigation_bar_width_title">Šířka navigační lišty</string>
-  <string name="navigation_bar_width_summary">Šíčka navigační lišty když je zobrazena na straně.</string>
+  <string name="navigation_bar_width_summary">Šířka navigační lišty když je zobrazena na straně.</string>
   <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
   <string name="navbar_enable_dialog_msg">Pro správnou funkčnost navigační lišty je dobré vždy restartovat (ale né nutné).</string>
   <string name="navbar_enable_dialog_negative">Restartovat později</string>

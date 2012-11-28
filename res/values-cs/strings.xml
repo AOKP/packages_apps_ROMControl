@@ -150,8 +150,6 @@
   <string name="error_creating_preview">Chyba při vytváření náhledu</string>
   <string name="multipane_ui">Zapnout dvojitý panel</string>
   <string name="multipane_ui_summary">Zapne/vypne zobrazení dvojitého panelu - jako na tabletech (vyžaduje restart)</string>
-  <string name="alt_resolver">Alt. výchozí aplikace</string>
-  <string name="alt_resolver_summary">Použít alternativní výběr výchozí aplikace (GB styl)</string>
   <string name="show_overflow_title">Zobrazit tlačítko menu</string>
   <string name="show_overflow_summary">Zobrazit v aplikacích tlačítko menu s 3 tečkami</string>
   <string name="show_overflow_toast_enable">Tlačítko menu nebude vidět, dokud nedojde k restartování aplikací</string>
@@ -194,6 +192,8 @@
   <string name="enabled_toggles_title">Zapnuté přepínače</string>
   <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
   <string name="toggles_display_dialog">Vybrat používané přepínače</string>
+  <string name="toggles_per_row_title">Přepínačů na řádek</string>
+  <string name="toggles_per_row_summary">Vybrat kolik se bude zobrazovat přepínačů na každém řádku</string>
   <string name="toggles_display_close">Zavřít</string>
   <string name="toggles_order_title">Pořadí přepínačů</string>
   <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
@@ -218,32 +218,39 @@
   <string name="colors">Barvy</string>
   <string name="clock_color_title">Barva hodin</string>
   <string name="alarm">Budíky</string>
+  <string name="clock_options">Nastavení data a času</string>
   <string name="nothing">Nic</string>
   <string name="today">Dnešní kalendář</string>
   <string name="event">Nová událost v kalendáři</string>
   <string name="voiceassist">Hlasové příkazy</string>
-  <string name="title_date_longclick">Akce dlouhého stisku data</string>
-  <string name="title_date_shortclick">Akce krátkého stisku data</string>
+  <string name="title_clock_doubleclick">Akce dvojitého stisku hodin</string>
   <string name="title_clock_longclick">Akce dlouhého stisku hodin</string>
   <string name="title_clock_shortclick">Akce krátkého stisku hodin</string>
   <!--Toggle Strings to be called from device overlays-->
   <string name="toggle_airplane_mode">Režim letadlo</string>
   <string name="toggle_auto_rotate">Automatická rotace</string>
   <string name="toggle_bluetooth">Bluetooth</string>
-  <string name="toggle_fast_charge">Rychlé nabíjení</string>
+  <string name="toggle_fcharge">Rychlé nabíjení</string>
   <string name="toggle_gps">GPS</string>
   <string name="toggle_lte">LTE</string>
   <string name="toggle_data">Data</string>
   <string name="toggle_nfc">NFC</string>
   <string name="toggle_silent">Tichý režim</string>
   <string name="toggle_swagger">Swagger</string>
-  <string name="toggle_sync">Sync</string>
+  <string name="toggle_sync">Synchronizace</string>
   <string name="toggle_torch">Svítilna</string>
   <string name="toggle_2g">2G</string>
-  <string name="toggle_usb_tether">USB tether</string>
+  <string name="toggle_usb_tether">USB tethering</string>
   <string name="toggle_vibrate">Vibrace</string>
-  <string name="toggle_wifi_ap">Tether</string>
+  <string name="toggle_wifi_tether">Wifi tethering</string>
   <string name="toggle_wifi">Wi-Fi</string>
+  <string name="toggle_user">Uživatel</string>
+  <string name="toggle_settings">Nastavení</string>
+  <string name="toggle_signal">Signál</string>
+  <string name="toggle_clock">Hodiny</string>
+  <string name="toggle_ime">Metody vstupu</string>
+  <string name="toggle_battery">Baterie</string>
+  <string name="toggle_brightness">Jas</string>
   <!--Statusbar | Battery-->
   <string name="battery_icon">Styl ikony baterie</string>
   <string name="battery_not_title">Ikona baterie ve stavové liště</string>
@@ -307,7 +314,7 @@
   <string name="navigation_bar_height_landscape_title">Výška navigační lišty v režimu na šířku</string>
   <string name="navigation_bar_height_landscape_summary">Výška navigační lišty v režimu na šířku.</string>
   <string name="navigation_bar_width_title">Šířka navigační lišty</string>
-  <string name="navigation_bar_width_summary">Šíčka navigační lišty když je zobrazena na straně.</string>
+  <string name="navigation_bar_width_summary">Šířka navigační lišty když je zobrazena na straně.</string>
   <string name="navbar_enable_dialog_title">Vyžadován restart!</string>
   <string name="navbar_enable_dialog_msg">Pro správnou funkčnost navigační lišty je dobré vždy restartovat (ale né nutné).</string>
   <string name="navbar_enable_dialog_negative">Restartovat později</string>
@@ -356,6 +363,7 @@
   <string name="interface_navring_assist_title">Google Now</string>
   <string name="interface_navring">Položky kruhu</string>
   <string name="navbar_ring">Vlastní položky kruhu</string>
+  <string name="navring_enable_long">Zapnout dlouhý stisk pro navigační kruh</string>
   <!--LED-->
   <string name="led_on">LED svítí</string>
   <string name="led_time_on">Doba po kterou LED svítí</string>
@@ -402,6 +410,7 @@
   <string name="summary_phone_flip_mode">Přepnout telefon otočením do tichého režimu během příchozího hovoru</string>
   <string name="title_phone_flip_mode">Tichý příchozí hovor</string>
   <!--Lockscreen-->
+  <string name="lock_widgets_short">Widgety na zamčené obrazovce</string>
   <string name="lockscreen_security_cat">Zabezpečení</string>
   <string name="lockscreen_layout_cat">Rozložení</string>
   <string name="lockscreen_music_cat">Hudba</string>
@@ -413,6 +422,10 @@
   <string name="lockscreen_menu_unlock_summary">Tlačítko menu odemkne obrazovku</string>
   <string name="lockscreen_auto_rotate_title">Povolit rotaci zamčené obrazovky</string>
   <string name="lockscreen_auto_rotate_summary">Zamčená obrazovka se bude natáčet podle zařízení. Tato volba je nezávislá na automatickém otočení v nastavení obrazovky.</string>
+  <string name="lockscreen_all_widgets_title">Povolit všechny widgety</string>
+  <string name="lockscreen_all_widgets_summary">VAROVÁNÍ** Některé widgety nejsou určeny pro to, být na zamčené obrazovce. Autor widgetů ani AOKP nejsou zodpovědni za následky přidávání widgetů.</string>
+  <string name="lockscreen_unlimited_widgets_title">Neomezený počet widgetů</string>
+  <string name="lockscreen_unlimited_widgets_summary">Varování** Přidání mnoha widgetů může způsobit zpomalení a lagy zamčené obrazovky.</string>
   <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
   <string name="volume_rocker_wake_title">Probuzení tlačítky hlasitosti</string>

@@ -272,6 +272,7 @@
     <string name="toggle_ime">IME</string>
     <string name="toggle_battery">Battery</string>
     <string name="toggle_brightness">Brightness</string>
+    <string name="toggle_ram">Ram Tile</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>

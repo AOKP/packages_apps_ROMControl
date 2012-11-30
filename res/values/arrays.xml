@@ -85,6 +85,7 @@
         <item>TORCH</item>
         <item>2G</item>
         <item>LTE</item>
+        <item>RAM</item>
     </string-array>
     <string-array name="available_toggles_values" translatable="false">
         <item>@string/toggle_user</item>
@@ -110,6 +111,7 @@
         <item>@string/toggle_torch</item>
         <item>@string/toggle_2g</item>
         <item>@string/toggle_lte</item>
+        <item>@string/toggle_ram</item>
     </string-array>
 
     <!-- Toggles per row -->

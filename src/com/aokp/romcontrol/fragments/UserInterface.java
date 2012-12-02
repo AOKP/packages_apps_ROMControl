@@ -83,7 +83,6 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-    private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
@@ -105,7 +104,6 @@ public class UserInterface extends AOKPPreferenceFragment {
     Preference mCustomBootAnimation;
     ImageView view;
     TextView error;
-    CheckBoxPreference mUseAltResolver;
     CheckBoxPreference mVibrateOnExpand;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRamBar;
@@ -161,10 +159,6 @@ public class UserInterface extends AOKPPreferenceFragment {
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
-
-        mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
-        mUseAltResolver.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                        Settings.System.ACTIVITY_RESOLVER_USE_ALT, false));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
@@ -352,11 +346,6 @@ public class UserInterface extends AOKPPreferenceFragment {
             });
 
             alert.show();
-        } else if (preference == mUseAltResolver) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.ACTIVITY_RESOLVER_USE_ALT,
-                    isCheckBoxPrefernceChecked(preference));
-            return true;
         } else if (preference == mVibrateOnExpand) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VIBRATE_NOTIF_EXPAND,

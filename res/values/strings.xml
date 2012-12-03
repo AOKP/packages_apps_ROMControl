@@ -462,6 +462,8 @@
     <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
+    <string name="lockscreen_all_widgets_title">Allow all widgets</string>
+    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget maker and AOKP are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="volume_rocker_wake_title">Volume wake</string>

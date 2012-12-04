@@ -227,6 +227,8 @@
     <string name="toggle_btn_disabled_color_title">Disabled indicator color</string>
     <string name="toggle_btn_background_title">Toggle background alpha</string>
     <string name="toggle_text_color_title">Toggle text color</string>
+    <string name="toggle_favcontact_title">Favorite contact</string>
+    <string name="toggle_favcontact_summary">Choose your favorite contact</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
@@ -264,6 +266,7 @@
     <string name="toggle_wifi_tether">Wifi Tether</string>
     <string name="toggle_wifi">Wi-Fi</string>
     <string name="toggle_user">User</string>
+    <string name="toggle_favorite_contact">Favorite Contact</string>
     <string name="toggle_settings">Settings</string>
     <string name="toggle_signal">Signal</string>
     <string name="toggle_clock">Clock</string>

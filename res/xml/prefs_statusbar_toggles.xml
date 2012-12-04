@@ -19,4 +19,9 @@
         android:title="@string/toggles_per_row_title"
         android:summary="@string/toggles_per_row_summary" />
 
+    <Preference
+        android:key="toggle_fav_contact"
+        android:summary="@string/toggle_favcontact_summary"
+        android:title="@string/toggle_favcontact_title" />
+
 </PreferenceScreen>

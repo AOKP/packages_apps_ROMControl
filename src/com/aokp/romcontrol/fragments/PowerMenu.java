@@ -15,15 +15,15 @@ import com.aokp.romcontrol.R.xml;
 public class PowerMenu extends PreferenceFragment {
 
     //private static final String PREF_POWER_SAVER = "show_power_saver";
-    //private static final String PREF_SCREENSHOT = "show_screenshot";
-    //private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
-    //private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
+    private static final String PREF_SCREENSHOT = "show_screenshot";
+    private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
+    private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
 
     //CheckBoxPreference mShowPowerSaver;
-    //CheckBoxPreference mShowScreenShot;
-    //CheckBoxPreference mShowTorchToggle;
-    //CheckBoxPreference mShowAirplaneToggle;
+    CheckBoxPreference mShowScreenShot;
+    CheckBoxPreference mShowTorchToggle;
+    CheckBoxPreference mShowAirplaneToggle;
     CheckBoxPreference mShowNavBarHide;
 
     @Override
@@ -43,56 +43,49 @@ public class PowerMenu extends PreferenceFragment {
             mShowPowerSaver
                     .setSummary("You need to enable power saver before you can see it in the power menu.");
         }
-        mShowPowerSaver.setChecked(powerSaverVal != 0);
+        mShowPowerSaver.setChecked(powerSaverVal != 0); */
 
         mShowTorchToggle = (CheckBoxPreference) findPreference(PREF_TORCH_TOGGLE);
-        mShowTorchToggle.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE,
-                0) == 1);
+        mShowTorchToggle.setChecked(Settings.System.getBoolean(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE, false));
 
         mShowScreenShot = (CheckBoxPreference) findPreference(PREF_SCREENSHOT);
-        mShowScreenShot.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
-                0) == 1);
+        mShowScreenShot.setChecked(Settings.System.getBoolean(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_SCREENSHOT, false));
 
         mShowAirplaneToggle = (CheckBoxPreference) findPreference(PREF_AIRPLANE_TOGGLE);
-        mShowAirplaneToggle.setChecked(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
-                1) == 1);
-        */
+        mShowAirplaneToggle.setChecked(Settings.System.getBoolean(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE, true));
+
         mShowNavBarHide = (CheckBoxPreference) findPreference(PREF_NAVBAR_HIDE);
         mShowNavBarHide.setChecked(Settings.System.getBoolean(getActivity()
-                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
-                false));
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, false));
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-            /*
         if (preference == mShowScreenShot) {
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_SCREENSHOT,
-                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference)preference).isChecked());
             return true;
-
+        /*
         } else if (preference == mShowPowerSaver) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_POWER_SAVER,
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
-            return true;
+            return true; */
         } else if (preference == mShowTorchToggle) {
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_TORCH_TOGGLE,
-                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference)preference).isChecked());
             return true;
-
         } else if (preference == mShowAirplaneToggle) {
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_AIRPLANE_TOGGLE,
-                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+                    ((CheckBoxPreference)preference).isChecked());
             return true;
-        } else */
-        if (preference == mShowNavBarHide) {
+        } else if (preference == mShowNavBarHide) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
                     ((CheckBoxPreference)preference).isChecked());

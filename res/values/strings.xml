@@ -450,6 +450,7 @@
     <string name="title_phone_flip_mode">Phone Call Silence</string>
 
     <!-- Lockscreen -->
+    <string name="lock_widgets_short">Lockscreen Widgets</string>
     <string name="lockscreen_security_cat">Security</string>
     <string name="lockscreen_layout_cat">Layout</string>
     <string name="lockscreen_music_cat">Music</string>
@@ -464,6 +465,8 @@
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
     <string name="lockscreen_all_widgets_title">Allow all widgets</string>
     <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lock screen, The widget maker and AOKP are not responsible for your choice of lock screen widgets. Choose responsibly.</string>
+    <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
+    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding to many widgets can cause lag issues with lockscreen.</string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="volume_rocker_wake_title">Volume wake</string>

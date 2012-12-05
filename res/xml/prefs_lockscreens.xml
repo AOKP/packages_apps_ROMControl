@@ -52,10 +52,20 @@
                 android:title="@string/lockscreen_auto_rotate_title"
                 android:summary="@string/lockscreen_auto_rotate_summary" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="lock_widgets"
+            android:title="@string/lock_widgets_short">
             <CheckBoxPreference
                 android:key="lockscreen_all_widgets"
                 android:title="@string/lockscreen_all_widgets_title"
                 android:summary="@string/lockscreen_all_widgets_summary" />
+
+            <CheckBoxPreference
+                android:key="lockscreen_unlimited_widgets"
+                android:title="@string/lockscreen_unlimited_widgets_title"
+                android:summary="@string/lockscreen_unlimited_widgets_summary" />
 
     </PreferenceCategory>
 </PreferenceScreen>

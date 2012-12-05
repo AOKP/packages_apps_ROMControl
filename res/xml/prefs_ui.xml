@@ -68,7 +68,14 @@
             android:title="@string/kill_app_longpress_back"
             android:summary="@string/kill_app_longpress_back_summary" />
 
-    </PreferenceCategory>
+        <ListPreference
+            android:key="user_mode_ui"
+            android:title="@string/user_mode_ui"
+            android:summary="@string/user_mode_ui_summary"
+            android:entries="@array/user_mode_ui_entries"
+            android:entryValues="@array/user_mode_ui_values" />
+
+     </PreferenceCategory>
 
      <PreferenceCategory
             android:key="misc"

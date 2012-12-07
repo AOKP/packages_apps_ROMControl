@@ -79,6 +79,12 @@
             android:title="@string/rotate_180_title"
             android:summary="@string/rotate_180_summary" />
 
+        <CheckBoxPreference
+            android:key="ime_switcher"
+            android:title="@string/ime_switcher_title"
+            android:summary="@string/ime_switcher_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

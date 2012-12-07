@@ -86,6 +86,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
+    private static final String PREF_IME_SWITCHER = "ime_switcher";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -107,6 +108,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mVibrateOnExpand;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRamBar;
+    CheckBoxPreference mShowImeSwitcher;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -159,6 +161,10 @@ public class UserInterface extends AOKPPreferenceFragment {
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
+        mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
@@ -316,6 +322,11 @@ public class UserInterface extends AOKPPreferenceFragment {
             })
             .create()
             .show();
+            return true;
+        } else if (preference == mShowImeSwitcher) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    isCheckBoxPrefernceChecked(preference));
             return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());

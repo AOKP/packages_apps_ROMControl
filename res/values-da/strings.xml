@@ -146,7 +146,7 @@
     <string name="rotate_180_summary">Lad din enhed vende på hovedet!</string>
     <string name="recent_kill_all">Aktiver kill-all-knap</string>
     <string name="recent_kill_all_summary">Viser en knap til at lukke alt i nylige vinduet</string>
-    <string name="ram_bar">ylige RAM Bar</string>
+    <string name="ram_bar">Nylige RAM Bar</string>
     <string name="ram_bar_summary">Vis RAM forbrug i nylige menuen</string>
     <string name="kill_app_longpress_back">Hold tilbage for at lukke</string>
     <string name="kill_app_longpress_back_summary">Hold tilbage nede for at lukke nuvænrede aktivitet</string>
@@ -376,28 +376,28 @@
     <string name="navbar_ring">Custom Ring Targets</string>
 
     <!-- LED -->
-    <string name="led_on">LED On</string>
-    <string name="led_time_on">Time Light Is On</string>
-    <string name="led_off">LED Off</string>
-    <string name="led_time_off">Time Light Is Off</string>
-    <string name="led_time_seconds">" seconds"</string>
-    <string name="led_color_click">Click on the LED to change the color</string>
-    <string name="title_led_screen_on">LED flash while screen ON</string>
-    <string name="led_custom_app">Selected App</string>
-    <string name="led_custom_default">Default</string>
-    <string name="led_change_app">Change</string>
-    <string name="led_delete_app">Delete</string>
-    <string name="led_keep_app">Keep</string>
-    <string name="led_custom_title">Custom LED Apps</string>
-    <string name="led_custom_message">"Would you like to change the app: "</string>
+    <string name="led_on">LED Til</string>
+    <string name="led_time_on">Tid lyset er tændt</string>
+    <string name="led_off">LED Fra</string>
+    <string name="led_time_off">Tid lyset er slukket</string>
+    <string name="led_time_seconds">" sekunder"</string>
+    <string name="led_color_click">Klik på LED for at skifte farve</string>
+    <string name="title_led_screen_on">LED blinker ved tændt skærm</string>
+    <string name="led_custom_app">Valgt App</string>
+    <string name="led_custom_default">Standard</string>
+    <string name="led_change_app">Skift</string>
+    <string name="led_delete_app">Slet</string>
+    <string name="led_keep_app">Gem</string>
+    <string name="led_custom_title">Alternative LED Apps</string>
+    <string name="led_custom_message">"Vil du gerne ændre appen: "</string>
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Test LED</string>
-    <string name="led_test_notification_message_now">"Now testing LED for: "</string>
-    <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup till you're done viewing the LED color."</string>
+    <string name="led_test_notification_message_now">"Tester nu LED for: "</string>
+    <string name="led_test_notification_message_note">".  Sluk venligst skærm for at se LED. Tryk ikke OK før du er færdig med at se LED farve."</string>
     <string name="led_test_ok">OK</string>
-    <string name="title_charging_led_on">Enable LED while charging (needs reboot)</string>
-    <string name="led_change_brightness">Change brightness</string>
-    <string name="led_brightness_default">Default brightness: 31</string>
+    <string name="title_charging_led_on">Aktiver LED under opladning (genstart kræves)</string>
+    <string name="led_change_brightness">Skift lysstyrke</string>
+    <string name="led_brightness_default">Standard lysstyrke: 31</string>
 
     <!-- Sound -->
     <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
@@ -427,11 +427,11 @@
     <string name="title_phone_flip_mode">Phone Call Silence</string>
 
     <!-- Lockscreen -->
-    <string name="lockscreen_security_cat">Security</string>
+    <string name="lockscreen_security_cat">Sikkerhed</string>
     <string name="lockscreen_layout_cat">Layout</string>
-    <string name="lockscreen_music_cat">Music</string>
-    <string name="lockscreen_weather_cat">Weather</string>
-    <string name="lockscreen_calendar_cat">Calendar</string>
+    <string name="lockscreen_music_cat">Musik</string>
+    <string name="lockscreen_weather_cat">Vejr</string>
+    <string name="lockscreen_calendar_cat">Kalender</string>
 
     <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
@@ -652,42 +652,42 @@
     <string name="clipboard_notification">Copied to clipboard.</string>
 
     <!-- Performance -->
-    <string name="tab_cpu_settings">"CPU Settings"</string>
-    <string name="tab_voltage_settings">"Voltage Settings"</string>
-    <string name="tab_other_settings">"Other Settings"</string>
-    <string name="current_speed">Current Speed</string>
-    <string name="current_max">Current max:</string>
-    <string name="current_min">Current min:</string>
+    <string name="tab_cpu_settings">"CPU Indstillinger"</string>
+    <string name="tab_voltage_settings">"Strøm Indstillinger"</string>
+    <string name="tab_other_settings">"Andre Indstillinger"</string>
+    <string name="current_speed">Nuværende hastighed</string>
+    <string name="current_max">Nuværende maks:</string>
+    <string name="current_min">Nuværende min:</string>
     <string name="governor">Governor</string>
     <string name="io">IO Scheduler</string>
-    <string name="sob">Set on boot</string>
+    <string name="sob">Indstil ved boot</string>
     <string name="dt_free_memory">Minfree Taskkiller</string>
-    <string name="prefcat_free_memory">Free Memory</string>
-    <string name="pt_free_memory">Free memory</string>
-    <string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep | Current: %s</string>
-    <string name="pt_free_memory_boot">Set at boot</string>
-    <string name="ps_free_memory_boot">Apply the amount above at boot</string>
-    <string name="pt_fast_charge_boot">Fast Charge</string>
-    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
+    <string name="prefcat_free_memory">Ledig Hukommelse</string>
+    <string name="pt_free_memory">Ledig hukommelse</string>
+    <string name="ps_free_memory">Mængde af RAM som minfree taskkiller vil holde | Nuværende: %s</string>
+    <string name="pt_free_memory_boot">Indstil ved boot</string>
+    <string name="ps_free_memory_boot">Sæt ovenstående ved boot</string>
+    <string name="pt_fast_charge_boot">Hurtig Opladning</string>
+    <string name="ps_fast_charge_boot">Aktiver hurtig opladning ved boot</string>
     <string name="ps_volt_mhz_voltage">" MHz Voltage"</string>
-    <string name="ps_volt_save">"Save"</string>
-    <string name="ps_volt_current_voltage">"Current voltage: "</string>
-    <string name="ps_volt_setting_to_apply">"Setting to apply: "</string>
-    <string name="pt_volt_control">Voltage control</string>
-    <string name="ps_volt_control">Set voltages for each frequency</string>
-    <string name="not_supported">Your kernel does not support voltage control</string>
-    <string name="apply_values">Apply values</string>
-    <string name="freq">Frequency</string>
-    <string name="current">mV current</string>
-    <string name="saved">mV saved</string>
-    <string name="kernel">Kernel Tweaks (if supported)</string>
-    <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
-    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
-    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
-    <string name="prefcat_other_tweaks">Other tweaks</string>
-    <string name="performance_daily_reboot_title">Daily reboot</string>
-    <string name="performance_daily_reboot_summary">Reboot scheduled at %1$s</string>
-    <string name="performance_daily_reboot_summary_unscheduled">Not scheduled</string>
+    <string name="ps_volt_save">"Gem"</string>
+    <string name="ps_volt_current_voltage">"Nuværende voltage: "</string>
+    <string name="ps_volt_setting_to_apply">"Sæt indstilling: "</string>
+    <string name="pt_volt_control">Voltage kontrol</string>
+    <string name="ps_volt_control">Sæt voltages for hver frekvens</string>
+    <string name="not_supported">Din kernel understøtter ikke voltage kontrol</string>
+    <string name="apply_values">Indstil værdier</string>
+    <string name="freq">Frekvens</string>
+    <string name="current">mV nuværende</string>
+    <string name="saved">mV gemt</string>
+    <string name="kernel">Kernel Tweaks (hvis understøttet)</string>
+    <string name="fast_charge_warning">DU VIL IKKE KUNNE FORBINDE TIL DIN PC EFTER HVER GENSTART!\n\nDenne indstilling vil slå hurtig opladning TIL ved hver genstart. Mens hurtig opladning er til, kan du *kun* oplade din enhed!</string>
+    <string name="fast_charge_notification_title">Hurtig Opladning er TIL!</string>
+    <string name="fast_charge_notification_message">Enhed er i oplad-kun mode!</string>
+    <string name="prefcat_other_tweaks">Andre tweaks</string>
+    <string name="performance_daily_reboot_title">Daglig genstart</string>
+    <string name="performance_daily_reboot_summary">Genstart skemalagt %1$s</string>
+    <string name="performance_daily_reboot_summary_unscheduled">Ikke skemalagt</string>
 
     <!-- Custom vibrations -->
     <string name="vibrations">Vibrationer</string>

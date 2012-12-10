@@ -19,6 +19,13 @@
         android:title="@string/toggles_per_row_title"
         android:summary="@string/toggles_per_row_summary" />
 
+    <ListPreference
+        android:entries="@array/quicksettings_theme_style_entries"
+        android:entryValues="@array/quicksettings_theme_style_values"
+        android:key="quick_theme_style"
+        android:title="@string/quicksettings_theme_style"
+        android:summary="@string/quicksettings_theme_style_summary" />
+
     <Preference
         android:key="toggle_fav_contact"
         android:summary="@string/toggle_favcontact_summary"

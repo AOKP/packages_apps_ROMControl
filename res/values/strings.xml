@@ -230,6 +230,12 @@
     <string name="toggle_favcontact_title">Favorite contact</string>
     <string name="toggle_favcontact_summary">Choose your favorite contact</string>
 
+    <!-- holo theme style for Quick Setting tiles -->
+    <string name="holo_dark">Holo dark</string>
+    <string name="holo_light">Holo light</string>
+    <string name="quicksettings_theme_style">Holo</string>
+    <string name="quicksettings_theme_style_summary">Choose between holo light or holo dark</string>
+
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>
     <string name="title_clock_ampm_entries">AM/PM style</string>

@@ -363,6 +363,16 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
 
         if (uri.equals("**null**")) {
                 return getResources().getString(R.string.none);
+        } else if (uri.equals("**home**")) {
+                return getResources().getString(R.string.navbar_action_home);
+        } else if (uri.equals("**back**")) {
+                return getResources().getString(R.string.navbar_action_back);
+        } else if (uri.equals("**recents**")) {
+                return getResources().getString(R.string.navbar_action_recents);
+        } else if (uri.equals("**search**")) {
+                return getResources().getString(R.string.navbar_action_search);
+        } else if (uri.equals("**menu**")) {
+                return getResources().getString(R.string.navbar_action_menu);
         } else if (uri.equals("**screenshot**")) {
                 return getResources().getString(R.string.take_screenshot);
         } else if (uri.equals("**ime**")) {
@@ -405,6 +415,16 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
 
             if (uri.equals("**null**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_null);
+            } else if (uri.equals("**home**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_home);
+            } else if (uri.equals("**back**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_back);
+            } else if (uri.equals("**recents**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_recent);
+            } else if (uri.equals("**search**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_search);
+            } else if (uri.equals("**menu**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
             } else if (uri.equals("**screenshot**")) {
                 return getResources().getDrawable(R.drawable.ic_navbar_screenshot);
             } else if (uri.equals("**ime**")) {

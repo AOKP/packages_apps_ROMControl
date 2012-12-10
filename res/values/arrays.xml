@@ -227,6 +227,11 @@
     </string-array>
     <string-array name="navring_dialog_entries" translatable="false">
         <item>@string/none</item>
+        <item>@string/home</item>
+        <item>@string/back</item>
+        <item>@string/recents</item>
+        <item>@string/search</item>
+        <item>@string/menu</item>
         <item>@string/take_screenshot</item>
         <item>@string/open_ime_switcher</item>
         <item>@string/ring_vib</item>
@@ -239,6 +244,11 @@
     </string-array>
     <string-array name="navring_dialog_values" translatable="false">
         <item>**null**</item>
+        <item>**home**</item>
+        <item>**back**</item>
+        <item>**recents**</item>
+        <item>**search**</item>
+        <item>**menu**</item>
         <item>**screenshot**</item>
         <item>**ime**</item>
         <item>**ring_vib**</item>

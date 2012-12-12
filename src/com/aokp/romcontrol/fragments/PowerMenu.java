@@ -4,15 +4,15 @@ package com.aokp.romcontrol.fragments;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
+import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.R.xml;
 
-public class PowerMenu extends PreferenceFragment {
+public class PowerMenu extends AOKPPreferenceFragment {
 
     //private static final String PREF_POWER_SAVER = "show_power_saver";
     private static final String PREF_SCREENSHOT = "show_screenshot";

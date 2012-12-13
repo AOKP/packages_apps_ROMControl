@@ -927,4 +927,11 @@
     <string name="toggles_enable_haptic_feedback_title">Enable haptic feedback</string>
     <string name="toggles_enable_haptic_feedback_summary">Use haptic feedback when pressing toggles</string>
 
+    <!-- quick reply -->
+    <string name="quick_reply_title">QuickReply</string>
+    <string name="qr_call_back">Call Back</string>
+    <string name="qr_sms">Quick Reply</string>
+    <string name="qr_delete">Delete Thread</string>
+    <string name="qr_mark_read">Mark Read</string>
+    <string name="only_three_please">Only select three options at once</string>
 </resources>

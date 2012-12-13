@@ -45,7 +45,31 @@
             android:key="vibrate_notif_expand"
             android:title="@string/vibrate_notif_expand_title"
             android:summary="@string/vibrate_notif_expand_summary" />
+    </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="quick_reply_cat"
+        android:title="@string/quick_reply_title">
+
+        <CheckBoxPreference
+            android:key="quick_reply_call_back"
+            android:title="@string/qr_call_back"
+            android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            android:key="quick_reply_sms"
+            android:title="@string/qr_sms"
+            android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            android:key="quick_reply_delete"
+            android:title="@string/qr_delete"
+            android:defaultValue="false"/>
+
+        <CheckBoxPreference
+            android:key="quick_reply_mark_read"
+            android:title="@string/qr_mark_read"
+            android:defaultValue="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory

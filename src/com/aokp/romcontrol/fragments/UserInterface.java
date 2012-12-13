@@ -1,18 +1,8 @@
 package com.aokp.romcontrol.fragments;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.util.Random;
-
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,32 +15,25 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.Rect;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceGroup;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.TwoStatePreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.text.Spannable;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.Window;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -58,19 +41,24 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.AbstractAsyncSuCMDProcessor;
+import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.StringBuilder;
+import java.io.InputStreamReader;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Random;
+import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -87,6 +75,11 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
+    private static final String PREF_QR_CAT = "quick_reply_cat";
+    private static final String PREF_QR_CALL_BACK = "quick_reply_call_back";
+    private static final String PREF_QR_QUICK_REPLY = "quick_reply_sms";
+    private static final String PREF_QR_DELETE = "quick_reply_delete";
+    private static final String PREF_QR_MARK_READ = "quick_reply_mark_read";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -95,6 +88,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final int SELECT_WALLPAPER = 5;
 
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
+    private static final Pattern COMPILED_DELIMITER = Pattern.compile("\\|");
 
     CheckBoxPreference mAllow180Rotation;
     CheckBoxPreference mDisableBootAnimation;
@@ -109,14 +103,18 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRamBar;
     CheckBoxPreference mShowImeSwitcher;
+    // quick reply
+    PreferenceCategory mQuickReplyCat;
+    CheckBoxPreference mQrCallBack;
+    CheckBoxPreference mQrQuickReply;
+    CheckBoxPreference mQrDelete;
+    CheckBoxPreference mQrMarkRead;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
     private String mPartName1;
     private String mPartName2;
     private int delay;
-    private int height;
-    private int width;
     private String errormsg;
     private String bootAniPath;
 
@@ -135,54 +133,52 @@ public class UserInterface extends AOKPPreferenceFragment {
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_ui);
 
-        PreferenceScreen prefs = getPreferenceScreen();
         mInsults = mContext.getResources().getStringArray(
                 R.array.disable_bootanimation_insults);
 
         mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
-        mAllow180Rotation.setChecked(Settings.System.getInt(mContext
-                .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_ANGLES, (1 | 2 | 8)) == (1 | 2 | 4 | 8));
-
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
-                .getContentResolver(), Settings.System.STATUSBAR_NOTIF_COUNT,
-                false));
-
         mDisableBootAnimation = (CheckBoxPreference)findPreference("disable_bootanimation");
-        mDisableBootAnimation.setChecked(!new File("/system/media/bootanimation.zip").exists());
+        mCustomBootAnimation = findPreference("custom_bootanimation");
+        mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
+        mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
+        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
+        mWallpaperAlpha = findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+        mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
+        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
+        // quick replies
+        mQuickReplyCat = (PreferenceCategory) findPreference(PREF_QR_CAT);
+        mQrCallBack = (CheckBoxPreference) findPreference(PREF_QR_CALL_BACK);
+        mQrQuickReply = (CheckBoxPreference) findPreference(PREF_QR_QUICK_REPLY);
+        mQrDelete = (CheckBoxPreference) findPreference(PREF_QR_DELETE);
+        mQrMarkRead = (CheckBoxPreference) findPreference(PREF_QR_MARK_READ);
+        updateScreen();
+        setHasOptionsMenu(true);
+    }
+
+    private void updateScreen() {
+        mAllow180Rotation.setChecked(Settings.System.getInt(mContext
+            .getContentResolver(), Settings.System.ACCELEROMETER_ROTATION_ANGLES, (1 | 2 | 8)) == (1 | 2 | 4 | 8));
+        mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContext
+            .getContentResolver(), Settings.System.STATUSBAR_NOTIF_COUNT,
+            false));
+        mDisableBootAnimation.setChecked(! new File("/system/media/bootanimation.zip").exists());
         if (mDisableBootAnimation.isChecked()) {
             Resources res = mContext.getResources();
             String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
             int randomInt = randomGenerator.nextInt(insults.length);
             mDisableBootAnimation.setSummary(insults[randomInt]);
         }
-
-        mCustomBootAnimation = findPreference("custom_bootanimation");
-
-        mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
-        updateCustomLabelTextSummary();
-
-        mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
-
-        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
-
-        mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
-
-        mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
+            Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
         mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                Settings.System.VIBRATE_NOTIF_EXPAND, true));
-
-        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
-        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
-                Settings.System.RECENT_KILL_ALL_BUTTON, false));
-
-        mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
-        mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
-                Settings.System.RAM_USAGE_BAR, false));
-
-        setHasOptionsMenu(true);
+            Settings.System.VIBRATE_NOTIF_EXPAND, true));
+        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+            Settings.System.RECENT_KILL_ALL_BUTTON, false));
+        mRamBar.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+            Settings.System.RAM_USAGE_BAR, false));
+        updateCustomLabelTextSummary();
     }
 
     private void updateCustomLabelTextSummary() {
@@ -273,7 +269,6 @@ public class UserInterface extends AOKPPreferenceFragment {
             intent.putExtra("scaleUpIfNeeded", true);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, getNotificationExternalUri());
             intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             return true;
         } else if (preference == mWallpaperAlpha) {
@@ -341,7 +336,7 @@ public class UserInterface extends AOKPPreferenceFragment {
 
             alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                    String value = ((Spannable) input.getText()).toString();
+                    String value = input.getText().toString();
                     Settings.System.putString(getActivity().getContentResolver(),
                             Settings.System.CUSTOM_CARRIER_LABEL, value);
                     updateCustomLabelTextSummary();
@@ -373,9 +368,42 @@ public class UserInterface extends AOKPPreferenceFragment {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.RAM_USAGE_BAR, checked ? true : false);
             return true;
+        } else if (preference == mQrCallBack
+            || preference == mQrQuickReply
+            || preference == mQrDelete
+            || preference == mQrMarkRead) {
+            quickReplyAction((CheckBoxPreference) preference);
         }
-
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    private void quickReplyAction(CheckBoxPreference cbPreference) {
+        if (getQuickReplyOptionsCount() >= 3) {
+            cbPreference.setChecked(!cbPreference.isChecked());
+            Toast.makeText(mContext, R.string.only_three_please, Toast.LENGTH_SHORT);
+            return;
+        }
+        ContentResolver contentResolver = getActivity().getContentResolver();
+        StringBuilder stringBuilder = new StringBuilder(0);
+        int count = mQuickReplyCat.getPreferenceCount();
+        for (int i = 0; count > i; i++) {
+            stringBuilder.append(String.valueOf(
+                ((TwoStatePreference) mQuickReplyCat.getPreference(i)).isChecked()));
+            stringBuilder.append(count == i ? "" : '|');
+        }
+        Settings.System.putString(contentResolver,
+            Settings.System.QUICK_REPLY_BUTTONS,
+            stringBuilder.toString());
+    }
+
+    private int getQuickReplyOptionsCount() {
+        int count = 0;
+        for (int i = 0; mQuickReplyCat.getPreferenceCount() > i; i++) {
+            if (((CheckBoxPreference) mQuickReplyCat.getPreference(i)).isChecked()) {
+                count++;
+            }
+        }
+        return count;
     }
 
     @Override
@@ -386,7 +414,6 @@ public class UserInterface extends AOKPPreferenceFragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.remove_wallpaper:
                 File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
@@ -394,7 +421,7 @@ public class UserInterface extends AOKPPreferenceFragment {
                 Helpers.restartSystemUI();
                 return true;
             default:
-                return super.onContextItemSelected(item);
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -459,28 +486,18 @@ public class UserInterface extends AOKPPreferenceFragment {
                 LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
                 View layout = inflater.inflate(R.layout.dialog_bootanimation_preview,
                         (ViewGroup) getActivity().findViewById(R.id.bootanimation_layout_root));
-
                 error = (TextView) layout.findViewById(R.id.textViewError);
-
                 view = (ImageView) layout.findViewById(R.id.imageViewPreview);
                 view.setVisibility(View.GONE);
-
                 Display display = getActivity().getWindowManager().getDefaultDisplay();
                 Point size = new Point();
                 display.getSize(size);
-
                 view.setLayoutParams(new LinearLayout.LayoutParams(size.x/2, size.y/2));
-
                 error.setText(R.string.creating_preview);
-
                 builder.setView(layout);
-
                 AlertDialog dialog = builder.create();
-
                 dialog.setOwnerActivity(getActivity());
-
                 dialog.show();
-
                 Thread thread = new Thread(new Runnable() {
 
                     @Override
@@ -489,37 +506,44 @@ public class UserInterface extends AOKPPreferenceFragment {
                     }
                 });
                 thread.start();
-
             }
         }
     }
 
     public void copy(File src, File dst) throws IOException {
-        InputStream in = new FileInputStream(src);
-        FileOutputStream out = new FileOutputStream(dst);
+        InputStream in = null;
+        FileOutputStream out = null;
+        try {
+            in = new FileInputStream(src);
+            out = new FileOutputStream(dst);
 
-        // Transfer bytes from in to out
-        byte[] buf = new byte[1024];
-        int len;
-        while ((len = in.read(buf)) > 0) {
-            out.write(buf, 0, len);
+            // Transfer bytes from in to out
+            byte[] buf = new byte[1024];
+            int len;
+            while ((len = in.read(buf)) > 0) {
+                out.write(buf, 0, len);
+            }
+        } finally {
+            in.close();
+            out.close();
         }
-        in.close();
-        out.close();
+
     }
 
     private void createPreview(String path) {
         File zip = new File(path);
-
         ZipFile zipfile = null;
         String desc = "";
+        InputStream in = null;
+        InputStreamReader is = null;
+        BufferedReader br = null;
         try {
             zipfile = new ZipFile(zip);
             ZipEntry ze = zipfile.getEntry("desc.txt");
-            InputStream in = zipfile.getInputStream(ze);
-            InputStreamReader is = new InputStreamReader(in);
+            in = zipfile.getInputStream(ze);
+            is = new InputStreamReader(in);
             StringBuilder sb = new StringBuilder();
-            BufferedReader br = new BufferedReader(is);
+            br = new BufferedReader(is);
             String read = br.readLine();
             while(read != null) {
                 sb.append(read);
@@ -527,20 +551,23 @@ public class UserInterface extends AOKPPreferenceFragment {
                 read = br.readLine();
             }
             desc = sb.toString();
-            br.close();
-            is.close();
-            in.close();
-
         } catch (Exception e1) {
             errormsg = getActivity().getString(R.string.error_reading_zip_file);
             errorHandler.sendEmptyMessage(0);
             return;
+        } finally {
+            try {
+                br.close();
+                is.close();
+                in.close();
+            } catch (IOException ioe) {
+            }
         }
 
         String[] info = desc.replace("\\r", "").split("\\n");
-
-        width = Integer.parseInt(info[0].split(" ")[0]);
-        height = Integer.parseInt(info[0].split(" ")[1]);
+        //XXX: these are set but never accessed
+        int width = Integer.parseInt(info[0].split(" ")[0]);
+        int height = Integer.parseInt(info[0].split(" ")[1]);
         delay = Integer.parseInt(info[0].split(" ")[2]);
 
         mPartName1 = info[1].split(" ")[3];
@@ -548,39 +575,44 @@ public class UserInterface extends AOKPPreferenceFragment {
         try {
             if (info.length > 2) {
                 mPartName2 = info[2].split(" ")[3];
-            }
-            else {
+            } else {
                 mPartName2 = "";
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             mPartName2 = "";
         }
 
         BitmapFactory.Options opt = new BitmapFactory.Options();
         opt.inSampleSize = 4;
-
         mAnimationPart1 = new AnimationDrawable();
         mAnimationPart2 = new AnimationDrawable();
 
-        try
-        {
+        try {
             for (Enumeration<? extends ZipEntry> e = zipfile.entries(); e.hasMoreElements();) {
-                ZipEntry entry = (ZipEntry) e.nextElement();
+                ZipEntry entry = e.nextElement();
                 if (entry.isDirectory()) {
                     continue;
                 }
                 String partname = entry.getName().split("/")[0];
+
                 if (mPartName1.equalsIgnoreCase(partname)) {
-                    InputStream is = zipfile.getInputStream(entry);
-                    mAnimationPart1.addFrame(new BitmapDrawable(getResources(), BitmapFactory.decodeStream(is, null, opt)), delay);
-                    is.close();
-                }
-                else if (mPartName2.equalsIgnoreCase(partname)) {
-                    InputStream is = zipfile.getInputStream(entry);
-                    mAnimationPart2.addFrame(new BitmapDrawable(getResources(), BitmapFactory.decodeStream(is, null, opt)), delay);
-                    is.close();
+                    InputStream inputStreamOne = null;
+                    try {
+                        inputStreamOne = zipfile.getInputStream(entry);
+                        mAnimationPart1.addFrame(new BitmapDrawable(getResources(),
+                            BitmapFactory.decodeStream(inputStreamOne, null, opt)), delay);
+                    } finally {
+                        inputStreamOne.close();
+                    }
+                } else if (mPartName2.equalsIgnoreCase(partname)) {
+                    InputStream inputStreamTwo = null;
+                    try {
+                        inputStreamTwo = zipfile.getInputStream(entry);
+                        mAnimationPart2.addFrame(new BitmapDrawable(getResources(),
+                            BitmapFactory.decodeStream(inputStreamTwo, null, opt)), delay);
+                    } finally {
+                        inputStreamTwo.close();
+                    }
                 }
             }
         } catch (IOException e1) {
@@ -593,9 +625,8 @@ public class UserInterface extends AOKPPreferenceFragment {
             Log.d(TAG, "Multipart Animation");
             mAnimationPart1.setOneShot(false);
             mAnimationPart2.setOneShot(false);
-
-            mAnimationPart1.setOnAnimationFinishedListener(new AnimationDrawable.OnAnimationFinishedListener() {
-
+            mAnimationPart1.setOnAnimationFinishedListener(
+                    new AnimationDrawable.OnAnimationFinishedListener() {
                 @Override
                 public void onAnimationFinished() {
                     Log.d(TAG, "First part finished");
@@ -604,12 +635,9 @@ public class UserInterface extends AOKPPreferenceFragment {
                     mAnimationPart2.start();
                 }
             });
-
-        }
-        else {
+        } else {
             mAnimationPart1.setOneShot(false);
         }
-
         finishedHandler.sendEmptyMessage(0);
 
     }

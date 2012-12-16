@@ -365,6 +365,8 @@
     <string name="navbar_widgets_shiftLeft">Shift left</string>
     <string name="navbar_widgets_shiftRight">Shift right</string>
     <string name="navbar_widgets_delete">Delete widget</string>
+    <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>

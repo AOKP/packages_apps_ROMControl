@@ -117,14 +117,14 @@ public class HeadphoneService extends Service {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
         // stored as strings from listpreference
-        return Integer.parseInt(prefs.getString(KEY_HEADPHONE_AUDIO_MODE, MODE_VIBRATE + ""));
+        return Integer.parseInt(prefs.getString(KEY_HEADPHONE_AUDIO_MODE, String.valueOf(MODE_UNTOUCHED)));
     }
     
     public static int getUserBTAudioMode(Context c) {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
         // stored as strings from listpreference
-        return Integer.parseInt(prefs.getString(KEY_BT_AUDIO_MODE, MODE_VIBRATE + ""));
+        return Integer.parseInt(prefs.getString(KEY_BT_AUDIO_MODE, String.valueOf(MODE_UNTOUCHED)));
     }
 
     @Override

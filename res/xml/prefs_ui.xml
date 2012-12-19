@@ -83,6 +83,12 @@
             android:key="misc"
             android:title="@string/misc_short">
 
+        <CheckBoxPreference
+            android:key="show_overflow"
+            android:title="@string/show_overflow_title"
+            android:summary="@string/show_overflow_summary"
+            android:defaultValue="false" />
+
          <CheckBoxPreference
             android:key="rotate_180"
             android:title="@string/rotate_180_title"

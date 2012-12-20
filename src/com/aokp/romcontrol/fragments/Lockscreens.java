@@ -87,12 +87,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
 
     CheckBoxPreference mVolumeMusic;
     CheckBoxPreference mVolumeRockerWake;
-    CheckBoxPreference mQuickUnlock;
+//    CheckBoxPreference mQuickUnlock;
     CheckBoxPreference mLockscreenBattery;
     CheckBoxPreference mLockscreenAllWidgets;
     CheckBoxPreference mLockscreenUnlimitedWidgets;
     ColorPickerPreference mLockscreenTextColor;
-    CheckBoxPreference mLockscreenAutoRotate;
+//    CheckBoxPreference mLockscreenAutoRotate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -110,12 +110,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
         mVolumeMusic.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.VOLUME_MUSIC_CONTROLS, false));
 
-        mQuickUnlock = (CheckBoxPreference) findPreference(PREF_QUICK_UNLOCK);
-        mQuickUnlock.setChecked(Settings.System.getBoolean(mContext.getContentResolver(), Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, false));
+//        mQuickUnlock = (CheckBoxPreference) findPreference(PREF_QUICK_UNLOCK);
+//        mQuickUnlock.setChecked(Settings.System.getBoolean(mContext.getContentResolver(), Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, false));
 
-        mLockscreenAutoRotate = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_AUTO_ROTATE);
-        mLockscreenAutoRotate.setChecked(Settings.System.getBoolean(mContext
-                .getContentResolver(), Settings.System.LOCKSCREEN_AUTO_ROTATE, false));
+//        mLockscreenAutoRotate = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_AUTO_ROTATE);
+//        mLockscreenAutoRotate.setChecked(Settings.System.getBoolean(mContext
+//                .getContentResolver(), Settings.System.LOCKSCREEN_AUTO_ROTATE, false));
 
         mLockscreenBattery = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_BATTERY);
         mLockscreenBattery.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
@@ -155,11 +155,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
                     Settings.System.VOLUME_MUSIC_CONTROLS,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
-        } else if (preference == mQuickUnlock) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
-                    ((CheckBoxPreference) preference).isChecked());
-            return true;
+//        } else if (preference == mQuickUnlock) {
+//            Settings.System.putBoolean(mContext.getContentResolver(),
+//                    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
+//                    ((CheckBoxPreference) preference).isChecked());
+//            return true;
         } else if (preference == mLockscreenAllWidgets) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.LOCKSCREEN_ALL_WIDGETS,
@@ -200,11 +200,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
                     Settings.System.LOCKSCREEN_BATTERY,
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mLockscreenAutoRotate) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.LOCKSCREEN_AUTO_ROTATE,
-                    ((CheckBoxPreference) preference).isChecked());
-            return true;
+//        } else if (preference == mLockscreenAutoRotate) {
+//            Settings.System.putBoolean(mContext.getContentResolver(),
+//                    Settings.System.LOCKSCREEN_AUTO_ROTATE,
+//                    ((CheckBoxPreference) preference).isChecked());
+//            return true;
         }
         
         return super.onPreferenceTreeClick(preferenceScreen, preference);

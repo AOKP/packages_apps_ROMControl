@@ -2,7 +2,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
+   <!--  <PreferenceCategory
             android:key="security"
             android:title="@string/lockscreen_security_cat">
 
@@ -11,7 +11,7 @@
             android:title="@string/lockscreen_quick_unlock_control_title"
             android:summary="@string/lockscreen_quick_unlock_control_summary" />
 
-    </PreferenceCategory>
+    </PreferenceCategory> -->
     <PreferenceCategory
         android:key="layout"
         android:title="@string/lockscreen_layout_cat">
@@ -43,7 +43,7 @@
             android:summary="@string/volume_music_controls_summary" />
 
     </PreferenceCategory>
-    <PreferenceCategory
+    <!-- <PreferenceCategory
             android:key="misc"
             android:title="@string/misc_short">
 
@@ -52,7 +52,7 @@
                 android:title="@string/lockscreen_auto_rotate_title"
                 android:summary="@string/lockscreen_auto_rotate_summary" />
 
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
     <PreferenceCategory
             android:key="lock_widgets"

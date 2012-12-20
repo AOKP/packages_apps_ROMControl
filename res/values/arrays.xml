@@ -145,6 +145,8 @@
         <item>@string/icon_with_text</item>
         <item>@string/icon_with_centered_text</item>
         <item>@string/circlemod</item>
+	<item>@string/status_bar_battery_status_cyanogenmod_circle</item>
+	<item>@string/status_bar_battery_status_cyanogenmod_circle_percentage</item>
         <item>@string/dont_show</item>
     </string-array>
     <string-array name="battery_icon_values" translatable="false">
@@ -154,6 +156,8 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+	<item>6</item>
+	<item>7</item>
     </string-array>
 
     <!-- NavBar -->

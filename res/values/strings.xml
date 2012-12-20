@@ -788,6 +788,8 @@
     <string name="icon_with_text">Icon with text</string>
     <string name="icon_with_centered_text">Icon with centered text</string>
     <string name="circlemod">CircleMOD</string>
+    <string name="status_bar_battery_status_cyanogenmod_circle">CyanogenMod Circle</string>
+    <string name="status_bar_battery_status_cyanogenmod_circle_percentage">CyanogenMod Circle with percentage</string>
 
     <!-- NavBar -->
     <string name="right">Right</string>

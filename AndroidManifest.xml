@@ -174,9 +174,17 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".service.ChangeFastChargeStateReceiver" >
+            <intent-filter>
+                <action android:name="com.aokp.romcontrol.ACTION_CHANGE_FCHARGE_STATE" />
+            </intent-filter>
+        </receiver>
         <service android:name=".service.BootService" />
         <service android:name=".service.HeadphoneService" />
         <service android:name=".service.FlipService" />
+        <service android:name=".service.ExternalCommandService"
+            android:exported="false" />
     </application>
 
 </manifest>

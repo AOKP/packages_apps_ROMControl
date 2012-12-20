@@ -169,6 +169,8 @@
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
     <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
+    <string name="brightness_slider_title">Statusbar brightness slider</string>
+    <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
 
 
     <!-- LCD Density -->

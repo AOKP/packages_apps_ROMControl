@@ -87,6 +87,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
+    private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -109,6 +110,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRamBar;
     CheckBoxPreference mShowImeSwitcher;
+    CheckBoxPreference mStatusbarSliderPreference;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -165,6 +167,10 @@ public class UserInterface extends AOKPPreferenceFragment {
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
+
+        mStatusbarSliderPreference = (CheckBoxPreference) findPreference(PREF_STATUSBAR_BRIGHTNESS);
+        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, true));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
@@ -326,6 +332,11 @@ public class UserInterface extends AOKPPreferenceFragment {
         } else if (preference == mShowImeSwitcher) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    isCheckBoxPrefernceChecked(preference));
+            return true;
+        } else if (preference == mStatusbarSliderPreference) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BRIGHTNESS_SLIDER,
                     isCheckBoxPrefernceChecked(preference));
             return true;
         } else if (preference == mCustomLabel) {

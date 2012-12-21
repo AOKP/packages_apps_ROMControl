@@ -798,5 +798,13 @@
         <item>**update**</item>
         <item>**app**</item>
     </string-array>
+    <string-array name="choose_toggle_side_entries" translatable="false">
+        <item>@string/right</item>
+        <item>@string/left</item>
+    </string-array>
+    <string-array name="choose_toggle_side_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
 </resources>

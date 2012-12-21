@@ -51,6 +51,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private static final String PREF_ENABLE_TOGGLES = "enabled_toggles";
     private static final String PREF_TOGGLES_PER_ROW = "toggles_per_row";
     private static final String PREF_TOGGLE_FAV_CONTACT = "toggle_fav_contact";
+    private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle"; 
 
     private final int PICK_CONTACT = 1;
 
@@ -58,6 +59,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     Preference mLayout;
     ListPreference mTogglesPerRow;
     Preference mFavContact;
+    CheckBoxPreference mFastToggle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,9 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mLayout = findPreference("toggles");
 
         mFavContact = findPreference(PREF_TOGGLE_FAV_CONTACT);
+
+        mFastToggle = (CheckBoxPreference) findPreference(PREF_ENABLE_FASTTOGGLE);
+        mFastToggle.setOnPreferenceChangeListener(this);
 
         final String[] entries = getResources().getStringArray(R.array.available_toggles_entries);
 
@@ -95,6 +100,14 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.QUICK_TOGGLES_PER_ROW, val);
+
+        } else if (preference == mFastToggle) {
+            Log.d("TAGs", "loooool" + (Boolean) newValue);
+            boolean val = (Boolean) newValue;
+            // preference.setChecked(val);
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.FAST_TOGGLE, val);
+            return true;
         }
         return false;
     }

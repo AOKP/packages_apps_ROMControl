@@ -6,7 +6,6 @@
         android:key="enabled_toggles"
         android:summary="@string/enabled_toggles_summary"
         android:title="@string/enabled_toggles_title" />
-
     <Preference
         android:key="toggles"
         android:summary="@string/toggles_order_summary"
@@ -16,12 +15,25 @@
         android:entries="@array/toggles_per_row_entries"
         android:entryValues="@array/toggles_per_row_values"
         android:key="toggles_per_row"
-        android:title="@string/toggles_per_row_title"
-        android:summary="@string/toggles_per_row_summary" />
+        android:summary="@string/toggles_per_row_summary"
+        android:title="@string/toggles_per_row_title" />
 
     <Preference
         android:key="toggle_fav_contact"
         android:summary="@string/toggle_favcontact_summary"
         android:title="@string/toggle_favcontact_title" />
+
+    <CheckBoxPreference
+        android:key="enable_fast_toggle"
+        android:summary="@string/toggle_enable_fasttoggle_summary"
+        android:title="@string/toggle_enable_fasttoggle_title" />
+
+    <ListPreference
+        android:entries="@array/choose_toggle_side_entries"
+        android:entryValues="@array/choose_toggle_side_values"
+        android:key="choose_fast_toggle_side"
+        android:summary="@string/toggle_choose_fasttoggle_side_summary"
+        android:title="@string/toggle_choose_fasttoggle_side_title"
+        android:dependency="enable_fast_toggle" />
 
 </PreferenceScreen>

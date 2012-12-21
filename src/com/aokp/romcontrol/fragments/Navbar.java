@@ -103,6 +103,8 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
+    ColorPreference mNavBar;
+    Preference mStockColor;
     CheckBoxPreference mEnableNavringLong;
     CheckBoxPreference mMenuArrowKeysCheckBox;
     Preference mConfigureWidgets;
@@ -198,6 +200,13 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
+
+        mNavBar = (ColorPreference) findPreference("interface_navbar_color");
+        mNavBar.setProviderTarget(Settings.System.SYSTEMUI_NAVBAR_COLOR,
+                                  Settings.System.SYSTEMUI_NAVBAR_COLOR_DEF);
+
+        mStockColor = (Preference) findPreference("interface_navbar_color_default");
+        mStockColor.setOnPreferenceClickListener(this);
 
         mMenuArrowKeysCheckBox = (CheckBoxPreference) findPreference(PREF_MENU_ARROWS);
         mMenuArrowKeysCheckBox.setChecked(Settings.System.getBoolean(getContentResolver(),
@@ -421,6 +430,17 @@ public class Navbar extends AOKPPreferenceFragment implements
 
     public void resetNavRingLong() {
             // TODO : FIXME
+    }
+
+	
+    @Override
+    public boolean onPreferenceClick(Preference pref) {
+        // TODO Auto-generated method stub
+        if (pref.equals(mStockColor)) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEMUI_NAVBAR_COLOR, -1);
+        }
+        return false;
     }
 
     @Override

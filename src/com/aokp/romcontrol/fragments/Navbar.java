@@ -70,6 +70,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
     private static final String PREF_NAV_COLOR = "nav_button_color";
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
+    private static final String SYSTEMUI_NAVBAR_COLOR = "interface_navbar_color";
     private static final String PREF_GLOW_TIMES = "glow_times";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
     private static final String ENABLE_NAVIGATION_BAR = "enable_navigation_bar";
@@ -103,6 +104,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
+    ColorPickerPreference mNavBar;
     CheckBoxPreference mEnableNavringLong;
     CheckBoxPreference mMenuArrowKeysCheckBox;
     Preference mConfigureWidgets;
@@ -198,6 +200,9 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
+
+        mNavBar = (ColorPickerPreference) findPreference(SYSTEMUI_NAVBAR_COLOR);
+        mNavBar.setOnPreferenceChangeListener(this);
 
         mMenuArrowKeysCheckBox = (CheckBoxPreference) findPreference(PREF_MENU_ARROWS);
         mMenuArrowKeysCheckBox.setChecked(Settings.System.getBoolean(getContentResolver(),
@@ -422,6 +427,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     public void resetNavRingLong() {
             // TODO : FIXME
     }
+
 
     @Override
     public Dialog onCreateDialog(int dialogId) {

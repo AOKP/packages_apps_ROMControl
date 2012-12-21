@@ -1,16 +1,5 @@
 package com.aokp.romcontrol.fragments;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.util.Random;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -25,18 +14,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.Rect;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -47,7 +30,6 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.Window;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView.AdapterContextMenuInfo;
@@ -58,19 +40,24 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.AbstractAsyncSuCMDProcessor;
+import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.StringBuilder;
+import java.io.InputStreamReader;
+import java.nio.channels.FileChannel;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Random;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -261,26 +248,32 @@ public class UserInterface extends AOKPPreferenceFragment {
             }
             return true;
         } else if (preference == mNotificationWallpaper) {
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Display display = getActivity().getWindowManager().getDefaultDisplay();
+                    int width = display.getWidth();
+                    int height = display.getHeight();
 
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            boolean isPortrait = getResources()
-                    .getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height);
-            intent.putExtra("aspectY", isPortrait ? height : width);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, getNotificationExternalUri());
-            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-
-            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                    intent.setType("image/*");
+                    intent.putExtra("crop", "true");
+                    boolean isPortrait = getResources()
+                            .getConfiguration().orientation
+                            == Configuration.ORIENTATION_PORTRAIT;
+                    intent.putExtra("aspectX", isPortrait ? width : height);
+                    intent.putExtra("aspectY", isPortrait ? height : width);
+                    intent.putExtra("outputX", width);
+                    intent.putExtra("outputY", height);
+                    intent.putExtra("scale", true);
+                    intent.putExtra("scaleUpIfNeeded", true);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                            getNotificationExternalUri());
+                    intent.putExtra("outputFormat",
+                            Bitmap.CompressFormat.PNG.toString());
+                    startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+                }
+            }).start();
             return true;
         } else if (preference == mWallpaperAlpha) {
             Resources res = getActivity().getResources();
@@ -341,7 +334,6 @@ public class UserInterface extends AOKPPreferenceFragment {
             return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
 
@@ -349,7 +341,6 @@ public class UserInterface extends AOKPPreferenceFragment {
             final EditText input = new EditText(getActivity());
             input.setText(mCustomLabelText != null ? mCustomLabelText : "");
             alert.setView(input);
-
             alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     String value = ((Spannable) input.getText()).toString();
@@ -401,8 +392,13 @@ public class UserInterface extends AOKPPreferenceFragment {
         switch (item.getItemId()) {
             case R.id.remove_wallpaper:
                 File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
-                mContext.deleteFile(WALLPAPER_NAME);
-                Helpers.restartSystemUI();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mContext.deleteFile(WALLPAPER_NAME);
+                        Helpers.restartSystemUI();
+                    }
+                }).start();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -412,52 +408,68 @@ public class UserInterface extends AOKPPreferenceFragment {
     private Uri getNotificationExternalUri() {
         File dir = mContext.getExternalCacheDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);
-
         return Uri.fromFile(wallpaper);
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, final Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_WALLPAPER) {
+                Runnable wallpaperInstall = new Runnable() {
+                    @Override
+                    public void run() {
+                        FileOutputStream wallpaperStream = null;
+                        try {
+                            wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
+                                    Context.MODE_WORLD_READABLE);
+                        } catch (FileNotFoundException e) {
+                            return; // NOOOOO
+                        } finally {
+                            try {
+                                if (wallpaperStream != null)
+                                    wallpaperStream.close();
+                            } catch (IOException e) {
+                                // let it go
+                            }
+                        }
 
-                FileOutputStream wallpaperStream = null;
-                try {
-                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_WORLD_READABLE);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
-                }
-
-                Uri selectedImageUri = getNotificationExternalUri();
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
-                Helpers.restartSystemUI();
+                        Uri selectedImageUri = getNotificationExternalUri();
+                        Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
+                        bitmap.compress(Bitmap.CompressFormat.PNG,
+                                        100,
+                                        wallpaperStream);
+                        Helpers.restartSystemUI();
+                    }
+                };
+                new Thread(wallpaperInstall).start();
             } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
-                if (data==null) {
+                if (data == null) {
                     //Nothing returned by user, probably pressed back button in file manager
                     return;
                 }
-
-                bootAniPath = data.getData().getEncodedPath();
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(R.string.bootanimation_preview);
-                builder.setPositiveButton(R.string.apply, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+                final Runnable install = new Runnable() {
+                    @Override
+                    public void run() {
+                        bootAniPath = data.getData().getEncodedPath();
                         Helpers.getMount("rw");
                         //backup old boot animation
-                        new CMDProcessor().su.runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
+                        CMDProcessor processor = new CMDProcessor();
+                        processor.su.runWaitFor("mv /system/media/bootanimation.zip /system/media/bootanimation.backup");
 
                         //Copy new bootanimation, give proper permissions
-                        new CMDProcessor().su.runWaitFor("cp "+ bootAniPath +" /system/media/bootanimation.zip");
-                        new CMDProcessor().su.runWaitFor("chmod 644 /system/media/bootanimation.zip");
+                        processor.su.runWaitFor("cp " + bootAniPath + " /system/media/bootanimation.zip");
+                        processor.su.runWaitFor("chmod 644 /system/media/bootanimation.zip");
 
                         //Update setting to reflect that boot animation is now enabled
                         mDisableBootAnimation.setChecked(false);
-
                         Helpers.getMount("ro");
+                    }
+                };
 
+                builder.setPositiveButton(R.string.apply, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        new Thread(install).start();
                         dialog.dismiss();
                     }
                 });
@@ -470,92 +482,100 @@ public class UserInterface extends AOKPPreferenceFragment {
                 LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
                 View layout = inflater.inflate(R.layout.dialog_bootanimation_preview,
                         (ViewGroup) getActivity().findViewById(R.id.bootanimation_layout_root));
-
                 error = (TextView) layout.findViewById(R.id.textViewError);
-
                 view = (ImageView) layout.findViewById(R.id.imageViewPreview);
                 view.setVisibility(View.GONE);
 
                 Display display = getActivity().getWindowManager().getDefaultDisplay();
                 Point size = new Point();
                 display.getSize(size);
-
                 view.setLayoutParams(new LinearLayout.LayoutParams(size.x/2, size.y/2));
-
                 error.setText(R.string.creating_preview);
-
                 builder.setView(layout);
-
                 AlertDialog dialog = builder.create();
-
                 dialog.setOwnerActivity(getActivity());
-
                 dialog.show();
 
                 Thread thread = new Thread(new Runnable() {
-
                     @Override
                     public void run() {
                         createPreview(bootAniPath);
                     }
                 });
                 thread.start();
-
             }
         }
     }
 
     public void copy(File src, File dst) throws IOException {
-        InputStream in = new FileInputStream(src);
-        FileOutputStream out = new FileOutputStream(dst);
-
-        // Transfer bytes from in to out
-        byte[] buf = new byte[1024];
-        int len;
-        while ((len = in.read(buf)) > 0) {
-            out.write(buf, 0, len);
+        // use file channels for faster byte transfers
+        FileChannel inChannel = new
+                FileInputStream(src).getChannel();
+        FileChannel outChannel = new
+                FileOutputStream(dst).getChannel();
+        try {
+            // move the bytes from in to out
+            inChannel.transferTo(0,
+                    inChannel.size(),
+                    outChannel);
+        } finally {
+            // ensure closure
+            if (inChannel != null) inChannel.close();
+            if (outChannel != null) outChannel.close();
         }
-        in.close();
-        out.close();
     }
 
     private void createPreview(String path) {
         File zip = new File(path);
-
         ZipFile zipfile = null;
         String desc = "";
+        InputStream inputStream = null;
+        InputStreamReader inputStreamReader = null;
+        BufferedReader bufferedReader = null;
         try {
             zipfile = new ZipFile(zip);
             ZipEntry ze = zipfile.getEntry("desc.txt");
-            InputStream in = zipfile.getInputStream(ze);
-            InputStreamReader is = new InputStreamReader(in);
+            inputStream = zipfile.getInputStream(ze);
+            inputStreamReader = new InputStreamReader(inputStream);
             StringBuilder sb = new StringBuilder();
-            BufferedReader br = new BufferedReader(is);
-            String read = br.readLine();
-            while(read != null) {
+            bufferedReader = new BufferedReader(inputStreamReader);
+            String read = bufferedReader.readLine();
+            while (read != null) {
                 sb.append(read);
                 sb.append("\n");
-                read = br.readLine();
+                read = bufferedReader.readLine();
             }
             desc = sb.toString();
-            br.close();
-            is.close();
-            in.close();
-
         } catch (Exception e1) {
             errormsg = getActivity().getString(R.string.error_reading_zip_file);
             errorHandler.sendEmptyMessage(0);
             return;
+        } finally {
+            try {
+                if (bufferedReader != null)
+                    bufferedReader.close();
+            } catch (IOException e) {
+                // we tried
+            }
+            try {
+                if (inputStreamReader != null)
+                    inputStreamReader.close();
+            } catch (IOException e) {
+                // we tried
+            }
+            try {
+                if (inputStream != null)
+                    inputStream.close();
+            } catch (IOException e) {
+                // moving on...
+            }
         }
 
         String[] info = desc.replace("\\r", "").split("\\n");
-
         width = Integer.parseInt(info[0].split(" ")[0]);
         height = Integer.parseInt(info[0].split(" ")[1]);
         delay = Integer.parseInt(info[0].split(" ")[2]);
-
         mPartName1 = info[1].split(" ")[3];
-
         try {
             if (info.length > 2) {
                 mPartName2 = info[2].split(" ")[3];
@@ -563,20 +583,15 @@ public class UserInterface extends AOKPPreferenceFragment {
             else {
                 mPartName2 = "";
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             mPartName2 = "";
         }
 
         BitmapFactory.Options opt = new BitmapFactory.Options();
         opt.inSampleSize = 4;
-
         mAnimationPart1 = new AnimationDrawable();
         mAnimationPart2 = new AnimationDrawable();
-
-        try
-        {
+        try {
             for (Enumeration<? extends ZipEntry> e = zipfile.entries(); e.hasMoreElements();) {
                 ZipEntry entry = (ZipEntry) e.nextElement();
                 if (entry.isDirectory()) {
@@ -584,14 +599,27 @@ public class UserInterface extends AOKPPreferenceFragment {
                 }
                 String partname = entry.getName().split("/")[0];
                 if (mPartName1.equalsIgnoreCase(partname)) {
-                    InputStream is = zipfile.getInputStream(entry);
-                    mAnimationPart1.addFrame(new BitmapDrawable(getResources(), BitmapFactory.decodeStream(is, null, opt)), delay);
-                    is.close();
-                }
-                else if (mPartName2.equalsIgnoreCase(partname)) {
-                    InputStream is = zipfile.getInputStream(entry);
-                    mAnimationPart2.addFrame(new BitmapDrawable(getResources(), BitmapFactory.decodeStream(is, null, opt)), delay);
-                    is.close();
+                    InputStream partOneInStream = null;
+                    try {
+                        partOneInStream = zipfile.getInputStream(entry);
+                        mAnimationPart1.addFrame(new BitmapDrawable(getResources(),
+                                BitmapFactory.decodeStream(partOneInStream,
+                                        null, opt)), delay);
+                    } finally {
+                        if (partOneInStream != null)
+                            partOneInStream.close();
+                    }
+                } else if (mPartName2.equalsIgnoreCase(partname)) {
+                    InputStream partTwoInStream = null;
+                    try {
+                        partTwoInStream = zipfile.getInputStream(entry);
+                        mAnimationPart2.addFrame(new BitmapDrawable(getResources(),
+                                BitmapFactory.decodeStream(partTwoInStream,
+                                        null, opt)), delay);
+                    } finally {
+                        if (partTwoInStream != null)
+                            partTwoInStream.close();
+                    }
                 }
             }
         } catch (IOException e1) {
@@ -604,9 +632,8 @@ public class UserInterface extends AOKPPreferenceFragment {
             Log.d(TAG, "Multipart Animation");
             mAnimationPart1.setOneShot(false);
             mAnimationPart2.setOneShot(false);
-
-            mAnimationPart1.setOnAnimationFinishedListener(new AnimationDrawable.OnAnimationFinishedListener() {
-
+            mAnimationPart1.setOnAnimationFinishedListener(
+                    new AnimationDrawable.OnAnimationFinishedListener() {
                 @Override
                 public void onAnimationFinished() {
                     Log.d(TAG, "First part finished");
@@ -615,14 +642,10 @@ public class UserInterface extends AOKPPreferenceFragment {
                     mAnimationPart2.start();
                 }
             });
-
-        }
-        else {
+        } else {
             mAnimationPart1.setOneShot(false);
         }
-
         finishedHandler.sendEmptyMessage(0);
-
     }
 
     /**

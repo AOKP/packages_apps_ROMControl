@@ -94,7 +94,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
     CheckBoxPreference mLockscreenAllWidgets;
     CheckBoxPreference mLockscreenUnlimitedWidgets;
     ColorPickerPreference mLockscreenTextColor;
-//    CheckBoxPreference mLockscreenAutoRotate;
+    CheckBoxPreference mLockscreenAutoRotate;
     CheckBoxPreference mLockscreenHideInitialPageHints;
     CheckBoxPreference mLockscreenMinChallenge;
 
@@ -117,9 +117,9 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
 //        mQuickUnlock = (CheckBoxPreference) findPreference(PREF_QUICK_UNLOCK);
 //        mQuickUnlock.setChecked(Settings.System.getBoolean(mContext.getContentResolver(), Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, false));
 
-//        mLockscreenAutoRotate = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_AUTO_ROTATE);
-//        mLockscreenAutoRotate.setChecked(Settings.System.getBoolean(mContext
-//                .getContentResolver(), Settings.System.LOCKSCREEN_AUTO_ROTATE, false));
+        mLockscreenAutoRotate = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_AUTO_ROTATE);
+        mLockscreenAutoRotate.setChecked(Settings.System.getBoolean(mContext
+                .getContentResolver(), Settings.System.LOCKSCREEN_AUTO_ROTATE, false));
 
         mLockscreenBattery = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_BATTERY);
         mLockscreenBattery.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
@@ -221,11 +221,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
                     Settings.System.LOCKSCREEN_MINIMIZE_LOCKSCREEN_CHALLENGE,
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
-//        } else if (preference == mLockscreenAutoRotate) {
-//            Settings.System.putBoolean(mContext.getContentResolver(),
-//                    Settings.System.LOCKSCREEN_AUTO_ROTATE,
-//                    ((CheckBoxPreference) preference).isChecked());
-//            return true;
+        } else if (preference == mLockscreenAutoRotate) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_AUTO_ROTATE,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
         } else if (preference == mLockscreenHideInitialPageHints) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS,

@@ -53,7 +53,8 @@
             android:summary="@string/volume_music_controls_summary" />
 
     </PreferenceCategory>
-    <!-- <PreferenceCategory
+
+    <PreferenceCategory
             android:key="misc"
             android:title="@string/misc_short">
 
@@ -62,7 +63,7 @@
                 android:title="@string/lockscreen_auto_rotate_title"
                 android:summary="@string/lockscreen_auto_rotate_summary" />
 
-    </PreferenceCategory> -->
+    </PreferenceCategory>
 
     <PreferenceCategory
             android:key="lock_widgets"

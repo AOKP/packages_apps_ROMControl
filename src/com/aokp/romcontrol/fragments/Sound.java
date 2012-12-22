@@ -134,6 +134,7 @@ public class Sound extends AOKPPreferenceFragment
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
+            return true;
 
         } else if (preference == mPhoneSilent) {
             int val = Integer.parseInt((String) newValue);

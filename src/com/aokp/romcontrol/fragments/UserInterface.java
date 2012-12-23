@@ -21,6 +21,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -46,6 +47,7 @@ import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.AbstractAsyncSuCMDProcessor;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -62,7 +64,7 @@ import java.util.Random;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class UserInterface extends AOKPPreferenceFragment {
+public class UserInterface extends AOKPPreferenceFragment implements OnPreferenceChangeListener {
 
     public final String TAG = getClass().getSimpleName();
 
@@ -99,6 +101,7 @@ public class UserInterface extends AOKPPreferenceFragment {
     CheckBoxPreference mRamBar;
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mStatusbarSliderPreference;
+    SeekBarPreference mNavBarAlpha;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -177,7 +180,21 @@ public class UserInterface extends AOKPPreferenceFragment {
         mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
                 Settings.System.RAM_USAGE_BAR, false));
 
+        mNavBarAlpha = (SeekBarPreference) findPreference("navigation_bar_alpha");
+        mNavBarAlpha.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(mNavBarAlpha != null) {
+            final float defaultNavAlpha = Settings.System.getFloat(getActivity()
+                    .getContentResolver(), Settings.System.NAVIGATION_BAR_ALPHA,
+                    0.8f);
+            mNavBarAlpha.setInitValue(Math.round(defaultNavAlpha * 100));
+        }
     }
 
     private void updateCustomLabelTextSummary() {
@@ -705,5 +722,16 @@ public class UserInterface extends AOKPPreferenceFragment {
             Helpers.getMount("ro");
             return null;
         }
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mNavBarAlpha) {
+            float val = (float) (Integer.parseInt((String)newValue) * 0.01);
+            return Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_ALPHA,
+                    val);
+        }
+        return false;
     }
 }

@@ -51,6 +51,10 @@
             android:title="@string/brightness_slider_title"
             android:summary="@string/brightness_slider_summary" />
 
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="navigation_bar_alpha"
+            android:title="@string/navigation_bar_alpha_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

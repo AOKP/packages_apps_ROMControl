@@ -156,6 +156,8 @@
   <string name="show_overflow_toast_disable">Tlačítko menu bude vidět, dokud nedojde k restartování aplikací</string>
   <string name="notification_show_wifi_ssid_title">Zobrazit název wifi sítě</string>
   <string name="notification_show_wifi_ssid_summary">Zobrazit název aktuálně připojené wifi sítě</string>
+  <string name="brightness_slider_title">Jas v notifikační liště</string>
+  <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v případě, že je vypnut automatický jas.</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>

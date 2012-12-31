@@ -471,7 +471,7 @@
   <string name="circles_lock_wave_color_title">Barva vlny</string>
   <!-- Lockscreen Targets-->
   <string name="custom_targets">Vlastní položky zamčené obrazovky</string>
-  <string name="lockscreen_target_info">Posunutím odemykacího kruhu na cílovou položku je možné provést její přiřazení</string>  
+  <string name="lockscreen_target_info">Posunutím odemykacího kruhu na cílovou položku je možné provést její přiřazení</string>
   <string name="lockscreen_target_title">Položky zamčené obrazovky</string>
   <string name="lockscreen_target_summary">Zobrazit nebo změnit položky na zamčené obrazovce</string>
   <string name="number_of_targets_title">Počet položek na zamčené obrazovce</string>

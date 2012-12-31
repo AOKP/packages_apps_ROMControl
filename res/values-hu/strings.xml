@@ -84,7 +84,7 @@
     <string name="title_pref_powersaving_data_screen_off_delay">Adatforgalom késleltetése</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">Mennyit várjon az adatforgalom előtt?</string>
 
-    
+
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Egyedi alkalmazás használata</string>
@@ -281,7 +281,7 @@
     <string name="wifi_signal_color_title">WiFi jel színe</string>
     <string name="alt_signal_title">Alt jel elrendezés</string>
     <string name="alt_signal_summary">Alternativ (GB) jel használata</string>
-    
+
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Színválasztó</string>
@@ -565,14 +565,14 @@
     <string name="weather_refresh_interval">Fríssitési gyakoriság</string>
     <string name="weather_refresh_interval_minutes">" perc"</string>
     <string name="weather_use_celcius">Metrikus egység</string>
-	<string name="weather_use_celcius_summary">Engedélyezve Celiusban és km/h-ban jeleniti meg az adatokat.</string>
-	<string name="weather_statusbar_style">Statusbar időjárás stílusa</string>
+    <string name="weather_use_celcius_summary">Engedélyezve Celiusban és km/h-ban jeleniti meg az adatokat.</string>
+    <string name="weather_statusbar_style">Statusbar időjárás stílusa</string>
     <string name="weather_start_custom_app">Egyéni alkalmazás indítása</string>
     <string name="weather_start_custom_app_summary">Alkalmazás indítása, ha az időjárásra nyomsz.</string>
     <string name="weather_custom_app_title">Egyéni alkalmazás</string>
     <string name="weather_custom_app_dialog_title">Válaszd ki az alkalmazást</string>
-	<string name="weather_custom_app_dialog_message">Jelenlegi csomag neve.</string>
-	<string name="weather_refreshing">Időjárás frissítése!</string>
+    <string name="weather_custom_app_dialog_message">Jelenlegi csomag neve.</string>
+    <string name="weather_refreshing">Időjárás frissítése!</string>
     <string name="weather_loc_warning_title">Nem lehet helyet betölteni!</string>
     <string name="weather_loc_warning_msg">"Hálózati helymeghatározás le van tiltva. Állíts be egyéni helyet vagy engedélyezd a hálózati meghatározást."</string>
     <string name="weather_loc_warning_positive">"Hálózat engedélyezése"</string>
@@ -710,15 +710,15 @@
     <string name="help">Segítség</string>
     <string name="vibration_detailed_help">Egyéni rezgési minták készítése 5 egyszerű lépésben:\n
         - Nyomd meg az Új/Alaphelyzet gombot\n
-		- Utána a Felvétel-t\n
-		- Rögzítsd a mintád nyomkodva az Érintés! gombot\n
-		- Nyomd meg a Stop-ot\n
-		- Érintsd a Mentést, nevezd el és nyomj egy OK-t\n\n
-		A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
-		Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented (felülírja, akkor is ha átnevezed).\n
-		Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
-		Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
-		Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
+        - Utána a Felvétel-t\n
+        - Rögzítsd a mintád nyomkodva az Érintés! gombot\n
+        - Nyomd meg a Stop-ot\n
+        - Érintsd a Mentést, nevezd el és nyomj egy OK-t\n\n
+        A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
+        Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented (felülírja, akkor is ha átnevezed).\n
+        Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
+        Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
+        Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

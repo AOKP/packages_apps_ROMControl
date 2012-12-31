@@ -44,7 +44,7 @@ public class ShortcutPickerHelper {
     public interface OnPickListener {
         /**
          * Callback after a shortcut is picked
-         * 
+         *
          * @param uri Intent for the shortcut
          * @param friendlyName Title
          * @param icon Icon for the shortcut, or null

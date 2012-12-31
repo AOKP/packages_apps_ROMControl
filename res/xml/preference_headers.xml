@@ -61,14 +61,14 @@
         android:fragment="com.aokp.romcontrol.fragments.StatusBarSignal"
         android:icon="@drawable/ic_rom_control_signal"
         android:summary="@string/header_summary_signal" />
-    
+
         <header
         android:id="@+id/statusbar_toggles"
         android:title="@string/title_statusbar_toggles"
         android:fragment="com.aokp.romcontrol.fragments.StatusBarToggles"
         android:icon="@drawable/ic_rom_control_quick_settings"
         android:summary="@string/header_summary_signal" />
-     
+
     <header
         android:id="@+id/system"
         android:title="@string/header_system" />

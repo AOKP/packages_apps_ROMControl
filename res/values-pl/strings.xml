@@ -591,15 +591,15 @@
     <string name="help">Pomoc</string>
     <string name="vibration_detailed_help">Możesz stworzyć swoje własne ścieżki wibracji w 5 prostych krokach:\n
         - Stuknij Nowy/Reset\n
-		- Stuknij Nagraj\n
-		- Nagraj ścieżkę klikając na przycisk TAP!\n
-		- Stuknij Stop\n
-		- Stuknij Zapisz, wpisz nazwę i kliknij OK\n\n
-		Możesz sprawdzić swoją ścieżkę klikając Odtwórz.\n
-		Jeśli życzysz sobie zmodyfikować istniejącą ścieżkę stuknij Wczytaj, wybierz ścieżkę, nagraj ponownie, i ponownie zapisz (zostanie nadpisana na starą).\n
-		Aby usunąć ścieżkę, stuknij Kasuj, wybierz swoją ścieżkę i ponownie stuknij Kasuj. Nie możesz usunąć domyślnej wibracji.\n\n
-		Możesz przypisać swoją ścieżkę wibracji do rozmów telefonicznych w ustawieniach dźwięku.\n
-		Możesz również przypisać swoje ścieżki wibracji do określonych kontatków w aplikacji Osoby: po wyświetleniu kontaktu stuknij Menu/Ustaw wibrację.</string>
+        - Stuknij Nagraj\n
+        - Nagraj ścieżkę klikając na przycisk TAP!\n
+        - Stuknij Stop\n
+        - Stuknij Zapisz, wpisz nazwę i kliknij OK\n\n
+        Możesz sprawdzić swoją ścieżkę klikając Odtwórz.\n
+        Jeśli życzysz sobie zmodyfikować istniejącą ścieżkę stuknij Wczytaj, wybierz ścieżkę, nagraj ponownie, i ponownie zapisz (zostanie nadpisana na starą).\n
+        Aby usunąć ścieżkę, stuknij Kasuj, wybierz swoją ścieżkę i ponownie stuknij Kasuj. Nie możesz usunąć domyślnej wibracji.\n\n
+        Możesz przypisać swoją ścieżkę wibracji do rozmów telefonicznych w ustawieniach dźwięku.\n
+        Możesz również przypisać swoje ścieżki wibracji do określonych kontatków w aplikacji Osoby: po wyświetleniu kontaktu stuknij Menu/Ustaw wibrację.</string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

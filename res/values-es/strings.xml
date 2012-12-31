@@ -720,7 +720,7 @@
     <string name="saved">mV Guardados</string>
     <string name="kernel">Ajustes del kernel (si es soportado)</string>
     <string name="fast_charge_warning">"¡NO PODRÁ CONECTARSE A SU PC DESPUÉS DE CADA REINICIO!
- 
+
  Esta opción activará la carga rápida en cada reinicio. ¡Mientras la carga rápida esté activada, la función del USB será *exclusivamente* cargar el dispositivo!"</string>
     <string name="fast_charge_notification_title">¡Carga rápida activada!</string>
     <string name="fast_charge_notification_message">¡El teléfono se encuentra en modo sólo carga!</string>

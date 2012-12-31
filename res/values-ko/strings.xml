@@ -101,7 +101,7 @@
     <string name="recent_kill_all_summary">최근앱 사용 화면에서 표시되는 모든 어플을 종료합니다.(UI재시작 필요)</string>
     <string name="kill_app_longpress_back">백투킬</string>
     <string name="kill_app_longpress_back_summary">뒤로 키를 길게 눌러 활동화는 어플을 킬 합니다.</string>
-	<string name="tablet_ui">강제 태블릿UI</string>
+    <string name="tablet_ui">강제 태블릿UI</string>
     <string name="tablet_ui_summary">태블릿UI로 전환됩니다. (다시부팅 필요)</string>
     <string name="bootanimation_preview">부팅애니메이션 미리보기</string>
     <string name="apply">적용</string>
@@ -295,7 +295,7 @@
     <string name="volume_rocker_wake_summary">화면이 꺼진 상태에서 볼륨키를 눌러서 화면을 켤수 있습니다.</string>
     <string name="volume_music_controls_title">볼륨키로 음악 컨트롤</string>
     <string name="volume_music_controls_summary">볼륨키를 길게 눌러 음악 트랙을 넘깁니다. 이 기능이 작동중일때는 볼륨버튼으로 잠금해제가 되지 않습니다.</string>
-	<string name="lockscreen_stock_music_layout_title">Stock music layout</string>
+    <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
     <string name="lockscreen_wallpaper_title">잠금화면 배경 선택</string>
     <string name="lockscreen_wallpaper_summary">이 창의 메뉴에서 배경화면을 삭제할 수 있습니다.</string>
@@ -440,7 +440,7 @@ Examples: New York,NY // New York, NY // 10033 // London, England"</string>
     <string name="freq">클럭</string>
     <string name="current">현재 mV</string>
     <string name="saved">저장된 mV</string>
-	<string name="dpi">DPI</string>
+    <string name="dpi">DPI</string>
     <string name="kernel">커널 설정 (커널에서 지원해야 사용 가능)</string>
     <string name="fast_charge_warning">"재부팅한 후에 PC에 연결할수 없습니다!
 

@@ -206,7 +206,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
 //                    ((CheckBoxPreference) preference).isChecked());
 //            return true;
         }
-        
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

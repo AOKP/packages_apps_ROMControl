@@ -1,5 +1,6 @@
 package com.aokp.romcontrol.fragments;
 
+import android.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,6 +16,7 @@ import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -241,7 +243,7 @@ public class UserInterface extends AOKPPreferenceFragment {
             test.setType("file/*");
             List<ResolveInfo> list = packageManager.queryIntentActivities(test,
                     PackageManager.GET_ACTIVITIES);
-            if(list.size() > 0) {
+            if (list.size() > 0) {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
                 intent.setType("file/*");
                 startActivityForResult(intent, REQUEST_PICK_BOOT_ANIMATION);
@@ -252,32 +254,27 @@ public class UserInterface extends AOKPPreferenceFragment {
             }
             return true;
         } else if (preference == mNotificationWallpaper) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    Display display = getActivity().getWindowManager().getDefaultDisplay();
-                    int width = display.getWidth();
-                    int height = display.getHeight();
+            Display display = getActivity().getWindowManager().getDefaultDisplay();
+            int width = display.getWidth();
+            int height = display.getHeight();
 
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                    intent.setType("image/*");
-                    intent.putExtra("crop", "true");
-                    boolean isPortrait = getResources()
-                            .getConfiguration().orientation
-                            == Configuration.ORIENTATION_PORTRAIT;
-                    intent.putExtra("aspectX", isPortrait ? width : height);
-                    intent.putExtra("aspectY", isPortrait ? height : width);
-                    intent.putExtra("outputX", width);
-                    intent.putExtra("outputY", height);
-                    intent.putExtra("scale", true);
-                    intent.putExtra("scaleUpIfNeeded", true);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                            getNotificationExternalUri());
-                    intent.putExtra("outputFormat",
-                            Bitmap.CompressFormat.PNG.toString());
-                    startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
-                }
-            }).start();
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+            intent.setType("image/*");
+            intent.putExtra("crop", "true");
+            boolean isPortrait = getResources()
+                    .getConfiguration().orientation
+                    == Configuration.ORIENTATION_PORTRAIT;
+            intent.putExtra("aspectX", isPortrait ? width : height);
+            intent.putExtra("aspectY", isPortrait ? height : width);
+            intent.putExtra("outputX", width);
+            intent.putExtra("outputY", height);
+            intent.putExtra("scale", true);
+            intent.putExtra("scaleUpIfNeeded", true);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                    getNotificationExternalUri());
+            intent.putExtra("outputFormat",
+                    Bitmap.CompressFormat.PNG.toString());
+            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             return true;
         } else if (preference == mWallpaperAlpha) {
             Resources res = getActivity().getResources();
@@ -455,11 +452,10 @@ public class UserInterface extends AOKPPreferenceFragment {
                     // pressed back button in file manager
                     return;
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle(R.string.bootanimation_preview);
-                final Runnable install = new Runnable() {
+
+                AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
                     @Override
-                    public void run() {
+                    protected Void doInBackground(Void... unused) {
                         bootAniPath = data.getData().getEncodedPath();
                         Helpers.getMount("rw");
                         //backup old boot animation
@@ -473,53 +469,63 @@ public class UserInterface extends AOKPPreferenceFragment {
                         processor.su.runWaitFor(
                                 "chmod 644 /system/media/bootanimation.zip");
 
-                        //Update setting to reflect that boot animation is now enabled
-                        mDisableBootAnimation.setChecked(false);
                         Helpers.getMount("ro");
+                        return null;
+                    }
+
+                    protected void onPostExecute(Void done) {
+                        // Update setting to reflect that boot animation is now enabled
+                        mDisableBootAnimation.setChecked(false);
+                        // now that we have finished copying start the animation
+                        startAnim();
                     }
                 };
-
-                builder.setPositiveButton(R.string.apply,
-                        new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        new Thread(install).start();
-                        dialog.dismiss();
-                    }
-                });
-                builder.setNegativeButton(com.android.internal.R.string.cancel,
-                        new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-
-                LayoutInflater inflater = (LayoutInflater) getActivity()
-                        .getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
-                View layout = inflater.inflate(R.layout.dialog_bootanimation_preview,
-                        (ViewGroup) getActivity().findViewById(R.id.bootanimation_layout_root));
-                error = (TextView) layout.findViewById(R.id.textViewError);
-                view = (ImageView) layout.findViewById(R.id.imageViewPreview);
-                view.setVisibility(View.GONE);
-
-                Display display = getActivity().getWindowManager().getDefaultDisplay();
-                Point size = new Point();
-                display.getSize(size);
-                view.setLayoutParams(new LinearLayout.LayoutParams(size.x/2, size.y/2));
-                error.setText(R.string.creating_preview);
-                builder.setView(layout);
-                AlertDialog dialog = builder.create();
-                dialog.setOwnerActivity(getActivity());
-                dialog.show();
-
-                Thread thread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        createPreview(bootAniPath);
-                    }
-                });
-                thread.start();
+                task.execute();
             }
         }
+    }
+
+    private void startAnim() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.bootanimation_preview);
+        builder.setPositiveButton(R.string.apply,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        asyncTask.execute();
+                        dialog.dismiss();
+                    }
+                });
+        builder.setNegativeButton(com.android.internal.R.string.cancel,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        LayoutInflater inflater = (LayoutInflater) getActivity()
+	        .getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.dialog_bootanimation_preview,
+	        (ViewGroup) getActivity().findViewById(R.id.bootanimation_layout_root));
+        error = (TextView) layout.findViewById(R.id.textViewError);
+        view = (ImageView) layout.findViewById(R.id.imageViewPreview);
+        view.setVisibility(View.GONE);
+
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        view.setLayoutParams(new LinearLayout.LayoutParams(size.x/2, size.y/2));
+        error.setText(R.string.creating_preview);
+        builder.setView(layout);
+        AlertDialog dialog = builder.create();
+        dialog.setOwnerActivity(getActivity());
+        dialog.show();
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+	            createPreview(bootAniPath);
+            }
+        });
+        thread.start();
     }
 
     public void copy(File src, File dst) throws IOException {

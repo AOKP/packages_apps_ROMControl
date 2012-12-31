@@ -293,13 +293,13 @@
     <string name="reset_toggles_title">Schalter zurücksetzen</string>
     <string name="reset_toggles_summary">Setzt alle Schalter und Ihre Reihenvolge zurück</string>
 
-	<!-- Statusbar | Signal -->
-	<string name="signal_style">Aussehen des Empfang Textes</string>
-	<string name="signal_color_title">Farbe des Empfangs</string>
-	<string name="hide_signal_title">Empfangsleisten verstecken</string>
-	<string name="hide_signal_summary">Versteckt aktuell zusätzlich das Symbol für Datenverbindung. Wird später separat verfügbar sein.</string>
-	<string name="wifi_signal_style">WiFi Signal Text Stiel</string>
-	<string name="wifi_signal_color_title">WiFi Signal Farbe</string>
+    <!-- Statusbar | Signal -->
+    <string name="signal_style">Aussehen des Empfang Textes</string>
+    <string name="signal_color_title">Farbe des Empfangs</string>
+    <string name="hide_signal_title">Empfangsleisten verstecken</string>
+    <string name="hide_signal_summary">Versteckt aktuell zusätzlich das Symbol für Datenverbindung. Wird später separat verfügbar sein.</string>
+    <string name="wifi_signal_style">WiFi Signal Text Stiel</string>
+    <string name="wifi_signal_color_title">WiFi Signal Farbe</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Farbe wählen</string>
@@ -336,7 +336,7 @@
     <string name="weather_custom_app_title">benutzerdefinierte Anwendung</string>
     <string name="weather_custom_app_dialog_title">Wähle eine Anwendung</string>
     <string name="weather_custom_app_dialog_message">Momentaner Paketname.</string>
-	
+
 <!-- Dialog Titles -->
     <string name="dt_free_memory">Minfree Taskkiller</string>
 
@@ -409,8 +409,8 @@
     <string name="ps_testing_menu">Telefoninfo, Batterieinfo, Statistik der Datennutzung</string>
     <!-- Start up tweaks -->
     <string name="ps_init_d">Konfiguriere Tweaks die beim Startvorgang ausgeführt werden
-		(init.d)
-	</string>
+        (init.d)
+    </string>
     <string name="ps_enable_init_d">Tweaks für den Startvorgang. (init.d)</string>
     <string name="ps_zipalign">Zipalign alle unaligned Apps beim Startvorgang</string>
     <string name="ps_enable_sd_boost">SD Card Speed-Boost de-/aktivieren</string>
@@ -442,7 +442,7 @@
     <string name="error_values">Fehler beim Abrufen der Werte</string>
     <string name="set_boot">Beim Startvorgang festlegen</string>
     <string name="apply_values">Werte übernehmen</string>
-	
+
     <string name="dpi">DPI</string>
 
     <string name="devs">Entwickler</string>

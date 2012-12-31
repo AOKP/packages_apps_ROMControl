@@ -753,15 +753,15 @@
     <string name="help">Help</string>
     <string name="vibration_detailed_help">You can create your custom vibration patterns in 5 simple steps:\n
         - Tap New/Reset\n
-		- Tap Record\n
-		- Record your pattern by hitting the TAP! button\n
-		- Tap Stop\n
-		- Tap Save, enter a name and hit OK\n\n
-		You can check what you just recorded by tapping the Play button.\n
-		If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it will be overwritten, even if you choose another name).\n
-		To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default vibration.\n\n
-		You can choose the default vibration for your phone calls in Phone/Settings or in Settings/Sound.\n
-		You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
+        - Tap Record\n
+        - Record your pattern by hitting the TAP! button\n
+        - Tap Stop\n
+        - Tap Save, enter a name and hit OK\n\n
+        You can check what you just recorded by tapping the Play button.\n
+        If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it will be overwritten, even if you choose another name).\n
+        To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default vibration.\n\n
+        You can choose the default vibration for your phone calls in Phone/Settings or in Settings/Sound.\n
+        You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

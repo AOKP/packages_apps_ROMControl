@@ -27,7 +27,7 @@ public class Helpers {
 
     /**
      * Checks device for SuperUser permission
-     * 
+     *
      * @return If SU was granted or denied
      */
     public static boolean checkSu() {
@@ -76,7 +76,7 @@ public class Helpers {
 
     /**
      * Checks to see if Busybox is installed in "/system/"
-     * 
+     *
      * @return If busybox exists
      */
     public static boolean checkBusybox() {
@@ -226,7 +226,7 @@ public class Helpers {
 
     /**
      * Long toast message
-     * 
+     *
      * @param c Application Context
      * @param msg Message to send
      */
@@ -238,7 +238,7 @@ public class Helpers {
 
     /**
      * Short toast message
-     * 
+     *
      * @param c Application Context
      * @param msg Message to send
      */
@@ -250,7 +250,7 @@ public class Helpers {
 
     /**
      * Long toast message
-     * 
+     *
      * @param c Application Context
      * @param msg Message to send
      */
@@ -262,7 +262,7 @@ public class Helpers {
 
     /**
      * Return a timestamp
-     * 
+     *
      * @param c Application Context
      */
     public static String getTimestamp(final Context context) {

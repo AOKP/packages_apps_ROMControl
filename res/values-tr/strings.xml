@@ -4,7 +4,7 @@
     <string name="app_name">ROM Yönetimi</string>
 
     <!-- Header Strings -->
-	<string name="user_interface">Arayüz</string>
+    <string name="user_interface">Arayüz</string>
     <string name="cancel">İptal</string>
     <string name="ok">Tamam</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
@@ -16,14 +16,14 @@
     <string name="battery">Batarya</string>
     <string name="nav_bar">Yazılımsal Tuş</string>
     <string name="led_options">LED Seçenekleri</string>
-	<string name="header_system">Sistem</string>
-	<string name="sound">Ses</string>
-	<string name="lockscreen_options">Kilit Ekranı Seçenekleri</string>
-	<string name="weather">Hava Durumu</string>
-	<string name="tools">Araçlar</string>
-	<string name="performance">Performans</string>
-	
-	<!-- Activity titles defined in AndroidManifest.xml -->
+    <string name="header_system">Sistem</string>
+    <string name="sound">Ses</string>
+    <string name="lockscreen_options">Kilit Ekranı Seçenekleri</string>
+    <string name="weather">Hava Durumu</string>
+    <string name="tools">Araçlar</string>
+    <string name="performance">Performans</string>
+
+    <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">AOKP Hakkında</string>
     <string name="title_ui">Genel Kullanıcı Arayüzü</string>
     <string name="title_statusbar_clock">Durum Çubuğu Saat</string>
@@ -44,12 +44,12 @@
     <string name="header_summary_battery">@null</string>
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_led">@null</string>
-	<string name="header_summary_sound">@null</string>
-	<string name="header_summary_lockscreens">@null</string>
-	<string name="header_summary_weather">@null</string>
-	<string name="header_summary_performance">@null</string>
-	
-	<!-- Menu Strings -->
+    <string name="header_summary_sound">@null</string>
+    <string name="header_summary_lockscreens">@null</string>
+    <string name="header_summary_weather">@null</string>
+    <string name="header_summary_performance">@null</string>
+
+    <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Yazımsal Tuşları Sıfırla</string>
 
     <!-- General Strings -->
@@ -81,9 +81,9 @@
     <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
     <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
     <string name="donate_khasmek">http://nyan.cat</string>
-	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
-	<string name="donate_adam">http://goo.gl/fRj57</string>
-	<string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
+    <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+    <string name="donate_adam">http://goo.gl/fRj57</string>
+    <string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
     <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
     <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
     <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
@@ -91,19 +91,19 @@
     <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
     <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
-	    	
-	<!-- General UI -->
+
+    <!-- General UI -->
     <string name="enable_volume_options">Ses Panelini Etkinleştir</string>
     <string name="status_bar_notif_count_title">Bildirim Sayısını Göster</string>
     <string name="status_bar_notif_count_summary">Durum çubuğunda bekleyen bildirimlerin sayısını göster</string>
-	<string name="disable_bootanimation_title">Yükleme animasyonu devre dışı</string>
-	<string name="notification_wallpaper_title">Durum çubuğu duvar kağıdı seçin</string>
+    <string name="disable_bootanimation_title">Yükleme animasyonu devre dışı</string>
+    <string name="notification_wallpaper_title">Durum çubuğu duvar kağıdı seçin</string>
     <string name="notification_wallpaper_summary">Duvar kağıdını bu menüden kaldırabilirsiniz</string>
     <string name="notif_wallpaper_alpha_title">Durum çubuğu arkaplan ışığı</string>
     <string name="alpha_dialog_title">Işığın değerini ayarla</string>
-	<string name="custom_carrier_label_title">Özelleştirilmiş operatör yazısı</string>
-	<string name="custom_carrier_label_explain">Lütfen yeni bir yazı giriniz. Boş girildiği zaman tekrar standart hale dönecektir .</string>
-	<string name="custom_carrier_label_notset">Özel operatör yazısı şu anda ayarlanamadı</string>
+    <string name="custom_carrier_label_title">Özelleştirilmiş operatör yazısı</string>
+    <string name="custom_carrier_label_explain">Lütfen yeni bir yazı giriniz. Boş girildiği zaman tekrar standart hale dönecektir .</string>
+    <string name="custom_carrier_label_notset">Özel operatör yazısı şu anda ayarlanamadı</string>
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Kısayol tarzı</string>
@@ -121,17 +121,17 @@
     <string name="toggle_button_alpha_title">Kısayol göstergesi alpha</string>
     <string name="toggle_btn_enabled_color_title">Gösterge rengi aktif</string>
     <string name="toggle_btn_disabled_color_title">Gösterge rengi devre dışı</string>
-	<string name="toggle_btn_background_title">Kısayol arkaplan rengi</string>
-	<string name="toggle_text_color_title">Kısayol metin rengi</string>
+    <string name="toggle_btn_background_title">Kısayol arkaplan rengi</string>
+    <string name="toggle_text_color_title">Kısayol metin rengi</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Saat Tarzı</string>
     <string name="title_clock_ampm_entries">AM/PM Tarzı</string>
     <string name="enable_clock_weekday">Haftanın günü</string>
     <string name="enable_clock_weekday_summary">Saatten önce kısaltılmış gün</string>
-	<string name="colors">Renkler</string>
-	<string name="clock_color_title">Saat rengi</string>
-    
+    <string name="colors">Renkler</string>
+    <string name="clock_color_title">Saat rengi</string>
+
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Uçak Modu</string>
     <string name="toggle_auto_rotate">Oto-Çevirme</string>
@@ -172,8 +172,8 @@
     <string name="hex_hint">#FF000000</string>
     <string name="set">Ayarla</string>
     <string name="ics_color">Holo</string>
-	
-	<!-- Navigation Bar -->
+
+    <!-- Navigation Bar -->
     <string name="navigation_bar">Yazılımsal Tuşlar</string>
     <string name="navbar_button_cat">Yazılımsal Tuşlar</string>
     <string name="title_pref_menu_display">Menü Konumu</string>
@@ -192,7 +192,7 @@
     <string name="navbar_action_menu">Menü</string>
     <string name="navbar_action_kill">Uygulama Sonlandır</string>
     <string name="navbar_action_power">Güç</string>
-	<string name="navbar_action_notifications">Bildirimler</string>
+    <string name="navbar_action_notifications">Bildirimler</string>
     <string name="navbar_action_none">Boş</string>
     <string name="navbar_widgets">Yazılımsal Tuş Araçları</string>
     <string name="navbar_enable_bar">Yazılımsal tuş çubuğu etkin</string>
@@ -210,7 +210,7 @@
     <string name="navbar_height_dialog_summary">Yükseklik değişiminin düzgün bir şekilde eklenebilmesi için lütfen yeniden başlatın!</string>
     <string name="navbar_height_dialog_button_later">Daha sonra yeniden başlat</string>
     <string name="navbar_height_dialog_button_reboot">Şimdi yeniden başlat!</string>
-	<string name="navigation_bar_tint_title">Yazılımsal tuş rengi</string>
+    <string name="navigation_bar_tint_title">Yazılımsal tuş rengi</string>
     <string name="navigation_bar_glow_tint_title">Yazılımsal tuş parlama rengi</string>
     <string name="navigation_bar_glow_tint_summary">Yazılımsal tuşa bastığınız zaman parlar. Bunu kullanarak rengini değiştirebilirsiniz.</string>
     <string name="glow_times_title">Tuş parlama animasyonu</string>
@@ -218,25 +218,25 @@
     <string name="glow_times_superquick">Çok hızlı</string>
     <string name="glow_times_quick">Hızlı</string>
     <string name="glow_times_normal">Normal</string>
-	
+
     <!-- LED -->
     <string name="led_on">LED Açık</string>
-	<string name="led_time_on">Zaman ışığı açık</string>
+    <string name="led_time_on">Zaman ışığı açık</string>
     <string name="led_off">LED Kapalı</string>
-	<string name="led_time_off">Zaman ışığı kapalı</string>
+    <string name="led_time_off">Zaman ışığı kapalı</string>
     <string name="led_color_click">LED rengini değiştirmek için tıkla</string>
-    <string name="title_led_screen_on">LED bildirimini ekran açık olduğunda da göster</string> 
-	<string name="led_custom_app">Seçilen Uygulamalar</string>	
-	<string name="led_change_app">Değiştir</string>
-	<string name="led_delete_app">Sil</string>
-	<string name="led_keep_app">Koru</string>
-	<string name="led_custom_title">Özel LED Uygulamaları</string>
-	<string name="led_edit_button">-</string>
-	<string name="led_test_notification">LED\'i test et</string>
-	<string name="led_test_ok">OK</string> 
-    
+    <string name="title_led_screen_on">LED bildirimini ekran açık olduğunda da göster</string>
+    <string name="led_custom_app">Seçilen Uygulamalar</string>
+    <string name="led_change_app">Değiştir</string>
+    <string name="led_delete_app">Sil</string>
+    <string name="led_keep_app">Koru</string>
+    <string name="led_custom_title">Özel LED Uygulamaları</string>
+    <string name="led_edit_button">-</string>
+    <string name="led_test_notification">LED\'i test et</string>
+    <string name="led_test_ok">OK</string>
+
     <!-- Sound -->
-	<string name="less_notification_sounds_title">Daha Az Bildirim Sesleri</string>
+    <string name="less_notification_sounds_title">Daha Az Bildirim Sesleri</string>
     <string name="less_notification_sounds_summary">Her bir uygulamanın bildirim seslerine belirli bir limit değer verin</string>
     <string name="title_headphone_audio_mode">Kulaklık takıldığındaki eylem</string>
     <string name="summary_headphone_audio_mode">Kulaklık takıldığında ses ile ilgili hangi eylem yapılsın</string>
@@ -247,36 +247,36 @@
     <string name="headphones_mode_silent">Sessiz moda geç</string>
     <string name="title_flip_mode">Ses ters çevirme modu</string>
     <string name="summary_flip_mode">Telefonunuzu ters çevirdiğinizde ses ile ilgili ne yapılsın</string>
-	<string name="flip_cat_title">Ters çevirme eylemi</string>
+    <string name="flip_cat_title">Ters çevirme eylemi</string>
     <string name="title_timeout_sec">Ekran zaman aşımı</string>
     <string name="summary_timeout_sec">Sensörünün kapalı konuma geçmesi için gereken ekran kapalı kalma süresi</string>
     <string name="title_down_sec">Ters çevirme saniyesi</string>
     <string name="summary_down_sec">Telefonun yüz üstü durumu kabul etmesi için gereken zaman</string>
     <string name="flip_action_positive">Tamam</string>
     <string name="flip_dialog_title">Nasıl çalışıyor</string>
-    <string name="flip_dialog_msg">Telefon ters çevirildiğinde sizin seçtiğiniz moda(sessiz-titreşim) alınacak.  
-        Bu işlemi gerçekleştirmek 1.5 saniye(standart) sürecek.  
-        Daha sonra ekran açıldıktan 15 saniye(standart) sonra seçtiğiniz işlem(sessiz-titreşim) geri alınacak  
-        NOT: **Ekran zaman aşımı süresine ulaştığı zaman sesli modun tekrar açılması için 
+    <string name="flip_dialog_msg">Telefon ters çevirildiğinde sizin seçtiğiniz moda(sessiz-titreşim) alınacak.
+        Bu işlemi gerçekleştirmek 1.5 saniye(standart) sürecek.
+        Daha sonra ekran açıldıktan 15 saniye(standart) sonra seçtiğiniz işlem(sessiz-titreşim) geri alınacak
+        NOT: **Ekran zaman aşımı süresine ulaştığı zaman sesli modun tekrar açılması için
         ekranı açmanız gerekir.**</string>
-	<string name="summary_phone_flip_mode">Gelen arama sırasında ters çevirerek sessiz moda alın</string>
+    <string name="summary_phone_flip_mode">Gelen arama sırasında ters çevirerek sessiz moda alın</string>
     <string name="title_phone_flip_mode">Gelen Arama Sessiz Modu</string>
-	
-	<!-- Lockscreen -->
-	<string name="lockscreen_quick_unlock_control_title">Hızlı pin kilit açma</string>
-	<string name="lockscreen_quick_unlock_control_summary">Enter tuşuna basmadan şifre/pin ile ekran kilidini aç</string>
-	<string name="lockscreen_battery_title">Kilit ekranı batarya yüzdesi</string>
-	<string name="lockscreen_battery_summary">Kilit ekranında batarya yüzdesini herzaman göster</string>
-	<string name="volume_rocker_wake_title">Ses tuşu ile uyandırma</string>
+
+    <!-- Lockscreen -->
+    <string name="lockscreen_quick_unlock_control_title">Hızlı pin kilit açma</string>
+    <string name="lockscreen_quick_unlock_control_summary">Enter tuşuna basmadan şifre/pin ile ekran kilidini aç</string>
+    <string name="lockscreen_battery_title">Kilit ekranı batarya yüzdesi</string>
+    <string name="lockscreen_battery_summary">Kilit ekranında batarya yüzdesini herzaman göster</string>
+    <string name="volume_rocker_wake_title">Ses tuşu ile uyandırma</string>
     <string name="volume_rocker_wake_summary">Ekranı ses tuşları ile aç</string>
-	<string name="lockscreen_wallpaper_title">Kilit ekranı duvar kağıdı seçin</string>
+    <string name="lockscreen_wallpaper_title">Kilit ekranı duvar kağıdı seçin</string>
     <string name="lockscreen_wallpaper_summary">Duvar kağıdını bu menüden kaldırabilirsiniz</string>
     <string name="title_lockscreen_user_timeout_override">Ekranın kapanmasını bekle</string>
     <string name="summary_lockscreen_user_timeout_override">Ekranı manuel olarak kapatırsanız Android\'in zaman aşımı kullanılacak. Standart davranış sadece ekranın otomatik olarak kapanmasında gecikme yapar.</string>
-	<string name="lockscreen_text_color_title">Kilit ekranı metin rengi</string>
-	
-	<!-- Weather -->
-	<string name="weather_enable">Hava Durumu aktif</string>
+    <string name="lockscreen_text_color_title">Kilit ekranı metin rengi</string>
+
+    <!-- Weather -->
+    <string name="weather_enable">Hava Durumu aktif</string>
     <string name="weather_enable_summary">Hava Durumu Bilgisini ROM boyunca göster.</string>
     <string name="weather_use_custom_location">Özel konum kullan</string>
     <string name="weather_use_custom_location_summary">Özel konum belirlemek size pil tasarrufu sağlar. Yoksa internet-konum sizin nerede olduğunuzu bulur.</string>
@@ -300,9 +300,9 @@
     <string name="weather_loc_warning_msg">"Ağ dan konum alma özelliği şu anda devre dışı. Mevcut konumunuzdaki geçerli hava alma yeteneğini önler. Özel bir konum ayarlamak veya ağ dan konumunuzu belirlemek için etkinleştirin."</string>
     <string name="weather_loc_warning_positive">"Ağ konumunu etkinleştir"</string>
     <string name="weather_loc_warning_negative">"Etkinleştirme."</string>
-	
-	<!-- Weather Codes -->
-	<string name="weather_0">Kasırga</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">Kasırga</string>
     <string name="weather_1">Tropik Fırtına</string>
     <string name="weather_2">Hortum</string>
     <string name="weather_3">Şiddetli Gök Gürültüsü</string>
@@ -329,20 +329,20 @@
     <string name="weather_24">Rüzgarlı</string>
     <string name="weather_25">Soğuk</string>
     <string name="weather_26">Bulutlu</string>
-	<!-- mostly cloudy (night) -->
+    <!-- mostly cloudy (night) -->
     <string name="weather_27">Çok Bulutlu</string>
-	<!-- mostly cloudy (day) -->
+    <!-- mostly cloudy (day) -->
     <string name="weather_28">Çok Bulutlu</string>
-	<!-- partly cloudy (night) -->
+    <!-- partly cloudy (night) -->
     <string name="weather_29">Parçalı Bulutlu</string>
-	<!-- partly cloudy (day) -->
+    <!-- partly cloudy (day) -->
     <string name="weather_30">Parçalı Bulutlu</string>
-	<!-- clear (night) -->
+    <!-- clear (night) -->
     <string name="weather_31">Temiz</string>
     <string name="weather_32">Güneşli</string>
-	<!-- fair (night) -->
+    <!-- fair (night) -->
     <string name="weather_33">Açık</string>
-	<!-- fair (day) -->
+    <!-- fair (day) -->
     <string name="weather_34">Açık</string>
     <string name="weather_35">Yağmurla Karışık Dolu</string>
     <string name="weather_36">Sıcak</string>
@@ -357,31 +357,31 @@
     <string name="weather_45">Gök Gürültüsü</string>
     <string name="weather_46">Kar Yağışı</string>
     <string name="weather_47">Sadece Gök Gürültüsü</string>
-	<!-- Forecase unavailable -->
+    <!-- Forecase unavailable -->
     <string name="weather_3200" />
-	
-	<!-- Miscellaneous -->
-	<string name="location_unavailable">Güncel hava durumu için konum bilgileri alınamadı</string>
-	
-	<!-- cardinal directions -->
-	<string name="direction_north">K</string>
-	<string name="direction_north_east">KD</string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">Güncel hava durumu için konum bilgileri alınamadı</string>
+
+    <!-- cardinal directions -->
+    <string name="direction_north">K</string>
+    <string name="direction_north_east">KD</string>
     <string name="direction_east">D</string>
     <string name="direction_south_east">GD</string>
     <string name="direction_south">G</string>
     <string name="direction_south_west">GB</string>
     <string name="direction_west">B</string>
     <string name="direction_north_west">KB</string>
-	<string name="lockscreen_weather_title">Kilit Ekranı Hava Durumu</string>
+    <string name="lockscreen_weather_title">Kilit Ekranı Hava Durumu</string>
     <string name="lockscreen_weather_summary">Kilit Ekranında Hava Durumu Bilgisini göster. Aktif olması için ROM Yönetimi Hava Durumu servisinin çalışması gerekir</string>
-	<string name="lockscreen_weather_type_title">Kilit Ekr.Hava Durumu Tarzı</string>
-	<string name="lockscreen_weather_type_summary">Hava Durumu bilgisini grafik yada yazı olarak göster.</string>
-	<string name="menu_weather_get_weather">Hava Durumunu Al</string>
-	
-	<!-- Share to clipboard -->
-	<string name="clipboard_notification">Panoya kopyalandı.</string>
-	
-	<!-- Performance -->
+    <string name="lockscreen_weather_type_title">Kilit Ekr.Hava Durumu Tarzı</string>
+    <string name="lockscreen_weather_type_summary">Hava Durumu bilgisini grafik yada yazı olarak göster.</string>
+    <string name="menu_weather_get_weather">Hava Durumunu Al</string>
+
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">Panoya kopyalandı.</string>
+
+    <!-- Performance -->
     <string name="current_speed">Geçerli Hız</string>
     <string name="current_max">En Fazla:</string>
     <string name="current_min">En Düşük:</string>
@@ -408,5 +408,5 @@
     <string name="fast_charge_notification_title">Hızlı Şarj AÇIK!</string>
     <string name="fast_charge_notification_message">Telefon şarj modunda!!</string>
     <string name="prefcat_other_tweaks">Diğer düzenlemeler</string>
-	
+
 </resources>

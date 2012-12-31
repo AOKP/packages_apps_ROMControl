@@ -32,7 +32,7 @@ import com.aokp.romcontrol.R;
 
 /**
  * A preference type that allows a user to choose a time
- * 
+ *
  * @author Sergey Margaritov
  */
 public class ColorPickerPreference extends Preference implements
@@ -193,7 +193,7 @@ public class ColorPickerPreference extends Preference implements
 
     /**
      * Toggle Alpha Slider visibility (by default it's disabled)
-     * 
+     *
      * @param enable
      */
     public void setAlphaSliderEnabled(boolean enable) {
@@ -202,7 +202,7 @@ public class ColorPickerPreference extends Preference implements
 
     /**
      * For custom purposes. Not used by ColorPickerPreferrence
-     * 
+     *
      * @param color
      * @author Unknown
      */
@@ -233,7 +233,7 @@ public class ColorPickerPreference extends Preference implements
 
     /**
      * For custom purposes. Not used by ColorPickerPreferrence
-     * 
+     *
      * @param argb
      * @throws NumberFormatException
      * @author Unknown

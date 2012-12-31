@@ -3,7 +3,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView 
+    <TextView
         android:id="@+id/vib_name"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -12,7 +12,7 @@
         android:text="@string/vib_dialog_name"
         android:gravity="left"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-            
+
     <EditText
         android:id="@+id/vib_edit"
         android:layout_height="wrap_content"

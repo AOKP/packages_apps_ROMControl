@@ -9,7 +9,7 @@ import com.aokp.romcontrol.util.Helpers;
 
 /**
  * An abstract implentation of AsyncTask
- * 
+ *
  * since our needs are simple send a command, perform a task when we finish
  * this implentation requires you send the command as String...
  * in the .execute(String) so you can send String[] of commands if needed
@@ -96,7 +96,7 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
     /**
      * <p>Runs on the UI thread after {@link #doInBackground}. The
      * specified result is the value returned by {@link #doInBackground}.</p>
-     * 
+     *
      * <p>This method won't be invoked if the task was cancelled.</p>
      *
      * You MUST @Override this method if you don't need the result

@@ -9,9 +9,9 @@ class WrapperDrawable extends Drawable {
     public WrapperDrawable(BitmapDrawable drawable) {
         mDrawable = drawable;
     }
-    
+
     BitmapDrawable mDrawable;
-    
+
     public WrapperDrawable(WrapperDrawable drawable) {
         this(drawable.mDrawable);
     }
@@ -40,12 +40,12 @@ class WrapperDrawable extends Drawable {
     public void setBounds(int left, int top, int right, int bottom) {
         mDrawable.setBounds(left, top, right, bottom);
     }
-    
+
     @Override
     public int getIntrinsicHeight() {
         return mDrawable.getIntrinsicHeight();
     }
-    
+
     @Override
     public int getIntrinsicWidth() {
         // TODO Auto-generated method stub

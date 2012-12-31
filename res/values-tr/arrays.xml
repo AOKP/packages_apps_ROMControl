@@ -40,8 +40,8 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-	
-	<!-- toggle style -->
+
+    <!-- toggle style -->
     <string-array name="toggle_style_entries">
         <item>Sadece Simge</item>
         <item>Sadece Yazı</item>
@@ -58,8 +58,8 @@
         <item>0</item>
         <item>1</item>
     </string-array>
-	
-	<!-- Generic toggle oberlay. Should be set per device in overlay -->
+
+    <!-- Generic toggle oberlay. Should be set per device in overlay -->
     <string-array name="available_toggles_entries">
         <item>ROTATE</item>
         <item>BT</item>
@@ -96,8 +96,8 @@
         <item>@string/toggle_swagger</item>
         <item>@string/toggle_fast_charge</item>
     </array>
-	
-	<!-- Brightness slider -->
+
+    <!-- Brightness slider -->
     <string-array name="brightness_location_entries">
         <item>En üstte</item>
         <item>Altta</item>
@@ -109,7 +109,7 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-		
+
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">
         <item>Sadece Simge</item>
@@ -127,29 +127,29 @@
         <item>4</item>
         <item>5</item>
     </string-array>
-	
-	<!-- NavBar -->
-	<string-array name="pref_navigation_menu_entries">
+
+    <!-- NavBar -->
+    <string-array name="pref_navigation_menu_entries">
         <item>Sağ</item>
         <item>Sol</item>
         <item>İki Kenar</item>
         <item>Kaldır</item>
     </string-array>
-	
-	<!-- right is the default, easier to keep 0 as first index -->
+
+    <!-- right is the default, easier to keep 0 as first index -->
     <string-array name="pref_navigation_menu_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>4</item>
-    </string-array>	
-	<string-array name="pref_navigation_menu_display_entries">
+    </string-array>
+    <string-array name="pref_navigation_menu_display_entries">
         <item>Standart ICS davranışı</item>
         <item>Görünmez ikonları daima göster</item>
         <item>Daima göster</item>
         <item>Görünmez ikonların saklanmasını ICS standartı ile kullan</item>
     </string-array>
-	<string-array name="pref_navigation_menu_display_values" translatable="false">
+    <string-array name="pref_navigation_menu_display_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -169,20 +169,20 @@
         <item>4</item>
         <item>5</item>
     </string-array>
-	<string-array name="navbar_button_entries">
+    <string-array name="navbar_button_entries">
         <item>AnaSayfa</item>
         <item>Geri</item>
         <item>Son Uygulamalar</item>
         <item>Ara</item>
         <item>Menü</item>
-		<item>Düğme Widget</item>
+        <item>Düğme Widget</item>
         <item>Uygulama Sonlandır</item>
         <item>Güç</item>
-		<item>Bildirimler</item>
+        <item>Bildirimler</item>
         <item>Uygulama</item>
         <item>Boş</item>
     </string-array>
-	<string-array name="navbar_button_values" translatable="false">
+    <string-array name="navbar_button_values" translatable="false">
         <item>**home**</item>
         <item>**back**</item>
         <item>**recents**</item>
@@ -191,31 +191,31 @@
         <item>**widgets**</item>
         <item>**kill**</item>
         <item>**power**</item>
-		<item>**notifications**</item>
+        <item>**notifications**</item>
         <item>**app**</item>
         <item>**null**</item>
     </string-array>
-	<string-array name="navigation_bar_width_entries">
+    <string-array name="navigation_bar_width_entries">
         <item>42 dp (Varsayılan)</item>
         <item>36 dp</item>
         <item>30 dp</item>
         <item>24 dp</item>
     </string-array>
-	<string-array name="navigation_bar_width" translatable="false">
+    <string-array name="navigation_bar_width" translatable="false">
         <item>42</item>
         <item>36</item>
         <item>30</item>
         <item>24</item>
     </string-array>
-	<string-array name="navigation_bar_height_entries">
+    <string-array name="navigation_bar_height_entries">
         <item>48 dp (Varsayılan)</item>
-		<item>44 dp</item>
+        <item>44 dp</item>
         <item>42 dp</item>
         <item>36 dp</item>
         <item>30 dp</item>
         <item>24 dp</item>
     </string-array>
-	<string-array name="navigation_bar_height" translatable="false">
+    <string-array name="navigation_bar_height" translatable="false">
         <item>48</item>
         <item>44</item>
         <item>40</item>
@@ -223,68 +223,68 @@
         <item>30</item>
         <item>24</item>
     </string-array>
-	<string-array name="navigation_bar_height_landscape_entries">
+    <string-array name="navigation_bar_height_landscape_entries">
         <item>48 dp (Varsayılan)</item>
         <item>42 dp</item>
         <item>36 dp</item>
         <item>30 dp</item>
         <item>24 dp</item>
     </string-array>
-	<string-array name="navigation_bar_height_landscape" translatable="false">
+    <string-array name="navigation_bar_height_landscape" translatable="false">
         <item>48</item>
         <item>42</item>
         <item>36</item>
         <item>30</item>
         <item>24</item>
     </string-array>
-	<string-array name="glow_times_entries">
-		<item>@string/glow_times_off</item>
-		<item>@string/glow_times_superquick</item>
-		<item>@string/glow_times_quick</item>
-		<item>@string/glow_times_normal</item>
-	</string-array>
-	<string-array name="glow_times_values" translatable="false">
-		<item>0|0</item>
-		<item>100|10</item>
-		<item>250|25</item>
-		<item>500|50</item>
-	</string-array>
+    <string-array name="glow_times_entries">
+        <item>@string/glow_times_off</item>
+        <item>@string/glow_times_superquick</item>
+        <item>@string/glow_times_quick</item>
+        <item>@string/glow_times_normal</item>
+    </string-array>
+    <string-array name="glow_times_values" translatable="false">
+        <item>0|0</item>
+        <item>100|10</item>
+        <item>250|25</item>
+        <item>500|50</item>
+    </string-array>
     <string-array name="battery_bar_entries">
-	    <item>Gizle</item>
-	    <item>Durum Çubuğunda</item>
-	    <item>Yazılımsal Tuşların Üstünde</item>
-	    <item>Yazılımsal Tuşların Altında</item>
+        <item>Gizle</item>
+        <item>Durum Çubuğunda</item>
+        <item>Yazılımsal Tuşların Üstünde</item>
+        <item>Yazılımsal Tuşların Altında</item>
     </string-array>
         <string-array name="battery_bar_values" translatable="false">
-	    <item>0</item>
-	    <item>1</item>
-	    <item>2</item>
-	    <item>3</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
         </string-array>
     <string-array name="battery_bar_style_entries">
-	    <item>Normal</item>
-	    <item>Ortalanmış</item>
+        <item>Normal</item>
+        <item>Ortalanmış</item>
     </string-array>
     <string-array name="battery_bar_style_values" translatable="false">
-	    <item>0</item>
-	    <item>1</item>
+        <item>0</item>
+        <item>1</item>
     </string-array>
     <string-array name="battery_bar_thickness_entries">
-	    <item>1 dp</item>
-	    <item>2 dp</item>
-	    <item>3 dp</item>
-	    <item>4 dp</item>
+        <item>1 dp</item>
+        <item>2 dp</item>
+        <item>3 dp</item>
+        <item>4 dp</item>
     </string-array>
     <string-array name="battery_bar_thickness_values" translatable="false">
-	    <item>1</item>
-	    <item>2</item>
-	    <item>3</item>
-	    <item>4</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
-	
+
     <!-- LED Values -->
-	<string-array name="led_entries">
-		<item>.2 saniye</item>
+    <string-array name="led_entries">
+        <item>.2 saniye</item>
         <item>.5 saniye</item>
         <item>1 saniye</item>
         <item>1.5 saniye</item>
@@ -302,8 +302,8 @@
         <item>9 saniye</item>
         <item>10 saniye</item>
     </string-array>
-	
-	<!-- values must be in milliseconds!~@@#E!@ -->
+
+    <!-- values must be in milliseconds!~@@#E!@ -->
     <integer-array name="led_values" translatable="false">
         <item>200</item>
         <item>500</item>
@@ -334,7 +334,7 @@
         <item>1</item>
         <item>0</item>
     </string-array>
-	<string-array name="phone_call_flip_entries">
+    <string-array name="phone_call_flip_entries">
         <item>Devre Dışı</item>
         <item>Aktif</item>
     </string-array>
@@ -342,8 +342,8 @@
         <item>0</item>
         <item>1</item>
     </string-array>
-	
-	<!-- Flip up/down arrays -->
+
+    <!-- Flip up/down arrays -->
     <string-array name="flip_entries">
         <item>.5 saniye</item>
         <item>1 saniye</item>
@@ -362,8 +362,8 @@
         <item>9 saniye</item>
         <item>10 saniye</item>
     </string-array>
-	
-	<!-- values must be in milliseconds!~@@#E!@ -->
+
+    <!-- values must be in milliseconds!~@@#E!@ -->
     <string-array name="flip_values" translatable="false">
         <item>500</item>
         <item>1000</item>
@@ -383,7 +383,7 @@
         <item>10000</item>
     </string-array>
     <string-array name="flip_screenoff_entries">
-		<item>0 saniye (Acil Kapalı)</item>
+        <item>0 saniye (Acil Kapalı)</item>
         <item>5 saniye</item>
         <item>10 saniye</item>
         <item>15 saniye</item>
@@ -398,10 +398,10 @@
         <item>4 dakika</item>
         <item>5 dakika</item>
     </string-array>
-	
-	<!-- values must be in milliseconds!~@@#E!@ -->
+
+    <!-- values must be in milliseconds!~@@#E!@ -->
     <string-array name="flip_screenoff_values" translatable="false">
-		<item>0</item>
+        <item>0</item>
         <item>5000</item>
         <item>10000</item>
         <item>15000</item>
@@ -431,8 +431,8 @@
         <item>4 saat</item>
         <item>6 saat</item>
         <item>8 saat</item>
-    </string-array>	
-	<string-array name="weather_interval_values" translatable="false">
+    </string-array>
+    <string-array name="weather_interval_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>5</item>

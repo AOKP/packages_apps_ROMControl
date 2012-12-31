@@ -21,7 +21,7 @@ public class SeekBarPreference extends Preference
 
     private TextView monitorBox;
     private SeekBar bar;
-    
+
     int defaultValue = 60;
 
     private OnPreferenceChangeListener changer;
@@ -42,11 +42,11 @@ public class SeekBarPreference extends Preference
 
         return layout;
     }
-    
+
     public void setInitValue(int progress) {
         defaultValue = progress;
     }
-    
+
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
         // TODO Auto-generated method stub

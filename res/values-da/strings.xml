@@ -707,15 +707,15 @@
     <string name="help">Hjælp</string>
     <string name="vibration_detailed_help">Du kan lave dine egne vibrationsmønstre i 5 enkle skridt:\n
         - Tryk Ny/Nulstil\n
-		- Tryk Optag\n
-		- Optag dit eget mønster ved at trykke på TRYK! knappen\n
-		- Tryk Stop\n
-		- Tryk Gem, skriv et navn og tryk OK\n\n
-		Du kan teste det mønster ved at trykke på Afspil knappen.\n
-		Hvis du vil ændre på et eksisterende mønster, tryk Indlæs, vælg et mønster, optag, og gem det igen (det vil blive overskrevet, selvom du vælger et nyt navn).\n
-		For at slette et mønster, tryk Slet, vælg mønstret og tryk Slet igen. Du kan ikke slette standard vibrationen.\n\n
-		Du kan vælde standard vibration i Telefon/Indstillinger eller i Indstillinger/Lyd.\n
-		Du kan tilføje alternative vibrationsmønstre til kontakter i Personer appen: efter du har åbnet en kontakt tryk Menu/Sæt vibration.</string>
+        - Tryk Optag\n
+        - Optag dit eget mønster ved at trykke på TRYK! knappen\n
+        - Tryk Stop\n
+        - Tryk Gem, skriv et navn og tryk OK\n\n
+        Du kan teste det mønster ved at trykke på Afspil knappen.\n
+        Hvis du vil ændre på et eksisterende mønster, tryk Indlæs, vælg et mønster, optag, og gem det igen (det vil blive overskrevet, selvom du vælger et nyt navn).\n
+        For at slette et mønster, tryk Slet, vælg mønstret og tryk Slet igen. Du kan ikke slette standard vibrationen.\n\n
+        Du kan vælde standard vibration i Telefon/Indstillinger eller i Indstillinger/Lyd.\n
+        Du kan tilføje alternative vibrationsmønstre til kontakter i Personer appen: efter du har åbnet en kontakt tryk Menu/Sæt vibration.</string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Klovn!</string>

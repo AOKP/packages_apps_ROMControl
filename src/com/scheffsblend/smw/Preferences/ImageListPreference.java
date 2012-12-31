@@ -19,7 +19,7 @@ public class ImageListPreference extends ListPreference {
     private int mSummaryImageResourceId;
     /**
      * Constructor of the ImageListPreference. Initializes the custom images.
-     * 
+     *
      * @param context application context.
      * @param attrs custom xml attributes.
      */

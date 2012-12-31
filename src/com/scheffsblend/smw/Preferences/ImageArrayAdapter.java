@@ -15,7 +15,7 @@ import com.aokp.romcontrol.R;
 /**
  * The ImageArrayAdapter is the array adapter used for displaying an additional
  * image to a list preference item.
- * 
+ *
  * @author Casper Wakkers
  */
 public class ImageArrayAdapter extends ArrayAdapter<CharSequence> {
@@ -24,7 +24,7 @@ public class ImageArrayAdapter extends ArrayAdapter<CharSequence> {
 
     /**
      * ImageArrayAdapter constructor.
-     * 
+     *
      * @param context the context.
      * @param textViewResourceId resource id of the text view.
      * @param objects to be displayed.

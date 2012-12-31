@@ -74,7 +74,7 @@ public final class UrlImageViewHelper {
 
     private static Drawable loadDrawableFromStream(Context context, String url, String filename, int targetWidth, int targetHeight) {
         prepareResources(context);
-        
+
 //        Log.v(Constants.LOGTAG,targetWidth);
 //        Log.v(Constants.LOGTAG,targetHeight);
         try {
@@ -252,7 +252,7 @@ public final class UrlImageViewHelper {
                 callback.onLoaded(imageView, drawable, url, true);
             return;
         }
-        
+
         // oh noes, at this point we definitely do not have the file available in memory
         // let's prepare for an asynchronous load of the image.
 
@@ -262,7 +262,7 @@ public final class UrlImageViewHelper {
         if (imageView != null)
             imageView.setImageDrawable(defaultDrawable);
 
-        // since listviews reuse their views, we need to 
+        // since listviews reuse their views, we need to
         // take note of which url this view is waiting for.
         // This may change rapidly as the list scrolls or is filtered, etc.
         if (Constants.LOG_ENABLED)
@@ -328,7 +328,7 @@ public final class UrlImageViewHelper {
                 }
             }
         };
-        
+
 
         File file = new File(filename);
         if (file.exists()) {
@@ -336,7 +336,7 @@ public final class UrlImageViewHelper {
                 if (cacheDurationMs == CACHE_DURATION_INFINITE || System.currentTimeMillis() < file.lastModified() + cacheDurationMs) {
                     if (Constants.LOG_ENABLED)
                         Log.i(Constants.LOGTAG, "File Cache hit on: " + url + ". " + (System.currentTimeMillis() - file.lastModified()) + "ms old.");
-                    
+
                     AsyncTask<Void, Void, Void> fileloader = new AsyncTask<Void, Void, Void>() {
                         protected Void doInBackground(Void[] params) {
                             loader.run();
@@ -430,21 +430,21 @@ public final class UrlImageViewHelper {
             executeTask(downloader);
         }
     };
-    
+
     static public interface RequestPropertiesCallback {
         public ArrayList<NameValuePair> getHeadersForRequest(Context context, String url);
     }
-    
+
     static private RequestPropertiesCallback mRequestPropertiesCallback;
     static public RequestPropertiesCallback getRequestPropertiesCallback() {
         return mRequestPropertiesCallback;
     }
-    
+
     static public void setRequestPropertiesCallback(RequestPropertiesCallback callback) {
         mRequestPropertiesCallback = callback;
     }
-    
-    
+
+
     public static void useDownloader(UrlDownloader downloader) {
         mDownloader = downloader;
     }
@@ -452,7 +452,7 @@ public final class UrlImageViewHelper {
     public static void useDefaultDownloader() {
         mDownloader = mDefaultDownloader;
     }
-    
+
     public static UrlDownloader getDefaultDownloader() {
         return mDownloader;
     }
@@ -464,7 +464,7 @@ public final class UrlImageViewHelper {
     private static int getHeapSize(Context context) {
         return ((ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass() * 1024 * 1024;
     }
-    
+
     private static class ZombieDrawable extends WrapperDrawable {
         public ZombieDrawable(String url, BitmapDrawable drawable) {
             super(drawable);
@@ -474,9 +474,9 @@ public final class UrlImageViewHelper {
             mDeadCache.remove(url);
             mLiveCache.put(url, this);
         }
-        
+
         String mUrl;
-        
+
         @Override
         protected void finalize() throws Throwable {
             super.finalize();
@@ -499,7 +499,7 @@ public final class UrlImageViewHelper {
         else
             executeTaskHoneycomb(task);
     }
-    
+
     @TargetApi(Constants.HONEYCOMB)
     private static void executeTaskHoneycomb(AsyncTask<Void, Void, Void> task) {
         task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);

@@ -124,6 +124,8 @@
     <string name="custom_carrier_label_notset">当前未自定义运营商名称</string>
     <string name="ime_switcher_title">显示输入法切换</string>
     <string name="ime_switcher_summary">输入时状态栏显示键盘图标</string>
+    <string name="lefty_mode_title">左手模式</string>
+    <string name="lefty_mode_summary">交换导航栏位置（将重启用户界面）</string>
     <string name="rotate_180_title">允许 180° 旋转</string>
     <string name="rotate_180_summary">允许设备倒置显示</string>
     <string name="recent_kill_all">启用“全部结束”按钮</string>
@@ -143,12 +145,15 @@
     <string name="error_creating_preview">创建预览错误</string>
     <string name="multipane_ui">启用双面板</string>
     <string name="multipane_ui_summary">启用双面板视图（需重启）</string>
-    <string name="alt_resolver">更改默认应用程序网格布局</string>
-    <string name="alt_resolver_summary">使用循环应用程序选择器（姜饼风格）</string>
     <string name="show_overflow_title">显示菜单按钮</string>
     <string name="show_overflow_summary">无论是否存在导航栏均在应用程序中显示内置的菜单按钮（3个点）</string>
     <string name="show_overflow_toast_enable">在应用程序重新运行前菜单按钮可能依然显示</string>
     <string name="show_overflow_toast_disable">在应用程序重新运行前菜单按钮可能依然隐藏</string>
+    <string name="notification_show_wifi_ssid_title">显示 Wifi 名称</string>
+    <string name="notification_show_wifi_ssid_summary">显示当前链接的 WiFi 网络名称</string>
+    <string name="brightness_slider_title">状态栏调节亮度</string>
+    <string name="brightness_slider_summary">未启用自动亮度时，在状态栏滑动可改变亮度。</string>
+
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -186,6 +191,8 @@
     <string name="enabled_toggles_title">已启用开关</string>
     <string name="enabled_toggles_summary">选择要显示的开关</string>
     <string name="toggles_display_dialog">选择所需的开关</string>
+    <string name="toggles_per_row_title">每行开关数量</string>
+    <string name="toggles_per_row_summary">选择每行显示几个开关</string>
     <string name="toggles_display_close">关闭</string>
     <string name="toggles_order_title">开关排序</string>
     <string name="toggles_order_summary">排列要显示的切换开关顺序</string>
@@ -202,6 +209,8 @@
     <string name="toggle_btn_disabled_color_title">未启用开关颜色</string>
     <string name="toggle_btn_background_title">开关背景透明度</string>
     <string name="toggle_text_color_title">开关文字颜色</string>
+    <string name="toggle_favcontact_title">收藏联系人</string>
+    <string name="toggle_favcontact_summary">选择你收藏的联系人</string>
 
     <!-- Statusbar | Clock 状态栏|时钟 -->
     <string name="clock_title_enable">时钟风格</string>
@@ -211,19 +220,20 @@
     <string name="colors">颜色</string>
     <string name="clock_color_title">时钟颜色</string>
     <string name="alarm">提醒</string>
+    <string name="clock_options">时钟选项</string>
+    <string name="nothing">无</string>
     <string name="today">今日日程</string>
     <string name="event">新日程事件</string>
     <string name="voiceassist">语音命令</string>
-    <string name="title_date_longclick">长按日期动作</string>
-    <string name="title_date_shortclick">短按日期动作</string>
+    <string name="title_clock_doubleclick">双击时钟动作</string>
     <string name="title_clock_longclick">长按时钟动作</string>
-    <string name="title_clock_shortclick">短按时钟动作</string>
+    <string name="title_clock_shortclick">点击时钟动作</string>
 
     <!-- Toggle Strings to be called from device overlays 开关文本 -->
     <string name="toggle_airplane_mode">飞行模式</string>
     <string name="toggle_auto_rotate">屏幕自动旋转</string>
     <string name="toggle_bluetooth">蓝牙</string>
-    <string name="toggle_fast_charge">快速充电</string>
+    <string name="toggle_fcharge">快速充电</string>
     <string name="toggle_gps">GPS 定位</string>
     <string name="toggle_lte">LTE 网络</string>
     <string name="toggle_data">数据网络</string>
@@ -235,8 +245,16 @@
     <string name="toggle_2g">2G 模式</string>
     <string name="toggle_usb_tether">USB 网络共享</string>
     <string name="toggle_vibrate">振动</string>
-    <string name="toggle_wifi_ap">Wi-Fi 热点</string>
+    <string name="toggle_wifi_tether">Wi-Fi 热点</string>
     <string name="toggle_wifi">Wi-Fi 无线网络</string>
+    <string name="toggle_user">用户</string>
+    <string name="toggle_favorite_contact">收藏的联系人</string>
+    <string name="toggle_settings">系统设置</string>
+    <string name="toggle_signal">信号</string>
+    <string name="toggle_clock">时钟</string>
+    <string name="toggle_ime">输入法</string>
+    <string name="toggle_battery">电量</string>
+    <string name="toggle_brightness">亮度</string>
 
     <!-- Statusbar | Battery 状态栏|电量 -->
     <string name="battery_icon">电量图标风格</string>
@@ -329,11 +347,22 @@
     <string name="navbar_widgets_shiftLeft">左移</string>
     <string name="navbar_widgets_shiftRight">右移</string>
     <string name="navbar_widgets_delete">删除小部件</string>
+    <string name="navigation_bar_menu_arrow_keys_title">菜单选择键</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">输入时在导航栏显示箭头键用于选择菜单。</string>
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
     <string name="interface_softkey_settings">按钮设置</string>
-    <string name="interface_softkeys_pref_default_title">点击并选择程序</string>
+    <string name="interface_softkeys_pref_default_1_title">点击目标 1 执行程序</string>
+    <string name="interface_softkeys_pref_long_1_title">长按目标 1 执行程序</string>
+    <string name="interface_softkeys_pref_default_2_title">点击目标 2 执行程序</string>
+    <string name="interface_softkeys_pref_long_2_title">长按目标 2 执行程序</string>
+    <string name="interface_softkeys_pref_default_3_title">点击目标 3 执行程序</string>
+    <string name="interface_softkeys_pref_long_3_title">长按目标 3 执行程序</string>
+    <string name="interface_softkeys_pref_default_4_title">点击目标 4 执行程序</string>
+    <string name="interface_softkeys_pref_long_4_title">长按目标 4 执行程序</string>
+    <string name="interface_softkeys_pref_default_5_title">点击目标 5 执行程序</string>
+    <string name="interface_softkeys_pref_long_5_title">长按目标 5 执行程序</string>
     <string name="interface_softkeys_pref_default_summary">点击设置按钮选择一个想要在长按时出现的程序</string>
     <string name="interface_softkeys_activity_dialog_title">选择程序</string>
     <string name="interface_softkeys_reboot_title">重启菜单</string>
@@ -354,6 +383,7 @@
     <string name="interface_navring_assist_title">Google Now</string>
     <string name="interface_navring">导航环目标</string>
     <string name="navbar_ring">自定义导航环目标</string>
+    <string name="navring_enable_long">启用导航环长按</string>
 
     <!-- LED 灯光 -->
     <string name="led_on">LED 点亮</string>
@@ -402,6 +432,7 @@
     <string name="title_phone_flip_mode">来电响铃静音</string>
 
     <!-- Lockscreen 锁屏 -->
+    <string name="lock_widgets_short">锁屏界面小部件</string>
     <string name="lockscreen_security_cat">安全</string>
     <string name="lockscreen_layout_cat">布局</string>
     <string name="lockscreen_music_cat">音乐</string>
@@ -414,6 +445,10 @@
     <string name="lockscreen_menu_unlock_summary">通过菜单键解锁屏幕</string>
     <string name="lockscreen_auto_rotate_title">允许锁屏时旋转</string>
     <string name="lockscreen_auto_rotate_summary">允许在锁屏状态时旋转屏幕，该选项独立生效，与显示界面的自动旋转无关。</string>
+    <string name="lockscreen_all_widgets_title">允许所有小部件</string>
+    <string name="lockscreen_all_widgets_summary">警告** 一些小部件并不适用于锁屏界面，小部件作者及AOKP对你的选择不承担责任。请谨慎选择。</string>
+    <string name="lockscreen_unlimited_widgets_title">不限制使用的小部件数量</string>
+    <string name="lockscreen_unlimited_widgets_summary">警告** 添加过多的小部件将导致锁屏界面不流畅。</string>
     <string name="lockscreen_battery_title">锁屏电量百分比</string>
     <string name="lockscreen_battery_summary">总是在锁屏中显示电量百分比</string>
     <string name="volume_rocker_wake_title">音量键唤醒</string>
@@ -445,6 +480,14 @@
     <string name="lockscreen_calendar_flip_summary">启用将以弹出动画显示多个活动</string>
     <string name="lockscreen_calendar_interval_title">弹出间隔</string>
     <string name="lockscreen_calendar_interval_summary">选择弹出动画速度</string>
+    <string name="circles_lock_cat_title">锁屏环设置</string>
+    <string name="circles_lock_bg_color_title">背景颜色</string>
+    <string name="circles_lock_ring_color_title">圆环颜色</string>
+    <string name="circles_lock_ring_alpha_title">圆环透明度</string>
+    <string name="circles_lock_halo_color_title">光晕颜色</string>
+    <string name="circles_lock_halo_alpha_title">光晕透明度</string>
+    <string name="circles_lock_wave_color_title">波纹颜色</string>
+    <string name="circles_lock_wave_alpha_title">波纹透明度</string>
 
     <!-- Lockscreen Targets 锁屏目标-->
     <string name="custom_targets">自定义锁屏目标</string>
@@ -539,17 +582,19 @@
     <string name="weather_use_celcius">公制单位</string>
     <string name="weather_use_celcius_summary">启用该选项将会使天气温度以摄氏度显示，风速以 km/h 显示。</string>
     <string name="weather_statusbar_style">状态栏天气风格</string>
-    <string name="weather_start_custom_app">启动自定义程序</string>
-    <string name="weather_start_custom_app_summary">点击天气图标时启动自定义应用程序</string>
-    <string name="weather_custom_app_title">自定义程序</string>
-    <string name="weather_custom_app_dialog_title">选择你的应用程序</string>
-    <string name="weather_custom_app_dialog_message">暂时仅显示程序包名称</string>
+    <string name="title_weather_longclick">天气面板长按行为</string>
+    <string name="title_weather_shortclick">天气面板点击行为</string>
+    <string name="update">更新天气面板</string>
     <string name="weather_refreshing">正在获取天气更新！</string>
     <string name="weather_loc_warning_title">无法获得地理位置信息！</string>
     <string name="weather_loc_warning_msg">"通过网络获得地理位置功能目前已禁用。无法从网络获得你当前的位置和天气信息。请设置自定义位置或启用从网络获得所在位置的功能。"</string>
     <string name="weather_loc_warning_positive">"打开网络位置"</string>
     <string name="weather_loc_warning_negative">"不使用网络位置"</string>
     <string name="menu_weather_get_weather">获取天气信息</string>
+    <string name="weather_statusbar_hide">天气面板选项</string>
+    <string name="always_on">总是显示</string>
+    <string name="same_toggles">依赖于开关页面</string>
+    <string name="opposite_toggles">跟随开关页面切换</string>
 
     <!-- Weather Codes 天气代码 -->
     <string name="weather_0">龙卷风</string>
@@ -693,6 +738,7 @@
     <!-- boot animation stuff 开机动画选项 -->
     <string name="insult_jerk">囧</string>
     <string name="insult_protekk">ProTekk!</string>
+    <string name="insult_unicorns">勉强承认粉红色的独角兽太娘了</string>
 
     <!-- clock stuff 时钟选项 -->
     <string name="right_clock">时钟右置</string>
@@ -738,6 +784,7 @@
     <string name="power">电源</string>
     <string name="notifications">通知</string>
     <string name="custom_app">自定义程序</string>
+    <string name="menu_power">电源菜单</string>
     <string name="blank">空</string>
     <string name="none">无</string>
     <string name="take_screenshot">屏幕截图</string>
@@ -765,6 +812,7 @@
     <string name="bottom_of_navbar">导航栏底部</string>
     <string name="regular">正常</string>
     <string name="center_mirrored">居中</string>
+    <string name="size_0_dp">0 dp (关闭)</string>
     <string name="size_1_dp">1 dp</string>
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>

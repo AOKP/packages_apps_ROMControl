@@ -220,9 +220,9 @@ public class Navbar extends AOKPPreferenceFragment implements
         switch (item.getItemId()) {
             case R.id.reset:
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_TINT, Integer.MIN_VALUE);
+                        Settings.System.NAVIGATION_BAR_TINT, -1);
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_GLOW_TINT, Integer.MIN_VALUE);
+                        Settings.System.NAVIGATION_BAR_GLOW_TINT, -1);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3);
 

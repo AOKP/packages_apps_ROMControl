@@ -346,6 +346,7 @@
   <string name="navbar_widgets_delete">Smazat widget</string>
   <string name="navigation_bar_menu_arrow_keys_title">Tlačítka šipek</string>
   <string name="navigation_bar_menu_arrow_keys_summary">Zobrazit tlačítka s šipkami v navigační liště během psaní (pro možnost posunu v textu)</string>
+  <string name="navigation_bar_alpha_title">Viditelnost stavové a navigační lišty</string>
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>

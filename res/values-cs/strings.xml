@@ -214,6 +214,10 @@
   <string name="toggle_text_color_title">Barva textu přepínačů</string>
   <string name="toggle_favcontact_title">Oblíbený kontakt</string>
   <string name="toggle_favcontact_summary">Zvolit oblíbený kontakt</string>
+  <string name="toggle_enable_fasttoggle_title">Zapnout rychlý přístup</string>
+  <string name="toggle_enable_fasttoggle_summary">Zapnout přímý přístup k přepínačům jedním prstem</string>
+  <string name="toggle_choose_fasttoggle_side_title">Zvolit stranu rychlého přístupu</string>
+  <string name="toggle_choose_fasttoggle_side_summary">Zvolit z jaké strany lišty bude lišta s přepínači přístupná</string>
   <!--Statusbar | Clock-->
   <string name="clock_title_enable">Styl hodin</string>
   <string name="title_clock_ampm_entries">AM/PM styl</string>
@@ -346,6 +350,7 @@
   <string name="navbar_widgets_delete">Smazat widget</string>
   <string name="navigation_bar_menu_arrow_keys_title">Tlačítka šipek</string>
   <string name="navigation_bar_menu_arrow_keys_summary">Zobrazit tlačítka s šipkami v navigační liště během psaní (pro možnost posunu v textu)</string>
+  <string name="navigation_bar_alpha_title">Viditelnost stavové a navigační lišty</string>
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>
@@ -435,6 +440,10 @@
   <string name="lockscreen_unlimited_widgets_summary">Varování** Přidání mnoha widgetů může způsobit zpomalení a lagy zamčené obrazovky.</string>
   <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
+  <string name="lockscreen_hide_initial_page_hints_title">Skrýt úvodní ukazatele</string>
+  <string name="lockscreen_hide_initial_page_hints_summary">Skryje ukazatele widgetů (po levé a pravé straně) na úvodní zamčené obrazovce po zapnutí displeje.</string>
+  <string name="lockscreen_minimize_challenge_title">Zmenšit symbol odemknutí</string>
+  <string name="lockscreen_minimize_challenge_summary">Nastavit výchozí stav symbolu odemknutí (kruh, gesto, pin) na zmenšený po zapnutí obrazovky.</string>
   <string name="volume_rocker_wake_title">Probuzení tlačítky hlasitosti</string>
   <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>

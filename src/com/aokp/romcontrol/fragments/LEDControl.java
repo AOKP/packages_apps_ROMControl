@@ -636,13 +636,15 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     @Override
     public void shortcutPicked(String uri, String friendlyName, Bitmap icon, boolean isApplication) {
         String packageName = null;
-        String[] pickedUri = uri.split(";component=", -1);
-        String[] splitURI = pickedUri[1].split("/", -1);
-        packageName = splitURI[0];
-        if (DEBUG)
-            Log.e(TAG, pickedUri[1]);
-        if (DEBUG)
-            Log.e(TAG, packageName);
+        final PackageManager pm = mActivity.getPackageManager();
+        try {
+            Intent intent = Intent.getIntent(uri);
+            packageName = intent.resolveActivity(pm).getPackageName();
+            if (DEBUG)
+                Log.e(TAG, uri);
+            if (DEBUG)
+                Log.e(TAG, packageName);
+        } catch (URISyntaxException e) { }
 
         if (packageName != null) {
             addCustomApp(packageName);

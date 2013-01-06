@@ -26,6 +26,11 @@
             android:title="@string/lockscreen_battery_title"
             android:summary="@string/lockscreen_battery_summary" />
 
+        <CheckBoxPreference
+            android:key="lockscreen_hide_initial_page_hints"
+            android:title="@string/lockscreen_hide_initial_page_hints_title"
+            android:summary="@string/lockscreen_hide_initial_page_hints_summary" />
+
     </PreferenceCategory>
     <PreferenceCategory
         android:key="music"

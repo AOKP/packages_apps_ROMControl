@@ -42,6 +42,13 @@
         android:persistent="false"
         android:defaultValue="true" />
 
+        <!-- Headset -->
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="headset_connect_player"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:title="@string/notifications_category_title" />
 

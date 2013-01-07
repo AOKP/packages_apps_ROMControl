@@ -435,6 +435,10 @@
     <string name="volume_steps_15">15</string>
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Launch music app</string>
+    <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
     <!-- ****************************** Sound Cat ends ****************************** -->
 
     <!-- ****************************** StatusBar Cat starts ****************************** -->

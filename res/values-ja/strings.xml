@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ROMコントロール</string>
+
+    <!-- Header Strings -->
+    <string name="user_interface">インターフェース</string>
+    <string name="cancel">キャンセル</string>
+    <string name="ok">OK</string>
+    <string name="menu_main_activity_change_locale">Blank!</string>
+    <string name="header_statusbar">ステータスバー</string>
+    <string name="header_navbar">ナビゲーションバー</string>
+    <string name="toggles_layout">クイック設定</string>
+    <string name="general_ui">全般</string>
+    <string name="clock">時計表示</string>
+    <string name="battery">バッテリー</string>
+    <string name="signal">電波強度</string>
+    <string name="nav_bar">ナビゲーションバー</string>
+    <string name="power_menu">電源メニュー</string>
+    <string name="led_options">LED</string>
+    <string name="header_system">システム</string>
+    <string name="sound">サウンド</string>
+    <string name="lockscreen_options">ロック画面</string>
+    <string name="weather">天気情報</string>
+    <string name="tools">ツール</string>
+    <string name="performance">パフォーマンス</string>
+
+    <!-- Activity titles defined in AndroidManifest.xml -->
+    <string name="title_about">AOKPについて</string>
+    <string name="title_ui">全般</string>
+    <string name="title_statusbar_clock">時計表示</string>
+    <string name="title_statusbar_toggles">クイック設定</string>
+    <string name="title_statusbar_battery">バッテリー</string>
+    <string name="title_navbar">ナビゲーションバー</string>
+    <string name="title_power_menu">電源メニュー</string>
+    <string name="title_led">LED</string>
+    <string name="title_lockscreens">ロック画面</string>
+    <string name="title_lockscreens_targets">ロック画面ターゲット</string>
+    <string name="title_navring">ナビゲーションリング</string>
+    <string name="title_sound">サウンド</string>
+    <string name="title_weather">天気情報</string>
+    <string name="title_performance">パフォーマンス</string>
+    <string name="title_clipboard_share">クリップボードに共有</string>
+
+    <!-- Header Summaries -->
+    <string name="header_summary_clock">@null</string>
+    <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_general_ui">@null</string>
+    <string name="header_summary_battery">@null</string>
+    <string name="header_summary_signal">@null</string>
+    <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_power_menu">@null</string>
+    <string name="header_summary_led">@null</string>
+    <string name="header_summary_sound">@null</string>
+    <string name="header_summary_performance">@null</string>
+    <string name="header_summary_lockscreens">@null</string>
+    <string name="header_summary_weather">@null</string>
+    <string name="header_summary_vibrations">@null</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_nav_bar_reset">ナビゲーションバーをリセット</string>
+    <string name="menu_user_interface_reset">通知パネルの壁紙をリセット</string>
+    <string name="menu_lockscreens_reset">ロック画面の壁紙をリセット</string>
+
+    <!-- General Strings -->
+    <string name="advanced_settings">詳細設定</string>
+    <string name="misc_short">その他</string>
+    <string name="custom_app_icon_successfully">"のアイコンが設定されました"</string>
+
+   <!-- Power Menu -->
+    <string name="title_show_power_saver">省電力モード</string>
+    <string name="title_show_screenshot">スクリーンショット</string>
+    <string name="title_show_torch_toggle">トーチ</string>
+    <string name="title_show_airplane_toggle">機内モード</string>
+    <string name="title_show_navbar_hide">ナビゲーションバー</string>
+
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">省電力設定を有効にする</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+
+    <string name="title_pref_powersaving_data_screen_off">データ通信制限設定</string>
+    <string name="summary_pref_powersaving_data_screen_off">スリープ時のデータ通信を制限することで電池の持ちを改善する</string>
+
+    <string name="title_pref_powersaving_data_screen_off_delay">データ通信制限の待機時間</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">スリープ時にデータ通信の制限を開始するまでの待機時間を設定する</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">任意のアプリを起動する</string>
+    <string name="use_custom_app_summary">アプリ履歴の代わりに任意のアプリを配置する</string>
+    <string name="select_custom_app_title">アプリの選択</string>
+    <string name="group_applications">アプリケーション</string>
+
+    <!-- About -->
+    <string name="devs">開発者</string>
+    <string name="aokp">Android Open Kang Project</string>
+    <string name="aokp_website_title">AOKPウェブサイト</string>
+    <string name="aokp_website_summary">"http://aokp.co/
+こちらからAOKPの最新情報が確認できます。"</string>
+    <string name="aokp_source_title">AOKPソースコード</string>
+    <string name="aokp_source_summary">"AOKPはオープンソースです。
+最新のソースコードはgithub.com/aokpでいつでも確認することができます。"</string>
+    <string name="aokp_review_title">AOKPコードレビュー</string>
+    <string name="aokp_review_summary">パッチを提出・テストするためのAOKP Gerrit Review</string>
+    <string name="aokp_irc_title">IRCに参加</string>
+    <string name="aokp_irc_summary">\#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">AOKPについて</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+    <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+    <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+    <string name="donate_khasmek">http://nyan.cat</string>
+    <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+    <string name="donate_adam">http://goo.gl/fRj57</string>
+    <string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
+    <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
+    <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
+    <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
+    <string name="donate_sixstringsg">https://www.paypal.com/cgi-bin/webscr?cmd=_flow&amp;SESSION=U3KYhTz6itHx8bKvx-F79EFVY5sQKKQu9f1ftkJ1pevFN6wdaJLu8yz3Y3e&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d1e83f46a36995b3856cef1e18897ad75</string>
+    <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
+    <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
+    <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
+
+    <!-- General UI -->
+    <string name="bootani_cat">ブートアニメーション</string>
+    <string name="navbar_cat">ナビゲーションバー</string>
+    <string name="notification_cat">通知パネル</string>
+    <string name="tabletUI_cat">タブレットUI</string>
+    <string name="enable_volume_options">ボリュームオプションを有効</string>
+    <string name="status_bar_notif_count_title">通知数を表示</string>
+    <string name="status_bar_notif_count_summary">ステータスバーに未読の通知数を表示する</string>
+    <string name="vibrate_notif_expand_title">通知を展開時に振動</string>
+    <string name="vibrate_notif_expand_summary">通知を展開した時に振動する (UI再起動)</string>
+    <string name="disable_bootanimation_title">ブートアニメーションを無効</string>
+    <string name="custom_bootanimation_title">ブートアニメーションの変更</string>
+    <string name="custom_bootanimation_summary">SDカードからブートアニメーション用のzipを選択してください。以前のブートアニメーションは/system/mediaにバックアップされます。</string>
+    <string name="install_file_manager_error">zipファイルを指定するアプリがありません。ファイルマネージャーをインストールしてください。</string>
+    <string name="notification_wallpaper_title">通知パネルの背景の変更</string>
+    <string name="notification_wallpaper_summary">通知パネルの背景を元に戻すにはメニューから設定をリセットしてください</string>
+    <string name="notif_wallpaper_alpha_title">通知パネル背景の不透明度</string>
+    <string name="alpha_dialog_title">不透明度の設定</string>
+    <string name="custom_carrier_label_title">キャリアラベルの変更</string>
+    <string name="custom_carrier_label_explain">新しいラベルを入力してください。元のキャリアラベルに戻すには空欄にしてください。</string>
+    <string name="custom_carrier_label_notset">カスタムラベルは現在設定されていません</string>
+    <string name="ime_switcher_title">IME変更アイコンの表示</string>
+    <string name="ime_switcher_summary">文字入力中にステータスバーに表示する</string>
+    <string name="lefty_mode_title">左利きモード</string>
+    <string name="lefty_mode_summary">ナビゲーションバーの配置をスワップする (UI再起動)</string>
+    <string name="rotate_180_title">180°画面回転を有効</string>
+    <string name="rotate_180_summary">画面を上下反対に180°回転させることを可能にする</string>
+    <string name="recent_kill_all">全タスク終了ボタンを表示</string>
+    <string name="recent_kill_all_summary">アプリ履歴ウィンドウに全タスク終了ボタンを表示する</string>
+    <string name="ram_bar">RAM使用量を表示</string>
+    <string name="ram_bar_summary">アプリ履歴にRAMの使用量を表示する</string>
+    <string name="kill_app_longpress_back">戻るキー長押しでタスクキル</string>
+    <string name="kill_app_longpress_back_summary">戻るキー長押しで使用中のアプリを終了する</string>
+    <string name="tablet_ui">タブレットUIを使用する</string>
+    <string name="tablet_ui_summary">タブレットUIに切り替える (要再起動)</string>
+    <string name="hide_extras">余分なアイコンを非表示</string>
+    <string name="hide_extras_summary">タブレットUIの互換ズームボタン等を表示しない (UI再起動)</string>
+    <string name="bootanimation_preview">ブートアニメーションプレビュー</string>
+    <string name="apply">適用する</string>
+    <string name="creating_preview">プレビューを作成中...</string>
+    <string name="error_reading_zip_file">zipファイルの読み込み中にエラーが発生しました</string>
+    <string name="error_creating_preview">プレビュー作成中にエラーが発生しました</string>
+    <string name="multipane_ui">2ペイン表示を有効</string>
+    <string name="multipane_ui_summary">パネルの表示方法を2ペイン表示に変更する (要再起動)</string>
+    <string name="show_overflow_title">3ドットメニューボタンを表示</string>
+    <string name="show_overflow_summary">アプリ内の3ドットメニューボタンを表示する</string>
+    <string name="show_overflow_toast_enable">アプリを再起動するまでメニューボタンが表示されない場合があります</string>
+    <string name="show_overflow_toast_disable">アプリを再起動するまでメニューボタンは非表示にすることはできません</string>
+    <string name="notification_show_wifi_ssid_title">Wi-Fiネットワーク名を表示</string>
+    <string name="notification_show_wifi_ssid_summary">現在接続中のネットワークのSSIDを表示する</string>
+    <string name="brightness_slider_title">ステータスバーで明るさを変更</string>
+    <string name="brightness_slider_summary">明るさの自動調整無効時に、ステータスバーをスライドすることで明るさを変更する</string>
+
+
+    <!-- LCD Density -->
+    <string name="lcd_density_title">画面密度の変更</string>
+    <string name="lcd_density_summary">不明</string>
+    <string name="current_lcd_density">"現在の画面密度 : "</string>
+    <string name="lcd_density_wizard">画面密度設定ウィザード</string>
+    <string name="follow_through_title">画面密度の変更手順</string>
+    <string name="follow_through_summary">以下の手順を順番に実施してください。</string>
+    <string name="stock_density_title">1. 画面密度を既定値に設定</string>
+    <string name="stock_density_summary">タブレットや古い機種は160、ほとんどの機種は240、Galaxy Nexusは320を選んでください。</string>
+    <string name="stock_density_changed_summary">"設定した画面密度 : "</string>
+    <string name="reboot_title">2. 再起動</string>
+    <string name="reboot_summary">再起動後にこの画面へ戻り、残りの手順を完了させてください。</string>
+    <string name="clear_market_data_title">3. Playストアのデータを消去</string>
+    <string name="clear_market_data_cleared">Playストアのデータは消去されました。</string>
+    <string name="clear_market_data_donot_cleared">Playストアのデータを消去できませんでした。手動で消去してください。</string>
+    <string name="dpi">DPI</string>
+    <string name="open_market_title">4. Google Playの利用規約に同意</string>
+    <string name="open_market_summary">Google Playの利用規約に同意した後にこの画面へ戻り、残りの手順を完了させてください。</string>
+    <string name="open_market_summary_could_not_open">Playストアを開くことができませんでした。Playストアがインストールされている場合はランチャーから開いてください。</string>
+    <string name="custom_density_title">5. 好みの画面密度に変更</string>
+    <string name="custom_density_summary">Playストアの互換性に問題がある場合は、再度この手順をやり直してください。</string>
+    <string name="custom_density_summary_invalid">不正な画面密度です</string>
+    <string name="custom_density">カスタム</string>
+    <string name="set_custom_density_title">画面密度を設定してください</string>
+    <string name="set_custom_density_set">設定</string>
+    <string name="custom_density_dialog_title">警告!</string>
+    <string name="custom_density_dialog_summary">画面密度を変更するとアプリが予期しない動作をする場合があります。Playストアの互換性に問題がある場合はステップ1からやり直してください。</string>
+    <string name="custom_density_dialog_button_got">完了!</string>
+    <string name="custom_density_dialog_button_reboot">今すぐ再起動</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
+    <string name="toggle_style_title">トグルスタイル</string>
+    <string name="toggle_style_summary">トグルの表示をアイコンにするかテキストにするかを選択する</string>
+    <string name="toggles_layout_title">トグルレイアウト</string>
+    <string name="enabled_toggles_title">表示タイル</string>
+    <string name="enabled_toggles_summary">クイック設定に表示するタイルを選択する</string>
+    <string name="toggles_display_dialog">表示タイルの選択</string>
+    <string name="toggles_per_row_title">タイル数</string>
+    <string name="toggles_per_row_summary">1行に表示するタイル数を選択する</string>
+    <string name="toggles_display_close">閉じる</string>
+    <string name="toggles_order_title">タイルの並び替え</string>
+    <string name="toggles_order_summary">表示するタイルの並びを変更する</string>
+    <string name="title_settings_behavior">デフォルトの動作を使用する</string>
+    <string name="summary_settings_behavior_default">設定アイコンをタップで設定、長押しでトグル表示切替え</string>
+    <string name="summary_settings_behavior_reverse">設定アイコンをタップでトグル表示切替え、長押しで設定</string>
+    <string name="title_toggles_autohide">トグルを自動的に隠す</string>
+    <string name="summary_toggles_autohide">通知パネルを閉じるとトグルを自動的に非表示にする</string>
+    <string name="brightness_location_title">明るさ調整スライダーの表示位置</string>
+    <string name="reset_toggles_title">トグル設定のリセット</string>
+    <string name="reset_toggles_summary">トグルの設定や並び順をリセットする</string>
+    <string name="toggle_button_alpha_title">トグルインジケータの不透明度</string>
+    <string name="toggle_btn_enabled_color_title">有効時のインジケータ色</string>
+    <string name="toggle_btn_disabled_color_title">無効時のインジケータ色</string>
+    <string name="toggle_btn_background_title">トグル背景の不透明度</string>
+    <string name="toggle_text_color_title">トグルの文字色</string>
+    <string name="toggle_favcontact_title">お気に入りの連絡先</string>
+    <string name="toggle_favcontact_summary">お気に入りの連絡先を選択する</string>
+    <string name="toggle_enable_fasttoggle_title">スワイプでクイック設定を表示</string>
+    <string name="toggle_enable_fasttoggle_summary">ステータスバーをスワイプするだけでクイック設定パネルを表示する</string>
+    <string name="toggle_choose_fasttoggle_side_title">スワイプ領域の選択</string>
+    <string name="toggle_choose_fasttoggle_side_summary">スワイプでクイック設定パネルを表示させる領域を選択する</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">時計表示スタイル</string>
+    <string name="title_clock_ampm_entries">AM/PMスタイル</string>
+    <string name="enable_clock_weekday">曜日表示スタイル</string>
+    <string name="enable_clock_weekday_summary">曜日の表示方法を設定する</string>
+    <string name="colors">配色設定</string>
+    <string name="clock_color_title">時計の文字色</string>
+    <string name="alarm">アラーム</string>
+    <string name="clock_options">時計オプション</string>
+    <string name="nothing">設定なし</string>
+    <string name="today">カレンダー表示</string>
+    <string name="event">予定を新規作成</string>
+    <string name="voiceassist">ボイスサーチ</string>
+    <string name="title_clock_doubleclick">時計ダブルタップ時の動作</string>
+    <string name="title_clock_longclick">時計長押し時の動作</string>
+    <string name="title_clock_shortclick">時計タップ時の動作</string>
+
+    <!-- Toggle Strings to be called from device overlays -->
+    <string name="toggle_airplane_mode">機内モード</string>
+    <string name="toggle_auto_rotate">画面回転</string>
+    <string name="toggle_bluetooth">Bluetooth</string>
+    <string name="toggle_fcharge">急速充電</string>
+    <string name="toggle_gps">GPS</string>
+    <string name="toggle_lte">LTE</string>
+    <string name="toggle_data">データ通信</string>
+    <string name="toggle_nfc">NFC</string>
+    <string name="toggle_silent">サイレント</string>
+    <string name="toggle_swagger">Swagger</string>
+    <string name="toggle_sync">同期</string>
+    <string name="toggle_torch">トーチ</string>
+    <string name="toggle_2g">2G</string>
+    <string name="toggle_usb_tether">USBテザリング</string>
+    <string name="toggle_vibrate">バイブレート</string>
+    <string name="toggle_wifi_tether">テザリング</string>
+    <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_user">ユーザー</string>
+    <string name="toggle_favorite_contact">お気に入りの連絡先</string>
+    <string name="toggle_settings">設定</string>
+    <string name="toggle_signal">電波強度</string>
+    <string name="toggle_clock">時計</string>
+    <string name="toggle_ime">IME変更</string>
+    <string name="toggle_battery">電池残量</string>
+    <string name="toggle_brightness">明るさ調整</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">電池残量アイコンスタイル</string>
+    <string name="battery_not_title">通知パネルに電池残量を表示</string>
+    <string name="battery_not_summary">電池残量アイコンを通知パネルのクリアボタンの位置に表示する</string>
+    <string name="battery_bar">電池残量バー表示位置</string>
+    <string name="battery_bar_color">電池残量バー配色設定</string>
+    <string name="battery_bar_cat">電池残量バー設定</string>
+    <string name="battery_bar_style_title">電池残量バースタイル</string>
+    <string name="battery_bar_thickness_title">電池残量バーの太さ</string>
+    <string name="battery_bar_animate_title">充電中アニメーション</string>
+    <string name="battery_bar_animate_summary">アニメーションを有効にするとパフォーマンスが低下する恐れがあります</string>
+
+    <!-- Statusbar | Signal -->
+    <string name="signal_style">電波強度表示スタイル</string>
+    <string name="signal_color_title">電波強度表示の配色設定</string>
+    <string name="hide_signal_title">電波アイコンを非表示</string>
+    <string name="hide_signal_summary">電波強度が変化したタイミングで適用されます</string>
+    <string name="wifi_signal_style">Wi-Fi強度表示スタイル</string>
+    <string name="wifi_signal_color_title">Wi-Fi強度表示の配色設定</string>
+    <string name="alt_signal_title">電波強度とインジケータを分離</string>
+    <string name="alt_signal_summary">電波強度とインジケータを別々に表示する</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">色選択</string>
+    <string name="press_color_to_apply">選択した色をタップで適用</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">16進:</string>
+    <string name="hex_hint">\#FF000000</string>
+    <string name="set">set</string>
+    <string name="ics_color">Holo</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar">ナビゲーションバー</string>
+    <string name="navbar_button_cat">ソフトキー設定</string>
+    <string name="title_pref_menu_display">メニューキー表示位置</string>
+    <string name="summary_pref_menu_display">ソフトキー設定でメニューを表示する場合は「表示しない」を選択してください。</string>
+    <string name="title_pref_navigation_menu_display">メニューキー表示</string>
+    <string name="summary_pref_navigation_menu_display">メニューキーの表示方法を設定する</string>
+    <string name="navbar_qty_title">ソフトキーの数</string>
+    <string name="navbar_qty_summary">ナビゲーションバーに表示するソフトキーの数を設定する</string>
+    <string name="navbar_action_title">ソフトキー%1$sの動作とアイコン</string>
+    <string name="button_transparency_title">ソフトキーの不透明度</string>
+    <string name="navbar_width_help_title">ソフトキー表示幅の変更</string>
+    <string name="navbar_width_help_summary">100で画面の幅の70\%%、5で画面幅の30\%%の表示 (デフォルト0)</string>
+    <string name="width_port_title">縦画面時のソフトキー表示幅</string>
+    <string name="width_land_title">横画面時のソフトキー表示幅</string>
+    <string name="navbar_longpress_title">ソフトキー%1$s長押し時の動作</string>
+    <string name="navbar_action_home">ホーム</string>
+    <string name="navbar_action_back">戻る</string>
+    <string name="navbar_action_recents">アプリ履歴</string>
+    <string name="navbar_action_search">検索</string>
+    <string name="navbar_action_screenshot">スクリーンショット</string>
+    <string name="navbar_action_menu">メニュー</string>
+    <string name="navbar_action_ime">IME変更</string>
+    <string name="navbar_action_kill">タスクキル</string>
+    <string name="navbar_action_power">電源</string>
+    <string name="navbar_action_notifications">通知パネルの開閉</string>
+    <string name="navbar_action_none">設定なし</string>
+    <string name="navbar_widgets">ウィジェット表示</string>
+    <string name="navbar_enable_bar">有効にする</string>
+    <string name="navigation_bar_height_title">ナビゲーションバーの高さ(縦画面)</string>
+    <string name="navigation_bar_height_summary">縦画面時のナビゲーションバーの高さを変更する</string>
+    <string name="navigation_bar_height_landscape_title">ナビゲーションバーの高さ(横画面)</string>
+    <string name="navigation_bar_height_landscape_summary">横画面時のナビゲーションバーの高さを変更する</string>
+    <string name="navigation_bar_width_title">ナビゲーションバーの幅</string>
+    <string name="navigation_bar_width_summary">横画面時のナビゲーションバーの幅を変更する</string>
+    <string name="navbar_enable_dialog_title">再起動が必要です</string>
+    <string name="navbar_enable_dialog_msg">ナビゲーションバーの表示/非表示切替えを正常に完了するには端末を再起動してください</string>
+    <string name="navbar_enable_dialog_negative">後で再起動する</string>
+    <string name="navbar_enable_dialog_Positive">今すぐ再起動</string>
+    <string name="navbar_height_dialog_title">再起動が必要です</string>
+    <string name="navbar_height_dialog_summary">高さの変更を正常に完了するには端末を再起動してください</string>
+    <string name="navbar_height_dialog_button_later">後で再起動する</string>
+    <string name="navbar_height_dialog_button_reboot">今すぐ再起動</string>
+    <string name="navigation_bar_tint_title">ソフトキー配色設定</string>
+    <string name="navigation_bar_glow_tint_title">ソフトキーの発光色</string>
+    <string name="navigation_bar_glow_tint_summary">ソフトキーをタップした時の発光色を変更する</string>
+    <string name="glow_times_title">ソフトキーの発光アニメーション</string>
+    <string name="glow_times_off">なし</string>
+    <string name="glow_times_superquick">超高速</string>
+    <string name="glow_times_quick">高速</string>
+    <string name="glow_times_normal">標準</string>
+    <string name="navbar_widgets_instructions">スワイプで表示 - タップで選択</string>
+    <string name="navbar_widgets_reset">ウィジェットをリセット</string>
+    <string name="navbar_widget_summary">ウィジェット %1$s/%2$s</string>
+    <string name="navbar_widget_summary_add">タップでウィジェットを追加する</string>
+    <string name="navbar_widgets_title">ウィジェットの設定</string>
+    <string name="navbar_widgets_shiftLeft">左へシフト</string>
+    <string name="navbar_widgets_shiftRight">右へシフト</string>
+    <string name="navbar_widgets_delete">ウィジェットを削除</string>
+    <string name="navigation_bar_menu_arrow_keys_title">矢印キー</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">文字入力中にナビゲーションバーに矢印キーを表示する</string>
+    <string name="navigation_bar_alpha_title">通知とナビゲーションバーの不透明度</string>
+
+    <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">ナビゲーションバーリング</string>
+    <string name="interface_softkey_settings">ソフトキー設定</string>
+    <string name="interface_softkeys_pref_default_1_title">ターゲット1 選択時の動作</string>
+    <string name="interface_softkeys_pref_long_1_title">ターゲット1 長押し時の動作</string>
+    <string name="interface_softkeys_pref_default_2_title">ターゲット2 選択時の動作</string>
+    <string name="interface_softkeys_pref_long_2_title">ターゲット2 長押し時の動作</string>
+    <string name="interface_softkeys_pref_default_3_title">ターゲット3 選択時の動作</string>
+    <string name="interface_softkeys_pref_long_3_title">ターゲット3 長押し時の動作</string>
+    <string name="interface_softkeys_pref_default_4_title">ターゲット4 選択時の動作</string>
+    <string name="interface_softkeys_pref_long_4_title">ターゲット4 長押し時の動作</string>
+    <string name="interface_softkeys_pref_default_5_title">ターゲット5 選択時の動作</string>
+    <string name="interface_softkeys_pref_long_5_title">ターゲット5 長押し時の動作</string>
+    <string name="interface_softkeys_pref_default_summary">設定アイコンをタップして長押し時の動作を選択してください</string>
+    <string name="interface_softkeys_activity_dialog_title">アクティビティの選択</string>
+    <string name="interface_softkeys_reboot_title">再起動メニュー</string>
+    <string name="interface_softkeys_screenshot_title">スクリーンショット</string>
+    <string name="interface_softkeys_screenoff_title">スクリーンオフ</string>
+    <string name="interface_softkeys_ime_switcher_title">IME変更</string>
+    <string name="interface_softkeys_ring_vib_title">サウンド/バイブ</string>
+    <string name="interface_softkeys_ring_silent_title">サウンド/サイレント</string>
+    <string name="interface_softkeys_ring_vib_silent_title">サウンド/バイブ/サイレント</string>
+    <string name="interface_softkeys_kill_process_title">タスクキル</string>
+    <string name="interface_softkey_package_removed">以前に選択したパッケージが見つかりませんでした</string>
+    <string name="interface_navring_settings_title">ターゲットの動作設定</string>
+    <string name="interface_navring_settings_summary">ナビゲーションバーリングに割り当てる動作を設定する</string>
+    <string name="title_navring_amount">リングターゲット数</string>
+    <string name="summary_navring_amount">リングターゲットの数を設定する</string>
+    <string name="interface_navring_custom_pref_summary">ターゲット上で指を離すことでアプリが起動する</string>
+    <string name="interface_navring_pref_default_summary">ターゲットに割り当てる動作を選択してください</string>
+    <string name="interface_navring_assist_title">Google Now</string>
+    <string name="interface_navring">リングターゲット</string>
+    <string name="navbar_ring">カスタムリングターゲット</string>
+    <string name="navring_enable_long">ターゲット長押しを有効にする</string>
+
+    <!-- LED -->
+    <string name="led_on">LEDオン</string>
+    <string name="led_time_on">LED点灯時間</string>
+    <string name="led_off">LEDオフ</string>
+    <string name="led_time_off">LED消灯時間</string>
+    <string name="led_time_seconds">" 秒"</string>
+    <string name="led_color_click">色を変更するにはLEDをタップしてください</string>
+    <string name="title_led_screen_on">ウェイク時もLED通知を点灯</string>
+    <string name="led_custom_app">選択したアプリ</string>
+    <string name="led_custom_default">デフォルト</string>
+    <string name="led_change_app">変更</string>
+    <string name="led_delete_app">削除</string>
+    <string name="led_keep_app">保存</string>
+    <string name="led_custom_title">LEDアプリの編集</string>
+    <string name="led_custom_message">"設定したアプリを変更しますか : "</string>
+    <string name="led_edit_button">+</string>
+    <string name="led_test_notification">LED点灯テスト</string>
+    <string name="led_test_notification_message_now">"LED点灯テスト : "</string>
+    <string name="led_test_notification_message_note">"
+LEDをテストするにはこのまま画面をオフにしてください。LEDのテストが完了するまでOKをタップしないでください。"</string>
+    <string name="led_test_ok">OK</string>
+    <string name="title_charging_led_on">"充電中にLEDを点灯
+(要再起動)"</string>
+    <string name="led_change_brightness">LEDの明るさ変更</string>
+    <string name="led_brightness_default">デフォルトの明るさ : 31</string>
+
+    <!-- Sound -->
+    <string name="less_notification_sounds_title">通知音の制限</string>
+    <string name="less_notification_sounds_summary">アプリの通知音を設定時間ごとに1回の再生に制限する</string>
+    <string name="title_headphone_audio_mode">ヘッドホン接続時の動作</string>
+    <string name="summary_headphone_audio_mode">ヘッドホンを抜き差しした時のサウンドモードを設定する</string>
+    <string name="title_bt_audio_mode">Bluetooth A2DP接続時の動作</string>
+    <string name="summary_bt_audio_mode">A2DP接続した時のサウンドモードを設定する</string>
+    <string name="headphones_mode_no_action">何もしない</string>
+    <string name="headphones_mode_vibrate">バイブレートモード</string>
+    <string name="headphones_mode_silent">サイレントモード</string>
+    <string name="title_flip_mode">フェイスダウン時の着信モード</string>
+    <string name="summary_flip_mode">画面を下に向けている時の着信の挙動を設定する (マナーモードオフ時のみ)</string>
+    <string name="flip_cat_title">フェイスダウンモードの設定</string>
+    <string name="title_timeout_sec">フリップセンサー無効時間</string>
+    <string name="summary_timeout_sec">着信後にフリップセンサーが無効になるまでの時間を設定する</string>
+    <string name="title_down_sec">フェイスダウン判定時間</string>
+    <string name="summary_down_sec">端末がフェイスダウンモードに入ったと判定するまでに要する時間を設定する</string>
+    <string name="flip_action_positive">OK</string>
+    <string name="flip_dialog_title">フェイスダウン時の動作</string>
+    <string name="flip_dialog_msg">"端末を裏返すことでバイブレーション、もしくはサイレントの選択したモードになります。
+フェイスダウン判定までの時間はデフォルトで1.5秒です。
+画面がオンになってからデフォルトで15秒後にフリップセンサーが無効になります。
+注：フリップセンサーがタイムアウトした後にサウンドモードを変更するには、端末をフェイスダウンさせてから画面をオンにする必要があります。"</string>
+    <string name="summary_phone_flip_mode">着信時に端末をフェイスダウンさせることでサイレントモードへ移行する</string>
+    <string name="title_phone_flip_mode">サイレントモードに移行</string>
+
+    <!-- Lockscreen -->
+    <string name="lock_widgets_short">ロック画面ウィジェット</string>
+    <string name="lockscreen_security_cat">セキュリティ</string>
+    <string name="lockscreen_layout_cat">レイアウト</string>
+    <string name="lockscreen_music_cat">音楽</string>
+    <string name="lockscreen_weather_cat">天気情報</string>
+    <string name="lockscreen_calendar_cat">カレンダー</string>
+    <string name="lockscreen_quick_unlock_control_title">クイックPINロック解除</string>
+    <string name="lockscreen_quick_unlock_control_summary">PINコードでのロック解除時にコード入力後のOKのタップを省略する</string>
+    <string name="lockscreen_menu_unlock_title">メニューキーでロックを解除</string>
+    <string name="lockscreen_menu_unlock_summary">メニューキーでロックを解除する</string>
+    <string name="lockscreen_auto_rotate_title">ロック画面の回転を有効にする</string>
+    <string name="lockscreen_auto_rotate_summary">ロック画面をデバイスの向きに応じて回転させることができる。これは画面の自動回転とは無関係です。</string>
+    <string name="lockscreen_all_widgets_title">全ウィジェットの配置を許可</string>
+    <string name="lockscreen_all_widgets_summary">警告:ウィジェットによってはロック画面上で使用されることを意図しておらず、ウィジェット作成者またはAOKPはロック画面へのウィジェット配置に関して責任を負いません。自己責任で選択してください。</string>
+    <string name="lockscreen_unlimited_widgets_title">ウィジェット配置数制限を無効</string>
+    <string name="lockscreen_unlimited_widgets_summary">警告:あまりにも多くのウィジェットを追加するとロック画面のラグ問題を引き起こす可能性があります。</string>
+    <string name="lockscreen_battery_title">ロック画面に電池残量を表示</string>
+    <string name="lockscreen_battery_summary">ロック画面に電池残量を常に表示する</string>
+    <string name="lockscreen_hide_initial_page_hints_title">ガイドを非表示</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">ロック画面の左右に表示されるウィジェットのガイドを表示しない</string>
+    <string name="lockscreen_minimize_challenge_title">ロック解除表示を最小化</string>
+    <string name="lockscreen_minimize_challenge_summary">画面オン時にロック解除表示(サークル/パターン/PIN)を最小化する</string>
+    <string name="volume_rocker_wake_title">ボリュームキーでスリープ解除</string>
+    <string name="volume_rocker_wake_summary">ボリュームキーを押すことでスリープを解除する</string>
+    <string name="volume_music_controls_title">ボリュームキーで曲選択</string>
+    <string name="volume_music_controls_summary">画面オフ時にボリュームキーの長押しで曲をスキップする。音楽再生中はボリュームキーを押してもスリープは解除されません。</string>
+    <string name="lockscreen_stock_music_layout_title">標準の音楽プレーヤーを使用</string>
+    <string name="lockscreen_stock_music_layout_summary">音楽再生の際に標準の音楽プレーヤーを使用する</string>
+    <string name="lockscreen_wallpaper_title">ロック画面の壁紙の選択</string>
+    <string name="lockscreen_wallpaper_summary">ロック画面の壁紙を元に戻すにはメニューから設定をリセットしてください</string>
+    <string name="lockscreen_text_color_title">ロック画面の文字色</string>
+    <string name="lockscreen_weather_title">ロック画面に天気情報を表示</string>
+    <string name="lockscreen_weather_summary">ロック画面に天気情報を表示する (天気情報表示を有効にする必要あり)</string>
+    <string name="lockscreen_weather_type_title">ロック画面の天気表示スタイル</string>
+    <string name="lockscreen_weather_type_summary">天気情報を画像で表示するかテキストで表示するかを選択する</string>
+    <string name="lockscreen_calendar_title">ロック画面にカレンダーを表示</string>
+    <string name="lockscreen_calendar_summary">ロック画面にカレンダーの予定を表示する</string>
+    <string name="lockscreen_calendar_sources_title">カレンダーの選択</string>
+    <string name="lockscreen_calendar_sources_summary">表示するカレンダーを選択する</string>
+    <string name="lockscreen_calendar_dialog">使用するカレンダーの選択</string>
+    <string name="lockscreen_calendar_close">閉じる</string>
+    <string name="lockscreen_calendar_range_title">予定表示期間の設定</string>
+    <string name="lockscreen_calendar_range_summary">表示する予定の期間を設定する</string>
+    <string name="lockscreen_calendar_use_colors_title">予定を色付け表示する</string>
+    <string name="lockscreen_calendar_use_colors_summary">カレンダーのように予定が色付け表示する</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">開始済みの予定を非表示</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">既に開始された予定は表示しない</string>
+    <string name="lockscreen_calendar_flip_title">複数の予定を表示</string>
+    <string name="lockscreen_calendar_flip_summary">複数の予定を交互に表示する</string>
+    <string name="lockscreen_calendar_interval_title">表示時間間隔</string>
+    <string name="lockscreen_calendar_interval_summary">次の予定を表示するまでの時間間隔を秒数で設定する</string>
+    <string name="circles_lock_cat_title">サークルロック画面設定</string>
+    <string name="circles_lock_bg_color_title">背景の色</string>
+    <string name="circles_lock_ring_color_title">ボーダーリングの色</string>
+    <string name="circles_lock_ring_alpha_title">ボーダーリングの不透明度</string>
+    <string name="circles_lock_halo_color_title">スライド解除リングの色</string>
+    <string name="circles_lock_halo_alpha_title">スライド解除リングの不透明度</string>
+    <string name="circles_lock_wave_color_title">リングの外周の色</string>
+    <string name="circles_lock_wave_alpha_title">リングの外周の不透明度</string>
+
+    <!-- Lockscreen Targets-->
+    <string name="custom_targets">ロック解除ターゲット</string>
+    <string name="lockscreen_target_info">ドラッグで編集するターゲットを選択する</string>
+    <string name="lockscreen_target_title">ターゲットの編集</string>
+    <string name="lockscreen_target_summary">ロック解除のターゲットを編集する</string>
+    <string name="number_of_targets_title">ロック解除ターゲット数</string>
+    <string name="number_of_targets_summary">ロック解除ターゲットの数を設定する</string>
+    <string name="picker_activities">アクティビティ</string>
+    <string name="select_custom_activity_title">割り当てる機能を選択する</string>
+    <string name="icon_picker_choose_icon_title">アイコンの選択</string>
+    <string name="icon_picker_alarm">アラーム</string>
+    <string name="icon_picker_browser">ブラウザ</string>
+    <string name="icon_picker_calendar">カレンダー</string>
+    <string name="icon_picker_camera">カメラ</string>
+    <string name="icon_picker_email">メール</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">ギャラリー</string>
+    <string name="icon_picker_googleplus">Google+</string>
+    <string name="icon_picker_googletalk">トーク</string>
+    <string name="icon_picker_maps">マップ</string>
+    <string name="icon_picker_movie">ムービー</string>
+    <string name="icon_picker_music">ミュージック</string>
+    <string name="icon_picker_nav_normal">ナビ</string>
+    <string name="icon_picker_phone">電話</string>
+    <string name="icon_picker_podcast">ポッドキャスト</string>
+    <string name="icon_picker_rss">RSS</string>
+    <string name="icon_picker_search">検索</string>
+    <string name="icon_picker_sms">メッセージ</string>
+    <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_unlock">ロック解除</string>
+    <string name="icon_picker_title">アイコンソースの選択</string>
+    <string name="icon_picker_system_icons_title">システムアイコン</string>
+    <string name="icon_picker_aokp_icons_title">AOKPアイコン</string>
+    <string name="icon_picker_gallery_title">ギャラリーから選択</string>
+
+    <string name="aokp_icon_picker_aokp">AOKP Now</string>
+    <string name="aokp_icon_picker_browser">ブラウザ</string>
+    <string name="aokp_icon_picker_calendar">カレンダー</string>
+    <string name="aokp_icon_picker_camera">カメラ</string>
+    <string name="aokp_icon_picker_clock">時計</string>
+    <string name="aokp_icon_picker_email">メール</string>
+    <string name="aokp_icon_picker_facebook">Facebook</string>
+    <string name="aokp_icon_picker_gallery">ギャラリー</string>
+    <string name="aokp_icon_picker_googleplus">Google+</string>
+    <string name="aokp_icon_picker_googletalk">トーク</string>
+    <string name="aokp_icon_picker_maps">マップ</string>
+    <string name="aokp_icon_picker_movie">ムービー</string>
+    <string name="aokp_icon_picker_music">ミュージック</string>
+    <string name="aokp_icon_picker_navigation">ナビ</string>
+    <string name="aokp_icon_picker_phone">電話</string>
+    <string name="aokp_icon_picker_podcast">ポッドキャスト</string>
+    <string name="aokp_icon_picker_rss">RSS</string>
+    <string name="aokp_icon_picker_sms">メッセージ</string>
+    <string name="aokp_icon_picker_unlock">ロック解除</string>
+    <string name="aokp_icon_picker_video">ビデオ</string>
+    <string name="aokp_icon_picker_title">アイコンソースの選択</string>
+    <string name="aokp_icon_picker_system_icons_title">システムアイコン</string>
+    <string name="aokp_icon_picker_gallery_title">ギャラリーから選択</string>
+
+    <string name="icon_picker_pack_title">アイコンパック</string>
+    <string name="lockscreen_target_empty">設定なし</string>
+    <string name="profile_reset_title">リセット</string>
+    <string name="wifi_save">保存</string>
+    <string name="lockscreen_target_reset">ロック画面ターゲットはデフォルトにリセットされます</string>
+    <string name="lockscreen_target_save">ロック画面ターゲットを保存しました</string>
+    <string name="lockscreen_target_save_error_title">!!警告!!</string>
+    <string name="lockscreen_target_save_error_msg">少なくとも一つはロック画面ターゲットを配置する必要があります</string>
+    <string name="lockscreen_target_reset_title">ターゲットのリセット</string>
+    <string name="lockscreen_target_reset_message">編集したロック画面ターゲットを削除してデフォルトに戻しますか?</string>
+    <string name="lockscreen_target_edit_title">ターゲットとアイコンの編集</string>
+    <string name="lockscreen_target_edit_msg">アプリやアクティビティとアイコンを編集してください</string>
+
+    <string name="aokp_3targets">3 ターゲット</string>
+    <string name="aokp_4targets">4 ターゲット</string>
+    <string name="aokp_5targets">5 ターゲット</string>
+    <string name="aokp_6targets">6 ターゲット</string>
+    <string name="aokp_8targets">8 ターゲット</string>
+
+    <!-- Weather -->
+    <string name="weather_enable">天気情報表示を有効</string>
+    <string name="weather_enable_summary">通知パネルやロック画面に天気情報を表示する</string>
+    <string name="weather_use_custom_location">地域を指定</string>
+    <string name="weather_use_custom_location_summary">地域を指定した場合バッテリーを節約することができます。指定しない場合は現在地を特定するためにネットワークを利用します。</string>
+    <string name="weather_custom_location_dialog_title">地域を指定してください</string>
+    <string name="weather_custom_location_dialog_message">"例のように地域を指定してください。無効な地域を指定すると天気情報の更新を停止し、予期しない動作を引き起こす可能性があります。
+
+例：Tokyo / Osaka / Nagoya"</string>
+    <string name="weather_custom_location_title">地域を指定する</string>
+    <string name="weather_show_location_title">地域を表示する</string>
+    <string name="weather_show_location_summary">天気情報を取得中の地域を表示する</string>
+    <string name="weather_refresh_interval">更新間隔の設定</string>
+    <string name="weather_refresh_interval_minutes">" 分"</string>
+    <string name="weather_use_celcius">気温を摂氏、風速をkm/h表示</string>
+    <string name="weather_use_celcius_summary">無効にすると気温は華氏、風速はmphで表示する</string>
+    <string name="weather_statusbar_style">通知パネルの天気表示スタイル</string>
+    <string name="title_weather_longclick">天気情報パネル長押し時の動作</string>
+    <string name="title_weather_shortclick">天気情報パネルタップ時の動作</string>
+    <string name="update">天気情報パネルを更新</string>
+    <string name="weather_refreshing">天気情報を更新中</string>
+    <string name="weather_loc_warning_title">地域が取得できません</string>
+    <string name="weather_loc_warning_msg">ネットワークからの現在値の取得が無効になっているため、天気情報を取得する地域の判別ができません。地域を指定するか、ネットワークからの現在地の取得を有効にしてください。</string>
+    <string name="weather_loc_warning_positive">有効にする</string>
+    <string name="weather_loc_warning_negative">無効のまま</string>
+    <string name="menu_weather_get_weather">天気情報を更新</string>
+    <string name="weather_statusbar_hide">天気情報パネル表示方法</string>
+    <string name="always_on">常に表示</string>
+    <string name="same_toggles">トグルと一緒に隠す</string>
+    <string name="opposite_toggles">トグルと入れ替えて表示</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">竜巻</string>
+    <string name="weather_1">熱帯暴風雨</string>
+    <string name="weather_2">台風</string>
+    <string name="weather_3">強雷雨</string>
+    <string name="weather_4">激しい雷雨</string>
+    <string name="weather_5">みぞれ</string>
+    <string name="weather_6">みぞれ混じりの雨</string>
+    <string name="weather_7">みぞれ混じりの雪</string>
+    <string name="weather_8">着氷性の霧雨</string>
+    <string name="weather_9">霧雨</string>
+    <string name="weather_10">着氷性の雨</string>
+    <string name="weather_11">にわか雨</string>
+    <string name="weather_12">雨</string>
+    <string name="weather_13">にわか雪</string>
+    <string name="weather_14">弱いにわか雪</string>
+    <string name="weather_15">吹雪</string>
+    <string name="weather_16">雪</string>
+    <string name="weather_17">あられ</string>
+    <string name="weather_18">みぞれ</string>
+    <string name="weather_19">塵</string>
+    <string name="weather_20">霧</string>
+    <string name="weather_21">煙霧</string>
+    <string name="weather_22">もや</string>
+    <string name="weather_23">暴風</string>
+    <string name="weather_24">強風</string>
+    <string name="weather_25">酷寒</string>
+    <string name="weather_26">曇り</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">概ね曇り</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">概ね曇り</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">晴れ時々曇り</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">晴れ時々曇り</string>
+    <!-- clear (night) -->
+    <string name="weather_31">快晴</string>
+    <string name="weather_32">快晴</string>
+    <!-- fair (night) -->
+    <string name="weather_33">晴れ</string>
+    <!-- fair (day) -->
+    <string name="weather_34">晴れ</string>
+    <string name="weather_35">あられ混じりの雨</string>
+    <string name="weather_36">猛暑</string>
+    <string name="weather_37">晴れ 所により雷雨</string>
+    <string name="weather_38">晴れ 所により雷雨</string>
+    <string name="weather_39">晴れ 所により雨</string>
+    <string name="weather_40">晴れ 所によりにわか雨</string>
+    <string name="weather_41">大雪</string>
+    <string name="weather_42">晴れ 所によりにわか雪</string>
+    <string name="weather_43">晴れ 所によりにわか雪</string>
+    <string name="weather_44">晴れ時々曇り</string>
+    <string name="weather_45">雷雨</string>
+    <string name="weather_46">にわか雪</string>
+    <string name="weather_47">晴れ 所により雷雨</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200" />
+    <string name="location_unavailable">天気の更新に必要な位置情報が取得できません</string>
+
+    <!-- cardinal directions -->
+    <string name="direction_north">北の風</string>
+    <string name="direction_north_east">北東の風</string>
+    <string name="direction_east">東の風</string>
+    <string name="direction_south_east">南東の風</string>
+    <string name="direction_south">南の風</string>
+    <string name="direction_south_west">南西の風</string>
+    <string name="direction_west">西の風</string>
+    <string name="direction_north_west">北西の風</string>
+
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">クリップボードにコピーしました</string>
+
+    <!-- Performance -->
+    <string name="tab_cpu_settings">CPU設定</string>
+    <string name="tab_voltage_settings">動作電圧設定</string>
+    <string name="tab_other_settings">その他の設定</string>
+    <string name="current_speed">現在の周波数</string>
+    <string name="current_max">"最大値 : "</string>
+    <string name="current_min">"最小値 : "</string>
+    <string name="governor">CPUガバナー</string>
+    <string name="io">IOスケジューラー</string>
+    <string name="sob">起動時に適用する</string>
+    <string name="dt_free_memory">自動タスクキル設定</string>
+    <string name="prefcat_free_memory">メモリ管理</string>
+    <string name="pt_free_memory">自動タスクキル設定</string>
+    <string name="ps_free_memory">"空きメモリが設定値以下にならないよう自動でタスクキルする
+現在の設定値 : %s"</string>
+    <string name="pt_free_memory_boot">起動時に適用する</string>
+    <string name="ps_free_memory_boot">起動時に上記の設定を適用する</string>
+    <string name="pt_fast_charge_boot">急速充電</string>
+    <string name="ps_fast_charge_boot">起動時に急速充電を有効にする</string>
+    <string name="ps_volt_mhz_voltage">" MHz帯の電圧"</string>
+    <string name="ps_volt_save">保存</string>
+    <string name="ps_volt_current_voltage">"現在の電圧　: "</string>
+    <string name="ps_volt_setting_to_apply">"適用する設定 : "</string>
+    <string name="pt_volt_control">CPU動作電圧設定</string>
+    <string name="ps_volt_control">周波数ごとの動作電圧を設定する</string>
+    <string name="not_supported">このカーネルは電圧設定に対応していません</string>
+    <string name="apply_values">設定を適用</string>
+    <string name="freq">周波数</string>
+    <string name="current">mV current</string>
+    <string name="saved">mV saved</string>
+    <string name="kernel">カーネルTweaks (要対応カーネル)</string>
+    <string name="fast_charge_warning">"再起動後に急速充電が有効になります。
+急速充電を有効にしている間は端末をPCに接続してもメディアデバイスとしては認識されず、充電しかできません。"</string>
+    <string name="fast_charge_notification_title">急速充電オン</string>
+    <string name="fast_charge_notification_message">PC接続時も充電だけしかできません</string>
+    <string name="prefcat_other_tweaks">その他の調整</string>
+    <string name="performance_daily_reboot_title">再起動スケジュール</string>
+    <string name="performance_daily_reboot_summary">%1$sに再起動する</string>
+    <string name="performance_daily_reboot_summary_unscheduled">スケジュールなし</string>
+
+    <!-- Custom vibrations -->
+    <string name="vibrations">バイブレーション</string>
+    <string name="defaultvibrationname">デフォルト</string>
+    <string name="vib_new">新規/リセット</string>
+    <string name="vib_load">読み込み</string>
+    <string name="vib_rec">記録</string>
+    <string name="vib_TAP">タップ!</string>
+    <string name="vib_stop">停止</string>
+    <string name="vib_play">再生</string>
+    <string name="vib_save">保存</string>
+    <string name="vib_del">削除</string>
+    <string name="vib_dialog_text_entry">パターンを保存</string>
+    <string name="vib_dialog_name">"名前 : "</string>
+    <string name="vib_cur_loaded_title">"現在の設定 : "</string>
+    <string name="help">ヘルプ</string>
+    <string name="vibration_detailed_help">"5つの簡単なステップでバイブレーションパターンを作成することができます:
+ - 「新規/リセット」をタップします。
+ - 「記録」をタップします。
+ - 「タップ!」でリズムを刻み、パターンを記録します。
+ - 「停止」をタップします。
+ - 「保存」をタップし名前を入力します。
+
+ 「再生」ボタンをタップすることで記録されたパターンが確認できます。
+ 既に保存されているパターンを変更したい場合は「読み込み」をタップして選択し、パターンを作成してから再度保存します。(別の名前を選択した場合でもそれが上書きされます)
+ パターンを削除するには「削除」をタップしてパターンを選択し、もう一度「削除」をタップします。 初期パターンを削除することはできません。
+
+ 「電話>設定」もしくは「設定>音」からデフォルトのバイブレーションパターンを選択することができます。
+ 連絡帳アプリから連絡先を選択し、「メニュー>バイブレーションを設定」を選択することで連絡先に割り当てることができます。"</string>
+
+    <!-- boot animation stuff -->
+    <string name="insult_jerk">Jerk!</string>
+    <string name="insult_protekk">ProTekk!</string>
+    <string name="insult_unicorns">Concede pink unicorns are for little girls</string>
+
+    <!-- clock stuff -->
+    <string name="right_clock">右側に表示</string>
+    <string name="center_clock">中央に表示</string>
+    <string name="no_clock">表示しない</string>
+    <string name="dont_show">表示しない</string>
+    <string name="small_am_pm">AM/PM (小)</string>
+    <string name="regular_am_pm">AM/PM (標準)</string>
+    <string name="protekk_oclock">"ProTekk O'Clock"</string>
+    <string name="small_weekday">曜日を表示 (小)</string>
+    <string name="regular_weekday">曜日を表示 (標準)</string>
+
+    <!-- toggle style -->
+    <string name="icon_only">アイコンのみ</string>
+    <string name="text_only">テキストのみ</string>
+
+    <!-- Brightness slider -->
+    <string name="on_top">上部に表示</string>
+    <string name="on_the_bottom">下部に表示</string>
+
+    <!-- Battery styles -->
+    <string name="icon_with_text">アイコンとテキスト</string>
+    <string name="icon_with_centered_text">アイコンとテキスト (中央)</string>
+    <string name="circlemod">サークルMOD</string>
+
+    <!-- NavBar -->
+    <string name="right">右側</string>
+    <string name="left">左側</string>
+    <string name="both">両サイド</string>
+    <string name="default_jb_behavior">表示、配置ともにアプリ依存</string>
+    <string name="always_show_invincible_icons">非表示だが常時配置</string>
+    <string name="always_show">常時表示、常時配置</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">表示はアプリ依存、常時配置</string>
+    <string name="home">ホーム</string>
+    <string name="back">戻る</string>
+    <string name="recents">アプリ履歴</string>
+    <string name="search">検索</string>
+    <string name="screenshot">スクリーンショット</string>
+    <string name="menu">メニュー</string>
+    <string name="toggle_widgets">ウィジェット表示</string>
+    <string name="open_ime_switcher">IME変更</string>
+    <string name="kill_app">タスクキル</string>
+    <string name="power">電源</string>
+    <string name="notifications">通知パネルの開閉</string>
+    <string name="custom_app">アプリを指定</string>
+    <string name="menu_power">電源メニュー</string>
+    <string name="blank">設定なし</string>
+    <string name="none">なし</string>
+    <string name="take_screenshot">スクリーンショット</string>
+    <string name="ring_vib">サウンド/バイブ</string>
+    <string name="ring_silent">サウンド/サイレント</string>
+    <string name="ring_vib_silent">サウンド/バイブ/サイレント</string>
+    <string name="screen_off">スクリーンオフ</string>
+    <string name="google_now">Google Now</string>
+    <string name="select_application">アプリを指定</string>
+    <string name="one_target">1 ターゲット</string>
+    <string name="two_targets">2 ターゲット</string>
+    <string name="three_targets">3 ターゲット</string>
+    <string name="four_targets">4 ターゲット</string>
+    <string name="five_targets">5 ターゲット</string>
+    <string name="size_42_dp_default">42 dp (デフォルト)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (デフォルト)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">ステータスバーに表示</string>
+    <string name="top_of_navbar">ナビゲーションバー上部</string>
+    <string name="bottom_of_navbar">ナビゲーションバー下部</string>
+    <string name="regular">標準</string>
+    <string name="center_mirrored">中央</string>
+    <string name="size_0_dp">0 dp (オフ)</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- LED Values -->
+    <string name="time_0_seconds_off">オフ</string>
+    <string name="time_0_2_seconds">0.2 秒</string>
+    <string name="time_0_5_seconds">0.5 秒</string>
+    <string name="time_1_second">1.0 秒</string>
+    <string name="time_1_5_seconds">1.5 秒</string>
+    <string name="time_2_seconds">2.0 秒</string>
+    <string name="time_2_5_seconds">2.5 秒</string>
+    <string name="time_3_seconds">3.0 秒</string>
+    <string name="time_3_5_seconds">3.5 秒</string>
+    <string name="time_4_seconds">4.0 秒</string>
+    <string name="time_4_5_seconds">4.5 秒</string>
+    <string name="time_5_seconds">5.0 秒</string>
+    <string name="time_5_5_seconds">5.5 秒</string>
+    <string name="time_6_seconds">6.0 秒</string>
+    <string name="time_7_seconds">7.0 秒</string>
+    <string name="time_8_seconds">8.0 秒</string>
+    <string name="time_9_seconds">9.0 秒</string>
+    <string name="time_10_seconds">10.0 秒</string>
+
+    <!-- LED brightness entries -->
+    <string name="low">暗い</string>
+    <string name="medium">標準</string>
+    <string name="high">明るい</string>
+    <string name="very_high">とても明るい</string>
+    <string name="laserbeam">レーザービーム</string>
+
+    <!-- Flip phone entries -->
+    <string name="disabled">無効にする</string>
+    <string name="enabled">有効にする</string>
+    <string name="time_0_seconds_instant_off">0 秒 (瞬時に無効)</string>
+    <string name="time_15_seconds">15 秒</string>
+    <string name="time_30_seconds">30 秒</string>
+    <string name="time_45_seconds">45 秒</string>
+    <string name="time_1_minute">1.0 分</string>
+    <string name="time_1_5_minutes">1.5 分</string>
+    <string name="time_2_minutes">2.0 分</string>
+    <string name="time_2_5_minutes">2.5 分</string>
+    <string name="time_3_minutes">3.0 分</string>
+    <string name="time_3_5_minutes">3.5 分</string>
+    <string name="time_4_minutes">4.0 分</string>
+    <string name="time_5_minutes">5.0 分</string>
+
+    <!-- weather arrays -->
+    <string name="off">オフ</string>
+    <string name="time_10_minutes">10 分</string>
+    <string name="time_30_minutes">30 分</string>
+    <string name="time_45_minutes">45 分</string>
+    <string name="time_60_minutes">60 分</string>
+    <string name="time_2_hours">2 時間</string>
+    <string name="time_3_hours">3 時間</string>
+    <string name="time_4_hours">4 時間</string>
+    <string name="time_6_hours">6 時間</string>
+    <string name="time_8_hours">8 時間</string>
+    <string name="above_carrier_text">キャリアラベルの上に表示</string>
+    <string name="weather_panel">天気情報パネル</string>
+    <string name="text">テキスト表示</string>
+
+    <!-- lockscreen calendar arrays -->
+    <string name="time_1_day">1 日</string>
+    <string name="time_2_days">2 日</string>
+    <string name="time_3_days">3 日</string>
+    <string name="time_4_days">4 日</string>
+    <string name="time_5_days">5 日</string>
+    <string name="time_6_days">6 日</string>
+    <string name="time_1_week">1 週間</string>
+
+    <!-- minfree -->
+    <string name="size_25_mb">25mb</string>
+    <string name="size_50_mb">50mb</string>
+    <string name="size_75_mb">75mb</string>
+    <string name="size_80_mb">80mb</string>
+    <string name="size_100_mb">100mb</string>
+
+    <!-- less notification sounds -->
+    <string name="default_behavior">デフォルトの動作</string>
+
+    <!-- signal style -->
+    <string name="show_signal_bars">アイコン表示</string>
+    <string name="show_signal_text">数値表示</string>
+    <string name="show_with_dbm">数値+dBm表示</string>
+
+    <!-- haptic feedback on toggle press -->
+    <string name="toggles_enable_haptic_feedback_title">振動フィードバック</string>
+    <string name="toggles_enable_haptic_feedback_summary">トグルをタップした時の振動フィードバックを有効にする</string>
+
+</resources>

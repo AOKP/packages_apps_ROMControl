@@ -72,10 +72,10 @@
             android:title="@string/ram_bar"
             android:summary="@string/ram_bar_summary" />
 
-        <CheckBoxPreference
+       <!-- <CheckBoxPreference
             android:key="kill_app_longpress_back"
             android:title="@string/kill_app_longpress_back"
-            android:summary="@string/kill_app_longpress_back_summary" />
+            android:summary="@string/kill_app_longpress_back_summary" /> -->
 
     </PreferenceCategory>
 

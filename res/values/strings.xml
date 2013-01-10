@@ -482,9 +482,9 @@
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
-    <string name="lockscreen_hide_initial_page_hints_summary">Set wether the hints for the left and right widgets are shown when the screen is turned on.</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are shown when the screen is turned on.</string>
     <string name="lockscreen_minimize_challenge_title">Minimize lockscreen challenge</string>
-    <string name="lockscreen_minimize_challenge_summary">Set wether the lockscreen challenge (circle, pattern, pin) is minimized when the screen is turned on.</string>
+    <string name="lockscreen_minimize_challenge_summary">Set whether the lockscreen challenge (circle, pattern, pin) is minimized when the screen is turned on.</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>

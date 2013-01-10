@@ -84,7 +84,7 @@
     <string name="title_pref_powersaving_data_screen_off_delay">Adatforgalom késleltetése</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">Mennyit várjon az adatforgalom előtt?</string>
 
-
+    
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Egyedi alkalmazás használata</string>
@@ -169,6 +169,10 @@
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
+    <string name="notification_show_wifi_ssid_title">Wif hálózat név mutatása</string>
+    <string name="notification_show_wifi_ssid_summary">Az aktuálisan kapcsolódott Wifi hálózat nevét kirja</string>
+    <string name="brightness_slider_title">Értesitési sáv fényerő csúszka</string>
+    <string name="brightness_slider_summary">Engedélyezi a csúsztatással való fényerő állítást az értesítési sáv tetején. Autó fényerő állításnál nem történik semmi.</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD febontás</string>
@@ -207,6 +211,8 @@
     <string name="enabled_toggles_title">Kapcsolók engedélyezése</string>
     <string name="enabled_toggles_summary">Engedélyezett kapcsolók</string>
     <string name="toggles_display_dialog">Válaszd ki a kapcsolókat.</string>
+    <string name="toggles_per_row_title">Kapcsolók soronként</string>
+    <string name="toggles_per_row_summary">Válaszd ki, hogy hány kapcsoló legyen egy sorban</string>
     <string name="toggles_display_close">Bezárás</string>
     <string name="toggles_order_title">Kapcsoló sorrend</string>
     <string name="toggles_order_summary">Válaszd ki a sorrendet</string>
@@ -223,6 +229,12 @@
     <string name="toggle_btn_disabled_color_title">Indikátor szinének tiltása</string>
     <string name="toggle_btn_background_title">Kapcsolók hátterének áttetszősége</string>
     <string name="toggle_text_color_title">Kapcsoló szöveg szín</string>
+    <string name="toggle_favcontact_title">Kedvenc Személyek</string>
+    <string name="toggle_favcontact_summary">Válaszd ki a kedvenc kapcsolatod</string>
+    <string name="toggle_enable_fasttoggle_title">Gyors kapcsoló engedélyezése</string>
+    <string name="toggle_enable_fasttoggle_summary">Alapértelmezett viselkedés felülbírálása</string>
+    <string name="toggle_choose_fasttoggle_side_title">Gyors kapcsoló oldal választás</string>
+    <string name="toggle_choose_fasttoggle_side_summary">Válaszd ki melyik oldalon legyen</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Óra stílus</string>
@@ -236,8 +248,7 @@
     <string name="today">Naptár mai nap</string>
     <string name="event">Naptár új esemény</string>
     <string name="voiceassist">Hang utasítások</string>
-    <string name="title_date_longclick">Dátum hosszú éritése</string>
-    <string name="title_date_shortclick">Dátum rövid érintése</string>
+    <string name="title_clock_doubleclick">Óra dupla érintése</string>
     <string name="title_clock_longclick">Óra rövid érintése</string>
     <string name="title_clock_shortclick">Óra hosszú érintése</string>
 
@@ -281,7 +292,7 @@
     <string name="wifi_signal_color_title">WiFi jel színe</string>
     <string name="alt_signal_title">Alt jel elrendezés</string>
     <string name="alt_signal_summary">Alternativ (GB) jel használata</string>
-
+    
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Színválasztó</string>
@@ -352,11 +363,23 @@
     <string name="navbar_widgets_shiftLeft">Balra</string>
     <string name="navbar_widgets_shiftRight">Jobbra</string>
     <string name="navbar_widgets_delete">Modul törlése</string>
+    <string name="navigation_bar_menu_arrow_keys_title">Menü nyíl gombok</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">Mutatja a nyíl gombokat az értesítési sávon gépelés közben</string>
+    <string name="navigation_bar_alpha_title">Állapotsáv és navigációs sáv áttetszősége</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigációs sáv gyűrű esemény</string>
     <string name="interface_softkey_settings">Softkey Beállítások</string>
-    <string name="interface_softkeys_pref_default_title">Nincs Aktivitás választva</string>
+    <string name="interface_softkeys_pref_default_1_title">1. elem rövid nyomása</string>
+    <string name="interface_softkeys_pref_long_1_title">1. elem hosszú nyomása</string>
+    <string name="interface_softkeys_pref_default_2_title">2. elem rövid nyomása</string>
+    <string name="interface_softkeys_pref_long_2_title">2. elem hosszú nyomása</string>
+    <string name="interface_softkeys_pref_default_3_title">3. elem rövid nyomása</string>
+    <string name="interface_softkeys_pref_long_3_title">3. elem hosszú nyomása</string>
+    <string name="interface_softkeys_pref_default_4_title">4. elem rövid nyomása</string>
+    <string name="interface_softkeys_pref_long_4_title">4. elem hosszú nyomása</string>
+    <string name="interface_softkeys_pref_default_5_title">5. elem rövid nyomása</string>
+    <string name="interface_softkeys_pref_long_5_title">5. elem hosszú nyomása</string>
     <string name="interface_softkeys_pref_default_summary">Éríntsd meg a beállitás ikont, hogy a hosszú nyomásra mi történjen</string>
     <string name="interface_softkeys_activity_dialog_title">Aktivitás választás</string>
     <string name="interface_softkeys_reboot_title">Újraindítás Menü</string>
@@ -377,6 +400,7 @@
     <string name="interface_navring_assist_title">Google Now</string>
     <string name="interface_navring">Gyűrű elemek</string>
     <string name="navbar_ring">Egyéni gyűrű elemek</string>
+    <string name="navring_enable_long">Gyűrű hosszan nyomásának engedélyezése</string>
 
 
     <!-- LED -->
@@ -429,6 +453,7 @@
     <string name="title_phone_flip_mode">Telefon hívás némítás</string>
 
     <!-- Lockscreen -->
+    <string name="lock_widgets_short">Zárképernyő Modulok</string>
     <string name="lockscreen_security_cat">Biztonság</string>
     <string name="lockscreen_layout_cat">Elrendezés</string>
     <string name="lockscreen_music_cat">Zene</string>
@@ -440,8 +465,14 @@
     <string name="lockscreen_menu_unlock_summary">Menü gombbal baló feloldás</string>
     <string name="lockscreen_auto_rotate_title">Zárképernyő forgatásának engedélyezése</string>
     <string name="lockscreen_auto_rotate_summary">Zárképernyő forog a készülék tájolása szerint. Ez független a kijelző Auto-forgatásástól.</string>
+    <string name="lockscreen_all_widgets_title">Összes modul engedélyezve</string>
+    <string name="lockscreen_all_widgets_summary">Figyelmeztetés**Néhány modul nem használható zárképernyőn. A modul készítői és az Aokp nem felelősek a működésükért. Válaszd felelőséggel.</string>
+    <string name="lockscreen_unlimited_widgets_title">Végtelen modul engedélyezve</string>
+    <string name="lockscreen_unlimited_widgets_summary">Figyelmeztetés**Sok modul hozzáadása akadást okozhat.</string>
     <string name="lockscreen_battery_title">Zárképernyő akksi százalék</string>
     <string name="lockscreen_battery_summary">Mutatja a akksi százalékot a zárképernyőn</string>
+    <string name="lockscreen_hide_initial_page_hints_title">Kezdőoldalak elrejtése</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Bekapcsolt képernyőnél a jobb és bal oldali modulok elrejtése.</string>
     <string name="volume_rocker_wake_title">Hangerő feloldás</string>
     <string name="volume_rocker_wake_summary">Képernyő felélesztése a hangerő gombokra</string>
     <string name="volume_music_controls_title">Hangerő zene vezérlés</string>
@@ -565,14 +596,14 @@
     <string name="weather_refresh_interval">Fríssitési gyakoriság</string>
     <string name="weather_refresh_interval_minutes">" perc"</string>
     <string name="weather_use_celcius">Metrikus egység</string>
-    <string name="weather_use_celcius_summary">Engedélyezve Celiusban és km/h-ban jeleniti meg az adatokat.</string>
-    <string name="weather_statusbar_style">Statusbar időjárás stílusa</string>
+	<string name="weather_use_celcius_summary">Engedélyezve Celiusban és km/h-ban jeleniti meg az adatokat.</string>
+	<string name="weather_statusbar_style">Statusbar időjárás stílusa</string>
     <string name="weather_start_custom_app">Egyéni alkalmazás indítása</string>
     <string name="weather_start_custom_app_summary">Alkalmazás indítása, ha az időjárásra nyomsz.</string>
     <string name="weather_custom_app_title">Egyéni alkalmazás</string>
     <string name="weather_custom_app_dialog_title">Válaszd ki az alkalmazást</string>
-    <string name="weather_custom_app_dialog_message">Jelenlegi csomag neve.</string>
-    <string name="weather_refreshing">Időjárás frissítése!</string>
+	<string name="weather_custom_app_dialog_message">Jelenlegi csomag neve.</string>
+	<string name="weather_refreshing">Időjárás frissítése!</string>
     <string name="weather_loc_warning_title">Nem lehet helyet betölteni!</string>
     <string name="weather_loc_warning_msg">"Hálózati helymeghatározás le van tiltva. Állíts be egyéni helyet vagy engedélyezd a hálózati meghatározást."</string>
     <string name="weather_loc_warning_positive">"Hálózat engedélyezése"</string>
@@ -710,15 +741,15 @@
     <string name="help">Segítség</string>
     <string name="vibration_detailed_help">Egyéni rezgési minták készítése 5 egyszerű lépésben:\n
         - Nyomd meg az Új/Alaphelyzet gombot\n
-        - Utána a Felvétel-t\n
-        - Rögzítsd a mintád nyomkodva az Érintés! gombot\n
-        - Nyomd meg a Stop-ot\n
-        - Érintsd a Mentést, nevezd el és nyomj egy OK-t\n\n
-        A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
-        Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented (felülírja, akkor is ha átnevezed).\n
-        Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
-        Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
-        Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
+		- Utána a Felvétel-t\n
+		- Rögzítsd a mintád nyomkodva az Érintés! gombot\n
+		- Nyomd meg a Stop-ot\n
+		- Érintsd a Mentést, nevezd el és nyomj egy OK-t\n\n
+		A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
+		Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented (felülírja, akkor is ha átnevezed).\n
+		Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
+		Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
+		Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

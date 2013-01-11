@@ -23,7 +23,6 @@
     <string name="lockscreen_options">Lockscreen</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
-    <string name="performance">Performance</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">About AOKP</string>
@@ -704,44 +703,6 @@
 
     <!-- Share to clipboard -->
     <string name="clipboard_notification">Copied to clipboard.</string>
-
-    <!-- Performance -->
-    <string name="tab_cpu_settings">"CPU Settings"</string>
-    <string name="tab_voltage_settings">"Voltage Settings"</string>
-    <string name="tab_other_settings">"Other Settings"</string>
-    <string name="current_speed">Current Speed</string>
-    <string name="current_max">Current max:</string>
-    <string name="current_min">Current min:</string>
-    <string name="governor">Governor</string>
-    <string name="io">IO Scheduler</string>
-    <string name="sob">Set on boot</string>
-    <string name="dt_free_memory">Minfree Taskkiller</string>
-    <string name="prefcat_free_memory">Free Memory</string>
-    <string name="pt_free_memory">Free memory</string>
-    <string name="ps_free_memory">Amount of RAM the minfree taskkiller will keep | Current: %s</string>
-    <string name="pt_free_memory_boot">Set at boot</string>
-    <string name="ps_free_memory_boot">Apply the amount above at boot</string>
-    <string name="pt_fast_charge_boot">Fast Charge</string>
-    <string name="ps_fast_charge_boot">Enable fast charge at boot</string>
-    <string name="ps_volt_mhz_voltage">" MHz Voltage"</string>
-    <string name="ps_volt_save">"Save"</string>
-    <string name="ps_volt_current_voltage">"Current voltage: "</string>
-    <string name="ps_volt_setting_to_apply">"Setting to apply: "</string>
-    <string name="pt_volt_control">Voltage control</string>
-    <string name="ps_volt_control">Set voltages for each frequency</string>
-    <string name="not_supported">Your kernel does not support voltage control</string>
-    <string name="apply_values">Apply values</string>
-    <string name="freq">Frequency</string>
-    <string name="current">mV current</string>
-    <string name="saved">mV saved</string>
-    <string name="kernel">Kernel Tweaks (if supported)</string>
-    <string name="fast_charge_warning">YOU WILL NOT BE ABLE TO CONNECT TO YOUR PC AFTER EACH REBOOT!\n\nThis setting will set fast charge ON after each reboot. While fast charge is on, you can *only* charge your phone!</string>
-    <string name="fast_charge_notification_title">Fast Charge is ON!</string>
-    <string name="fast_charge_notification_message">Phone is in charge-only mode!</string>
-    <string name="prefcat_other_tweaks">Other tweaks</string>
-    <string name="performance_daily_reboot_title">Daily reboot</string>
-    <string name="performance_daily_reboot_summary">Reboot scheduled at %1$s</string>
-    <string name="performance_daily_reboot_summary_unscheduled">Not scheduled</string>
 
     <!-- Custom vibrations -->
     <string name="vibrations">Vibrations</string>

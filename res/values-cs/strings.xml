@@ -299,7 +299,7 @@
   <string name="navbar_qty_title">Počet navigačních tlačítek</string>
   <string name="navbar_qty_summary">Zvolit počet tlačítek v navigační liště</string>
   <string name="navbar_action_title">Akce a ikona tlačítka %1$s</string>
-  <string name="button_transparency_title">Průhlednost tl. navigační lišty</string>
+  <string name="button_transparency_title">Viditelnost tl. navigační lišty</string>
   <string name="navbar_width_help_title">Nápověda k šířce kombinované navigační lišty</string>
   <string name="navbar_width_help_summary">100 je 70\%% šířky displeje, 5 je 30\%% šířky displeje. 0 je výchozí šířka podle tlačítek.</string>
   <string name="width_port_title">Šířka kombinované lišty na šířku</string>
@@ -775,6 +775,7 @@
   <string name="bottom_of_navbar">Vespod navigační lišty</string>
   <string name="regular">Normální</string>
   <string name="center_mirrored">Na střed se zrcadlením</string>
+  <string name="size_0_dp">0 bodů (vypnutá)</string>
   <string name="size_1_dp">1 bod</string>
   <string name="size_2_dp">2 body</string>
   <string name="size_3_dp">3 body</string>

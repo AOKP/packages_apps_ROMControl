@@ -76,6 +76,10 @@ public class Sound extends AOKPPreferenceFragment
         mPhoneSilent.setValue((prefs.getString(PREF_PHONE_RING_SILENCE, "0")));
         mPhoneSilent.setOnPreferenceChangeListener(this);
 
+        if (isTablet(mContext)) {
+            getPreferenceScreen().removePreference(mPhoneSilent);
+        }
+
         if (HeadphoneService.DEBUG)
             mContext.startService(new Intent(mContext, HeadphoneService.class));
 

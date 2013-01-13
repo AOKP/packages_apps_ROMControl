@@ -56,9 +56,7 @@ public class CreateShortcut extends LauncherActivity {
     private int getProperShortcutIcon(String className) {
         String c = className.substring(className.lastIndexOf(".") + 1);
 
-        if (c.equals("Performance"))
-            return R.drawable.ic_rom_control_performance;
-        else if (c.equals("LEDControl"))
+        if (c.equals("LEDControl"))
             return R.drawable.ic_rom_control_led;
         else if (c.equals("Lockscreens"))
             return R.drawable.ic_rom_control_lockscreens;

@@ -1,0 +1,9 @@
+Change-Id: I24605c4d4066d4bba07fa502d8d6df5b874dfb8c
+Code-Review+2: Roman Birg <romanbirg@gmail.com>
+Verified+1: Roman Birg <romanbirg@gmail.com>
+Code-Review+1: xoomdev <xoomdevnet@gmail.com>
+Submitted-by: Roman Birg <romanbirg@gmail.com>
+Submitted-at: Sun, 13 Jan 2013 17:12:43 +0000
+Reviewed-on: http://gerrit.sudoservers.com/5065
+Project: AOKP/packages_apps_ROMControl
+Branch: refs/heads/jb-mr1

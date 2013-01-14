@@ -21,7 +21,6 @@
   <string name="lockscreen_options">Zamčená obrazovka</string>
   <string name="weather">Počasí</string>
   <string name="tools">Nástroje</string>
-  <string name="performance">Výkon</string>
   <!--Activity titles defined in AndroidManifest.xml-->
   <string name="title_about">O AOKP</string>
   <string name="title_ui">Hlavní uživatelské rozhraní</string>
@@ -332,6 +331,7 @@
   <string name="navbar_height_dialog_summary">Pro správnou změnu šířky navigační lišty je třeba restartovat!</string>
   <string name="navbar_height_dialog_button_later">Restartovat později</string>
   <string name="navbar_height_dialog_button_reboot">Restartovat nyní!</string>
+  <string name="navigation_bar_color_title">Barva navigační lišty</string>
   <string name="navigation_bar_tint_title">Barva tlačítek navigační lišty</string>
   <string name="navigation_bar_glow_tint_title">Barva světelného efektu navigační lišty</string>
   <string name="navigation_bar_glow_tint_summary">Při stisku tlačítka v navigační liště se zobrazuje svetělný efekt. Tato volba umožňuje změnit jeho barvu.</string>
@@ -651,43 +651,6 @@
   <string name="direction_north_west">SZ</string>
   <!--Share to clipboard-->
   <string name="clipboard_notification">Zkopírováno do schránky.</string>
-  <!--Performance-->
-  <string name="tab_cpu_settings">Nastavení CPU</string>
-  <string name="tab_voltage_settings">Nastavení voltáže</string>
-  <string name="tab_other_settings">Jiná nastavení</string>
-  <string name="current_speed">Aktuální rychlost</string>
-  <string name="current_max">Aktuální maximum:</string>
-  <string name="current_min">Aktuální minimum:</string>
-  <string name="governor">Governor</string>
-  <string name="io">IO Scheduler</string>
-  <string name="sob">Nastavit při startu</string>
-  <string name="dt_free_memory">Minfree Taskkiller</string>
-  <string name="prefcat_free_memory">Volná paměť</string>
-  <string name="pt_free_memory">Volná paměť</string>
-  <string name="ps_free_memory">Množství paměti, které minfree taskkiler ponechá volné | Aktuálně: %s</string>
-  <string name="pt_free_memory_boot">Nastavit při startu</string>
-  <string name="ps_free_memory_boot">Aplikovat nastavení při startu</string>
-  <string name="pt_fast_charge_boot">Rychlé nabíjení</string>
-  <string name="ps_fast_charge_boot">Zapnout rychlé nabíjení při startu</string>
-  <string name="ps_volt_mhz_voltage">MHz voltáž</string>
-  <string name="ps_volt_save">Uložit</string>
-  <string name="ps_volt_current_voltage">Aktuální voltáž:</string>
-  <string name="ps_volt_setting_to_apply">Použít nastavení:</string>
-  <string name="pt_volt_control">Nastavení voltáže</string>
-  <string name="ps_volt_control">Nastavení voltáže pro jednotlivé frekvence</string>
-  <string name="not_supported">Aktuální kernel nepodporuje nastavení voltáže</string>
-  <string name="apply_values">Použít hodnoty</string>
-  <string name="freq">Frekvence</string>
-  <string name="current">Aktuálně mV</string>
-  <string name="saved">Uloženo mV</string>
-  <string name="kernel">Ladění kernelu (je-li podporováno)</string>
-  <string name="fast_charge_warning">PO STARTU NEBUDE MOŽNÉ PŘIPOJIT ZAŘÍZENÍ K PC!\n\nRychlé nabíjení bude nastaveno po každém startu. Pokud je tato volba aktivní, zařízení je možné *pouze* nabíjet!</string>
-  <string name="fast_charge_notification_title">Rychlé nabíjení je zapnuto!</string>
-  <string name="fast_charge_notification_message">Telefon je ve stavu nabíjení!</string>
-  <string name="prefcat_other_tweaks">Další tweaky</string>
-  <string name="performance_daily_reboot_title">Denní restart</string>
-  <string name="performance_daily_reboot_summary">Restart naplánován na %1$s</string>
-  <string name="performance_daily_reboot_summary_unscheduled">Nenaplánován</string>
   <!--Custom vibrations-->
   <string name="vibrations">Vibrace</string>
   <string name="defaultvibrationname">\'Výchozí\'</string>

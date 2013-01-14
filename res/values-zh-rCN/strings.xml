@@ -23,7 +23,6 @@
     <string name="lockscreen_options">锁屏选项</string>
     <string name="weather">天气</string>
     <string name="tools">工具</string>
-    <string name="performance">性能</string>
 
     <!-- Activity titles defined in AndroidManifest.xml Activity标题 -->
     <string name="title_about">关于 AOKP</string>
@@ -211,6 +210,10 @@
     <string name="toggle_text_color_title">开关文字颜色</string>
     <string name="toggle_favcontact_title">收藏联系人</string>
     <string name="toggle_favcontact_summary">选择你收藏的联系人</string>
+    <string name="toggle_enable_fasttoggle_title">启用快捷开关</string>
+    <string name="toggle_enable_fasttoggle_summary">覆盖默认行为</string>
+    <string name="toggle_choose_fasttoggle_side_title">选择快捷开关侧边</string>
+    <string name="toggle_choose_fasttoggle_side_summary">选择快捷开关触发区域</string>
 
     <!-- Statusbar | Clock 状态栏|时钟 -->
     <string name="clock_title_enable">时钟风格</string>
@@ -347,8 +350,9 @@
     <string name="navbar_widgets_shiftLeft">左移</string>
     <string name="navbar_widgets_shiftRight">右移</string>
     <string name="navbar_widgets_delete">删除小部件</string>
-    <string name="navigation_bar_menu_arrow_keys_title">菜单选择键</string>
-    <string name="navigation_bar_menu_arrow_keys_summary">输入时在导航栏显示箭头键用于选择菜单。</string>
+    <string name="navigation_bar_menu_arrow_keys_title">箭头按键</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">在导航栏显示箭头按键用于准确定位输入光标或选择菜单。</string>
+    <string name="navigation_bar_alpha_title">状态栏与导航栏透明度</string>
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
@@ -451,6 +455,10 @@
     <string name="lockscreen_unlimited_widgets_summary">警告** 添加过多的小部件将导致锁屏界面不流畅。</string>
     <string name="lockscreen_battery_title">锁屏电量百分比</string>
     <string name="lockscreen_battery_summary">总是在锁屏中显示电量百分比</string>
+    <string name="lockscreen_hide_initial_page_hints_title">隐藏初始页面提示</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">设置当屏幕开启时是否隐藏左右两边的小部件页面提示。</string>
+    <string name="lockscreen_minimize_challenge_title">最小化解锁区</string>
+    <string name="lockscreen_minimize_challenge_summary">设置当屏幕开启时是否最小化解锁区（环形，图形解锁，PIN）。</string>
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">使用音量键唤醒设备</string>
     <string name="volume_music_controls_title">音量键控制音乐</string>
@@ -668,44 +676,6 @@
 
     <!-- Share to clipboard 分享到剪贴板 -->
     <string name="clipboard_notification">复制到剪切板</string>
-
-    <!-- Performance 性能 -->
-    <string name="tab_cpu_settings">"CPU 设置"</string>
-    <string name="tab_voltage_settings">"电压设置"</string>
-    <string name="tab_other_settings">"其它设置"</string>
-    <string name="current_speed">当前频率</string>
-    <string name="current_max">当前最高频率:</string>
-    <string name="current_min">当前最低频率:</string>
-    <string name="governor">调节器</string>
-    <string name="io">IO 调度</string>
-    <string name="sob">启动时进行设置</string>
-    <string name="dt_free_memory">系统内存清理器</string>
-    <string name="prefcat_free_memory">空闲内存</string>
-    <string name="pt_free_memory">空闲内存</string>
-    <string name="ps_free_memory">系统内存清理器所保持最低的空闲内存 | 当前: %s</string>
-    <string name="pt_free_memory_boot">启动时进行设置</string>
-    <string name="ps_free_memory_boot">在启动时自动设置为上面的数值</string>
-    <string name="pt_fast_charge_boot">快速充电</string>
-    <string name="ps_fast_charge_boot">启动时自动启用快速充电</string>
-    <string name="ps_volt_mhz_voltage">" MHz 电压"</string>
-    <string name="ps_volt_save">"保存"</string>
-    <string name="ps_volt_current_voltage">"当前电压： "</string>
-    <string name="ps_volt_setting_to_apply">"设定电压： "</string>
-    <string name="pt_volt_control">电压控制</string>
-    <string name="ps_volt_control">为每个工作频率设置工作电压</string>
-    <string name="not_supported">你的内核不支持电压控制</string>
-    <string name="apply_values">应用设定数值</string>
-    <string name="freq">频率</string>
-    <string name="current">mV 当前设置</string>
-    <string name="saved">mV 已保存设置</string>
-    <string name="kernel">内核微调设置 (如果支持)</string>
-    <string name="fast_charge_warning">开启快速充电后你将无法连接到电脑！\n\n该设置在每次重启后应用。开启后你将*只能*对手机充电！</string>
-    <string name="fast_charge_notification_title">快速充电已启用！</string>
-    <string name="fast_charge_notification_message">设备正处于“仅充电”状态！</string>
-    <string name="prefcat_other_tweaks">其它微调</string>
-    <string name="performance_daily_reboot_title">每日重启</string>
-    <string name="performance_daily_reboot_summary">重启预定于 %1$s</string>
-    <string name="performance_daily_reboot_summary_unscheduled">未预定时间</string>
 
     <!-- Custom vibrations 自定义振动-->
     <string name="vibrations">振动</string>

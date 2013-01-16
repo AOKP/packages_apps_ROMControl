@@ -124,6 +124,24 @@
 
         </PreferenceCategory>
         <PreferenceCategory
+            android:key="navbar_hide_cat"
+            android:title="@string/navbar_hide">
+
+        <CheckBoxPreference
+                android:key="navbar_hide_enable"
+                android:title="@string/navbar_hide_enable_title" />
+
+        <ListPreference
+                android:entries="@array/hide_navbar_timeout_entries"
+                android:entryValues="@array/hide_navbar_timeout_values"
+                android:key="navbar_hide_timeout"
+                android:title="@string/title_navbar_timeout"
+                android:summary="@string/summary_navbar_timeout"
+                android:dependency="navbar_hide_enable" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
             android:key="navbar_widgets_cat"
             android:title="@string/navbar_widgets">
             <Preference

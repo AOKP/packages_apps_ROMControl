@@ -296,6 +296,7 @@
     <string name="toggle_battery">Battery</string>
     <string name="toggle_brightness">Brightness</string>
     <string name="toggle_sound_state">Ring/Vib/Silent</string>
+    <string name="toggle_navbar_hide">Navbar Auto Hide</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>
@@ -331,6 +332,7 @@
 
     <!-- Navigation Bar -->
     <string name="navigation_bar">Navigation bar</string>
+    <string name="navbar_hide">NavBar Hide Options</string>
     <string name="navbar_button_cat">Navigation bar buttons</string>
     <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
@@ -396,6 +398,11 @@
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
+    <string name="navbar_hide_enable_title">Hidden Navbar Enable</string>
+    <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
+    <string name="drag_handle_width_title">Drag Handle Width</string>
+    <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
+    <string name="summary_navbar_timeout">Timeout time for Hidden Navbar Window</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>

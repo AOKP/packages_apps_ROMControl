@@ -111,6 +111,26 @@
 
         </PreferenceCategory>
         <PreferenceCategory
+            android:key="navbar_hide_cat"
+            android:title="@string/navbar_hide">
+
+        <ListPreference
+                android:entries="@array/hide_navbar_height_entries"
+                android:entryValues="@array/hide_navbar_height_values"
+                android:key="navbar_hide_height"
+                android:title="@string/title_navbar_hide_height"
+                android:summary="@string/summary_navbar_hide_height" />
+
+        <ListPreference
+                android:entries="@array/hide_navbar_timeout_entries"
+                android:entryValues="@array/hide_navbar_timeout_values"
+                android:key="navbar_hide_timeout"
+                android:title="@string/title_navbar_timeout_height"
+                android:summary="@string/summary_navbar_timeout_height" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
             android:key="navbar_widgets_cat"
             android:title="@string/navbar_widgets">
             <Preference

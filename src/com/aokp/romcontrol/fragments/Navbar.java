@@ -1,3 +1,4 @@
+
 package com.aokp.romcontrol.fragments;
 
 import java.io.File;
@@ -80,6 +81,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String ENABLE_NAVRING_LONG = "enable_navring_long";
     private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
     private static final String PREF_MENU_ARROWS = "navigation_bar_menu_arrow_keys";
+    private static final String NAVBAR_HIDE_TIMEOUT = "navbar_hide_timeout";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
@@ -103,10 +105,10 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
-
     CheckBoxPreference mEnableNavringLong;
     CheckBoxPreference mMenuArrowKeysCheckBox;
     Preference mConfigureWidgets;
+    ListPreference mNavBarHideTimeout;
 
     private int mPendingIconIndex = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
@@ -156,6 +158,11 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarButtonQty.setOnPreferenceChangeListener(this);
         mNavBarButtonQty.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NAVIGATION_BAR_BUTTONS_QTY, 3) + "");
+
+        mNavBarHideTimeout = (ListPreference) findPreference(NAVBAR_HIDE_TIMEOUT);
+        mNavBarHideTimeout.setOnPreferenceChangeListener(this);
+        mNavBarHideTimeout.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NAV_HIDE_TIMEOUT, 3000) + "");
 
         mEnableNavringLong = (CheckBoxPreference) findPreference("enable_navring_long");
         mEnableNavringLong.setChecked(Settings.System.getBoolean(getContentResolver(),
@@ -334,6 +341,12 @@ public class Navbar extends AOKPPreferenceFragment implements
                     height);
             //showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
             return true;
+        } else if (preference == mNavBarHideTimeout) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAV_HIDE_TIMEOUT, val);
+            refreshSettings();
+            return true;
         } else if (preference == mNavigationBarHeightLandscape) {
             String newVal = (String) newValue;
             int dp = Integer.parseInt(newVal);
@@ -411,6 +424,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                     val * 0.01f);
             return true;
+
         }
         return false;
     }

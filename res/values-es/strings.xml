@@ -202,7 +202,6 @@
     <string name="custom_density_dialog_button_reboot">Reiniciar ahora</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_default_entries">USUARIO|BRILLO|AJUSTES|WIFI|SEÑAL|ROTACIÓN|BATERIA|MODO_AVIÓN|BLUETOOTH</string>
     <string name="toggle_style_title">Aspecto de los interruptores</string>
     <string name="toggle_style_summary">Mostrar iconos o texto en los interruptores.</string>
     <string name="toggles_layout_title">Tipo de interruptores</string>

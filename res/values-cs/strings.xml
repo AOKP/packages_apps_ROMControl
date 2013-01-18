@@ -434,6 +434,8 @@
   <string name="lockscreen_menu_unlock_summary">Tlačítko menu odemkne obrazovku</string>
   <string name="lockscreen_auto_rotate_title">Povolit rotaci zamčené obrazovky</string>
   <string name="lockscreen_auto_rotate_summary">Zamčená obrazovka se bude natáčet podle zařízení. Tato volba je nezávislá na automatickém otočení v nastavení obrazovky.</string>
+  <string name="lock_clock_title">Chronus widget</string>
+  <string name="lock_clock_summary">Nastavení chování widgetu Chrnous</string>
   <string name="lockscreen_all_widgets_title">Povolit všechny widgety</string>
   <string name="lockscreen_all_widgets_summary">VAROVÁNÍ** Některé widgety nejsou určeny pro to, být na zamčené obrazovce. Autor widgetů ani AOKP nejsou zodpovědni za následky přidávání widgetů.</string>
   <string name="lockscreen_unlimited_widgets_title">Neomezený počet widgetů</string>

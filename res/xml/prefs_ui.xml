@@ -94,6 +94,14 @@
             android:summary="@string/ime_switcher_summary"
             android:defaultValue="true" />
 
+        <ListPreference
+            android:key="volume_key_cursor_control"
+            android:persistent="false"
+            android:dialogTitle="@string/volume_key_cursor_control_title"
+            android:title="@string/volume_key_cursor_control_title"
+            android:entries="@array/volume_key_cursor_control_entries"
+            android:entryValues="@array/volume_key_cursor_control_values" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

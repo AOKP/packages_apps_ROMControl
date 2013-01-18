@@ -77,6 +77,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_IME_SWITCHER = "ime_switcher";
+    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
@@ -120,6 +121,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     private int seekbarProgress;
     String mCustomLabelText = null;
+    private ListPreference mVolumeKeyCursorControl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -159,6 +161,13 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
         mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
+
+        mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
+        if(mVolumeKeyCursorControl != null) {
+            mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
+            mVolumeKeyCursorControl.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0)));
+            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
 
         mStatusbarSliderPreference = (CheckBoxPreference) findPreference(PREF_STATUSBAR_BRIGHTNESS);
         mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
@@ -316,6 +325,14 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
                     isCheckBoxPrefernceChecked(preference));
+            return true;
+        } else if (preference == mVolumeKeyCursorControl) {
+            String volumeKeyCursorControl = (String) value;
+            int val = Integer.parseInt(volumeKeyCursorControl);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
+            int index = mVolumeKeyCursorControl.findIndexOfValue(volumeKeyCursorControl);
+            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
             return true;
         } else if (preference == mStatusbarSliderPreference) {
             Settings.System.putBoolean(getActivity().getContentResolver(),

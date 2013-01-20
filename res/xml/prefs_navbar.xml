@@ -34,6 +34,11 @@
                 android:title="@string/navigation_bar_tint_title"
                 android:defaultValue="#FFFFFF" />
 
+        <CheckBoxPreference
+                android:key="navigation_bar_allcolor"
+                android:title="@string/navigation_bar_colorall_title"
+                android:summary="@string/navigation_bar_colorall_summary" />
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_button_glow_color"
                 android:title="@string/navigation_bar_glow_tint_title"

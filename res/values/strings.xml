@@ -130,7 +130,7 @@
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="custom_bootanimation_title">Custom boot animation</string>
-    <string name="custom_bootanimation_summary">Select bootanimation zip from sdcard. Previous bootanimation will be backed up to /system/media.</string>
+    <string name="custom_bootanimation_summary">Select a custom zip from sdcard to use as your new boot animation</string>
     <string name="install_file_manager_error">No application found to pick the zip file. Please install a file manager.</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
@@ -157,6 +157,8 @@
     <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat. mode button(requires UI restart)</string>
     <string name="bootanimation_preview">Bootanimation preview</string>
     <string name="apply">Apply</string>
+    <string name="clear_custom_bootanimation">Clear custom boot animation</string>
+    <string name="set_custom_bootanimation">Set custom...</string>
     <string name="creating_preview">Creating preview...</string>
     <string name="error_reading_zip_file">Error reading zip file</string>
     <string name="error_creating_preview">Error creating preview</string>

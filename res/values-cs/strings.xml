@@ -117,7 +117,7 @@
   <string name="vibrate_notif_expand_summary">Vibrovat při vytažení notifikační lišty (vyžaduje restart UI)</string>
   <string name="disable_bootanimation_title">Vypnout startovací animaci</string>
   <string name="custom_bootanimation_title">Vlastní startovací animace</string>
-  <string name="custom_bootanimation_summary">Vybrat zip se startovací animací z úložiště. Předchozí animace bude zálohována do /system/media.</string>
+  <string name="custom_bootanimation_summary">Vybrat zip z úložiště pro použití jako vlastní startovací animaci.</string>
   <string name="install_file_manager_error">Nebyla nalezena aplikace pro vybrání zip souboru. Je nutné nainstalovat nějaký správce souborů.</string>
   <string name="notification_wallpaper_title">Zvolit pozadí notifikací</string>
   <string name="notification_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
@@ -144,6 +144,8 @@
   <string name="hide_extras_summary">Skrýt některé položky systémové lišty (např. tlačítko kompatibility) (vyžaduje restart UI)</string>
   <string name="bootanimation_preview">Náhled startovací animace</string>
   <string name="apply">Použít</string>
+  <string name="clear_custom_bootanimation">Smazat vlastní startovací animaci</string>
+  <string name="set_custom_bootanimation">Nastavit vlastní...</string>
   <string name="creating_preview">Vytváření náhledu...</string>
   <string name="error_reading_zip_file">Chyba při čtení zip souboru</string>
   <string name="error_creating_preview">Chyba při vytváření náhledu</string>
@@ -259,6 +261,7 @@
   <string name="toggle_ime">Metody vstupu</string>
   <string name="toggle_battery">Baterie</string>
   <string name="toggle_brightness">Jas</string>
+  <string name="toggle_sound_state">Hasitý/Vibrace/Tichý</string>
   <!--Statusbar | Battery-->
   <string name="battery_icon">Styl ikony baterie</string>
   <string name="battery_not_title">Ikona baterie ve stavové liště</string>
@@ -444,6 +447,10 @@
   <string name="lockscreen_hide_initial_page_hints_summary">Skryje ukazatele widgetů (po levé a pravé straně) na úvodní zamčené obrazovce po zapnutí displeje.</string>
   <string name="lockscreen_minimize_challenge_title">Zmenšit symbol odemknutí</string>
   <string name="lockscreen_minimize_challenge_summary">Nastavit výchozí stav symbolu odemknutí (kruh, gesto, pin) na zmenšený po zapnutí obrazovky.</string>
+  <string name="lockscreen_longpress_challenge_title">Odemknout dlouhým stiskem</string>
+  <string name="lockscreen_longpress_challenge_summary">Umožňuje odemknout zařízení dlouhým stiskem symbolu odemknutí i při maximalizovaných widgetech.</string>
+  <string name="lockscreen_use_widget_container_carousel_title">Otočná animace widgetů</string>
+  <string name="lockscreen_use_widget_container_carousel_summary">Použít otočnou animaci při přepínání mezi widgety na zamčené obrazovce.</string>
   <string name="volume_rocker_wake_title">Probuzení tlačítky hlasitosti</string>
   <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>

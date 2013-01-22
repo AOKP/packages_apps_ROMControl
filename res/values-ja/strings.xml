@@ -23,7 +23,6 @@
     <string name="lockscreen_options">ロック画面</string>
     <string name="weather">天気情報</string>
     <string name="tools">ツール</string>
-    <string name="performance">パフォーマンス</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">AOKPについて</string>
@@ -160,6 +159,8 @@
     <string name="hide_extras_summary">タブレットUIの互換ズームボタン等を表示しない (UI再起動)</string>
     <string name="bootanimation_preview">ブートアニメーションプレビュー</string>
     <string name="apply">適用する</string>
+    <string name="clear_custom_bootanimation">クリア</string>
+    <string name="set_custom_bootanimation">設定...</string>
     <string name="creating_preview">プレビューを作成中...</string>
     <string name="error_reading_zip_file">zipファイルの読み込み中にエラーが発生しました</string>
     <string name="error_creating_preview">プレビュー作成中にエラーが発生しました</string>
@@ -281,6 +282,7 @@
     <string name="toggle_ime">IME変更</string>
     <string name="toggle_battery">電池残量</string>
     <string name="toggle_brightness">明るさ調整</string>
+    <string name="toggle_sound_state">サウンド/バイブ/サイレント</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">電池残量アイコンスタイル</string>
@@ -357,7 +359,8 @@
     <string name="navbar_height_dialog_summary">高さの変更を正常に完了するには端末を再起動してください</string>
     <string name="navbar_height_dialog_button_later">後で再起動する</string>
     <string name="navbar_height_dialog_button_reboot">今すぐ再起動</string>
-    <string name="navigation_bar_tint_title">ソフトキー配色設定</string>
+    <string name="navigation_bar_color_title">ナビゲーションバーの色</string>
+    <string name="navigation_bar_tint_title">ソフトキーの色</string>
     <string name="navigation_bar_glow_tint_title">ソフトキーの発光色</string>
     <string name="navigation_bar_glow_tint_summary">ソフトキーをタップした時の発光色を変更する</string>
     <string name="glow_times_title">ソフトキーの発光アニメーション</string>
@@ -487,6 +490,10 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_hide_initial_page_hints_summary">ロック画面の左右に表示されるウィジェットのガイドを表示しない</string>
     <string name="lockscreen_minimize_challenge_title">ロック解除表示を最小化</string>
     <string name="lockscreen_minimize_challenge_summary">画面オン時にロック解除表示(サークル/パターン/PIN)を最小化する</string>
+    <string name="lockscreen_longpress_challenge_title">アイコンを長押しでロック解除</string>
+    <string name="lockscreen_longpress_challenge_summary">ロック解除表示を最小化した時にロックアイコン長押しでロックを解除する</string>
+    <string name="lockscreen_use_widget_container_carousel_title">回転アニメーションを使用</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">ロック画面ウィジェットの切り替え時に回転アニメーションを使用する</string>
     <string name="volume_rocker_wake_title">ボリュームキーでスリープ解除</string>
     <string name="volume_rocker_wake_summary">ボリュームキーを押すことでスリープを解除する</string>
     <string name="volume_music_controls_title">ボリュームキーで曲選択</string>
@@ -706,46 +713,6 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
 
     <!-- Share to clipboard -->
     <string name="clipboard_notification">クリップボードにコピーしました</string>
-
-    <!-- Performance -->
-    <string name="tab_cpu_settings">CPU設定</string>
-    <string name="tab_voltage_settings">動作電圧設定</string>
-    <string name="tab_other_settings">その他の設定</string>
-    <string name="current_speed">現在の周波数</string>
-    <string name="current_max">"最大値 : "</string>
-    <string name="current_min">"最小値 : "</string>
-    <string name="governor">CPUガバナー</string>
-    <string name="io">IOスケジューラー</string>
-    <string name="sob">起動時に適用する</string>
-    <string name="dt_free_memory">自動タスクキル設定</string>
-    <string name="prefcat_free_memory">メモリ管理</string>
-    <string name="pt_free_memory">自動タスクキル設定</string>
-    <string name="ps_free_memory">"空きメモリが設定値以下にならないよう自動でタスクキルする
-現在の設定値 : %s"</string>
-    <string name="pt_free_memory_boot">起動時に適用する</string>
-    <string name="ps_free_memory_boot">起動時に上記の設定を適用する</string>
-    <string name="pt_fast_charge_boot">急速充電</string>
-    <string name="ps_fast_charge_boot">起動時に急速充電を有効にする</string>
-    <string name="ps_volt_mhz_voltage">" MHz帯の電圧"</string>
-    <string name="ps_volt_save">保存</string>
-    <string name="ps_volt_current_voltage">"現在の電圧　: "</string>
-    <string name="ps_volt_setting_to_apply">"適用する設定 : "</string>
-    <string name="pt_volt_control">CPU動作電圧設定</string>
-    <string name="ps_volt_control">周波数ごとの動作電圧を設定する</string>
-    <string name="not_supported">このカーネルは電圧設定に対応していません</string>
-    <string name="apply_values">設定を適用</string>
-    <string name="freq">周波数</string>
-    <string name="current">mV current</string>
-    <string name="saved">mV saved</string>
-    <string name="kernel">カーネルTweaks (要対応カーネル)</string>
-    <string name="fast_charge_warning">"再起動後に急速充電が有効になります。
-急速充電を有効にしている間は端末をPCに接続してもメディアデバイスとしては認識されず、充電しかできません。"</string>
-    <string name="fast_charge_notification_title">急速充電オン</string>
-    <string name="fast_charge_notification_message">PC接続時も充電だけしかできません</string>
-    <string name="prefcat_other_tweaks">その他の調整</string>
-    <string name="performance_daily_reboot_title">再起動スケジュール</string>
-    <string name="performance_daily_reboot_summary">%1$sに再起動する</string>
-    <string name="performance_daily_reboot_summary_unscheduled">スケジュールなし</string>
 
     <!-- Custom vibrations -->
     <string name="vibrations">バイブレーション</string>

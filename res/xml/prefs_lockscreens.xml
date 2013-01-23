@@ -65,6 +65,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="targets"
+        android:title="@string/custom_targets">
+
+    <Preference
+        android:key="lockscreen_targets"
+        android:summary="@string/lockscreen_target_summary"
+        android:title="@string/lockscreen_target_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
             android:key="misc"
             android:title="@string/misc_short">
 

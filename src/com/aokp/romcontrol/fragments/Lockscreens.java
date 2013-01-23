@@ -60,6 +60,7 @@ import java.util.ArrayList;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.ROMControlActivity;
+import com.aokp.romcontrol.fragments.LockscreenTargets;
 
 public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -140,6 +141,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
         mLockscreenTextColor = (ColorPickerPreference) findPreference(PREF_LOCKSCREEN_TEXT_COLOR);
         mLockscreenTextColor.setOnPreferenceChangeListener(this);
 
+        mLockscreenTargets = findPreference("lockscreen_targets");
         mLockscreenWallpaper = findPreference("wallpaper");
 
         mLockscreenHideInitialPageHints = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS);
@@ -178,6 +180,13 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mLockscreenTargets) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            LockscreenTargets fragment = new LockscreenTargets();
+            ft.addToBackStack("lockscreen_targets");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
             return true;
         } else if (preference == mVolumeMusic) {
             Settings.System.putBoolean(mContext.getContentResolver(),

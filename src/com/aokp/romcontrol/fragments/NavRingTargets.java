@@ -375,6 +375,8 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
                 return getResources().getString(R.string.ring_vib_silent);
         } else if (uri.equals("**kill**")) {
                 return getResources().getString(R.string.kill_app);
+        } else if (uri.equals("**lastapp**")) {
+                return getResources().getString(R.string.lastapp);
         } else if (uri.equals("**power**")) {
                 return getResources().getString(R.string.screen_off);
         } else if (uri.equals("**assist**")) {
@@ -417,6 +419,8 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
                 return getResources().getDrawable(R.drawable.ic_navbar_ring_vib_silent);
             } else if (uri.equals("**kill**")) {
                 return getResources().getDrawable(R.drawable.ic_navbar_killtask);
+            } else if (uri.equals("**lastapp**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_lastapp);
             } else if (uri.equals("**power**")) {
                 return getResources().getDrawable(R.drawable.ic_navbar_power);
             } else if (uri.equals("**assist**")) {

@@ -747,6 +747,8 @@ public class Navbar extends AOKPPreferenceFragment implements
                 return getResources().getDrawable(R.drawable.ic_sysbar_power);
             } else if (uri.equals("**notifications**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_notifications);
+            } else if (uri.equals("**lastapp**")) {
+                return getResources().getDrawable(R.drawable.ic_sysbar_lastapp);
             }
         } else {
             try {
@@ -793,6 +795,8 @@ public class Navbar extends AOKPPreferenceFragment implements
                 return getResources().getString(R.string.navbar_action_power);
             else if (uri.equals("**notifications**"))
                 return getResources().getString(R.string.navbar_action_notifications);
+            else if (uri.equals("**lastapp**"))
+                return getResources().getString(R.string.navbar_action_lastapp);
             else if (uri.equals("**null**"))
                 return getResources().getString(R.string.navbar_action_none);
         } else {

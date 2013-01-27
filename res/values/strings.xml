@@ -104,7 +104,7 @@
     <string name="about_aokp_summary">@null</string>
     <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
     <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
-    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+    <string name="donate_zaph">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
     <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
     <string name="donate_khasmek">http://nyan.cat</string>
     <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
@@ -342,6 +342,7 @@
     <string name="navbar_action_menu">Menu</string>
     <string name="navbar_action_ime">Open IME Switcher</string>
     <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_lastapp">Last app</string>
     <string name="navbar_action_power">Power</string>
     <string name="navbar_action_notifications">Notifications</string>
     <string name="navbar_action_none">Empty</string>
@@ -790,6 +791,7 @@
     <string name="toggle_widgets">Toggle Widgets</string>
     <string name="open_ime_switcher">Open IME Switcher</string>
     <string name="kill_app">Kill app</string>
+    <string name="lastapp">Last app</string>
     <string name="power">Power</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>

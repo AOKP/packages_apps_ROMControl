@@ -141,6 +141,8 @@
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In statusbar while typing</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged/unplugged.</string>
     <string name="lefty_mode_title">Lefty Mode</string>
     <string name="lefty_mode_summary">Swap NavBar location (requires UI restart)</string>
     <string name="rotate_180_title">Allow 180 degree rotation</string>

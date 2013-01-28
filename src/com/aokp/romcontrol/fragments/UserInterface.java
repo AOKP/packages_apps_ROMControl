@@ -253,6 +253,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
         CodeReceiver.setSwagInitiatedPref(mContext, false);
     }
+    
+    private void openTransparencyDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//        builder.setView(view)
+    }
 
     private void updateCustomLabelTextSummary() {
         mCustomLabelText = Settings.System.getString(getActivity().getContentResolver(),

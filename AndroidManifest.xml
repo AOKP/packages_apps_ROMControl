@@ -43,6 +43,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.TransparencyDialog"
+            android:theme="@android:style/Theme.Dialog"
+            android:label="@string/title_ui" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.StatusBarClock"
             android:label="@string/title_statusbar_clock" >
             <intent-filter>

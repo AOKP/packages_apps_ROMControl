@@ -92,7 +92,7 @@
   <string name="about_aokp_summary">@null</string>
   <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
   <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
-  <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+  <string name="donate_zaph">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
   <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
   <string name="donate_khasmek">http://nyan.cat</string>
   <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
@@ -128,6 +128,8 @@
   <string name="custom_carrier_label_notset">Vlastní název není momentálně nastaven</string>
   <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
   <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
+  <string name="wakeup_when_plugged_unplugged_title">Probudit nabíječkou</string>
+  <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
   <string name="lefty_mode_title">Režim pro leváky</string>
   <string name="lefty_mode_summary">Prohodit pořadí navigačních prvků (vyžaduje restart UI)</string>
   <string name="rotate_180_title">Umožnit rotaci o 180°</string>
@@ -159,6 +161,11 @@
   <string name="notification_show_wifi_ssid_summary">Zobrazit název aktuálně připojené wifi sítě</string>
   <string name="brightness_slider_title">Jas v notifikační liště</string>
   <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v případě, že je vypnut automatický jas.</string>
+  <string name="user_mode_ui">Rozhraní</string>
+  <string name="user_mode_ui_summary">Jak se bude zobrazovat navigační a stavová lišta</string>
+  <string name="phone_mode_ui">Telefon - Navigační lišta na strně v režimu na šířku</string>
+  <string name="tablet_mode_ui">Tablet - Kombinovaná lišta s navigací i stavy</string>
+  <string name="phablet_mode_ui">Phablet - Navigační lišta zůstává dole i v režimu na šířku</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>
@@ -315,6 +322,7 @@
   <string name="navbar_action_menu">Menu</string>
   <string name="navbar_action_ime">Otevřít metody vstupu</string>
   <string name="navbar_action_kill">Ukončit aplikaci</string>
+  <string name="navbar_action_lastapp">Poslední aplikace</string>
   <string name="navbar_action_power">Napájení</string>
   <string name="navbar_action_notifications">Notifikace</string>
   <string name="navbar_action_none">Prázdné</string>
@@ -357,9 +365,18 @@
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>
-  <string name="interface_softkeys_pref_default_title">Dotykem vybrat aktivitu</string>
-  <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat akitivitu dlouhého stisku</string>
-  <string name="interface_softkeys_activity_dialog_title">Vybrat aktivitu</string>
+  <string name="interface_softkeys_pref_default_1_title">Událost krátkého stisku pro 1. položku</string>
+  <string name="interface_softkeys_pref_long_1_title">Událost dlouhého stisku pro 1. položku</string>
+  <string name="interface_softkeys_pref_default_2_title">Událost krátkého stisku pro 2. položku</string>
+  <string name="interface_softkeys_pref_long_2_title">Událost dlouhého stisku pro 2. položku</string>
+  <string name="interface_softkeys_pref_default_3_title">Událost krátkého stisku pro 3. položku</string>
+  <string name="interface_softkeys_pref_long_3_title">Událost dlouhého stisku pro 3. položku</string>
+  <string name="interface_softkeys_pref_default_4_title">Událost krátkého stisku pro 4. položku</string>
+  <string name="interface_softkeys_pref_long_4_title">Událost dlouhého stisku pro 4. položku</string>
+  <string name="interface_softkeys_pref_default_5_title">Událost krátkého stisku pro 1. položku</string>
+  <string name="interface_softkeys_pref_long_5_title">Událost dlouhého stisku pro 5. položku</string>
+  <string name="interface_softkeys_pref_default_summary">Dotykem na ikonu nastavení je možné vybrat událost dlouhého stisku</string>
+  <string name="interface_softkeys_activity_dialog_title">Vybrat událost</string>
   <string name="interface_softkeys_reboot_title">Menu restartování</string>
   <string name="interface_softkeys_screenshot_title">Snímek obrazovky</string>
   <string name="interface_softkeys_screenoff_title">Vypnutí obrazovky</string>
@@ -715,6 +732,7 @@
   <string name="toggle_widgets">Přepnout widgety</string>
   <string name="open_ime_switcher">Otevřít metody vstupu</string>
   <string name="kill_app">Ukončit aplikaci</string>
+  <string name="lastapp">Poslední aplikace</string>
   <string name="power">Napájení</string>
   <string name="notifications">Notifikace</string>
   <string name="custom_app">Vlastní aplikace</string>

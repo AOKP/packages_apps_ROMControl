@@ -1,7 +1,10 @@
+
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -23,12 +26,13 @@ import android.os.Message;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -37,6 +41,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -44,12 +50,14 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.service.CodeReceiver;
 import com.aokp.romcontrol.util.AbstractAsyncSuCMDProcessor;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.Helpers;
+import com.aokp.romcontrol.widgets.AlphaSeekBar;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 import java.io.BufferedReader;
@@ -108,7 +116,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     CheckBoxPreference mRamBar;
     CheckBoxPreference mShowImeSwitcher;
     CheckBoxPreference mStatusbarSliderPreference;
-    SeekBarPreference mNavBarAlpha;
     AlertDialog mCustomBootAnimationDialog;
     ListPreference mUserModeUI;
     CheckBoxPreference mHideExtras;
@@ -151,7 +158,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.STATUSBAR_NOTIF_COUNT, false));
 
-        mDisableBootAnimation = (CheckBoxPreference)findPreference("disable_bootanimation");
+        mDisableBootAnimation = (CheckBoxPreference) findPreference("disable_bootanimation");
 
         mCustomBootAnimation = findPreference("custom_bootanimation");
 
@@ -163,7 +170,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
 
         mStatusbarSliderPreference = (CheckBoxPreference) findPreference(PREF_STATUSBAR_BRIGHTNESS);
-        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(
+                mContext.getContentResolver(),
                 Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, true));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
@@ -184,10 +192,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
         mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
         mHideExtras.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                        Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
+                Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
 
-        mNavBarAlpha = (SeekBarPreference) findPreference("navigation_bar_alpha");
-        mNavBarAlpha.setOnPreferenceChangeListener(this);
         mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
         int uiMode = Settings.System.getInt(cr,
                 Settings.System.CURRENT_UI_MODE, 0);
@@ -202,13 +208,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     @Override
     public void onResume() {
         super.onResume();
-        if(mNavBarAlpha != null) {
-            final float defaultNavAlpha = Settings.System.getFloat(getActivity()
-                    .getContentResolver(), Settings.System.NAVIGATION_BAR_ALPHA,
-                    0.8f);
-            mNavBarAlpha.setInitValue(Math.round(defaultNavAlpha * 100));
-        }
-        if(mDisableBootAnimation != null) {
+        if (mDisableBootAnimation != null) {
             if (mDisableBootAnimation.isChecked()) {
                 Resources res = mContext.getResources();
                 String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
@@ -221,13 +221,15 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     }
 
     /**
-     * Resets boot animation path. Essentially clears temporary-set boot animation
-     * set by the user from the dialog.
-     * @return returns true if a boot animation exists (user or system). false otherwise.
+     * Resets boot animation path. Essentially clears temporary-set boot
+     * animation set by the user from the dialog.
+     * 
+     * @return returns true if a boot animation exists (user or system). false
+     *         otherwise.
      */
     private boolean resetBootAnimation() {
         boolean bootAnimationExists = false;
-        if(new File(BOOTANIMATION_USER_PATH).exists()) {
+        if (new File(BOOTANIMATION_USER_PATH).exists()) {
             mBootAnimationPath = BOOTANIMATION_USER_PATH;
             bootAnimationExists = true;
         } else if (new File(BOOTANIMATION_SYSTEM_PATH).exists()) {
@@ -241,17 +243,23 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     }
 
     private void resetSwaggedOutBootAnimation() {
-        if(new File("/data/local/bootanimation.user").exists()) {
+        if (new File("/data/local/bootanimation.user").exists()) {
             // we're using the alt boot animation
             new AsyncTask<Void, Void, Void>() {
                 @Override
                 protected Void doInBackground(Void... params) {
-                    new CMDProcessor().su.run("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
+                    new CMDProcessor().su
+                            .run("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
                     return null;
                 }
             }.execute();
         }
         CodeReceiver.setSwagInitiatedPref(mContext, false);
+    }
+
+    private void openTransparencyDialog() {
+        getFragmentManager().beginTransaction().add(new AdvancedTransparencyDialog(), null)
+                .commit();
     }
 
     private void updateCustomLabelTextSummary() {
@@ -271,7 +279,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES,
-                    checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8 ));
+                    checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8));
             return true;
         } else if (preference == mStatusBarNotifCount) {
             Settings.System.putBoolean(mContext.getContentResolver(),
@@ -318,7 +326,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             String ok = res.getString(R.string.ok);
             String title = res.getString(R.string.alpha_dialog_title);
             float savedProgress = Settings.System.getFloat(getActivity()
-                        .getContentResolver(),
+                    .getContentResolver(),
                     Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
 
             LayoutInflater factory = LayoutInflater.from(getActivity());
@@ -330,9 +338,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                         int progress, boolean fromUser) {
                     seekbarProgress = seekbar.getProgress();
                 }
+
                 @Override
                 public void onStopTrackingTouch(SeekBar seekbar) {
                 }
+
                 @Override
                 public void onStartTrackingTouch(SeekBar seekbar) {
                 }
@@ -344,22 +354,22 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     .setTitle(title)
                     .setView(alphaDialog)
                     .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // nothing
-                }
-            })
-            .setPositiveButton(ok, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    float val = ((float) seekbarProgress / 100);
-                    Settings.System.putFloat(getActivity().getContentResolver(),
-                        Settings.System.NOTIF_WALLPAPER_ALPHA, val);
-                    Helpers.restartSystemUI();
-                }
-            })
-            .create()
-            .show();
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // nothing
+                        }
+                    })
+                    .setPositiveButton(ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            float val = ((float) seekbarProgress / 100);
+                            Settings.System.putFloat(getActivity().getContentResolver(),
+                                    Settings.System.NOTIF_WALLPAPER_ALPHA, val);
+                            Helpers.restartSystemUI();
+                        }
+                    })
+                    .create()
+                    .show();
             return true;
         } else if (preference == mShowImeSwitcher) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
@@ -382,22 +392,22 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             alert.setView(input);
             alert.setPositiveButton(getResources().getString(R.string.ok),
                     new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    String value = ((Spannable) input.getText()).toString();
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.CUSTOM_CARRIER_LABEL, value);
-                    updateCustomLabelTextSummary();
-                    Intent i = new Intent();
-                    i.setAction("com.aokp.romcontrol.LABEL_CHANGED");
-                    mContext.sendBroadcast(i);
-                }
-            });
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            String value = ((Spannable) input.getText()).toString();
+                            Settings.System.putString(getActivity().getContentResolver(),
+                                    Settings.System.CUSTOM_CARRIER_LABEL, value);
+                            updateCustomLabelTextSummary();
+                            Intent i = new Intent();
+                            i.setAction("com.aokp.romcontrol.LABEL_CHANGED");
+                            mContext.sendBroadcast(i);
+                        }
+                    });
             alert.setNegativeButton(getResources().getString(R.string.cancel),
                     new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    // Canceled.
-                }
-            });
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            // Canceled.
+                        }
+                    });
 
             alert.show();
         } else if (preference == mVibrateOnExpand) {
@@ -407,14 +417,19 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mRecentKillAll) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
             return true;
         } else if (preference == mRamBar) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.RAM_USAGE_BAR, checked ? true : false);
+            return true;
+        } else if (preference.getKey().equals("transparency_dialog")) {
+            // getFragmentManager().beginTransaction().add(new
+            // TransparencyDialog(), null).commit();
+            openTransparencyDialog();
             return true;
         }
 
@@ -463,8 +478,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     Bitmap bitmap = BitmapFactory.decodeFile(
                             selectedImageUri.getPath());
                     bitmap.compress(Bitmap.CompressFormat.PNG,
-                                    100,
-                                    wallpaperStream);
+                            100,
+                            wallpaperStream);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
                 } finally {
@@ -477,8 +492,9 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 }
                 Helpers.restartSystemUI();
             } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
-                if (data==null) {
-                    //Nothing returned by user, probably pressed back button in file manager
+                if (data == null) {
+                    // Nothing returned by user, probably pressed back button in
+                    // file manager
                     return;
                 }
                 mBootAnimationPath = data.getData().getPath();
@@ -490,7 +506,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private void openBootAnimationDialog() {
         resetSwaggedOutBootAnimation();
         Log.e(TAG, "boot animation path: " + mBootAnimationPath);
-        if(mCustomBootAnimationDialog != null) {
+        if (mCustomBootAnimationDialog != null) {
             mCustomBootAnimationDialog.cancel();
             mCustomBootAnimationDialog = null;
         }
@@ -507,37 +523,41 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 }
             });
         } else if (new File(BOOTANIMATION_USER_PATH).exists()) {
-            builder.setPositiveButton(R.string.clear_custom_bootanimation, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    new AbstractAsyncSuCMDProcessor() {
+            builder.setPositiveButton(R.string.clear_custom_bootanimation,
+                    new DialogInterface.OnClickListener() {
                         @Override
-                        protected void onPostExecute(String result) {
-                            resetBootAnimation();
+                        public void onClick(DialogInterface dialog, int which) {
+                            new AbstractAsyncSuCMDProcessor() {
+                                @Override
+                                protected void onPostExecute(String result) {
+                                    resetBootAnimation();
+                                }
+                            }.execute("rm '" + BOOTANIMATION_USER_PATH + "'",
+                                    "rm '/data/media/bootanimation.backup'");
                         }
-                    }.execute("rm '" + BOOTANIMATION_USER_PATH + "'", "rm '/data/media/bootanimation.backup'");
-                }
-            });
+                    });
         }
-        builder.setNeutralButton(R.string.set_custom_bootanimation, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                PackageManager packageManager = getActivity().getPackageManager();
-                Intent test = new Intent(Intent.ACTION_GET_CONTENT);
-                test.setType("file/*");
-                List<ResolveInfo> list = packageManager.queryIntentActivities(test,
-                        PackageManager.GET_ACTIVITIES);
-                if (list.size() > 0) {
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                    intent.setType("file/*");
-                    startActivityForResult(intent, REQUEST_PICK_BOOT_ANIMATION);
-                } else {
-                    //No app installed to handle the intent - file explorer required
-                    Toast.makeText(mContext, R.string.install_file_manager_error,
-                            Toast.LENGTH_SHORT).show();
-                }
+        builder.setNeutralButton(R.string.set_custom_bootanimation,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        PackageManager packageManager = getActivity().getPackageManager();
+                        Intent test = new Intent(Intent.ACTION_GET_CONTENT);
+                        test.setType("file/*");
+                        List<ResolveInfo> list = packageManager.queryIntentActivities(test,
+                                PackageManager.GET_ACTIVITIES);
+                        if (list.size() > 0) {
+                            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                            intent.setType("file/*");
+                            startActivityForResult(intent, REQUEST_PICK_BOOT_ANIMATION);
+                        } else {
+                            // No app installed to handle the intent - file
+                            // explorer required
+                            Toast.makeText(mContext, R.string.install_file_manager_error,
+                                    Toast.LENGTH_SHORT).show();
+                        }
 
-            }
-        });
+                    }
+                });
         builder.setNegativeButton(com.android.internal.R.string.cancel,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -585,8 +605,10 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     outChannel);
         } finally {
             // ensure closure
-            if (inChannel != null) inChannel.close();
-            if (outChannel != null) outChannel.close();
+            if (inChannel != null)
+                inChannel.close();
+            if (outChannel != null)
+                outChannel.close();
         }
     }
 
@@ -699,14 +721,14 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             mAnimationPart2.setOneShot(false);
             mAnimationPart1.setOnAnimationFinishedListener(
                     new AnimationDrawable.OnAnimationFinishedListener() {
-                @Override
-                public void onAnimationFinished() {
-                    Log.d(TAG, "First part finished");
-                    view.setImageDrawable(mAnimationPart2);
-                    mAnimationPart1.stop();
-                    mAnimationPart2.start();
-                }
-            });
+                        @Override
+                        public void onAnimationFinished() {
+                            Log.d(TAG, "First part finished");
+                            view.setImageDrawable(mAnimationPart2);
+                            mAnimationPart1.stop();
+                            mAnimationPart2.start();
+                        }
+                    });
         } else {
             mAnimationPart1.setOneShot(false);
         }
@@ -714,9 +736,9 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     }
 
     /**
-     * creates a couple commands to perform all root
-     * operations needed to disable/enable bootanimations
-     *
+     * creates a couple commands to perform all root operations needed to
+     * disable/enable bootanimations
+     * 
      * @param checked state of CheckBox
      * @return script to turn bootanimations on/off
      */
@@ -736,9 +758,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             cmds[1] = "mv " + activeUserLocation + " " + storedUserLocation + "; ";
         }
         /*
-         * use sed to replace build.prop property
-         * debug.sf.nobootanimation=[1|0]
-         *
+         * use sed to replace build.prop property debug.sf.nobootanimation=[1|0]
          * without we get the Android shine animation when
          * /system/media/bootanimation.zip is not found
          */
@@ -775,7 +795,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
 
         protected void onPreExecute() {
-            //Update setting to reflect that boot animation is now enabled
+            // Update setting to reflect that boot animation is now enabled
             taskAnimationPath = mBootAnimationPath;
             mDisableBootAnimation.setChecked(false);
             DisableBootAnimation();
@@ -784,8 +804,9 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
         @Override
         protected Void doInBackground(Void... voids) {
-            //Copy new bootanimation, give proper permissions
-            new CMDProcessor().su.runWaitFor("cp "+ taskAnimationPath +" /data/local/bootanimation.zip");
+            // Copy new bootanimation, give proper permissions
+            new CMDProcessor().su.runWaitFor("cp " + taskAnimationPath
+                    + " /data/local/bootanimation.zip");
             new CMDProcessor().su.runWaitFor("chmod 644 /data/local/bootanimation.zip");
             return null;
         }
@@ -800,8 +821,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             // if not add value
             Helpers.getMount("rw");
             term.su.runWaitFor("echo debug.sf.nobootanimation="
-                + String.valueOf(mDisableBootAnimation.isChecked() ? 1 : 0)
-                + " >> /system/build.prop");
+                    + String.valueOf(mDisableBootAnimation.isChecked() ? 1 : 0)
+                    + " >> /system/build.prop");
             Helpers.getMount("ro");
         }
         // preform bootanimation operations off UI thread
@@ -828,17 +849,193 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNavBarAlpha) {
-            float val = (float) (Integer.parseInt((String)newValue) * 0.01);
-            return Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_ALPHA,
-                    val);
-        } else if (preference == mUserModeUI) {
+       if (preference == mUserModeUI) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.USER_UI_MODE, Integer.parseInt((String) newValue));
             Helpers.restartSystemUI();
             return true;
         }
         return false;
+    }
+
+    public static class AdvancedTransparencyDialog extends DialogFragment {
+
+        private static final int KEYGUARD_ALPHA = 112;
+
+        private static final int STATUSBAR_ALPHA = 0;
+        private static final int STATUSBAR_KG_ALPHA = 1;
+        private static final int NAVBAR_ALPHA = 2;
+        private static final int NAVBAR_KG_ALPHA = 3;
+
+        boolean linkTransparencies = true;
+        CheckBox mLinkCheckBox, mMatchStatusbarKeyguard, mMatchNavbarKeyguard;
+        ViewGroup mNavigationBarGroup;
+
+        TextView mSbLabel;
+
+        AlphaSeekBar mSeekBars[] = new AlphaSeekBar[4];
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setShowsDialog(true);
+            setRetainInstance(true);
+            linkTransparencies = getSavedLinkedState();
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            View layout = View.inflate(getActivity(), R.layout.dialog_transparency, null);
+            mLinkCheckBox = (CheckBox) layout.findViewById(R.id.transparency_linked);
+            mLinkCheckBox.setChecked(linkTransparencies);
+
+            mNavigationBarGroup = (ViewGroup) layout.findViewById(R.id.navbar_layout);
+            mSbLabel = (TextView) layout.findViewById(R.id.statusbar_label);
+            mSeekBars[STATUSBAR_ALPHA] = (AlphaSeekBar) layout.findViewById(R.id.statusbar_alpha);
+            mSeekBars[STATUSBAR_KG_ALPHA] = (AlphaSeekBar) layout
+                    .findViewById(R.id.statusbar_keyguard_alpha);
+            mSeekBars[NAVBAR_ALPHA] = (AlphaSeekBar) layout.findViewById(R.id.navbar_alpha);
+            mSeekBars[NAVBAR_KG_ALPHA] = (AlphaSeekBar) layout
+                    .findViewById(R.id.navbar_keyguard_alpha);
+
+            mMatchStatusbarKeyguard = (CheckBox) layout.findViewById(R.id.statusbar_match_keyguard);
+            mMatchNavbarKeyguard = (CheckBox) layout.findViewById(R.id.navbar_match_keyguard);
+
+            try {
+                // restore any saved settings
+                int alphas[] = new int[2];
+                final String sbConfig = Settings.System.getString(getActivity()
+                        .getContentResolver(),
+                        Settings.System.STATUS_BAR_ALPHA_CONFIG);
+                if (sbConfig != null) {
+                    String split[] = sbConfig.split(";");
+                    alphas[0] = Integer.parseInt(split[0]);
+                    alphas[1] = Integer.parseInt(split[1]);
+
+                    mSeekBars[STATUSBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                    mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
+
+                    mMatchStatusbarKeyguard.setChecked(alphas[1] == KEYGUARD_ALPHA);
+
+                    if (linkTransparencies) {
+                        mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                        mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
+                    } else {
+                        final String navConfig = Settings.System.getString(getActivity()
+                                .getContentResolver(),
+                                Settings.System.NAVIGATION_BAR_ALPHA_CONFIG);
+                        if (navConfig != null) {
+                            split = navConfig.split(";");
+                            alphas[0] = Integer.parseInt(split[0]);
+                            alphas[1] = Integer.parseInt(split[1]);
+                            mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                            mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
+
+                            mMatchNavbarKeyguard.setChecked(alphas[1] == KEYGUARD_ALPHA);
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                resetSettings();
+            }
+
+            updateToggleState();
+            mMatchStatusbarKeyguard.setOnCheckedChangeListener(mUpdateStatesListener);
+            mMatchNavbarKeyguard.setOnCheckedChangeListener(mUpdateStatesListener);
+            mLinkCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    linkTransparencies = isChecked;
+                    saveSavedLinkedState(isChecked);
+                    updateToggleState();
+                }
+            });
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setView(layout);
+            builder.setTitle(getString(R.string.transparency_dialog_title));
+            builder.setNegativeButton(R.string.cancel, null);
+            builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (linkTransparencies) {
+                        String config = mSeekBars[STATUSBAR_ALPHA].getCurrentAlpha() + ";" +
+                                mSeekBars[STATUSBAR_KG_ALPHA].getCurrentAlpha();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_ALPHA_CONFIG, config);
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, config);
+                    } else {
+                        String sbConfig = mSeekBars[STATUSBAR_ALPHA].getCurrentAlpha() + ";" +
+                                mSeekBars[STATUSBAR_KG_ALPHA].getCurrentAlpha();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.STATUS_BAR_ALPHA_CONFIG, sbConfig);
+
+                        String nbConfig = mSeekBars[NAVBAR_ALPHA].getCurrentAlpha() + ";" +
+                                mSeekBars[NAVBAR_KG_ALPHA].getCurrentAlpha();
+                        Settings.System.putString(getActivity().getContentResolver(),
+                                Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, nbConfig);
+                    }
+                }
+            });
+
+            return builder.create();
+        }
+
+        private void resetSettings() {
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_ALPHA_CONFIG, null);
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, null);
+        }
+
+        private void updateToggleState() {
+            if (linkTransparencies) {
+                mSbLabel.setText(R.string.transparency_dialog_transparency_sb_and_nv);
+                mNavigationBarGroup.setVisibility(View.GONE);
+            } else {
+                mSbLabel.setText(R.string.transparency_dialog_statusbar);
+                mNavigationBarGroup.setVisibility(View.VISIBLE);
+            }
+
+            mSeekBars[STATUSBAR_KG_ALPHA]
+                    .setEnabled(!mMatchStatusbarKeyguard.isChecked());
+            mSeekBars[NAVBAR_KG_ALPHA]
+                    .setEnabled(!mMatchNavbarKeyguard.isChecked());
+
+            // disable keyguard alpha if needed
+            if (!mSeekBars[STATUSBAR_KG_ALPHA].isEnabled()) {
+                mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(KEYGUARD_ALPHA);
+            }
+            if (!mSeekBars[NAVBAR_KG_ALPHA].isEnabled()) {
+                mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(KEYGUARD_ALPHA);
+            }
+        }
+
+        @Override
+        public void onDestroyView() {
+            if (getDialog() != null && getRetainInstance())
+                getDialog().setDismissMessage(null);
+            super.onDestroyView();
+        }
+
+        private CompoundButton.OnCheckedChangeListener mUpdateStatesListener = new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                updateToggleState();
+            }
+        };
+
+        private boolean getSavedLinkedState() {
+            return getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE)
+                    .getBoolean("link", true);
+        }
+
+        private void saveSavedLinkedState(boolean v) {
+            getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE).edit()
+                    .putBoolean("link", v).commit();
+        }
     }
 }

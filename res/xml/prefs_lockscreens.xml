@@ -2,7 +2,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <!--  <PreferenceCategory
+     <PreferenceCategory
             android:key="security"
             android:title="@string/lockscreen_security_cat">
 
@@ -11,7 +11,7 @@
             android:title="@string/lockscreen_quick_unlock_control_title"
             android:summary="@string/lockscreen_quick_unlock_control_summary" />
 
-    </PreferenceCategory> -->
+    </PreferenceCategory>
     <PreferenceCategory
         android:key="layout"
         android:title="@string/lockscreen_layout_cat">

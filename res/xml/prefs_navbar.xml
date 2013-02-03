@@ -75,6 +75,11 @@
                 android:key="advanced_cat"
                 android:title="@string/advanced_settings">
 
+                <CheckBoxPreference
+                    android:key="longpress_to_kill"
+                    android:title="@string/longpress_to_kill"
+                    android:summary="@string/longpress_to_kill_summary" />
+
                 <ListPreference
                     android:entries="@array/glow_times_entries"
                     android:entryValues="@array/glow_times_values"

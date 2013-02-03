@@ -82,6 +82,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String ENABLE_NAVRING_LONG = "enable_navring_long";
     private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
     private static final String PREF_MENU_ARROWS = "navigation_bar_menu_arrow_keys";
+    private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
@@ -112,6 +113,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     CheckBoxPreference mEnableNavringLong;
     CheckBoxPreference mMenuArrowKeysCheckBox;
     Preference mConfigureWidgets;
+    CheckBoxPreference mLongPressToKill;
 
     private int mPendingIconIndex = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
@@ -151,6 +153,15 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.MENU_VISIBILITY,
                 0) + "");
+
+        boolean hasHardwareButtons = mContext.getResources().getBoolean(
+                R.bool.has_hardware_buttons);
+        mLongPressToKill = (CheckBoxPreference)findPreference(PREF_LONGPRESS_TO_KILL);
+        mLongPressToKill.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
+        if (!hasHardwareButtons) {
+            ((PreferenceGroup)findPreference("advanced_cat")).removePreference(mLongPressToKill);
+        }
 
         mNavRingButtonQty = (ListPreference) findPreference(PREF_NAVRING_AMOUNT);
         mNavRingButtonQty.setOnPreferenceChangeListener(this);
@@ -295,6 +306,12 @@ public class Navbar extends AOKPPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mLongPressToKill) {
+
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
             return true;
         } else if (preference == mEnableNavringLong) {
 

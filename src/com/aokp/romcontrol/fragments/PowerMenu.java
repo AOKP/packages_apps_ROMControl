@@ -19,12 +19,14 @@ public class PowerMenu extends AOKPPreferenceFragment {
     private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
+    private static final String PREF_EXPANDED_DESKTOP = "show_expanded_desktop";
 
     //CheckBoxPreference mShowPowerSaver;
     CheckBoxPreference mShowScreenShot;
     CheckBoxPreference mShowTorchToggle;
     CheckBoxPreference mShowAirplaneToggle;
     CheckBoxPreference mShowNavBarHide;
+    CheckBoxPreference mShowExpandedDesktop;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,11 @@ public class PowerMenu extends AOKPPreferenceFragment {
         mShowNavBarHide = (CheckBoxPreference) findPreference(PREF_NAVBAR_HIDE);
         mShowNavBarHide.setChecked(Settings.System.getBoolean(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, false));
+
+        mShowExpandedDesktop = (CheckBoxPreference) findPreference(PREF_EXPANDED_DESKTOP);
+        mShowExpandedDesktop.setChecked(Settings.System.getBoolean(getActivity()
+               .getContentResolver(), Settings.System.POWER_DIALOG_EXPANDED_DESKTOP_ENABLED, false));
+        }
     }
 
     @Override
@@ -90,7 +97,11 @@ public class PowerMenu extends AOKPPreferenceFragment {
                     Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
                     ((CheckBoxPreference)preference).isChecked());
             return true;
-        }
+        } else if (preference == mShowExpandedDesktop) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_EXPANDED_DESKTOP_ENABLED,
+                    ((CheckBoxPreference)preference).isChecked());
+            return true;
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

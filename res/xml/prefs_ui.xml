@@ -61,6 +61,10 @@
         android:key="navbar"
         android:title="@string/navbar_cat">
 
+        <CheckBoxPreference
+            android:key="longpress_to_kill"
+            android:title="@string/longpress_to_kill"
+            android:summary="@string/longpress_to_kill_summary" />
 
         <CheckBoxPreference
             android:key="recent_kill_all"

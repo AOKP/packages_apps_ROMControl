@@ -50,6 +50,11 @@
             android:key="statusbar_brightness_slider"
             android:title="@string/brightness_slider_title"
             android:summary="@string/brightness_slider_summary" />
+            
+        <CheckBoxPreference
+            android:key="navigation_bar_status_show_now"
+            android:title="@string/statusbar_hide_title"
+            android:summary="@string/statusbar_hide_summary" />
 
         <com.aokp.romcontrol.widgets.SeekBarPreference
             android:key="navigation_bar_alpha"

@@ -282,6 +282,7 @@
     <string name="toggle_swagger">Swagger</string>
     <string name="toggle_sync">Sync</string>
     <string name="toggle_torch">Torch</string>
+    <string name="toggle_statusbar">StatusBar</string>
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Tether</string>
     <string name="toggle_vibrate">Vibrate</string>
@@ -397,6 +398,8 @@
     <string name="navbar_widgets_delete">Delete widget</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
+    <string name="statusbar_hide_title">Hide Statusbar</string>
+    <string name="statusbar_hide_summary">Allow completly hide the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
     <string name="navbar_hide_enable_title">Hidden Navbar Enable</string>
     <string name="drag_handle_opacity_title">Drag Handle Opacity</string>

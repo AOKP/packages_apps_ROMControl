@@ -96,6 +96,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
+    private static final String STATUSBAR_HIDDEN = "statusbar_hidden";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -128,6 +129,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mDualpane;
+    CheckBoxPreference mStatusBarHide;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -216,6 +218,10 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                         getApplicationContext().getContentResolver(),
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
+        mStatusBarHide = (CheckBoxPreference) findPreference(STATUSBAR_HIDDEN);
+        mStatusBarHide.setChecked(Settings.System.getBoolean(cr,
+                Settings.System.STATUSBAR_HIDDEN, false));
+        
         mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
         int uiMode = Settings.System.getInt(cr,
                 Settings.System.CURRENT_UI_MODE, 0);
@@ -490,6 +496,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             // getFragmentManager().beginTransaction().add(new
             // TransparencyDialog(), null).commit();
             openTransparencyDialog();
+            return true;
+        } else if (preference == mStatusBarHide) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_HIDDEN, checked ? true : false);
             return true;
         }
 

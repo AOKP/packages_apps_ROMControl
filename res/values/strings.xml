@@ -383,6 +383,8 @@
     <string name="navbar_widgets_delete">Delete widget</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
+    <string name="statusbar_hide_title">Hide Statusbar</string>
+    <string name="statusbar_hide_summary">Allow completly hide the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
 
     <!-- Nav Ring Targets -->

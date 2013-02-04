@@ -85,6 +85,7 @@
         <item>WIFITETHER</item>
         <item>USBTETHER</item>
         <item>TORCH</item>
+        <item>STATUSBAR</item>
         <item>2G</item>
         <item>LTE</item>
         <item>NAVBARHIDE</item>
@@ -114,6 +115,7 @@
         <item>@string/toggle_wifi_tether</item>
         <item>@string/toggle_usb_tether</item>
         <item>@string/toggle_torch</item>
+        <item>@string/toggle_statusbar</item>
         <item>@string/toggle_2g</item>
         <item>@string/toggle_lte</item>
         <item>@string/toggle_navbar_hide</item>

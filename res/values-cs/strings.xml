@@ -248,6 +248,7 @@
   <string name="toggle_swagger">Swagger</string>
   <string name="toggle_sync">Synchronizace</string>
   <string name="toggle_torch">Svítilna</string>
+  <string name="toggle_statusbar">Stavová lišta</string>
   <string name="toggle_2g">2G</string>
   <string name="toggle_usb_tether">USB tethering</string>
   <string name="toggle_vibrate">Vibrace</string>
@@ -353,6 +354,8 @@
   <string name="navbar_widgets_delete">Smazat widget</string>
   <string name="navigation_bar_menu_arrow_keys_title">Tlačítka šipek</string>
   <string name="navigation_bar_menu_arrow_keys_summary">Zobrazit tlačítka s šipkami v navigační liště během psaní (pro možnost posunu v textu)</string>
+  <string name="statusbar_hide_title">Skrýt stavovou lištu</string>
+  <string name="statusbar_hide_summary">Umožňuje kompletně skrýt stavovou lištu</string>
   <string name="navigation_bar_alpha_title">Viditelnost stavové a navigační lišty</string>
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>

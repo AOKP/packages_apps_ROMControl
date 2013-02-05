@@ -297,6 +297,7 @@
     <string name="toggle_brightness">Brightness</string>
     <string name="toggle_sound_state">Ring/Vib/Silent</string>
     <string name="toggle_navbar_hide">Navbar Auto Hide</string>
+    <string name="toggle_quickrecord">Quick Record</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Battery icon style</string>

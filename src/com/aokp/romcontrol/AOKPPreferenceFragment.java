@@ -30,6 +30,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Button;
 
@@ -68,6 +69,20 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     public static boolean isTablet(Context context) {
         return Settings.System.getInt(context.getContentResolver(),
                 Settings.System.CURRENT_UI_MODE,0) == 1;
+    }
+
+    public static boolean isPhablet(Context context) {
+        return Settings.System.getInt(context.getContentResolver(),
+                Settings.System.CURRENT_UI_MODE,0) == 2;
+    }
+
+    public static boolean hasPhoneAbility(Context context)
+    {
+       TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+       if(telephonyManager.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE)
+           return false;
+
+       return true;
     }
 
     public void setTitle(int resId) {

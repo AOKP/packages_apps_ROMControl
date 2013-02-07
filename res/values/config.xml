@@ -14,4 +14,10 @@
 
     <!-- Whether can use color tuning -->
     <bool name="has_color_tuning">true</bool>
+
+    <!-- Whether device has led brightness feature -->
+    <bool name="has_led_brightness_feature">false</bool>
+
+    <!-- Whether device has led charging feature -->
+    <bool name="has_led_charging_feature">false</bool>
 </resources>

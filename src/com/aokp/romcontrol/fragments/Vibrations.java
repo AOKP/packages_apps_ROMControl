@@ -35,12 +35,15 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.aokp.romcontrol.AOKPActivity;
 import com.aokp.romcontrol.vibrations.VibrationRecorder;
 import com.aokp.romcontrol.R;
 
-public class Vibrations extends AOKPActivity {
+public class Vibrations extends Fragment {
     private static final String TAG = "Vibrations";
+
+    private ViewGroup mContainer;
+    private Activity mActivity;
+    private Resources mResources;
 
     private final int DIALOG_SAVE = 0;
     private final int DIALOG_HELP = 1;
@@ -94,25 +97,31 @@ public class Vibrations extends AOKPActivity {
     };
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle(R.string.vibrations);
-        sharedPrefs = this.getSharedPreferences("vibrations", 0);
-        mRecorder = new VibrationRecorder(this);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mContainer = container;
+        mActivity = getActivity();
+        mResources = getResources();
+        return inflater.inflate(R.layout.vibration_manager, container, false);
+    }
 
-        setContentView(R.layout.vibration_manager);
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mActivity.setTitle(R.string.vibrations);
+        sharedPrefs = mActivity.getSharedPreferences("vibrations", 0);
+        mRecorder = new VibrationRecorder(mActivity);
 
-        mTapButton = (Button) this.findViewById(R.id.button_tap);
-        mRecButton = (Button) this.findViewById(R.id.button_rec);
-        mPlayButton = (Button) this.findViewById(R.id.button_play);
-        mStopButton = (Button) this.findViewById(R.id.button_stop);
-        mSaveButton = (Button) this.findViewById(R.id.button_save);
-        mLoadButton = (Button) this.findViewById(R.id.button_load);
-        mDelButton = (Button) this.findViewById(R.id.button_del);
-        mNewButton = (Button) this.findViewById(R.id.button_new);
-        mHelpButton = (Button) this.findViewById(R.id.help_vibrations);
-        mCurLoadedText = (TextView) this.findViewById(R.id.vib_cur_loaded_name);
-        mPatternBar = (LinearLayout) this.findViewById(R.id.pattern_bar);
+        mTapButton = (Button) mActivity.findViewById(R.id.button_tap);
+        mRecButton = (Button) mActivity.findViewById(R.id.button_rec);
+        mPlayButton = (Button) mActivity.findViewById(R.id.button_play);
+        mStopButton = (Button) mActivity.findViewById(R.id.button_stop);
+        mSaveButton = (Button) mActivity.findViewById(R.id.button_save);
+        mLoadButton = (Button) mActivity.findViewById(R.id.button_load);
+        mDelButton = (Button) mActivity.findViewById(R.id.button_del);
+        mNewButton = (Button) mActivity.findViewById(R.id.button_new);
+        mHelpButton = (Button) mActivity.findViewById(R.id.help_vibrations);
+        mCurLoadedText = (TextView) mActivity.findViewById(R.id.vib_cur_loaded_name);
+        mPatternBar = (LinearLayout) mActivity.findViewById(R.id.pattern_bar);
         mCurLoadedText.setText("-");
         mTapButton.setEnabled(false);
         mStopButton.setEnabled(false);
@@ -219,14 +228,14 @@ public class Vibrations extends AOKPActivity {
             sharedPrefs.edit().putBoolean("firststart", false).apply();
             showDia(DIALOG_HELP);
         }
+
+        setHasOptionsMenu(true);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuInflater mi = getMenuInflater();
-        mi.inflate(R.menu.vibrations, menu);
-        return true;
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.vibrations, menu);
     }
 
     @Override
@@ -243,11 +252,11 @@ public class Vibrations extends AOKPActivity {
     protected void showDia(int id) {
         switch (id) {
             case DIALOG_SAVE:
-                LayoutInflater factory = LayoutInflater.from(this);
+                LayoutInflater factory = LayoutInflater.from(mActivity);
                 final View textEntryView = factory.inflate(R.layout.vib_dialog_text_entry, null);
                 final EditText name = (EditText) textEntryView.findViewById(R.id.vib_edit);
                 name.setText(mRecorder.getLoadedPatternName());
-                final AlertDialog saveDialog = new AlertDialog.Builder(this)
+                final AlertDialog saveDialog = new AlertDialog.Builder(mActivity)
                         .setTitle(R.string.vib_dialog_text_entry)
                         .setView(textEntryView)
                         .setPositiveButton(com.android.internal.R.string.ok,
@@ -278,13 +287,13 @@ public class Vibrations extends AOKPActivity {
                 break;
 
             case DIALOG_HELP:
-                final ScrollView sView = new ScrollView(this);
+                final ScrollView sView = new ScrollView(mActivity);
                 sView.setPadding(8, 8, 8, 8);
-                final TextView helpView = new TextView(this);
+                final TextView helpView = new TextView(mActivity);
                 helpView.setText(R.string.vibration_detailed_help);
                 helpView.setTextSize(12);
                 sView.addView(helpView);
-                new AlertDialog.Builder(this)
+                new AlertDialog.Builder(mActivity)
                         .setTitle(R.string.help)
                         .setPositiveButton(android.R.string.ok, null)
                         .setView(sView).show();
@@ -313,7 +322,7 @@ public class Vibrations extends AOKPActivity {
         for (int i = 0; i<pattern.getPattern().length; i++) {
             final int mWidth = (int) (((double) pattern.getPattern()[i] / 10) * ratio);
             Log.d(TAG, "mWidth = " + Integer.toString(mWidth));
-            final View view = new View(this) {
+            final View view = new View(mActivity) {
                 @Override
                 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
                     // Adjust width as necessary

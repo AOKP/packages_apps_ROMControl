@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -15,5 +16,8 @@
 
     <CheckBoxPreference android:key="show_navbar_hide"
         android:title="@string/title_show_navbar_hide" />
+
+    <CheckBoxPreference android:key="show_reboot_keyguard"
+        android:title="@string/title_show_reboot_keyguard" />
 
 </PreferenceScreen>

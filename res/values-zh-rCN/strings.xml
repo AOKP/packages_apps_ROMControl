@@ -139,6 +139,8 @@
     <string name="hide_extras_summary">隐藏系统栏的一些内容，为更改密度或强制使用平板界面提高兼容性（将重启用户界面）</string>
     <string name="bootanimation_preview">预览开机动画</string>
     <string name="apply">应用</string>
+    <string name="clear_custom_bootanimation">清除自定义开机动画</string>
+    <string name="set_custom_bootanimation">自定义...</string>
     <string name="creating_preview">正在创建预览...</string>
     <string name="error_reading_zip_file">读取 ZIP 文件错误</string>
     <string name="error_creating_preview">创建预览错误</string>
@@ -169,6 +171,7 @@
     <string name="clear_market_data_title">3. 清理Play商店数据</string>
     <string name="clear_market_data_cleared">Play商店数据已清除</string>
     <string name="clear_market_data_donot_cleared">"Play商店数据无法清除，请手动清除！"</string>
+
     <string name="open_market_title">4. 打开Play商店选择接受</string>
     <string name="open_market_summary">然后回到此菜单</string>
     <string name="open_market_summary_could_not_open">"无法打开Play商店！如果你确定已经安装，请手动打开。"</string>
@@ -184,6 +187,7 @@
     <string name="custom_density_dialog_button_reboot">立即重启</string>
 
     <!-- Statusbar | Toggles 状态栏|开关-->
+
     <string name="toggle_style_title">开关风格</string>
     <string name="toggle_style_summary">显示开关的图标或文字</string>
     <string name="toggles_layout_title">开关布局</string>
@@ -258,6 +262,7 @@
     <string name="toggle_ime">输入法</string>
     <string name="toggle_battery">电量</string>
     <string name="toggle_brightness">亮度</string>
+    <string name="toggle_sound_state">铃声/振动/静音</string>
 
     <!-- Statusbar | Battery 状态栏|电量 -->
     <string name="battery_icon">电量图标风格</string>
@@ -334,6 +339,7 @@
     <string name="navbar_height_dialog_summary">请重启以确保导航栏高度设置正常！</string>
     <string name="navbar_height_dialog_button_later">稍后重启</string>
     <string name="navbar_height_dialog_button_reboot">立刻重启</string>
+    <string name="navigation_bar_color_title">导航栏颜色</string>
     <string name="navigation_bar_tint_title">导航栏按键颜色</string>
     <string name="navigation_bar_glow_tint_title">导航栏按键按下发光颜色</string>
     <string name="navigation_bar_glow_tint_summary">当你按下一个按键时，它的背景会发光。使用该选项来改变发光的颜色。</string>
@@ -404,6 +410,7 @@
     <string name="led_keep_app">保持</string>
     <string name="led_custom_title">自定义 LED 程序</string>
     <string name="led_custom_message">"你想要变更应用程序: "</string>
+
     <string name="led_test_notification">测试 LED</string>
     <string name="led_test_notification_message_now">"现在测试应用程序： "</string>
     <string name="led_test_notification_message_note">".  请关闭屏幕后观察 LED 灯。在你观察完毕之前不要点击确定按钮。"</string>
@@ -459,6 +466,10 @@
     <string name="lockscreen_hide_initial_page_hints_summary">设置当屏幕开启时是否隐藏左右两边的小部件页面提示。</string>
     <string name="lockscreen_minimize_challenge_title">最小化解锁区</string>
     <string name="lockscreen_minimize_challenge_summary">设置当屏幕开启时是否最小化解锁区（环形，图形解锁，PIN）。</string>
+    <string name="lockscreen_longpress_challenge_title">启用长按解锁</string>
+    <string name="lockscreen_longpress_challenge_summary">使设备可以通过长按锁定图标解锁。</string>
+    <string name="lockscreen_use_widget_container_carousel_title">使用小部件旋转</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">在切换屏幕小部件时使用旋转动的画效果。</string>
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">使用音量键唤醒设备</string>
     <string name="volume_music_controls_title">音量键控制音乐</string>
@@ -708,7 +719,7 @@
     <!-- boot animation stuff 开机动画选项 -->
     <string name="insult_jerk">囧</string>
     <string name="insult_protekk">ProTekk!</string>
-    <string name="insult_unicorns">勉强承认粉红色的独角兽太娘了</string>
+    <string name="insult_unicorns">不情不愿的承认粉红独角兽太娘了</string>
 
     <!-- clock stuff 时钟选项 -->
     <string name="right_clock">时钟右置</string>

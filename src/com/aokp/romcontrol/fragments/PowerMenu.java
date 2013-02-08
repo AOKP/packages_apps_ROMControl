@@ -19,12 +19,14 @@ public class PowerMenu extends AOKPPreferenceFragment {
     private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
+    private static final String PREF_REBOOT_HIDE = "show_reboot_hide";
 
     //CheckBoxPreference mShowPowerSaver;
     CheckBoxPreference mShowScreenShot;
     CheckBoxPreference mShowTorchToggle;
     CheckBoxPreference mShowAirplaneToggle;
     CheckBoxPreference mShowNavBarHide;
+    CheckBoxPreference mShowRebootHide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,10 @@ public class PowerMenu extends AOKPPreferenceFragment {
         mShowNavBarHide = (CheckBoxPreference) findPreference(PREF_NAVBAR_HIDE);
         mShowNavBarHide.setChecked(Settings.System.getBoolean(getActivity()
                 .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, false));
+
+        mShowRebootHide = (CheckBoxPreference) findPreference(PREF_REBOOT_HIDE);
+        mShowRebootHide.setChecked(Settings.System.getBoolean(getActivity()
+                .getContentResolver(), Settings.System.POWER_DIALOG_SHOW_REBOOT_HIDE, false));
     }
 
     @Override
@@ -88,6 +94,11 @@ public class PowerMenu extends AOKPPreferenceFragment {
         } else if (preference == mShowNavBarHide) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
+                    ((CheckBoxPreference)preference).isChecked());
+            return true;
+        } else if (preference == mShowRebootHide) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.POWER_DIALOG_SHOW_REBOOT_HIDE,
                     ((CheckBoxPreference)preference).isChecked());
             return true;
         }

@@ -98,6 +98,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private int onBlink;
     private int offBlink;
     private int currentSelectedApp;
+    private boolean hasBrightnessFeature;
+    private boolean hasChargingFeature;
 
     private HashMap<String, CustomApps> customAppList;
     private ArrayList<String> unicornApps;
@@ -192,14 +194,20 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
             }
         });
 
-        mChargingLedOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton v, boolean checked) {
-                Helpers.setSystemProp(PROP_CHARGING_LED, checked ? "1" : "0");
-                if (DEBUG)
-                    Log.i(TAG, "Charging LED is set to: " + checked);
-            }
-        });
+        hasChargingFeature = getResources().getBoolean(R.bool.has_led_charging_feature);
 
+        if (hasChargingFeature) {
+            mChargingLedOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                public void onCheckedChanged(CompoundButton v, boolean checked) {
+                    Helpers.setSystemProp(PROP_CHARGING_LED, checked ? "1" : "0");
+                    if (DEBUG)
+                        Log.i(TAG, "Charging LED is set to: " + checked);
+                }
+            });
+        }
+        else {
+            mChargingLedOn.setVisibility(View.GONE);
+        }
 
         parseExistingAppList();
 
@@ -264,31 +272,37 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
             }
         });
 
-        mLedBrightness.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                AlertDialog.Builder b = new AlertDialog.Builder(mActivity);
-                b.setTitle(R.string.led_change_brightness);
-                b.setSingleChoiceItems(brightnessArray, Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LED_BRIGHTNESS, 1), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int item) {
-                        Helpers.setSystemProp(PROP_LED_BRIGHTNESS, String.valueOf(brightnessOutput[item]));
-                        Settings.System.putInt(mActivity.getContentResolver(),
-                                Settings.System.LED_BRIGHTNESS, item);
-                    }
-                });
-                b.setPositiveButton(com.android.internal.R.string.ok,
-                    new DialogInterface.OnClickListener() {
+        hasBrightnessFeature = getResources().getBoolean(R.bool.has_led_brightness_feature);
+
+        if (hasBrightnessFeature) {
+            mLedBrightness.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    AlertDialog.Builder b = new AlertDialog.Builder(mActivity);
+                    b.setTitle(R.string.led_change_brightness);
+                    b.setSingleChoiceItems(brightnessArray, Settings.System.getInt(mActivity.getContentResolver(), Settings.System.LED_BRIGHTNESS, 1), new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                    }
-                });
+                        public void onClick(DialogInterface dialog, int item) {
+                            Helpers.setSystemProp(PROP_LED_BRIGHTNESS, String.valueOf(brightnessOutput[item]));
+                            Settings.System.putInt(mActivity.getContentResolver(),
+                                    Settings.System.LED_BRIGHTNESS, item);
+                        }
+                    });
+                    b.setPositiveButton(com.android.internal.R.string.ok,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                        }
+                    });
 
-                AlertDialog alert = b.create();
-                alert.show();
-            }
-        });
-
+                    AlertDialog alert = b.create();
+                    alert.show();
+                }
+            });
+        }
+        else {
+            mLedBrightness.setVisibility(View.GONE);
+        }
 
         refreshSettings();
         startLed();

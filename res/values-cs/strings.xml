@@ -5,6 +5,7 @@
   <string name="user_interface">Rozhraní</string>
   <string name="cancel">Zrušit</string>
   <string name="ok">OK</string>
+  <string name="save">Uložit</string>
   <string name="menu_main_activity_change_locale">Prázdné!</string>
   <string name="header_statusbar">Stavová lišta</string>
   <string name="header_navbar">Navigační lišta</string>
@@ -138,8 +139,8 @@
   <string name="recent_kill_all_summary">Zobrazuje tlačítko pro zavření všech aplikací v přehledu všech spuštěných aplikací (vyžaduje restart UI)</string>
   <string name="ram_bar">Lišta s RAM</string>
   <string name="ram_bar_summary">Zobrazuje použitou RAM v okně s běžícími aplikacemi</string>
-  <string name="kill_app_longpress_back">Podržet zpět pro ukončení</string>
-  <string name="kill_app_longpress_back_summary">Podržení tlačítka zpět ukončí (killne) aktuální aplikaci</string>
+  <string name="longpress_to_kill">Ukončení hw tlačítkem zpět</string>
+  <string name="longpress_to_kill_summary">Podržení hw tlačítka zpět ukončí (killne) aktuální aplikaci</string>
   <string name="tablet_ui">Vynutit tabletové UI</string>
   <string name="tablet_ui_summary">Přepne do tabletového rozhraní (vyžaduje restart)</string>
   <string name="hide_extras">Skrýt pomůcky</string>
@@ -166,6 +167,14 @@
   <string name="phone_mode_ui">Telefon - Navigační lišta na strně v režimu na šířku</string>
   <string name="tablet_mode_ui">Tablet - Kombinovaná lišta s navigací i stavy</string>
   <string name="phablet_mode_ui">Phablet - Navigační lišta zůstává dole i v režimu na šířku</string>
+  <string name="transparency_dialog_title">Nastavení průhlednosti</string>
+  <string name="transparency_dialog_linked_transparency">Spojit průhlednost stavové a navigační lišty</string>
+  <string name="transparency_dialog_transparency_sb_and_nv">Stavová a navigační lišta</string>
+  <string name="transparency_dialog_statusbar">Stavová lišta</string>
+  <string name="transparency_dialog_navbar">Navigační lišta</string>
+  <string name="transparency_dialog_match_keyguard_alpha">Přizpůsobit průhlednosti zamčené obrazovky</string>
+  <string name="transparency_dialog_transparency">Průhlednost domovské obrazovky</string>
+  <string name="transparency_dialog_transparency_keyguard">Průhlednost zamknuté obrazovky</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>
@@ -317,6 +326,7 @@
   <string name="navbar_action_home">Domů</string>
   <string name="navbar_action_back">Zpět</string>
   <string name="navbar_action_recents">Přepínač aplikací</string>
+  <string name="navbar_action_recents_gb">Přepínač aplikací (GB styl)</string>
   <string name="navbar_action_search">Hledat</string>
   <string name="navbar_action_screenshot">Snímek obrazovky</string>
   <string name="navbar_action_menu">Menu</string>
@@ -735,6 +745,7 @@
   <string name="lastapp">Poslední aplikace</string>
   <string name="power">Napájení</string>
   <string name="notifications">Notifikace</string>
+  <string name="recents_gb">Přepínač aplikací (GB styl)</string>
   <string name="custom_app">Vlastní aplikace</string>
   <string name="blank">Prázdné</string>
   <string name="none">Nic</string>

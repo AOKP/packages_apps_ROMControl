@@ -144,6 +144,10 @@
     <string name="custom_carrier_label_notset">Nincs beállított egyedi felírta</string>
     <string name="ime_switcher_title">Aktuális billentyűzet váltó</string>
     <string name="ime_switcher_summary">Állapotsoron, gépelés közben (újraindítás szükséges)</string>
+    <string name="wakeup_when_plugged_unplugged_title">Töltésre ébred</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Feléled a készülék töltöre csatlakozva/lecsatlakozva.</string>
+    <string name="lefty_mode_title">Balkezes mód</string>
+    <string name="lefty_mode_summary">Navigációs sáv helyzetének cseréje (UI újraindul)</string>
     <string name="rotate_180_title">180 fokos forgatás engedélyezése</string>
     <string name="rotate_180_summary">Engedélyezi a képernyő megfordítását!</string>
     <string name="recent_kill_all">Engedélyezi a "kill-all-button"-t</string>
@@ -173,6 +177,19 @@
     <string name="notification_show_wifi_ssid_summary">Az aktuálisan kapcsolódott Wifi hálózat nevét kirja</string>
     <string name="brightness_slider_title">Értesitési sáv fényerő csúszka</string>
     <string name="brightness_slider_summary">Engedélyezi a csúsztatással való fényerő állítást az értesítési sáv tetején. Autó fényerő állításnál nem történik semmi.</string>
+    <string name="user_mode_ui">Felhasználói felület</string>
+    <string name="user_mode_ui_summary">Milyen stílusú legyen az értesítési/állapot sáv. SystemUI újraindul.</string>
+    <string name="phone_mode_ui">Phone - NavBar oldalt fekvőmódban</string>
+    <string name="tablet_mode_ui">Tablet - Kombinált NavBar és SystemBar</string>
+    <string name="phablet_mode_ui">Phablet - NavBar felül marad fekvőmódban</string>
+    <string name="transparency_dialog_title">Áttetszőség beállításai</string>
+    <string name="transparency_dialog_linked_transparency">Kapcsolat értesítési sáv &amp; navigációs sáv között</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Értesítési sáv és navigációs sáv</string>
+    <string name="transparency_dialog_statusbar">Értesítési sáv</string>
+    <string name="transparency_dialog_navbar">Navigációs sáv</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Együtt a zárképernyő szintjével</string>
+    <string name="transparency_dialog_transparency">Kezdőképernyő szintje</string>
+    <string name="transparency_dialog_transparency_keyguard">Zárképernyő szintje</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD febontás</string>
@@ -347,7 +364,8 @@
     <string name="navbar_height_dialog_summary">Kérlek indítsd újra a magasság beállításához!</string>
     <string name="navbar_height_dialog_button_later">Újraindítás később</string>
     <string name="navbar_height_dialog_button_reboot">Újraindítás most!</string>
-    <string name="navigation_bar_tint_title">Navigációs sáv színe</string>
+    <string name="navigation_bar_color_title">Navigációs sáv színe</string>
+    <string name="navigation_bar_tint_title">Navigációs sáv gomb színe</string>
     <string name="navigation_bar_glow_tint_title">Navigációs sáv fénye</string>
     <string name="navigation_bar_glow_tint_summary">Gomb megnyomásának a háttér színe.</string>
     <string name="glow_times_title">Gomb fényének animációja</string>
@@ -473,6 +491,12 @@
     <string name="lockscreen_battery_summary">Mutatja a akksi százalékot a zárképernyőn</string>
     <string name="lockscreen_hide_initial_page_hints_title">Kezdőoldalak elrejtése</string>
     <string name="lockscreen_hide_initial_page_hints_summary">Bekapcsolt képernyőnél a jobb és bal oldali modulok elrejtése.</string>
+    <string name="lockscreen_minimize_challenge_title">Kisebb zárfeloldó</string>
+    <string name="lockscreen_minimize_challenge_summary">A zárképernyő feloldó (kör, motívum, pin) kicsi lezárt képernyőnél.</string>
+    <string name="lockscreen_longpress_challenge_title">Hosszan nyomásra nyitás</string>
+    <string name="lockscreen_longpress_challenge_summary">Teljes képernyős zárképernyő moduloknál a lakat ikon hosszú nyomására nyitás</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Modul keret használata</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Modul keret használata a zárképernyő modulok váltásánál.</string>
     <string name="volume_rocker_wake_title">Hangerő feloldás</string>
     <string name="volume_rocker_wake_summary">Képernyő felélesztése a hangerő gombokra</string>
     <string name="volume_music_controls_title">Hangerő zene vezérlés</string>

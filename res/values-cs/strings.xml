@@ -278,6 +278,7 @@
   <string name="toggle_battery">Baterie</string>
   <string name="toggle_brightness">Jas</string>
   <string name="toggle_sound_state">Hasitý/Vibrace/Tichý</string>
+  <string name="toggle_navbar_hide">Auto. skrývání navigační lišty</string>
   <!--Statusbar | Battery-->
   <string name="battery_icon">Styl ikony baterie</string>
   <string name="battery_not_title">Ikona baterie ve stavové liště</string>
@@ -309,6 +310,7 @@
   <string name="ics_color">Holo</string>
   <!--Navigation Bar-->
   <string name="navigation_bar">Navigační lišta</string>
+  <string name="navbar_hide">Volby skrývání navigační lišty</string>
   <string name="navbar_button_cat">Tlačítka navigační lišty</string>
   <string name="title_pref_menu_display">Umístění menu</string>
   <string name="summary_pref_menu_display">Při používání velkého tlačítka menu je třeba odstranit postranní tlačítka menu!</string>
@@ -354,6 +356,8 @@
   <string name="navbar_height_dialog_button_reboot">Restartovat nyní!</string>
   <string name="navigation_bar_color_title">Barva navigační lišty</string>
   <string name="navigation_bar_tint_title">Barva tlačítek navigační lišty</string>
+  <string name="navigation_bar_colorall_title">Obarvit všechna tlačítka</string>
+  <string name="navigation_bar_colorall_summary">Pokud je vybráno, obarví se i vlastní ikony</string>
   <string name="navigation_bar_glow_tint_title">Barva světelného efektu navigační lišty</string>
   <string name="navigation_bar_glow_tint_summary">Při stisku tlačítka v navigační liště se zobrazuje svetělný efekt. Tato volba umožňuje změnit jeho barvu.</string>
   <string name="glow_times_title">Animace světelného efektu tlačítek</string>
@@ -372,6 +376,11 @@
   <string name="navigation_bar_menu_arrow_keys_title">Tlačítka šipek</string>
   <string name="navigation_bar_menu_arrow_keys_summary">Zobrazit tlačítka s šipkami v navigační liště během psaní (pro možnost posunu v textu)</string>
   <string name="navigation_bar_alpha_title">Viditelnost stavové a navigační lišty</string>
+  <string name="navbar_hide_enable_title">Zapnout skrytou navigační lištu</string>
+  <string name="drag_handle_opacity_title">Viditelnost symbolu vysunutí</string>
+  <string name="drag_handle_width_title">Šírka symbolu vysunutí</string>
+  <string name="title_navbar_timeout">Prodleva skrytí</string>
+  <string name="summary_navbar_timeout">Doba, po které dojde ke skrytí okna navigační lišty</string>
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>

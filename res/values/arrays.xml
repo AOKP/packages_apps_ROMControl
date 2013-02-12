@@ -830,13 +830,13 @@
     </string-array>
 
     <string-array name="hide_navbar_timeout_entries" translatable="false">
-        <item>Never</item>
-        <item>1.5 Sec</item>
-        <item>3 Sec</item>
-        <item>5 Sec</item>
-        <item>10 Sec</item>
-        <item>15 Sec</item>
-        <item>30 Sec</item>
+        <item>@string/hide_navbar_timeout_never</item>
+        <item>@string/hide_navbar_timeout_1500</item>
+        <item>@string/hide_navbar_timeout_3000</item>
+        <item>@string/hide_navbar_timeout_5000</item>
+        <item>@string/hide_navbar_timeout_10000</item>
+        <item>@string/hide_navbar_timeout_15000</item>
+        <item>@string/hide_navbar_timeout_30000</item>
     </string-array>
     <string-array name="hide_navbar_timeout_values" translatable="false">
         <item>0</item>

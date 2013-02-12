@@ -381,6 +381,13 @@
   <string name="drag_handle_width_title">Šírka symbolu vysunutí</string>
   <string name="title_navbar_timeout">Prodleva skrytí</string>
   <string name="summary_navbar_timeout">Doba, po které dojde ke skrytí okna navigační lišty</string>
+  <string name="hide_navbar_timeout_never">Nikdy</string>
+  <string name="hide_navbar_timeout_1500">1,5 sekundy</string>
+  <string name="hide_navbar_timeout_3000">3 sekundy</string>
+  <string name="hide_navbar_timeout_5000">5 sekund</string>
+  <string name="hide_navbar_timeout_10000">10 sekund</string>
+  <string name="hide_navbar_timeout_15000">15 sekund</string>
+  <string name="hide_navbar_timeout_30000">30 sekund</string>
   <!--Nav Ring Targets-->
   <string name="navbar_ring_cat">Položky kruhu v navigační liště</string>
   <string name="interface_softkey_settings">Nastavení tlačítek</string>

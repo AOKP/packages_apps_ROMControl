@@ -403,6 +403,13 @@
     <string name="drag_handle_width_title">Drag Handle Width</string>
     <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
     <string name="summary_navbar_timeout">Timeout time for Hidden Navbar Window</string>
+    <string name="hide_navbar_timeout_never">Never</string>
+    <string name="hide_navbar_timeout_1500">1.5 Sec</string>
+    <string name="hide_navbar_timeout_3000">3 Sec</string>
+    <string name="hide_navbar_timeout_5000">5 Sec</string>
+    <string name="hide_navbar_timeout_10000">10 Sec</string>
+    <string name="hide_navbar_timeout_15000">15 Sec</string>
+    <string name="hide_navbar_timeout_30000">30 Sec</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>

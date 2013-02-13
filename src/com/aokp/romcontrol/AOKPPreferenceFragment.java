@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -49,6 +50,7 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     protected boolean hasHardwareButtons;
     protected boolean hasFastCharge;
     protected boolean hasColorTuning;
+    protected boolean hasVibration = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,11 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
         }
         if(!mShortcutFragment)
             mActionBar.setDisplayHomeAsUpEnabled(true);
+
+        Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if (mVibrator != null && mVibrator.hasVibrator()) {
+            hasVibration = true;
+        }
     }
 
     public static boolean isTablet(Context context) {

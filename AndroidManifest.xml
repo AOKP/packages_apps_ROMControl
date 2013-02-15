@@ -1,22 +1,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aokp.romcontrol" >
+          package="com.aokp.romcontrol">
 
-    <original-package android:name="com.aokp.romcontrol" />
+    <uses-sdk android:minSdkVersion="17"/>
+    <original-package android:name="com.aokp.romcontrol"/>
 
-    <uses-permission android:name="android.permission.REBOOT" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+    <uses-permission android:name="android.permission.REBOOT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.BIND_APPWIDGET"/>
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
 
     <application
@@ -24,184 +25,189 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo"
-        android:uiOptions="none" >
+        android:uiOptions="none">
         <activity
             android:name=".ROMControlActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.UserInterface"
-            android:label="@string/title_ui" >
+            android:label="@string/title_ui">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.TransparencyDialog"
             android:theme="@android:style/Theme.Dialog"
-            android:label="@string/title_ui" >
+            android:label="@string/title_ui">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.StatusBarClock"
-            android:label="@string/title_statusbar_clock" >
+            android:label="@string/title_statusbar_clock">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.StatusBarBattery"
-            android:label="@string/title_statusbar_battery" >
+            android:label="@string/title_statusbar_battery">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.Navbar"
-            android:label="@string/title_navbar" >
+            android:label="@string/title_navbar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.LEDControl"
-            android:label="@string/title_led" >
+            android:label="@string/title_led">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.PowerMenu"
-            android:label="@string/title_power_menu" >
+            android:label="@string/title_power_menu">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.Lockscreens"
-            android:label="@string/title_lockscreens" >
+            android:label="@string/title_lockscreens">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.About"
-            android:label="@string/title_about" >
+            android:label="@string/title_about">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.Sound"
-            android:label="@string/title_sound" >
+            android:label="@string/title_sound">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".ShareToClipboard"
             android:icon="@drawable/ic_menu_clipboard"
             android:label="@string/title_clipboard_share"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND"/>
 
-                <category android:name="android.intent.category.ALTERNATIVE" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
 
-                <data android:mimeType="text/*" />
+                <data android:mimeType="text/*"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.StatusBarSignal"
-            android:label="Statusbar Signal" >
+            android:label="Statusbar Signal">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.StatusBarToggles"
-            android:label="@string/title_statusbar_toggles" >
+            android:label="@string/title_statusbar_toggles">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
 
         <!-- vibration manager -->
         <activity
             android:name=".fragments.Vibrations"
-            android:label="@string/vibrations" >
+            android:label="@string/vibrations">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
 
         <provider
             android:name=".vibrations.VibrationsProvider"
             android:authorities="com.aokp.romcontrol.Vibrations"
-            android:exported="true" />
+            android:exported="true"/>
 
         <activity
             android:name="CreateShortcut"
-            android:theme="@style/Theme.CreateShortCut" >
+            android:theme="@style/Theme.CreateShortCut">
             <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".service.ChangeFastChargeStateReceiver" >
+            android:name=".service.ChangeFastChargeStateReceiver">
             <intent-filter>
-                <action android:name="com.aokp.romcontrol.ACTION_CHANGE_FCHARGE_STATE" />
+                <action android:name="com.aokp.romcontrol.ACTION_CHANGE_FCHARGE_STATE"/>
             </intent-filter>
         </receiver>
         <receiver android:name=".service.CodeReceiver">
             <intent-filter>
-                 <action android:name="android.provider.Telephony.SECRET_CODE" />
-                 <data android:scheme="android_secret_code" android:host="2657" />
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data
+                    android:scheme="android_secret_code"
+                    android:host="2657"/>
             </intent-filter>
-       </receiver>
-        <service android:name=".service.BootService" />
-        <service android:name=".service.HeadphoneService" />
-        <service android:name=".service.FlipService" />
-        <service android:name=".service.ExternalCommandService"
-            android:exported="false" />
+        </receiver>
+
+        <service android:name=".service.BootService"/>
+        <service android:name=".service.HeadphoneService"/>
+        <service android:name=".service.FlipService"/>
+        <service
+            android:name=".service.ExternalCommandService"
+            android:exported="false"/>
     </application>
 
 </manifest>

@@ -57,6 +57,7 @@ import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.service.CodeReceiver;
 import com.aokp.romcontrol.util.AbstractAsyncSuCMDProcessor;
 import com.aokp.romcontrol.util.CMDProcessor;
+import com.aokp.romcontrol.util.Executable;
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.widgets.AlphaSeekBar;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
@@ -245,7 +246,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     @Override
     public void onResume() {
         super.onResume();
-        if(mDisableBootAnimation != null) {
+        if (mDisableBootAnimation != null) {
             if (mDisableBootAnimation.isChecked()) {
                 Resources res = mContext.getResources();
                 String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
@@ -280,13 +281,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private void resetSwaggedOutBootAnimation() {
         if(new File("/data/local/bootanimation.user").exists()) {
             // we're using the alt boot animation
-            new AsyncTask<Void, Void, Void>() {
-                @Override
-                protected Void doInBackground(Void... params) {
-                    new CMDProcessor().su.run("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
-                    return null;
-                }
-            }.execute();
+            Executable moveAnimCommand = new Executable("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
+            new CMDProcessor().su.fireAndForget(moveAnimCommand);
         }
         CodeReceiver.setSwagInitiatedPref(mContext, false);
     }
@@ -577,7 +573,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             builder.setPositiveButton(R.string.apply, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    new InstallBootAnimTask(dialog).execute();
+                    installBootAnim(dialog, mBootAnimationPath);
                     resetBootAnimation();
                 }
             });
@@ -841,29 +837,15 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
     };
 
-    class InstallBootAnimTask extends AsyncTask<Void, Void, Void> {
-        private final DialogInterface dialog;
-        private String taskAnimationPath;
-
-        public InstallBootAnimTask(DialogInterface dialog) {
-            this.dialog = dialog;
-        }
-
-        protected void onPreExecute() {
-            //Update setting to reflect that boot animation is now enabled
-            taskAnimationPath = mBootAnimationPath;
-            mDisableBootAnimation.setChecked(false);
-            DisableBootAnimation();
-            dialog.dismiss();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            //Copy new bootanimation, give proper permissions
-            new CMDProcessor().su.runWaitFor("cp "+ taskAnimationPath +" /data/local/bootanimation.zip");
-            new CMDProcessor().su.runWaitFor("chmod 644 /data/local/bootanimation.zip");
-            return null;
-        }
+    private void installBootAnim(DialogInterface dialog, String bootAnimationPath) {
+        //Update setting to reflect that boot animation is now enabled
+        mDisableBootAnimation.setChecked(false);
+        DisableBootAnimation();
+        dialog.dismiss();
+        Executable installScript = new Executable(
+                "cp " + bootAnimationPath + " /data/local/bootanimation.zip",
+                "chmod 644 /data/local/bootanimation.zip");
+        new CMDProcessor().su.fireAndForget(installScript);
     }
 
     private void DisableBootAnimation() {

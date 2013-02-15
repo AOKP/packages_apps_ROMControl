@@ -159,7 +159,7 @@ public class Helpers {
     }
 
     public static String readFileViaShell(String filePath, boolean useSu) {
-        CMDProcessor.CommandResult cr = null;
+        CommandResult cr = null;
         if (useSu) {
             cr = new CMDProcessor().su.runWaitFor("cat " + filePath);
         } else {
@@ -293,11 +293,11 @@ public class Helpers {
     }
 
     public static void restartSystemUI() {
-        new CMDProcessor().su.run("pkill -TERM -f com.android.systemui");
+        new CMDProcessor().su.runWaitFor("pkill -TERM -f com.android.systemui");
     }
 
     public static void setSystemProp(String prop, String val) {
-        new CMDProcessor().su.run("setprop " + prop + " " + val);
+        new CMDProcessor().su.runWaitFor("setprop " + prop + " " + val);
     }
 
     public static String getSystemProp(String prop, String def) {

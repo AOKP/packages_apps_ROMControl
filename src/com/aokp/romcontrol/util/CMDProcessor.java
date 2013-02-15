@@ -1,112 +1,163 @@
-
 package com.aokp.romcontrol.util;
 
 import android.util.Log;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
-import com.aokp.romcontrol.objects.EasyPair;
+import static java.lang.System.nanoTime;
+
+// convenience import for quick referencing of this method
 
 public class CMDProcessor {
 
-    private final String TAG = getClass().getSimpleName();
-    private static final boolean DEBUG = false;
+    private boolean mDebug = false;
     private Boolean can_su;
     public SH sh;
     public SH su;
+    private final String TAG;
 
     public CMDProcessor() {
         sh = new SH("sh");
         su = new SH("su");
+        this.TAG = getClass().getSimpleName();
     }
 
     public SH suOrSH() {
         return canSU() ? su : sh;
     }
 
+    public CMDProcessor setLogcatDebugging(boolean debug) {
+        mDebug = debug;
+        return this;
+    }
+
     public boolean canSU() {
         return canSU(false);
     }
 
-    public class CommandResult {
-        private final String resultTag = TAG + '.' + getClass().getSimpleName();
-        public final String stdout;
-        public final String stderr;
-        public final Integer exit_value;
-
-        CommandResult(final Integer exit_value_in) {
-            this(exit_value_in, null, null);
-        }
-
-        CommandResult(final Integer exit_value_in, final String stdout_in,
-                final String stderr_in) {
-            exit_value = exit_value_in;
-            stdout = stdout_in;
-            stderr = stderr_in;
-            if (DEBUG)
-                Log.d(TAG, resultTag + "( exit_value=" + exit_value
-                    + ", stdout=" + stdout
-                    + ", stderr=" + stderr + " )");
-        }
-
-        public boolean success() {
-            return exit_value != null && exit_value == 0;
-        }
-
-        public EasyPair<String, String> getOutput() {
-            return new EasyPair<String, String>(stdout, stderr);
-        }
-    }
-
     public class SH {
-        private String SHELL = "sh";
+        private String mShell = "sh";
 
-        public SH(final String SHELL_in) {
-            SHELL = SHELL_in;
+        public SH(String SHELL_in) {
+            mShell = SHELL_in;
         }
 
-        private String getStreamLines(final InputStream is) {
-            String out = null;
+        @SuppressWarnings("deprecation")
+        private String getStreamLines(InputStream is) {
             StringBuffer buffer = null;
-            final DataInputStream dis = new DataInputStream(is);
+            DataInputStream dis = null;
             try {
+                dis = new DataInputStream(is);
                 if (dis.available() > 0) {
                     buffer = new StringBuffer(dis.readLine());
                     while (dis.available() > 0) {
-                        buffer.append("\n").append(dis.readLine());
+                        buffer.append('\n')
+                                .append(dis.readLine());
                     }
                 }
                 dis.close();
-            } catch (final Exception ex) {
-                Log.e(TAG, ex.getMessage());
+            } catch (IOException e) {
+                Log.e(TAG, "Caught thrown exception e", e);
+            } finally {
+                if (dis != null) {
+                    try {
+                        dis.close();
+                    } catch (IOException ignored) {
+                        // let it go
+                    }
+                }
             }
-            if (buffer != null) {
-                out = buffer.toString();
-            }
-            return out;
+            return buffer != null ? buffer.toString() : "";
         }
 
-        public Process run(final String s) {
+        /**
+         * run a single command; this is depreciated
+         * because it now just forms a new Executable object
+         * and calls runWaitFor(Executable)
+         *
+         * @param command single shell command
+         * @return result of command as CommandResult object
+         */
+        @Deprecated
+        public CommandResult runWaitFor(String command) {
+            return runWaitFor(new Executable(command));
+        }
+
+        /**
+         * Convenience method to allow execution
+         * of shell commands on a worker thread,
+         * without blocking the UI thread.
+         *
+         * @param command shell command to be executed
+         *                off the main thread.
+         */
+        @Deprecated
+        public void fireAndForget(String command) {
+            fireAndForget(new Executable(command));
+        }
+
+        /**
+         * run a command or commands from an Executable object
+         * on a worker thread allowing the main thread to move on
+         *
+         * @param executable
+         */
+        public void fireAndForget(final Executable executable) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    runWaitFor(executable);
+                }
+            }).start();
+        }
+
+        // Handle Lists sent to us
+        @SuppressWarnings({"CallToRuntimeExec", "CallToRuntimeExecWithNonConstantString"})
+        private Process run(Executable script) {
             Process process = null;
+            DataOutputStream toProcess = null;
+            String currentCommand = null;
             try {
-                process = Runtime.getRuntime().exec(SHELL);
-                final DataOutputStream toProcess = new DataOutputStream(
+                // open shell here
+                process = Runtime.getRuntime()
+                        .exec(mShell);
+                toProcess = new DataOutputStream(
                         process.getOutputStream());
-                toProcess.writeBytes("exec " + s + "\n");
-                toProcess.flush();
-            } catch (final Exception e) {
-                Log.e(TAG, "Exception while trying to run: '" + s + "' "
-                        + e.getMessage());
+                for (String command : script.getCommandsArray()) {
+                    currentCommand = command + '\n';
+                    if (mDebug) {
+                        Log.d(TAG, "executing { '" + currentCommand + "' }");
+                    }
+                    toProcess.writeBytes(currentCommand);
+                }
+            } catch (IOException e) {
+                Log.e(TAG,
+                        "Exception while trying to run: '"
+                                + currentCommand + "' ", e);
                 process = null;
+            } finally {
+                if (toProcess != null) {
+                    try {
+                        // pretty sure flush() is redundant as close()
+                        // I think will flush() for us
+                        toProcess.flush();
+                        toProcess.close();
+                    } catch (IOException ignored) {
+                        // let it go
+                    }
+                }
             }
             return process;
         }
 
-        public CommandResult runWaitFor(final String s) {
-            if (DEBUG) Log.d(TAG, "runWaitFor( " + s + " )");
-            final Process process = run(s);
+        public CommandResult runWaitFor(Executable script) {
+            long startTime = nanoTime();
+            Process process = run(script);
+            // notify the script we finished
+            script.setFinishTime(nanoTime());
             Integer exit_value = null;
             String stdout = null;
             String stderr = null;
@@ -115,20 +166,28 @@ public class CMDProcessor {
                     exit_value = process.waitFor();
                     stdout = getStreamLines(process.getInputStream());
                     stderr = getStreamLines(process.getErrorStream());
-                } catch (final InterruptedException e) {
-                    Log.e(TAG, "runWaitFor " + e.toString());
-                } catch (final NullPointerException e) {
-                    Log.e(TAG, "runWaitFor " + e.toString());
+                } catch (InterruptedException e) {
+                    Log.e(TAG, "process was interrupted!", e);
+                } catch (NullPointerException e) {
+                    Log.e(TAG, "NullPointer while getting streams", e);
+                } finally {
+                    process.destroy();
                 }
             }
-            return new CommandResult(exit_value, stdout, stderr);
+            return new CommandResult(
+                    script, // executed shell code
+                    script.getStartTime(), // begin execution
+                    exit_value, // success?
+                    stdout, // terminal output /not failure related/
+                    stderr, // failure output
+                    script.getFinishTime()); // time after execution
         }
     }
 
-    public boolean canSU(final boolean force_check) {
+    public boolean canSU(boolean force_check) {
         if (can_su == null || force_check) {
-            final CommandResult r = su.runWaitFor("id");
-            final StringBuilder out = new StringBuilder();
+            CommandResult r = su.runWaitFor("id");
+            StringBuilder out = new StringBuilder(0);
             if (r.stdout != null) {
                 out.append(r.stdout).append(" ; ");
             }

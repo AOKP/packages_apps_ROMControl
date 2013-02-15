@@ -293,7 +293,7 @@ public class WidgetConfigurationFragment extends DialogFragment {
 
         /**
          * Create the page for the given position. The adapter is responsible for
-         * adding the view to the container given here, although it only must ensure
+         * adding the mView to the container given here, although it only must ensure
          * this is done by the time it returns from {@link #finishUpdate()}.
          *
          * @param container The containing View in which the page will be shown.
@@ -307,7 +307,7 @@ public class WidgetConfigurationFragment extends DialogFragment {
                 return null;
             View v = mWidgets.get(position).getView();
             if (v.getParent() != null) {
-                // there is a case where shifting views could result in a view being re-added yet
+                // there is a case where shifting views could result in a mView being re-added yet
                 // still having a parent.
                 ViewGroup vparent = (ViewGroup) v.getParent();
                 vparent.removeView(v);
@@ -319,7 +319,7 @@ public class WidgetConfigurationFragment extends DialogFragment {
 
         /**
          * Remove a page for the given position. The adapter is responsible for
-         * removing the view from its container, although it only must ensure this
+         * removing the mView from its container, although it only must ensure this
          * is done by the time it returns from {@link #finishUpdate()}.
          *
          * @param container The containing View from which the page will be removed.

@@ -283,7 +283,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             new AsyncTask<Void, Void, Void>() {
                 @Override
                 protected Void doInBackground(Void... params) {
-                    new CMDProcessor().su.run("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
+                    new CMDProcessor().su.runWaitFor("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
                     return null;
                 }
             }.execute();

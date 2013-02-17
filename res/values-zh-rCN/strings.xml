@@ -6,7 +6,8 @@
     <!-- Header Strings 标题文本 -->
     <string name="user_interface">界面</string>
     <string name="cancel">取消</string>
-    <string name="ok">确认</string>
+    <string name="ok">确定</string>
+    <string name="save">保存</string>
     <string name="menu_main_activity_change_locale">空白!</string>
     <string name="header_statusbar">状态栏</string>
     <string name="header_navbar">导航栏</string>
@@ -123,6 +124,8 @@
     <string name="custom_carrier_label_notset">当前未自定义运营商名称</string>
     <string name="ime_switcher_title">显示输入法切换</string>
     <string name="ime_switcher_summary">输入时状态栏显示键盘图标</string>
+    <string name="wakeup_when_plugged_unplugged_title">充电唤醒</string>
+    <string name="wakeup_when_plugged_unplugged_summary">当连接或移除充电器时唤醒设备。</string>
     <string name="lefty_mode_title">左手模式</string>
     <string name="lefty_mode_summary">交换导航栏位置（将重启用户界面）</string>
     <string name="rotate_180_title">允许 180° 旋转</string>
@@ -131,8 +134,8 @@
     <string name="recent_kill_all_summary">在系统的近期任务界面显示“全部结束”按钮</string>
     <string name="ram_bar">近期 RAM 栏</string>
     <string name="ram_bar_summary">在近期任务显示 RAM 使用情况</string>
-    <string name="kill_app_longpress_back">长按返回键结束程序</string>
-    <string name="kill_app_longpress_back_summary">长时间按住返回键可以强行结束当前程序</string>
+    <string name="longpress_to_kill">长按返回键结束程序</string>
+    <string name="longpress_to_kill_summary">长时间按住返回键可以强行结束当前程序</string>
     <string name="tablet_ui">强制使用平板界面</string>
     <string name="tablet_ui_summary">可强制使用平板设备专用的界面（需重启）</string>
     <string name="hide_extras">隐藏多余内容</string>
@@ -154,7 +157,19 @@
     <string name="notification_show_wifi_ssid_summary">显示当前链接的 WiFi 网络名称</string>
     <string name="brightness_slider_title">状态栏调节亮度</string>
     <string name="brightness_slider_summary">未启用自动亮度时，在状态栏滑动可改变亮度。</string>
-
+    <string name="user_mode_ui">用户界面模式</string>
+    <string name="user_mode_ui_summary">选择导航栏和状态栏显示风格（将重启用户界面）</string>
+    <string name="phone_mode_ui">手机 - 横屏时导航栏在侧边</string>
+    <string name="tablet_mode_ui">平板 - 导航栏与系统栏结合</string>
+    <string name="phablet_mode_ui">手机平板 - 横屏时导航栏在底部</string>
+    <string name="transparency_dialog_title">透明度设置</string>
+    <string name="transparency_dialog_linked_transparency">同时作用于状态栏和导航栏</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">状态栏和导航栏</string>
+    <string name="transparency_dialog_statusbar">状态栏</string>
+    <string name="transparency_dialog_navbar">导航栏</string>
+    <string name="transparency_dialog_match_keyguard_alpha">匹配锁屏界面透明度</string>
+    <string name="transparency_dialog_transparency">主屏幕透明度</string>
+    <string name="transparency_dialog_transparency_keyguard">锁屏界面透明度</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -263,6 +278,7 @@
     <string name="toggle_battery">电量</string>
     <string name="toggle_brightness">亮度</string>
     <string name="toggle_sound_state">铃声/振动/静音</string>
+    <string name="toggle_navbar_hide">导航栏自动隐藏</string>
 
     <!-- Statusbar | Battery 状态栏|电量 -->
     <string name="battery_icon">电量图标风格</string>
@@ -298,6 +314,7 @@
 
     <!-- Navigation Bar 导航栏 -->
     <string name="navigation_bar">导航栏</string>
+    <string name="navbar_hide">导航栏隐藏</string>
     <string name="navbar_button_cat">导航栏按键</string>
     <string name="title_pref_menu_display">菜单键位置</string>
     <string name="summary_pref_menu_display">使用大菜单键时请务必选择移除菜单键</string>
@@ -315,11 +332,13 @@
     <string name="navbar_action_home">主屏幕</string>
     <string name="navbar_action_back">返回</string>
     <string name="navbar_action_recents">近期任务</string>
+    <string name="navbar_action_recents_gb">近期任务 (姜饼风格)</string>
     <string name="navbar_action_search">搜索</string>
     <string name="navbar_action_screenshot">屏幕截图</string>
     <string name="navbar_action_menu">菜单</string>
     <string name="navbar_action_ime">打开输入法选择器</string>
     <string name="navbar_action_kill">结束程序</string>
+    <string name="navbar_action_lastapp">上次运行程序</string>
     <string name="navbar_action_power">电源</string>
     <string name="navbar_action_notifications">通知栏</string>
     <string name="navbar_action_none">空</string>
@@ -341,6 +360,8 @@
     <string name="navbar_height_dialog_button_reboot">立刻重启</string>
     <string name="navigation_bar_color_title">导航栏颜色</string>
     <string name="navigation_bar_tint_title">导航栏按键颜色</string>
+    <string name="navigation_bar_colorall_title">着色所有按键</string>
+    <string name="navigation_bar_colorall_summary">选中后自定义图标将被着色</string>
     <string name="navigation_bar_glow_tint_title">导航栏按键按下发光颜色</string>
     <string name="navigation_bar_glow_tint_summary">当你按下一个按键时，它的背景会发光。使用该选项来改变发光的颜色。</string>
     <string name="glow_times_title">按键发光动画</string>
@@ -359,6 +380,11 @@
     <string name="navigation_bar_menu_arrow_keys_title">箭头按键</string>
     <string name="navigation_bar_menu_arrow_keys_summary">在导航栏显示箭头按键用于准确定位输入光标或选择菜单。</string>
     <string name="navigation_bar_alpha_title">状态栏与导航栏透明度</string>
+    <string name="navbar_hide_enable_title">隐藏导航栏</string>
+    <string name="drag_handle_opacity_title">滑动区透明度</string>
+    <string name="drag_handle_width_title">滑动区宽度</string>
+    <string name="title_navbar_timeout">隐藏导航栏超时</string>
+    <string name="summary_navbar_timeout">超时多久后隐藏导航栏</string>
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
@@ -762,8 +788,10 @@
     <string name="toggle_widgets">小部件</string>
     <string name="open_ime_switcher">打开输入法选择器</string>
     <string name="kill_app">结束程序</string>
+    <string name="lastapp">上次运行程序</string>
     <string name="power">电源</string>
     <string name="notifications">通知</string>
+    <string name="recents_gb">近期任务 (姜饼风格)</string>
     <string name="custom_app">自定义程序</string>
     <string name="menu_power">电源菜单</string>
     <string name="blank">空</string>

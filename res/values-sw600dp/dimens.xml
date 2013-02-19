@@ -15,30 +15,12 @@
 -->
 
 <resources>
-
-    <dimen name="shortcut_picker_left_padding">70dip</dimen>
-    <dimen name="target_icon_size">40dip</dimen>
-
-    <!-- height of a normal list item in edit playlist mode -->
-    <dimen name="normal_height">64dip</dimen>
-    <!-- height of an expanded list item in edit playlist mode -->
-    <dimen name="expanded_height">128dip</dimen>
-
-    <dimen name="navigation_bar_48">48.0dip</dimen>
-    <dimen name="navigation_bar_44">44.0dip</dimen>
-    <dimen name="navigation_bar_42">42.0dip</dimen>
-    <dimen name="navigation_bar_40">40.0dip</dimen>
-    <dimen name="navigation_bar_36">36.0dip</dimen>
-    <dimen name="navigation_bar_30">30.0dip</dimen>
-    <dimen name="navigation_bar_24">24.0dip</dimen>
-    <dimen name="navigation_bar_0">0.0dip</dimen>
-
    <!-- Default distance beyond which snaps to the matching target -->
     <dimen name="navbar_search_snap_margin">40dip</dimen>
     <!-- Diameter of outer shape drawable shown in navbar search. Should be 1/2 of above value -->
-    <dimen name="navbar_search_outerring_radius">170dp</dimen>
+    <dimen name="navbar_search_outerring_radius">215dp</dimen>
     <!-- Diameter of outer shape drawable shown in navbar search-->
-    <dimen name="navbar_search_outerring_diameter">340dp</dimen>
+    <dimen name="navbar_search_outerring_diameter">430dp</dimen>
     <!-- Height of search panel including navigation bar height -->
-    <dimen name="navbar_search_panel_height">230dip</dimen>
+    <dimen name="navbar_search_panel_height">280dip</dimen>
 </resources>

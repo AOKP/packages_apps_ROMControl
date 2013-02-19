@@ -39,4 +39,27 @@
     <dimen name="list_toggle_height">48dp</dimen>
     <dimen name="list_toggle_width">370dp</dimen>
     <dimen name="toggle_rearrange_dialog_title_height">68dp</dimen>
+   <!-- Default distance beyond which snaps to the matching target -->
+    <dimen name="navbar_search_snap_margin">40dip</dimen>
+    <!-- Diameter of outer shape drawable shown in navbar search. -->
+    <dimen name="navbar_search_outerring_radius">170dp</dimen>
+    <!-- Diameter of outer shape drawable shown in navbar search-->
+    <dimen name="navbar_search_outerring_diameter">340dp</dimen>
+    <!-- Height of search panel including navigation bar height -->
+    <dimen name="navbar_search_panel_height">230dip</dimen>
+
+    <!--  Amount of Margin to offset NavRing in Portrait Mode -->
+    <dimen name="navring_left_margin_port_sw">200dp</dimen>
+    <dimen name="navring_left_margin_port">-100dp</dimen>
+    <!--  Amount of Margin to offset NavRing in Landscape Mode -->
+    <dimen name="navring_left_margin_land_sw">500dp</dimen>
+    <dimen name="navring_left_margin_land">250dp</dimen>
+    <!--  Height of NavRing in Tablet Mode Landscape -->
+    <dimen name="navring_height_tablet_landscape">320dp</dimen>
+    <!--  Height of NavRing in Tablet Mode Portrait -->
+    <dimen name="navring_height_tablet_portrait">320dp</dimen>
+    <!--  Radius of NavRing in Tablet Mode Landscape -->
+    <dimen name="navring_radius_tablet_landscape">270dp</dimen>
+    <!--  Radius of NavRing in Tablet Mode Landscape -->
+    <dimen name="navring_radius_tablet_portrait">240dp</dimen>
 </resources>

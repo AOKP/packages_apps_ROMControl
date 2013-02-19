@@ -37,6 +37,13 @@
         android:icon="@drawable/ic_rom_control_navigation_bar"
         android:summary="@string/header_summary_navigation_bar" />
 
+     <header
+        android:id="@+id/nav_ring"
+        android:fragment="com.aokp.romcontrol.fragments.NavRingTargets"
+        android:icon="@drawable/ic_rom_control_navigation_ring"
+        android:title="@string/interface_navring_settings_title"
+        android:summary="@string/interface_navring_settings_summary" />
+
     <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />

@@ -12,6 +12,13 @@
         android:title="@string/toggles_order_title" />
 
     <ListPreference
+        android:entries="@array/toggles_style_entries"
+        android:entryValues="@array/toggles_style_values"
+        android:key="toggles_style"
+        android:summary="@string/toggles_style_summary"
+        android:title="@string/toggles_style_title" />
+
+    <ListPreference
         android:entries="@array/toggles_per_row_entries"
         android:entryValues="@array/toggles_per_row_values"
         android:key="toggles_per_row"

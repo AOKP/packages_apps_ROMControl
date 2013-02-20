@@ -229,6 +229,8 @@
     <string name="toggles_display_dialog">Choose which toggles to use</string>
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
+    <string name="toggles_style_title">Toggles style</string>
+    <string name="toggles_style_summary">Notification (traditional) or tiles</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>

@@ -34,6 +34,7 @@ import android.widget.TextView;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.widgets.TouchInterceptor;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 import com.scheffsblend.smw.Preferences.ImageListPreference;
@@ -50,6 +51,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
     private static final String PREF_ENABLE_TOGGLES = "enabled_toggles";
     private static final String PREF_TOGGLES_PER_ROW = "toggles_per_row";
+    private static final String PREF_TOGGLES_STYLE = "toggles_style";
     private static final String PREF_TOGGLE_FAV_CONTACT = "toggle_fav_contact";
     private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
     private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
@@ -59,6 +61,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     Preference mEnabledToggles;
     Preference mLayout;
     ListPreference mTogglesPerRow;
+    ListPreference mTogglesStyle;
     Preference mFavContact;
     CheckBoxPreference mFastToggle;
     ListPreference mChooseFastToggleSide;
@@ -76,6 +79,12 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mTogglesPerRow.setOnPreferenceChangeListener(this);
         mTogglesPerRow.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.QUICK_TOGGLES_PER_ROW, 3) + "");
+
+        mTogglesStyle = (ListPreference) findPreference(PREF_TOGGLES_STYLE);
+        mTogglesStyle.setOnPreferenceChangeListener(this);
+        mTogglesStyle.setValue(String.valueOf(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.TOGGLES_STYLE, 0)));
+
         mLayout = findPreference("toggles");
 
         mFavContact = findPreference(PREF_TOGGLE_FAV_CONTACT);
@@ -112,6 +121,12 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.QUICK_TOGGLES_PER_ROW, val);
+        } else if (preference == mTogglesStyle) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.TOGGLES_STYLE, val);
+            mTogglesStyle.setValue((String) newValue);
+            Helpers.restartSystemUI();
         } else if (preference == mFastToggle) {
             boolean val = (Boolean) newValue;
             Settings.System.putBoolean(getActivity().getContentResolver(),

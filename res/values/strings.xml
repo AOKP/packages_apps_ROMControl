@@ -222,15 +222,13 @@
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
     <string name="toggle_style_title">Toggle style</string>
     <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
     <string name="toggles_layout_title">Toggle Layout</string>
-    <string name="enabled_toggles_title">Enabled toggles</string>
-    <string name="enabled_toggles_summary">Choose toggles to display</string>
-    <string name="toggles_display_dialog">Choose which toggles to use</string>
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
+    <string name="toggles_style_title">Toggles style</string>
+    <string name="toggles_style_summary">Notification (traditional) or tiles</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
@@ -253,6 +251,12 @@
     <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
+    <string name="toggle_dialog_arrange_title">Toggle setup</string>
+    <string name="toggle_dialog_add_toggles">Select toggles to add</string>
+    <string name="toggle_style_tile">Tiles</string>
+    <string name="toggle_style_traditional">Traditional</string>
+    <string name="toggle_swap_handle_side">Drag handle on right</string>
+    <string name="add_toggles">Add toggles</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

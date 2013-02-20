@@ -3,13 +3,15 @@
     xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol">
 
     <Preference
-        android:key="enabled_toggles"
-        android:summary="@string/enabled_toggles_summary"
-        android:title="@string/enabled_toggles_title" />
-    <Preference
         android:key="toggles"
-        android:summary="@string/toggles_order_summary"
-        android:title="@string/toggles_order_title" />
+        android:title="@string/toggle_dialog_arrange_title" />
+
+    <ListPreference
+        android:entries="@array/toggles_style_entries"
+        android:entryValues="@array/toggles_style_values"
+        android:key="toggles_style"
+        android:summary="@string/toggles_style_summary"
+        android:title="@string/toggles_style_title" />
 
     <ListPreference
         android:entries="@array/toggles_per_row_entries"

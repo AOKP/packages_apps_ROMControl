@@ -132,6 +132,16 @@
         <item>5</item>
     </string-array>
 
+    <!-- Toggles style -->
+    <string-array name="toggles_style_entries" translatable="false">
+        <item>@string/toggle_style_tile</item>
+        <item>@string/toggle_style_traditional</item>
+    </string-array>
+    <string-array name="toggles_style_values" translatable="false">
+        <item>0</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries" translatable="false">
         <item>@string/on_top</item>

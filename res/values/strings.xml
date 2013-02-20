@@ -230,6 +230,8 @@
     <string name="toggles_display_dialog">Choose which toggles to use</string>
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
+    <string name="toggles_style_title">Toggles style</string>
+    <string name="toggles_style_summary">Notification (traditional) or tiles</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
@@ -252,6 +254,7 @@
     <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
+    <string name="toggle_dialog_arrange_title">Rearrange toggles</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

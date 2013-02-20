@@ -27,6 +27,12 @@
             android:title="@string/aokp_irc_title"
             android:summary="@string/aokp_irc_summary" />
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="AOKP"
+            aokp:nameDev="AOKP"
+            aokp:twitterHandle="AOKP_ROM"
+            aokp:donateLink="@string/donate_aokp" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -7,6 +7,7 @@
     <string name="user_interface">インターフェース</string>
     <string name="cancel">キャンセル</string>
     <string name="ok">OK</string>
+    <string name="save">保存</string>
     <string name="menu_main_activity_change_locale">Blank!</string>
     <string name="header_statusbar">ステータスバー</string>
     <string name="header_navbar">ナビゲーションバー</string>
@@ -119,6 +120,7 @@
     <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
     <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
     <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
 
     <!-- General UI -->
     <string name="bootani_cat">ブートアニメーション</string>
@@ -143,16 +145,18 @@
     <string name="custom_carrier_label_notset">カスタムラベルは現在設定されていません</string>
     <string name="ime_switcher_title">IME変更アイコンの表示</string>
     <string name="ime_switcher_summary">文字入力中にステータスバーに表示する</string>
+    <string name="wakeup_when_plugged_unplugged_title">充電時にウェイクアップ</string>
+    <string name="wakeup_when_plugged_unplugged_summary">充電ケーブルの抜き差し時にデバイスをウェイクアップする</string>
     <string name="lefty_mode_title">左利きモード</string>
     <string name="lefty_mode_summary">ナビゲーションバーの配置をスワップする (UI再起動)</string>
     <string name="rotate_180_title">180°画面回転を有効</string>
     <string name="rotate_180_summary">画面を上下反対に180°回転させることを可能にする</string>
-    <string name="recent_kill_all">全タスク終了ボタンを表示</string>
-    <string name="recent_kill_all_summary">アプリ履歴ウィンドウに全タスク終了ボタンを表示する</string>
+    <string name="recent_kill_all">全アプリ終了ボタンを表示</string>
+    <string name="recent_kill_all_summary">アプリ履歴ウィンドウに全アプリ終了ボタンを表示する</string>
     <string name="ram_bar">RAM使用量を表示</string>
     <string name="ram_bar_summary">アプリ履歴にRAMの使用量を表示する</string>
-    <string name="kill_app_longpress_back">戻るキー長押しでタスクキル</string>
-    <string name="kill_app_longpress_back_summary">戻るキー長押しで使用中のアプリを終了する</string>
+    <string name="longpress_to_kill">戻るキー長押しでアプリ終了</string>
+    <string name="longpress_to_kill_summary">戻るキー長押しで使用中のアプリを終了する</string>
     <string name="tablet_ui">タブレットUIを使用する</string>
     <string name="tablet_ui_summary">タブレットUIに切り替える (要再起動)</string>
     <string name="hide_extras">余分なアイコンを非表示</string>
@@ -179,6 +183,14 @@
     <string name="phone_mode_ui">Phone - 横画面時にナビゲーションバーをサイドに配置</string>
     <string name="tablet_mode_ui">Tablet - ナビゲーションバーとステータスバーを一体化</string>
     <string name="phablet_mode_ui">Phablet - 横画面時にナビゲーションバーを下部に配置</string>
+    <string name="transparency_dialog_title">不透明度設定</string>
+    <string name="transparency_dialog_linked_transparency">ステータスバーとナビゲーションバーの不透明度をリンクする</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">ステータスバーとナビゲーションバー</string>
+    <string name="transparency_dialog_statusbar">ステータスバー</string>
+    <string name="transparency_dialog_navbar">ナビゲーションバー</string>
+    <string name="transparency_dialog_match_keyguard_alpha">ロック画面の不透明度を合わせる</string>
+    <string name="transparency_dialog_transparency">ホーム画面での不透明度</string>
+    <string name="transparency_dialog_transparency_keyguard">ロック画面での不透明度</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">画面密度の変更</string>
@@ -287,6 +299,8 @@
     <string name="toggle_battery">電池残量</string>
     <string name="toggle_brightness">明るさ調整</string>
     <string name="toggle_sound_state">サウンド/バイブ/サイレント</string>
+    <string name="toggle_navbar_hide">ナビゲーションバー</string>
+    <string name="toggle_quickrecord">クイックレコーダー</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">電池残量アイコンスタイル</string>
@@ -322,6 +336,7 @@
 
     <!-- Navigation Bar -->
     <string name="navigation_bar">ナビゲーションバー</string>
+    <string name="navbar_hide">ナビゲーションバー非表示設定</string>
     <string name="navbar_button_cat">ソフトキー設定</string>
     <string name="title_pref_menu_display">メニューキー表示位置</string>
     <string name="summary_pref_menu_display">ソフトキー設定でメニューを表示する場合は「表示しない」を選択してください。</string>
@@ -339,11 +354,12 @@
     <string name="navbar_action_home">ホーム</string>
     <string name="navbar_action_back">戻る</string>
     <string name="navbar_action_recents">アプリ履歴</string>
+    <string name="navbar_action_recents_gb">アプリ履歴(GBスタイル)</string>
     <string name="navbar_action_search">検索</string>
     <string name="navbar_action_screenshot">スクリーンショット</string>
     <string name="navbar_action_menu">メニュー</string>
     <string name="navbar_action_ime">IME変更</string>
-    <string name="navbar_action_kill">タスクキル</string>
+    <string name="navbar_action_kill">アプリ終了</string>
     <string name="navbar_action_lastapp">直前のアプリ</string>
     <string name="navbar_action_power">電源</string>
     <string name="navbar_action_notifications">通知パネルの開閉</string>
@@ -366,6 +382,8 @@
     <string name="navbar_height_dialog_button_reboot">今すぐ再起動</string>
     <string name="navigation_bar_color_title">ナビゲーションバーの色</string>
     <string name="navigation_bar_tint_title">ソフトキーの色</string>
+    <string name="navigation_bar_colorall_title">全てのボタンをカラー化</string>
+    <string name="navigation_bar_colorall_summary">カスタムアイコンをカラー化する</string>
     <string name="navigation_bar_glow_tint_title">ソフトキーの発光色</string>
     <string name="navigation_bar_glow_tint_summary">ソフトキーをタップした時の発光色を変更する</string>
     <string name="glow_times_title">ソフトキーの発光アニメーション</string>
@@ -384,6 +402,18 @@
     <string name="navigation_bar_menu_arrow_keys_title">矢印キー</string>
     <string name="navigation_bar_menu_arrow_keys_summary">文字入力中にナビゲーションバーに矢印キーを表示する</string>
     <string name="navigation_bar_alpha_title">通知とナビゲーションバーの不透明度</string>
+    <string name="navbar_hide_enable_title">ナビゲーションバーを隠す</string>
+    <string name="drag_handle_opacity_title">ハンドルの不透明度</string>
+    <string name="drag_handle_width_title">ハンドルの幅</string>
+    <string name="title_navbar_timeout">表示時間</string>
+    <string name="summary_navbar_timeout">ナビゲーションバーを隠すまでの時間</string>
+    <string name="hide_navbar_timeout_never">隠さない</string>
+    <string name="hide_navbar_timeout_1500">1.5 秒</string>
+    <string name="hide_navbar_timeout_3000">3 秒</string>
+    <string name="hide_navbar_timeout_5000">5 秒</string>
+    <string name="hide_navbar_timeout_10000">10 秒</string>
+    <string name="hide_navbar_timeout_15000">15 秒</string>
+    <string name="hide_navbar_timeout_30000">30 秒</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">ナビゲーションバーリング</string>
@@ -407,7 +437,7 @@
     <string name="interface_softkeys_ring_vib_title">サウンド/バイブ</string>
     <string name="interface_softkeys_ring_silent_title">サウンド/サイレント</string>
     <string name="interface_softkeys_ring_vib_silent_title">サウンド/バイブ/サイレント</string>
-    <string name="interface_softkeys_kill_process_title">タスクキル</string>
+    <string name="interface_softkeys_kill_process_title">アプリ終了</string>
     <string name="interface_softkey_package_removed">以前に選択したパッケージが見つかりませんでした</string>
     <string name="interface_navring_settings_title">ターゲットの動作設定</string>
     <string name="interface_navring_settings_summary">ナビゲーションバーリングに割り当てる動作を設定する</string>
@@ -793,10 +823,11 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="menu">メニュー</string>
     <string name="toggle_widgets">ウィジェット表示</string>
     <string name="open_ime_switcher">IME変更</string>
-    <string name="kill_app">タスクキル</string>
+    <string name="kill_app">アプリ終了</string>
     <string name="lastapp">直前のアプリ</string>
     <string name="power">電源</string>
     <string name="notifications">通知パネルの開閉</string>
+    <string name="recents_gb">アプリ履歴(GBスタイル)</string>
     <string name="custom_app">アプリを指定</string>
     <string name="menu_power">電源メニュー</string>
     <string name="blank">設定なし</string>

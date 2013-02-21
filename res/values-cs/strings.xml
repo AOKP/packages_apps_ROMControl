@@ -279,6 +279,7 @@
   <string name="toggle_brightness">Jas</string>
   <string name="toggle_sound_state">Hasitý/Vibrace/Tichý</string>
   <string name="toggle_navbar_hide">Auto. skrývání navigační lišty</string>
+  <string name="toggle_quickrecord">Rychlé nahrávání</string>
   <!--Statusbar | Battery-->
   <string name="battery_icon">Styl ikony baterie</string>
   <string name="battery_not_title">Ikona baterie ve stavové liště</string>

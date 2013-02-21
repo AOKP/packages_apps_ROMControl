@@ -1,26 +1,5 @@
 package com.koushikdutta.urlimageviewhelper;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Hashtable;
-
-import junit.framework.Assert;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.params.HttpClientParams;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpParams;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -44,6 +23,25 @@ import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import junit.framework.Assert;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.params.HttpClientParams;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Hashtable;
 
 public final class UrlImageViewHelper {
 
@@ -91,7 +89,7 @@ public final class UrlImageViewHelper {
             }
             o = new Options();
             o.inSampleSize = 1 << scale;
-            final Bitmap bitmap = BitmapFactory.decodeStream(stream, null, o);
+            Bitmap bitmap = BitmapFactory.decodeStream(stream, null, o);
             if (Constants.LOG_ENABLED)
                 Log.i(Constants.LOGTAG, String.format("Loaded bitmap (%dx%d).", bitmap.getWidth(), bitmap.getHeight()));
             BitmapDrawable bd = new BitmapDrawable(mResources, bitmap);
@@ -111,70 +109,70 @@ public final class UrlImageViewHelper {
     public static final int CACHE_DURATION_SIX_DAYS = CACHE_DURATION_ONE_DAY * 6;
     public static final int CACHE_DURATION_ONE_WEEK = CACHE_DURATION_ONE_DAY * 7;
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, int defaultResource) {
+    public static void setUrlDrawable(ImageView imageView, String url, int defaultResource) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultResource, CACHE_DURATION_THREE_DAYS);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url) {
+    public static void setUrlDrawable(ImageView imageView, String url) {
         setUrlDrawable(imageView.getContext(), imageView, url, null, CACHE_DURATION_THREE_DAYS, null);
     }
 
-    public static void loadUrlDrawable(final Context context, final String url) {
+    public static void loadUrlDrawable(Context context, String url) {
         setUrlDrawable(context, null, url, null, CACHE_DURATION_THREE_DAYS, null);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, Drawable defaultDrawable) {
+    public static void setUrlDrawable(ImageView imageView, String url, Drawable defaultDrawable) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultDrawable, CACHE_DURATION_THREE_DAYS, null);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, int defaultResource, long cacheDurationMs) {
+    public static void setUrlDrawable(ImageView imageView, String url, int defaultResource, long cacheDurationMs) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultResource, cacheDurationMs);
     }
 
-    public static void loadUrlDrawable(final Context context, final String url, long cacheDurationMs) {
+    public static void loadUrlDrawable(Context context, String url, long cacheDurationMs) {
         setUrlDrawable(context, null, url, null, cacheDurationMs, null);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, Drawable defaultDrawable, long cacheDurationMs) {
+    public static void setUrlDrawable(ImageView imageView, String url, Drawable defaultDrawable, long cacheDurationMs) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultDrawable, cacheDurationMs, null);
     }
 
-    private static void setUrlDrawable(final Context context, final ImageView imageView, final String url, int defaultResource, long cacheDurationMs) {
+    private static void setUrlDrawable(Context context, ImageView imageView, String url, int defaultResource, long cacheDurationMs) {
         Drawable d = null;
         if (defaultResource != 0)
             d = imageView.getResources().getDrawable(defaultResource);
         setUrlDrawable(context, imageView, url, d, cacheDurationMs, null);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, int defaultResource, UrlImageViewCallback callback) {
+    public static void setUrlDrawable(ImageView imageView, String url, int defaultResource, UrlImageViewCallback callback) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultResource, CACHE_DURATION_THREE_DAYS, callback);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, UrlImageViewCallback callback) {
+    public static void setUrlDrawable(ImageView imageView, String url, UrlImageViewCallback callback) {
         setUrlDrawable(imageView.getContext(), imageView, url, null, CACHE_DURATION_THREE_DAYS, callback);
     }
 
-    public static void loadUrlDrawable(final Context context, final String url, UrlImageViewCallback callback) {
+    public static void loadUrlDrawable(Context context, String url, UrlImageViewCallback callback) {
         setUrlDrawable(context, null, url, null, CACHE_DURATION_THREE_DAYS, callback);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, Drawable defaultDrawable, UrlImageViewCallback callback) {
+    public static void setUrlDrawable(ImageView imageView, String url, Drawable defaultDrawable, UrlImageViewCallback callback) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultDrawable, CACHE_DURATION_THREE_DAYS, callback);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, int defaultResource, long cacheDurationMs, UrlImageViewCallback callback) {
+    public static void setUrlDrawable(ImageView imageView, String url, int defaultResource, long cacheDurationMs, UrlImageViewCallback callback) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultResource, cacheDurationMs, callback);
     }
 
-    public static void loadUrlDrawable(final Context context, final String url, long cacheDurationMs, UrlImageViewCallback callback) {
+    public static void loadUrlDrawable(Context context, String url, long cacheDurationMs, UrlImageViewCallback callback) {
         setUrlDrawable(context, null, url, null, cacheDurationMs, callback);
     }
 
-    public static void setUrlDrawable(final ImageView imageView, final String url, Drawable defaultDrawable, long cacheDurationMs, UrlImageViewCallback callback) {
+    public static void setUrlDrawable(ImageView imageView, String url, Drawable defaultDrawable, long cacheDurationMs, UrlImageViewCallback callback) {
         setUrlDrawable(imageView.getContext(), imageView, url, defaultDrawable, cacheDurationMs, callback);
     }
 
-    private static void setUrlDrawable(final Context context, final ImageView imageView, final String url, int defaultResource, long cacheDurationMs, UrlImageViewCallback callback) {
+    private static void setUrlDrawable(Context context, ImageView imageView, String url, int defaultResource, long cacheDurationMs, UrlImageViewCallback callback) {
         Drawable d = null;
         if (defaultResource != 0)
             d = imageView.getResources().getDrawable(defaultResource);
@@ -214,7 +212,12 @@ public final class UrlImageViewHelper {
         }
     }
 
-    private static void setUrlDrawable(final Context context, final ImageView imageView, final String url, final Drawable defaultDrawable, long cacheDurationMs, final UrlImageViewCallback callback) {
+    private static void setUrlDrawable(final Context context,
+                                       ImageView imageView,
+                                       final String url,
+                                       final Drawable defaultDrawable,
+                                       long cacheDurationMs,
+                                       final UrlImageViewCallback callback) {
         cleanup(context);
         // disassociate this ImageView from any pending downloads
         if (isNullOrEmpty(url)) {
@@ -225,8 +228,8 @@ public final class UrlImageViewHelper {
 
         WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
-        final int tw = display.getWidth();
-        final int th = display.getHeight();
+        int tw = display.getWidth();
+        int th = display.getHeight();
 
         if (mDeadCache == null)
             mDeadCache = new UrlLruCache(getHeapSize(context) / 8);
@@ -375,16 +378,17 @@ public final class UrlImageViewHelper {
             AsyncTask<Void, Void, Void> downloader = new AsyncTask<Void, Void, Void>() {
                 @Override
                 protected Void doInBackground(Void... params) {
+                    InputStream is = null;
+                    FileOutputStream fos = null;
+                    AndroidHttpClient client = null;
                     try {
-                        InputStream is = null;
                         if (url.startsWith(ContactsContract.Contacts.CONTENT_URI.toString())) {
                             ContentResolver cr = context.getContentResolver();
                             is = ContactsContract.Contacts.openContactPhotoInputStream(cr, Uri.parse(url));
-                        }
-                        else {
-                            final AndroidHttpClient client = AndroidHttpClient.newInstance(context.getPackageName());
+                        } else {
+                            client = AndroidHttpClient.newInstance(context.getPackageName());
                             HttpGet get = new HttpGet(url);
-                            final HttpParams httpParams = new BasicHttpParams();
+                            HttpParams httpParams = new BasicHttpParams();
                             HttpClientParams.setRedirecting(httpParams, true);
 
                             if (mRequestPropertiesCallback != null) {
@@ -408,17 +412,33 @@ public final class UrlImageViewHelper {
                         }
 
                         if (is != null) {
-                            FileOutputStream fos = new FileOutputStream(filename);
+                            fos = new FileOutputStream(filename);
                             copyStream(is, fos);
-                            fos.close();
-                            is.close();
+
                         }
                         loader.run();
                         return null;
-                    }
-                    catch (Throwable e) {
-                        e.printStackTrace();
+                    } catch (Throwable e) {
+                        Log.e(getClass().getSimpleName(), "Error thrown while getting drawable", e);
                         return null;
+                    } finally {
+                        if (client != null) {
+                            client.close();
+                        }
+                        if (is != null) {
+                            try {
+                                is.close();
+                            } catch (IOException e) {
+                                Log.e(getClass().getSimpleName(), "Failed to close input stream", e);
+                            }
+                        }
+                        if (fos != null) {
+                            try {
+                                fos.close();
+                            } catch (IOException e) {
+                                Log.e(getClass().getSimpleName(), "Failed to close file output stream");
+                            }
+                        }
                     }
                 }
 
@@ -426,7 +446,6 @@ public final class UrlImageViewHelper {
                     completion.run();
                 }
             };
-
             executeTask(downloader);
         }
     };

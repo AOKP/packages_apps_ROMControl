@@ -241,7 +241,7 @@
     <string name="enable_clock_weekday_summary">在时间前简短显示星期几</string>
     <string name="colors">颜色</string>
     <string name="clock_color_title">时钟颜色</string>
-    <string name="alarm">提醒</string>
+    <string name="alarm">闹钟</string>
     <string name="clock_options">时钟选项</string>
     <string name="nothing">无</string>
     <string name="today">今日日程</string>
@@ -279,6 +279,7 @@
     <string name="toggle_brightness">亮度</string>
     <string name="toggle_sound_state">铃声/振动/静音</string>
     <string name="toggle_navbar_hide">导航栏自动隐藏</string>
+    <string name="toggle_quickrecord">快捷录音</string>
 
     <!-- Statusbar | Battery 状态栏|电量 -->
     <string name="battery_icon">电量图标风格</string>
@@ -385,6 +386,13 @@
     <string name="drag_handle_width_title">滑动区宽度</string>
     <string name="title_navbar_timeout">隐藏导航栏超时</string>
     <string name="summary_navbar_timeout">超时多久后隐藏导航栏</string>
+    <string name="hide_navbar_timeout_never">永不</string>
+    <string name="hide_navbar_timeout_1500">1.5 秒</string>
+    <string name="hide_navbar_timeout_3000">3 秒</string>
+    <string name="hide_navbar_timeout_5000">5 秒</string>
+    <string name="hide_navbar_timeout_10000">10 秒</string>
+    <string name="hide_navbar_timeout_15000">15 秒</string>
+    <string name="hide_navbar_timeout_30000">30 秒</string>
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>

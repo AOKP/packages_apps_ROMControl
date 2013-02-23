@@ -73,6 +73,7 @@
     <string name="title_show_torch_toggle">トーチ</string>
     <string name="title_show_airplane_toggle">機内モード</string>
     <string name="title_show_navbar_hide">ナビゲーションバー</string>
+    <string name="title_show_reboot_keyguard">ロック画面で再起動</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">省電力設定を有効にする</string>

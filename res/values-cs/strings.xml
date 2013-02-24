@@ -61,11 +61,12 @@
   <string name="misc_short">Ostatní</string>
   <string name="custom_app_icon_successfully"> ikona úspěšně nastavena!</string>
   <!--Power Menu-->
-  <string name="title_show_power_saver">Zobrazovat spořič energie</string>
-  <string name="title_show_screenshot">Zobrazovat snímek obrazovky</string>
-  <string name="title_show_torch_toggle">Zobrazovat přepínač svítilny</string>
-  <string name="title_show_airplane_toggle">Zobrazovat přepínač letového módu</string>
-  <string name="title_show_navbar_hide">Zobrazovat přepínač navigační lišty</string>
+  <string name="title_show_power_saver">Zobrazit spořič energie</string>
+  <string name="title_show_screenshot">Zobrazit snímek obrazovky</string>
+  <string name="title_show_torch_toggle">Zobrazit přepínač svítilny</string>
+  <string name="title_show_airplane_toggle">Zobrazit přepínač letového módu</string>
+  <string name="title_show_navbar_hide">Zobrazit přepínač navigační lišty</string>
+  <string name="title_show_reboot_keyguard">Zobrazit restartovat na zamčené obrazovce</string>
   <!--Power Saving-->
   <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
   <string name="summary_pref_powersaving_pref_mode">@null</string>

@@ -73,6 +73,7 @@
     <string name="title_show_torch_toggle">显示手电筒开关</string>
     <string name="title_show_airplane_toggle">显示飞行模式开关</string>
     <string name="title_show_navbar_hide">显示导航栏控制</string>
+    <string name="title_show_reboot_keyguard">锁屏时显示重启</string>
 
     <!-- Power Saving 省电模式 -->
     <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
@@ -709,6 +710,8 @@
     <string name="weather_45">雷阵雨</string>
     <string name="weather_46">阵雪</string>
     <string name="weather_47">地区性雷雨</string>
+
+
 
     <!-- Miscellaneous 杂项 -->
     <string name="location_unavailable">无法获取当前位置的天气信息</string>

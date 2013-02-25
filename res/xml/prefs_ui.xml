@@ -129,6 +129,16 @@
             android:summary="@string/wakeup_when_plugged_unplugged_summary"
             android:defaultValue="true" />
 
+        <CheckBoxPreference
+            android:key="system_power_crt_screen_off"
+            android:summary="@string/system_power_crt_screen_off_summary"
+            android:title="@string/system_power_crt_screen_off_title" />
+
+        <CheckBoxPreference
+            android:key="system_power_crt_screen_on"
+            android:summary="@string/system_power_crt_screen_on_summary"
+            android:title="@string/system_power_crt_screen_on_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

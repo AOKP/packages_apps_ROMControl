@@ -96,6 +96,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
+    private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
+    private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -128,6 +130,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mDualpane;
+    CheckBoxPreference mCrtOff;
+    CheckBoxPreference mCrtOn;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -242,6 +246,16 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
         mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                         Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
+
+        boolean isCrtOffChecked = Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF, true);
+        mCrtOff = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_OFF);
+        mCrtOff.setChecked(isCrtOffChecked);
+
+        mCrtOn = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_ON);
+        mCrtOn.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, false));
+        mCrtOn.setEnabled(isCrtOffChecked);
 
         // hide option if device is already set to never wake up
         if(!mContext.getResources().getBoolean(
@@ -497,6 +511,22 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
                     ((CheckBoxPreference) preference).isChecked());
+        } else if (preference == mCrtOff) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF, checked ? true : false);
+            if (!checked) {
+                Settings.System.putBoolean(getActivity().getContentResolver(),
+                        Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, false);
+                mCrtOn.setChecked(false);
+            }
+            mCrtOn.setEnabled(checked);
+            return true;
+        } else if (preference == mCrtOn) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, checked ? true : false);
+            return true;
         } else if (preference.getKey().equals("transparency_dialog")) {
             // getFragmentManager().beginTransaction().add(new
             // TransparencyDialog(), null).commit();

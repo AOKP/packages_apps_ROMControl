@@ -38,8 +38,15 @@ public class VibrationsProvider extends ContentProvider
         uriMatcher.addURI(PROVIDER_NAME, "vibrations/#", VIBRATION_ID);
     }
 
+    private static final String AOKPVibrationName = "'AOKP'";
+    private static final String AOKPVibrationPattern = "'500,150,400,400,400,400,400,400,400,400,400,400,150,150,400,400,150,150,400,400,400,400,150,150'";
+    private static final String CQDVibrationName = "'CQD'";
+    private static final String CQDVibrationPattern = "'500,400,400,150,150,400,400,150,150,400,400,400,400,150,150,400,400,400,400,150,150,150'";
     private static final String defaultVibrationName = "'Default'";
     private static final String defaultVibrationPattern = "'500,1000,1000,1000,1000'";
+    // ---because pretty women are tasty treats---
+    private static final String NOMVibrationName = "'NOM'";
+    private static final String NOMVibrationPattern = "'500,400,400,150,150,400,400,400,400,400,400,400,400,400'";
     private static final String SOSVibrationName = "'S.O.S.'";
     private static final String SOSVibrationPattern = "'500,150,150,150,150,150,400,400,400,400,400,400,400,150,150,150,150,150'";
 
@@ -53,10 +60,22 @@ public class VibrationsProvider extends ContentProvider
                     " (_id integer primary key autoincrement, "
                     + "name text not null, pattern text not null);";
 
+    private static final String DATABASE_INIT_AOKP =
+            "insert into names (name, pattern) " +
+                    "values (" + AOKPVibrationName + ", " + AOKPVibrationPattern + ")";
+
+    private static final String DATABASE_INIT_CQD =
+            "insert into names (name, pattern) " +
+                    "values (" + CQDVibrationName + ", " + CQDVibrationPattern + ")";
+
     private static final String DATABASE_INIT_DEFAULT =
             "insert into names (_id, name, pattern) " +
                     "values (" + "0" + ", " + defaultVibrationName + ", " + defaultVibrationPattern
                     + ")";
+
+    private static final String DATABASE_INIT_NOM =
+            "insert into names (name, pattern) " +
+                    "values (" + NOMVibrationName + ", " + NOMVibrationPattern + ")";
 
     private static final String DATABASE_INIT_SOS =
             "insert into names (name, pattern) " +
@@ -72,7 +91,10 @@ public class VibrationsProvider extends ContentProvider
         public void onCreate(SQLiteDatabase db)
         {
             db.execSQL(DATABASE_CREATE);
+            db.execSQL(DATABASE_INIT_AOKP);
+            db.execSQL(DATABASE_INIT_CQD);
             db.execSQL(DATABASE_INIT_DEFAULT);
+            db.execSQL(DATABASE_INIT_NOM);
             db.execSQL(DATABASE_INIT_SOS);
         }
 

@@ -133,6 +133,13 @@
   <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
   <string name="wakeup_when_plugged_unplugged_title">Probudit nabíječkou</string>
   <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
+  <string name="system_power_crt_screen_off_title">CRT animace vypnutí</string>
+  <string name="system_power_crt_screen_off_summary">Při vypínání obrazovky se objeví CRT animace</string>
+  <string name="system_power_crt_mode_title">Styl CRT animace</string>
+  <string name="system_power_crt_mode_dialog_title">Zobrazit CRT animaci</string>
+  <string name="system_power_crt_mode_horizontal">Na výšku - horizontálně</string>
+  <string name="system_power_crt_mode_vertical">Na výšku - vertikálně</string>
+  <string name="system_power_crt_mode_both">Dle orientace</string>
   <string name="lefty_mode_title">Režim pro leváky</string>
   <string name="lefty_mode_summary">Prohodit pořadí navigačních prvků (vyžaduje restart UI)</string>
   <string name="rotate_180_title">Umožnit rotaci o 180°</string>

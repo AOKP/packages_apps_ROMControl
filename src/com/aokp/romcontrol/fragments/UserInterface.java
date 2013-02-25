@@ -100,6 +100,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_NOTIFICATION_VIBRATE = "notification";
     private static final CharSequence PREF_NAVBAR = "navbar";
     private static final CharSequence PREF_MISC = "misc";
+    private static final CharSequence PREF_POWER_CRT_MODE = "system_power_crt_mode";
+    private static final CharSequence PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -130,6 +132,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mDualpane;
+    ListPreference mCrtMode;
+    CheckBoxPreference mCrtOff;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -239,6 +243,18 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mDualpane.setChecked(Settings.System.getBoolean(mContentResolver,
                         Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
                         com.android.internal.R.bool.preferences_prefer_dual_pane)));
+
+        boolean isCrtOffChecked = (Settings.System.getBoolean(mContentResolver,	
+                        Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF, true));
+        mCrtOff = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_OFF);
+        mCrtOff.setChecked(isCrtOffChecked);
+        
+        mCrtMode = (ListPreference) findPreference(PREF_POWER_CRT_MODE);
+        int crtMode = Settings.System.getInt(mContentResolver,
+                Settings.System.SYSTEM_POWER_CRT_MODE, 0);
+        mCrtMode.setValue(Integer.toString(Settings.System.getInt(mContentResolver,
+                Settings.System.SYSTEM_POWER_CRT_MODE, crtMode)));
+        mCrtMode.setOnPreferenceChangeListener(this);
 
         mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
         mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContentResolver,
@@ -493,6 +509,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     ((TwoStatePreference) preference).isChecked());
         } else if ("transparency_dialog".equals(preference.getKey())) {
             openTransparencyDialog();
+            return true;
+        } else if (preference == mCrtOff) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+                    ((TwoStatePreference) preference).isChecked());
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -893,6 +914,13 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             Settings.System.putInt(mContentResolver,
                     Settings.System.USER_UI_MODE, Integer.parseInt((String) newValue));
             Helpers.restartSystemUI();
+            return true;
+                } else if (preference == mCrtMode) {
+            int crtMode = Integer.valueOf((String) newValue);
+            int index = mCrtMode.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_CRT_MODE, crtMode);
+            mCrtMode.setSummary(mCrtMode.getEntries()[index]);
             return true;
         }
         return false;

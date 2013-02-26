@@ -20,7 +20,6 @@ public class About extends AOKPPreferenceFragment {
     public static final String TAG = "About";
 
     Preference mSiteUrl;
-    Preference mSourceUrl;
     Preference mReviewUrl;
     Preference mIrcUrl;
 
@@ -30,7 +29,6 @@ public class About extends AOKPPreferenceFragment {
         setTitle(R.string.title_about);
         addPreferencesFromResource(R.xml.prefs_about);
         mSiteUrl = findPreference("aokp_website");
-        mSourceUrl = findPreference("aokp_source");
         mReviewUrl = findPreference("aokp_review");
         mIrcUrl = findPreference("aokp_irc");
 
@@ -54,8 +52,6 @@ public class About extends AOKPPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
             launchUrl("http://aokp.co/");
-        } else if (preference == mSourceUrl) {
-            launchUrl("http://github.com/aokp");
         } else if (preference == mReviewUrl) {
             launchUrl("http://gerrit.aokp.co");
         } else if (preference == mIrcUrl) {
@@ -68,5 +64,7 @@ public class About extends AOKPPreferenceFragment {
         Uri uriUrl = Uri.parse(url);
         Intent donate = new Intent(Intent.ACTION_VIEW, uriUrl);
         getActivity().startActivity(donate);
+        Intent github = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(github);
     }
 }

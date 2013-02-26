@@ -95,8 +95,6 @@
     <string name="devs">开发团队</string>
     <string name="aokp_website_title">AOKP 网站</string>
     <string name="aokp_website_summary">www.aokp.co - 在这里可以找到最新发布的消息</string>
-    <string name="aokp_source_title">AOKP 源代码</string>
-    <string name="aokp_source_summary">AOKP 完全开源，你随时可以在 github.com/aokp 找到最新的源代码</string>
     <string name="aokp_review_title">AOKP 代码评审平台</string>
     <string name="aokp_review_summary">AOKP 的 Gerrit ，用于评审提交代码和测试补丁</string>
     <string name="aokp_irc_title">加入我们的 IRC 聊天室</string>

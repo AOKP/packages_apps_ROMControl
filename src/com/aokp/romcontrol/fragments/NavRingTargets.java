@@ -363,8 +363,6 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
 
         if (uri.equals("**null**")) {
                 return getResources().getString(R.string.none);
-        } else if (uri.equals("**screenshot**")) {
-                return getResources().getString(R.string.take_screenshot);
         } else if (uri.equals("**ime**")) {
                 return getResources().getString(R.string.open_ime_switcher);
         } else if (uri.equals("**ring_vib**")) {
@@ -407,8 +405,6 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
 
             if (uri.equals("**null**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_null);
-            } else if (uri.equals("**screenshot**")) {
-                return getResources().getDrawable(R.drawable.ic_navbar_screenshot);
             } else if (uri.equals("**ime**")) {
                 return getResources().getDrawable(R.drawable.ic_sysbar_ime_switcher);
             } else if (uri.equals("**ring_vib**")) {

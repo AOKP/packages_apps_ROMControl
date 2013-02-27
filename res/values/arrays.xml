@@ -220,7 +220,6 @@
         <item>@string/recents_gb</item>
         <item>@string/lastapp</item>
         <item>@string/search</item>
-        <item>@string/screenshot</item>
         <item>@string/menu</item>
         <item>@string/open_ime_switcher</item>
         <item>@string/kill_app</item>
@@ -236,7 +235,6 @@
         <item>**recentsgb**</item>
         <item>**lastapp**</item>
         <item>**search**</item>
-        <item>**screenshot**</item>
         <item>**menu**</item>
         <item>**ime**</item>
         <item>**kill**</item>
@@ -247,7 +245,6 @@
     </string-array>
     <string-array name="navring_dialog_entries" translatable="false">
         <item>@string/none</item>
-        <item>@string/take_screenshot</item>
         <item>@string/open_ime_switcher</item>
         <item>@string/ring_vib</item>
         <item>@string/ring_silent</item>
@@ -260,7 +257,6 @@
     </string-array>
     <string-array name="navring_dialog_values" translatable="false">
         <item>**null**</item>
-        <item>**screenshot**</item>
         <item>**ime**</item>
         <item>**ring_vib**</item>
         <item>**ring_silent**</item>

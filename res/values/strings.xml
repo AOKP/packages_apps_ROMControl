@@ -256,7 +256,7 @@
     <string name="toggle_style_tile">Tiles</string>
     <string name="toggle_style_traditional">Traditional</string>
     <string name="toggle_swap_handle_side">Drag handle on right</string>
-    <string name="add_toggles">Add toggles</string>
+    <string name="add_toggles">Add/remove toggles</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

@@ -209,11 +209,10 @@
   <string name="toggle_style_title">Styl přepínačů</string>
   <string name="toggle_style_summary">Určuje zobrazení textu nebo ikon u přepínačů.</string>
   <string name="toggles_layout_title">Vzhled přepínačů</string>
-  <string name="enabled_toggles_title">Zapnuté přepínače</string>
-  <string name="enabled_toggles_summary">Vybrat povolené přepínače</string>
-  <string name="toggles_display_dialog">Vybrat používané přepínače</string>
   <string name="toggles_per_row_title">Přepínačů na řádek</string>
   <string name="toggles_per_row_summary">Vybrat kolik se bude zobrazovat přepínačů na každém řádku</string>
+  <string name="toggles_style_title">Styl přepínačů</string>
+  <string name="toggles_style_summary">U notifikací (tradiční) nebo dlaždice</string>
   <string name="toggles_display_close">Zavřít</string>
   <string name="toggles_order_title">Pořadí přepínačů</string>
   <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
@@ -236,6 +235,12 @@
   <string name="toggle_enable_fasttoggle_summary">Zapnout přímý přístup k přepínačům jedním prstem</string>
   <string name="toggle_choose_fasttoggle_side_title">Zvolit stranu rychlého přístupu</string>
   <string name="toggle_choose_fasttoggle_side_summary">Zvolit z jaké strany lišty bude lišta s přepínači přístupná</string>
+  <string name="toggle_dialog_arrange_title">Nastavení přepínačů</string>
+  <string name="toggle_dialog_add_toggles">Přidat vybrané přepínače</string>
+  <string name="toggle_style_tile">Dlaždice</string>
+  <string name="toggle_style_traditional">Tradiční</string>
+  <string name="toggle_swap_handle_side">Uchopením vpravo je možné přetahovat</string>
+  <string name="add_toggles">Změnit přepínače</string>
   <!--Statusbar | Clock-->
   <string name="clock_title_enable">Styl hodin</string>
   <string name="title_clock_ampm_entries">AM/PM styl</string>

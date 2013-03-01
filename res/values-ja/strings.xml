@@ -224,15 +224,13 @@
     <string name="custom_density_dialog_button_reboot">今すぐ再起動</string>
 
     <!-- Statusbar | Toggles -->
-    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
     <string name="toggle_style_title">トグルスタイル</string>
     <string name="toggle_style_summary">トグルの表示をアイコンにするかテキストにするかを選択する</string>
     <string name="toggles_layout_title">トグルレイアウト</string>
-    <string name="enabled_toggles_title">表示タイル</string>
-    <string name="enabled_toggles_summary">クイック設定に表示するタイルを選択する</string>
-    <string name="toggles_display_dialog">表示タイルの選択</string>
     <string name="toggles_per_row_title">タイル数</string>
     <string name="toggles_per_row_summary">1行に表示するタイル数を選択する</string>
+    <string name="toggles_style_title">トグルスタイル</string>
+    <string name="toggles_style_summary">通知パネル表示かタイル表示かを選択する</string>
     <string name="toggles_display_close">閉じる</string>
     <string name="toggles_order_title">タイルの並び替え</string>
     <string name="toggles_order_summary">表示するタイルの並びを変更する</string>
@@ -251,10 +249,16 @@
     <string name="toggle_text_color_title">トグルの文字色</string>
     <string name="toggle_favcontact_title">お気に入りの連絡先</string>
     <string name="toggle_favcontact_summary">お気に入りの連絡先を選択する</string>
-    <string name="toggle_enable_fasttoggle_title">スワイプでクイック設定を表示</string>
-    <string name="toggle_enable_fasttoggle_summary">ステータスバーをスワイプするだけでクイック設定パネルを表示する</string>
-    <string name="toggle_choose_fasttoggle_side_title">スワイプ領域の選択</string>
-    <string name="toggle_choose_fasttoggle_side_summary">スワイプでクイック設定パネルを表示させる領域を選択する</string>
+    <string name="toggle_enable_fasttoggle_title">ファーストトグルを有効</string>
+    <string name="toggle_enable_fasttoggle_summary">ステータスバーをプルダウンするだけでクイック設定パネルを表示する</string>
+    <string name="toggle_choose_fasttoggle_side_title">ファーストトグル領域の選択</string>
+    <string name="toggle_choose_fasttoggle_side_summary">ファーストトグルを動作させる領域を選択する</string>
+    <string name="toggle_dialog_arrange_title">トグル設定</string>
+    <string name="toggle_dialog_add_toggles">追加するトグルを選択</string>
+    <string name="toggle_style_tile">タイル表示</string>
+    <string name="toggle_style_traditional">通知パネルに表示</string>
+    <string name="toggle_swap_handle_side">ドラッグハンドルを右側に</string>
+    <string name="add_toggles">トグルの変更</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">時計表示スタイル</string>

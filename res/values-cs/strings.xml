@@ -10,13 +10,14 @@
   <string name="header_statusbar">Stavová lišta</string>
   <string name="header_navbar">Navigační lišta</string>
   <string name="toggles_layout">Přepínače</string>
-  <string name="general_ui">Hlavní nastavení</string>
+  <string name="general_ui">Uživatelské rozhraní</string>
   <string name="clock">Hodiny</string>
   <string name="battery">Baterie</string>
   <string name="signal">Signál</string>
   <string name="nav_bar">Navigační lišta</string>
   <string name="power_menu">Menu napájení</string>
   <string name="led_options">LED</string>
+  <string name="spen_options">S Pen gesta</string>
   <string name="header_system">Systém</string>
   <string name="sound">Zvuk</string>
   <string name="lockscreen_options">Zamčená obrazovka</string>
@@ -31,6 +32,7 @@
   <string name="title_navbar">Navigační panel</string>
   <string name="title_power_menu">Menu napájení</string>
   <string name="title_led">Ovládání LED</string>
+  <string name="title_spen">S Pen gesta</string>
   <string name="title_lockscreens">Možnosti zamčené obrazovky</string>
   <string name="title_lockscreens_targets">Položky zamčené obrazovky</string>
   <string name="title_navring">Navigační kruh</string>
@@ -47,6 +49,7 @@
   <string name="header_summary_navigation_bar">@null</string>
   <string name="header_summary_power_menu">@null</string>
   <string name="header_summary_led">@null</string>
+  <string name="header_summary_spen">@null</string>
   <string name="header_summary_sound">@null</string>
   <string name="header_summary_performance">@null</string>
   <string name="header_summary_lockscreens">@null</string>
@@ -67,6 +70,15 @@
   <string name="title_show_airplane_toggle">Zobrazit přepínač letového módu</string>
   <string name="title_show_navbar_hide">Zobrazit přepínač navigační lišty</string>
   <string name="title_show_reboot_keyguard">Zobrazit restartovat na zamčené obrazovce</string>
+  <!-- S Pen -->
+  <string name="spen_left_title">Akce přetažení vlevo</string>
+  <string name="spen_right_title">Akce přetažení vpravo</string>
+  <string name="spen_up_title">Akce přetažení nahoru</string>
+  <string name="spen_down_title">Akce přetažení dolů</string>
+  <string name="spen_double_title">Akce dvojitého stisku</string>
+  <string name="spen_long_title">Akce dlouhého stisku</string>
+  <string name="spen_enable">Zapnout S Pen gesta</string>
+  <string name="spen_enable_summary">Nastavit vlastní akce S Pen gest</string>
   <!--Power Saving-->
   <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
   <string name="summary_pref_powersaving_pref_mode">@null</string>

@@ -1,19 +1,387 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:prvandroid="http://schemas.android.com/apk/prv/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#55000000"
-    android:id="@+id/container">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#8833b5e5"
-        android:layout_margin="8dip"
-        android:padding="2dip"
-        android:gravity="center_horizontal"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/lockscreen_target_info" />
+    android:orientation="horizontal"
+    android:weightSum="1" >
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/helper_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dip"
+            android:layout_marginStart="8dip"
+            android:background="@android:color/holo_blue_light"
+            android:gravity="center_horizontal"
+            android:padding="4dip"
+            android:text="@string/lockscreen_options_info"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_button_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_text_color_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/lockscreen_color_button"
+                android:layout_width="37dip"
+                android:layout_height="20dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:clickable="true"
+                android:gravity="right"
+                android:padding="4dip" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_battery_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_battery_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_battery_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_rotate_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_auto_rotate_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_rotate_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_vol_controls_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/volume_music_controls_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_vol_controls_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_vol_wake_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/volume_rocker_wake_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_vol_wake_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_all_widgets_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_all_widgets_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_all_widgets_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_unlimited_widgets_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_unlimited_widgets_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_unlimited_widgets_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_hide_page_hints_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_hide_initial_page_hints_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_hide_page_hints_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_minimize_challange_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_minimize_challenge_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_minimize_challange_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_carousel_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_use_widget_container_carousel_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/lockscreen_carousel_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/lockscreen_target_longpress_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_target_longpress_text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@+id/longpress_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:padding="4dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.android.internal.widget.multiwaveview.GlowPadView
+        android:id="@+id/lock_target"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@*android:string/keyguard_accessibility_slide_area"
+        android:gravity="left"
+        android:orientation="horizontal"
+        prvandroid:allowScaling="true"
+        prvandroid:directionDescriptions="@*android:array/lockscreen_direction_descriptions"
+        prvandroid:feedbackCount="1"
+        prvandroid:firstItemOffset="@*android:integer/kg_glowpad_rotation_offset"
+        prvandroid:glowRadius="@*android:dimen/glowpadview_glow_radius"
+        prvandroid:handleDrawable="@*android:drawable/ic_lockscreen_handle"
+        prvandroid:innerRadius="@*android:dimen/glowpadview_inner_radius"
+        prvandroid:magneticTargets="false"
+        prvandroid:outerRadius="@*android:dimen/glowpadview_target_placement_radius"
+        prvandroid:outerRingDrawable="@*android:drawable/ic_lockscreen_outerring"
+        prvandroid:pointDrawable="@*android:drawable/ic_lockscreen_glowdot"
+        prvandroid:snapMargin="@*android:dimen/glowpadview_snap_margin"
+        prvandroid:targetDescriptions="@*android:array/lockscreen_target_descriptions_unlock_only"
+        prvandroid:targetDrawables="@*android:array/lockscreen_targets_unlock_only"
+        prvandroid:vibrationDuration="20" />
+
+</LinearLayout>

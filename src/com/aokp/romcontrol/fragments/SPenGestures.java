@@ -41,6 +41,7 @@ public class SPenGestures extends AOKPPreferenceFragment implements
     ListPreference mDouble;
     ListPreference mLong;
     CheckBoxPreference mEnableSPen;
+    CheckBoxPreference mEnableIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,10 @@ public class SPenGestures extends AOKPPreferenceFragment implements
         mEnableSPen = (CheckBoxPreference) findPreference("enable_spen");
         mEnableSPen.setChecked(Settings.System.getBoolean(getContentResolver(),
                 Settings.System.ENABLE_SPEN_ACTIONS, false));
+
+        mEnableIcon = (CheckBoxPreference) findPreference("enable_stylus pointer");
+        mEnableIcon.setChecked(Settings.System.getBoolean(getContentResolver(),
+                Settings.System.STYLUS_ICON_ENABLED, true));
 
         mLeft = (ListPreference) findPreference("spen_left");
         mLeft.setOnPreferenceChangeListener(this);
@@ -90,6 +95,12 @@ public class SPenGestures extends AOKPPreferenceFragment implements
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.ENABLE_SPEN_ACTIONS,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mEnableIcon) {
+
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.STYLUS_ICON_ENABLED,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
         }

@@ -2,6 +2,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+      <Preference
+            android:key="lockscreen_targets"
+            android:title= "@string/lockscreen_targets_title"
+            android:summary= "@string/lockscreen_targets_summary" />
+
      <PreferenceCategory
             android:key="security"
             android:title="@string/lockscreen_security_cat">

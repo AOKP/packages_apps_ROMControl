@@ -728,83 +728,19 @@
         <item>240</item>
         <item>320</item>
     </string-array>
-    <string-array name="lockscreen_icon_picker_labels" translatable="false">
-        <item>@string/icon_picker_alarm</item>
-        <item>@string/icon_picker_browser</item>
-        <item>@string/icon_picker_calendar</item>
-        <item>@string/icon_picker_camera</item>
-        <item>@string/icon_picker_email</item>
-        <item>@string/icon_picker_facebook</item>
-        <item>@string/icon_picker_gallery</item>
-        <item>@string/icon_picker_googleplus</item>
-        <item>@string/icon_picker_googletalk</item>
-        <item>@string/icon_picker_maps</item>
-        <item>@string/icon_picker_sms</item>
-        <item>@string/icon_picker_movie</item>
-        <item>@string/icon_picker_music</item>
-        <item>@string/icon_picker_nav_normal</item>
-        <item>@string/icon_picker_phone</item>
-        <item>@string/icon_picker_podcast</item>
-        <item>@string/icon_picker_rss</item>
-        <item>@string/icon_picker_search</item>
-        <item>@string/icon_picker_twitter</item>
-        <item>@string/icon_picker_unlock</item>
+    <string-array name="lockscreen_dialog_entries" translatable="false">
+        <item>@string/none</item>
+        <item>@string/lockscreen_unlock</item>
+        <item>@string/lockscreen_camera</item>
+        <item>@string/google_now</item>
+        <item>@string/select_application</item>
     </string-array>
-    <string-array name="lockscreen_aokp_icon_picker_labels" translatable="false">
-        <item>@string/aokp_icon_picker_aokp</item>
-        <item>@string/aokp_icon_picker_browser</item>
-        <item>@string/aokp_icon_picker_browser</item>
-        <item>@string/aokp_icon_picker_calendar</item>
-        <item>@string/aokp_icon_picker_calendar</item>
-        <item>@string/aokp_icon_picker_camera</item>
-        <item>@string/aokp_icon_picker_camera</item>
-        <item>@string/aokp_icon_picker_camera</item>
-        <item>@string/aokp_icon_picker_camera</item>
-        <item>@string/aokp_icon_picker_clock</item>
-        <item>@string/aokp_icon_picker_clock</item>
-        <item>@string/aokp_icon_picker_email</item>
-        <item>@string/aokp_icon_picker_email</item>
-        <item>@string/aokp_icon_picker_facebook</item>
-        <item>@string/aokp_icon_picker_facebook</item>
-        <item>@string/aokp_icon_picker_gallery</item>
-        <item>@string/aokp_icon_picker_gallery</item>
-        <item>@string/aokp_icon_picker_googleplus</item>
-        <item>@string/aokp_icon_picker_googleplus</item>
-        <item>@string/aokp_icon_picker_unlock</item>
-        <item>@string/aokp_icon_picker_unlock</item>
-        <item>@string/aokp_icon_picker_maps</item>
-        <item>@string/aokp_icon_picker_maps</item>
-        <item>@string/aokp_icon_picker_sms</item>
-        <item>@string/aokp_icon_picker_sms</item>
-        <item>@string/aokp_icon_picker_movie</item>
-        <item>@string/aokp_icon_picker_movie</item>
-        <item>@string/aokp_icon_picker_music</item>
-        <item>@string/aokp_icon_picker_music</item>
-        <item>@string/aokp_icon_picker_navigation</item>
-        <item>@string/aokp_icon_picker_navigation</item>
-        <item>@string/aokp_icon_picker_phone</item>
-        <item>@string/aokp_icon_picker_phone</item>
-        <item>@string/aokp_icon_picker_podcast</item>
-        <item>@string/aokp_icon_picker_podcast</item>
-        <item>@string/aokp_icon_picker_rss</item>
-        <item>@string/aokp_icon_picker_rss</item>
-        <item>@string/aokp_icon_picker_googletalk</item>
-        <item>@string/aokp_icon_picker_googletalk</item>
-        <item>@string/aokp_icon_picker_video</item>
-    </string-array>
-    <string-array name="lockscreen_target_amount_entries">
-        <item>@string/aokp_3targets</item>
-        <item>@string/aokp_4targets</item>
-        <item>@string/aokp_5targets</item>
-        <item>@string/aokp_6targets</item>
-        <item>@string/aokp_8targets</item>
-    </string-array>
-    <string-array name="lockscreen_target_amount_values" translatable="false">
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>8</item>
+    <string-array name="lockscreen_dialog_values" translatable="false">
+        <item>**null**</item>
+        <item>**unlock**</item>
+        <item>**camera**</item>
+        <item>**assist**</item>
+        <item>**app**</item>
     </string-array>
     <string-array name="notification_action_entries" translatable="false">
         <item>@string/nothing</item>

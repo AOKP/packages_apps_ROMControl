@@ -89,6 +89,10 @@
     <string name="spen_long_title">Action on long press</string>
     <string name="spen_enable">Enable S Pen Gestures</string>
     <string name="spen_enable_summary">Set custom actions for S Pen gestures</string>
+    <string name="spen_extras_cat">S Pen Extras</string>
+    <string name="spen_gestures_cat">S Pen Gestures</string>
+    <string name="enable_stylus_pointer_title">Enable S Pen pointer</string>
+    <string name="enable_stylus_pointer_summary">Enable the mouse icon when using the S Pen</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>

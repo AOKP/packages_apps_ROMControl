@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory
+        android:key="spen_gestures"
+        android:title="@string/spen_gestures_cat">
+
         <CheckBoxPreference
             android:key="enable_spen"
             android:title= "@string/spen_enable"
@@ -47,5 +51,17 @@
             android:title="@string/spen_long_title"
             android:entries="@array/navbar_button_entries"
             android:entryValues="@array/navbar_button_values" />
+    </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="spen_extras"
+        android:title="@string/spen_extras_cat">
+
+        <CheckBoxPreference
+            android:key="enable_stylus pointer"
+            android:title= "@string/enable_stylus_pointer_title"
+            android:summary= "@string/enable_stylus_pointer_summary"  />
+
+    </PreferenceCategory>
 </PreferenceScreen>
+

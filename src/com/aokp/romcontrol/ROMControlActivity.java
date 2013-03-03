@@ -193,21 +193,25 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     @Override
     public void onBuildHeaders(List<Header> target) {
         loadHeadersFromResource(R.xml.preference_headers, target);
+        ArrayList<Header> toRemove = new ArrayList<Header>();
         for (int i=0; i<target.size(); i++) {
             Header header = target.get(i);
             if (header.id == R.id.led) {
                 if (!hasNotificationLed) {
-                    target.remove(i);
+                    toRemove.add(header);
                 }
             } else if (header.id == R.id.vibrations) {
                 if (mVibrator == null || !mVibrator.hasVibrator()) {
-                    target.remove(i);
+                    toRemove.add(header);
                 }
             } else if (header.id == R.id.spen) {
                 if (!hasSPen) {
-                    target.remove(i);
+                    toRemove.add(header);
                 }
             }
+        }
+        for (int i=0; i<toRemove.size(); i++) {
+            target.remove(toRemove.get(i));
         }
         updateHeaderList(target);
         mHeaders = target;

@@ -143,6 +143,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
 
         mLockscreenWallpaper = findPreference("wallpaper");
 
+        mLockscreenTargets = findPreference("lockscreen_targets");
+
         mLockscreenHideInitialPageHints = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS);
         mLockscreenHideInitialPageHints.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS, false));
@@ -185,6 +187,13 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
                     Settings.System.VOLUME_MUSIC_CONTROLS,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
+        } else if (preference == mLockscreenTargets) {
+	        FragmentTransaction ft = getFragmentManager().beginTransaction();
+	        LockscreenTargets fragment = new LockscreenTargets();
+            ft.addToBackStack("config_lockscreen_targets");
+	        ft.replace(this.getId(), fragment);
+	        ft.commit();
+	        return true;
         } else if (preference == mQuickUnlock) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,

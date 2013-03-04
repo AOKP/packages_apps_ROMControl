@@ -45,4 +45,48 @@
         android:summary="@string/screenshot_delay_summary"
         android:title="@string/screenshot_delay_title" />
 
+    <PreferenceCategory
+        android:key="custom_toggle"
+        android:title="@string/custom_toggle_cat">
+
+        <CheckBoxPreference
+            android:key="advanced_toggle_actions"
+            android:summaryOff="@string/advanced_toggle_summaryoff"
+            android:summaryOn="@string/advanced_toggle_summaryon"
+            android:title="@string/advanced_toggle_title" />
+
+        <CheckBoxPreference
+            android:key="set_boot_action"
+            android:summary="@string/boot_action_summary"
+            android:title="@string/boot_action_title" />
+
+        <CheckBoxPreference
+            android:key="match_icon_action"
+            android:summary="@string/match_icon_action_summary"
+            android:title="@string/match_icon_action_title" />
+
+        <ListPreference
+            android:entries="@array/collapse_bar_entries"
+            android:entryValues="@array/collapse_bar_values"
+            android:key="collapse_bar"
+            android:title="@string/collapse_bar_title"
+            android:summary="@string/collapse_bar_summary" />
+
+        <ListPreference
+            android:entries="@array/custom_toggle_dclick_entries"
+            android:entryValues="@array/custom_toggle_dclick_values"
+            android:key="dclick_action"
+            android:title="@string/dclick_action_title"
+            android:summary="@string/dclick_action_summary" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="custom_buttons"
+        android:title="@string/custom_button_cat">
+
+        <com.aokp.romcontrol.widgets.CustomTogglePref
+            android:key="custom_toggle_pref" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

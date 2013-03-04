@@ -15,11 +15,10 @@
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.aokp.romcontrol"
-    android:layout_width="@dimen/list_toggle_width"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@color/configure_light_background"
-    android:minHeight="@dimen/list_toggle_width"
     android:minWidth="@dimen/list_toggle_width" >
 
     <Button
@@ -38,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/add_toggles"
-        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
         android:gravity="right"
         android:padding="12dp"
         android:text="@string/toggle_swap_handle_side" />

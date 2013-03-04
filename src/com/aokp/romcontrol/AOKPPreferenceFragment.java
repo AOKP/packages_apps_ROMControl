@@ -32,6 +32,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.Button;
 
@@ -90,6 +91,13 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
            return false;
 
        return true;
+    }
+
+    public static boolean isSW600DPScreen(Context context) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int widthPixels = displayMetrics.widthPixels;
+        float density = displayMetrics.density;
+        return ((widthPixels / density) >= 600);
     }
 
     public void setTitle(int resId) {

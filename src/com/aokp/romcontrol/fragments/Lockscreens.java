@@ -159,7 +159,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements OnPreferenceC
         mLockscreenLongpressChallenge.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
                 Settings.System.LOCKSCREEN_LONGPRESS_CHALLENGE, false));
 
-        if (isTablet(mContext) || isPhablet(mContext)) {
+        if (isSW600DPScreen(mContext)) {
             ((PreferenceGroup)findPreference("layout")).removePreference((Preference)findPreference(PREF_LOCKSCREEN_MINIMIZE_CHALLENGE));
             ((PreferenceGroup)findPreference("layout")).removePreference((Preference)findPreference(PREF_LOCKSCREEN_LONGPRESS_CHALLENGE));
         }

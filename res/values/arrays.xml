@@ -142,6 +142,52 @@
         <item>2</item>
     </string-array>
 
+    <!-- Custom toggle quantity -->
+    <string-array name="custom_toggle_qty_entries" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="custom_toggle_qty_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <!-- Custom toggle collapse bar -->
+    <string-array name="collapse_bar_entries" translatable="false">
+        <item>@string/no_collapse</item>
+        <item>@string/click_collapse</item>
+        <item>@string/long_collapse</item>
+        <item>@string/both_collapse</item>
+    </string-array>
+    <string-array name="collapse_bar_values" translatable="false">
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+    </string-array>
+
+    <!-- Custom toggle double-actions -->
+    <string-array name="custom_toggle_dclick_entries" translatable="false">
+        <item>@string/no_dclick</item>
+        <item>@string/back_one_dclick</item>
+        <item>@string/state_one_dclick</item>
+        <item>@string/skip_back_dclick</item>
+        <item>@string/skip_up_dclick</item>
+    </string-array>
+    <string-array name="custom_toggle_dclick_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries" translatable="false">
         <item>@string/on_top</item>

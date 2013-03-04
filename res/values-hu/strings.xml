@@ -323,6 +323,7 @@
 
     <!-- Navigation Bar -->
     <string name="navigation_bar">Navigációs sáv</string>
+    <string name="navbar_hide">Rejtett Navigációs sáv</string>
     <string name="navbar_button_cat">Navigációs sáv gombok</string>
     <string name="title_pref_menu_display">Menü helye</string>
     <string name="summary_pref_menu_display">Ne felejtsd el eltávolítani a menü gomgot, ha nagy menü ikonokat használsz!</string>
@@ -366,6 +367,8 @@
     <string name="navbar_height_dialog_button_reboot">Újraindítás most!</string>
     <string name="navigation_bar_color_title">Navigációs sáv színe</string>
     <string name="navigation_bar_tint_title">Navigációs sáv gomb színe</string>
+    <string name="navigation_bar_colorall_title">Összes gomb színezése</string>
+    <string name="navigation_bar_colorall_summary">Bejelölve egyéni ikonokat tudod színezni</string>
     <string name="navigation_bar_glow_tint_title">Navigációs sáv fénye</string>
     <string name="navigation_bar_glow_tint_summary">Gomb megnyomásának a háttér színe.</string>
     <string name="glow_times_title">Gomb fényének animációja</string>
@@ -384,6 +387,11 @@
     <string name="navigation_bar_menu_arrow_keys_title">Menü nyíl gombok</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Mutatja a nyíl gombokat az értesítési sávon gépelés közben</string>
     <string name="navigation_bar_alpha_title">Állapotsáv és navigációs sáv áttetszősége</string>
+    <string name="navbar_hide_enable_title">Navigációs sáv elrejtése</string>
+    <string name="drag_handle_opacity_title">Fogantyú áttetszősége</string>
+    <string name="drag_handle_width_title">Fogantyú szélessége</string>
+    <string name="title_navbar_timeout">Rejtett Navigációs sáv késleltetése</string>
+    <string name="summary_navbar_timeout">Rejtett Navigációs sáv ablak késleltetésének az ideje</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigációs sáv gyűrű esemény</string>

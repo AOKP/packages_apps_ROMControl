@@ -289,6 +289,32 @@
     <string name="add_toggles">Change toggles</string>
     <string name="screenshot_delay_title">Screenshot delay</string>
     <string name="screenshot_delay_summary">Delay to use after long pressing the screenshot toggle</string>
+    <string name="toggle_action_title">Action %1$s &amp; icon</string>
+    <string name="toggle_action_title_alt">Longpress action %1$s &amp; icon</string>
+    <string name="toggle_longpress_title">Longpress action %1$s</string>
+    <string name="custom_toggle_cat">Custom toggle</string>
+    <string name="custom_button_cat">Custom toggle actions</string>
+    <string name="dclick_action_title">Double-click Actions</string>
+    <string name="dclick_action_summary">Change state by double-clicking</string>
+    <string name="boot_action_title">State one at boot</string>
+    <string name="boot_action_summary">Will set state one on boot</string>
+    <string name="match_icon_action_title">Launch displayed action</string>
+    <string name="match_icon_action_summary">Useful for aligning task to displayed icon per your specific usage</string>
+    <string name="advanced_toggle_title">Advanced toggle actions</string>
+    <string name="advanced_toggle_summary">Allows short and longpress actions</string>
+    <string name="action_toggle_title">Toggle Actions</string>
+    <string name="action_toggle_summary">Toggle sequence from left to right</string>
+    <string name="no_dclick">No action</string>
+    <string name="back_one_dclick">Reverse state</string>
+    <string name="state_one_dclick">Set to state one</string>
+    <string name="skip_back_dclick">Skip back (no action)</string>
+    <string name="skip_up_dclick">Skip forward (no action)</string>
+    <string name="collapse_bar_title">Close statusbar</string>
+    <string name="collapse_bar_summary">Statusbar closes on action completion</string>
+    <string name="no_collapse">No action</string>
+    <string name="click_collapse">On click</string>
+    <string name="long_collapse">On long click</string>
+    <string name="both_collapse">Both click and long click</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

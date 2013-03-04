@@ -280,6 +280,11 @@
     <string name="toggle_style_traditional">Traditional</string>
     <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="add_toggles">Change toggles</string>
+    <string name="custom_button_cat">Custom Toggle Settings</string>
+    <string name="reset_action_title">Reset on double-click</string>
+    <string name="reset_action_summary">Double-click to revert to action one</string>
+    <string name="action_qty_title">Number of toggle actions</string>
+    <string name="action_qty_summary">Toggle will cycle to the next action on click</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Clock style</string>

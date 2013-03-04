@@ -38,4 +38,21 @@
         android:title="@string/toggle_choose_fasttoggle_side_title"
         android:dependency="enable_fast_toggle" />
 
+    <PreferenceCategory
+        android:key="custom_buttons"
+        android:title="@string/custom_button_cat">
+    </PreferenceCategory>
+
+    <ListPreference
+        android:entries="@array/custom_toggle_qty_entries"
+        android:entryValues="@array/custom_toggle_qty_values"
+        android:key="action_qty"
+        android:title="@string/action_qty_title"
+        android:summary="@string/action_qty_summary" />
+
+    <CheckBoxPreference
+        android:key="reset_action"
+        android:title="@string/reset_action_title"
+        android:summary="@string/reset_action_summary" />
+
 </PreferenceScreen>

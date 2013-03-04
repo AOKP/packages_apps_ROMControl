@@ -142,6 +142,18 @@
         <item>2</item>
     </string-array>
 
+    <!-- Custom toggle actions -->
+    <string-array name="custom_toggle_qty_entries" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="custom_toggle_qty_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries" translatable="false">
         <item>@string/on_top</item>

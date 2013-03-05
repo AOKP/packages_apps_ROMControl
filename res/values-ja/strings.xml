@@ -19,6 +19,7 @@
     <string name="nav_bar">ナビゲーションバー</string>
     <string name="power_menu">電源メニュー</string>
     <string name="led_options">LED</string>
+    <string name="spen_options">Sペンジェスチャー</string>
     <string name="header_system">システム</string>
     <string name="sound">サウンド</string>
     <string name="lockscreen_options">ロック画面</string>
@@ -32,11 +33,12 @@
     <string name="title_statusbar_toggles">クイック設定</string>
     <string name="title_statusbar_battery">バッテリー</string>
     <string name="title_navbar">ナビゲーションバー</string>
+    <string name="title_navring">ナビゲーションリング</string>
     <string name="title_power_menu">電源メニュー</string>
     <string name="title_led">LED</string>
+    <string name="title_spen">Sペンジェスチャー</string>
     <string name="title_lockscreens">ロック画面</string>
     <string name="title_lockscreens_targets">ロック画面ターゲット</string>
-    <string name="title_navring">ナビゲーションリング</string>
     <string name="title_sound">サウンド</string>
     <string name="title_weather">天気情報</string>
     <string name="title_performance">パフォーマンス</string>
@@ -51,6 +53,7 @@
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
+    <string name="header_summary_spen">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
@@ -66,6 +69,8 @@
     <string name="advanced_settings">詳細設定</string>
     <string name="misc_short">その他</string>
     <string name="custom_app_icon_successfully">"のアイコンが設定されました"</string>
+    <string name="text_on">オン</string>
+    <string name="text_off">オフ</string>
 
    <!-- Power Menu -->
     <string name="title_show_power_saver">省電力モード</string>
@@ -74,6 +79,20 @@
     <string name="title_show_airplane_toggle">機内モード</string>
     <string name="title_show_navbar_hide">ナビゲーションバー</string>
     <string name="title_show_reboot_keyguard">ロック画面で再起動</string>
+
+    <!-- S Pen -->
+    <string name="spen_left_title">左スワイプ時の動作</string>
+    <string name="spen_right_title">右スワイプ時の動作</string>
+    <string name="spen_up_title">上スワイプ時の動作</string>
+    <string name="spen_down_title">下スワイプ時の動作</string>
+    <string name="spen_double_title">ダブルタップ時の動作</string>
+    <string name="spen_long_title">長押し時の動作</string>
+    <string name="spen_enable">Sペンジェスチャーを有効</string>
+    <string name="spen_enable_summary">Sペンジェスチャーのカスタムアクションを設定する</string>
+    <string name="spen_extras_cat">Sペン拡張</string>
+    <string name="spen_gestures_cat">Sペンジェスチャー</string>
+    <string name="enable_stylus_pointer_title">Sペンポインターを有効</string>
+    <string name="enable_stylus_pointer_summary">Sペン使用時にマウスカーソルを有効にする</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">省電力設定を有効にする</string>
@@ -257,7 +276,7 @@
     <string name="toggle_dialog_add_toggles">追加するトグルを選択</string>
     <string name="toggle_style_tile">タイル表示</string>
     <string name="toggle_style_traditional">通知パネルに表示</string>
-    <string name="toggle_swap_handle_side">ドラッグハンドルを右側に</string>
+    <string name="toggle_swap_handle_side">ドラッグハンドルを右側に表示</string>
     <string name="add_toggles">トグルの変更</string>
 
     <!-- Statusbar | Clock -->
@@ -421,39 +440,26 @@
     <string name="hide_navbar_timeout_30000">30 秒</string>
 
     <!-- Nav Ring Targets -->
-    <string name="navbar_ring_cat">ナビゲーションバーリング</string>
-    <string name="interface_softkey_settings">ソフトキー設定</string>
-    <string name="interface_softkeys_pref_default_1_title">ターゲット1 選択時の動作</string>
-    <string name="interface_softkeys_pref_long_1_title">ターゲット1 長押し時の動作</string>
-    <string name="interface_softkeys_pref_default_2_title">ターゲット2 選択時の動作</string>
-    <string name="interface_softkeys_pref_long_2_title">ターゲット2 長押し時の動作</string>
-    <string name="interface_softkeys_pref_default_3_title">ターゲット3 選択時の動作</string>
-    <string name="interface_softkeys_pref_long_3_title">ターゲット3 長押し時の動作</string>
-    <string name="interface_softkeys_pref_default_4_title">ターゲット4 選択時の動作</string>
-    <string name="interface_softkeys_pref_long_4_title">ターゲット4 長押し時の動作</string>
-    <string name="interface_softkeys_pref_default_5_title">ターゲット5 選択時の動作</string>
-    <string name="interface_softkeys_pref_long_5_title">ターゲット5 長押し時の動作</string>
-    <string name="interface_softkeys_pref_default_summary">設定アイコンをタップして長押し時の動作を選択してください</string>
-    <string name="interface_softkeys_activity_dialog_title">アクティビティの選択</string>
-    <string name="interface_softkeys_reboot_title">再起動メニュー</string>
-    <string name="interface_softkeys_screenshot_title">スクリーンショット</string>
-    <string name="interface_softkeys_screenoff_title">スクリーンオフ</string>
-    <string name="interface_softkeys_ime_switcher_title">IME変更</string>
-    <string name="interface_softkeys_ring_vib_title">サウンド/バイブ</string>
-    <string name="interface_softkeys_ring_silent_title">サウンド/サイレント</string>
-    <string name="interface_softkeys_ring_vib_silent_title">サウンド/バイブ/サイレント</string>
-    <string name="interface_softkeys_kill_process_title">アプリ終了</string>
-    <string name="interface_softkey_package_removed">以前に選択したパッケージが見つかりませんでした</string>
-    <string name="interface_navring_settings_title">ターゲットの動作設定</string>
-    <string name="interface_navring_settings_summary">ナビゲーションバーリングに割り当てる動作を設定する</string>
-    <string name="title_navring_amount">リングターゲット数</string>
-    <string name="summary_navring_amount">リングターゲットの数を設定する</string>
-    <string name="interface_navring_custom_pref_summary">ターゲット上で指を離すことでアプリが起動する</string>
-    <string name="interface_navring_pref_default_summary">ターゲットに割り当てる動作を選択してください</string>
-    <string name="interface_navring_assist_title">Google Now</string>
-    <string name="interface_navring">リングターゲット</string>
-    <string name="navbar_ring">カスタムリングターゲット</string>
-    <string name="navring_enable_long">ターゲット長押しを有効にする</string>
+    <string name="navbar_ring_cat">ナビゲーションリング</string>
+    <string name="navbar_ring">リングターゲットの設定</string>
+    <string name="navring_enable_long">ナビゲーションリングの長押しを有効</string>
+    <string name="navring_target_save">ナビゲーションリングを保存しました</string>
+    <string name="navring_target_reset_message">ナビゲーションリングをリセットしますか？</string>
+    <string name="navring_target_reset">ナビゲーションリングをリセットしました</string>
+    <string name="choose_action_title">動作の選択</string>
+    <string name="choose_action_short_title">スワイプ時の動作の選択</string>
+    <string name="choose_action_long_title">長押し時の動作の選択</string>
+    <string name="action_long_save">を長押し時の動作に設定しました</string>
+    <string name="title_navring_amount">ナビゲーションリングターゲット数</string>
+    <string name="summary_navring_amount">ナビゲーションリングに設置するターゲットの数を選択する</string>
+    <string name="interface_navring_settings_title">ナビゲーションリング</string>
+    <string name="interface_navring_settings_summary">@null</string>
+    <string name="navring_target_info">動作を割り当てるターゲットに向けてスワイプしてください</string>
+    <string name="navring_short">スワイプ時</string>
+    <string name="navring_long">長押し時</string>
+    <string name="navring_icon">アイコン変更</string>
+    <string name="navring_target_amount_text">現在のターゲット数</string>
+    <string name="navring_target_longpress_text">長押し時の動作</string>
 
     <!-- LED -->
     <string name="led_on">LEDオン</string>

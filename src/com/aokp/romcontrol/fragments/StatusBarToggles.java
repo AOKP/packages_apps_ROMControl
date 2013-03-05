@@ -102,7 +102,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
 
-        if (isTablet(mContext) || isPhablet(mContext)) {
+        if (isSW600DPScreen(mContext) || isTablet(mContext)) {
             getPreferenceScreen().removePreference(mFastToggle);
             getPreferenceScreen().removePreference(mChooseFastToggleSide);
         }

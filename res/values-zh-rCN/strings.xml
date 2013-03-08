@@ -19,6 +19,7 @@
     <string name="nav_bar">导航栏</string>
     <string name="power_menu">电源菜单</string>
     <string name="led_options">灯光</string>
+    <string name="spen_options">S Pen 手势</string>
     <string name="header_system">系统</string>
     <string name="sound">声音</string>
     <string name="lockscreen_options">锁屏选项</string>
@@ -32,11 +33,12 @@
     <string name="title_statusbar_toggles">状态栏开关</string>
     <string name="title_statusbar_battery">状态栏电量</string>
     <string name="title_navbar">导航栏</string>
+    <string name="title_navring">导航环</string>
     <string name="title_power_menu">电源菜单</string>
     <string name="title_led">灯光</string>
+    <string name="title_spen">S Pen 手势</string>
     <string name="title_lockscreens">锁屏选项</string>
     <string name="title_lockscreens_targets">锁屏目标</string>
-    <string name="title_navring">导航环</string>
     <string name="title_sound">声音设置</string>
     <string name="title_weather">天气设置</string>
     <string name="title_performance">性能设置</string>
@@ -51,6 +53,7 @@
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
+    <string name="header_summary_spen">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
@@ -66,6 +69,8 @@
     <string name="advanced_settings">高级设置</string>
     <string name="misc_short">其它</string>
     <string name="custom_app_icon_successfully">"的图标已成功设置！"</string>
+    <string name="text_on">打开</string>
+    <string name="text_off">关闭</string>
 
     <!-- Power Menu 电源菜单 -->
     <string name="title_show_power_saver">显示省电模式</string>
@@ -74,6 +79,20 @@
     <string name="title_show_airplane_toggle">显示飞行模式开关</string>
     <string name="title_show_navbar_hide">显示导航栏控制</string>
     <string name="title_show_reboot_keyguard">锁屏时显示重启</string>
+
+    <!-- S Pen -->
+    <string name="spen_left_title">左滑动作</string>
+    <string name="spen_right_title">右滑动作</string>
+    <string name="spen_up_title">上滑动作</string>
+    <string name="spen_down_title">下滑动作</string>
+    <string name="spen_double_title">双击动作</string>
+    <string name="spen_long_title">长按动作</string>
+    <string name="spen_enable">启用 S Pen 手势</string>
+    <string name="spen_enable_summary">为 S Pen 手势设置自定义动作</string>
+    <string name="spen_extras_cat">S Pen 扩展</string>
+    <string name="spen_gestures_cat">S Pen 手势</string>
+    <string name="enable_stylus_pointer_title">启用 S Pen 指针</string>
+    <string name="enable_stylus_pointer_summary">当使用 S Pen 时启用鼠标图标</string>
 
     <!-- Power Saving 省电模式 -->
     <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
@@ -116,8 +135,8 @@
     <string name="install_file_manager_error">未找到可选择 ZIP 文件的应用程序，请至少安装一款文件管理程序。</string>
     <string name="notification_wallpaper_title">选择通知栏背景</string>
     <string name="notification_wallpaper_summary">在本页面按菜单键可选择重置背景壁纸</string>
-    <string name="notif_wallpaper_alpha_title">通知栏背景透明度</string>
-    <string name="alpha_dialog_title">设置透明度</string>
+    <string name="notif_wallpaper_alpha_title">通知栏背景不透明度</string>
+    <string name="alpha_dialog_title">设置不透明度</string>
     <string name="custom_carrier_label_title">自定义运营商名称</string>
     <string name="custom_carrier_label_explain">请输入新名称，输入空字符将恢复为原始名称。</string>
     <string name="custom_carrier_label_notset">当前未自定义运营商名称</string>
@@ -125,6 +144,13 @@
     <string name="ime_switcher_summary">输入时状态栏显示键盘图标</string>
     <string name="wakeup_when_plugged_unplugged_title">充电唤醒</string>
     <string name="wakeup_when_plugged_unplugged_summary">当连接或移除充电器时唤醒设备</string>
+    <string name="system_power_crt_screen_off_title">CRT 关闭屏幕</string>
+    <string name="system_power_crt_screen_off_summary">屏幕关闭时将显示出像关闭CRT显示器一样的动画</string>
+    <string name="system_power_crt_mode_title">CRT 动画模式</string>
+    <string name="system_power_crt_mode_dialog_title">显示 CRT 动画</string>
+    <string name="system_power_crt_mode_horizontal">始终横屏</string>
+    <string name="system_power_crt_mode_vertical">始终竖屏</string>
+    <string name="system_power_crt_mode_both">自动旋转</string>
     <string name="lefty_mode_title">左手模式</string>
     <string name="lefty_mode_summary">交换导航栏位置（将重启用户界面）</string>
     <string name="rotate_180_title">允许 180° 旋转</string>
@@ -167,8 +193,8 @@
     <string name="transparency_dialog_statusbar">状态栏</string>
     <string name="transparency_dialog_navbar">导航栏</string>
     <string name="transparency_dialog_match_keyguard_alpha">匹配锁屏界面透明度</string>
-    <string name="transparency_dialog_transparency">主屏幕透明度</string>
-    <string name="transparency_dialog_transparency_keyguard">锁屏界面透明度</string>
+    <string name="transparency_dialog_transparency">主屏幕不透明度</string>
+    <string name="transparency_dialog_transparency_keyguard">锁屏界面不透明度</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -201,15 +227,13 @@
     <string name="custom_density_dialog_button_reboot">立即重启</string>
 
     <!-- Statusbar | Toggles 状态栏|开关-->
-
     <string name="toggle_style_title">开关风格</string>
     <string name="toggle_style_summary">显示开关的图标或文字</string>
     <string name="toggles_layout_title">开关布局</string>
-    <string name="enabled_toggles_title">已启用开关</string>
-    <string name="enabled_toggles_summary">选择要显示的开关</string>
-    <string name="toggles_display_dialog">选择所需的开关</string>
     <string name="toggles_per_row_title">每行开关数量</string>
     <string name="toggles_per_row_summary">选择每行显示几个开关</string>
+    <string name="toggles_style_title">开关风格</string>
+    <string name="toggles_style_summary">传统通知样式或方块排列样式</string>
     <string name="toggles_display_close">关闭</string>
     <string name="toggles_order_title">开关排序</string>
     <string name="toggles_order_summary">排列要显示的切换开关顺序</string>
@@ -232,6 +256,12 @@
     <string name="toggle_enable_fasttoggle_summary">覆盖默认行为</string>
     <string name="toggle_choose_fasttoggle_side_title">选择快捷开关侧边</string>
     <string name="toggle_choose_fasttoggle_side_summary">选择快捷开关触发区域</string>
+    <string name="toggle_dialog_arrange_title">开关设置</string>
+    <string name="toggle_dialog_add_toggles">选择并添加开关</string>
+    <string name="toggle_style_tile">方块式</string>
+    <string name="toggle_style_traditional">传统式</string>
+    <string name="toggle_swap_handle_side">拖动区右置</string>
+    <string name="add_toggles">更改开关</string>
 
     <!-- Statusbar | Clock 状态栏|时钟 -->
     <string name="clock_title_enable">时钟风格</string>
@@ -263,12 +293,12 @@
     <string name="toggle_swagger">屌爆</string>
     <string name="toggle_sync">数据同步</string>
     <string name="toggle_torch">LED 灯光</string>
-    <string name="toggle_2g">2G 模式</string>
+    <string name="toggle_2g">仅使用 2G 模式</string>
     <string name="toggle_usb_tether">USB 网络共享</string>
     <string name="toggle_vibrate">振动</string>
     <string name="toggle_wifi_tether">Wi-Fi 热点</string>
     <string name="toggle_wifi">Wi-Fi 无线网络</string>
-    <string name="toggle_user">用户</string>
+    <string name="toggle_user">当前用户</string>
     <string name="toggle_favorite_contact">收藏的联系人</string>
     <string name="toggle_settings">系统设置</string>
     <string name="toggle_signal">信号</string>
@@ -323,7 +353,7 @@
     <string name="navbar_qty_title">导航栏按键数量</string>
     <string name="navbar_qty_summary">设置导航栏按键数量</string>
     <string name="navbar_action_title">按键 %1$s 的行为与图标</string>
-    <string name="button_transparency_title">导航栏按键透明度</string>
+    <string name="button_transparency_title">导航栏按键不透明度</string>
     <string name="navbar_width_help_title">导航栏组合高度帮助</string>
     <string name="navbar_width_help_summary">100 是屏幕高度的 70\%% 。5 是屏幕高度的 30\%% 。0 默认是按钮高度。</string>
     <string name="width_port_title">竖屏组合高度</string>
@@ -381,7 +411,7 @@
     <string name="navigation_bar_menu_arrow_keys_summary">在导航栏显示箭头按键用于准确定位输入光标或选择菜单</string>
     <string name="navigation_bar_alpha_title">状态栏与导航栏透明度</string>
     <string name="navbar_hide_enable_title">隐藏导航栏</string>
-    <string name="drag_handle_opacity_title">滑动区透明度</string>
+    <string name="drag_handle_opacity_title">滑动区不透明度</string>
     <string name="drag_handle_width_title">滑动区宽度</string>
     <string name="title_navbar_timeout">隐藏导航栏超时</string>
     <string name="summary_navbar_timeout">超时多久后隐藏导航栏</string>
@@ -395,38 +425,25 @@
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
-    <string name="interface_softkey_settings">按钮设置</string>
-    <string name="interface_softkeys_pref_default_1_title">点击目标 1 执行程序</string>
-    <string name="interface_softkeys_pref_long_1_title">长按目标 1 执行程序</string>
-    <string name="interface_softkeys_pref_default_2_title">点击目标 2 执行程序</string>
-    <string name="interface_softkeys_pref_long_2_title">长按目标 2 执行程序</string>
-    <string name="interface_softkeys_pref_default_3_title">点击目标 3 执行程序</string>
-    <string name="interface_softkeys_pref_long_3_title">长按目标 3 执行程序</string>
-    <string name="interface_softkeys_pref_default_4_title">点击目标 4 执行程序</string>
-    <string name="interface_softkeys_pref_long_4_title">长按目标 4 执行程序</string>
-    <string name="interface_softkeys_pref_default_5_title">点击目标 5 执行程序</string>
-    <string name="interface_softkeys_pref_long_5_title">长按目标 5 执行程序</string>
-    <string name="interface_softkeys_pref_default_summary">点击设置按钮选择一个想要在长按时出现的程序</string>
-    <string name="interface_softkeys_activity_dialog_title">选择程序</string>
-    <string name="interface_softkeys_reboot_title">重启菜单</string>
-    <string name="interface_softkeys_screenshot_title">屏幕截图</string>
-    <string name="interface_softkeys_screenoff_title">关闭屏幕</string>
-    <string name="interface_softkeys_ime_switcher_title">输入法选择器</string>
-    <string name="interface_softkeys_ring_vib_title">铃声/振动</string>
-    <string name="interface_softkeys_ring_silent_title">铃声/静音</string>
-    <string name="interface_softkeys_ring_vib_silent_title">铃声/振动/静音</string>
-    <string name="interface_softkeys_kill_process_title">强行结束程序</string>
-    <string name="interface_softkey_package_removed">找不到之前选择的程序</string>
-    <string name="interface_navring_settings_title">导航环</string>
-    <string name="interface_navring_settings_summary">自定义导航环应用程序</string>
-    <string name="title_navring_amount">导航环目标数量</string>
-    <string name="summary_navring_amount">你想显示多少个导航环目标？\n*改变此选项将重置当前目标程序并重启用户界面*</string>
-    <string name="interface_navring_custom_pref_summary">触摸并移动到目标上松开时将运行 </string>
-    <string name="interface_navring_pref_default_summary">点击选择一个自定义程序用于导航环目标</string>
-    <string name="interface_navring_assist_title">Google Now</string>
-    <string name="interface_navring">导航环目标</string>
     <string name="navbar_ring">自定义导航环目标</string>
     <string name="navring_enable_long">长按“主屏幕”键启动导航环</string>
+    <string name="navring_target_save">导航环已保存</string>
+    <string name="navring_target_reset_message">你想要重置导航环吗？</string>
+    <string name="navring_target_reset">导航环目标重置。</string>
+    <string name="choose_action_title">选择动作</string>
+    <string name="choose_action_short_title">选择点击动作</string>
+    <string name="choose_action_long_title">选择长按动作</string>
+    <string name="action_long_save"> 设为长按动作</string>
+    <string name="title_navring_amount">导航环目标数量</string>
+    <string name="summary_navring_amount">选择导航环目标数量</string>
+    <string name="interface_navring_settings_title">导航环</string>
+    <string name="interface_navring_settings_summary">@null</string>
+    <string name="navring_target_info">用手指拖动并为目标设定动作</string>
+    <string name="navring_short">点击动作</string>
+    <string name="navring_long">长按动作</string>
+    <string name="navring_icon">自定义图标</string>
+    <string name="navring_target_amount_text">当前目标数量</string>
+    <string name="navring_target_longpress_text">长按状态</string>
 
     <!-- LED 灯光 -->
     <string name="led_on">LED 点亮</string>

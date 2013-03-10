@@ -54,6 +54,9 @@
                 android:key="navbar_buttons"
                 android:title="@string/navbar_button_cat">
 
+            <com.aokp.romcontrol.widgets.NavBarButtonsPref
+                android:key="navbar_buttons_widget" />
+
         </PreferenceCategory>
 
         <PreferenceCategory

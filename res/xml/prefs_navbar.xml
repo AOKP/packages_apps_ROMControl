@@ -3,27 +3,30 @@
         <CheckBoxPreference
                 android:key="enable_nav_bar"
                 android:title="@string/navbar_enable_bar" />
+        <PreferenceCategory
+                android:key="navbar_buttons"
+                android:title="@string/navbar_button_cat">
 
-        <ListPreference
+            <com.aokp.romcontrol.widgets.NavBarButtonsPref
+                android:key="navbar_buttons_widget" />
+            <ListPreference
                 android:entries="@array/pref_navigation_menu_entries"
                 android:entryValues="@array/pref_navigation_menu_values"
                 android:key="pref_menu_display"
                 android:title="@string/title_pref_menu_display"
                 android:summary="@string/summary_pref_menu_display" />
-
-        <ListPreference
+            <ListPreference
                 android:entries="@array/pref_navigation_menu_display_entries"
                 android:entryValues="@array/pref_navigation_menu_display_values"
                 android:key="navbar_menu_display"
                 android:title="@string/title_pref_navigation_menu_display"
                 android:summary="@string/summary_pref_navigation_menu_display" />
-        <ListPreference
-                android:entries="@array/navigation_bar_qty_entries"
-                android:entryValues="@array/navigation_bar_qty_values"
-                android:key="navbar_qty"
-                android:title="@string/navbar_qty_title"
-                android:summary="@string/navbar_qty_summary" />
-
+            <CheckBoxPreference
+                android:key="navigation_bar_menu_arrow_keys"
+                android:title="@string/navigation_bar_menu_arrow_keys_title"
+                android:summary="@string/navigation_bar_menu_arrow_keys_summary" />
+        </PreferenceCategory>
+            
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_bar_color"
                 android:title="@string/navigation_bar_color_title"
@@ -44,17 +47,6 @@
                 android:title="@string/navigation_bar_glow_tint_title"
                 android:summary="@string/navigation_bar_glow_tint_summary"
                 android:defaultValue="#FFFFFF" />
-
-        <CheckBoxPreference
-                android:key="navigation_bar_menu_arrow_keys"
-                android:title="@string/navigation_bar_menu_arrow_keys_title"
-                android:summary="@string/navigation_bar_menu_arrow_keys_summary" />
-
-        <PreferenceCategory
-                android:key="navbar_buttons"
-                android:title="@string/navbar_button_cat">
-
-        </PreferenceCategory>
 
         <PreferenceCategory
                 android:key="advanced_cat"

@@ -17,12 +17,6 @@
                 android:key="navbar_menu_display"
                 android:title="@string/title_pref_navigation_menu_display"
                 android:summary="@string/summary_pref_navigation_menu_display" />
-        <ListPreference
-                android:entries="@array/navigation_bar_qty_entries"
-                android:entryValues="@array/navigation_bar_qty_values"
-                android:key="navbar_qty"
-                android:title="@string/navbar_qty_title"
-                android:summary="@string/navbar_qty_summary" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_bar_color"
@@ -53,6 +47,9 @@
         <PreferenceCategory
                 android:key="navbar_buttons"
                 android:title="@string/navbar_button_cat">
+
+            <com.aokp.romcontrol.widgets.NavBarButtonsPref
+                android:key="navbar_buttons_widget" />
 
         </PreferenceCategory>
 

@@ -364,6 +364,7 @@
     <string name="navigation_bar">Navigation bar</string>
     <string name="navbar_hide">NavBar Hide Options</string>
     <string name="navbar_button_cat">Navigation bar buttons</string>
+    <string name="navbar_color_cat">Colors and Transparency</string>
     <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
@@ -376,20 +377,6 @@
     <string name="navbar_width_help_summary">100 is 70\%% of screen width, 5 is 30\%% of screen width. 0 will default to per button width.</string>
     <string name="width_port_title">Combined bar width port</string>
     <string name="width_land_title">Combined bar width land</string>
-    <string name="navbar_longpress_title">Button %1$s longpress action</string>
-    <string name="navbar_action_home">Home</string>
-    <string name="navbar_action_back">Back</string>
-    <string name="navbar_action_recents">Recents</string>
-    <string name="navbar_action_recents_gb">Recents (GB style)</string>
-    <string name="navbar_action_search">Search</string>
-    <string name="navbar_action_screenshot">Screenshot</string>
-    <string name="navbar_action_menu">Menu</string>
-    <string name="navbar_action_ime">Open IME Switcher</string>
-    <string name="navbar_action_kill">Kill task</string>
-    <string name="navbar_action_lastapp">Last app</string>
-    <string name="navbar_action_power">Power</string>
-    <string name="navbar_action_notifications">Notifications</string>
-    <string name="navbar_action_none">Empty</string>
     <string name="navbar_widgets">Navigation Bar Widgets</string>
     <string name="navbar_enable_bar">Enable bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
@@ -440,6 +427,12 @@
     <string name="hide_navbar_timeout_10000">10 Sec</string>
     <string name="hide_navbar_timeout_15000">15 Sec</string>
     <string name="hide_navbar_timeout_30000">30 Sec</string>
+    <string name="navbar_buttons_instructions">Press icon to select actions or custom icon</string>
+    <string name="navbar_title_menu">Button options</string>
+    <string name="navbar_actiontitle_menu">Action: %1$s</string>
+    <string name="navbar_longpress_menu">Longpress: %1$s</string>
+    <string name="navbar_icon_menu">Custom icon</string>
+    <string name="navbar_delete_menu">Delete button</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Ring Targets</string>

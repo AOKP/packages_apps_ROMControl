@@ -3,57 +3,54 @@
         <CheckBoxPreference
                 android:key="enable_nav_bar"
                 android:title="@string/navbar_enable_bar" />
+        <PreferenceCategory
+                android:key="navbar_buttons"
+                android:title="@string/navbar_button_cat">
 
-        <ListPreference
+            <ListPreference
                 android:entries="@array/pref_navigation_menu_entries"
                 android:entryValues="@array/pref_navigation_menu_values"
                 android:key="pref_menu_display"
                 android:title="@string/title_pref_menu_display"
                 android:summary="@string/summary_pref_menu_display" />
-
-        <ListPreference
+            <ListPreference
                 android:entries="@array/pref_navigation_menu_display_entries"
                 android:entryValues="@array/pref_navigation_menu_display_values"
                 android:key="navbar_menu_display"
                 android:title="@string/title_pref_navigation_menu_display"
                 android:summary="@string/summary_pref_navigation_menu_display" />
-        <ListPreference
-                android:entries="@array/navigation_bar_qty_entries"
-                android:entryValues="@array/navigation_bar_qty_values"
-                android:key="navbar_qty"
-                android:title="@string/navbar_qty_title"
-                android:summary="@string/navbar_qty_summary" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="nav_bar_color"
-                android:title="@string/navigation_bar_color_title"
-                android:defaultValue="#000000" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="nav_button_color"
-                android:title="@string/navigation_bar_tint_title"
-                android:defaultValue="#FFFFFF" />
-
-        <CheckBoxPreference
-                android:key="navigation_bar_allcolor"
-                android:title="@string/navigation_bar_colorall_title"
-                android:summary="@string/navigation_bar_colorall_summary" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="nav_button_glow_color"
-                android:title="@string/navigation_bar_glow_tint_title"
-                android:summary="@string/navigation_bar_glow_tint_summary"
-                android:defaultValue="#FFFFFF" />
-
-        <CheckBoxPreference
+            <CheckBoxPreference
                 android:key="navigation_bar_menu_arrow_keys"
                 android:title="@string/navigation_bar_menu_arrow_keys_title"
                 android:summary="@string/navigation_bar_menu_arrow_keys_summary" />
+        </PreferenceCategory>
 
         <PreferenceCategory
-                android:key="navbar_buttons"
-                android:title="@string/navbar_button_cat">
+                android:key="navbar_colors_cat"
+                android:title="@string/navbar_color_cat" >
+               <net.margaritov.preference.colorpicker.ColorPickerPreference
+                       android:key="nav_bar_color"
+                       android:title="@string/navigation_bar_color_title"
+                       android:defaultValue="#000000" />
 
+               <net.margaritov.preference.colorpicker.ColorPickerPreference
+                       android:key="nav_button_color"
+                       android:title="@string/navigation_bar_tint_title"
+                       android:defaultValue="#FFFFFF" />
+
+               <CheckBoxPreference
+                       android:key="navigation_bar_allcolor"
+                       android:title="@string/navigation_bar_colorall_title"
+                       android:summary="@string/navigation_bar_colorall_summary" />
+
+               <net.margaritov.preference.colorpicker.ColorPickerPreference
+                       android:key="nav_button_glow_color"
+                       android:title="@string/navigation_bar_glow_tint_title"
+                       android:summary="@string/navigation_bar_glow_tint_summary"
+                       android:defaultValue="#FFFFFF" />
+               <com.aokp.romcontrol.widgets.SeekBarPreference
+                   android:key="button_transparency"
+                   android:title="@string/button_transparency_title" />
         </PreferenceCategory>
 
         <PreferenceCategory
@@ -89,47 +86,43 @@
                         android:title="@string/navigation_bar_width_title"
                         android:summary="@string/navigation_bar_width_summary" />
 
-        <Preference
-            android:key="width_help"
-            android:enabled="false"
-            android:title="@string/navbar_width_help_title"
-            android:summary="@string/navbar_width_help_summary" />
+               <Preference
+                   android:key="width_help"
+                   android:enabled="false"
+                   android:title="@string/navbar_width_help_title"
+                   android:summary="@string/navbar_width_help_summary" />
 
-        <com.aokp.romcontrol.widgets.SeekBarPreference
-            android:key="width_port"
-            android:title="@string/width_port_title" />
+               <com.aokp.romcontrol.widgets.SeekBarPreference
+                   android:key="width_port"
+                   android:title="@string/width_port_title" />
 
-        <com.aokp.romcontrol.widgets.SeekBarPreference
-            android:key="width_land"
-            android:title="@string/width_land_title" />
-
-        <com.aokp.romcontrol.widgets.SeekBarPreference
-            android:key="button_transparency"
-            android:title="@string/button_transparency_title" />
+               <com.aokp.romcontrol.widgets.SeekBarPreference
+                   android:key="width_land"
+                   android:title="@string/width_land_title" />
 
         </PreferenceCategory>
         <PreferenceCategory
             android:key="navbar_hide_cat"
             android:title="@string/navbar_hide">
 
-        <CheckBoxPreference
-                android:key="navbar_hide_enable"
-                android:title="@string/navbar_hide_enable_title" />
+            <CheckBoxPreference
+                    android:key="navbar_hide_enable"
+                    android:title="@string/navbar_hide_enable_title" />
 
-        <com.aokp.romcontrol.widgets.SeekBarPreference
-            android:key="drag_handle_opacity"
-            android:title="@string/drag_handle_opacity_title"/>
+            <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="drag_handle_opacity"
+                android:title="@string/drag_handle_opacity_title"/>
 
-        <com.aokp.romcontrol.widgets.SeekBarPreference
-            android:key="drag_handle_width"
-            android:title="@string/drag_handle_width_title"/>
+            <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="drag_handle_width"
+                android:title="@string/drag_handle_width_title"/>
 
-        <ListPreference
-                android:entries="@array/hide_navbar_timeout_entries"
-                android:entryValues="@array/hide_navbar_timeout_values"
-                android:key="navbar_hide_timeout"
-                android:title="@string/title_navbar_timeout"
-                android:summary="@string/summary_navbar_timeout"/>
+            <ListPreference
+                    android:entries="@array/hide_navbar_timeout_entries"
+                    android:entryValues="@array/hide_navbar_timeout_values"
+                    android:key="navbar_hide_timeout"
+                    android:title="@string/title_navbar_timeout"
+                    android:summary="@string/summary_navbar_timeout"/>
 
         </PreferenceCategory>
 

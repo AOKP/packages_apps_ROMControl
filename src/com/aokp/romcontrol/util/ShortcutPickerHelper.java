@@ -58,6 +58,11 @@ public class ShortcutPickerHelper {
         mListener = listener;
     }
 
+ /*   public ShortcutPickerHelper(Preference parent, OnPickListener listener) {
+        mParent = parent;
+        mListener = listener;
+    } */
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {

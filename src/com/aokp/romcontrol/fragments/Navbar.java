@@ -316,6 +316,12 @@ public class Navbar extends AOKPPreferenceFragment implements
             Settings.System.putBoolean(mContentRes,
                     Settings.System.NAV_HIDE_ENABLE,
                     ((CheckBoxPreference) preference).isChecked());
+            mDragHandleOpacity.setInitValue(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.DRAG_HANDLE_OPACITY,50));
+            mDragHandleWidth.setInitValue(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.DRAG_HANDLE_WEIGHT,5));
+            mNavBarHideTimeout.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.NAV_HIDE_TIMEOUT, 3000) + "");
             refreshSettings();
             return true;
         } else if (preference == mConfigureWidgets) {

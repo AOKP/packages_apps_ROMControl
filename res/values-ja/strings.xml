@@ -122,6 +122,21 @@
     <string name="aokp_irc_summary">\#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">AOKPについて</string>
     <string name="about_aokp_summary">@null</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
+    <string name="github_aokp">https://github.com/AOKP</string>
+    <string name="github_adam">https://github.com/syaoran12</string>
+    <string name="github_birdman">https://github.com/mrbirdman</string>
+    <string name="github_khasmek">https://github.com/KhasMek</string>
+    <string name="github_kwes">https://github.com/kwes1020</string>
+    <string name="github_marclandis">https://github.com/MarcLandis</string>
+    <string name="github_roman">https://github.com/romanbb</string>
+    <string name="github_protekk">https://github.com/ProTekk</string>
+    <string name="github_sethyx">https://github.com/sethyx</string>
+    <string name="github_sixstringsg">https://github.com/sixstringsg</string>
+    <string name="github_stevespear">https://github.com/Stevespear426</string>
+    <string name="github_whitehawk">https://github.com/Whitehawkx</string>
+    <string name="github_xoom">https://github.com/xoomdev</string>
+    <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
 
     <!-- General UI -->
     <string name="bootani_cat">ブートアニメーション</string>
@@ -148,6 +163,13 @@
     <string name="ime_switcher_summary">文字入力中にステータスバーに表示する</string>
     <string name="wakeup_when_plugged_unplugged_title">充電時にウェイクアップ</string>
     <string name="wakeup_when_plugged_unplugged_summary">充電ケーブルの抜き差し時にデバイスをウェイクアップする</string>
+    <string name="system_power_crt_screen_off_title">CRTスクリーンオフ</string>
+    <string name="system_power_crt_screen_off_summary">画面オフ時のブラウン管アニメーションを有効にする</string>
+    <string name="system_power_crt_mode_title">CRTアニメーションモード</string>
+    <string name="system_power_crt_mode_dialog_title">CRTアニメーションモード</string>
+    <string name="system_power_crt_mode_horizontal">縦画面で水平方向</string>
+    <string name="system_power_crt_mode_vertical">縦画面で垂直方向</string>
+    <string name="system_power_crt_mode_both">画面の向きに依存</string>
     <string name="lefty_mode_title">左利きモード</string>
     <string name="lefty_mode_summary">ナビゲーションバーの配置をスワップする (UI再起動)</string>
     <string name="rotate_180_title">180°画面回転を有効</string>

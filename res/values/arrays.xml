@@ -618,6 +618,31 @@
         <item>360</item>
         <item>480</item>
     </string-array>
+    <string-array name="statusbar_fontsize_entries">
+        <item>@string/font_8dp</item>
+        <item>@string/font_10dp</item>
+        <item>@string/font_12dp</item>
+        <item>@string/font_14dp</item>
+        <item>@string/font_16dp</item>
+        <item>@string/font_18dp</item>
+        <item>@string/font_20dp</item>
+        <item>@string/font_22dp</item>
+        <item>@string/font_24dp</item>
+        <item>@string/font_26dp</item>
+    </string-array>
+
+    <string-array name="statusbar_fontsize_values">
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
+    </string-array>
     <string-array name="weather_statusbar_location_entries" translatable="false">
         <item>@string/above_carrier_text</item>
         <item>@string/weather_panel</item>

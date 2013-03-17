@@ -32,5 +32,11 @@
         android:key="hide_signal"
         android:title="@string/hide_signal_title"
         android:summary="@string/hide_signal_summary" />
+    <ListPreference
+        android:key="status_bar_fontsize"
+        android:title="@string/statusbar_fontsize"
+        android:summary="@string/statusbar_fontsize_summary"
+        android:entries="@array/statusbar_fontsize_entries"
+        android:entryValues="@array/statusbar_fontsize_values" />
 
 </PreferenceScreen>

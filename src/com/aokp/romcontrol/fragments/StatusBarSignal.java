@@ -10,15 +10,20 @@ import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import android.util.Log;
+import android.util.TypedValue;
 
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
+import com.aokp.romcontrol.util.Helpers;
 
 public class StatusBarSignal extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static int STOCK_FONT_SIZE = 16;
+
     ListPreference mDbmStyletyle;
     ListPreference mWifiStyle;
+    ListPreference mFontsize;
     ColorPickerPreference mColorPicker;
     ColorPickerPreference mWifiColorPicker;
     CheckBoxPreference mHideSignal;
@@ -54,6 +59,10 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mAltSignal.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT,false));
 
+        mFontsize = (ListPreference) findPreference("status_bar_fontsize");
+        mFontsize.setOnPreferenceChangeListener(this);
+        mFontsize.setValue(Integer.toString(Settings.System.getInt(mContentRes,
+                Settings.System.STATUSBAR_FONT_SIZE, STOCK_FONT_SIZE)));
     }
 
     @Override
@@ -107,6 +116,12 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
                     Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT_COLOR, intHex);
 
             return true;
+        } else if (preference == mFontsize) {
+
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.STATUSBAR_FONT_SIZE, val);
+            Helpers.restartSystemUI();
         }
         return false;
     }

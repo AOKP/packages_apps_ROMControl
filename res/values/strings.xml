@@ -424,6 +424,18 @@
     <string name="wifi_signal_color_title">WiFi signal text color</string>
     <string name="alt_signal_title">Alt signal indicator layout</string>
     <string name="alt_signal_summary">Use alternate Gingerbread style signal cluster</string>
+	<string name="statusbar_fontsize">Statusbar Font Size</string>
+    <string name="statusbar_fontsize_summary">Change the size of text elements on statusbar\nWill restart UI!</string>
+    <string name="font_8dp">8 dp</string>
+    <string name="font_10dp">10 dp</string>
+    <string name="font_12dp">12 dp</string>
+    <string name="font_14dp">14 dp</string>
+    <string name="font_16dp">16 dp (Default)</string>
+    <string name="font_18dp">18 dp</string>
+    <string name="font_20dp">20 dp</string>
+    <string name="font_22dp">22 dp</string>
+    <string name="font_24dp">24 dp</string>
+    <string name="font_26dp">26 dp</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

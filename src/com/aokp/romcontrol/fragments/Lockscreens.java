@@ -79,6 +79,7 @@ public class Lockscreens extends Fragment implements
 
     private GlowPadView mGlowPadView;
     private TextView mHelperText;
+    private View mLockscreenOptions;
 
     private Switch mLongPressStatus;
     private Switch mLockBatterySwitch;
@@ -186,6 +187,8 @@ public class Lockscreens extends Fragment implements
         super.onActivityCreated(savedInstanceState);
         mGlowPadView = ((GlowPadView) getActivity().findViewById(R.id.lock_target));
         mGlowPadView.setOnTriggerListener(this);
+        mLockscreenOptions = ((View) getActivity().findViewById(R.id.lockscreen_options));
+        mLockscreenOptions.getParent().bringChildToFront(mLockscreenOptions);
         mHelperText = ((TextView) getActivity().findViewById(R.id.helper_text));
         defaultColor = mResources
                 .getColor(com.android.internal.R.color.config_defaultNotificationColor);

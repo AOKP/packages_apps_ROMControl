@@ -182,7 +182,7 @@
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
     <string name="hide_extras">Hide Extras</string>
-    <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat. mode button(requires UI restart)</string>
+    <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat. mode button</string>
     <string name="bootanimation_preview">Bootanimation preview</string>
     <string name="apply">Apply</string>
     <string name="clear_custom_bootanimation">Clear custom boot animation</string>
@@ -251,7 +251,7 @@
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggles_style_title">Toggles style</string>
-    <string name="toggles_style_summary">Notification (traditional) or tiles</string>
+    <string name="toggles_style_summary">Tiles or traditional</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
@@ -278,7 +278,7 @@
     <string name="toggle_dialog_add_toggles">Select toggles to add</string>
     <string name="toggle_style_tile">Tiles</string>
     <string name="toggle_style_traditional">Traditional</string>
-    <string name="toggle_style_scrollable">Traditional (Scrollable)</string>
+    <string name="toggle_style_scrollable">Scrollable</string>
     <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="add_toggles">Change toggles</string>
 
@@ -350,7 +350,7 @@
     <string name="wifi_signal_style">WiFi signal text style</string>
     <string name="wifi_signal_color_title">WiFi signal color</string>
     <string name="alt_signal_title">Alt signal layout</string>
-    <string name="alt_signal_summary">Use alternate (GB style) signal cluster</string>
+    <string name="alt_signal_summary">Use alternate Gingerbread style signal cluster</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -532,7 +532,7 @@
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
     <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are shown when the screen is turned on.</string>
     <string name="lockscreen_minimize_challenge_title">Minimize lockscreen challenge</string>
-    <string name="lockscreen_minimize_challenge_summary">Set whether the lockscreen challenge (circle, pattern, pin) is minimized when the screen is turned on.</string>
+    <string name="lockscreen_minimize_challenge_summary">Set whether the lockscreen challenge is minimized when the screen is turned on.</string>
     <string name="lockscreen_use_widget_container_carousel_title">Use widget carousel</string>
     <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
@@ -550,7 +550,7 @@
     <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
     <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
     <string name="lockscreen_calendar_title">Enable</string>
-    <string name="lockscreen_calendar_summary">Show upcoming event(s) from your calendar on the lockscreen.</string>
+    <string name="lockscreen_calendar_summary">Show upcoming events from your calendar on the lockscreen.</string>
     <string name="lockscreen_calendar_sources_title">Calendar sources</string>
     <string name="lockscreen_calendar_sources_summary">Select the calendars you want to see.</string>
     <string name="lockscreen_calendar_dialog">Choose which calendars to use</string>

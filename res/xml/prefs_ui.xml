@@ -123,6 +123,12 @@
             android:summary="@string/rotate_180_summary" />
 
         <CheckBoxPreference
+            android:key="rotate_270"
+            android:title="@string/rotate_270_title"
+            android:summary="@string/rotate_270_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
             android:key="ime_switcher"
             android:title="@string/ime_switcher_title"
             android:summary="@string/ime_switcher_summary"

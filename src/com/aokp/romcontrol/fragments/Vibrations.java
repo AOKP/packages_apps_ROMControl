@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.preference.PreferenceFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -35,10 +36,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.vibrations.VibrationRecorder;
 import com.aokp.romcontrol.R;
 
-public class Vibrations extends Fragment {
+public class Vibrations extends AOKPPreferenceFragment {
     private static final String TAG = "Vibrations";
 
     private ViewGroup mContainer;

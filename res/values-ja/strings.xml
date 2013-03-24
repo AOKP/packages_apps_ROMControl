@@ -279,6 +279,7 @@
     <string name="toggle_dialog_add_toggles">追加するトグルを選択</string>
     <string name="toggle_style_tile">タイル表示</string>
     <string name="toggle_style_traditional">通知パネルに表示</string>
+    <string name="toggle_style_scrollable">通知パネルに表示 (スクロール)</string>
     <string name="toggle_swap_handle_side">ドラッグハンドルを右側に表示</string>
     <string name="add_toggles">トグルの変更</string>
 
@@ -312,6 +313,7 @@
     <string name="toggle_swagger">Swagger</string>
     <string name="toggle_sync">同期</string>
     <string name="toggle_torch">トーチ</string>
+    <string name="toggle_statusbar">ステータスバー</string>
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USBテザリング</string>
     <string name="toggle_vibrate">バイブレート</string>
@@ -365,6 +367,7 @@
     <string name="navigation_bar">ナビゲーションバー</string>
     <string name="navbar_hide">ナビゲーションバー非表示設定</string>
     <string name="navbar_button_cat">ソフトキー設定</string>
+    <string name="navbar_color_cat">色と不透明度の設定</string>
     <string name="title_pref_menu_display">メニューキー表示位置</string>
     <string name="summary_pref_menu_display">ソフトキー設定でメニューを表示する場合は「表示しない」を選択してください。</string>
     <string name="title_pref_navigation_menu_display">メニューキー表示</string>
@@ -377,20 +380,6 @@
     <string name="navbar_width_help_summary">100で画面の幅の70\%%、5で画面幅の30\%%の表示 (デフォルト0)</string>
     <string name="width_port_title">縦画面時のソフトキー表示幅</string>
     <string name="width_land_title">横画面時のソフトキー表示幅</string>
-    <string name="navbar_longpress_title">ソフトキー%1$s長押し時の動作</string>
-    <string name="navbar_action_home">ホーム</string>
-    <string name="navbar_action_back">戻る</string>
-    <string name="navbar_action_recents">アプリ履歴</string>
-    <string name="navbar_action_recents_gb">アプリ履歴(GBスタイル)</string>
-    <string name="navbar_action_search">検索</string>
-    <string name="navbar_action_screenshot">スクリーンショット</string>
-    <string name="navbar_action_menu">メニュー</string>
-    <string name="navbar_action_ime">IME変更</string>
-    <string name="navbar_action_kill">アプリ終了</string>
-    <string name="navbar_action_lastapp">直前のアプリ</string>
-    <string name="navbar_action_power">電源</string>
-    <string name="navbar_action_notifications">通知パネルの開閉</string>
-    <string name="navbar_action_none">設定なし</string>
     <string name="navbar_widgets">ウィジェット表示</string>
     <string name="navbar_enable_bar">有効にする</string>
     <string name="navigation_bar_height_title">ナビゲーションバーの高さ(縦画面)</string>
@@ -428,6 +417,8 @@
     <string name="navbar_widgets_delete">ウィジェットを削除</string>
     <string name="navigation_bar_menu_arrow_keys_title">矢印キー</string>
     <string name="navigation_bar_menu_arrow_keys_summary">文字入力中にナビゲーションバーに矢印キーを表示する</string>
+    <string name="statusbar_hide_title">ステータスバーを隠す</string>
+    <string name="statusbar_hide_summary">ステータスバーを完全に隠す</string>
     <string name="navigation_bar_alpha_title">通知とナビゲーションバーの不透明度</string>
     <string name="navbar_hide_enable_title">ナビゲーションバーを隠す</string>
     <string name="drag_handle_opacity_title">ハンドルの不透明度</string>
@@ -441,6 +432,12 @@
     <string name="hide_navbar_timeout_10000">10 秒</string>
     <string name="hide_navbar_timeout_15000">15 秒</string>
     <string name="hide_navbar_timeout_30000">30 秒</string>
+    <string name="navbar_buttons_instructions">アイコンをタップしてソフトキー動作とアイコンを変更してください</string>
+    <string name="navbar_title_menu">ソフトキーオプション</string>
+    <string name="navbar_actiontitle_menu">タップ: %1$s</string>
+    <string name="navbar_longpress_menu">長押し: %1$s</string>
+    <string name="navbar_icon_menu">カスタムアイコン</string>
+    <string name="navbar_delete_menu">ソフトキー削除</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">ナビゲーションリング</string>
@@ -523,8 +520,6 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_music_cat">音楽</string>
     <string name="lockscreen_weather_cat">天気情報</string>
     <string name="lockscreen_calendar_cat">カレンダー</string>
-    <string name="lockscreen_quick_unlock_control_title">クイックPINロック解除</string>
-    <string name="lockscreen_quick_unlock_control_summary">PINコードでのロック解除時にコード入力後のOKのタップを省略する</string>
     <string name="lockscreen_menu_unlock_title">メニューキーでロックを解除</string>
     <string name="lockscreen_menu_unlock_summary">メニューキーでロックを解除する</string>
     <string name="lockscreen_auto_rotate_title">ロック画面の回転を有効にする</string>
@@ -539,8 +534,6 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_hide_initial_page_hints_summary">ロック画面の左右に表示されるウィジェットのガイドを表示しない</string>
     <string name="lockscreen_minimize_challenge_title">ロック解除表示を最小化</string>
     <string name="lockscreen_minimize_challenge_summary">画面オン時にロック解除表示(サークル/パターン/PIN)を最小化する</string>
-    <string name="lockscreen_longpress_challenge_title">アイコンを長押しでロック解除</string>
-    <string name="lockscreen_longpress_challenge_summary">ロック解除表示を最小化した時にロックアイコン長押しでロックを解除する</string>
     <string name="lockscreen_use_widget_container_carousel_title">回転アニメーションを使用</string>
     <string name="lockscreen_use_widget_container_carousel_summary">ロック画面ウィジェットの切り替え時に回転アニメーションを使用する</string>
     <string name="volume_rocker_wake_title">ボリュームキーでスリープ解除</string>
@@ -552,6 +545,7 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_wallpaper_title">ロック画面の壁紙の選択</string>
     <string name="lockscreen_wallpaper_summary">ロック画面の壁紙を元に戻すにはメニューから設定をリセットしてください</string>
     <string name="lockscreen_text_color_title">ロック画面の文字色</string>
+    <string name="lockscreen_text_color_summary">ロック画面の文字色を設定する</string>
     <string name="lockscreen_weather_title">ロック画面に天気情報を表示</string>
     <string name="lockscreen_weather_summary">ロック画面に天気情報を表示する (天気情報表示を有効にする必要あり)</string>
     <string name="lockscreen_weather_type_title">ロック画面の天気表示スタイル</string>
@@ -582,68 +576,18 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="circles_lock_wave_alpha_title">リングの外周の不透明度</string>
 
     <!-- Lockscreen Targets-->
-    <string name="custom_targets">ロック解除ターゲット</string>
-    <string name="lockscreen_target_info">ドラッグで編集するターゲットを選択する</string>
-    <string name="lockscreen_target_title">ターゲットの編集</string>
-    <string name="lockscreen_target_summary">ロック解除のターゲットを編集する</string>
-    <string name="number_of_targets_title">ロック解除ターゲット数</string>
-    <string name="number_of_targets_summary">ロック解除ターゲットの数を設定する</string>
-    <string name="picker_activities">アクティビティ</string>
-    <string name="select_custom_activity_title">割り当てる機能を選択する</string>
-    <string name="icon_picker_choose_icon_title">アイコンの選択</string>
-    <string name="icon_picker_alarm">アラーム</string>
-    <string name="icon_picker_browser">ブラウザ</string>
-    <string name="icon_picker_calendar">カレンダー</string>
-    <string name="icon_picker_camera">カメラ</string>
-    <string name="icon_picker_email">メール</string>
-    <string name="icon_picker_facebook">Facebook</string>
-    <string name="icon_picker_gallery">ギャラリー</string>
-    <string name="icon_picker_googleplus">Google+</string>
-    <string name="icon_picker_googletalk">トーク</string>
-    <string name="icon_picker_maps">マップ</string>
-    <string name="icon_picker_movie">ムービー</string>
-    <string name="icon_picker_music">ミュージック</string>
-    <string name="icon_picker_nav_normal">ナビ</string>
-    <string name="icon_picker_phone">電話</string>
-    <string name="icon_picker_podcast">ポッドキャスト</string>
-    <string name="icon_picker_rss">RSS</string>
-    <string name="icon_picker_search">検索</string>
-    <string name="icon_picker_sms">メッセージ</string>
-    <string name="icon_picker_twitter">Twitter</string>
-    <string name="icon_picker_unlock">ロック解除</string>
-    <string name="icon_picker_title">アイコンソースの選択</string>
-    <string name="icon_picker_system_icons_title">システムアイコン</string>
-    <string name="icon_picker_aokp_icons_title">AOKPアイコン</string>
-    <string name="icon_picker_gallery_title">ギャラリーから選択</string>
-
-    <string name="aokp_icon_picker_aokp">AOKP Now</string>
-    <string name="aokp_icon_picker_browser">ブラウザ</string>
-    <string name="aokp_icon_picker_calendar">カレンダー</string>
-    <string name="aokp_icon_picker_camera">カメラ</string>
-    <string name="aokp_icon_picker_clock">時計</string>
-    <string name="aokp_icon_picker_email">メール</string>
-    <string name="aokp_icon_picker_facebook">Facebook</string>
-    <string name="aokp_icon_picker_gallery">ギャラリー</string>
-    <string name="aokp_icon_picker_googleplus">Google+</string>
-    <string name="aokp_icon_picker_googletalk">トーク</string>
-    <string name="aokp_icon_picker_maps">マップ</string>
-    <string name="aokp_icon_picker_movie">ムービー</string>
-    <string name="aokp_icon_picker_music">ミュージック</string>
-    <string name="aokp_icon_picker_navigation">ナビ</string>
-    <string name="aokp_icon_picker_phone">電話</string>
-    <string name="aokp_icon_picker_podcast">ポッドキャスト</string>
-    <string name="aokp_icon_picker_rss">RSS</string>
-    <string name="aokp_icon_picker_sms">メッセージ</string>
-    <string name="aokp_icon_picker_unlock">ロック解除</string>
-    <string name="aokp_icon_picker_video">ビデオ</string>
-    <string name="aokp_icon_picker_title">アイコンソースの選択</string>
-    <string name="aokp_icon_picker_system_icons_title">システムアイコン</string>
-    <string name="aokp_icon_picker_gallery_title">ギャラリーから選択</string>
-
+    <string name="lockscreen_targets_title">ロック画面ターゲット</string>
+    <string name="lockscreen_targets_summary">ロック画面ターゲットサマリー…</string>
+    <string name="lockscreen_target_longpress_text">長押し時の動作</string>
+    <string name="lockscreen_camera">カメラ</string>
+    <string name="lockscreen_unlock">ロック解除</string>
+    <string name="save_error">ターゲットを保存できません！少なくとも一つロック解除ターゲットが必要です！</string>
     <string name="icon_picker_pack_title">アイコンパック</string>
     <string name="lockscreen_target_empty">設定なし</string>
     <string name="profile_reset_title">リセット</string>
     <string name="wifi_save">保存</string>
+    <string name="lockscreen_target_info">動作を割り当てるターゲットに向けてロック解除アイコンをスワイプしてください</string>
+    <string name="lockscreen_options_info">テキストをタップすれば各オプションの説明が表示されます</string>
     <string name="lockscreen_target_reset">ロック画面ターゲットはデフォルトにリセットされます</string>
     <string name="lockscreen_target_save">ロック画面ターゲットを保存しました</string>
     <string name="lockscreen_target_save_error_title">!!警告!!</string>
@@ -652,12 +596,7 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_target_reset_message">編集したロック画面ターゲットを削除してデフォルトに戻しますか?</string>
     <string name="lockscreen_target_edit_title">ターゲットとアイコンの編集</string>
     <string name="lockscreen_target_edit_msg">アプリやアクティビティとアイコンを編集してください</string>
-
-    <string name="aokp_3targets">3 ターゲット</string>
-    <string name="aokp_4targets">4 ターゲット</string>
-    <string name="aokp_5targets">5 ターゲット</string>
-    <string name="aokp_6targets">6 ターゲット</string>
-    <string name="aokp_8targets">8 ターゲット</string>
+    <string name="lockscreen_target_longpress_summary">ロック画面ターゲットの長押しを有効にする</string>
 
     <!-- Weather -->
     <string name="weather_enable">天気情報表示を有効</string>

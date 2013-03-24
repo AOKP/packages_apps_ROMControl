@@ -6,10 +6,10 @@
     android:gravity="center_horizontal" >
 
     <LinearLayout
+        android:id="@+id/lockscreen_options"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/lockscreen_options" >
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/helper_text"
@@ -24,19 +24,18 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="#FFFFFF" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_button_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_color_button"
                 android:gravity="left"
                 android:padding="4dip"
                 android:text="@string/lockscreen_text_color_title"
@@ -45,32 +44,31 @@
 
             <Button
                 android:id="@+id/lockscreen_color_button"
-                android:layout_width="37dip"
+                android:layout_width="wrap_content"
                 android:layout_height="20dip"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dip"
                 android:clickable="true"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_battery_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_battery_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_battery_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -79,28 +77,27 @@
                 android:id="@+id/lockscreen_battery_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_rotate_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_rotate_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_auto_rotate_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -109,28 +106,27 @@
                 android:id="@+id/lockscreen_rotate_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_vol_controls_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_vol_controls_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/volume_music_controls_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -139,28 +135,27 @@
                 android:id="@+id/lockscreen_vol_controls_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_vol_wake_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_vol_wake_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/volume_rocker_wake_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -169,28 +164,27 @@
                 android:id="@+id/lockscreen_vol_wake_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_all_widgets_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_all_widgets_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_all_widgets_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -199,28 +193,27 @@
                 android:id="@+id/lockscreen_all_widgets_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_unlimited_widgets_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_unlimited_widgets_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_unlimited_widgets_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -229,28 +222,27 @@
                 android:id="@+id/lockscreen_unlimited_widgets_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_hide_page_hints_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_hide_page_hints_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_hide_initial_page_hints_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -259,28 +251,27 @@
                 android:id="@+id/lockscreen_hide_page_hints_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_minimize_challange_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_minimize_challange_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_minimize_challenge_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -289,28 +280,27 @@
                 android:id="@+id/lockscreen_minimize_challange_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_carousel_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/lockscreen_carousel_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_use_widget_container_carousel_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -319,28 +309,27 @@
                 android:id="@+id/lockscreen_carousel_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:orientation="horizontal" >
+            android:gravity="center_vertical" >
 
             <TextView
                 android:id="@+id/lockscreen_target_longpress_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dip"
+                android:layout_alignParentLeft="true"
                 android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
+                android:layout_toLeftOf="@id/longpress_switch"
+                android:ellipsize="marquee"
                 android:gravity="left"
                 android:padding="4dip"
+                android:singleLine="true"
                 android:text="@string/lockscreen_target_longpress_text"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#FFFFFF" />
@@ -349,12 +338,10 @@
                 android:id="@+id/longpress_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginEnd="4dip"
-                android:layout_marginStart="4dip"
-                android:layout_weight="0.5"
-                android:gravity="right"
                 android:padding="4dip" />
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
     <com.android.internal.widget.multiwaveview.GlowPadView

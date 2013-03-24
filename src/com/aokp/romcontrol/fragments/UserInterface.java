@@ -80,6 +80,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final boolean DEBUG = false;
 
     private static final CharSequence PREF_180 = "rotate_180";
+    private static final CharSequence PREF_270 = "rotate_270";
     private static final CharSequence PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final CharSequence PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final CharSequence PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
@@ -113,6 +114,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
 
     CheckBoxPreference mAllow180Rotation;
+    CheckBoxPreference mAllow270Rotation;
     CheckBoxPreference mDisableBootAnimation;
     CheckBoxPreference mStatusBarNotifCount;
     Preference mNotificationWallpaper;
@@ -169,6 +171,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 R.array.disable_bootanimation_insults);
 
         mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
+        mAllow270Rotation = (CheckBoxPreference) findPreference(PREF_270);
         mUserRotationAngles = Settings.System.getInt(mContentResolver,
                 Settings.System.ACCELEROMETER_ROTATION_ANGLES, -1);
         if (mUserRotationAngles < 0) {
@@ -177,9 +180,10 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                             com.android.internal.R.bool.config_allowAllRotations) ? true : false;
             mUserRotationAngles = mAllowAllRotations  ?
                 (1 | 2 | 4 | 8) : // All angles
-                (1 | 2 | 8); // All except 180
+                (1 | 2); // All except 180 and 270
         }
-        mAllow180Rotation.setChecked(mUserRotationAngles == (1 | 2 | 4 | 8));
+        mAllow180Rotation.setChecked(mUserRotationAngles == (1 | 2 | 4 | 8) || mUserRotationAngles == (1 | 2 | 4));
+        mAllow270Rotation.setChecked(mUserRotationAngles == (1 | 2 | 4 | 8) || mUserRotationAngles == (1 | 2 | 8));
 
         mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContentResolver,
@@ -339,11 +343,19 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        if (preference == mAllow180Rotation) {
-            boolean checked = ((TwoStatePreference) preference).isChecked();
+        if (preference == mAllow180Rotation || preference == mAllow270Rotation) {
+            boolean checked180 = ((TwoStatePreference) mAllow180Rotation).isChecked();
+            boolean checked270 = ((TwoStatePreference) mAllow270Rotation).isChecked();
+            int result;
+            if (checked180) {
+                if (checked270) result = (1 | 2 | 4 | 8);
+                else result = (1 | 2 | 4);
+            } else {
+                if (checked270) result = (1 | 2 | 8);
+                else result = (1 | 2);
+            }
             Settings.System.putInt(mContentResolver,
-                    Settings.System.ACCELEROMETER_ROTATION_ANGLES,
-                    checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8));
+                    Settings.System.ACCELEROMETER_ROTATION_ANGLES, result);
             return true;
         } else if (preference == mStatusBarNotifCount) {
             Settings.System.putBoolean(mContentResolver,

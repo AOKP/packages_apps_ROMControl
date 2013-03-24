@@ -144,6 +144,8 @@
   <string name="lefty_mode_summary">Prohodit pořadí navigačních prvků (vyžaduje restart UI)</string>
   <string name="rotate_180_title">Umožnit rotaci o 180°</string>
   <string name="rotate_180_summary">Umožnit zařízení úplně obracet obrazovku!</string>
+  <string name="rotate_270_title">Umožnit rotaci o 270°</string>
+  <string name="rotate_270_summary">Umožnit zařízení obracet obrazovku vpravo!</string>
   <string name="recent_kill_all">Zapnout tlačítko zavření všech aplikací</string>
   <string name="recent_kill_all_summary">Zobrazuje tlačítko pro zavření všech aplikací v přehledu všech spuštěných aplikací (vyžaduje restart UI)</string>
   <string name="ram_bar">Lišta s RAM</string>

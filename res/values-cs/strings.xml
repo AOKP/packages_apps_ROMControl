@@ -475,21 +475,21 @@
   <string name="lockscreen_calendar_cat">Kalendář</string>
   <string name="lockscreen_menu_unlock_title">Odemčení tlačítkem menu</string>
   <string name="lockscreen_menu_unlock_summary">Tlačítko menu odemkne obrazovku</string>
-  <string name="lockscreen_auto_rotate_title">Povolit rotaci zamčené obrazovky</string>
+  <string name="lockscreen_auto_rotate_title">Rotace zamčené obrazovky</string>
   <string name="lockscreen_auto_rotate_summary">Zamčená obrazovka se bude natáčet podle zařízení. Tato volba je nezávislá na automatickém otočení v nastavení obrazovky.</string>
   <string name="lockscreen_all_widgets_title">Povolit všechny widgety</string>
   <string name="lockscreen_all_widgets_summary">VAROVÁNÍ** Některé widgety nejsou určeny pro to, být na zamčené obrazovce. Autor widgetů ani AOKP nejsou zodpovědni za následky přidávání widgetů.</string>
   <string name="lockscreen_unlimited_widgets_title">Neomezený počet widgetů</string>
   <string name="lockscreen_unlimited_widgets_summary">Varování** Přidání mnoha widgetů může způsobit zpomalení a lagy zamčené obrazovky.</string>
-  <string name="lockscreen_battery_title">% baterie na zamčené obrazovce</string>
+  <string name="lockscreen_battery_title">Procenta baterie</string>
   <string name="lockscreen_battery_summary">Vždy zobrazovat % baterie (nejen při nabíjení) na zamčené obrazovce</string>
-  <string name="lockscreen_hide_initial_page_hints_title">Skrýt úvodní ukazatele</string>
+  <string name="lockscreen_hide_initial_page_hints_title">Skryté úvodní ukazatele</string>
   <string name="lockscreen_hide_initial_page_hints_summary">Skryje ukazatele widgetů (po levé a pravé straně) na úvodní zamčené obrazovce po zapnutí displeje.</string>
-  <string name="lockscreen_minimize_challenge_title">Zmenšit symbol odemknutí</string>
+  <string name="lockscreen_minimize_challenge_title">Zmenšený symbol odemknutí</string>
   <string name="lockscreen_minimize_challenge_summary">Nastavit výchozí stav symbolu odemknutí (kruh, gesto, pin) na zmenšený po zapnutí obrazovky.</string>
   <string name="lockscreen_use_widget_container_carousel_title">Otočná animace widgetů</string>
   <string name="lockscreen_use_widget_container_carousel_summary">Použít otočnou animaci při přepínání mezi widgety na zamčené obrazovce.</string>
-  <string name="volume_rocker_wake_title">Probuzení tlačítky hlasitosti</string>
+  <string name="volume_rocker_wake_title">Probouzet tlačítky hlasitosti</string>
   <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
   <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>
   <string name="volume_music_controls_summary">Dlouhým stiskem tlačítek hlasitosti dojde k přeskočení skladeb, pokud je vypnut displej. Probouzení tlačítky hlasitosti nebude fungovat, pokud bude přehrávána hudba.</string>
@@ -497,7 +497,7 @@
   <string name="lockscreen_stock_music_layout_summary">Použít výchozí rozložení při přehrávání hudby.</string>
   <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
   <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
-  <string name="lockscreen_text_color_title">Barva textu na zamčené obrazovce</string>
+  <string name="lockscreen_text_color_title">Barva textu</string>
   <string name="lockscreen_text_color_summary">Nastavit barvu textu na zamčené obrazovce</string>
   <string name="lockscreen_weather_title">Zapnout</string>
   <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou službu počasí!</string>
@@ -527,7 +527,7 @@
   <!-- Lockscreen Targets-->
   <string name="lockscreen_targets_title">Položky zamčené obrazovky</string>
   <string name="lockscreen_targets_summary">Zobrazit nebo změnit položky na zamčené obrazovce</string>
-  <string name="lockscreen_target_longpress_text">Stav dlouhého stisku</string>
+  <string name="lockscreen_target_longpress_text">Dlouhhý stisk</string>
   <string name="lockscreen_camera">Fotoaparát</string>
   <string name="lockscreen_unlock">Odemknout</string>
   <string name="save_error">Položky nelze uložit! Je nutné nastavit nejméně jednu položku!</string>

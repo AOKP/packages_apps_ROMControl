@@ -70,8 +70,11 @@
   <string name="title_show_screenshot">Zobrazit snímek obrazovky</string>
   <string name="title_show_torch_toggle">Zobrazit přepínač svítilny</string>
   <string name="title_show_airplane_toggle">Zobrazit přepínač letového módu</string>
-  <string name="title_show_navbar_hide">Zobrazit přepínač navigační lišty</string>
+  <string name="title_show_navbar_hide">Zobrazit přepínače systémových lišt</string>
+  <string name="summary_show_navbar_hide">Toto nastavení zpřístupní přepínače, které mohou skrýt navigační a stavovou lištu</string>
   <string name="title_show_reboot_keyguard">Zobrazit restartovat na zamčené obrazovce</string>
+  <string name="summary_off_show_reboot_keyguard">Volba restartovat nebude zobrazena na zamčené obrazovce</string>
+  <string name="summary_on_show_reboot_keyguard">Volba restartovat bude zobrazena na zamčené obrazovce</string>
   <!-- S Pen -->
   <string name="spen_left_title">Akce přetažení vlevo</string>
   <string name="spen_right_title">Akce přetažení vpravo</string>
@@ -307,7 +310,7 @@
   <string name="battery_bar_cat">Možnosti pruhu baterie</string>
   <string name="battery_bar_style_title">Styl pruhu baterie</string>
   <string name="battery_bar_thickness_title">Tloušťka pruhu baterie</string>
-  <string name="battery_bar_animate_title">Animace při nabíjení</string>
+  <string name="battery_bar_animate_title">Zapnout animaci nabíjení</string>
   <string name="battery_bar_animate_summary">Povolení animace způsobuje horší odezvy systému. Zapínat pouze na vlastní nebezpečí.</string>
   <!--Statusbar | Signal-->
   <string name="signal_style">Styl ukazatele signálu</string>

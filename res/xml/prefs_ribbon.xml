@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory
+                android:key="ribbon_targets"
+                android:title="@string/ribbon_targets_cat">
+
+            <CheckBoxPreference
+                android:key="enable_ribbon_text"
+                android:title="@string/enable_ribbon_text_title"
+                android:summary="@string/enable_ribbon_text_summary" />
+
+            <ListPreference
+                android:key="ribbon_icon_size"
+                android:title="@string/ribbon_icon_size_title"
+                android:summary="@string/ribbon_icon_size_summary"
+                android:entries="@array/ribbon_icon_size_entries"
+                android:entryValues="@array/ribbon_icon_size_values" />
+
+           <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="drag_handle_opacity"
+                android:shouldDisableView="true"
+                android:title="@string/drag_handle_opacity_title" />
+
+           <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="drag_handle_width"
+                android:shouldDisableView="true"
+                android:title="@string/drag_handle_width_title" />
+
+           <com.aokp.romcontrol.widgets.SeekBarPreference
+                android:key="ribbon_opacity"
+                android:shouldDisableView="true"
+                android:title="@string/ribbon_opacity_title" />
+
+           <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="ribbon_color"
+                android:title="@string/ribbon_color_title"
+                android:defaultValue="#000000" />
+
+        </PreferenceCategory>
+</PreferenceScreen>

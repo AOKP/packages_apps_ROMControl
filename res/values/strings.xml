@@ -144,7 +144,7 @@
     <string name="tabletUI_cat">Tablet UI</string>
     <string name="enable_volume_options">Enable Volume Panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
-    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
+    <string name="status_bar_notif_count_summary">Display number of pending notifications in the Statusbar</string>
     <string name="vibrate_notif_expand_title">Vibrate on expand</string>
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
@@ -339,7 +339,7 @@
     <string name="battery_bar_cat">Battery bar options</string>
     <string name="battery_bar_style_title">Battery bar style</string>
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_title">Enable charging animation</string>
     <string name="battery_bar_animate_summary">Enabling the charging animation may result in a poor user experience. Enable at your own discretion.</string>
 
     <!-- Statusbar | Signal -->

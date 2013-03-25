@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory
+                android:key="ribbon_targets"
+                android:title="@string/ribbon_targets_cat">
+
+            <CheckBoxPreference
+                android:key="enable_ribbon_text"
+                android:title="@string/enable_ribbon_text_title"
+                android:summary="@string/enable_ribbon_text_summary" />
+
+       <!--     <CheckBoxPreference
+                android:key="enable_ribbon_notifications"
+                android:title="@string/enable_ribbon_notifications_title"
+                android:summary="@string/enable_ribbon_notifications_summary" /> -->
+
+        </PreferenceCategory>
+</PreferenceScreen>

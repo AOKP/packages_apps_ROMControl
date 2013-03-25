@@ -39,8 +39,8 @@
                     android:id="@+id/lockscreen_button_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dip"
                     android:layout_alignParentLeft="true"
+                    android:layout_marginStart="4dip"
                     android:layout_toLeftOf="@id/lockscreen_color_button"
                     android:gravity="left"
                     android:padding="4dip"
@@ -53,8 +53,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dip"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dip"
                     android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
                     android:clickable="true"
                     android:padding="4dip" />
             </RelativeLayout>

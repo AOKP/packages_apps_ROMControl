@@ -79,6 +79,7 @@
     <string name="title_show_airplane_toggle">Show Airplane mode</string>
     <string name="title_show_navbar_hide">Show System Bar toggles</string>
     <string name="summary_show_navbar_hide">Checking this will enable toggles that hide the NavBar and Statusbar</string>
+    <string name="title_show_volume_state_toggle">Show Volume states</string>
     <string name="title_show_reboot_keyguard">Show Reboot on lockscreen</string>
     <string name="summary_off_show_reboot_keyguard">Reboot option will not be shown while on lockscreen</string>
     <string name="summary_on_show_reboot_keyguard">Reboot option will be shown while on lockscreen</string>
@@ -141,7 +142,7 @@
     <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
 
     <!-- General UI -->
-    <string name="bootani_cat">Boot Animation</string>
+    <string name="bootani_cat">Boot animation</string>
     <string name="navbar_cat">NavBar</string>
     <string name="notification_cat">Notification</string>
     <string name="tabletUI_cat">Tablet UI</string>
@@ -166,6 +167,7 @@
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
     <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="system_power_crt_screen_off_title">CRT screen off</string>
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>
     <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>
@@ -197,7 +199,7 @@
     <string name="error_creating_preview">Error creating preview</string>
     <string name="multipane_ui">Enable Dual Panel</string>
     <string name="multipane_ui_summary">Checking this will enable the Dual Panel (Tablet) UI used by certain apps</string>
-    <string name="show_overflow_title">Show Menu UI Overflow</string>
+    <string name="show_overflow_title">Show Menu UI overflow</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
@@ -252,7 +254,7 @@
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>
     <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
-    <string name="toggles_layout_title">Toggle Layout</string>
+    <string name="toggles_layout_title">Toggle layout</string>
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggles_style_title">Toggles style</string>
@@ -466,10 +468,10 @@
     <string name="navring_target_longpress_text">Longpress status</string>
 
     <!-- LED -->
-    <string name="led_on">LED On</string>
-    <string name="led_time_on">Time Light Is On</string>
+    <string name="led_on">LED on</string>
+    <string name="led_time_on">Time Light is on</string>
     <string name="led_off">LED Off</string>
-    <string name="led_time_off">Time Light Is Off</string>
+    <string name="led_time_off">Time Light is off</string>
     <string name="led_time_seconds">" seconds"</string>
     <string name="led_color_click">Click on the LED to change the color</string>
     <string name="title_led_screen_on">Flash LED while screen is on</string>
@@ -490,7 +492,7 @@
     <string name="led_brightness_default">Default brightness: 31</string>
 
     <!-- Sound -->
-    <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
+    <string name="less_notification_sounds_title">Less frequent notification sounds</string>
     <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set value</string>
     <string name="title_headphone_audio_mode">Headphones plugged-in action</string>
     <string name="summary_headphone_audio_mode">Define behavior of volume when headphones are plugged in</string>

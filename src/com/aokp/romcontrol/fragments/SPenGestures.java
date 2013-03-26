@@ -23,6 +23,7 @@ import java.net.URISyntaxException;
 
 
 import static com.android.internal.util.aokp.AwesomeConstants.*;
+import com.android.internal.util.aokp.NavBarHelpers;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
@@ -206,53 +207,6 @@ public class SPenGestures extends AOKPPreferenceFragment implements
         }
 
         String uri = Settings.System.getString(mContentRes,mString);
-        if (TextUtils.isEmpty(uri)) {
-            return getResources().getString(R.string.navbar_action_none);
-        }
-
-        String newString = getResources().getString(R.string.navbar_action_none);
-        AwesomeConstant AwesomeEnum = fromString(uri);
-        switch (AwesomeEnum) {
-        case ACTION_HOME:
-            newString = getResources().getString(R.string.navbar_action_home);
-            break;
-        case ACTION_BACK:
-            newString = getResources().getString(R.string.navbar_action_back);
-            break;
-        case ACTION_RECENTS:
-            newString = getResources().getString(R.string.navbar_action_recents);
-            break;
-        case ACTION_RECENTS_GB:
-            newString = getResources().getString(R.string.navbar_action_recents_gb);
-            break;
-        case ACTION_SEARCH:
-            newString = getResources().getString(R.string.navbar_action_search);
-            break;
-        case ACTION_MENU:
-            newString = getResources().getString(R.string.navbar_action_menu);
-            break;
-        case ACTION_IME:
-            newString = getResources().getString(R.string.navbar_action_ime);
-            break;
-        case ACTION_KILL:
-            newString = getResources().getString(R.string.navbar_action_kill);
-            break;
-        case ACTION_POWER:
-            newString = getResources().getString(R.string.navbar_action_power);
-            break;
-        case ACTION_NOTIFICATIONS:
-            newString = getResources().getString(R.string.navbar_action_notifications);
-            break;
-        case ACTION_LAST_APP:
-            newString = getResources().getString(R.string.navbar_action_lastapp);
-            break;
-        case ACTION_NULL:
-            newString = getResources().getString(R.string.navbar_action_none);
-            break;
-        case ACTION_APP:
-            newString = mPicker.getFriendlyNameForUri(uri);
-            break;
-        }
-     return newString;
-   }
+        return NavBarHelpers.getProperSummary(mContext, uri);
+    }
 }

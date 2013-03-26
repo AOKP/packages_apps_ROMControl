@@ -166,7 +166,6 @@
     <string name="ime_switcher_summary">In Statusbar while typing</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
     <string name="system_power_crt_screen_off_title">CRT screen off</string>
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>

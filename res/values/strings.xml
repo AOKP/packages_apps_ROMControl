@@ -79,6 +79,7 @@
     <string name="title_show_airplane_toggle">Show Airplane mode</string>
     <string name="title_show_navbar_hide">Show System Bar toggles</string>
     <string name="summary_show_navbar_hide">Checking this will enable toggles that hide the NavBar and Statusbar</string>
+    <string name="title_show_volume_state_toggle">Show Volume States</string>
     <string name="title_show_reboot_keyguard">Show Reboot on lockscreen</string>
     <string name="summary_off_show_reboot_keyguard">Reboot option will not be shown while on lockscreen</string>
     <string name="summary_on_show_reboot_keyguard">Reboot option will be shown while on lockscreen</string>
@@ -204,7 +205,7 @@
     <string name="notification_show_wifi_ssid_title">Show WiFi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
-    <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness\nOnly active if auto-brightness is disabled</string>
+    <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Only active if auto-brightness is disabled</string>
     <string name="user_mode_ui">UI Mode</string>
     <string name="user_mode_ui_summary">Choose the style of the NavBar and Statusbar</string>
     <string name="phone_mode_ui">Phone - NavBar orients to side in landscape</string>

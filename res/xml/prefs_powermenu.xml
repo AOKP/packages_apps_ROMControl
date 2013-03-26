@@ -20,6 +20,10 @@
         android:key="show_navbar_hide"
         android:title="@string/title_show_navbar_hide"
         android:summary="@string/summary_show_navbar_hide" />
+    
+    <CheckBoxPreference
+        android:key="show_volume_state_toggle"
+        android:title="@string/title_show_volume_state_toggle" />
 
     <CheckBoxPreference
         android:key="show_reboot_keyguard"

@@ -158,7 +158,7 @@
         </activity>
         <activity
             android:name=".fragments.StatusBarSignal"
-            android:label="Statusbar Signal">
+            android:label="@string/title_statusbar_signal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>

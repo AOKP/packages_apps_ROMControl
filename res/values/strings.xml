@@ -79,7 +79,7 @@
     <string name="title_show_airplane_toggle">Show Airplane mode</string>
     <string name="title_show_navbar_hide">Show System Bar toggles</string>
     <string name="summary_show_navbar_hide">Checking this will enable toggles that hide the NavBar and Statusbar</string>
-    <string name="title_show_volume_state_toggle">Show Volume States</string>
+    <string name="title_show_volume_state_toggle">Show Volume states</string>
     <string name="title_show_reboot_keyguard">Show Reboot on lockscreen</string>
     <string name="summary_off_show_reboot_keyguard">Reboot option will not be shown while on lockscreen</string>
     <string name="summary_on_show_reboot_keyguard">Reboot option will be shown while on lockscreen</string>
@@ -142,7 +142,7 @@
     <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
 
     <!-- General UI -->
-    <string name="bootani_cat">Boot Animation</string>
+    <string name="bootani_cat">Boot animation</string>
     <string name="navbar_cat">NavBar</string>
     <string name="notification_cat">Notification</string>
     <string name="tabletUI_cat">Tablet UI</string>
@@ -153,7 +153,7 @@
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="custom_bootanimation_title">Custom boot animation</string>
-    <string name="custom_bootanimation_summary">Select a custom zip from sdcard to use as your new boot animation</string>
+    <string name="custom_bootanimation_summary">Select a custom zip from storage to use as your new boot animation</string>
     <string name="install_file_manager_error">No application found to pick the zip file. Please install a file manager.</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
@@ -163,10 +163,10 @@
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
-    <string name="ime_switcher_summary">In statusbar while typing</string>
+    <string name="ime_switcher_summary">In Statusbar while typing</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged/unplugged.</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
+    <string name="system_power_crt_screen_off_title">CRT screen off</string>
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>
     <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>
@@ -175,20 +175,20 @@
     <string name="system_power_crt_mode_both">Orientation dependent</string>
     <string name="lefty_mode_title">Lefty Mode</string>
     <string name="lefty_mode_summary">Swap NavBar location (requires UI restart)</string>
-    <string name="rotate_180_title">Allow 180 degree rotation</string>
-    <string name="rotate_180_summary">Allow your device to rotate upside down!</string>
-    <string name="rotate_270_title">Allow 270 degree rotation</string>
-    <string name="rotate_270_summary">Allow your device to rotate to right side!</string>
-    <string name="recent_kill_all">Enable kill-all-button</string>
-    <string name="recent_kill_all_summary">Displays a button to kill all apps on recents window</string>
+    <string name="rotate_180_title">Allow 180-degree rotation</string>
+    <string name="rotate_180_summary">Checking this allows your device to rotate upside down</string>
+    <string name="rotate_270_title">Allow 270-degree rotation</string>
+    <string name="rotate_270_summary">Checking this allows your device to rotate to the right</string>
+    <string name="recent_kill_all">Enable Kill-All button</string>
+    <string name="recent_kill_all_summary">Displays a button that kills all apps in the Recent Apps window</string>
     <string name="ram_bar">Recents RAM Bar</string>
     <string name="ram_bar_summary">Shows RAM usage in the Recent Apps window</string>
-    <string name="longpress_to_kill">Hardware back to kill</string>
-    <string name="longpress_to_kill_summary">Holding the hardware back button will kill the activity in the foreground</string>
+    <string name="longpress_to_kill">Hardware Back-to-kill</string>
+    <string name="longpress_to_kill_summary">Holding the hardware Back button will kill the activity in the foreground</string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
     <string name="hide_extras">Hide Extras</string>
-    <string name="hide_extras_summary">Hide some SystemBar stuff e.g. the compat. mode button</string>
+    <string name="hide_extras_summary">Hide some SystemBar items e.g. the Compatibility Mode button</string>
     <string name="bootanimation_preview">Bootanimation preview</string>
     <string name="apply">Apply</string>
     <string name="clear_custom_bootanimation">Clear custom boot animation</string>
@@ -198,14 +198,14 @@
     <string name="error_creating_preview">Error creating preview</string>
     <string name="multipane_ui">Enable Dual Panel</string>
     <string name="multipane_ui_summary">Checking this will enable the Dual Panel (Tablet) UI used by certain apps</string>
-    <string name="show_overflow_title">Show Menu UI Overflow</string>
+    <string name="show_overflow_title">Show Menu UI overflow</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
     <string name="notification_show_wifi_ssid_title">Show WiFi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
-    <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Only active if auto-brightness is disabled</string>
+    <string name="brightness_slider_summary">When enabled, this option will allow you to change the brightness by sliding your finger across the Statusbar. Note: Will not be active when auto-brightness is on</string>
     <string name="user_mode_ui">UI Mode</string>
     <string name="user_mode_ui_summary">Choose the style of the NavBar and Statusbar</string>
     <string name="phone_mode_ui">Phone - NavBar orients to side in landscape</string>
@@ -253,7 +253,7 @@
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>
     <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
-    <string name="toggles_layout_title">Toggle Layout</string>
+    <string name="toggles_layout_title">Toggle layout</string>
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggles_style_title">Toggles style</string>
@@ -470,10 +470,10 @@
     <string name="navring_target_longpress_text">Longpress status</string>
 
     <!-- LED -->
-    <string name="led_on">LED On</string>
-    <string name="led_time_on">Time Light Is On</string>
+    <string name="led_on">LED on</string>
+    <string name="led_time_on">Time Light is on</string>
     <string name="led_off">LED Off</string>
-    <string name="led_time_off">Time Light Is Off</string>
+    <string name="led_time_off">Time Light is off</string>
     <string name="led_time_seconds">" seconds"</string>
     <string name="led_color_click">Click on the LED to change the color</string>
     <string name="title_led_screen_on">Flash LED while screen is on</string>
@@ -494,7 +494,7 @@
     <string name="led_brightness_default">Default brightness: 31</string>
 
     <!-- Sound -->
-    <string name="less_notification_sounds_title">Less Frequent Notification Sounds</string>
+    <string name="less_notification_sounds_title">Less Frequent Notification sounds</string>
     <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set value</string>
     <string name="title_headphone_audio_mode">Headphones plugged-in action</string>
     <string name="summary_headphone_audio_mode">Define behavior of volume when headphones are plugged in</string>

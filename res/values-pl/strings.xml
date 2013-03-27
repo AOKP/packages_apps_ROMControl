@@ -7,6 +7,7 @@
     <string name="user_interface">Interfejs</string>
     <string name="cancel">Anuluj</string>
     <string name="ok">OK</string>
+    <string name="save">Zapisz</string>
     <string name="menu_main_activity_change_locale">Czysty!</string>
     <string name="header_statusbar">Pasek statusu</string>
     <string name="header_navbar">Belka nawigacyjna</string>
@@ -18,6 +19,7 @@
     <string name="nav_bar">Belka nawigacyjna</string>
     <string name="power_menu">Power Menu</string>
     <string name="led_options">LED</string>
+    <string name="spen_options">Gesty S Pen</string>
     <string name="header_system">System</string>
     <string name="sound">Dźwięki</string>
     <string name="lockscreen_options">Ekran blokady</string>
@@ -32,9 +34,12 @@
     <string name="title_statusbar_toggles">Przełączniki paska statusu</string>
     <string name="title_statusbar_battery">Wskaźnik baterii na pasku statusu</string>
     <string name="title_navbar">Belka nawigacyjna</string>
+    <string name="title_navring">Krąg nawigacyjny</string>
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led">Kontrola diody LED</string>
+    <string name="title_spen">Gesty S Pen</string>
     <string name="title_lockscreens">Opcje ekranu blokady</string>
+    <string name="title_lockscreens_targets">Cele ekranu blokady</string>
     <string name="title_sound">Ustawienia systemu dźwiękowego</string>
     <string name="title_weather">Ustawienia pogody</string>
     <string name="title_performance">Ustawienia wydajności</string>
@@ -49,6 +54,7 @@
     <string name="header_summary_navigation_bar">@null</string>
     <string name="header_summary_power_menu">@null</string>
     <string name="header_summary_led">@null</string>
+    <string name="header_summary_spen">@null</string>
     <string name="header_summary_sound">@null</string>
     <string name="header_summary_performance">@null</string>
     <string name="header_summary_lockscreens">@null</string>
@@ -64,6 +70,8 @@
     <string name="advanced_settings">Ustawienia zaawansowane</string>
     <string name="misc_short">Różne</string>
     <string name="custom_app_icon_successfully">"'s ikona ustawiona pomyślnie!"</string>
+    <string name="text_on">Wł.</string>
+    <string name="text_off">Wył.</string>
 
     <!-- Power Menu -->
     <string name="title_show_power_saver">Pokaż oszczędzacz baterii</string>
@@ -71,6 +79,24 @@
     <string name="title_show_torch_toggle">Pokaż przełącznik latarki</string>
     <string name="title_show_airplane_toggle">Pokaż przełącznik trybu sam.</string>
     <string name="title_show_navbar_hide">Pokaż przełącznik belki naw.</string>
+    <string name="summary_show_navbar_hide">Umożliwia włączenie przełączników belki nawigacyjnej i paska statusu</string>
+    <string name="title_show_reboot_keyguard">Pokaż opcję restartu na ekranie blokady</string>
+    <string name="summary_off_show_reboot_keyguard">Opcja restartu nie będzie widoczna na ekranie blokady</string>
+    <string name="summary_on_show_reboot_keyguard">Opcja restartu będzie widoczna na ekranie blokady</string>
+
+    <!-- S Pen -->
+    <string name="spen_left_title">Akcja dla pociągnięcia w lewo</string>
+    <string name="spen_right_title">Akcja dla pociągnięcia w prawo</string>
+    <string name="spen_up_title">Akcja dla pociągnięcia do góry</string>
+    <string name="spen_down_title">Akcja dla pociągnięcia w dół</string>
+    <string name="spen_double_title">Akcja dla podwójnego stuknięcia</string>
+    <string name="spen_long_title">Akcja dla długiego przytrzymania</string>
+    <string name="spen_enable">Włącz gesty S Pen</string>
+    <string name="spen_enable_summary">Ustaw własne akcje dla gestów S Pen</string>
+    <string name="spen_extras_cat">Dodatki S Pen</string>
+    <string name="spen_gestures_cat">Gesty S Pen</string>
+    <string name="enable_stylus_pointer_title">Włącz wskaźnik S Pen</string>
+    <string name="enable_stylus_pointer_summary">Włącz ikonkę myszy podczas używania S Pen</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Aktywuj oszczędzacz energii</string>
@@ -104,9 +130,12 @@
     <string name="bootani_cat">Boot Animacja</string>
     <string name="navbar_cat">NavBar</string>
     <string name="notification_cat">Powiadomienia</string>
+    <string name="tabletUI_cat">Interfejs tabletu</string>
     <string name="enable_volume_options">Aktywuj panel głośności</string>
     <string name="status_bar_notif_count_title">Pokaż licznik powiadomień</string>
     <string name="status_bar_notif_count_summary">Pokaż liczbę oczekujących powiadomień</string>
+    <string name="vibrate_notif_expand_title">Wibruj przy rozwinięciu</string>
+    <string name="vibrate_notif_expand_summary">Wibruj przy rozwijaniu powiadomień (wymaga restartu interfejsu)</string>
     <string name="disable_bootanimation_title">Wyłącz boot animację</string>
     <string name="custom_bootanimation_title">Niestandardowa boot animacja</string>
     <string name="custom_bootanimation_summary">Wybierz plik zip boot animacji. Poprzednia bootanimacja zostanie zachowana w /system/media.</string>
@@ -120,23 +149,57 @@
     <string name="custom_carrier_label_notset">Nie ustawiono własnego tekstu</string>
     <string name="ime_switcher_title">Pokaż przeł. klawiatury</string>
     <string name="ime_switcher_summary">W pasku powiadomień, podczas pisania (wymagany reboot)</string>
-    <string name="rotate_180_title">Pozwalaj na rotację 180 stopni</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wybudź przy ładowarce</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wybudź urządzenie, jeśli jest podłączana lub odłączana ładowarka</string>
+    <string name="system_power_crt_screen_off_title">Wyłączanie ekranu CRT</string>
+    <string name="system_power_crt_screen_off_summary">Przy wyłączaniu ekranu będzie odtwarzana animacja wyłączanego działa elektronowego</string>
+    <string name="system_power_crt_mode_title">Tryb animacji CRT</string>
+    <string name="system_power_crt_mode_dialog_title">Pokaż animację CRT</string>
+    <string name="system_power_crt_mode_horizontal">Poziomo</string>
+    <string name="system_power_crt_mode_vertical">Pionowo</string>
+    <string name="system_power_crt_mode_both">Zależnie od położenia</string>
+    <string name="lefty_mode_title">Tryb leworęczny</string>
+    <string name="lefty_mode_summary">Zmień położenie belki nawigacyjnej (wymaga restartu interfejsu)</string>
+	<string name="rotate_180_title">Pozwalaj na rotację 180 stopni</string>
     <string name="rotate_180_summary">Ekran będzie mógł się obrócić do góry nogami!</string>
+    <string name="rotate_270_title">Pozwalaj na rotację 270 stopni</string>
+    <string name="rotate_270_summary">Ekran będzie mógł się obrócić na prawą stronę!</string>
     <string name="recent_kill_all">Aktywuj przycisk zabij-wszystko</string>
     <string name="recent_kill_all_summary">Pokaże przycisk zabicia wszystkich aplikacji w men. zadań (wym. ponowne uruchomienie UI)</string>
-    <string name="kill_app_longpress_back">Przytrzymaj wstecz by zabić</string>
-    <string name="kill_app_longpress_back_summary">Przytrzymanie wstecz zabije aktywną aplikację</string>
+    <string name="ram_bar">Pasek RAM ostatnich</string>
+    <string name="ram_bar_summary">Pokazuje użycie RAM w oknie ostatnio użytych aplikacji</string>
+    <string name="longpress_to_kill">Przytrzymaj Wstecz by zabić</string>
+    <string name="longpress_to_kill_summary">Przytrzymanie przycisku Wstecz zabije aktywną aplikację</string>
     <string name="tablet_ui">Wymuś Tablet UI</string>
     <string name="tablet_ui_summary">Pozwoli użyć Tablet UI (wymagany reboot)</string>
+    <string name="hide_extras">Ukryj dodatki</string>
+    <string name="hide_extras_summary">Ukryj niektóre elementy paska systemowego, np. przycisk trybu zgodności</string>
     <string name="bootanimation_preview">Podgląd boot animacji</string>
     <string name="apply">Zastosuj</string>
+    <string name="clear_custom_bootanimation">Wyczyść własną animację restartu</string>
+    <string name="set_custom_bootanimation">Ustaw własną...</string>
     <string name="creating_preview">Tworzenie podglądu...</string>
     <string name="error_reading_zip_file">Błąd odczytu pliku zip</string>
     <string name="error_creating_preview">Błąd podczas tworzenia podglądu</string>
     <string name="multipane_ui">Aktywuj dwa panele</string>
     <string name="multipane_ui_summary">To włączy dwa panele (wymagany reboot)</string>
-    <string name="alt_resolver">Użyj innej siatki aplikacji</string>
-    <string name="alt_resolver_summary">Użyj siatki aplikacji w stylu Gingerbread</string>
+    <string name="notification_show_wifi_ssid_title">Pokaż nazwę sieci WiFi</string>
+    <string name="notification_show_wifi_ssid_summary">Wyświetlaj nazwę aktualnie podłączonej sieci WiFi</string>
+    <string name="brightness_slider_title">Suwak jasności w pasku statusu</string>
+    <string name="brightness_slider_summary">Umożliwia zmianę jasności ekranu poprzez przesuwanie palca wzdłuż górnej krawędzi paska statusu.\nAktywne tylko, jeśli automatyczna jasność jest wyłączona.</string>
+    <string name="user_mode_ui">Tryb interfejsu</string>
+    <string name="user_mode_ui_summary">Wybierz nowy styl belki nawigacyjnej i paska statusu</string>
+    <string name="phone_mode_ui">Telefon - belka nawigacyjna z boku w położeniu poziomym</string>
+    <string name="tablet_mode_ui">Tablet - Połączona belka nawigacyjna z paskiem statusu</string>
+    <string name="phablet_mode_ui">Phablet - belka nawigacyjna zostaje na dole w położeniu poziomym</string>
+    <string name="transparency_dialog_title">Ustawienia przeźroczystości</string>
+    <string name="transparency_dialog_linked_transparency">Połącz przeźroczystość paska statusu i belki nawigacyjnej</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Pasek statusu i belka nawigacyjna</string>
+    <string name="transparency_dialog_statusbar">Pasek statusu</string>
+    <string name="transparency_dialog_navbar">Belka nawigacyjna</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Dopasuj przeźroczystość ekranu blokady</string>
+    <string name="transparency_dialog_transparency">Przeźroczystość ekranu głównego</string>
+    <string name="transparency_dialog_transparency_keyguard">Przeźroczystość ekranu blokady</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">Gęstość pikseli LCD (DPI)</string>
@@ -172,12 +235,18 @@
     <string name="toggle_style_title">Styl przełączników</string>
     <string name="toggle_style_summary">Styl ikonowy lub tekstowy.</string>
     <string name="toggles_layout_title">Układ przełączników</string>
-    <string name="enabled_toggles_title">Aktywne przełączniki</string>
-    <string name="enabled_toggles_summary">Wybierz przełączniki do wyświetlenia</string>
-    <string name="toggles_display_dialog">Wybierz przełączniki do użycia</string>
+    <string name="toggles_per_row_title">Przełączników na rząd</string>
+    <string name="toggles_per_row_summary">Ustaw ilość przełączników na jeden rząd</string>
+    <string name="toggles_style_title">Styl przełączników</string>
+    <string name="toggles_style_summary">Kafelki czy tradycyjne</string>
     <string name="toggles_display_close">Zamknij</string>
     <string name="toggles_order_title">Kolejność przełączników</string>
     <string name="toggles_order_summary">Wybierz, w jakiej kolejności przełączniki mają być wyświetlane</string>
+    <string name="title_settings_behavior">Użyj domyślnego zachowania</string>
+    <string name="summary_settings_behavior_default">Krótkie naciśnięcie dla Ustawień, długie dla Przełączników</string>
+    <string name="summary_settings_behavior_reverse">Krókie naciśnięcie dla przełączników, długie dla Ustawień</string>
+    <string name="title_toggles_autohide">Automatycznie chowaj przełączniki</string>
+    <string name="summary_toggles_autohide">Chowaj przełączniki po zamknięciu szuflady</string>
     <string name="brightness_location_title">Lokalizacja jasności</string>
     <string name="reset_toggles_title">Resetuj przełączniki</string>
     <string name="reset_toggles_summary">Ustanawia domyślną kolejność i rodzaje przełączników</string>
@@ -186,6 +255,19 @@
     <string name="toggle_btn_disabled_color_title">Kolor nieaktywnego wskaźnika</string>
     <string name="toggle_btn_background_title">Przezroczystość tła przełączników</string>
     <string name="toggle_text_color_title">Kolor tekstu przełączników</string>
+    <string name="toggle_favcontact_title">Ulubiony kontakt</string>
+    <string name="toggle_favcontact_summary">Wybierz swój ulubiony kontakt</string>
+    <string name="toggle_enable_fasttoggle_title">Włącz szybkie przełączanie</string>
+    <string name="toggle_enable_fasttoggle_summary">Nadpisuje domyślne zachowanie</string>
+    <string name="toggle_choose_fasttoggle_side_title">Wybierz stronę szybkiego przełączania</string>
+    <string name="toggle_choose_fasttoggle_side_summary">Wybierz stronę, która włącza szybkie przełączanie</string>
+    <string name="toggle_dialog_arrange_title">Ustawienia przełączników</string>
+    <string name="toggle_dialog_add_toggles">Wybierz przełączniki do dodania</string>
+    <string name="toggle_style_tile">Kafelki</string>
+    <string name="toggle_style_traditional">Tradycyjne</string>
+    <string name="toggle_style_scrollable">Przewijane</string>
+    <string name="toggle_swap_handle_side">Uchwyt przewijania po prawej</string>
+    <string name="add_toggles">Zmień przełączniki</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Styl zegarka</string>
@@ -194,12 +276,21 @@
     <string name="enable_clock_weekday_summary">Skrócona nazwa dnia tygodnia obok zegarka</string>
     <string name="colors">Kolory</string>
     <string name="clock_color_title">Kolor zegarka</string>
+    <string name="alarm">Alarmy</string>
+    <string name="clock_options">Opcje zegarka</string>
+    <string name="nothing">Nic</string>
+    <string name="today">Kalendarz na dziś</string>
+    <string name="event">Następne wydarzenie z kalendarza</string>
+    <string name="voiceassist">Polecenia głosowe</string>
+    <string name="title_clock_doubleclick">Akcje podwójnego stuknięcia zegarka</string>
+    <string name="title_clock_longclick">Akcje długiego przytrzymania zegarka</string>
+    <string name="title_clock_shortclick">Akcje krótkiego dotknięcia zegarka</string>
 
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Tryb samolotowy</string>
     <string name="toggle_auto_rotate">Auto rotacja</string>
     <string name="toggle_bluetooth">Bluetooth</string>
-    <string name="toggle_fast_charge">Szybkie ładowanie</string>
+    <string name="toggle_fcharge">Szybkie ładowanie</string>
     <string name="toggle_gps">GPS</string>
     <string name="toggle_lte">LTE</string>
     <string name="toggle_data">Transfer danych</string>
@@ -208,11 +299,23 @@
     <string name="toggle_swagger">Swagger</string>
     <string name="toggle_sync">Synchronizacja</string>
     <string name="toggle_torch">Latarka</string>
+    <string name="toggle_statusbar">Pasek statusu</string>
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">Tethering USB</string>
     <string name="toggle_vibrate">Wibracje</string>
-    <string name="toggle_wifi_ap">Tethering Wi-Fi</string>
+    <string name="toggle_wifi_tether">Tethering Wi-Fi</string>
     <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_user">Użytkownik</string>
+    <string name="toggle_favorite_contact">Ulubiony kontakt</string>
+    <string name="toggle_settings">Ustawienia</string>
+    <string name="toggle_signal">Sygnał</string>
+    <string name="toggle_clock">Zegarek</string>
+    <string name="toggle_ime">IME</string>
+    <string name="toggle_battery">Bateria</string>
+    <string name="toggle_brightness">Jasność</string>
+    <string name="toggle_sound_state">Dzwonek/Wibracje/Cisza</string>
+    <string name="toggle_navbar_hide">Auto chowanie NavBara</string>
+    <string name="toggle_quickrecord">Szybkie nagranie</string>
 
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Styl ikony baterii</string>
@@ -248,7 +351,9 @@
 
     <!-- Navigation Bar -->
     <string name="navigation_bar">Belka nawigacyjna</string>
+    <string name="navbar_hide">Opcje chowania belki nawigacyjnej</string>
     <string name="navbar_button_cat">Przyciki belki nawigacji</string>
+    <string name="navbar_color_cat">Kolory i przeźroczystość</string>
     <string name="title_pref_menu_display">Lokalizacja menu</string>
     <string name="summary_pref_menu_display">Pamiętaj o usunięciu swoich przycisków menu jeśli \ używasz dużego przycisku menu!</string>
     <string name="title_pref_navigation_menu_display">Widoczność menu</string>
@@ -293,6 +398,8 @@
     <string name="glow_times_superquick">Super szybka</string>
     <string name="glow_times_quick">Szybka</string>
     <string name="glow_times_normal">Normalna</string>
+    <string name="statusbar_hide_title">Ukryj pasek statusu</string>
+    <string name="statusbar_hide_summary">Zaznaczenie tej opcji spowoduje całkowite schowanie paska statusu</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Cele pierścieni belki</string>
@@ -362,28 +469,32 @@
     <string name="summary_down_sec">Czas wymagany do postawienia telefonu ekranem w dół</string>
     <string name="flip_action_positive">OK</string>
     <string name="flip_dialog_title">Jak to działa ?</string>
-    <string name="flip_dialog_msg">Twój telefon przełączy się na wibracje lub tryb cichy jeśli to ustawisz.
-        To trwa 1.5 (domyślnie) sekundy by zmienić po przerzuceniu.
-        Zostanie wyłączone po 15 sekundach (domyślnie) od włączenia ekranu
-        UWAGA: **Musisz włączyć ekran po czasie wygaszenia by powrócić do stanu sprzed ustawienia etykiety.**</string>
+    <string name="flip_dialog_msg">Twój telefon przełączy się na wibracje lub tryb cichy jeśli to ustawisz. To trwa 1.5 (domyślnie) sekundy by zmienić po przerzuceniu. Zostanie wyłączone po 15 sekundach (domyślnie) od włączenia ekranu UWAGA: **Musisz włączyć ekran po czasie wygaszenia by powrócić do stanu sprzed ustawienia etykiety.**</string>
     <string name="summary_phone_flip_mode">Obróć telefon by wyciszyć dzwonek połączenia</string>
     <string name="title_phone_flip_mode">Wyciszenie rozmowy</string>
 
     <!-- Lockscreen -->
+    <string name="lock_widgets_short">Widgety ekranu blokady</string>
     <string name="lockscreen_security_cat">Bezpieczeństwo</string>
     <string name="lockscreen_layout_cat">Styl</string>
     <string name="lockscreen_music_cat">Muzyka</string>
     <string name="lockscreen_weather_cat">Pogoda</string>
     <string name="lockscreen_calendar_cat">Kalendarz</string>
 
-    <string name="lockscreen_quick_unlock_control_title">Szybkie odblokowanie PIN</string>
-    <string name="lockscreen_quick_unlock_control_summary">Oblokowanie PINu bez potrzeby zatwierdzania</string>
     <string name="lockscreen_menu_unlock_title">Przycisk menu</string>
     <string name="lockscreen_menu_unlock_summary">Użyj przycisku menu by odblokować telefon</string>
     <string name="lockscreen_auto_rotate_title">Pozwól na obrót ekr. blokady</string>
     <string name="lockscreen_auto_rotate_summary">Ekran blokady będzie mógł się automatycznie obrócić. Jest to niezależne od Auto rotacji w ust. ekranu</string>
+    <string name="lockscreen_all_widgets_title">Zezwól na wszystkie widgety</string>
+    <string name="lockscreen_all_widgets_summary">Uwaga** Niektóre widgety nie są przeznaczone do użycia na ekranie blokady. Twórca widgetu i AOKP nie są odpowiedzialne za Twój wybór widgetów na ekranie blokady. Wybieraj z głową.</string>
+    <string name="lockscreen_unlimited_widgets_title">Zezwól na nieograniczoną ilość widgetów</string>
+    <string name="lockscreen_unlimited_widgets_summary">Uwaga** Dodanie zbyt wielu widgetów może spowodować mocne opóźnienia.</string>
     <string name="lockscreen_battery_title">Procentowy wskaźnik baterii</string>
     <string name="lockscreen_battery_summary">Zawsze pokazuj wskaźnik baterii na ekranie blokady</string>
+    <string name="lockscreen_hide_initial_page_hints_title">Ukryj początkowo wskazówki</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Ustal, czy wskazówki dla lewego i prawego widgetu są widoczne na ekranie po jego włączeniu.</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Użyj karuzeli widgetów</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Użyj animacji karuzeli podczas przełączania widgetów ekranu blokady.</string>
     <string name="volume_rocker_wake_title">Obudź klawiszami głoś.</string>
     <string name="volume_rocker_wake_summary">Wybudza po kliknięciu przycisków głośności</string>
     <string name="volume_music_controls_title">Zmiana utworu</string>
@@ -393,8 +504,7 @@
     <string name="lockscreen_wallpaper_title">Wybierz tapetę ekr. blokady</string>
     <string name="lockscreen_wallpaper_summary">Możesz usunąć tapetę z ekranu blokady używając tej opcji</string>
     <string name="lockscreen_text_color_title">Kolor tekstu ekranu blokady</string>
-    <string name="title_lockscreen_user_timeout_override">Poczekaj na ekran blokady</string>
-    <string name="summary_lockscreen_user_timeout_override">Użyj czasu oczekiwania Androida gdy wygaszono ekran. Domyślnym zachowaniem jest użycie tego czasu tylko gdy nie został ręcznie uśpiony.</string>
+    <string name="lockscreen_text_color_summary">Ustaw kolor tekstu ekranu blokady</string>
     <string name="lockscreen_weather_title">Aktywuj</string>
     <string name="lockscreen_weather_summary">Pokaż informacje pogodowe na ekranie blokady. Musisz włączyć usługę pogodą w ustawieniach ROM Control</string>
     <string name="lockscreen_weather_type_title">Styl pogody</string>
@@ -431,17 +541,19 @@
     <string name="weather_use_celcius">Jednostki metryczne</string>
     <string name="weather_use_celcius_summary">Włączenie tego będzie pokazywało temperaturę w stopniach Celsjusza zamiast Fahrenheita i prędkość wiatru w km/h zamiast mph.</string>
     <string name="weather_statusbar_style">Styl pogody na pasku statusu</string>
-    <string name="weather_start_custom_app">Uruchom własną aplikację</string>
-    <string name="weather_start_custom_app_summary">Uruchomi wybraną aplikację po kliknięciu ikony pogodowej.</string>
-    <string name="weather_custom_app_title">Własna aplikacja</string>
-    <string name="weather_custom_app_dialog_title">Wybierz swoją apliację</string>
-    <string name="weather_custom_app_dialog_message">Nazwa aplikacji.</string>
-    <string name="weather_refreshing">Odświeżanie pogody...</string>
-    <string name="weather_loc_warning_title">Nie można ustalić lokalizacji.</string>
-    <string name="weather_loc_warning_msg">"Uzyskiwanie lokalizacji z sieci jest wyłączone. To uniemożliwia pobranie informacji pogodowej z twojej lokalizacji. Ustaw własną lokalizację albo ustaw automatyczną lokalizaję po sieci."</string>
-    <string name="weather_loc_warning_positive">"Włącz lokalizację sieciową"</string>
-    <string name="weather_loc_warning_negative">"Nie włączaj."</string>
-    <string name="menu_weather_get_weather">Pobierz informacje pogodowe</string>
+    <string name="title_weather_longclick">Akcje długiego przytrzymania panelu pogody</string>
+    <string name="title_weather_shortclick">Akcje krótkiego puknięcia panelu pogody</string>
+    <string name="update">Odśwież panel pogody</string>
+    <string name="weather_refreshing">Żądanie aktualizacji pogody!</string>
+    <string name="weather_loc_warning_title">Nie można pobrać lokalizacji!</string>
+    <string name="weather_loc_warning_msg">Pobieranie informacji o lokalizacji z sieci jest aktualnie wyłączone. To uniemożliwia pobranie aktualnej pogody dla Twojej aktualnej pozycji. Ustaw własną lokalizację, lub włącz możliwość pobierania lokalizacji z sieci.</string>
+    <string name="weather_loc_warning_positive">Włącz pobieranie lokalizacji z sieci</string>
+    <string name="weather_loc_warning_negative">Nie włączaj</string>
+    <string name="menu_weather_get_weather">Pobierz pogodę</string>
+    <string name="weather_statusbar_hide">Opcje ukrywania panelu pogody</string>
+    <string name="always_on">Zawsze widoczny</string>
+    <string name="same_toggles">Ukryj wraz z przełącznikami</string>
+    <string name="opposite_toggles">Ukryj zamiennie z przełącznikami</string>
 
     <!-- Weather Codes -->
     <string name="weather_0">Tornado</string>
@@ -587,6 +699,7 @@
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>
     <string name="insult_protekk">ProTekk!</string>
+    <string name="insult_unicorns">Przyznaj, że różowe jednorożce są dla małych dziewczynek</string>
 
     <!-- clock stuff -->
     <string name="right_clock">Zegar z prawej</string>
@@ -629,9 +742,12 @@
     <string name="toggle_widgets">Przełącz widżety</string>
     <string name="open_ime_switcher">Otwórz selektor klawiatury</string>
     <string name="kill_app">Zabij aplikację</string>
+    <string name="lastapp">Ostatnia aplikacja</string>
     <string name="power">Power menu</string>
     <string name="notifications">Powiadomienia</string>
+    <string name="recents_gb">Ostatnie (styl GB)</string>
     <string name="custom_app">Własna aplikacja</string>
+    <string name="menu_power">Menu zasilania</string>
     <string name="blank">Pusto</string>
     <string name="none">Nic</string>
     <string name="take_screenshot">Wykonaj Screenshot</string>
@@ -659,6 +775,7 @@
     <string name="bottom_of_navbar">Dół belki nawigacji</string>
     <string name="regular">Regularny</string>
     <string name="center_mirrored">Wyśrodkowany-lustrzany</string>
+    <string name="size_0_dp">0 dp (wył.)</string>
     <string name="size_1_dp">1 dp</string>
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>

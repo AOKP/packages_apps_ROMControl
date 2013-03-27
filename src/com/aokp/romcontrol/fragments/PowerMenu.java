@@ -19,6 +19,7 @@ public class PowerMenu extends AOKPPreferenceFragment {
     private static final String PREF_TORCH_TOGGLE = "show_torch_toggle";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
     private static final String PREF_NAVBAR_HIDE = "show_navbar_hide";
+    private static final String PREF_VOLUME_STATE_TOGGLE = "show_volume_state_toggle";
     private static final String PREF_REBOOT_KEYGUARD = "show_reboot_keyguard";
 
     //CheckBoxPreference mShowPowerSaver;
@@ -26,6 +27,7 @@ public class PowerMenu extends AOKPPreferenceFragment {
     CheckBoxPreference mShowTorchToggle;
     CheckBoxPreference mShowAirplaneToggle;
     CheckBoxPreference mShowNavBarHide;
+    CheckBoxPreference mShowVolumeStateToggle;
     CheckBoxPreference mShowRebootKeyguard;
 
     @Override
@@ -63,6 +65,10 @@ public class PowerMenu extends AOKPPreferenceFragment {
         mShowNavBarHide.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, false));
 
+        mShowVolumeStateToggle = (CheckBoxPreference) findPreference(PREF_VOLUME_STATE_TOGGLE);
+        mShowVolumeStateToggle.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.POWER_DIALOG_SHOW_VOLUME_STATE_TOGGLE, true));
+
         mShowRebootKeyguard = (CheckBoxPreference) findPreference(PREF_REBOOT_KEYGUARD);
         mShowRebootKeyguard.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.POWER_DIALOG_SHOW_REBOOT_KEYGUARD, true));
@@ -94,6 +100,11 @@ public class PowerMenu extends AOKPPreferenceFragment {
         } else if (preference == mShowNavBarHide) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE,
+                    ((CheckBoxPreference)preference).isChecked());
+            return true;
+        } else if (preference == mShowVolumeStateToggle) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.POWER_DIALOG_SHOW_VOLUME_STATE_TOGGLE,
                     ((CheckBoxPreference)preference).isChecked());
             return true;
         } else if (preference == mShowRebootKeyguard) {

@@ -114,12 +114,6 @@
     <string name="select_custom_app_title">Wybierz niestandardową aplikację</string>
     <string name="group_applications">Aplikacje</string>
 
-    <!-- Shortcut picker -->
-    <string name="use_custom_app_title">Użyj własnej aplikacji</string>
-    <string name="use_custom_app_summary">Użyj własnej aplikacji, zamiast okna ostatnio używanych aplikacji</string>
-    <string name="select_custom_app_title">Wybierz własną aplikację</string>
-    <string name="group_applications">Aplikacje</string>
-
     <!-- About -->
     <string name="devs">Developerzy</string>
     <string name="aokp">Android Open Kang Project</string>

@@ -20,11 +20,6 @@
         android:summary="@string/toggles_per_row_summary"
         android:title="@string/toggles_per_row_title" />
 
-    <Preference
-        android:key="toggle_fav_contact"
-        android:summary="@string/toggle_favcontact_summary"
-        android:title="@string/toggle_favcontact_title" />
-
     <CheckBoxPreference
         android:key="enable_fast_toggle"
         android:summary="@string/toggle_enable_fasttoggle_summary"
@@ -37,5 +32,17 @@
         android:summary="@string/toggle_choose_fasttoggle_side_summary"
         android:title="@string/toggle_choose_fasttoggle_side_title"
         android:dependency="enable_fast_toggle" />
+
+    <Preference
+        android:key="toggle_fav_contact"
+        android:summary="@string/toggle_favcontact_summary"
+        android:title="@string/toggle_favcontact_title" />
+
+    <ListPreference
+        android:entries="@array/screenshot_delay_entries"
+        android:entryValues="@array/screenshot_delay_values"
+        android:key="screenshot_delay"
+        android:summary="@string/screenshot_delay_summary"
+        android:title="@string/screenshot_delay_title" />
 
 </PreferenceScreen>

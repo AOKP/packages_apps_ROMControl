@@ -146,6 +146,26 @@
         <item>3</item>
     </string-array>
 
+    <!-- Screenshot delay -->
+    <string-array name="screenshot_delay_entries" translatable="false">
+        <item>2 seconds</item>
+        <item>3 seconds</item>
+        <item>4 seconds</item>
+        <item>5 seconds</item>
+        <item>6 seconds</item>
+        <item>7 seconds</item>
+        <item>8 seconds</item>
+    </string-array>
+    <string-array name="screenshot_delay_values" translatable="false">
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+    </string-array>
+
     <!-- Brightness slider -->
     <string-array name="brightness_location_entries" translatable="false">
         <item>@string/on_top</item>
@@ -228,6 +248,7 @@
         <item>**app**</item>
     </string-array>
     <string-array name="navring_long_dialog_entries" translatable="false">
+        <item>@string/navring_clear</item>
         <item>@string/navring_short</item>
         <item>@string/navring_long</item>
         <item>@string/navring_icon</item>
@@ -238,6 +259,7 @@
         <item>**icon**</item>
     </string-array>
     <string-array name="navring_short_dialog_entries" translatable="false">
+        <item>@string/navring_clear</item>
         <item>@string/navring_short</item>
         <item>@string/navring_icon</item>
     </string-array>

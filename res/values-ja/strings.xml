@@ -77,8 +77,12 @@
     <string name="title_show_screenshot">スクリーンショット</string>
     <string name="title_show_torch_toggle">トーチ</string>
     <string name="title_show_airplane_toggle">機内モード</string>
-    <string name="title_show_navbar_hide">ナビゲーションバー</string>
+    <string name="title_show_navbar_hide">システムバー</string>
+    <string name="summary_show_navbar_hide">ナビゲーションバーとステータスバーの表示切替</string>
+    <string name="title_show_volume_state_toggle">サウンドモード</string>
     <string name="title_show_reboot_keyguard">ロック画面で再起動</string>
+    <string name="summary_off_show_reboot_keyguard">ロック画面では再起動オプションを表示しません</string>
+    <string name="summary_on_show_reboot_keyguard">ロック画面で再起動オプションを表示します</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">左スワイプ時の動作</string>
@@ -173,7 +177,9 @@
     <string name="lefty_mode_title">左利きモード</string>
     <string name="lefty_mode_summary">ナビゲーションバーの配置をスワップする (UI再起動)</string>
     <string name="rotate_180_title">180°画面回転を有効</string>
-    <string name="rotate_180_summary">画面を上下反対に180°回転させることを可能にする</string>
+    <string name="rotate_180_summary">端末を上下反対にしたとき画面を回転させる</string>
+    <string name="rotate_270_title">270°画面回転を有効</string>
+    <string name="rotate_270_summary">端末を右側に倒したとき画面を回転させる</string>
     <string name="recent_kill_all">全アプリ終了ボタンを表示</string>
     <string name="recent_kill_all_summary">アプリ履歴ウィンドウに全アプリ終了ボタンを表示する</string>
     <string name="ram_bar">RAM使用量を表示</string>
@@ -183,7 +189,7 @@
     <string name="tablet_ui">タブレットUIを使用する</string>
     <string name="tablet_ui_summary">タブレットUIに切り替える (要再起動)</string>
     <string name="hide_extras">余分なアイコンを非表示</string>
-    <string name="hide_extras_summary">タブレットUIの互換ズームボタン等を表示しない (UI再起動)</string>
+    <string name="hide_extras_summary">タブレットUIの互換ズームボタン等を表示しない</string>
     <string name="bootanimation_preview">ブートアニメーションプレビュー</string>
     <string name="apply">適用する</string>
     <string name="clear_custom_bootanimation">クリア</string>
@@ -192,7 +198,7 @@
     <string name="error_reading_zip_file">zipファイルの読み込み中にエラーが発生しました</string>
     <string name="error_creating_preview">プレビュー作成中にエラーが発生しました</string>
     <string name="multipane_ui">2ペイン表示を有効</string>
-    <string name="multipane_ui_summary">パネルの表示方法を2ペイン表示に変更する (要再起動)</string>
+    <string name="multipane_ui_summary">特定のアプリでタブレットUIの2ペイン表示を有効にする</string>
     <string name="show_overflow_title">3ドットメニューボタンを表示</string>
     <string name="show_overflow_summary">アプリ内の3ドットメニューボタンを表示する</string>
     <string name="show_overflow_toast_enable">アプリを再起動するまでメニューボタンが表示されない場合があります</string>
@@ -200,9 +206,9 @@
     <string name="notification_show_wifi_ssid_title">Wi-Fiネットワーク名を表示</string>
     <string name="notification_show_wifi_ssid_summary">現在接続中のネットワークのSSIDを表示する</string>
     <string name="brightness_slider_title">ステータスバーで明るさを変更</string>
-    <string name="brightness_slider_summary">明るさの自動調整無効時に、ステータスバーをスライドすることで明るさを変更する</string>
+    <string name="brightness_slider_summary">ステータスバーをスライドすることで明るさを変更する (明るさ自動調整オフ時のみ動作)</string>
     <string name="user_mode_ui">UIモード</string>
-    <string name="user_mode_ui_summary">ナビゲーションバーとステータスバーの表示スタイルを変更する (UI再起動)</string>
+    <string name="user_mode_ui_summary">ナビゲーションバーとステータスバーの表示スタイルを変更する</string>
     <string name="phone_mode_ui">Phone - 横画面時にナビゲーションバーをサイドに配置</string>
     <string name="tablet_mode_ui">Tablet - ナビゲーションバーとステータスバーを一体化</string>
     <string name="phablet_mode_ui">Phablet - 横画面時にナビゲーションバーを下部に配置</string>
@@ -252,7 +258,7 @@
     <string name="toggles_per_row_title">タイル数</string>
     <string name="toggles_per_row_summary">1行に表示するタイル数を選択する</string>
     <string name="toggles_style_title">トグルスタイル</string>
-    <string name="toggles_style_summary">通知パネル表示かタイル表示かを選択する</string>
+    <string name="toggles_style_summary">タイル表示か通知パネル表示かを選択する</string>
     <string name="toggles_display_close">閉じる</string>
     <string name="toggles_order_title">タイルの並び替え</string>
     <string name="toggles_order_summary">表示するタイルの並びを変更する</string>
@@ -277,9 +283,9 @@
     <string name="toggle_choose_fasttoggle_side_summary">ファーストトグルを動作させる領域を選択する</string>
     <string name="toggle_dialog_arrange_title">トグル設定</string>
     <string name="toggle_dialog_add_toggles">追加するトグルを選択</string>
-    <string name="toggle_style_tile">タイル表示</string>
-    <string name="toggle_style_traditional">通知パネルに表示</string>
-    <string name="toggle_style_scrollable">通知パネルに表示 (スクロール)</string>
+    <string name="toggle_style_tile">タイル</string>
+    <string name="toggle_style_traditional">通知パネル</string>
+    <string name="toggle_style_scrollable">通知パネル (スクロール)</string>
     <string name="toggle_swap_handle_side">ドラッグハンドルを右側に表示</string>
     <string name="add_toggles">トグルの変更</string>
 
@@ -316,7 +322,7 @@
     <string name="toggle_statusbar">ステータスバー</string>
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USBテザリング</string>
-    <string name="toggle_vibrate">バイブレート</string>
+    <string name="toggle_vibrate">バイブレーション</string>
     <string name="toggle_wifi_tether">テザリング</string>
     <string name="toggle_wifi">Wi-Fi</string>
     <string name="toggle_user">ユーザー</string>
@@ -369,7 +375,7 @@
     <string name="navbar_button_cat">ソフトキー設定</string>
     <string name="navbar_color_cat">色と不透明度の設定</string>
     <string name="title_pref_menu_display">メニューキー表示位置</string>
-    <string name="summary_pref_menu_display">ソフトキー設定でメニューを表示する場合は「表示しない」を選択してください。</string>
+    <string name="summary_pref_menu_display">メニューキーの表示位置/非表示を設定する</string>
     <string name="title_pref_navigation_menu_display">メニューキー表示</string>
     <string name="summary_pref_navigation_menu_display">メニューキーの表示方法を設定する</string>
     <string name="navbar_qty_title">ソフトキーの数</string>
@@ -495,7 +501,7 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="title_bt_audio_mode">Bluetooth A2DP接続時の動作</string>
     <string name="summary_bt_audio_mode">A2DP接続した時のサウンドモードを設定する</string>
     <string name="headphones_mode_no_action">何もしない</string>
-    <string name="headphones_mode_vibrate">バイブレートモード</string>
+    <string name="headphones_mode_vibrate">バイブレーションモード</string>
     <string name="headphones_mode_silent">サイレントモード</string>
     <string name="title_flip_mode">フェイスダウン時の着信モード</string>
     <string name="summary_flip_mode">画面を下に向けている時の着信の挙動を設定する (マナーモードオフ時のみ)</string>
@@ -533,7 +539,7 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_hide_initial_page_hints_title">ガイドを非表示</string>
     <string name="lockscreen_hide_initial_page_hints_summary">ロック画面の左右に表示されるウィジェットのガイドを表示しない</string>
     <string name="lockscreen_minimize_challenge_title">ロック解除表示を最小化</string>
-    <string name="lockscreen_minimize_challenge_summary">画面オン時にロック解除表示(サークル/パターン/PIN)を最小化する</string>
+    <string name="lockscreen_minimize_challenge_summary">画面オン時にロック解除表示を最小化する</string>
     <string name="lockscreen_use_widget_container_carousel_title">回転アニメーションを使用</string>
     <string name="lockscreen_use_widget_container_carousel_summary">ロック画面ウィジェットの切り替え時に回転アニメーションを使用する</string>
     <string name="volume_rocker_wake_title">ボリュームキーでスリープ解除</string>

@@ -248,7 +248,6 @@
         <item>**app**</item>
     </string-array>
     <string-array name="navring_long_dialog_entries" translatable="false">
-        <item>@string/navring_clear</item>
         <item>@string/navring_short</item>
         <item>@string/navring_long</item>
         <item>@string/navring_icon</item>
@@ -259,7 +258,6 @@
         <item>**icon**</item>
     </string-array>
     <string-array name="navring_short_dialog_entries" translatable="false">
-        <item>@string/navring_clear</item>
         <item>@string/navring_short</item>
         <item>@string/navring_icon</item>
     </string-array>

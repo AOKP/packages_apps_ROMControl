@@ -47,8 +47,7 @@
         </activity>
         <activity
             android:name=".fragments.TransparencyDialog"
-            android:theme="@android:style/Theme.Dialog"
-            android:label="@string/title_ui">
+            android:theme="@android:style/Theme.Dialog">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

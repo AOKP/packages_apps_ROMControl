@@ -112,6 +112,10 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             getPreferenceScreen().removePreference(mFastToggle);
             getPreferenceScreen().removePreference(mChooseFastToggleSide);
         }
+
+        if (Integer.parseInt(mTogglesStyle.getValue()) > 1) {
+            mFastToggle.setEnabled(false);
+        }
     }
 
     static ArrayList<EasyPair<String, String>> buildToggleMap(Bundle toggleInfo) {
@@ -168,6 +172,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes,
                     Settings.System.TOGGLES_STYLE, val);
             mTogglesStyle.setValue((String) newValue);
+            mFastToggle.setEnabled(val > 1 ? false : true);
             Helpers.restartSystemUI();
         } else if (preference == mScreenshotDelay) {
             int val = Integer.parseInt((String) newValue);

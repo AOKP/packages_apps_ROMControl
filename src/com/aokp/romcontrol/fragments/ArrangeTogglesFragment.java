@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnDismissListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -24,6 +25,7 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 import com.mobeta.android.dslv.DragSortController;
@@ -39,6 +41,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
     private static final String PREF_HANDLE_KEY = "toggles_arrange_right_handle";
 
     Button mAddToggles;
+    Button mClose;
     Switch mToggle;
     DragSortListView mListView;
     EnabledTogglesAdapter mAdapter;
@@ -63,8 +66,6 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
         if (StatusBarToggles.sToggles == null) {
             StatusBarToggles.sToggles = getArguments();
         }
-        params.height = getActivity().getResources().getDimensionPixelSize(
-                R.dimen.list_toggle_height);
         params.width = getActivity().getResources().getDimensionPixelSize(
                 R.dimen.list_toggle_width);
     }
@@ -134,6 +135,14 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
         mToggle.setChecked(useRightSideLayout());
         mToggle.setOnCheckedChangeListener(this);
 
+        mClose = (Button) rootView.findViewById(R.id.close);
+        mClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrangeTogglesFragment.this.dismiss();
+            }
+        });
+
         mAddToggles = (Button) rootView.findViewById(R.id.add_toggles);
         mAddToggles.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,29 +162,6 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        adjustWindowSize();
-    }
-
-    private void adjustWindowSize() {
-        Resources r = getActivity().getResources();
-        int width = r.getDimensionPixelSize(R.dimen.list_toggle_width);
-
-        Point display = new Point();
-        WindowManager wm = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
-        wm.getDefaultDisplay().getSize(display);
-
-        final int titleHeight = Math.round(r
-                .getDimensionPixelSize(R.dimen.toggle_rearrange_dialog_title_height) * 1.5f);
-        final int rowHeight = Math
-                .round(r.getDimensionPixelSize(R.dimen.list_toggle_height) * 1.5f);
-        final int totalApproxDialogHeight = (mAdapter.getCount() * rowHeight)
-                + (titleHeight)
-                + (mAddToggles.getHeight())
-                + (mToggle.getHeight());
-
-        int height = Math.min(Math.round(display.y * 0.8f), totalApproxDialogHeight);
-
-        getDialog().getWindow().setLayout(width, height);
     }
 
     private class EnabledTogglesAdapter extends ArrayAdapter<String> {
@@ -260,32 +246,27 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
 
         builder.setTitle(R.string.toggle_dialog_add_toggles);
         builder.setCancelable(true);
-        builder.setPositiveButton(R.string.toggles_display_close,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        updateToggleList();
-                        mAdapter.notifyDataSetChanged();
-                        adjustWindowSize();
-                    }
-                });
+        builder.setOnDismissListener(new OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                dialog.dismiss();
+                updateToggleList();
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+        builder.setPositiveButton(R.string.back, null);
         builder.setMultiChoiceItems(itemStrings, checkedItems,
                 new OnMultiChoiceClickListener() {
-
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                         String toggleKey = allToggles.get(which);
-
                         if (isChecked)
                             StatusBarToggles.addToggle(getActivity(), toggleKey);
                         else
                             StatusBarToggles.removeToggle(getActivity(), toggleKey);
                     }
                 });
-
         AlertDialog d = builder.create();
-
         d.show();
     }
 

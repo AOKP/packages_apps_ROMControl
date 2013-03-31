@@ -13,40 +13,19 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.aokp.romcontrol"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@color/configure_light_background"
-    android:minWidth="@dimen/list_toggle_width" >
-
-    <Button
-        android:id="@+id/add_toggles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:padding="20dp"
-        android:text="@string/add_toggles"
-        android:textStyle="bold"
-        android:typeface="sans" />
-
-    <Switch
-        android:id="@+id/handle_switch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/add_toggles"
-        android:layout_centerHorizontal="true"
-        android:gravity="right"
-        android:padding="12dp"
-        android:text="@string/toggle_swap_handle_side" />
+    android:minWidth="@dimen/list_toggle_width"
+    android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/title_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:orientation="vertical" >
 
         <TextView
@@ -72,11 +51,61 @@
     <com.mobeta.android.dslv.DragSortListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/handle_switch"
-        android:layout_below="@id/title_container"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         app:drag_start_mode="onDown"
         app:remove_enabled="false" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/divider_horizontal_dim_dark" />
+
+        <Switch
+            android:id="@+id/handle_switch"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="@string/toggle_swap_handle_side" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/divider_horizontal_dim_dark" />
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/close"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/toggles_display_close" />
+
+            <Button
+                android:id="@+id/add_toggles"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_toggles" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -335,6 +335,36 @@
         <item>24</item>
         <item>0</item>
     </string-array>
+    <string-array name="softkey_button_entries" translatable="false">
+        <item>@string/home</item>
+        <item>@string/back</item>
+        <item>@string/recents</item>
+        <item>@string/search</item>
+        <item>@string/inappassist</item>
+        <item>@string/screenshot</item>
+        <item>@string/menu</item>
+        <item>@string/open_ime_switcher</item>
+        <item>@string/kill_app</item>
+        <item>@string/power</item>
+        <item>@string/notifications</item>
+        <item>@string/custom_app</item>
+        <item>@string/blank</item>
+    </string-array>
+    <string-array name="softkey_button_values" translatable="false">
+        <item>**home**</item>
+        <item>**back**</item>
+        <item>**recents**</item>
+        <item>**search**</item>
+        <item>**inappassist**</item>
+        <item>**screenshot**</item>
+        <item>**menu**</item>
+        <item>**ime**</item>
+        <item>**kill**</item>
+        <item>**power**</item>
+        <item>**notifications**</item>
+        <item>**app**</item>
+        <item>**null**</item>
+    </string-array>
     <string-array name="glow_times_entries" translatable="false">
         <item>@string/glow_times_off</item>
         <item>@string/glow_times_superquick</item>

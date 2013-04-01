@@ -121,6 +121,90 @@
             aokp:nameDev="birdman"
             aokp:twitterHandle="_mrbirdman_"
             aokp:githubLink="@string/github_birdman" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="akellar"
+            aokp:nameDev="akellar"
+            aokp:twitterHandle="AKBraves"
+            aokp:githubLink="@string/github_akellar" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="bajee11"
+            aokp:nameDev="bajee11"
+            aokp:twitterHandle="bajee11"
+            aokp:githubLink="@string/github_bajee11" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="dhacker29"
+            aokp:nameDev="dhacker29"
+            aokp:twitterHandle="dhacker29"
+            aokp:githubLink="@string/github_dhacker29" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="graffixnyc"
+            aokp:nameDev="graffixnyc"
+            aokp:twitterHandle="graffixnyc"
+            aokp:githubLink="@string/github_graffixnyc" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="jbirdvegas"
+            aokp:nameDev="JBirdVegas"
+            aokp:twitterHandle="JBird_Vegas"
+            aokp:githubLink="@string/github_jbirdvegas" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="k900"
+            aokp:nameDev="K900"
+            aokp:twitterHandle="AOKP_ROM"
+            aokp:githubLink="@string/github_k900" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="rohan32"
+            aokp:nameDev="rohan32"
+            aokp:twitterHandle="rohanXm"
+            aokp:githubLink="@string/github_rohan32" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="hillbillyhacker"
+            aokp:nameDev="hillbillyhacker"
+            aokp:twitterHandle="willdeberry"
+            aokp:githubLink="@string/github_hillbillyhacker" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="bmc08gt"
+            aokp:nameDev="bmc08gt"
+            aokp:twitterHandle="bmc08gt"
+            aokp:githubLink="@string/github_bmc08gt" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="tdm"
+            aokp:nameDev="tdm"
+            aokp:twitterHandle="AOKP_ROM"
+            aokp:githubLink="@string/github_tdm" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="Jubakuba"
+            aokp:nameDev="Jubakuba"
+            aokp:twitterHandle="Jubakuba"
+            aokp:githubLink="@string/github_jubakuba" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="qnhoang81"
+            aokp:nameDev="qnhoang81"
+            aokp:twitterHandle="AOKP_ROM"
+            aokp:githubLink="@string/github_qnhoang81" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="Hashcode"
+            aokp:nameDev="Hashcode"
+            aokp:twitterHandle="Hashcode0f"
+            aokp:githubLink="@string/github_hashcode" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="scar45"
+            aokp:nameDev="scar45"
+            aokp:twitterHandle="scar45"
+            aokp:githubLink="@string/github_scar45" />
     </PreferenceCategory>
 
 </PreferenceScreen>

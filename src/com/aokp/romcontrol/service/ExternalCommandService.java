@@ -2,7 +2,6 @@
 package com.aokp.romcontrol.service;
 
 import com.aokp.romcontrol.util.CMDProcessor;
-import com.aokp.romcontrol.util.Executable;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -22,8 +21,8 @@ public class ExternalCommandService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         if (intent.hasExtra("cmd")) {
-            new CMDProcessor().su.fireAndForget(
-                    new Executable(intent.getStringExtra("cmd")));
+            CMDProcessor.startSuCommand(
+                    intent.getStringExtra("cmd"));
         }
     }
 }

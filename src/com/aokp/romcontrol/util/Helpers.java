@@ -46,8 +46,7 @@ public class Helpers {
             return false; // tell caller to bail...
         }
         try {
-            if (new CMDProcessor().su
-                    .runWaitFor("ls /data/app-private").success()) {
+            if (CMDProcessor.runSuCommand("ls /data/app-private").success()) {
                 Log.i(TAG, " SU exists and we have permission");
                 return true;
             } else {
@@ -94,7 +93,7 @@ public class Helpers {
             return false;
         }
         try {
-            if (!new CMDProcessor().su.runWaitFor(new Executable("busybox mount")).success()) {
+            if (!CMDProcessor.runSuCommand("busybox mount").success()) {
                 Log.e(TAG, "Busybox is there but it is borked! ");
                 return false;
             }
@@ -132,19 +131,18 @@ public class Helpers {
     }
 
     public static boolean getMount(String mount) {
-        CMDProcessor cmd = new CMDProcessor();
         String[] mounts = getMounts("/system");
         if (mounts != null && mounts.length >= 3) {
             String device = mounts[0];
             String path = mounts[1];
             String point = mounts[2];
-            Executable preferredMountCmd = new Executable("mount -o " + mount + ",remount -t " + point + ' ' + device + ' ' + path);
-            if (cmd.su.runWaitFor(preferredMountCmd).success()) {
+            String preferredMountCmd = new String("mount -o " + mount + ",remount -t " + point + ' ' + device + ' ' + path);
+            if (CMDProcessor.runSuCommand(preferredMountCmd).success()) {
                 return true;
             }
         }
-        Executable fallbackMountCmd = new Executable("busybox mount -o remount," + mount + " /system");
-        return cmd.su.runWaitFor(fallbackMountCmd).success();
+        String fallbackMountCmd = new String("busybox mount -o remount," + mount + " /system");
+        return CMDProcessor.runSuCommand(fallbackMountCmd).success();
     }
 
     public static String readOneLine(String fname) {
@@ -172,10 +170,9 @@ public class Helpers {
     }
 
     public static String readFileViaShell(String filePath, boolean useSu) {
-        CMDProcessor shell = new CMDProcessor();
-        Executable command = new Executable("cat " + filePath);
-        return useSu ? shell.su.runWaitFor(command).getStdout()
-                : shell.sh.runWaitFor(command).getStdout();
+        String command = new String("cat " + filePath);
+        return useSu ? CMDProcessor.runSuCommand(command).getStdout()
+                : CMDProcessor.runShellCommand(command).getStdout();
     }
 
     public static boolean writeOneLine(String filename, String value) {
@@ -302,11 +299,11 @@ public class Helpers {
     }
 
     public static void restartSystemUI() {
-        new CMDProcessor().su.fireAndForget(new Executable("pkill -TERM -f com.android.systemui"));
+        CMDProcessor.startSuCommand("pkill -TERM -f com.android.systemui");
     }
 
     public static void setSystemProp(String prop, String val) {
-        new CMDProcessor().su.fireAndForget(new Executable(String.format("setprop %s %s", prop, val)));
+        CMDProcessor.startSuCommand(String.format("setprop %s %s", prop, val));
     }
 
     // TODO method is only used by com.aokp.romcontrol.fragments.LEDControl; move there
@@ -317,7 +314,7 @@ public class Helpers {
     }
 
     private static String getSystemProp(String prop) {
-        CommandResult cr = new CMDProcessor().sh.runWaitFor(new Executable("getprop " + prop));
-        return cr.success() ? cr.stdout : null;
+        CommandResult cr = CMDProcessor.runShellCommand("getprop " + prop);
+        return cr.success() ? cr.getStdout() : null;
     }
 }

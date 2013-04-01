@@ -11,35 +11,34 @@ import java.io.IOException;
 
 @SuppressWarnings("AccessOfSystemProperties")
 public class CommandResult implements Parcelable {
-    private Executable mExecutableScript;
+    private final String TAG = getClass().getSimpleName();
     private final long mStartTime;
-    public Integer exit_value;
-    public String stdout;
-    public String stderr;
-    private long mEndTime;
-    private long mExecutionTime;
-    private String TAG = getClass().getSimpleName();
+    private final int mExitValue;
+    private final String mStdout;
+    private final String mStderr;
+    private final long mEndTime;
 
-    public CommandResult(Executable executableScript,
-                         long startTime,
-                         Integer exit_value_in,
-                         String stdout_in,
-                         String stderr_in,
+    public CommandResult(long startTime,
+                         int exitValue,
+                         String stdout,
+                         String stderr,
                          long endTime) {
-        this.mExecutableScript = executableScript;
-        this.mStartTime = startTime;
-        setExit_value(exit_value_in);
-        setStdout(stdout_in);
-        setStderr(stderr_in);
-        setEndTime(endTime);
+        mStartTime = startTime;
+        mExitValue = exitValue;
+        mStdout = stdout;
+        mStderr = stderr;
+        mEndTime = endTime;
+
+        Log.d(TAG, "Time to execute: " + (mEndTime - mStartTime) + " ns (nanoseconds)");
+        // this is set last so log from here
+        checkForErrors();
     }
 
     // pretty much just forward the constructor from parcelable to our main
     // loading constructor
     @SuppressWarnings("CastToConcreteClass")
     public CommandResult(Parcel inParcel) {
-        this((Executable) inParcel.readParcelable(Executable.class.getClassLoader()),
-                inParcel.readLong(),
+        this(inParcel.readLong(),
                 inParcel.readInt(),
                 inParcel.readString(),
                 inParcel.readString(),
@@ -47,66 +46,40 @@ public class CommandResult implements Parcelable {
     }
 
     public boolean success() {
-        return exit_value != null && exit_value == 0;
+        return (mExitValue == 0);
     }
 
     public long getEndTime() {
-        return new Long(mEndTime);
+        return mEndTime;
     }
 
     public String getStderr() {
-        return new String(stderr);
+        return new String(mStderr);
     }
 
     public String getStdout() {
-        return new String(stdout);
+        return new String(mStdout);
     }
 
-    public Integer getExit_value() {
-        return new Integer(exit_value);
+    public Integer getExitValue() {
+        return mExitValue;
     }
 
     public long getStartTime() {
-        return new Long(mStartTime);
-    }
-
-    // setters
-    public CommandResult setExit_value(Integer exit_value) {
-        this.exit_value = exit_value;
-        return this;
-    }
-
-    public CommandResult setStdout(String stdout) {
-        this.stdout = stdout;
-        return this;
-    }
-
-    public CommandResult setStderr(String stderr) {
-        this.stderr = stderr;
-        return this;
-    }
-
-    public CommandResult setEndTime(long endTime) {
-        this.mEndTime = endTime;
-        this.mExecutionTime = mEndTime - mStartTime;
-        Log.d(TAG, "Time to execute: " + this.mExecutionTime + " ns (nanoseconds)");
-        // this is set last so log from here
-        checkForErrors();
-        return this;
+        return mStartTime;
     }
 
     @SuppressWarnings("UnnecessaryExplicitNumericCast")
     private void checkForErrors() {
-        if (getExit_value() != 0
-                || !"".equals(getStderr().trim())) {
+        if (mExitValue != 0
+                || !"".equals(mStderr.trim())) {
             // don't log the commands that failed
             // because the cpu was offline
-            String errorPipe = getStderr();
             boolean skipOfflineCpu =
                     // if core is off locking fails
-                    errorPipe.contains("chmod: /sys/devices/system/cpu/cpu")
+                    mStderr.contains("chmod: /sys/devices/system/cpu/cpu")
                             // if core is off applying cpu freqs fails
-                            || errorPipe.contains(": can't create /sys/devices/system/cpu/cpu");
+                            || mStderr.contains(": can't create /sys/devices/system/cpu/cpu");
             String lineEnding = System.getProperty("line.separator");
             FileWriter errorWriter = null;
             try {
@@ -150,24 +123,21 @@ public class CommandResult implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(mExecutableScript, 0);
         parcel.writeLong(mStartTime);
-        parcel.writeInt(exit_value);
-        parcel.writeString(stdout);
-        parcel.writeString(stderr);
+        parcel.writeInt(mExitValue);
+        parcel.writeString(mStdout);
+        parcel.writeString(mStderr);
         parcel.writeLong(mEndTime);
     }
 
     @Override
     public String toString() {
         return "CommandResult{" +
-                "mExecutableScript={" + mExecutableScript + '}' +
                 ", mStartTime=" + mStartTime +
-                ", exit_value=" + exit_value +
-                ", stdout='" + stdout + '\'' +
-                ", stderr='" + stderr + '\'' +
+                ", mExitValue=" + mExitValue +
+                ", stdout='" + mStdout + "'" +
+                ", stderr='" + mStderr + "'" +
                 ", mEndTime=" + mEndTime +
-                ", mExecutionTime=" + mExecutionTime +
                 '}';
     }
 
@@ -178,28 +148,21 @@ public class CommandResult implements Parcelable {
 
         CommandResult that = (CommandResult) o;
 
-        if (mEndTime != that.mEndTime) return false;
-        if (mExecutionTime != that.mExecutionTime) return false;
-        if (mStartTime != that.mStartTime) return false;
-        if (!TAG.equals(that.TAG)) return false;
-        if (!exit_value.equals(that.exit_value)) return false;
-        if (!mExecutableScript.equals(that.mExecutableScript)) return false;
-        if (stderr != null ? !stderr.equals(that.stderr) : that.stderr != null) return false;
-        if (stdout != null ? !stdout.equals(that.stdout) : that.stdout != null) return false;
-
-        return true;
+        return (mStartTime == that.mStartTime &&
+                mExitValue == that.mExitValue &&
+                mStdout == that.mStdout &&
+                mStderr == that.mStderr &&
+                mEndTime == that.mEndTime);
     }
 
     @Override
     public int hashCode() {
-        int result = mExecutableScript.hashCode();
+        int result = 0;
         result = 31 * result + (int) (mStartTime ^ (mStartTime >>> 32));
-        result = 31 * result + exit_value.hashCode();
-        result = 31 * result + (stdout != null ? stdout.hashCode() : 0);
-        result = 31 * result + (stderr != null ? stderr.hashCode() : 0);
+        result = 31 * result + mExitValue;
+        result = 31 * result + (mStdout != null ? mStdout.hashCode() : 0);
+        result = 31 * result + (mStderr != null ? mStderr.hashCode() : 0);
         result = 31 * result + (int) (mEndTime ^ (mEndTime >>> 32));
-        result = 31 * result + (int) (mExecutionTime ^ (mExecutionTime >>> 32));
-        result = 31 * result + TAG.hashCode();
         return result;
     }
 }

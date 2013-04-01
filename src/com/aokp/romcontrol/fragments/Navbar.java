@@ -715,12 +715,12 @@ public class Navbar extends AOKPPreferenceFragment implements
         action = String.format(action, button.getClickName());
         String longpress = mResources.getString(R.string.navbar_longpress_menu);
         longpress = String.format(longpress, button.getLongName());
-        String[] items = {action,longpress,
+        String[] items = {action, longpress,
                 mResources.getString(R.string.navbar_icon_menu),
                 mResources.getString(R.string.navbar_delete_menu)};
         final AlertDialog dialog = new AlertDialog.Builder(mContext)
                 .setTitle(mResources.getString(R.string.navbar_title_menu))
-                .setSingleChoiceItems(items, -1, l)
+                .setItems(items, l)
                 .create();
 
         dialog.show();
@@ -737,7 +737,7 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         final AlertDialog dialog = new AlertDialog.Builder(mContext)
                 .setTitle(mResources.getString(R.string.navbar_title_menu))
-                .setSingleChoiceItems(mActions, -1, l)
+                .setItems(mActions, l)
                 .create();
 
         dialog.show();

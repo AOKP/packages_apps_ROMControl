@@ -552,7 +552,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
 
             final AlertDialog dialog = new AlertDialog.Builder(mContext)
                 .setTitle(title)
-                .setSingleChoiceItems(entries, -1, l)
+                .setItems(entries, l)
                 .create();
 
             dialog.show();

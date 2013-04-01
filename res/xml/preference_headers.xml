@@ -107,4 +107,12 @@
         android:summary="@string/header_summary_vibrations"
         android:icon="@drawable/ic_rom_control_vibrations"
         android:fragment="com.aokp.romcontrol.fragments.Vibrations" />
+
+    <header
+        android:id="@+id/installer"
+        android:title="@string/installer"
+        android:summary="@string/header_summary_installer"
+        android:icon="@drawable/ic_rom_control_installer"
+        android:fragment="com.aokp.romcontrol.fragments.Installer" />
+
 </preference-headers>

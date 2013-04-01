@@ -25,6 +25,7 @@
     <string name="lockscreen_options">Lockscreen</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
+    <string name="installer">Installer</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">About AOKP</string>
@@ -43,6 +44,7 @@
     <string name="title_sound">Sound Settings</string>
     <string name="title_weather">Weather Settings</string>
     <string name="title_performance">Performance Settings</string>
+    <string name="title_installer">Installer Settings</string>
     <string name="title_clipboard_share">Share to Clipboard</string>
 
     <!-- Header Summaries -->
@@ -60,6 +62,7 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
+    <string name="header_summary_installer">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset NavBar</string>
@@ -98,6 +101,15 @@
     <string name="spen_gestures_cat">S Pen Gestures</string>
     <string name="enable_stylus_pointer_title">Enable S Pen pointer</string>
     <string name="enable_stylus_pointer_summary">Enable the mouse icon when using the S Pen</string>
+
+    <!-- Installer -->
+    <string name="persist_options">Persistence</string>
+    <string name="persist_enable">Enable Persistence</string>
+    <string name="persist_enable_summary">Enable data to persist across installs</string>
+    <string name="persist_prop_density">Persist Density</string>
+    <string name="persist_prop_density_summary">Persist LCD density</string>
+    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts_summary">Persist hosts file</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>

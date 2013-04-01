@@ -155,14 +155,14 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="misc"
-        android:title="@string/misc_short">
+        <PreferenceCategory
+            android:key="misc"
+            android:title="@string/misc_short">
 
-        <CheckBoxPreference
-            android:key="longpress_to_kill"
-            android:title="@string/longpress_to_kill"
-            android:summary="@string/longpress_to_kill_summary" />
+            <CheckBoxPreference
+                    android:key="longpress_to_kill"
+                    android:title="@string/longpress_to_kill"
+                    android:summary="@string/longpress_to_kill_summary" />
 
     </PreferenceCategory>
 

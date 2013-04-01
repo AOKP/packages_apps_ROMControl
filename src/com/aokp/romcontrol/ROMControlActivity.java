@@ -38,6 +38,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     private static final String TAG = "ROM_Control";
 
     private static boolean hasNotificationLed;
+    private static boolean hasSoftKeys;
     private static boolean hasSPen;
     private static String KEY_USE_ENGLISH_LOCALE = "use_english_locale";
 
@@ -60,6 +61,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         hasSPen = getResources().getBoolean(R.bool.config_stylusGestures);
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        hasSoftKeys = getResources().getBoolean(R.bool.has_soft_keys);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
         setLocale();
@@ -204,6 +206,10 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             } else if (header.id == R.id.vibrations) {
                 if (mVibrator == null || !mVibrator.hasVibrator()) {
                     toRemove.add(header);
+                }
+            } else if (header.id == R.id.softkey) {
+                if (!hasSoftKeys) {
+                    target.remove(i);
                 }
             } else if (header.id == R.id.spen) {
                 if (!hasSPen) {

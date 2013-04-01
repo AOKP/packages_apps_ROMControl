@@ -54,7 +54,6 @@ import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.service.CodeReceiver;
 import com.aokp.romcontrol.util.AbstractAsyncSuCMDProcessor;
 import com.aokp.romcontrol.util.CMDProcessor;
-import com.aokp.romcontrol.util.Executable;
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.widgets.AlphaSeekBar;
 
@@ -144,7 +143,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private String mErrormsg;
     private String mBootAnimationPath;
 
-    private CMDProcessor mCMDProcessor = new CMDProcessor();
     private static ContentResolver mContentResolver;
     private Random mRandomGenerator = new SecureRandom();
     // previous random; so we don't repeat
@@ -161,9 +159,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         setTitle(R.string.title_ui);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_ui);
-
-        //debug?
-        mCMDProcessor.setLogcatDebugging(DEBUG);
 
         mContentResolver = getContentResolver();
         PreferenceScreen prefs = getPreferenceScreen();
@@ -318,9 +313,9 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private void resetSwaggedOutBootAnimation() {
         if(new File("/data/local/bootanimation.user").exists()) {
             // we're using the alt boot animation
-            Executable moveAnimCommand = new Executable("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
+            String moveAnimCommand = "mv /data/local/bootanimation.user /data/local/bootanimation.zip";
             // we must wait for this command to finish before we continue
-            mCMDProcessor.su.runWaitFor(moveAnimCommand);
+            CMDProcessor.runSuCommand(moveAnimCommand);
         }
         CodeReceiver.setSwagInitiatedPref(mContext, false);
     }
@@ -901,12 +896,12 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     private void DisableBootAnimation() {
         resetSwaggedOutBootAnimation();
-        if (!mCMDProcessor.su.runWaitFor(
+        if (!CMDProcessor.runSuCommand(
                 "grep -q \"debug.sf.nobootanimation\" /system/build.prop")
                 .success()) {
             // if not add value
             Helpers.getMount("rw");
-            mCMDProcessor.su.runWaitFor(String.format("echo debug.sf.nobootanimation=%d >> /system/build.prop",
+            CMDProcessor.runSuCommand(String.format("echo debug.sf.nobootanimation=%d >> /system/build.prop",
                     mDisableBootAnimation.isChecked() ? 1 : 0));
             Helpers.getMount("ro");
         }

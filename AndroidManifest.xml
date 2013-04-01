@@ -118,6 +118,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.Persist"
+            android:label="@string/title_persist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.Lockscreens"
             android:label="@string/title_lockscreens">
             <intent-filter>

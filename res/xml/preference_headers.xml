@@ -107,4 +107,16 @@
         android:summary="@string/header_summary_vibrations"
         android:icon="@drawable/ic_rom_control_vibrations"
         android:fragment="com.aokp.romcontrol.fragments.Vibrations" />
+
+    <header
+        android:id="@+id/install"
+        android:title="@string/header_install" />
+
+    <header
+        android:id="@+id/persist"
+        android:fragment="com.aokp.romcontrol.fragments.Persist"
+        android:title="@string/persist_options"
+        android:icon="@drawable/ic_rom_control_persist"
+        android:summary="@string/header_summary_persist" />
+
 </preference-headers>

@@ -148,13 +148,13 @@
 
     <!-- Screenshot delay -->
     <string-array name="screenshot_delay_entries" translatable="false">
-        <item>2 seconds</item>
-        <item>3 seconds</item>
-        <item>4 seconds</item>
-        <item>5 seconds</item>
-        <item>6 seconds</item>
-        <item>7 seconds</item>
-        <item>8 seconds</item>
+        <item>@string/time_2_seconds</item>
+        <item>@string/time_3_seconds</item>
+        <item>@string/time_4_seconds</item>
+        <item>@string/time_5_seconds</item>
+        <item>@string/time_6_seconds</item>
+        <item>@string/time_7_seconds</item>
+        <item>@string/time_8_seconds</item>
     </string-array>
     <string-array name="screenshot_delay_values" translatable="false">
         <item>2000</item>

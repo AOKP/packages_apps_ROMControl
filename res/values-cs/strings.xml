@@ -29,6 +29,7 @@
   <string name="title_statusbar_clock">Hodiny ve stavové liště</string>
   <string name="title_statusbar_toggles">Přepínače ve stavové liště</string>
   <string name="title_statusbar_battery">Baterie ve stavové liště</string>
+  <string name="title_statusbar_signal">Signál ve stavové liště</string>
   <string name="title_navbar">Navigační panel</string>
   <string name="title_navring">Navigační kruh</string>
   <string name="title_power_menu">Menu napájení</string>
@@ -72,6 +73,7 @@
   <string name="title_show_airplane_toggle">Zobrazit přepínač letového módu</string>
   <string name="title_show_navbar_hide">Zobrazit přepínače systémových lišt</string>
   <string name="summary_show_navbar_hide">Toto nastavení zpřístupní přepínače, které mohou skrýt navigační a stavovou lištu</string>
+  <string name="title_show_volume_state_toggle">Zobrazit stavy hlasitosti</string>
   <string name="title_show_reboot_keyguard">Zobrazit restartovat na zamčené obrazovce</string>
   <string name="summary_off_show_reboot_keyguard">Volba restartovat nebude zobrazena na zamčené obrazovce</string>
   <string name="summary_on_show_reboot_keyguard">Volba restartovat bude zobrazena na zamčené obrazovce</string>
@@ -255,6 +257,8 @@
   <string name="toggle_style_scrollable">Tradiční (s posunem do stran)</string>
   <string name="toggle_swap_handle_side">Uchopením vpravo je možné přetahovat</string>
   <string name="add_toggles">Změnit přepínače</string>
+  <string name="screenshot_delay_title">Zpoždění snímku obrazovky</string>
+  <string name="screenshot_delay_summary">Zpoždění použité při dlouhém stisku přepínače snímku obrazovky</string>
   <!--Statusbar | Clock-->
   <string name="clock_title_enable">Styl hodin</string>
   <string name="title_clock_ampm_entries">AM/PM styl</string>
@@ -421,6 +425,7 @@
   <string name="interface_navring_settings_title">Navigační kruh</string>
   <string name="interface_navring_settings_summary">@null</string>
   <string name="navring_target_info">Tažením prstu na položky je k nim možné přiřadit akce</string>
+  <string name="navring_clear">Čistící akce</string>
   <string name="navring_short">Krátká akce</string>
   <string name="navring_long">Dlouhá akce</string>
   <string name="navring_icon">Vlastní ikona</string>

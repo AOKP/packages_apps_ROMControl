@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <CheckBoxPreference
+            android:key="enable_softkey"
+            android:title= "@string/softkey_enable"
+            android:summary= "@string/softkey_enable_summary"  />
+
+        <CheckBoxPreference
+            android:key="enable_softkey_double_click"
+            android:dependency="enable_softkey"
+            android:title= "@string/softkey_enable_double_click"
+            android:summary= "@string/softkey_enable_double_click_summary"  />
+
+        <ListPreference
+            android:key="softkey_home_short"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_home_short_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_home_long"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_home_long_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_home_double"
+            android:dependency="enable_softkey_double_click"
+            android:title="@string/softkey_home_double_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_menu_short"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_menu_short_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_menu_long"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_menu_long_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_menu_double"
+            android:dependency="enable_softkey_double_click"
+            android:title="@string/softkey_menu_double_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_back_short"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_back_short_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_back_long"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_back_long_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_back_double"
+            android:dependency="enable_softkey_double_click"
+            android:title="@string/softkey_back_double_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_search_short"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_search_short_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_search_long"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_search_long_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_search_double"
+            android:dependency="enable_softkey_double_click"
+            android:title="@string/softkey_search_double_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_recents_short"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_recents_short_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_recents_long"
+            android:dependency="enable_softkey"
+            android:title="@string/softkey_recents_long_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+        <ListPreference
+            android:key="softkey_recents_double"
+            android:dependency="enable_softkey_double_click"
+            android:title="@string/softkey_recents_double_title"
+            android:entries="@array/softkey_button_entries"
+            android:entryValues="@array/softkey_button_values" />
+
+</PreferenceScreen>

@@ -2,6 +2,10 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+   <Preference
+        android:key="transparency_dialog"
+        android:title="@string/transparency_dialog_title" />
+
 
     <PreferenceCategory
         android:key="bootani"
@@ -56,35 +60,17 @@
             android:title="@string/statusbar_hide_title"
             android:summary="@string/statusbar_hide_summary" />
 
-        <Preference
-            android:key="transparency_dialog"
-            android:title="@string/transparency_dialog_title" />
+        <CheckBoxPreference
+            android:key="ime_switcher"
+            android:title="@string/ime_switcher_title"
+            android:summary="@string/ime_switcher_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="navbar"
         android:title="@string/navbar_cat">
-
-        <CheckBoxPreference
-            android:key="longpress_to_kill"
-            android:title="@string/longpress_to_kill"
-            android:summary="@string/longpress_to_kill_summary" />
-
-        <CheckBoxPreference
-            android:key="recent_kill_all"
-            android:title="@string/recent_kill_all"
-            android:summary="@string/recent_kill_all_summary" />
-
-        <CheckBoxPreference
-            android:key="ram_usage_bar"
-            android:title="@string/ram_bar"
-            android:summary="@string/ram_bar_summary" />
-
-       <!-- <CheckBoxPreference
-            android:key="kill_app_longpress_back"
-            android:title="@string/kill_app_longpress_back"
-            android:summary="@string/kill_app_longpress_back_summary" /> -->
 
         <ListPreference
             android:key="user_mode_ui"
@@ -108,8 +94,8 @@
      </PreferenceCategory>
 
      <PreferenceCategory
-            android:key="misc"
-            android:title="@string/misc_short">
+        android:key="display"
+        android:title="@string/display_cat">
 
         <CheckBoxPreference
             android:key="show_overflow"
@@ -126,12 +112,6 @@
             android:key="rotate_270"
             android:title="@string/rotate_270_title"
             android:summary="@string/rotate_270_summary"
-            android:defaultValue="true" />
-
-        <CheckBoxPreference
-            android:key="ime_switcher"
-            android:title="@string/ime_switcher_title"
-            android:summary="@string/ime_switcher_summary"
             android:defaultValue="true" />
 
         <CheckBoxPreference
@@ -152,6 +132,33 @@
             android:entries="@array/entries_system_power_crt_mode"
             android:entryValues="@array/values_system_power_crt_mode"
             android:dependency="system_power_crt_screen_off" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="recents"
+        android:title="@string/recents_cat">
+
+        <CheckBoxPreference
+            android:key="recent_kill_all"
+            android:title="@string/recent_kill_all"
+            android:summary="@string/recent_kill_all_summary" />
+
+        <CheckBoxPreference
+            android:key="ram_usage_bar"
+            android:title="@string/ram_bar"
+            android:summary="@string/ram_bar_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_short">
+
+        <CheckBoxPreference
+            android:key="longpress_to_kill"
+            android:title="@string/longpress_to_kill"
+            android:summary="@string/longpress_to_kill_summary" />
 
     </PreferenceCategory>
 

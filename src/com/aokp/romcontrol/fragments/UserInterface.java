@@ -102,7 +102,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_MISC = "misc";
     private static final CharSequence PREF_POWER_CRT_MODE = "system_power_crt_mode";
     private static final CharSequence PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
-    private static final String STATUSBAR_HIDDEN = "statusbar_hidden";
+    private static final CharSequence PREF_STATUSBAR_HIDDEN = "statusbar_hidden";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -233,7 +233,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mShowActionOverflow.setChecked(Settings.System.getBoolean(mContentResolver,
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
-        mStatusBarHide = (CheckBoxPreference) findPreference(STATUSBAR_HIDDEN);
+        mStatusBarHide = (CheckBoxPreference) findPreference(PREF_STATUSBAR_HIDDEN);
         mStatusBarHide.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_HIDDEN, false));
 
@@ -271,8 +271,18 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             ((PreferenceGroup) findPreference(PREF_MISC)).removePreference(mWakeUpWhenPluggedOrUnplugged);
         }
 
+        if (isTablet(mContext)) {
+            Preference mTransparency = findPreference("transparency_dialog");
+            mStatusbarSliderPreference.setEnabled(false);
+            mStatusBarHide.setEnabled(false);
+            mTransparency.setEnabled(false);
+        } else {
+            mHideExtras.setEnabled(false);
+        }
+
         setHasOptionsMenu(true);
         resetBootAnimation();
+        findWallpaperStatus();
     }
 
     @Override
@@ -550,6 +560,12 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     @Override
                     public void run() {
                         mContext.deleteFile(WALLPAPER_NAME);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                findWallpaperStatus();
+                            }
+                        });
                         Helpers.restartSystemUI();
                     }
                 }).start();
@@ -564,6 +580,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         File dir = mContext.getExternalCacheDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);
         return Uri.fromFile(wallpaper);
+    }
+
+    public void findWallpaperStatus() {
+        File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+        mWallpaperAlpha.setEnabled(wallpaper.exists() ? true : false);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -589,6 +610,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                         // let it go
                     }
                 }
+                findWallpaperStatus();
                 Helpers.restartSystemUI();
             } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
                 if (data==null) {
@@ -929,12 +951,18 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-       if (preference == mUserModeUI) {
+        if (preference == mUserModeUI) {
+            Preference mTransparency = findPreference("transparency_dialog");
+            int val = Integer.valueOf((String) newValue);
             Settings.System.putInt(mContentResolver,
-                    Settings.System.USER_UI_MODE, Integer.parseInt((String) newValue));
+                    Settings.System.USER_UI_MODE, val);
+            mStatusbarSliderPreference.setEnabled(val == 1 ? false : true);
+            mStatusBarHide.setEnabled(val == 1 ? false : true);
+            mTransparency.setEnabled(val == 1 ? false : true);
+            mHideExtras.setEnabled(val == 1 ? true : false);
             Helpers.restartSystemUI();
             return true;
-                } else if (preference == mCrtMode) {
+        } else if (preference == mCrtMode) {
             int crtMode = Integer.valueOf((String) newValue);
             int index = mCrtMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),

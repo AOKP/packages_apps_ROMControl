@@ -270,6 +270,10 @@ public class Navbar extends AOKPPreferenceFragment implements
             pg.removePreference(mNavigationBarHeight);
             pg.removePreference(mNavigationBarHeightLandscape);
             pg.removePreference(mNavigationBarWidth);
+            mNavBarHideEnable.setEnabled(false);
+            mDragHandleOpacity.setEnabled(false);
+            mDragHandleWidth.setEnabled(false);
+            mNavBarHideTimeout.setEnabled(false);
         } else { // Phones&Phablets don't have SystemBar
             pg.removePreference(mWidthPort);
             pg.removePreference(mWidthLand);

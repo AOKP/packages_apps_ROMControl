@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
@@ -14,6 +15,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,6 +27,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -85,6 +88,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private static final String PREF_COLLAPSE_BAR = "collapse_bar";
     private static final String PREF_DCLICK_ACTION = "dclick_action";
     private static final String PREF_CUSTOM_TOGGLE = "custom_toggle_pref";
+    private static final String PREF_CUSTOM_CAT = "custom_toggle";
+    private static final String PREF_CUSTOM_BUTTONS = "custom_buttons";
 
     private final int PICK_CONTACT = 1;
 
@@ -106,8 +111,9 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     ListPreference mScreenshotDelay;
     ListPreference mCollapseShade;
     ListPreference mOnDoubleClick;
-    ListPreference mNumberOfActions;
     CustomTogglePref mCustomToggles;
+    PreferenceGroup mCustomCat;
+    PreferenceGroup mCustomButtons;
 
     BroadcastReceiver mReceiver;
     ArrayList<String> mToggles;
@@ -209,6 +215,9 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mCustomToggles = (CustomTogglePref) findPreference(PREF_CUSTOM_TOGGLE);
         mCustomToggles.setParent(this);
 
+        mCustomCat = (PreferenceGroup) findPreference(PREF_CUSTOM_CAT);
+        mCustomButtons = (PreferenceGroup) findPreference(PREF_CUSTOM_BUTTONS);
+
         if (isSW600DPScreen(mContext) || isTablet(mContext)) {
             getPreferenceScreen().removePreference(mFastToggle);
             getPreferenceScreen().removePreference(mChooseFastToggleSide);
@@ -221,6 +230,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         if (!isAdvanced) {
             mMatchAction.setEnabled(false);
         }
+        new SettingsObserver(new Handler()).observe();
         refreshSettings();
     }
 
@@ -293,15 +303,6 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private void onTogglesUpdate(Bundle toggleInfo) {
         mToggles = toggleInfo.getStringArrayList("toggles");
         sToggles = toggleInfo;
-        if (mToggles.contains("FAVCONTACT")) {
-            if (mFavContact != null) {
-                mFavContact.setEnabled(true);
-            }
-        } else {
-            if (mFavContact != null) {
-                getPreferenceScreen().removePreference(mFavContact);
-            }
-        }
     }
 
     @Override
@@ -459,14 +460,11 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
                         @Override
                         public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                             String toggleKey = availableToggles.get(which);
-
-                            if (isChecked)
+                            if (isChecked) {
                                 StatusBarToggles.addToggle(getActivity(), toggleKey);
-                            else
+                            }
+                            else {
                                 StatusBarToggles.removeToggle(getActivity(), toggleKey);
-
-                            if ("FAVCONTACT".equals(toggleKey)) {
-                                mFavContact.setEnabled(isChecked);
                             }
                         }
                     });
@@ -1027,4 +1025,40 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         }
     }
 
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.QUICK_TOGGLES),
+                    false, this);
+            updateSettings();
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            updateSettings();
+        }
+    }
+
+    private void updateSettings() {
+        ContentResolver resolver = mContext.getContentResolver();
+        String currentToggles = Settings.System.getString(resolver, Settings.System.QUICK_TOGGLES);
+        if (currentToggles != null) {
+            if (mFavContact != null) {
+                mFavContact.setEnabled(currentToggles.contains("FAVCONTACT"));
+            }
+            if (mScreenshotDelay != null) {
+                mScreenshotDelay.setEnabled(currentToggles.contains("SCREENSHOT"));
+            }
+            if (mCustomCat != null && mCustomButtons != null) {
+                boolean enabled = currentToggles.contains("CUSTOM");
+                mCustomCat.setEnabled(enabled);
+                mCustomButtons.setEnabled(enabled);
+            }
+        }
+    }
 }

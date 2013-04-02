@@ -63,6 +63,13 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
         mBatteryBarThickness.setOnPreferenceChangeListener(this);
         mBatteryBarThickness.setValue((Settings.System.getInt(mContentRes,
                 Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1)) + "");
+
+        if (Integer.parseInt(mBatteryBar.getValue()) == 0) {
+            mBatteryBarStyle.setEnabled(false);
+            mBatteryBarColor.setEnabled(false);
+            mBatteryBarChargingAnimation.setEnabled(false);
+            mBatteryBarThickness.setEnabled(false);
+        }
     }
 
     @Override
@@ -98,8 +105,20 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
         } else if (preference == mBatteryBar) {
 
             int val = Integer.parseInt((String) newValue);
-            return Settings.System.putInt(mContentRes,
+            Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_BATTERY_BAR, val);
+            if (val == 0) {
+                mBatteryBarStyle.setEnabled(false);
+                mBatteryBarColor.setEnabled(false);
+                mBatteryBarChargingAnimation.setEnabled(false);
+                mBatteryBarThickness.setEnabled(false);
+            } else {
+                mBatteryBarStyle.setEnabled(true);
+                mBatteryBarColor.setEnabled(true);
+                mBatteryBarChargingAnimation.setEnabled(true);
+                mBatteryBarThickness.setEnabled(true);
+            }
+            return true;
 
         } else if (preference == mBatteryBarStyle) {
 

@@ -99,11 +99,13 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_DISABLE_BOOTANIM = "disable_bootanimation";
     private static final CharSequence PREF_CUSTOM_BOOTANIM = "custom_bootanimation";
     private static final CharSequence PREF_NOTIFICATION_VIBRATE = "notification";
+    private static final CharSequence PREF_DISPLAY = "display";
     private static final CharSequence PREF_NAVBAR = "navbar";
+    private static final CharSequence PREF_NOTIFICATION = "notif";
     private static final CharSequence PREF_MISC = "misc";
     private static final CharSequence PREF_POWER_CRT_MODE = "system_power_crt_mode";
     private static final CharSequence PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
-    private static final String STATUSBAR_HIDDEN = "statusbar_hidden";
+    private static final CharSequence PREF_STATUSBAR_HIDDEN = "statusbar_hidden";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -238,7 +240,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mShowActionOverflow.setChecked(Settings.System.getBoolean(mContentResolver,
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
-        mStatusBarHide = (CheckBoxPreference) findPreference(STATUSBAR_HIDDEN);
+        mStatusBarHide = (CheckBoxPreference) findPreference(PREF_STATUSBAR_HIDDEN);
         mStatusBarHide.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_HIDDEN, false));
 
@@ -276,8 +278,20 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             ((PreferenceGroup) findPreference(PREF_MISC)).removePreference(mWakeUpWhenPluggedOrUnplugged);
         }
 
+        if (isTablet(mContext)) {
+            ((PreferenceGroup)findPreference(PREF_DISPLAY)).removePreference(mStatusbarSliderPreference);
+            ((PreferenceGroup)findPreference(PREF_DISPLAY)).removePreference(mStatusBarHide);
+            ((PreferenceGroup)findPreference(PREF_NAVBAR)).removePreference(mDualpane);
+        } else {
+            if (!isTablet(mContext) || !isPhablet(mContext)) {
+                ((PreferenceGroup)findPreference(PREF_NAVBAR)).removePreference(mHideExtras);
+
+            }
+        }
+
         setHasOptionsMenu(true);
         resetBootAnimation();
+        findWallpaperStatus();
     }
 
     @Override
@@ -555,6 +569,12 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     @Override
                     public void run() {
                         mContext.deleteFile(WALLPAPER_NAME);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                findWallpaperStatus();
+                            }
+                        });
                         Helpers.restartSystemUI();
                     }
                 }).start();
@@ -569,6 +589,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         File dir = mContext.getExternalCacheDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);
         return Uri.fromFile(wallpaper);
+    }
+
+    public void findWallpaperStatus() {
+        File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+        mWallpaperAlpha.setEnabled(wallpaper.exists() ? true : false);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -594,6 +619,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                         // let it go
                     }
                 }
+                findWallpaperStatus();
                 Helpers.restartSystemUI();
             } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
                 if (data==null) {

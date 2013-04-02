@@ -160,6 +160,8 @@
     <string name="bootani_cat">Boot animation</string>
     <string name="navbar_cat">NavBar</string>
     <string name="notification_cat">Notification</string>
+    <string name="display_cat">Display</string>
+    <string name="recents_cat">Recents</string>
     <string name="tabletUI_cat">Tablet UI</string>
     <string name="enable_volume_options">Enable Volume panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
@@ -308,7 +310,7 @@
     <string name="toggle_action_title_alt">Longpress action %1$s &amp; icon</string>
     <string name="toggle_longpress_title">Longpress action %1$s</string>
     <string name="custom_toggle_action">How it works</string>
-    <string name="custom_toggle_desc">In Basic mode, the toggle will cycle through actions on each click. Longpress will launch the displayed action. This is most useful for users who want the toggle to launch applications.\nIn Advanced mode, the toggle allows you to launch an action with each click. Longpress actions will also be available to you in this mode. This is most useful for users who desire a toggle that performs tasks that does not launch a new application.</string>
+    <string name="custom_toggle_desc">In Basic mode, the toggle will cycle through actions on each click. Longpress will launch the displayed action. This is most useful for users who want the toggle to launch applications.\nIn Advanced mode, the toggle allows you to launch an action with each click. Longpress actions will also be available to you in this mode. This is most useful for users who desire a toggle that performs tasks that do not launch a new application.</string>
     <string name="custom_toggle_okay">Dismiss</string>
     <string name="custom_toggle_cat">Custom toggle</string>
     <string name="custom_button_cat">Custom toggle actions</string>
@@ -398,11 +400,11 @@
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Signal indicator style</string>
-    <string name="signal_color_title">Signal indicator color</string>
+    <string name="signal_color_title">Signal text color</string>
     <string name="hide_signal_title">Hide signal bars</string>
     <string name="hide_signal_summary">Checking this hides the signal bar indicator (updates when signal strength changes)</string>
     <string name="wifi_signal_style">WiFi signal indicator style</string>
-    <string name="wifi_signal_color_title">WiFi signal indicator color</string>
+    <string name="wifi_signal_color_title">WiFi signal text color</string>
     <string name="alt_signal_title">Alt signal indicator layout</string>
     <string name="alt_signal_summary">Use alternate Gingerbread style signal cluster</string>
 

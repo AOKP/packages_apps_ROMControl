@@ -90,6 +90,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private Switch mLockVolWakeSwitch;
     private Switch mLockPageHintSwitch;
     private Switch mLockMinimizeChallangeSwitch;
+    private Switch mLockLongpressChallengeSwitch;
     private Switch mLockCarouselSwitch;
     private Switch mLockAllWidgetsSwitch;
     private Switch mLockUnlimitedWidgetsSwitch;
@@ -103,6 +104,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private TextView mLockVolWakeText;
     private TextView mLockPageHintText;
     private TextView mLockMinimizeChallangeText;
+    private TextView mLockLongpressChallengeText;
     private TextView mLockCarouselText;
     private TextView mLockAllWidgetsText;
     private TextView mLockUnlimitedWidgetsText;
@@ -323,6 +325,21 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     }
                 });
 
+        mLockLongpressChallengeText = ((TextView) getActivity().findViewById(
+                R.id.lockscreen_longpress_challenge_id));
+        mLockLongpressChallengeText.setOnClickListener(mLockLongpressChallengeTextListener);
+        mLockLongpressChallengeSwitch = (Switch) getActivity().findViewById(
+                R.id.lockscreen_longpress_challenge_switch);
+        mLockLongpressChallengeSwitch
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton v, boolean checked) {
+                        Settings.System.putBoolean(cr,
+                                Settings.System.LOCKSCREEN_LONGPRESS_CHALLENGE, checked);
+                        updateSwitches();
+                    }
+                });
+
         mLockCarouselText = ((TextView) getActivity().findViewById(R.id.lockscreen_carousel_id));
         mLockCarouselText.setOnClickListener(mLockCarouselTextListener);
         mLockCarouselSwitch = (Switch) getActivity().findViewById(R.id.lockscreen_carousel_switch);
@@ -432,6 +449,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         }
     };
 
+    private TextView.OnClickListener mLockLongpressChallengeTextListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(R.string.lockscreen_longpress_challenge_title),
+                    getResources().getString(R.string.lockscreen_longpress_challenge_summary));
+        }
+    };
+
     private TextView.OnClickListener mLockCarouselTextListener = new TextView.OnClickListener() {
         public void onClick(View v) {
             createMessage(
@@ -459,6 +484,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 Settings.System.LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS, false));
         mLockMinimizeChallangeSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_MINIMIZE_LOCKSCREEN_CHALLENGE, false));
+        mLockLongpressChallengeSwitch.setChecked(Settings.System.getBoolean(cr,
+                Settings.System.LOCKSCREEN_LONGPRESS_CHALLENGE, false));
         mLockCarouselSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_USE_WIDGET_CONTAINER_CAROUSEL, false));
     }
@@ -873,6 +900,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             mLockVolWakeSwitch.setVisibility(View.VISIBLE);
             mLockPageHintSwitch.setVisibility(View.VISIBLE);
             mLockMinimizeChallangeSwitch.setVisibility(View.VISIBLE);
+            mLockLongpressChallengeSwitch.setVisibility(View.VISIBLE);
             mLockCarouselSwitch.setVisibility(View.VISIBLE);
             mLockAllWidgetsSwitch.setVisibility(View.VISIBLE);
             mLockUnlimitedWidgetsSwitch.setVisibility(View.VISIBLE);
@@ -883,6 +911,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             mLockVolWakeText.setVisibility(View.VISIBLE);
             mLockPageHintText.setVisibility(View.VISIBLE);
             mLockMinimizeChallangeText.setVisibility(View.VISIBLE);
+            mLockLongpressChallengeText.setVisibility(View.VISIBLE);
             mLockCarouselText.setVisibility(View.VISIBLE);
             mLockAllWidgetsText.setVisibility(View.VISIBLE);
             mLockUnlimitedWidgetsText.setVisibility(View.VISIBLE);
@@ -897,6 +926,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             mLockVolWakeSwitch.setVisibility(View.GONE);
             mLockPageHintSwitch.setVisibility(View.GONE);
             mLockMinimizeChallangeSwitch.setVisibility(View.GONE);
+            mLockLongpressChallengeSwitch.setVisibility(View.GONE);
             mLockCarouselSwitch.setVisibility(View.GONE);
             mLockAllWidgetsSwitch.setVisibility(View.GONE);
             mLockUnlimitedWidgetsSwitch.setVisibility(View.GONE);
@@ -907,6 +937,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             mLockVolWakeText.setVisibility(View.GONE);
             mLockPageHintText.setVisibility(View.GONE);
             mLockMinimizeChallangeText.setVisibility(View.GONE);
+            mLockLongpressChallengeText.setVisibility(View.GONE);
             mLockCarouselText.setVisibility(View.GONE);
             mLockAllWidgetsText.setVisibility(View.GONE);
             mLockUnlimitedWidgetsText.setVisibility(View.GONE);

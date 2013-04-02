@@ -290,6 +290,35 @@
             android:gravity="center_vertical" >
 
             <TextView
+                android:id="@+id/lockscreen_longpress_challenge_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="4dip"
+                android:layout_toLeftOf="@+id/lockscreen_longpress_challenge_switch"
+                android:ellipsize="marquee"
+                android:gravity="left"
+                android:padding="4dip"
+                android:singleLine="true"
+                android:text="@string/lockscreen_longpress_challenge_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Switch
+                android:id="@id/lockscreen_longpress_challenge_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="4dip"
+                android:padding="4dip" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
                 android:id="@+id/lockscreen_carousel_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

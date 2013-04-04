@@ -32,6 +32,7 @@
     <string name="title_statusbar_clock">時計表示</string>
     <string name="title_statusbar_toggles">クイック設定</string>
     <string name="title_statusbar_battery">バッテリー</string>
+    <string name="title_statusbar_signal">電波強度</string>
     <string name="title_navbar">ナビゲーションバー</string>
     <string name="title_navring">ナビゲーションリング</string>
     <string name="title_power_menu">電源メニュー</string>
@@ -288,6 +289,38 @@
     <string name="toggle_style_scrollable">通知パネル (スクロール)</string>
     <string name="toggle_swap_handle_side">ドラッグハンドルを右側に表示</string>
     <string name="add_toggles">トグルの変更</string>
+    <string name="screenshot_delay_title">スクリーンショット遅延時間</string>
+    <string name="screenshot_delay_summary">スクリーンショットトグル長押し時の遅延時間を設定する</string>
+    <string name="toggle_action_title">タップ動作 %1$s &amp; アイコン</string>
+    <string name="toggle_action_title_alt">長押し動作 %1$s &amp; アイコン</string>
+    <string name="toggle_longpress_title">長押し動作 %1$s</string>
+    <string name="custom_toggle_action">動作説明</string>
+    <string name="custom_toggle_desc">基本モードでは、タップするたびにトグルして長押しで設定動作を実行します。基本モードはカスタムトグルをアプリランチャーとして使うことができます。\n上級モードでは、タップするたびに設定動作を実行します。長押し動作を設定することもできます。上級モードは新しいアプリを起動しないタスクをトグルで動作させる場合に最適です。</string>
+    <string name="custom_toggle_okay">閉じる</string>
+    <string name="custom_toggle_cat">カスタムトグル</string>
+    <string name="custom_button_cat">カスタムトグル動作</string>
+    <string name="dclick_action_title">ダブルタップ動作</string>
+    <string name="dclick_action_summary">ダブルタップ時の動作を選択する</string>
+    <string name="boot_action_title">起動時に実行</string>
+    <string name="boot_action_summary">端末起動時に1番目の動作を実行する</string>
+    <string name="match_icon_action_title">表示動作を実行</string>
+    <string name="match_icon_action_summary">アイコン表示の動作を実行する (非チェック時はトグル後の動作を実行)</string>
+    <string name="advanced_toggle_title">動作モード</string>
+    <string name="advanced_toggle_summaryon">上級モード (タップ/長押し動作)</string>
+    <string name="advanced_toggle_summaryoff">基本モード (長押し動作のみ)</string>
+    <string name="action_toggle_title">トグル動作</string>
+    <string name="action_toggle_summary">左から右の順にトグルする</string>
+    <string name="no_dclick">無効</string>
+    <string name="back_one_dclick">逆順にトグル</string>
+    <string name="state_one_dclick">1番目の動作にセット</string>
+    <string name="skip_back_dclick">前にスキップ (実行しない)</string>
+    <string name="skip_up_dclick">次にスキップ (実行しない)</string>
+    <string name="collapse_bar_title">ステータスバーを閉じる</string>
+    <string name="collapse_bar_summary">動作完了時にステータスバーを閉じる</string>
+    <string name="no_collapse">閉じない</string>
+    <string name="click_collapse">タップ時</string>
+    <string name="long_collapse">長押し時</string>
+    <string name="both_collapse">タップ/長押し時</string>
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">時計表示スタイル</string>
@@ -461,6 +494,7 @@
     <string name="interface_navring_settings_title">ナビゲーションリング</string>
     <string name="interface_navring_settings_summary">@null</string>
     <string name="navring_target_info">動作を割り当てるターゲットに向けてスワイプしてください</string>
+    <string name="navring_clear">クリア時</string>
     <string name="navring_short">スワイプ時</string>
     <string name="navring_long">長押し時</string>
     <string name="navring_icon">アイコン変更</string>
@@ -826,21 +860,21 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="time_0_seconds_off">オフ</string>
     <string name="time_0_2_seconds">0.2 秒</string>
     <string name="time_0_5_seconds">0.5 秒</string>
-    <string name="time_1_second">1.0 秒</string>
+    <string name="time_1_second">1 秒</string>
     <string name="time_1_5_seconds">1.5 秒</string>
-    <string name="time_2_seconds">2.0 秒</string>
+    <string name="time_2_seconds">2 秒</string>
     <string name="time_2_5_seconds">2.5 秒</string>
-    <string name="time_3_seconds">3.0 秒</string>
+    <string name="time_3_seconds">3 秒</string>
     <string name="time_3_5_seconds">3.5 秒</string>
-    <string name="time_4_seconds">4.0 秒</string>
+    <string name="time_4_seconds">4 秒</string>
     <string name="time_4_5_seconds">4.5 秒</string>
-    <string name="time_5_seconds">5.0 秒</string>
+    <string name="time_5_seconds">5 秒</string>
     <string name="time_5_5_seconds">5.5 秒</string>
-    <string name="time_6_seconds">6.0 秒</string>
-    <string name="time_7_seconds">7.0 秒</string>
-    <string name="time_8_seconds">8.0 秒</string>
-    <string name="time_9_seconds">9.0 秒</string>
-    <string name="time_10_seconds">10.0 秒</string>
+    <string name="time_6_seconds">6 秒</string>
+    <string name="time_7_seconds">7 秒</string>
+    <string name="time_8_seconds">8 秒</string>
+    <string name="time_9_seconds">9 秒</string>
+    <string name="time_10_seconds">10 秒</string>
 
     <!-- LED brightness entries -->
     <string name="low">暗い</string>

@@ -65,6 +65,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StatusBarToggles extends AOKPPreferenceFragment implements
@@ -917,6 +918,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             for (String toggle : splitter) {
                 userEnabledToggles.add(toggle);
             }
+            Collections.sort(userEnabledToggles);
             return userEnabledToggles;
         } catch (Exception e) {
             if (sToggles != null && sToggles.containsKey("default_toggles")) {

@@ -68,6 +68,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StatusBarToggles extends AOKPPreferenceFragment implements
@@ -94,6 +95,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private final int PICK_CONTACT = 1;
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
+
+    private static boolean mTogglesAreSorted = false;
 
     private Resources mResources;
     private PackageManager mPackMan;
@@ -909,6 +912,10 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             String[] splitter = userToggles.split("\\|");
             for (String toggle : splitter) {
                 userEnabledToggles.add(toggle);
+            }
+            if (!mTogglesAreSorted) {
+                Collections.sort(userEnabledToggles);
+                mTogglesAreSorted = true;
             }
             return userEnabledToggles;
         } catch (Exception e) {

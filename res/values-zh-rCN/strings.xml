@@ -76,7 +76,7 @@
     <!-- Power Menu 电源菜单 -->
     <string name="title_show_power_saver">显示省电模式</string>
     <string name="title_show_screenshot">显示屏幕截图</string>
-    <string name="title_show_torch_toggle">显示手电筒开关</string>
+    <string name="title_show_torch_toggle">显示灯光开关</string>
     <string name="title_show_airplane_toggle">显示飞行模式开关</string>
     <string name="title_show_navbar_hide">显示导航栏和状态栏栏控制</string>
     <string name="summary_show_navbar_hide">选中将显示导航栏和状态栏开关</string>
@@ -267,7 +267,7 @@
     <string name="toggle_dialog_add_toggles">选择并添加开关</string>
     <string name="toggle_style_tile">方块式</string>
     <string name="toggle_style_traditional">传统式</string>
-    <string name="toggle_style_scrollable">卷动式</string>
+    <string name="toggle_style_scrollable">滑动式</string>
     <string name="toggle_swap_handle_side">拖动区右置</string>
     <string name="add_toggles">更改开关</string>
     <string name="screenshot_delay_title">截图延迟</string>
@@ -276,26 +276,26 @@
     <string name="toggle_action_title_alt">%1$s &amp; 长按动作图标</string>
     <string name="toggle_longpress_title">%1$s 长按动作</string>
     <string name="custom_toggle_action">使用指导</string>
-    <string name="custom_toggle_desc">基本模式时每次点击开关将循环显示动作，长按将执行显示的动作，适用于用户希望自己切换到要执行的应用程序。\n高级模式时每次点击都将执行动作，长按同样有效，适用于用户只希望用一个动作而不切换其它应用程序。</string>
+    <string name="custom_toggle_desc">基本模式，点击开关将切换动作，长按执行所显示开关的长按动作，适用于用户希望自己切换到要执行的应用程序。\n高级模式，点击开关将切换并执行动作，长按执行所显示开关的长按动作，适用于用户希望用一次点击切换并执行动作。</string>
     <string name="custom_toggle_okay">取消</string>
     <string name="custom_toggle_cat">自定义开关</string>
     <string name="custom_button_cat">自定义开关动作</string>
     <string name="dclick_action_title">双击动作</string>
     <string name="dclick_action_summary">双击改变状态</string>
-    <string name="boot_action_title">系统启动时状态</string>
-    <string name="boot_action_summary">系统启动时将执行状态</string>
-    <string name="match_icon_action_title">执行显示的动作</string>
-    <string name="match_icon_action_summary">根据具体用途调整任务显示的图标</string>
+    <string name="boot_action_title">启动执行</string>
+    <string name="boot_action_summary">系统启动后将执行第一个动作</string>
+    <string name="match_icon_action_title">执行所显示的动作</string>
+    <string name="match_icon_action_summary">执行当前显示的动作后再切换为下一个动作图标</string>
     <string name="advanced_toggle_title">高级或基本动作</string>
-    <string name="advanced_toggle_summaryon">高级（点击和长按动作）</string>
-    <string name="advanced_toggle_summaryoff">基本（仅长按动作）</string>
+    <string name="advanced_toggle_summaryon">高级（点击和长按执行动作）</string>
+    <string name="advanced_toggle_summaryoff">基本（仅长按执行动作）</string>
     <string name="action_toggle_title">开关动作</string>
     <string name="action_toggle_summary">顺序从左到右</string>
-    <string name="no_dclick">无动作</string>
-    <string name="back_one_dclick">反向状态</string>
-    <string name="state_one_dclick">设置为首选状态</string>
-    <string name="skip_back_dclick">向后（无动作）</string>
-    <string name="skip_up_dclick">向前（无动作）</string>
+    <string name="no_dclick">无操作</string>
+    <string name="back_one_dclick">执行上一个动作</string>
+    <string name="state_one_dclick">执行第一个动作</string>
+    <string name="skip_back_dclick">下一个动作（不执行）</string>
+    <string name="skip_up_dclick">上一个动作（不执行）</string>
     <string name="collapse_bar_title">收起状态栏</string>
     <string name="collapse_bar_summary">动作执行后收起状态栏</string>
     <string name="no_collapse">不收起</string>
@@ -457,7 +457,7 @@
     <string name="navbar_actiontitle_menu">动作： %1$s</string>
     <string name="navbar_longpress_menu">长按： %1$s</string>
     <string name="navbar_icon_menu">自定义图标</string>
-    <string name="navbar_delete_menu">删除按钮</string>
+    <string name="navbar_delete_menu">删除虚拟键</string>
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
@@ -613,7 +613,7 @@
     <string name="lockscreen_target_reset_message">删除用户创建的所有锁屏目标并恢复默认？</string>
     <string name="lockscreen_target_edit_title">编辑目标与图标</string>
     <string name="lockscreen_target_edit_msg">选择或更改需要的程序及相关图标</string>
-    <string name="lockscreen_target_longpress_summary">Enables long press options for lock screen targets</string>
+    <string name="lockscreen_target_longpress_summary">为锁屏目标启用长按操作</string>
 
     <!-- Weather 天气 -->
     <string name="weather_enable">启用天气</string>

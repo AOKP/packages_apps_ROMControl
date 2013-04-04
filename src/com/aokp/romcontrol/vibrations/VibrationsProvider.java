@@ -39,7 +39,7 @@ public class VibrationsProvider extends ContentProvider
     }
 
     private static final String AOKPVibrationName = "'AOKP'";
-    private static final String AOKPVibrationPattern = "'500,150,400,400,400,400,400,400,400,400,400,400,150,150,400,400,150,150,400,400,400,400,150,150'";
+    private static final String AOKPVibrationPattern = "'500,150,400,400,400,400,400,400,400,400,400,400,150,150,400,400,150,150,400,400,400,400,150,150,150'";
     private static final String CQDVibrationName = "'CQD'";
     private static final String CQDVibrationPattern = "'500,400,400,150,150,400,400,150,150,400,400,400,400,150,150,400,400,400,400,150,150,150'";
     private static final String defaultVibrationName = "'Default'";

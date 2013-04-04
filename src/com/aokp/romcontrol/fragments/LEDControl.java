@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
@@ -50,6 +49,9 @@ import com.aokp.romcontrol.R;
 
 import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
+import com.aokp.romcontrol.util.CMDProcessor;
+import com.aokp.romcontrol.util.CommandResult;
+import com.aokp.romcontrol.util.Executable;
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 
@@ -85,6 +87,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     private Activity mActivity;
     private Resources mResources;
     private ShortcutPickerHelper mPicker;
+    private CMDProcessor mCMDProcessor = new CMDProcessor();
 
     private int defaultColor;
     private int userColor;
@@ -407,11 +410,9 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         mLedScreenOn.setChecked(Settings.Secure.getInt(mActivity.getContentResolver(),
                 Settings.Secure.LED_SCREEN_ON, 0) == 1);
 
-        String charging_led_enabled = Helpers.getSystemProp(PROP_CHARGING_LED, "0");
-        if (charging_led_enabled.length() == 0) {
-            charging_led_enabled = "0";
-        }
-        mChargingLedOn.setChecked(Integer.parseInt(charging_led_enabled) == 1);
+
+        mCMDProcessor.su.runWaitFor(String.format("echo PROP_CHARGING_LED=%d >> /system/build.prop",
+               mChargingLedOn.isChecked() ? 1:0));
     }
 
     private void saveCustomApps() {
@@ -674,4 +675,5 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }

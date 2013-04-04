@@ -309,13 +309,6 @@ public class Helpers {
         new CMDProcessor().su.fireAndForget(new Executable(String.format("setprop %s %s", prop, val)));
     }
 
-    // TODO method is only used by com.aokp.romcontrol.fragments.LEDControl; move there
-    @SuppressWarnings("StaticMethodOnlyUsedInOneClass")
-    public static String getSystemProp(String prop, String def) {
-        String result = getSystemProp(prop);
-        return result == null ? def : result;
-    }
-
     private static String getSystemProp(String prop) {
         CommandResult cr = new CMDProcessor().sh.runWaitFor(new Executable("getprop " + prop));
         return cr.success() ? cr.stdout : null;

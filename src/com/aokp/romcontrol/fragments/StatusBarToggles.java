@@ -66,6 +66,7 @@ import java.io.FileOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class StatusBarToggles extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener, ShortcutPickerHelper.OnPickListener {
@@ -917,6 +918,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             for (String toggle : splitter) {
                 userEnabledToggles.add(toggle);
             }
+            Collections.sort(userEnabledToggles);
             return userEnabledToggles;
         } catch (Exception e) {
             if (sToggles != null && sToggles.containsKey("default_toggles")) {

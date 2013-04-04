@@ -26,8 +26,6 @@ import android.os.AsyncTask;
 public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void, String> {
     // if /system needs to be mounted before command
     private boolean mMountSystem;
-    // su terminal we execute on
-    private CMDProcessor mTerm;
     // return if we recieve a null command or empty command
     public final String FAILURE = "failed_no_command";
 
@@ -63,7 +61,6 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
         if (params[0] == null || params[0].trim().equals(""))
             return FAILURE;
 
-        mTerm = new CMDProcessor();
         String stdout = null;
 
         // conditionally enforce mounting
@@ -75,7 +72,7 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
             for (int i = 0; params.length > i; i++) {
                 // always watch for null and empty strings, lazy devs :/
                 if (params[i] != null && !params[i].trim().equals("")) {
-                    stdout = mTerm.su.runWaitFor(params[i]).getStdout();
+                    stdout = CMDProcessor.runSuCommand(params[i]).getStdout();
                 } else {
                     // bail because of careless devs
                     return FAILURE;

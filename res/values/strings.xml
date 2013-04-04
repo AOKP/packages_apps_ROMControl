@@ -328,6 +328,7 @@
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
     <string name="colors">Colors</string>
     <string name="clock_color_title">Clock color</string>
+    <string name="notification_shade_clock">Notification Shade</string>
     <string name="alarm">Alarms</string>
     <string name="clock_options">Clock Options</string>
     <string name="nothing">Nothing</string>

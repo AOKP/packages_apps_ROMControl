@@ -266,10 +266,12 @@ public class Navbar extends AOKPPreferenceFragment implements
             prefs.removePreference(mEnableNavigationBar);
         }
         PreferenceGroup pg = (PreferenceGroup) prefs.findPreference("advanced_cat");
-        if (isTablet(mContext)) { // Tablets don't set NavBar Height
-            pg.removePreference(mNavigationBarHeight);
+        if (isTablet(mContext)) {
+            mNavigationBarHeight.setTitle(R.string.system_bar_height_title);
+            mNavigationBarHeight.setSummary(R.string.system_bar_height_summary);
+            mNavigationBarWidth.setTitle(R.string.system_bar_height_landscape_title);
+            mNavigationBarWidth.setSummary(R.string.system_bar_height_landscape_summary);
             pg.removePreference(mNavigationBarHeightLandscape);
-            pg.removePreference(mNavigationBarWidth);
             mNavBarHideEnable.setEnabled(false);
             mDragHandleOpacity.setEnabled(false);
             mDragHandleWidth.setEnabled(false);
@@ -570,9 +572,11 @@ public class Navbar extends AOKPPreferenceFragment implements
 
     public void refreshSettings() {
         refreshButtons();
-        mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
-        mDragHandleWidth.setEnabled(mNavBarHideEnable.isChecked());
-        mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());
+        if (!isTablet(mContext)) {
+            mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
+            mDragHandleWidth.setEnabled(mNavBarHideEnable.isChecked());
+            mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());
+        }
     }
 
     private Uri getTempFileUri() {

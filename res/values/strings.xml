@@ -441,6 +441,10 @@
     <string name="navigation_bar_height_summary">Navigation Bar height while in portrait</string>
     <string name="navigation_bar_height_landscape_title">Navigation Bar height landscape</string>
     <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape</string>
+    <string name="system_bar_height_title">System Bar height</string>
+    <string name="system_bar_height_summary">System Bar height while in portrait</string>
+    <string name="system_bar_height_landscape_title">System Bar height landscape</string>
+    <string name="system_bar_height_landscape_summary">System Bar height while in landscape</string>
     <string name="navigation_bar_width_title">Navigation Bar width</string>
     <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side</string>
     <string name="navbar_enable_dialog_title">Reboot required!</string>

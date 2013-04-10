@@ -348,11 +348,11 @@
   <string name="battery_bar_animate_summary">Povolení animace způsobuje horší odezvy systému. Zapínat pouze na vlastní nebezpečí.</string>
   <!--Statusbar | Signal-->
   <string name="signal_style">Styl ukazatele signálu</string>
-  <string name="signal_color_title">Barva ukazatele signálu</string>
+  <string name="signal_color_title">Barva textu signálu</string>
   <string name="hide_signal_title">Skrýt graficky ukazatel signálu</string>
   <string name="hide_signal_summary">Aktualizuje se při změně síly signálu</string>
   <string name="wifi_signal_style">Textový styl ukazatele WiFi</string>
-  <string name="wifi_signal_color_title">Barva ukazatele WiFi</string>
+  <string name="wifi_signal_color_title">Barva textu ukazatele WiFi</string>
   <string name="alt_signal_title">Jiný styl signálu</string>
   <string name="alt_signal_summary">Použít alternativní styl signálu (jako v GB)</string>
   <!--Color Picker-->
@@ -387,6 +387,10 @@
   <string name="navigation_bar_height_summary">Výška navigační lišty v režimu na výšku</string>
   <string name="navigation_bar_height_landscape_title">Výška navigační lišty v režimu na šířku</string>
   <string name="navigation_bar_height_landscape_summary">Výška navigační lišty v režimu na šířku.</string>
+  <string name="system_bar_height_title">Výška systémové lišty</string>
+  <string name="system_bar_height_summary">Výška systémové lišty v režimu na výšku</string>
+  <string name="system_bar_height_landscape_title">Výška systémové lišty na šířku</string>
+  <string name="system_bar_height_landscape_summary">Výška systémové lišty v režimu na šířku</string>
   <string name="navigation_bar_width_title">Šířka navigační lišty</string>
   <string name="navigation_bar_width_summary">Šířka navigační lišty když je zobrazena na straně.</string>
   <string name="navbar_enable_dialog_title">Vyžadován restart!</string>

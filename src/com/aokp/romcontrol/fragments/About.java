@@ -49,11 +49,15 @@ public class About extends AOKPPreferenceFragment {
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+            Preference preference) {
         if (preference == mSiteUrl) {
             launchUrl("http://aokp.co/");
         } else if (preference == mReviewUrl) {
-            launchUrl("http://gerrit.aokp.co");
+            Intent mGerrit = new Intent(getActivity().getApplicationContext(),
+                    com.jbirdvegas.mgerrit.GerritControllerActivity.class);
+            mGerrit.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(mGerrit);
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=teamkang");
         }

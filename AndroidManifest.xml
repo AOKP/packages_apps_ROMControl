@@ -221,6 +221,22 @@
         <service
             android:name=".service.ExternalCommandService"
             android:exported="false"/>
+
+        <!-- mGerrit, embedded Gerrit instance viewer -->
+        <activity
+            android:name="com.jbirdvegas.mgerrit.GerritControllerActivity"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:label="@string/mgerrit_activity_name"/>
+        <activity android:name="com.jbirdvegas.mgerrit.ReviewTab"
+            android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:name="com.jbirdvegas.mgerrit.MergedTab"
+            android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:name="com.jbirdvegas.mgerrit.AbandonedTab"
+            android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:name="com.jbirdvegas.mgerrit.PatchSetViewerActivity"
+            android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:name="com.jbirdvegas.mgerrit.Prefs"
+            android:theme="@android:style/Theme.Holo.Light"/>
     </application>
 
 </manifest>

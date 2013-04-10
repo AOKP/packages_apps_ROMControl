@@ -129,6 +129,10 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     protected Object getSystemService(final String name) {
         return getActivity().getSystemService(name);
     }
+    
+    protected Context getParentActivityContext() {
+        return getActivity().getApplicationContext();
+    }
 
     /**
      * Returns the PackageManager from the owning Activity.

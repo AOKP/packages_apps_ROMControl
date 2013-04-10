@@ -53,7 +53,9 @@ public class About extends AOKPPreferenceFragment {
         if (preference == mSiteUrl) {
             launchUrl("http://aokp.co/");
         } else if (preference == mReviewUrl) {
-            launchUrl("http://gerrit.aokp.co");
+            Intent mgerrit = new Intent(this, com.jbirdvegas.mgerrit.GerritControllerActivity.class);
+            mgerrit.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(mGerrit);
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=teamkang");
         }

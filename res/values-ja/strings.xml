@@ -21,7 +21,7 @@
     <string name="led_options">LED</string>
     <string name="spen_options">Sペンジェスチャー</string>
     <string name="header_system">システム</string>
-    <string name="sound">サウンド</string>
+    <string name="sound">音</string>
     <string name="lockscreen_options">ロック画面</string>
     <string name="weather">天気情報</string>
     <string name="tools">ツール</string>
@@ -40,7 +40,7 @@
     <string name="title_spen">Sペンジェスチャー</string>
     <string name="title_lockscreens">ロック画面</string>
     <string name="title_lockscreens_targets">ロック画面ターゲット</string>
-    <string name="title_sound">サウンド</string>
+    <string name="title_sound">音</string>
     <string name="title_weather">天気情報</string>
     <string name="title_performance">パフォーマンス</string>
     <string name="title_clipboard_share">クリップボードに共有</string>
@@ -130,15 +130,29 @@
     <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
     <string name="github_aokp">https://github.com/AOKP</string>
     <string name="github_adam">https://github.com/syaoran12</string>
+    <string name="github_akellar">https://github.com/akellar</string>
+    <string name="github_bajee11">https://github.com/Bajee11</string>
+    <string name="github_bmc08gt"> https://github.com/BMc08GT</string>
     <string name="github_birdman">https://github.com/mrbirdman</string>
+    <string name="github_dhacker29">https://github.com/dhacker29</string>
+    <string name="github_graffixnyc">https://github.com/graffixnyc</string>
+    <string name="github_hashcode">https://github.com/Hashcode</string>
+    <string name="github_hillbillyhacker">https://github.com/hillbillyhacker86</string>
+    <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
+    <string name="github_jubakuba">https://github.com/Jubakuba</string>
+    <string name="github_k900">https://github.com/K900</string>
     <string name="github_khasmek">https://github.com/KhasMek</string>
     <string name="github_kwes">https://github.com/kwes1020</string>
     <string name="github_marclandis">https://github.com/MarcLandis</string>
+    <string name="github_rohan32">https://github.com/rohanmathur</string>
     <string name="github_roman">https://github.com/romanbb</string>
     <string name="github_protekk">https://github.com/ProTekk</string>
+    <string name="github_qnhoang81">https://github.com/qnhoang81</string>
+    <string name="github_scar45">https://github.com/scar45</string>
     <string name="github_sethyx">https://github.com/sethyx</string>
     <string name="github_sixstringsg">https://github.com/sixstringsg</string>
     <string name="github_stevespear">https://github.com/Stevespear426</string>
+    <string name="github_tdm">https://github.com/tdm</string>
     <string name="github_whitehawk">https://github.com/Whitehawkx</string>
     <string name="github_xoom">https://github.com/xoomdev</string>
     <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
@@ -147,6 +161,8 @@
     <string name="bootani_cat">ブートアニメーション</string>
     <string name="navbar_cat">ナビゲーションバー</string>
     <string name="notification_cat">通知パネル</string>
+    <string name="display_cat">ディスプレイ</string>
+    <string name="recents_cat">アプリ履歴</string>
     <string name="tabletUI_cat">タブレットUI</string>
     <string name="enable_volume_options">ボリュームオプションを有効</string>
     <string name="status_bar_notif_count_title">通知数を表示</string>
@@ -178,9 +194,9 @@
     <string name="lefty_mode_title">左利きモード</string>
     <string name="lefty_mode_summary">ナビゲーションバーの配置をスワップする (UI再起動)</string>
     <string name="rotate_180_title">180°画面回転を有効</string>
-    <string name="rotate_180_summary">端末を上下反対にしたとき画面を回転させる</string>
+    <string name="rotate_180_summary">端末を上下反対にしたとき画面を回転する</string>
     <string name="rotate_270_title">270°画面回転を有効</string>
-    <string name="rotate_270_summary">端末を右側に倒したとき画面を回転させる</string>
+    <string name="rotate_270_summary">端末を右側に倒したとき画面を回転する</string>
     <string name="recent_kill_all">全アプリ終了ボタンを表示</string>
     <string name="recent_kill_all_summary">アプリ履歴ウィンドウに全アプリ終了ボタンを表示する</string>
     <string name="ram_bar">RAM使用量を表示</string>
@@ -329,6 +345,7 @@
     <string name="enable_clock_weekday_summary">曜日の表示方法を設定する</string>
     <string name="colors">配色設定</string>
     <string name="clock_color_title">時計の文字色</string>
+    <string name="notification_shade_clock">通知パネル</string>
     <string name="alarm">アラーム</string>
     <string name="clock_options">時計オプション</string>
     <string name="nothing">設定なし</string>
@@ -375,7 +392,7 @@
     <string name="battery_not_title">通知パネルに電池残量を表示</string>
     <string name="battery_not_summary">電池残量アイコンを通知パネルのクリアボタンの位置に表示する</string>
     <string name="battery_bar">電池残量バー表示位置</string>
-    <string name="battery_bar_color">電池残量バー配色設定</string>
+    <string name="battery_bar_color">電池残量バーの色</string>
     <string name="battery_bar_cat">電池残量バー設定</string>
     <string name="battery_bar_style_title">電池残量バースタイル</string>
     <string name="battery_bar_thickness_title">電池残量バーの太さ</string>
@@ -384,11 +401,11 @@
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">電波強度表示スタイル</string>
-    <string name="signal_color_title">電波強度表示の配色設定</string>
+    <string name="signal_color_title">電波強度の文字色</string>
     <string name="hide_signal_title">電波アイコンを非表示</string>
     <string name="hide_signal_summary">電波強度が変化したタイミングで適用されます</string>
     <string name="wifi_signal_style">Wi-Fi強度表示スタイル</string>
-    <string name="wifi_signal_color_title">Wi-Fi強度表示の配色設定</string>
+    <string name="wifi_signal_color_title">Wi-Fi強度の文字色</string>
     <string name="alt_signal_title">電波強度とインジケータを分離</string>
     <string name="alt_signal_summary">電波強度とインジケータを別々に表示する</string>
 
@@ -425,6 +442,10 @@
     <string name="navigation_bar_height_summary">縦画面時のナビゲーションバーの高さを変更する</string>
     <string name="navigation_bar_height_landscape_title">ナビゲーションバーの高さ(横画面)</string>
     <string name="navigation_bar_height_landscape_summary">横画面時のナビゲーションバーの高さを変更する</string>
+    <string name="system_bar_height_title">システムバーの高さ(縦画面)</string>
+    <string name="system_bar_height_summary">縦画面時のシステムバーの高さを変更する</string>
+    <string name="system_bar_height_landscape_title">システムバーの高さ(横画面)</string>
+    <string name="system_bar_height_landscape_summary">横画面時のシステムバーの高さを変更する</string>
     <string name="navigation_bar_width_title">ナビゲーションバーの幅</string>
     <string name="navigation_bar_width_summary">横画面時のナビゲーションバーの幅を変更する</string>
     <string name="navbar_enable_dialog_title">再起動が必要です</string>

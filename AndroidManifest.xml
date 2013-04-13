@@ -198,7 +198,13 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".torch.TorchActivity"
+            android:label="@string/torch_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>

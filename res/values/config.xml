@@ -23,4 +23,28 @@
 
     <!-- Whether device has led charging feature -->
     <bool name="has_led_charging_feature">false</bool>
+
+    <!-- If there is no sysfs-based control mechanism, enable this -->
+    <bool name="useCameraInterface">true</bool>
+
+    <!-- Full path to the sysfs toggle -->
+    <string name="flashDevice">/sys/class/leds/flashlight/brightness</string>
+
+    <!-- Full path to the sysfs luminosity -->
+    <string name="flashDeviceLuminosity"></string>
+
+    <!-- Off setting -->
+    <integer name="valueOff">0</integer>
+
+    <!-- On setting -->
+    <integer name="valueOn">1</integer>
+
+    <!-- Low setting -->
+    <integer name="valueLow">50</integer>
+
+    <!-- Middle setting -->
+    <integer name="valueHigh">128</integer>
+
+    <!-- Highest setting, leave -1 if it doesn't exist -->
+    <integer name="valueDeathRay">3</integer>
 </resources>

@@ -72,6 +72,7 @@
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
     <string name="text_on">On</string>
     <string name="text_off">Off</string>
+    <string name="torch_title">Torch</string>
 
     <!-- Power Menu -->
     <string name="title_show_power_saver">Show Power Saver</string>

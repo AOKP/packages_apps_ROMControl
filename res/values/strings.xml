@@ -74,16 +74,15 @@
     <string name="text_off">Off</string>
 
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Show Power Saver</string>
-    <string name="title_show_screenshot">Show Screenshot</string>
-    <string name="title_show_torch_toggle">Show Torch</string>
-    <string name="title_show_airplane_toggle">Show Airplane mode</string>
-    <string name="title_show_navbar_hide">Show System Bar toggles</string>
-    <string name="summary_show_navbar_hide">Checking this will enable toggles that hide the NavBar and Statusbar</string>
-    <string name="title_show_volume_state_toggle">Show Volume states</string>
-    <string name="title_show_reboot_keyguard">Show Reboot on lockscreen</string>
-    <string name="summary_off_show_reboot_keyguard">Reboot option will not be shown while on lockscreen</string>
-    <string name="summary_on_show_reboot_keyguard">Reboot option will be shown while on lockscreen</string>
+    <string name="title_show_power_saver">Power Saver</string>
+    <string name="title_show_screenshot">Screenshot</string>
+    <string name="title_show_torch_toggle">Torch</string>
+    <string name="title_show_airplane_toggle">Airplane mode</string>
+    <string name="title_show_navbar_hide">System Bar toggles</string>
+    <string name="summary_show_navbar_hide">Enabling this will show toggles that hide the NavBar and Statusbar</string>
+    <string name="title_show_volume_state_toggle">Volume states</string>
+    <string name="title_show_reboot_keyguard">Reboot on lockscreen</string>
+    <string name="summary_show_reboot_keyguard">Enabling this will show reboot options while on lockscreen</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Action on swipe left</string>

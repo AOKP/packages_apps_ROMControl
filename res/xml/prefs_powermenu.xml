@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference 
+    <SwitchPreference
         android:key="show_screenshot"
         android:title="@string/title_show_screenshot" />
 <!--
-    <CheckBoxPreference android:key="show_power_saver"
+    <SwitchPreference android:key="show_power_saver"
         android:title="@string/title_show_power_saver" />
 -->
-    <CheckBoxPreference 
+    <SwitchPreference
         android:key="show_torch_toggle"
         android:title="@string/title_show_torch_toggle" />
 
-    <CheckBoxPreference 
+    <SwitchPreference
         android:key="show_airplane_toggle"
         android:title="@string/title_show_airplane_toggle" />
 
-    <CheckBoxPreference 
+    <SwitchPreference
+        android:key="show_volume_state_toggle"
+        android:title="@string/title_show_volume_state_toggle" />
+
+    <SwitchPreference
         android:key="show_navbar_hide"
         android:title="@string/title_show_navbar_hide"
         android:summary="@string/summary_show_navbar_hide" />
 
-    <CheckBoxPreference
-        android:key="show_volume_state_toggle"
-        android:title="@string/title_show_volume_state_toggle" />
-
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="show_reboot_keyguard"
         android:title="@string/title_show_reboot_keyguard"
-        android:summaryOff="@string/summary_off_show_reboot_keyguard"
-        android:summaryOn="@string/summary_on_show_reboot_keyguard" />
+        android:summary="@string/summary_show_reboot_keyguard" />
 
 </PreferenceScreen>

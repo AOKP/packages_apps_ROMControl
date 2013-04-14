@@ -273,10 +273,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
 
         if (isTablet(mContext)) {
-            Preference mTransparency = findPreference("transparency_dialog");
             mStatusbarSliderPreference.setEnabled(false);
             mStatusBarHide.setEnabled(false);
-            mTransparency.setEnabled(false);
         } else {
             mHideExtras.setEnabled(false);
         }
@@ -948,13 +946,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mUserModeUI) {
-            Preference mTransparency = findPreference("transparency_dialog");
             int val = Integer.valueOf((String) newValue);
             Settings.System.putInt(mContentResolver,
                     Settings.System.USER_UI_MODE, val);
             mStatusbarSliderPreference.setEnabled(val == 1 ? false : true);
             mStatusBarHide.setEnabled(val == 1 ? false : true);
-            mTransparency.setEnabled(val == 1 ? false : true);
             mHideExtras.setEnabled(val == 1 ? true : false);
             Helpers.restartSystemUI();
             return true;

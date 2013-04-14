@@ -273,10 +273,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
 
         if (isTablet(mContext)) {
-            Preference mTransparency = findPreference("transparency_dialog");
             mStatusbarSliderPreference.setEnabled(false);
             mStatusBarHide.setEnabled(false);
-            mTransparency.setEnabled(false);
         } else {
             mHideExtras.setEnabled(false);
         }

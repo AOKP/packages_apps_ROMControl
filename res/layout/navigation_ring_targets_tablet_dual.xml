@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:prvandroid="http://schemas.android.com/apk/prv/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginEnd="8dip"
+        android:layout_marginStart="8dip"
+        android:padding="4dip"
+        android:gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/navring_target_info" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/navring_target_amount_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dip"
+            android:layout_marginStart="8dip"
+            android:layout_weight="0.5"
+            android:padding="4dip"
+            android:gravity="left"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/navring_target_amount_text" />
+
+        <Spinner
+            android:id="@+id/amount_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dip"
+            android:layout_marginStart="8dip"
+            android:layout_weight="0.5"
+            android:padding="4dip"
+            android:gravity="left" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/navring_target_longpress_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dip"
+            android:layout_marginStart="8dip"
+            android:layout_weight="0.5"
+            android:padding="4dip"
+            android:gravity="left"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/navring_target_longpress_text" />
+
+        <Switch
+            android:id="@+id/longpress_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dip"
+            android:layout_marginStart="8dip"
+            android:layout_weight="0.5"
+            android:padding="4dip"
+            android:gravity="left"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2" />
+
+    <com.android.internal.widget.multiwaveview.GlowPadView
+        android:id="@+id/navring_target"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:gravity="top|left"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/navring_left_margin_port_dual"
+        android:contentDescription="@*android:string/keyguard_accessibility_slide_area"
+        prvandroid:targetDrawables="@*android:array/lockscreen_targets_unlock_only"
+        prvandroid:targetDescriptions="@*android:array/lockscreen_target_descriptions_unlock_only"
+        prvandroid:directionDescriptions="@*android:array/lockscreen_direction_descriptions"
+        prvandroid:handleDrawable="@drawable/ic_navigation_ring_hint"
+        prvandroid:outerRingDrawable="@drawable/navbar_search_outerring_left"
+        prvandroid:innerRadius="@*android:dimen/glowpadview_inner_radius"
+        prvandroid:outerRadius="@dimen/navring_radius_tablet_portrait"
+        prvandroid:snapMargin="@dimen/navbar_search_snap_margin"
+        prvandroid:firstItemOffset="@*android:integer/kg_glowpad_rotation_offset"
+        prvandroid:magneticTargets="false"
+        prvandroid:feedbackCount="1"
+        prvandroid:vibrationDuration="20"
+        prvandroid:glowRadius="@*android:dimen/glowpadview_glow_radius"
+        prvandroid:pointDrawable="@*android:drawable/ic_lockscreen_glowdot"
+        prvandroid:allowScaling="false" />
+
+</LinearLayout>

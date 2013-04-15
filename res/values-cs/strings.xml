@@ -67,14 +67,14 @@
   <string name="text_on">Zap</string>
   <string name="text_off">Vyp</string>
   <!--Power Menu-->
-  <string name="title_show_power_saver">Zobrazit spořič energie</string>
-  <string name="title_show_screenshot">Zobrazit snímek obrazovky</string>
-  <string name="title_show_torch_toggle">Zobrazit přepínač svítilny</string>
-  <string name="title_show_airplane_toggle">Zobrazit přepínač letového módu</string>
-  <string name="title_show_navbar_hide">Zobrazit přepínače systémových lišt</string>
+  <string name="title_show_power_saver">Spořič energie</string>
+  <string name="title_show_screenshot">Snímek obrazovky</string>
+  <string name="title_show_torch_toggle">Svítilna</string>
+  <string name="title_show_airplane_toggle">Letový mód</string>
+  <string name="title_show_navbar_hide">Přepínače systémových lišt</string>
   <string name="summary_show_navbar_hide">Toto nastavení zpřístupní přepínače, které mohou skrýt navigační a stavovou lištu</string>
-  <string name="title_show_volume_state_toggle">Zobrazit stavy hlasitosti</string>
-  <string name="title_show_reboot_keyguard">Zobrazit restartovat na zamčené obrazovce</string>
+  <string name="title_show_volume_state_toggle">Stavy hlasitosti</string>
+  <string name="title_show_reboot_keyguard">Restartovat na zamčené obrazovce</string>
   <string name="summary_off_show_reboot_keyguard">Volba restartovat nebude zobrazena na zamčené obrazovce</string>
   <string name="summary_on_show_reboot_keyguard">Volba restartovat bude zobrazena na zamčené obrazovce</string>
   <!-- S Pen -->

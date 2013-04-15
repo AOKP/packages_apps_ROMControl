@@ -82,8 +82,7 @@
     <string name="summary_show_navbar_hide">ナビゲーションバーとステータスバーの表示切替</string>
     <string name="title_show_volume_state_toggle">サウンドモード</string>
     <string name="title_show_reboot_keyguard">ロック画面で再起動</string>
-    <string name="summary_off_show_reboot_keyguard">ロック画面では再起動オプションを表示しません</string>
-    <string name="summary_on_show_reboot_keyguard">ロック画面で再起動オプションを表示します</string>
+    <string name="summary_show_reboot_keyguard">ロック画面で再起動オプションを表示</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">左スワイプ時の動作</string>

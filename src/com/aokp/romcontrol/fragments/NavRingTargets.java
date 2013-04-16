@@ -134,7 +134,8 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
         boolean tabletui = Settings.System.getInt(cr, Settings.System.CURRENT_UI_MODE, 0) == 1;
         boolean dualpanel = Settings.System.getBoolean(cr, Settings.System.FORCE_DUAL_PANEL, false);
         if (dualpanel) {
-            return inflater.inflate(R.layout.navigation_ring_targets, container, false);
+            return inflater.inflate(tabletui ? R.layout.navigation_ring_targets_tablet_dual
+                    : R.layout.navigation_ring_targets, container, false);
         } else {
             return inflater.inflate(tabletui ? R.layout.navigation_ring_targets_tablet
                     : R.layout.navigation_ring_targets, container, false);

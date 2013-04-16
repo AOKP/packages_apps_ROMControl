@@ -51,9 +51,13 @@
     <!--  Amount of Margin to offset NavRing in Portrait Mode -->
     <dimen name="navring_left_margin_port_sw">200dp</dimen>
     <dimen name="navring_left_margin_port">-100dp</dimen>
+    <!--  Amount of Margin to offset NavRing in Portrait Mode while DualPane -->
+    <dimen name="navring_left_margin_port_dual">-400dp</dimen>
     <!--  Amount of Margin to offset NavRing in Landscape Mode -->
     <dimen name="navring_left_margin_land_sw">500dp</dimen>
     <dimen name="navring_left_margin_land">250dp</dimen>
+    <!--  Amount of Margin to offset NavRing while DualPane -->
+    <dimen name="navring_left_margin_land_dual">-600dp</dimen>
     <!--  Height of NavRing in Tablet Mode Landscape -->
     <dimen name="navring_height_tablet_landscape">320dp</dimen>
     <!--  Height of NavRing in Tablet Mode Portrait -->

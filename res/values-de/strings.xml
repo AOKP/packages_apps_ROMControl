@@ -4,6 +4,8 @@
 
     <!-- Main -->
     <string name="user_interface">Benutzeroberfläche</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
     <string name="general_ui">Allgemein</string>
     <string name="lockscreen_options">Bildschirmsperre</string>
     <string name="power_menu_optons">An-/Aus-Schalter Menü</string>
@@ -108,6 +110,14 @@
 
     <string name="lcd_density_title">LCD Pixeldichte</string>
     <string name="lcd_density_summary">Ändert die Pixeldichte des Bildschirms</string>
+    
+    <string name="transparency_dialog_title">Transparenzeinstellungen</string>
+    <string name="transparency_dialog_linked_transparency">Verbinde Statusbar- &amp; NavBar-Alpha</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Statusbar und Navigationsleiste</string>
+    <string name="transparency_dialog_navbar">Navigationsleiste</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Passe Bildschirmsperren-Alpha an</string>
+    <string name="transparency_dialog_transparency">Homescreen-Alpha</string>
+    <string name="transparency_dialog_transparency_keyguard">Bildschirmsperren-Alpha</string>
 
     <!-- CRT animations -->
     <string name="crt_animations_header">An-/Aus-Animationen</string>

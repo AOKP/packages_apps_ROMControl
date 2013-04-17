@@ -269,9 +269,9 @@ public class Navbar extends AOKPPreferenceFragment implements
         if (isTablet(mContext)) {
             mNavigationBarHeight.setTitle(R.string.system_bar_height_title);
             mNavigationBarHeight.setSummary(R.string.system_bar_height_summary);
-            mNavigationBarWidth.setTitle(R.string.system_bar_height_landscape_title);
-            mNavigationBarWidth.setSummary(R.string.system_bar_height_landscape_summary);
-            pg.removePreference(mNavigationBarHeightLandscape);
+            mNavigationBarHeightLandscape.setTitle(R.string.system_bar_height_landscape_title);
+            mNavigationBarHeightLandscape.setSummary(R.string.system_bar_height_landscape_summary);
+            pg.removePreference(mNavigationBarWidth);
             mNavBarHideEnable.setEnabled(false);
             mDragHandleOpacity.setEnabled(false);
             mDragHandleWidth.setEnabled(false);

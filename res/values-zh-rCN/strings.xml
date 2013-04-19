@@ -45,6 +45,7 @@
     <string name="title_performance">性能设置</string>
     <string name="title_clipboard_share">分享到剪贴板</string>
 
+
     <!-- Header Summaries 标题说明 -->
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
@@ -82,8 +83,7 @@
     <string name="summary_show_navbar_hide">选中将显示导航栏和状态栏开关</string>
     <string name="title_show_volume_state_toggle">显示声音状态</string>
     <string name="title_show_reboot_keyguard">锁屏时显示重新启动</string>
-    <string name="summary_off_show_reboot_keyguard">锁屏时不显示重新启动选项</string>
-    <string name="summary_on_show_reboot_keyguard">锁屏时显示重新启动选项</string>
+    <string name="summary_show_reboot_keyguard">启用将在锁屏时显示重新启动选项</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">左滑动作</string>
@@ -128,6 +128,8 @@
     <string name="bootani_cat">开机动画</string>
     <string name="navbar_cat">导航栏</string>
     <string name="notification_cat">通知栏</string>
+    <string name="display_cat">显示</string>
+    <string name="recents_cat">近期任务</string>
     <string name="tabletUI_cat">平板界面</string>
     <string name="enable_volume_options">启用音量面板</string>
     <string name="status_bar_notif_count_title">显示通知数量</string>
@@ -310,6 +312,7 @@
     <string name="enable_clock_weekday_summary">在时间前显示周几</string>
     <string name="colors">颜色</string>
     <string name="clock_color_title">时钟颜色</string>
+    <string name="notification_shade_clock">通知栏阴影</string>
     <string name="alarm">闹钟</string>
     <string name="clock_options">日期和时间设置</string>
     <string name="nothing">无</string>
@@ -406,6 +409,10 @@
     <string name="navigation_bar_height_summary">设置竖屏时导航栏高度</string>
     <string name="navigation_bar_height_landscape_title">导航栏高度（横屏）</string>
     <string name="navigation_bar_height_landscape_summary">设置横屏时导航栏高度</string>
+    <string name="system_bar_height_title">系统栏高度（竖屏）</string>
+    <string name="system_bar_height_summary">设置竖屏时系统栏高度</string>
+    <string name="system_bar_height_landscape_title">系统栏高度（横屏）</string>
+    <string name="system_bar_height_landscape_summary">设置横屏时系统栏高度</string>
     <string name="navigation_bar_width_title">导航栏宽度</string>
     <string name="navigation_bar_width_summary">设置当导航栏在侧面时的宽度</string>
     <string name="navbar_enable_dialog_title">需要重启生效！</string>

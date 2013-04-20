@@ -306,6 +306,8 @@
     <string name="add_toggles">Change toggles</string>
     <string name="screenshot_delay_title">Screenshot delay</string>
     <string name="screenshot_delay_summary">Delay to use after long pressing the screenshot toggle</string>
+    <string name="insomnia_duration_title">Override sleep policy</string>
+    <string name="insomnia_duration_summary">Duration in minutes to set sleep policy of device</string> 
     <string name="toggle_action_title">Action %1$s &amp; icon</string>
     <string name="toggle_action_title_alt">Longpress action %1$s &amp; icon</string>
     <string name="toggle_longpress_title">Longpress action %1$s</string>
@@ -870,6 +872,13 @@
     <string name="size_2_dp">2 dp</string>
     <string name="size_3_dp">3 dp</string>
     <string name="size_4_dp">4 dp</string>
+
+    <!-- Screen timeout values -->
+    <string name="time_1_minute">1 minute</string>
+    <string name="time_5_minutes">5 minutes</string>
+    <string name="time_10_minutes">10 minutes</string>
+    <string name="time_20_minutes">20 minutes</string>
+    <string name="time_30_minutes">30 minutes</string>
 
     <!-- LED Values -->
     <string name="time_0_seconds_off">Off</string>

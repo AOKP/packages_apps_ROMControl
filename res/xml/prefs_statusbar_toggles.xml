@@ -45,6 +45,13 @@
         android:summary="@string/screenshot_delay_summary"
         android:title="@string/screenshot_delay_title" />
 
+    <ListPreference
+        android:entries="@array/insomnia_duration_entries"
+        android:entryValues="@array/insomnia_duration_values"
+        android:key="insomnia_duration"
+        android:summary="@string/insomnia_duration_summary"
+        android:title="@string/insomnia_duration_title" />
+
     <PreferenceCategory
         android:key="custom_toggle"
         android:title="@string/custom_toggle_cat">

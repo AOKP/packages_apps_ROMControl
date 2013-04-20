@@ -166,6 +166,23 @@
         <item>8000</item>
     </string-array>
 
+    <!-- Stay Awake (insomnia) duration -->
+    <string-array name="insomnia_duration_entries" translatable="false">
+        <item>@string/time_1_minute</item>
+        <item>@string/time_5_minutes</item>
+        <item>@string/time_10_minutes</item>
+        <item>@string/time_20_minutes</item>
+        <item>@string/time_30_minutes</item>
+    </string-array>
+
+    <string-array name="insomnia_duration_values" translatable="false">
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1200000</item>
+        <item>1800000</item>
+    </string-array>
+
     <!-- Custom toggle quantity -->
     <string-array name="custom_toggle_qty_entries" translatable="false">
         <item>1</item>

@@ -91,6 +91,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private static final String PREF_CUSTOM_TOGGLE = "custom_toggle_pref";
     private static final String PREF_CUSTOM_CAT = "custom_toggle";
     private static final String PREF_CUSTOM_BUTTONS = "custom_buttons";
+    private static final String PREF_INSOMNIA_DURATION = "insomnia_duration";
 
     private final int PICK_CONTACT = 1;
 
@@ -117,6 +118,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     CustomTogglePref mCustomToggles;
     PreferenceGroup mCustomCat;
     PreferenceGroup mCustomButtons;
+    ListPreference mInsomniaDuration;
 
     BroadcastReceiver mReceiver;
     ArrayList<String> mToggles;
@@ -217,6 +219,11 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
         mCustomCat = (PreferenceGroup) findPreference(PREF_CUSTOM_CAT);
         mCustomButtons = (PreferenceGroup) findPreference(PREF_CUSTOM_BUTTONS);
+
+        mInsomniaDuration = (ListPreference) findPreference(PREF_INSOMNIA_DURATION);
+        mInsomniaDuration.setOnPreferenceChangeListener(this);
+        mInsomniaDuration.setValue(String.valueOf(Settings.System.getInt(mContentRes,
+                Settings.System.SCREEN_OFF_TIMEOUT_LONG, 30000)));
 
         if (isSW600DPScreen(mContext) || isTablet(mContext)) {
             getPreferenceScreen().removePreference(mFastToggle);
@@ -403,6 +410,11 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes,
                     Settings.System.DCLICK_TOGGLE_REVERT, val);
             return true;
+        } else if (preference == mInsomniaDuration) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.SCREEN_OFF_TIMEOUT_LONG, val);
+            mInsomniaDuration.setValue((String) newValue);
         }
         return true;
     }
@@ -1057,6 +1069,9 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             }
             if (mScreenshotDelay != null) {
                 mScreenshotDelay.setEnabled(currentToggles.contains("SCREENSHOT"));
+            }
+            if (mInsomniaDuration != null) {
+                mInsomniaDuration.setEnabled(currentToggles.contains("STAYAWAKE"));
             }
             if (mCustomCat != null && mCustomButtons != null) {
                 boolean enabled = currentToggles.contains("CUSTOM");

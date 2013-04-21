@@ -41,6 +41,7 @@
   <string name="title_weather">Nastavení počasí</string>
   <string name="title_performance">Nastavení výkonu</string>
   <string name="title_clipboard_share">Sdílení do schránky</string>
+  <string name="mgerrit_activity_name">mGerrit</string>
   <!--Header Summaries-->
   <string name="header_summary_clock">@null</string>
   <string name="header_summary_toggles">@null</string>
@@ -117,6 +118,8 @@
   <string name="bootani_cat">Startovací animace</string>
   <string name="navbar_cat">Navigační lišta</string>
   <string name="notification_cat">Notifikace</string>
+  <string name="display_cat">Zobrazení</string>
+  <string name="recents_cat">Přepínání aplikací</string>
   <string name="tabletUI_cat">Tabletové UI</string>
   <string name="enable_volume_options">Zapnout volby hlasitosti</string>
   <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>

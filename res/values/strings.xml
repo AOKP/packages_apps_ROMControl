@@ -23,7 +23,7 @@
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
     <string name="lockscreen_options">Lockscreen</string>
-    <string name="title_ribbon">Ribbon Options</string>
+    <string name="title_ribbon">Ribbons</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
 
@@ -46,7 +46,7 @@
     <string name="title_performance">Performance Settings</string>
     <string name="title_clipboard_share">Share to Clipboard</string>
     <string name="mgerrit_activity_name">mGerrit</string>
-    <string name="ribbon_settings_title">Ribbon options</string>
+    <string name="ribbon_settings_title">Ribbons</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">@null</string>

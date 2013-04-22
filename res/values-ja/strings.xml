@@ -23,6 +23,7 @@
     <string name="header_system">システム</string>
     <string name="sound">音</string>
     <string name="lockscreen_options">ロック画面</string>
+    <string name="title_ribbon">リボン</string>
     <string name="weather">天気情報</string>
     <string name="tools">ツール</string>
 
@@ -44,6 +45,8 @@
     <string name="title_weather">天気情報</string>
     <string name="title_performance">パフォーマンス</string>
     <string name="title_clipboard_share">クリップボードに共有</string>
+    <string name="mgerrit_activity_name">mGerrit</string>
+    <string name="ribbon_settings_title">リボン</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">@null</string>
@@ -60,9 +63,12 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
+    <string name="ribbon_settings_summary">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">ナビゲーションバーをリセット</string>
+    <string name="menu_ribbon_reset">リボンをリセット</string>
+    <string name="menu_ribbon_rearrange">アイコンの並び替え</string>
     <string name="menu_user_interface_reset">通知パネルの壁紙をリセット</string>
     <string name="menu_lockscreens_reset">ロック画面の壁紙をリセット</string>
 
@@ -445,7 +451,7 @@
     <string name="system_bar_height_summary">縦画面時のシステムバーの高さを変更する</string>
     <string name="system_bar_height_landscape_title">システムバーの高さ(横画面)</string>
     <string name="system_bar_height_landscape_summary">横画面時のシステムバーの高さを変更する</string>
-    <string name="navigation_bar_width_title">ナビゲーションバーの幅</string>
+    <string name="navigation_bar_width_title">ナビゲーションバーの幅(横画面)</string>
     <string name="navigation_bar_width_summary">横画面時のナビゲーションバーの幅を変更する</string>
     <string name="navbar_enable_dialog_title">再起動が必要です</string>
     <string name="navbar_enable_dialog_msg">ナビゲーションバーの表示/非表示切替えを正常に完了するには端末を再起動してください</string>
@@ -480,8 +486,8 @@
     <string name="statusbar_hide_summary">ステータスバーを完全に隠す</string>
     <string name="navigation_bar_alpha_title">通知とナビゲーションバーの不透明度</string>
     <string name="navbar_hide_enable_title">ナビゲーションバーを隠す</string>
-    <string name="drag_handle_opacity_title">ハンドルの不透明度</string>
-    <string name="drag_handle_width_title">ハンドルの幅</string>
+    <string name="drag_handle_opacity_title">ドラッグハンドルの不透明度</string>
+    <string name="drag_handle_width_title">ドラッグハンドルの幅</string>
     <string name="title_navbar_timeout">表示時間</string>
     <string name="summary_navbar_timeout">ナビゲーションバーを隠すまでの時間</string>
     <string name="hide_navbar_timeout_never">隠さない</string>
@@ -491,12 +497,12 @@
     <string name="hide_navbar_timeout_10000">10 秒</string>
     <string name="hide_navbar_timeout_15000">15 秒</string>
     <string name="hide_navbar_timeout_30000">30 秒</string>
-    <string name="navbar_buttons_instructions">アイコンをタップしてソフトキー動作とアイコンを変更してください</string>
-    <string name="navbar_title_menu">ソフトキーオプション</string>
-    <string name="navbar_actiontitle_menu">タップ: %1$s</string>
-    <string name="navbar_longpress_menu">長押し: %1$s</string>
+    <string name="navbar_buttons_instructions">アイコンをタップして動作を設定してください</string>
+    <string name="navbar_title_menu">ボタンオプション</string>
+    <string name="navbar_actiontitle_menu">短押し : %1$s</string>
+    <string name="navbar_longpress_menu">長押し : %1$s</string>
     <string name="navbar_icon_menu">カスタムアイコン</string>
-    <string name="navbar_delete_menu">ソフトキー削除</string>
+    <string name="navbar_delete_menu">ボタン削除</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">ナビゲーションリング</string>
@@ -506,20 +512,57 @@
     <string name="navring_target_reset_message">ナビゲーションリングをリセットしますか？</string>
     <string name="navring_target_reset">ナビゲーションリングをリセットしました</string>
     <string name="choose_action_title">動作の選択</string>
-    <string name="choose_action_short_title">スワイプ時の動作の選択</string>
-    <string name="choose_action_long_title">長押し時の動作の選択</string>
-    <string name="action_long_save">を長押し時の動作に設定しました</string>
+    <string name="choose_action_short_title">短押し動作の選択</string>
+    <string name="choose_action_long_title">長押し動作の選択</string>
+    <string name="action_long_save">を長押し動作に設定しました</string>
     <string name="title_navring_amount">ナビゲーションリングターゲット数</string>
     <string name="summary_navring_amount">ナビゲーションリングに設置するターゲットの数を選択する</string>
     <string name="interface_navring_settings_title">ナビゲーションリング</string>
     <string name="interface_navring_settings_summary">@null</string>
-    <string name="navring_target_info">動作を割り当てるターゲットに向けてスワイプしてください</string>
-    <string name="navring_clear">クリア時</string>
-    <string name="navring_short">スワイプ時</string>
-    <string name="navring_long">長押し時</string>
-    <string name="navring_icon">アイコン変更</string>
+    <string name="navring_target_info">動作を割り当てるターゲットに向けてリングをドラッグしてください</string>
+    <string name="navring_clear">クリア動作</string>
+    <string name="navring_short">短押し</string>
+    <string name="navring_long">長押し</string>
+    <string name="navring_icon">カスタムアイコン</string>
     <string name="navring_target_amount_text">現在のターゲット数</string>
     <string name="navring_target_longpress_text">長押し時の動作</string>
+
+   <!-- Ribbon -->
+    <string name="ribbon_dialog_arrange_title">リボンレイアウト</string>
+    <string name="ribbon_instructions">アイコンをタップして動作を設定してください</string>
+    <string name="ribbon_targets_cat">リボンオプション</string>
+    <string name="enable_ribbon_text_title">ラベルを表示</string>
+    <string name="enable_ribbon_vibrate_title">スワイプ領域タッチで振動</string>
+    <string name="enable_ribbon_text_summary">アイコンの下にラベルを表示する</string>
+    <string name="ribbon_icon_vibrate_title">アイコンタップで振動</string>
+    <string name="ribbon_icon_space_title">アイコンの左右間隔</string>
+    <string name="ribbon_icon_space_vertical_title">アイコンの上下間隔</string>
+    <string name="ribbon_icon_size_title">アイコンサイズ</string>
+    <string name="ribbon_icon_size_summary">アイコンの大きさを設定する</string>
+    <string name="ribbon_lockscreen">ロック画面リボン</string>
+    <string name="ribbon_notifications">通知リボン</string>
+    <string name="ribbon_quicksettings">クイック設定リボン</string>
+    <string name="ribbon_swipe">AOKPスワイプリボン</string>
+    <string name="clone_title">コピーするリボンを選択</string>
+    <string name="icon_size_normal">大</string>
+    <string name="icon_size_20">中</string>
+    <string name="icon_size_15">小</string>
+    <string name="ribbon_left_enable_title">左からのスワイプを有効</string>
+    <string name="ribbon_right_enable_title">右からのスワイプを有効</string>
+    <string name="ribbon_bottom_enable_title">下からのスワイプを有効</string>
+    <string name="ribbon_bottom_warning_title">ナビゲーションバーを表示していると下からのスワイプは使用できません</string>
+    <string name="ribbon_color_title">スワイプリボンの色</string>
+    <string name="text_color_title">ラベルの文字色</string>
+    <string name="ribbon_opacity_title">スワイプリボンの不透明度</string>
+    <string name="timeout_spinner_title">リボンの表示時間</string>
+    <string name="ribbon_drag_handle_width_title">ドラッグハンドルの長さ</string>
+    <string name="ribbon_drag_handle_height_title">ドラッグハンドルの太さ</string>
+    <string name="ribbon_insert">ボタン挿入</string>
+    <string name="ribbon_handle_location_title">リボンハンドルの位置</string>
+    <string name="ribbon_icon_location_title">アイコンの位置</string>
+    <string name="center">中央</string>
+    <string name="top">上</string>
+    <string name="bottom">下</string>
 
     <!-- LED -->
     <string name="led_on">LEDオン</string>
@@ -646,8 +689,8 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_target_empty">設定なし</string>
     <string name="profile_reset_title">リセット</string>
     <string name="wifi_save">保存</string>
-    <string name="lockscreen_target_info">動作を割り当てるターゲットに向けてロック解除アイコンをスワイプしてください</string>
-    <string name="lockscreen_options_info">テキストをタップすれば各オプションの説明が表示されます</string>
+    <string name="lockscreen_target_info">動作を割り当てるターゲットに向けてロック解除アイコンをドラッグしてください</string>
+    <string name="lockscreen_options_info">テキストをタップすると各オプションの説明が表示されます</string>
     <string name="lockscreen_target_reset">ロック画面ターゲットはデフォルトにリセットされます</string>
     <string name="lockscreen_target_save">ロック画面ターゲットを保存しました</string>
     <string name="lockscreen_target_save_error_title">!!警告!!</string>
@@ -843,6 +886,8 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="recents_gb">アプリ履歴(GBスタイル)</string>
     <string name="custom_app">アプリを指定</string>
     <string name="menu_power">電源メニュー</string>
+    <string name="aokp_ribbon">AOKPリボン</string>
+    <string name="nav_widgets">ナビゲーションウィジェット</string>
     <string name="blank">設定なし</string>
     <string name="none">設定なし</string>
     <string name="take_screenshot">スクリーンショット</string>

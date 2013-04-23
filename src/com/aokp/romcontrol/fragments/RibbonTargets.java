@@ -122,6 +122,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private TextView mRibbonColorText;
     private Button mRibbonColor;
     private Button mTextColor;
+    private TextView mRibbonIconSpaceText;
+    private SeekBar mRibbonIconSpace;
+    private TextView mRibbonIconSpaceVerticalText;
+    private SeekBar mRibbonIconSpaceVertical;
 
     private int textColor;
     private int ribbonColor;
@@ -307,8 +311,6 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
 
         mEnableText = ((TextView) ll.findViewById(R.id.enable_ribbon_text_id));
         mEnableTextSwitch = (Switch) ll.findViewById(R.id.enable_ribbon_text);
-        mEnableTextSwitch.setChecked(Settings.System.getBoolean(mContentRes,
-                Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true));
         mEnableTextSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton v, boolean checked) {
@@ -343,11 +345,6 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
-       final String[] iconValues = getResources().getStringArray(R.array.ribbon_icon_size_values);
-
-       mIconSize.setSelection(Arrays.asList(iconValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
-            Settings.System.RIBBON_ICON_SIZE[arrayNum], 0))));
-
        mLocationText = ((TextView) ll.findViewById(R.id.ribbon_handle_location_id));
        mLocation = (Spinner) ll.findViewById(R.id.ribbon_handle_location);
        ArrayAdapter<CharSequence> locAdapter = new ArrayAdapter<CharSequence>(
@@ -364,9 +361,9 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
-       final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
+        final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
 
-       mLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+        mLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
             Settings.System.RIBBON_DRAG_HANDLE_LOCATION, 0))));
 
        mIconLocationText = ((TextView) ll.findViewById(R.id.ribbon_icon_location_id));
@@ -384,14 +381,20 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
        mRibbonOpacityText = ((TextView) ll.findViewById(R.id.ribbon_opacity_id));
        mDragHandleWidthText = ((TextView) ll.findViewById(R.id.drag_handle_width_id));
        mDragHandleHeightText = ((TextView) ll.findViewById(R.id.drag_handle_height_id));
+       mRibbonIconSpaceText = ((TextView) ll.findViewById(R.id.ribbon_icon_space_id));
+       mRibbonIconSpaceVerticalText = ((TextView) ll.findViewById(R.id.ribbon_icon_space_vertical_id));
        mDragHandleOpacity = (SeekBar) ll.findViewById(R.id.drag_handle_opacity);
        mRibbonOpacity = (SeekBar) ll.findViewById(R.id.ribbon_opacity);
        mDragHandleWidth = (SeekBar) ll.findViewById(R.id.drag_handle_width);
        mDragHandleHeight = (SeekBar) ll.findViewById(R.id.drag_handle_height);
+       mRibbonIconSpace = (SeekBar) ll.findViewById(R.id.ribbon_icon_space);
+       mRibbonIconSpaceVertical = (SeekBar) ll.findViewById(R.id.ribbon_icon_space_vertical);
        mDragHandleOpacity.setOnSeekBarChangeListener(this);
        mRibbonOpacity.setOnSeekBarChangeListener(this);
        mDragHandleWidth.setOnSeekBarChangeListener(this);
        mDragHandleHeight.setOnSeekBarChangeListener(this);
+       mRibbonIconSpace.setOnSeekBarChangeListener(this);
+       mRibbonIconSpaceVertical.setOnSeekBarChangeListener(this);
        mDragHandleOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, 0));
        mRibbonOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY, 100));
        mDragHandleWidth.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, 50));
@@ -528,6 +531,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mTimeOutText.setVisibility(View.VISIBLE);
             mEnableVib.setVisibility(View.VISIBLE);
             mEnableVibSwitch.setVisibility(View.VISIBLE);
+            mRibbonIconSpaceVertical.setVisibility(View.VISIBLE);
+            mRibbonIconSpaceVerticalText.setVisibility(View.VISIBLE);
         } else {
             mEnableBottomWarning.setVisibility(View.GONE);
             mEnableBottomSwitch.setVisibility(View.GONE);
@@ -554,6 +559,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mEnableVib.setVisibility(View.GONE);
             mEnableVibSwitch.setVisibility(View.GONE);
             mTimeOutText.setVisibility(View.GONE);
+            mRibbonIconSpaceVertical.setVisibility(View.GONE);
+            mRibbonIconSpaceVerticalText.setVisibility(View.GONE);
         }
 
     }
@@ -581,9 +588,18 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mCustomIcons.add("**null**");
         }
 
+        mRibbonIconSpace.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], 5));
+        mRibbonIconSpaceVertical.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE_VERTICAL, 1));
+        mEnableTextSwitch.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true));
         textColor = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.RIBBON_TEXT_COLOR[arrayNum], Color.WHITE);
         mTextColor.setBackgroundColor(textColor);
+        final String[] iconValues = getResources().getStringArray(R.array.ribbon_icon_size_values);
+
+        mIconSize.setSelection(Arrays.asList(iconValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+          Settings.System.RIBBON_ICON_SIZE[arrayNum], 0))));
+
     }
 
     public void refreshButtons() {
@@ -806,6 +822,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, progress);
         } else if (seekBar == mDragHandleHeight) {
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, progress);
+        } else if (seekBar == mRibbonIconSpace) {
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], progress);
+        } else if (seekBar == mRibbonIconSpaceVertical) {
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SPACE_VERTICAL, progress);
         }
     }
 

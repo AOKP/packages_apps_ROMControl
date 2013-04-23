@@ -531,6 +531,9 @@
     <string name="enable_ribbon_text_title">Show app name</string>
     <string name="enable_ribbon_vibrate_title">Vibrate on touch of swipe area</string>
     <string name="enable_ribbon_text_summary">Enable the app name text below the icon</string>
+    <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
+    <string name="ribbon_icon_space_title">Horizontal ribbon spacing</string>
+    <string name="ribbon_icon_space_vertical_title">Vertical ribbon spacing</string>
     <string name="ribbon_icon_size_title">Icon size</string>
     <string name="ribbon_icon_size_summary">Set size of your icons</string>
     <string name="ribbon_lockscreen">Lockscreen ribbon</string>

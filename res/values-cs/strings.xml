@@ -21,7 +21,7 @@
   <string name="header_system">Systém</string>
   <string name="sound">Zvuk</string>
   <string name="lockscreen_options">Zamčená obrazovka</string>
-  <string name="title_ribbon">Možnosti ribbonu</string>
+  <string name="title_ribbon">Ribbony</string>
   <string name="weather">Počasí</string>
   <string name="tools">Nástroje</string>
   <!--Activity titles defined in AndroidManifest.xml-->
@@ -43,7 +43,7 @@
   <string name="title_performance">Nastavení výkonu</string>
   <string name="title_clipboard_share">Sdílení do schránky</string>
   <string name="mgerrit_activity_name">mGerrit</string>
-  <string name="ribbon_settings_title">Možnosti ribbonu</string>
+  <string name="ribbon_settings_title">Ribbony</string>
   <!--Header Summaries-->
   <string name="header_summary_clock">@null</string>
   <string name="header_summary_toggles">@null</string>

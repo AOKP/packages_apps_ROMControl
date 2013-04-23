@@ -2,4 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/reset"
           android:title="@string/menu_ribbon_reset" />
+    <item android:id="@+id/rearrange"
+          android:title="@string/menu_ribbon_rearrange" />
 </menu>

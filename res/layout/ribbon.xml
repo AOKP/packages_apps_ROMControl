@@ -223,6 +223,36 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/ribbon_icon_vibrate_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dip"
+                    android:layout_marginStart="4dip"
+                    android:layout_weight="0.5"
+                    android:padding="4dip"
+                    android:gravity="left"
+                    android:textColor="#FFFFFF"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/ribbon_icon_vibrate_title" />
+
+                <Switch
+                    android:id="@+id/ribbon_icon_vibrate_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dip"
+                    android:layout_marginStart="4dip"
+                    android:layout_weight="0.5"
+                    android:padding="4dip"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/enable_ribbon_text_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -329,6 +359,46 @@
                 android:layout_marginStart="8dip"
                 android:padding="8dip"
                 android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/ribbon_icon_space_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_icon_space_title" />
+
+            <SeekBar
+                android:id="@+id/ribbon_icon_space"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
+
+            <TextView
+                android:id="@+id/ribbon_icon_space_vertical_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_icon_space_vertical_title" />
+
+            <SeekBar
+                android:id="@+id/ribbon_icon_space_vertical"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
 
             <TextView
                 android:id="@+id/drag_handle_opacity_id"

@@ -49,11 +49,10 @@
         android:key="custom_toggle"
         android:title="@string/custom_toggle_cat">
 
-        <CheckBoxPreference
-            android:key="advanced_toggle_actions"
-            android:summaryOff="@string/advanced_toggle_summaryoff"
-            android:summaryOn="@string/advanced_toggle_summaryon"
-            android:title="@string/advanced_toggle_title" />
+        <Preference
+            android:key="custom_toggle_help"
+            android:summary="@string/custom_help_summary"
+            android:title="@string/custom_help_title" />
 
         <CheckBoxPreference
             android:key="set_boot_action"

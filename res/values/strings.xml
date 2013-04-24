@@ -313,8 +313,9 @@
     <string name="toggle_action_title">Action %1$s &amp; icon</string>
     <string name="toggle_action_title_alt">Longpress action %1$s &amp; icon</string>
     <string name="toggle_longpress_title">Longpress action %1$s</string>
-    <string name="custom_toggle_action">How it works</string>
-    <string name="custom_toggle_desc">In Basic mode, the toggle will cycle through actions on each click. Longpress will launch the displayed action. This is most useful for users who want the toggle to launch applications.\nIn Advanced mode, the toggle allows you to launch an action with each click. Longpress actions will also be available to you in this mode. This is most useful for users who desire a toggle that performs tasks that do not launch a new application.</string>
+    <string name="custom_toggle_desc">Each click causes the toggle to move to the next action. If your toggle has an empty click action and no custom icon; the long click action\'s icon will be used.\nThis is useful for users who want their click actions to simply cycle through toggle actions without launching anything.</string>
+    <string name="custom_help_title">How it works</string>
+    <string name="custom_help_summary">Click for more information</string>
     <string name="custom_toggle_okay">Dismiss</string>
     <string name="custom_toggle_cat">Custom toggle</string>
     <string name="custom_button_cat">Custom toggle actions</string>
@@ -324,9 +325,6 @@
     <string name="boot_action_summary">Will launch state one on boot</string>
     <string name="match_icon_action_title">Launch displayed action</string>
     <string name="match_icon_action_summary">Useful for aligning task to displayed icon per your specific usage</string>
-    <string name="advanced_toggle_title">Advanced or Basic actions</string>
-    <string name="advanced_toggle_summaryon">Advanced (Short and Longpress actions)</string>
-    <string name="advanced_toggle_summaryoff">Basic (Longpress actions only)</string>
     <string name="action_toggle_title">Toggle Actions</string>
     <string name="action_toggle_summary">Toggle sequence from left to right</string>
     <string name="no_dclick">No action</string>

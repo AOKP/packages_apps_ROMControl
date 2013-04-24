@@ -85,7 +85,6 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private static final String PREF_SCREENSHOT_DELAY = "screenshot_delay";
     private static final String PREF_SET_BOOT_ACTION = "set_boot_action";
     private static final String PREF_MATCH_ICON_ACTION = "match_icon_action";
-    private static final String PREF_ADV_TOGGLE_ACTIONS = "advanced_toggle_actions";
     private static final String PREF_COLLAPSE_BAR = "collapse_bar";
     private static final String PREF_DCLICK_ACTION = "dclick_action";
     private static final String PREF_CUSTOM_TOGGLE = "custom_toggle_pref";
@@ -107,7 +106,6 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     ListPreference mTogglesStyle;
     Preference mFavContact;
     CheckBoxPreference mFastToggle;
-    CheckBoxPreference mAdvancedStates;
     CheckBoxPreference mBootState;
     CheckBoxPreference mMatchAction;
     ListPreference mChooseFastToggleSide;
@@ -193,9 +191,6 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mScreenshotDelay.setValue(String.valueOf(Settings.System.getInt(mContentRes,
                 Settings.System.SCREENSHOT_TOGGLE_DELAY, 5000)));
 
-        mAdvancedStates = (CheckBoxPreference) findPreference(PREF_ADV_TOGGLE_ACTIONS);
-        mAdvancedStates.setOnPreferenceChangeListener(this);
-
         mBootState = (CheckBoxPreference) findPreference(PREF_SET_BOOT_ACTION);
         mBootState.setOnPreferenceChangeListener(this);
 
@@ -228,66 +223,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             mTogglesPerRow.setEnabled(false);
         }
 
-        mMatchAction.setEnabled(mAdvancedStates.isChecked());
         new SettingsObserver(new Handler()).observe();
         refreshSettings();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.reset:
-                Settings.System.putInt(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_QTY, 3);
-
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_PRESS_TOGGLE[0], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_PRESS_TOGGLE[1], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_PRESS_TOGGLE[2], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_PRESS_TOGGLE[3], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_PRESS_TOGGLE[4], "**null**");
-
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_LONGPRESS_TOGGLE[0], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_LONGPRESS_TOGGLE[1], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_LONGPRESS_TOGGLE[2], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_LONGPRESS_TOGGLE[3], "**null**");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_LONGPRESS_TOGGLE[4], "**null**");
-
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_ICONS[0], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_ICONS[1], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_ICONS[2], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_ICONS[3], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_ICONS[4], "");
-
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_TEXT[0], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_TEXT[1], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_TEXT[2], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_TEXT[3], "");
-                Settings.System.putString(mContentRes,
-                        Settings.System.CUSTOM_TOGGLE_TEXT[4], "");
-                refreshSettings();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
     }
 
     static ArrayList<EasyPair<String, String>> buildToggleMap(Bundle toggleInfo) {
@@ -358,27 +295,6 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
                     Settings.System.getUriFor(Settings.System.CHOOSE_FASTTOGGLE_SIDE), null);
             mChooseFastToggleSide.setValue(Settings.System.getInt(mContentRes,
                     Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
-        } else if (preference == mAdvancedStates) {
-            boolean val = (Boolean) newValue;
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.CUSTOM_TOGGLE_ADVANCED, val);
-            mContentRes.notifyChange(
-                    Settings.System.getUriFor(Settings.System.CUSTOM_TOGGLE_ADVANCED), null);
-            AlertDialog.Builder ad = new AlertDialog.Builder(getActivity());
-            ad.setTitle(getResources().getString(R.string.custom_toggle_action));
-            ad.setMessage(getResources().getString(R.string.custom_toggle_desc));
-            ad.setPositiveButton(
-                    getResources().getString(R.string.custom_toggle_okay),
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            ad.show();
-            mMatchAction.setEnabled(val == false ? false : true);
-            refreshSettings();
-            return true;
         } else if (preference == mBootState) {
             boolean val = (Boolean) newValue;
             Settings.System.putBoolean(mContentRes,
@@ -477,10 +393,22 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         } else if (preference == mLayout) {
             ArrangeTogglesFragment fragment = ArrangeTogglesFragment.newInstance(sToggles);
             fragment.show(getFragmentManager(), "arrange");
-        }
-        else if (preference == mFavContact) {
+        } else if (preference == mFavContact) {
             Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
             startActivityForResult(intent, PICK_CONTACT);
+        } else if ("custom_toggle_help".equals(preference.getKey())) {
+            AlertDialog.Builder ad = new AlertDialog.Builder(getActivity());
+            ad.setTitle(getResources().getString(R.string.custom_help_title));
+            ad.setMessage(getResources().getString(R.string.custom_toggle_desc));
+            ad.setPositiveButton(
+                    getResources().getString(R.string.custom_toggle_okay),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            ad.show();
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -562,8 +490,14 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
                     button.getLongAction());
             Settings.System.putString(mContentRes, Settings.System.CUSTOM_TOGGLE_ICONS[i],
                     button.getIconURI());
-            Settings.System.putString(mContentRes, Settings.System.CUSTOM_TOGGLE_TEXT[i],
-                    button.getClickName());
+            // if user sets no click-action borrow longclick text
+            if ("**null**".equals(button.getClickAction())) {
+                Settings.System.putString(mContentRes, Settings.System.CUSTOM_TOGGLE_TEXT[i],
+                        button.getLongName());
+            } else {
+                Settings.System.putString(mContentRes, Settings.System.CUSTOM_TOGGLE_TEXT[i],
+                        button.getClickName());
+            }
         }
     }
 
@@ -576,12 +510,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             }
         };
 
-        boolean isAdvanced = mAdvancedStates.isChecked();
-
         String action = mResources.getString(R.string.navbar_actiontitle_menu);
-        if (!isAdvanced) {
-            action = mResources.getString(R.string.navbar_longpress_menu);
-        }
         String longpress = mResources.getString(R.string.navbar_longpress_menu);
         longpress = String.format(longpress, button.getLongName());
         action = String.format(action, button.getClickName());
@@ -590,24 +519,11 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
                 mResources.getString(R.string.navbar_icon_menu),
                 mResources.getString(R.string.navbar_delete_menu)
         };
-        String[] basicitems = {
-                action,
-                mResources.getString(R.string.navbar_icon_menu),
-                mResources.getString(R.string.navbar_delete_menu)
-        };
-        if (isAdvanced) {
-            final AlertDialog dialog = new AlertDialog.Builder(mContext)
-                    .setTitle(mResources.getString(R.string.navbar_title_menu))
-                    .setItems(items, l)
-                    .create();
-            dialog.show();
-        } else {
-            final AlertDialog dialog = new AlertDialog.Builder(mContext)
-                    .setTitle(mResources.getString(R.string.navbar_title_menu))
-                    .setItems(basicitems, l)
-                    .create();
-            dialog.show();
-        }
+        final AlertDialog dialog = new AlertDialog.Builder(mContext)
+                .setTitle(mResources.getString(R.string.navbar_title_menu))
+                .setItems(items, l)
+                .create();
+        dialog.show();
     }
 
     private void createActionDialog(final ToggleButton button) {
@@ -628,65 +544,35 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     }
 
     private void onDialogClick(ToggleButton button, int command) {
-        boolean isAdvanced = mAdvancedStates.isChecked();
-        if (isAdvanced) {
-            switch (command) {
-                case 0: // Set Click Action
-                    button.setPickLongPress(false);
-                    createActionDialog(button);
-                    break;
-                case 1: // Set Long Press Action
-                    button.setPickLongPress(true);
-                    createActionDialog(button);
-                    break;
-                case 2: // set Custom Icon
-                    int width = 100;
-                    int height = width;
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                    intent.setType("image/*");
-                    intent.putExtra("crop", "true");
-                    intent.putExtra("aspectX", width);
-                    intent.putExtra("aspectY", height);
-                    intent.putExtra("outputX", width);
-                    intent.putExtra("outputY", height);
-                    intent.putExtra("scale", true);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getTempFileUri());
-                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-                    Log.i(TAG, "started for result, should output to: " + getTempFileUri());
-                    startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
-                    break;
-                case 3: // Delete Button
-                    mButtons.remove(mPendingToggle);
-                    mNumberofToggles--;
-                    break;
-            }
-        } else {
-            switch (command) {
-                case 0: // Set Click Action
-                    button.setPickLongPress(false);
-                    createActionDialog(button);
-                    break;
-                case 1: // set Custom Icon
-                    int width = 100;
-                    int height = width;
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-                    intent.setType("image/*");
-                    intent.putExtra("crop", "true");
-                    intent.putExtra("aspectX", width);
-                    intent.putExtra("aspectY", height);
-                    intent.putExtra("outputX", width);
-                    intent.putExtra("outputY", height);
-                    intent.putExtra("scale", true);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getTempFileUri());
-                    intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-                    Log.i(TAG, "started for result, should output to: " + getTempFileUri());
-                    startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
-                    break;
-                case 2: // Delete Button
-                    mButtons.remove(mPendingToggle);
-                    mNumberofToggles--;
-                    break;
-            }
+        switch (command) {
+            case 0: // Set Click Action
+                button.setPickLongPress(false);
+                createActionDialog(button);
+                break;
+            case 1: // Set Long Press Action
+                button.setPickLongPress(true);
+                createActionDialog(button);
+                break;
+            case 2: // set Custom Icon
+                int width = 100;
+                int height = width;
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+                intent.setType("image/*");
+                intent.putExtra("crop", "true");
+                intent.putExtra("aspectX", width);
+                intent.putExtra("aspectY", height);
+                intent.putExtra("outputX", width);
+                intent.putExtra("outputY", height);
+                intent.putExtra("scale", true);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, getTempFileUri());
+                intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+                Log.i(TAG, "started for result, should output to: " + getTempFileUri());
+                startActivityForResult(intent, REQUEST_PICK_CUSTOM_ICON);
+                break;
+            case 3: // Delete Button
+                mButtons.remove(mPendingToggle);
+                mNumberofToggles--;
+                break;
         }
         refreshButtons();
     }
@@ -780,21 +666,21 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
         if (!longpress) {
             button.setClickAction(uri);
-            if (bmp == null) {
-                button.setIconURI("");
-            } else {
-                String iconName = getIconFileName(mPendingToggle);
-                FileOutputStream iconStream = null;
-                try {
-                    iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
-                }
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-                button.setIconURI(Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
-            }
         } else {
             button.setLongPress(uri);
+        }
+        if (bmp == null) {
+            button.setIconURI("");
+        } else {
+            String iconName = getIconFileName(mPendingToggle);
+            FileOutputStream iconStream = null;
+            try {
+                iconStream = mContext.openFileOutput(iconName, Context.MODE_WORLD_READABLE);
+            } catch (FileNotFoundException e) {
+                return; // NOOOOO
+            }
+            bmp.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+            button.setIconURI(Uri.fromFile(mContext.getFileStreamPath(iconName)).toString());
         }
         refreshButtons();
     }
@@ -871,7 +757,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     }
 
     private Drawable resize(Drawable image) {
-        int size = 64;
+        int size = 50;
         int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, size,
                 mResources.getDisplayMetrics());
 
@@ -974,21 +860,26 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             mIconURI = iconuri;
             mClickFriendlyName = getProperSummary(mClickAction);
             mLongPressFriendlyName = getProperSummary(mLongPressAction);
-            mIcon = setIcon(mIconURI, mClickAction);
+            checkEmptyClick();
         }
-
         public void setClickAction(String click) {
             mClickAction = click;
             mClickFriendlyName = getProperSummary(mClickAction);
-            // ClickAction was reset - so we should default to stock Icon for
-            // now
             mIconURI = "";
-            mIcon = setIcon(mIconURI, mClickAction);
+            checkEmptyClick();
         }
 
         public void setLongPress(String action) {
             mLongPressAction = action;
             mLongPressFriendlyName = getProperSummary(mLongPressAction);
+            mIconURI = "";
+            checkEmptyClick();
+        }
+
+        public void checkEmptyClick() {
+            // if user sets no click-action borrow longclick icon
+            mIcon = setIcon(mIconURI, "**null**".equals(mClickAction)
+                    ? mLongPressAction : mClickAction);
         }
 
         public void setPickLongPress(boolean pick) {
@@ -1001,7 +892,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
         public void setIconURI(String uri) {
             mIconURI = uri;
-            mIcon = setIcon(mIconURI, mClickAction);
+            checkEmptyClick();
         }
 
         public String getClickName() {
@@ -1051,6 +942,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private void updateSettings() {
         ContentResolver resolver = mContext.getContentResolver();
         String currentToggles = Settings.System.getString(resolver, Settings.System.QUICK_TOGGLES);
+        if (currentToggles == null)
+            currentToggles = "";
         if (currentToggles != null) {
             if (mFavContact != null) {
                 mFavContact.setEnabled(currentToggles.contains("FAVCONTACT"));
@@ -1061,8 +954,11 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             if (mCustomCat != null && mCustomButtons != null) {
                 boolean enabled = currentToggles.contains("CUSTOM");
                 mCustomCat.setEnabled(enabled);
-                mMatchAction.setEnabled(mAdvancedStates.isChecked());
                 mCustomButtons.setEnabled(enabled);
+                for (int i = 0; i < 5; i++) {
+                    mContentRes.notifyChange(Settings.System
+                            .getUriFor(Settings.System.CUSTOM_PRESS_TOGGLE[i]), null);
+                }
             }
         }
     }

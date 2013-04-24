@@ -68,6 +68,7 @@
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
     <string name="menu_ribbon_reset">Reset ribbon</string>
+    <string name="menu_ribbon_rearrange">Rearrange ribbon</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
 
@@ -526,11 +527,15 @@
     <string name="navring_target_longpress_text">Longpress status</string>
 
    <!-- Ribbon -->
+    <string name="ribbon_dialog_arrange_title">Ribbon layout</string>
     <string name="ribbon_instructions">Press icon to select actions or delete</string>
     <string name="ribbon_targets_cat">Ribbon options</string>
     <string name="enable_ribbon_text_title">Show app name</string>
     <string name="enable_ribbon_vibrate_title">Vibrate on touch of swipe area</string>
     <string name="enable_ribbon_text_summary">Enable the app name text below the icon</string>
+    <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
+    <string name="ribbon_icon_space_title">Horizontal ribbon spacing</string>
+    <string name="ribbon_icon_space_vertical_title">Vertical ribbon spacing</string>
     <string name="ribbon_icon_size_title">Icon size</string>
     <string name="ribbon_icon_size_summary">Set size of your icons</string>
     <string name="ribbon_lockscreen">Lockscreen ribbon</string>

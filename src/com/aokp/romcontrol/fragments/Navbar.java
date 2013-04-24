@@ -360,6 +360,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[1], "");
                 Settings.System.putString(mContentRes,
                         Settings.System.NAVIGATION_CUSTOM_APP_ICONS[2], "");
+                loadButtons();
                 refreshSettings();
                 return true;
             default:
@@ -798,9 +799,9 @@ public class Navbar extends AOKPPreferenceFragment implements
                 mPicker.pickShortcut();
         } else { // This should be any other defined action.
             if (button.getPickLongPress()) {
-                button.setLongPress(AwesomeConstants.AwesomeActions()[command]);
+                button.setLongPress(mActionCodes[command]);
             } else {
-                button.setClickAction(AwesomeConstants.AwesomeActions()[command]);
+                button.setClickAction(mActionCodes[command]);
             }
         }
         refreshButtons();

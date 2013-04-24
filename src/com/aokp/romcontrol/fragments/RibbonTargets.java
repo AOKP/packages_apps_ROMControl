@@ -130,6 +130,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private TextView mRibbonIconSpaceVerticalText;
     private SeekBar mRibbonIconSpaceVertical;
     private Switch mRibbonIconVibrate;
+    private TextView mButtonColorizeText;
+    private Switch mButtonColorize;
 
     private int textColor;
     private int ribbonColor;
@@ -345,6 +347,15 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             @Override
             public void onCheckedChanged(CompoundButton v, boolean checked) {
                 Settings.System.putBoolean(mContentRes, Settings.System.RIBBON_ICON_VIBRATE[arrayNum], checked);
+            }
+        });
+
+        mButtonColorizeText = ((TextView) ll.findViewById(R.id.enable_button_colorize_id));
+        mButtonColorize = (Switch) ll.findViewById(R.id.enable_button_colorize);
+        mButtonColorize.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Settings.System.putBoolean(mContentRes, Settings.System.RIBBON_ICON_COLORIZE[arrayNum], checked);
             }
         });
 
@@ -635,6 +646,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
 
         mRibbonIconVibrate.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.RIBBON_ICON_VIBRATE[arrayNum], true));
+
+        boolean colorize = Settings.System.getBoolean(mContentRes,
+                Settings.System.RIBBON_ICON_COLORIZE[arrayNum], false);
+        mButtonColorize.setChecked(colorize);
 
     }
 

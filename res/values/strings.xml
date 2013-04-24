@@ -550,6 +550,7 @@
     <string name="ribbon_right_enable_title">Enable swipe from right</string>
     <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
     <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide.</string>
+    <string name="ribbon_button_colorize_title">Action icons match text color</string>
     <string name="ribbon_color_title">Color of Swipe Ribbon</string>
     <string name="text_color_title">Color of app label text</string>
     <string name="ribbon_opacity_title">Opacity of Swipe Ribbon</string>

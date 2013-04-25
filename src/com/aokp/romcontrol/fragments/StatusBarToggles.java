@@ -697,9 +697,9 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             mPicker.pickShortcut();
         } else { // This should be any other defined action.
             if (button.getPickLongPress()) {
-                button.setLongPress(AwesomeConstants.AwesomeActions()[command]);
+                button.setLongPress(mActionCodes[command]);
             } else {
-                button.setClickAction(AwesomeConstants.AwesomeActions()[command]);
+                button.setClickAction(mActionCodes[command]);
             }
         }
         refreshButtons();

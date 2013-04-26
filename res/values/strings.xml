@@ -553,7 +553,9 @@
     <string name="ribbon_lockscreen">Lockscreen ribbon</string>
     <string name="ribbon_notifications">Notifications ribbon</string>
     <string name="ribbon_quicksettings">Quick settings ribbon</string>
-    <string name="ribbon_swipe">AOKP swipe ribbon</string>
+    <string name="ribbon_swipe_left">Left swipe ribbon</string>
+    <string name="ribbon_swipe_right">Right swipe ribbon</string>
+    <string name="ribbon_swipe_bottom">Bottom swipe ribbon</string>
     <string name="clone_title">Choose ribbon to clone</string>
     <string name="icon_size_normal">Normal</string>
     <string name="icon_size_20">Medium</string>
@@ -561,7 +563,7 @@
     <string name="ribbon_left_enable_title">Enable swipe from left</string>
     <string name="ribbon_right_enable_title">Enable swipe from right</string>
     <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
-    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide.</string>
+    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide or manually hide the navbar.</string>
     <string name="ribbon_button_colorize_title">Action icons match text color</string>
     <string name="ribbon_color_title">Color of Swipe Ribbon</string>
     <string name="text_color_title">Color of app label text</string>

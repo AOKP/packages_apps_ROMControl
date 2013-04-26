@@ -546,14 +546,15 @@
     <string name="enable_ribbon_vibrate_title">Vibrate on touch of swipe area</string>
     <string name="enable_ribbon_text_summary">Enable the app name text below the icon</string>
     <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
-    <string name="ribbon_icon_space_title">Horizontal ribbon spacing</string>
-    <string name="ribbon_icon_space_vertical_title">Vertical ribbon spacing</string>
+    <string name="ribbon_icon_space_title">Icon ribbon spacing</string>
     <string name="ribbon_icon_size_title">Icon size</string>
     <string name="ribbon_icon_size_summary">Set size of your icons</string>
     <string name="ribbon_lockscreen">Lockscreen ribbon</string>
     <string name="ribbon_notifications">Notifications ribbon</string>
     <string name="ribbon_quicksettings">Quick settings ribbon</string>
-    <string name="ribbon_swipe">AOKP swipe ribbon</string>
+    <string name="ribbon_swipe_left">Left swipe ribbon</string>
+    <string name="ribbon_swipe_right">Right swipe ribbon</string>
+    <string name="ribbon_swipe_bottom">Bottom swipe ribbon</string>
     <string name="clone_title">Choose ribbon to clone</string>
     <string name="icon_size_normal">Normal</string>
     <string name="icon_size_20">Medium</string>
@@ -561,7 +562,7 @@
     <string name="ribbon_left_enable_title">Enable swipe from left</string>
     <string name="ribbon_right_enable_title">Enable swipe from right</string>
     <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
-    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide.</string>
+    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide or manually hide the navbar.</string>
     <string name="ribbon_button_colorize_title">Action icons match text color</string>
     <string name="ribbon_color_title">Color of Swipe Ribbon</string>
     <string name="text_color_title">Color of app label text</string>

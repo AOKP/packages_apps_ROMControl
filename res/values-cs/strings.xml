@@ -24,6 +24,7 @@
   <string name="title_ribbon">Ribbony</string>
   <string name="weather">Počasí</string>
   <string name="tools">Nástroje</string>
+  <string name="installer">Instalátor</string>
   <!--Activity titles defined in AndroidManifest.xml-->
   <string name="title_about">O AOKP</string>
   <string name="title_ui">Hlavní uživatelské rozhraní</string>
@@ -41,6 +42,7 @@
   <string name="title_sound">Nastavení zvuku</string>
   <string name="title_weather">Nastavení počasí</string>
   <string name="title_performance">Nastavení výkonu</string>
+  <string name="title_installer">Nastavení instalátoru</string>
   <string name="title_clipboard_share">Sdílení do schránky</string>
   <string name="mgerrit_activity_name">mGerrit</string>
   <string name="ribbon_settings_title">Ribbony</string>
@@ -59,9 +61,11 @@
   <string name="header_summary_lockscreens">@null</string>
   <string name="header_summary_weather">@null</string>
   <string name="header_summary_vibrations">@null</string>
+  <string name="header_summary_installer">@null</string>
   <!--Menu Strings-->
   <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
   <string name="menu_ribbon_reset">Obnovit ribbon</string>
+  <string name="menu_ribbon_rearrange">Přeuspořádat ribbon</string>
   <string name="menu_user_interface_reset">Obnovit pozadí notifikací</string>
   <string name="menu_lockscreens_reset">Obnovit pozadí zamčené obrazovky</string>
   <!--General Strings-->
@@ -94,6 +98,14 @@
   <string name="spen_gestures_cat">S Pen gesta</string>
   <string name="enable_stylus_pointer_title">Zapnout ukazatel S Pen</string>
   <string name="enable_stylus_pointer_summary">Zapnout kurzor myši při používání S Pen</string>
+  <!-- Installer -->
+  <string name="persist_options">Perzistence</string>
+  <string name="persist_enable">Zapnout perzistenci</string>
+  <string name="persist_enable_summary">Zapnout uložení dat pro setrvání mezi instalacemi</string>
+  <string name="persist_prop_density">Uložit DPI</string>
+  <string name="persist_prop_density_summary">Zachovat LCD densitu</string>
+  <string name="persist_file_hosts">Uložit hosts</string>
+  <string name="persist_file_hosts_summary">Zachovat soubor hosts</string>
   <!--Power Saving-->
   <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
   <string name="summary_pref_powersaving_pref_mode">@null</string>
@@ -472,11 +484,15 @@
   <string name="navring_target_amount_text">Aktuální počet položek</string>
   <string name="navring_target_longpress_text">Stav dlouhého stisku</string>
   <!-- Ribbon -->
+  <string name="ribbon_dialog_arrange_title">Rozložení ribbonu</string>
   <string name="ribbon_instructions">Stisknutím ikony zvolit akce nebo smazat</string>
   <string name="ribbon_targets_cat">Možnosti ribbonu</string>
   <string name="enable_ribbon_text_title">Zobrazit název aplikace</string>
   <string name="enable_ribbon_vibrate_title">Vibrovat při stisku posuvné plochy</string>
   <string name="enable_ribbon_text_summary">Zapnout zobrazení názvu aplikace pod ikonou</string>
+  <string name="ribbon_icon_vibrate_title">Vibrovat při kliknutí na cíl</string>
+  <string name="ribbon_icon_space_title">Horizontální odsazení ribbonu</string>
+  <string name="ribbon_icon_space_vertical_title">Vertikální odsazení ribbonu</string>
   <string name="ribbon_icon_size_title">Velikost ikony</string>
   <string name="ribbon_icon_size_summary">Zvolit velikost ikon</string>
   <string name="ribbon_lockscreen">Ribbon na zamčené obrazovce</string>
@@ -491,6 +507,7 @@
   <string name="ribbon_right_enable_title">Zapnout posunutí zprava</string>
   <string name="ribbon_bottom_enable_title">Zapnout posunutí zespoda</string>
   <string name="ribbon_bottom_warning_title">Se zapnutou navigační lištou není možné zapnout posunutí zespoda, je třeba nastavit automatické skrývání navigační lišty.</string>
+  <string name="ribbon_button_colorize_title">Ikony akcí odpovídají barvě textu</string>
   <string name="ribbon_color_title">Barva posuvného ribbonu</string>
   <string name="text_color_title">Barva textu názvu aplikace</string>
   <string name="ribbon_opacity_title">Viditelnost posuvného ribbonu</string>

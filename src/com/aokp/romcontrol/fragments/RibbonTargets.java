@@ -38,6 +38,7 @@ import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
@@ -127,8 +128,6 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private Button mTextColor;
     private TextView mRibbonIconSpaceText;
     private SeekBar mRibbonIconSpace;
-    private TextView mRibbonIconSpaceVerticalText;
-    private SeekBar mRibbonIconSpaceVertical;
     private Switch mRibbonIconVibrate;
     private TextView mButtonColorizeText;
     private Switch mButtonColorize;
@@ -137,6 +136,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private int ribbonColor;
 
     private int colorPref;
+    private int ribbonNumber = 0;
 
     private DisplayMetrics metrics;
     private WindowManager wm;
@@ -211,6 +211,16 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         setHasOptionsMenu(true);
     }
 
+    private void getRibbonNumber() {
+        if (arrayNum == 5) {
+            ribbonNumber = 2;
+        } else if (arrayNum == 2) {
+            ribbonNumber = 0;
+        } else if (arrayNum == 4) {
+            ribbonNumber = 1;
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedinstanceState){
        View ll = inflater.inflate(R.layout.ribbon, container, false);
@@ -239,12 +249,9 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
-        ribbonColor = Settings.System.getInt(mContentRes,
-                Settings.System.SWIPE_RIBBON_COLOR, Color.BLACK);
 
         mRibbonColorText = ((TextView) ll.findViewById(R.id.ribbon_color_id));
         mRibbonColor = ((Button) ll.findViewById(R.id.ribbon_color));
-        mRibbonColor.setBackgroundColor(ribbonColor);
         mRibbonColor.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -281,11 +288,6 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 mTimeOut.setOnItemSelectedListener(new TimeOutListener());
             }
         });
-
-       final String[] hideValues = getResources().getStringArray(R.array.hide_navbar_timeout_values);
-
-       mTimeOut.setSelection(Arrays.asList(hideValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
-            Settings.System.RIBBON_HIDE_TIMEOUT, 5000))));
 
         mEnableBottomWarning = ((TextView) ll.findViewById(R.id.ribbon_bottom_warning_id));
 
@@ -404,29 +406,23 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 mIconLocation.setOnItemSelectedListener(new IconLocationListener());
             }
         });
-       mIconLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
-            Settings.System.RIBBON_ICON_LOCATION, 0))));
 
        mDragHandleOpacityText = ((TextView) ll.findViewById(R.id.drag_handle_opacity_id));
        mRibbonOpacityText = ((TextView) ll.findViewById(R.id.ribbon_opacity_id));
        mDragHandleWidthText = ((TextView) ll.findViewById(R.id.drag_handle_width_id));
        mDragHandleHeightText = ((TextView) ll.findViewById(R.id.drag_handle_height_id));
        mRibbonIconSpaceText = ((TextView) ll.findViewById(R.id.ribbon_icon_space_id));
-       mRibbonIconSpaceVerticalText = ((TextView) ll.findViewById(R.id.ribbon_icon_space_vertical_id));
        mDragHandleOpacity = (SeekBar) ll.findViewById(R.id.drag_handle_opacity);
        mRibbonOpacity = (SeekBar) ll.findViewById(R.id.ribbon_opacity);
        mDragHandleWidth = (SeekBar) ll.findViewById(R.id.drag_handle_width);
        mDragHandleHeight = (SeekBar) ll.findViewById(R.id.drag_handle_height);
        mRibbonIconSpace = (SeekBar) ll.findViewById(R.id.ribbon_icon_space);
-       mRibbonIconSpaceVertical = (SeekBar) ll.findViewById(R.id.ribbon_icon_space_vertical);
        mDragHandleOpacity.setOnSeekBarChangeListener(this);
        mRibbonOpacity.setOnSeekBarChangeListener(this);
        mDragHandleWidth.setOnSeekBarChangeListener(this);
        mDragHandleHeight.setOnSeekBarChangeListener(this);
        mRibbonIconSpace.setOnSeekBarChangeListener(this);
-       mRibbonIconSpaceVertical.setOnSeekBarChangeListener(this);
        mDragHandleOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, 0));
-       mRibbonOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY, 100));
        mDragHandleWidth.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, 50));
        mDragHandleHeight.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, 0));
        mRibbonColor = ((Button) ll.findViewById(R.id.ribbon_color));
@@ -452,7 +448,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             final String[] values = getResources().getStringArray(R.array.hide_navbar_timeout_values);
             int tempHide = Integer.parseInt((String) values[pos]);
-            Settings.System.putInt(mContentRes, Settings.System.RIBBON_HIDE_TIMEOUT, tempHide);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_HIDE_TIMEOUT[ribbonNumber], tempHide);
         }
         public void onNothingSelected(AdapterView<?> parent) {
             // Do nothing.
@@ -485,7 +481,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             final String[] values = getResources().getStringArray(R.array.ribbon_handle_location_values);
             int tempLoc = Integer.parseInt((String) values[pos]);
-            Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_LOCATION, tempLoc);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_LOCATION[ribbonNumber], tempLoc);
         }
         public void onNothingSelected(AdapterView<?> parent) {
             // Do nothing.
@@ -543,18 +539,44 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                     Settings.System.NAV_HIDE_ENABLE, false);
         boolean navBarEnabled = Settings.System.getBoolean(mContentRes,
                     Settings.System.NAVIGATION_BAR_SHOW, false);
-        if (arrayNum == 2) {
+        switch (arrayNum) {
+        case 5:
             if (hasNavBarByDefault || navBarEnabled) {
                 mEnableBottomWarning.setVisibility(View.VISIBLE);
-                mEnableBottomSwitch.setEnabled(false);
             } else {
                 mEnableBottomWarning.setVisibility(View.GONE);
-                mEnableBottomSwitch.setEnabled(true);
             }
             mEnableBottomSwitch.setVisibility(View.VISIBLE);
             mEnableBottomText.setVisibility(View.VISIBLE);
-            mEnableLeftSwitch.setVisibility(View.VISIBLE);
-            mEnableLeftText.setVisibility(View.VISIBLE);
+            mEnableLeftSwitch.setVisibility(View.GONE);
+            mEnableLeftText.setVisibility(View.GONE);
+            mEnableRightSwitch.setVisibility(View.GONE);
+            mEnableRightText.setVisibility(View.GONE);
+            mTimeOut.setVisibility(View.VISIBLE);
+            mDragHandleOpacity.setVisibility(View.VISIBLE);
+            mDragHandleWidth.setVisibility(View.VISIBLE);
+            mDragHandleHeight.setVisibility(View.VISIBLE);
+            mRibbonOpacity.setVisibility(View.VISIBLE);
+            mDragHandleOpacityText.setVisibility(View.VISIBLE);
+            mDragHandleWidthText.setVisibility(View.VISIBLE);
+            mDragHandleHeightText.setVisibility(View.VISIBLE);
+            mRibbonOpacityText.setVisibility(View.VISIBLE);
+            mRibbonColorText.setVisibility(View.VISIBLE);
+            mRibbonColor.setVisibility(View.VISIBLE);
+            mLocationText.setVisibility(View.VISIBLE);
+            mLocation.setVisibility(View.VISIBLE);
+            mIconLocationText.setVisibility(View.GONE);
+            mIconLocation.setVisibility(View.GONE);
+            mTimeOutText.setVisibility(View.VISIBLE);
+            mEnableVib.setVisibility(View.VISIBLE);
+            mEnableVibSwitch.setVisibility(View.VISIBLE);
+            break;
+        case 4:
+            mEnableBottomWarning.setVisibility(View.GONE);
+            mEnableBottomSwitch.setVisibility(View.GONE);
+            mEnableBottomText.setVisibility(View.GONE);
+            mEnableLeftSwitch.setVisibility(View.GONE);
+            mEnableLeftText.setVisibility(View.GONE);
             mEnableRightSwitch.setVisibility(View.VISIBLE);
             mEnableRightText.setVisibility(View.VISIBLE);
             mTimeOut.setVisibility(View.VISIBLE);
@@ -575,9 +597,35 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mTimeOutText.setVisibility(View.VISIBLE);
             mEnableVib.setVisibility(View.VISIBLE);
             mEnableVibSwitch.setVisibility(View.VISIBLE);
-            mRibbonIconSpaceVertical.setVisibility(View.VISIBLE);
-            mRibbonIconSpaceVerticalText.setVisibility(View.VISIBLE);
-        } else {
+            break;
+        case 2:
+            mEnableBottomWarning.setVisibility(View.GONE);
+            mEnableBottomSwitch.setVisibility(View.GONE);
+            mEnableBottomText.setVisibility(View.GONE);
+            mEnableLeftSwitch.setVisibility(View.VISIBLE);
+            mEnableLeftText.setVisibility(View.VISIBLE);
+            mEnableRightSwitch.setVisibility(View.GONE);
+            mEnableRightText.setVisibility(View.GONE);
+            mTimeOut.setVisibility(View.VISIBLE);
+            mDragHandleOpacity.setVisibility(View.VISIBLE);
+            mDragHandleWidth.setVisibility(View.VISIBLE);
+            mDragHandleHeight.setVisibility(View.VISIBLE);
+            mRibbonOpacity.setVisibility(View.VISIBLE);
+            mDragHandleOpacityText.setVisibility(View.VISIBLE);
+            mDragHandleWidthText.setVisibility(View.VISIBLE);
+            mDragHandleHeightText.setVisibility(View.VISIBLE);
+            mRibbonOpacityText.setVisibility(View.VISIBLE);
+            mRibbonColorText.setVisibility(View.VISIBLE);
+            mRibbonColor.setVisibility(View.VISIBLE);
+            mLocationText.setVisibility(View.VISIBLE);
+            mLocation.setVisibility(View.VISIBLE);
+            mIconLocationText.setVisibility(View.VISIBLE);
+            mIconLocation.setVisibility(View.VISIBLE);
+            mTimeOutText.setVisibility(View.VISIBLE);
+            mEnableVib.setVisibility(View.VISIBLE);
+            mEnableVibSwitch.setVisibility(View.VISIBLE);
+            break;
+        default :
             mEnableBottomWarning.setVisibility(View.GONE);
             mEnableBottomSwitch.setVisibility(View.GONE);
             mEnableBottomText.setVisibility(View.GONE);
@@ -603,8 +651,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mEnableVib.setVisibility(View.GONE);
             mEnableVibSwitch.setVisibility(View.GONE);
             mTimeOutText.setVisibility(View.GONE);
-            mRibbonIconSpaceVertical.setVisibility(View.GONE);
-            mRibbonIconSpaceVerticalText.setVisibility(View.GONE);
+            break;
         }
 
     }
@@ -619,6 +666,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     }
 
     public void setupButtons() {
+        getRibbonNumber();
         updateSwitches();
         mShortTargets.clear();
         mLongTargets.clear();
@@ -633,7 +681,6 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         }
 
         mRibbonIconSpace.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], 5));
-        mRibbonIconSpaceVertical.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE_VERTICAL, 1));
         mEnableTextSwitch.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true));
         textColor = Settings.System.getInt(mContext.getContentResolver(),
@@ -650,6 +697,23 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         boolean colorize = Settings.System.getBoolean(mContentRes,
                 Settings.System.RIBBON_ICON_COLORIZE[arrayNum], false);
         mButtonColorize.setChecked(colorize);
+
+        ribbonColor = Settings.System.getInt(mContentRes,
+                Settings.System.SWIPE_RIBBON_COLOR[ribbonNumber], Color.BLACK);
+        mRibbonColor.setBackgroundColor(ribbonColor);
+
+        final String[] hideValues = getResources().getStringArray(R.array.hide_navbar_timeout_values);
+
+        mTimeOut.setSelection(Arrays.asList(hideValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+            Settings.System.RIBBON_HIDE_TIMEOUT[ribbonNumber], 5000))));
+
+        if (ribbonNumber < 2) {
+            final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
+            mIconLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+                Settings.System.RIBBON_ICON_LOCATION[ribbonNumber], 0))));
+        }
+
+        mRibbonOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY[ribbonNumber], 100));
 
     }
 
@@ -813,6 +877,12 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 String tempIcons = Settings.System.getString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[tempInt]);
                 Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum], tempShort);
                 Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum], tempLong);
+                try {
+                int tempSpace = Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[tempInt]);
+                Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], tempSpace);
+                } catch (SettingNotFoundException e) {
+                // compiler says there might be an error here.... no sure how though.
+                }
                 Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum], tempIcons);
                 setupButtons();
                 refreshButtons();
@@ -875,15 +945,13 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         if (seekBar == mDragHandleOpacity) {
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, progress);
         } else if (seekBar == mRibbonOpacity) {
-            Settings.System.putInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY, progress);
+            Settings.System.putInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY[ribbonNumber], progress);
         } else if (seekBar == mDragHandleWidth) {
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, progress);
         } else if (seekBar == mDragHandleHeight) {
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, progress);
         } else if (seekBar == mRibbonIconSpace) {
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], progress);
-        } else if (seekBar == mRibbonIconSpaceVertical) {
-            Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SPACE_VERTICAL, progress);
         }
     }
 
@@ -921,7 +989,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         switch (colorPref) {
         case 0:
             Settings.System.putInt(mContentRes,
-                    Settings.System.SWIPE_RIBBON_COLOR, color);
+                    Settings.System.SWIPE_RIBBON_COLOR[ribbonNumber], color);
             ribbonColor = color;
             mRibbonColor.setBackgroundColor(ribbonColor);
             break;

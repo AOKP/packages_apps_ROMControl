@@ -26,6 +26,7 @@
     <string name="title_ribbon">リボン</string>
     <string name="weather">天気情報</string>
     <string name="tools">ツール</string>
+    <string name="installer">インストーラー</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">AOKPについて</string>
@@ -44,6 +45,7 @@
     <string name="title_sound">音</string>
     <string name="title_weather">天気情報</string>
     <string name="title_performance">パフォーマンス</string>
+    <string name="title_installer">インストーラー</string>
     <string name="title_clipboard_share">クリップボードに共有</string>
     <string name="mgerrit_activity_name">mGerrit</string>
     <string name="ribbon_settings_title">リボン</string>
@@ -64,6 +66,7 @@
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
     <string name="ribbon_settings_summary">@null</string>
+    <string name="header_summary_installer">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">ナビゲーションバーをリセット</string>
@@ -103,6 +106,15 @@
     <string name="spen_gestures_cat">Sペンジェスチャー</string>
     <string name="enable_stylus_pointer_title">Sペンポインターを有効</string>
     <string name="enable_stylus_pointer_summary">Sペン使用時にマウスカーソルを有効にする</string>
+
+    <!-- Installer -->
+    <string name="persist_options">データ維持</string>
+    <string name="persist_enable">データ維持</string>
+    <string name="persist_enable_summary">インストールを跨いでデータを維持する</string>
+    <string name="persist_prop_density">画面密度を維持</string>
+    <string name="persist_prop_density_summary">画面密度設定を維持する</string>
+    <string name="persist_file_hosts">hostsを維持</string>
+    <string name="persist_file_hosts_summary">hostsファイルを維持する</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">省電力設定を有効にする</string>
@@ -535,22 +547,24 @@
     <string name="enable_ribbon_vibrate_title">スワイプ領域タッチで振動</string>
     <string name="enable_ribbon_text_summary">アイコンの下にラベルを表示する</string>
     <string name="ribbon_icon_vibrate_title">アイコンタップで振動</string>
-    <string name="ribbon_icon_space_title">アイコンの左右間隔</string>
-    <string name="ribbon_icon_space_vertical_title">アイコンの上下間隔</string>
+    <string name="ribbon_icon_space_title">リボンのアイコン間隔</string>
     <string name="ribbon_icon_size_title">アイコンサイズ</string>
     <string name="ribbon_icon_size_summary">アイコンの大きさを設定する</string>
     <string name="ribbon_lockscreen">ロック画面リボン</string>
     <string name="ribbon_notifications">通知リボン</string>
     <string name="ribbon_quicksettings">クイック設定リボン</string>
-    <string name="ribbon_swipe">AOKPスワイプリボン</string>
+    <string name="ribbon_swipe_left">左スワイプリボン</string>
+    <string name="ribbon_swipe_right">右スワイプリボン</string>
+    <string name="ribbon_swipe_bottom">下スワイプリボン</string>
     <string name="clone_title">コピーするリボンを選択</string>
     <string name="icon_size_normal">大</string>
     <string name="icon_size_20">中</string>
     <string name="icon_size_15">小</string>
-    <string name="ribbon_left_enable_title">左からのスワイプを有効</string>
-    <string name="ribbon_right_enable_title">右からのスワイプを有効</string>
-    <string name="ribbon_bottom_enable_title">下からのスワイプを有効</string>
+    <string name="ribbon_left_enable_title">左からのスワイプ</string>
+    <string name="ribbon_right_enable_title">右からのスワイプ</string>
+    <string name="ribbon_bottom_enable_title">下からのスワイプ</string>
     <string name="ribbon_bottom_warning_title">ナビゲーションバーを表示していると下からのスワイプは使用できません</string>
+    <string name="ribbon_button_colorize_title">ラベルと同じ色のアイコン</string>
     <string name="ribbon_color_title">スワイプリボンの色</string>
     <string name="text_color_title">ラベルの文字色</string>
     <string name="ribbon_opacity_title">スワイプリボンの不透明度</string>

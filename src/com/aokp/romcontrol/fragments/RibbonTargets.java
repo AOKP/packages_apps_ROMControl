@@ -779,18 +779,12 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         Log.d(TAG, "saving ribbon targets:" + TextUtils.join("|", mShortTargets));
         Log.d(TAG, "saving ribbon targets:" + TextUtils.join("|", mLongTargets));
         Log.d(TAG, "saving ribbon targets:" + TextUtils.join("|", mCustomIcons));
-        if (mShortTargets.size() > 0) {
-            Settings.System.putArrayList(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum],
-                    mShortTargets);
-            Settings.System.putArrayList(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum],
-                    mLongTargets);
-            Settings.System.putArrayList(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum],
-                    mCustomIcons);
-        } else {
-            Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum], "");
-            Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum], "");
-            Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum], "**null**");
-        }
+        Settings.System.putArrayList(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum],
+                mShortTargets);
+        Settings.System.putArrayList(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum],
+                mLongTargets);
+        Settings.System.putArrayList(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum],
+                mCustomIcons);
     }
 
     public void onValueChange(String uri) {

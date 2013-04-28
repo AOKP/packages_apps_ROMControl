@@ -118,7 +118,11 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
             }
         }
         ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if(getArguments() != null) {
+            mShortcutFragment = getArguments().getBoolean("started_from_shortcut", false);
+        }
+        if(!mShortcutFragment)
+            actionBar.setDisplayHomeAsUpEnabled(true);
 
     }
 

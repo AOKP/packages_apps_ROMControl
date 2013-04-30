@@ -491,14 +491,15 @@
   <string name="enable_ribbon_vibrate_title">Vibrovat při stisku posuvné plochy</string>
   <string name="enable_ribbon_text_summary">Zapnout zobrazení názvu aplikace pod ikonou</string>
   <string name="ribbon_icon_vibrate_title">Vibrovat při kliknutí na cíl</string>
-  <string name="ribbon_icon_space_title">Horizontální odsazení ribbonu</string>
-  <string name="ribbon_icon_space_vertical_title">Vertikální odsazení ribbonu</string>
+  <string name="ribbon_icon_space_title">Mezery mezi ikonami ribbonu</string>
   <string name="ribbon_icon_size_title">Velikost ikony</string>
   <string name="ribbon_icon_size_summary">Zvolit velikost ikon</string>
   <string name="ribbon_lockscreen">Ribbon na zamčené obrazovce</string>
   <string name="ribbon_notifications">Ribbon v notifikacích</string>
   <string name="ribbon_quicksettings">Ribbon v rychlém nastavení</string>
-  <string name="ribbon_swipe">AOKP posuvný ribbon</string>
+  <string name="ribbon_swipe_left">Zleva výsuvný ribbon</string>
+  <string name="ribbon_swipe_right">Zprava výsuvný ribbon</string>
+  <string name="ribbon_swipe_bottom">Zespodu výsuvný ribbon</string>
   <string name="clone_title">Zvolit ribbon ke zkopírování</string>
   <string name="icon_size_normal">Normální</string>
   <string name="icon_size_20">Střední</string>
@@ -506,7 +507,7 @@
   <string name="ribbon_left_enable_title">Zapnout posunutí zleva</string>
   <string name="ribbon_right_enable_title">Zapnout posunutí zprava</string>
   <string name="ribbon_bottom_enable_title">Zapnout posunutí zespoda</string>
-  <string name="ribbon_bottom_warning_title">Se zapnutou navigační lištou není možné zapnout posunutí zespoda, je třeba nastavit automatické skrývání navigační lišty.</string>
+  <string name="ribbon_bottom_warning_title">Se zapnutou navigační lištou není možné zapnout vysunutí zespodu, je třeba nastavit automatické skrývání navigační lišty nebo ji skrýt úplně.</string>
   <string name="ribbon_button_colorize_title">Ikony akcí odpovídají barvě textu</string>
   <string name="ribbon_color_title">Barva posuvného ribbonu</string>
   <string name="text_color_title">Barva textu názvu aplikace</string>

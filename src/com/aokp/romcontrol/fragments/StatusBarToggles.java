@@ -126,6 +126,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     String[] mActions;
     String[] mActionCodes;
     private int mPendingToggle = -1;
+    private int toggleNum = 0;
     private ImageButton mAddButton, mResetButton, mSaveButton;
     private ShortcutPickerHelper mPicker;
 
@@ -200,12 +201,12 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mCollapseShade = (ListPreference) findPreference(PREF_COLLAPSE_BAR);
         mCollapseShade.setOnPreferenceChangeListener(this);
         mCollapseShade.setValue(Settings.System.getInt(mContentRes,
-                Settings.System.COLLAPSE_SHADE, 10) + "");
+                Settings.System.COLLAPSE_SHADE[toggleNum], 10) + "");
 
         mOnDoubleClick = (ListPreference) findPreference(PREF_DCLICK_ACTION);
         mOnDoubleClick.setOnPreferenceChangeListener(this);
         mOnDoubleClick.setValue(Settings.System.getInt(mContentRes,
-                Settings.System.DCLICK_TOGGLE_REVERT, 0) + "");
+                Settings.System.DCLICK_TOGGLE_REVERT[toggleNum], 0) + "");
 
         mCustomToggles = (CustomTogglePref) findPreference(PREF_CUSTOM_TOGGLE);
         mCustomToggles.setParent(this);
@@ -298,26 +299,26 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         } else if (preference == mBootState) {
             boolean val = (Boolean) newValue;
             Settings.System.putBoolean(mContentRes,
-                    Settings.System.CUSTOM_TOGGLE_REVERT, val);
+                    Settings.System.CUSTOM_TOGGLE_REVERT[toggleNum], val);
             mContentRes.notifyChange(
-                    Settings.System.getUriFor(Settings.System.CUSTOM_TOGGLE_REVERT), null);
+                    Settings.System.getUriFor(Settings.System.CUSTOM_TOGGLE_REVERT[toggleNum]), null);
             return true;
         } else if (preference == mMatchAction) {
             boolean val = (Boolean) newValue;
             Settings.System.putBoolean(mContentRes,
-                    Settings.System.MATCH_ACTION_ICON, val);
-            mContentRes.notifyChange(Settings.System.getUriFor(Settings.System.MATCH_ACTION_ICON),
+                    Settings.System.MATCH_ACTION_ICON[toggleNum], val);
+            mContentRes.notifyChange(Settings.System.getUriFor(Settings.System.MATCH_ACTION_ICON[toggleNum]),
                     null);
             return true;
         } else if (preference == mCollapseShade) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
-                    Settings.System.COLLAPSE_SHADE, val);
+                    Settings.System.COLLAPSE_SHADE[toggleNum], val);
             return true;
         } else if (preference == mOnDoubleClick) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
-                    Settings.System.DCLICK_TOGGLE_REVERT, val);
+                    Settings.System.DCLICK_TOGGLE_REVERT[toggleNum], val);
             return true;
         }
         return true;
@@ -447,9 +448,14 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         }
     };
 
+    private void getToggleNumber() {
+        //find value, load buttons per toggle
+    }
+
     private void loadButtons() {
+
         mNumberofToggles = Settings.System.getInt(mContentRes,
-                Settings.System.CUSTOM_TOGGLE_QTY, 3);
+                Settings.System.CUSTOM_TOGGLE_QTY[toggleNum], 3);
         mButtons.clear();
         for (int i = 0; i < mNumberofToggles; i++) {
             String click = Settings.System.getString(mContentRes,
@@ -480,7 +486,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     }
 
     private void saveButtons() {
-        Settings.System.putInt(mContentRes, Settings.System.CUSTOM_TOGGLE_QTY,
+        Settings.System.putInt(mContentRes, Settings.System.CUSTOM_TOGGLE_QTY[toggleNum],
                 mNumberofToggles);
         for (int i = 0; i < mNumberofToggles; i++) {
             ToggleButton button = mButtons.get(i);

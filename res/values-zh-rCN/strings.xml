@@ -23,8 +23,10 @@
     <string name="header_system">系统</string>
     <string name="sound">声音</string>
     <string name="lockscreen_options">锁屏选项</string>
+    <string name="title_ribbon">操作区</string>
     <string name="weather">天气</string>
     <string name="tools">工具</string>
+    <string name="installer">安装器</string>
 
     <!-- Activity titles defined in AndroidManifest.xml Activity标题 -->
     <string name="title_about">关于 AOKP</string>
@@ -43,8 +45,10 @@
     <string name="title_sound">声音设置</string>
     <string name="title_weather">天气设置</string>
     <string name="title_performance">性能设置</string>
+    <string name="title_installer">安装器设置</string>
     <string name="title_clipboard_share">分享到剪贴板</string>
-
+    <string name="mgerrit_activity_name">代码评审</string>
+    <string name="ribbon_settings_title">操作区</string>
 
     <!-- Header Summaries 标题说明 -->
     <string name="header_summary_clock">@null</string>
@@ -61,9 +65,13 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
+    <string name="ribbon_settings_summary">@null</string>
+    <string name="header_summary_installer">@null</string>
 
     <!-- Menu Strings 菜单文本 -->
     <string name="menu_nav_bar_reset">重置导航栏</string>
+    <string name="menu_ribbon_reset">重置操作区</string>
+    <string name="menu_ribbon_rearrange">排序操作区</string>
     <string name="menu_user_interface_reset">重置背景壁纸</string>
     <string name="menu_lockscreens_reset">重置锁屏壁纸</string>
 
@@ -79,7 +87,7 @@
     <string name="title_show_screenshot">显示屏幕截图</string>
     <string name="title_show_torch_toggle">显示灯光开关</string>
     <string name="title_show_airplane_toggle">显示飞行模式开关</string>
-    <string name="title_show_navbar_hide">显示导航栏和状态栏栏控制</string>
+    <string name="title_show_navbar_hide">显示导航栏和状态栏控制</string>
     <string name="summary_show_navbar_hide">选中将显示导航栏和状态栏开关</string>
     <string name="title_show_volume_state_toggle">显示声音状态</string>
     <string name="title_show_reboot_keyguard">锁屏时显示重新启动</string>
@@ -98,6 +106,15 @@
     <string name="spen_gestures_cat">S Pen 手势</string>
     <string name="enable_stylus_pointer_title">启用 S Pen 指针</string>
     <string name="enable_stylus_pointer_summary">当使用 S Pen 时启用鼠标图标</string>
+
+    <!-- Installer 安装器 -->
+    <string name="persist_options">持久化</string>
+    <string name="persist_enable">启用持久化</string>
+    <string name="persist_enable_summary">保持安装数据</string>
+    <string name="persist_prop_density">保持密度</string>
+    <string name="persist_prop_density_summary">保持LCD密度</string>
+    <string name="persist_file_hosts">保持Hosts</string>
+    <string name="persist_file_hosts_summary">保持hosts文件</string>
 
     <!-- Power Saving 省电模式 -->
     <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
@@ -312,7 +329,7 @@
     <string name="enable_clock_weekday_summary">在时间前显示周几</string>
     <string name="colors">颜色</string>
     <string name="clock_color_title">时钟颜色</string>
-    <string name="notification_shade_clock">通知栏阴影</string>
+    <string name="notification_shade_clock">通知栏时钟</string>
     <string name="alarm">闹钟</string>
     <string name="clock_options">日期和时间设置</string>
     <string name="nothing">无</string>
@@ -464,7 +481,7 @@
     <string name="navbar_actiontitle_menu">动作： %1$s</string>
     <string name="navbar_longpress_menu">长按： %1$s</string>
     <string name="navbar_icon_menu">自定义图标</string>
-    <string name="navbar_delete_menu">删除虚拟键</string>
+    <string name="navbar_delete_menu">删除按钮</string>
 
     <!-- Nav Ring Targets 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
@@ -488,6 +505,45 @@
     <string name="navring_icon">自定义图标</string>
     <string name="navring_target_amount_text">当前目标数量</string>
     <string name="navring_target_longpress_text">长按状态</string>
+
+   <!-- Ribbon 操作区 -->
+    <string name="ribbon_dialog_arrange_title">操作区布局</string>
+    <string name="ribbon_instructions">点击图标选择动作或删除</string>
+    <string name="ribbon_targets_cat">操作区选项</string>
+    <string name="enable_ribbon_text_title">显示应用名称</string>
+    <string name="enable_ribbon_vibrate_title">触摸滑动区时振动</string>
+    <string name="enable_ribbon_text_summary">在图标下显示应用程序名称</string>
+    <string name="ribbon_icon_vibrate_title">点击目标时振动</string>
+    <string name="ribbon_icon_space_title">图标间隔</string>
+    <string name="ribbon_icon_size_title">图标尺寸</string>
+    <string name="ribbon_icon_size_summary">设置图标尺寸</string>
+    <string name="ribbon_lockscreen">锁屏界面操作区</string>
+    <string name="ribbon_notifications">通知栏操作区</string>
+    <string name="ribbon_quicksettings">快捷开关操作区</string>
+    <string name="ribbon_swipe_left">左侧滑动操作区</string>
+    <string name="ribbon_swipe_right">右侧滑动操作区</string>
+    <string name="ribbon_swipe_bottom">底部滑动操作区</string>
+    <string name="clone_title">选择复制操作区</string>
+    <string name="icon_size_normal">大</string>
+    <string name="icon_size_20">中</string>
+    <string name="icon_size_15">小</string>
+    <string name="ribbon_left_enable_title">启用左侧滑动</string>
+    <string name="ribbon_right_enable_title">启用右侧滑动</string>
+    <string name="ribbon_bottom_enable_title">启用底部滑动</string>
+    <string name="ribbon_bottom_warning_title">当导航栏启用时无法使用底部滑动，必须使导航栏自动隐藏或始终隐藏。</string>
+    <string name="ribbon_button_colorize_title">图标颜色匹配文字颜色</string>
+    <string name="ribbon_color_title">操作区颜色</string>
+    <string name="text_color_title">应用程序文字颜色</string>
+    <string name="ribbon_opacity_title">操作区不透明度</string>
+    <string name="timeout_spinner_title">操作区超时</string>
+    <string name="ribbon_drag_handle_width_title">滑动区长度</string>
+    <string name="ribbon_drag_handle_height_title">滑动区厚度</string>
+    <string name="ribbon_insert">添加按钮</string>
+    <string name="ribbon_handle_location_title">滑动区位置</string>
+    <string name="ribbon_icon_location_title">图标位置</string>
+    <string name="center">中</string>
+    <string name="top">上</string>
+    <string name="bottom">下</string>
 
     <!-- LED 灯光 -->
     <string name="led_on">LED 点亮</string>
@@ -806,6 +862,8 @@
     <string name="recents_gb">近期任务 (姜饼风格)</string>
     <string name="custom_app">自定义程序</string>
     <string name="menu_power">电源菜单</string>
+    <string name="aokp_ribbon">AOKP操作区</string>
+    <string name="nav_widgets">导航栏小部件</string>
     <string name="blank">空</string>
     <string name="none">无</string>
     <string name="take_screenshot">屏幕截图</string>

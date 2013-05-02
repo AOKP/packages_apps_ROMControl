@@ -205,6 +205,12 @@
             aokp:nameDev="scar45"
             aokp:twitterHandle="scar45"
             aokp:githubLink="@string/github_scar45" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="championswimmer"
+            aokp:nameDev="championswimmer"
+            aokp:twitterHandle="championswimmer"
+            aokp:githubLink="@string/github_championswimmer" />
     </PreferenceCategory>
 
 </PreferenceScreen>

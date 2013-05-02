@@ -61,6 +61,7 @@
   <string name="header_summary_lockscreens">@null</string>
   <string name="header_summary_weather">@null</string>
   <string name="header_summary_vibrations">@null</string>
+  <string name="ribbon_settings_summary">@null</string>
   <string name="header_summary_installer">@null</string>
   <!--Menu Strings-->
   <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
@@ -83,9 +84,8 @@
   <string name="summary_show_navbar_hide">Toto nastavení zpřístupní přepínače, které mohou skrýt navigační a stavovou lištu</string>
   <string name="title_show_volume_state_toggle">Stavy hlasitosti</string>
   <string name="title_show_reboot_keyguard">Restartovat na zamčené obrazovce</string>
-  <string name="summary_off_show_reboot_keyguard">Volba restartovat nebude zobrazena na zamčené obrazovce</string>
-  <string name="summary_on_show_reboot_keyguard">Volba restartovat bude zobrazena na zamčené obrazovce</string>
-  <!-- S Pen -->
+  <string name="summary_show_reboot_keyguard">Povolí volbu restartovat zařízení na zamčené obrazovce</string>
+  <!--S Pen-->
   <string name="spen_left_title">Akce přetažení vlevo</string>
   <string name="spen_right_title">Akce přetažení vpravo</string>
   <string name="spen_up_title">Akce přetažení nahoru</string>
@@ -98,7 +98,7 @@
   <string name="spen_gestures_cat">S Pen gesta</string>
   <string name="enable_stylus_pointer_title">Zapnout ukazatel S Pen</string>
   <string name="enable_stylus_pointer_summary">Zapnout kurzor myši při používání S Pen</string>
-  <!-- Installer -->
+  <!--Installer-->
   <string name="persist_options">Perzistence</string>
   <string name="persist_enable">Zapnout perzistenci</string>
   <string name="persist_enable_summary">Zapnout uložení dat pro setrvání mezi instalacemi</string>
@@ -129,6 +129,35 @@
   <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
   <string name="about_aokp">O AOKP</string>
   <string name="about_aokp_summary">@null</string>
+  <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
+  <string name="github_aokp">https://github.com/AOKP</string>
+  <string name="github_adam">https://github.com/syaoran12</string>
+  <string name="github_akellar">https://github.com/akellar</string>
+  <string name="github_bajee11">https://github.com/Bajee11</string>
+  <string name="github_bmc08gt"> https://github.com/BMc08GT</string>
+  <string name="github_birdman">https://github.com/mrbirdman</string>
+  <string name="github_dhacker29">https://github.com/dhacker29</string>
+  <string name="github_graffixnyc">https://github.com/graffixnyc</string>
+  <string name="github_hashcode">https://github.com/Hashcode</string>
+  <string name="github_hillbillyhacker">https://github.com/hillbillyhacker86</string>
+  <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
+  <string name="github_jubakuba">https://github.com/Jubakuba</string>
+  <string name="github_k900">https://github.com/K900</string>
+  <string name="github_khasmek">https://github.com/KhasMek</string>
+  <string name="github_kwes">https://github.com/kwes1020</string>
+  <string name="github_marclandis">https://github.com/MarcLandis</string>
+  <string name="github_rohan32">https://github.com/rohanmathur</string>
+  <string name="github_roman">https://github.com/romanbb</string>
+  <string name="github_protekk">https://github.com/ProTekk</string>
+  <string name="github_qnhoang81">https://github.com/qnhoang81</string>
+  <string name="github_scar45">https://github.com/scar45</string>
+  <string name="github_sethyx">https://github.com/sethyx</string>
+  <string name="github_sixstringsg">https://github.com/sixstringsg</string>
+  <string name="github_stevespear">https://github.com/Stevespear426</string>
+  <string name="github_tdm">https://github.com/tdm</string>
+  <string name="github_whitehawk">https://github.com/Whitehawkx</string>
+  <string name="github_xoom">https://github.com/xoomdev</string>
+  <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
   <!--General UI-->
   <string name="bootani_cat">Startovací animace</string>
   <string name="navbar_cat">Navigační lišta</string>
@@ -314,6 +343,7 @@
   <string name="enable_clock_weekday_summary">Zobrazit den v týdnu před hodinami</string>
   <string name="colors">Barvy</string>
   <string name="clock_color_title">Barva hodin</string>
+  <string name="notification_shade_clock">Akce oznámení</string>
   <string name="alarm">Budíky</string>
   <string name="clock_options">Nastavení data a času</string>
   <string name="nothing">Nic</string>
@@ -430,7 +460,7 @@
   <string name="glow_times_superquick">Hodně rychlá</string>
   <string name="glow_times_quick">Rychlá</string>
   <string name="glow_times_normal">Normální</string>
-  <string name="navbar_widgets_instructions">Posunutím zobrazit - zvolit kliknutím</string>
+  <string name="navbar_widgets_instructions">Posunutím zobrazit - kliknutím zvolit</string>
   <string name="navbar_widgets_reset">Obnovit widgety</string>
   <string name="navbar_widget_summary">Widget %1$s z %2$s</string>
   <string name="navbar_widget_summary_add">Kliknutím přidat widget</string>
@@ -455,7 +485,7 @@
   <string name="hide_navbar_timeout_10000">10 sekund</string>
   <string name="hide_navbar_timeout_15000">15 sekund</string>
   <string name="hide_navbar_timeout_30000">30 sekund</string>
-  <string name="navbar_buttons_instructions">Stisknutím talčítka je možné zvolit akce nebo vlastní ikonu</string>
+  <string name="navbar_buttons_instructions">Stisknutím tlačítka je možné zvolit akce nebo vlastní ikonu</string>
   <string name="navbar_title_menu">Možnosti tlačítka</string>
   <string name="navbar_actiontitle_menu">Akce: %1$s</string>
   <string name="navbar_longpress_menu">Dlouhý stisk: %1$s</string>
@@ -483,7 +513,7 @@
   <string name="navring_icon">Vlastní ikona</string>
   <string name="navring_target_amount_text">Aktuální počet položek</string>
   <string name="navring_target_longpress_text">Stav dlouhého stisku</string>
-  <!-- Ribbon -->
+  <!--Ribbon-->
   <string name="ribbon_dialog_arrange_title">Rozložení ribbonu</string>
   <string name="ribbon_instructions">Stisknutím ikony zvolit akce nebo smazat</string>
   <string name="ribbon_targets_cat">Možnosti ribbonu</string>
@@ -622,9 +652,12 @@
   <string name="circles_lock_cat_title">Nastavení kruhové zamčené obrazovky</string>
   <string name="circles_lock_bg_color_title">Barva pozadí</string>
   <string name="circles_lock_ring_color_title">Barva kruhu</string>
+  <string name="circles_lock_ring_alpha_title">Viditelnost kruhu</string>
   <string name="circles_lock_halo_color_title">Barva záře</string>
+  <string name="circles_lock_halo_alpha_title">Viditelnost záře</string>
   <string name="circles_lock_wave_color_title">Barva vlny</string>
-  <!-- Lockscreen Targets-->
+  <string name="circles_lock_wave_alpha_title">Viditelnost vlny</string>
+  <!--Lockscreen Targets-->
   <string name="lockscreen_targets_title">Položky zamčené obrazovky</string>
   <string name="lockscreen_targets_summary">Zobrazit nebo změnit položky na zamčené obrazovce</string>
   <string name="lockscreen_target_longpress_text">Dlouhhý stisk</string>
@@ -731,7 +764,7 @@
   <string name="weather_46">Sněhové přeháňky</string>
   <string name="weather_47">Ojedinělé bouřky</string>
   <!--Forecase unavailable-->
-  <string name="weather_3200"/>
+  <string name="weather_3200"></string>
   <!--Miscellaneous-->
   <string name="location_unavailable">Nelze získat informace o poloze pro aktualizaci počasí</string>
   <!--cardinal directions-->
@@ -807,6 +840,9 @@
   <string name="notifications">Notifikace</string>
   <string name="recents_gb">Přepínač aplikací (GB styl)</string>
   <string name="custom_app">Vlastní aplikace</string>
+  <string name="menu_power">Menu napájení</string>
+  <string name="aokp_ribbon">AOKP Ribbon</string>
+  <string name="nav_widgets">Navigační widgety</string>
   <string name="blank">Prázdné</string>
   <string name="none">Nic</string>
   <string name="take_screenshot">Pořídit snímek obrazovky</string>
@@ -913,7 +949,7 @@
   <string name="show_signal_bars">Zobrazit ukazatel signálu</string>
   <string name="show_signal_text">Zobrazit signál textově</string>
   <string name="show_with_dbm">Zobrazit s dBm</string>
-  <!-- haptic feedback on toggle press -->
+  <!--haptic feedback on toggle press-->
   <string name="toggles_enable_haptic_feedback_title">Zapnout hmatovou odezvu</string>
   <string name="toggles_enable_haptic_feedback_summary">Použít hmatovou odezvu při stisku přepínačů</string>
 </resources>

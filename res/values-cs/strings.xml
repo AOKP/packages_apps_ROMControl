@@ -83,8 +83,7 @@
   <string name="summary_show_navbar_hide">Toto nastavení zpřístupní přepínače, které mohou skrýt navigační a stavovou lištu</string>
   <string name="title_show_volume_state_toggle">Stavy hlasitosti</string>
   <string name="title_show_reboot_keyguard">Restartovat na zamčené obrazovce</string>
-  <string name="summary_off_show_reboot_keyguard">Volba restartovat nebude zobrazena na zamčené obrazovce</string>
-  <string name="summary_on_show_reboot_keyguard">Volba restartovat bude zobrazena na zamčené obrazovce</string>
+  <string name="summary_show_reboot_keyguard">Povolí volbu restartovat zařízení na zamčené obrazovce</string>
   <!-- S Pen -->
   <string name="spen_left_title">Akce přetažení vlevo</string>
   <string name="spen_right_title">Akce přetažení vpravo</string>
@@ -455,7 +454,7 @@
   <string name="hide_navbar_timeout_10000">10 sekund</string>
   <string name="hide_navbar_timeout_15000">15 sekund</string>
   <string name="hide_navbar_timeout_30000">30 sekund</string>
-  <string name="navbar_buttons_instructions">Stisknutím talčítka je možné zvolit akce nebo vlastní ikonu</string>
+  <string name="navbar_buttons_instructions">Stisknutím tlačítka je možné zvolit akce nebo vlastní ikonu</string>
   <string name="navbar_title_menu">Možnosti tlačítka</string>
   <string name="navbar_actiontitle_menu">Akce: %1$s</string>
   <string name="navbar_longpress_menu">Dlouhý stisk: %1$s</string>

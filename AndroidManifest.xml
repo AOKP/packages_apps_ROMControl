@@ -2,6 +2,8 @@
           package="com.aokp.romcontrol">
 
     <uses-sdk android:minSdkVersion="17"/>
+    <uses-sdk android:minSdkVersion="17"/>
+
     <original-package android:name="com.aokp.romcontrol"/>
 
     <uses-permission android:name="android.permission.REBOOT"/>
@@ -18,8 +20,8 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.BIND_APPWIDGET"/>
-    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
 
     <application
         android:hardwareAccelerated="true"
@@ -78,20 +80,20 @@
         </activity>
         <activity
             android:name=".fragments.NavRingTargets"
-            android:label="@string/title_navring" >
+            android:label="@string/title_navring">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".fragments.RibbonTargets"
-            android:label="@string/title_ribbon" >
+            android:label="@string/title_ribbon">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
@@ -114,11 +116,11 @@
         </activity>
         <activity
             android:name=".fragments.SPenGestures"
-            android:label="@string/title_spen" >
+            android:label="@string/title_spen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
         <activity
@@ -167,6 +169,7 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".fragments.StatusBarToggles"
             android:label="@string/title_statusbar_toggles">
@@ -174,6 +177,16 @@
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="com.aokp.romcontrol.SHORTCUT"/>
+            </intent-filter>
+        </activity>
+
+        <!-- github viewer -->
+        <activity
+            android:name=".github.GithubViewer"
+            android:label="@string/dynamic_changelog_title"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
@@ -197,6 +210,7 @@
                 <category android:name="com.aokp.romcontrol.SHORTCUT"/>
             </intent-filter>
         </activity>
+
         <provider
             android:name=".vibrations.VibrationsProvider"
             android:authorities="com.aokp.romcontrol.Vibrations"
@@ -245,15 +259,20 @@
             android:name="com.jbirdvegas.mgerrit.GerritControllerActivity"
             android:theme="@android:style/Theme.Holo.Light"
             android:label="@string/mgerrit_activity_name"/>
-        <activity android:name="com.jbirdvegas.mgerrit.ReviewTab"
+        <activity
+            android:name="com.jbirdvegas.mgerrit.ReviewTab"
             android:theme="@android:style/Theme.Holo.Light"/>
-        <activity android:name="com.jbirdvegas.mgerrit.MergedTab"
+        <activity
+            android:name="com.jbirdvegas.mgerrit.MergedTab"
             android:theme="@android:style/Theme.Holo.Light"/>
-        <activity android:name="com.jbirdvegas.mgerrit.AbandonedTab"
+        <activity
+            android:name="com.jbirdvegas.mgerrit.AbandonedTab"
             android:theme="@android:style/Theme.Holo.Light"/>
-        <activity android:name="com.jbirdvegas.mgerrit.PatchSetViewerActivity"
+        <activity
+            android:name="com.jbirdvegas.mgerrit.PatchSetViewerActivity"
             android:theme="@android:style/Theme.Holo.Light"/>
-        <activity android:name="com.jbirdvegas.mgerrit.Prefs"
+        <activity
+            android:name="com.jbirdvegas.mgerrit.Prefs"
             android:theme="@android:style/Theme.Holo.Light"/>
     </application>
 

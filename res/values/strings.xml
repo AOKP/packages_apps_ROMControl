@@ -555,6 +555,7 @@
     <string name="ribbon_swipe_left">Left swipe ribbon</string>
     <string name="ribbon_swipe_right">Right swipe ribbon</string>
     <string name="ribbon_swipe_bottom">Bottom swipe ribbon</string>
+    <string name="app_window">Application window</string>
     <string name="clone_title">Choose ribbon to clone</string>
     <string name="icon_size_normal">Normal</string>
     <string name="icon_size_20">Medium</string>
@@ -573,6 +574,9 @@
     <string name="ribbon_insert">Insert button</string>
     <string name="ribbon_handle_location_title">Ribbon Handle Location</string>
     <string name="ribbon_icon_location_title">Icon gravity</string>
+    <string name="window_text_color_title">Window text color</string>
+    <string name="window_color_title">Window color</string>
+    <string name="window_opacity_title">Window opacity</string>
     <string name="center">Centered</string>
     <string name="top">Top</string>
     <string name="bottom">Bottom</string>

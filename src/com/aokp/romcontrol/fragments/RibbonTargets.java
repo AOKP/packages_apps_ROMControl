@@ -91,6 +91,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private Spinner mLocation;
     private TextView mIconLocationText;
     private Spinner mIconLocation;
+    private TextView mWindowColumnsText;
+    private Spinner mWindowColumns;
 
     Resources mResources;
     private Spinner mRibbonChooser;
@@ -98,6 +100,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private LinearLayout targetsLayout;
     private LinearLayout llbuttons;
     private LinearLayout mButtonContainer;
+    private LinearLayout mButtonInstructions;
+    private LinearLayout mCommandButtonsCon;
     private PackageManager mPackMan;
     ArrayList<String> mShortTargets = new ArrayList<String>();
     ArrayList<String> mLongTargets = new ArrayList<String>();
@@ -126,14 +130,24 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private TextView mRibbonColorText;
     private Button mRibbonColor;
     private Button mTextColor;
+    private TextView mTextColorText;
     private TextView mRibbonIconSpaceText;
     private SeekBar mRibbonIconSpace;
     private Switch mRibbonIconVibrate;
+    private TextView mRibbonIconVibrateText;
     private TextView mButtonColorizeText;
     private Switch mButtonColorize;
+    private TextView mWindowColorText;
+    private Button mWindowColor;
+    private TextView mTextWindowColorText;
+    private Button mTextWindowColor;
+    private TextView mWindowOpacityText;
+    private SeekBar mWindowOpacity;
 
     private int textColor;
     private int ribbonColor;
+    private int windowTextColor;
+    private int windowColor;
 
     private int colorPref;
     private int ribbonNumber = 0;
@@ -233,6 +247,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
        mCloneButton = (ImageButton) ll.findViewById(R.id.clone_button);
        mCloneButton.setOnClickListener(mCommandButtons);
        mButtonContainer = (LinearLayout) ll.findViewById(R.id.ribbon_container);
+       mButtonInstructions = (LinearLayout) ll.findViewById(R.id.ribbon_targets_instructions);
+       mCommandButtonsCon = (LinearLayout) ll.findViewById(R.id.ribbon_command_buttons);
        llbuttons = (LinearLayout) ll.findViewById(R.id.ribbon_targets_container);
        mRibbonChooser = (Spinner) ll.findViewById(R.id.spinner);
        ArrayAdapter<CharSequence> spinnerAdapter = new ArrayAdapter<CharSequence>(
@@ -262,6 +278,31 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
+        mWindowColorText = ((TextView) ll.findViewById(R.id.window_color_id));
+        mWindowColor = ((Button) ll.findViewById(R.id.window_color));
+        mWindowColor.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                colorPref = 2;
+                ColorPickerDialog picker = new ColorPickerDialog(mContext, windowColor);
+                picker.setOnColorChangedListener(RibbonTargets.this);
+                picker.show();
+            }
+        });
+
+        mTextWindowColorText = ((TextView) ll.findViewById(R.id.window_text_color_id));
+        mTextWindowColor = ((Button) ll.findViewById(R.id.window_text_color));
+        mTextWindowColor.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                colorPref = 3;
+                ColorPickerDialog picker = new ColorPickerDialog(mContext, windowTextColor);
+                picker.setOnColorChangedListener(RibbonTargets.this);
+                picker.show();
+            }
+        });
+
+        mTextColorText = ((TextView) ll.findViewById(R.id.text_color_id));
         mTextColor = ((Button) ll.findViewById(R.id.text_color));
         mTextColor.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -288,6 +329,27 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 mTimeOut.setOnItemSelectedListener(new TimeOutListener());
             }
         });
+
+       mWindowColumnsText = ((TextView) ll.findViewById(R.id.window_columns_id));
+       mWindowColumns = (Spinner) ll.findViewById(R.id.window_columns);
+       ArrayAdapter<CharSequence> columnsAdapter = new ArrayAdapter<CharSequence>(
+            getActivity(), android.R.layout.simple_spinner_item);
+       columnsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       final String[] columnsEntries = getResources().getStringArray(R.array.window_columns_entries);
+       for (int i = 0; i < columnsEntries.length ; i++) {
+            columnsAdapter.add(columnsEntries[i]);
+       }
+        mWindowColumns.setAdapter(columnsAdapter);
+        mWindowColumns.post(new Runnable() {
+            public void run() {
+                mWindowColumns.setOnItemSelectedListener(new ColumnsListener());
+            }
+        });
+
+        final String[] columnsValues = getResources().getStringArray(R.array.window_columns_values);
+
+        mWindowColumns.setSelection(Arrays.asList(columnsValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+                Settings.System.APP_WINDOW_COLUMNS, 5))));
 
         mEnableBottomWarning = ((TextView) ll.findViewById(R.id.ribbon_bottom_warning_id));
 
@@ -344,6 +406,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
+        mRibbonIconVibrateText = ((TextView) ll.findViewById(R.id.ribbon_icon_vibrate_id));
         mRibbonIconVibrate = (Switch) ll.findViewById(R.id.ribbon_icon_vibrate_switch);
         mRibbonIconVibrate.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -425,9 +488,11 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
        mDragHandleOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, 0));
        mDragHandleWidth.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, 50));
        mDragHandleHeight.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, 0));
+       mWindowOpacityText = ((TextView) ll.findViewById(R.id.window_opacity_id));
+       mWindowOpacity = (SeekBar) ll.findViewById(R.id.window_opacity);
+       mWindowOpacity.setOnSeekBarChangeListener(this);
        mRibbonColor = ((Button) ll.findViewById(R.id.ribbon_color));
        mRibbonColorText = ((TextView) ll.findViewById(R.id.ribbon_color_id));
-
        setupButtons();
        return ll;
     }
@@ -449,6 +514,17 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             final String[] values = getResources().getStringArray(R.array.hide_navbar_timeout_values);
             int tempHide = Integer.parseInt((String) values[pos]);
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_HIDE_TIMEOUT[ribbonNumber], tempHide);
+        }
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Do nothing.
+        }
+    }
+
+    public class ColumnsListener implements OnItemSelectedListener {
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            final String[] values = getResources().getStringArray(R.array.window_columns_values);
+            int tempColumns = Integer.parseInt((String) values[pos]);
+            Settings.System.putInt(mContentRes, Settings.System.APP_WINDOW_COLUMNS, tempColumns);
         }
         public void onNothingSelected(AdapterView<?> parent) {
             // Do nothing.
@@ -503,18 +579,20 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 refreshButtons();
                 return true;
             case R.id.rearrange:
-                ArrayList<String> aTargets = new ArrayList<String>();
-                for (int i = 0; i < mShortTargets.size(); i++) {
-                    if (mShortTargets.get(i).equals("**null**")) {
-                        aTargets.add(NavBarHelpers.getProperSummary(mContext, mLongTargets.get(i)));
-                    } else {
-                        aTargets.add(NavBarHelpers.getProperSummary(mContext, mShortTargets.get(i)));
+                if (arrayNum < 10) {
+                    ArrayList<String> aTargets = new ArrayList<String>();
+                    for (int i = 0; i < mShortTargets.size(); i++) {
+                        if (mShortTargets.get(i).equals("**null**")) {
+                            aTargets.add(NavBarHelpers.getProperSummary(mContext, mLongTargets.get(i)));
+                        } else {
+                            aTargets.add(NavBarHelpers.getProperSummary(mContext, mShortTargets.get(i)));
+                        }
                     }
+                    ArrangeRibbonFragment fragment = new ArrangeRibbonFragment();
+                    fragment.setResources(mContext, mContentRes, aTargets,
+                        mShortTargets, mLongTargets, mCustomIcons, arrayNum);
+                    fragment.show(getFragmentManager(), "rearrange");
                 }
-                ArrangeRibbonFragment fragment = new ArrangeRibbonFragment();
-                fragment.setResources(mContext, mContentRes, aTargets,
-                    mShortTargets, mLongTargets, mCustomIcons, arrayNum);
-                fragment.show(getFragmentManager(), "rearrange");
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -570,6 +648,30 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mTimeOutText.setVisibility(View.VISIBLE);
             mEnableVib.setVisibility(View.VISIBLE);
             mEnableVibSwitch.setVisibility(View.VISIBLE);
+            //mButtonContainer.setVisibility(View.VISIBLE);
+            mButtonInstructions.setVisibility(View.VISIBLE);
+            mCommandButtonsCon.setVisibility(View.VISIBLE);
+            llbuttons.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
+            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mTextColorText.setVisibility(View.VISIBLE);
+            mTextColor.setVisibility(View.VISIBLE);
+            mIconSizeText.setVisibility(View.VISIBLE);
+            mIconSize.setVisibility(View.VISIBLE);
+            mRibbonIconSpaceText.setVisibility(View.VISIBLE);
+            mRibbonIconSpace.setVisibility(View.VISIBLE);
+            mEnableTextSwitch.setVisibility(View.VISIBLE);
+            mEnableText.setVisibility(View.VISIBLE);
+            mButtonColorizeText.setVisibility(View.VISIBLE);
+            mButtonColorize.setVisibility(View.VISIBLE);
+            mWindowColorText.setVisibility(View.GONE);
+            mWindowColor.setVisibility(View.GONE);
+            mTextWindowColorText.setVisibility(View.GONE);
+            mTextWindowColor.setVisibility(View.GONE);
+            mWindowOpacityText.setVisibility(View.GONE);
+            mWindowOpacity.setVisibility(View.GONE);
+            mWindowColumnsText.setVisibility(View.GONE);
+            mWindowColumns.setVisibility(View.GONE);
             break;
         case 4:
             mEnableBottomWarning.setVisibility(View.GONE);
@@ -597,6 +699,30 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mTimeOutText.setVisibility(View.VISIBLE);
             mEnableVib.setVisibility(View.VISIBLE);
             mEnableVibSwitch.setVisibility(View.VISIBLE);
+            //mButtonContainer.setVisibility(View.VISIBLE);
+            mButtonInstructions.setVisibility(View.VISIBLE);
+            mCommandButtonsCon.setVisibility(View.VISIBLE);
+            llbuttons.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
+            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mTextColorText.setVisibility(View.VISIBLE);
+            mTextColor.setVisibility(View.VISIBLE);
+            mIconSizeText.setVisibility(View.VISIBLE);
+            mIconSize.setVisibility(View.VISIBLE);
+            mRibbonIconSpaceText.setVisibility(View.VISIBLE);
+            mRibbonIconSpace.setVisibility(View.VISIBLE);
+            mEnableTextSwitch.setVisibility(View.VISIBLE);
+            mEnableText.setVisibility(View.VISIBLE);
+            mButtonColorizeText.setVisibility(View.VISIBLE);
+            mButtonColorize.setVisibility(View.VISIBLE);
+            mWindowColorText.setVisibility(View.GONE);
+            mWindowColor.setVisibility(View.GONE);
+            mTextWindowColorText.setVisibility(View.GONE);
+            mTextWindowColor.setVisibility(View.GONE);
+            mWindowOpacityText.setVisibility(View.GONE);
+            mWindowOpacity.setVisibility(View.GONE);
+            mWindowColumnsText.setVisibility(View.GONE);
+            mWindowColumns.setVisibility(View.GONE);
             break;
         case 2:
             mEnableBottomWarning.setVisibility(View.GONE);
@@ -624,6 +750,81 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mTimeOutText.setVisibility(View.VISIBLE);
             mEnableVib.setVisibility(View.VISIBLE);
             mEnableVibSwitch.setVisibility(View.VISIBLE);
+            //mButtonContainer.setVisibility(View.VISIBLE);
+            mButtonInstructions.setVisibility(View.VISIBLE);
+            mCommandButtonsCon.setVisibility(View.VISIBLE);
+            llbuttons.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
+            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mTextColorText.setVisibility(View.VISIBLE);
+            mTextColor.setVisibility(View.VISIBLE);
+            mIconSizeText.setVisibility(View.VISIBLE);
+            mIconSize.setVisibility(View.VISIBLE);
+            mRibbonIconSpaceText.setVisibility(View.VISIBLE);
+            mRibbonIconSpace.setVisibility(View.VISIBLE);
+            mEnableTextSwitch.setVisibility(View.VISIBLE);
+            mEnableText.setVisibility(View.VISIBLE);
+            mButtonColorizeText.setVisibility(View.VISIBLE);
+            mButtonColorize.setVisibility(View.VISIBLE);
+            mWindowColorText.setVisibility(View.GONE);
+            mWindowColor.setVisibility(View.GONE);
+            mTextWindowColorText.setVisibility(View.GONE);
+            mTextWindowColor.setVisibility(View.GONE);
+            mWindowOpacityText.setVisibility(View.GONE);
+            mWindowOpacity.setVisibility(View.GONE);
+            mWindowColumnsText.setVisibility(View.GONE);
+            mWindowColumns.setVisibility(View.GONE);
+            break;
+        case 10 :
+            mEnableBottomWarning.setVisibility(View.GONE);
+            mEnableBottomSwitch.setVisibility(View.GONE);
+            mEnableBottomText.setVisibility(View.GONE);
+            mEnableLeftSwitch.setVisibility(View.GONE);
+            mEnableLeftText.setVisibility(View.GONE);
+            mEnableRightSwitch.setVisibility(View.GONE);
+            mEnableRightText.setVisibility(View.GONE);
+            mTimeOut.setVisibility(View.GONE);
+            mDragHandleOpacity.setVisibility(View.GONE);
+            mDragHandleWidth.setVisibility(View.GONE);
+            mDragHandleHeight.setVisibility(View.GONE);
+            mRibbonOpacity.setVisibility(View.GONE);
+            mDragHandleOpacityText.setVisibility(View.GONE);
+            mDragHandleWidthText.setVisibility(View.GONE);
+            mDragHandleHeightText.setVisibility(View.GONE);
+            mRibbonOpacityText.setVisibility(View.GONE);
+            mRibbonColorText.setVisibility(View.GONE);
+            mRibbonColor.setVisibility(View.GONE);
+            mLocationText.setVisibility(View.GONE);
+            mLocation.setVisibility(View.GONE);
+            mIconLocationText.setVisibility(View.GONE);
+            mIconLocation.setVisibility(View.GONE);
+            mEnableVib.setVisibility(View.GONE);
+            mEnableVibSwitch.setVisibility(View.GONE);
+            mTimeOutText.setVisibility(View.GONE);
+            //mButtonContainer.setVisibility(View.GONE);
+            mButtonInstructions.setVisibility(View.GONE);
+            mCommandButtonsCon.setVisibility(View.GONE);
+            llbuttons.setVisibility(View.GONE);
+            mRibbonIconVibrateText.setVisibility(View.GONE);
+            mRibbonIconVibrate.setVisibility(View.GONE);
+            mTextColorText.setVisibility(View.GONE);
+            mTextColor.setVisibility(View.GONE);
+            mIconSizeText.setVisibility(View.GONE);
+            mIconSize.setVisibility(View.GONE);
+            mRibbonIconSpaceText.setVisibility(View.GONE);
+            mRibbonIconSpace.setVisibility(View.GONE);
+            mEnableTextSwitch.setVisibility(View.GONE);
+            mEnableText.setVisibility(View.GONE);
+            mButtonColorizeText.setVisibility(View.GONE);
+            mButtonColorize.setVisibility(View.GONE);
+            mWindowColorText.setVisibility(View.VISIBLE);
+            mWindowColor.setVisibility(View.VISIBLE);
+            mTextWindowColorText.setVisibility(View.VISIBLE);
+            mTextWindowColor.setVisibility(View.VISIBLE);
+            mWindowOpacityText.setVisibility(View.VISIBLE);
+            mWindowOpacity.setVisibility(View.VISIBLE);
+            mWindowColumnsText.setVisibility(View.VISIBLE);
+            mWindowColumns.setVisibility(View.VISIBLE);
             break;
         default :
             mEnableBottomWarning.setVisibility(View.GONE);
@@ -651,70 +852,105 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mEnableVib.setVisibility(View.GONE);
             mEnableVibSwitch.setVisibility(View.GONE);
             mTimeOutText.setVisibility(View.GONE);
+            //mButtonContainer.setVisibility(View.VISIBLE);
+            mButtonInstructions.setVisibility(View.VISIBLE);
+            mCommandButtonsCon.setVisibility(View.VISIBLE);
+            llbuttons.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
+            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mTextColorText.setVisibility(View.VISIBLE);
+            mTextColor.setVisibility(View.VISIBLE);
+            mIconSizeText.setVisibility(View.VISIBLE);
+            mIconSize.setVisibility(View.VISIBLE);
+            mRibbonIconSpaceText.setVisibility(View.VISIBLE);
+            mRibbonIconSpace.setVisibility(View.VISIBLE);
+            mEnableTextSwitch.setVisibility(View.VISIBLE);
+            mEnableText.setVisibility(View.VISIBLE);
+            mButtonColorizeText.setVisibility(View.VISIBLE);
+            mButtonColorize.setVisibility(View.VISIBLE);
+            mWindowColorText.setVisibility(View.GONE);
+            mWindowColor.setVisibility(View.GONE);
+            mTextWindowColorText.setVisibility(View.GONE);
+            mTextWindowColor.setVisibility(View.GONE);
+            mWindowOpacityText.setVisibility(View.GONE);
+            mWindowOpacity.setVisibility(View.GONE);
+            mWindowColumnsText.setVisibility(View.GONE);
+            mWindowColumns.setVisibility(View.GONE);
             break;
         }
 
     }
 
     public void resetRibbon() {
-        Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum], "");
-        Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum], "");
-        Settings.System.putBoolean(mContentRes, Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true);
-        Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SIZE[arrayNum], 0);
-        Settings.System.putInt(mContentRes, Settings.System.RIBBON_TEXT_COLOR[arrayNum], -1);
-        Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum], "");
+        if (arrayNum < 10) {
+            Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum], "");
+            Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum], "");
+            Settings.System.putBoolean(mContentRes, Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SIZE[arrayNum], 0);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_TEXT_COLOR[arrayNum], -1);
+            Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum], "");
+        }
     }
 
     public void setupButtons() {
-        getRibbonNumber();
-        updateSwitches();
-        mShortTargets.clear();
-        mLongTargets.clear();
-        mCustomIcons.clear();
-        mShortTargets = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum]);
-        mLongTargets = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum]);
-        mCustomIcons = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum]);
-        if (mShortTargets.size() < 1) {
-            mShortTargets.add("**null**");
-            mLongTargets.add("**null**");
-            mCustomIcons.add("**null**");
+        if (arrayNum < 10) {   
+            getRibbonNumber();
+            updateSwitches();
+            mShortTargets.clear();
+            mLongTargets.clear();
+            mCustomIcons.clear();
+            mShortTargets = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum]);
+            mLongTargets = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum]);
+            mCustomIcons = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum]);
+            if (mShortTargets.size() < 1) {
+                mShortTargets.add("**null**");
+                mLongTargets.add("**null**");
+                mCustomIcons.add("**null**");
+            }
+
+            mRibbonIconSpace.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], 5));
+            mEnableTextSwitch.setChecked(Settings.System.getBoolean(mContentRes,
+                    Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true));
+            textColor = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.RIBBON_TEXT_COLOR[arrayNum], Color.WHITE);
+            mTextColor.setBackgroundColor(textColor);
+            final String[] iconValues = getResources().getStringArray(R.array.ribbon_icon_size_values);
+
+            mIconSize.setSelection(Arrays.asList(iconValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+                    Settings.System.RIBBON_ICON_SIZE[arrayNum], 0))));
+
+            mRibbonIconVibrate.setChecked(Settings.System.getBoolean(mContentRes,
+                    Settings.System.RIBBON_ICON_VIBRATE[arrayNum], true));
+
+            boolean colorize = Settings.System.getBoolean(mContentRes,
+                    Settings.System.RIBBON_ICON_COLORIZE[arrayNum], false);
+            mButtonColorize.setChecked(colorize);
+
+            ribbonColor = Settings.System.getInt(mContentRes,
+                    Settings.System.SWIPE_RIBBON_COLOR[ribbonNumber], Color.BLACK);
+            mRibbonColor.setBackgroundColor(ribbonColor);
+
+            final String[] hideValues = getResources().getStringArray(R.array.hide_navbar_timeout_values);
+
+            mTimeOut.setSelection(Arrays.asList(hideValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+                    Settings.System.RIBBON_HIDE_TIMEOUT[ribbonNumber], 5000))));
+
+            if (ribbonNumber < 2) {
+                final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
+                mIconLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+                    Settings.System.RIBBON_ICON_LOCATION[ribbonNumber], 0))));
+            }
+            mRibbonOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY[ribbonNumber], 100));
+        } else {
+            updateSwitches();
+            windowColor = Settings.System.getInt(mContentRes,
+                    Settings.System.APP_WINDOW_COLOR_BG, Color.BLACK);
+            mWindowColor.setBackgroundColor(windowColor);
+            windowTextColor = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.APP_WINDOW_COLOR_TEXT, Color.CYAN);
+            mTextWindowColor.setBackgroundColor(windowTextColor);
+            mWindowOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.APP_WINDOW_OPACITY, 100));
         }
-
-        mRibbonIconSpace.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], 5));
-        mEnableTextSwitch.setChecked(Settings.System.getBoolean(mContentRes,
-                Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true));
-        textColor = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.RIBBON_TEXT_COLOR[arrayNum], Color.WHITE);
-        mTextColor.setBackgroundColor(textColor);
-        final String[] iconValues = getResources().getStringArray(R.array.ribbon_icon_size_values);
-
-        mIconSize.setSelection(Arrays.asList(iconValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
-          Settings.System.RIBBON_ICON_SIZE[arrayNum], 0))));
-
-        mRibbonIconVibrate.setChecked(Settings.System.getBoolean(mContentRes,
-                Settings.System.RIBBON_ICON_VIBRATE[arrayNum], true));
-
-        boolean colorize = Settings.System.getBoolean(mContentRes,
-                Settings.System.RIBBON_ICON_COLORIZE[arrayNum], false);
-        mButtonColorize.setChecked(colorize);
-
-        ribbonColor = Settings.System.getInt(mContentRes,
-                Settings.System.SWIPE_RIBBON_COLOR[ribbonNumber], Color.BLACK);
-        mRibbonColor.setBackgroundColor(ribbonColor);
-
-        final String[] hideValues = getResources().getStringArray(R.array.hide_navbar_timeout_values);
-
-        mTimeOut.setSelection(Arrays.asList(hideValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
-            Settings.System.RIBBON_HIDE_TIMEOUT[ribbonNumber], 5000))));
-
-        if (ribbonNumber < 2) {
-            final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
-            mIconLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
-                Settings.System.RIBBON_ICON_LOCATION[ribbonNumber], 0))));
-        }
-
-        mRibbonOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY[ribbonNumber], 100));
-
     }
 
     public void refreshButtons() {
@@ -940,6 +1176,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, progress);
         } else if (seekBar == mRibbonOpacity) {
             Settings.System.putInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY[ribbonNumber], progress);
+        } else if (seekBar == mWindowOpacity) {
+            Settings.System.putInt(mContentRes, Settings.System.APP_WINDOW_OPACITY, progress);
         } else if (seekBar == mDragHandleWidth) {
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, progress);
         } else if (seekBar == mDragHandleHeight) {
@@ -992,6 +1230,18 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                     Settings.System.RIBBON_TEXT_COLOR[arrayNum], color);
             textColor = color;
             mTextColor.setBackgroundColor(textColor);
+            break;
+        case 2:
+            Settings.System.putInt(mContentRes,
+                    Settings.System.APP_WINDOW_COLOR_BG, color);
+            windowColor = color;
+            mWindowColor.setBackgroundColor(windowColor);
+            break;
+        case 3:
+            Settings.System.putInt(mContentRes,
+                    Settings.System.APP_WINDOW_COLOR_TEXT, color);
+            windowTextColor = color;
+            mTextWindowColor.setBackgroundColor(windowTextColor);
             break;
         }
     }

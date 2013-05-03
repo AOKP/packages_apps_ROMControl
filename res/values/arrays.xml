@@ -314,6 +314,7 @@
         <item>@string/ribbon_swipe_left</item>
         <item>@string/ribbon_swipe_right</item>
         <item>@string/ribbon_swipe_bottom</item>
+        <item>@string/app_window</item>
     </string-array>
     <string-array name="ribbon_chooser_values" translatable="false">
         <item>0</item>
@@ -322,6 +323,7 @@
         <item>2</item>
         <item>4</item>
         <item>5</item>
+        <item>10</item>
     </string-array>
     <string-array name="navring_long_dialog_entries" translatable="false">
         <item>@string/navring_short</item>

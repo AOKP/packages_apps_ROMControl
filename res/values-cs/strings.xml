@@ -309,8 +309,9 @@
   <string name="toggle_action_title">Akce a ikona pro %1$s</string>
   <string name="toggle_action_title_alt">Akce dlouhého stisku a ikona pro %1$s</string>
   <string name="toggle_longpress_title">Akce dlouhého stisku pro %1$s</string>
-  <string name="custom_toggle_action">Jak to funguje</string>
-  <string name="custom_toggle_desc">V základním režimu přepínač střídá akce při každém stisku. Dlouhým stiskem dojde ke spuštění zobrazené akce. Je to užitečné pro všechny, co chtějí přepínač na spouštění aplikací.\nV pokročilém režimu přepínač umožňuje spouštět akci při každém stisku. Akce dlouhého stisku jsou však také k dispozici. Toto je užitečné pro všechny, kdo nechtějí přepínač na spouštění aplikací, ale provádění jiných úkolů.</string>
+  <string name="custom_toggle_desc">Každé stisknutí přepínače způsobí posunutí na další akci. Pokud nemá přepínač nastavenu akci kliknutí a neurčenou ikonu, bude použita ikona přiřazena akci dlouhého stisku. Toto je vhodné pro použití s jednoduchým přepínáním mezi akcemi bez jejich vyvolání.</string>
+  <string name="custom_help_summary">Jak to funguje</string>
+  <string name="custom_help_summary">Kliknutím pro více informací</string>
   <string name="custom_toggle_okay">Potvrdit</string>
   <string name="custom_toggle_cat">Vlastní přepínač</string>
   <string name="custom_button_cat">Akce vlastního přepínače</string>
@@ -320,9 +321,6 @@
   <string name="boot_action_summary">Spustí počáteční stav při startu</string>
   <string name="match_icon_action_title">Spustí zobrazenou akci</string>
   <string name="match_icon_action_summary">Přiřadí úlohu zobrazené ikoně pro specifické použití</string>
-  <string name="advanced_toggle_title">Pokročilé nebo základní akce</string>
-  <string name="advanced_toggle_summaryon">Pokročilé (akce krátkého i dlouhého stisku)</string>
-  <string name="advanced_toggle_summaryoff">Základní (pouze akce dlouhého stisku)</string>
   <string name="action_toggle_title">Akce přepínače</string>
   <string name="action_toggle_summary">Přepíná pořadí akci z leva do prava</string>
   <string name="no_dclick">Žádná akce</string>

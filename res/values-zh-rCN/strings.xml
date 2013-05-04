@@ -294,8 +294,9 @@
     <string name="toggle_action_title">%1$s &amp; 动作图标</string>
     <string name="toggle_action_title_alt">%1$s &amp; 长按动作图标</string>
     <string name="toggle_longpress_title">%1$s 长按动作</string>
-    <string name="custom_toggle_action">使用指导</string>
-    <string name="custom_toggle_desc">基本模式，点击开关将切换动作，长按执行所显示开关的长按动作，适用于用户希望自己切换到要执行的应用程序。\n高级模式，点击开关将切换并执行动作，长按执行所显示开关的长按动作，适用于用户希望用一次点击切换并执行动作。</string>
+    <string name="custom_toggle_desc">每次点击将切换到下一个动作。如果点击动作为空并且无图标，将显示长按动作的图标。适用于用户希望通过简单的点击可以循环动作并执行。</string>
+    <string name="custom_help_title">使用指导</string>
+    <string name="custom_help_summary">点击查看更多信息</string>
     <string name="custom_toggle_okay">取消</string>
     <string name="custom_toggle_cat">自定义开关</string>
     <string name="custom_button_cat">自定义开关动作</string>
@@ -305,9 +306,6 @@
     <string name="boot_action_summary">系统启动后将执行第一个动作</string>
     <string name="match_icon_action_title">执行所显示的动作</string>
     <string name="match_icon_action_summary">执行当前显示的动作后再切换为下一个动作图标</string>
-    <string name="advanced_toggle_title">高级或基本动作</string>
-    <string name="advanced_toggle_summaryon">高级（点击和长按执行动作）</string>
-    <string name="advanced_toggle_summaryoff">基本（仅长按执行动作）</string>
     <string name="action_toggle_title">开关动作</string>
     <string name="action_toggle_summary">顺序从左到右</string>
     <string name="no_dclick">无操作</string>

@@ -151,6 +151,7 @@
     <string name="github_bajee11">https://github.com/Bajee11</string>
     <string name="github_bmc08gt"> https://github.com/BMc08GT</string>
     <string name="github_birdman">https://github.com/mrbirdman</string>
+    <string name="github_championswimmer">https://github.com/championswimmer</string>
     <string name="github_dhacker29">https://github.com/dhacker29</string>
     <string name="github_graffixnyc">https://github.com/graffixnyc</string>
     <string name="github_hashcode">https://github.com/Hashcode</string>
@@ -324,11 +325,12 @@
     <string name="add_toggles">トグルの変更</string>
     <string name="screenshot_delay_title">スクリーンショット遅延時間</string>
     <string name="screenshot_delay_summary">スクリーンショットトグル長押し時の遅延時間を設定する</string>
-    <string name="toggle_action_title">タップ動作 %1$s &amp; アイコン</string>
+    <string name="toggle_action_title">短押し動作 %1$s &amp; アイコン</string>
     <string name="toggle_action_title_alt">長押し動作 %1$s &amp; アイコン</string>
     <string name="toggle_longpress_title">長押し動作 %1$s</string>
-    <string name="custom_toggle_action">動作説明</string>
-    <string name="custom_toggle_desc">基本モードでは、タップするたびにトグルして長押しで設定動作を実行します。基本モードはカスタムトグルをアプリランチャーとして使うことができます。\n上級モードでは、タップするたびに設定動作を実行します。長押し動作を設定することもできます。上級モードは新しいアプリを起動しないタスクをトグルで動作させる場合に最適です。</string>
+    <string name="custom_toggle_desc">タップするたびに次の設定動作にトグルします。短押し動作およびカスタムアイコンを設定していないときは、長押し動作のアイコンが使用されます。\nこれはタップしたときに何も起動せずトグルだけさせたい場合に有用です。</string>
+    <string name="custom_help_title">動作説明</string>
+    <string name="custom_help_summary">動作説明を表示する</string>
     <string name="custom_toggle_okay">閉じる</string>
     <string name="custom_toggle_cat">カスタムトグル</string>
     <string name="custom_button_cat">カスタムトグル動作</string>
@@ -338,9 +340,6 @@
     <string name="boot_action_summary">端末起動時に1番目の動作を実行する</string>
     <string name="match_icon_action_title">表示動作を実行</string>
     <string name="match_icon_action_summary">アイコン表示の動作を実行する (非チェック時はトグル後の動作を実行)</string>
-    <string name="advanced_toggle_title">動作モード</string>
-    <string name="advanced_toggle_summaryon">上級モード (タップ/長押し動作)</string>
-    <string name="advanced_toggle_summaryoff">基本モード (長押し動作のみ)</string>
     <string name="action_toggle_title">トグル動作</string>
     <string name="action_toggle_summary">左から右の順にトグルする</string>
     <string name="no_dclick">無効</string>
@@ -803,7 +802,7 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="weather_46">にわか雪</string>
     <string name="weather_47">晴れ 所により雷雨</string>
     <!-- Forecase unavailable -->
-    <string name="weather_3200" />
+    <string name="weather_3200"></string>
     <string name="location_unavailable">天気の更新に必要な位置情報が取得できません</string>
 
     <!-- cardinal directions -->

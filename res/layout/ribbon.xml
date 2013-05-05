@@ -26,6 +26,7 @@
         android:gravity="center_horizontal" />
 
     <LinearLayout
+        android:id="@+id/ribbon_command_buttons"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
@@ -55,6 +56,7 @@
             android:src="@*android:drawable/ic_menu_save" />
     </LinearLayout>
      <LinearLayout
+        android:id="@+id/ribbon_targets_instructions"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
@@ -391,6 +393,27 @@
                 android:gravity="center_horizontal" />
 
             <TextView
+                android:id="@+id/window_columns_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/window_columns_title" />
+
+            <Spinner
+                android:id="@+id/window_columns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dip"
+                android:layout_marginStart="8dip"
+                android:padding="8dip"
+                android:gravity="center_horizontal" />
+
+            <TextView
                 android:id="@+id/ribbon_icon_space_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -547,6 +570,92 @@
 
                     <Button
                         android:id="@+id/text_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dip"
+                        android:gravity="right"
+                        android:paddingRight="20dp"
+                        android:layout_marginRight="10dip"
+                        android:clickable="true"
+                        android:padding="4dip" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/window_opacity_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/window_opacity_title" />
+
+            <SeekBar
+                android:id="@+id/window_opacity"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dip"
+                android:layout_gravity="center_horizontal|top"
+                android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/window_color_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="4dip"
+                        android:gravity="left"
+                        android:text="@string/window_color_title"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#FFFFFF" />
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:id="@+id/window_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dip"
+                        android:gravity="right"
+                        android:paddingRight="20dp"
+                        android:layout_marginRight="10dip"
+                        android:clickable="true"
+                        android:padding="4dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dip"
+                android:layout_gravity="center_horizontal|top"
+                android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/window_text_color_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="4dip"
+                        android:gravity="left"
+                        android:text="@string/window_text_color_title"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#FFFFFF" />
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:id="@+id/window_text_color"
                         android:layout_width="wrap_content"
                         android:layout_height="30dip"
                         android:gravity="right"

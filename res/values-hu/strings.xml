@@ -21,9 +21,10 @@
     <string name="header_system">Rendszer</string>
     <string name="sound">Hang</string>
     <string name="lockscreen_options">Zárképernyő</string>
+    <string name="title_ribbon">Szalagsávok</string>
     <string name="weather">Időjárás</string>
     <string name="tools">Eszközők</string>
-    <string name="performance">Teljesítmény</string>
+    <string name="installer">Telepítő</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">AOKP-ról</string>
@@ -34,13 +35,16 @@
     <string name="title_navbar">Navigációs sáv</string>
     <string name="title_power_menu">Power Menü</string>
     <string name="title_led">LED Vezérlés</string>
+    <string name="title_spen">S Pen Gesztusok</string>
     <string name="title_sound">Hang beállítások</string>
     <string name="title_lockscreens">Képernyőzár beállítások</string>
     <string name="title_lockscreens_targets">Zárképernyő elemek</string>
     <string name="title_navring">Navigációs gyűrű</string>
     <string name="title_weather">Időjárás beállítások</string>
     <string name="title_performance">Teljesítmény beállítások</string>
+    <string name="title_installer">Telepítő beállítások</string>
     <string name="title_clipboard_share">Megosztás vágólapra</string>
+    <string name="ribbon_settings_title">Szalagsávok</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">@null</string>
@@ -59,6 +63,8 @@
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Navigációs sáv alaphelyzetbe</string>
+    <string name="menu_ribbon_reset">Szalagsáv alaphelyzetbe</string>
+    <string name="menu_ribbon_rearrange">Szalagsáv átrendezése</string>
     <string name="menu_user_interface_reset">Értesítési háttér alaphelyzetbe</string>
     <string name="menu_lockscreens_reset">Zárképernyő háttér alaphelyzetbe</string>
 
@@ -92,6 +98,16 @@
     <string name="spen_gestures_cat">S Pen Gesztusok</string>
     <string name="enable_stylus_pointer_title">Engedélyezi az S Pen mutatót</string>
     <string name="enable_stylus_pointer_summary">Engedélyezi az egér ikont S Pen használatnál</string>
+
+    <!-- Installer -->
+    <string name="persist_options">Perzisztáció</string>
+    <string name="persist_enable">Engedélyezi a perzisztációt</string>
+    <string name="persist_enable_summary">Engedélyezi az adat perziszációt telepítés alatt</string>
+    <string name="persist_prop_density">Felbontás megtartása</string>
+    <string name="persist_prop_density_summary">LCD felbontás megtartása</string>
+    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts_summary">Persist hosts file</string>
+
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Energia takarékosmód engedélyezése</string>
@@ -285,14 +301,15 @@
     <string name="toggle_style_traditional">Hagyományos</string>
     <string name="toggle_style_scrollable">Gördülő</string>
     <string name="toggle_swap_handle_side">Jobbra húzás</string>
-    <string name="add_toggles">Kapcsoló váltás</string>
+    <string name="add_toggles">Kapcsolók cseréje</string>
     <string name="screenshot_delay_title">Képernyőkép késleltés</string>
     <string name="screenshot_delay_summary">Késleltés miután hosszan nyomtad a képernyőkép csempét</string>
     <string name="toggle_action_title">Akció %1$s &amp; icon</string>
     <string name="toggle_action_title_alt">Hosszannyomás akció %1$s &amp; ikon</string>
     <string name="toggle_longpress_title">Hosszannyomás akció %1$s</string>
-    <string name="custom_toggle_action">Mükődése</string>
     <string name="custom_toggle_desc">Alap módban egy érintésre végrehajtja a ciklust. Hosszan nyomásra elindítja a megjelenített akciót. Ez a laghasznosabb a legtöbb felhasználónak. \n Haladó módban engedélyezi az alkalmazás futtatását minden kattintásnál. A hosszan nyomások is engedélyezve vannak ebben a módban. Azoknak a felhasználóknak hasznos akik akarják, hogy a végrehajtó feladat ne indítsa el az alkalmazást.</string>
+    <string name="custom_help_title">Hogyan mükődik</string>
+    <string name="custom_help_summary">Nyomj rá az információért</string>
     <string name="custom_toggle_okay">Elutasít</string>
     <string name="custom_toggle_cat">Egyéni kapcsoló</string>
     <string name="custom_button_cat">Egyéni kapcsoló akció</string>
@@ -326,6 +343,7 @@
     <string name="enable_clock_weekday_summary">Rövidített nap kijelzése az óra előtt</string>
     <string name="colors">Színek</string>
     <string name="clock_color_title">Óra színe</string>
+    <string name="notification_shade_clock">Értesítési funkciók</string>
     <string name="alarm">Riasztások</string>
     <string name="nothing">Semmi</string>
     <string name="today">Naptár mai nap</string>
@@ -509,6 +527,52 @@
     <string name="navring_icon">Saját ikon</string>
     <string name="navring_target_amount_text">Aktuális elemek száma</string>
     <string name="navring_target_longpress_text">Hosszan nyomás állapota</string>
+
+   <!-- Ribbon -->
+    <string name="ribbon_dialog_arrange_title">Szalagsáv rendezése</string>
+    <string name="ribbon_instructions">Nyomd meg az ikont az akció kiválasztásához vagy törléséhez</string>
+    <string name="ribbon_targets_cat">Szalagsáv opciók</string>
+    <string name="enable_ribbon_text_title">Alkalmazásnév mutatása</string>
+    <string name="enable_ribbon_vibrate_title">Rezeg az érintési területen</string>
+    <string name="enable_ribbon_text_summary">Engedélyezi az alkalmazás nevet az ikon alatt</string>
+    <string name="ribbon_icon_vibrate_title">Rezeg az elem érintésére</string>
+    <string name="ribbon_icon_space_title">Vízszintes térköz</string>
+    <string name="ribbon_icon_space_vertical_title">Fűggöleges térköz</string>
+    <string name="ribbon_icon_size_title">Ikon méret</string>
+    <string name="ribbon_icon_size_summary">Add meg az ikon méreteit</string>
+    <string name="ribbon_lockscreen">Zárképernyő szalag</string>
+    <string name="ribbon_notifications">Értesítési szalag</string>
+    <string name="ribbon_quicksettings">Gyors beállítások szalag</string>
+    <string name="ribbon_swipe_left">Balról húzó szalag</string>
+    <string name="ribbon_swipe_right">Jobbról húzó szalag</string>
+    <string name="ribbon_swipe_bottom">Alulról húzó szalag</string>
+    <string name="app_window">Alkalmazás ablak</string>
+    <string name="clone_title">Válassz szalagot klónozni</string>
+    <string name="icon_size_normal">Normál</string>
+    <string name="icon_size_20">Közepes</string>
+    <string name="icon_size_15">Kicsi</string>
+    <string name="ribbon_left_enable_title">Engedélyezi a balról húzást</string>
+    <string name="ribbon_right_enable_title">Engedélyezi a jobbról húzást</string>
+    <string name="ribbon_bottom_enable_title">Engedélyezi alulról a húzást</string>
+    <string name="ribbon_bottom_warning_title">Nem engedélyezi az alulról húzást Navigációs sávnál, rejtve kell lennie.</string>
+    <string name="ribbon_button_colorize_title">Akció ikonok szöveg színei</string>
+    <string name="ribbon_color_title">Húzó szalag szine</string>
+    <string name="text_color_title">Alkalmazás szöveg szine</string>
+    <string name="ribbon_opacity_title">Húzó szalag áttetszőssége</string>
+    <string name="timeout_spinner_title">Szalag auto kikapcsolása</string>
+    <string name="ribbon_drag_handle_width_title">Húzó fogantyú hossza</string>
+    <string name="ribbon_drag_handle_height_title">Húzó fogantyú vastagsága</string>
+    <string name="ribbon_insert">Gomb beillesztés</string>
+    <string name="ribbon_handle_location_title">Szalag fogantyú helye</string>
+    <string name="ribbon_icon_location_title">Ikon súlya</string>
+    <string name="window_text_color_title">Ablak szöveg szín</string>
+    <string name="window_color_title">Ablak szín</string>
+    <string name="window_opacity_title">Ablak áttetszősége</string>
+    <string name="window_columns_title">Ablak oszlop</string>
+    <string name="center">Középen</string>
+    <string name="top">Felül</string>
+    <string name="bottom">Alul</string>
+
 
 
     <!-- LED -->

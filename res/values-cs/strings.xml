@@ -528,6 +528,7 @@
   <string name="ribbon_swipe_left">Zleva výsuvný ribbon</string>
   <string name="ribbon_swipe_right">Zprava výsuvný ribbon</string>
   <string name="ribbon_swipe_bottom">Zespodu výsuvný ribbon</string>
+  <string name="app_window">Aplikační okno</string>
   <string name="clone_title">Zvolit ribbon ke zkopírování</string>
   <string name="icon_size_normal">Normální</string>
   <string name="icon_size_20">Střední</string>
@@ -545,7 +546,11 @@
   <string name="ribbon_drag_handle_height_title">Výška výsuvného tlačítka</string>
   <string name="ribbon_insert">Vložit tlačítko</string>
   <string name="ribbon_handle_location_title">Pozice tlačítka ribbonu</string>
-  <string name="ribbon_icon_location_title">Pozici ikony</string>
+  <string name="ribbon_icon_location_title">Pozice ikony</string>
+  <string name="window_text_color_title">Barva textu okna</string>
+  <string name="window_color_title">Barva okna</string>
+  <string name="window_opacity_title">Viditelnost okna</string>
+  <string name="window_columns_title">Sloupce okna</string>
   <string name="center">Na střed</string>
   <string name="top">Nahoru</string>
   <string name="bottom">Dolů</string>

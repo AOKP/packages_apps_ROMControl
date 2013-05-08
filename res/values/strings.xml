@@ -260,6 +260,15 @@
     <string name="transparency_dialog_transparency">Homescreen alpha</string>
     <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
     <string name="transparency_dialog_lockscreen">Lockscreen</string>
+    <string name="statusbar_behaviour">Statusbar Behaviour</string>
+    <string name="statusbar_visible">Show Statusbar</string>
+    <string name="statusbar_hide_title">Hide Statusbar</string>
+    <string name="statusbar_hide_summary">Choose from 3 different statusbar behaviour</string>
+    <string name="statusbar_notification">Notifications</string>
+    <string name="statusbar_pulldown">Pulldown Statusbar</string>
+    <string name="statusbar_pulldown_notification">Pulldown &amp; Notifications</string>
+    <string name="hidden_statusbar_pulldown_timeout_title">Hidden statusbar pulldown timeout</string>
+    <string name="hidden_statusbar_pulldown_timeout_summary">Timeout for hidden statusbar window</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>
@@ -498,8 +507,6 @@
     <string name="navbar_widgets_delete">Delete widget</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Checking this enables arrow keys in the Navigation Bar while typing</string>
-    <string name="statusbar_hide_title">Hide Statusbar</string>
-    <string name="statusbar_hide_summary">Checking this completely hides the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and Navigation Bar opacity</string>
     <string name="navbar_hide_enable_title">Hidden NavBar Enable</string>
     <string name="drag_handle_opacity_title">Drag Handle Opacity</string>

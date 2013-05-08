@@ -4,4 +4,6 @@
           android:title="@string/menu_ribbon_reset" />
     <item android:id="@+id/rearrange"
           android:title="@string/menu_ribbon_rearrange" />
+    <item android:id="@+id/ribbon_toggles"
+          android:title="@string/menu_ribbon_toggles" />
 </menu>

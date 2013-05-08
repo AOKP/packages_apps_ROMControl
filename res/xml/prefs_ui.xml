@@ -61,6 +61,19 @@
             android:summary="@string/statusbar_hide_summary" />
 
         <CheckBoxPreference
+            android:key="hidden_statusbar_pulldown"
+            android:title="@string/hidden_statusbar_pulldown_title"
+            android:summary="@string/hidden_statusbar_pulldown_summary" />
+
+        <ListPreference
+            android:key="hidden_statusbar_pulldown_timeout"
+            android:entries="@array/hidden_statusbar_pulldown_timeout_entries"
+            android:entryValues="@array/hidden_statusbar_pulldown_timeout_values"
+            android:title="@string/hidden_statusbar_pulldown_timeout_title"
+            android:summary="@string/hidden_statusbar_pulldown_timeout_summary"
+            android:dependency="hidden_statusbar_pulldown" />
+
+        <CheckBoxPreference
             android:key="ime_switcher"
             android:title="@string/ime_switcher_title"
             android:summary="@string/ime_switcher_summary"

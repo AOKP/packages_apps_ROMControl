@@ -943,4 +943,17 @@
         <item>5</item>
         <item>6</item>
     </string-array>
+    <!-- Hidden Statusbar Pulldown Timeout -->
+    <string-array name="hidden_statusbar_pulldown_timeout_entries" translatable="false">
+        <item>2.5 seconds</item>
+        <item>5 seconds</item>
+        <item>7.5 seconds</item>
+        <item>10 seconds</item>
+    </string-array>
+    <string-array name="hidden_statusbar_pulldown_timeout_values" translatable="false">
+        <item>2500</item>
+        <item>5000</item>
+        <item>7500</item>
+        <item>10000</item>
+    </string-array>
 </resources>

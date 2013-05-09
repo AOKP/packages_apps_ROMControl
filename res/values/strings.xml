@@ -71,8 +71,11 @@
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
     <string name="menu_ribbon_reset">Reset ribbon</string>
+    <string name="menu_ribbon_apps">Reset apps</string>
     <string name="menu_ribbon_rearrange">Rearrange ribbon</string>
+    <string name="menu_ribbon_hide">Hide apps</string>
     <string name="menu_ribbon_toggles">Setup toggles</string>
+    <string name="menu_ribbon_na">Not available</string>
     <string name="menu_ribbon_toggles_error">Toggles are only available for the left and right swipe ribbons.</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
@@ -549,6 +552,10 @@
     <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
     <string name="ribbon_icon_space_title">Icon ribbon spacing</string>
     <string name="ribbon_icon_size_title">Icon size</string>
+    <string name="ribbon_dismiss_title">Ribbon dismiss action</string>
+    <string name="ribbon_animation_duration_title">Animation duration</string>
+    <string name="ribbon_long_swipe_title">Swipe area long swipe</string>
+    <string name="ribbon_long_press_title">Swipe area long press</string>
     <string name="ribbon_icon_size_summary">Set size of your icons</string>
     <string name="ribbon_lockscreen">Lockscreen ribbon</string>
     <string name="ribbon_notifications">Notifications ribbon</string>
@@ -579,9 +586,13 @@
     <string name="window_color_title">Window color</string>
     <string name="window_opacity_title">Window opacity</string>
     <string name="window_columns_title">Window columns</string>
+    <string name="window_app_hide_title">Choose apps to hide</string>
     <string name="center">Centered</string>
     <string name="top">Top</string>
     <string name="bottom">Bottom</string>
+    <string name="never">Never</string>
+    <string name="always">Always</string>
+    <string name="not_bar">Not Navbar Actions</string>
 
     <!-- LED -->
     <string name="led_on">LED on</string>

@@ -549,6 +549,10 @@
     <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
     <string name="ribbon_icon_space_title">Icon ribbon spacing</string>
     <string name="ribbon_icon_size_title">Icon size</string>
+    <string name="ribbon_dismiss_title">Ribbon dismiss action</string>
+    <string name="ribbon_animation_duration_title">Animation duration</string>
+    <string name="ribbon_long_swipe_title">Swipe area long swipe</string>
+    <string name="ribbon_long_press_title">Swipe area long press</string>
     <string name="ribbon_icon_size_summary">Set size of your icons</string>
     <string name="ribbon_lockscreen">Lockscreen ribbon</string>
     <string name="ribbon_notifications">Notifications ribbon</string>
@@ -582,6 +586,9 @@
     <string name="center">Centered</string>
     <string name="top">Top</string>
     <string name="bottom">Bottom</string>
+    <string name="never">Never</string>
+    <string name="always">Always</string>
+    <string name="not_bar">Not Navbar Actions</string>
 
     <!-- LED -->
     <string name="led_on">LED on</string>

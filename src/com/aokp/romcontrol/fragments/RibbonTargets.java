@@ -504,8 +504,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
        mDragHandleHeight.setOnSeekBarChangeListener(this);
        mRibbonIconSpace.setOnSeekBarChangeListener(this);
        mDragHandleOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, 0));
-       mDragHandleWidth.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, 50));
-       mDragHandleHeight.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, 0));
+       mDragHandleWidth.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, 30));
+       mDragHandleHeight.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, 50));
        mWindowOpacityText = ((TextView) ll.findViewById(R.id.window_opacity_id));
        mWindowOpacity = (SeekBar) ll.findViewById(R.id.window_opacity);
        mWindowOpacity.setOnSeekBarChangeListener(this);

@@ -67,6 +67,8 @@
   <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
   <string name="menu_ribbon_reset">Obnovit ribbon</string>
   <string name="menu_ribbon_rearrange">Přeuspořádat ribbon</string>
+  <string name="menu_ribbon_toggles">Nastavit přepínače</string>
+  <string name="menu_ribbon_toggles_error">Přepínače jsou k dispozici pouze u výsuvného ribbnou zleva a zprava.</string>
   <string name="menu_user_interface_reset">Obnovit pozadí notifikací</string>
   <string name="menu_lockscreens_reset">Obnovit pozadí zamčené obrazovky</string>
   <!--General Strings-->

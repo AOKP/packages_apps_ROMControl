@@ -16,6 +16,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+     <LinearLayout
+        android:id="@+id/ribbon_selector_instructions"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ribbon_chooser_instructions"
+            android:gravity="center" />
+    </LinearLayout>
+
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
@@ -64,6 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ribbon_instructions"
+            android:maxLines="3"
+            android:singleLine="false"
             android:gravity="center" />
     </LinearLayout>
 
@@ -308,6 +322,129 @@
                     android:gravity="right"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ribbon_toggles_button_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dip"
+                    android:layout_marginStart="4dip"
+                    android:layout_weight="0.5"
+                    android:padding="4dip"
+                    android:gravity="left"
+                    android:textColor="#FFFFFF"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/ribbon_toggles_button_title" />
+
+                <Switch
+                    android:id="@+id/ribbon_toggles_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dip"
+                    android:layout_marginStart="4dip"
+                    android:layout_weight="0.5"
+                    android:padding="4dip"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ribbon_hide_ime_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dip"
+                    android:layout_marginStart="4dip"
+                    android:layout_weight="0.5"
+                    android:padding="4dip"
+                    android:gravity="left"
+                    android:textColor="#FFFFFF"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/ribbon_hide_ime_title" />
+
+                <Switch
+                    android:id="@+id/ribbon_hide_ime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dip"
+                    android:layout_marginStart="4dip"
+                    android:layout_weight="0.5"
+                    android:padding="4dip"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/ribbon_long_swipe_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_long_swipe_title" />
+
+            <Spinner
+                android:id="@+id/ribbon_long_swipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dip"
+                android:layout_marginStart="8dip"
+                android:padding="8dip"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/ribbon_long_press_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_long_press_title" />
+
+            <Spinner
+                android:id="@+id/ribbon_long_press"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dip"
+                android:layout_marginStart="8dip"
+                android:padding="8dip"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/ribbon_dismiss_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_dismiss_title" />
+
+            <Spinner
+                android:id="@+id/ribbon_dismiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dip"
+                android:layout_marginStart="8dip"
+                android:padding="8dip"
+                android:gravity="center_horizontal" />
+
             <TextView
                 android:id="@+id/ribbon_icon_size_id"
                 android:layout_width="wrap_content"
@@ -385,6 +522,27 @@
 
             <Spinner
                 android:id="@+id/ribbon_icon_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dip"
+                android:layout_marginStart="8dip"
+                android:padding="8dip"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/ribbon_animation_type_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_animation_type_title" />
+
+            <Spinner
+                android:id="@+id/ribbon_animation_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dip"
@@ -513,6 +671,26 @@
                 android:layout_marginLeft="17dp"
                 android:layout_marginRight="17dp"/>
 
+            <TextView
+                android:id="@+id/ribbon_animation_duration_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_animation_duration_title" />
+
+            <SeekBar
+                android:id="@+id/ribbon_animation_duration"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -593,6 +771,46 @@
 
             <SeekBar
                 android:id="@+id/window_opacity"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
+
+            <TextView
+                android:id="@+id/ribbon_animation_duration_app_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/ribbon_animation_duration_title" />
+
+            <SeekBar
+                android:id="@+id/ribbon_animation_duration_app"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
+
+            <TextView
+                android:id="@+id/app_window_space_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dip"
+                android:layout_marginStart="4dip"
+                android:padding="4dip"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/app_window_space_title" />
+
+            <SeekBar
+                android:id="@+id/app_window_space"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

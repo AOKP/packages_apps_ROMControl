@@ -4,17 +4,24 @@ package com.aokp.romcontrol.fragments;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnDismissListener;
+import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -66,6 +73,7 @@ import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
 
 import com.android.internal.util.aokp.AwesomeConstants;
+import com.android.internal.util.aokp.AwesomeAnimationHelper;
 import com.android.internal.util.aokp.NavBarHelpers;
 import com.android.internal.util.aokp.LockScreenHelpers;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
@@ -108,7 +116,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     ArrayList<String> mCustomIcons = new ArrayList<String>();
     private int mTargetNum;
     private int arrayNum = 0;
-    private boolean longPressChoice;
+    private int mChoice = 0;
+    private MenuItem mMenuRearrange;
+    private MenuItem mMenuReset;
+    private MenuItem mMenuToggles;
 
     private TextView mEnableBottomWarning;
     private Switch mEnableBottomSwitch;
@@ -143,6 +154,25 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private Button mTextWindowColor;
     private TextView mWindowOpacityText;
     private SeekBar mWindowOpacity;
+    private TextView mRibbonLongSwipeText;
+    private Spinner mRibbonLongSwipe;
+    private TextView mRibbonLongPressText;
+    private Spinner mRibbonLongPress;
+    private TextView mRibbonDismissText;
+    private Spinner mRibbonDismiss;
+    private TextView mRibbonAnimDurText;
+    private SeekBar mRibbonAnimDur;
+    private TextView mWindowAnimDurText;
+    private SeekBar mWindowAnimDur;
+    private TextView mRibbonAnimationText;
+    private Spinner mRibbonAnimation;
+    private TextView mAppWindowSpaceText;
+    private SeekBar mAppWindowSpace;
+    private TextView mTogglesButtonText;
+    private Switch mTogglesButton;
+    private TextView mRibbonHideImeText;
+    private Switch mRibbonHideIme;
+
 
     private int textColor;
     private int ribbonColor;
@@ -157,11 +187,21 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private IntentFilter filter;
     private RibbonDialogReceiver reciever;
 
-    BroadcastReceiver mReceiver;
-    ArrayList<String> allToggles;
+    private BroadcastReceiver mReceiver;
+    private ArrayList<String> allToggles = new ArrayList<String>();
+    private ArrayList<String> allTogglesStrings = new ArrayList<String>();
+    private Bundle sToggles = new Bundle();
+
+    private ArrayList<String> mGoodName = new ArrayList<String>();
+    private ArrayList<String> mHiddenApps = new ArrayList<String>();
+    private ArrayList<String> mSelectedApps = new ArrayList<String>();
+    private ArrayList<String> mApps = new ArrayList<String>();
 
     private String[] mActions;
     private String[] mActionCodes;
+
+    private int[] mAnimations;
+    private String[] mAnimationsStrings;
 
     private ShortcutPickerHelper mPicker;
 
@@ -200,6 +240,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         mReceiver = new BroadcastReceiver() {
 
             @Override
@@ -240,7 +281,12 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mActions[i] = AwesomeConstants.getProperName(mContext, mActionCodes[i]);
         }
 
-        setHasOptionsMenu(true);
+        mAnimations = AwesomeAnimationHelper.getAnimationsList();
+        mAnimationsStrings = new String[mAnimations.length];
+        int animqty = mAnimations.length;
+        for (int i = 0; i < animqty; i++) {
+            mAnimationsStrings[i] = AwesomeAnimationHelper.getProperName(mContext, mAnimations[i]);
+        }
     }
 
     private void getRibbonNumber() {
@@ -255,6 +301,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedinstanceState){
+       setHasOptionsMenu(true);
        View ll = inflater.inflate(R.layout.ribbon, container, false);
        mResetButton = (ImageButton) ll.findViewById(R.id.reset_button);
        mResetButton.setOnClickListener(mCommandButtons);
@@ -348,6 +395,47 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
+       ArrayAdapter<CharSequence> actionsAdapter = new ArrayAdapter<CharSequence>(
+            getActivity(), android.R.layout.simple_spinner_item);
+       actionsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       for (int i = 0; i < mActions.length ; i++) {
+            actionsAdapter.add(mActions[i]);
+       }
+
+       mRibbonLongSwipeText = ((TextView) ll.findViewById(R.id.ribbon_long_swipe_id));
+       mRibbonLongSwipe = (Spinner) ll.findViewById(R.id.ribbon_long_swipe);
+       mRibbonLongSwipe.setAdapter(actionsAdapter);
+       mRibbonLongSwipe.post(new Runnable() {
+            public void run() {
+                mRibbonLongSwipe.setOnItemSelectedListener(new RibbonLongSwipeListener());
+            }
+        });
+
+       mRibbonLongPressText = ((TextView) ll.findViewById(R.id.ribbon_long_press_id));
+       mRibbonLongPress = (Spinner) ll.findViewById(R.id.ribbon_long_press);
+       mRibbonLongPress.setAdapter(actionsAdapter);
+       mRibbonLongPress.post(new Runnable() {
+            public void run() {
+                mRibbonLongPress.setOnItemSelectedListener(new RibbonLongPressListener());
+            }
+        });
+
+       mRibbonDismissText = ((TextView) ll.findViewById(R.id.ribbon_dismiss_id));
+       ArrayAdapter<CharSequence> dismissAdapter = new ArrayAdapter<CharSequence>(
+            getActivity(), android.R.layout.simple_spinner_item);
+       dismissAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       final String[] dismissEntries = getResources().getStringArray(R.array.ribbon_dismiss_entries);
+       for (int i = 0; i < dismissEntries.length ; i++) {
+            dismissAdapter.add(dismissEntries[i]);
+       }
+       mRibbonDismiss = (Spinner) ll.findViewById(R.id.ribbon_dismiss);
+       mRibbonDismiss.setAdapter(dismissAdapter);
+       mRibbonDismiss.post(new Runnable() {
+            public void run() {
+                mRibbonDismiss.setOnItemSelectedListener(new RibbonDismissListener());
+            }
+        });
+
        mWindowColumnsText = ((TextView) ll.findViewById(R.id.window_columns_id));
        mWindowColumns = (Spinner) ll.findViewById(R.id.window_columns);
        ArrayAdapter<CharSequence> columnsAdapter = new ArrayAdapter<CharSequence>(
@@ -404,6 +492,15 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
+        mRibbonHideImeText = ((TextView) ll.findViewById(R.id.ribbon_hide_ime_id));
+        mRibbonHideIme = (Switch) ll.findViewById(R.id.ribbon_hide_ime);
+        mRibbonHideIme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Settings.System.putBoolean(mContentRes, Settings.System.RIBBON_HIDE_IME[ribbonNumber], checked);
+            }
+        });
+
         mEnableText = ((TextView) ll.findViewById(R.id.enable_ribbon_text_id));
         mEnableTextSwitch = (Switch) ll.findViewById(R.id.enable_ribbon_text);
         mEnableTextSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -415,12 +512,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
 
         mEnableVib = ((TextView) ll.findViewById(R.id.enable_ribbon_vibrate_id));
         mEnableVibSwitch = (Switch) ll.findViewById(R.id.enable_ribbon_vibrate);
-        mEnableVibSwitch.setChecked(Settings.System.getBoolean(mContentRes,
-                Settings.System.SWIPE_RIBBON_VIBRATE, false));
         mEnableVibSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton v, boolean checked) {
-                Settings.System.putBoolean(mContentRes, Settings.System.SWIPE_RIBBON_VIBRATE, checked);
+                Settings.System.putBoolean(mContentRes, Settings.System.SWIPE_RIBBON_VIBRATE[ribbonNumber], checked);
             }
         });
 
@@ -439,6 +534,15 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             @Override
             public void onCheckedChanged(CompoundButton v, boolean checked) {
                 Settings.System.putBoolean(mContentRes, Settings.System.RIBBON_ICON_COLORIZE[arrayNum], checked);
+            }
+        });
+
+        mTogglesButtonText = ((TextView) ll.findViewById(R.id.ribbon_toggles_button_id));
+        mTogglesButton = (Switch) ll.findViewById(R.id.ribbon_toggles_button);
+        mTogglesButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Settings.System.putBoolean(mContentRes, Settings.System.RIBBON_TOGGLE_BUTTON_LOCATION[ribbonNumber], checked);
             }
         });
 
@@ -474,10 +578,20 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
-        final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
-
-        mLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
-            Settings.System.RIBBON_DRAG_HANDLE_LOCATION, 0))));
+       mRibbonAnimationText = ((TextView) ll.findViewById(R.id.ribbon_animation_type_id));
+       mRibbonAnimation = (Spinner) ll.findViewById(R.id.ribbon_animation_type);
+       ArrayAdapter<CharSequence> animAdapter = new ArrayAdapter<CharSequence>(
+            getActivity(), android.R.layout.simple_spinner_item);
+       animAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       for (int i = 0; i < mAnimationsStrings.length ; i++) {
+            animAdapter.add(mAnimationsStrings[i]);
+       }
+        mRibbonAnimation.setAdapter(animAdapter);
+        mRibbonAnimation.post(new Runnable() {
+            public void run() {
+                mRibbonAnimation.setOnItemSelectedListener(new AnimationListener());
+            }
+        });
 
        mIconLocationText = ((TextView) ll.findViewById(R.id.ribbon_icon_location_id));
        mIconLocation = (Spinner) ll.findViewById(R.id.ribbon_icon_location);
@@ -488,24 +602,30 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             }
         });
 
+       mAppWindowSpaceText = ((TextView) ll.findViewById(R.id.app_window_space_id));
        mDragHandleOpacityText = ((TextView) ll.findViewById(R.id.drag_handle_opacity_id));
        mRibbonOpacityText = ((TextView) ll.findViewById(R.id.ribbon_opacity_id));
+       mRibbonAnimDurText = ((TextView) ll.findViewById(R.id.ribbon_animation_duration_id));
+       mWindowAnimDurText = ((TextView) ll.findViewById(R.id.ribbon_animation_duration_app_id));
        mDragHandleWidthText = ((TextView) ll.findViewById(R.id.drag_handle_width_id));
        mDragHandleHeightText = ((TextView) ll.findViewById(R.id.drag_handle_height_id));
        mRibbonIconSpaceText = ((TextView) ll.findViewById(R.id.ribbon_icon_space_id));
        mDragHandleOpacity = (SeekBar) ll.findViewById(R.id.drag_handle_opacity);
+       mAppWindowSpace = (SeekBar) ll.findViewById(R.id.app_window_space);
        mRibbonOpacity = (SeekBar) ll.findViewById(R.id.ribbon_opacity);
+       mRibbonAnimDur = (SeekBar) ll.findViewById(R.id.ribbon_animation_duration);
+       mWindowAnimDur = (SeekBar) ll.findViewById(R.id.ribbon_animation_duration_app);
        mDragHandleWidth = (SeekBar) ll.findViewById(R.id.drag_handle_width);
        mDragHandleHeight = (SeekBar) ll.findViewById(R.id.drag_handle_height);
        mRibbonIconSpace = (SeekBar) ll.findViewById(R.id.ribbon_icon_space);
+       mAppWindowSpace.setOnSeekBarChangeListener(this);
        mDragHandleOpacity.setOnSeekBarChangeListener(this);
        mRibbonOpacity.setOnSeekBarChangeListener(this);
+       mRibbonAnimDur.setOnSeekBarChangeListener(this);
+       mWindowAnimDur.setOnSeekBarChangeListener(this);
        mDragHandleWidth.setOnSeekBarChangeListener(this);
        mDragHandleHeight.setOnSeekBarChangeListener(this);
        mRibbonIconSpace.setOnSeekBarChangeListener(this);
-       mDragHandleOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, 0));
-       mDragHandleWidth.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, 50));
-       mDragHandleHeight.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, 0));
        mWindowOpacityText = ((TextView) ll.findViewById(R.id.window_opacity_id));
        mWindowOpacity = (SeekBar) ll.findViewById(R.id.window_opacity);
        mWindowOpacity.setOnSeekBarChangeListener(this);
@@ -538,11 +658,66 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         }
     }
 
+    public class RibbonDismissListener implements OnItemSelectedListener {
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            final String[] values = getResources().getStringArray(R.array.ribbon_dismiss_values);
+            int temp = Integer.parseInt((String) values[pos]);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DISMISS[ribbonNumber], temp);
+        }
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Do nothing.
+        }
+    }
+
+    public class RibbonLongSwipeListener implements OnItemSelectedListener {
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            String temp = mActionCodes[pos];
+            if (temp.equals(DialogConstant.CUSTOM_APP.value())) {
+                mChoice = 2;
+                mPicker.pickShortcut();
+            } else {
+                Settings.System.putString(mContentRes, Settings.System.RIBBON_LONG_SWIPE[ribbonNumber], temp);
+            }
+        }
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Do nothing.
+        }
+    }
+
+    public class RibbonLongPressListener implements OnItemSelectedListener {
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            String temp = mActionCodes[pos];
+            if (temp.equals(DialogConstant.CUSTOM_APP.value())) {
+                mChoice = 3;
+                mPicker.pickShortcut();
+            } else {
+                Settings.System.putString(mContentRes, Settings.System.RIBBON_LONG_PRESS[ribbonNumber], temp);
+            }
+        }
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Do nothing.
+        }
+    }
+
     public class ColumnsListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             final String[] values = getResources().getStringArray(R.array.window_columns_values);
             int tempColumns = Integer.parseInt((String) values[pos]);
             Settings.System.putInt(mContentRes, Settings.System.APP_WINDOW_COLUMNS, tempColumns);
+        }
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Do nothing.
+        }
+    }
+
+    public class AnimationListener implements OnItemSelectedListener {
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            int temp = mAnimations[pos];
+            if (arrayNum < 10) {
+                Settings.System.putInt(mContentRes, Settings.System.RIBBON_ANIMATION_TYPE[ribbonNumber], temp);
+            } else {
+                Settings.System.putInt(mContentRes, Settings.System.APP_WINDOW_ANIMATION_TYPE, temp);
+            }
         }
         public void onNothingSelected(AdapterView<?> parent) {
             // Do nothing.
@@ -564,7 +739,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             final String[] values = getResources().getStringArray(R.array.ribbon_handle_location_values);
             int tempLoc = Integer.parseInt((String) values[pos]);
-            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_LOCATION, tempLoc);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_LOCATION[ribbonNumber], tempLoc);
         }
         public void onNothingSelected(AdapterView<?> parent) {
             // Do nothing.
@@ -586,6 +761,9 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.ribbon, menu);
+        mMenuRearrange = menu.findItem(R.id.rearrange);
+        mMenuReset = menu.findItem(R.id.reset);
+        mMenuToggles = menu.findItem(R.id.ribbon_toggles);
     }
 
     @Override
@@ -610,13 +788,19 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                     fragment.setResources(mContext, mContentRes, aTargets,
                         mShortTargets, mLongTargets, mCustomIcons, arrayNum);
                     fragment.show(getFragmentManager(), "rearrange");
+                } else {
+                    showHideAppsDialog();
                 }
                 return true;
             case R.id.ribbon_toggles:
                 if (arrayNum == 2 || arrayNum == 4) {
+                    allTogglesStrings.clear();
+                    for (int i = 0; i < allToggles.size(); i++) {
+                        allTogglesStrings.add(lookupToggle(allToggles.get(i)));
+                    }
                     ArrayList<String> mToggles = Settings.System.getArrayList(mContentRes, Settings.System.SWIPE_RIBBON_TOGGLES[ribbonNumber]);
                     ArrangeRibbonTogglesFragment fragment = new ArrangeRibbonTogglesFragment();
-                    fragment.setResources(mContext, mContentRes, allToggles,
+                    fragment.setResources(mContext, mContentRes, allToggles, allTogglesStrings,
                         mToggles, ribbonNumber);
                     fragment.show(getFragmentManager(), "toggles");
                 } else {
@@ -628,8 +812,18 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         }
     }
 
+    private String lookupToggle(String ident) {
+        if (sToggles != null) {
+            return sToggles.getString(ident.toUpperCase());
+        }
+        return ident;
+    }
+
     private void onTogglesUpdate(Bundle toggleInfo) {
+        allToggles.clear();
+        sToggles.clear();
         allToggles = toggleInfo.getStringArrayList("toggles");
+        sToggles = toggleInfo;
     }
 
     @Override
@@ -661,11 +855,28 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_SHOW, false);
         switch (arrayNum) {
         case 5:
+            mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_rearrange));
+            mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_reset));
+            mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_na));
             if (hasNavBarByDefault || navBarEnabled) {
                 mEnableBottomWarning.setVisibility(View.VISIBLE);
             } else {
                 mEnableBottomWarning.setVisibility(View.GONE);
             }
+            mRibbonHideImeText.setVisibility(View.VISIBLE);
+            mRibbonHideIme.setVisibility(View.VISIBLE);
+            mRibbonAnimDurText.setVisibility(View.VISIBLE);
+            mRibbonAnimDur.setVisibility(View.VISIBLE);
+            mRibbonAnimationText.setVisibility(View.VISIBLE);
+            mRibbonAnimation.setVisibility(View.VISIBLE);
+            mRibbonDismissText.setVisibility(View.VISIBLE);
+            mRibbonDismiss.setVisibility(View.VISIBLE);
+            mTogglesButtonText.setVisibility(View.GONE);
+            mTogglesButton.setVisibility(View.GONE);
+            mRibbonLongSwipeText.setVisibility(View.VISIBLE);
+            mRibbonLongSwipe.setVisibility(View.VISIBLE);
+            mRibbonLongPressText.setVisibility(View.VISIBLE);
+            mRibbonLongPress.setVisibility(View.VISIBLE);
             mEnableBottomSwitch.setVisibility(View.VISIBLE);
             mEnableBottomText.setVisibility(View.VISIBLE);
             mEnableLeftSwitch.setVisibility(View.GONE);
@@ -683,19 +894,18 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mRibbonOpacityText.setVisibility(View.VISIBLE);
             mRibbonColorText.setVisibility(View.VISIBLE);
             mRibbonColor.setVisibility(View.VISIBLE);
-            mLocationText.setVisibility(View.VISIBLE);
-            mLocation.setVisibility(View.VISIBLE);
+            mLocationText.setVisibility(View.GONE);
+            mLocation.setVisibility(View.GONE);
             mIconLocationText.setVisibility(View.GONE);
             mIconLocation.setVisibility(View.GONE);
             mTimeOutText.setVisibility(View.VISIBLE);
-            mEnableVib.setVisibility(View.VISIBLE);
-            mEnableVibSwitch.setVisibility(View.VISIBLE);
-            //mButtonContainer.setVisibility(View.VISIBLE);
+            mEnableVib.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
+            mEnableVibSwitch.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
             mButtonInstructions.setVisibility(View.VISIBLE);
             mCommandButtonsCon.setVisibility(View.VISIBLE);
             llbuttons.setVisibility(View.VISIBLE);
-            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
-            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
+            mRibbonIconVibrate.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
             mTextColorText.setVisibility(View.VISIBLE);
             mTextColor.setVisibility(View.VISIBLE);
             mIconSizeText.setVisibility(View.VISIBLE);
@@ -714,8 +924,29 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mWindowOpacity.setVisibility(View.GONE);
             mWindowColumnsText.setVisibility(View.GONE);
             mWindowColumns.setVisibility(View.GONE);
+            mWindowAnimDurText.setVisibility(View.GONE);
+            mWindowAnimDur.setVisibility(View.GONE);
+            mAppWindowSpaceText.setVisibility(View.GONE);
+            mAppWindowSpace.setVisibility(View.GONE);
             break;
         case 4:
+            mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_rearrange));
+            mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_reset));
+            mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_toggles));
+            mRibbonHideImeText.setVisibility(View.VISIBLE);
+            mRibbonHideIme.setVisibility(View.VISIBLE);
+            mTogglesButtonText.setVisibility(View.VISIBLE);
+            mTogglesButton.setVisibility(View.VISIBLE);
+            mRibbonAnimDurText.setVisibility(View.VISIBLE);
+            mRibbonAnimDur.setVisibility(View.VISIBLE);
+            mRibbonAnimationText.setVisibility(View.VISIBLE);
+            mRibbonAnimation.setVisibility(View.VISIBLE);
+            mRibbonDismissText.setVisibility(View.VISIBLE);
+            mRibbonDismiss.setVisibility(View.VISIBLE);
+            mRibbonLongSwipeText.setVisibility(View.VISIBLE);
+            mRibbonLongSwipe.setVisibility(View.VISIBLE);
+            mRibbonLongPressText.setVisibility(View.VISIBLE);
+            mRibbonLongPress.setVisibility(View.VISIBLE);
             mEnableBottomWarning.setVisibility(View.GONE);
             mEnableBottomSwitch.setVisibility(View.GONE);
             mEnableBottomText.setVisibility(View.GONE);
@@ -739,14 +970,13 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mIconLocationText.setVisibility(View.VISIBLE);
             mIconLocation.setVisibility(View.VISIBLE);
             mTimeOutText.setVisibility(View.VISIBLE);
-            mEnableVib.setVisibility(View.VISIBLE);
-            mEnableVibSwitch.setVisibility(View.VISIBLE);
-            //mButtonContainer.setVisibility(View.VISIBLE);
+            mEnableVib.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
+            mEnableVibSwitch.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
             mButtonInstructions.setVisibility(View.VISIBLE);
             mCommandButtonsCon.setVisibility(View.VISIBLE);
             llbuttons.setVisibility(View.VISIBLE);
-            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
-            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
+            mRibbonIconVibrate.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
             mTextColorText.setVisibility(View.VISIBLE);
             mTextColor.setVisibility(View.VISIBLE);
             mIconSizeText.setVisibility(View.VISIBLE);
@@ -765,8 +995,29 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mWindowOpacity.setVisibility(View.GONE);
             mWindowColumnsText.setVisibility(View.GONE);
             mWindowColumns.setVisibility(View.GONE);
+            mWindowAnimDurText.setVisibility(View.GONE);
+            mWindowAnimDur.setVisibility(View.GONE);
+            mAppWindowSpaceText.setVisibility(View.GONE);
+            mAppWindowSpace.setVisibility(View.GONE);
             break;
         case 2:
+            mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_rearrange));
+            mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_reset));
+            mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_toggles));
+            mRibbonHideImeText.setVisibility(View.VISIBLE);
+            mRibbonHideIme.setVisibility(View.VISIBLE);
+            mTogglesButtonText.setVisibility(View.VISIBLE);
+            mTogglesButton.setVisibility(View.VISIBLE);
+            mRibbonAnimDurText.setVisibility(View.VISIBLE);
+            mRibbonAnimDur.setVisibility(View.VISIBLE);
+            mRibbonAnimationText.setVisibility(View.VISIBLE);
+            mRibbonAnimation.setVisibility(View.VISIBLE);
+            mRibbonDismissText.setVisibility(View.VISIBLE);
+            mRibbonDismiss.setVisibility(View.VISIBLE);
+            mRibbonLongSwipeText.setVisibility(View.VISIBLE);
+            mRibbonLongSwipe.setVisibility(View.VISIBLE);
+            mRibbonLongPressText.setVisibility(View.VISIBLE);
+            mRibbonLongPress.setVisibility(View.VISIBLE);
             mEnableBottomWarning.setVisibility(View.GONE);
             mEnableBottomSwitch.setVisibility(View.GONE);
             mEnableBottomText.setVisibility(View.GONE);
@@ -790,14 +1041,13 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mIconLocationText.setVisibility(View.VISIBLE);
             mIconLocation.setVisibility(View.VISIBLE);
             mTimeOutText.setVisibility(View.VISIBLE);
-            mEnableVib.setVisibility(View.VISIBLE);
-            mEnableVibSwitch.setVisibility(View.VISIBLE);
-            //mButtonContainer.setVisibility(View.VISIBLE);
+            mEnableVib.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
+            mEnableVibSwitch.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
             mButtonInstructions.setVisibility(View.VISIBLE);
             mCommandButtonsCon.setVisibility(View.VISIBLE);
             llbuttons.setVisibility(View.VISIBLE);
-            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
-            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
+            mRibbonIconVibrate.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
             mTextColorText.setVisibility(View.VISIBLE);
             mTextColor.setVisibility(View.VISIBLE);
             mIconSizeText.setVisibility(View.VISIBLE);
@@ -816,8 +1066,29 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mWindowOpacity.setVisibility(View.GONE);
             mWindowColumnsText.setVisibility(View.GONE);
             mWindowColumns.setVisibility(View.GONE);
+            mWindowAnimDurText.setVisibility(View.GONE);
+            mWindowAnimDur.setVisibility(View.GONE);
+            mAppWindowSpaceText.setVisibility(View.GONE);
+            mAppWindowSpace.setVisibility(View.GONE);
             break;
         case 10 :
+            mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_hide));
+            mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_apps));
+            mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_na));
+            mRibbonHideImeText.setVisibility(View.GONE);
+            mRibbonHideIme.setVisibility(View.GONE);
+            mTogglesButtonText.setVisibility(View.GONE);
+            mTogglesButton.setVisibility(View.GONE);
+            mRibbonAnimDurText.setVisibility(View.GONE);
+            mRibbonAnimDur.setVisibility(View.GONE);
+            mRibbonAnimationText.setVisibility(View.VISIBLE);
+            mRibbonAnimation.setVisibility(View.VISIBLE);
+            mRibbonDismissText.setVisibility(View.GONE);
+            mRibbonDismiss.setVisibility(View.GONE);
+            mRibbonLongSwipeText.setVisibility(View.GONE);
+            mRibbonLongSwipe.setVisibility(View.GONE);
+            mRibbonLongPressText.setVisibility(View.GONE);
+            mRibbonLongPress.setVisibility(View.GONE);
             mEnableBottomWarning.setVisibility(View.GONE);
             mEnableBottomSwitch.setVisibility(View.GONE);
             mEnableBottomText.setVisibility(View.GONE);
@@ -867,8 +1138,31 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mWindowOpacity.setVisibility(View.VISIBLE);
             mWindowColumnsText.setVisibility(View.VISIBLE);
             mWindowColumns.setVisibility(View.VISIBLE);
+            mWindowAnimDurText.setVisibility(View.VISIBLE);
+            mWindowAnimDur.setVisibility(View.VISIBLE);
+            mAppWindowSpaceText.setVisibility(View.VISIBLE);
+            mAppWindowSpace.setVisibility(View.VISIBLE);
             break;
         default :
+            if (mMenuRearrange != null) {
+                mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_rearrange));
+                mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_reset));
+                mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_na));
+            }
+            mRibbonHideImeText.setVisibility(View.GONE);
+            mRibbonHideIme.setVisibility(View.GONE);
+            mTogglesButtonText.setVisibility(View.GONE);
+            mTogglesButton.setVisibility(View.GONE);
+            mRibbonAnimDurText.setVisibility(View.GONE);
+            mRibbonAnimDur.setVisibility(View.GONE);
+            mRibbonAnimationText.setVisibility(View.GONE);
+            mRibbonAnimation.setVisibility(View.GONE);
+            mRibbonDismissText.setVisibility(View.GONE);
+            mRibbonDismiss.setVisibility(View.GONE);
+            mRibbonLongSwipeText.setVisibility(View.GONE);
+            mRibbonLongSwipe.setVisibility(View.GONE);
+            mRibbonLongPressText.setVisibility(View.GONE);
+            mRibbonLongPress.setVisibility(View.GONE);
             mEnableBottomWarning.setVisibility(View.GONE);
             mEnableBottomSwitch.setVisibility(View.GONE);
             mEnableBottomText.setVisibility(View.GONE);
@@ -894,12 +1188,11 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mEnableVib.setVisibility(View.GONE);
             mEnableVibSwitch.setVisibility(View.GONE);
             mTimeOutText.setVisibility(View.GONE);
-            //mButtonContainer.setVisibility(View.VISIBLE);
             mButtonInstructions.setVisibility(View.VISIBLE);
             mCommandButtonsCon.setVisibility(View.VISIBLE);
             llbuttons.setVisibility(View.VISIBLE);
-            mRibbonIconVibrateText.setVisibility(View.VISIBLE);
-            mRibbonIconVibrate.setVisibility(View.VISIBLE);
+            mRibbonIconVibrateText.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
+            mRibbonIconVibrate.setVisibility(hasVibration ? View.VISIBLE : View.GONE);
             mTextColorText.setVisibility(View.VISIBLE);
             mTextColor.setVisibility(View.VISIBLE);
             mIconSizeText.setVisibility(View.VISIBLE);
@@ -918,6 +1211,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mWindowOpacity.setVisibility(View.GONE);
             mWindowColumnsText.setVisibility(View.GONE);
             mWindowColumns.setVisibility(View.GONE);
+            mWindowAnimDurText.setVisibility(View.GONE);
+            mWindowAnimDur.setVisibility(View.GONE);
+            mAppWindowSpaceText.setVisibility(View.GONE);
+            mAppWindowSpace.setVisibility(View.GONE);
             break;
         }
 
@@ -931,6 +1228,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SIZE[arrayNum], 0);
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_TEXT_COLOR[arrayNum], -1);
             Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum], "");
+        } else {
+            Settings.System.putString(mContentRes, Settings.System.APP_WINDOW_HIDDEN_APPS, "");
         }
     }
 
@@ -944,13 +1243,9 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mShortTargets = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum]);
             mLongTargets = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum]);
             mCustomIcons = Settings.System.getArrayList(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum]);
-            if (mShortTargets.size() < 1) {
-                mShortTargets.add("**null**");
-                mLongTargets.add("**null**");
-                mCustomIcons.add("**null**");
-            }
 
             mRibbonIconSpace.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], 5));
+            mRibbonAnimDur.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_ANIMATION_DURATION[ribbonNumber], 50));
             mEnableTextSwitch.setChecked(Settings.System.getBoolean(mContentRes,
                     Settings.System.ENABLE_RIBBON_TEXT[arrayNum], true));
             textColor = Settings.System.getInt(mContext.getContentResolver(),
@@ -977,12 +1272,36 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mTimeOut.setSelection(Arrays.asList(hideValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
                     Settings.System.RIBBON_HIDE_TIMEOUT[ribbonNumber], 5000))));
 
+            final String[] dismissValues = getResources().getStringArray(R.array.ribbon_dismiss_values);
+            mRibbonDismiss.setSelection(Arrays.asList(dismissValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
+                    Settings.System.RIBBON_DISMISS[ribbonNumber], 1))));
+
+            mRibbonLongSwipe.setSelection(Arrays.asList(mActionCodes).indexOf(Settings.System.getString(mContentRes,
+                    Settings.System.RIBBON_LONG_SWIPE[ribbonNumber])));
+
+            mRibbonLongPress.setSelection(Arrays.asList(mActionCodes).indexOf(Settings.System.getString(mContentRes,
+                    Settings.System.RIBBON_LONG_PRESS[ribbonNumber])));
+
+            mTogglesButton.setChecked(Settings.System.getBoolean(mContentRes,
+                    Settings.System.RIBBON_TOGGLE_BUTTON_LOCATION[ribbonNumber], false));
+
+            mRibbonHideIme.setChecked(Settings.System.getBoolean(mContentRes,
+                    Settings.System.RIBBON_HIDE_IME[ribbonNumber], false));
+
+            mRibbonAnimation.setSelection(mAnimations[Settings.System.getInt(mContentRes,
+                    Settings.System.RIBBON_ANIMATION_TYPE[ribbonNumber], 0)]);
+
+            final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
             if (ribbonNumber < 2) {
-                final String[] locValues = getResources().getStringArray(R.array.ribbon_handle_location_values);
                 mIconLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes,
                     Settings.System.RIBBON_ICON_LOCATION[ribbonNumber], 0))));
             }
+            mLocation.setSelection(Arrays.asList(locValues).indexOf(String.valueOf(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_LOCATION[ribbonNumber], 0))));
             mRibbonOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY[ribbonNumber], 100));
+            mDragHandleOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY[ribbonNumber], 0));
+            mDragHandleWidth.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT[ribbonNumber], 30));
+            mDragHandleHeight.setProgress(Settings.System.getInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT[ribbonNumber], 50));
+            mEnableVibSwitch.setChecked(Settings.System.getBoolean(mContentRes, Settings.System.SWIPE_RIBBON_VIBRATE[ribbonNumber], false));
         } else {
             updateSwitches();
             windowColor = Settings.System.getInt(mContentRes,
@@ -991,7 +1310,11 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             windowTextColor = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.APP_WINDOW_COLOR_TEXT, Color.CYAN);
             mTextWindowColor.setBackgroundColor(windowTextColor);
+            mAppWindowSpace.setProgress(Settings.System.getInt(mContentRes, Settings.System.APP_WINDOW_SPACING, 5));
             mWindowOpacity.setProgress(Settings.System.getInt(mContentRes, Settings.System.APP_WINDOW_OPACITY, 100));
+            mWindowAnimDur.setProgress(Settings.System.getInt(mContentRes, Settings.System.APP_WINDOW_ANIMATION_DURATION, 75));
+            mRibbonAnimation.setSelection(mAnimations[Settings.System.getInt(mContentRes,
+                    Settings.System.APP_WINDOW_ANIMATION_TYPE, 0)]);
         }
     }
 
@@ -1069,13 +1392,13 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         DialogConstant mFromString = funcFromString(uri);
         switch (mFromString) {
         case SHORT_ACTION:
-            longPressChoice = false;
+            mChoice = 0;
             createDialog(
                 getResources().getString(R.string.choose_action_title),
                 mActions, mActionCodes);
             break;
         case LONG_ACTION:
-            longPressChoice = true;
+            mChoice = 1;
             createDialog(
                 getResources().getString(R.string.choose_action_title),
                 mActions, mActionCodes);
@@ -1111,7 +1434,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             mCustomIcons.add(mTargetNum + 1, "**null**");
             break;
         case AWESOME_ACTION:
-            if (longPressChoice) {
+            if (mChoice == 1) {
                 mLongTargets.set(mTargetNum, uri);
             } else {
                 mShortTargets.set(mTargetNum, uri);
@@ -1149,12 +1472,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 String tempIcons = Settings.System.getString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[tempInt]);
                 Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_SHORT[arrayNum], tempShort);
                 Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_LONG[arrayNum], tempLong);
-                try {
-                int tempSpace = Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[tempInt]);
+                int tempSpace = Settings.System.getInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[tempInt], 5);
                 Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], tempSpace);
-                } catch (SettingNotFoundException e) {
-                // compiler says there might be an error here.... no sure how though.
-                }
                 Settings.System.putString(mContentRes, Settings.System.RIBBON_TARGETS_ICONS[arrayNum], tempIcons);
                 setupButtons();
                 refreshButtons();
@@ -1194,9 +1513,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                     setupButtons();
                     break;
                 case R.id.add_button:
-                    mShortTargets.add("**null**");
-                    mLongTargets.add("**null**");
-                    mCustomIcons.add("**null**");
+                    showMultiSelectDialog();
                     break;
                 case R.id.save_button:
                     saveButtons();
@@ -1211,21 +1528,26 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         }
     };
 
-
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         if (seekBar == mDragHandleOpacity) {
-            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY, progress);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_OPACITY[ribbonNumber], progress);
         } else if (seekBar == mRibbonOpacity) {
             Settings.System.putInt(mContentRes, Settings.System.SWIPE_RIBBON_OPACITY[ribbonNumber], progress);
         } else if (seekBar == mWindowOpacity) {
             Settings.System.putInt(mContentRes, Settings.System.APP_WINDOW_OPACITY, progress);
         } else if (seekBar == mDragHandleWidth) {
-            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT, progress);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_WEIGHT[ribbonNumber], progress);
         } else if (seekBar == mDragHandleHeight) {
-            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT, progress);
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_DRAG_HANDLE_HEIGHT[ribbonNumber], progress);
         } else if (seekBar == mRibbonIconSpace) {
             Settings.System.putInt(mContentRes, Settings.System.RIBBON_ICON_SPACE[arrayNum], progress);
+        } else if (seekBar == mRibbonAnimDur) {
+            Settings.System.putInt(mContentRes, Settings.System.RIBBON_ANIMATION_DURATION[ribbonNumber], progress);
+        } else if (seekBar == mWindowAnimDur) {
+            Settings.System.putInt(mContentRes, Settings.System.APP_WINDOW_ANIMATION_DURATION, progress);
+        } else if (seekBar == mAppWindowSpace) {
+            Settings.System.putInt(mContentRes, Settings.System.APP_WINDOW_SPACING, progress);
         }
     }
 
@@ -1237,12 +1559,184 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     public void onStopTrackingTouch(SeekBar seekBar) {
     }
 
+    private void showMultiSelectDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        mGoodName.clear();
+        mSelectedApps.clear();
+        mApps.clear();
+        ArrayList<String> apps = new ArrayList<String>();
+        PackageManager pm = mContext.getPackageManager();
+        final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        List<ResolveInfo> packs = pm.queryIntentActivities(mainIntent, 0);
+        for (int i = 0; i < packs.size(); i++) {
+            ResolveInfo p = packs.get(i);
+            ActivityInfo activity = p.activityInfo;
+            ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+            intent.setComponent(name);
+            if (intent != null) {
+                apps.add(intent.toUri(0));
+            }
+        }
+
+        for (int i = 0; i < apps.size(); i++) {
+            mGoodName.add(NavBarHelpers.getProperSummary(mContext, apps.get(i)));
+        }
+
+        for (int i = 0; i < mGoodName.size(); i++) {
+            mApps.add(mGoodName.get(i));
+        }
+
+        Collections.sort(mApps, String.CASE_INSENSITIVE_ORDER);
+        for (int i = 0; i < mApps.size(); i++) {
+            int j = mGoodName.indexOf(mApps.get(i));
+            mApps.set(i, apps.get(j));
+        }
+        Collections.sort(mGoodName, String.CASE_INSENSITIVE_ORDER);
+
+       // mActions;
+       // mActionCodes;
+        for (int i = (mActions.length - 3); i > -1; i--) {
+            mApps.add(0, mActionCodes[i]);
+            mGoodName.add(0, mActions[i]);
+        }
+
+        // build arrays for dialog
+        final String itemStrings[] = new String[mGoodName.size()];
+        final boolean checkedItems[] = new boolean[mGoodName.size()];
+
+        // set strings
+        for (int i = 0; i < itemStrings.length; i++) {
+            itemStrings[i] = mGoodName.get(i);
+        }
+
+        // check hidden apps
+        for (int i = 0; i < checkedItems.length; i++) {
+            checkedItems[i] = false;
+        }
+
+        builder.setTitle(R.string.multi_select_title);
+        builder.setCancelable(true);
+        builder.setOnDismissListener(new OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                dialog.dismiss();
+                for (int i = 0; i < mSelectedApps.size(); i++) {
+                    mShortTargets.add(mSelectedApps.get(i));
+                    mLongTargets.add("**null**");
+                    mCustomIcons.add("**null**");
+                }
+                refreshButtons();
+            }
+        });
+        builder.setPositiveButton(R.string.toggles_display_close, null);
+        builder.setMultiChoiceItems(itemStrings, checkedItems,
+                new OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        String toggleKey = mApps.get(which);
+                        if (isChecked)
+                            mSelectedApps.add(toggleKey);
+                        else
+                            mSelectedApps.remove(toggleKey);
+                    }
+                });
+        AlertDialog d = builder.create();
+        d.show();
+    }
+
+    private void showHideAppsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        mGoodName.clear();
+        mHiddenApps.clear();
+        mHiddenApps = Settings.System.getArrayList(
+            mContentRes, Settings.System.APP_WINDOW_HIDDEN_APPS);
+        ArrayList<String> apps = new ArrayList<String>();
+        PackageManager pm = mContext.getPackageManager();
+        final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        List<ResolveInfo> packs = pm.queryIntentActivities(mainIntent, 0);
+        for (int i = 0; i < packs.size(); i++) {
+            ResolveInfo p = packs.get(i);
+            ActivityInfo activity = p.activityInfo;
+            ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+            intent.setComponent(name);
+            if (intent != null) {
+                apps.add(intent.toUri(0));
+            }
+        }
+
+        for (int i = 0; i < apps.size(); i++) {
+            mGoodName.add(NavBarHelpers.getProperSummary(mContext, apps.get(i)));
+        }
+        Collections.sort(mGoodName, String.CASE_INSENSITIVE_ORDER);
+
+
+        // build arrays for dialog
+        final String itemStrings[] = new String[mGoodName.size()];
+        final boolean checkedItems[] = new boolean[mGoodName.size()];
+
+        // set strings
+        for (int i = 0; i < itemStrings.length; i++) {
+            itemStrings[i] = mGoodName.get(i);
+        }
+
+        // check hidden apps
+        for (int i = 0; i < checkedItems.length; i++) {
+            checkedItems[i] = mHiddenApps.contains(itemStrings[i]);
+        }
+
+        builder.setTitle(R.string.window_app_hide_title);
+        builder.setCancelable(true);
+        builder.setOnDismissListener(new OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                dialog.dismiss();
+                Settings.System.putArrayList(mContentRes, Settings.System.APP_WINDOW_HIDDEN_APPS,
+                    mHiddenApps);
+            }
+        });
+        builder.setPositiveButton(R.string.toggles_display_close, null);
+        builder.setMultiChoiceItems(itemStrings, checkedItems,
+                new OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        String toggleKey = mGoodName.get(which);
+                        if (isChecked)
+                            mHiddenApps.add(toggleKey);
+                        else
+                            mHiddenApps.remove(toggleKey);
+                    }
+                });
+        AlertDialog d = builder.create();
+        d.show();
+    }
+
     @Override
     public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
-        if (longPressChoice) {
-            mLongTargets.set(mTargetNum, uri);
-        } else {
-            mShortTargets.set(mTargetNum, uri);
+        switch (mChoice) {
+            case 0:
+                mShortTargets.set(mTargetNum, uri);
+                break;
+            case 1:
+                mLongTargets.set(mTargetNum, uri);
+                break;
+            case 2:
+                Settings.System.putString(mContentRes,
+                    Settings.System.RIBBON_LONG_SWIPE[ribbonNumber], uri);
+                break;
+            case 3:
+                Settings.System.putString(mContentRes,
+                    Settings.System.RIBBON_LONG_PRESS[ribbonNumber], uri);
+                break;
         }
         refreshButtons();
     }

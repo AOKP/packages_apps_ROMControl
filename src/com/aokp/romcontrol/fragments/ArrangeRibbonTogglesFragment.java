@@ -57,6 +57,8 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
     int arrayNum;
 
     ArrayList<String> allToggles = new ArrayList<String>();
+    ArrayList<String> allTogglesSorted = new ArrayList<String>();
+    ArrayList<String> allTogglesStrings = new ArrayList<String>();
     ArrayList<String> sToggles = new ArrayList<String>();
 
     ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
@@ -75,10 +77,11 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
     }
 
     public void setResources(Context context, ContentResolver res,
-             ArrayList<String> aList, ArrayList<String> sList, int num) {
+             ArrayList<String> aList, ArrayList<String> bList, ArrayList<String> sList, int num) {
         mContext = context;
         mContentRes = res;
         allToggles = aList;
+        allTogglesStrings = bList;
         sToggles = sList;
         arrayNum = num;
     }
@@ -213,17 +216,27 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
     private void showToggleSelectionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        Collections.sort(allToggles);
+        for (int i = 0; i < allTogglesStrings.size(); i++) {
+            allTogglesSorted.add(allTogglesStrings.get(i));
+        }
+        Collections.sort(allTogglesSorted, String.CASE_INSENSITIVE_ORDER);
+
+        for (int i = 0; i < allTogglesSorted.size(); i++) {
+            int j = allTogglesStrings.indexOf(allTogglesSorted.get(i));
+            allTogglesSorted.set(i, allToggles.get(j));
+        }
+
+        Collections.sort(allTogglesStrings, String.CASE_INSENSITIVE_ORDER);
 
         // build arrays for dialog
-        final String items[] = new String[allToggles.size()];
-        final String itemStrings[] = new String[allToggles.size()];
-        final boolean checkedItems[] = new boolean[allToggles.size()];
+        final String items[] = new String[allTogglesSorted.size()];
+        final String itemStrings[] = new String[allTogglesSorted.size()];
+        final boolean checkedItems[] = new boolean[allTogglesSorted.size()];
 
         // set strings
         for (int i = 0; i < items.length; i++) {
-            items[i] = allToggles.get(i);
-            itemStrings[i] = allToggles.get(i).toUpperCase();
+            items[i] = allTogglesSorted.get(i);
+            itemStrings[i] = allTogglesStrings.get(i);
         }
 
         // check current toggles
@@ -246,7 +259,7 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
                 new OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                        String toggleKey = allToggles.get(which);
+                        String toggleKey = allTogglesSorted.get(which);
                         if (isChecked)
                             sToggles.add(toggleKey);
                         else
@@ -275,7 +288,7 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         setUseRightSideHandle(isChecked);
         ArrangeRibbonTogglesFragment f = new ArrangeRibbonTogglesFragment();
-        f.setResources(mContext, mContentRes, allToggles, sToggles, arrayNum);
+        f.setResources(mContext, mContentRes, allToggles, allTogglesStrings, sToggles, arrayNum);
         dismiss();
         f.show(getFragmentManager(), getTag());
     }

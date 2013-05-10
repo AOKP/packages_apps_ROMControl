@@ -21,8 +21,8 @@ import android.util.TypedValue;
 
 import java.net.URISyntaxException;
 
-
 import static com.android.internal.util.aokp.AwesomeConstants.*;
+import com.android.internal.util.aokp.AwesomeConstants;
 import com.android.internal.util.aokp.NavBarHelpers;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
@@ -34,6 +34,9 @@ public class SPenGestures extends AOKPPreferenceFragment implements
     private ShortcutPickerHelper mPicker;
     private Preference mPreference;
     private String mString;
+
+    private String[] mActions;
+    private String[] mActionCodes;
 
     ListPreference mLeft;
     ListPreference mRight;
@@ -55,6 +58,14 @@ public class SPenGestures extends AOKPPreferenceFragment implements
 
         mPicker = new ShortcutPickerHelper(this, this);
 
+        // Get NavBar Actions
+        mActionCodes = NavBarHelpers.getNavBarActions();
+        mActions = new String[mActionCodes.length];
+        int actionqty = mActions.length;
+        for (int i = 0; i < actionqty; i++) {
+            mActions[i] = AwesomeConstants.getProperName(mContext, mActionCodes[i]);
+        }
+
         mEnableSPen = (CheckBoxPreference) findPreference("enable_spen");
         mEnableSPen.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.ENABLE_SPEN_ACTIONS, false));
@@ -66,26 +77,38 @@ public class SPenGestures extends AOKPPreferenceFragment implements
         mLeft = (ListPreference) findPreference("spen_left");
         mLeft.setOnPreferenceChangeListener(this);
         mLeft.setSummary(getProperSummary(mLeft));
+        mLeft.setEntries(mActions);
+        mLeft.setEntryValues(mActionCodes);
 
         mRight = (ListPreference) findPreference("spen_right");
         mRight.setOnPreferenceChangeListener(this);
         mRight.setSummary(getProperSummary(mRight));
+        mRight.setEntries(mActions);
+        mRight.setEntryValues(mActionCodes);
 
         mUp = (ListPreference) findPreference("spen_up");
         mUp.setOnPreferenceChangeListener(this);
         mUp.setSummary(getProperSummary(mUp));
+        mUp.setEntries(mActions);
+        mUp.setEntryValues(mActionCodes);
 
         mDown = (ListPreference) findPreference("spen_down");
         mDown.setOnPreferenceChangeListener(this);
         mDown.setSummary(getProperSummary(mDown));
+        mDown.setEntries(mActions);
+        mDown.setEntryValues(mActionCodes);
 
         mDouble = (ListPreference) findPreference("spen_double");
         mDouble.setOnPreferenceChangeListener(this);
         mDouble.setSummary(getProperSummary(mDouble));
+        mDouble.setEntries(mActions);
+        mDouble.setEntryValues(mActionCodes);
 
         mLong = (ListPreference) findPreference("spen_long");
         mLong.setOnPreferenceChangeListener(this);
         mLong.setSummary(getProperSummary(mLong));
+        mLong.setEntries(mActions);
+        mLong.setEntryValues(mActionCodes);
 
     }
 

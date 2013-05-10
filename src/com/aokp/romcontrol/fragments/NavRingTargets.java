@@ -46,6 +46,7 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import static com.android.internal.util.aokp.AwesomeConstants.*;
+import com.android.internal.util.aokp.AwesomeConstants;
 import com.android.internal.util.aokp.NavRingHelpers;
 import com.android.internal.widget.multiwaveview.GlowPadView;
 import com.android.internal.widget.multiwaveview.TargetDrawable;
@@ -83,6 +84,9 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     private String[] longActivities = new String[5];
     private String[] customIcons = new String[5];
     private ViewGroup mContainer;
+
+    private String[] mActions;
+    private String[] mActionCodes;
 
     private int mTargetIndex = 0;
     private int startPosOffset;
@@ -129,6 +133,14 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
         setHasOptionsMenu(true);
         mContext = getActivity();
         cr = mContext.getContentResolver();
+
+        // Get NavRing Actions
+        mActionCodes = NavRingHelpers.getNavRingActions();
+        mActions = new String[mActionCodes.length];
+        int actionqty = mActions.length;
+        for (int i = 0; i < actionqty; i++) {
+            mActions[i] = AwesomeConstants.getProperName(mContext, mActionCodes[i]);
+        }
 
         mPicker = new ShortcutPickerHelper(this, this);
         boolean tabletui = Settings.System.getInt(cr, Settings.System.CURRENT_UI_MODE, 0) == 1;
@@ -381,7 +393,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
                 break;
             case 1:
                 longActivities[mTargetIndex] = uri;
-                Toast.makeText(getActivity(), getProperSummary(uri) + "  "
+                Toast.makeText(getActivity(), AwesomeConstants.getProperName(mContext, uri) + "  "
                      + getResources().getString(R.string.action_long_save),
                                Toast.LENGTH_LONG).show();
                 break;
@@ -465,16 +477,14 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
             mString = Settings.System.SYSTEMUI_NAVRING[mTargetIndex];
             createDialog(
                 getResources().getString(R.string.choose_action_short_title),
-                getResources().getStringArray(R.array.navring_dialog_entries),
-                getResources().getStringArray(R.array.navring_dialog_values));
+                mActions, mActionCodes);
             break;
         case LONG_ACTION:
             mTarget = 1;
             mString = Settings.System.SYSTEMUI_NAVRING_LONG[mTargetIndex];
             createDialog(
                 getResources().getString(R.string.choose_action_long_title),
-                getResources().getStringArray(R.array.navring_dialog_entries),
-                getResources().getStringArray(R.array.navring_dialog_values));
+                mActions, mActionCodes);
             break;
         case ICON_ACTION:
             int width = 85;
@@ -500,7 +510,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
                     break;
                 case 1:
                     longActivities[mTargetIndex] = uri;
-                    Toast.makeText(getActivity(), getProperSummary(uri)
+                    Toast.makeText(getActivity(), AwesomeConstants.getProperName(mContext, uri)
                          + "  " + getResources().getString(R.string.action_long_save),
                              Toast.LENGTH_LONG).show();
                     break;
@@ -518,14 +528,14 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
         mTargetIndex = intentList.get(target);
         if (mBoolLongPress) {
             final String[] stringArray = mContext.getResources().getStringArray(R.array.navring_long_dialog_entries);
-            stringArray[0] = stringArray[0] + "  :  " + getProperSummary(targetActivities[mTargetIndex]);
-            stringArray[1] = stringArray[1] + "  :  " + getProperSummary(longActivities[mTargetIndex]);
+            stringArray[0] = stringArray[0] + "  :  " + AwesomeConstants.getProperName(mContext, targetActivities[mTargetIndex]);
+            stringArray[1] = stringArray[1] + "  :  " + AwesomeConstants.getProperName(mContext, longActivities[mTargetIndex]);
             createDialog(
                 getResources().getString(R.string.choose_action_title), stringArray,
                 getResources().getStringArray(R.array.navring_long_dialog_values));
         } else {
             final String[] stringArray = mContext.getResources().getStringArray(R.array.navring_short_dialog_entries);
-            stringArray[0] = stringArray[0] + "  :  " + getProperSummary(targetActivities[mTargetIndex]);
+            stringArray[0] = stringArray[0] + "  :  " + AwesomeConstants.getProperName(mContext, targetActivities[mTargetIndex]);
             createDialog(
                 getResources().getString(R.string.choose_action_title), stringArray,
                 getResources().getStringArray(R.array.navring_short_dialog_values));
@@ -581,46 +591,6 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     public boolean isScreenPortrait() {
         return getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
     }
-
-    private String getProperSummary(String uri) {
-
-        if (TextUtils.isEmpty(uri) || AwesomeConstant.ACTION_NULL.equals(uri)) {
-                return getResources().getString(R.string.none);
-        }
-
-        String newSummary = mContext.getResources().getString(R.string.none);
-        AwesomeConstant stringEnum = fromString(uri);
-        switch (stringEnum) {
-        case ACTION_IME:
-                newSummary = getResources().getString(R.string.open_ime_switcher);
-                break;
-        case ACTION_VIB:
-                newSummary = getResources().getString(R.string.ring_vib);
-                break;
-        case ACTION_SILENT:
-                newSummary = getResources().getString(R.string.ring_silent);
-                break;
-        case ACTION_SILENT_VIB:
-                newSummary = getResources().getString(R.string.ring_vib_silent);
-                break;
-        case ACTION_KILL:
-                newSummary = getResources().getString(R.string.kill_app);
-                break;
-        case ACTION_LAST_APP:
-                newSummary = getResources().getString(R.string.lastapp);
-                break;
-        case ACTION_POWER:
-                newSummary = getResources().getString(R.string.screen_off);
-                break;
-        case ACTION_ASSIST:
-                newSummary = getResources().getString(R.string.google_now);
-                break;
-        case ACTION_APP:
-                newSummary = mPicker.getFriendlyNameForUri(uri);
-                break;
-        }
-        return newSummary;
-   }
 
     private Uri getTempFileUri() {
         return Uri.fromFile(new File(Environment.getExternalStorageDirectory(),

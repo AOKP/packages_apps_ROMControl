@@ -750,17 +750,27 @@
         <item>300</item>
         <item>320</item>
         <item>340</item>
+        <item>360</item>
+        <item>380</item>
+        <item>400</item>
+        <item>420</item>
+        <item>440</item>
+        <item>460</item>
+        <item>480</item>
+        <item>500</item>
         <item>@string/custom_density</item>
     </string-array>
     <string-array name="lcd_density_stock_entries" translatable="false">
         <item>160 -- mdpi</item>
         <item>240 -- hdpi</item>
         <item>320 -- xhdpi</item>
+        <item>480 -- xxhdpi</item>
     </string-array>
     <string-array name="lcd_density_stock_values" translatable="false">
         <item>160</item>
         <item>240</item>
         <item>320</item>
+        <item>480</item>
     </string-array>
     <string-array name="lockscreen_dialog_entries" translatable="false">
         <item>@string/none</item>

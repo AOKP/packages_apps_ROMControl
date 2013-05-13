@@ -22,7 +22,7 @@ include $(BUILD_PACKAGE)
 # include java jar used by CardsUI
 include $(CLEAR_VARS)
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := nineoldandroids-2.4.0:../../../external/jbirdvegas/mGerrit/libs/nineoldandroids-2.4.0.jar
-LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := volley_lib:../../../external/jbirdvegas/mGerrit/libs/volley.jar
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES += volley_lib:../../../external/jbirdvegas/mGerrit/libs/volley.jar
 include $(BUILD_MULTI_PREBUILT)
 # Use the folloing include to make our test apk.
 include $(call all-makefiles-under,$(LOCAL_PATH))

@@ -139,8 +139,8 @@
     <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP Website</string>
     <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
-    <string name="aokp_review_title">AOKP Code Review</string>
-    <string name="aokp_review_summary">AOKP\'s Gerrit Review instance for submitting and testing patches</string>
+    <string name="aokp_review_title">mGerrit</string>
+    <string name="aokp_review_summary">View AOKP\'s and AOSP\'s Gerrit Review instances quickly and easily</string>
     <string name="aokp_irc_title">Join us on IRC</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">About AOKP</string>

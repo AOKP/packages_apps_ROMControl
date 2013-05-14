@@ -490,14 +490,6 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
                     button.getLongAction());
             Settings.System.putString(mContentRes, Settings.System.CUSTOM_TOGGLE_ICONS[i],
                     button.getIconURI());
-            // if user sets no click-action borrow longclick text
-            if ("**null**".equals(button.getClickAction())) {
-                Settings.System.putString(mContentRes, Settings.System.CUSTOM_TOGGLE_TEXT[i],
-                        button.getLongName());
-            } else {
-                Settings.System.putString(mContentRes, Settings.System.CUSTOM_TOGGLE_TEXT[i],
-                        button.getClickName());
-            }
         }
     }
 

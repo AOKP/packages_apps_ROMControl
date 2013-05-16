@@ -229,7 +229,7 @@
   <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v případě, že je vypnut automatický jas.</string>
   <string name="user_mode_ui">Rozhraní</string>
   <string name="user_mode_ui_summary">Jak se bude zobrazovat navigační a stavová lišta</string>
-  <string name="phone_mode_ui">Telefon - Navigační lišta na strně v režimu na šířku</string>
+  <string name="phone_mode_ui">Telefon - Navigační lišta na straně v režimu na šířku</string>
   <string name="tablet_mode_ui">Tablet - Kombinovaná lišta s navigací i stavy</string>
   <string name="phablet_mode_ui">Phablet - Navigační lišta zůstává dole i v režimu na šířku</string>
   <string name="transparency_dialog_title">Nastavení průhlednosti</string>

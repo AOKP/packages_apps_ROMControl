@@ -125,8 +125,8 @@
   <string name="aokp">Android Open Kang Project</string>
   <string name="aokp_website_title">Web AOKP</string>
   <string name="aokp_website_summary">www.aokp.co - Všechny nejnovější verze k nalezení zde.</string>
-  <string name="aokp_review_title">Revize AOKP kódu</string>
-  <string name="aokp_review_summary">Gerrit server AOKP pro odesílání a testování patchů</string>
+  <string name="aokp_review_title">mGerrit</string>
+  <string name="aokp_review_summary">Rychle a jednoduše zobrazit AOKP a AOSP instance gerrit serverů</string>
   <string name="aokp_irc_title">Připojit se na IRC</string>
   <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
   <string name="about_aokp">O AOKP</string>
@@ -957,4 +957,38 @@
   <!--haptic feedback on toggle press-->
   <string name="toggles_enable_haptic_feedback_title">Zapnout hmatovou odezvu</string>
   <string name="toggles_enable_haptic_feedback_summary">Použít hmatovou odezvu při stisku přepínačů</string>
+  <!-- dynamic changelog -->
+  <string name="github_organization">AOKP</string>
+  <string name="dynamic_changelog_title">Dynamický seznam změn</string>
+  <string name="dynamic_changelog_summary">Interaktivní seznam změn načítaný z githubu</string>
+  <string name="dynamic_changelog_cat_title">Seznam změn</string>
+  <string name="changelog_menu_projects_title">Zobrazit výpis projektů</string>
+  <string name="changelog_menu_commitlog_title">Zobrazit nejnovější změny</string>
+  <string name="button_close">Zavřít</string>
+  <string name="button_webview">Webové zobrazení</string>
+  <string name="commit_extended_info_title">Rozšířené informace o změně</string>
+  <string name="commit_message">Zpráva u změny</string>
+  <string name="commit_date">Datum změny</string>
+  <string name="commit_sha">SHA-1 hash změny</string>
+  <string name="next_commits_page_title">Více\u2026</string>
+  <string name="next_commits_page_summary">\u2026zobrazit dalších 30 změn</string>
+  <string name="loading_commits">Načítání změn\u2026</string>
+  <string name="commits_title">Změny</string>
+  <string name="loading_projects">Načítání seznamu projektů\u2026</string>
+  <string name="org_projects">Projekty organizace</string>
+  <string name="author_title">Autor</string>
+  <string name="commit_committer_title">Committer</string>
+  <string name="sort_commits_title">Řazení</string>
+  <string name="sort_commits_message">Změny jsou nyní řazeny podle repositáře, opravdu je řadit podle data bez ohledu na repositář, ve kterém existují?</string>
+  <string name="button_sort">Řadit podle data</string>
+  <string name="button_donot_sort">Neřadit</string>
+  <string name="unknown_author">Neznámý autor</string>
+  <string name="unknown_committer">Neznámý committer</string>
+  <string name="toast_commitlog_info" formatted="false">Nalezeno %d změn během %d sekund</string>
+  <string name="changelog_favorite_cat_title">Oblíbené projekty</string>
+  <string name="changelog_add_to_favs_list">Přidat</string>
+  <string name="changelog_view_commits">Zobrazit změny</string>
+  <string name="add_favs_or_view">Přidat do seznamu oblíbených nebo zobrazených změn?</string>
+  <string name="remove_favs_or_view">Smazat ze seznamu oblíbených nebo zobrazených změn?</string>
+  <string name="changelog_remove_from_favs_list">Smazat</string>
 </resources>

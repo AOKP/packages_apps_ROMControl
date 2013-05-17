@@ -138,10 +138,9 @@
     <string name="devs">開発者</string>
     <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKPウェブサイト</string>
-    <string name="aokp_website_summary">"http://aokp.co/
-こちらからAOKPの最新情報が確認できます。"</string>
-    <string name="aokp_review_title">AOKPコードレビュー</string>
-    <string name="aokp_review_summary">パッチを提出・テストするためのAOKP Gerrit Review</string>
+    <string name="aokp_website_summary">http://aokp.co/\n最新情報を確認する</string>
+    <string name="aokp_review_title">mGerrit</string>
+    <string name="aokp_review_summary">AOKPとAOSPのGerritレビューインスタンスを参照する</string>
     <string name="aokp_irc_title">IRCに参加</string>
     <string name="aokp_irc_summary">\#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">AOKPについて</string>
@@ -1026,5 +1025,38 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <!-- haptic feedback on toggle press -->
     <string name="toggles_enable_haptic_feedback_title">振動フィードバック</string>
     <string name="toggles_enable_haptic_feedback_summary">トグルをタップした時の振動フィードバックを有効にする</string>
+    <!-- dynamic changelog -->
+    <string name="dynamic_changelog_title">変更履歴</string>
+    <string name="dynamic_changelog_summary">githubから変更履歴を参照する</string>
+    <string name="dynamic_changelog_cat_title">変更履歴</string>
+    <string name="changelog_menu_projects_title">プロジェクトリストを参照</string>
+    <string name="changelog_menu_commitlog_title">最近のコミットを参照</string>
+    <string name="button_close">閉じる</string>
+    <string name="button_webview">ブラウザ</string>
+    <string name="commit_extended_info_title">コミット情報</string>
+    <string name="commit_message">コミットメッセージ</string>
+    <string name="commit_date">日付</string>
+    <string name="commit_sha">SHA-1ハッシュ</string>
+    <string name="next_commits_page_title">次へ\u2026</string>
+    <string name="next_commits_page_summary">\u2026次の30コミットを表示する</string>
+    <string name="loading_commits">コミットロード中\u2026</string>
+    <string name="commits_title">コミット</string>
+    <string name="loading_projects">プロジェクトリストロード中\u2026</string>
+    <string name="org_projects">すべてのプロジェクト</string>
+    <string name="author_title">作者</string>
+    <string name="commit_committer_title">コミット</string>
+    <string name="sort_commits_title">ソート</string>
+    <string name="sort_commits_message">コミットはレポジトリ順に並んでいます。レポジトリを気にせず日付順でソートしますか？</string>
+    <string name="button_sort">日付でソート</string>
+    <string name="button_donot_sort">ソートしない</string>
+    <string name="unknown_author">不明な作者</string>
+    <string name="unknown_committer">不明なコミッター</string>
+    <string name="toast_commitlog_info" formatted="false">%d件のコミットを%d秒で見つけました</string>
+    <string name="changelog_favorite_cat_title">お気に入りのプロジェクト</string>
+    <string name="changelog_add_to_favs_list">追加</string>
+    <string name="changelog_view_commits">コミットを参照</string>
+    <string name="add_favs_or_view">お気に入りに追加しますか？それともコミットを参照しますか？</string>
+    <string name="remove_favs_or_view">お気に入りから削除しますか？それともコミットを参照しますか？</string>
+    <string name="changelog_remove_from_favs_list">削除</string>
 
 </resources>

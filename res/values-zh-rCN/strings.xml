@@ -72,6 +72,8 @@
     <string name="menu_nav_bar_reset">重置导航栏</string>
     <string name="menu_ribbon_reset">重置操作区</string>
     <string name="menu_ribbon_rearrange">排序操作区</string>
+    <string name="menu_ribbon_toggles">设置开关</string>
+    <string name="menu_ribbon_toggles_error">开关只在使用左右滑动操作区时有效。</string>
     <string name="menu_user_interface_reset">重置背景壁纸</string>
     <string name="menu_lockscreens_reset">重置锁屏壁纸</string>
 
@@ -140,6 +142,7 @@
     <string name="aokp_review_summary">AOKP 的 Gerrit ，用于评审提交代码和测试补丁</string>
     <string name="aokp_irc_title">加入我们的 IRC 聊天室</string>
     <string name="about_aokp">关于 AOKP</string>
+    <string name="about_aokp_summary">@null</string>
 
     <!-- General UI 常规界面 -->
     <string name="bootani_cat">开机动画</string>
@@ -521,6 +524,7 @@
     <string name="ribbon_swipe_left">左侧滑动操作区</string>
     <string name="ribbon_swipe_right">右侧滑动操作区</string>
     <string name="ribbon_swipe_bottom">底部滑动操作区</string>
+    <string name="app_window">应用程序窗口</string>
     <string name="clone_title">选择复制操作区</string>
     <string name="icon_size_normal">大</string>
     <string name="icon_size_20">中</string>
@@ -539,6 +543,10 @@
     <string name="ribbon_insert">添加按钮</string>
     <string name="ribbon_handle_location_title">滑动区位置</string>
     <string name="ribbon_icon_location_title">图标位置</string>
+    <string name="window_text_color_title">窗口文字颜色</string>
+    <string name="window_color_title">窗口颜色</string>
+    <string name="window_opacity_title">窗口不透明度</string>
+    <string name="window_columns_title">窗口列数</string>
     <string name="center">中</string>
     <string name="top">上</string>
     <string name="bottom">下</string>
@@ -980,5 +988,39 @@
     <!-- haptic feedback on toggle press 开关触感反馈 -->
     <string name="toggles_enable_haptic_feedback_title">启用触感反馈</string>
     <string name="toggles_enable_haptic_feedback_summary">使用开关时将有触感反馈</string>
+
+    <!-- dynamic changelog 动态更新日志 -->
+    <string name="dynamic_changelog_title">动态更新日志</string>
+    <string name="dynamic_changelog_summary">从GitHub拉取交互式更新日志</string>
+    <string name="dynamic_changelog_cat_title">更新日志</string>
+    <string name="changelog_menu_projects_title">查看项目列表</string>
+    <string name="changelog_menu_commitlog_title">查看近期提交</string>
+    <string name="button_close">关闭</string>
+    <string name="button_webview">网页查看</string>
+    <string name="commit_extended_info_title">展开提交详情</string>
+    <string name="commit_message">提交信息</string>
+    <string name="commit_date">提交日期</string>
+    <string name="commit_sha">提交 SHA-1 校验码</string>
+    <string name="next_commits_page_title">更多…</string>
+    <string name="next_commits_page_summary">…显示后 30 个提交</string>
+    <string name="loading_commits">读取提交中…</string>
+    <string name="commits_title">提交</string>
+    <string name="loading_projects">读取项目列表中…</string>
+    <string name="org_projects">项目组织</string>
+    <string name="author_title">作者</string>
+    <string name="commit_committer_title">提交者</string>
+    <string name="sort_commits_title">排序</string>
+    <string name="sort_commits_message">提交按照版本库默认顺序排序，你希望按照日期分类无论是否存在无论哪个版本库？</string>
+    <string name="button_sort">按日期排序</string>
+    <string name="button_donot_sort">不排序</string>
+    <string name="unknown_author">未知作者</string>
+    <string name="unknown_committer">未知提交者</string>
+    <string name="toast_commitlog_info" formatted="false">找到 %d 提交，用时 %d 秒</string>
+    <string name="changelog_favorite_cat_title">收藏的项目</string>
+    <string name="changelog_add_to_favs_list">添加</string>
+    <string name="changelog_view_commits">查看提交</string>
+    <string name="add_favs_or_view">添加到收藏列表或查看提交？</string>
+    <string name="remove_favs_or_view">从收藏列表移除或查看提交？</string>
+    <string name="changelog_remove_from_favs_list">移除</string>
 
 </resources>

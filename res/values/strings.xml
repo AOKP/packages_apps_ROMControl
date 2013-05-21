@@ -256,6 +256,7 @@
     <string name="transparency_dialog_match_keyguard_alpha">Match lockscreen alpha</string>
     <string name="transparency_dialog_transparency">Homescreen alpha</string>
     <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
+    <string name="transparency_dialog_lockscreen">Lockscreen</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>

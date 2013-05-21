@@ -126,6 +126,36 @@
                 android:text="@string/transparency_dialog_match_keyguard_alpha"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lockscreen_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="5dip"
+                android:background="#FF545454" />
+
+            <TextView
+                android:id="@+id/lockscreen_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:text="@string/transparency_dialog_lockscreen"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <com.aokp.romcontrol.widgets.AlphaSeekBar
+                android:id="@+id/lockscreen_alpha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="10dip" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

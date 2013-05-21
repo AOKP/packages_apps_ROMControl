@@ -972,12 +972,13 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         private static final int STATUSBAR_KG_ALPHA = 1;
         private static final int NAVBAR_ALPHA = 2;
         private static final int NAVBAR_KG_ALPHA = 3;
+        private static final int LOCKSCREEN_ALPHA = 4;
         boolean linkTransparencies = true;
 
         CheckBox mLinkCheckBox, mMatchStatusbarKeyguard, mMatchNavbarKeyguard;
         ViewGroup mNavigationBarGroup;
         TextView mSbLabel;
-        AlphaSeekBar mSeekBars[] = new AlphaSeekBar[4];
+        AlphaSeekBar mSeekBars[] = new AlphaSeekBar[5];
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -1002,11 +1003,15 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     .findViewById(R.id.navbar_keyguard_alpha);
             mMatchStatusbarKeyguard = (CheckBox) layout.findViewById(R.id.statusbar_match_keyguard);
             mMatchNavbarKeyguard = (CheckBox) layout.findViewById(R.id.navbar_match_keyguard);
+            mSeekBars[LOCKSCREEN_ALPHA] = (AlphaSeekBar) layout.findViewById(R.id.lockscreen_alpha);
 
             try {
                 // restore any saved settings
                 int alphas[] = new int[2];
                 ContentResolver resolver = getActivity().getContentResolver();
+                int lockscreen_alpha = Settings.System.getInt(resolver,
+                        Settings.System.LOCKSCREEN_ALPHA_CONFIG, KEYGUARD_ALPHA);
+                mSeekBars[LOCKSCREEN_ALPHA].setCurrentAlpha(lockscreen_alpha);
                 String sbConfig = Settings.System.getString(resolver,
                         Settings.System.STATUS_BAR_ALPHA_CONFIG);
                 if (sbConfig != null) {
@@ -1015,7 +1020,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     alphas[1] = Integer.parseInt(split[1]);
                     mSeekBars[STATUSBAR_ALPHA].setCurrentAlpha(alphas[0]);
                     mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
-                    mMatchStatusbarKeyguard.setChecked(alphas[1] == KEYGUARD_ALPHA);
+                    mMatchStatusbarKeyguard.setChecked(alphas[1] == lockscreen_alpha);
                     if (linkTransparencies) {
                         mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(alphas[0]);
                         mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
@@ -1028,7 +1033,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                             alphas[1] = Integer.parseInt(split[1]);
                             mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(alphas[0]);
                             mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
-                            mMatchNavbarKeyguard.setChecked(alphas[1] == KEYGUARD_ALPHA);
+                            mMatchNavbarKeyguard.setChecked(alphas[1] == lockscreen_alpha);
                         }
                     }
                 }
@@ -1055,6 +1060,18 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    Settings.System.putInt(mContentResolver,
+                            Settings.System.LOCKSCREEN_ALPHA_CONFIG,
+                            mSeekBars[LOCKSCREEN_ALPHA].getCurrentAlpha());
+                    // update keyguard alpha
+                    if (!mSeekBars[STATUSBAR_KG_ALPHA].isEnabled()) {
+                        mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(
+                                mSeekBars[LOCKSCREEN_ALPHA].getCurrentAlpha());
+                    }
+                    if (!mSeekBars[NAVBAR_KG_ALPHA].isEnabled()) {
+                        mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(
+                                mSeekBars[LOCKSCREEN_ALPHA].getCurrentAlpha());
+                    }
                     if (linkTransparencies) {
                         String config = mSeekBars[STATUSBAR_ALPHA].getCurrentAlpha() + ";" +
                                 mSeekBars[STATUSBAR_KG_ALPHA].getCurrentAlpha();
@@ -1073,6 +1090,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                         Settings.System.putString(mContentResolver,
                                 Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, nbConfig);
                     }
+
                 }
             });
             return builder.create();
@@ -1083,6 +1101,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_ALPHA_CONFIG, null);
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_ALPHA_CONFIG, null);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALPHA_CONFIG, KEYGUARD_ALPHA);
         }
 
         private void updateToggleState() {
@@ -1099,12 +1119,14 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             mSeekBars[NAVBAR_KG_ALPHA]
                     .setEnabled(!mMatchNavbarKeyguard.isChecked());
 
-            // disable keyguard alpha if needed
+            // update keyguard alpha
+            int lockscreen_alpha = Settings.System.getInt(getActivity().getContentResolver(),
+                        Settings.System.LOCKSCREEN_ALPHA_CONFIG, KEYGUARD_ALPHA);
             if (!mSeekBars[STATUSBAR_KG_ALPHA].isEnabled()) {
-                mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(KEYGUARD_ALPHA);
+                mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(lockscreen_alpha);
             }
             if (!mSeekBars[NAVBAR_KG_ALPHA].isEnabled()) {
-                mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(KEYGUARD_ALPHA);
+                mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(lockscreen_alpha);
             }
         }
 

@@ -932,19 +932,45 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     }
 
     private void updateSettings() {
+        boolean screenshotRibbon = false;
+        boolean favoriteRibbon = false;
+        boolean customRibbon = false;
         ContentResolver resolver = mContext.getContentResolver();
         String currentToggles = Settings.System.getString(resolver, Settings.System.QUICK_TOGGLES);
+        ArrayList<String> leftSwipeToggles = Settings.System.getArrayList(mContentRes,
+                Settings.System.SWIPE_RIBBON_TOGGLES[0]);
+        ArrayList<String> rightSwipeToggles = Settings.System.getArrayList(mContentRes,
+                Settings.System.SWIPE_RIBBON_TOGGLES[1]);
+        ArrayList<String> bottomSwipeToggles = Settings.System.getArrayList(mContentRes,
+                Settings.System.SWIPE_RIBBON_TOGGLES[2]);
+        ArrayList<String> swipeToggles = new ArrayList<String>();
+        swipeToggles.addAll(leftSwipeToggles);
+        swipeToggles.addAll(rightSwipeToggles);
+        swipeToggles.addAll(bottomSwipeToggles);
+
+        for (int i = 0; i < swipeToggles.size(); i++) {
+            if (swipeToggles.get(i).equals("FAVCONTACT")) {
+                favoriteRibbon = true;
+            }
+            if (swipeToggles.get(i).equals("SCREENSHOT")) {
+                screenshotRibbon = true;
+            }
+            if (swipeToggles.get(i).equals("CUSTOM")) {
+                customRibbon = true;
+            }
+        }
+
         if (currentToggles == null)
             currentToggles = "";
         if (currentToggles != null) {
             if (mFavContact != null) {
-                mFavContact.setEnabled(currentToggles.contains("FAVCONTACT"));
+                mFavContact.setEnabled(currentToggles.contains("FAVCONTACT") || favoriteRibbon);
             }
             if (mScreenshotDelay != null) {
-                mScreenshotDelay.setEnabled(currentToggles.contains("SCREENSHOT"));
+                mScreenshotDelay.setEnabled(currentToggles.contains("SCREENSHOT") || screenshotRibbon);
             }
             if (mCustomCat != null && mCustomButtons != null) {
-                boolean enabled = currentToggles.contains("CUSTOM");
+                boolean enabled = currentToggles.contains("CUSTOM") || customRibbon;
                 mCustomCat.setEnabled(enabled);
                 mCustomButtons.setEnabled(enabled);
                 for (int i = 0; i < 5; i++) {

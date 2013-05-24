@@ -11,7 +11,6 @@ import android.preference.PreferenceScreen;
 
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.github.GithubViewer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,11 +63,10 @@ public class About extends AOKPPreferenceFragment {
         } else if (preference == mIrcUrl) {
             launchUrl("http://webchat.freenode.net/?channels=teamkang");
         } else if (preference == mDynamicChangelog) {
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            GithubViewer changelogFragment = new GithubViewer();
-            transaction.addToBackStack(null);
-            transaction.replace(this.getId(), changelogFragment);
-            transaction.commit();
+            Intent mGerritChangelog = new Intent(getActivity().getApplicationContext(),
+                    com.jbirdvegas.mgerrit.AOKPChangelog.class);
+            mGerritChangelog.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(mGerritChangelog);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

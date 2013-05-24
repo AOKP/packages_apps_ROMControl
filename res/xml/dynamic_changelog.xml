@@ -16,7 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory 
+    <PreferenceCategory
         android:key="dynamic_changelog"
         android:title="@string/dynamic_changelog_cat_title" />
 </PreferenceScreen>

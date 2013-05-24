@@ -1048,36 +1048,5 @@
 
     <!-- dynamic changelog -->
     <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
-    <string name="dynamic_changelog_summary">Interactive changelog pulled live from github</string>
-    <string name="dynamic_changelog_cat_title">Changelog</string>
-    <string name="changelog_menu_projects_title">View Projects List</string>
-    <string name="changelog_menu_commitlog_title">View Most Recent Commits</string>
-    <string name="button_close">Close</string>
-    <string name="button_webview">WebView</string>
-    <string name="commit_extended_info_title">Extended Commit Info</string>
-    <string name="commit_message">Commit Message</string>
-    <string name="commit_date">Commit Date</string>
-    <string name="commit_sha">Commit SHA-1 Hash</string>
-    <string name="next_commits_page_title">More\u2026</string>
-    <string name="next_commits_page_summary">\u2026display next 30 commits</string>
-    <string name="loading_commits">Loading commits\u2026</string>
-    <string name="commits_title">Commits</string>
-    <string name="loading_projects">Loading projects list\u2026</string>
-    <string name="org_projects">Organization projects</string>
-    <string name="author_title">Author</string>
-    <string name="commit_committer_title">Committer</string>
-    <string name="sort_commits_title">Sort</string>
-    <string name="sort_commits_message">Commits are now in order by repository, would you like to sort them by date regardless of which repository in which they exist?</string>
-    <string name="button_sort">Sort by date</string>
-    <string name="button_donot_sort">Do not sort</string>
-    <string name="unknown_author">Unknown Author</string>
-    <string name="unknown_committer">Unknown Committer</string>
-    <string name="toast_commitlog_info" formatted="false">Found %d commits in %d seconds</string>
-    <string name="changelog_favorite_cat_title">Favorited Projects</string>
-    <string name="changelog_add_to_favs_list">Add</string>
-    <string name="changelog_view_commits">View commits</string>
-    <string name="add_favs_or_view">Add to favorites list or view commits?</string>
-    <string name="remove_favs_or_view">Remove from favorites list or view commits?</string>
-    <string name="changelog_remove_from_favs_list">Remove</string>
-
+    <string name="dynamic_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
 </resources>

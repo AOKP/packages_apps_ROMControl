@@ -13,6 +13,11 @@
         android:summary="@string/toggles_style_summary"
         android:title="@string/toggles_style_title" />
 
+    <CheckBoxPreference
+        android:key="collapse_shade_all"
+        android:summary="@string/toggle_collapse_generic_summary"
+        android:title="@string/toggle_collapse_generic_title" />
+
     <ListPreference
         android:entries="@array/toggles_per_row_entries"
         android:entryValues="@array/toggles_per_row_values"

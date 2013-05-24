@@ -66,8 +66,11 @@
   <!--Menu Strings-->
   <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
   <string name="menu_ribbon_reset">Obnovit ribbon</string>
+  <string name="menu_ribbon_apps">Obnovit aplikace</string>
   <string name="menu_ribbon_rearrange">Přeuspořádat ribbon</string>
+  <string name="menu_ribbon_hide">Skrýt aplikace</string>
   <string name="menu_ribbon_toggles">Nastavit přepínače</string>
+  <string name="menu_ribbon_na">Není k dispozici</string>
   <string name="menu_ribbon_toggles_error">Přepínače jsou k dispozici pouze u výsuvného ribbnou zleva a zprava.</string>
   <string name="menu_user_interface_reset">Obnovit pozadí notifikací</string>
   <string name="menu_lockscreens_reset">Obnovit pozadí zamčené obrazovky</string>
@@ -240,6 +243,7 @@
   <string name="transparency_dialog_match_keyguard_alpha">Přizpůsobit průhlednosti zamčené obrazovky</string>
   <string name="transparency_dialog_transparency">Průhlednost domovské obrazovky</string>
   <string name="transparency_dialog_transparency_keyguard">Průhlednost zamknuté obrazovky</string>
+  <string name="transparency_dialog_lockscreen">Zamčená obrazovka</string>
   <!--LCD Density-->
   <string name="lcd_density_title">Hustota displeje</string>
   <string name="lcd_density_summary">neznámá</string>
@@ -515,14 +519,20 @@
   <string name="navring_target_longpress_text">Stav dlouhého stisku</string>
   <!--Ribbon-->
   <string name="ribbon_dialog_arrange_title">Rozložení ribbonu</string>
-  <string name="ribbon_instructions">Stisknutím ikony zvolit akce nebo smazat</string>
+  <string name="ribbon_chooser_instructions">Zvolit ribbon k nastavení.</string>
+  <string name="ribbon_instructions">Stisknutím ikon zvolit akce nebo smazat.\nPro více možností je nutné stisknout menu.</string>
   <string name="ribbon_targets_cat">Možnosti ribbonu</string>
   <string name="enable_ribbon_text_title">Zobrazit název aplikace</string>
   <string name="enable_ribbon_vibrate_title">Vibrovat při stisku posuvné plochy</string>
   <string name="enable_ribbon_text_summary">Zapnout zobrazení názvu aplikace pod ikonou</string>
   <string name="ribbon_icon_vibrate_title">Vibrovat při kliknutí na cíl</string>
-  <string name="ribbon_icon_space_title">Mezery mezi ikonami ribbonu</string>
+  <string name="ribbon_icon_space_title">Rozestup mezi ikonami ribbonu</string>
+  <string name="app_window_space_title">Vertikální rozestup mezi ikonami</string>
   <string name="ribbon_icon_size_title">Velikost ikony</string>
+  <string name="ribbon_dismiss_title">Akce skrytí ribbonu</string>
+  <string name="ribbon_animation_duration_title">Délka animace</string>
+  <string name="ribbon_long_swipe_title">Dlouhé potažení na oblasti vysunutí</string>
+  <string name="ribbon_long_press_title">Dlouhý stisk na oblasti vysunutí</string>
   <string name="ribbon_icon_size_summary">Zvolit velikost ikon</string>
   <string name="ribbon_lockscreen">Ribbon na zamčené obrazovce</string>
   <string name="ribbon_notifications">Ribbon v notifikacích</string>
@@ -553,9 +563,17 @@
   <string name="window_color_title">Barva okna</string>
   <string name="window_opacity_title">Viditelnost okna</string>
   <string name="window_columns_title">Sloupce okna</string>
+  <string name="window_app_hide_title">Zvolit aplikace ke skrytí</string>
   <string name="center">Na střed</string>
   <string name="top">Nahoru</string>
   <string name="bottom">Dolů</string>
+  <string name="never">Nikdy</string>
+  <string name="always">Vždy</string>
+  <string name="not_bar">Bez akcí navigační lišty</string>
+  <string name="multi_select_title">Zvolit položky k přidání</string>
+  <string name="ribbon_animation_type_title">Styl animace</string>
+  <string name="ribbon_toggles_button_title">Tlačítko přepínačů vespod</string>
+  <string name="ribbon_hide_ime_title">Skrýt oblast vysunutí klávesice.</string>
   <!--LED-->
   <string name="led_on">LED svítí</string>
   <string name="led_time_on">Doba po kterou LED svítí</string>

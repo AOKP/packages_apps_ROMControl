@@ -83,6 +83,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private View mLockscreenOptions;
     private boolean mIsLandscape;
 
+    private Switch mGlowTorchSwitch;
     private Switch mLongPressStatus;
     private Switch mLockBatterySwitch;
     private Switch mLockRotateSwitch;
@@ -95,6 +96,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private Switch mLockUnlimitedWidgetsSwitch;
     private Button mLockTextColorButton;
 
+    private TextView mGlowTorchText;
     private TextView mLongPressText;
     private TextView mLockTextColorText;
     private TextView mLockBatteryText;
@@ -343,6 +345,24 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     }
                 });
 
+        mGlowTorchText = ((TextView) getActivity()
+                .findViewById(R.id.lockscreen_glow_torch_id));
+        mGlowTorchText.setOnClickListener(mGlowTorchTextListener);
+        mGlowTorchSwitch = (Switch) getActivity().findViewById(R.id.glow_torch_switch);
+        mGlowTorchSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Settings.System.putBoolean(cr, Settings.System.LOCKSCREEN_GLOW_TORCH,
+                        checked);
+                updateDrawables();
+            }
+        });
+
+        if (!hasTorch) {
+            mGlowTorchText.setVisibility(View.GONE);
+            mGlowTorchSwitch.setVisibility(View.GONE);
+        }
+
         mLongPressText = ((TextView) getActivity()
                 .findViewById(R.id.lockscreen_target_longpress_id));
         mLongPressText.setOnClickListener(mLongPressTextListener);
@@ -364,6 +384,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             createMessage(
                     getResources().getString(R.string.lockscreen_text_color_title),
                     getResources().getString(R.string.lockscreen_text_color_summary));
+        }
+    };
+
+    private TextView.OnClickListener mGlowTorchTextListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(R.string.lockscreen_glow_torch_text),
+                    getResources().getString(R.string.lockscreen_glow_torch_summary));
         }
     };
 
@@ -466,6 +494,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 Settings.System.LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS, false));
         mLockMinimizeChallangeSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_MINIMIZE_LOCKSCREEN_CHALLENGE, false));
+        mGlowTorchSwitch.setChecked(Settings.System.getBoolean(cr,
+                Settings.System.LOCKSCREEN_GLOW_TORCH, false));
         mLockCarouselSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_USE_WIDGET_CONTAINER_CAROUSEL, false));
     }
@@ -873,6 +903,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private void updateVisiblity(boolean visible) {
         if (visible) {
+            mGlowTorchText.setVisibility(View.VISIBLE);
+            mGlowTorchSwitch.setVisibility(View.VISIBLE);
             mLongPressStatus.setVisibility(View.VISIBLE);
             mLockBatterySwitch.setVisibility(View.VISIBLE);
             mLockRotateSwitch.setVisibility(View.VISIBLE);
@@ -897,6 +929,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             mLockTextColorButton.setVisibility(View.VISIBLE);
             mHelperText.setText(getResources().getString(R.string.lockscreen_options_info));
         } else {
+            mGlowTorchText.setVisibility(View.GONE);
+            mGlowTorchSwitch.setVisibility(View.GONE);
             mLongPressStatus.setVisibility(View.GONE);
             mLockBatterySwitch.setVisibility(View.GONE);
             mLockRotateSwitch.setVisibility(View.GONE);

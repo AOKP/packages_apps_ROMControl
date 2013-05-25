@@ -71,8 +71,11 @@
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">ナビゲーションバーをリセット</string>
     <string name="menu_ribbon_reset">リボンをリセット</string>
+    <string name="menu_ribbon_apps">アプリをリセット</string>
     <string name="menu_ribbon_rearrange">アイコンの並び替え</string>
+    <string name="menu_ribbon_hide">アプリを隠す</string>
     <string name="menu_ribbon_toggles">トグル設定</string>
+    <string name="menu_ribbon_na">利用不可</string>
     <string name="menu_ribbon_toggles_error">トグルは左右のスワイプリボンでしか使えません</string>
     <string name="menu_user_interface_reset">通知パネルの壁紙をリセット</string>
     <string name="menu_lockscreens_reset">ロック画面の壁紙をリセット</string>
@@ -256,6 +259,7 @@
     <string name="transparency_dialog_match_keyguard_alpha">ロック画面の不透明度を合わせる</string>
     <string name="transparency_dialog_transparency">ホーム画面での不透明度</string>
     <string name="transparency_dialog_transparency_keyguard">ロック画面での不透明度</string>
+    <string name="transparency_dialog_lockscreen">ロック画面</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">画面密度の変更</string>
@@ -541,6 +545,7 @@
 
    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">リボンレイアウト</string>
+    <string name="ribbon_chooser_instructions">設定するリボンを選択してください</string>
     <string name="ribbon_instructions">アイコンをタップして動作を設定してください</string>
     <string name="ribbon_targets_cat">リボンオプション</string>
     <string name="enable_ribbon_text_title">ラベルを表示</string>
@@ -548,7 +553,12 @@
     <string name="enable_ribbon_text_summary">アイコンの下にラベルを表示する</string>
     <string name="ribbon_icon_vibrate_title">アイコンタップで振動</string>
     <string name="ribbon_icon_space_title">リボンのアイコン間隔</string>
+    <string name="app_window_space_title">アイコンの上下間隔</string>
     <string name="ribbon_icon_size_title">アイコンサイズ</string>
+    <string name="ribbon_dismiss_title">リボンを閉じる動作</string>
+    <string name="ribbon_animation_duration_title">アニメーション速度</string>
+    <string name="ribbon_long_swipe_title">スワイプ領域ロングスワイプ</string>
+    <string name="ribbon_long_press_title">スワイプ領域長押し</string>
     <string name="ribbon_icon_size_summary">アイコンの大きさを設定する</string>
     <string name="ribbon_lockscreen">ロック画面リボン</string>
     <string name="ribbon_notifications">通知リボン</string>
@@ -579,9 +589,17 @@
     <string name="window_color_title">ウィンドウ背景色</string>
     <string name="window_opacity_title">ウィンドウ不透明度</string>
     <string name="window_columns_title">ウィンドウカラム</string>
+    <string name="window_app_hide_title">隠すアプリを選択</string>
     <string name="center">中央</string>
     <string name="top">上</string>
     <string name="bottom">下</string>
+    <string name="never">閉じない</string>
+    <string name="always">すべて</string>
+    <string name="not_bar">ナビバー動作以外</string>
+    <string name="multi_select_title">追加するターゲットを選択</string>
+    <string name="ribbon_animation_type_title">アニメーションスタイル</string>
+    <string name="ribbon_toggles_button_title">トグルボタンを下に配置</string>
+    <string name="ribbon_hide_ime_title">文字入力時にスワイプ無効</string>
 
     <!-- LED -->
     <string name="led_on">LEDオン</string>

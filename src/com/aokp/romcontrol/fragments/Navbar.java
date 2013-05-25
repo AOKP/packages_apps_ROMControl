@@ -272,10 +272,9 @@ public class Navbar extends AOKPPreferenceFragment implements
             mNavigationBarHeightLandscape.setTitle(R.string.system_bar_height_landscape_title);
             mNavigationBarHeightLandscape.setSummary(R.string.system_bar_height_landscape_summary);
             pg.removePreference(mNavigationBarWidth);
-            mNavBarHideEnable.setEnabled(false);
-            mDragHandleOpacity.setEnabled(false);
-            mDragHandleWidth.setEnabled(false);
-            mNavBarHideTimeout.setEnabled(false);
+            mNavBarHideEnable.setTitle(R.string.systembar_hide_enable_title);
+            mNavBarHideTimeout.setTitle(R.string.title_systembar_timeout);
+            mNavBarHideTimeout.setSummary(R.string.summary_systembar_timeout);
         } else { // Phones&Phablets don't have SystemBar
             pg.removePreference(mWidthPort);
             pg.removePreference(mWidthLand);
@@ -580,11 +579,9 @@ public class Navbar extends AOKPPreferenceFragment implements
 
     public void refreshSettings() {
         refreshButtons();
-        if (!isTabletUI(mContext)) {
-            mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
-            mDragHandleWidth.setEnabled(mNavBarHideEnable.isChecked());
-            mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());
-        }
+        mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
+        mDragHandleWidth.setEnabled(mNavBarHideEnable.isChecked());
+        mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());
     }
 
     private Uri getTempFileUri() {

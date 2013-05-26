@@ -216,5 +216,11 @@
             aokp:nameDev="championswimmer"
             aokp:twitterHandle="championswimmer"
             aokp:githubLink="@string/github_championswimmer" />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="kecinzer"
+            aokp:nameDev="Petr Reznicek"
+            aokp:twitterHandle="kecinzer"
+            aokp:githubLink="@string/github_kecinzer" />
     </PreferenceCategory>
 </PreferenceScreen>

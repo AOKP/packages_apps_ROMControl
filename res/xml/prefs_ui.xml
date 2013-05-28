@@ -132,6 +132,13 @@
             android:entryValues="@array/values_system_power_crt_mode"
             android:dependency="system_power_crt_screen_off" />
 
+        <ListPreference
+            android:key="lockscreen_background"
+            android:dialogTitle="@string/lockscreen_custom_background_title"
+            android:title="@string/lockscreen_custom_background_title"
+            android:entries="@array/lockscreen_background_entries"
+            android:entryValues="@array/lockscreen_background_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

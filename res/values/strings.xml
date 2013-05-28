@@ -1149,4 +1149,13 @@
     <!-- dynamic changelog -->
     <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
     <string name="dynamic_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
+
+    <!-- Custom lock screen background -->
+    <string name="lockscreen_custom_background_title">Lockscreen background</string>
+    <string name="lockscreen_custom_background_dialog_title">Choose color</string>
+    <string name="lockscreen_background_result_successful">Background changed successfully</string>
+    <string name="lockscreen_background_result_not_successful">Background could not be changed</string>
+    <string name="lockscreen_background_color_fill">Color fill</string>
+    <string name="lockscreen_background_custom_image">Custom image</string>
+    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 </resources>

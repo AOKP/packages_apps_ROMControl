@@ -478,10 +478,13 @@
   <string name="statusbar_hide_summary">Umožňuje kompletně skrýt stavovou lištu</string>
   <string name="navigation_bar_alpha_title">Viditelnost stavové a navigační lišty</string>
   <string name="navbar_hide_enable_title">Zapnout skrytou navigační lištu</string>
+  <string name="systembar_hide_enable_title">Zapnout skrytou stavovou lištu</string>
   <string name="drag_handle_opacity_title">Viditelnost symbolu vysunutí</string>
   <string name="drag_handle_width_title">Šírka symbolu vysunutí</string>
-  <string name="title_navbar_timeout">Prodleva skrytí</string>
+  <string name="title_navbar_timeout">Prodleva skrytí navigační lišty</string>
+  <string name="title_systembar_timeout">Prodleva skrytí stavové lišty</string>
   <string name="summary_navbar_timeout">Doba, po které dojde ke skrytí okna navigační lišty</string>
+  <string name="summary_systembar_timeout">Doba, po které dojde ke skrytí stavové roletky</string>
   <string name="hide_navbar_timeout_never">Nikdy</string>
   <string name="hide_navbar_timeout_1500">1,5 sekundy</string>
   <string name="hide_navbar_timeout_3000">3 sekundy</string>
@@ -542,9 +545,9 @@
   <string name="ribbon_swipe_bottom">Zespodu výsuvný ribbon</string>
   <string name="app_window">Aplikační okno</string>
   <string name="clone_title">Zvolit ribbon ke zkopírování</string>
-  <string name="icon_size_normal">Normální</string>
+  <string name="icon_size_normal">Velká</string>
   <string name="icon_size_20">Střední</string>
-  <string name="icon_size_15">Malý</string>
+  <string name="icon_size_15">Malá</string>
   <string name="ribbon_left_enable_title">Zapnout posunutí zleva</string>
   <string name="ribbon_right_enable_title">Zapnout posunutí zprava</string>
   <string name="ribbon_bottom_enable_title">Zapnout posunutí zespoda</string>
@@ -684,6 +687,9 @@
   <string name="lockscreen_targets_title">Položky zamčené obrazovky</string>
   <string name="lockscreen_targets_summary">Zobrazit nebo změnit položky na zamčené obrazovce</string>
   <string name="lockscreen_target_longpress_text">Dlouhhý stisk</string>
+  <string name="lockscreen_target_longpress_text">Stav dlouhého stisku</string>
+  <string name="lockscreen_glow_torch_text">Svítilna v odemykacím kruhu</string>
+  <string name="lockscreen_glow_torch_summary">Dlouhým stiskem a následným držením středu odemykacího kruhu dojde k zapnutí svítilny. Uvolněním prstu dojde k vypnutí.</string>
   <string name="lockscreen_camera">Fotoaparát</string>
   <string name="lockscreen_unlock">Odemknout</string>
   <string name="save_error">Položky nelze uložit! Je nutné nastavit nejméně jednu položku!</string>

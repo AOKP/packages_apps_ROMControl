@@ -213,7 +213,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mCustomCat = (PreferenceGroup) findPreference(PREF_CUSTOM_CAT);
         mCustomButtons = (PreferenceGroup) findPreference(PREF_CUSTOM_BUTTONS);
 
-        if (isSW600DPScreen(mContext) || isTablet(mContext)) {
+        if (isSW600DPScreen(mContext) || isTabletUI(mContext)) {
             getPreferenceScreen().removePreference(mFastToggle);
             getPreferenceScreen().removePreference(mChooseFastToggleSide);
         }

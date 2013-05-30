@@ -323,7 +323,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     }
                 });
 
-        if (isTablet(mContext) || isPhablet(mContext)) {
+        if (isSW600DPScreen(mContext)) {
             Settings.System.putBoolean(cr,
                 Settings.System.LOCKSCREEN_MINIMIZE_LOCKSCREEN_CHALLENGE, false);
             mLockMinimizeChallangeText.setVisibility(View.GONE);

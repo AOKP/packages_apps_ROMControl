@@ -188,12 +188,6 @@
             aokp:githubLink="@string/github_tdm" />
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
-            android:title="Jubakuba"
-            aokp:nameDev="Jubakuba"
-            aokp:twitterHandle="Jubakuba"
-            aokp:githubLink="@string/github_jubakuba" />
-
-        <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="qnhoang81"
             aokp:nameDev="qnhoang81"
             aokp:twitterHandle="AOKP_ROM"

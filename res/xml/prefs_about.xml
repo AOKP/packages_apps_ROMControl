@@ -214,13 +214,6 @@
             aokp:emailDev="tdm.code@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
-            android:title="Jubakuba"
-            aokp:nameDev="Jubakuba"
-            aokp:twitterHandle="Jubakuba"
-            aokp:githubLink="@string/github_jubakuba"
-            aokp:emailDev="Jubakuba@aokp.co"/>
-
-        <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="qnhoang81"
             aokp:nameDev="qnhoang81"
             aokp:twitterHandle="AOKP_ROM"

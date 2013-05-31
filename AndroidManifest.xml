@@ -266,6 +266,8 @@
             android:theme="@android:style/Theme.Holo.Light"/>
         <activity android:name="com.jbirdvegas.mgerrit.Prefs"
             android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:name="com.jbirdvegas.mgerrit.AOKPChangelog"
+            android:theme="@android:style/Theme.Holo.Light"/>
     </application>
 
 </manifest>

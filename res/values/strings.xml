@@ -353,8 +353,8 @@
     <string name="state_one_dclick">Set to state one</string>
     <string name="skip_back_dclick">Skip back (no action)</string>
     <string name="skip_up_dclick">Skip forward (no action)</string>
-    <string name="collapse_bar_title">Close statusbar</string>
-    <string name="collapse_bar_summary">Statusbar closes on action completion</string>
+    <string name="collapse_bar_title">Close notification shade</string>
+    <string name="collapse_bar_summary">Notification shade closes on action completion</string>
     <string name="no_collapse">Never collapse</string>
     <string name="click_collapse">On click</string>
     <string name="long_collapse">On long click</string>
@@ -554,7 +554,7 @@
     <string name="navring_long">Long action</string>
     <string name="navring_icon">Custom icon</string>
     <string name="navring_target_amount_text">Current number of targets</string>
-    <string name="navring_target_longpress_text">Longpress status</string>
+    <string name="navring_target_longpress_text">Longpress actions</string>
 
    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">Ribbon layout</string>
@@ -727,7 +727,7 @@
     <!-- Lockscreen Targets-->
     <string name="lockscreen_targets_title">Lockscreen targets</string>
     <string name="lockscreen_targets_summary">Lockscreen targets summary…</string>
-    <string name="lockscreen_target_longpress_text">Longpress status</string>
+    <string name="lockscreen_target_longpress_text">Longpress actions</string>
     <string name="lockscreen_camera">Camera</string>
     <string name="lockscreen_unlock">Unlock</string>
     <string name="save_error">Could not save targets! You must have at least one unlock target!</string>

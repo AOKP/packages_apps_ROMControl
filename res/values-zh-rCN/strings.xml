@@ -71,8 +71,11 @@
     <!-- Menu Strings 菜单文本 -->
     <string name="menu_nav_bar_reset">重置导航栏</string>
     <string name="menu_ribbon_reset">重置操作区</string>
+    <string name="menu_ribbon_apps">重置应用</string>
     <string name="menu_ribbon_rearrange">排序操作区</string>
+    <string name="menu_ribbon_hide">隐藏应用</string>
     <string name="menu_ribbon_toggles">设置开关</string>
+    <string name="menu_ribbon_na">不可用</string>
     <string name="menu_ribbon_toggles_error">开关只在使用左右滑动操作区时有效。</string>
     <string name="menu_user_interface_reset">重置背景壁纸</string>
     <string name="menu_lockscreens_reset">重置锁屏壁纸</string>
@@ -224,6 +227,7 @@
     <string name="transparency_dialog_match_keyguard_alpha">匹配锁屏界面透明度</string>
     <string name="transparency_dialog_transparency">主屏幕不透明度</string>
     <string name="transparency_dialog_transparency_keyguard">锁屏界面不透明度</string>
+    <string name="transparency_dialog_lockscreen">锁屏界面</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -316,8 +320,8 @@
     <string name="state_one_dclick">执行第一个动作</string>
     <string name="skip_back_dclick">下一个动作（不执行）</string>
     <string name="skip_up_dclick">上一个动作（不执行）</string>
-    <string name="collapse_bar_title">收起状态栏</string>
-    <string name="collapse_bar_summary">动作执行后收起状态栏</string>
+    <string name="collapse_bar_title">收起通知栏</string>
+    <string name="collapse_bar_summary">动作执行后收起通知栏</string>
     <string name="no_collapse">不收起</string>
     <string name="click_collapse">点击时</string>
     <string name="long_collapse">长按时</string>
@@ -466,10 +470,13 @@
     <string name="statusbar_hide_summary">选中将完全隐藏状态栏</string>
     <string name="navigation_bar_alpha_title">状态栏与导航栏透明度</string>
     <string name="navbar_hide_enable_title">隐藏导航栏</string>
+    <string name="systembar_hide_enable_title">隐藏系统栏</string>
     <string name="drag_handle_opacity_title">滑动区不透明度</string>
     <string name="drag_handle_width_title">滑动区宽度</string>
     <string name="title_navbar_timeout">隐藏导航栏超时</string>
+    <string name="title_systembar_timeout">隐藏系统栏超时</string>
     <string name="summary_navbar_timeout">超时多久后隐藏导航栏</string>
+    <string name="summary_systembar_timeout">超时多久后隐藏系统栏</string>
     <string name="hide_navbar_timeout_never">永不</string>
     <string name="hide_navbar_timeout_1500">1.5 秒</string>
     <string name="hide_navbar_timeout_3000">3 秒</string>
@@ -505,10 +512,11 @@
     <string name="navring_long">长按动作</string>
     <string name="navring_icon">自定义图标</string>
     <string name="navring_target_amount_text">当前目标数量</string>
-    <string name="navring_target_longpress_text">长按状态</string>
+    <string name="navring_target_longpress_text">长按动作</string>
 
    <!-- Ribbon 操作区 -->
     <string name="ribbon_dialog_arrange_title">操作区布局</string>
+    <string name="ribbon_chooser_instructions">选择需设置的操作区</string>
     <string name="ribbon_instructions">点击图标选择动作或删除</string>
     <string name="ribbon_targets_cat">操作区选项</string>
     <string name="enable_ribbon_text_title">显示应用名称</string>
@@ -516,7 +524,12 @@
     <string name="enable_ribbon_text_summary">在图标下显示应用程序名称</string>
     <string name="ribbon_icon_vibrate_title">点击目标时振动</string>
     <string name="ribbon_icon_space_title">图标间隔</string>
+    <string name="app_window_space_title">纵向图标间隔</string>
     <string name="ribbon_icon_size_title">图标尺寸</string>
+    <string name="ribbon_dismiss_title">操作区消失动作</string>
+    <string name="ribbon_animation_duration_title">自动保持</string>
+    <string name="ribbon_long_swipe_title">滑动区长滑</string>
+    <string name="ribbon_long_press_title">滑动区长按</string>
     <string name="ribbon_icon_size_summary">设置图标尺寸</string>
     <string name="ribbon_lockscreen">锁屏界面操作区</string>
     <string name="ribbon_notifications">通知栏操作区</string>
@@ -547,9 +560,17 @@
     <string name="window_color_title">窗口颜色</string>
     <string name="window_opacity_title">窗口不透明度</string>
     <string name="window_columns_title">窗口列数</string>
+    <string name="window_app_hide_title">选择隐藏的应用</string>
     <string name="center">中</string>
     <string name="top">上</string>
     <string name="bottom">下</string>
+    <string name="never">从不</string>
+    <string name="always">总是</string>
+    <string name="not_bar">非导航栏动作</string>
+    <string name="multi_select_title">选择目标添加</string>
+    <string name="ribbon_animation_type_title">动画风格</string>
+    <string name="ribbon_toggles_button_title">开关按钮在底部</string>
+    <string name="ribbon_hide_ime_title">隐藏键盘</string>
 
     <!-- LED 灯光 -->
     <string name="led_on">LED 点亮</string>
@@ -664,7 +685,9 @@
     <!-- Lockscreen Targets 锁屏目标-->
     <string name="lockscreen_targets_title">锁屏目标</string>
     <string name="lockscreen_targets_summary">查看或自定义锁屏界面的快捷方式</string>
-    <string name="lockscreen_target_longpress_text">长按状态</string>
+    <string name="lockscreen_target_longpress_text">长按动作</string>
+    <string name="lockscreen_glow_torch_text">辉光灯</string>
+    <string name="lockscreen_glow_torch_summary">按住锁屏圈的中央开启灯光，松开手指关闭灯光。</string>
     <string name="lockscreen_camera">相机</string>
     <string name="lockscreen_unlock">解锁</string>
     <string name="save_error">无法保存目标！至少需要一个目标解锁！</string>
@@ -991,36 +1014,5 @@
 
     <!-- dynamic changelog 动态更新日志 -->
     <string name="dynamic_changelog_title">动态更新日志</string>
-    <string name="dynamic_changelog_summary">从GitHub拉取交互式更新日志</string>
-    <string name="dynamic_changelog_cat_title">更新日志</string>
-    <string name="changelog_menu_projects_title">查看项目列表</string>
-    <string name="changelog_menu_commitlog_title">查看近期提交</string>
-    <string name="button_close">关闭</string>
-    <string name="button_webview">网页查看</string>
-    <string name="commit_extended_info_title">展开提交详情</string>
-    <string name="commit_message">提交信息</string>
-    <string name="commit_date">提交日期</string>
-    <string name="commit_sha">提交 SHA-1 校验码</string>
-    <string name="next_commits_page_title">更多…</string>
-    <string name="next_commits_page_summary">…显示后 30 个提交</string>
-    <string name="loading_commits">读取提交中…</string>
-    <string name="commits_title">提交</string>
-    <string name="loading_projects">读取项目列表中…</string>
-    <string name="org_projects">项目组织</string>
-    <string name="author_title">作者</string>
-    <string name="commit_committer_title">提交者</string>
-    <string name="sort_commits_title">排序</string>
-    <string name="sort_commits_message">提交按照版本库默认顺序排序，你希望按照日期分类无论是否存在无论哪个版本库？</string>
-    <string name="button_sort">按日期排序</string>
-    <string name="button_donot_sort">不排序</string>
-    <string name="unknown_author">未知作者</string>
-    <string name="unknown_committer">未知提交者</string>
-    <string name="toast_commitlog_info" formatted="false">找到 %d 提交，用时 %d 秒</string>
-    <string name="changelog_favorite_cat_title">收藏的项目</string>
-    <string name="changelog_add_to_favs_list">添加</string>
-    <string name="changelog_view_commits">查看提交</string>
-    <string name="add_favs_or_view">添加到收藏列表或查看提交？</string>
-    <string name="remove_favs_or_view">从收藏列表移除或查看提交？</string>
-    <string name="changelog_remove_from_favs_list">移除</string>
-
+    <string name="dynamic_changelog_summary">从Gerrit实例拉取交互式更新日志</string>
 </resources>

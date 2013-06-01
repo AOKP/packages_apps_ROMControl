@@ -71,8 +71,11 @@
     <!-- Menu Strings 菜单文本 -->
     <string name="menu_nav_bar_reset">重置导航栏</string>
     <string name="menu_ribbon_reset">重置操作区</string>
+    <string name="menu_ribbon_apps">重置应用</string>
     <string name="menu_ribbon_rearrange">排序操作区</string>
+    <string name="menu_ribbon_hide">隐藏应用</string>
     <string name="menu_ribbon_toggles">设置开关</string>
+    <string name="menu_ribbon_na">不可用</string>
     <string name="menu_ribbon_toggles_error">开关只在使用左右滑动操作区时有效。</string>
     <string name="menu_user_interface_reset">重置背景壁纸</string>
     <string name="menu_lockscreens_reset">重置锁屏壁纸</string>
@@ -224,6 +227,7 @@
     <string name="transparency_dialog_match_keyguard_alpha">匹配锁屏界面透明度</string>
     <string name="transparency_dialog_transparency">主屏幕不透明度</string>
     <string name="transparency_dialog_transparency_keyguard">锁屏界面不透明度</string>
+    <string name="transparency_dialog_lockscreen">锁屏界面</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -393,6 +397,9 @@
     <string name="wifi_signal_color_title">WiFi 信号颜色</string>
     <string name="alt_signal_title">更改信号布局</string>
     <string name="alt_signal_summary">使用网络与信号分离的布局（姜饼风格）</string>
+    <string name="statusbar_fontsize">状态栏字体大小</string>
+    <string name="statusbar_fontsize_summary">更改状态栏的文本字体大小\n将重启用户界面！</string>
+    <string name="font_16dp">16 dp（默认）</string>
 
     <!-- Color Picker 颜色选择器-->
     <string name="dialog_color_picker">颜色选择器</string>
@@ -509,6 +516,7 @@
 
    <!-- Ribbon 操作区 -->
     <string name="ribbon_dialog_arrange_title">操作区布局</string>
+    <string name="ribbon_chooser_instructions">选择需设置的操作区</string>
     <string name="ribbon_instructions">点击图标选择动作或删除</string>
     <string name="ribbon_targets_cat">操作区选项</string>
     <string name="enable_ribbon_text_title">显示应用名称</string>
@@ -516,7 +524,12 @@
     <string name="enable_ribbon_text_summary">在图标下显示应用程序名称</string>
     <string name="ribbon_icon_vibrate_title">点击目标时振动</string>
     <string name="ribbon_icon_space_title">图标间隔</string>
+    <string name="app_window_space_title">纵向图标间隔</string>
     <string name="ribbon_icon_size_title">图标尺寸</string>
+    <string name="ribbon_dismiss_title">操作区消失动作</string>
+    <string name="ribbon_animation_duration_title">自动保持</string>
+    <string name="ribbon_long_swipe_title">滑动区长滑</string>
+    <string name="ribbon_long_press_title">滑动区长按</string>
     <string name="ribbon_icon_size_summary">设置图标尺寸</string>
     <string name="ribbon_lockscreen">锁屏界面操作区</string>
     <string name="ribbon_notifications">通知栏操作区</string>
@@ -547,9 +560,17 @@
     <string name="window_color_title">窗口颜色</string>
     <string name="window_opacity_title">窗口不透明度</string>
     <string name="window_columns_title">窗口列数</string>
+    <string name="window_app_hide_title">选择隐藏的应用</string>
     <string name="center">中</string>
     <string name="top">上</string>
     <string name="bottom">下</string>
+    <string name="never">从不</string>
+    <string name="always">总是</string>
+    <string name="not_bar">非导航栏动作</string>
+    <string name="multi_select_title">选择目标添加</string>
+    <string name="ribbon_animation_type_title">动画风格</string>
+    <string name="ribbon_toggles_button_title">开关按钮在底部</string>
+    <string name="ribbon_hide_ime_title">隐藏键盘</string>
 
     <!-- LED 灯光 -->
     <string name="led_on">LED 点亮</string>

@@ -69,6 +69,8 @@
         <item>WIFI</item>
         <item>SIGNAL</item>
         <item>ROTATE</item>
+        <item>TURNLEFT</item>
+        <item>TURNRIGHT</item>
         <item>CLOCK</item>
         <item>GPS</item>
         <item>IME</item>
@@ -99,6 +101,8 @@
         <item>@string/toggle_wifi</item>
         <item>@string/toggle_signal</item>
         <item>@string/toggle_auto_rotate</item>
+        <item>@string/toggle_turn_left</item>
+        <item>@string/toggle_turn_right</item>
         <item>@string/toggle_clock</item>
         <item>@string/toggle_gps</item>
         <item>@string/toggle_ime</item>

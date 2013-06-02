@@ -381,6 +381,8 @@
     <!-- Toggle Strings to be called from device overlays -->
     <string name="toggle_airplane_mode">Airplane Mode</string>
     <string name="toggle_auto_rotate">Auto Rotate</string>
+    <string name="toggle_turn_left">Turn Left</string>
+    <string name="toggle_turn_right">Turn Right</string>
     <string name="toggle_bluetooth">Bluetooth</string>
     <string name="toggle_fcharge">Fast Charge</string>
     <string name="toggle_gps">GPS</string>

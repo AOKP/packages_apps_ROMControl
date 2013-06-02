@@ -16,6 +16,8 @@
 -->
 <resources>
 
+    <dimen name="awesome_action_list_height">48dp</dimen>
+
     <dimen name="shortcut_picker_left_padding">70dip</dimen>
     <dimen name="target_icon_size">40dip</dimen>
 

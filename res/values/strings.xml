@@ -1073,4 +1073,10 @@
     <string name="remove_favs_or_view">Remove from favorites list or view commits?</string>
     <string name="changelog_remove_from_favs_list">Remove</string>
 
+    <!-- Awesome Picker -->
+    <string name="awesome_picker_tab_action">Actions</string>
+    <string name="awesome_picker_tab_app">Apps</string>
+    <string name="awesome_picker_tab_shortcuts">Shortcuts</string>
+    <string name="awesome_picker_title">Choose an action</string>
+
 </resources>

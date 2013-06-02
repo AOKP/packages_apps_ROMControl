@@ -897,4 +897,12 @@
         <item>5</item>
         <item>6</item>
     </string-array>
+    
+    <!-- Awesome action -->
+    <string-array name="awesome_picker_tabs">
+    	<item>@string/awesome_picker_tab_action</item>
+    	<item>@string/awesome_picker_tab_app</item>
+    	<item>@string/awesome_picker_tab_shortcuts</item>
+	</string-array>
+	
 </resources>

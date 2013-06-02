@@ -35,6 +35,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import com.android.internal.util.aokp.AwesomeConstants;
+
 public class ROMControlActivity extends PreferenceActivity implements ButtonBarHandler {
 
     private static final String TAG = "ROM_Control";
@@ -58,7 +60,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     protected boolean isShortcut;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {    	
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
         hasSPen = getResources().getBoolean(R.bool.config_stylusGestures);
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

@@ -31,6 +31,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
 
+import com.aokp.romcontrol.AwesomeActivityPicker;
 import com.aokp.romcontrol.R;
 public class ShortcutPickerHelper {
 
@@ -41,6 +42,8 @@ public class ShortcutPickerHelper {
     public static final int REQUEST_PICK_APPLICATION = 101;
     public static final int REQUEST_CREATE_SHORTCUT = 102;
 
+//    public static final int REQUEST_AWESOME = 100;
+    
     public interface OnPickListener {
         /**
          * Callback after a shortcut is picked
@@ -68,30 +71,38 @@ public class ShortcutPickerHelper {
                     completeSetCustomShortcut(data);
                     break;
                 case REQUEST_PICK_SHORTCUT:
-                    processShortcut(data, REQUEST_PICK_APPLICATION, REQUEST_CREATE_SHORTCUT);
+//                    processShortcut(data, REQUEST_PICK_APPLICATION, REQUEST_CREATE_SHORTCUT);
+//                    break;
+//                case REQUEST_AWESOME:
+                    mListener.shortcutPicked(data.getStringExtra("uri"), null, null, false);
                     break;
             }
         }
     }
 
     public void pickShortcut() {
-        Bundle bundle = new Bundle();
-
-        ArrayList<String> shortcutNames = new ArrayList<String>();
-        shortcutNames.add(mParent.getString(R.string.group_applications));
-        bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
-
-        ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
-        shortcutIcons.add(ShortcutIconResource.fromContext(mParent.getActivity(),
-                R.drawable.ic_launcher));
-        bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
-
-        Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
-        pickIntent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_CREATE_SHORTCUT));
-        pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(R.string.select_custom_app_title));
-        pickIntent.putExtras(bundle);
-
-        mParent.startActivityForResult(pickIntent, REQUEST_PICK_SHORTCUT);
+//        Bundle bundle = new Bundle();
+//
+//        ArrayList<String> shortcutNames = new ArrayList<String>();
+//        shortcutNames.add(mParent.getString(R.string.group_applications));
+//        bundle.putStringArrayList(Intent.EXTRA_SHORTCUT_NAME, shortcutNames);
+//
+//        ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
+//        shortcutIcons.add(ShortcutIconResource.fromContext(mParent.getActivity(),
+//                R.drawable.ic_launcher));
+//        bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
+//
+//        Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
+//        pickIntent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_CREATE_SHORTCUT));
+//        pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(R.string.select_custom_app_title));
+//        pickIntent.putExtras(bundle);
+//
+//        mParent.startActivityForResult(pickIntent, REQUEST_PICK_SHORTCUT);
+        
+        
+        Intent startNewPicker = new Intent(mParent.getActivity(), AwesomeActivityPicker.class);
+        startNewPicker.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mParent.getActivity().startActivityForResult(startNewPicker, REQUEST_PICK_SHORTCUT);
     }
 
     private void processShortcut(Intent intent, int requestCodeApplication, int requestCodeShortcut) {

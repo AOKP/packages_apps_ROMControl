@@ -1399,9 +1399,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
             break;
         case LONG_ACTION:
             mChoice = 1;
-            createDialog(
-                getResources().getString(R.string.choose_action_title),
-                mActions, mActionCodes);
+//            createDialog(
+//                getResources().getString(R.string.choose_action_title),
+//                mActions, mActionCodes);
+            mPicker.pickShortcut();
             break;
         case CUSTOM_APP:
             mPicker.pickShortcut();

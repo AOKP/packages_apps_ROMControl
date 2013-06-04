@@ -719,7 +719,6 @@
     <string name="lockscreen_targets_title">Lockscreen targets</string>
     <string name="lockscreen_targets_summary">Lockscreen targets summary…</string>
     <string name="lockscreen_target_longpress_text">Longpress actions</string>
-    <string name="lockscreen_target_longpress_text">Longpress status</string>
     <string name="lockscreen_glow_torch_text">GlowPad torch</string>
     <string name="lockscreen_glow_torch_summary">Longpressing the center of the lockcircle will turn torch on.  Release finger to turn torch off.</string>
     <string name="lockscreen_camera">Camera</string>

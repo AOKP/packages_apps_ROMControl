@@ -56,6 +56,37 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/navring_target_glowpad_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dip"
+            android:layout_marginStart="8dip"
+            android:layout_weight="0.5"
+            android:padding="4dip"
+            android:gravity="left"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/navring_target_glowpad_text" />
+
+        <Switch
+            android:id="@+id/glowpad_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dip"
+            android:layout_marginStart="8dip"
+            android:layout_weight="0.5"
+            android:padding="4dip"
+            android:gravity="left"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:orientation="horizontal">
+
+        <TextView
             android:id="@+id/navring_target_longpress_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

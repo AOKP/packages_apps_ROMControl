@@ -793,9 +793,10 @@
     <string name="lockscreen_targets_summary">Lockscreen targets summary…</string>
     <string name="lockscreen_target_longpress_text">Longpress actions</string>
     <string name="lockscreen_glow_torch_text">GlowPad torch</string>
-    <string name="lockscreen_glow_torch_summary">Longpressing the center of the lockcircle will turn torch on. Release
-        finger to turn torch off.
-    </string>
+    <string name="lockscreen_glow_torch_summary">Longpressing the center of the lock ring or navigation ring will turn torch on.  Release finger to turn torch off.</string>
+    <string name="lockscreen_torch_off">Off</string>
+    <string name="lockscreen_torch_lockcircle">LockRing</string>
+    <string name="lockscreen_torch_navring">NavRing</string>
     <string name="lockscreen_camera">Camera</string>
     <string name="lockscreen_unlock">Unlock</string>
     <string name="save_error">Could not save targets! You must have at least one unlock target!</string>

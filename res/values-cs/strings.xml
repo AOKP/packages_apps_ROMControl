@@ -316,7 +316,7 @@
   <string name="toggle_action_title_alt">Akce dlouhého stisku a ikona pro %1$s</string>
   <string name="toggle_longpress_title">Akce dlouhého stisku pro %1$s</string>
   <string name="custom_toggle_desc">Každé stisknutí přepínače způsobí posunutí na další akci. Pokud nemá přepínač nastavenu akci kliknutí a neurčenou ikonu, bude použita ikona přiřazena akci dlouhého stisku. Toto je vhodné pro použití s jednoduchým přepínáním mezi akcemi bez jejich vyvolání.</string>
-  <string name="custom_help_summary">Jak to funguje</string>
+  <string name="custom_help_title">Jak to funguje</string>
   <string name="custom_help_summary">Kliknutím pro více informací</string>
   <string name="custom_toggle_okay">Potvrdit</string>
   <string name="custom_toggle_cat">Vlastní přepínač</string>

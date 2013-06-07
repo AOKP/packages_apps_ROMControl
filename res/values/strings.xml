@@ -546,6 +546,9 @@
     <string name="navring_icon">Custom icon</string>
     <string name="navring_target_amount_text">Current number of targets</string>
     <string name="navring_target_longpress_text">Longpress actions</string>
+    <string name="navring_target_glowpad_text">Lockscreen Torch</string>
+    <string name="navring_target_glowpad_text_desc">Longpress the center of the navigation ring while lockscreen is active to start the torch.  Release to turn the torch off.</string>
+    <string name="navring_target_glowpad_dismiss">Dismiss</string>
 
    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">Ribbon layout</string>

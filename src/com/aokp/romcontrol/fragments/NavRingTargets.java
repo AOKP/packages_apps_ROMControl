@@ -77,6 +77,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
 
     private GlowPadView mGlowPadView;
     private Spinner mTargetNumAmount;
+    private Switch mGlowTorchStatus;
     private Switch mLongPressStatus;
 
     private ShortcutPickerHelper mPicker;
@@ -94,6 +95,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     private int mNavRingAmount;
     private int mCurrentUIMode;
     private boolean mLefty;
+    private boolean mGlowPadTorch;
     private boolean mBoolLongPress;
     private int mTarget = 0;
 
@@ -175,6 +177,29 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
             }
         });
 
+        mGlowTorchStatus = (Switch) getActivity().findViewById(R.id.glowpad_switch);
+        mGlowTorchStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+                Settings.System.putBoolean(cr, Settings.System.SYSTEMUI_NAVRING_GLOW_TORCH, checked);
+                if (checked) {
+                    AlertDialog.Builder ad = new AlertDialog.Builder(getActivity());
+                    ad.setTitle(getResources().getString(R.string.navring_target_glowpad_text));
+                    ad.setMessage(getResources().getString(R.string.navring_target_glowpad_text_desc));
+                    ad.setPositiveButton(
+                            getResources().getString(R.string.navring_target_glowpad_dismiss),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    ad.show();
+                }
+                updateDrawables();
+            }
+        });
+
         mLongPressStatus = (Switch) getActivity().findViewById(R.id.longpress_switch);
         mLongPressStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -203,6 +228,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
         intentCounter = 0;
         intentList.clear();
         mTargetNumAmount.setSelection(mNavRingAmount - 1);
+        mGlowTorchStatus.setChecked(mGlowPadTorch);
         mLongPressStatus.setChecked(mBoolLongPress);
 
         // Custom Targets
@@ -458,6 +484,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
              longActivities[i] = Settings.System.getString(cr, Settings.System.SYSTEMUI_NAVRING_LONG[i]);
              customIcons[i] = Settings.System.getString(cr, Settings.System.SYSTEMUI_NAVRING_ICON[i]);
         }
+        mGlowPadTorch = (Settings.System.getBoolean(cr, Settings.System.SYSTEMUI_NAVRING_GLOW_TORCH, false));
         mBoolLongPress = (Settings.System.getBoolean(cr, Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE, false));
 
         mNavRingAmount = Settings.System.getInt(cr, Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);

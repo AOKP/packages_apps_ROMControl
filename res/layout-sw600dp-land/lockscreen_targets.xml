@@ -60,6 +60,35 @@
             android:gravity="center_vertical">
 
             <TextView
+                android:id="@+id/lockscreen_glow_torch_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="4dip"
+                android:layout_toLeftOf="@id/glow_torch_switch"
+                android:ellipsize="marquee"
+                android:gravity="left"
+                android:padding="4dip"
+                android:singleLine="true"
+                android:text="@string/lockscreen_glow_torch_text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Spinner
+                android:id="@+id/glow_torch_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="6dip"
+                android:padding="4dip" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
                 android:id="@+id/lockscreen_battery_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -308,35 +337,6 @@
 
             <Switch
                 android:id="@+id/lockscreen_carousel_switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="4dip"
-                android:padding="4dip" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/lockscreen_glow_torch_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="4dip"
-                android:layout_toLeftOf="@id/glow_torch_switch"
-                android:ellipsize="marquee"
-                android:gravity="left"
-                android:padding="4dip"
-                android:singleLine="true"
-                android:text="@string/lockscreen_glow_torch_text"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
-
-            <Switch
-                android:id="@+id/glow_torch_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

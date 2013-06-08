@@ -7,6 +7,7 @@
     <string name="user_interface">Felhasználói felület</string>
     <string name="cancel">Mégse</string>
     <string name="ok">OK</string>
+    <string name="save">Mentés</string>
     <string name="menu_main_activity_change_locale">Üres!</string>
     <string name="header_statusbar">Állapotsáv</string>
     <string name="header_navbar">Navigációs sáv</string>
@@ -32,14 +33,16 @@
     <string name="title_statusbar_clock">Állapotsáv Óra</string>
     <string name="title_statusbar_toggles">Állapotsáv Kapcsolók</string>
     <string name="title_statusbar_battery">Állapotsáv Akkumulátor</string>
+    <string name="title_statusbar_signal">Állapotsáv Jel</string>
     <string name="title_navbar">Navigációs sáv</string>
+    <string name="title_navring">Navigációs gyűrű</string>
     <string name="title_power_menu">Power Menü</string>
     <string name="title_led">LED Vezérlés</string>
     <string name="title_spen">S Pen Gesztusok</string>
     <string name="title_sound">Hang beállítások</string>
     <string name="title_lockscreens">Képernyőzár beállítások</string>
     <string name="title_lockscreens_targets">Zárképernyő elemek</string>
-    <string name="title_navring">Navigációs gyűrű</string>
+    <string name="title_sound">Hang beállítások</string>
     <string name="title_weather">Időjárás beállítások</string>
     <string name="title_performance">Teljesítmény beállítások</string>
     <string name="title_installer">Telepítő beállítások</string>
@@ -64,7 +67,12 @@
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Navigációs sáv alaphelyzetbe</string>
     <string name="menu_ribbon_reset">Szalagsáv alaphelyzetbe</string>
+    <string name="menu_ribbon_apps">Alkalmazások alaphelyzetbe</string>
     <string name="menu_ribbon_rearrange">Szalagsáv átrendezése</string>
+    <string name="menu_ribbon_hide">Alkalmazás rejtése</string>
+    <string name="menu_ribbon_toggles">Beállítás váltás</string>
+    <string name="menu_ribbon_na">Nem elérhető</string>
+    <string name="menu_ribbon_toggles_error">Kapcsolók csak a jobb és balra húzó szalagoknál érhetőek el.</string>
     <string name="menu_user_interface_reset">Értesítési háttér alaphelyzetbe</string>
     <string name="menu_lockscreens_reset">Zárképernyő háttér alaphelyzetbe</string>
 
@@ -72,6 +80,8 @@
     <string name="advanced_settings">Speciális beállítások</string>
     <string name="misc_short">Vegyes</string>
     <string name="custom_app_icon_successfully">"sikeres ikon állítás!"</string>
+    <string name="text_on">Be</string>
+    <string name="text_off">Ki</string>
 
     <!-- Power Menu -->
     <string name="title_show_power_saver">Energia takarékos mód</string>
@@ -82,8 +92,7 @@
     <string name="summary_show_navbar_hide">Bejelölve engedélyezi a rejtett Navigációs sáv és Értesítési sáv váltást</string>
     <string name="title_show_volume_state_toggle">Mutatja a hangerő állítást</string>
     <string name="title_show_reboot_keyguard">Mutatja az Újraindítást a zárképernyőn</string>
-    <string name="summary_off_show_reboot_keyguard">Újraindítást nem fogja mutatni a zárképernyőn</string>
-    <string name="summary_on_show_reboot_keyguard">Újraindítást mutatni fogja a zárképernyőn</string>
+    <string name="summary_show_reboot_keyguard">Engedélyezve mutatni fogja az újraindítási opciókat a kezdőképernyőn</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Balra húzás akciója</string>
@@ -128,38 +137,22 @@
     <string name="group_applications">Alkalmazások</string>
 
     <!-- About -->
-    <string name="devs">The Crew</string>
+    <string name="devs">A Csapat</string>
     <string name="aokp">Android Open Kang Project</string>
-    <string name="aokp_website_title">AOKP Website</string>
-    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
-    <string name="aokp_source_title">AOKP Source</string>
-    <string name="aokp_source_summary">AOKP is fully open source. You can always check out the latest source at github.com/aokp</string>
-    <string name="aokp_review_title">AOKP Code Review</string>
-    <string name="aokp_review_summary">AOKP\'s Gerrit Review instance for submitting and testing patches</string>
-    <string name="aokp_irc_title">Join us on IRC</string>
-    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="aokp_website_title">AOKP Weboldal</string>
+    <string name="aokp_website_summary">www.aokp.co - Keresd az összes új megjelenést itt.</string>
+    <string name="aokp_review_summary">Nézd meg az AOKP és AOSP Gerrit újdonságokat gyorsan és egyszerűen</string>
+    <string name="aokp_irc_title">Csatlakozz hozzánk IRC-n</string>
+    <string name="aokp_irc_summary">\#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">AOKP-ról</string>
     <string name="about_aokp_summary">@null</string>
-    <string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
-    <string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
-    <string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
-    <string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
-    <string name="donate_khasmek">http://nyan.cat</string>
-    <string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
-    <string name="donate_adam">http://goo.gl/fRj57</string>
-    <string name="donate_kwes">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=HGAN9G5ZJ2AAS&amp;lc=US&amp;item_name=kwes1020&amp;currency_code=USD&amp;bn=PP%%2dDonationsBF%%3abtn_donateCC_LG%2egif%%3aNonHosted</string>
-    <string name="donate_nitroz">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=U27ZAWB8995TS</string>
-    <string name="donate_xoom">http://bit.ly/t7YC5Z</string>
-    <string name="donate_marclandis">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7FN44KF8XZXFW</string>
-    <string name="donate_sixstringsg">https://www.paypal.com/cgi-bin/webscr?cmd=_flow&amp;SESSION=U3KYhTz6itHx8bKvx-F79EFVY5sQKKQu9f1ftkJ1pevFN6wdaJLu8yz3Y3e&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d1e83f46a36995b3856cef1e18897ad75</string>
-    <string name="donate_just_reboot">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WEZKU46DAFMSW</string>
-    <string name="donate_stevespear">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6SY3WH7AZNR7Y</string>
-    <string name="donate_birdman">https://support.woundedwarriorproject.org/Default.aspx?tsid=66&amp;campaignSource=WEBSITE</string>
 
     <!-- General UI -->
-     <string name="bootani_cat">Bootanimáció</string>
+    <string name="bootani_cat">Bootanimáció</string>
     <string name="navbar_cat">Értesítési sáv</string>
     <string name="notification_cat">Értesítés</string>
+    <string name="display_cat">Kijelző</string>
+    <string name="recents_cat">Legutóbbiak</string>
     <string name="tabletUI_cat">Tábla mód</string>
     <string name="enable_volume_options">Hang panel engedélyezése</string>
     <string name="status_bar_notif_count_title">Értesítésí számláló</string>
@@ -194,25 +187,25 @@
     <string name="rotate_180_summary">Engedélyezi a képernyő megfordítását!</string>
     <string name="rotate_270_title">270 fokos forgatás engedélyezése</string>
     <string name="rotate_270_summary">Engedélyezi a képernyő jobb oldalra forgatását</string>
-    <string name="recent_kill_all">Engedélyezi a "kill-all-button"-t</string>
+    <string name="recent_kill_all">Engedélyezi a kill-all-button-t</string>
     <string name="recent_kill_all_summary">Összes alkalmazás bezárását engedélyező gomb megjelenítése.</string>
     <string name="ram_bar">Memória sáv</string>
-    <string name="ram_bar_summary">Memória használat mutatása a Legutóbbi menüben </string>
-    <string name="kill_app_longpress_back">Vissza gombra kill</string>
-    <string name="kill_app_longpress_back_summary">Vissza gombra fogja bezárni a futó alkalmazást</string>
+    <string name="ram_bar_summary">Memória használat mutatása a Legutóbbi menüben</string>
+    <string name="longpress_to_kill">Vissza gombra kill</string>
+    <string name="longpress_to_kill_summary">Vissza gombra fogja bezárni a futó alkalmazást</string>
     <string name="tablet_ui">Tábla mód</string>
     <string name="tablet_ui_summary">Tábla módba fogja állítani (újra indítás szüksége)</string>
     <string name="hide_extras">Extrák elrejtése</string>
     <string name="hide_extras_summary">Némely extra alkalmazás elrejtése (UI újraindítás szükséges)</string>
     <string name="bootanimation_preview">Bootanimáció előnézet</string>
     <string name="apply">Mehet</string>
+    <string name="clear_custom_bootanimation">Egyedi bootanimáció eltávolítása</string>
+    <string name="set_custom_bootanimation">Egyedi beállítása...</string>
     <string name="creating_preview">Előnézet készítés...</string>
     <string name="error_reading_zip_file">Hiba a zip olvasásakor</string>
     <string name="error_creating_preview">Hiba az előnézet készítéskor</string>
     <string name="multipane_ui">Dupla panel engedélyezés</string>
-    <string name="multipane_ui_summary">Engedélyezi/Tiltja a dupla paneles nézetet (újraindítás szükséges) </string>
-    <string name="alt_resolver">Másik alapértelmezett alkalmazás rács</string>
-    <string name="alt_resolver_summary">Másik (GB) alapértelemezett alkalmazás választó</string>
+    <string name="multipane_ui_summary">Engedélyezi/Tiltja a dupla paneles nézetet (újraindítás szükséges)</string>
     <string name="show_overflow_title">Mutassa a menü UI túlnyúlását</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
@@ -234,6 +227,7 @@
     <string name="transparency_dialog_match_keyguard_alpha">Együtt a zárképernyő szintjével</string>
     <string name="transparency_dialog_transparency">Kezdőképernyő szintje</string>
     <string name="transparency_dialog_transparency_keyguard">Zárképernyő szintje</string>
+    <string name="transparency_dialog_lockscreen">Zárképernyő</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD febontás</string>
@@ -307,7 +301,8 @@
     <string name="toggle_action_title">Akció %1$s &amp; icon</string>
     <string name="toggle_action_title_alt">Hosszannyomás akció %1$s &amp; ikon</string>
     <string name="toggle_longpress_title">Hosszannyomás akció %1$s</string>
-    <string name="custom_toggle_desc">Alap módban egy érintésre végrehajtja a ciklust. Hosszan nyomásra elindítja a megjelenített akciót. Ez a laghasznosabb a legtöbb felhasználónak. \n Haladó módban engedélyezi az alkalmazás futtatását minden kattintásnál. A hosszan nyomások is engedélyezve vannak ebben a módban. Azoknak a felhasználóknak hasznos akik akarják, hogy a végrehajtó feladat ne indítsa el az alkalmazást.</string>
+    <string name="custom_toggle_desc">"Alap módban egy érintésre végrehajtja a ciklust. Hosszan nyomásra elindítja a megjelenített akciót. Ez a laghasznosabb a legtöbb felhasználónak. 
+ Haladó módban engedélyezi az alkalmazás futtatását minden kattintásnál. A hosszan nyomások is engedélyezve vannak ebben a módban. Azoknak a felhasználóknak hasznos akik akarják, hogy a végrehajtó feladat ne indítsa el az alkalmazást."</string>
     <string name="custom_help_title">Hogyan mükődik</string>
     <string name="custom_help_summary">Nyomj rá az információért</string>
     <string name="custom_toggle_okay">Elutasít</string>
@@ -319,9 +314,6 @@
     <string name="boot_action_summary">Egyes állapot fog indulni bekapcsoláskor</string>
     <string name="match_icon_action_title">Megjelenített akció indítása</string>
     <string name="match_icon_action_summary">Hasznos összehangolni a megjelenített feadatot az ikon specifikus felhasználásával</string>
-    <string name="advanced_toggle_title">Haladó vagy Alap akciók</string>
-    <string name="advanced_toggle_summaryon">Haladó (Rövid és Hosszan nyomás akciók)</string>
-    <string name="advanced_toggle_summaryoff">Alap (Hosszan nyomás akciók csak)</string>
     <string name="action_toggle_title">Kapcsoló akciók</string>
     <string name="action_toggle_summary">Kapcsoló sorrend balról jobbra</string>
     <string name="no_dclick">Nincs akció</string>
@@ -329,8 +321,8 @@
     <string name="state_one_dclick">Egyes állapot beállítása</string>
     <string name="skip_back_dclick">Vissza ugrik (nincs akció)</string>
     <string name="skip_up_dclick">Előre urgik (nincs akció)</string>
-    <string name="collapse_bar_title">Állapotsáv bezárása</string>
-    <string name="collapse_bar_summary">Állapotsáv bezárása a feladat befejeztével</string>
+    <string name="collapse_bar_title">Értesítési bezárása</string>
+    <string name="collapse_bar_summary">Értesítési bezárása a feladat befejeztével</string>
     <string name="no_collapse">Soha nincs összeomlás</string>
     <string name="click_collapse">Kattintás</string>
     <string name="long_collapse">Hosszú kattintás</string>
@@ -345,6 +337,7 @@
     <string name="clock_color_title">Óra színe</string>
     <string name="notification_shade_clock">Értesítési funkciók</string>
     <string name="alarm">Riasztások</string>
+    <string name="clock_options">Óra opciók</string>
     <string name="nothing">Semmi</string>
     <string name="today">Naptár mai nap</string>
     <string name="event">Naptár új esemény</string>
@@ -431,27 +424,19 @@
     <string name="navbar_action_title">Gomb %1$s esemény &amp; ikon</string>
     <string name="button_transparency_title">Nav gombok áttetszősége</string>
     <string name="navbar_width_help_title">Navigációs sáv kombinált szélesség segítség</string>
-    <string name="navbar_width_help_summary">100 a 70\%% képernyő szélesség, 5 a 30\%% képernyő szélesség. 0 alapértelmezésben egy gomb szélesség.</string>
+    <string name="navbar_width_help_summary" formatted="false">100 a 70% képernyő szélesség, 5 a 30% képernyő szélesség. 0 alapértelmezésben egy gomb szélesség.</string>
     <string name="width_port_title">Kombinált sáv szélesség állóhelyzetben</string>
     <string name="width_land_title">Kombinált sáv szélesség fekvőhelyzetben</string>
-    <string name="navbar_longpress_title">Gomb %1$s hosszan nyomva</string>
-    <string name="navbar_action_home">Kezdőlap</string>
-    <string name="navbar_action_back">Vissza</string>
-    <string name="navbar_action_recents">Legutóbbiak</string>
-    <string name="navbar_action_search">Keresés</string>
-    <string name="navbar_action_screenshot">Képernyőkép</string>
-    <string name="navbar_action_menu">Menü</string>
-    <string name="navbar_action_ime">Billentyűzet váltó megnyitása</string>
-    <string name="navbar_action_kill">Kill task</string>
-    <string name="navbar_action_power">Teljesítmény</string>
-    <string name="navbar_action_notifications">Értesítések</string>
-    <string name="navbar_action_none">Üres</string>
     <string name="navbar_widgets">Navigációs sáv Widgetek</string>
     <string name="navbar_enable_bar">Sáv engedélyezése</string>
     <string name="navigation_bar_height_title">Navigációs sáv magassága</string>
     <string name="navigation_bar_height_summary">Navigációs sáv magassága állóhelyzetben.</string>
     <string name="navigation_bar_height_landscape_title">Navigációs sáv magassága fekvőhelyzetben</string>
     <string name="navigation_bar_height_landscape_summary">Navigációs sáv magasságának beállítása fekvőhelyzetben.</string>
+    <string name="system_bar_height_title">Rendszer sáv magasság</string>
+    <string name="system_bar_height_summary">Rendszer sáv magassága állóhelyzetben</string>
+    <string name="system_bar_height_landscape_title">Rendszer sáv magasság fekve</string>
+    <string name="system_bar_height_landscape_summary">Rendszer sáv magassága fekvőhelyzetben</string>
     <string name="navigation_bar_width_title">Navigációs sáv szélessége.</string>
     <string name="navigation_bar_width_summary">Navigációs sáv magassága oldal nézetben.</string>
     <string name="navbar_enable_dialog_title">Újraindítás szükséges!</string>
@@ -515,7 +500,7 @@
     <string name="choose_action_title">Akció választása</string>
     <string name="choose_action_short_title">Rövid akció választása</string>
     <string name="choose_action_long_title">Hosszú akció választása</string>
-    <string name="action_long_save"> beállítás, mint hosszú akció</string>
+    <string name="action_long_save">beállítás, mint hosszú akció</string>
     <string name="title_navring_amount">Gyűrűk száma</string>
     <string name="summary_navring_amount">Hány eseményt akarsz rajta? *A változtatás hatására alaphelyzetbe kerülnek az események és újra indul a SystemUI*</string>
     <string name="interface_navring_settings_title">Navigációs Gyűrű</string>
@@ -526,10 +511,11 @@
     <string name="navring_long">Hosszú akció</string>
     <string name="navring_icon">Saját ikon</string>
     <string name="navring_target_amount_text">Aktuális elemek száma</string>
-    <string name="navring_target_longpress_text">Hosszan nyomás állapota</string>
+    <string name="navring_target_longpress_text">Hosszan nyomás akciója</string>
 
    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">Szalagsáv rendezése</string>
+    <string name="ribbon_chooser_instructions">Válaszd ki melyik Szalag beállítása legyen.</string>
     <string name="ribbon_instructions">Nyomd meg az ikont az akció kiválasztásához vagy törléséhez</string>
     <string name="ribbon_targets_cat">Szalagsáv opciók</string>
     <string name="enable_ribbon_text_title">Alkalmazásnév mutatása</string>
@@ -537,8 +523,12 @@
     <string name="enable_ribbon_text_summary">Engedélyezi az alkalmazás nevet az ikon alatt</string>
     <string name="ribbon_icon_vibrate_title">Rezeg az elem érintésére</string>
     <string name="ribbon_icon_space_title">Vízszintes térköz</string>
-    <string name="ribbon_icon_space_vertical_title">Fűggöleges térköz</string>
+    <string name="app_window_space_title">Függőleges térköz</string>
     <string name="ribbon_icon_size_title">Ikon méret</string>
+    <string name="ribbon_dismiss_title">Szalag elutasító akció</string>
+    <string name="ribbon_animation_duration_title">Animáció hossza</string>
+    <string name="ribbon_long_swipe_title">Húzási terület hooszan húzva</string>
+    <string name="ribbon_long_press_title">Húzási terület hooszan nyomva</string>
     <string name="ribbon_icon_size_summary">Add meg az ikon méreteit</string>
     <string name="ribbon_lockscreen">Zárképernyő szalag</string>
     <string name="ribbon_notifications">Értesítési szalag</string>
@@ -569,11 +559,17 @@
     <string name="window_color_title">Ablak szín</string>
     <string name="window_opacity_title">Ablak áttetszősége</string>
     <string name="window_columns_title">Ablak oszlop</string>
+    <string name="window_app_hide_title">Alkalmazások elrejtése</string>
     <string name="center">Középen</string>
     <string name="top">Felül</string>
     <string name="bottom">Alul</string>
-
-
+    <string name="never">Soha</string>
+    <string name="always">Mindig</string>
+    <string name="not_bar">Nincs Navigációs sáv akció</string>
+    <string name="multi_select_title">Válaszd ki a hozzáadandó elemeket</string>
+    <string name="ribbon_animation_type_title">Animáció stílusa</string>
+    <string name="ribbon_toggles_button_title">Kapcsoló gombok alul</string>
+    <string name="ribbon_hide_ime_title">Billentyűzet seprési terület elrejtése.</string>
 
     <!-- LED -->
     <string name="led_on">LED Be</string>
@@ -645,8 +641,6 @@
     <string name="lockscreen_hide_initial_page_hints_summary">Bekapcsolt képernyőnél a jobb és bal oldali modulok elrejtése.</string>
     <string name="lockscreen_minimize_challenge_title">Kisebb zárfeloldó</string>
     <string name="lockscreen_minimize_challenge_summary">A zárképernyő feloldó (kör, motívum, pin) kicsi lezárt képernyőnél.</string>
-    <string name="lockscreen_longpress_challenge_title">Hosszan nyomásra nyitás</string>
-    <string name="lockscreen_longpress_challenge_summary">Teljes képernyős zárképernyő moduloknál a lakat ikon hosszú nyomására nyitás</string>
     <string name="lockscreen_use_widget_container_carousel_title">Modul keret használata</string>
     <string name="lockscreen_use_widget_container_carousel_summary">Modul keret használata a zárképernyő modulok váltásánál.</string>
     <string name="volume_rocker_wake_title">Hangerő feloldás</string>
@@ -687,11 +681,12 @@
     <string name="circles_lock_wave_color_title">Hullám szín</string>
     <string name="circles_lock_wave_alpha_title">Hullám áttetszősége</string>
 
-
     <!-- Lockscreen Targets-->
-    <string name="lockscreen_target_title">Zárképernyő elemek</string>
-    <string name="lockscreen_target_summary">Nézd vagy változtasd meg az elemeket</string>
+    <string name="lockscreen_targets_title">Zárképernyő elemek</string>
+    <string name="lockscreen_targets_summary">Zárképernyő elemek összesítője…</string>
     <string name="lockscreen_target_longpress_text">Hosszan nyomás állapota</string>
+    <string name="lockscreen_glow_torch_text">Fénylő újj</string>
+    <string name="lockscreen_glow_torch_summary">Hosszan nyomva a zárképernyő gombot bekapcsol a zseblámpa, elengedve kialszik.</string>
     <string name="lockscreen_camera">Kamera</string>
     <string name="lockscreen_unlock">Feloldás</string>
     <string name="save_error">Nem sikerült menteni! Legalább egy elem kell!</string>
@@ -710,8 +705,6 @@
     <string name="lockscreen_target_edit_title">Elem és ikon szerkesztés</string>
     <string name="lockscreen_target_edit_msg">Válaszd ki vagy módosítsd a kívánt alkalmazást vagy tevékenységet és az ikonjait</string>
     <string name="lockscreen_target_longpress_summary">Engedélyezi a hosszan nyomást a zárképernyő elemeken</string>
-
-
 
     <!-- Weather -->
     <string name="weather_enable">Időjárás engedélyezése</string>
@@ -851,6 +844,7 @@
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>
     <string name="insult_protekk">ProTekk!</string>
+    <string name="insult_unicorns">Elismeri, hogy a rózsaszín unikornis kislányos</string>
 
     <!-- clock stuff -->
     <string name="right_clock">Jobb oldalon</string>
@@ -893,9 +887,14 @@
     <string name="toggle_widgets">Widget kapcsolók</string>
     <string name="open_ime_switcher">Billentyűzet váltó megnyítása</string>
     <string name="kill_app">Kill app</string>
+    <string name="lastapp">Utolsó alkalmazás</string>
     <string name="power">Kikapcsolás</string>
     <string name="notifications">Értesítések</string>
+    <string name="recents_gb">Legutóbbiak (GB stílus)</string>
     <string name="custom_app">Saját alkalmazás</string>
+    <string name="menu_power">Kikapcsolás menű</string>
+    <string name="aokp_ribbon">AOKP Szalag</string>
+    <string name="nav_widgets">Nav Modulok</string>
     <string name="blank">Üres</string>
     <string name="none">Nincs</string>
     <string name="take_screenshot">Képernyőkép készítés</string>
@@ -949,11 +948,11 @@
     <string name="time_10_seconds">10 mp</string>
 
     <!-- LED brightness entries -->
-    <string name="low">alacsony</string>
-    <string name="medium">közepes</string>
-    <string name="high">magas</string>
-    <string name="very_high">nagyon magas</string>
-    <string name="laserbeam">lézerfény</string>
+    <string name="low">Alacsony</string>
+    <string name="medium">Közepes</string>
+    <string name="high">Magas</string>
+    <string name="very_high">Nagyon magas</string>
+    <string name="laserbeam">Lézerfény</string>
 
     <!-- Flip phone entries -->
     <string name="disabled">Tiltva</string>
@@ -1013,5 +1012,9 @@
     <!-- haptic feedback on toggle press -->
     <string name="toggles_enable_haptic_feedback_title">Tapintási visszajelzés</string>
     <string name="toggles_enable_haptic_feedback_summary">Visszajelzés, ha használod a kapcsolót</string>
+
+    <!-- dynamic changelog -->
+    <string name="dynamic_changelog_title">Dinamikus VáltozásLista</string>
+    <string name="dynamic_changelog_summary">Interaktív változáslista a Gerrit kérelmekről</string>
 
 </resources>

@@ -442,7 +442,7 @@
     <string name="navbar_action_screenshot">Képernyőkép</string>
     <string name="navbar_action_menu">Menü</string>
     <string name="navbar_action_ime">Billentyűzet váltó megnyitása</string>
-    <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_kill">Kill feladat</string>
     <string name="navbar_action_power">Teljesítmény</string>
     <string name="navbar_action_notifications">Értesítések</string>
     <string name="navbar_action_none">Üres</string>

@@ -1,43 +1,22 @@
-
 package com.aokp.romcontrol.fragments;
 
-import com.aokp.romcontrol.util.CMDProcessor;
-import com.aokp.romcontrol.util.CommandResult;
-
-import android.app.Activity;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
-import android.provider.Settings;
-import android.text.TextUtils;
 import android.util.Log;
-import android.util.TypedValue;
-
-import java.net.URISyntaxException;
-
-
-import static com.android.internal.util.aokp.AwesomeConstants.*;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.CMDProcessor;
+import com.aokp.romcontrol.util.CommandResult;
+import com.aokp.romcontrol.util.Helpers;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-
-import com.aokp.romcontrol.util.Helpers;
 
 public class Installer extends AOKPPreferenceFragment {
 
@@ -62,27 +41,30 @@ public class Installer extends AOKPPreferenceFragment {
 
     private boolean stringToBool(String val) {
         if (val.equals("0") ||
-            val.equals("false") ||
-            val.equals("False")) {
+                val.equals("false") ||
+                val.equals("False")) {
             return false;
         }
         return true;
     }
+
     private String boolToString(boolean val) {
         return (val ? "true" : "false");
     }
+
     private ArrayList<String> stringToStringArray(String val) {
         ArrayList<String> ret = new ArrayList<String>();
         int p1 = val.indexOf("\"");
         int p2 = val.lastIndexOf("\"");
-        if (p1 >= 0 && p2 > p1+1) {
-            String dqval = val.substring(p1+1, p2);
+        if (p1 >= 0 && p2 > p1 + 1) {
+            String dqval = val.substring(p1 + 1, p2);
             for (String s : dqval.split(" +")) {
                 ret.add(s);
             }
         }
         return ret;
     }
+
     private String stringArrayToString(ArrayList<String> val) {
         String ret = "";
         boolean first = true;
@@ -125,24 +107,19 @@ public class Installer extends AOKPPreferenceFragment {
                             mPersistFiles = stringToStringArray(fields[1]);
                         }
                     }
-                }
-                else {
+                } else {
                     mPersistTrailer.add(line);
                 }
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             Log.e(TAG, "Config file not found");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             Log.e(TAG, "Exception reading config file: " + e.getMessage());
-        }
-        finally {
+        } finally {
             if (br != null) {
                 try {
                     br.close();
-                }
-                catch (IOException e) {
+                } catch (IOException e) {
                     // Igonre
                 }
             }
@@ -184,18 +161,18 @@ public class Installer extends AOKPPreferenceFragment {
 
         loadPrefs();
 
-        mPrefPersistEnable = (CheckBoxPreference)findPreference(PREF_PERSIST_ENABLE);
+        mPrefPersistEnable = (CheckBoxPreference) findPreference(PREF_PERSIST_ENABLE);
         mPrefPersistEnable.setChecked(mPersistEnable);
-        mPrefPersistDensity = (CheckBoxPreference)findPreference(PREF_PERSIST_PROP_DENSITY);
+        mPrefPersistDensity = (CheckBoxPreference) findPreference(PREF_PERSIST_PROP_DENSITY);
         mPrefPersistDensity.setChecked(mPersistProps.contains("ro.sf.lcd_density"));
-        mPrefPersistHosts = (CheckBoxPreference)findPreference(PREF_PERSIST_FILE_HOSTS);
+        mPrefPersistHosts = (CheckBoxPreference) findPreference(PREF_PERSIST_FILE_HOSTS);
         mPrefPersistHosts.setChecked(mPersistFiles.contains("etc/hosts"));
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
-        boolean isChecked = ((CheckBoxPreference)preference).isChecked();
+                                         Preference preference) {
+        boolean isChecked = ((CheckBoxPreference) preference).isChecked();
         if (preference == mPrefPersistEnable) {
             mPersistEnable = isChecked;
             savePrefs();
@@ -206,8 +183,7 @@ public class Installer extends AOKPPreferenceFragment {
                 if (!mPersistProps.contains("ro.sf.lcd_density")) {
                     mPersistProps.add("ro.sf.lcd_density");
                 }
-            }
-            else {
+            } else {
                 mPersistProps.remove("ro.sf.lcd_density");
             }
             savePrefs();
@@ -218,8 +194,7 @@ public class Installer extends AOKPPreferenceFragment {
                 if (!mPersistFiles.contains("etc/hosts")) {
                     mPersistFiles.add("etc/hosts");
                 }
-            }
-            else {
+            } else {
                 mPersistFiles.remove("etc/hosts");
             }
             savePrefs();

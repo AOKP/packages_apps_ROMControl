@@ -97,8 +97,9 @@ public class FlipService extends Service {
                     }
 
                     if (faceUp) {
-                        for (int i = 0; i < SENSOR_SAMPLES; i++)
+                        for (int i = 0; i < SENSOR_SAMPLES; i++) {
                             mSamples[i] = false;
+                        }
                         if (wasFaceDown) {
                             wasFaceDown = false;
                             if (switchSoundBack
@@ -129,8 +130,9 @@ public class FlipService extends Service {
                     // do not change to wasFaceDown till it has changed
                     // or else it will not ever get to it
                     if (faceDown) {
-                        for (int i = 0; i < SENSOR_SAMPLES; i++)
+                        for (int i = 0; i < SENSOR_SAMPLES; i++) {
                             mSamples[i] = false;
+                        }
                         cancelRunDown = true;
                         if (getUserFlipAudioMode(service) != -1 && !callIncoming) {
                             handler.postDelayed(faceDownTimer, getUserDownMS(service));
@@ -338,7 +340,8 @@ public class FlipService extends Service {
     }
 
     private static void log(String s) {
-        if (DEBUG)
+        if (DEBUG) {
             Log.e(TAG, s);
+        }
     }
 }

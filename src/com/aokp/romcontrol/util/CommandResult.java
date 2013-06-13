@@ -85,7 +85,7 @@ public class CommandResult implements Parcelable {
             try {
                 File errorLogFile = new File(
                         Environment.getExternalStorageDirectory()
-                        + "/aokp/error.txt");
+                                + "/aokp/error.txt");
                 if (!errorLogFile.exists()) {
                     errorLogFile.createNewFile();
                 }
@@ -143,8 +143,12 @@ public class CommandResult implements Parcelable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CommandResult)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CommandResult)) {
+            return false;
+        }
 
         CommandResult that = (CommandResult) o;
 

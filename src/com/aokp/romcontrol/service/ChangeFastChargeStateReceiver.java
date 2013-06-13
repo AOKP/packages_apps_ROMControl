@@ -1,12 +1,11 @@
-
 package com.aokp.romcontrol.service;
-
-import java.io.File;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import java.io.File;
 
 public class ChangeFastChargeStateReceiver extends BroadcastReceiver {
 

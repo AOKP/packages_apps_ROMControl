@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol;
 
 import android.app.Activity;
@@ -13,8 +12,9 @@ public class AOKPActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getIntent() != null) {
-            if (getIntent().hasExtra("started_from_shortcut"))
+            if (getIntent().hasExtra("started_from_shortcut")) {
                 mStartedFromShortcut = getIntent().getBooleanExtra("started_from_shortcut", false);
+            }
         }
 
         getActionBar().setDisplayHomeAsUpEnabled(!mStartedFromShortcut);

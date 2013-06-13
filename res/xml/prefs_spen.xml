@@ -7,8 +7,8 @@
 
         <CheckBoxPreference
             android:key="enable_spen"
-            android:title= "@string/spen_enable"
-            android:summary= "@string/spen_enable_summary"  />
+            android:title="@string/spen_enable"
+            android:summary="@string/spen_enable_summary" />
 
         <ListPreference
             android:key="spen_left"
@@ -47,8 +47,8 @@
 
         <CheckBoxPreference
             android:key="enable_stylus pointer"
-            android:title= "@string/enable_stylus_pointer_title"
-            android:summary= "@string/enable_stylus_pointer_summary"  />
+            android:title="@string/enable_stylus_pointer_title"
+            android:summary="@string/enable_stylus_pointer_summary" />
 
     </PreferenceCategory>
 </PreferenceScreen>

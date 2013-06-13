@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.objects;
 
 import android.util.Pair;
@@ -15,6 +14,7 @@ public class EasyPair<Ta, Tb> extends Pair<Ta, Tb> {
      */
     public Ta first;
     public Tb second;
+
     public EasyPair(Ta first, Tb second) {
         super(first, second);
         this.first = first;
@@ -23,6 +23,7 @@ public class EasyPair<Ta, Tb> extends Pair<Ta, Tb> {
 
     /**
      * Constructs a new EasyPair from an existing EasyPair
+     *
      * @param pair
      */
     public EasyPair(EasyPair<Ta, Tb> pair) {
@@ -72,8 +73,9 @@ public class EasyPair<Ta, Tb> extends Pair<Ta, Tb> {
 
     public boolean equals() {
         // yea they equal but not in a good way
-        if (first == null || second == null)
+        if (first == null || second == null) {
             return false;
+        }
         // return a method that won't throw null
         return first == second;
     }

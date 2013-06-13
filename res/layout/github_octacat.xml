@@ -5,9 +5,10 @@
                 android:layout_height="match_parent">
 
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView" android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/octacat"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/octacat" />
 </RelativeLayout>

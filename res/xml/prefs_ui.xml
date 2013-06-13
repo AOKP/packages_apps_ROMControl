@@ -2,7 +2,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <Preference
+    <Preference
         android:key="transparency_dialog"
         android:title="@string/transparency_dialog_title" />
 
@@ -16,7 +16,7 @@
             android:title="@string/custom_bootanimation_title"
             android:summary="@string/custom_bootanimation_summary" />
 
-         <CheckBoxPreference
+        <CheckBoxPreference
             android:key="disable_bootanimation"
             android:title="@string/disable_bootanimation_title" />
 
@@ -79,21 +79,21 @@
             android:entries="@array/user_mode_ui_entries"
             android:entryValues="@array/user_mode_ui_values" />
 
-       <CheckBoxPreference
+        <CheckBoxPreference
             android:key="hide_extras"
-            android:title= "@string/hide_extras"
-            android:summary= "@string/hide_extras_summary"
+            android:title="@string/hide_extras"
+            android:summary="@string/hide_extras_summary"
             android:defaultValue="false" />
 
-       <CheckBoxPreference
+        <CheckBoxPreference
             android:key="force_dualpanel"
             android:title="@string/multipane_ui"
             android:summary="@string/multipane_ui_summary"
             android:defaultValue="false" />
 
-     </PreferenceCategory>
+    </PreferenceCategory>
 
-     <PreferenceCategory
+    <PreferenceCategory
         android:key="display"
         android:title="@string/display_cat">
 
@@ -103,7 +103,7 @@
             android:summary="@string/show_overflow_summary"
             android:defaultValue="false" />
 
-         <CheckBoxPreference
+        <CheckBoxPreference
             android:key="rotate_180"
             android:title="@string/rotate_180_title"
             android:summary="@string/rotate_180_summary" />

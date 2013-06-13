@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.widgets;
 
 /*
@@ -32,7 +31,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-
 import com.aokp.romcontrol.R;
 
 public class TouchInterceptor extends ListView {
@@ -44,7 +42,7 @@ public class TouchInterceptor extends ListView {
     private int mFirstDragPos; // where was the dragged item originally
     private int mDragPoint; // at what offset inside the item did the user grab it
     private int mCoordOffset; // the difference between screen coordinates and coordinates in this
-                              // view
+    // view
     private DragListener mDragListener;
     private DropListener mDropListener;
     private int mUpperBound;
@@ -160,7 +158,7 @@ public class TouchInterceptor extends ListView {
      * Restore size and visibility for all listitems
      */
     private void unExpandViews(boolean deletion) {
-        for (int i = 0;; i++) {
+        for (int i = 0; ; i++) {
             View v = getChildAt(i);
             if (v == null) {
                 if (deletion) {
@@ -200,7 +198,7 @@ public class TouchInterceptor extends ListView {
 
         View first = getChildAt(mFirstDragPos - getFirstVisiblePosition());
 
-        for (int i = 0;; i++) {
+        for (int i = 0; ; i++) {
             View vv = getChildAt(i);
             if (vv == null) {
                 break;

@@ -89,10 +89,12 @@
     <string name="title_show_torch_toggle">Zseblámpa kapcsoló</string>
     <string name="title_show_airplane_toggle">Repülőgép üzemmód</string>
     <string name="title_show_navbar_hide">Navigációs sáv mutatása</string>
-    <string name="summary_show_navbar_hide">Bejelölve engedélyezi a rejtett Navigációs sáv és Értesítési sáv váltást</string>
+    <string name="summary_show_navbar_hide">Bejelölve engedélyezi a rejtett Navigációs sáv és Értesítési sáv váltást
+    </string>
     <string name="title_show_volume_state_toggle">Mutatja a hangerő állítást</string>
     <string name="title_show_reboot_keyguard">Mutatja az Újraindítást a zárképernyőn</string>
-    <string name="summary_show_reboot_keyguard">Engedélyezve mutatni fogja az újraindítási opciókat a kezdőképernyőn</string>
+    <string name="summary_show_reboot_keyguard">Engedélyezve mutatni fogja az újraindítási opciókat a kezdőképernyőn
+    </string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Balra húzás akciója</string>
@@ -128,7 +130,6 @@
     <string name="title_pref_powersaving_data_screen_off_delay">Adatforgalom késleltetése</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">Mennyit várjon az adatforgalom előtt?</string>
 
-    
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Egyedi alkalmazás használata</string>
@@ -161,7 +162,8 @@
     <string name="vibrate_notif_expand_summary">Rezeg mikor szétnyitod az értesítést (UI újraindítás szükséges)</string>
     <string name="disable_bootanimation_title">Bootanimáció tiltása</string>
     <string name="custom_bootanimation_title">Egyedi bootanimáció</string>
-    <string name="custom_bootanimation_summary">Bootanimáció zip kiválasztása. Eredeti mentési helye /system/media.</string>
+    <string name="custom_bootanimation_summary">Bootanimáció zip kiválasztása. Eredeti mentési helye /system/media.
+    </string>
     <string name="install_file_manager_error">Alkalmazás nem található. Telepíts fájlkezelőt.</string>
     <string name="notification_wallpaper_title">Értesítési háttér választása</string>
     <string name="notification_wallpaper_summary">Egyedi hátteret tudsz adni az értesítési sávnak</string>
@@ -208,12 +210,16 @@
     <string name="multipane_ui_summary">Engedélyezi/Tiltja a dupla paneles nézetet (újraindítás szükséges)</string>
     <string name="show_overflow_title">Mutassa a menü UI túlnyúlását</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
-    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
-    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
+    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted
+    </string>
+    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted
+    </string>
     <string name="notification_show_wifi_ssid_title">Wifi hálózat név mutatása</string>
     <string name="notification_show_wifi_ssid_summary">Az aktuálisan kapcsolódott Wifi hálózat nevét kiírja</string>
     <string name="brightness_slider_title">Értesitési sáv fényerő csúszka</string>
-    <string name="brightness_slider_summary">Engedélyezi a csúsztatással való fényerő állítást az értesítési sáv tetején. Autó fényerő állításnál nem történik semmi.</string>
+    <string name="brightness_slider_summary">Engedélyezi a csúsztatással való fényerő állítást az értesítési sáv
+        tetején. Autó fényerő állításnál nem történik semmi.
+    </string>
     <string name="user_mode_ui">Felhasználói felület</string>
     <string name="user_mode_ui_summary">Milyen stílusú legyen az értesítési/állapot sáv. SystemUI újraindul.</string>
     <string name="phone_mode_ui">Phone - NavBar oldalt fekvőmódban</string>
@@ -247,7 +253,9 @@
     <string name="dpi">DPI</string>
     <string name="open_market_title">4. Nyísd meg a marketet és fogadd el.</string>
     <string name="open_market_summary">Lépj ki és folytasd itt.</string>
-    <string name="open_market_summary_could_not_open">"Nem sikerült megnyitni a marketet! Ha telepítve van, nyisd meg."</string>
+    <string name="open_market_summary_could_not_open">"Nem sikerült megnyitni a marketet! Ha telepítve van, nyisd
+        meg."
+    </string>
     <string name="custom_density_title">5. Állítsd a felbontást amire akarod!</string>
     <string name="custom_density_summary">Ha kompatibilitási problémák vannak, ismételd meg a lépéseket.</string>
     <string name="custom_density_summary_invalid">"ELFOGADHATATLAN ÉRTÉK!"</string>
@@ -255,7 +263,9 @@
     <string name="set_custom_density_title">Egyedi felbontás beállítás</string>
     <string name="set_custom_density_set">Beállítás</string>
     <string name="custom_density_dialog_title">"FIGYELMEZTETÉS!"</string>
-    <string name="custom_density_dialog_summary">"A megváltoztatott LCD felbontás gondot okozhat némely alkalmazásnál. Abban az esetben kezd az első lépésnél."</string>
+    <string name="custom_density_dialog_summary">"A megváltoztatott LCD felbontás gondot okozhat némely alkalmazásnál.
+        Abban az esetben kezd az első lépésnél."
+    </string>
     <string name="custom_density_dialog_button_got">Megvan!</string>
     <string name="custom_density_dialog_button_reboot">Újraindítás most</string>
 
@@ -301,8 +311,12 @@
     <string name="toggle_action_title">Akció %1$s &amp; icon</string>
     <string name="toggle_action_title_alt">Hosszannyomás akció %1$s &amp; ikon</string>
     <string name="toggle_longpress_title">Hosszannyomás akció %1$s</string>
-    <string name="custom_toggle_desc">"Alap módban egy érintésre végrehajtja a ciklust. Hosszan nyomásra elindítja a megjelenített akciót. Ez a laghasznosabb a legtöbb felhasználónak. 
- Haladó módban engedélyezi az alkalmazás futtatását minden kattintásnál. A hosszan nyomások is engedélyezve vannak ebben a módban. Azoknak a felhasználóknak hasznos akik akarják, hogy a végrehajtó feladat ne indítsa el az alkalmazást."</string>
+    <string name="custom_toggle_desc">"Alap módban egy érintésre végrehajtja a ciklust. Hosszan nyomásra elindítja a
+        megjelenített akciót. Ez a laghasznosabb a legtöbb felhasználónak.
+        Haladó módban engedélyezi az alkalmazás futtatását minden kattintásnál. A hosszan nyomások is engedélyezve
+        vannak ebben a módban. Azoknak a felhasználóknak hasznos akik akarják, hogy a végrehajtó feladat ne indítsa el
+        az alkalmazást."
+    </string>
     <string name="custom_help_title">Hogyan mükődik</string>
     <string name="custom_help_summary">Nyomj rá az információért</string>
     <string name="custom_toggle_okay">Elutasít</string>
@@ -313,7 +327,9 @@
     <string name="boot_action_title">Egyes állapot bekapcsoláskor</string>
     <string name="boot_action_summary">Egyes állapot fog indulni bekapcsoláskor</string>
     <string name="match_icon_action_title">Megjelenített akció indítása</string>
-    <string name="match_icon_action_summary">Hasznos összehangolni a megjelenített feadatot az ikon specifikus felhasználásával</string>
+    <string name="match_icon_action_summary">Hasznos összehangolni a megjelenített feadatot az ikon specifikus
+        felhasználásával
+    </string>
     <string name="action_toggle_title">Kapcsoló akciók</string>
     <string name="action_toggle_summary">Kapcsoló sorrend balról jobbra</string>
     <string name="no_dclick">Nincs akció</string>
@@ -330,7 +346,7 @@
 
     <!-- Statusbar | Clock -->
     <string name="clock_title_enable">Óra stílus</string>
-    <string name="title_clock_ampm_entries">AM/PM </string>
+    <string name="title_clock_ampm_entries">AM/PM</string>
     <string name="enable_clock_weekday">A hét napja</string>
     <string name="enable_clock_weekday_summary">Rövidített nap kijelzése az óra előtt</string>
     <string name="colors">Színek</string>
@@ -398,7 +414,7 @@
     <string name="wifi_signal_color_title">WiFi jel színe</string>
     <string name="alt_signal_title">Alt jel elrendezés</string>
     <string name="alt_signal_summary">Alternativ (GB) jel használata</string>
-    
+
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Színválasztó</string>
@@ -416,7 +432,9 @@
     <string name="navbar_button_cat">Navigációs sáv gombok</string>
     <string name="navbar_color_cat">Színek és áttetszőség</string>
     <string name="title_pref_menu_display">Menü helye</string>
-    <string name="summary_pref_menu_display">Ne felejtsd el eltávolítani a menü gomgot, ha nagy menü ikonokat használsz!</string>
+    <string name="summary_pref_menu_display">Ne felejtsd el eltávolítani a menü gomgot, ha nagy menü ikonokat
+        használsz!
+    </string>
     <string name="title_pref_navigation_menu_display">Menü kinézete</string>
     <string name="summary_pref_navigation_menu_display">Hogyan és mikor jelenjen meg a menü gomb?</string>
     <string name="navbar_qty_title">Navigációs gombok száma</string>
@@ -424,7 +442,9 @@
     <string name="navbar_action_title">Gomb %1$s esemény &amp; ikon</string>
     <string name="button_transparency_title">Nav gombok áttetszősége</string>
     <string name="navbar_width_help_title">Navigációs sáv kombinált szélesség segítség</string>
-    <string name="navbar_width_help_summary" formatted="false">100 a 70% képernyő szélesség, 5 a 30% képernyő szélesség. 0 alapértelmezésben egy gomb szélesség.</string>
+    <string name="navbar_width_help_summary" formatted="false">100 a 70% képernyő szélesség, 5 a 30% képernyő szélesség.
+        0 alapértelmezésben egy gomb szélesség.
+    </string>
     <string name="width_port_title">Kombinált sáv szélesség állóhelyzetben</string>
     <string name="width_land_title">Kombinált sáv szélesség fekvőhelyzetben</string>
     <string name="navbar_widgets">Navigációs sáv Widgetek</string>
@@ -432,7 +452,8 @@
     <string name="navigation_bar_height_title">Navigációs sáv magassága</string>
     <string name="navigation_bar_height_summary">Navigációs sáv magassága állóhelyzetben.</string>
     <string name="navigation_bar_height_landscape_title">Navigációs sáv magassága fekvőhelyzetben</string>
-    <string name="navigation_bar_height_landscape_summary">Navigációs sáv magasságának beállítása fekvőhelyzetben.</string>
+    <string name="navigation_bar_height_landscape_summary">Navigációs sáv magasságának beállítása fekvőhelyzetben.
+    </string>
     <string name="system_bar_height_title">Rendszer sáv magasság</string>
     <string name="system_bar_height_summary">Rendszer sáv magassága állóhelyzetben</string>
     <string name="system_bar_height_landscape_title">Rendszer sáv magasság fekve</string>
@@ -440,7 +461,10 @@
     <string name="navigation_bar_width_title">Navigációs sáv szélessége.</string>
     <string name="navigation_bar_width_summary">Navigációs sáv magassága oldal nézetben.</string>
     <string name="navbar_enable_dialog_title">Újraindítás szükséges!</string>
-    <string name="navbar_enable_dialog_msg">Újraindítás <b>szükséges</b> , hogy minden jól mükődjön!</string>
+    <string name="navbar_enable_dialog_msg">Újraindítás
+        <b>szükséges</b>
+        , hogy minden jól mükődjön!
+    </string>
     <string name="navbar_enable_dialog_negative">Újraindítás később</string>
     <string name="navbar_enable_dialog_Positive">Újraindítás most!</string>
     <string name="navbar_height_dialog_title">Újraindítás szükséges!</string>
@@ -467,7 +491,8 @@
     <string name="navbar_widgets_shiftRight">Jobbra</string>
     <string name="navbar_widgets_delete">Modul törlése</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menü nyíl gombok</string>
-    <string name="navigation_bar_menu_arrow_keys_summary">Mutatja a nyíl gombokat az értesítési sávon gépelés közben</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">Mutatja a nyíl gombokat az értesítési sávon gépelés közben
+    </string>
     <string name="statusbar_hide_title">Értesítési sáv elrejtése</string>
     <string name="statusbar_hide_summary">Bejelölve teljesen elrejti az Értesítési sávot</string>
     <string name="navigation_bar_alpha_title">Állapotsáv és navigációs sáv áttetszősége</string>
@@ -502,7 +527,9 @@
     <string name="choose_action_long_title">Hosszú akció választása</string>
     <string name="action_long_save">beállítás, mint hosszú akció</string>
     <string name="title_navring_amount">Gyűrűk száma</string>
-    <string name="summary_navring_amount">Hány eseményt akarsz rajta? *A változtatás hatására alaphelyzetbe kerülnek az események és újra indul a SystemUI*</string>
+    <string name="summary_navring_amount">Hány eseményt akarsz rajta? *A változtatás hatására alaphelyzetbe kerülnek az
+        események és újra indul a SystemUI*
+    </string>
     <string name="interface_navring_settings_title">Navigációs Gyűrű</string>
     <string name="interface_navring_settings_summary">@null</string>
     <string name="navring_target_info">Az újjaddal fogd meg a kivánt elemet</string>
@@ -513,7 +540,7 @@
     <string name="navring_target_amount_text">Aktuális elemek száma</string>
     <string name="navring_target_longpress_text">Hosszan nyomás akciója</string>
 
-   <!-- Ribbon -->
+    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">Szalagsáv rendezése</string>
     <string name="ribbon_chooser_instructions">Válaszd ki melyik Szalag beállítása legyen.</string>
     <string name="ribbon_instructions">Nyomd meg az ikont az akció kiválasztásához vagy törléséhez</string>
@@ -544,7 +571,9 @@
     <string name="ribbon_left_enable_title">Engedélyezi a balról húzást</string>
     <string name="ribbon_right_enable_title">Engedélyezi a jobbról húzást</string>
     <string name="ribbon_bottom_enable_title">Engedélyezi alulról a húzást</string>
-    <string name="ribbon_bottom_warning_title">Nem engedélyezi az alulról húzást Navigációs sávnál, rejtve kell lennie.</string>
+    <string name="ribbon_bottom_warning_title">Nem engedélyezi az alulról húzást Navigációs sávnál, rejtve kell
+        lennie.
+    </string>
     <string name="ribbon_button_colorize_title">Akció ikonok szöveg színei</string>
     <string name="ribbon_color_title">Húzó szalag szine</string>
     <string name="text_color_title">Alkalmazás szöveg szine</string>
@@ -589,7 +618,7 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">LED teszt</string>
     <string name="led_test_notification_message_now">"LED tesztelése: "</string>
-    <string name="led_test_notification_message_note">".  Kapcsold ki a képernyőt, hogy lásd a LED-et. "</string>
+    <string name="led_test_notification_message_note">". Kapcsold ki a képernyőt, hogy lásd a LED-et. "</string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">LED világít töltés alatt (újraindítás szükséges)</string>
     <string name="led_change_brightness">Fényerő állítás</string>
@@ -616,7 +645,8 @@
     <string name="flip_dialog_title">Mükődése</string>
     <string name="flip_dialog_msg">Telefon felfordítására rezeg vagy némít.
         Alapértelmezés 1,5 mp a telefon felfordítására.
-        15 mp után visszaáll.</string>
+        15 mp után visszaáll.
+    </string>
     <string name="summary_phone_flip_mode">Fordítsd fel a telefont hívás közben</string>
     <string name="title_phone_flip_mode">Telefon hívás némítás</string>
 
@@ -630,30 +660,43 @@
     <string name="lockscreen_menu_unlock_title">Menü feloldás</string>
     <string name="lockscreen_menu_unlock_summary">Menü gombbal baló feloldás</string>
     <string name="lockscreen_auto_rotate_title">Zárképernyő forgatásának engedélyezése</string>
-    <string name="lockscreen_auto_rotate_summary">Zárképernyő forog a készülék tájolása szerint. Ez független a kijelző Auto-forgatásástól.</string>
+    <string name="lockscreen_auto_rotate_summary">Zárképernyő forog a készülék tájolása szerint. Ez független a kijelző
+        Auto-forgatásástól.
+    </string>
     <string name="lockscreen_all_widgets_title">Összes modul engedélyezve</string>
-    <string name="lockscreen_all_widgets_summary">Figyelmeztetés**Néhány modul nem használható zárképernyőn. A modul készítői és az Aokp nem felelősek a működésükért. Válaszd felelőséggel.</string>
+    <string name="lockscreen_all_widgets_summary">Figyelmeztetés**Néhány modul nem használható zárképernyőn. A modul
+        készítői és az Aokp nem felelősek a működésükért. Válaszd felelőséggel.
+    </string>
     <string name="lockscreen_unlimited_widgets_title">Végtelen modul engedélyezve</string>
     <string name="lockscreen_unlimited_widgets_summary">Figyelmeztetés**Sok modul hozzáadása akadást okozhat.</string>
     <string name="lockscreen_battery_title">Zárképernyő akksi százalék</string>
     <string name="lockscreen_battery_summary">Mutatja a akksi százalékot a zárképernyőn</string>
     <string name="lockscreen_hide_initial_page_hints_title">Kezdőoldalak elrejtése</string>
-    <string name="lockscreen_hide_initial_page_hints_summary">Bekapcsolt képernyőnél a jobb és bal oldali modulok elrejtése.</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Bekapcsolt képernyőnél a jobb és bal oldali modulok
+        elrejtése.
+    </string>
     <string name="lockscreen_minimize_challenge_title">Kisebb zárfeloldó</string>
-    <string name="lockscreen_minimize_challenge_summary">A zárképernyő feloldó (kör, motívum, pin) kicsi lezárt képernyőnél.</string>
+    <string name="lockscreen_minimize_challenge_summary">A zárképernyő feloldó (kör, motívum, pin) kicsi lezárt
+        képernyőnél.
+    </string>
     <string name="lockscreen_use_widget_container_carousel_title">Modul keret használata</string>
-    <string name="lockscreen_use_widget_container_carousel_summary">Modul keret használata a zárképernyő modulok váltásánál.</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Modul keret használata a zárképernyő modulok
+        váltásánál.
+    </string>
     <string name="volume_rocker_wake_title">Hangerő feloldás</string>
     <string name="volume_rocker_wake_summary">Képernyő felélesztése a hangerő gombokra</string>
     <string name="volume_music_controls_title">Hangerő zene vezérlés</string>
-    <string name="volume_music_controls_summary">Hosszan nyomva a hangerő gombot lépteti a következő számra kikapcsolt képernyőnél. Hangerő gombra való ébresztés nem müködik zene lejátszás közben.</string>
+    <string name="volume_music_controls_summary">Hosszan nyomva a hangerő gombot lépteti a következő számra kikapcsolt
+        képernyőnél. Hangerő gombra való ébresztés nem müködik zene lejátszás közben.
+    </string>
     <string name="lockscreen_stock_music_layout_title">Gyári zene elrendezés</string>
     <string name="lockscreen_stock_music_layout_summary">Gyári elrendezés használata lejátszás közben.</string>
     <string name="lockscreen_wallpaper_title">Zárképernyő háttérkép választása</string>
     <string name="lockscreen_wallpaper_summary">Meg tudod változtatni a háttérképét</string>
     <string name="lockscreen_text_color_title">Zárképernyő szöveg szín</string>
     <string name="lockscreen_weather_title">Engedélyez</string>
-    <string name="lockscreen_weather_summary">Időjárás a zárképernyőn. RomControlban engedélyezni kell a mükődését.</string>
+    <string name="lockscreen_weather_summary">Időjárás a zárképernyőn. RomControlban engedélyezni kell a mükődését.
+    </string>
     <string name="lockscreen_weather_type_title">Zárképernyő időjárás stílusa</string>
     <string name="lockscreen_weather_type_summary">Grafikus vagy szöveges kijelzés</string>
     <string name="lockscreen_calendar_title">Engedélyez</string>
@@ -667,7 +710,9 @@
     <string name="lockscreen_calendar_use_colors_title">Szinek használata</string>
     <string name="lockscreen_calendar_use_colors_summary">Ha engedélyezed, akkor a naptár szineit használja.</string>
     <string name="lockscreen_calendar_hide_ongoing_title">Folyamatban lévő események elrejtése</string>
-    <string name="lockscreen_calendar_hide_ongoing_summary">Ha engedélyezed, akkor a folyamatban lévő eseményeket nem jelzi ki.</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Ha engedélyezed, akkor a folyamatban lévő eseményeket nem
+        jelzi ki.
+    </string>
     <string name="lockscreen_calendar_flip_title">Több esemény</string>
     <string name="lockscreen_calendar_flip_summary">Ha engedélyezed, vált az események közt.</string>
     <string name="lockscreen_calendar_interval_title">Váltás üteme</string>
@@ -686,7 +731,9 @@
     <string name="lockscreen_targets_summary">Zárképernyő elemek összesítője…</string>
     <string name="lockscreen_target_longpress_text">Hosszan nyomás állapota</string>
     <string name="lockscreen_glow_torch_text">Fénylő újj</string>
-    <string name="lockscreen_glow_torch_summary">Hosszan nyomva a zárképernyő gombot bekapcsol a zseblámpa, elengedve kialszik.</string>
+    <string name="lockscreen_glow_torch_summary">Hosszan nyomva a zárképernyő gombot bekapcsol a zseblámpa, elengedve
+        kialszik.
+    </string>
     <string name="lockscreen_camera">Kamera</string>
     <string name="lockscreen_unlock">Feloldás</string>
     <string name="save_error">Nem sikerült menteni! Legalább egy elem kell!</string>
@@ -703,32 +750,40 @@
     <string name="lockscreen_target_reset_title">Alaphelyzet</string>
     <string name="lockscreen_target_reset_message">Törlöd az összes beállítást és minden alaphelyzetbe?</string>
     <string name="lockscreen_target_edit_title">Elem és ikon szerkesztés</string>
-    <string name="lockscreen_target_edit_msg">Válaszd ki vagy módosítsd a kívánt alkalmazást vagy tevékenységet és az ikonjait</string>
+    <string name="lockscreen_target_edit_msg">Válaszd ki vagy módosítsd a kívánt alkalmazást vagy tevékenységet és az
+        ikonjait
+    </string>
     <string name="lockscreen_target_longpress_summary">Engedélyezi a hosszan nyomást a zárképernyő elemeken</string>
 
     <!-- Weather -->
     <string name="weather_enable">Időjárás engedélyezése</string>
     <string name="weather_enable_summary">Időjárási információk megjelenítése az egész ROM-ban.</string>
     <string name="weather_use_custom_location">Egyéni hely használata</string>
-    <string name="weather_use_custom_location_summary">Egyéni hely beállításával energiát takarit meg. Egyébként a hálózat-választó határozza meg a helyet.</string>
+    <string name="weather_use_custom_location_summary">Egyéni hely beállításával energiát takarit meg. Egyébként a
+        hálózat-választó határozza meg a helyet.
+    </string>
     <string name="weather_custom_location_dialog_title">Hely beállítása</string>
-    <string name="weather_custom_location_dialog_message">Ügyelj a helyes megadásra! Helytelen megadás esetén nem frissül az időjárás.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_dialog_message">Ügyelj a helyes megadásra! Helytelen megadás esetén nem
+        frissül az időjárás.\n\nExamples: New York,NY // New York, NY // 10033 // London, England
+    </string>
     <string name="weather_custom_location_title">Saját hely</string>
     <string name="weather_show_location_title">Hely mutatása</string>
     <string name="weather_show_location_summary">Mutatja a helyet.</string>
     <string name="weather_refresh_interval">Fríssitési gyakoriság</string>
     <string name="weather_refresh_interval_minutes">" perc"</string>
     <string name="weather_use_celcius">Metrikus egység</string>
-	<string name="weather_use_celcius_summary">Engedélyezve Celiusban és km/h-ban jeleniti meg az adatokat.</string>
-	<string name="weather_statusbar_style">Statusbar időjárás stílusa</string>
+    <string name="weather_use_celcius_summary">Engedélyezve Celiusban és km/h-ban jeleniti meg az adatokat.</string>
+    <string name="weather_statusbar_style">Statusbar időjárás stílusa</string>
     <string name="weather_start_custom_app">Egyéni alkalmazás indítása</string>
     <string name="weather_start_custom_app_summary">Alkalmazás indítása, ha az időjárásra nyomsz.</string>
     <string name="weather_custom_app_title">Egyéni alkalmazás</string>
     <string name="weather_custom_app_dialog_title">Válaszd ki az alkalmazást</string>
-	<string name="weather_custom_app_dialog_message">Jelenlegi csomag neve.</string>
-	<string name="weather_refreshing">Időjárás frissítése!</string>
+    <string name="weather_custom_app_dialog_message">Jelenlegi csomag neve.</string>
+    <string name="weather_refreshing">Időjárás frissítése!</string>
     <string name="weather_loc_warning_title">Nem lehet helyet betölteni!</string>
-    <string name="weather_loc_warning_msg">"Hálózati helymeghatározás le van tiltva. Állíts be egyéni helyet vagy engedélyezd a hálózati meghatározást."</string>
+    <string name="weather_loc_warning_msg">"Hálózati helymeghatározás le van tiltva. Állíts be egyéni helyet vagy
+        engedélyezd a hálózati meghatározást."
+    </string>
     <string name="weather_loc_warning_positive">"Hálózat engedélyezése"</string>
     <string name="weather_loc_warning_negative">"Nem engedélyezi."</string>
     <string name="menu_weather_get_weather">Időjárás beállítása</string>
@@ -831,15 +886,17 @@
     <string name="help">Segítség</string>
     <string name="vibration_detailed_help">Egyéni rezgési minták készítése 5 egyszerű lépésben:\n
         - Nyomd meg az Új/Alaphelyzet gombot\n
-		- Utána a Felvétel-t\n
-		- Rögzítsd a mintád nyomkodva az Érintés! gombot\n
-		- Nyomd meg a Stop-ot\n
-		- Érintsd a Mentést, nevezd el és nyomj egy OK-t\n\n
-		A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
-		Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented (felülírja, akkor is ha átnevezed).\n
-		Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
-		Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
-		Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.</string>
+        - Utána a Felvétel-t\n
+        - Rögzítsd a mintád nyomkodva az Érintés! gombot\n
+        - Nyomd meg a Stop-ot\n
+        - Érintsd a Mentést, nevezd el és nyomj egy OK-t\n\n
+        A felvétel ellenőrzéséhez nyomd meg a Lejátszás gombot.\n
+        Ha modósítani akarsz egy elmentett mintát, a Lejátszás érintésével kiválasztod és újra felveszed és mented
+        (felülírja, akkor is ha átnevezed).\n
+        Minta törléséhez nyomj a Törlés gombra. Az Alapértelmezett mintát nem tudod törölni.\n\n
+        Az alapértelmezett rezgést a Telefon/Beállítások vagy Beállítások/Hangok alatt tudod állítani.\n
+        Egyéni mintákat tudsz állítani személyekhez is: miután betöltötted a névjegyet Menü/Rezgés beállítás.
+    </string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

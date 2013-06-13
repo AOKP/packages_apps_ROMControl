@@ -36,8 +36,9 @@ public class HeadphoneService extends Service {
             if (Intent.ACTION_HEADSET_PLUG.equals(action)) {
                 final int userPreferenceAudioMode = getUserHeadphoneAudioMode(context);
 
-                if (userPreferenceAudioMode == MODE_UNTOUCHED)
+                if (userPreferenceAudioMode == MODE_UNTOUCHED) {
                     return;
+                }
 
                 final int state = intent.getIntExtra("state", 0);
 
@@ -53,7 +54,8 @@ public class HeadphoneService extends Service {
                     }
                 } else {
                     // unplugged
-                    if (mShouldSwitchBack && am.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
+                    if (mShouldSwitchBack &&
+                            am.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
                         mShouldSwitchBack = false;
                         am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
                         log("unplugged");
@@ -68,10 +70,12 @@ public class HeadphoneService extends Service {
                     Log.d(TAG, "user picked audio mode = " + userPreferenceAudioMode);
                 }
 
-                if (userPreferenceAudioMode == MODE_UNTOUCHED)
+                if (userPreferenceAudioMode == MODE_UNTOUCHED) {
                     return;
+                }
 
-                final int state = intent.getIntExtra(BluetoothHeadset.EXTRA_STATE, BluetoothHeadset.STATE_DISCONNECTED);
+                final int state = intent.getIntExtra(BluetoothHeadset.EXTRA_STATE,
+                        BluetoothHeadset.STATE_DISCONNECTED);
 
                 final AudioManager am = (AudioManager) context
                         .getSystemService(Context.AUDIO_SERVICE);
@@ -85,7 +89,8 @@ public class HeadphoneService extends Service {
                     }
                 } else {
                     // disconnected or others
-                    if (mShouldSwitchBack && am.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
+                    if (mShouldSwitchBack &&
+                            am.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
                         mShouldSwitchBack = false;
                         am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
                         log("bt not connected");
@@ -117,7 +122,8 @@ public class HeadphoneService extends Service {
         SharedPreferences prefs =
                 PreferenceManager.getDefaultSharedPreferences(c);
         // stored as strings from listpreference
-        return Integer.parseInt(prefs.getString(KEY_HEADPHONE_AUDIO_MODE, String.valueOf(MODE_UNTOUCHED)));
+        return Integer.parseInt(
+                prefs.getString(KEY_HEADPHONE_AUDIO_MODE, String.valueOf(MODE_UNTOUCHED)));
     }
 
     public static int getUserBTAudioMode(Context c) {
@@ -147,7 +153,8 @@ public class HeadphoneService extends Service {
     }
 
     private static void log(String s) {
-        if (DEBUG)
+        if (DEBUG) {
             Log.e(TAG, s);
+        }
     }
 }

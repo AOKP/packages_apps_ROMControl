@@ -64,7 +64,9 @@
     <string name="title_pref_powersaving_data_screen_off">Kapalı Ekranda Veri Hareketi</string>
     <string name="summary_pref_powersaving_data_screen_off">Kapalı ekrandaki veri hareketini ayarla</string>
     <string name="title_pref_powersaving_data_screen_off_delay">Veri Hareketi Gecikmesi</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">Veri hareketi uygulamadan önceki beklenecek zamanı ayarla</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Veri hareketi uygulamadan önceki beklenecek zamanı
+        ayarla
+    </string>
     <string name="use_custom_app_title">Özel uygulamalar kullan</string>
     <string name="use_custom_app_summary">Son uygulamalar penceresi yerine özel uygulamalar kullan</string>
     <string name="select_custom_app_title">Özel uygulamaları seçin</string>
@@ -87,17 +89,24 @@
     <string name="status_bar_notif_count_title">Bildirim Sayısını Göster</string>
     <string name="status_bar_notif_count_summary">Durum çubuğunda bekleyen bildirimlerin sayısını göster</string>
     <string name="vibrate_notif_expand_title">Genişletildiğinde Titreşim</string>
-    <string name="vibrate_notif_expand_summary">Genişletilmiş bildirimlerde titreşim (Arayüz yeniden başlatılır)</string>
+    <string name="vibrate_notif_expand_summary">Genişletilmiş bildirimlerde titreşim (Arayüz yeniden başlatılır)
+    </string>
     <string name="disable_bootanimation_title">Yükleme animasyonu devre dışı</string>
     <string name="custom_bootanimation_title">Özel yükleme animasyonu</string>
-    <string name="custom_bootanimation_summary">Kullanacağınız özel ön yükleme animasyonu için sd kartınızdan zip dosyanızı seçin</string>
-    <string name="install_file_manager_error">Zip dosyasını açabilecek uygulama bulunamadı.Lütfen bir dosya yöneticisi yükleyin.</string>
+    <string name="custom_bootanimation_summary">Kullanacağınız özel ön yükleme animasyonu için sd kartınızdan zip
+        dosyanızı seçin
+    </string>
+    <string name="install_file_manager_error">Zip dosyasını açabilecek uygulama bulunamadı.Lütfen bir dosya yöneticisi
+        yükleyin.
+    </string>
     <string name="notification_wallpaper_title">Durum çubuğu duvar kağıdı seçin</string>
     <string name="notification_wallpaper_summary">Duvar kağıdını bu menüden kaldırabilirsiniz</string>
     <string name="notif_wallpaper_alpha_title">Durum çubuğu arkaplan ışığı</string>
     <string name="alpha_dialog_title">Işığın değerini ayarla</string>
     <string name="custom_carrier_label_title">Özelleştirilmiş operatör yazısı</string>
-    <string name="custom_carrier_label_explain">Lütfen yeni bir yazı giriniz. Boş girildiği zaman tekrar standart hale dönecektir .</string>
+    <string name="custom_carrier_label_explain">Lütfen yeni bir yazı giriniz. Boş girildiği zaman tekrar standart hale
+        dönecektir .
+    </string>
     <string name="custom_carrier_label_notset">Özel operatör yazısı şu anda ayarlanamadı</string>
     <string name="ime_switcher_title">Klavye değiştirici</string>
     <string name="ime_switcher_summary">Yazarken durum çubuğu içinde</string>
@@ -115,7 +124,7 @@
     <string name="tablet_ui_summary">Tablet Arayüzüne geçecektir (Yeniden başlatmak gerekir)</string>
     <string name="hide_extras">Ekstraları gizle</string>
     <string name="hide_extras_summary">Sistem çubuğunda mod butonunu gizle.(Sistem Arayüzü yeniden başlatılır)</string>
-    <string name="bootanimation_preview">Yükleme animasyonu </string>
+    <string name="bootanimation_preview">Yükleme animasyonu</string>
     <string name="apply">Uygula</string>
     <string name="clear_custom_bootanimation">Özel yükleme animasyonunu temizle</string>
     <string name="set_custom_bootanimation">Özel ayarla...</string>
@@ -123,23 +132,33 @@
     <string name="error_reading_zip_file">Zip dosyası okuma hatası</string>
     <string name="error_creating_preview">Önizleme oluşturma hatası</string>
     <string name="multipane_ui">Çift-panel görünümü</string>
-    <string name="multipane_ui_summary">Bu ayarı destekleyen uygulamalar yan yana iki bölme olarak görüntülenir (Yeniden başlatmak gerektirir)</string>
+    <string name="multipane_ui_summary">Bu ayarı destekleyen uygulamalar yan yana iki bölme olarak görüntülenir (Yeniden
+        başlatmak gerektirir)
+    </string>
     <string name="show_overflow_title">Menü Arayüz taşmasını göster</string>
     <string name="show_overflow_summary">Uygulamalar içinde 3-nokta taşması menü tuşunu görüntüle</string>
-    <string name="show_overflow_toast_enable">Uygulamalar yeniden başlatılana kadar menü taşma tuşu görünür olmayabilir</string>
-    <string name="show_overflow_toast_disable">Uygulamalar yeniden başlatılana kadar menü taşma tuşu gizli olabilir</string>
+    <string name="show_overflow_toast_enable">Uygulamalar yeniden başlatılana kadar menü taşma tuşu görünür
+        olmayabilir
+    </string>
+    <string name="show_overflow_toast_disable">Uygulamalar yeniden başlatılana kadar menü taşma tuşu gizli olabilir
+    </string>
     <string name="notification_show_wifi_ssid_title">Wifi ağ adını göster</string>
     <string name="notification_show_wifi_ssid_summary">Ekranda mevcut olan bağlı Wifi ağ adını görüntüle</string>
     <string name="brightness_slider_title">Durum çubuğu parlaklık kaydırıcı</string>
-    <string name="brightness_slider_summary">Durum çubuğu üzerinde ekran parlaklığını parmağınızı sağa sola kaydırarak değiştirin. Otomatik parklaklık etkin olduğunda çalışmaz.</string>
+    <string name="brightness_slider_summary">Durum çubuğu üzerinde ekran parlaklığını parmağınızı sağa sola kaydırarak
+        değiştirin. Otomatik parklaklık etkin olduğunda çalışmaz.
+    </string>
     <string name="lcd_density_title">LCD Yoğunluğu</string>
     <string name="lcd_density_summary">Bilinmeyen</string>
     <string name="current_lcd_density">"Mevcut LCD Yoğunluğu: "</string>
     <string name="lcd_density_wizard">LCD Yoğunluk Sihirbazı</string>
     <string name="follow_through_title">Talimatları izleyin!</string>
-    <string name="follow_through_summary">Yeni adıma geçmeden önce bulunduğunuz adımı doğru yaptığınıza emin olun.</string>
+    <string name="follow_through_summary">Yeni adıma geçmeden önce bulunduğunuz adımı doğru yaptığınıza emin olun.
+    </string>
     <string name="stock_density_title">1. Standart LCD yoğunluğunu değiştirin</string>
-    <string name="stock_density_summary">Tabletler ve eski telefonlar için 160 dır. Çoğu telefon 240 kullanır. Galaxy Nexus standart olarak 320 ile gelir.</string>
+    <string name="stock_density_summary">Tabletler ve eski telefonlar için 160 dır. Çoğu telefon 240 kullanır. Galaxy
+        Nexus standart olarak 320 ile gelir.
+    </string>
     <string name="stock_density_changed_summary">"Yoğunluk Ayarı: "</string>
     <string name="reboot_title">2. Yeniden başlat!</string>
     <string name="reboot_summary">Yeniden başlattıktan sonra buraya gelin ve bütün adımları tamamlayın!</string>
@@ -149,18 +168,25 @@
     <string name="dpi">DPI</string>
     <string name="open_market_title">4. Marketi açın ve Kabul Et tıklayın</string>
     <string name="open_market_summary">Tamamladığınızda buraya geri dönün.</string>
-    <string name="open_market_summary_could_not_open">"Market açılamadı.Yüklü olduğundan eminseniz Anasayfadan kendiniz açın."</string>
+    <string name="open_market_summary_could_not_open">"Market açılamadı.Yüklü olduğundan eminseniz Anasayfadan kendiniz
+        açın."
+    </string>
     <string name="custom_density_title">5. LCD yoğunluğunu nasıl istiyorsanız değiştirin!</string>
-    <string name="custom_density_summary">Eğer marketle ilgili uyum sorunu olursa, buraya gelin ve adımları baştan doğru bir şekilde yapın.</string>
+    <string name="custom_density_summary">Eğer marketle ilgili uyum sorunu olursa, buraya gelin ve adımları baştan doğru
+        bir şekilde yapın.
+    </string>
     <string name="custom_density_summary_invalid">GEÇERSİZ YOĞUNLUK!</string>
     <string name="custom_density">Özel</string>
     <string name="set_custom_density_title">Özel Yoğunluk Ayarla</string>
     <string name="set_custom_density_set">Ayarla</string>
     <string name="custom_density_dialog_title">UYARI!</string>
-    <string name="custom_density_dialog_summary">LCD yoğunluğunun değiştirilmesi uygulamalarda beklenmedik davranışlara sebeb olabilir.Bu şekilde bir sorun ile karşılaşırsanız buraya dönün ve 1. adımdan süreci yeniden başlatın.</string>
+    <string name="custom_density_dialog_summary">LCD yoğunluğunun değiştirilmesi uygulamalarda beklenmedik davranışlara
+        sebeb olabilir.Bu şekilde bir sorun ile karşılaşırsanız buraya dönün ve 1. adımdan süreci yeniden başlatın.
+    </string>
     <string name="custom_density_dialog_button_got">Tamam!</string>
     <string name="custom_density_dialog_button_reboot">Yeniden Başlat</string>
-    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
+    <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH
+    </string>
     <string name="toggle_style_title">Kısayol tarzı</string>
     <string name="toggle_style_summary">Kısayol metin ya da ikon gösterimini belirleyin.</string>
     <string name="toggles_layout_title">Kısayol Görünümü</string>
@@ -234,14 +260,18 @@
     <string name="toggle_sound_state">Zil/Titr./Sessiz</string>
     <string name="battery_icon">Batarya Simge Tarzı</string>
     <string name="battery_not_title">Bildirimlerdeki batarya simgesi</string>
-    <string name="battery_not_summary">Bu seçenek işaretlendiğinde batarya simgesi bildirim çubuğunu indirdiğinizde de görülecektir.</string>
+    <string name="battery_not_summary">Bu seçenek işaretlendiğinde batarya simgesi bildirim çubuğunu indirdiğinizde de
+        görülecektir.
+    </string>
     <string name="battery_bar">Batarya çubuk konumu</string>
     <string name="battery_bar_color">Batarya çubuk rengi</string>
     <string name="battery_bar_cat">Batarya çubuk seçenekleri</string>
     <string name="battery_bar_style_title">Batarya çubuk tarzı</string>
     <string name="battery_bar_thickness_title">Batarya çubuk kalınlığı</string>
     <string name="battery_bar_animate_title">Şarj animasyonu</string>
-    <string name="battery_bar_animate_summary">Şarj animasyonu kötü kullanıcı deneyimlerine sebep olabilir. Kendi takdirinize kalmış.</string>
+    <string name="battery_bar_animate_summary">Şarj animasyonu kötü kullanıcı deneyimlerine sebep olabilir. Kendi
+        takdirinize kalmış.
+    </string>
     <string name="signal_style">Sinyal işaret tarzı</string>
     <string name="signal_color_title">İşaret rengi</string>
     <string name="hide_signal_title">İşaret çubuğunu gizle</string>
@@ -261,15 +291,19 @@
     <string name="navigation_bar">Yazılımsal Tuşlar</string>
     <string name="navbar_button_cat">Yazılımsal Tuşlar</string>
     <string name="title_pref_menu_display">Menü Konumu</string>
-    <string name="summary_pref_menu_display">Büyük menü botunları kullanıyorsanız menu butonlarını silmeyi unutmayın!</string>
+    <string name="summary_pref_menu_display">Büyük menü botunları kullanıyorsanız menu butonlarını silmeyi unutmayın!
+    </string>
     <string name="title_pref_navigation_menu_display">Menü görünürlüğü</string>
-    <string name="summary_pref_navigation_menu_display">Menü butonlarının ne zaman ve nasıl görünmesini istiyorsunuz?</string>
+    <string name="summary_pref_navigation_menu_display">Menü butonlarının ne zaman ve nasıl görünmesini istiyorsunuz?
+    </string>
     <string name="navbar_qty_title">Yazılımsal Tuş Sayısı</string>
     <string name="navbar_qty_summary">Yazılımsal tuş sayısını seçin</string>
     <string name="navbar_action_title">Tuş %1$s eylemi &amp; simgesi</string>
     <string name="button_transparency_title">Yazılımsal tuş şeffaflığı</string>
     <string name="navbar_width_help_title">Yazılımsal tuş genişlik Yardım</string>
-    <string name="navbar_width_help_summary" formatted="false">Ekran genişliği 100 olduğunda % 70, 5 olduğunda % 30 dur. 0 varsayılan ekran genişlik değeridir.</string>
+    <string name="navbar_width_help_summary" formatted="false">Ekran genişliği 100 olduğunda % 70, 5 olduğunda % 30 dur.
+        0 varsayılan ekran genişlik değeridir.
+    </string>
     <string name="width_port_title">Kombine çubuk genişlik noktası</string>
     <string name="width_land_title">Kombine çubuk etki noktası</string>
     <string name="navbar_longpress_title">Tuş %1$s uzun basma eylemi</string>
@@ -293,17 +327,22 @@
     <string name="navigation_bar_width_title">Yazılımsal Tuş Kalınlığı</string>
     <string name="navigation_bar_width_summary">Yatay moddaki tuş kalınlığı</string>
     <string name="navbar_enable_dialog_title">Yeniden başlatmak gerektirir!</string>
-    <string name="navbar_enable_dialog_msg">Lütfen Aktif/Devre dışı yazılımsal tuşları doğru şekilde yeniden başlatın!</string>
+    <string name="navbar_enable_dialog_msg">Lütfen Aktif/Devre dışı yazılımsal tuşları doğru şekilde yeniden başlatın!
+    </string>
     <string name="navbar_enable_dialog_negative">Daha sonra yeniden başlat</string>
     <string name="navbar_enable_dialog_Positive">Şimdi yeniden başlat!</string>
     <string name="navbar_height_dialog_title">Yeniden başlatma gerektirir!</string>
-    <string name="navbar_height_dialog_summary">Yükseklik değişiminin düzgün bir şekilde eklenebilmesi için lütfen yeniden başlatın!</string>
+    <string name="navbar_height_dialog_summary">Yükseklik değişiminin düzgün bir şekilde eklenebilmesi için lütfen
+        yeniden başlatın!
+    </string>
     <string name="navbar_height_dialog_button_later">Daha sonra yeniden başlat</string>
     <string name="navbar_height_dialog_button_reboot">Şimdi yeniden başlat!</string>
     <string name="navigation_bar_color_title">Yazılımsal çubuk rengi</string>
     <string name="navigation_bar_tint_title">Yazılımsal tuş rengi</string>
     <string name="navigation_bar_glow_tint_title">Yazılımsal tuş parlama rengi</string>
-    <string name="navigation_bar_glow_tint_summary">Yazılımsal tuşa bastığınız zaman parlar. Bunu kullanarak rengini değiştirebilirsiniz.</string>
+    <string name="navigation_bar_glow_tint_summary">Yazılımsal tuşa bastığınız zaman parlar. Bunu kullanarak rengini
+        değiştirebilirsiniz.
+    </string>
     <string name="glow_times_title">Tuş parlama animasyonu</string>
     <string name="glow_times_off">Kapalı</string>
     <string name="glow_times_superquick">Çok hızlı</string>
@@ -332,7 +371,9 @@
     <string name="interface_softkeys_pref_long_4_title">4.Hedef uzun basma etkinliği</string>
     <string name="interface_softkeys_pref_default_5_title">5.Hedef kısa basma etkinliği</string>
     <string name="interface_softkeys_pref_long_5_title">5.Hedef uzun basma etkinliği</string>
-    <string name="interface_softkeys_pref_default_summary">Özel bir uzun basma etkinliği seçmek için ayarlar düğmesine dokunun</string>
+    <string name="interface_softkeys_pref_default_summary">Özel bir uzun basma etkinliği seçmek için ayarlar düğmesine
+        dokunun
+    </string>
     <string name="interface_softkeys_activity_dialog_title">Etkinlik seç</string>
     <string name="interface_softkeys_reboot_title">Yeniden başlat menüsü</string>
     <string name="interface_softkeys_screenshot_title">Ekran görüntüsü</string>
@@ -346,7 +387,9 @@
     <string name="interface_navring_settings_title">Yazılımsal tuş halkası</string>
     <string name="interface_navring_settings_summary">Yazılımsal tuş halka uygulamalarını özelleştir ve düzenle</string>
     <string name="title_navring_amount">Yazılımsal tuş halka sayısı</string>
-    <string name="summary_navring_amount">Hedefler için kaç halka istiyorsunuz? *Halka sayısı değiştirildiğinde Sistem Arayüzü yeniden başlatılır*</string>
+    <string name="summary_navring_amount">Hedefler için kaç halka istiyorsunuz? *Halka sayısı değiştirildiğinde Sistem
+        Arayüzü yeniden başlatılır*
+    </string>
     <string name="interface_navring_custom_pref_summary">Başlatmak için hedef üzerinde bırakın</string>
     <string name="interface_navring_pref_default_summary">Özel zil hedefi etkinliği seçmek için dokunun</string>
     <string name="interface_navring_assist_title">Google Now</string>
@@ -369,13 +412,17 @@
     <string name="led_custom_message">"Uygulamayı değiştirmek istermisiniz: "</string>
     <string name="led_test_notification">"LED ışığı test et"</string>
     <string name="led_test_notification_message_now">"LED ışık şimdi test edilecek: "</string>
-    <string name="led_test_notification_message_note">".  LED ışığı görmek için lütfen ekranı kapatın. Görüntülemeyi bitirdiğiniz zaman çıkan ekranı kapatmak için TAMAM tuşuna basın."</string>
+    <string name="led_test_notification_message_note">". LED ışığı görmek için lütfen ekranı kapatın. Görüntülemeyi
+        bitirdiğiniz zaman çıkan ekranı kapatmak için TAMAM tuşuna basın."
+    </string>
     <string name="led_test_ok">TAMAM</string>
     <string name="title_charging_led_on">Şarj olurken de LED ışığı etkin tut (Yeniden başlatmak gerektirir)</string>
     <string name="led_change_brightness">Parlaklığı değiştir</string>
     <string name="led_brightness_default">Varsayılan Parlaklık: 31</string>
     <string name="less_notification_sounds_title">Daha Az Bildirim Sesleri</string>
-    <string name="less_notification_sounds_summary">Her bir uygulamanın bildirim seslerine belirli bir limit değer verin</string>
+    <string name="less_notification_sounds_summary">Her bir uygulamanın bildirim seslerine belirli bir limit değer
+        verin
+    </string>
     <string name="title_headphone_audio_mode">Kulaklık takıldığındaki eylem</string>
     <string name="summary_headphone_audio_mode">Kulaklık takıldığında ses ile ilgili hangi eylem yapılsın</string>
     <string name="title_bt_audio_mode">Bluetooth A2DP bağlantı eylemi</string>
@@ -392,7 +439,11 @@
     <string name="summary_down_sec">Telefonun yüz üstü durumu kabul etmesi için gereken zaman</string>
     <string name="flip_action_positive">Tamam</string>
     <string name="flip_dialog_title">Nasıl çalışıyor</string>
-    <string name="flip_dialog_msg">Telefon ters çevirildiğinde sizin seçtiğiniz moda(sessiz-titreşim) alınacak. Bu işlemi gerçekleştirmek 1.5 saniye(standart) sürecek. Daha sonra ekran açıldıktan 15 saniye(standart) sonra seçtiğiniz işlem(sessiz-titreşim) geri alınacak NOT: **Ekran zaman aşımı süresine ulaştığı zaman sesli modun tekrar açılması için ekranı açmanız gerekir.**</string>
+    <string name="flip_dialog_msg">Telefon ters çevirildiğinde sizin seçtiğiniz moda(sessiz-titreşim) alınacak. Bu
+        işlemi gerçekleştirmek 1.5 saniye(standart) sürecek. Daha sonra ekran açıldıktan 15 saniye(standart) sonra
+        seçtiğiniz işlem(sessiz-titreşim) geri alınacak NOT: **Ekran zaman aşımı süresine ulaştığı zaman sesli modun
+        tekrar açılması için ekranı açmanız gerekir.**
+    </string>
     <string name="summary_phone_flip_mode">Gelen arama sırasında ters çevirerek sessiz moda alın</string>
     <string name="title_phone_flip_mode">Gelen Arama Sessiz Modu</string>
     <string name="lock_widgets_short">Kilit Ekranı Araçları</string>
@@ -402,36 +453,55 @@
     <string name="lockscreen_weather_cat">Hava Durumu</string>
     <string name="lockscreen_calendar_cat">Takvim</string>
     <string name="lockscreen_quick_unlock_control_title">Hızlı pin kilit açma</string>
-    <string name="lockscreen_quick_unlock_control_summary">Enter tuşuna basmadan şifre/pin ile ekran kilidini aç</string>
+    <string name="lockscreen_quick_unlock_control_summary">Enter tuşuna basmadan şifre/pin ile ekran kilidini aç
+    </string>
     <string name="lockscreen_menu_unlock_title">Menü Kilidini Aç</string>
     <string name="lockscreen_menu_unlock_summary">Ekran kilidini açmak için menü tuşunu kullanın</string>
     <string name="lockscreen_auto_rotate_title">Kilit Ekranını döndürmeyi etkinleştir</string>
-    <string name="lockscreen_auto_rotate_summary">Kilit ekranına cihaz yönlendirmesi ile döndürme olanağı verir. Bu ekran otomatik döndürmeden bağımsızdır</string>
+    <string name="lockscreen_auto_rotate_summary">Kilit ekranına cihaz yönlendirmesi ile döndürme olanağı verir. Bu
+        ekran otomatik döndürmeden bağımsızdır
+    </string>
     <string name="lockscreen_all_widgets_title">Tüm Araçlara izin ver</string>
-    <string name="lockscreen_all_widgets_summary">Uyarı** Bazı Araçlar kilit ekranında kullanılmak üzere tasarlanmamış olabilir. Seçtiğiniz kilit ekranı Aracından sorumlu değiliz. Sorumluluğu alarak seçebilirsiniz.</string>
+    <string name="lockscreen_all_widgets_summary">Uyarı** Bazı Araçlar kilit ekranında kullanılmak üzere tasarlanmamış
+        olabilir. Seçtiğiniz kilit ekranı Aracından sorumlu değiliz. Sorumluluğu alarak seçebilirsiniz.
+    </string>
     <string name="lockscreen_unlimited_widgets_title">Araçlara sınırsız izin ver</string>
-    <string name="lockscreen_unlimited_widgets_summary">Uyarı** Bir çok Araç ekleme kilit ekranında takılmalara neden olabilir.</string>
+    <string name="lockscreen_unlimited_widgets_summary">Uyarı** Bir çok Araç ekleme kilit ekranında takılmalara neden
+        olabilir.
+    </string>
     <string name="lockscreen_battery_title">Kilit ekranı batarya yüzdesi</string>
     <string name="lockscreen_battery_summary">Kilit ekranında batarya yüzdesini herzaman göster</string>
     <string name="lockscreen_hide_initial_page_hints_title">Başlangıç sayfası ipuçlarını gizle</string>
-    <string name="lockscreen_hide_initial_page_hints_summary">Ekran açıldığında sağ ve sol Araç ipuçlarını ayarlamayı gösterin.</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Ekran açıldığında sağ ve sol Araç ipuçlarını ayarlamayı
+        gösterin.
+    </string>
     <string name="lockscreen_minimize_challenge_title">Kilit ekranını küçült</string>
-    <string name="lockscreen_minimize_challenge_summary">Ekran açıldığında kilit ekranının (daire, desen, pin) küçülür olup olmadığını ayarlayın.</string>
+    <string name="lockscreen_minimize_challenge_summary">Ekran açıldığında kilit ekranının (daire, desen, pin) küçülür
+        olup olmadığını ayarlayın.
+    </string>
     <string name="lockscreen_longpress_challenge_title">Uzun basarak kilit açmayı etkinleştir</string>
-    <string name="lockscreen_longpress_challenge_summary">Etkinleştirildiğinde kilit ekranı küçük olduğunda kilit simgesine uzun basarak ekran kilidi açılır.</string>
+    <string name="lockscreen_longpress_challenge_summary">Etkinleştirildiğinde kilit ekranı küçük olduğunda kilit
+        simgesine uzun basarak ekran kilidi açılır.
+    </string>
     <string name="lockscreen_use_widget_container_carousel_title">Atlıkarınca Aracı kullan</string>
-    <string name="lockscreen_use_widget_container_carousel_summary">Kilit ekranı araçları arasında geçiş yaparken Atlıkarınca animasyonu kullan.</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Kilit ekranı araçları arasında geçiş yaparken
+        Atlıkarınca animasyonu kullan.
+    </string>
     <string name="volume_rocker_wake_title">Ses tuşu ile uyandırma</string>
     <string name="volume_rocker_wake_summary">Ekranı ses tuşları ile aç</string>
     <string name="volume_music_controls_title">Müzik ses kontrolleri</string>
-    <string name="volume_music_controls_summary">Ekran kapalıyken ses tuşuna uzun basarak parça değiştirin. Müzik çalarken ekran açıksa çalışmaz.</string>
+    <string name="volume_music_controls_summary">Ekran kapalıyken ses tuşuna uzun basarak parça değiştirin. Müzik
+        çalarken ekran açıksa çalışmaz.
+    </string>
     <string name="lockscreen_stock_music_layout_title">Orjinal müzik düzeni</string>
     <string name="lockscreen_stock_music_layout_summary">Müzik çalarken orjinal düzeni kullan.</string>
     <string name="lockscreen_wallpaper_title">Kilit ekranı duvar kağıdı seçin</string>
     <string name="lockscreen_wallpaper_summary">Duvar kağıdını bu menüden kaldırabilirsiniz</string>
     <string name="lockscreen_text_color_title">Kilit ekranı metin rengi</string>
     <string name="lockscreen_weather_title">Kilit Ekranı Hava Durumu</string>
-    <string name="lockscreen_weather_summary">Kilit Ekranında Hava Durumu Bilgisini göster. Aktif olması için ROM Yönetimi Hava Durumu servisinin çalışması gerekir</string>
+    <string name="lockscreen_weather_summary">Kilit Ekranında Hava Durumu Bilgisini göster. Aktif olması için ROM
+        Yönetimi Hava Durumu servisinin çalışması gerekir
+    </string>
     <string name="lockscreen_weather_type_title">Kilit Ekr.Hava Durumu Tarzı</string>
     <string name="lockscreen_weather_type_summary">Hava Durumu bilgisini grafik yada yazı olarak göster.</string>
     <string name="lockscreen_calendar_title">Etkinleştir</string>
@@ -447,7 +517,8 @@
     <string name="lockscreen_calendar_hide_ongoing_title">Devam eden olayları gizle</string>
     <string name="lockscreen_calendar_hide_ongoing_summary">"Etkinse başlamış olan olaylar gizlenecek."</string>
     <string name="lockscreen_calendar_flip_title">Çoklu olaylar</string>
-    <string name="lockscreen_calendar_flip_summary">Etkinse Widget aralarında çoklu olaylar çevrilerek gösterilecek.</string>
+    <string name="lockscreen_calendar_flip_summary">Etkinse Widget aralarında çoklu olaylar çevrilerek gösterilecek.
+    </string>
     <string name="lockscreen_calendar_interval_title">Kapak Aralığı</string>
     <string name="lockscreen_calendar_interval_summary">Animasyon hız saniyesini seçin.</string>
     <string name="circles_lock_cat_title">Kilit ekranı halka ayarları</string>
@@ -523,9 +594,12 @@
     <string name="lockscreen_target_save_error_title">Hedefler kaydedilemedi</string>
     <string name="lockscreen_target_save_error_msg">Ekran kilidini açan en az bir hedef olmalı!</string>
     <string name="lockscreen_target_reset_title">Sıfırla</string>
-    <string name="lockscreen_target_reset_message">Kilit ekranında oluşturulan tüm hedefleri silin ve varsayılana dönün</string>
+    <string name="lockscreen_target_reset_message">Kilit ekranında oluşturulan tüm hedefleri silin ve varsayılana
+        dönün
+    </string>
     <string name="lockscreen_target_edit_title">Hedef ve simge düzenle</string>
-    <string name="lockscreen_target_edit_msg">İstenen uygulama yada etkinlik ile ilgili simgeyi seçin yada değiştirin</string>
+    <string name="lockscreen_target_edit_msg">İstenen uygulama yada etkinlik ile ilgili simgeyi seçin yada değiştirin
+    </string>
     <string name="aokp_3targets">3 hedef</string>
     <string name="aokp_4targets">4 hedef</string>
     <string name="aokp_5targets">5 hedef</string>
@@ -534,25 +608,33 @@
     <string name="weather_enable">Hava Durumu aktif</string>
     <string name="weather_enable_summary">Hava Durumu Bilgisini ROM boyunca göster.</string>
     <string name="weather_use_custom_location">Özel konum kullan</string>
-    <string name="weather_use_custom_location_summary">Özel konum belirlemek size pil tasarrufu sağlar. Yoksa internet-konum sizin nerede olduğunuzu bulur.</string>
+    <string name="weather_use_custom_location_summary">Özel konum belirlemek size pil tasarrufu sağlar. Yoksa
+        internet-konum sizin nerede olduğunuzu bulur.
+    </string>
     <string name="weather_custom_location_dialog_title">Konumunuzu ayarlayın</string>
-    <string name="weather_custom_location_dialog_message">"Örnekleri anladığınıza emin olun! Yanlış konum belirlemek Hava Durumu güncellemesi almayı engeller ve beklenmedik hatalara sebep olabilir.
+    <string name="weather_custom_location_dialog_message">"Örnekleri anladığınıza emin olun! Yanlış konum belirlemek
+        Hava Durumu güncellemesi almayı engeller ve beklenmedik hatalara sebep olabilir.
 
-Örneğin: New York,NY // New York, NY // 10033 // istanbul, Turkey"</string>
+        Örneğin: New York,NY // New York, NY // 10033 // istanbul, Turkey"
+    </string>
     <string name="weather_custom_location_title">Özel konum</string>
     <string name="weather_show_location_title">Konumu göster</string>
     <string name="weather_show_location_summary">Konumunuzu gösterin.</string>
     <string name="weather_refresh_interval">Yenileme aralığı</string>
     <string name="weather_refresh_interval_minutes">" dakika"</string>
     <string name="weather_use_celcius">Metrik sistem</string>
-    <string name="weather_use_celcius_summary">Kabul ederseniz Hava sıcaklığı Fahrenheit yerine Celcius, rüzgar hızı ise mph yerine kmh olacak.</string>
+    <string name="weather_use_celcius_summary">Kabul ederseniz Hava sıcaklığı Fahrenheit yerine Celcius, rüzgar hızı ise
+        mph yerine kmh olacak.
+    </string>
     <string name="weather_statusbar_style">Durum Çubuğu Hava Durumu tarzı</string>
     <string name="title_weather_longclick">Hava durumu uzun tıklama eylemi</string>
     <string name="title_weather_shortclick">Hava durumu kısa tıklama eylemi</string>
     <string name="update">Hava durumu güncelleme paneli</string>
     <string name="weather_refreshing">Hava Durumunu Güncelleyin!</string>
     <string name="weather_loc_warning_title">Konum alınamıyor!</string>
-    <string name="weather_loc_warning_msg">Ağ dan konum alma özelliği şu anda devre dışı. Mevcut konumunuzdaki geçerli hava alma yeteneğini önler. Özel bir konum ayarlamak veya ağ dan konumunuzu belirlemek için etkinleştirin.</string>
+    <string name="weather_loc_warning_msg">Ağ dan konum alma özelliği şu anda devre dışı. Mevcut konumunuzdaki geçerli
+        hava alma yeteneğini önler. Özel bir konum ayarlamak veya ağ dan konumunuzu belirlemek için etkinleştirin.
+    </string>
     <string name="weather_loc_warning_positive">Ağ konumunu etkinleştir</string>
     <string name="weather_loc_warning_negative">Etkinleştirme.</string>
     <string name="menu_weather_get_weather">Hava Durumunu Al</string>
@@ -619,7 +701,7 @@
     <string name="direction_west">B</string>
     <string name="direction_north_west">KB</string>
     <string name="clipboard_notification">Panoya kopyalandı.</string>
-   <string name="vibrations">Titreşimler</string>
+    <string name="vibrations">Titreşimler</string>
     <string name="defaultvibrationname">"'Varsayılan'"</string>
     <string name="vib_new">Yeni/Sıfırla</string>
     <string name="vib_load">Yükle</string>
@@ -634,18 +716,22 @@
     <string name="vib_cur_loaded_title">Yüklü:</string>
     <string name="help">Yardım</string>
     <string name="vibration_detailed_help">"Siz 5 basit adımda özel titreşim desenleri oluşturabilirsiniz:
- - Yeni/Sıfırla dokun
- - Kayıta dokun
- - DOKUN butonuna basarak kdeseni kaydedin
- - Durdur a dokun
- - Kaydete dokun, isim gir ve TAMAM a tıkla
+        - Yeni/Sıfırla dokun
+        - Kayıta dokun
+        - DOKUN butonuna basarak kdeseni kaydedin
+        - Durdur a dokun
+        - Kaydete dokun, isim gir ve TAMAM a tıkla
 
- Oynat butonuna basarak kaydedilen desenleri kontrol edebilirsiniz.
- Kayıtlı bir deseni düzenlemek için bir desen seçip Yükle butonuna dokun ve tekrar kaydedin, and save it again (Eğer başka bir isim seçmezseniz önceki desen üzerine yazılır).
- Bir desen silmek için, Sil butonuna dokun, Deseni seçin ve Sil butonuna tekrar dokunun. Varsayılan Titreşim deseni silinemez.
+        Oynat butonuna basarak kaydedilen desenleri kontrol edebilirsiniz.
+        Kayıtlı bir deseni düzenlemek için bir desen seçip Yükle butonuna dokun ve tekrar kaydedin, and save it again
+        (Eğer başka bir isim seçmezseniz önceki desen üzerine yazılır).
+        Bir desen silmek için, Sil butonuna dokun, Deseni seçin ve Sil butonuna tekrar dokunun. Varsayılan Titreşim
+        deseni silinemez.
 
- Telefonunuzda aramalar için varsayılan titreşimi Telefon/Ayarlar yada Ayarlar/Ses içinden seçebilirsiniz.
- Siz telefonunuzdaki kayıtlı kişilere özel desenler oluşturabilirsiniz: Kişi yüklendikten sonra Menü/Ayarla butonuna dokunun."</string>
+        Telefonunuzda aramalar için varsayılan titreşimi Telefon/Ayarlar yada Ayarlar/Ses içinden seçebilirsiniz.
+        Siz telefonunuzdaki kayıtlı kişilere özel desenler oluşturabilirsiniz: Kişi yüklendikten sonra Menü/Ayarla
+        butonuna dokunun."
+    </string>
     <string name="insult_jerk">Jerk!</string>
     <string name="insult_protekk">ProTekk!</string>
     <string name="insult_unicorns">Kabul edin pembe boynuzlu atlar küçük kızlar içindir</string>
@@ -784,5 +870,6 @@
     <string name="show_signal_text">Sinyal çubuğunu rakam olarak göster</string>
     <string name="show_with_dbm">DBm olarak göster</string>
     <string name="toggles_enable_haptic_feedback_title">Dokunsal Geri Bildirimi Etkinleştir</string>
-    <string name="toggles_enable_haptic_feedback_summary">Kısayollara tıklandığında dokunsal geri bildirim kullanın</string>
+    <string name="toggles_enable_haptic_feedback_summary">Kısayollara tıklandığında dokunsal geri bildirim kullanın
+    </string>
 </resources>

@@ -1,27 +1,26 @@
-
 package com.aokp.romcontrol.util;
 
 import android.os.AsyncTask;
 
 /**
  * An abstract implentation of AsyncTask
- *
+ * <p/>
  * since our needs are simple send a command, perform a task when we finish
  * this implentation requires you send the command as String...
  * in the .execute(String) so you can send String[] of commands if needed
- *
+ * <p/>
  * This class is not for you if...
- *     1) You do not need to perform any action after command execution
- *        you want a Thread not this.
- *     2) You need to perform more complex tasks in doInBackground
- *        than simple script/command sequence of commands
- *        you want your own AsyncTask not this.
- *
+ * 1) You do not need to perform any action after command execution
+ * you want a Thread not this.
+ * 2) You need to perform more complex tasks in doInBackground
+ * than simple script/command sequence of commands
+ * you want your own AsyncTask not this.
+ * <p/>
  * This class is for you if...
- *     1) You need to run a command/script/sequence of commands without
- *        blocking the UI thread and you must perform actions after the
- *        task completes.
- *     2) see #1.
+ * 1) You need to run a command/script/sequence of commands without
+ * blocking the UI thread and you must perform actions after the
+ * task completes.
+ * 2) see #1.
  */
 public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void, String> {
     // if /system needs to be mounted before command
@@ -34,32 +33,32 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
      * of /system partition while in background thread
      */
     public AbstractAsyncSuCMDProcessor(boolean mountSystem) {
-         this.mMountSystem = mountSystem;
+        this.mMountSystem = mountSystem;
     }
 
     /**
      * Constructor that assumes /system should not be mounted
      */
     public AbstractAsyncSuCMDProcessor() {
-         this.mMountSystem = false;
+        this.mMountSystem = false;
     }
 
     /**
      * DO NOT override this method you should simply send your commands off
      * as params and expect to handle results in {@link #onPostExecute}
-     *
+     * <p/>
      * if you find a need to @Override this method then you should
      * consider using a new AsyncTask implentation instead
      *
      * @param params The parameters of the task.
-     *
      * @return A result, defined by the subclass of this task.
      */
     @Override
     protected String doInBackground(String... params) {
         // don't bother if we don't get a command
-        if (params[0] == null || params[0].trim().equals(""))
+        if (params[0] == null || params[0].trim().equals("")) {
             return FAILURE;
+        }
 
         String stdout = null;
 
@@ -78,10 +77,11 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
                     return FAILURE;
                 }
             }
-        // always unmount
+            // always unmount
         } finally {
-            if (mMountSystem)
+            if (mMountSystem) {
                 Helpers.getMount("ro");
+            }
         }
         // return the stdout from the command
         return stdout;
@@ -90,9 +90,9 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
     /**
      * <p>Runs on the UI thread after {@link #doInBackground}. The
      * specified result is the value returned by {@link #doInBackground}.</p>
-     *
+     * <p/>
      * <p>This method won't be invoked if the task was cancelled.</p>
-     *
+     * <p/>
      * You MUST @Override this method if you don't need the result
      * then you should consider using a new Thread implentation instead
      *

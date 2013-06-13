@@ -1,44 +1,29 @@
-
 package com.aokp.romcontrol.fragments;
 
-import android.app.AlertDialog;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnDismissListener;
-import android.content.DialogInterface.OnMultiChoiceClickListener;
+import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import com.android.internal.util.aokp.NavBarHelpers;
-import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.ROMControlActivity;
-import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 import com.mobeta.android.dslv.DragSortController;
 import com.mobeta.android.dslv.DragSortListView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ArrangeRibbonFragment extends DialogFragment implements OnItemClickListener,
         OnCheckedChangeListener {
@@ -65,7 +50,6 @@ public class ArrangeRibbonFragment extends DialogFragment implements OnItemClick
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Holo_Dialog_MinWidth);
@@ -76,8 +60,9 @@ public class ArrangeRibbonFragment extends DialogFragment implements OnItemClick
                 R.dimen.list_toggle_width);
     }
 
-    public void setResources(Context context, ContentResolver res, ArrayList<String> aList, ArrayList<String> sList,
-            ArrayList<String> lList, ArrayList<String> cList, int num) {
+    public void setResources(Context context, ContentResolver res, ArrayList<String> aList,
+                             ArrayList<String> sList,
+                             ArrayList<String> lList, ArrayList<String> cList, int num) {
         mContext = context;
         mContentRes = res;
         aTargets = aList;
@@ -89,7 +74,7 @@ public class ArrangeRibbonFragment extends DialogFragment implements OnItemClick
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
 
         rootView = (ViewGroup)
                 inflater.inflate(R.layout.fragment_configure_ribbon,
@@ -138,7 +123,8 @@ public class ArrangeRibbonFragment extends DialogFragment implements OnItemClick
         mClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent refreshRibbon = new Intent(RibbonTargets.RibbonDialogReceiver.ACTION_RIBBON_DIALOG_DISMISS);
+                Intent refreshRibbon =
+                        new Intent(RibbonTargets.RibbonDialogReceiver.ACTION_RIBBON_DIALOG_DISMISS);
                 mContext.sendBroadcast(refreshRibbon);
                 ArrangeRibbonFragment.this.dismiss();
             }
@@ -249,7 +235,7 @@ public class ArrangeRibbonFragment extends DialogFragment implements OnItemClick
         setUseRightSideHandle(isChecked);
         ArrangeRibbonFragment f = new ArrangeRibbonFragment();
         f.setResources(mContext, mContentRes, aTargets, sTargets,
-            lTargets, cTargets, arrayNum);
+                lTargets, cTargets, arrayNum);
         dismiss();
         f.show(getFragmentManager(), getTag());
     }

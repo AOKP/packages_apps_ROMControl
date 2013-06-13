@@ -1,25 +1,16 @@
-
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.Fragment;
 import android.app.VibrationPickerDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.database.Cursor;
 import android.media.VibrationPattern;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
-import android.preference.PreferenceFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -35,10 +26,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.aokp.romcontrol.AOKPPreferenceFragment;
-import com.aokp.romcontrol.vibrations.VibrationRecorder;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.vibrations.VibrationRecorder;
 
 public class Vibrations extends AOKPPreferenceFragment {
     private static final String TAG = "Vibrations";
@@ -99,7 +89,8 @@ public class Vibrations extends AOKPPreferenceFragment {
     };
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         mContainer = container;
         mActivity = getActivity();
         mResources = getResources();
@@ -135,13 +126,10 @@ public class Vibrations extends AOKPPreferenceFragment {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (mTapButton.isEnabled()) {
-                    if (event.getAction() == MotionEvent.ACTION_DOWN)
-                    {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         mRecorder.processTime(event.getEventTime());
                         mRecorder.startVibration();
-                    }
-                    else if (event.getAction() == MotionEvent.ACTION_UP)
-                    {
+                    } else if (event.getAction() == MotionEvent.ACTION_UP) {
                         mRecorder.processTime(event.getEventTime());
                         mRecorder.stopVibration();
                     }
@@ -235,7 +223,7 @@ public class Vibrations extends AOKPPreferenceFragment {
     }
 
     @Override
-        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.vibrations, menu);
     }
@@ -319,9 +307,10 @@ public class Vibrations extends AOKPPreferenceFragment {
         }
         double fullWidth = mPatternBar.getWidth();
         double fullLength = ((double) pattern.getLength()) / 10;
-        double ratio = fullWidth/fullLength;
-        Log.d(TAG, "fullwidth = " + Double.toString(fullWidth) + " fullLength = " + Double.toString(fullLength) + " ratio = " + Double.toString(ratio));
-        for (int i = 0; i<pattern.getPattern().length; i++) {
+        double ratio = fullWidth / fullLength;
+        Log.d(TAG, "fullwidth = " + Double.toString(fullWidth) + " fullLength = " +
+                Double.toString(fullLength) + " ratio = " + Double.toString(ratio));
+        for (int i = 0; i < pattern.getPattern().length; i++) {
             final int mWidth = (int) (((double) pattern.getPattern()[i] / 10) * ratio);
             Log.d(TAG, "mWidth = " + Integer.toString(mWidth));
             final View view = new View(mActivity) {

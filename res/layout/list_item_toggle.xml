@@ -15,10 +15,9 @@
 -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="@dimen/list_toggle_height" >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/list_toggle_height">
 
     <com.google.android.apps.dashclock.ui.DragGripView
         android:id="@+id/drag_handle"

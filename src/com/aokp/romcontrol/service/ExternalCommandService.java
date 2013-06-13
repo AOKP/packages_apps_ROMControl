@@ -1,10 +1,8 @@
-
 package com.aokp.romcontrol.service;
-
-import com.aokp.romcontrol.util.CMDProcessor;
 
 import android.app.IntentService;
 import android.content.Intent;
+import com.aokp.romcontrol.util.CMDProcessor;
 
 /**
  * Helper class to queue su commands that can be run from broadcast receivers,

@@ -438,7 +438,10 @@
     <string name="navigation_bar_width_title">导航栏宽度</string>
     <string name="navigation_bar_width_summary">设置当导航栏在侧面时的宽度</string>
     <string name="navbar_enable_dialog_title">需要重启生效！</string>
-    <string name="navbar_enable_dialog_msg">你 <b>应该</b> 立刻重启以确保一切能够正常运行！</string>
+    <string name="navbar_enable_dialog_msg">你
+        <b>应该</b>
+        立刻重启以确保一切能够正常运行！
+    </string>
     <string name="navbar_enable_dialog_negative">稍后重启</string>
     <string name="navbar_enable_dialog_Positive">立刻重启</string>
     <string name="navbar_height_dialog_title">需要重启生效！</string>
@@ -501,7 +504,7 @@
     <string name="choose_action_title">选择动作</string>
     <string name="choose_action_short_title">选择点击动作</string>
     <string name="choose_action_long_title">选择长按动作</string>
-    <string name="action_long_save"> 设为长按动作</string>
+    <string name="action_long_save">设为长按动作</string>
     <string name="title_navring_amount">导航环目标数量</string>
     <string name="summary_navring_amount">选择导航环目标数量</string>
     <string name="interface_navring_settings_title">导航环</string>
@@ -514,7 +517,7 @@
     <string name="navring_target_amount_text">当前目标数量</string>
     <string name="navring_target_longpress_text">长按动作</string>
 
-   <!-- Ribbon 操作区 -->
+    <!-- Ribbon 操作区 -->
     <string name="ribbon_dialog_arrange_title">操作区布局</string>
     <string name="ribbon_chooser_instructions">选择需设置的操作区</string>
     <string name="ribbon_instructions">点击图标选择动作或删除</string>
@@ -590,7 +593,7 @@
 
     <string name="led_test_notification">测试 LED</string>
     <string name="led_test_notification_message_now">"现在测试应用程序： "</string>
-    <string name="led_test_notification_message_note">".  请关闭屏幕后观察 LED 灯。在你观察完毕之前不要点击确定按钮。"</string>
+    <string name="led_test_notification_message_note">". 请关闭屏幕后观察 LED 灯。在你观察完毕之前不要点击确定按钮。"</string>
     <string name="led_test_ok">确定</string>
     <string name="title_charging_led_on">充电指示灯（需重启）</string>
     <string name="led_change_brightness">更改亮度</string>
@@ -615,7 +618,9 @@
     <string name="summary_down_sec">判定设备为正面朝下所需的时间</string>
     <string name="flip_action_positive">确定</string>
     <string name="flip_dialog_title">功能说明</string>
-    <string name="flip_dialog_msg">设备将在它正面朝下后自动进入所设定的振动或静音模式。在反转1.5秒后（默认）进入所选模式。在开启屏幕15秒后（默认）保持所选模式。备注：**必须在正面依旧朝下的情况下开启屏幕并超过所设定的“屏幕超时时间”才可保持。</string>
+    <string name="flip_dialog_msg">
+        设备将在它正面朝下后自动进入所设定的振动或静音模式。在反转1.5秒后（默认）进入所选模式。在开启屏幕15秒后（默认）保持所选模式。备注：**必须在正面依旧朝下的情况下开启屏幕并超过所设定的“屏幕超时时间”才可保持。
+    </string>
     <string name="summary_phone_flip_mode">来电响铃时翻转进入静音状态</string>
     <string name="title_phone_flip_mode">来电响铃静音</string>
 
@@ -713,7 +718,9 @@
     <string name="weather_use_custom_location">使用自定义位置</string>
     <string name="weather_use_custom_location_summary">使用自定义的位置可节省一些电量；否则使用网络定位确定你的位置</string>
     <string name="weather_custom_location_dialog_title">设定你的位置</string>
-    <string name="weather_custom_location_dialog_message">"务必遵循规则！设置一个无效的位置您将无法获得天气更新，并可能导致意外的行为。\n\n举例: New York，NY // New York， NY // 10033 // London， England"</string>
+    <string name="weather_custom_location_dialog_message">"务必遵循规则！设置一个无效的位置您将无法获得天气更新，并可能导致意外的行为。\n\n举例: New York，NY //
+        New York， NY // 10033 // London， England"
+    </string>
     <string name="weather_custom_location_title">自定义位置</string>
     <string name="weather_show_location_title">显示位置</string>
     <string name="weather_show_location_summary">显示你的位置</string>
@@ -794,7 +801,6 @@
     <string name="weather_47">地区性雷雨</string>
 
 
-
     <!-- Miscellaneous 杂项 -->
     <string name="location_unavailable">无法获取当前位置的天气信息</string>
 
@@ -837,7 +843,8 @@
         如果你想更改已保存的振动效果，点击“读取”，选择一个已保存的振动效果，重新录制，然后再次保存（它将覆盖旧的内容，除非你输入了不同的名称）。\n
         删除振动效果，只需点击“删除”，选择需要删除的振动效果并点击“删除”，默认振动效果无法删除。\n\n
         你可以将自定义的振动效果用于来电：拨号程序/设置 或者 系统设置/声音\n
-        你可以将自定义的振动效果用于某个联系人：显示联系人后点击菜单键/设置振动效果</string>
+        你可以将自定义的振动效果用于某个联系人：显示联系人后点击菜单键/设置振动效果
+    </string>
 
     <!-- boot animation stuff 开机动画选项 -->
     <string name="insult_jerk">囧</string>

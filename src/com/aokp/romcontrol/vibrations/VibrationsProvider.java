@@ -15,8 +15,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
-public class VibrationsProvider extends ContentProvider
-{
+public class VibrationsProvider extends ContentProvider {
     private static final String TAG = "VibrationsProvider";
     public static final String PROVIDER_NAME =
             "com.aokp.romcontrol.Vibrations";
@@ -32,6 +31,7 @@ public class VibrationsProvider extends ContentProvider
     private static final int VIBRATION_ID = 2;
 
     private static final UriMatcher uriMatcher;
+
     static {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         uriMatcher.addURI(PROVIDER_NAME, "vibrations", VIBRATIONS);
@@ -39,16 +39,22 @@ public class VibrationsProvider extends ContentProvider
     }
 
     private static final String AOKPVibrationName = "'AOKP'";
-    private static final String AOKPVibrationPattern = "'500,150,400,400,400,400,400,400,400,400,400,400,150,150,400,400,150,150,400,400,400,400,150,150,150'";
+    private static final String AOKPVibrationPattern =
+            "'500,150,400,400,400,400,400,400,400,400,400,400,150,150,400,400,150,150,400,400," +
+                    "400,400,150,150,150'";
     private static final String CQDVibrationName = "'CQD'";
-    private static final String CQDVibrationPattern = "'500,400,400,150,150,400,400,150,150,400,400,400,400,150,150,400,400,400,400,150,150,150'";
+    private static final String CQDVibrationPattern =
+            "'500,400,400,150,150,400,400,150,150,400,400,400,400,150,150,400,400,400,400,150," +
+                    "150,150'";
     private static final String defaultVibrationName = "'Default'";
     private static final String defaultVibrationPattern = "'500,1000,1000,1000,1000'";
     // ---because pretty women are tasty treats---
     private static final String NOMVibrationName = "'NOM'";
-    private static final String NOMVibrationPattern = "'500,400,400,150,150,400,400,400,400,400,400,400,400,400'";
+    private static final String NOMVibrationPattern =
+            "'500,400,400,150,150,400,400,400,400,400,400,400,400,400'";
     private static final String SOSVibrationName = "'S.O.S.'";
-    private static final String SOSVibrationPattern = "'500,150,150,150,150,150,400,400,400,400,400,400,400,150,150,150,150,150'";
+    private static final String SOSVibrationPattern =
+            "'500,150,150,150,150,150,400,400,400,400,400,400,400,150,150,150,150,150'";
 
     // ---for database use---
     private SQLiteDatabase vibrationsDB;
@@ -81,15 +87,13 @@ public class VibrationsProvider extends ContentProvider
             "insert into names (name, pattern) " +
                     "values (" + SOSVibrationName + ", " + SOSVibrationPattern + ")";
 
-    private static class DatabaseHelper extends SQLiteOpenHelper
-    {
+    private static class DatabaseHelper extends SQLiteOpenHelper {
         DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
         }
 
         @Override
-        public void onCreate(SQLiteDatabase db)
-        {
+        public void onCreate(SQLiteDatabase db) {
             db.execSQL(DATABASE_CREATE);
             db.execSQL(DATABASE_INIT_AOKP);
             db.execSQL(DATABASE_INIT_CQD);
@@ -100,7 +104,7 @@ public class VibrationsProvider extends ContentProvider
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion,
-                int newVersion) {
+                              int newVersion) {
             // db.execSQL("DROP TABLE IF EXISTS names");
             // onCreate(db);
             if (oldVersion == 1) {
@@ -134,7 +138,7 @@ public class VibrationsProvider extends ContentProvider
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
-            String[] selectionArgs, String sortOrder) {
+                        String[] selectionArgs, String sortOrder) {
 
         SQLiteQueryBuilder sqlBuilder = new SQLiteQueryBuilder();
         sqlBuilder.setTables(DATABASE_TABLE);
@@ -145,8 +149,9 @@ public class VibrationsProvider extends ContentProvider
                     _ID + " = " + uri.getLastPathSegment());
         }
 
-        if (sortOrder == null || sortOrder == "")
+        if (sortOrder == null || sortOrder == "") {
             sortOrder = NAME;
+        }
 
         Cursor c = sqlBuilder.query(
                 vibrationsDB,
@@ -169,8 +174,7 @@ public class VibrationsProvider extends ContentProvider
                 DATABASE_TABLE, "", values);
 
         // ---if added successfully---
-        if (rowID > 0)
-        {
+        if (rowID > 0) {
             Uri _uri = ContentUris.withAppendedId(CONTENT_URI, rowID);
             getContext().getContentResolver().notifyChange(_uri, null);
             return _uri;
@@ -214,8 +218,7 @@ public class VibrationsProvider extends ContentProvider
 
     @Override
     public int update(Uri uri, ContentValues values,
-            String selection, String[] selectionArgs)
-    {
+                      String selection, String[] selectionArgs) {
         int count = 0;
         switch (uriMatcher.match(uri)) {
             case VIBRATIONS:

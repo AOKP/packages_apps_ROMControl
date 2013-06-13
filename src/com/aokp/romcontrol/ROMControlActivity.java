@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol;
 
 import android.app.ActionBar;
@@ -13,7 +12,6 @@ import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -197,7 +195,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     public void onBuildHeaders(List<Header> target) {
         loadHeadersFromResource(R.xml.preference_headers, target);
         ArrayList<Header> toRemove = new ArrayList<Header>();
-        for (int i=0; i<target.size(); i++) {
+        for (int i = 0; i < target.size(); i++) {
             Header header = target.get(i);
             if (header.id == R.id.led) {
                 if (!hasNotificationLed) {
@@ -213,7 +211,7 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
                 }
             }
         }
-        for (int i=0; i<toRemove.size(); i++) {
+        for (int i = 0; i < toRemove.size(); i++) {
             target.remove(toRemove.get(i));
         }
         updateHeaderList(target);
@@ -303,12 +301,14 @@ public class ROMControlActivity extends PreferenceActivity implements ButtonBarH
     }
 
     protected String getStartingFragmentClass(Intent intent) {
-        if (mFragmentClass != null)
+        if (mFragmentClass != null) {
             return mFragmentClass;
+        }
 
         String intentClass = intent.getComponent().getClassName();
-        if (intentClass.equals(getClass().getName()))
+        if (intentClass.equals(getClass().getName())) {
             return null;
+        }
 
         return intentClass;
     }

@@ -147,12 +147,13 @@
     <string name="aokp_irc_summary">\#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">AOKP 정보</string>
     <string name="about_aokp_summary">@null</string>
-    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
+    </string>
     <string name="github_aokp">https://github.com/AOKP</string>
     <string name="github_adam">https://github.com/syaoran12</string>
     <string name="github_akellar">https://github.com/akellar</string>
     <string name="github_bajee11">https://github.com/Bajee11</string>
-    <string name="github_bmc08gt"> https://github.com/BMc08GT</string>
+    <string name="github_bmc08gt">https://github.com/BMc08GT</string>
     <string name="github_birdman">https://github.com/mrbirdman</string>
     <string name="github_championswimmer">https://github.com/championswimmer</string>
     <string name="github_dhacker29">https://github.com/dhacker29</string>
@@ -193,14 +194,19 @@
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="disable_bootanimation_title">Disable boot animation</string>
     <string name="custom_bootanimation_title">Custom boot animation</string>
-    <string name="custom_bootanimation_summary">Select a custom zip from storage to use as your new boot animation</string>
-    <string name="install_file_manager_error">No application found to pick the zip file. Please install a file manager.</string>
+    <string name="custom_bootanimation_summary">Select a custom zip from storage to use as your new boot animation
+    </string>
+    <string name="install_file_manager_error">No application found to pick the zip file. Please install a file
+        manager.
+    </string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
     <string name="alpha_dialog_title">Set alpha value</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
-    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock
+        label.
+    </string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
@@ -224,7 +230,8 @@
     <string name="ram_bar">멀티테스크 창 램바</string>
     <string name="ram_bar_summary">Shows RAM usage in the Recent Apps window</string>
     <string name="longpress_to_kill">Hardware Back-to-kill</string>
-    <string name="longpress_to_kill_summary">Holding the hardware Back button will kill the activity in the foreground</string>
+    <string name="longpress_to_kill_summary">Holding the hardware Back button will kill the activity in the foreground
+    </string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
     <string name="hide_extras">Hide Extras</string>
@@ -237,15 +244,20 @@
     <string name="error_reading_zip_file">Error reading zip file</string>
     <string name="error_creating_preview">Error creating preview</string>
     <string name="multipane_ui">듀얼 패널 활성화</string>
-    <string name="multipane_ui_summary">Checking this will enable the Dual Panel (Tablet) UI used by certain apps</string>
+    <string name="multipane_ui_summary">Checking this will enable the Dual Panel (Tablet) UI used by certain apps
+    </string>
     <string name="show_overflow_title">Show Menu UI overflow</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
-    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
-    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
+    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted
+    </string>
+    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted
+    </string>
     <string name="notification_show_wifi_ssid_title">Show WiFi network name</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
-    <string name="brightness_slider_summary">When enabled, this option will allow you to change the brightness by sliding your finger across the Statusbar. Note: Will not be active when auto-brightness is on</string>
+    <string name="brightness_slider_summary">When enabled, this option will allow you to change the brightness by
+        sliding your finger across the Statusbar. Note: Will not be active when auto-brightness is on
+    </string>
     <string name="user_mode_ui">UI Mode</string>
     <string name="user_mode_ui_summary">Choose the style of the NavBar and Statusbar</string>
     <string name="phone_mode_ui">Phone - NavBar orients to side in landscape</string>
@@ -267,9 +279,13 @@
     <string name="current_lcd_density">"Current LCD Density: "</string>
     <string name="lcd_density_wizard">LCD Density Wizard</string>
     <string name="follow_through_title">Follow through!</string>
-    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
+    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before
+        proceeding to the next.
+    </string>
     <string name="stock_density_title">1. Change LCD Density to stock value</string>
-    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
+    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by
+        default.
+    </string>
     <string name="stock_density_changed_summary">"Density set to: "</string>
     <string name="reboot_title">2. Reboot!</string>
     <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
@@ -279,15 +295,21 @@
     <string name="dpi">DPI</string>
     <string name="open_market_title">4. Open Market and hit accept</string>
     <string name="open_market_summary">Press back when done to return here.</string>
-    <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
+    <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it
+        yourself from the launcher."
+    </string>
     <string name="custom_density_title">5. Change density to whatever you like!</string>
-    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
+    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here
+        and repeat the process.
+    </string>
     <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
     <string name="custom_density">custom</string>
     <string name="set_custom_density_title">Set custom density</string>
     <string name="set_custom_density_set">Set</string>
     <string name="custom_density_dialog_title">"WARNING!"</string>
-    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you
+        encounter market app incompatibility please return here and restart the process from step 1."
+    </string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
@@ -332,7 +354,10 @@
     <string name="toggle_action_title">Action %1$s &amp; icon</string>
     <string name="toggle_action_title_alt">Longpress action %1$s &amp; icon</string>
     <string name="toggle_longpress_title">Longpress action %1$s</string>
-    <string name="custom_toggle_desc">Each click causes the toggle to move to the next action. If your toggle has an empty click action and no custom icon; the long click action\'s icon will be used.\nThis is useful for users who want their click actions to simply cycle through toggle actions without launching anything.</string>
+    <string name="custom_toggle_desc">Each click causes the toggle to move to the next action. If your toggle has an
+        empty click action and no custom icon; the long click action\'s icon will be used.\nThis is useful for users who
+        want their click actions to simply cycle through toggle actions without launching anything.
+    </string>
     <string name="custom_help_title">How it works</string>
     <string name="custom_help_summary">Click for more information</string>
     <string name="custom_toggle_okay">Dismiss</string>
@@ -517,7 +542,7 @@
     <string name="choose_action_title">활동 선택</string>
     <string name="choose_action_short_title">짧게 눌렀을 때의 활동</string>
     <string name="choose_action_long_title">길게 눌렀을 때의 활동</string>
-    <string name="action_long_save"> 이(가) 길게 눌렀을 때의 활동으로 지정됨.</string>
+    <string name="action_long_save">이(가) 길게 눌렀을 때의 활동으로 지정됨.</string>
     <string name="title_navring_amount">소프트 키 링 타켓 수</string>
     <string name="summary_navring_amount">소프트 키 링 타켓의 수를 지정합니다.</string>
     <string name="interface_navring_settings_title">소프트 키 링</string>
@@ -561,7 +586,9 @@
     <string name="ribbon_left_enable_title">Enable swipe from left</string>
     <string name="ribbon_right_enable_title">Enable swipe from right</string>
     <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
-    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide or manually hide the navbar.</string>
+    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar
+        AutoHide or manually hide the navbar.
+    </string>
     <string name="ribbon_button_colorize_title">Action icons match text color</string>
     <string name="ribbon_color_title">Color of Swipe Ribbon</string>
     <string name="text_color_title">Color of app label text</string>
@@ -606,7 +633,9 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Test LED</string>
     <string name="led_test_notification_message_now">"Now testing LED for: "</string>
-    <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup till you're done viewing the LED color."</string>
+    <string name="led_test_notification_message_note">". Please turn off your screen to see the LED. Don't hit OK on
+        this popup till you're done viewing the LED color."
+    </string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">Enable LED while charging (requires reboot)</string>
     <string name="led_change_brightness">Change brightness</string>
@@ -631,7 +660,9 @@
     <string name="summary_down_sec">휴대전화가 뒤집혀 있음을 인식할 시간을 설정</string>
     <string name="flip_action_positive">확인</string>
     <string name="flip_dialog_title">작동 원리</string>
-    <string name="flip_dialog_msg">당신이 어떻게 선택하냐에 따라서 휴대전화가 뒤집히면 진동이나 무음 모드로 전환됩니다. 뒤집힌 다음 모드가 변하기 까지 1.5초(기본값일 경우)가 걸립니다. 그리고 나서 한번 켜진후로부터 15초(기본값일 경우)간 뒤집힘을 감지하지 않습니다. 참고: **뒤집혀서 화면이 꺼진경우 다시 화면을 켜야만 소리 모드가 원래대로 돌아옵니다**</string>
+    <string name="flip_dialog_msg">당신이 어떻게 선택하냐에 따라서 휴대전화가 뒤집히면 진동이나 무음 모드로 전환됩니다. 뒤집힌 다음 모드가 변하기 까지 1.5초(기본값일 경우)가
+        걸립니다. 그리고 나서 한번 켜진후로부터 15초(기본값일 경우)간 뒤집힘을 감지하지 않습니다. 참고: **뒤집혀서 화면이 꺼진경우 다시 화면을 켜야만 소리 모드가 원래대로 돌아옵니다**
+    </string>
     <string name="summary_phone_flip_mode">전화를 받을때 폰을 뒤집으면 무음이 될것입니다.</string>
     <string name="title_phone_flip_mode">전화받기 무음 모드</string>
 
@@ -646,23 +677,37 @@
     <string name="lockscreen_menu_unlock_title">Menu unlock</string>
     <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
-    <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
+    <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is
+        independent of Auto-rotation in display
+    </string>
     <string name="lockscreen_all_widgets_title">Allow all widgets</string>
-    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget maker and AOKP are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
+    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen,
+        The widget maker and AOKP are not responsible for your choice of lockscreen widgets. Choose responsibly.
+    </string>
     <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
-    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause lag issues with lockscreen.</string>
+    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause lag issues with
+        lockscreen.
+    </string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
-    <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are shown when the screen is turned on.</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are
+        shown when the screen is turned on.
+    </string>
     <string name="lockscreen_minimize_challenge_title">Minimize lockscreen challenge</string>
-    <string name="lockscreen_minimize_challenge_summary">Set whether the lockscreen challenge is minimized when the screen is turned on.</string>
+    <string name="lockscreen_minimize_challenge_summary">Set whether the lockscreen challenge is minimized when the
+        screen is turned on.
+    </string>
     <string name="lockscreen_use_widget_container_carousel_title">Use widget carousel</string>
-    <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between
+        lockscreen widgets.
+    </string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>
-    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume wake will not work when music is playing.</string>
+    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume
+        wake will not work when music is playing.
+    </string>
     <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
     <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
@@ -670,7 +715,9 @@
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
     <string name="lockscreen_weather_title">Enable</string>
-    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s Weather service to use this</string>
+    <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s
+        Weather service to use this
+    </string>
     <string name="lockscreen_weather_type_title">Lockscreen Weather style</string>
     <string name="lockscreen_weather_type_summary">Whether to show graphical or text weather information.</string>
     <string name="lockscreen_calendar_title">Enable</string>
@@ -682,11 +729,15 @@
     <string name="lockscreen_calendar_range_title">Time-range</string>
     <string name="lockscreen_calendar_range_summary">Select the time-range to be displayed.</string>
     <string name="lockscreen_calendar_use_colors_title">Use colors</string>
-    <string name="lockscreen_calendar_use_colors_summary">If enabled, events will be colored like in your calendar.</string>
+    <string name="lockscreen_calendar_use_colors_summary">If enabled, events will be colored like in your calendar.
+    </string>
     <string name="lockscreen_calendar_hide_ongoing_title">Hide ongoing events</string>
-    <string name="lockscreen_calendar_hide_ongoing_summary">If enabled, events which already started won\'t show up.</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">If enabled, events which already started won\'t show up.
+    </string>
     <string name="lockscreen_calendar_flip_title">Multiple events</string>
-    <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping between them.</string>
+    <string name="lockscreen_calendar_flip_summary">If enabled, the widget will display multiple events by flipping
+        between them.
+    </string>
     <string name="lockscreen_calendar_interval_title">Flip interval</string>
     <string name="lockscreen_calendar_interval_summary">Choose the animation speed in seconds.</string>
     <string name="circles_lock_cat_title">Circle lockscreen settings</string>
@@ -703,7 +754,9 @@
     <string name="lockscreen_targets_summary">Lockscreen targets summary…</string>
     <string name="lockscreen_target_longpress_text">Longpress actions</string>
     <string name="lockscreen_glow_torch_text">GlowPad torch</string>
-    <string name="lockscreen_glow_torch_summary">Longpressing the center of the lockcircle will turn torch on.  Release finger to turn torch off.</string>
+    <string name="lockscreen_glow_torch_summary">Longpressing the center of the lockcircle will turn torch on. Release
+        finger to turn torch off.
+    </string>
     <string name="lockscreen_camera">Camera</string>
     <string name="lockscreen_unlock">Unlock</string>
     <string name="save_error">Could not save targets! You must have at least one unlock target!</string>
@@ -718,32 +771,46 @@
     <string name="lockscreen_target_save_error_title">Error saving targets</string>
     <string name="lockscreen_target_save_error_msg">You must have at least one target that unlocks the screen!</string>
     <string name="lockscreen_target_reset_title">Reset</string>
-    <string name="lockscreen_target_reset_message">Delete all user created lockscreen target and restore to default?</string>
+    <string name="lockscreen_target_reset_message">Delete all user created lockscreen target and restore to default?
+    </string>
     <string name="lockscreen_target_edit_title">Edit target and icon</string>
-    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated
+        icon
+    </string>
     <string name="lockscreen_target_longpress_summary">Enables long press options for lock screen targets</string>
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>
-    <string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.</string>
+    <string name="weather_enable_summary">Whether to pull weather information and display it throughout the ROM.
+    </string>
     <string name="weather_use_custom_location">Use custom location</string>
-    <string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise network-location is used to determine your location.</string>
+    <string name="weather_use_custom_location_summary">Setting a custom location can save some battery. Otherwise
+        network-location is used to determine your location.
+    </string>
     <string name="weather_custom_location_dialog_title">Set your location</string>
-    <string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_dialog_message">Be sure to follow the examples! Setting an invalid location
+        will stop you from getting weather updates and may cause unexpected behavior.\n\nExamples: New York,NY // New
+        York, NY // 10033 // London, England
+    </string>
     <string name="weather_custom_location_title">Custom location</string>
     <string name="weather_show_location_title">Show location</string>
     <string name="weather_show_location_summary">Show your location.</string>
     <string name="weather_refresh_interval">Refresh interval</string>
     <string name="weather_refresh_interval_minutes">" minutes"</string>
     <string name="weather_use_celcius">Metric units</string>
-    <string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than Fahrenheit and windspeed in km/h rather than mph.</string>
+    <string name="weather_use_celcius_summary">Enabling this will display weather temperature in Celsius rather than
+        Fahrenheit and windspeed in km/h rather than mph.
+    </string>
     <string name="weather_statusbar_style">Statusbar weather style</string>
     <string name="title_weather_longclick">Weather panel long click actions</string>
     <string name="title_weather_shortclick">Weather panel short click actions</string>
     <string name="update">Update weather panel</string>
     <string name="weather_refreshing">Requesting weather update!</string>
     <string name="weather_loc_warning_title">Cannot retrieve location!</string>
-    <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the ability to get the current weather in your current location. Please set a custom location or enable obtaining your location from your network."</string>
+    <string name="weather_loc_warning_msg">"Obtaining location from network is currently disabled. This breaks the
+        ability to get the current weather in your current location. Please set a custom location or enable obtaining
+        your location from your network."
+    </string>
     <string name="weather_loc_warning_positive">"Enable network location"</string>
     <string name="weather_loc_warning_negative">"Don't enable."</string>
     <string name="menu_weather_get_weather">Get weather</string>
@@ -850,10 +917,14 @@
         - Tap Stop\n
         - Tap Save, enter a name and hit OK\n\n
         You can check what you just recorded by tapping the Play button.\n
-        If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it will be overwritten, even if you choose another name).\n
-        To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default vibration.\n\n
+        If you wish to modify an already saved pattern, tap Load, choose a pattern, re-record, and save it again (it
+        will be overwritten, even if you choose another name).\n
+        To delete a pattern, tap Delete, choose your pattern and tap Delete again. You cannot delete the Default
+        vibration.\n\n
         You can choose the default vibration for your phone calls in Phone/Settings or in Settings/Sound.\n
-        You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap Menu/Set vibration.</string>
+        You can assign custom vibration patterns to your contacts in the People app: after loading a contact tap
+        Menu/Set vibration.
+    </string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

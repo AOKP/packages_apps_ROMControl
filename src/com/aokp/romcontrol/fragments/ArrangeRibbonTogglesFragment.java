@@ -1,39 +1,28 @@
-
 package com.aokp.romcontrol.fragments;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import com.android.internal.util.aokp.NavBarHelpers;
-import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.ROMControlActivity;
-import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 import com.mobeta.android.dslv.DragSortController;
 import com.mobeta.android.dslv.DragSortListView;
 
@@ -65,7 +54,6 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Holo_Dialog_MinWidth);
@@ -77,7 +65,8 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
     }
 
     public void setResources(Context context, ContentResolver res,
-             ArrayList<String> aList, ArrayList<String> bList, ArrayList<String> sList, int num) {
+                             ArrayList<String> aList, ArrayList<String> bList,
+                             ArrayList<String> sList, int num) {
         mContext = context;
         mContentRes = res;
         allToggles = aList;
@@ -88,7 +77,7 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
 
         rootView = (ViewGroup)
                 inflater.inflate(R.layout.fragment_configure_toggles,
@@ -260,10 +249,11 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                         String toggleKey = allTogglesSorted.get(which);
-                        if (isChecked)
+                        if (isChecked) {
                             sToggles.add(toggleKey);
-                        else
+                        } else {
                             sToggles.remove(toggleKey);
+                        }
                     }
                 });
         AlertDialog d = builder.create();

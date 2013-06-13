@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
@@ -17,16 +16,13 @@ import android.provider.Settings;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
-
-
+import android.widget.TextView;
 import com.aokp.romcontrol.R;
 
 import java.util.ArrayList;
@@ -51,7 +47,7 @@ public class WidgetConfigurationFragment extends DialogFragment {
     BroadcastReceiver mWidgetIdReceiver = new BroadcastReceiver() {
 
         public void onReceive(Context context, Intent intent) {
-            int widgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,-1);
+            int widgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
             if (widgetId == 0) { // Widgetselection was cancelled
                 return;
             }
@@ -64,44 +60,47 @@ public class WidgetConfigurationFragment extends DialogFragment {
                 mContext.sendBroadcast(delete);
                 mWidgets.remove(mCurrentPage);
             }
-            mWidgets.add(mCurrentPage ,new NavBarWidget(widgetId));
+            mWidgets.add(mCurrentPage, new NavBarWidget(widgetId));
             saveWidgets();
             refreshParams();
             mViewPager.setCurrentItem(mCurrentPage);
             updateSummary(mCurrentPage);
-        };
+        }
+
+        ;
     };
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         mPrefView = inflater.inflate(R.layout.navbar_widgets, container, false);
         mViewPager = (ViewPager) mPrefView.findViewById(R.id.pager);
         mCurrentPage = 0;
         ImageButton widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_shift_left);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v) {
+            public void onClick(View v) {
                 shiftleftWidget(mCurrentPage);
             }
         });
         widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_shift_right);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v) {
+            public void onClick(View v) {
                 shiftrightWidget(mCurrentPage);
             }
         });
         widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_delete);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v) {
+            public void onClick(View v) {
                 removeWidget(mCurrentPage);
             }
         });
         widgetbutton = (ImageButton) mPrefView.findViewById(R.id.button_reset_widgets);
         widgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v) {
+            public void onClick(View v) {
                 resetNavBarWidgets();
             }
         });
@@ -132,9 +131,9 @@ public class WidgetConfigurationFragment extends DialogFragment {
     }
 
     private void shiftleftWidget(int page) {
-        if (page > 0 && mWidgets.size() > 1 && (page < mWidgets.size()-1)) {
+        if (page > 0 && mWidgets.size() > 1 && (page < mWidgets.size() - 1)) {
             NavBarWidget moveme = mWidgets.remove(page);
-            mWidgets.add(page -1, moveme);
+            mWidgets.add(page - 1, moveme);
             saveWidgets();
             refreshParams();
             mViewPager.setCurrentItem(page - 1);
@@ -142,9 +141,9 @@ public class WidgetConfigurationFragment extends DialogFragment {
     }
 
     private void shiftrightWidget(int page) {
-        if (page < (mWidgets.size()-2) && mWidgets.size() > 1) {
+        if (page < (mWidgets.size() - 2) && mWidgets.size() > 1) {
             NavBarWidget moveme = mWidgets.remove(page);
-            mWidgets.add(page +1, moveme);
+            mWidgets.add(page + 1, moveme);
             saveWidgets();
             refreshParams();
             mViewPager.setCurrentItem(page + 1);
@@ -152,14 +151,14 @@ public class WidgetConfigurationFragment extends DialogFragment {
     }
 
     private void removeWidget(int page) {
-        if (page < (mWidgets.size() -1)) {
-            NavBarWidget removedWidget =  mWidgets.remove(page);
+        if (page < (mWidgets.size() - 1)) {
+            NavBarWidget removedWidget = mWidgets.remove(page);
             saveWidgets();
             refreshParams();
             // remove in system ui
             Intent delete = new Intent();
             delete.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
-                removedWidget.getWidgetId());
+                    removedWidget.getWidgetId());
             delete.setAction(ACTION_DEALLOCATE_ID);
             mContext.sendBroadcast(delete);
             mViewPager.setCurrentItem(page);
@@ -202,7 +201,9 @@ public class WidgetConfigurationFragment extends DialogFragment {
     View.OnClickListener mDoPrefClick = new View.OnClickListener() {
         public void onClick(View v) {
             requestNewWidget();
-        };
+        }
+
+        ;
     };
 
     private void requestNewWidget() {
@@ -218,7 +219,9 @@ public class WidgetConfigurationFragment extends DialogFragment {
         for (int i = 0; i < (numwidgets); i++) {
             widgetString.append(mWidgets.get(i).getWidgetId());
             if (i != (numwidgets - 1)) // zero based adjustment
+            {
                 widgetString.append("|");
+            }
         }
         Settings.System.putString(mContext.getContentResolver(),
                 Settings.System.NAVIGATION_BAR_WIDGETS,
@@ -240,8 +243,9 @@ public class WidgetConfigurationFragment extends DialogFragment {
     private void updateSummary(int page) {
         int widgets = mWidgets.size() - 1;
         if (widgets > page) {
-            mSummary.setText(String.format(mContext.getResources().getString(R.string.navbar_widget_summary),
-                    (page + 1),widgets));
+            mSummary.setText(
+                    String.format(mContext.getResources().getString(R.string.navbar_widget_summary),
+                            (page + 1), widgets));
             mTitle.setText(mWidgets.get(page).mTitle);
         } else {
             mSummary.setText(mContext.getResources().getString(R.string.navbar_widget_summary_add));
@@ -271,7 +275,7 @@ public class WidgetConfigurationFragment extends DialogFragment {
 
         @Override
         public int getCount() {
-            if (mWidgets == null){
+            if (mWidgets == null) {
                 return 0;
             } else {
                 return mWidgets.size();
@@ -297,14 +301,15 @@ public class WidgetConfigurationFragment extends DialogFragment {
          * this is done by the time it returns from {@link #finishUpdate()}.
          *
          * @param container The containing View in which the page will be shown.
-         * @param position The page position to be instantiated.
+         * @param position  The page position to be instantiated.
          * @return Returns an Object representing the new page. This does not need
          *         to be a View, but can be some other container of the page.
          */
         @Override
         public Object instantiateItem(ViewGroup collection, int position) {
-            if (position > (mWidgets.size() - 1))
+            if (position > (mWidgets.size() - 1)) {
                 return null;
+            }
             View v = mWidgets.get(position).getView();
             if (v.getParent() != null) {
                 // there is a case where shifting views could result in a mView being re-added yet
@@ -323,9 +328,9 @@ public class WidgetConfigurationFragment extends DialogFragment {
          * is done by the time it returns from {@link #finishUpdate()}.
          *
          * @param container The containing View from which the page will be removed.
-         * @param position The page position to be removed.
-         * @param object The same object that was returned by
-         *            {@link #instantiateItem(View, int)}.
+         * @param position  The page position to be removed.
+         * @param object    The same object that was returned by
+         *                  {@link #instantiateItem(View, int)}.
          */
         @Override
         public void destroyItem(View collection, int position, Object view) {
@@ -346,7 +351,7 @@ public class WidgetConfigurationFragment extends DialogFragment {
          * removed from the container as appropriate.
          *
          * @param container The containing View which is displaying this adapter's
-         *            page views.
+         *                  page views.
          */
         @Override
         public void finishUpdate(View arg0) {
@@ -365,6 +370,7 @@ public class WidgetConfigurationFragment extends DialogFragment {
         public void startUpdate(View arg0) {
         }
     }
+
     public class NavBarWidget {
         int mWidgetId;
         int mHeight;
@@ -386,11 +392,13 @@ public class WidgetConfigurationFragment extends DialogFragment {
                 } else {
                     mHeight = info.minHeight;
                     mTitle = info.label;
-                    mPreview = mContext.getPackageManager().getDrawable(info.provider.getPackageName(),
-                            info.previewImage, null);
+                    mPreview =
+                            mContext.getPackageManager().getDrawable(info.provider.getPackageName(),
+                                    info.previewImage, null);
                     if (mPreview == null) {
                         try {
-                            mPreview =  mContext.getPackageManager().getApplicationIcon(info.provider.getPackageName());
+                            mPreview = mContext.getPackageManager()
+                                    .getApplicationIcon(info.provider.getPackageName());
                         } catch (NameNotFoundException e) {
                             mPreview = mContext.getResources().getDrawable(R.drawable.widget_na);
                         }

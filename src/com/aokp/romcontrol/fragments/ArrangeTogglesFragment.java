@@ -1,4 +1,3 @@
-
 package com.aokp.romcontrol.fragments;
 
 import android.app.AlertDialog;
@@ -7,27 +6,21 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
-import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 import com.mobeta.android.dslv.DragSortController;
 import com.mobeta.android.dslv.DragSortListView;
 
@@ -79,7 +72,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
 
         ViewGroup rootView = (ViewGroup)
                 inflater.inflate(R.layout.fragment_configure_toggles,
@@ -260,10 +253,11 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                         String toggleKey = allToggles.get(which);
-                        if (isChecked)
+                        if (isChecked) {
                             StatusBarToggles.addToggle(getActivity(), toggleKey);
-                        else
+                        } else {
                             StatusBarToggles.removeToggle(getActivity(), toggleKey);
+                        }
                     }
                 });
         AlertDialog d = builder.create();

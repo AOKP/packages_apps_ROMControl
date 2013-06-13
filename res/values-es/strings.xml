@@ -103,8 +103,8 @@
     <string name="about_aokp_summary">@null</string>
 
     <!-- General UI -->
-    <string name="bootani_cat">Boot Animation</string>
-    <string name="navbar_cat">NavBar</string>
+    <string name="bootani_cat">Animación de arranque</string>
+    <string name="navbar_cat">barra de navegación</string>
     <string name="notification_cat">Notificación</string>
     <string name="tabletUI_cat">Tablet UI</string>
     <string name="enable_volume_options">Activar panel de volumen</string>
@@ -125,16 +125,18 @@
     <string name="custom_carrier_label_notset">No se fijó ninguna etiqueta personalizada</string>
     <string name="ime_switcher_title">Ver método de escritura</string>
     <string name="ime_switcher_summary">En la barra de estado mientras se escribe</string>
+    <string name="wakeup_when_plugged_unplugged_title">Despertar con cargador</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Despierta el dispositivo si se ha conectado o desconectado un cargador</string>
     <string name="lefty_mode_title">Modo Lefty</string>
     <string name="lefty_mode_summary">Cambiar localización de NavBar (necesita reiniciar la interfaz)</string>
     <string name="rotate_180_title">Permitir rotación de 180 grados</string>
     <string name="rotate_180_summary">Permite a su dispositivo rotar 180 grados!</string>
-    <string name="recent_kill_all">Kill All</string>
+    <string name="recent_kill_all">Matar Todo</string>
     <string name="recent_kill_all_summary">Mostrar boton de Matar Todo en el menu de aplicaciones recientes</string>
-    <string name="ram_bar">RAM Bar</string>
+    <string name="ram_bar">Barra de RAM</string>
     <string name="ram_bar_summary">Mostrar consumo de Ram en el menu de aplicaciones recientes</string>
-    <string name="kill_app_longpress_back">Pulsación larga en botón atrás para matar</string>
-    <string name="kill_app_longpress_back_summary">Mantener pulsado el botón atrás matara la aplicación actual</string>
+    <string name="longpress_to_kill">Pulsación larga en botón atrás para matar</string>
+    <string name="longpress_to_kill_summary">Mantener pulsado el botón atrás matara la aplicación actual</string>
     <string name="tablet_ui">Forzar interfaz de tablet</string>
     <string name="tablet_ui_summary">Esto cambiará la interfaz a modo tablet (necesita reiniciar)</string>
     <string name="hide_extras">No mostrar Extras</string>

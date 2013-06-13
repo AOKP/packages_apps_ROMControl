@@ -3,12 +3,10 @@ package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Fragment;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,46 +15,36 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
-import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
-import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 import android.widget.Switch;
-
 import com.aokp.romcontrol.R;
-
-import net.margaritov.preference.colorpicker.ColorPickerDialog;
-
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
+import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
 import java.net.URISyntaxException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -204,8 +192,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                         Log.i(TAG, "Charging LED is set to: " + checked);
                 }
             });
-        }
-        else {
+        } else {
             mChargingLedOn.setVisibility(View.GONE);
         }
 
@@ -288,19 +275,18 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                         }
                     });
                     b.setPositiveButton(com.android.internal.R.string.ok,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                        }
-                    });
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
 
                     AlertDialog alert = b.create();
                     alert.show();
                 }
             });
-        }
-        else {
+        } else {
             mLedBrightness.setVisibility(View.GONE);
         }
 
@@ -658,7 +644,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                 Log.e(TAG, uri);
             if (DEBUG)
                 Log.e(TAG, packageName);
-        } catch (URISyntaxException e) { }
+        } catch (URISyntaxException e) {
+        }
 
         if (packageName != null) {
             addCustomApp(packageName);

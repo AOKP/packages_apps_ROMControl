@@ -7,10 +7,8 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBarBattery extends AOKPPreferenceFragment implements
@@ -45,7 +43,7 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
         mBatteryBar = (ListPreference) findPreference(PREF_BATT_BAR);
         mBatteryBar.setOnPreferenceChangeListener(this);
         mBatteryBar.setValue((Settings.System.getInt(mContentRes,
-                        Settings.System.STATUSBAR_BATTERY_BAR, 0)) + "");
+                Settings.System.STATUSBAR_BATTERY_BAR, 0)) + "");
 
         mBatteryBarStyle = (ListPreference) findPreference(PREF_BATT_BAR_STYLE);
         mBatteryBarStyle.setOnPreferenceChangeListener(this);
@@ -74,7 +72,7 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
+                                         Preference preference) {
         if (preference == mBatteryBarChargingAnimation) {
 
             Settings.System.putInt(mContentRes,

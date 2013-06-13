@@ -39,7 +39,7 @@
     <dimen name="list_toggle_height">48dp</dimen>
     <dimen name="list_toggle_width">320dp</dimen>
     <dimen name="toggle_rearrange_dialog_title_height">68dp</dimen>
-   <!-- Default distance beyond which snaps to the matching target -->
+    <!-- Default distance beyond which snaps to the matching target -->
     <dimen name="navbar_search_snap_margin">40dip</dimen>
     <!-- Diameter of outer shape drawable shown in navbar search. -->
     <dimen name="navbar_search_outerring_radius">170dp</dimen>

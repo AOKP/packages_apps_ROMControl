@@ -43,6 +43,7 @@
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:orientation="vertical">
+
             <ImageView
                 android:id="@+android:id/icon"
                 android:layout_width="wrap_content"

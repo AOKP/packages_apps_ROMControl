@@ -16,7 +16,6 @@ package com.aokp.romcontrol;
  */
 
 
-
 import android.app.Dialog;
 
 /**

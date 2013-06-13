@@ -1,16 +1,14 @@
 
 package com.aokp.romcontrol.vibrations;
 
-import java.util.ArrayList;
-
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.media.VibrationPattern;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.os.Vibrator;
-import android.util.Log;
+
+import java.util.ArrayList;
 
 public class VibrationRecorder {
     private static final String TAG = "VibrationRecorder";

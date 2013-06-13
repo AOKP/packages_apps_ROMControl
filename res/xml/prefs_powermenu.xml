@@ -4,10 +4,10 @@
     <SwitchPreference
         android:key="show_screenshot"
         android:title="@string/title_show_screenshot" />
-<!--
-    <SwitchPreference android:key="show_power_saver"
-        android:title="@string/title_show_power_saver" />
--->
+    <!--
+        <SwitchPreference android:key="show_power_saver"
+            android:title="@string/title_show_power_saver" />
+    -->
     <SwitchPreference
         android:key="show_torch_toggle"
         android:title="@string/title_show_torch_toggle" />

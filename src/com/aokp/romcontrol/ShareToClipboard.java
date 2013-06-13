@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.aokp.romcontrol.R;
-
 public class ShareToClipboard extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {

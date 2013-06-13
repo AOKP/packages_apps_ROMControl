@@ -79,14 +79,19 @@
     <string name="summary_pref_powersaving_pref_mode">@null</string>
 
     <string name="title_pref_powersaving_data_screen_off">Datos con pantalla apagada</string>
-    <string name="summary_pref_powersaving_data_screen_off">Que hacer con los datos mientras la pantalla esta apagada</string>
+    <string name="summary_pref_powersaving_data_screen_off">Que hacer con los datos mientras la pantalla esta apagada
+    </string>
 
     <string name="title_pref_powersaving_data_screen_off_delay">Retraso para la opción datos</string>
-    <string name="summary_pref_powersaving_data_screen_off_delay">Cuanto retraso se aplica para activar la opción datos</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">Cuanto retraso se aplica para activar la opción
+        datos
+    </string>
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Usar aplicación personalizada</string>
-    <string name="use_custom_app_summary">Usar una aplicación personalizada en vez del diálogo de aplicaciones recientes</string>
+    <string name="use_custom_app_summary">Usar una aplicación personalizada en vez del diálogo de aplicaciones
+        recientes
+    </string>
     <string name="select_custom_app_title">Seleccionar aplicación</string>
     <string name="group_applications">Aplicaciones</string>
 
@@ -109,19 +114,26 @@
     <string name="tabletUI_cat">Tablet UI</string>
     <string name="enable_volume_options">Activar panel de volumen</string>
     <string name="status_bar_notif_count_title">Mostrar contador de notificaciones</string>
-    <string name="status_bar_notif_count_summary">Muestra el número de notificaciones pendientes en la barra de estado</string>
+    <string name="status_bar_notif_count_summary">Muestra el número de notificaciones pendientes en la barra de estado
+    </string>
     <string name="vibrate_notif_expand_title">Vibrar al expandir</string>
     <string name="vibrate_notif_expand_summary">Vibrar al ampliar</string>
     <string name="disable_bootanimation_title">Desactivar animación de arranque</string>
     <string name="custom_bootanimation_title">Animación de arranque personalizada</string>
-    <string name="custom_bootanimation_summary">Seleccione bootanimation.zip de la tarjeta SD. Se realizara una copia de la anterior animación de arranque en /system/media.</string>
-    <string name="install_file_manager_error">Ninguna aplicación disponible para abrir archivos zip. Por favor instale un explorador de archivos .</string>
+    <string name="custom_bootanimation_summary">Seleccione bootanimation.zip de la tarjeta SD. Se realizara una copia de
+        la anterior animación de arranque en /system/media.
+    </string>
+    <string name="install_file_manager_error">Ninguna aplicación disponible para abrir archivos zip. Por favor instale
+        un explorador de archivos .
+    </string>
     <string name="notification_wallpaper_title">Elige el fondo en las notificaciones</string>
     <string name="notification_wallpaper_summary">Puede quitar el fondo de pantalla en el menú de esta ventana</string>
     <string name="notif_wallpaper_alpha_title">Transparencia del fondo del panel de notificaciones</string>
     <string name="alpha_dialog_title">Ajustar transparencia</string>
     <string name="custom_carrier_label_title">Personalizar nombre de la operadora</string>
-    <string name="custom_carrier_label_explain">Por favor escriba una etiqueta. Si no escribe nada volverá a la etiqueta por defecto.</string>
+    <string name="custom_carrier_label_explain">Por favor escriba una etiqueta. Si no escribe nada volverá a la etiqueta
+        por defecto.
+    </string>
     <string name="custom_carrier_label_notset">No se fijó ninguna etiqueta personalizada</string>
     <string name="ime_switcher_title">Ver método de escritura</string>
     <string name="ime_switcher_summary">En la barra de estado mientras se escribe</string>
@@ -138,18 +150,25 @@
     <string name="tablet_ui">Forzar interfaz de tablet</string>
     <string name="tablet_ui_summary">Esto cambiará la interfaz a modo tablet (necesita reiniciar)</string>
     <string name="hide_extras">No mostrar Extras</string>
-    <string name="hide_extras_summary">Ocultar algunas cosas del systembar y hacer el boton compacto (necesita reiniciar la interfaz)</string>
+    <string name="hide_extras_summary">Ocultar algunas cosas del systembar y hacer el boton compacto (necesita reiniciar
+        la interfaz)
+    </string>
     <string name="bootanimation_preview">Vista previa</string>
     <string name="apply">Aplicar</string>
     <string name="creating_preview">Creando vista previa...</string>
     <string name="error_reading_zip_file">Error leyendo el archivo zip</string>
     <string name="error_creating_preview">Error creando vista previa</string>
     <string name="multipane_ui">Activar panel dual</string>
-    <string name="multipane_ui_summary">Esta opción activara /desactivara la vista de panel dual (necesita reiniciar)</string>
+    <string name="multipane_ui_summary">Esta opción activara /desactivara la vista de panel dual (necesita reiniciar)
+    </string>
     <string name="show_overflow_title">Mostrar interfaz de menu Overflow</string>
-    <string name="show_overflow_summary">Muestra el botón de menú 3 puntos  dentro de las aplicaciones</string>
-    <string name="show_overflow_toast_enable">El botón de menú puede no ser visible hasta que se reinicien las aplicaciones</string>
-    <string name="show_overflow_toast_disable">El botón de menú puede ser visible hasta que se reinicien las aplicaciones</string>
+    <string name="show_overflow_summary">Muestra el botón de menú 3 puntos dentro de las aplicaciones</string>
+    <string name="show_overflow_toast_enable">El botón de menú puede no ser visible hasta que se reinicien las
+        aplicaciones
+    </string>
+    <string name="show_overflow_toast_disable">El botón de menú puede ser visible hasta que se reinicien las
+        aplicaciones
+    </string>
     <string name="notification_show_wifi_ssid_title">Ver nombre de conección wifi</string>
     <string name="notification_show_wifi_ssid_summary">Mostrar el nombre de la conección actual de wifi</string>
 
@@ -160,27 +179,39 @@
     <string name="current_lcd_density">"Densidad LCD actual: "</string>
     <string name="lcd_density_wizard">Asistente de densidad LCD</string>
     <string name="follow_through_title">¡Siga estas instrucciones!</string>
-    <string name="follow_through_summary">Asegúrese de que ha realizado correctamente todos los pasos antes de iniciar el siguiente.</string>
+    <string name="follow_through_summary">Asegúrese de que ha realizado correctamente todos los pasos antes de iniciar
+        el siguiente.
+    </string>
     <string name="stock_density_title">1. Poner densidad LCD por defecto</string>
-    <string name="stock_density_summary">Los tablet y teléfonos antiguos usan 160. Otros muchos usan 240. El Galaxy Nexus usa 320.</string>
+    <string name="stock_density_summary">Los tablet y teléfonos antiguos usan 160. Otros muchos usan 240. El Galaxy
+        Nexus usa 320.
+    </string>
     <string name="stock_density_changed_summary">"Densidad actual: "</string>
     <string name="reboot_title">2. Reiniciar!</string>
-    <string name="reboot_summary">¡Regrese a esta pantalla después de reiniciar y complete el resto de los pasos!</string>
+    <string name="reboot_summary">¡Regrese a esta pantalla después de reiniciar y complete el resto de los pasos!
+    </string>
     <string name="clear_market_data_title">3. Borrar datos del market</string>
     <string name="clear_market_data_cleared">Datos del market borrados</string>
-    <string name="clear_market_data_donot_cleared">"Los datos del market no se pueden borrar, hágalo manualmente!"</string>
+    <string name="clear_market_data_donot_cleared">"Los datos del market no se pueden borrar, hágalo manualmente!"
+    </string>
     <string name="dpi">DPI</string>
     <string name="open_market_title">4. Abra el market y dele a aceptar</string>
     <string name="open_market_summary">Presione atrás para volver a esta pantalla.</string>
-    <string name="open_market_summary_could_not_open">"¡No se puede abrir el market! Si está seguro de tenerlo instalado, ábralo desde el lanzador."</string>
+    <string name="open_market_summary_could_not_open">"¡No se puede abrir el market! Si está seguro de tenerlo
+        instalado, ábralo desde el lanzador."
+    </string>
     <string name="custom_density_title">5. Ponga la densidad deseada!</string>
-    <string name="custom_density_summary">Si tiene problemas de compatibilidad con el market, regrese a esta pantalla y repita el ultimo paso.</string>
+    <string name="custom_density_summary">Si tiene problemas de compatibilidad con el market, regrese a esta pantalla y
+        repita el ultimo paso.
+    </string>
     <string name="custom_density_summary_invalid">"¡DENSIDAD NO VALIDA!"</string>
     <string name="custom_density">Personalizar</string>
     <string name="set_custom_density_title">Ajustar densidad personalizada</string>
     <string name="set_custom_density_set">Establecer</string>
     <string name="custom_density_dialog_title">"¡ATENCIÓN!"</string>
-    <string name="custom_density_dialog_summary">"Cambiar de la densidad LCD puede provocar comportamientos inesperados. Si tiene problemas de compatibilidad con alguna aplicación regrese a esta pantalla y repita todos los pasos."</string>
+    <string name="custom_density_dialog_summary">"Cambiar de la densidad LCD puede provocar comportamientos inesperados.
+        Si tiene problemas de compatibilidad con alguna aplicación regrese a esta pantalla y repita todos los pasos."
+    </string>
     <string name="custom_density_dialog_button_got">Entendido!</string>
     <string name="custom_density_dialog_button_reboot">Reiniciar ahora</string>
 
@@ -259,14 +290,18 @@
     <!-- Statusbar | Battery -->
     <string name="battery_icon">Aspecto del indicador de batería</string>
     <string name="battery_not_title">Indicador de batería en panel de notificaciones</string>
-    <string name="battery_not_summary">El icono de la batería se mostrará donde aparece el botón de limpiar notificaciones</string>
+    <string name="battery_not_summary">El icono de la batería se mostrará donde aparece el botón de limpiar
+        notificaciones
+    </string>
     <string name="battery_bar">Ubicación de la barra de batería</string>
     <string name="battery_bar_color">Color de la barra de batería</string>
     <string name="battery_bar_cat">Opciones de la barra de batería</string>
     <string name="battery_bar_style_title">Aspecto de la barra de batería</string>
     <string name="battery_bar_thickness_title">Ancho de la barra</string>
     <string name="battery_bar_animate_title">Animación de carga</string>
-    <string name="battery_bar_animate_summary">La animación de carga puede dar lugar a una experiencia de usuario pobre. Actívela solo si lo cree conveniente.</string>
+    <string name="battery_bar_animate_summary">La animación de carga puede dar lugar a una experiencia de usuario pobre.
+        Actívela solo si lo cree conveniente.
+    </string>
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Estilo de señal</string>
@@ -292,7 +327,9 @@
     <string name="navigation_bar">Barra de navegación</string>
     <string name="navbar_button_cat">Botones de la barra de navegación</string>
     <string name="title_pref_menu_display">Posición del menú</string>
-    <string name="summary_pref_menu_display">¡Recuerde quitar los botones de menú si está usando el botón grande de menú!</string>
+    <string name="summary_pref_menu_display">¡Recuerde quitar los botones de menú si está usando el botón grande de
+        menú!
+    </string>
     <string name="title_pref_navigation_menu_display">Visibilidad del menú</string>
     <string name="summary_pref_navigation_menu_display">Como y cuando quiere que aparezca el menú</string>
     <string name="navbar_qty_title">Número de botones</string>
@@ -300,7 +337,9 @@
     <string name="navbar_action_title">Acción del botón %1$s e icono</string>
     <string name="button_transparency_title">Transparencia de la barra</string>
     <string name="navbar_width_help_title">Ayuda para combinar ancho de NavBar</string>
-    <string name="navbar_width_help_summary" formatted="false">100 es el 70% del ancho de la pantalla, 5 es el 30% del ancho de la pantalla. 0 de forma predeterminada para el ancho por botón.</string>
+    <string name="navbar_width_help_summary" formatted="false">100 es el 70% del ancho de la pantalla, 5 es el 30% del
+        ancho de la pantalla. 0 de forma predeterminada para el ancho por botón.
+    </string>
     <string name="width_port_title">Barra combinada para el puerto</string>
     <string name="width_land_title">Barra combinada para land</string>
     <string name="navbar_longpress_title">Botón %1$s Acción pulsación larga</string>
@@ -320,11 +359,17 @@
     <string name="navigation_bar_height_title">Altura de la barra de navegación</string>
     <string name="navigation_bar_height_summary">Ajuste la altura de la barra de navegación en modo retrato.</string>
     <string name="navigation_bar_height_landscape_title">Altura de la barra de navegación apaisada</string>
-    <string name="navigation_bar_height_landscape_summary">Ajuste la altura de la barra de navegación en modo apaisado.</string>
+    <string name="navigation_bar_height_landscape_summary">Ajuste la altura de la barra de navegación en modo
+        apaisado.
+    </string>
     <string name="navigation_bar_width_title">Ancho de la barra de navegación</string>
-    <string name="navigation_bar_width_summary">Ancho de la barra de navegación cuando está a lo largo de un lateral.</string>
+    <string name="navigation_bar_width_summary">Ancho de la barra de navegación cuando está a lo largo de un lateral.
+    </string>
     <string name="navbar_enable_dialog_title">¡Es necesario reiniciar!</string>
-    <string name="navbar_enable_dialog_msg">¡<b>Debería</b> reiniciar ahora mismo para asegurarse de que todo funciona correctamente!</string>
+    <string name="navbar_enable_dialog_msg">¡
+        <b>Debería</b>
+        reiniciar ahora mismo para asegurarse de que todo funciona correctamente!
+    </string>
     <string name="navbar_enable_dialog_negative">Reiniciar mas tarde</string>
     <string name="navbar_enable_dialog_Positive">Reiniciar ahora</string>
     <string name="navbar_height_dialog_title">¡Es necesario reiniciar!</string>
@@ -333,7 +378,9 @@
     <string name="navbar_height_dialog_button_reboot">Reiniciar ahora</string>
     <string name="navigation_bar_tint_title">Color de la barra de navegación</string>
     <string name="navigation_bar_glow_tint_title">Color del resplandor de la barra de navegación</string>
-    <string name="navigation_bar_glow_tint_summary">Cuando presiona un botón hay un resplandor. Aquí puede cambiar el color de ese resplandor.</string>
+    <string name="navigation_bar_glow_tint_summary">Cuando presiona un botón hay un resplandor. Aquí puede cambiar el
+        color de ese resplandor.
+    </string>
     <string name="glow_times_title">Animación del resplandor de los botones</string>
     <string name="glow_times_off">Apagado</string>
     <string name="glow_times_superquick">Muy rápida</string>
@@ -361,7 +408,9 @@
     <string name="interface_softkeys_pref_long_4_title">Presión larga objeto 4</string>
     <string name="interface_softkeys_pref_default_5_title">Presión corta objeto 5</string>
     <string name="interface_softkeys_pref_long_5_title">Presión larga objeto 5</string>
-    <string name="interface_softkeys_pref_default_summary">Presione el icono para personalizar la actividad de pulsación larga</string>
+    <string name="interface_softkeys_pref_default_summary">Presione el icono para personalizar la actividad de pulsación
+        larga
+    </string>
     <string name="interface_softkeys_activity_dialog_title">Seleccionar actividad</string>
     <string name="interface_softkeys_reboot_title">Reiniciar menú</string>
     <string name="interface_softkeys_screenshot_title">Captura de pantalla</string>
@@ -375,9 +424,13 @@
     <string name="interface_navring_settings_title">Accesos en barra de navegación</string>
     <string name="interface_navring_settings_summary">Seleccione la aplicaciones personalizadas de los accesos</string>
     <string name="title_navring_amount">Numero de accesos</string>
-    <string name="summary_navring_amount">¿Cuantos accesos desea mostrar? *Los cambios realizados reiniciaran la interfaz*</string>
+    <string name="summary_navring_amount">¿Cuantos accesos desea mostrar? *Los cambios realizados reiniciaran la
+        interfaz*
+    </string>
     <string name="interface_navring_custom_pref_summary">Este acceso iniciara</string>
-    <string name="interface_navring_pref_default_summary">Presione para seleccionar la actividad o aplicación del acceso</string>
+    <string name="interface_navring_pref_default_summary">Presione para seleccionar la actividad o aplicación del
+        acceso
+    </string>
     <string name="interface_navring_assist_title">Google Now</string>
     <string name="interface_navring">Accesos cargados</string>
     <string name="navbar_ring">Accesos personalizados</string>
@@ -401,7 +454,9 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Probar LED</string>
     <string name="led_test_notification_message_now">"Probando LED para: "</string>
-    <string name="led_test_notification_message_note">".Por favor, apague su pantalla para ver el LED. Hágalo antes de aceptar este mensaje ya que sino no se mostrara el color elegido para el LED."</string>
+    <string name="led_test_notification_message_note">".Por favor, apague su pantalla para ver el LED. Hágalo antes de
+        aceptar este mensaje ya que sino no se mostrara el color elegido para el LED."
+    </string>
     <string name="led_test_ok">Aceptar</string>
     <string name="title_charging_led_on">Activar LED mientras carga (es necesario reiniciar)</string>
     <string name="led_change_brightness">Cambiar brillo</string>
@@ -409,7 +464,9 @@
 
     <!-- Sound -->
     <string name="less_notification_sounds_title">Notificaciones menos habituales</string>
-    <string name="less_notification_sounds_summary">"Limite la notificación en cada aplicación, suena una vez por el valor establecido</string>
+    <string name="less_notification_sounds_summary">"Limite la notificación en cada aplicación, suena una vez por el
+        valor establecido
+    </string>
     <string name="title_headphone_audio_mode">Acción al conectar auriculares</string>
     <string name="summary_headphone_audio_mode">Qué hacer con el sonido cuando los auriculares están conectados</string>
     <string name="title_bt_audio_mode">Acción al conectar Bluetooth A2DP</string>
@@ -421,12 +478,17 @@
     <string name="summary_flip_mode">Qué hacer con el sonido cuando se coloca el teléfono boca abajo</string>
     <string name="flip_cat_title">Acción teléfono boca abajo</string>
     <string name="title_timeout_sec">Tiempo de espera de la pantalla</string>
-    <string name="summary_timeout_sec">Tiempo de espera con pantalla apagada para que el sensor de giro se desactive</string>
+    <string name="summary_timeout_sec">Tiempo de espera con pantalla apagada para que el sensor de giro se desactive
+    </string>
     <string name="title_down_sec">Como funciona</string>
     <string name="summary_down_sec">El tiempo necesario para que su teléfono sea considerado boca abajo</string>
     <string name="flip_action_positive">Aceptar</string>
     <string name="flip_dialog_title">Como funciona</string>
-    <string name="flip_dialog_msg">Al dar la vuelta al teléfono vibrara o se silenciara según escoja una u otra opción. Tardara 1,5s (por defecto) para considerarse boca abajo. Esta opción quedara desactivada si enciende la pantalla antes de 15s (por defecto) NOTA: **Tendrá que encender la pantalla de nuevo cuando haya entrado en modo boca abajo para conseguir el sonido de nuevo si el tiempo de espera de pantalla se ha superado.**</string>
+    <string name="flip_dialog_msg">Al dar la vuelta al teléfono vibrara o se silenciara según escoja una u otra opción.
+        Tardara 1,5s (por defecto) para considerarse boca abajo. Esta opción quedara desactivada si enciende la pantalla
+        antes de 15s (por defecto) NOTA: **Tendrá que encender la pantalla de nuevo cuando haya entrado en modo boca
+        abajo para conseguir el sonido de nuevo si el tiempo de espera de pantalla se ha superado.**
+    </string>
     <string name="summary_phone_flip_mode">Gire el teléfono para silenciar el sonido cuando reciba una llamada</string>
     <string name="title_phone_flip_mode">Silenciar llamadas</string>
 
@@ -439,28 +501,43 @@
     <string name="lockscreen_calendar_cat">Calendario</string>
 
     <string name="lockscreen_quick_unlock_control_title">Desbloqueo rápido</string>
-    <string name="lockscreen_quick_unlock_control_summary">Desbloquear pantalla con contraseña o pin sin pulsar el botón INTRO</string>
+    <string name="lockscreen_quick_unlock_control_summary">Desbloquear pantalla con contraseña o pin sin pulsar el botón
+        INTRO
+    </string>
     <string name="lockscreen_menu_unlock_title">Desbloquear con menú</string>
     <string name="lockscreen_menu_unlock_summary">Usar los botones de menú para desbloquear la pantalla</string>
     <string name="lockscreen_auto_rotate_title">Permitir rotación de pantalla de desbloqueo</string>
-    <string name="lockscreen_auto_rotate_summary">La pantalla de desbloqueo podrá rotar según su orientación. Este ajuste es independiente a la rotación de la pantalla principal</string>
+    <string name="lockscreen_auto_rotate_summary">La pantalla de desbloqueo podrá rotar según su orientación. Este
+        ajuste es independiente a la rotación de la pantalla principal
+    </string>
     <string name="lockscreen_all_widgets_title">Permitir a todos los widgets</string>
-    <string name="lockscreen_all_widgets_summary">Advertencia** Algunos widgets no están destinados a ser utilizados en la pantalla de bloqueo, el fabricante del widget y AOKP no son responsables de la elección de los widgets.Elige responsablemente.</string>
+    <string name="lockscreen_all_widgets_summary">Advertencia** Algunos widgets no están destinados a ser utilizados en
+        la pantalla de bloqueo, el fabricante del widget y AOKP no son responsables de la elección de los widgets.Elige
+        responsablemente.
+    </string>
     <string name="lockscreen_unlimited_widgets_title">Permitir widgets sin limites</string>
-    <string name="lockscreen_unlimited_widgets_summary">Advertencia** Agregar muchos widgets puede ocasionar demasiados problemas de lag en la pantalla de bloqueo.</string>
+    <string name="lockscreen_unlimited_widgets_summary">Advertencia** Agregar muchos widgets puede ocasionar demasiados
+        problemas de lag en la pantalla de bloqueo.
+    </string>
     <string name="lockscreen_battery_title">Porcentaje de batería en pantalla de desbloqueo</string>
-    <string name="lockscreen_battery_summary">Mostrar siempre el porcentaje de la batería en pantalla de desbloqueo</string>
+    <string name="lockscreen_battery_summary">Mostrar siempre el porcentaje de la batería en pantalla de desbloqueo
+    </string>
     <string name="volume_rocker_wake_title">Desbloquear con volumen</string>
     <string name="volume_rocker_wake_summary">Desbloquear pantalla con los botones de volumen</string>
     <string name="volume_music_controls_title">Control de volumen de musica</string>
-    <string name="volume_music_controls_summary">La pulsación larga pasara a la siguiente pista mientras la pantalla esta apagada. El desbloqueo de pantalla con el control de volumen no funcionara mientras se escucha musica.</string>
+    <string name="volume_music_controls_summary">La pulsación larga pasara a la siguiente pista mientras la pantalla
+        esta apagada. El desbloqueo de pantalla con el control de volumen no funcionara mientras se escucha musica.
+    </string>
     <string name="lockscreen_stock_music_layout_title">Diseño de música stock</string>
     <string name="lockscreen_stock_music_layout_summary">Usar diseño stock</string>
     <string name="lockscreen_wallpaper_title">Fondo de pantalla de desbloqueo</string>
-    <string name="lockscreen_wallpaper_summary">Puede quitar el fondo de pantalla desde el menú de esta pantalla</string>
+    <string name="lockscreen_wallpaper_summary">Puede quitar el fondo de pantalla desde el menú de esta pantalla
+    </string>
     <string name="lockscreen_text_color_title">Color de texto de Pantalla de desbloqueo</string>
     <string name="lockscreen_weather_title">Activado</string>
-    <string name="lockscreen_weather_summary">Ver información meteorológica en la pantalla de desbloqueo. Debe activar la información meteorológica en ROMControl para poder usar esta opción</string>
+    <string name="lockscreen_weather_summary">Ver información meteorológica en la pantalla de desbloqueo. Debe activar
+        la información meteorológica en ROMControl para poder usar esta opción
+    </string>
     <string name="lockscreen_weather_type_title">Tiempo en pantalla de desbloqueo</string>
     <string name="lockscreen_weather_type_summary">Mostrar información del tiempo con texto o de forma gráfica.</string>
     <string name="lockscreen_calendar_title">Activado</string>
@@ -472,13 +549,20 @@
     <string name="lockscreen_calendar_range_title">Rango de tiempo</string>
     <string name="lockscreen_calendar_range_summary">Seleccionar el rango de tiempo que sera mostrado.</string>
     <string name="lockscreen_calendar_use_colors_title">Emplear colores</string>
-    <string name="lockscreen_calendar_use_colors_summary">Si activa esta opción Los eventos del calendario se mostraran en color.</string>
+    <string name="lockscreen_calendar_use_colors_summary">Si activa esta opción Los eventos del calendario se mostraran
+        en color.
+    </string>
     <string name="lockscreen_calendar_hide_ongoing_title">No mostrar los eventos empezados</string>
-    <string name="lockscreen_calendar_hide_ongoing_summary">Si se activa esta opción no se mostraran los eventos ya iniciados.</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">Si se activa esta opción no se mostraran los eventos ya
+        iniciados.
+    </string>
     <string name="lockscreen_calendar_flip_title">Eventos múltiples</string>
-    <string name="lockscreen_calendar_flip_summary">Si activa esta opción el widget mostrara múltiples eventos al deslizar el dedo sobre ello.</string>
+    <string name="lockscreen_calendar_flip_summary">Si activa esta opción el widget mostrara múltiples eventos al
+        deslizar el dedo sobre ello.
+    </string>
     <string name="lockscreen_calendar_interval_title">Intervalo de transición de eventos</string>
-    <string name="lockscreen_calendar_interval_summary">Escoger la velocidad de animación entre eventos en segundos.</string>
+    <string name="lockscreen_calendar_interval_summary">Escoger la velocidad de animación entre eventos en segundos.
+    </string>
     <string name="circles_lock_cat_title">Ajustar accesos en pantalla de bloqueo</string>
     <string name="circles_lock_bg_color_title">Color de fondo</string>
     <string name="circles_lock_ring_color_title">Color del acceso</string>
@@ -490,9 +574,11 @@
 
     <!-- Lockscreen Targets-->
     <string name="custom_targets">Personalizar accesos de pantalla de bloqueo</string>
-    <string name="lockscreen_target_info">Arrastre el icono de desbloqueo hacia los accesos para asignar los accesos</string>
+    <string name="lockscreen_target_info">Arrastre el icono de desbloqueo hacia los accesos para asignar los accesos
+    </string>
     <string name="lockscreen_target_title">Accesos de pantalla de bloqueo</string>
-    <string name="lockscreen_target_summary">Ver o cambiar los accesos directos personalizados de bloqueo de pantalla</string>
+    <string name="lockscreen_target_summary">Ver o cambiar los accesos directos personalizados de bloqueo de pantalla
+    </string>
     <string name="number_of_targets_title">Cantidad de accesos en pantalla de bloqueo</string>
     <string name="number_of_targets_summary">Cuantos accesos quieres?</string>
     <string name="picker_activities">Actividades</string>
@@ -558,7 +644,9 @@
     <string name="lockscreen_target_reset_title">Reiniciar</string>
     <string name="lockscreen_target_reset_message">Borrar todos los accesos creados y restaurar por defecto?</string>
     <string name="lockscreen_target_edit_title">Editar icono y acceso</string>
-    <string name="lockscreen_target_edit_msg">Seleccionar o cambiar la aplicación o actividad deseada y el icono asociado</string>
+    <string name="lockscreen_target_edit_msg">Seleccionar o cambiar la aplicación o actividad deseada y el icono
+        asociado
+    </string>
 
     <string name="aokp_3targets">3 Accesos</string>
     <string name="aokp_4targets">4 Accesos</string>
@@ -570,9 +658,14 @@
     <string name="weather_enable">Activar tiempo</string>
     <string name="weather_enable_summary">Para ver información del tiempo y mostrarla en la pantalla.</string>
     <string name="weather_use_custom_location">Ubicación personalizada</string>
-    <string name="weather_use_custom_location_summary">Poniendo una ubicación personalizada puede ahorrar batería. De lo contrario se usará la ubicación por red para determinar su ubicación.</string>
+    <string name="weather_use_custom_location_summary">Poniendo una ubicación personalizada puede ahorrar batería. De lo
+        contrario se usará la ubicación por red para determinar su ubicación.
+    </string>
     <string name="weather_custom_location_dialog_title">Elegir su ubicación</string>
-    <string name="weather_custom_location_dialog_message">¡Asegúrese de seguir los ejemplos! Una ubicación errónea detendrá las actualizaciones del tiempo y puede causar un comportamiento inesperado.\n\nEjemplos: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_dialog_message">¡Asegúrese de seguir los ejemplos! Una ubicación errónea
+        detendrá las actualizaciones del tiempo y puede causar un comportamiento inesperado.\n\nEjemplos: New York,NY //
+        New York, NY // 10033 // London, England
+    </string>
 
     <string name="weather_custom_location_title">Ubicación personalizada</string>
     <string name="weather_show_location_title">Mostrar ubicación</string>
@@ -580,14 +673,19 @@
     <string name="weather_refresh_interval">Intervalo de actualización</string>
     <string name="weather_refresh_interval_minutes">" minutos"</string>
     <string name="weather_use_celcius">Unidades métricas</string>
-    <string name="weather_use_celcius_summary">Activando esta opción se mostrarán las temperaturas en Celsius en vez de en Fahrenheits y la velocidad del viento en km/h en vez de en mph.</string>
+    <string name="weather_use_celcius_summary">Activando esta opción se mostrarán las temperaturas en Celsius en vez de
+        en Fahrenheits y la velocidad del viento en km/h en vez de en mph.
+    </string>
     <string name="weather_statusbar_style">Aspecto del tiempo en la barra de estado</string>
     <string name="title_weather_longclick">Acción al presionar largo sobre el tiempo</string>
     <string name="title_weather_shortclick">Acción al presionar rapido sobre el tiempo</string>
     <string name="update">Actualizar panel de tiempo</string>
     <string name="weather_refreshing">¡Actualizar el tiempo ahora!</string>
     <string name="weather_loc_warning_title">¡Imposible recuperar la ubicación!</string>
-    <string name="weather_loc_warning_msg">La obtención de ubicación de red está actualmente desactivada. Esto rompe la capacidad de obtener el tiempo en su ubicación actual. Por favor, establecer una ubicación personalizada o permitir la obtención de su ubicación en la red.</string>
+    <string name="weather_loc_warning_msg">La obtención de ubicación de red está actualmente desactivada. Esto rompe la
+        capacidad de obtener el tiempo en su ubicación actual. Por favor, establecer una ubicación personalizada o
+        permitir la obtención de su ubicación en la red.
+    </string>
     <string name="weather_loc_warning_positive">Habilitar ubicación de red</string>
     <string name="weather_loc_warning_negative">No habilitar</string>
     <string name="menu_weather_get_weather">Actualizar ahora</string>
@@ -703,7 +801,9 @@
     <string name="kernel">Ajustes del kernel (si es soportado)</string>
     <string name="fast_charge_warning">"¡NO PODRÁ CONECTARSE A SU PC DESPUÉS DE CADA REINICIO!
 
- Esta opción activará la carga rápida en cada reinicio. ¡Mientras la carga rápida esté activada, la función del USB será *exclusivamente* cargar el dispositivo!"</string>
+        Esta opción activará la carga rápida en cada reinicio. ¡Mientras la carga rápida esté activada, la función del
+        USB será *exclusivamente* cargar el dispositivo!"
+    </string>
     <string name="fast_charge_notification_title">¡Carga rápida activada!</string>
     <string name="fast_charge_notification_message">¡El teléfono se encuentra en modo sólo carga!</string>
     <string name="prefcat_other_tweaks">Otros ajustes</string>
@@ -728,18 +828,22 @@
     <string name="vib_cur_loaded_title">Cargado:</string>
     <string name="help">Ayuda</string>
     <string name="vibration_detailed_help">"Puede crear un patrón de vibración personalizado en 5 sencillos pasos:
- - Presione Nuevo/Reiniciar
- - Presione grabar
- - Grabe su patrón presionando el botón TAP
- - Presione parar
- - Presione guardar, Escriba un nombre y dele a aceptar
+        - Presione Nuevo/Reiniciar
+        - Presione grabar
+        - Grabe su patrón presionando el botón TAP
+        - Presione parar
+        - Presione guardar, Escriba un nombre y dele a aceptar
 
- Puede comprobar lo que ha grabado dándole al botón escuchar.
- Puede modificar un patrón existente. Presione cargar, escoja el patrón, Vuelva a grabarlo y guárdelo nuevamente (se sobrescribirá, incluso si usted elige otro nombre).
- Para borrar un patrón, Presione borrar, escoja el patrón de vibración y dele a eliminar. No se puede eliminar los patrones de vibración por defecto.
+        Puede comprobar lo que ha grabado dándole al botón escuchar.
+        Puede modificar un patrón existente. Presione cargar, escoja el patrón, Vuelva a grabarlo y guárdelo nuevamente
+        (se sobrescribirá, incluso si usted elige otro nombre).
+        Para borrar un patrón, Presione borrar, escoja el patrón de vibración y dele a eliminar. No se puede eliminar
+        los patrones de vibración por defecto.
 
- Puede escoger la vibración para llamadas desde/Ajustes/Sonido.
- Puede asignar una vibración personalizada a un contacto desde la aplicación contactos: Después de cargar un contacto vaya a Menú/Ajustar vibración."</string>
+        Puede escoger la vibración para llamadas desde/Ajustes/Sonido.
+        Puede asignar una vibración personalizada a un contacto desde la aplicación contactos: Después de cargar un
+        contacto vaya a Menú/Ajustar vibración."
+    </string>
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>
     <string name="insult_protekk">ProTekk!</string>
@@ -775,7 +879,9 @@
     <string name="default_jb_behavior">Comportamiento JB por defecto</string>
     <string name="always_show_invincible_icons">Mostrar siempre iconos invisibles</string>
     <string name="always_show">Mostrar siempre</string>
-    <string name="default_jb_with_invincible_icons_when_hidden">Comportamiento por defecto de JB cuando los iconos no se muestran</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">Comportamiento por defecto de JB cuando los iconos no se
+        muestran
+    </string>
     <string name="home">Inicio</string>
     <string name="back">Atrás</string>
     <string name="recents">Recientes</string>

@@ -13,23 +13,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
+
         <ImageButton
             android:id="@+id/reset_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@*android:drawable/ic_menu_revert" />
+
         <ImageButton
             android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@*android:drawable/ic_menu_add" />
+
         <ImageButton
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
@@ -37,97 +41,111 @@
             android:layout_weight="1"
             android:src="@*android:drawable/ic_menu_save" />
     </LinearLayout>
-     <LinearLayout
+
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/navbar_buttons_instructions"
             android:gravity="center" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/navbar_container"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-       <ImageView
+        android:layout_height="wrap_content">
+
+        <ImageView
             android:id="@+id/left_menu"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:paddingRight="2dp"
             android:layout_weight="0"
             android:src="@drawable/ic_sysbar_menu" />
-       <LinearLayout
-        android:id="@+id/button_container"
-        android:orientation="horizontal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal" >
-       <ImageButton
-            android:id="@+id/button_1"
+
+        <LinearLayout
+            android:id="@+id/button_container"
+            android:orientation="horizontal"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:clickable="true"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingRight="2dp"
-            android:src="@drawable/ic_sysbar_null" />
-       <ImageButton
-            android:id="@+id/button_2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:paddingRight="2dp"
-            android:src="@drawable/ic_sysbar_null" />
-       <ImageButton
-            android:id="@+id/button_3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:paddingRight="2dp"
-            android:src="@drawable/ic_sysbar_null" />
-       <ImageButton
-            android:id="@+id/button_4"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:src="@drawable/ic_sysbar_null"/>
-       <ImageButton
-            android:id="@+id/button_5"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:paddingRight="2dp"
-            android:src="@drawable/ic_sysbar_null" />
-       <ImageButton
-            android:id="@+id/button_6"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:paddingRight="2dp"
-            android:src="@drawable/ic_sysbar_null" />
-       <ImageButton
-            android:id="@+id/button_7"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:src="@drawable/ic_sysbar_null" />
-       </LinearLayout>
-       <ImageView
+            android:layout_gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/button_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_sysbar_null" />
+
+            <ImageButton
+                android:id="@+id/button_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_sysbar_null" />
+
+            <ImageButton
+                android:id="@+id/button_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_sysbar_null" />
+
+            <ImageButton
+                android:id="@+id/button_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:src="@drawable/ic_sysbar_null" />
+
+            <ImageButton
+                android:id="@+id/button_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_sysbar_null" />
+
+            <ImageButton
+                android:id="@+id/button_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_sysbar_null" />
+
+            <ImageButton
+                android:id="@+id/button_7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:src="@drawable/ic_sysbar_null" />
+        </LinearLayout>
+
+        <ImageView
             android:id="@+id/right_menu"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:paddingLeft="2dp"
             android:src="@drawable/ic_sysbar_menu" />
     </LinearLayout>
+
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"

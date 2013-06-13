@@ -76,7 +76,7 @@
             android:layout_marginStart="8dip"
             android:layout_weight="0.5"
             android:padding="4dip"
-            android:gravity="left"/>
+            android:gravity="left" />
 
     </LinearLayout>
 

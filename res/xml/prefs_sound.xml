@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <CheckBoxPreference
         android:key="enable_volume_options"
@@ -34,7 +34,7 @@
 
     <PreferenceCategory
         android:key="flip_category"
-        android:title="@string/flip_cat_title" >
+        android:title="@string/flip_cat_title">
         <ListPreference
             android:entries="@array/headphone_audio_mode_entries"
             android:entryValues="@array/headphone_audio_mode_values"

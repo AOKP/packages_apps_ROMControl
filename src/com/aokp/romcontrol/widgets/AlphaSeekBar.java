@@ -3,14 +3,11 @@ package com.aokp.romcontrol.widgets;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-
 import com.aokp.romcontrol.R;
 
 public class AlphaSeekBar extends LinearLayout implements OnSeekBarChangeListener {
@@ -67,7 +64,7 @@ public class AlphaSeekBar extends LinearLayout implements OnSeekBarChangeListene
         if (mSeekBar != null)
             mSeekBar.setProgress(p);
     }
-    
+
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);

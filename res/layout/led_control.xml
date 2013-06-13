@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_root"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+            android:id="@+id/layout_root"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent">
 
         <ImageView
             android:id="@+id/ledphone"
@@ -29,7 +29,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ledphone"
-            android:layout_marginTop="10dp" >
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="0dp"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/explainled"
             android:layout_marginTop="10dp"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/app_text"
@@ -72,7 +72,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/customLED"
-            android:layout_marginTop="10dp" >
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/ontimeText"
@@ -97,7 +97,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/buttontext"
-            android:layout_marginTop="5dp" >
+            android:layout_marginTop="5dp">
 
             <Button
                 android:id="@+id/ontime"
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/time_buttons"
             android:layout_marginTop="5dp"
-            android:gravity="center" >
+            android:gravity="center">
 
             <Button
                 android:id="@+id/button_led_brightness"
@@ -134,7 +134,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/led_brightness"
-            android:layout_marginTop="5dp" >
+            android:layout_marginTop="5dp">
 
             <Switch
                 android:id="@+id/led_screen_on"
@@ -149,7 +149,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/screen_on"
-            android:layout_marginTop="5dp" >
+            android:layout_marginTop="5dp">
 
             <Switch
                 android:id="@+id/charging_led_on"

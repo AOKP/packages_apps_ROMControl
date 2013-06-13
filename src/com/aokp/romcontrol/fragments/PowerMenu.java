@@ -2,16 +2,12 @@
 package com.aokp.romcontrol.fragments;
 
 import android.os.Bundle;
-import android.preference.SwitchPreference;
 import android.preference.Preference;
-import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
-
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.R.xml;
 
 public class PowerMenu extends AOKPPreferenceFragment implements OnPreferenceChangeListener {
 

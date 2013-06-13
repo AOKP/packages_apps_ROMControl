@@ -1,7 +1,6 @@
 package com.aokp.romcontrol.widgets;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.preference.Preference;
 import android.util.AttributeSet;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-
 import com.aokp.romcontrol.R;
 
 public class SeekBarPreference extends Preference

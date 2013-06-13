@@ -15,6 +15,7 @@ public class EasyPair<Ta, Tb> extends Pair<Ta, Tb> {
      */
     public Ta first;
     public Tb second;
+
     public EasyPair(Ta first, Tb second) {
         super(first, second);
         this.first = first;
@@ -23,6 +24,7 @@ public class EasyPair<Ta, Tb> extends Pair<Ta, Tb> {
 
     /**
      * Constructs a new EasyPair from an existing EasyPair
+     *
      * @param pair
      */
     public EasyPair(EasyPair<Ta, Tb> pair) {

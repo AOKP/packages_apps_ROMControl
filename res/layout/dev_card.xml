@@ -51,31 +51,31 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dip"
                 android:scaleType="centerInside"
-                android:src="@drawable/twitter_birdy"/>
+                android:src="@drawable/twitter_birdy" />
 
         </LinearLayout>
 
         <ImageView
-                android:id="@+id/donate_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/photo"
-                android:paddingRight="4dip"
-                android:paddingBottom="4dp"
-                android:layout_toLeftOf="@+id/github_button"
-                android:scaleType="centerInside"
-                android:src="@drawable/paypal_donate"/>
+            android:id="@+id/donate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/photo"
+            android:paddingRight="4dip"
+            android:paddingBottom="4dp"
+            android:layout_toLeftOf="@+id/github_button"
+            android:scaleType="centerInside"
+            android:src="@drawable/paypal_donate" />
 
         <ImageView
-                android:id="@+id/github_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/photo"
-                android:paddingRight="4dip"
-                android:paddingBottom="4dp"
-                android:layout_alignParentRight="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/github"/>
+            android:id="@+id/github_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/photo"
+            android:paddingRight="4dip"
+            android:paddingBottom="4dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/github" />
 
     </RelativeLayout>
 

@@ -1,4 +1,4 @@
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
     <header
         android:id="@+id/about"
@@ -30,21 +30,21 @@
         android:icon="@drawable/ic_rom_control_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
-     <header
+    <header
         android:id="@+id/nav_bar"
         android:fragment="com.aokp.romcontrol.fragments.Navbar"
         android:title="@string/nav_bar"
         android:icon="@drawable/ic_rom_control_navigation_bar"
         android:summary="@string/header_summary_navigation_bar" />
 
-     <header
+    <header
         android:id="@+id/nav_ring"
         android:fragment="com.aokp.romcontrol.fragments.NavRingTargets"
         android:icon="@drawable/ic_rom_control_navigation_ring"
         android:title="@string/interface_navring_settings_title"
         android:summary="@string/interface_navring_settings_summary" />
 
-     <header
+    <header
         android:id="@+id/ribbon_targets"
         android:fragment="com.aokp.romcontrol.fragments.RibbonTargets"
         android:icon="@drawable/ic_rom_control_ribbon"

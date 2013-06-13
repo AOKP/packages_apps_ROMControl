@@ -87,7 +87,7 @@
     <string name="text_on">オン</string>
     <string name="text_off">オフ</string>
 
-   <!-- Power Menu -->
+    <!-- Power Menu -->
     <string name="title_show_power_saver">省電力モード</string>
     <string name="title_show_screenshot">スクリーンショット</string>
     <string name="title_show_torch_toggle">トーチ</string>
@@ -148,12 +148,13 @@
     <string name="aokp_irc_summary">\#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">AOKPについて</string>
     <string name="about_aokp_summary">@null</string>
-    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
+    </string>
     <string name="github_aokp">https://github.com/AOKP</string>
     <string name="github_adam">https://github.com/syaoran12</string>
     <string name="github_akellar">https://github.com/akellar</string>
     <string name="github_bajee11">https://github.com/Bajee11</string>
-    <string name="github_bmc08gt"> https://github.com/BMc08GT</string>
+    <string name="github_bmc08gt">https://github.com/BMc08GT</string>
     <string name="github_birdman">https://github.com/mrbirdman</string>
     <string name="github_championswimmer">https://github.com/championswimmer</string>
     <string name="github_dhacker29">https://github.com/dhacker29</string>
@@ -194,7 +195,9 @@
     <string name="vibrate_notif_expand_summary">通知を展開した時に振動する (UI再起動)</string>
     <string name="disable_bootanimation_title">ブートアニメーションを無効</string>
     <string name="custom_bootanimation_title">ブートアニメーションの変更</string>
-    <string name="custom_bootanimation_summary">SDカードからブートアニメーション用のzipを選択してください。以前のブートアニメーションは/system/mediaにバックアップされます。</string>
+    <string name="custom_bootanimation_summary">
+        SDカードからブートアニメーション用のzipを選択してください。以前のブートアニメーションは/system/mediaにバックアップされます。
+    </string>
     <string name="install_file_manager_error">zipファイルを指定するアプリがありません。ファイルマネージャーをインストールしてください。</string>
     <string name="notification_wallpaper_title">通知パネルの背景の変更</string>
     <string name="notification_wallpaper_summary">通知パネルの背景を元に戻すにはメニューから設定をリセットしてください</string>
@@ -280,7 +283,8 @@
     <string name="dpi">DPI</string>
     <string name="open_market_title">4. Google Playの利用規約に同意</string>
     <string name="open_market_summary">Google Playの利用規約に同意した後にこの画面へ戻り、残りの手順を完了させてください。</string>
-    <string name="open_market_summary_could_not_open">Playストアを開くことができませんでした。Playストアがインストールされている場合はランチャーから開いてください。</string>
+    <string name="open_market_summary_could_not_open">Playストアを開くことができませんでした。Playストアがインストールされている場合はランチャーから開いてください。
+    </string>
     <string name="custom_density_title">5. 好みの画面密度に変更</string>
     <string name="custom_density_summary">Playストアの互換性に問題がある場合は、再度この手順をやり直してください。</string>
     <string name="custom_density_summary_invalid">不正な画面密度です</string>
@@ -288,7 +292,8 @@
     <string name="set_custom_density_title">画面密度を設定してください</string>
     <string name="set_custom_density_set">設定</string>
     <string name="custom_density_dialog_title">警告!</string>
-    <string name="custom_density_dialog_summary">画面密度を変更するとアプリが予期しない動作をする場合があります。Playストアの互換性に問題がある場合はステップ1からやり直してください。</string>
+    <string name="custom_density_dialog_summary">画面密度を変更するとアプリが予期しない動作をする場合があります。Playストアの互換性に問題がある場合はステップ1からやり直してください。
+    </string>
     <string name="custom_density_dialog_button_got">完了!</string>
     <string name="custom_density_dialog_button_reboot">今すぐ再起動</string>
 
@@ -334,7 +339,9 @@
     <string name="toggle_action_title">短押し動作 %1$s &amp; アイコン</string>
     <string name="toggle_action_title_alt">長押し動作 %1$s &amp; アイコン</string>
     <string name="toggle_longpress_title">長押し動作 %1$s</string>
-    <string name="custom_toggle_desc">タップするたびに次の設定動作にトグルします。短押し動作およびカスタムアイコンを設定していないときは、長押し動作のアイコンが使用されます。\nこれはタップしたときに何も起動せずトグルだけさせたい場合に有用です。</string>
+    <string name="custom_toggle_desc">
+        タップするたびに次の設定動作にトグルします。短押し動作およびカスタムアイコンを設定していないときは、長押し動作のアイコンが使用されます。\nこれはタップしたときに何も起動せずトグルだけさせたい場合に有用です。
+    </string>
     <string name="custom_help_title">動作説明</string>
     <string name="custom_help_summary">動作説明を表示する</string>
     <string name="custom_toggle_okay">閉じる</string>
@@ -547,7 +554,7 @@
     <string name="navring_target_amount_text">現在のターゲット数</string>
     <string name="navring_target_longpress_text">長押し時の動作</string>
 
-   <!-- Ribbon -->
+    <!-- Ribbon -->
     <string name="ribbon_dialog_arrange_title">リボンレイアウト</string>
     <string name="ribbon_chooser_instructions">設定するリボンを選択してください</string>
     <string name="ribbon_instructions">アイコンをタップして動作を設定してください</string>
@@ -624,10 +631,12 @@
     <string name="led_test_notification">LED点灯テスト</string>
     <string name="led_test_notification_message_now">"LED点灯テスト : "</string>
     <string name="led_test_notification_message_note">"
-LEDをテストするにはこのまま画面をオフにしてください。LEDのテストが完了するまでOKをタップしないでください。"</string>
+        LEDをテストするにはこのまま画面をオフにしてください。LEDのテストが完了するまでOKをタップしないでください。"
+    </string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">"充電中にLEDを点灯
-(要再起動)"</string>
+        (要再起動)"
+    </string>
     <string name="led_change_brightness">LEDの明るさ変更</string>
     <string name="led_brightness_default">デフォルトの明るさ : 31</string>
 
@@ -651,9 +660,10 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="flip_action_positive">OK</string>
     <string name="flip_dialog_title">フェイスダウン時の動作</string>
     <string name="flip_dialog_msg">"端末を裏返すことでバイブレーション、もしくはサイレントの選択したモードになります。
-フェイスダウン判定までの時間はデフォルトで1.5秒です。
-画面がオンになってからデフォルトで15秒後にフリップセンサーが無効になります。
-注：フリップセンサーがタイムアウトした後にサウンドモードを変更するには、端末をフェイスダウンさせてから画面をオンにする必要があります。"</string>
+        フェイスダウン判定までの時間はデフォルトで1.5秒です。
+        画面がオンになってからデフォルトで15秒後にフリップセンサーが無効になります。
+        注：フリップセンサーがタイムアウトした後にサウンドモードを変更するには、端末をフェイスダウンさせてから画面をオンにする必要があります。"
+    </string>
     <string name="summary_phone_flip_mode">着信時に端末をフェイスダウンさせることでサイレントモードへ移行する</string>
     <string name="title_phone_flip_mode">サイレントモードに移行</string>
 
@@ -669,7 +679,9 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="lockscreen_auto_rotate_title">ロック画面の回転を有効にする</string>
     <string name="lockscreen_auto_rotate_summary">ロック画面をデバイスの向きに応じて回転させることができます。これは画面の自動回転とは無関係です。</string>
     <string name="lockscreen_all_widgets_title">全ウィジェットの配置を許可</string>
-    <string name="lockscreen_all_widgets_summary">警告:ウィジェットによってはロック画面上で使用されることを意図しておらず、ウィジェット作成者またはAOKPはロック画面へのウィジェット配置に関して責任を負いません。自己責任で選択してください。</string>
+    <string name="lockscreen_all_widgets_summary">
+        警告:ウィジェットによってはロック画面上で使用されることを意図しておらず、ウィジェット作成者またはAOKPはロック画面へのウィジェット配置に関して責任を負いません。自己責任で選択してください。
+    </string>
     <string name="lockscreen_unlimited_widgets_title">ウィジェット配置数制限を無効</string>
     <string name="lockscreen_unlimited_widgets_summary">警告:あまりにも多くのウィジェットを追加するとロック画面のラグ問題を引き起こす可能性があります。</string>
     <string name="lockscreen_battery_title">ロック画面に電池残量を表示</string>
@@ -748,11 +760,14 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="weather_enable">天気情報表示を有効</string>
     <string name="weather_enable_summary">通知パネルやロック画面に天気情報を表示する</string>
     <string name="weather_use_custom_location">地域を指定</string>
-    <string name="weather_use_custom_location_summary">地域を指定した場合バッテリーを節約することができます。指定しない場合は現在地を特定するためにネットワークを利用します。</string>
+    <string name="weather_use_custom_location_summary">地域を指定した場合バッテリーを節約することができます。指定しない場合は現在地を特定するためにネットワークを利用します。
+    </string>
     <string name="weather_custom_location_dialog_title">地域を指定してください</string>
-    <string name="weather_custom_location_dialog_message">"例のように地域を指定してください。無効な地域を指定すると天気情報の更新を停止し、予期しない動作を引き起こす可能性があります。
+    <string name="weather_custom_location_dialog_message">
+        "例のように地域を指定してください。無効な地域を指定すると天気情報の更新を停止し、予期しない動作を引き起こす可能性があります。
 
-例：Tokyo / Osaka / Nagoya"</string>
+        例：Tokyo / Osaka / Nagoya"
+    </string>
     <string name="weather_custom_location_title">地域を指定する</string>
     <string name="weather_show_location_title">地域を表示する</string>
     <string name="weather_show_location_summary">天気情報を取得中の地域を表示する</string>
@@ -766,7 +781,9 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="update">天気情報パネルを更新</string>
     <string name="weather_refreshing">天気情報を更新中</string>
     <string name="weather_loc_warning_title">地域が取得できません</string>
-    <string name="weather_loc_warning_msg">ネットワークからの現在値の取得が無効になっているため、天気情報を取得する地域の判別ができません。地域を指定するか、ネットワークからの現在地の取得を有効にしてください。</string>
+    <string name="weather_loc_warning_msg">
+        ネットワークからの現在値の取得が無効になっているため、天気情報を取得する地域の判別ができません。地域を指定するか、ネットワークからの現在地の取得を有効にしてください。
+    </string>
     <string name="weather_loc_warning_positive">有効にする</string>
     <string name="weather_loc_warning_negative">無効のまま</string>
     <string name="menu_weather_get_weather">天気情報を更新</string>
@@ -864,18 +881,19 @@ LEDをテストするにはこのまま画面をオフにしてください。LE
     <string name="vib_cur_loaded_title">"現在の設定 : "</string>
     <string name="help">ヘルプ</string>
     <string name="vibration_detailed_help">"5つの簡単なステップでバイブレーションパターンを作成することができます:
- - 「新規/リセット」をタップします。
- - 「記録」をタップします。
- - 「タップ!」でリズムを刻み、パターンを記録します。
- - 「停止」をタップします。
- - 「保存」をタップし名前を入力します。
+        - 「新規/リセット」をタップします。
+        - 「記録」をタップします。
+        - 「タップ!」でリズムを刻み、パターンを記録します。
+        - 「停止」をタップします。
+        - 「保存」をタップし名前を入力します。
 
- 「再生」ボタンをタップすることで記録されたパターンが確認できます。
- 既に保存されているパターンを変更したい場合は「読み込み」をタップして選択し、パターンを作成してから再度保存します。(別の名前を選択した場合でもそれが上書きされます)
- パターンを削除するには「削除」をタップしてパターンを選択し、もう一度「削除」をタップします。 初期パターンを削除することはできません。
+        「再生」ボタンをタップすることで記録されたパターンが確認できます。
+        既に保存されているパターンを変更したい場合は「読み込み」をタップして選択し、パターンを作成してから再度保存します。(別の名前を選択した場合でもそれが上書きされます)
+        パターンを削除するには「削除」をタップしてパターンを選択し、もう一度「削除」をタップします。 初期パターンを削除することはできません。
 
- 「電話>設定」もしくは「設定>音」からデフォルトのバイブレーションパターンを選択することができます。
- 連絡帳アプリから連絡先を選択し、「メニュー>バイブレーションを設定」を選択することで連絡先に割り当てることができます。"</string>
+        「電話>設定」もしくは「設定>音」からデフォルトのバイブレーションパターンを選択することができます。
+        連絡帳アプリから連絡先を選択し、「メニュー>バイブレーションを設定」を選択することで連絡先に割り当てることができます。"
+    </string>
 
     <!-- boot animation stuff -->
     <string name="insult_jerk">Jerk!</string>

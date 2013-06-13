@@ -64,7 +64,7 @@ public class Helpers {
      * Checks device for network connectivity
      *
      * @return If the device has data connectivity
-    */
+     */
     public static boolean isNetworkAvailable(Context context) {
         boolean state = false;
         if (context != null) {
@@ -237,7 +237,7 @@ public class Helpers {
      * Long toast message
      *
      * @param context Application Context
-     * @param msg Message to send
+     * @param msg     Message to send
      */
     public static void msgLong(Context context, String msg) {
         if (context != null && msg != null) {
@@ -249,7 +249,7 @@ public class Helpers {
      * Short toast message
      *
      * @param context Application Context
-     * @param msg Message to send
+     * @param msg     Message to send
      */
     public static void msgShort(Context context, String msg) {
         if (context != null && msg != null) {
@@ -261,7 +261,7 @@ public class Helpers {
      * Long toast message
      *
      * @param context Application Context
-     * @param msg Message to send
+     * @param msg     Message to send
      */
     public static void sendMsg(Context context, String msg) {
         if (context != null && msg != null) {

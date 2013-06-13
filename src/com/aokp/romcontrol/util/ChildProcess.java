@@ -1,11 +1,8 @@
 package com.aokp.romcontrol.util;
 
-import android.os.Environment;
-import android.util.Log;
-
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.IOException;
 
 import static java.lang.System.nanoTime;
 
@@ -17,10 +14,12 @@ public class ChildProcess {
     private class ChildReader extends Thread {
         InputStream mStream;
         StringBuffer mBuffer;
+
         ChildReader(InputStream is, StringBuffer buf) {
             mStream = is;
             mBuffer = buf;
         }
+
         public void run() {
             byte[] buf = new byte[PIPE_SIZE];
             try {
@@ -29,25 +28,26 @@ public class ChildProcess {
                     String s = new String(buf, 0, len);
                     mBuffer.append(s);
                 }
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 // Ignore
             }
             try {
                 mStream.close();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 // Ignore
             }
         }
     }
+
     private class ChildWriter extends Thread {
         OutputStream mStream;
         String mBuffer;
+
         ChildWriter(OutputStream os, String buf) {
             mStream = os;
             mBuffer = buf;
         }
+
         public void run() {
             int off = 0;
             byte[] buf = mBuffer.getBytes();
@@ -57,14 +57,12 @@ public class ChildProcess {
                     mStream.write(buf, off, len);
                     off += len;
                 }
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 // Ignore
             }
             try {
                 mStream.close();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 // Ignore
             }
         }
@@ -94,8 +92,7 @@ public class ChildProcess {
             mChildStderr = new StringBuffer();
             mChildStderrReader = new ChildReader(mChildProc.getErrorStream(), mChildStderr);
             mChildStderrReader.start();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             // XXX: log
         }
     }
@@ -105,8 +102,7 @@ public class ChildProcess {
         if (mChildProc != null) {
             try {
                 mChildProc.exitValue();
-            }
-            catch (IllegalStateException e) {
+            } catch (IllegalStateException e) {
                 finished = false;
             }
         }
@@ -127,8 +123,7 @@ public class ChildProcess {
                     mChildStdinWriter.join();
                     mChildStdinWriter = null;
                 }
-            }
-            catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 // Ignore
             }
         }

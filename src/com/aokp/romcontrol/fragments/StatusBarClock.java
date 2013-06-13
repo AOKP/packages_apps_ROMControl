@@ -11,14 +11,13 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
-
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBarClock extends AOKPPreferenceFragment implements
-                ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
+        ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
@@ -162,9 +161,10 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
         }
         return result;
     }
+
     public void shortcutPicked(String uri, String friendlyName, Bitmap bmp, boolean isApplication) {
-          mPreference.setSummary(friendlyName);
-          Settings.System.putString(mContentRes, mString, (String) uri);
+        mPreference.setSummary(friendlyName);
+        Settings.System.putString(mContentRes, mString, (String) uri);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -187,7 +187,7 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
             mString = Settings.System.NOTIFICATION_CLOCK[shortClick];
         }
 
-        String uri = Settings.System.getString(mContentRes,mString);
+        String uri = Settings.System.getString(mContentRes, mString);
         String empty = "";
 
         if (uri == null)

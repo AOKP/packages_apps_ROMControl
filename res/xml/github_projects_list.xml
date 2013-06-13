@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:key="changelog_projects">
+                  android:key="changelog_projects">
     <PreferenceCategory
-            android:key="favorite_projects"
-            android:title="@string/changelog_favorite_cat_title"/>
+        android:key="favorite_projects"
+        android:title="@string/changelog_favorite_cat_title" />
     <PreferenceCategory
-            android:key="dynamic_changelog"
-            android:title="@string/dynamic_changelog_cat_title"/>
+        android:key="dynamic_changelog"
+        android:title="@string/dynamic_changelog_cat_title" />
 </PreferenceScreen>

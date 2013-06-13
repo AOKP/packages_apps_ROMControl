@@ -15,8 +15,6 @@
  */
 
 package com.aokp.romcontrol.util;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -30,8 +28,11 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
-
 import com.aokp.romcontrol.R;
+
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+
 public class ShortcutPickerHelper {
 
     private Fragment mParent;
@@ -45,9 +46,9 @@ public class ShortcutPickerHelper {
         /**
          * Callback after a shortcut is picked
          *
-         * @param uri Intent for the shortcut
-         * @param friendlyName Title
-         * @param icon Icon for the shortcut, or null
+         * @param uri           Intent for the shortcut
+         * @param friendlyName  Title
+         * @param icon          Icon for the shortcut, or null
          * @param isApplication true for standard app, false for "shortcut"
          */
         void shortcutPicked(String uri, String friendlyName, Bitmap icon, boolean isApplication);

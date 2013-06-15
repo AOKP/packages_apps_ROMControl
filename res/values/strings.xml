@@ -104,7 +104,7 @@
     <string name="spen_up_title">Action on swipe up</string>
     <string name="spen_down_title">Action on swipe down</string>
     <string name="spen_double_title">Action on double tap</string>
-    <string name="spen_long_title">Action on long press</string>
+    <string name="spen_long_title">Action on longpress</string>
     <string name="spen_enable">Enable S Pen Gestures</string>
     <string name="spen_enable_summary">Set custom actions for S Pen gestures</string>
     <string name="spen_extras_cat">S Pen extras</string>
@@ -326,8 +326,8 @@
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order in which your toggles are displayed</string>
     <string name="title_settings_behavior">Use default settings behavior</string>
-    <string name="summary_settings_behavior_default">Short press for Settings, Long press for Toggles</string>
-    <string name="summary_settings_behavior_reverse">Short press for Toggles, Long press for Settings</string>
+    <string name="summary_settings_behavior_default">Short press for Settings, Longpress for Toggles</string>
+    <string name="summary_settings_behavior_reverse">Short press for Toggles, Longpress for Settings</string>
     <string name="title_toggles_autohide">Auto-hide toggles</string>
     <string name="summary_toggles_autohide">Hide toggles after drawer closes</string>
     <string name="brightness_location_title">Brightness location</string>
@@ -354,7 +354,7 @@
     <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="add_toggles">Change toggles</string>
     <string name="screenshot_delay_title">Screenshot delay</string>
-    <string name="screenshot_delay_summary">Delay to use after long pressing the screenshot toggle</string>
+    <string name="screenshot_delay_summary">Delay to use after longpressing the screenshot toggle</string>
     <string name="toggle_action_title">Action %1$s &amp; icon</string>
     <string name="toggle_action_title_alt">Longpress action %1$s &amp; icon</string>
     <string name="toggle_longpress_title">Longpress action %1$s</string>
@@ -537,7 +537,7 @@
     <string name="navbar_widgets_shiftLeft">Shift left</string>
     <string name="navbar_widgets_shiftRight">Shift right</string>
     <string name="navbar_widgets_delete">Delete widget</string>
-    <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
+    <string name="navigation_bar_menu_arrow_keys_title">Keyboard arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Checking this enables arrow keys in the Navigation Bar while
         typing
     </string>
@@ -603,8 +603,8 @@
     <string name="ribbon_icon_size_title">Icon size</string>
     <string name="ribbon_dismiss_title">Ribbon dismiss action</string>
     <string name="ribbon_animation_duration_title">Animation duration</string>
-    <string name="ribbon_long_swipe_title">Swipe area long swipe</string>
-    <string name="ribbon_long_press_title">Swipe area long press</string>
+    <string name="ribbon_long_swipe_title">Swipe area longswipe</string>
+    <string name="ribbon_long_press_title">Swipe area longpress</string>
     <string name="ribbon_icon_size_summary">Set size of your icons</string>
     <string name="ribbon_lockscreen">Lockscreen ribbon</string>
     <string name="ribbon_notifications">Notifications ribbon</string>
@@ -620,8 +620,11 @@
     <string name="ribbon_left_enable_title">Enable swipe from left</string>
     <string name="ribbon_right_enable_title">Enable swipe from right</string>
     <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
-    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar
-        AutoHide or manually hide the navbar.
+    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with NavBar enabled, must use Navbar
+        Auto Hide or manually hide the NavBar.
+    </string>
+    <string name="ribbon_bottom_warning_hiding">With NavBar Auto Hide enabled, longpress the activation area to
+        display ribbon.
     </string>
     <string name="ribbon_button_colorize_title">Action icons match text color</string>
     <string name="ribbon_color_title">Color of Swipe Ribbon</string>
@@ -643,7 +646,7 @@
     <string name="bottom">Bottom</string>
     <string name="never">Never</string>
     <string name="always">Always</string>
-    <string name="not_bar">Not Navbar Actions</string>
+    <string name="not_bar">Not NavBar Actions</string>
     <string name="multi_select_title">Select targets to add</string>
     <string name="ribbon_animation_type_title">Animation style</string>
     <string name="ribbon_toggles_button_title">Toggles button on bottom</string>
@@ -696,14 +699,14 @@
     <string name="summary_down_sec">Time required for your phone to be considered face down</string>
     <string name="flip_action_positive">OK</string>
     <string name="flip_dialog_title">How it works</string>
-    <string name="flip_dialog_msg">When you flip your phone over, it will go in to either Vibrate or Silent Mode
+    <string name="flip_dialog_msg">When you flip your phone over: it will go in to either Vibrate or Silent Mode
         depending on what you have chosen. It will take 1.5 seconds (default) to change once flipped over. It will then
         disable the flipped mode once the screen is turned on and 15 seconds (default) has passed. NOTE: **You will need
         to turn the screen back on once flipped over to re-enable sound (once the screen timeout time has been
         reached)**
     </string>
     <string name="summary_phone_flip_mode">Flipping your phone face-down will put your phone into Silent Mode while
-        receiving a call
+        receiving a call.
     </string>
     <string name="title_phone_flip_mode">Phone call silence</string>
 
@@ -719,7 +722,7 @@
     <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is
-        independent of Auto-rotation in display
+        independent of Auto-rotation in display.
     </string>
     <string name="lockscreen_all_widgets_title">Allow all widgets</string>
     <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen,
@@ -746,7 +749,7 @@
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>
-    <string name="volume_music_controls_summary">Long press volume buttons to skip tracks while screen is off. Volume
+    <string name="volume_music_controls_summary">Longpress volume buttons to skip tracks while screen is off. Volume
         wake will not work when music is playing.
     </string>
     <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
@@ -821,7 +824,7 @@
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated
         icon
     </string>
-    <string name="lockscreen_target_longpress_summary">Enables long press options for lock screen targets</string>
+    <string name="lockscreen_target_longpress_summary">Enables longpress options for lock screen targets</string>
 
     <!-- Weather -->
     <string name="weather_enable">Enable weather</string>

@@ -323,6 +323,8 @@
     <string name="toggle_text_color_title">トグルの文字色</string>
     <string name="toggle_favcontact_title">お気に入りの連絡先</string>
     <string name="toggle_favcontact_summary">お気に入りの連絡先を選択する</string>
+    <string name="toggle_collapse_generic_title">パネルを閉じる</string>
+    <string name="toggle_collapse_generic_summary">トグルクリックでクイック設定パネルを閉じる</string>
     <string name="toggle_enable_fasttoggle_title">ファーストトグルを有効</string>
     <string name="toggle_enable_fasttoggle_summary">ステータスバーをプルダウンするだけでクイック設定パネルを表示する</string>
     <string name="toggle_choose_fasttoggle_side_title">ファーストトグル領域の選択</string>
@@ -585,7 +587,10 @@
     <string name="ribbon_left_enable_title">左スワイプリボン</string>
     <string name="ribbon_right_enable_title">右スワイプリボン</string>
     <string name="ribbon_bottom_enable_title">下スワイプリボン</string>
-    <string name="ribbon_bottom_warning_title">ナビゲーションバーを表示していると下スワイプリボンは使用できません</string>
+    <string name="ribbon_bottom_warning_title">ナビゲーションバーを表示していると下スワイプリボンは使用できないため、
+        自動的に隠す設定またはマニュアルで非表示にしてください
+    </string>
+    <string name="ribbon_bottom_warning_hiding">ナビゲーションバーを自動的に隠す設定のときは、スワイプ領域長押しでリボンを表示します</string>
     <string name="ribbon_button_colorize_title">ラベルと同じ色のアイコン</string>
     <string name="ribbon_color_title">スワイプリボンの色</string>
     <string name="text_color_title">ラベルの文字色</string>
@@ -736,7 +741,12 @@
     <string name="lockscreen_targets_summary">ロック画面ターゲットサマリー…</string>
     <string name="lockscreen_target_longpress_text">長押し時の動作</string>
     <string name="lockscreen_glow_torch_text">グローパッドトーチ</string>
-    <string name="lockscreen_glow_torch_summary">ロックサークルの中央を長押しすることでトーチON、指を離すとトーチOFFにします。</string>
+    <string name="lockscreen_glow_torch_summary">ロックリング/ナビゲーションリングの中央を長押しすることでトーチON、
+        指を離すとトーチOFFにします。
+    </string>
+    <string name="lockscreen_torch_off">オフ</string>
+    <string name="lockscreen_torch_lockcircle">ロックリング</string>
+    <string name="lockscreen_torch_navring">ナビリング</string>
     <string name="lockscreen_camera">カメラ</string>
     <string name="lockscreen_unlock">ロック解除</string>
     <string name="save_error">ターゲットを保存できません！少なくとも一つロック解除ターゲットが必要です！</string>

@@ -919,8 +919,6 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     }
 
     private void updateSwitches() {
-        boolean hasNavBarByDefault = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar);
         boolean navBarAutoHide = Settings.System.getBoolean(mContentRes,
                 Settings.System.NAV_HIDE_ENABLE, false);
         boolean navBarEnabled = Settings.System.getBoolean(mContentRes,
@@ -930,8 +928,11 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_rearrange));
                 mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_reset));
                 mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_na));
-                if (hasNavBarByDefault || navBarEnabled) {
+                if (navBarEnabled || navBarAutoHide) {
                     mEnableBottomWarning.setVisibility(View.VISIBLE);
+                    if (navBarAutoHide) {
+                        mEnableBottomWarning.setText(R.string.ribbon_bottom_warning_hiding);
+                    }
                 } else {
                     mEnableBottomWarning.setVisibility(View.GONE);
                 }

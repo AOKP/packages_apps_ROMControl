@@ -141,11 +141,9 @@
     <string name="devs">开发团队</string>
     <string name="aokp_website_title">AOKP 网站</string>
     <string name="aokp_website_summary">www.aokp.co - 在这里可以找到最新发布的消息</string>
-    <string name="aokp_review_title">AOKP 代码评审平台</string>
-    <string name="aokp_review_summary">AOKP 的 Gerrit ，用于评审提交代码和测试补丁</string>
+    <string name="aokp_review_summary">方便快捷的查看AOKP或AOSP的Gerrit评审实例</string>
     <string name="aokp_irc_title">加入我们的 IRC 聊天室</string>
     <string name="about_aokp">关于 AOKP</string>
-    <string name="about_aokp_summary">@null</string>
 
     <!-- General UI 常规界面 -->
     <string name="bootani_cat">开机动画</string>
@@ -285,6 +283,8 @@
     <string name="toggle_text_color_title">开关文字颜色</string>
     <string name="toggle_favcontact_title">收藏联系人</string>
     <string name="toggle_favcontact_summary">选择你收藏的联系人</string>
+    <string name="toggle_collapse_generic_title">点击开关后收起通知栏</string>
+    <string name="toggle_collapse_generic_summary">执行任何开关动作后收起通知栏</string>
     <string name="toggle_enable_fasttoggle_title">启用快捷开关</string>
     <string name="toggle_enable_fasttoggle_summary">覆盖默认动作</string>
     <string name="toggle_choose_fasttoggle_side_title">选择快捷开关侧边</string>
@@ -692,7 +692,10 @@
     <string name="lockscreen_targets_summary">查看或自定义锁屏界面的快捷方式</string>
     <string name="lockscreen_target_longpress_text">长按动作</string>
     <string name="lockscreen_glow_torch_text">辉光灯</string>
-    <string name="lockscreen_glow_torch_summary">按住锁屏圈的中央开启灯光，松开手指关闭灯光。</string>
+    <string name="lockscreen_glow_torch_summary">按住锁屏环或导航环的中央开启灯光，松开手指关闭灯光。</string>
+    <string name="lockscreen_torch_off">关闭</string>
+    <string name="lockscreen_torch_lockcircle">锁屏环</string>
+    <string name="lockscreen_torch_navring">导航环</string>
     <string name="lockscreen_camera">相机</string>
     <string name="lockscreen_unlock">解锁</string>
     <string name="save_error">无法保存目标！至少需要一个目标解锁！</string>

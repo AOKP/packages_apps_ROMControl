@@ -3,6 +3,7 @@ package com.aokp.romcontrol.fragments;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
@@ -76,6 +77,10 @@ public class PowerMenu extends AOKPPreferenceFragment implements OnPreferenceCha
         mShowRebootKeyguard.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.POWER_DIALOG_SHOW_REBOOT_KEYGUARD, true));
         mShowRebootKeyguard.setOnPreferenceChangeListener(this);
+
+        if (!hasTorch) {
+            getPreferenceScreen().removePreference(mShowTorchToggle);
+        }
     }
 
     @Override

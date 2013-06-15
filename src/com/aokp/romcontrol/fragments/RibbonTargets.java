@@ -930,8 +930,11 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                 mMenuRearrange.setTitle(getResources().getString(R.string.menu_ribbon_rearrange));
                 mMenuReset.setTitle(getResources().getString(R.string.menu_ribbon_reset));
                 mMenuToggles.setTitle(getResources().getString(R.string.menu_ribbon_na));
-                if (hasNavBarByDefault || navBarEnabled) {
+                if (hasNavBarByDefault || navBarEnabled || navBarAutoHide) {
                     mEnableBottomWarning.setVisibility(View.VISIBLE);
+                    if (navBarAutoHide) {
+                        mEnableBottomWarning.setText(R.string.ribbon_bottom_warning_hiding);
+                    }
                 } else {
                     mEnableBottomWarning.setVisibility(View.GONE);
                 }

@@ -327,6 +327,8 @@
     <string name="toggle_text_color_title">Barva textu přepínačů</string>
     <string name="toggle_favcontact_title">Oblíbený kontakt</string>
     <string name="toggle_favcontact_summary">Zvolit oblíbený kontakt</string>
+    <string name="toggle_collapse_generic_title">Zavřít menu po stisku přepínače</string>
+    <string name="toggle_collapse_generic_summary">Zavřít menu při základním stisku včech přepínačů</string>
     <string name="toggle_enable_fasttoggle_title">Zapnout rychlý přístup</string>
     <string name="toggle_enable_fasttoggle_summary">Zapnout přímý přístup k přepínačům jedním prstem</string>
     <string name="toggle_choose_fasttoggle_side_title">Zvolit stranu rychlého přístupu</string>
@@ -766,9 +768,12 @@
     <string name="lockscreen_target_longpress_text">Dlouhhý stisk</string>
     <string name="lockscreen_target_longpress_text">Stav dlouhého stisku</string>
     <string name="lockscreen_glow_torch_text">Svítilna v odemykacím kruhu</string>
-    <string name="lockscreen_glow_torch_summary">Dlouhým stiskem a následným držením středu odemykacího kruhu dojde k
+    <string name="lockscreen_glow_torch_summary">Dlouhým stiskem a následným držením středu odemykacího či navigačního kruhu dojde k
         zapnutí svítilny. Uvolněním prstu dojde k vypnutí.
     </string>
+    <string name="lockscreen_torch_off">Vypnuto</string>
+    <string name="lockscreen_torch_lockcircle">Odemykací kruh</string>
+    <string name="lockscreen_torch_navring">Navigační kruh</string>
     <string name="lockscreen_camera">Fotoaparát</string>
     <string name="lockscreen_unlock">Odemknout</string>
     <string name="save_error">Položky nelze uložit! Je nutné nastavit nejméně jednu položku!</string>

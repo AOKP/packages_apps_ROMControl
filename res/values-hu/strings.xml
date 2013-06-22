@@ -19,6 +19,7 @@
     <string name="nav_bar">Navigációs sáv</string>
     <string name="power_menu">Kikapcsolási Menü</string>
     <string name="led_options">LED Opciók</string>
+    <string name="spen_options">S Pen Gesztusok</string>
     <string name="header_system">Rendszer</string>
     <string name="sound">Hang</string>
     <string name="lockscreen_options">Zárképernyő</string>
@@ -84,7 +85,7 @@
     <string name="text_off">Ki</string>
 
     <!-- Power Menu -->
-    <string name="title_show_power_saver">Energia takarékos mód</string>
+    <string name="title_show_power_saver">Energitakarékos mód</string>
     <string name="title_show_screenshot">Képernyőkép</string>
     <string name="title_show_torch_toggle">Zseblámpa kapcsoló</string>
     <string name="title_show_airplane_toggle">Repülőgép üzemmód</string>
@@ -121,7 +122,7 @@
 
 
     <!-- Power Saving -->
-    <string name="title_pref_powersaving_pref_mode">Energia takarékosmód engedélyezése</string>
+    <string name="title_pref_powersaving_pref_mode">Energiatakarékos mód engedélyezése</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
 
     <string name="title_pref_powersaving_data_screen_off">Adat kikapcsolt képernyőnél</string>
@@ -155,15 +156,14 @@
     <string name="display_cat">Kijelző</string>
     <string name="recents_cat">Legutóbbiak</string>
     <string name="tabletUI_cat">Tábla mód</string>
-    <string name="enable_volume_options">Hang panel engedélyezése</string>
+    <string name="enable_volume_options">Hangpanel engedélyezése</string>
     <string name="status_bar_notif_count_title">Értesítésí számláló</string>
     <string name="status_bar_notif_count_summary">Megjelenití az értesítések számát a navigációs sávon</string>
     <string name="vibrate_notif_expand_title">Rezgés nyitásra</string>
     <string name="vibrate_notif_expand_summary">Rezeg mikor szétnyitod az értesítést (UI újraindítás szükséges)</string>
     <string name="disable_bootanimation_title">Bootanimáció tiltása</string>
     <string name="custom_bootanimation_title">Egyedi bootanimáció</string>
-    <string name="custom_bootanimation_summary">Bootanimáció zip kiválasztása. Eredeti mentési helye /system/media.
-    </string>
+    <string name="custom_bootanimation_summary">Saját zip kiválasztása a tárhelyről és használd boot animácónak.</string>
     <string name="install_file_manager_error">Alkalmazás nem található. Telepíts fájlkezelőt.</string>
     <string name="notification_wallpaper_title">Értesítési háttér választása</string>
     <string name="notification_wallpaper_summary">Egyedi hátteret tudsz adni az értesítési sávnak</string>
@@ -295,6 +295,8 @@
     <string name="toggle_text_color_title">Kapcsoló szöveg szín</string>
     <string name="toggle_favcontact_title">Kedvenc Személyek</string>
     <string name="toggle_favcontact_summary">Válaszd ki a kedvenc kapcsolatod</string>
+    <string name="toggle_collapse_generic_title">Collapse shade on toggle click</string>
+    <string name="toggle_collapse_generic_summary">Close shade on all generic toggle actions</string>
     <string name="toggle_enable_fasttoggle_title">Gyors kapcsoló engedélyezése</string>
     <string name="toggle_enable_fasttoggle_summary">Alapértelmezett viselkedés felülbírálása</string>
     <string name="toggle_choose_fasttoggle_side_title">Gyors kapcsoló oldal választás</string>
@@ -497,10 +499,13 @@
     <string name="statusbar_hide_summary">Bejelölve teljesen elrejti az Értesítési sávot</string>
     <string name="navigation_bar_alpha_title">Állapotsáv és navigációs sáv áttetszősége</string>
     <string name="navbar_hide_enable_title">Navigációs sáv elrejtése</string>
+    <string name="systembar_hide_enable_title">Rejtett Rendszersáv engedélyezése</string>
     <string name="drag_handle_opacity_title">Fogantyú áttetszősége</string>
     <string name="drag_handle_width_title">Fogantyú szélessége</string>
     <string name="title_navbar_timeout">Rejtett Navigációs sáv késleltetése</string>
+    <string name="title_systembar_timeout">Rejtett Rendszersáv késleltetése</string>
     <string name="summary_navbar_timeout">Rejtett Navigációs sáv ablak késleltetésének az ideje</string>
+    <string name="summary_systembar_timeout">Rejtett Rendszersáv Ablak késleltetési ideje</string>
     <string name="hide_navbar_timeout_never">Soha</string>
     <string name="hide_navbar_timeout_1500">1.5 mp</string>
     <string name="hide_navbar_timeout_3000">3 mp</string>
@@ -527,8 +532,7 @@
     <string name="choose_action_long_title">Hosszú akció választása</string>
     <string name="action_long_save">beállítás, mint hosszú akció</string>
     <string name="title_navring_amount">Gyűrűk száma</string>
-    <string name="summary_navring_amount">Hány eseményt akarsz rajta? *A változtatás hatására alaphelyzetbe kerülnek az
-        események és újra indul a SystemUI*
+    <string name="summary_navring_amount">Elemek számának megadása a Navigációs Gyűrűkön
     </string>
     <string name="interface_navring_settings_title">Navigációs Gyűrű</string>
     <string name="interface_navring_settings_summary">@null</string>
@@ -734,6 +738,9 @@
     <string name="lockscreen_glow_torch_summary">Hosszan nyomva a zárképernyő gombot bekapcsol a zseblámpa, elengedve
         kialszik.
     </string>
+    <string name="lockscreen_torch_off">Ki</string>
+    <string name="lockscreen_torch_lockcircle">ZárGyűrű</string>
+    <string name="lockscreen_torch_navring">NavigációsGyűrű</string>
     <string name="lockscreen_camera">Kamera</string>
     <string name="lockscreen_unlock">Feloldás</string>
     <string name="save_error">Nem sikerült menteni! Legalább egy elem kell!</string>

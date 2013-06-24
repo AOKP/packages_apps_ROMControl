@@ -32,8 +32,7 @@
 
         <Preference
             android:key="notification_wallpaper"
-            android:title="@string/notification_wallpaper_title"
-            android:summary="@string/notification_wallpaper_summary" />
+            android:title="@string/notification_wallpaper_title" />
 
         <Preference
             android:key="notification_wallpaper_alpha"

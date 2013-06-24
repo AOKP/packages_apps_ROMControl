@@ -33,9 +33,6 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -284,7 +281,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             mHideExtras.setEnabled(false);
         }
 
-        setHasOptionsMenu(true);
         resetBootAnimation();
         findWallpaperStatus();
     }
@@ -402,27 +398,12 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             }
             return true;
         } else if (preference == mNotificationWallpaper) {
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
-
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            boolean isPortrait = getResources()
-                    .getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height);
-            intent.putExtra("aspectY", isPortrait ? height : width);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                    getNotificationExternalUri());
-            intent.putExtra("outputFormat",
-                    Bitmap.CompressFormat.PNG.toString());
-            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+            File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+            if (wallpaper.exists()) {
+                buildWallpaperAlert();
+            } else {
+                prepareAndSetWallpaper();
+            }
             return true;
         } else if (preference == mWallpaperAlpha) {
             Resources res = getActivity().getResources();
@@ -553,36 +534,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.user_interface, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.remove_wallpaper:
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mContext.deleteFile(WALLPAPER_NAME);
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                findWallpaperStatus();
-                            }
-                        });
-                        Helpers.restartSystemUI();
-                    }
-                }).start();
-                return true;
-            default:
-                // call to super is implicit
-                return onContextItemSelected(item);
-        }
-    }
-
     private Uri getNotificationExternalUri() {
         File dir = mContext.getExternalCacheDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);
@@ -619,6 +570,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     }
                 }
                 findWallpaperStatus();
+                buildWallpaperAlert();
                 Helpers.restartSystemUI();
             } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
                 if (data == null) {
@@ -629,6 +581,86 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 openBootAnimationDialog();
             }
         }
+    }
+
+    private void buildWallpaperAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.notification_wallpaper_dialog);
+        builder.setPositiveButton(R.string.notification_wallpaper_pick,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        prepareAndSetWallpaper();
+                    }
+                });
+        builder.setNegativeButton(com.android.internal.R.string.notification_wallpaper_reset,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        resetWallpaper();
+                        dialog.dismiss();
+                    }
+                });
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        View layout = inflater.inflate(R.layout.dialog_shade_wallpaper, null);
+        ImageView wallView = (ImageView) layout.findViewById(R.id.shade_wallpaper_preview);
+        TextView wallText = (TextView) layout.findViewById(R.id.wall_error);
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        wallView.setLayoutParams(new LinearLayout.LayoutParams(size.x / 2, size.y / 2));
+        File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+        // double check
+        if (wallpaper.exists()) {
+            Drawable myWall = null;
+            myWall = new BitmapDrawable(mContext.getResources(), wallpaper.getAbsolutePath());
+            wallView.setImageDrawable(myWall);
+            wallText.setVisibility(View.GONE);
+            wallView.setVisibility(View.VISIBLE);
+        } else {
+            wallView.setVisibility(View.GONE);
+            wallText.setVisibility(View.VISIBLE);
+        }
+        builder.setView(layout);
+        builder.show();
+    }
+    private void prepareAndSetWallpaper() {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int width = display.getWidth();
+        int height = display.getHeight();
+
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+        intent.setType("image/*");
+        intent.putExtra("crop", "true");
+        boolean isPortrait = getResources()
+                .getConfiguration().orientation
+                == Configuration.ORIENTATION_PORTRAIT;
+        intent.putExtra("aspectX", isPortrait ? width : height);
+        intent.putExtra("aspectY", isPortrait ? height : width);
+        intent.putExtra("outputX", width);
+        intent.putExtra("outputY", height);
+        intent.putExtra("scale", true);
+        intent.putExtra("scaleUpIfNeeded", true);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                getNotificationExternalUri());
+        intent.putExtra("outputFormat",
+                Bitmap.CompressFormat.PNG.toString());
+        startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+    }
+
+    private void resetWallpaper() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mContext.deleteFile(WALLPAPER_NAME);
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        findWallpaperStatus();
+                    }
+                });
+                Helpers.restartSystemUI();
+            }
+        }).start();
     }
 
     private void openBootAnimationDialog() {

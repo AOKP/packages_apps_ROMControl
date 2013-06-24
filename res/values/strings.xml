@@ -77,7 +77,6 @@
     <string name="menu_ribbon_toggles">Setup toggles</string>
     <string name="menu_ribbon_na">Not available</string>
     <string name="menu_ribbon_toggles_error">Toggles are only available for the left and right swipe ribbons.</string>
-    <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
 
     <!-- General Strings -->
@@ -200,8 +199,11 @@
     <string name="install_file_manager_error">No application found to pick the zip file. Please install a file
         manager.
     </string>
-    <string name="notification_wallpaper_title">Choose notification background</string>
-    <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="notification_wallpaper_title">Notification background</string>
+    <string name="notification_wallpaper_dialog">Background preview</string>
+    <string name="notification_wallpaper_pick">New notification background</string>
+    <string name="notification_wallpaper_reset">Remove notification background</string>
+    <string name="notification_wallpaper_error">No image found</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
     <string name="alpha_dialog_title">Set alpha value</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>

@@ -19,6 +19,7 @@ package com.aokp.romcontrol.fragments;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.SearchManager;
+import android.app.WallpaperManager;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -27,6 +28,9 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -37,6 +41,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -48,6 +53,8 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -73,8 +80,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private static final String TAG = "Lockscreen";
     private static final boolean DEBUG = false;
 
+    public static final int REQUEST_PICK_WALLPAPER = 199;
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
     public static final int REQUEST_PICK_LANDSCAPE_ICON = 201;
+
+    private static final String WALLPAPER_NAME = "lockscreen_wallpaper.jpg";
 
     private Context mContext;
     private Resources mResources;
@@ -86,6 +96,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private View mLockscreenOptions;
     private boolean mIsLandscape;
 
+    private ImageView mWallpaperButton;
     private Spinner mGlowTorchSwitch;
     private Switch mLongPressStatus;
     private Switch mLockBatterySwitch;
@@ -99,6 +110,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private Switch mLockUnlimitedWidgetsSwitch;
     private Button mLockTextColorButton;
 
+    private TextView mWallpaperText;
     private TextView mGlowTorchText;
     private TextView mLongPressText;
     private TextView mLockTextColorText;
@@ -220,6 +232,13 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 picker.show();
             }
         });
+
+        mWallpaperText = ((TextView) getActivity()
+                .findViewById(R.id.lockscreen_wallpaper_id));
+        mWallpaperText.setOnClickListener(mWallpaperTextListener);
+        mWallpaperButton = ((ImageView) getActivity()
+                .findViewById(R.id.lockscreen_wallpaper_button));
+        mWallpaperButton.setOnClickListener(mWallpaperButtonListener);
 
         mGlowTorchText = ((TextView) getActivity()
                 .findViewById(R.id.lockscreen_glow_torch_id));
@@ -410,6 +429,24 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         }
     };
 
+    private TextView.OnClickListener mWallpaperTextListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(R.string.lockscreen_wallpaper_title),
+                    getResources().getString(R.string.lockscreen_wallpaper_summary));
+        }
+    };
+
+    private ImageView.OnClickListener mWallpaperButtonListener = new ImageView.OnClickListener() {
+        public void onClick(View v) {
+            if (wallpaperExists()) {
+                buildWallpaperAlert();
+            } else {
+                prepareAndSetWallpaper();
+            }
+        }
+    };
+
     private TextView.OnClickListener mGlowTorchTextListener = new TextView.OnClickListener() {
         public void onClick(View v) {
             createMessage(
@@ -505,6 +542,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     };
 
     private void updateSwitches() {
+        if (wallpaperExists()) {
+            mWallpaperButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_wallpaper_exists));
+        } else {
+            mWallpaperButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_wallpaper_none));
+        }
         mGlowTorchSwitch.setSelection(Settings.System.getInt(cr,
                 Settings.System.LOCKSCREEN_GLOW_TORCH, 0));
         mLockBatterySwitch.setChecked(Settings.System.getBoolean(cr,
@@ -678,7 +720,22 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     || requestCode == ShortcutPickerHelper.REQUEST_CREATE_SHORTCUT) {
                 mPicker.onActivityResult(requestCode, resultCode, data);
 
-            } else if ((requestCode == REQUEST_PICK_CUSTOM_ICON)
+            } else if (requestCode == REQUEST_PICK_WALLPAPER) {
+                FileOutputStream wallpaperStream = null;
+                try {
+                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
+                            Context.MODE_WORLD_READABLE);
+
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
+                }
+                Uri selectedImageUri = getLockscreenExternalUri();
+                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
+                /*Some "wallpaper exists" image (full color?)*/
+                mWallpaperButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_wallpaper_exists));
+                buildWallpaperAlert();
+            }  else if ((requestCode == REQUEST_PICK_CUSTOM_ICON)
                     || (requestCode == REQUEST_PICK_LANDSCAPE_ICON)) {
 
                 String iconName = getIconFileName(mTargetIndex);
@@ -798,6 +855,80 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         setDrawables();
     }
 
+    private Uri getLockscreenExternalUri() {
+        File dir = mContext.getExternalCacheDir();
+        File wallpaper = new File(dir, WALLPAPER_NAME);
+        return Uri.fromFile(wallpaper);
+    }
+
+    private void buildWallpaperAlert() {
+        Drawable myWall = null;
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.lockscreen_wallpaper_title);
+        builder.setPositiveButton(R.string.lockscreen_wallpaper_pick,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        prepareAndSetWallpaper();
+                    }
+                });
+        builder.setNegativeButton(R.string.lockscreen_wallpaper_remove,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        removeWallpaper();
+                        dialog.dismiss();
+                    }
+                });
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        View layout = inflater.inflate(R.layout.dialog_shade_wallpaper, null);
+        ImageView wallView = (ImageView) layout.findViewById(R.id.shade_wallpaper_preview);
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        wallView.setLayoutParams(new LinearLayout.LayoutParams(size.x / 2, size.y / 2));
+        File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+        myWall = new BitmapDrawable(mContext.getResources(), wallpaper.getAbsolutePath());
+        wallView.setImageDrawable(myWall);
+        builder.setView(layout);
+        builder.show();
+    }
+
+    private void prepareAndSetWallpaper() {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+
+        int width = getActivity().getWallpaperDesiredMinimumWidth();
+        int height = getActivity().getWallpaperDesiredMinimumHeight();
+        float spotlightX = (float)display.getWidth() / width;
+        float spotlightY = (float)display.getHeight() / height;
+
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+        intent.setType("image/*");
+        intent.putExtra("crop", "true");
+        intent.putExtra("scale", true);
+        intent.putExtra("scaleUpIfNeeded", true);
+        intent.putExtra("aspectX", width);
+        intent.putExtra("aspectY", height);
+        intent.putExtra("outputX", width);
+        intent.putExtra("outputY", height);
+        intent.putExtra("spotlightX", spotlightX);
+        intent.putExtra("spotlightY", spotlightY);
+        intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, getLockscreenExternalUri());
+
+        startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+    }
+
+    private void removeWallpaper() {
+        mContext.deleteFile(WALLPAPER_NAME);
+        /*Some "no wallpaper" image (grayed out?)*/
+        mWallpaperButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_wallpaper_none));
+    }
+
+    private boolean wallpaperExists() {
+        File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+        return wallpaper.exists();
+    }
+
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = target;
@@ -824,16 +955,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     @Override
     public void onGrabbed(View v, int handle) {
-        if (!mIsLandscape) {
-            updateVisiblity(false);
-        }
+        mHelperText.setText(getResources().getString(R.string.lockscreen_target_info));
     }
 
     @Override
     public void onReleased(View v, int handle) {
-        if (!mIsLandscape) {
-            updateVisiblity(true);
-        }
+        mHelperText.setText(getResources().getString(R.string.lockscreen_options_info));
     }
 
     @Override
@@ -928,66 +1055,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     }
 
     private H mHandler = new H();
-
-    private void updateVisiblity(boolean visible) {
-        if (visible) {
-            if (hasTorch) {
-                mGlowTorchText.setVisibility(View.VISIBLE);
-                mGlowTorchSwitch.setVisibility(View.VISIBLE);
-            }
-            mLongPressStatus.setVisibility(View.VISIBLE);
-            mLockBatterySwitch.setVisibility(View.VISIBLE);
-            mLockRotateSwitch.setVisibility(View.VISIBLE);
-            mLockVolControlSwitch.setVisibility(View.VISIBLE);
-            mLockVolWakeSwitch.setVisibility(View.VISIBLE);
-            mLockPageHintSwitch.setVisibility(View.VISIBLE);
-            if (!isSW600DPScreen(mContext)) {
-                mLockMinimizeChallangeSwitch.setVisibility(View.VISIBLE);
-                mLockMinimizeChallangeText.setVisibility(View.VISIBLE);
-            }
-            mLockCarouselSwitch.setVisibility(View.VISIBLE);
-            mLockAllWidgetsSwitch.setVisibility(View.VISIBLE);
-            mLockUnlimitedWidgetsSwitch.setVisibility(View.VISIBLE);
-            mLongPressText.setVisibility(View.VISIBLE);
-            mLockBatteryText.setVisibility(View.VISIBLE);
-            mLockRotateText.setVisibility(View.VISIBLE);
-            mLockVolControlText.setVisibility(View.VISIBLE);
-            mLockVolWakeText.setVisibility(View.VISIBLE);
-            mLockPageHintText.setVisibility(View.VISIBLE);
-            mLockCarouselText.setVisibility(View.VISIBLE);
-            mLockAllWidgetsText.setVisibility(View.VISIBLE);
-            mLockUnlimitedWidgetsText.setVisibility(View.VISIBLE);
-            mLockTextColorText.setVisibility(View.VISIBLE);
-            mLockTextColorButton.setVisibility(View.VISIBLE);
-            mHelperText.setText(getResources().getString(R.string.lockscreen_options_info));
-        } else {
-            mGlowTorchText.setVisibility(View.GONE);
-            mGlowTorchSwitch.setVisibility(View.GONE);
-            mLongPressStatus.setVisibility(View.GONE);
-            mLockBatterySwitch.setVisibility(View.GONE);
-            mLockRotateSwitch.setVisibility(View.GONE);
-            mLockVolControlSwitch.setVisibility(View.GONE);
-            mLockVolWakeSwitch.setVisibility(View.GONE);
-            mLockPageHintSwitch.setVisibility(View.GONE);
-            mLockMinimizeChallangeSwitch.setVisibility(View.GONE);
-            mLockCarouselSwitch.setVisibility(View.GONE);
-            mLockAllWidgetsSwitch.setVisibility(View.GONE);
-            mLockUnlimitedWidgetsSwitch.setVisibility(View.GONE);
-            mLongPressText.setVisibility(View.GONE);
-            mLockBatteryText.setVisibility(View.GONE);
-            mLockRotateText.setVisibility(View.GONE);
-            mLockVolControlText.setVisibility(View.GONE);
-            mLockVolWakeText.setVisibility(View.GONE);
-            mLockPageHintText.setVisibility(View.GONE);
-            mLockMinimizeChallangeText.setVisibility(View.GONE);
-            mLockCarouselText.setVisibility(View.GONE);
-            mLockAllWidgetsText.setVisibility(View.GONE);
-            mLockUnlimitedWidgetsText.setVisibility(View.GONE);
-            mLockTextColorText.setVisibility(View.GONE);
-            mLockTextColorButton.setVisibility(View.GONE);
-            mHelperText.setText(getResources().getString(R.string.lockscreen_target_info));
-        }
-    }
 
     @Override
     public void onColorChanged(int color) {

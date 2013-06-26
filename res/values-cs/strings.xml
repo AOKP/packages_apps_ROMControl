@@ -177,8 +177,8 @@
     <string name="enable_volume_options">Zapnout volby hlasitosti</string>
     <string name="status_bar_notif_count_title">Zobrazit počet upozornění</string>
     <string name="status_bar_notif_count_summary">Zobrazit počet čekajících upozornění ve stavové liště</string>
-    <string name="vibrate_notif_expand_title">Vibrovat při vytažení</string>
-    <string name="vibrate_notif_expand_summary">Vibrovat při vytažení notifikační lišty (vyžaduje restart UI)</string>
+    <string name="vibrate_notif_expand_title">Vibrovat při roztažení</string>
+    <string name="vibrate_notif_expand_summary">Vibrovat při roztažení notifikace v liště (vyžaduje restart UI)</string>
     <string name="disable_bootanimation_title">Vypnout startovací animaci</string>
     <string name="custom_bootanimation_title">Vlastní startovací animace</string>
     <string name="custom_bootanimation_summary">Vybrat zip z úložiště pro použití jako vlastní startovací animaci.
@@ -327,8 +327,8 @@
     <string name="toggle_text_color_title">Barva textu přepínačů</string>
     <string name="toggle_favcontact_title">Oblíbený kontakt</string>
     <string name="toggle_favcontact_summary">Zvolit oblíbený kontakt</string>
-    <string name="toggle_collapse_generic_title">Zavřít menu po stisku přepínače</string>
-    <string name="toggle_collapse_generic_summary">Zavřít menu při základním stisku včech přepínačů</string>
+    <string name="toggle_collapse_generic_title">Zavřít notifikační okno po stisku přepínače</string>
+    <string name="toggle_collapse_generic_summary">Zavřít okno notifikací/přepínačů po stisku přepínače</string>
     <string name="toggle_enable_fasttoggle_title">Zapnout rychlý přístup</string>
     <string name="toggle_enable_fasttoggle_summary">Zapnout přímý přístup k přepínačům jedním prstem</string>
     <string name="toggle_choose_fasttoggle_side_title">Zvolit stranu rychlého přístupu</string>

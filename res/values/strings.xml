@@ -343,6 +343,8 @@
     <string name="toggle_favcontact_summary">Choose your favorite contact</string>
     <string name="toggle_collapse_generic_title">Collapse shade on toggle click</string>
     <string name="toggle_collapse_generic_summary">Close shade on all generic toggle actions</string>
+    <string name="toggle_vibrate_title">Vibrate on toggle click</string>
+    <string name="toggle_vibrate_summary">Vibrate on all generic toggle actions</string>
     <string name="toggle_enable_fasttoggle_title">Enable fast toggle</string>
     <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>

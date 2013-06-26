@@ -18,6 +18,11 @@
         android:summary="@string/toggle_collapse_generic_summary"
         android:title="@string/toggle_collapse_generic_title" />
 
+    <CheckBoxPreference
+        android:key="quick_toggle_vibrate"
+        android:summary="@string/toggle_vibrate_summary"
+        android:title="@string/toggle_vibrate_title" />
+
     <ListPreference
         android:entries="@array/toggles_per_row_entries"
         android:entryValues="@array/toggles_per_row_values"

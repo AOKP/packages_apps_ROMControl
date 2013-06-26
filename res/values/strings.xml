@@ -754,8 +754,10 @@
     </string>
     <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
-    <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="lockscreen_wallpaper_title">Lockscreen background</string>
+    <string name="lockscreen_wallpaper_summary">Set or remove the current lockscreen background</string>
+    <string name="lockscreen_wallpaper_pick">New lockscreen background</string>
+    <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
     <string name="lockscreen_weather_title">Enable</string>

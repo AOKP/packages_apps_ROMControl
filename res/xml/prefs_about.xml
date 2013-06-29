@@ -32,7 +32,8 @@
             aokp:nameDev="AOKP"
             aokp:twitterHandle="AOKP_ROM"
             aokp:githubLink="@string/github_aokp"
-            aokp:donateLink="@string/donate_aokp" />
+            aokp:donateLink="@string/donate_aokp"
+            aokp:emailDev="aokp@aokp.co"/>
 
     </PreferenceCategory>
 
@@ -43,184 +44,215 @@
             android:title="Roman"
             aokp:nameDev="romanbb"
             aokp:twitterHandle="romanbb"
-            aokp:githubLink="@string/github_roman" />
+            aokp:githubLink="@string/github_roman"
+            aokp:emailDev="roman.brig@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="Whitehawkx"
             aokp:nameDev="Whitehawkx"
             aokp:twitterHandle="whitehawkx"
-            aokp:githubLink="@string/github_whitehawk" />
+            aokp:githubLink="@string/github_whitehawk"
+            aokp:emailDev="xxwhitehawk@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="kwes"
             aokp:nameDev="kwes"
             aokp:twitterHandle="kwes1020"
-            aokp:githubLink="@string/github_kwes" />
+            aokp:githubLink="@string/github_kwes"
+            aokp:emailDev="kwesley1020@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="Zaphod-Beeble"
             aokp:nameDev="Zaphod-Beeble"
             aokp:twitterHandle="Dont_Panic_Zaph"
-            aokp:githubLink="@string/github_zaph" />
+            aokp:githubLink="@string/github_zaph"
+            aokp:emailDev="mwilson@acesappraisal.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="ProTekk"
             aokp:nameDev="ProTekk"
             aokp:twitterHandle="protekkfzs"
-            aokp:githubLink="@string/github_protekk" />
+            aokp:githubLink="@string/github_protekk"
+            aokp:emailDev="fzservers@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="Khas Mek"
             aokp:nameDev="Khas Mek"
             aokp:twitterHandle="KhasMek"
-            aokp:githubLink="@string/github_khasmek" />
+            aokp:githubLink="@string/github_khasmek"
+            aokp:emailDev="boushh@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="sethyx"
             aokp:nameDev="sethyx"
             aokp:twitterHandle="sethyx"
-            aokp:githubLink="@string/github_sethyx" />
+            aokp:githubLink="@string/github_sethyx"
+            aokp:emailDev="sethyx@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="MarcLandis"
             aokp:nameDev="MarcLandis"
             aokp:twitterHandle="MarcLandis"
-            aokp:githubLink="@string/github_marclandis" />
+            aokp:githubLink="@string/github_marclandis"
+            aokp:emailDev="dirk.rettschlag@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="justreboot"
             aokp:nameDev="Just Reboot"
-            aokp:twitterHandle="just_reboot" />
+            aokp:twitterHandle="just_reboot"
+            aokp:emailDev="deidein.justreboot@gmail.com" />
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="nitroz"
             aokp:nameDev="Nitroz"
-            aokp:twitterHandle="NitrozK" />
+            aokp:twitterHandle="NitrozK"
+            aokp:emailDev="kcolbeck1@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="sixstringsg"
             aokp:nameDev="sixstringsg"
             aokp:twitterHandle="sixstringsg"
-            aokp:githubLink="@string/github_sixstringsg" />
+            aokp:githubLink="@string/github_sixstringsg"
+            aokp:emailDev="sixstringsg@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="adamthecashew"
             aokp:nameDev="adamthecashew"
             aokp:twitterHandle="adamthecashew"
-            aokp:githubLink="@string/github_adam" />
+            aokp:githubLink="@string/github_adam"
+            aokp:emailDev="adammfisch@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="xoom"
             aokp:nameDev="xoomdev"
             aokp:twitterHandle="xoomdev"
-            aokp:githubLink="@string/github_xoom" />
+            aokp:githubLink="@string/github_xoom"
+            aokp:emailDev="roberj13@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="stevespear"
             aokp:nameDev="Stevespear426"
             aokp:twitterHandle="stevespeartweet"
-            aokp:githubLink="@string/github_stevespear" />
+            aokp:githubLink="@string/github_stevespear"
+            aokp:emailDev="Stephen.k.spear@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="birdman"
             aokp:nameDev="birdman"
             aokp:twitterHandle="_mrbirdman_"
-            aokp:githubLink="@string/github_birdman" />
+            aokp:githubLink="@string/github_birdman"
+            aokp:emailDev="thebirdman.08@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="akellar"
             aokp:nameDev="akellar"
             aokp:twitterHandle="AKBraves"
-            aokp:githubLink="@string/github_akellar" />
+            aokp:githubLink="@string/github_akellar"
+            aokp:emailDev="apkellar@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="bajee11"
             aokp:nameDev="bajee11"
             aokp:twitterHandle="bajee11"
-            aokp:githubLink="@string/github_bajee11" />
+            aokp:githubLink="@string/github_bajee11"
+            aokp:emailDev="bajee11@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="dhacker29"
             aokp:nameDev="dhacker29"
             aokp:twitterHandle="dhacker29"
-            aokp:githubLink="@string/github_dhacker29" />
+            aokp:githubLink="@string/github_dhacker29"
+            aokp:emailDev="davidhackerdvm@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="graffixnyc"
             aokp:nameDev="graffixnyc"
             aokp:twitterHandle="graffixnyc"
-            aokp:githubLink="@string/github_graffixnyc" />
+            aokp:githubLink="@string/github_graffixnyc"
+            aokp:emailDev="graffixnyc@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="jbirdvegas"
             aokp:nameDev="JBirdVegas"
             aokp:twitterHandle="JBird_Vegas"
-            aokp:githubLink="@string/github_jbirdvegas" />
+            aokp:githubLink="@string/github_jbirdvegas"
+            aokp:emailDev="jbirdvegas@aokp.co"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="k900"
             aokp:nameDev="K900"
             aokp:twitterHandle="AOKP_ROM"
-            aokp:githubLink="@string/github_k900" />
+            aokp:githubLink="@string/github_k900"
+            aokp:emailDev="k0009000@gmail.co"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="rohan32"
             aokp:nameDev="rohan32"
             aokp:twitterHandle="rohanXm"
-            aokp:githubLink="@string/github_rohan32" />
+            aokp:githubLink="@string/github_rohan32"
+            aokp:emailDev="rohanmathur34@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="hillbillyhacker"
             aokp:nameDev="hillbillyhacker"
             aokp:twitterHandle="willdeberry"
-            aokp:githubLink="@string/github_hillbillyhacker" />
+            aokp:githubLink="@string/github_hillbillyhacker"
+            aokp:emailDev="willdeberry@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="bmc08gt"
             aokp:nameDev="bmc08gt"
             aokp:twitterHandle="bmc08gt"
-            aokp:githubLink="@string/github_bmc08gt" />
+            aokp:githubLink="@string/github_bmc08gt"
+            aokp:emailDev="brandon.mcansh@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="tdm"
             aokp:nameDev="tdm"
             aokp:twitterHandle="AOKP_ROM"
-            aokp:githubLink="@string/github_tdm" />
+            aokp:githubLink="@string/github_tdm"
+            aokp:emailDev="tdm.code@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="Jubakuba"
             aokp:nameDev="Jubakuba"
             aokp:twitterHandle="Jubakuba"
-            aokp:githubLink="@string/github_jubakuba" />
+            aokp:githubLink="@string/github_jubakuba"
+            aokp:emailDev="Jubakuba@aokp.co"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="qnhoang81"
             aokp:nameDev="qnhoang81"
             aokp:twitterHandle="AOKP_ROM"
-            aokp:githubLink="@string/github_qnhoang81" />
+            aokp:githubLink="@string/github_qnhoang81"
+            aokp:emailDev="qnhoang81@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="Hashcode"
             aokp:nameDev="Hashcode"
             aokp:twitterHandle="Hashcode0f"
-            aokp:githubLink="@string/github_hashcode" />
+            aokp:githubLink="@string/github_hashcode"
+            aokp:emailDev="hashcode0f@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="scar45"
             aokp:nameDev="scar45"
             aokp:twitterHandle="scar45"
-            aokp:githubLink="@string/github_scar45" />
+            aokp:githubLink="@string/github_scar45"
+            aokp:emailDev="scar45@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="championswimmer"
             aokp:nameDev="championswimmer"
             aokp:twitterHandle="championswimmer"
-            aokp:githubLink="@string/github_championswimmer" />
+            aokp:githubLink="@string/github_championswimmer"
+            aokp:emailDev="championswimmer@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="kecinzer"
             aokp:nameDev="Petr Reznicek"
             aokp:twitterHandle="kecinzer"
-            aokp:githubLink="@string/github_kecinzer" />
+            aokp:githubLink="@string/github_kecinzer"
+            aokp:emailDev="kecinzer@gmail.com"/>
     </PreferenceCategory>
 </PreferenceScreen>

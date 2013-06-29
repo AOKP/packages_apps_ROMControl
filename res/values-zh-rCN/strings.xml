@@ -549,6 +549,7 @@
     <string name="ribbon_right_enable_title">启用右侧滑动</string>
     <string name="ribbon_bottom_enable_title">启用底部滑动</string>
     <string name="ribbon_bottom_warning_title">当导航栏启用时无法使用底部滑动，必须使导航栏自动隐藏或始终隐藏。</string>
+    <string name="ribbon_bottom_warning_hiding">当启用导航栏自动隐藏时，长按滑动区域显示操作区。</string>
     <string name="ribbon_button_colorize_title">图标颜色匹配文字颜色</string>
     <string name="ribbon_color_title">操作区颜色</string>
     <string name="text_color_title">应用程序文字颜色</string>

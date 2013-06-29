@@ -306,6 +306,9 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
                 listAdapter.clear();
             }
             listAdapter.addAll(unicornApps);
+            if (currentSelectedApp == listAdapter.getCount()-1) {
+                mListApps.setSelection(0);
+            }
         }
     }
 
@@ -675,6 +678,8 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
             mPicker.onActivityResult(requestCode, resultCode, data);
         } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
             // do nothing
+        } else if (resultCode == Activity.RESULT_CANCELED && data == null) {
+            mListApps.setSelection(0);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

@@ -640,14 +640,14 @@
     <string name="weather_4">Burze z piorunami</string>
     <string name="weather_5">Deszcz i deszcz ze śniegiem</string>
     <string name="weather_6">Deszcz ze śniegiem</string>
-    <string name="weather_7">Śnieg z deszczem ze śniegiem</string>
+    <string name="weather_7">Śnieg z deszczem</string>
     <string name="weather_8">Mroźna mżawka</string>
     <string name="weather_9">Mżawka</string>
     <string name="weather_10">Mroźny deszcz</string>
     <string name="weather_11">Ulewa</string>
     <string name="weather_12">Ulewa</string>
     <string name="weather_13">Przelotne opady śniegu</string>
-    <string name="weather_14">Opady jasnego śniegu</string>
+    <string name="weather_14">Lekkie opady śniegu</string>
     <string name="weather_15">Mroźny śnieg</string>
     <string name="weather_16">Śnieg</string>
     <string name="weather_17">Grad</string>
@@ -657,15 +657,15 @@
     <string name="weather_21">Mgiełkowato</string>
     <string name="weather_22">Dymnie</string>
     <string name="weather_23">Przenikliwie</string>
-    <string name="weather_24">Wiatrzyście</string>
+    <string name="weather_24">Wietrznie</string>
     <string name="weather_25">Zimno</string>
-    <string name="weather_26">Chmurzyście</string>
+    <string name="weather_26">Pochmurno</string>
     <!-- mostly cloudy (night) -->
     <string name="weather_27">Liczne zachmurzenia</string>
     <!-- mostly cloudy (day) -->
     <string name="weather_28">Liczne zachmurzenia</string>
     <!-- partly cloudy (night) -->
-    <string name="weather_29">Umiarkowane zachmurzenie</string>
+    <string name="weather_29">Czciowe zachmurzenie</string>
     <!-- partly cloudy (day) -->
     <string name="weather_30">Umiarkowane zachmurzenie</string>
     <!-- clear (night) -->
@@ -677,17 +677,17 @@
     <string name="weather_34">Małe zachmurzenie</string>
     <string name="weather_35">Opady deszczu i gradu</string>
     <string name="weather_36">Gorąco</string>
-    <string name="weather_37">Izolowane burze z błyskawicami</string>
+    <string name="weather_37">Lokalne burze z piorunami</string>
     <string name="weather_38">Rzadkie burze z piorunami</string>
     <string name="weather_39">Rzadkie burze z piorunami</string>
     <string name="weather_40">Rzadka ulewa</string>
     <string name="weather_41">Gwałtowny śnieg</string>
-    <string name="weather_42">Rzadkie ulewy śnieżne</string>
-    <string name="weather_43">Rzadkie ulewy śnieżne</string>
+    <string name="weather_42">Rzadkie nawałnice śnieżne</string>
+    <string name="weather_43">Rzadkie nawałnice śnieżne</string>
     <string name="weather_44">Umiarkowane zachmurzenie</string>
     <string name="weather_45">Ulewa z błyskawicami</string>
     <string name="weather_46">Gwałtowny śnieg</string>
-    <string name="weather_47">Izolowane ulewy burz z błyskawicami</string>
+    <string name="weather_47">Lokalne ulewy piorunami</string>
     <!-- Forecase unavailable -->
     <string name="weather_3200"></string>
 
@@ -896,7 +896,7 @@
     <!-- Flip phone entries -->
     <string name="disabled">Wyłączone</string>
     <string name="enabled">Włączone</string>
-    <string name="time_0_seconds_instant_off">0 seconds (Od razu)</string>
+    <string name="time_0_seconds_instant_off">0 sekund (Natychmiast)</string>
     <string name="time_15_seconds">15 sekund</string>
     <string name="time_30_seconds">30 sekund</string>
     <string name="time_45_seconds">45 sekund</string>

@@ -66,7 +66,6 @@ public class Navbar extends AOKPPreferenceFragment implements
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
     private static final String NAVIGATION_BAR_COLOR = "nav_bar_color";
     private static final String PREF_NAV_COLOR = "nav_button_color";
-    private static final String NAVIGATION_BAR_ALLCOLOR = "navigation_bar_allcolor";
     private static final String PREF_NAV_GLOW_COLOR = "nav_button_glow_color";
     private static final String PREF_GLOW_TIMES = "glow_times";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
@@ -90,7 +89,6 @@ public class Navbar extends AOKPPreferenceFragment implements
     // move these later
     ColorPickerPreference mNavigationColor;
     ColorPickerPreference mNavigationBarColor;
-    CheckBoxPreference mColorizeAllIcons;
     ColorPickerPreference mNavigationBarGlowColor;
     ListPreference mGlowTimes;
     ListPreference menuDisplayLocation;
@@ -198,10 +196,6 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
-
-        mColorizeAllIcons = (CheckBoxPreference) findPreference("navigation_bar_allcolor");
-        mColorizeAllIcons.setChecked(Settings.System.getBoolean(mContentRes,
-                Settings.System.NAVIGATION_BAR_ALLCOLOR, false));
 
         mNavigationBarGlowColor = (ColorPickerPreference) findPreference(PREF_NAV_GLOW_COLOR);
         mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
@@ -361,10 +355,6 @@ public class Navbar extends AOKPPreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mColorizeAllIcons) {
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.NAVIGATION_BAR_ALLCOLOR,
-                    ((CheckBoxPreference) preference).isChecked() ? true : false);
         } else if (preference == mNavBarHideEnable) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.NAV_HIDE_ENABLE,

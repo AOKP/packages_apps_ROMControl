@@ -45,7 +45,7 @@
             aokp:nameDev="romanbb"
             aokp:twitterHandle="romanbb"
             aokp:githubLink="@string/github_roman"
-            aokp:emailDev="roman.brig@gmail.com"/>
+            aokp:emailDev="romanbirg@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="Whitehawkx"

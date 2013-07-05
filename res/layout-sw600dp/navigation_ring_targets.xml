@@ -33,7 +33,7 @@
             android:layout_weight="0.5"
             android:padding="4dip"
             android:gravity="left"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/navring_target_amount_text" />
 
@@ -64,7 +64,7 @@
             android:layout_weight="0.5"
             android:padding="4dip"
             android:gravity="left"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/navring_target_longpress_text" />
 

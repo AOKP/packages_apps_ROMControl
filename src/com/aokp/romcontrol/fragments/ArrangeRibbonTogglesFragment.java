@@ -56,7 +56,7 @@ public class ArrangeRibbonTogglesFragment extends DialogFragment implements OnIt
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Holo_Dialog_MinWidth);
+        setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Holo_Light_Dialog_MinWidth);
         super.onCreate(savedInstanceState);
         setShowsDialog(true);
 

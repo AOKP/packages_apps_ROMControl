@@ -23,7 +23,7 @@
             android:padding="4dip"
             android:text="@string/lockscreen_options_info"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#FFFFFF" />
+            android:textColor="#000000" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:padding="4dip"
                 android:text="@string/lockscreen_text_color_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/lockscreen_color_button"
@@ -72,7 +72,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_glow_torch_text"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Spinner
                 android:id="@+id/glow_torch_switch"
@@ -101,7 +101,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_battery_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_battery_switch"
@@ -130,7 +130,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_auto_rotate_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_rotate_switch"
@@ -159,7 +159,7 @@
                 android:singleLine="true"
                 android:text="@string/volume_music_controls_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_vol_controls_switch"
@@ -188,7 +188,7 @@
                 android:singleLine="true"
                 android:text="@string/volume_rocker_wake_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_vol_wake_switch"
@@ -217,7 +217,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_all_widgets_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_all_widgets_switch"
@@ -246,7 +246,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_unlimited_widgets_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_unlimited_widgets_switch"
@@ -275,7 +275,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_hide_initial_page_hints_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_hide_page_hints_switch"
@@ -304,7 +304,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_minimize_challenge_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_minimize_challange_switch"
@@ -333,7 +333,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_use_widget_container_carousel_title"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/lockscreen_carousel_switch"
@@ -362,7 +362,7 @@
                 android:singleLine="true"
                 android:text="@string/lockscreen_target_longpress_text"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
+                android:textColor="#000000" />
 
             <Switch
                 android:id="@+id/longpress_switch"

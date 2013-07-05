@@ -115,7 +115,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center_horizontal"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_bottom_warning_title" />
 
@@ -134,7 +134,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/ribbon_bottom_enable_title" />
 
@@ -164,7 +164,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/ribbon_left_enable_title" />
 
@@ -194,7 +194,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/ribbon_right_enable_title" />
 
@@ -224,7 +224,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/enable_ribbon_vibrate_title" />
 
@@ -254,7 +254,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/ribbon_icon_vibrate_title" />
 
@@ -284,7 +284,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/enable_ribbon_text_title" />
 
@@ -314,7 +314,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/ribbon_button_colorize_title" />
 
@@ -344,7 +344,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/ribbon_toggles_button_title" />
 
@@ -374,7 +374,7 @@
                     android:layout_weight="0.5"
                     android:padding="4dip"
                     android:gravity="left"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/ribbon_hide_ime_title" />
 
@@ -397,7 +397,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_long_swipe_title" />
 
@@ -418,7 +418,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_long_press_title" />
 
@@ -439,7 +439,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_dismiss_title" />
 
@@ -460,7 +460,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_icon_size_title" />
 
@@ -481,7 +481,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/timeout_spinner_title" />
 
@@ -502,7 +502,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_handle_location_title" />
 
@@ -523,7 +523,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_icon_location_title" />
 
@@ -544,7 +544,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_animation_type_title" />
 
@@ -565,7 +565,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/window_columns_title" />
 
@@ -586,7 +586,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_icon_space_title" />
 
@@ -606,7 +606,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/drag_handle_opacity_title" />
 
@@ -626,7 +626,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_drag_handle_width_title" />
 
@@ -646,7 +646,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_drag_handle_height_title" />
 
@@ -666,7 +666,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_opacity_title" />
 
@@ -686,7 +686,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_animation_duration_title" />
 
@@ -714,7 +714,7 @@
                     android:gravity="left"
                     android:text="@string/ribbon_color_title"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <View
                     android:layout_width="40dp"
@@ -747,7 +747,7 @@
                     android:gravity="left"
                     android:text="@string/text_color_title"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <View
                     android:layout_width="40dp"
@@ -772,7 +772,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/window_opacity_title" />
 
@@ -792,7 +792,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/ribbon_animation_duration_title" />
 
@@ -812,7 +812,7 @@
                 android:layout_marginStart="4dip"
                 android:padding="4dip"
                 android:gravity="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/app_window_space_title" />
 
@@ -840,7 +840,7 @@
                     android:gravity="left"
                     android:text="@string/window_color_title"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <View
                     android:layout_width="40dp"
@@ -873,7 +873,7 @@
                     android:gravity="left"
                     android:text="@string/window_text_color_title"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
 
                 <View
                     android:layout_width="40dp"

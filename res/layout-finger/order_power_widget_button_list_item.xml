@@ -59,7 +59,7 @@
         <!-- The height is set to half the height of the parent, which is 64 dip -->
         <TextView
             android:id="@+id/name"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse"
             android:layout_width="wrap_content"
             android:paddingLeft="9dip"
             android:paddingRight="9dip"

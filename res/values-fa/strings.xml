@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">کنترل رام</string>
+
+    <!-- Header Strings -->
+    <string name="user_interface">رابط کاربری</string>
+    <string name="cancel">لغو</string>
+    <string name="ok">تأیید</string>
+    <string name="save">ذخیره</string>
+    <string name="menu_main_activity_change_locale">خالی!</string>
+    <string name="header_statusbar">نوار وضعیت</string>
+    <string name="header_navbar">نوار نویگیشن</string>
+    <string name="toggles_layout">ضامن ها</string>
+    <string name="general_ui">رابط کاربری عمومی</string>
+    <string name="clock">ساعت</string>
+    <string name="battery">باتری</string>
+    <string name="signal">آنتن</string>
+    <string name="nav_bar">نوار پیمایش</string>
+    <string name="power_menu">منوی پاور</string>
+    <string name="led_options">ال ای دی</string>
+    <string name="spen_options">حرکت قلم اس</string>
+    <string name="header_system">سیستم</string>
+    <string name="sound">صدا</string>
+    <string name="lockscreen_options">قفل صفحه</string>
+    <string name="title_ribbon">روبان ها</string>
+    <string name="weather">آب و هوا</string>
+    <string name="tools">ابزارها</string>
+    <string name="installer">نصب کننده</string>
+
+    <!-- Activity titles defined in AndroidManifest.xml -->
+    <string name="title_about">AOKP درباره </string>
+    <string name="title_ui">رابط کاربری عمومی</string>
+    <string name="title_statusbar_clock">ساعت نوار وضعیت</string>
+    <string name="title_statusbar_toggles"> ضامن نوار وضعیت</string>
+    <string name="title_statusbar_battery">باتری نوار وضعیت</string>
+    <string name="title_statusbar_signal">آنتن نوار وضعیت</string>
+    <string name="title_navbar">نوار پیمایش</string>
+    <string name="title_navring">حلقه پیمایش</string>
+    <string name="title_power_menu">منوی پاور</string>
+    <string name="title_led">کنترل ال ای دی</string>
+    <string name="title_spen">حرکت قلم اس</string>
+    <string name="title_lockscreens">گزینه های قفل صفحه</string>
+    <string name="title_lockscreens_targets">اهداف قفل صفحه</string>
+    <string name="title_sound">تنظیمات صدا</string>
+    <string name="title_weather">تنظیمات آب و هوا</string>
+    <string name="title_performance">تنظیمات کارایی</string>
+    <string name="title_installer">تنظیمات نصب کننده</string>
+    <string name="title_clipboard_share">اشتراک در کلیپ برد</string>
+    <string name="mgerrit_activity_name">mGerrit</string>
+    <string name="ribbon_settings_title">روبان ها</string>
+
+    <!-- Header Summaries -->
+    <string name="header_summary_clock">@null</string>
+    <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_general_ui">@null</string>
+    <string name="header_summary_battery">@null</string>
+    <string name="header_summary_signal">@null</string>
+    <string name="header_summary_navigation_bar">@null</string>
+    <string name="header_summary_power_menu">@null</string>
+    <string name="header_summary_led">@null</string>
+    <string name="header_summary_spen">@null</string>
+    <string name="header_summary_sound">@null</string>
+    <string name="header_summary_performance">@null</string>
+    <string name="header_summary_lockscreens">@null</string>
+    <string name="header_summary_weather">@null</string>
+    <string name="header_summary_vibrations">@null</string>
+    <string name="ribbon_settings_summary">@null</string>
+    <string name="header_summary_installer">@null</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_nav_bar_reset">تنظیم مجدد نوار پیمایش</string>
+    <string name="menu_ribbon_reset">تنظیم مجدد روبان</string>
+    <string name="menu_ribbon_apps">تنظیم مجدد برنامه ها</string>
+    <string name="menu_ribbon_rearrange">بازچیدن روبان</string>
+    <string name="menu_ribbon_hide">مخفی کردن برنامه ها</string>
+    <string name="menu_ribbon_toggles"> تنظیم ضامن ها </string>
+    <string name="menu_ribbon_na">در دسترس نیست</string>
+    <string name="menu_ribbon_toggles_error">ضامن ها فقط برای روبان چپ و راست در دسترس هستند</string>
+    <string name="menu_user_interface_reset">تنظیم مجدد پس زمینه اعلان ها</string>
+    <string name="menu_lockscreens_reset">تنظیم مجدد پس زمینه قفل صفحه</string>
+
+    <!-- General Strings -->
+    <string name="advanced_settings">تنظیمات پیشرفته</string>
+    <string name="misc_short">متفرقه</string>
+    <string name="custom_app_icon_successfully">"آیکون تنظیم شد"</string>
+    <string name="text_on">روشن</string>
+    <string name="text_off">خاموش</string>
+
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">ذخیره کننده نیرو</string>
+    <string name="title_show_screenshot">اسکرین شات</string>
+    <string name="title_show_torch_toggle">چراغ قوه</string>
+    <string name="title_show_airplane_toggle">حالت هواپیما</string>
+    <string name="title_show_navbar_hide"> ضامن های نوار سیستم</string>
+    <string name="summary_show_navbar_hide">  فعال کردن این ضامن ها را نشان میدهد که نوار پیمایش و وضعیت را پنهان می کند</string>
+    <string name="title_show_volume_state_toggle">وضعیت های صدا</string>
+    <string name="title_show_reboot_keyguard">ریبوت در قفل صفحه</string>
+    <string name="summary_show_reboot_keyguard">فعال کردن این گزینه ریبوت را در قفل صفحه نمایش می دهد</string>
+
+    <!-- S Pen -->
+    <string name="spen_left_title">عملکرد در کشیدن به چپ</string>
+    <string name="spen_right_title">عملکرد در کشیدن به راست</string>
+    <string name="spen_up_title">عملکرد در کشیدن به بالا</string>
+    <string name="spen_down_title">عملکرد در کشیدن به پایین</string>
+    <string name="spen_double_title">عملکرد در دوبار ضربه زدن</string>
+    <string name="spen_long_title">عملکرد در فشار طولانی</string>
+    <string name="spen_enable">فعال کردن حرکت قلم اس</string>
+    <string name="spen_enable_summary">تنظیم عملکردهای سفارشی برای حرکت قلم اس</string>
+    <string name="spen_extras_cat">گزینه های اضافی قلم اس</string>
+    <string name="spen_gestures_cat">حرکت های قلم اس</string>
+    <string name="enable_stylus_pointer_title">فعال کردن نشانگر قلم اس</string>
+    <string name="enable_stylus_pointer_summary">فعال کردن آیکون موس به هنگام استفاده از قلم اس</string>
+
+    <!-- Installer -->
+    <string name="persist_options">ماندگاری</string>
+    <string name="persist_enable">فعال کردن ماندگاری</string>
+    <string name="persist_enable_summary">فعال کردن ماندگاری داده ها در نصب ها</string>
+    <string name="persist_prop_density">ماندگاری چگالی</string>
+    <string name="persist_prop_density_summary">ماندگاری چگالی ال سی دی</string>
+    <string name="persist_file_hosts">ماندگاری میزبان</string>
+    <string name="persist_file_hosts_summary">ماندگاری داده های میزبان</string>
+
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">فعال کردن ذخیره انرژی</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+
+    <string name="title_pref_powersaving_data_screen_off">عملکرد داده ها در صفحه خاموش</string>
+    <string name="summary_pref_powersaving_data_screen_off">با داده های هنگامی که صفحه خاموش است چکار کرد</string>
+
+    <string name="title_pref_powersaving_data_screen_off_delay">تاخیر عملکرد داده</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">چقدر باید صبر کرد قبل از اعمال عملکرد داده</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">استفاده از برنامه سفارشی</string>
+    <string name="use_custom_app_summary">استفاده از برنامه سفارشی به جای برنامه های اخیر</string>
+    <string name="select_custom_app_title">انتخاب برنامه سفارشی</string>
+    <string name="group_applications">برنامه ها</string>
+
+    <!-- About -->
+    <string name="devs">افراد</string>
+    <string name="aokp">Android Open Kang پروژه</string>
+    <string name="aokp_website_title">AOKP وبسایت</string>
+    <string name="aokp_website_summary">www.aokp.co - تمام توزیع های جدید را در اینجا پیدا کنید</string>
+    <string name="aokp_review_title">mGerrit</string>
+    <string name="aokp_review_summary">View AOKP\'s and AOSP\'s Gerrit Review instances quickly and easily</string>
+    <string name="aokp_irc_title"> در IRC به ما بپیوندید</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">AOKP درباره</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
+    <string name="github_aokp">https://github.com/AOKP</string>
+    <string name="github_adam">https://github.com/syaoran12</string>
+    <string name="github_akellar">https://github.com/akellar</string>
+    <string name="github_bajee11">https://github.com/Bajee11</string>
+    <string name="github_bmc08gt"> https://github.com/BMc08GT</string>
+    <string name="github_birdman">https://github.com/mrbirdman</string>
+    <string name="github_championswimmer">https://github.com/championswimmer</string>
+    <string name="github_dhacker29">https://github.com/dhacker29</string>
+    <string name="github_graffixnyc">https://github.com/graffixnyc</string>
+    <string name="github_hashcode">https://github.com/Hashcode</string>
+    <string name="github_hillbillyhacker">https://github.com/hillbillyhacker86</string>
+    <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
+    <string name="github_jubakuba">https://github.com/Jubakuba</string>
+    <string name="github_k900">https://github.com/K900</string>
+    <string name="github_kecinzer">https://github.com/kecinzer</string>
+    <string name="github_khasmek">https://github.com/KhasMek</string>
+    <string name="github_kwes">https://github.com/kwes1020</string>
+    <string name="github_marclandis">https://github.com/MarcLandis</string>
+    <string name="github_rohan32">https://github.com/rohanmathur</string>
+    <string name="github_roman">https://github.com/romanbb</string>
+    <string name="github_protekk">https://github.com/ProTekk</string>
+    <string name="github_qnhoang81">https://github.com/qnhoang81</string>
+    <string name="github_scar45">https://github.com/scar45</string>
+    <string name="github_sethyx">https://github.com/sethyx</string>
+    <string name="github_sixstringsg">https://github.com/sixstringsg</string>
+    <string name="github_stevespear">https://github.com/Stevespear426</string>
+    <string name="github_tdm">https://github.com/tdm</string>
+    <string name="github_whitehawk">https://github.com/Whitehawkx</string>
+    <string name="github_xoom">https://github.com/xoomdev</string>
+    <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
+
+    <!-- General UI -->
+    <string name="bootani_cat">انیمیشن راه اندازی</string>
+    <string name="navbar_cat">نوار پیمایش</string>
+    <string name="notification_cat">اعلان ها</string>
+    <string name="display_cat">صفحه نمایش</string>
+    <string name="recents_cat">برنامه های اخیر</string>
+    <string name="tabletUI_cat">رابط کاربری تبلت</string>
+    <string name="enable_volume_options">فعال کردن پنل صدا</string>
+    <string name="status_bar_notif_count_title">نمایش تعداد اعلان ها</string>
+    <string name="status_bar_notif_count_summary">تعداد اعلان های در حال انتظار در نوار وضعیت را نشان می دهد</string>
+    <string name="vibrate_notif_expand_title">لرزش در بسط دادن</string>
+    <string name="vibrate_notif_expand_summary">لرزش به هنگام بسط دادن اعلان ها( نیاز به  ریست کردن رابط کاربری دارد)</string>
+    <string name="disable_bootanimation_title">غیرفعال کردن انیمیشن راه اندازی</string>
+    <string name="custom_bootanimation_title">انیمشن راه اندازی سفارشی شده </string>
+    <string name="custom_bootanimation_summary">یک فایل زیپ را انتخاب کنید تا به عنوان انیمیشن جدید شما استفاده شود</string>
+    <string name="install_file_manager_error">برنامه ای پیدا نشد تا با آن فایل زیپ انتخاب شود.لطفا یک فایل منیجر نصب کنید</string>
+    <string name="notification_wallpaper_title">انتخاب پس زمینه اعلان ها</string>
+    <string name="notification_wallpaper_summary">با زدن دکمه منو میتوانید پس زمینه را حذف کنید</string>
+    <string name="notif_wallpaper_alpha_title">شفافیت پس زمینه اعلان ها</string>
+    <string name="alpha_dialog_title">تنظیم مقدار شیشه ای بودن</string>
+    <string name="custom_carrier_label_title">نام اپراتور سفارشی</string>
+    <string name="custom_carrier_label_explain">لطفا یک نام جدید وارد کنید. اینجا را خالی بگذارید تا به اپراتور اصلی بازگردد</string>
+    <string name="custom_carrier_label_notset">اپراتور سفارشی در حال حاضر تنظیم نشده است</string>
+    <string name="ime_switcher_title">نمایش انتخاب روش ورودی</string>
+    <string name="ime_switcher_summary">در نوار وضعیت هنگام تایپ کردن</string>
+    <string name="wakeup_when_plugged_unplugged_title">بیدار شدن هنگام شارژ</string>
+    <string name="wakeup_when_plugged_unplugged_summary">دستگاه هنگام قطع و یا وصل شارژر بیدار می شود</string>
+    <string name="system_power_crt_screen_off_title">CRT خاموش شدن</string>
+    <string name="system_power_crt_screen_off_summary">صفحه نمایش به هنگام خاموش شدن انمیشن پرتو الکترون اجرا میکند</string>
+    <string name="system_power_crt_mode_title"> CRT حالت انیمیشن</string>
+    <string name="system_power_crt_mode_dialog_title">CRT نمایش انیمیشن</string>
+    <string name="system_power_crt_mode_horizontal">ایستاده افقی</string>
+    <string name="system_power_crt_mode_vertical">ایستاده عمودی</string>
+    <string name="system_power_crt_mode_both">مستقل از جهت صفحه</string>
+    <string name="lefty_mode_title">حالت چپی</string>
+    <string name="lefty_mode_summary">مکان نوار پیمایش را عوض میکند (نیاز به ریست کردن رابط کاربری دارد(</string>
+    <string name="rotate_180_title">اجازه چرخش ۱۸۰ درجه</string>
+    <string name="rotate_180_summary">فعال کردن این به شما اجازه میدهد تا گوشی خود را سر و ته بگیرید</string>
+    <string name="rotate_270_title">اجازه چرخش ۲۷۰ درجه</string>
+    <string name="rotate_270_summary"> فعال کردن این اجازه میدهد تاگوشی خود را به چپ بچرخانید </string>
+    <string name="recent_kill_all">Kill-All فعال کردن دکمه</string>
+    <string name="recent_kill_all_summary">یک دکمه در صفحه برنامه های اخیر نمایش داده میشود که همه برنامه ها را می بندد</string>
+    <string name="ram_bar">نوار رم اخیر</string>
+    <string name="ram_bar_summary">در پنجره برنامه های اخیر مقدار رم مصرف شده را نشان می دهد</string>
+    <string name="longpress_to_kill">بستن با دکمه بازگشت سخت افزار</string>
+    <string name="longpress_to_kill_summary">نگه داشتن دکمه بازگشت سخت افزار برنامه رویی را می بندد</string>
+    <string name="tablet_ui">اجبار رابط کاربری تبلت</string>
+    <string name="tablet_ui_summary">این رابط کاربری را به تبلت تغییر می دهد.(نیاز به ریست کردن رابط کاربری دارد(</string>
+    <string name="hide_extras">مخفی کردن اضافه ها</string>
+    <string name="hide_extras_summary">در حالت سازگاری برخی از آیکون های نوار سیستم را مخفی میکند</string>
+    <string name="bootanimation_preview">پیش نمایش انیمیشن راه اندازی</string>
+    <string name="apply">اعمال</string>
+    <string name="clear_custom_bootanimation">پاک کردن انیمیشن راه اندازی سفارشی شده</string>
+    <string name="set_custom_bootanimation">تنظیم سفارشی</string>
+    <string name="creating_preview">در حال ساختن پیشنمایش</string>
+    <string name="error_reading_zip_file">خطا در هنگام خواندن فایل زیپ</string>
+    <string name="error_creating_preview">خطا در هنگام تولید پیش نمایش</string>
+    <string name="multipane_ui">تنظیم پنل دوقلو</string>
+    <string name="multipane_ui_summary">فعال کردن این رابط کاربری پنل دوقلو (تبلت)را برای برنامه های خاص فعال میکند</string>
+    <string name="show_overflow_title">نمایش دکمه منوی اضافی رابط کاربری</string>
+    <string name="show_overflow_summary">دکمه سه نقطه منو را در برنامه ها نشان می دهد</string>
+    <string name="show_overflow_toast_enable">دکمه اضافی منو شاید تا هنگامی که برنامه ها دوباره راه اندازی نشوند نشان داده نشود</string>
+    <string name="show_overflow_toast_disable">دکمه اضافی منو شاید تاهنگامی که برنامه ها دوباره راه اندازی نشوند مخفی نشود</string>
+    <string name="notification_show_wifi_ssid_title">WiFi نمایش اسم شبکه</string>
+    <string name="notification_show_wifi_ssid_summary">نمایش اسم شبکه ای که هم اکنون به آن متصل هستید</string>
+    <string name="brightness_slider_title">روشنایی نوار وضعیت لغزنده</string>
+    <string name="brightness_slider_summary">فعال کردن این گزینه به شما اجازه میدهد تا با لغزاندن انگشت خود روی نوار وضعیت روشنایی صفحه را تغییر دهید.توجه: این گزینه به هنگام فعال بودن روشنایی خودکار کار نمیکند</string>
+    <string name="user_mode_ui">حالت رابط کاربری</string>
+    <string name="user_mode_ui_summary">شیوه قرارگرفتن نوار وضعیت و پیمایش را انتخاب کنید</string>
+    <string name="phone_mode_ui">گوشی- نوار پیمایش در حالت افقی به گوشه منتقل میشود</string>
+    <string name="tablet_mode_ui">تبلت-نوار وضعیت و پیمایش را ترکیب میکند</string>
+    <string name="phablet_mode_ui">فبلت-نوار پیمایش در حالت افقی در پایین صفحه میماند</string>
+    <string name="transparency_dialog_title">تنظیمات شفافیت</string>
+    <string name="transparency_dialog_linked_transparency"> پیوند شفافیت نوار پیمایش و نوار وضعیت</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">نوار وضعیت و نوار پیمایش</string>
+    <string name="transparency_dialog_statusbar">نوار وضعیت</string>
+    <string name="transparency_dialog_navbar">نوار پیمایش</string>
+    <string name="transparency_dialog_match_keyguard_alpha">تطبیق شفافیت قفل صفحه</string>
+    <string name="transparency_dialog_transparency">شفافیت صفحه خانگی</string>
+    <string name="transparency_dialog_transparency_keyguard">شفافیت قفل صفحه</string>
+    <string name="transparency_dialog_lockscreen">قفل صفحه</string>
+
+    <!-- LCD Density -->
+    <string name="lcd_density_title">چگالی ال سی دی</string>
+    <string name="lcd_density_summary">ناشناخته</string>
+    <string name="current_lcd_density">"چگالی فعلی ال سی دی: "</string>
+    <string name="lcd_density_wizard">برنامه جادویی چگالی ال سی دی</string>
+    <string name="follow_through_title">!تا آخر دنبال کنید</string>
+    <string name="follow_through_summary">.مطمئن شوید که مراحل را یکی یکی دنبال میکنید و قبل از رفتن به مرحله بعد مرحله قبلی را کامل میکنید</string>
+    <string name="stock_density_title">مرحله اول :چگالی ال سی دی را به مقدار اولیه بازگردانید</string>
+    <string name="stock_density_summary">.تبلت ها و گوشی های قدیمی از ۱۶۰ استفاده میکنند و بیشتر گوشی ها از ۲۴۰ و گلکسی نکسوس از ۳۲۰ ببه صورت پیشفرض استفاده می کند</string>
+    <string name="stock_density_changed_summary">"چگالی این مقدار است: "</string>
+    <string name="reboot_title">مرحله دوم:ریبوت کنید</string>
+    <string name="reboot_summary">!بعد از ریبوت کردن برگردید و بقیه مراحل را انجام دهید</string>
+    <string name="clear_market_data_title">!مرحله سوم: داده های فروشگاه گوگل را پاک کنید</string>
+    <string name="clear_market_data_cleared">داده های فروشگاه پاک شد</string>
+    <string name="clear_market_data_donot_cleared">"!داده های فروشگاه پاک نمی شود.لطفا خودتان آنها را پاک کنید"</string>
+    <string name="dpi">DPI</string>
+    <string name="open_market_title">!مرحله چهارم:فروشگاه را باز کنید و روی پذیرفتن بزنید</string>
+    <string name="open_market_summary">وقتی کارتان تمام شد دکمه بازگشت را بزنید تا به اینجا بازگردید</string>
+    <string name="open_market_summary_could_not_open">".فروشگاه گوگل باز نمیشود! اگر مطمئن هستید که آن را نصب کردید خودتان با لانچر آن را اجرا کنید"</string>
+    <string name="custom_density_title">مرحله پنجم:چگالی را به میزانی که دوست دارید تغییر دهید</string>
+    <string name="custom_density_summary">اگر با فروشگاه مشکل همسازی داشتید به اینجا بازگردید و مراحل را تکرار کنید </string>
+    <string name="custom_density_summary_invalid">"!چگالی نامعتبر است"</string>
+    <string name="custom_density">سفارشی</string>
+    <string name="set_custom_density_title">تنظیم چگالی سفارشی</string>
+    <string name="set_custom_density_set">تنظیم</string>
+    <string name="custom_density_dialog_title">"!هشدار"</string>
+    <string name="custom_density_dialog_summary">"تغییر چگالی صفحه نمایش ممکن است باعث بروز رفتارهای غیر منتظره ای در برنامه ها شود.اگر با مشگل ناسازگاری فروشگاه مواجه شدید لطفا برگردید اینجا و دوباره از مرحله اول شروع کنید"</string>
+    <string name="custom_density_dialog_button_got">!گرفتید</string>
+    <string name="custom_density_dialog_button_reboot">حالا ریبوت کنید</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">سبک ضامن</string>
+    <string name="toggle_style_summary">اینکه آیکون یا نوشته روی ضامن ها نشان داده شود</string>
+    <string name="toggles_layout_title">لایه ضامن</string>
+    <string name="toggles_per_row_title">ضامن ها در هر سطر</string>
+    <string name="toggles_per_row_summary">انتخاب کنید که چه تعداد ضامن در هر سطر نشان داده شود</string>
+    <string name="toggles_style_title">سبک ضامن</string>
+    <string name="toggles_style_summary">کاشی یا سنتی</string>
+    <string name="toggles_display_close">بستن</string>
+    <string name="toggles_order_title">ترتیب ضامن</string>
+    <string name="toggles_order_summary">ترتیبی که ضامن ها قرار میگیرند را تعیین کنید</string>
+    <string name="title_settings_behavior">از رفتار پیش فرض تنظیمات استفاده شود</string>
+    <string name="summary_settings_behavior_default">فشار کوتاه برای تنظیمات فشار طولانی برای ضامن ها</string>
+    <string name="summary_settings_behavior_reverse">فشار کوتاه برای ضامن ها فشار طولانی برای تنظیمات</string>
+    <string name="title_toggles_autohide">مخفی شدن خودکار ضامن ها</string>
+    <string name="summary_toggles_autohide">بعد از اینکه کشو بسته شود ظامن ها مخفی می شوند</string>
+    <string name="brightness_location_title">محل روشنایی</string>
+    <string name="reset_toggles_title">بازنشانی ضامن ها</string>
+    <string name="reset_toggles_summary">بازنشانی تمام ضامن ها و ترتیبشان</string>
+    <string name="toggle_button_alpha_title">شفافیت نشانگر ضامن</string>
+    <string name="toggle_btn_enabled_color_title">رنگ نشانگر فعال شد</string>
+    <string name="toggle_btn_disabled_color_title">رنگ نشانگر غیرفعال شد</string>
+    <string name="toggle_btn_background_title">شفافیت پس زمینه ضامن</string>
+    <string name="toggle_text_color_title">رنگ متن ضامن</string>
+    <string name="toggle_favcontact_title">مخاطب مورد علاقه</string>
+    <string name="toggle_favcontact_summary">مخاطب مورد علاقه تان را انتخاب کنید</string>
+    <string name="toggle_enable_fasttoggle_title">فعال کردن ضامن سریع</string>
+    <string name="toggle_enable_fasttoggle_summary">لغو رفتار پیش فرض</string>
+    <string name="toggle_choose_fasttoggle_side_title">انتخاب سمت ضامن سریع</string>
+    <string name="toggle_choose_fasttoggle_side_summary">سمتی که ضامن سریع را راه می اندازد انتخاب کنید</string>
+    <string name="toggle_dialog_arrange_title">راه اندازی ضامن</string>
+    <string name="toggle_dialog_add_toggles">ضامن ها را برای افزودن انتخاب کنید</string>
+    <string name="toggle_style_tile">کاشی</string>
+    <string name="toggle_style_traditional">سنتی</string>
+    <string name="toggle_style_scrollable">قابل اسکرول</string>
+    <string name="toggle_swap_handle_side">دستگیره کشیدن در راست</string>
+    <string name="add_toggles">تعویض ضامن ها</string>
+    <string name="screenshot_delay_title">تاخیر اسکرین شات</string>
+    <string name="screenshot_delay_summary">تاخیری که در فشار طولانی ضامن اسکرین شات استفاده می شود</string>
+    <string name="toggle_action_title">عملکرد $1% و آیکونش</string>
+    <string name="toggle_action_title_alt">عملکرد فشار طولانی $1% و آیکونش</string>
+    <string name="toggle_longpress_title">فشار طولانی $1%</string>
+    <string name="custom_toggle_desc"> هرکلیک باعث میشه که ضامن به عملکرد بعدی بره. اگر ضامن شما یک عملگرد خالی بدون آیون داشته باشد، آیکون کلیک طولانی استفاده می شود. این برای کاربرانی که میخواهند بدون اجرای چیزی به راحتی در عملکرد های کلیکی خود بچرخند مفید است </string>
+    <string name="custom_help_title">چگونه کار میکند</string>
+    <string name="custom_help_summary">برای اطلاعات بیشتر کلیک کنید</string>
+    <string name="custom_toggle_okay">صرف نظر</string>
+    <string name="custom_toggle_cat">ضامن سفارشی</string>
+    <string name="custom_button_cat">عملکرد های ضامن سفارشی</string>
+    <string name="dclick_action_title">عملکردهای دابل کلیک</string>
+    <string name="dclick_action_summary">تغییر وضعیت با دابل کلیک</string>
+    <string name="boot_action_title">وضعیت اول در راه اندازی</string>
+    <string name="boot_action_summary">وضعیت اول در راه اندازی را اجرا می کند</string>
+    <string name="match_icon_action_title">اجرای عملکرد نمایش داده شده</string>
+    <string name="match_icon_action_summary">مفید برای هماهنگی کار و آیکون هر استفاده مخصوصتان</string>
+    <string name="action_toggle_title">عملکرد ضامن ها</string>
+    <string name="action_toggle_summary">ترتیب ضامن ها از چپ به راست</string>
+    <string name="no_dclick">بدون عملکرد</string>
+    <string name="back_one_dclick">بر عکس کردن وضعیت</string>
+    <string name="state_one_dclick">تنظیم وضعیت اول</string>
+    <string name="skip_back_dclick">پرش به عقب (بدون عملکرد)</string>
+    <string name="skip_up_dclick">پرش به جلو (بدون عملکرد)</string>
+    <string name="collapse_bar_title">بستن سایه بان اعلان ها</string>
+    <string name="collapse_bar_summary">هنگام تکمیل عملکرد سایه بان اعلان ها بسته میشود</string>
+    <string name="no_collapse">هیچگاه</string>
+    <string name="click_collapse">در کلیک</string>
+    <string name="long_collapse">در کلیک طولانی</string>
+    <string name="both_collapse">هم کلیک و هم کلیک طولانی</string>
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">سبک ساعت</string>
+    <string name="title_clock_ampm_entries">سبک ق.ط/ب.ظ</string>
+    <string name="enable_clock_weekday">روز هفته</string>
+    <string name="enable_clock_weekday_summary">روز هفته مختصر شده قبل از ساعت</string>
+    <string name="colors">رنگ ها</string>
+    <string name="clock_color_title">رنگ ساعت</string>
+    <string name="notification_shade_clock">سایه اعلان ها</string>
+    <string name="alarm">هشدارها</string>
+    <string name="clock_options">گزینه های ساعت</string>
+    <string name="nothing">هیچ چیز</string>
+    <string name="today">تقویم امروز</string>
+    <string name="event">رخداد جدید تقویم</string>
+    <string name="voiceassist">دستورهای صوتی</string>
+    <string name="title_clock_doubleclick">عملکرد دابل کلیک روی ساعت</string>
+    <string name="title_clock_longclick">عملکرد کلیک طولانی روی ساعت</string>
+    <string name="title_clock_shortclick">عملکرد کلیک کوتاه روی ساعت</string>
+
+    <!-- Toggle Strings to be called from device overlays -->
+    <string name="toggle_airplane_mode">حالت هواپیما</string>
+    <string name="toggle_auto_rotate">چرخش خودکار</string>
+    <string name="toggle_bluetooth">بلوتوث</string>
+    <string name="toggle_fcharge">شارژ سریع</string>
+    <string name="toggle_gps">GPS</string>
+    <string name="toggle_lte">LTE</string>
+    <string name="toggle_data">داده ها</string>
+    <string name="toggle_nfc">NFC</string>
+    <string name="toggle_silent">بی صدا</string>
+    <string name="toggle_swagger">Swagger</string>
+    <string name="toggle_sync">همگام سازی</string>
+    <string name="toggle_torch">چراغ قوه</string>
+    <string name="toggle_statusbar">نوار وضعیت</string>
+    <string name="toggle_2g">2G</string>
+    <string name="toggle_usb_tether">USB Tether</string>
+    <string name="toggle_vibrate">لرزش</string>
+    <string name="toggle_wifi_tether">Wifi Tether</string>
+    <string name="toggle_wifi">Wi-Fi</string>
+    <string name="toggle_user">کاربر</string>
+    <string name="toggle_favorite_contact">مخاطب مورد علاقه</string>
+    <string name="toggle_settings">تنظیمات</string>
+    <string name="toggle_signal">آنتن</string>
+    <string name="toggle_clock">ساعت</string>
+    <string name="toggle_ime">انتخاب روش ورودی</string>
+    <string name="toggle_battery">باتری</string>
+    <string name="toggle_brightness">روشنایی</string>
+    <string name="toggle_sound_state">زنگ/لرزش/بی صدا</string>
+    <string name="toggle_navbar_hide"> مخفی شدن خودکار نوار پیمایش</string>
+    <string name="toggle_quickrecord">ضبط سریع</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">سبک آیکون باتری</string>
+    <string name="battery_not_title">آیکون باتری در اعلان ها</string>
+    <string name="battery_not_summary">آیکون باتری جایی نشان داده میشود که دکمه حذف همه نشان داده شده </string>
+    <string name="battery_bar">مکان نوار باتری</string>
+    <string name="battery_bar_color">رنگ نوار باتری</string>
+    <string name="battery_bar_cat">گزینه های نوار باتری</string>
+    <string name="battery_bar_style_title">سبک نوار باتری</string>
+    <string name="battery_bar_thickness_title">ضخامت نوار باتری</string>
+    <string name="battery_bar_animate_title">فعال کردن انیمیشن شارژ باتری</string>
+    <string name="battery_bar_animate_summary">فعال کردن انیمیشن شارژ ممکن است تجربه خوبی برای کاربر نباشد.به صلاحدید خودتان این را فعال کنید</string>
+
+    <!-- Statusbar | Signal -->
+    <string name="signal_style">سبک نشانگر آنتن</string>
+    <string name="signal_color_title">رنگ متن آنتن</string>
+    <string name="hide_signal_title">مخفی کردن نشانگر آنتن</string>
+    <string name="hide_signal_summary">فعال کردن این نشانگر آنتن را حذف میکند (وقتی قدرت آنتن تغیر پیدا کند آپدیت میشود)</string>
+    <string name="wifi_signal_style">WiFiسبک نشانگرآنتن </string>
+    <string name="wifi_signal_color_title">WiFi رنگ متن آنتن</string>
+    <string name="alt_signal_title">سبک دیگر نشانگر آنتن</string>
+    <string name="alt_signal_summary">از نوع دیگر نمایش سیگنال خوشه ای گینگربرد استفاده می کند</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">انتخاب کننده رنگ</string>
+    <string name="press_color_to_apply">روی رنگ بفشارید تا اعمال شود</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">تنظیم</string>
+    <string name="ics_color">هولو</string>
+
+    <!-- Navigation Bar -->
+    <string name="navigation_bar">نوار پیمایش</string>
+    <string name="navbar_hide">گزینه های مخفی سازی نوار پیمایش</string>
+    <string name="navbar_button_cat">دکمه های نوار پیمایش</string>
+    <string name="navbar_color_cat">رنگ ها و شفافیت</string>
+    <string name="title_pref_menu_display">مکان منو</string>
+    <string name="summary_pref_menu_display">دکمه های منو میتوانند بازچینی و یا مخفی شوند(در مواقعی که از دکمه منوی بزرگ استفاده می کنید)</string>
+    <string name="title_pref_navigation_menu_display">قابلیت دیدن منو</string>
+    <string name="summary_pref_navigation_menu_display">تعریف کنید که چگونه و کجا میخواهید دکمه منو نشان داده شود</string>
+    <string name="navbar_qty_title">تعداد دکمه های نوار پیمایش</string>
+    <string name="navbar_qty_summary">انتخاب تعداد دکمه های نوار پیمایش</string>
+    <string name="navbar_action_title"> %1$s عملکرد و آیکون دکمه</string>
+    <string name="button_transparency_title">شفافیت نوار پیمایش</string>
+    <string name="navbar_width_help_title">کمک برای عرض نوار پیمایش ترکیب شده</string>
+    <string name="navbar_width_help_summary">صد هفتاد درصد از عرض صفحه است و پنج ،۳۰ درصد.صفر برای هر دکمه پیشفرض است.</string>
+    <string name="width_port_title">عرض نوار ترکیب شده عمودی</string>
+    <string name="width_land_title">عرض نوار ترکیب شده افقی</string>
+    <string name="navbar_widgets">ابزارک های نوار پیمایش</string>
+    <string name="navbar_enable_bar">فعال کردن نوار</string>
+    <string name="navigation_bar_height_title">ارتفاع نوار پیمایش</string>
+    <string name="navigation_bar_height_summary">ارتفاع نوار پیمایش در حالت عمودی</string>
+    <string name="navigation_bar_height_landscape_title">ارتفاع نوار پیمایش در حالت افقی</string>
+    <string name="navigation_bar_height_landscape_summary">ارتفاع نوار پیمایش وقتی گوشی در حالت افقی است</string>
+    <string name="system_bar_height_title">ارتفاع نوار سیستم</string>
+    <string name="system_bar_height_summary">ارتفاع نوار سیستم هنگامی که در حالت عمودی است</string>
+    <string name="system_bar_height_landscape_title">ارتفاع نوار سیستم افقی</string>
+    <string name="system_bar_height_landscape_summary">ارتفاع نوار سیستم در وقتی که گوشی در حالت افقی است</string>
+    <string name="navigation_bar_width_title">عرض نوار پیمایش</string>
+    <string name="navigation_bar_width_summary">ارتفاع نوار پیمایش وقتی که در گوشه قرار دارد</string>
+    <string name="navbar_enable_dialog_title">!ریبوت کردن ضروریست</string>
+    <string name="navbar_enable_dialog_msg">  گوشی خود را ریبوت کنید تا مطمئن شوید همه چیز به درستی کار می کند<b>باید</b> شما همین الآن </string>
+    <string name="navbar_enable_dialog_negative">بعدا ریبوت میکنم</string>
+    <string name="navbar_enable_dialog_Positive">!الآن ریبوت کن</string>
+    <string name="navbar_height_dialog_title">!ریبوت کردن ضروریست</string>
+    <string name="navbar_height_dialog_summary">لطفا ریبوت کنید تا تغییرات ارتفاع اعمال شوند</string>
+    <string name="navbar_height_dialog_button_later">بعدا ریبوت میکنم</string>
+    <string name="navbar_height_dialog_button_reboot">!الآن ریبوت کن</string>
+    <string name="navigation_bar_color_title">رنگ نوار پیمایش</string>
+    <string name="navigation_bar_tint_title">رنگ دکمه های نوار پیمایش</string>
+    <string name="navigation_bar_colorall_title">رنگ آمیزی تمام دکمه ها</string>
+    <string name="navigation_bar_colorall_summary">اگر فعال شود آیکون های سفارشی رنگی می شوند</string>
+    <string name="navigation_bar_glow_tint_title">رنگ درخشش نوار پیمایش</string>
+    <string name="navigation_bar_glow_tint_summary">رنگ درخششی که هنگام لمس دکمه های نوار پیمایش ظاهر میشود را تنظیم میکند</string>
+    <string name="glow_times_title">زمان انیمیشن درخشش دکمه</string>
+    <string name="glow_times_off">خاموش</string>
+    <string name="glow_times_superquick">بسیار سریع</string>
+    <string name="glow_times_quick">سریع</string>
+    <string name="glow_times_normal">معمولی</string>
+    <string name="navbar_widgets_instructions">برای دیدن روی صفحه بکشید-برای انخاب کلیک کنید</string>
+    <string name="navbar_widgets_reset">بازنشانی ابزارک ها</string>
+    <string name="navbar_widget_summary">ابزارک  %1$ از %2$</string>
+    <string name="navbar_widget_summary_add">کلیک کنید تا ابزارک اضافه شود </string>
+    <string name="navbar_widgets_title">پیکربندی ابزارک ها</string>
+    <string name="navbar_widgets_shiftLeft">تغییر نکام به چپ</string>
+    <string name="navbar_widgets_shiftRight">تغییر مکان به راست</string>
+    <string name="navbar_widgets_delete">حذف ابزارک</string>
+    <string name="navigation_bar_menu_arrow_keys_title">کلیدهای جهت منو</string>
+    <string name="navigation_bar_menu_arrow_keys_summary"> فعال کردن این جهت ها را به هنگام تایپ کردن در نوار پیمایش نشان می دهد </string>
+    <string name="statusbar_hide_title">مخفی کردن نوار وضعیت</string>
+    <string name="statusbar_hide_summary">فعال کردن این به طور کامل نوار وضعیت را غیرفعال می کند</string>
+    <string name="navigation_bar_alpha_title">تاری نوار وضعیت و پیمایش</string>
+    <string name="navbar_hide_enable_title">مخفی کردن نوار پیمایش </string>
+    <string name="systembar_hide_enable_title">نوار سیستم مخفی شده است</string>
+    <string name="drag_handle_opacity_title">تاری دستگیره کشیدن</string>
+    <string name="drag_handle_width_title">عرض دستگیره کشیدن</string>
+    <string name="title_navbar_timeout">زمان نوار پیمایش مخفی</string>
+    <string name="title_systembar_timeout">زمان نوار سیستم مخفی</string>
+    <string name="summary_navbar_timeout">مدت زمان اتمام نمایش پنجره مخفی شده نوار پیمایش</string>
+    <string name="summary_systembar_timeout">مدت زمان اتمام نمایش پنجره مخفی شده نوار سیستم</string>
+    <string name="hide_navbar_timeout_never">هرگز</string>
+    <string name="hide_navbar_timeout_1500">۱.۵ ثانیه</string>
+    <string name="hide_navbar_timeout_3000">۳ ثانیه</string>
+    <string name="hide_navbar_timeout_5000">۵ ثانیه</string>
+    <string name="hide_navbar_timeout_10000">۱۰ ثانیه</string>
+    <string name="hide_navbar_timeout_15000">۱۵ ثانیه</string>
+    <string name="hide_navbar_timeout_30000">۳۰ ثانیه</string>
+    <string name="navbar_buttons_instructions">آیکون را بفشارید تا عملکرد و آیکون سفارشی را تنظیم کنید</string>
+    <string name="navbar_title_menu">گزینه های دکمه</string>
+    <string name="navbar_actiontitle_menu"> %1$ :عملکرد</string>
+    <string name="navbar_longpress_menu">%1$ :فشار طولانی</string>
+    <string name="navbar_icon_menu">آیکون سفارشی</string>
+    <string name="navbar_delete_menu">حذف کردن دکمه</string>
+
+    <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">هدف های حلفه پیمایش</string>
+    <string name="navbar_ring">هدف های سفارشی حلقه</string>
+    <string name="navring_enable_long">فعال کردن فشار طولانی حلقه پیمایش</string>
+    <string name="navring_target_save">حلقه های پیمیایش ذخیره شد</string>
+    <string name="navring_target_reset_message">آیا میخواهید حلقه های پیمایش را باز نشانی کنید؟</string>
+    <string name="navring_target_reset">هدف های حلقه پیمایش بازنشانی شد</string>
+    <string name="choose_action_title">انتخاب عملکرد</string>
+    <string name="choose_action_short_title">انتخاب عملکرد کوتاه</string>
+    <string name="choose_action_long_title">انتخاب عملکرد طولانی</string>
+    <string name="action_long_save"> عملکرد طولانی تنظیم شد</string>
+    <string name="title_navring_amount">تعداد هدفهای حلقه پیمایش</string>
+    <string name="summary_navring_amount">تعداد هدفها در حلقه پیمایش رو انتخاب کنبد</string>
+    <string name="interface_navring_settings_title">حلقه پیمایش</string>
+    <string name="interface_navring_settings_summary">@null</string>
+    <string name="navring_target_info">انگشت خود را به سمت هدف ها بکشید تا عملکرد هدف ها را تعیین کنید</string>
+    <string name="navring_clear">پاک کردن عملکرد</string>
+    <string name="navring_short">عملکرد کوتاه</string>
+    <string name="navring_long">عملکرد طولانی</string>
+    <string name="navring_icon">آیکون سفارشی</string>
+    <string name="navring_target_amount_text">تعداد هدف های کنونی</string>
+    <string name="navring_target_longpress_text">عملکرد فشار طولانی</string>
+
+   <!-- Ribbon -->
+    <string name="ribbon_dialog_arrange_title">لایه روبان</string>
+    <string name="ribbon_chooser_instructions">انتخاب کنید کدام روبان را راه می اندازید</string>
+    <string name="ribbon_instructions">آیکون ها را بفشارید تا عملکرد را انتخاب کنید یا حذفش کنید.برای گزینه های بیشتر منو را بفشارید</string>
+    <string name="ribbon_targets_cat">گزینه های روبان</string>
+    <string name="enable_ribbon_text_title">اسم برنامه را نشان بده</string>
+    <string name="enable_ribbon_vibrate_title">لرزش به هنگام لمس محل کشیدن</string>
+    <string name="enable_ribbon_text_summary">فعال کردن نوشته نام برنامه زیر آیکون</string>
+    <string name="ribbon_icon_vibrate_title">لرزش به هنگام لمس هدف</string>
+    <string name="ribbon_icon_space_title">فاصله آیکون های روبان</string>
+    <string name="app_window_space_title">فاصله عمودی آیکون ها</string>
+    <string name="ribbon_icon_size_title">اندازه آیکون</string>
+    <string name="ribbon_dismiss_title">Ribbon dismiss action</string>
+    <string name="ribbon_animation_duration_title">مدت زمان انیمیشن</string>
+    <string name="ribbon_long_swipe_title">کشیدن طولانی محل کشیدن</string>
+    <string name="ribbon_long_press_title">فشار طولانی محل کشیدن</string>
+    <string name="ribbon_icon_size_summary">اندازه آیکون خود را تنظیم کنید</string>
+    <string name="ribbon_lockscreen">روبان قفل صفحه</string>
+    <string name="ribbon_notifications">روبان اعلان ها</string>
+    <string name="ribbon_quicksettings">روبان تنظیمات سریع</string>
+    <string name="ribbon_swipe_left">روبان کشیدن از چپ</string>
+    <string name="ribbon_swipe_right">روبان کشیدن از راست</string>
+    <string name="ribbon_swipe_bottom">روبان کشیدن از پایین</string>
+    <string name="app_window">پنجره برنامه ها</string>
+    <string name="clone_title">روبان را انتخاب کنید تا کپی شود</string>
+    <string name="icon_size_normal">معمولی</string>
+    <string name="icon_size_20">متوسط</string>
+    <string name="icon_size_15">کوچک</string>
+    <string name="ribbon_left_enable_title">فعال کردن کشیدن از چپ</string>
+    <string name="ribbon_right_enable_title">فعال کردن کشیدن از راست</string>
+    <string name="ribbon_bottom_enable_title">فعال کردن کشیدن از پایین</string>
+    <string name="ribbon_bottom_warning_title">شما نمیتوانید کشیدن از پایین را با نوار پیمایش استفاده کنید و باید مخفی شدن خودکار نوارپیمایش یا مخفی کردن دستی را انتخاب کنید </string>
+    <string name="ribbon_button_colorize_title">آیکون عملکردها و رنگ نوشته یکسان باشد</string>
+    <string name="ribbon_color_title">رنگ روبان کشیدن</string>
+    <string name="text_color_title">رنگ نوشته اسم برنامه</string>
+    <string name="ribbon_opacity_title">تاری روبان کشیدن</string>
+    <string name="timeout_spinner_title">اتمام زمان روبان</string>
+    <string name="ribbon_drag_handle_width_title">طول دستگیره کشیدن</string>
+    <string name="ribbon_drag_handle_height_title">ضخامت دستگیره کشیدن</string>
+    <string name="ribbon_insert">افزودن دکمه</string>
+    <string name="ribbon_handle_location_title">محل دستگیره روبان</string>
+    <string name="ribbon_icon_location_title">محل آیکون</string>
+    <string name="window_text_color_title">رنگ نوشته پنجره</string>
+    <string name="window_color_title">رنگ پنجره</string>
+    <string name="window_opacity_title">تاری پنجره</string>
+    <string name="window_columns_title">ستون های پنجره</string>
+    <string name="window_app_hide_title">برنامه هایی که میخواهید مخفی کنید انتخاب کنید</string>
+    <string name="center">مرکز</string>
+    <string name="top">بالا</string>
+    <string name="bottom">پایین</string>
+    <string name="never">هرگز</string>
+    <string name="always">همیشه</string>
+    <string name="not_bar">Not Navbar Actions</string>
+    <string name="multi_select_title">انتخاب اهداف برای اضافه شدن</string>
+    <string name="ribbon_animation_type_title">سبک انیمیشن</string>
+    <string name="ribbon_toggles_button_title">دکمه های ضامنی در پایین</string>
+    <string name="ribbon_hide_ime_title">مخفی کردن محل کشیدن برای کیبورد</string>
+
+    <!-- LED -->
+    <string name="led_on">ال ای دی روشن</string>
+    <string name="led_time_on">زمان روشن بودن چراغ</string>
+    <string name="led_off">ال ای دی خاموش</string>
+    <string name="led_time_off">زمان خاموش بودن چراغ</string>
+    <string name="led_time_seconds">" ثانیه "</string>
+    <string name="led_color_click">روی ال ای دی کلیک کنید تا رنگ را عوض کنید</string>
+    <string name="title_led_screen_on">جلوه ال ای دی هنگامی که صفحه روشن است</string>
+    <string name="led_custom_app">برنامه منتخب</string>
+    <string name="led_custom_default">پیشفرض</string>
+    <string name="led_change_app">تغییر</string>
+    <string name="led_delete_app">حذف</string>
+    <string name="led_keep_app">نگه داشتن</string>
+    <string name="led_custom_title">برنامه های سفارشی ال ای دی</string>
+    <string name="led_custom_message">"مایلید این برنامه را تغییر دهید:"</string>
+    <string name="led_edit_button">-</string>
+    <string name="led_test_notification">تست ال ای دی</string>
+    <string name="led_test_notification_message_now">"تست ال ای دی برای : "</string>
+    <string name="led_test_notification_message_note">". لطفا صفحه نمایش خود را خاموش کنیدتا ال ای دی را ببینید. دکمه تایید را تا زمانی که رنگ ال ای دی را ندیدید نزنید."</string>
+    <string name="led_test_ok">تایید</string>
+    <string name="title_charging_led_on">فعال کردن ال ای دی هنگام شارژ کردن(نیاز به ریبوت کردن دارد)</string>
+    <string name="led_change_brightness">تغییر روشنایی</string>
+    <string name="led_brightness_default">روشنایی پیشفرض :۳۱</string>
+
+    <!-- Sound -->
+    <string name="less_notification_sounds_title">صدا های اعلان های کمتر رایج</string>
+    <string name="less_notification_sounds_summary">صداهای اعلان هر برنامه را محدود می کند که یکبار در زمان تعیین شده پخش شود</string>
+    <string name="title_headphone_audio_mode">عملکرد وصل کردن هدفون</string>
+    <string name="summary_headphone_audio_mode">تعریف رفتار صدا هنگامی که هدفون وصل است</string>
+    <string name="title_bt_audio_mode">عملکرد وصل کردن هدفون بلوتوث</string>
+    <string name="summary_bt_audio_mode">تعریف رفتار صدا هنگامی که هدفون بلوتوث وصل است</string>
+    <string name="headphones_mode_no_action">بدون عملکرد</string>
+    <string name="headphones_mode_vibrate">حالت لرزش</string>
+    <string name="headphones_mode_silent">حالت بی صدا</string>
+    <string name="title_flip_mode">حالت صدای صورت پایین</string>
+    <string name="summary_flip_mode">تعریف رفتار صدا هنگامی که روی گوشی خود رابه پایین میچرخانید</string>
+    <string name="flip_cat_title">عملکرد صورت پایین</string>
+    <string name="title_timeout_sec">پایان زمان صفحه نمایش</string>
+    <string name="summary_timeout_sec">زمانی که صفحه نمایش خاموش است قبل از اینکه حسگر چدخش غیرفعال باشد</string>
+    <string name="title_down_sec">ثانیه های صورت پایین</string>
+    <string name="summary_down_sec">زمان مورد نیازی که بشود در نظر گرفت که روی گوشی به سمت پایین است</string>
+    <string name="flip_action_positive">بسیار خب</string>
+    <string name="flip_dialog_title">چگونه کار میکند</string>
+    <string name="flip_dialog_msg">هنگامی که گوشی خودتان را بر می گردانید، بسته به انتخابتان به حالت بی صدا یا لرزش میرود.به صورت پیشفرض ۱.۵ ثانیه بعذ از چرخاندن طول می کشد تا حالت تغییر کند.سپس ۱۵ ثانیه طول میکشد تا بعد از روشن کردن صفحه نمایش این قابلیت غیرفعال شود. توجه:** شما باید صفحه نمایش را روشن کنید تا پس از برگردادن گوشی صدا فعال شود.(یکبار بعد از اینکه زمان صفحه نمایش تمام شد) </string>
+    <string name="summary_phone_flip_mode">اگر هنگام دریافت یک تماس روی گوشی خود را به پایین بچرخانید حالت بی صدا فعال می شود</string>
+    <string name="title_phone_flip_mode">بی صدا کردن تماس تلفنی</string>
+
+    <!-- Lockscreen -->
+    <string name="lock_widgets_short">ابزارک های قفل صفحه</string>
+    <string name="lockscreen_security_cat">امنیت</string>
+    <string name="lockscreen_layout_cat">لایه</string>
+    <string name="lockscreen_music_cat">موسیقی</string>
+    <string name="lockscreen_weather_cat">آب و هوا</string>
+    <string name="lockscreen_calendar_cat">تقویم</string>
+
+    <string name="lockscreen_menu_unlock_title">گشودن با منو</string>
+    <string name="lockscreen_menu_unlock_summary">از دکمه منو برای گشودن قفل صفحه استفاده کنید</string>
+    <string name="lockscreen_auto_rotate_title">اجازه چرخش قفل صفحه</string>
+    <string name="lockscreen_auto_rotate_summary">قفل صفحه می تواند با جهت گوشی بچرخد . این مستقل از چرخش خودکار صفحه است</string>
+    <string name="lockscreen_all_widgets_title">اجازه دادن تمام ابزارک ها</string>
+    <string name="lockscreen_all_widgets_summary">خطر** برخی از ابزارک ها به منظور استفاده در قفل صفحه ساخته نشده اند و سازنده ابزارک و AOKP مسئولیتی در قبال ابزارک های انتخابی شما ندارند</string>
+    <string name="lockscreen_unlimited_widgets_title">اجازه ابزارک های نا محدود</string>
+    <string name="lockscreen_unlimited_widgets_summary">خطر** افزودن بیش از حد ابزارک ها در قفل صفحه ممکن است اعث مشکل لگ در قفل صفحه شود</string>
+    <string name="lockscreen_battery_title">درصد باتری قفل صفحه</string>
+    <string name="lockscreen_battery_summary">همیشه درصد باتری را در قفل صفحه نمایش می دهد</string>
+    <string name="lockscreen_hide_initial_page_hints_title">مخفی کردن اشاره های صفحه نخستین</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">تنظیم اینکه اشاره ها برای ابزارک های چپ و راست هنگامی که صفحه روشن می شود نمایش داده شود</string>
+    <string name="lockscreen_minimize_challenge_title">کمینه کردن حلقه قفل صفحه</string>
+    <string name="lockscreen_minimize_challenge_summary">تنظیم اینکه حلقه قفل صفحه هنگام روشن کردن صفحه کمینه باشد </string>
+    <string name="lockscreen_use_widget_container_carousel_title">استفاده چرخ و فلک ابزارک</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">هنگام تعویض بین صفحه های قفل صفحه از یک انیمیشن چرخ و فلک استفاده می شود</string>
+    <string name="volume_rocker_wake_title">بیداری صدا</string>
+    <string name="volume_rocker_wake_summary">صفحه نمایش با دکمه های صدا روشن می شود</string>
+    <string name="volume_music_controls_title">کنترل موسیقی صدا</string>
+    <string name="volume_music_controls_summary">فشردن طولانی دکمه های صدا هنگامی که صفحه نمایش خاموش است آهنگ را رد می کند. قابلیت بیداری صدا هنگامی که آهنگ پخش میشود کار نمی کند</string>
+    <string name="lockscreen_stock_music_layout_title">لایه موسیقی اصلی</string>
+    <string name="lockscreen_stock_music_layout_summary">از لایه موسیقی اصلی به هنگام پخش آهنگ استفاده می کند</string>
+    <string name="lockscreen_wallpaper_title">انتخاب پس زمینه قفل صفحه</string>
+    <string name="lockscreen_wallpaper_summary">شما میتوانید پس زمینه را با دکمه منو در همین صفحه حذف کنید</string>
+    <string name="lockscreen_text_color_title">رنگ نوشته قفل صفحه</string>
+    <string name="lockscreen_text_color_summary">تنظیم رنگ نوشته های رنگ صفحه</string>
+    <string name="lockscreen_weather_title">فعال کردن</string>
+    <string name="lockscreen_weather_summary">نشان دادن اطلاعات آب و هوا در قفل صفحه. برای استفاده از این شما باید سرویس آب و هوای کنترل رام رافعال کرده باشید </string>
+    <string name="lockscreen_weather_type_title">سبک آب و هموای قفل صفحه</string>
+    <string name="lockscreen_weather_type_summary">اطلاعات گرافیکی یا نوشته ای نمایش داده شوند</string>
+    <string name="lockscreen_calendar_title">فعال کردن</string>
+    <string name="lockscreen_calendar_summary">نمایش رخداد های آتی در قفل صفحه</string>
+    <string name="lockscreen_calendar_sources_title">منابع تقویم</string>
+    <string name="lockscreen_calendar_sources_summary">تقویم هایی که میخواهید ببینید انتخاب کنید</string>
+    <string name="lockscreen_calendar_dialog">انتخاب کنید کدام تقویم ها استفاده شوند</string>
+    <string name="lockscreen_calendar_close">بستن</string>
+    <string name="lockscreen_calendar_range_title">محدوده-زمانی</string>
+    <string name="lockscreen_calendar_range_summary">محدوده رمانی که باید نشان داده شود را انتخاب کنید</string>
+    <string name="lockscreen_calendar_use_colors_title">استفاده رنگ ها</string>
+    <string name="lockscreen_calendar_use_colors_summary">اگر فعال شود رخداد ها همانند برنامه تقویم رنگی میشوند</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">مخفی کردن رخدادهای هم اکون</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">اگر فعال شود رخدادهایی که هم اکنون در حال انجام هستند مخفی می شوند</string>
+    <string name="lockscreen_calendar_flip_title">رخدادهای چندگانه</string>
+    <string name="lockscreen_calendar_flip_summary">اگر فعال شود ابزارک چندین رخداد را نمایش میدهد که میتوانید بین آن ها حرکت کنید</string>
+    <string name="lockscreen_calendar_interval_title">فاصله حرکت</string>
+    <string name="lockscreen_calendar_interval_summary">انتخاب سرعت انیمیشن به ثانیه.</string>
+    <string name="circles_lock_cat_title">تنظیمات قفل صفحه دایره ای</string>
+    <string name="circles_lock_bg_color_title">رنگ پس زمینه</string>
+    <string name="circles_lock_ring_color_title">رنگ حلقه</string>
+    <string name="circles_lock_ring_alpha_title">شفافیت حلقه</string>
+    <string name="circles_lock_halo_color_title">رنگ هاله نور</string>
+    <string name="circles_lock_halo_alpha_title">شفافیت هاله نور</string>
+    <string name="circles_lock_wave_color_title">رنگ موج</string>
+    <string name="circles_lock_wave_alpha_title">شفافیت موج</string>
+
+    <!-- Lockscreen Targets-->
+    <string name="lockscreen_targets_title">هدف های قفل صفحه</string>
+    <string name="lockscreen_targets_summary">خلاصه هدف های قفل صفحه</string>
+    <string name="lockscreen_target_longpress_text">عملکرد فشارطولانی</string>
+    <string name="lockscreen_glow_torch_text">چراغ قوه دایره قفل صفحه</string>
+    <string name="lockscreen_glow_torch_summary">فشردن طولانی دایره قفل صفحه چراغ قوه را روشن می کند . برای خاموش کردن انگشت خود را بردارید</string>
+    <string name="lockscreen_camera">دوربین</string>
+    <string name="lockscreen_unlock">گشودن</string>
+    <string name="save_error">هدف ها ذخیره نمی شوند. حداقل باید یک هدف برای گشودن انتخاب کنید</string>
+    <string name="icon_picker_pack_title">بسته آیکون</string>
+    <string name="lockscreen_target_empty">خالی</string>
+    <string name="profile_reset_title">بازنشانی</string>
+    <string name="wifi_save">ذخیره</string>
+    <string name="lockscreen_target_info">آیکون گشودن را به سمت هدفها بکشید تا آن ها را تعیین کنید</string>
+    <string name="lockscreen_options_info">روی نوشته ها بزنید تا خلاصه هر گزینه را ببینید</string>
+    <string name="lockscreen_target_reset">میان بر های قفل صفحه به پیشفرض بازنشانی شد</string>
+    <string name="lockscreen_target_save">هدف های قفل صفحه ذخیره شد</string>
+    <string name="lockscreen_target_save_error_title">اشکال در ذخیره هدف ها</string>
+    <string name="lockscreen_target_save_error_msg">حداقل باید یک هدف برای گشودن قفل صفحه داشته باشید</string>
+    <string name="lockscreen_target_reset_title">بازنشانی</string>
+    <string name="lockscreen_target_reset_message">حذف تمام هدف های کاربر و بازنشانی به هدف های پیشفرض؟</string>
+    <string name="lockscreen_target_edit_title">ویرایش هدف و آیکون</string>
+    <string name="lockscreen_target_edit_msg">برنامه دلخواه را انتخاب کنید یا تغییر دهید و آیکون مرتبط را انتخاب کنید</string>
+    <string name="lockscreen_target_longpress_summary">فعال کردن گزینه فشار طولانی برای هدف های قفل صفحه</string>
+
+    <!-- Weather -->
+    <string name="weather_enable">فعال کردن آب و هوا</string>
+    <string name="weather_enable_summary">اینکه اطلاعات آب و هوا گرفته شود و در رام نمایش داده شود</string>
+    <string name="weather_use_custom_location">استفاده از مکان سفارشی</string>
+    <string name="weather_use_custom_location_summary">استفاده از مکان سفارشی در مصرف باتری صرفه جویی میکند. در غیر این صورت از برنامه مکان شبکه برای به دست آوردن محل شما استفاده می شود</string>
+    <string name="weather_custom_location_dialog_title">تنظیم مکان شما</string>
+    <string name="weather_custom_location_dialog_message">برای اطمینان به مثال ها نگاه کنید. .\n\nمثال: New York,NY // New York, NY // 10033 // London, England</string>
+    <string name="weather_custom_location_title">مکان سفارشی</string>
+    <string name="weather_show_location_title">مکان را نشان بده</string>
+    <string name="weather_show_location_summary">نمایش مکان شما.</string>
+    <string name="weather_refresh_interval">فواصل به روزرسانی</string>
+    <string name="weather_refresh_interval_minutes">" دقیقه"</string>
+    <string name="weather_use_celcius">واحد متریک</string>
+    <string name="weather_use_celcius_summary">با فعال کردن این درجه هوا به سلسیوس نشان داده میشود به جای فارنهایت و سرعت باد به کیلومتر بر ساعت نشان داده می شود به جای مایل بر ساعت</string>
+    <string name="weather_statusbar_style">سبک آب و هوای نوار وضعیت</string>
+    <string name="title_weather_longclick">عملکرد کلیک طولانی روی پنل آب و هوا</string>
+    <string name="title_weather_shortclick">عملکرد کلیک کوتاه روی پنل آب و هوا</string>
+    <string name="update">به روزرسانی پنل آب و هوا</string>
+    <string name="weather_refreshing">درخواست برای به روزرسانی آب و هوا!</string>
+    <string name="weather_loc_warning_title">مکان مورد نظر یافت نشد!</string>
+    <string name="weather_loc_warning_msg">"دسترسی به محل از طریق شبکه در حال حاضر غیرفعال است و نمیگذارد تا آب و هوا در محل کنونی شما دریافت شود.لطفا یک مکان سفارشی تنظیم کنید یا دسترسی به مکان از طریق شبکه را فعال کنید."</string>
+    <string name="weather_loc_warning_positive">"فعال کردن مکان شبکه"</string>
+    <string name="weather_loc_warning_negative">"فعال نکن."</string>
+    <string name="menu_weather_get_weather">گرفتن آب و هوا</string>
+    <string name="weather_statusbar_hide">گزینه های مخفی کردن پنل آب و هوا</string>
+    <string name="always_on">همیشه قابل رویت</string>
+    <string name="same_toggles">با ضامن ها مخفی شود</string>
+    <string name="opposite_toggles">برعکس ضامن ها مخفی شود</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">گردباد</string>
+    <string name="weather_1">طوفان گرمسیری</string>
+    <string name="weather_2">طوفان شدید</string>
+    <string name="weather_3">رعد و برق شدید</string>
+    <string name="weather_4">رعد و برق</string>
+    <string name="weather_5">مخلوط باران و برف</string>
+    <string name="weather_6">مخلوط باران و تگرگ</string>
+    <string name="weather_7">مخلوط برف و تگرگ</string>
+    <string name="weather_8">نم نم باران منجمد کننده</string>
+    <string name="weather_9">نم نم باران</string>
+    <string name="weather_10">باران منجمد کننده</string>
+    <string name="weather_11">باران درشت</string>
+    <string name="weather_12">باران درشت</string>
+    <string name="weather_13">باد برف</string>
+    <string name="weather_14">بارش برف خفیف</string>
+    <string name="weather_15">بارش برف</string>
+    <string name="weather_16">برف</string>
+    <string name="weather_17">تگرگ</string>
+    <string name="weather_18">بوران</string>
+    <string name="weather_19">گرد و خاک</string>
+    <string name="weather_20">مه آلود</string>
+    <string name="weather_21">مه</string>
+    <string name="weather_22">دودی</string>
+    <string name="weather_23">باد شدید</string>
+    <string name="weather_24">باد</string>
+    <string name="weather_25">سرد</string>
+    <string name="weather_26">ابر</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">بیشتر ابری</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">بیشتر ابری</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">کمی تا قسمتی ابری</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">کمی تا قسمتی ابری</string>
+    <!-- clear (night) -->
+    <string name="weather_31">صاف</string>
+    <string name="weather_32">آفتابی</string>
+    <!-- fair (night) -->
+    <string name="weather_33">بدون ابر</string>
+    <!-- fair (day) -->
+    <string name="weather_34">بدون ابر</string>
+    <string name="weather_35">مخلوط باران و تگرگ</string>
+    <string name="weather_36">گرم</string>
+    <string name="weather_37">رعد و برق مجزا</string>
+    <string name="weather_38">رعد و برق پراکنده</string>
+    <string name="weather_39">رعد و برق پراکنده</string>
+    <string name="weather_40">بارن درشت و پراکنده</string>
+    <string name="weather_41">برف سنگین</string>
+    <string name="weather_42">بارش برف پراکنده</string>
+    <string name="weather_43">بارش برف پراکنده</string>
+    <string name="weather_44">کمی تا قسمتی ابری</string>
+    <string name="weather_45">رعد و برق</string>
+    <string name="weather_46">بارش برف</string>
+    <string name="weather_47">رعد و برق مجزا</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+    <!-- Miscellaneous -->
+    <string name="location_unavailable">قادر به بازیابی اطلاعات محل برای به روزرسانی آب و هوا نیستیم</string>
+
+    <!-- cardinal directions -->
+    <string name="direction_north">شمال</string>
+    <string name="direction_north_east">شمالشرقی</string>
+    <string name="direction_east">شرق</string>
+    <string name="direction_south_east">جنوب شرقی</string>
+    <string name="direction_south">جنوب</string>
+    <string name="direction_south_west">جنوب غربی</string>
+    <string name="direction_west">غرب</string>
+    <string name="direction_north_west">شمالغربی</string>
+
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">رونوشت شد در کلیپ بورد</string>
+
+    <!-- Custom vibrations -->
+    <string name="vibrations">لرزش ها</string>
+    <string name="defaultvibrationname">"'پیشفرض'"</string>
+    <string name="vib_new">جدید/بازنشانی</string>
+    <string name="vib_load">بارگذاری</string>
+    <string name="vib_rec">ضبط</string>
+    <string name="vib_TAP">بزن!</string>
+    <string name="vib_stop">توقف</string>
+    <string name="vib_play">پخش</string>
+    <string name="vib_save">دخیره</string>
+    <string name="vib_del">حذف</string>
+
+    <string name="vib_dialog_text_entry">ذخیره لرزش</string>
+    <string name="vib_dialog_name">نام:</string>
+    <string name="vib_cur_loaded_title">بارگذاری:</string>
+    <string name="help">کمک</string>
+    <string name="vibration_detailed_help">شما میتونید الگوی لرزش سفارشیتون رو در ۵ مرحله ساده بسازید:
+	- روی جدید/بازنشانی بزنید
+	- روی ضبط بزنید
+	- با زدن دکمه بزن! الگوی خودتون رو ضبط کنید
+	- روی توقف بزنید
+	- روی ذخیره بزنید و یک نام وارد کنید
+	با زدن دکمه پخش میتونید چک کنید که چه چیزی رو ضبط کردید.
+	اگر میخواهید الگویی که قبلا ذخیره شده را ویرایش کنید بر روی بارگذاری بزنید و یک الگو انتخاب کنید و دوباره ضبطش کنید و آن را دوباره ذخیره کنید. (الگوی جدید بر روی قبلی ذخیره میشود حتی اگر شما نامش را تغییر بدهید).
+	برای حذف یک الگو روی حذف بزنید و الگوی خود را انتخاب کنید و دوباره روی حذف بزنید. نمیتوانید لرزش های پیشفرض را حذف کنید.
+	میتونید میتونیید الگوی لرزش زنگ ها را از منوی تنظیمات/صدا یا تلفن/تنظیمات تنظیم کنید.
+	میتونید در برنامه مخاطبین یک الگوی سفارشی رو برای هر مخاطب تنظیم کنید: بعد از بارگذاری مخاطب روی دکمه منو بزنید و تنظیم لرزش را انتخاب کنید
+	</string>
+
+    <!-- boot animation stuff -->
+    <string name="insult_jerk">احمق!</string>
+    <string name="insult_protekk">ProTekk!</string>
+    <string name="insult_unicorns">تک شاخ های صورتی واسه دختر کوچولوهاست!</string>
+
+    <!-- clock stuff -->
+    <string name="right_clock">ساعت راست</string>
+    <string name="center_clock">ساعت وسط</string>
+    <string name="no_clock">بدون ساعت</string>
+    <string name="dont_show">نمایش نده</string>
+    <string name="small_am_pm">ق.ظ و ی.ظ کوچک</string>
+    <string name="regular_am_pm">ق.ظ و ی.ظ معمولی</string>
+    <string name="protekk_oclock">ProTekk O\'Clock</string>
+    <string name="small_weekday">روز هفته کوچک</string>
+    <string name="regular_weekday">روز هفته معمولی</string>
+
+    <!-- toggle style -->
+    <string name="icon_only">فقط آیکون</string>
+    <string name="text_only">فقط نوشته</string>
+
+    <!-- Brightness slider -->
+    <string name="on_top">در بالا</string>
+    <string name="on_the_bottom">در پایین</string>
+
+    <!-- Battery styles -->
+    <string name="icon_with_text">آیکون با نوشته</string>
+    <string name="icon_with_centered_text">آیکون و نوشته داخل</string>
+    <string name="circlemod">حالت دایره</string>
+
+    <!-- NavBar -->
+    <string name="right">راست</string>
+    <string name="left">چپ</string>
+    <string name="both">هردو</string>
+    <string name="default_jb_behavior">رفتار پیشفرض جلی بین</string>
+    <string name="always_show_invincible_icons">همیشه آیکون های مخفی را نشان بده</string>
+    <string name="always_show">همیشه نشان بده</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">Default JB behavior with invisible icons when hidden</string>
+    <string name="home">خانه</string>
+    <string name="back">بازگشت</string>
+    <string name="recents">برنامه های اخیر</string>
+    <string name="search">جستجو</string>
+    <string name="screenshot">اسکرین شات</string>
+    <string name="menu">منو</string>
+    <string name="toggle_widgets">ابزارک های ضامنی</string>
+    <string name="open_ime_switcher">نمایش انتخاب روش ورودی</string>
+    <string name="kill_app">بستن برنامه</string>
+    <string name="lastapp">آخرین برنامه</string>
+    <string name="power">پاور</string>
+    <string name="notifications">اعلان ها</string>
+    <string name="recents_gb">برنامه های اخیر(به سبک گینگربرد)</string>
+    <string name="custom_app">برنامه سفارشی</string>
+    <string name="menu_power">منوی پاور</string>
+    <string name="aokp_ribbon">روبان AOKP</string>
+    <string name="nav_widgets">ابزارک های پیمایش</string>
+    <string name="blank">خالی</string>
+    <string name="none">هیچکدام</string>
+    <string name="take_screenshot">گرفتن اسکرین شات</string>
+    <string name="ring_vib">زنگ/لرزش</string>
+    <string name="ring_silent">زنگ/بیصدا</string>
+    <string name="ring_vib_silent">زنگ/لرزش/بیصدا</string>
+    <string name="screen_off">صفحه نمایش خاموش</string>
+    <string name="google_now">حالا گوگل</string>
+    <string name="select_application">انتخاب برنامه</string>
+    <string name="one_target">۱ هدف</string>
+    <string name="two_targets">2 هدف</string>
+    <string name="three_targets">3 هدف</string>
+    <string name="four_targets">4 هدف</string>
+    <string name="five_targets">5 هدف</string>
+    <string name="size_42_dp_default">42 dp (پیشفرض)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (پیشفرض)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">نوار وضعیت</string>
+    <string name="top_of_navbar">بالای نوار پیمایش</string>
+    <string name="bottom_of_navbar">پایین نوار پیمایش</string>
+    <string name="regular">معین</string>
+    <string name="center_mirrored">مرکز-آینه شده</string>
+    <string name="size_0_dp">0 dp (خاموش)</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- LED Values -->
+    <string name="time_0_seconds_off">خاموش</string>
+    <string name="time_0_2_seconds">.2 ثانیه</string>
+    <string name="time_0_5_seconds">.5 ثانیه</string>
+    <string name="time_1_second">1 ثانیه</string>
+    <string name="time_1_5_seconds">1.5 ثانیه</string>
+    <string name="time_2_seconds">2 ثانیه</string>
+    <string name="time_2_5_seconds">2.5 ثانیه</string>
+    <string name="time_3_seconds">3 ثانیه</string>
+    <string name="time_3_5_seconds">3.5 ثانیه</string>
+    <string name="time_4_seconds">4 ثانیه</string>
+    <string name="time_4_5_seconds">4.5 ثانیه</string>
+    <string name="time_5_seconds">5 ثانیه</string>
+    <string name="time_5_5_seconds">5.5 ثانیه</string>
+    <string name="time_6_seconds">6 ثانیه</string>
+    <string name="time_7_seconds">7 ثانیه</string>
+    <string name="time_8_seconds">8 ثانیه</string>
+    <string name="time_9_seconds">9 ثانیه</string>
+    <string name="time_10_seconds">10 ثانیه</string>
+
+    <!-- LED brightness entries -->
+    <string name="low">کم</string>
+    <string name="medium">متوسط</string>
+    <string name="high">زیاد</string>
+    <string name="very_high">خیلی زیاد</string>
+    <string name="laserbeam">پرتو لیزر</string>
+
+    <!-- Flip phone entries -->
+    <string name="disabled">غیرفعال شد</string>
+    <string name="enabled">فعال شد</string>
+    <string name="time_0_seconds_instant_off">0 ثانیه (بلافاصله خاموش(</string>
+    <string name="time_15_seconds">15 ثانیه</string>
+    <string name="time_30_seconds">30 ثانیه</string>
+    <string name="time_45_seconds">45 ثانیه</string>
+    <string name="time_1_minute">1 دقیقه</string>
+    <string name="time_1_5_minutes">1.5 ثانیه</string>
+    <string name="time_2_minutes">2 ثانیه</string>
+    <string name="time_2_5_minutes">2.5 ثانیه</string>
+    <string name="time_3_minutes">3 ثانیه</string>
+    <string name="time_3_5_minutes">3.5 ثانیه</string>
+    <string name="time_4_minutes">4 ثانیه</string>
+    <string name="time_5_minutes">5 ثانیه</string>
+
+    <!-- weather arrays -->
+    <string name="off">خاموش</string>
+    <string name="time_10_minutes">10 دقیقه</string>
+    <string name="time_30_minutes">30 دقیقه</string>
+    <string name="time_45_minutes">45 دقیقه</string>
+    <string name="time_60_minutes">60 دقیقه</string>
+    <string name="time_2_hours">2 ساعت</string>
+    <string name="time_3_hours">3 ساعت</string>
+    <string name="time_4_hours">4 ساعت</string>
+    <string name="time_6_hours">6 ساعت</string>
+    <string name="time_8_hours">8 ساعت</string>
+    <string name="above_carrier_text">بالای نوشته اپراتور</string>
+    <string name="weather_panel">پنل آب و هوا</string>
+    <string name="text">نوشته</string>
+
+    <!-- lockscreen calendar arrays -->
+    <string name="time_1_day">1 روز</string>
+    <string name="time_2_days">2 روز</string>
+    <string name="time_3_days">3 روز</string>
+    <string name="time_4_days">4 روز</string>
+    <string name="time_5_days">5 روز</string>
+    <string name="time_6_days">6 روز</string>
+    <string name="time_1_week">1 هفته</string>
+
+    <!-- minfree -->
+    <string name="size_25_mb">25 مگابایت</string>
+    <string name="size_50_mb">50 مگابایت</string>
+    <string name="size_75_mb">75 مگابایت</string>
+    <string name="size_80_mb">80 مگابایت</string>
+    <string name="size_100_mb">100 مگابایت</string>
+
+    <!-- less notification sounds -->
+    <string name="default_behavior">رفتار پیشفرض</string>
+
+    <!-- signal style -->
+    <string name="show_signal_bars">نمایش میل های آنتن</string>
+    <string name="show_signal_text">نمایش نوشته آنتن</string>
+    <string name="show_with_dbm"> با dBm نشان بده</string>
+
+    <!-- haptic feedback on toggle press -->
+    <string name="toggles_enable_haptic_feedback_title">فعال کردن بازخورد لمسی</string>
+    <string name="toggles_enable_haptic_feedback_summary">استفاده از بازخورد لمسی به هنگام فشردن ضامن ها</string>
+
+    <!-- dynamic changelog -->
+    <string name="dynamic_changelog_title">گزارش تغییرات پویا</string>
+    <string name="dynamic_changelog_summary">گزارش تغییراتی که به صورت زنده از Gerrit ما خوانده میشود</string>
+</resources>

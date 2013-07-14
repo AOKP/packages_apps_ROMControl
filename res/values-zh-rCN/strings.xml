@@ -77,7 +77,6 @@
     <string name="menu_ribbon_toggles">设置开关</string>
     <string name="menu_ribbon_na">不可用</string>
     <string name="menu_ribbon_toggles_error">开关只在使用左右滑动操作区时有效。</string>
-    <string name="menu_user_interface_reset">重置背景壁纸</string>
     <string name="menu_lockscreens_reset">重置锁屏壁纸</string>
 
     <!-- General Strings 常用文本 -->
@@ -161,8 +160,11 @@
     <string name="custom_bootanimation_title">自定义开机动画</string>
     <string name="custom_bootanimation_summary">从SD卡选择开机动画的ZIP文件，原开机动画将备份在/system/media目录</string>
     <string name="install_file_manager_error">未找到可选择 ZIP 文件的应用程序，请至少安装一款文件管理程序。</string>
-    <string name="notification_wallpaper_title">选择通知栏背景</string>
-    <string name="notification_wallpaper_summary">在本页面按菜单键可选择重置背景壁纸</string>
+    <string name="notification_wallpaper_title">通知栏背景</string>
+    <string name="notification_wallpaper_dialog">背景预览</string>
+    <string name="notification_wallpaper_pick">新建通知栏背景</string>
+    <string name="notification_wallpaper_reset">移除通知栏背景</string>
+    <string name="notification_wallpaper_error">找不到图像</string>
     <string name="notif_wallpaper_alpha_title">通知栏背景不透明度</string>
     <string name="alpha_dialog_title">设置不透明度</string>
     <string name="custom_carrier_label_title">自定义运营商名称</string>

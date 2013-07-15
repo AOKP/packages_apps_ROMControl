@@ -1043,4 +1043,31 @@
     <string name="toggles_enable_haptic_feedback_title">Habilita la retroacció hàptica</string>
     <string name="toggles_enable_haptic_feedback_summary">Utilitza la retroacció hàptica en prémer els commutadors
     </string>
+    <string name="menu_ribbon_apps">Restableix les apps</string>
+    <string name="menu_ribbon_hide">Oculta les apps</string>
+    <string name="menu_ribbon_toggles">Configuració dels commutadors</string>
+    <string name="menu_ribbon_na">No disponible</string>
+    <string name="menu_ribbon_toggles_error">Els commutadors només estan disponibles per a les cintes de lliscament de la dreta i de l\'esquerra.</string>
+    <string name="github_kecinzer">https://github.com/kecinzer</string>
+    <string name="transparency_dialog_lockscreen">Pantalla de bloqueig</string>
+    <string name="ribbon_chooser_instructions">Seleccioneu la cinta a configurar.</string>
+    <string name="app_window_space_title">Espaiat d\'icones vertical</string>
+    <string name="ribbon_dismiss_title">Acció d\'omissió de la cinta</string>
+    <string name="ribbon_animation_duration_title">Durada de l\'animació</string>
+    <string name="ribbon_long_swipe_title">Àrea de lliscament del lliscat llarg</string>
+    <string name="ribbon_long_press_title">Àrea de lliscat de la pressió llarga</string>
+    <string name="app_window">Finestra d\'aplicació</string>
+    <string name="window_text_color_title">Color del text de la finestra</string>
+    <string name="window_color_title">Color de la finestra</string>
+    <string name="window_opacity_title">Opacitat de la finestra</string>
+    <string name="window_columns_title">Columnes de la finestra</string>
+    <string name="window_app_hide_title">Trieu les apps que s\'ocultaran</string>
+    <string name="never">Més nou</string>
+    <string name="always">Sempre</string>
+    <string name="not_bar">No són accions de la BarNav</string>
+    <string name="multi_select_title">Seleccioneu els objectius que s\'afegiran</string>
+    <string name="ribbon_animation_type_title">Estil de l\'animació</string>
+    <string name="ribbon_toggles_button_title">Botons dels commutadors a baix</string>
+    <string name="ribbon_hide_ime_title">Àrea de lliscat de l\'ocultació de teclat.</string>
+    <string name="dynamic_changelog_title">Llista dinàmica de canvis</string>
 </resources>

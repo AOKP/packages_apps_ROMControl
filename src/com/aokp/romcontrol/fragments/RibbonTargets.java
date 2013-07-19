@@ -30,6 +30,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -165,6 +166,8 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private WindowManager wm;
     private IntentFilter filter;
     private RibbonDialogReceiver reciever;
+    private boolean mSetupFinished;
+    private Handler mHandler = new Handler();
 
     private BroadcastReceiver mReceiver;
     private ArrayList<String> allToggles = new ArrayList<String>();
@@ -682,14 +685,25 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
             final String[] values = getResources().getStringArray(R.array.ribbon_chooser_values);
             arrayNum = Integer.parseInt((String) values[pos]);
+            mSetupFinished = false;
             setupButtons();
             refreshButtons();
+            mHandler.postDelayed(mFinishedSettingUp, 250);
         }
 
         public void onNothingSelected(AdapterView<?> parent) {
             // Do nothing.
         }
     }
+
+    // I really hate post delaying for something like this
+    // I just need to patch this its been a problem too long
+    // and a real fix eludes me...
+    private Runnable mFinishedSettingUp = new Runnable() {
+        public void run() {
+            mSetupFinished = true;
+        }
+    };
 
     public class TimeOutListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -719,14 +733,16 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
 
     public class RibbonLongSwipeListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-            String temp = mActionCodes[pos];
-            if (temp.equals(DialogConstant.CUSTOM_APP.value())) {
-                mChoice = 2;
-                mPicker.pickShortcut();
-            } else {
-                Settings.System
-                        .putString(mContentRes, Settings.System.RIBBON_LONG_SWIPE[ribbonNumber],
-                                temp);
+            if (mSetupFinished) {
+                String temp = mActionCodes[pos];
+                if (temp.equals(DialogConstant.CUSTOM_APP.value())) {
+                    mChoice = 2;
+                    mPicker.pickShortcut();
+                } else {
+                    Settings.System
+                            .putString(mContentRes, Settings.System.RIBBON_LONG_SWIPE[ribbonNumber],
+                                    temp);
+                }
             }
         }
 
@@ -737,14 +753,16 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
 
     public class RibbonLongPressListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-            String temp = mActionCodes[pos];
-            if (temp.equals(DialogConstant.CUSTOM_APP.value())) {
-                mChoice = 3;
-                mPicker.pickShortcut();
-            } else {
-                Settings.System
-                        .putString(mContentRes, Settings.System.RIBBON_LONG_PRESS[ribbonNumber],
-                                temp);
+            if (mSetupFinished) {
+                String temp = mActionCodes[pos];
+                if (temp.equals(DialogConstant.CUSTOM_APP.value())) {
+                    mChoice = 3;
+                    mPicker.pickShortcut();
+                } else {
+                    Settings.System
+                            .putString(mContentRes, Settings.System.RIBBON_LONG_PRESS[ribbonNumber],
+                                    temp);
+                }
             }
         }
 
@@ -1368,14 +1386,21 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
                     .indexOf(String.valueOf(Settings.System.getInt(mContentRes,
                             Settings.System.RIBBON_DISMISS[ribbonNumber], 1))));
 
-            mRibbonLongSwipe.setSelection(
-                    Arrays.asList(mActionCodes).indexOf(Settings.System.getString(mContentRes,
+            List<String> codes = Arrays.asList(mActionCodes);
+            if (codes.contains(Settings.System.getString(mContentRes,
+                            Settings.System.RIBBON_LONG_SWIPE[ribbonNumber]))) {
+                mRibbonLongSwipe.setSelection(codes.indexOf(Settings.System.getString(mContentRes,
                             Settings.System.RIBBON_LONG_SWIPE[ribbonNumber])));
-
-            mRibbonLongPress.setSelection(
-                    Arrays.asList(mActionCodes).indexOf(Settings.System.getString(mContentRes,
+            } else {
+                mRibbonLongSwipe.setSelection(codes.size() - 1);
+            }
+            if (codes.contains(Settings.System.getString(mContentRes,
+                            Settings.System.RIBBON_LONG_PRESS[ribbonNumber]))) {
+                mRibbonLongPress.setSelection(codes.indexOf(Settings.System.getString(mContentRes,
                             Settings.System.RIBBON_LONG_PRESS[ribbonNumber])));
-
+            } else {
+                mRibbonLongPress.setSelection(codes.size() - 1);
+            }
             mTogglesButton.setChecked(Settings.System.getBoolean(mContentRes,
                     Settings.System.RIBBON_TOGGLE_BUTTON_LOCATION[ribbonNumber], false));
 

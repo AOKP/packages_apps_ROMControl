@@ -77,7 +77,6 @@
     <string name="menu_ribbon_toggles">トグル設定</string>
     <string name="menu_ribbon_na">利用不可</string>
     <string name="menu_ribbon_toggles_error">トグルは左右のスワイプリボンでしか使えません</string>
-    <string name="menu_user_interface_reset">通知パネルの壁紙をリセット</string>
     <string name="menu_lockscreens_reset">ロック画面の壁紙をリセット</string>
 
     <!-- General Strings -->
@@ -199,8 +198,11 @@
         SDカードからブートアニメーション用のzipを選択してください。以前のブートアニメーションは/system/mediaにバックアップされます。
     </string>
     <string name="install_file_manager_error">zipファイルを指定するアプリがありません。ファイルマネージャーをインストールしてください。</string>
-    <string name="notification_wallpaper_title">通知パネルの背景の変更</string>
-    <string name="notification_wallpaper_summary">通知パネルの背景を元に戻すにはメニューから設定をリセットしてください</string>
+    <string name="notification_wallpaper_title">通知パネルの背景</string>
+    <string name="notification_wallpaper_dialog">背景プレビュー</string>
+    <string name="notification_wallpaper_pick">新しい通知パネルの背景</string>
+    <string name="notification_wallpaper_reset">通知パネルの背景を消去</string>
+    <string name="notification_wallpaper_error">イメージが見つかりません</string>
     <string name="notif_wallpaper_alpha_title">通知パネル背景の不透明度</string>
     <string name="alpha_dialog_title">不透明度の設定</string>
     <string name="custom_carrier_label_title">キャリアラベルの変更</string>
@@ -489,8 +491,6 @@
     <string name="navbar_height_dialog_button_reboot">今すぐ再起動</string>
     <string name="navigation_bar_color_title">ナビゲーションバーの色</string>
     <string name="navigation_bar_tint_title">ソフトキーの色</string>
-    <string name="navigation_bar_colorall_title">全てのボタンをカラー化</string>
-    <string name="navigation_bar_colorall_summary">カスタムアイコンをカラー化する</string>
     <string name="navigation_bar_glow_tint_title">ソフトキーの発光色</string>
     <string name="navigation_bar_glow_tint_summary">ソフトキーをタップした時の発光色を変更する</string>
     <string name="glow_times_title">ソフトキーの発光アニメーション</string>

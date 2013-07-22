@@ -48,12 +48,8 @@ public class Sound extends AOKPPreferenceFragment
         prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 
         mHeadphonesPluggedAction = (ListPreference) findPreference(PREF_HEADPHONES_PLUGGED_ACTION);
-        mHeadphonesPluggedAction.setOnPreferenceChangeListener(this);
-        mHeadphonesPluggedAction.setValue((prefs.getString(PREF_HEADPHONES_PLUGGED_ACTION, "-1")));
 
         mBTPluggedAction = (ListPreference) findPreference(PREF_BT_CONNECTED_ACTION);
-        mBTPluggedAction.setOnPreferenceChangeListener(this);
-        mBTPluggedAction.setValue((prefs.getString(PREF_BT_CONNECTED_ACTION, "-1")));
 
         mEnableVolumeOptions = (CheckBoxPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
         mEnableVolumeOptions.setChecked(Settings.System.getBoolean(mContentRes,

@@ -452,8 +452,6 @@
     <string name="navbar_height_dialog_button_reboot">立刻重启</string>
     <string name="navigation_bar_color_title">导航栏颜色</string>
     <string name="navigation_bar_tint_title">导航栏按键颜色</string>
-    <string name="navigation_bar_colorall_title">着色所有按键</string>
-    <string name="navigation_bar_colorall_summary">选中后自定义图标将被着色</string>
     <string name="navigation_bar_glow_tint_title">导航栏按键按下发光颜色</string>
     <string name="navigation_bar_glow_tint_summary">当你按下一个按键时，它的背景会发光。使用该选项来改变发光的颜色。</string>
     <string name="glow_times_title">按键发光动画</string>

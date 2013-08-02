@@ -79,6 +79,29 @@
     <string name="menu_ribbon_toggles_error">Toggles are only available for the left and right swipe ribbons.</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
 
+    <!-- Preference Dependant Instruction -->
+    <string name="enable_bootanimation_unlock">To Unlock: uncheck \"disable boot animation\"</string>
+    <string name="enable_phone_or_phablet">To Unlock: enable phone or phablet \"UI mode\"</string>
+    <string name="enable_tablet_ui">To Unlock: enable tablet \"UI mode\"</string>
+    <string name="enable_noti_wallpaper">To Unlock: enable phone or phablet \"UI mode\" and set a
+        \"notification background\"
+    </string>
+    <string name="enable_menu_location">To Unlock: enable a \"menu Location\"</string>
+    <string name="enable_hiding_navbar">To Unlock: \"enable hidden NavBar\"</string>
+    <string name="enable_hiding_systembar">To Unlock: \"enable hidden SystemBar\"</string>
+    <string name="enable_audio_mode">To Unlock: enable \"face down audio mode\"</string>
+    <string name="enable_battery_bar">To Unlock: enable a \"battery bar location\"</string>
+    <string name="enable_clock_location">To Unlock: enable a \"clock style\"</string>
+    <string name="enable_signal_text">To Unlock: set \"signal indicator style\" to display text or dBm</string>
+    <string name="enable_wifi_text">To Unlock: set \"WiFi signal indicator style\" to display text</string>
+    <string name="enable_toggle_tiles">To Unlock: set \"toggle style\" to tiles</string>
+    <string name="enable_fasttoggle">To Unlock: \"enable fast toggle\" and tiles \"toggle style\"</string>
+    <string name="enable_favorite_toggle">To Unlock: enable a \"favorite contact\" toggle here or in a Ribbon</string>
+    <string name="enable_screenshot_toggle">To Unlock: enable a \"screenshot\" toggle here or in a Ribbon</string>
+    <string name="enable_custom_toggle">To Unlock: enable a \"custom\" toggle here or in a Ribbon</string>
+    <string name="enable_spen_gestures">To Unlock: \"enable S Pen gestures\" </string>
+    <string name="enable_persist_installer">To Unlock: \"enable persistence\"</string>
+
     <!-- General Strings -->
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
@@ -92,10 +115,8 @@
     <string name="title_show_torch_toggle">Torch</string>
     <string name="title_show_airplane_toggle">Airplane mode</string>
     <string name="title_show_navbar_hide">System Bar toggles</string>
-    <string name="summary_show_navbar_hide">Enabling this will show toggles that hide the NavBar and Statusbar</string>
     <string name="title_show_volume_state_toggle">Volume states</string>
-    <string name="title_show_reboot_keyguard">Reboot on lockscreen</string>
-    <string name="summary_show_reboot_keyguard">Enabling this will show reboot options while on lockscreen</string>
+    <string name="title_show_reboot_keyguard">Lockscreen reboot</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Action on swipe left</string>
@@ -323,7 +344,7 @@
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggles_style_title">Toggle style</string>
-    <string name="toggles_style_summary">Tiles or traditional</string>
+    <string name="toggles_style_summary">Tiles, traditional, or scrollable</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order in which your toggles are displayed</string>
@@ -544,8 +565,8 @@
     <string name="statusbar_hide_title">Hide Statusbar</string>
     <string name="statusbar_hide_summary">Checking this completely hides the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and Navigation Bar opacity</string>
-    <string name="navbar_hide_enable_title">Hidden NavBar Enable</string>
-    <string name="systembar_hide_enable_title">Hidden SystemBar Enable</string>
+    <string name="navbar_hide_enable_title">Enable Hidden NavBar</string>
+    <string name="systembar_hide_enable_title">Enable Hidden SystemBar</string>
     <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
     <string name="drag_handle_width_title">Drag Handle Width</string>
     <string name="title_navbar_timeout">Hidden NavBar Timeout</string>
@@ -670,8 +691,8 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Test LED</string>
     <string name="led_test_notification_message_now">"Now testing LED for: "</string>
-    <string name="led_test_notification_message_note">". Please turn off your screen to see the LED. Don't hit OK on
-        this popup till you're done viewing the LED color."
+    <string name="led_test_notification_message_note">".\nPlease turn off your screen to see the LED. Don't hit OK on
+        this popup until you're done viewing the LED color."
     </string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">Enable LED while charging (requires reboot)</string>
@@ -754,8 +775,10 @@
     </string>
     <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
-    <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="lockscreen_wallpaper_title">Lockscreen background</string>
+    <string name="lockscreen_wallpaper_summary">Set or remove the current lockscreen background</string>
+    <string name="lockscreen_wallpaper_pick">New lockscreen background</string>
+    <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
     <string name="lockscreen_weather_title">Enable</string>

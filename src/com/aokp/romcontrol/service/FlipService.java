@@ -50,7 +50,6 @@ public class FlipService extends Service {
     private boolean wasFaceDown = false;
     boolean switchSoundBack = false;
     boolean wentSilentFromRing = false;
-    static boolean mRegistered = false;
     static boolean mSecondReg = true;
     Handler handler = new Handler();
     private boolean faceDownIsRunning = false;
@@ -269,14 +268,33 @@ public class FlipService extends Service {
     }
 
     @Override
-    public void onDestroy() {
-        if (mRegistered) {
-            if (mSecondReg) {
-                getSensorManager().unregisterListener(sl);
-            }
-            unregisterReceiver(screenReceiver);
-            mRegistered = false;
+    public void onCreate() {
+        IntentFilter filter = new IntentFilter();
+        am = (AudioManager) service
+                .getSystemService(Context.AUDIO_SERVICE);
+        vib = (Vibrator) service
+                .getSystemService(Context.VIBRATOR_SERVICE);
+
+        if (getUserFlipAudioMode(service) != -1) {
+            getSensorManager().registerListener(sl,
+                    getSensorManager().getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                    SensorManager.SENSOR_DELAY_UI);
         }
+
+        filter.addAction(Intent.ACTION_SCREEN_OFF);
+        filter.addAction(Intent.ACTION_SCREEN_ON);
+        filter.addAction(TelephonyManager.ACTION_PHONE_STATE_CHANGED);
+        registerReceiver(screenReceiver, filter);
+
+        log("register sensor manager");
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mSecondReg) {
+            getSensorManager().unregisterListener(sl);
+        }
+        unregisterReceiver(screenReceiver);
         super.onDestroy();
     }
 
@@ -306,32 +324,7 @@ public class FlipService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (!mRegistered) {
-            IntentFilter filter = new IntentFilter();
-            am = (AudioManager) service
-                    .getSystemService(Context.AUDIO_SERVICE);
-            vib = (Vibrator) service
-                    .getSystemService(Context.VIBRATOR_SERVICE);
-
-            if (getUserFlipAudioMode(service) != -1) {
-                getSensorManager().registerListener(sl,
-                        getSensorManager().getDefaultSensor(Sensor.TYPE_ORIENTATION),
-                        SensorManager.SENSOR_DELAY_UI);
-            }
-
-            filter.addAction(Intent.ACTION_SCREEN_OFF);
-            filter.addAction(Intent.ACTION_SCREEN_ON);
-            filter.addAction(TelephonyManager.ACTION_PHONE_STATE_CHANGED);
-            registerReceiver(screenReceiver, filter);
-
-            mRegistered = true;
-            log("register sensor manager");
-        }
         return START_STICKY;
-    }
-
-    public static boolean isStarted() {
-        return mRegistered;
     }
 
     @Override

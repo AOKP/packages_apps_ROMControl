@@ -593,7 +593,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 return true;
             case MENU_SAVE:
                 saveAll();
-                Toast.makeText(mContext, R.string.lockscreen_target_save, Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return false;
@@ -646,6 +645,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                         Settings.System.LOCKSCREEN_TARGETS_ICON[i], customIcons[i]);
             }
             updateDrawables();
+            Toast.makeText(mContext, R.string.lockscreen_target_save, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(mContext, getResources()
                     .getString(R.string.save_error), Toast.LENGTH_LONG).show();
@@ -824,16 +824,12 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     @Override
     public void onGrabbed(View v, int handle) {
-        if (!mIsLandscape) {
-            updateVisiblity(false);
-        }
+        mHelperText.setText(getResources().getString(R.string.lockscreen_target_info));
     }
 
     @Override
     public void onReleased(View v, int handle) {
-        if (!mIsLandscape) {
-            updateVisiblity(true);
-        }
+        mHelperText.setText(getResources().getString(R.string.lockscreen_options_info));
     }
 
     @Override
@@ -928,66 +924,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     }
 
     private H mHandler = new H();
-
-    private void updateVisiblity(boolean visible) {
-        if (visible) {
-            if (hasTorch) {
-                mGlowTorchText.setVisibility(View.VISIBLE);
-                mGlowTorchSwitch.setVisibility(View.VISIBLE);
-            }
-            mLongPressStatus.setVisibility(View.VISIBLE);
-            mLockBatterySwitch.setVisibility(View.VISIBLE);
-            mLockRotateSwitch.setVisibility(View.VISIBLE);
-            mLockVolControlSwitch.setVisibility(View.VISIBLE);
-            mLockVolWakeSwitch.setVisibility(View.VISIBLE);
-            mLockPageHintSwitch.setVisibility(View.VISIBLE);
-            if (!isSW600DPScreen(mContext)) {
-                mLockMinimizeChallangeSwitch.setVisibility(View.VISIBLE);
-                mLockMinimizeChallangeText.setVisibility(View.VISIBLE);
-            }
-            mLockCarouselSwitch.setVisibility(View.VISIBLE);
-            mLockAllWidgetsSwitch.setVisibility(View.VISIBLE);
-            mLockUnlimitedWidgetsSwitch.setVisibility(View.VISIBLE);
-            mLongPressText.setVisibility(View.VISIBLE);
-            mLockBatteryText.setVisibility(View.VISIBLE);
-            mLockRotateText.setVisibility(View.VISIBLE);
-            mLockVolControlText.setVisibility(View.VISIBLE);
-            mLockVolWakeText.setVisibility(View.VISIBLE);
-            mLockPageHintText.setVisibility(View.VISIBLE);
-            mLockCarouselText.setVisibility(View.VISIBLE);
-            mLockAllWidgetsText.setVisibility(View.VISIBLE);
-            mLockUnlimitedWidgetsText.setVisibility(View.VISIBLE);
-            mLockTextColorText.setVisibility(View.VISIBLE);
-            mLockTextColorButton.setVisibility(View.VISIBLE);
-            mHelperText.setText(getResources().getString(R.string.lockscreen_options_info));
-        } else {
-            mGlowTorchText.setVisibility(View.GONE);
-            mGlowTorchSwitch.setVisibility(View.GONE);
-            mLongPressStatus.setVisibility(View.GONE);
-            mLockBatterySwitch.setVisibility(View.GONE);
-            mLockRotateSwitch.setVisibility(View.GONE);
-            mLockVolControlSwitch.setVisibility(View.GONE);
-            mLockVolWakeSwitch.setVisibility(View.GONE);
-            mLockPageHintSwitch.setVisibility(View.GONE);
-            mLockMinimizeChallangeSwitch.setVisibility(View.GONE);
-            mLockCarouselSwitch.setVisibility(View.GONE);
-            mLockAllWidgetsSwitch.setVisibility(View.GONE);
-            mLockUnlimitedWidgetsSwitch.setVisibility(View.GONE);
-            mLongPressText.setVisibility(View.GONE);
-            mLockBatteryText.setVisibility(View.GONE);
-            mLockRotateText.setVisibility(View.GONE);
-            mLockVolControlText.setVisibility(View.GONE);
-            mLockVolWakeText.setVisibility(View.GONE);
-            mLockPageHintText.setVisibility(View.GONE);
-            mLockMinimizeChallangeText.setVisibility(View.GONE);
-            mLockCarouselText.setVisibility(View.GONE);
-            mLockAllWidgetsText.setVisibility(View.GONE);
-            mLockUnlimitedWidgetsText.setVisibility(View.GONE);
-            mLockTextColorText.setVisibility(View.GONE);
-            mLockTextColorButton.setVisibility(View.GONE);
-            mHelperText.setText(getResources().getString(R.string.lockscreen_target_info));
-        }
-    }
 
     @Override
     public void onColorChanged(int color) {

@@ -87,6 +87,9 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
             mClockAmPmstyle.setEnabled(false);
             mColorPicker.setEnabled(false);
             mClockWeekday.setEnabled(false);
+            mClockAmPmstyle.setSummary(R.string.enable_clock_location);
+            mColorPicker.setSummary(R.string.enable_clock_location);
+            mClockWeekday.setSummary(R.string.enable_clock_location);
         }
     }
 
@@ -109,10 +112,16 @@ public class StatusBarClock extends AOKPPreferenceFragment implements
                 mClockAmPmstyle.setEnabled(false);
                 mColorPicker.setEnabled(false);
                 mClockWeekday.setEnabled(false);
+                mClockAmPmstyle.setSummary(R.string.enable_clock_location);
+                mColorPicker.setSummary(R.string.enable_clock_location);
+                mClockWeekday.setSummary(R.string.enable_clock_location);
             } else {
                 mClockAmPmstyle.setEnabled(true);
                 mColorPicker.setEnabled(true);
                 mClockWeekday.setEnabled(true);
+                mClockAmPmstyle.setSummary(null);
+                mColorPicker.setSummary(null);
+                mClockWeekday.setSummary(R.string.enable_clock_weekday_summary);
             }
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String

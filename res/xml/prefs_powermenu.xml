@@ -22,12 +22,10 @@
 
     <SwitchPreference
         android:key="show_navbar_hide"
-        android:title="@string/title_show_navbar_hide"
-        android:summary="@string/summary_show_navbar_hide" />
+        android:title="@string/title_show_navbar_hide" />
 
     <SwitchPreference
         android:key="show_reboot_keyguard"
-        android:title="@string/title_show_reboot_keyguard"
-        android:summary="@string/summary_show_reboot_keyguard" />
+        android:title="@string/title_show_reboot_keyguard" />
 
 </PreferenceScreen>

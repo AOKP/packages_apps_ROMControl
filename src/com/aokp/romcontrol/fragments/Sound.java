@@ -39,6 +39,9 @@ public class Sound extends AOKPPreferenceFragment
     ListPreference mPhoneSilent;
     ListPreference mAnnoyingNotifications;
 
+    private int mCallPref;
+    private int mFlipPref;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,16 +66,28 @@ public class Sound extends AOKPPreferenceFragment
         mFlipAction = (ListPreference) findPreference(PREF_FLIP_ACTION);
         mFlipAction.setOnPreferenceChangeListener(this);
         mFlipAction.setValue((prefs.getString(PREF_FLIP_ACTION, "-1")));
+        mFlipPref = Integer.parseInt(prefs.getString(PREF_FLIP_ACTION, "-1"));
 
         mUserDownMS = (ListPreference) findPreference(PREF_USER_DOWN_MS);
-        mUserDownMS.setEnabled(Integer.parseInt(prefs.getString(PREF_FLIP_ACTION, "-1")) != -1);
 
         mFlipScreenOff = (ListPreference) findPreference(PREF_USER_TIMEOUT);
-        mFlipScreenOff.setEnabled(Integer.parseInt(prefs.getString(PREF_FLIP_ACTION, "-1")) != -1);
 
         mPhoneSilent = (ListPreference) findPreference(PREF_PHONE_RING_SILENCE);
         mPhoneSilent.setValue((prefs.getString(PREF_PHONE_RING_SILENCE, "0")));
         mPhoneSilent.setOnPreferenceChangeListener(this);
+        mCallPref = Integer.parseInt(prefs.getString(PREF_PHONE_RING_SILENCE, "-1"));
+
+        if (mFlipPref != -1) {
+            mUserDownMS.setEnabled(true);
+            mFlipScreenOff.setEnabled(true);
+            mUserDownMS.setSummary(R.string.summary_down_sec);
+            mFlipScreenOff.setSummary(R.string.summary_timeout_sec);
+        } else {
+            mUserDownMS.setEnabled(false);
+            mFlipScreenOff.setEnabled(false);
+            mUserDownMS.setSummary(R.string.enable_audio_mode);
+            mFlipScreenOff.setSummary(R.string.enable_audio_mode);
+        }
 
         if (!hasPhoneAbility(mContext)) {
             getPreferenceScreen().removePreference(mPhoneSilent);
@@ -114,20 +129,15 @@ public class Sound extends AOKPPreferenceFragment
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    private void toggleFlipService() {
-        if (FlipService.isStarted()) {
-            mContext.stopService(new Intent(mContext, FlipService.class));
-        }
-        mContext.startService(new Intent(mContext, FlipService.class));
-    }
-
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mFlipAction) {
-            int val = Integer.parseInt((String) newValue);
-            if (val != -1) {
+            mFlipPref = Integer.parseInt((String) newValue);
+            if (mFlipPref != -1) {
                 mUserDownMS.setEnabled(true);
                 mFlipScreenOff.setEnabled(true);
+                mUserDownMS.setSummary(R.string.summary_down_sec);
+                mFlipScreenOff.setSummary(R.string.summary_timeout_sec);
                 AlertDialog.Builder ad = new AlertDialog.Builder(getActivity());
                 ad.setTitle(getResources().getString(R.string.flip_dialog_title));
                 ad.setMessage(getResources().getString(R.string.flip_dialog_msg));
@@ -140,26 +150,32 @@ public class Sound extends AOKPPreferenceFragment
                             }
                         });
                 ad.show();
-                toggleFlipService();
             } else {
                 mUserDownMS.setEnabled(false);
                 mFlipScreenOff.setEnabled(false);
+                mUserDownMS.setSummary(R.string.enable_audio_mode);
+                mFlipScreenOff.setSummary(R.string.enable_audio_mode);
             }
+            flipServiceCheck();
             return true;
-
         } else if (preference == mAnnoyingNotifications) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
             return true;
-
         } else if (preference == mPhoneSilent) {
-            int val = Integer.parseInt((String) newValue);
-            if (val != 0) {
-                toggleFlipService();
-            }
+            mCallPref = Integer.parseInt((String) newValue);
+            flipServiceCheck();
             return true;
         }
         return false;
+    }
+
+    private void flipServiceCheck() {
+        if (mCallPref != 0 || mFlipPref != -1) {
+            mContext.startService(new Intent(mContext, FlipService.class));
+        } else {
+            mContext.stopService(new Intent(mContext, FlipService.class));
+        }
     }
 }

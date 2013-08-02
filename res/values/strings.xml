@@ -79,6 +79,29 @@
     <string name="menu_ribbon_toggles_error">Toggles are only available for the left and right swipe ribbons.</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
 
+    <!-- Preference Dependant Instruction -->
+    <string name="enable_bootanimation_unlock">To Unlock: uncheck \"disable boot animation\"</string>
+    <string name="enable_phone_or_phablet">To Unlock: enable phone or phablet \"UI mode\"</string>
+    <string name="enable_tablet_ui">To Unlock: enable tablet \"UI mode\"</string>
+    <string name="enable_noti_wallpaper">To Unlock: enable phone or phablet \"UI mode\" and set a
+        \"notification background\"
+    </string>
+    <string name="enable_menu_location">To Unlock: enable a \"menu Location\"</string>
+    <string name="enable_hiding_navbar">To Unlock: \"enable hidden NavBar\"</string>
+    <string name="enable_hiding_systembar">To Unlock: \"enable hidden SystemBar\"</string>
+    <string name="enable_audio_mode">To Unlock: enable \"face down audio mode\"</string>
+    <string name="enable_battery_bar">To Unlock: enable a \"battery bar location\"</string>
+    <string name="enable_clock_location">To Unlock: enable a \"clock style\"</string>
+    <string name="enable_signal_text">To Unlock: set \"signal indicator style\" to display text or dBm</string>
+    <string name="enable_wifi_text">To Unlock: set \"WiFi signal indicator style\" to display text</string>
+    <string name="enable_toggle_tiles">To Unlock: set \"toggle style\" to tiles</string>
+    <string name="enable_fasttoggle">To Unlock: \"enable fast toggle\" and tiles \"toggle style\"</string>
+    <string name="enable_favorite_toggle">To Unlock: enable a \"favorite contact\" toggle here or in a Ribbon</string>
+    <string name="enable_screenshot_toggle">To Unlock: enable a \"screenshot\" toggle here or in a Ribbon</string>
+    <string name="enable_custom_toggle">To Unlock: enable a \"custom\" toggle here or in a Ribbon</string>
+    <string name="enable_spen_gestures">To Unlock: \"enable S Pen gestures\" </string>
+    <string name="enable_persist_installer">To Unlock: \"enable persistence\"</string>
+
     <!-- General Strings -->
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
@@ -92,10 +115,8 @@
     <string name="title_show_torch_toggle">Torch</string>
     <string name="title_show_airplane_toggle">Airplane mode</string>
     <string name="title_show_navbar_hide">System Bar toggles</string>
-    <string name="summary_show_navbar_hide">Enabling this will show toggles that hide the NavBar and Statusbar</string>
     <string name="title_show_volume_state_toggle">Volume states</string>
-    <string name="title_show_reboot_keyguard">Reboot on lockscreen</string>
-    <string name="summary_show_reboot_keyguard">Enabling this will show reboot options while on lockscreen</string>
+    <string name="title_show_reboot_keyguard">Lockscreen reboot</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Action on swipe left</string>
@@ -187,7 +208,7 @@
     <string name="display_cat">Display</string>
     <string name="recents_cat">Recents</string>
     <string name="tabletUI_cat">Tablet UI</string>
-    <string name="enable_volume_options">Enable Volume panel</string>
+    <string name="enable_volume_options">Enable volume-panel</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications in the Statusbar</string>
     <string name="vibrate_notif_expand_title">Vibrate on expand</string>
@@ -323,7 +344,7 @@
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggles_style_title">Toggle style</string>
-    <string name="toggles_style_summary">Tiles or traditional</string>
+    <string name="toggles_style_summary">Tiles, traditional, or scrollable</string>
     <string name="toggles_display_close">Close</string>
     <string name="toggles_order_title">Toggle order</string>
     <string name="toggles_order_summary">Choose the order in which your toggles are displayed</string>
@@ -544,8 +565,8 @@
     <string name="statusbar_hide_title">Hide Statusbar</string>
     <string name="statusbar_hide_summary">Checking this completely hides the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and Navigation Bar opacity</string>
-    <string name="navbar_hide_enable_title">Hidden NavBar Enable</string>
-    <string name="systembar_hide_enable_title">Hidden SystemBar Enable</string>
+    <string name="navbar_hide_enable_title">Enable Hidden NavBar</string>
+    <string name="systembar_hide_enable_title">Enable Hidden SystemBar</string>
     <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
     <string name="drag_handle_width_title">Drag Handle Width</string>
     <string name="title_navbar_timeout">Hidden NavBar Timeout</string>
@@ -598,7 +619,7 @@
     <string name="enable_ribbon_vibrate_title">Vibrate on touch of swipe area</string>
     <string name="enable_ribbon_text_summary">Enable the app name text below the icon</string>
     <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
-    <string name="ribbon_icon_space_title">Icon ribbon spacing</string>
+    <string name="ribbon_icon_space_title">Ribbon icon spacing</string>
     <string name="app_window_space_title">Vertical icon spacing</string>
     <string name="ribbon_icon_size_title">Icon size</string>
     <string name="ribbon_dismiss_title">Ribbon dismiss action</string>
@@ -606,14 +627,14 @@
     <string name="ribbon_long_swipe_title">Swipe area longswipe</string>
     <string name="ribbon_long_press_title">Swipe area longpress</string>
     <string name="ribbon_icon_size_summary">Set size of your icons</string>
-    <string name="ribbon_lockscreen">Lockscreen ribbon</string>
-    <string name="ribbon_notifications">Notifications ribbon</string>
-    <string name="ribbon_quicksettings">Quick settings ribbon</string>
-    <string name="ribbon_swipe_left">Left swipe ribbon</string>
-    <string name="ribbon_swipe_right">Right swipe ribbon</string>
-    <string name="ribbon_swipe_bottom">Bottom swipe ribbon</string>
+    <string name="ribbon_lockscreen">Lockscreen Ribbon</string>
+    <string name="ribbon_notifications">Notifications Ribbon</string>
+    <string name="ribbon_quicksettings">Quick settings Ribbon</string>
+    <string name="ribbon_swipe_left">Left swipe Ribbon</string>
+    <string name="ribbon_swipe_right">Right swipe Ribbon</string>
+    <string name="ribbon_swipe_bottom">Bottom swipe Ribbon</string>
     <string name="app_window">Application window</string>
-    <string name="clone_title">Choose ribbon to clone</string>
+    <string name="clone_title">Choose Ribbon to clone</string>
     <string name="icon_size_normal">Normal</string>
     <string name="icon_size_20">Medium</string>
     <string name="icon_size_15">Small</string>
@@ -627,14 +648,14 @@
         display ribbon.
     </string>
     <string name="ribbon_button_colorize_title">Action icons match text color</string>
-    <string name="ribbon_color_title">Color of Swipe Ribbon</string>
+    <string name="ribbon_color_title">Color of swipe Ribbon</string>
     <string name="text_color_title">Color of app label text</string>
-    <string name="ribbon_opacity_title">Opacity of Swipe Ribbon</string>
-    <string name="timeout_spinner_title">Ribbon Auto Timeout</string>
-    <string name="ribbon_drag_handle_width_title">Drag Handle Length</string>
-    <string name="ribbon_drag_handle_height_title">Drag Handle Thickness</string>
+    <string name="ribbon_opacity_title">Opacity of swipe Ribbon</string>
+    <string name="timeout_spinner_title">Ribbon auto timeout</string>
+    <string name="ribbon_drag_handle_width_title">Drag handle length</string>
+    <string name="ribbon_drag_handle_height_title">Drag handle thickness</string>
     <string name="ribbon_insert">Insert button</string>
-    <string name="ribbon_handle_location_title">Ribbon Handle Location</string>
+    <string name="ribbon_handle_location_title">Ribbon handle location</string>
     <string name="ribbon_icon_location_title">Icon gravity</string>
     <string name="window_text_color_title">Window text color</string>
     <string name="window_color_title">Window color</string>
@@ -646,7 +667,7 @@
     <string name="bottom">Bottom</string>
     <string name="never">Never</string>
     <string name="always">Always</string>
-    <string name="not_bar">Not NavBar Actions</string>
+    <string name="not_bar">Not NavBar actions</string>
     <string name="multi_select_title">Select targets to add</string>
     <string name="ribbon_animation_type_title">Animation style</string>
     <string name="ribbon_toggles_button_title">Toggles button on bottom</string>
@@ -670,8 +691,8 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Test LED</string>
     <string name="led_test_notification_message_now">"Now testing LED for: "</string>
-    <string name="led_test_notification_message_note">". Please turn off your screen to see the LED. Don't hit OK on
-        this popup till you're done viewing the LED color."
+    <string name="led_test_notification_message_note">".\nPlease turn off your screen to see the LED. Don't hit OK on
+        this popup until you're done viewing the LED color."
     </string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">Enable LED while charging (requires reboot)</string>
@@ -754,8 +775,10 @@
     </string>
     <string name="lockscreen_stock_music_layout_title">Stock music layout</string>
     <string name="lockscreen_stock_music_layout_summary">Use the stock layout when playing music.</string>
-    <string name="lockscreen_wallpaper_title">Choose lockscreen wallpaper</string>
-    <string name="lockscreen_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
+    <string name="lockscreen_wallpaper_title">Lockscreen background</string>
+    <string name="lockscreen_wallpaper_summary">Set or remove the current lockscreen background</string>
+    <string name="lockscreen_wallpaper_pick">New lockscreen background</string>
+    <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
     <string name="lockscreen_weather_title">Enable</string>
@@ -1006,10 +1029,10 @@
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="both">Both</string>
-    <string name="default_jb_behavior">Default JB behavior</string>
+    <string name="default_jb_behavior">Default behavior</string>
     <string name="always_show_invincible_icons">Always show invisible icons</string>
     <string name="always_show">Always show</string>
-    <string name="default_jb_with_invincible_icons_when_hidden">Default JB behavior with invisible icons when hidden
+    <string name="default_jb_with_invincible_icons_when_hidden">Default behavior with invisible icons when hidden
     </string>
     <string name="home">Home</string>
     <string name="back">Back</string>
@@ -1017,7 +1040,7 @@
     <string name="search">Search</string>
     <string name="screenshot">Screenshot</string>
     <string name="menu">Menu</string>
-    <string name="toggle_widgets">Toggle Widgets</string>
+    <string name="toggle_widgets">Toggle widgets</string>
     <string name="open_ime_switcher">Open IME Switcher</string>
     <string name="kill_app">Kill app</string>
     <string name="lastapp">Last app</string>
@@ -1026,17 +1049,17 @@
     <string name="recents_gb">Recents (GB style)</string>
     <string name="custom_app">Custom app</string>
     <string name="menu_power">Power menu</string>
-    <string name="aokp_ribbon">AOKP Ribbon</string>
-    <string name="nav_widgets">Nav Widgets</string>
+    <string name="aokp_ribbon">AOKP ribbon</string>
+    <string name="nav_widgets">NavBar widgets</string>
     <string name="blank">Blank</string>
     <string name="none">None</string>
-    <string name="take_screenshot">Take Screenshot</string>
+    <string name="take_screenshot">Take screenshot</string>
     <string name="ring_vib">Ring/Vib</string>
     <string name="ring_silent">Ring/Silent</string>
     <string name="ring_vib_silent">Ring/Vib/Silent</string>
-    <string name="screen_off">Screen Off</string>
+    <string name="screen_off">Screen off</string>
     <string name="google_now">Google Now</string>
-    <string name="select_application">Select Application</string>
+    <string name="select_application">Select application</string>
     <string name="one_target">1 target</string>
     <string name="two_targets">2 targets</string>
     <string name="three_targets">3 targets</string>

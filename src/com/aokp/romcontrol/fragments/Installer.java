@@ -39,6 +39,61 @@ public class Installer extends AOKPPreferenceFragment {
     ArrayList<String> mPersistFiles;
     ArrayList<String> mPersistTrailer;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle(R.string.title_installer);
+        // Load the preferences from an XML resource
+        addPreferencesFromResource(R.xml.prefs_installer);
+
+        PreferenceScreen prefs = getPreferenceScreen();
+
+        loadPrefs();
+
+        mPrefPersistEnable = (CheckBoxPreference) findPreference(PREF_PERSIST_ENABLE);
+        mPrefPersistEnable.setChecked(mPersistEnable);
+        mPrefPersistDensity = (CheckBoxPreference) findPreference(PREF_PERSIST_PROP_DENSITY);
+        mPrefPersistDensity.setChecked(mPersistProps.contains("ro.sf.lcd_density"));
+        mPrefPersistHosts = (CheckBoxPreference) findPreference(PREF_PERSIST_FILE_HOSTS);
+        mPrefPersistHosts.setChecked(mPersistFiles.contains("etc/hosts"));
+        setSummaries();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+                                         Preference preference) {
+        boolean isChecked = ((CheckBoxPreference) preference).isChecked();
+        if (preference == mPrefPersistEnable) {
+            mPersistEnable = isChecked;
+            savePrefs();
+            setSummaries();
+            return true;
+        }
+        if (preference == mPrefPersistDensity) {
+            if (isChecked) {
+                if (!mPersistProps.contains("ro.sf.lcd_density")) {
+                    mPersistProps.add("ro.sf.lcd_density");
+                }
+            } else {
+                mPersistProps.remove("ro.sf.lcd_density");
+            }
+            savePrefs();
+            return true;
+        }
+        if (preference == mPrefPersistHosts) {
+            if (isChecked) {
+                if (!mPersistFiles.contains("etc/hosts")) {
+                    mPersistFiles.add("etc/hosts");
+                }
+            } else {
+                mPersistFiles.remove("etc/hosts");
+            }
+            savePrefs();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
     private boolean stringToBool(String val) {
         if (val.equals("0") ||
                 val.equals("false") ||
@@ -80,7 +135,7 @@ public class Installer extends AOKPPreferenceFragment {
         return ret;
     }
 
-    boolean loadPrefs() {
+    private void loadPrefs() {
         mPersistEnable = true;
         mPersistProps = new ArrayList<String>();
         mPersistFiles = new ArrayList<String>();
@@ -124,10 +179,9 @@ public class Installer extends AOKPPreferenceFragment {
                 }
             }
         }
-        return true;
     }
 
-    boolean savePrefs() {
+    private void savePrefs() {
         BufferedWriter bw = null;
         Helpers.getMount("rw");
         String[] cmdarray = new String[3];
@@ -147,59 +201,12 @@ public class Installer extends AOKPPreferenceFragment {
         Log.i(TAG, "savePrefs: stdout=" + cr.getStdout());
         Log.i(TAG, "savePrefs: stderr=" + cr.getStderr());
         Helpers.getMount("ro");
-        return true;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTitle(R.string.title_installer);
-        // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.prefs_installer);
-
-        PreferenceScreen prefs = getPreferenceScreen();
-
-        loadPrefs();
-
-        mPrefPersistEnable = (CheckBoxPreference) findPreference(PREF_PERSIST_ENABLE);
-        mPrefPersistEnable.setChecked(mPersistEnable);
-        mPrefPersistDensity = (CheckBoxPreference) findPreference(PREF_PERSIST_PROP_DENSITY);
-        mPrefPersistDensity.setChecked(mPersistProps.contains("ro.sf.lcd_density"));
-        mPrefPersistHosts = (CheckBoxPreference) findPreference(PREF_PERSIST_FILE_HOSTS);
-        mPrefPersistHosts.setChecked(mPersistFiles.contains("etc/hosts"));
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-        boolean isChecked = ((CheckBoxPreference) preference).isChecked();
-        if (preference == mPrefPersistEnable) {
-            mPersistEnable = isChecked;
-            savePrefs();
-            return true;
-        }
-        if (preference == mPrefPersistDensity) {
-            if (isChecked) {
-                if (!mPersistProps.contains("ro.sf.lcd_density")) {
-                    mPersistProps.add("ro.sf.lcd_density");
-                }
-            } else {
-                mPersistProps.remove("ro.sf.lcd_density");
-            }
-            savePrefs();
-            return true;
-        }
-        if (preference == mPrefPersistHosts) {
-            if (isChecked) {
-                if (!mPersistFiles.contains("etc/hosts")) {
-                    mPersistFiles.add("etc/hosts");
-                }
-            } else {
-                mPersistFiles.remove("etc/hosts");
-            }
-            savePrefs();
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    private void setSummaries() {
+        mPrefPersistDensity.setSummary(mPersistEnable ? R.string.persist_prop_density_summary
+                : R.string.enable_persist_installer);
+        mPrefPersistHosts.setSummary(mPersistEnable ? R.string.persist_file_hosts_summary
+                : R.string.enable_persist_installer);
     }
 }

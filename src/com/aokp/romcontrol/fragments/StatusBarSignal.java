@@ -55,10 +55,12 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
 
         if (Integer.parseInt(mDbmStyletyle.getValue()) == 0) {
             mColorPicker.setEnabled(false);
+            mColorPicker.setSummary(R.string.enable_signal_text);
         }
 
         if (Integer.parseInt(mWifiStyle.getValue()) == 0) {
             mWifiColorPicker.setEnabled(false);
+            mWifiColorPicker.setSummary(R.string.enable_wifi_text);
         }
     }
 
@@ -86,6 +88,7 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_SIGNAL_TEXT, val);
             mColorPicker.setEnabled(val == 0 ? false : true);
+            mColorPicker.setSummary(val == 0 ? R.string.enable_signal_text : null);
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mColorPicker) {
@@ -103,6 +106,7 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT, val);
             mWifiColorPicker.setEnabled(val == 0 ? false : true);
+            mWifiColorPicker.setSummary(val == 0 ? R.string.enable_wifi_text : null);
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mWifiColorPicker) {

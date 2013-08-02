@@ -265,6 +265,7 @@ public class Navbar extends AOKPPreferenceFragment implements
 
         if (Integer.parseInt(menuDisplayLocation.getValue()) == 4) {
             mNavBarMenuDisplay.setEnabled(false);
+            mNavBarMenuDisplay.setSummary(R.string.enable_menu_location);
         }
 
         refreshSettings();
@@ -393,6 +394,8 @@ public class Navbar extends AOKPPreferenceFragment implements
                     Settings.System.MENU_LOCATION, val);
             refreshSettings();
             mNavBarMenuDisplay.setEnabled(val < 4 ? true : false);
+            mNavBarMenuDisplay.setSummary(val == 4 ? R.string.enable_menu_location
+                    : R.string.summary_pref_navigation_menu_display);
             return true;
         } else if (preference == mNavBarMenuDisplay) {
             Settings.System.putInt(mContentRes,
@@ -557,6 +560,13 @@ public class Navbar extends AOKPPreferenceFragment implements
         mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
         mDragHandleWidth.setEnabled(mNavBarHideEnable.isChecked());
         mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());
+        mDragHandleOpacity.setSummary(mNavBarHideEnable.isChecked() ? null
+                 : R.string.enable_hiding_navbar);
+        mDragHandleWidth.setSummary(mNavBarHideEnable.isChecked() ? null
+                 : R.string.enable_hiding_navbar);
+        mNavBarHideTimeout.setSummary(mNavBarHideEnable.isChecked()
+                 ? R.string.summary_navbar_timeout
+                 : R.string.enable_hiding_navbar);
     }
 
     private Uri getTempFileUri() {

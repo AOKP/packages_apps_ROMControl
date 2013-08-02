@@ -211,7 +211,13 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         if (Integer.parseInt(mTogglesStyle.getValue()) > 1) {
             mFastToggle.setEnabled(false);
             mTogglesPerRow.setEnabled(false);
+            mFastToggle.setSummary(R.string.enable_toggle_tiles);
+            mTogglesPerRow.setSummary(R.string.enable_toggle_tiles);
         }
+
+        mChooseFastToggleSide.setSummary(mFastToggle.isChecked() 
+                ? R.string.toggle_enable_fasttoggle_summary
+                : R.string.enable_fasttoggle);
 
         new SettingsObserver(new Handler()).observe();
         refreshSettings();
@@ -272,6 +278,10 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             mTogglesStyle.setValue((String) newValue);
             mFastToggle.setEnabled(val > 1 ? false : true);
             mTogglesPerRow.setEnabled(val > 1 ? false : true);
+            mFastToggle.setSummary(val > 1 ? R.string.enable_toggle_tiles
+                    : R.string.toggle_enable_fasttoggle_summary);
+            mTogglesPerRow.setSummary(val > 1 ? R.string.enable_toggle_tiles
+                    : R.string.toggles_per_row_summary);
             Helpers.restartSystemUI();
         } else if (preference == mScreenshotDelay) {
             int val = Integer.parseInt((String) newValue);
@@ -283,6 +293,8 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
             Settings.System.putBoolean(mContentRes,
                     Settings.System.FAST_TOGGLE, val);
             mContentRes.notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
+            mChooseFastToggleSide.setSummary(val ? R.string.toggle_enable_fasttoggle_summary
+                    : R.string.enable_fasttoggle);
             return true;
         } else if (preference == mChooseFastToggleSide) {
             int val = Integer.parseInt((String) newValue);
@@ -967,16 +979,41 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         }
         if (currentToggles != null) {
             if (mFavContact != null) {
-                mFavContact.setEnabled(currentToggles.contains("FAVCONTACT") || favoriteRibbon);
+                if (currentToggles.contains("FAVCONTACT") || favoriteRibbon) {
+                    mFavContact.setEnabled(true);
+                    mFavContact.setSummary(R.string.toggle_favcontact_summary);
+                } else {
+                    mFavContact.setEnabled(false);
+                    mFavContact.setSummary(R.string.enable_favorite_toggle);
+                }
             }
             if (mScreenshotDelay != null) {
-                mScreenshotDelay
-                        .setEnabled(currentToggles.contains("SCREENSHOT") || screenshotRibbon);
+                if (currentToggles.contains("SCREENSHOT") || screenshotRibbon) {
+                    mScreenshotDelay.setEnabled(true);
+                    mScreenshotDelay.setSummary(R.string.screenshot_delay_summary);
+                } else {
+                    mScreenshotDelay.setEnabled(false);
+                    mScreenshotDelay.setSummary(R.string.enable_screenshot_toggle);
+                }
             }
             if (mCustomCat != null && mCustomButtons != null) {
                 boolean enabled = currentToggles.contains("CUSTOM") || customRibbon;
-                mCustomCat.setEnabled(enabled);
-                mCustomButtons.setEnabled(enabled);
+                if (enabled) {
+                    mCustomCat.setEnabled(true);
+                    mCustomButtons.setEnabled(true);
+                    mBootState.setSummary(R.string.boot_action_summary);
+                    mMatchAction.setSummary(R.string.match_icon_action_summary);
+                    mCollapseShade.setSummary(R.string.collapse_bar_summary);
+                    mOnDoubleClick.setSummary(R.string.dclick_action_summary);
+                } else {
+                    mCustomCat.setEnabled(false);
+                    mCustomButtons.setEnabled(false);
+                    mBootState.setSummary(R.string.enable_custom_toggle);
+                    mMatchAction.setSummary(R.string.enable_custom_toggle);
+                    mCollapseShade.setSummary(R.string.enable_custom_toggle);
+                    mOnDoubleClick.setSummary(R.string.enable_custom_toggle);
+                }
+                
                 for (int i = 0; i < 5; i++) {
                     mContentRes.notifyChange(Settings.System
                             .getUriFor(Settings.System.CUSTOM_PRESS_TOGGLE[i]), null);

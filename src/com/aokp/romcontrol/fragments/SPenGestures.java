@@ -25,6 +25,7 @@ public class SPenGestures extends AOKPPreferenceFragment implements
     private Preference mPreference;
     private String mString;
 
+    private boolean mSPenChecked;
     private String[] mActions;
     private String[] mActionCodes;
 
@@ -59,6 +60,7 @@ public class SPenGestures extends AOKPPreferenceFragment implements
         mEnableSPen = (CheckBoxPreference) findPreference("enable_spen");
         mEnableSPen.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.ENABLE_SPEN_ACTIONS, false));
+        mSPenChecked = mEnableSPen.isChecked();
 
         mEnableIcon = (CheckBoxPreference) findPreference("enable_stylus pointer");
         mEnableIcon.setChecked(Settings.System.getBoolean(mContentRes,
@@ -66,50 +68,46 @@ public class SPenGestures extends AOKPPreferenceFragment implements
 
         mLeft = (ListPreference) findPreference("spen_left");
         mLeft.setOnPreferenceChangeListener(this);
-        mLeft.setSummary(getProperSummary(mLeft));
         mLeft.setEntries(mActions);
         mLeft.setEntryValues(mActionCodes);
 
         mRight = (ListPreference) findPreference("spen_right");
         mRight.setOnPreferenceChangeListener(this);
-        mRight.setSummary(getProperSummary(mRight));
         mRight.setEntries(mActions);
         mRight.setEntryValues(mActionCodes);
 
         mUp = (ListPreference) findPreference("spen_up");
         mUp.setOnPreferenceChangeListener(this);
-        mUp.setSummary(getProperSummary(mUp));
         mUp.setEntries(mActions);
         mUp.setEntryValues(mActionCodes);
 
         mDown = (ListPreference) findPreference("spen_down");
         mDown.setOnPreferenceChangeListener(this);
-        mDown.setSummary(getProperSummary(mDown));
         mDown.setEntries(mActions);
         mDown.setEntryValues(mActionCodes);
 
         mDouble = (ListPreference) findPreference("spen_double");
         mDouble.setOnPreferenceChangeListener(this);
-        mDouble.setSummary(getProperSummary(mDouble));
         mDouble.setEntries(mActions);
         mDouble.setEntryValues(mActionCodes);
 
         mLong = (ListPreference) findPreference("spen_long");
         mLong.setOnPreferenceChangeListener(this);
-        mLong.setSummary(getProperSummary(mLong));
         mLong.setEntries(mActions);
         mLong.setEntryValues(mActionCodes);
 
+        setSummaries();
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
         if (preference == mEnableSPen) {
-
+            mSPenChecked = mEnableSPen.isChecked();
             Settings.System.putBoolean(mContentRes,
                     Settings.System.ENABLE_SPEN_ACTIONS,
-                    mEnableSPen.isChecked());
+                    mSPenChecked);
+            setSummaries();
             return true;
         } else if (preference == mEnableIcon) {
 
@@ -203,6 +201,24 @@ public class SPenGestures extends AOKPPreferenceFragment implements
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void setSummaries() {
+        if (mSPenChecked) {
+            mLeft.setSummary(getProperSummary(mLeft));
+            mRight.setSummary(getProperSummary(mRight));
+            mUp.setSummary(getProperSummary(mUp));
+            mDown.setSummary(getProperSummary(mDown));
+            mDouble.setSummary(getProperSummary(mDouble));
+            mLong.setSummary(getProperSummary(mLong));
+        } else {
+            mLeft.setSummary(R.string.enable_spen_gestures);
+            mRight.setSummary(R.string.enable_spen_gestures);
+            mUp.setSummary(R.string.enable_spen_gestures);
+            mDown.setSummary(R.string.enable_spen_gestures);
+            mDouble.setSummary(R.string.enable_spen_gestures);
+            mLong.setSummary(R.string.enable_spen_gestures);
+        }
     }
 
     private String getProperSummary(Preference preference) {

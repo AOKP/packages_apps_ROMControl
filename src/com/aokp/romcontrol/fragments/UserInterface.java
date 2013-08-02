@@ -148,6 +148,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static int mLastRandomInsultIndex = -1;
     private String[] mInsults;
 
+    private int mUiMode;
     private int mSeekbarProgress;
     String mCustomLabelText = null;
     int mUserRotationAngles = -1;
@@ -273,16 +274,21 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     .removePreference(mWakeUpWhenPluggedOrUnplugged);
         }
 
-        if (isTabletUI(mContext)) {
+        mUiMode = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.CURRENT_UI_MODE, 0);
+
+        if (mUiMode == 1) {
             mStatusbarSliderPreference.setEnabled(false);
             mStatusBarHide.setEnabled(false);
             mNotificationWallpaper.setEnabled(false);
-            mWallpaperAlpha.setEnabled(false);
+            mStatusbarSliderPreference.setSummary(R.string.enable_phone_or_phablet);
+            mStatusBarHide.setSummary(R.string.enable_phone_or_phablet);
+            mNotificationWallpaper.setSummary(R.string.enable_phone_or_phablet);
         } else {
             mHideExtras.setEnabled(false);
+            mHideExtras.setSummary(R.string.enable_tablet_ui);
         }
 
-        resetBootAnimation();
         findWallpaperStatus();
     }
 
@@ -299,6 +305,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 mDisableBootAnimation.setSummary(null);
             }
         }
+        resetBootAnimation();
     }
 
     /**
@@ -319,6 +326,9 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             mBootAnimationPath = "";
         }
         mCustomBootAnimation.setEnabled(!mDisableBootAnimation.isChecked());
+        mCustomBootAnimation.setSummary(mDisableBootAnimation.isChecked()
+                ? R.string.enable_bootanimation_unlock
+                : R.string.custom_bootanimation_summary);
         return bootAnimationExists;
     }
 
@@ -543,7 +553,13 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     public void findWallpaperStatus() {
         File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
-        mWallpaperAlpha.setEnabled(wallpaper.exists() ? true : false);
+        if (mUiMode != 1 && wallpaper.exists()) {
+            mWallpaperAlpha.setEnabled(true);
+            mWallpaperAlpha.setSummary(null);
+        } else {
+            mWallpaperAlpha.setEnabled(false);
+            mWallpaperAlpha.setSummary(R.string.enable_noti_wallpaper);
+        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -988,18 +1004,25 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mUserModeUI) {
-            int val = Integer.valueOf((String) newValue);
+            mUiMode = Integer.valueOf((String) newValue);
             Settings.System.putInt(mContentResolver,
-                    Settings.System.USER_UI_MODE, val);
-            mStatusbarSliderPreference.setEnabled(val == 1 ? false : true);
-            mStatusBarHide.setEnabled(val == 1 ? false : true);
-            mNotificationWallpaper.setEnabled(val == 1 ? false : true);
-            if (val == 1) {
-                mWallpaperAlpha.setEnabled(false);
+                    Settings.System.USER_UI_MODE, mUiMode);
+            mStatusbarSliderPreference.setEnabled(mUiMode == 1 ? false : true);
+            mStatusBarHide.setEnabled(mUiMode == 1 ? false : true);
+            mNotificationWallpaper.setEnabled(mUiMode == 1 ? false : true);
+            mStatusbarSliderPreference.setSummary(mUiMode == 1 ? R.string.enable_phone_or_phablet
+                    : R.string.brightness_slider_summary);
+            mStatusBarHide.setSummary(mUiMode == 1 ? R.string.enable_phone_or_phablet
+                    : R.string.statusbar_hide_summary);
+            if (mUiMode == 1) {
+                mNotificationWallpaper.setSummary(R.string.enable_phone_or_phablet);
             } else {
-                findWallpaperStatus();
+                mNotificationWallpaper.setSummary(null);
             }
-            mHideExtras.setEnabled(val == 1 ? true : false);
+            mHideExtras.setEnabled(mUiMode == 1 ? true : false);
+            mHideExtras.setSummary(mUiMode == 1 ? R.string.hide_extras_summary
+                    : R.string.enable_tablet_ui);
+            findWallpaperStatus();
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mCrtMode) {

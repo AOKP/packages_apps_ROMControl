@@ -23,13 +23,11 @@
         <item>@string/dont_show</item>
         <item>@string/small_am_pm</item>
         <item>@string/regular_am_pm</item>
-        <item>@string/protekk_oclock</item>
     </string-array>
     <string-array name="clock_ampm_values" translatable="false">
         <item>2</item>
         <item>1</item>
         <item>0</item>
-        <item>3</item>
     </string-array>
     <string-array name="clock_weekday_entries" translatable="false">
         <item>@string/dont_show</item>

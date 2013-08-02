@@ -79,6 +79,25 @@
     <string name="menu_ribbon_toggles_error">Toggles are only available for the left and right swipe ribbons.</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
 
+    <!-- Preference Dependant Instruction -->
+    <string name="enable_phone_or_phablet">To Unlock: enable phone or phablet &quot;UI mode&quot;</string>
+    <string name="enable_tablet_ui">To Unlock: enable tablet &quot;UI mode&quot;</string>
+    <string name="enable_noti_wallpaper">To Unlock: enable phone or phablet &quot;UI mode&quot; and set a
+        &quot;notification background&quot;
+    </string>
+    <string name="enable_menu_location">To Unlock: enable a &quot;menu Location&quot;</string>
+    <string name="enable_hiding_navbar">To Unlock: &quot;enable hidden NavBar&quot;</string>
+    <string name="enable_audio_mode">To Unlock: enable &quot;face down audio mode&quot;</string>
+    <string name="enable_battery_bar">To Unlock: enable a &quot;battery bar location&quot;</string>
+    <string name="enable_clock_location">To Unlock: enable a &quot;clock style&quot;</string>
+    <string name="enable_signal_text">To Unlock: set &quot;signal indicator style&quot; to display text or dBm</string>
+    <string name="enable_wifi_text">To Unlock: set &quot;WiFi signal indicator style&quot; to display text</string>
+    <string name="enable_toggle_tiles">To Unlock: set &quot;toggle style&quot; to tiles</string>
+    <string name="enable_fasttoggle">To Unlock: &quot;enable fast toggle&quot; and tiles &quot;toggle style&quot;</string>
+    <string name="enable_favorite_toggle">To Unlock: enable a &quot;favorite contact&quot; toggle here or in a Ribbon</string>
+    <string name="enable_screenshot_toggle">To Unlock: enable a &quot;screenshot&quot; toggle here or in a Ribbon</string>
+    <string name="enable_custom_toggle">To Unlock: enable a &quot;custom&quot; toggle here or in a Ribbon</string>
+
     <!-- General Strings -->
     <string name="advanced_settings">Advanced settings</string>
     <string name="misc_short">Misc</string>
@@ -92,10 +111,8 @@
     <string name="title_show_torch_toggle">Torch</string>
     <string name="title_show_airplane_toggle">Airplane mode</string>
     <string name="title_show_navbar_hide">System Bar toggles</string>
-    <string name="summary_show_navbar_hide">Enabling this will show toggles that hide the NavBar and Statusbar</string>
     <string name="title_show_volume_state_toggle">Volume states</string>
-    <string name="title_show_reboot_keyguard">Reboot on lockscreen</string>
-    <string name="summary_show_reboot_keyguard">Enabling this will show reboot options while on lockscreen</string>
+    <string name="title_show_reboot_keyguard">Lockscreen reboot</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Action on swipe left</string>
@@ -544,7 +561,7 @@
     <string name="statusbar_hide_title">Hide Statusbar</string>
     <string name="statusbar_hide_summary">Checking this completely hides the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and Navigation Bar opacity</string>
-    <string name="navbar_hide_enable_title">Hidden NavBar Enable</string>
+    <string name="navbar_hide_enable_title">Enable Hidden NavBar</string>
     <string name="systembar_hide_enable_title">Hidden SystemBar Enable</string>
     <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
     <string name="drag_handle_width_title">Drag Handle Width</string>
@@ -670,8 +687,8 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Test LED</string>
     <string name="led_test_notification_message_now">"Now testing LED for: "</string>
-    <string name="led_test_notification_message_note">". Please turn off your screen to see the LED. Don't hit OK on
-        this popup till you're done viewing the LED color."
+    <string name="led_test_notification_message_note">".\nPlease turn off your screen to see the LED. Don't hit OK on
+        this popup until you're done viewing the LED color."
     </string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">Enable LED while charging (requires reboot)</string>

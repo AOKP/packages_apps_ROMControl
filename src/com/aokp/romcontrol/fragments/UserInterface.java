@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.FragmentTransaction;
 import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -23,6 +24,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -35,6 +38,7 @@ import android.provider.Settings;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.Display;
+import android.view.IWindowManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,7 +89,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final CharSequence PREF_SHOW_OVERFLOW = "show_overflow";
     private static final CharSequence PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
-    private static final CharSequence PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
     private static final CharSequence PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final CharSequence PREF_RECENT_GOOGLE_ASSIST = "recent_google_assist";
     private static final CharSequence PREF_RAM_USAGE_BAR = "ram_usage_bar";
@@ -113,6 +116,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
     private static final String BOOTANIMATION_USER_PATH = "/data/local/bootanimation.zip";
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
 
     CheckBoxPreference mAllow180Rotation;
     CheckBoxPreference mAllow270Rotation;
@@ -122,11 +126,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
     Preference mCustomBootAnimation;
+    Preference mHardwareKeys;
     ImageView mView;
     TextView mError;
     CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mVibrateOnExpand;
-    CheckBoxPreference mLongPressToKill;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRecentGoog;
     CheckBoxPreference mRamBar;
@@ -192,6 +196,20 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
         mCustomBootAnimation = findPreference(PREF_CUSTOM_BOOTANIM);
 
+        mHardwareKeys = (Preference) findPreference(KEY_HARDWARE_KEYS);
+
+        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if (windowManager.hasNavigationBar()) {
+                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+            } else {
+                // should not need to remove anything
+            }
+        } catch (RemoteException e) {
+            // Do nothing
+        }
+
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
@@ -213,13 +231,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         if (!hasVibration) {
             ((PreferenceGroup) findPreference(PREF_NOTIFICATION_VIBRATE))
                     .removePreference(mVibrateOnExpand);
-        }
-
-        mLongPressToKill = (CheckBoxPreference) findPreference(PREF_LONGPRESS_TO_KILL);
-        mLongPressToKill.setChecked(Settings.System.getInt(mContentResolver,
-                Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
-        if (!hasHardwareButtons) {
-            getPreferenceScreen().removePreference(((PreferenceGroup) findPreference(PREF_MISC)));
         }
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
@@ -529,12 +540,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     ((TwoStatePreference) preference).isChecked());
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mLongPressToKill) {
-            boolean checked = ((TwoStatePreference) preference).isChecked();
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.KILL_APP_LONGPRESS_BACK, checked);
-            return true;
-        } else if (preference == mRecentKillAll) {
+       } else if (preference == mRecentKillAll) {
             boolean checked = ((TwoStatePreference) preference).isChecked();
             Settings.System.putBoolean(mContentResolver,
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked);
@@ -567,6 +573,13 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                         Settings.System.SYSTEM_POWER_CRT_MODE, 0);
                 mCrtMode.setSummary(mCrtMode.getEntries()[crtMode]);
             }
+        } else if (preference == mHardwareKeys) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            HardwareKeys fragment = new HardwareKeys();
+            ft.addToBackStack("hardware_keys_binding");
+            ft.replace(this.getId(), fragment);
+            ft.commit();
+            return true;
         } else if (preference == mStatusBarHide) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(getActivity().getContentResolver(),

@@ -87,6 +87,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.HardwareKeys"
+            android:label="@string/title_hardware_keys" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.RibbonTargets"
             android:label="@string/title_ribbon" >
             <intent-filter>

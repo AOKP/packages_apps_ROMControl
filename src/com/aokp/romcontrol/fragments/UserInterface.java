@@ -86,7 +86,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final CharSequence PREF_SHOW_OVERFLOW = "show_overflow";
     private static final CharSequence PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
-    private static final CharSequence PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
     private static final CharSequence PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final CharSequence PREF_RECENT_GOOGLE_ASSIST = "recent_google_assist";
     private static final CharSequence PREF_RAM_USAGE_BAR = "ram_usage_bar";
@@ -128,7 +127,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     TextView mError;
     CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mVibrateOnExpand;
-    CheckBoxPreference mLongPressToKill;
     CheckBoxPreference mRecentKillAll;
     CheckBoxPreference mRecentGoog;
     CheckBoxPreference mRamBar;
@@ -216,13 +214,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         if (!hasVibration) {
             ((PreferenceGroup) findPreference(PREF_NOTIFICATION_VIBRATE))
                     .removePreference(mVibrateOnExpand);
-        }
-
-        mLongPressToKill = (CheckBoxPreference) findPreference(PREF_LONGPRESS_TO_KILL);
-        mLongPressToKill.setChecked(Settings.System.getInt(mContentResolver,
-                Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
-        if (!hasHardwareButtons) {
-            getPreferenceScreen().removePreference(((PreferenceGroup) findPreference(PREF_MISC)));
         }
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
@@ -537,12 +528,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     ((TwoStatePreference) preference).isChecked());
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mLongPressToKill) {
-            boolean checked = ((TwoStatePreference) preference).isChecked();
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.KILL_APP_LONGPRESS_BACK, checked);
-            return true;
-        } else if (preference == mRecentKillAll) {
+       } else if (preference == mRecentKillAll) {
             boolean checked = ((TwoStatePreference) preference).isChecked();
             Settings.System.putBoolean(mContentResolver,
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked);

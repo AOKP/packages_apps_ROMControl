@@ -46,6 +46,13 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         android:summary="@string/interface_navring_settings_summary" />
 
     <header
+        android:id="@+id/hardware_keys"
+        android:fragment="com.aokp.romcontrol.fragments.HardwareKeys"
+        android:title="@string/title_hardware_keys"
+        android:icon="@drawable/ic_rom_control_hardware_keys"
+        android:summary="@string/header_summary_hardware_keys" />
+
+    <header
         android:id="@+id/ribbon_targets"
         android:fragment="com.aokp.romcontrol.fragments.RibbonTargets"
         android:icon="@drawable/ic_rom_control_ribbon"

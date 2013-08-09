@@ -156,6 +156,23 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="hardware_keys_options"
+        android:title="@string/hardware_keys_options_title">
+
+        <Preference
+            android:key="hardware_keys"
+            android:title="@string/hardware_keys_title" />
+
+        <CheckBoxPreference
+            android:key="show_overflow"
+            android:title="@string/hardware_keys_show_overflow_title"
+            android:summary="@string/hardware_keys_show_overflow_summary"
+            android:persistent="false"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="misc"
         android:title="@string/misc_short">
 

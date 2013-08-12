@@ -552,7 +552,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private void maybeSwapSearchIcon() {
         // Update the search icon with drawable from the search .apk
         Intent intent = ((SearchManager) mContext.getSystemService(Context.SEARCH_SERVICE))
-                .getAssistIntent(mContext, UserHandle.USER_CURRENT);
+                .getAssistIntent(mContext, true, UserHandle.USER_CURRENT);
         if (intent != null) {
             ComponentName component = intent.getComponent();
             boolean replaced = mGlowPadView.replaceTargetDrawablesIfPresent(component,

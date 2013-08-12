@@ -626,7 +626,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     private void maybeSwapSearchIcon() {
         final Context context = getActivity();
         Intent intent = ((SearchManager) context.getSystemService(Context.SEARCH_SERVICE))
-                .getAssistIntent(context, UserHandle.USER_CURRENT);
+                .getAssistIntent(context, true, UserHandle.USER_CURRENT);
         if (intent != null) {
             ComponentName component = intent.getComponent();
             if (component == null || !mGlowPadView.replaceTargetDrawablesIfPresent(component,

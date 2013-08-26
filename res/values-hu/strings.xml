@@ -558,8 +558,8 @@
     <string name="ribbon_icon_size_title">Ikon méret</string>
     <string name="ribbon_dismiss_title">Szalag elutasító akció</string>
     <string name="ribbon_animation_duration_title">Animáció hossza</string>
-    <string name="ribbon_long_swipe_title">Húzási terület hooszan húzva</string>
-    <string name="ribbon_long_press_title">Húzási terület hooszan nyomva</string>
+    <string name="ribbon_long_swipe_title">Húzási terület hosszan húzva</string>
+    <string name="ribbon_long_press_title">Húzási terület hosszan nyomva</string>
     <string name="ribbon_icon_size_summary">Add meg az ikon méreteit</string>
     <string name="ribbon_lockscreen">Zárképernyő szalag</string>
     <string name="ribbon_notifications">Értesítési szalag</string>
@@ -587,7 +587,7 @@
     <string name="ribbon_drag_handle_height_title">Húzó fogantyú vastagsága</string>
     <string name="ribbon_insert">Gomb beillesztés</string>
     <string name="ribbon_handle_location_title">Szalag fogantyú helye</string>
-    <string name="ribbon_icon_location_title">Ikon súlya</string>
+    <string name="ribbon_icon_location_title">Ikon elhelyezkedése</string>
     <string name="window_text_color_title">Ablak szöveg szín</string>
     <string name="window_color_title">Ablak szín</string>
     <string name="window_opacity_title">Ablak áttetszősége</string>

@@ -1154,13 +1154,16 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
 
         private void updateToggleState() {
-            if (linkTransparencies) {
+            /*
+        	if (linkTransparencies) {
                 mSbLabel.setText(R.string.transparency_dialog_transparency_sb_and_nv);
                 mNavigationBarGroup.setVisibility(View.GONE);
             } else {
                 mSbLabel.setText(R.string.transparency_dialog_statusbar);
                 mNavigationBarGroup.setVisibility(View.VISIBLE);
             }
+            */
+        	mSbLabel.setText(R.string.transparency_dialog_statusbar);
 
             mSeekBars[STATUSBAR_KG_ALPHA]
                     .setEnabled(!mMatchStatusbarKeyguard.isChecked());

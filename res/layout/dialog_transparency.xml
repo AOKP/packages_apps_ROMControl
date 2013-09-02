@@ -16,14 +16,16 @@
             android:layout_marginBottom="10dip"
             android:checked="true"
             android:text="@string/transparency_dialog_linked_transparency"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:visibility="gone"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginBottom="10dip"
             android:layout_marginTop="5dip"
-            android:background="#FF545454" />
+            android:background="#FF545454"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/statusbar_label"
@@ -73,7 +75,8 @@
             android:id="@+id/navbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <View
                 android:layout_width="match_parent"

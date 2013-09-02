@@ -193,10 +193,10 @@
             aokp:emailDev="rohanmathur34@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
-            android:title="hillbillyhacker"
-            aokp:nameDev="hillbillyhacker"
+            android:title="willdeberry"
+            aokp:nameDev="willdeberry"
             aokp:twitterHandle="willdeberry"
-            aokp:githubLink="@string/github_hillbillyhacker"
+            aokp:githubLink="@string/github_willdeberry"
             aokp:emailDev="willdeberry@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference

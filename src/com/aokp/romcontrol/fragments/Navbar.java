@@ -104,11 +104,15 @@ public class Navbar extends AOKPPreferenceFragment implements
     SeekBarPreference mWidthLand;
     CheckBoxPreference mMenuArrowKeysCheckBox;
     Preference mConfigureWidgets;
+    
+    // removed navbar hide
+    /*
     CheckBoxPreference mNavBarHideEnable;
     ListPreference mNavBarHideTimeout;
     SeekBarPreference mDragHandleOpacity;
     SeekBarPreference mDragHandleWidth;
-
+	*/
+    
     // NavBar Buttons Stuff
     Resources mResources;
     private ImageView mLeftMenu, mRightMenu;
@@ -164,6 +168,8 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarMenuDisplay.setValue(Settings.System.getInt(mContentRes,
                 Settings.System.MENU_VISIBILITY, 0) + "");
 
+       // removed navbar hide
+        /*
         mNavBarHideEnable = (CheckBoxPreference) findPreference(NAVBAR_HIDE_ENABLE);
         mNavBarHideEnable.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.NAV_HIDE_ENABLE, false));
@@ -184,7 +190,7 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavBarHideTimeout.setOnPreferenceChangeListener(this);
         mNavBarHideTimeout.setValue(Settings.System.getInt(mContentRes,
                 Settings.System.NAV_HIDE_TIMEOUT, 3000) + "");
-
+        */
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
         mEnableNavigationBar = (CheckBoxPreference) findPreference(ENABLE_NAVIGATION_BAR);
@@ -249,9 +255,9 @@ public class Navbar extends AOKPPreferenceFragment implements
             mNavigationBarHeightLandscape.setTitle(R.string.system_bar_height_landscape_title);
             mNavigationBarHeightLandscape.setSummary(R.string.system_bar_height_landscape_summary);
             pg.removePreference(mNavigationBarWidth);
-            mNavBarHideEnable.setTitle(R.string.systembar_hide_enable_title);
-            mNavBarHideTimeout.setTitle(R.string.title_systembar_timeout);
-            mNavBarHideTimeout.setSummary(R.string.summary_systembar_timeout);
+            //mNavBarHideEnable.setTitle(R.string.systembar_hide_enable_title);
+            //mNavBarHideTimeout.setTitle(R.string.title_systembar_timeout);
+            //mNavBarHideTimeout.setSummary(R.string.summary_systembar_timeout);
         } else { // Phones&Phablets don't have SystemBar
             pg.removePreference(mWidthPort);
             pg.removePreference(mWidthLand);
@@ -355,7 +361,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mNavBarHideEnable) {
+       /* } else if (preference == mNavBarHideEnable) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.NAV_HIDE_ENABLE,
                     ((CheckBoxPreference) preference).isChecked());
@@ -367,7 +373,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             mNavBarHideTimeout.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.NAV_HIDE_TIMEOUT, 3000) + "");
             refreshSettings();
-            return true;
+            return true; */
         } else if (preference == mConfigureWidgets) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             WidgetConfigurationFragment fragment = new WidgetConfigurationFragment();
@@ -412,11 +418,11 @@ public class Navbar extends AOKPPreferenceFragment implements
             Settings.System.putInt(mContentRes, Settings.System.NAVIGATION_BAR_HEIGHT,
                     height);
             return true;
-        } else if (preference == mNavBarHideTimeout) {
+        /*} else if (preference == mNavBarHideTimeout) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
                     Settings.System.NAV_HIDE_TIMEOUT, val);
-            return true;
+            return true; */
         } else if (preference == mNavigationBarHeightLandscape) {
             String newVal = (String) newValue;
             int dp = Integer.parseInt(newVal);
@@ -472,7 +478,7 @@ public class Navbar extends AOKPPreferenceFragment implements
                     val * 0.01f);
             refreshSettings();
             return true;
-        } else if (preference == mDragHandleOpacity) {
+        /*} else if (preference == mDragHandleOpacity) {
             String newVal = (String) newValue;
             int op = Integer.parseInt(newVal);
             Settings.System.putInt(mContentRes,
@@ -484,7 +490,7 @@ public class Navbar extends AOKPPreferenceFragment implements
             //int height = mapChosenDpToPixels(dp);
             Settings.System.putInt(mContentRes,
                     Settings.System.DRAG_HANDLE_WEIGHT, dp);
-            return true;
+            return true;*/
         } else if (preference == mWidthPort) {
             float val = Float.parseFloat((String) newValue);
             Settings.System.putFloat(mContentRes,
@@ -554,9 +560,9 @@ public class Navbar extends AOKPPreferenceFragment implements
 
     public void refreshSettings() {
         refreshButtons();
-        mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
+        /*mDragHandleOpacity.setEnabled(mNavBarHideEnable.isChecked());
         mDragHandleWidth.setEnabled(mNavBarHideEnable.isChecked());
-        mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());
+        mNavBarHideTimeout.setEnabled(mNavBarHideEnable.isChecked());*/
     }
 
     private Uri getTempFileUri() {

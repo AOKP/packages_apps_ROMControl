@@ -144,6 +144,11 @@
             android:summary="@string/recent_kill_all_summary" />
 
         <CheckBoxPreference
+            android:key="recent_google_assist"
+            android:title="@string/recent_google_assist_title"
+            android:summary="@string/recent_google_assist_summary" />
+
+        <CheckBoxPreference
             android:key="ram_usage_bar"
             android:title="@string/ram_bar"
             android:summary="@string/ram_bar_summary" />

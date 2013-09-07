@@ -252,6 +252,8 @@
     <string name="rotate_270_summary">Checking this allows your device to rotate to the right</string>
     <string name="recent_kill_all">Enable Kill-All button</string>
     <string name="recent_kill_all_summary">Displays a button that kills all apps in the Recent Apps window</string>
+    <string name="recent_google_assist_title">Enable Google Now button</string>
+    <string name="recent_google_assist_summary">Displays a button to launch Google Now in the Recent Apps window</string>
     <string name="ram_bar">Recents RAM bar</string>
     <string name="ram_bar_summary">Shows RAM usage in the Recent Apps window</string>
     <string name="longpress_to_kill">Hardware Back-to-kill</string>

@@ -116,6 +116,13 @@
         android:fragment="com.aokp.romcontrol.fragments.Vibrations" />
 
     <header
+        android:id="@+id/animations"
+        android:title="@string/title_animation_controls"
+        android:summary="@string/header_summary_vibrations"
+        android:icon="@drawable/ic_rom_control_general_ui"
+        android:fragment="com.aokp.romcontrol.fragments.AnimationControls" />
+
+    <header
         android:id="@+id/installer"
         android:title="@string/installer"
         android:summary="@string/header_summary_installer"

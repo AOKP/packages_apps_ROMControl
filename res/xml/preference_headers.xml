@@ -88,6 +88,13 @@
         android:title="@string/header_system" />
 
     <header
+        android:id="@+id/animations"
+        android:title="@string/title_animation_controls"
+        android:summary="@string/header_summary_vibrations"
+        android:icon="@drawable/ic_rom_control_animations"
+        android:fragment="com.aokp.romcontrol.fragments.AnimationControls" />
+
+    <header
         android:id="@+id/led"
         android:fragment="com.aokp.romcontrol.fragments.LEDControl"
         android:title="@string/led_options"

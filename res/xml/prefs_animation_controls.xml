@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListPreference
+            android:key="activity_open"
+            android:title="@string/activity_open_title" />
+
+        <ListPreference
+            android:key="activity_close"
+            android:title="@string/activity_close_title" />
+
+        <ListPreference
+            android:key="task_open"
+            android:title="@string/task_open_title" />
+
+        <ListPreference
+            android:key="task_close"
+            android:title="@string/task_close_title" />
+
+        <ListPreference
+            android:key="task_move_to_front"
+            android:title="@string/task_move_to_front_title" />
+
+        <ListPreference
+            android:key="task_move_to_back"
+            android:title="@string/task_move_to_back_title" />
+
+</PreferenceScreen>
+

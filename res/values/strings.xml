@@ -234,6 +234,8 @@
     <string name="longpress_to_kill">Hardware Back-to-kill</string>
     <string name="longpress_to_kill_summary">Holding the hardware Back button will kill the activity in the foreground
     </string>
+    <string name="camera_widget_hide">Disable lockscreen camera widget</string>
+    <string name="camera_widget_hide_summary">Allows you to disable camera widget in lockscreen</string>
     <string name="tablet_ui">Force Tablet UI</string>
     <string name="tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
     <string name="hide_extras">Hide Extras</string>

@@ -159,6 +159,11 @@
             android:title="@string/longpress_to_kill"
             android:summary="@string/longpress_to_kill_summary" />
 
+        <CheckBoxPreference
+            android:key="camera_widget_hide"
+            android:title="@string/camera_widget_hide"
+            android:summary="@string/camera_widget_hide_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

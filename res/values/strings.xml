@@ -705,6 +705,19 @@
     <string name="led_brightness_default">Default brightness: 31</string>
 
     <!-- Sound -->
+    <string name="increasing_ring_title">Ascending ringtone</string>
+    <string name="checkbox_increasing_ring">Enable</string>
+    <string name="increasing_ring_min_volume_title">Ringing start volume</string>
+    <string name="increasing_ring_volume_notice">Notice:\nAs the start volume is set higher than the
+        ringer volume, the ring tone will be played using the ringer volume.</string>
+    <string name="increasing_ring_interval_title">Increase interval</string>
+    <string name="increasing_ring_interval_eachring">On each ringtone repeat</string>
+    <string name="increasing_ring_interval_half_second">0.5 seconds</string>
+    <string name="increasing_ring_interval_1second">1 second</string>
+    <string name="increasing_ring_interval_2seconds">2 seconds</string>
+    <string name="increasing_ring_interval_3seconds">3 seconds</string>
+    <string name="increasing_ring_interval_5seconds">5 seconds</string>
+    <string name="increasing_ring_interval_10seconds">10 seconds</string>
     <string name="less_notification_sounds_title">Less Frequent Notification sounds</string>
     <string name="less_notification_sounds_summary">Limit each app\'s notification sounds to play once per the set
         value

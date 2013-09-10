@@ -674,6 +674,19 @@
     <string name="led_change_brightness">Změnit jas</string>
     <string name="led_brightness_default">Výchozí jas: 31</string>
     <!--Sound-->
+    <string name="increasing_ring_title">Vzrůstající vyzvánění</string>
+    <string name="checkbox_increasing_ring">Zapnout</string>
+    <string name="increasing_ring_min_volume_title">Počáteční hlasitost vyzvánění</string>
+    <string name="increasing_ring_volume_notice">Upozornění:\nPokud je počáteční hlasitost nastavena
+        na vyšší hodnotu než hlasitost normální, bude při vyzvýnění použita normální (nevzrůstající) hlasitost.</string>
+    <string name="increasing_ring_interval_title">Interval zesilování</string>
+    <string name="increasing_ring_interval_eachring">Při každém opakování melodie</string>
+    <string name="increasing_ring_interval_half_second">0,5 sekundy</string>
+    <string name="increasing_ring_interval_1second">1 sekunda</string>
+    <string name="increasing_ring_interval_2seconds">2 sekundy</string>
+    <string name="increasing_ring_interval_3seconds">3 sekundy</string>
+    <string name="increasing_ring_interval_5seconds">5 sekund</string>
+    <string name="increasing_ring_interval_10seconds">10 sekund</string>
     <string name="less_notification_sounds_title">Méně častá zvuková upozornění</string>
     <string name="less_notification_sounds_summary">Omezit zvuková upozornění jednotlivých aplikací, aby hrála pouze
         jednou za zvolený čas.

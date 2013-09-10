@@ -5,6 +5,12 @@
         android:key="enable_volume_options"
         android:title="@string/enable_volume_options" />
 
+    <com.aokp.romcontrol.fragments.IncreasingRingPreference
+        android:key="increasing_ring"
+        android:title="@string/increasing_ring_title"
+        android:dialogTitle="@string/increasing_ring_title"
+        android:persistent="false" />
+
     <ListPreference
         android:entries="@array/less_notification_sounds_entries"
         android:entryValues="@array/less_notification_sounds_values"

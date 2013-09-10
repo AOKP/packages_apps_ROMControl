@@ -33,7 +33,7 @@
             aokp:twitterHandle="AOKP_ROM"
             aokp:githubLink="@string/github_aokp"
             aokp:donateLink="@string/donate_aokp"
-            aokp:emailDev="aokp@aokp.co"/>
+            aokp:emailDev="github@aokp.co"/>
 
     </PreferenceCategory>
 

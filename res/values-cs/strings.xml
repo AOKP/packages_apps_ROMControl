@@ -283,6 +283,7 @@
     <string name="transparency_dialog_transparency">Průhlednost domovské obrazovky</string>
     <string name="transparency_dialog_transparency_keyguard">Průhlednost zamknuté obrazovky</string>
     <string name="transparency_dialog_lockscreen">Zamčená obrazovka</string>
+    <string name="dark_ui">Tmavý vzhled</string>
     <!--LCD Density-->
     <string name="lcd_density_title">Hustota displeje</string>
     <string name="lcd_density_summary">neznámá</string>

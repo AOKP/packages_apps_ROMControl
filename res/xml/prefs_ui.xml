@@ -2,6 +2,10 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <CheckBoxPreference
+        android:key="ui_inverted_mode"
+        android:title="@string/dark_ui" />
+
     <Preference
         android:key="transparency_dialog"
         android:title="@string/transparency_dialog_title" />

@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -30,7 +30,7 @@ public class Sound extends AOKPPreferenceFragment
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
     SharedPreferences prefs;
-    CheckBoxPreference mEnableVolumeOptions;
+    SwitchPreference mEnableVolumeOptions;
     ListPreference mHeadphonesPluggedAction;
     ListPreference mBTPluggedAction;
     ListPreference mFlipAction;
@@ -51,7 +51,8 @@ public class Sound extends AOKPPreferenceFragment
 
         mBTPluggedAction = (ListPreference) findPreference(PREF_BT_CONNECTED_ACTION);
 
-        mEnableVolumeOptions = (CheckBoxPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
+        mEnableVolumeOptions = (SwitchPreference) findPreference(PREF_ENABLE_VOLUME_OPTIONS);
+        mEnableVolumeOptions.setOnPreferenceChangeListener(this);
         mEnableVolumeOptions.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.ENABLE_VOLUME_OPTIONS, false));
 
@@ -100,19 +101,6 @@ public class Sound extends AOKPPreferenceFragment
         }
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-        if (preference == mEnableVolumeOptions) {
-
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.ENABLE_VOLUME_OPTIONS, checked);
-            return true;
-
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
 
     private void toggleFlipService() {
         if (FlipService.isStarted()) {
@@ -159,6 +147,12 @@ public class Sound extends AOKPPreferenceFragment
                 toggleFlipService();
             }
             return true;
+        } else if (preference == mEnableVolumeOptions) {
+            boolean checked = (Boolean) newValue;
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.ENABLE_VOLUME_OPTIONS, checked);
+            return true;
+
         }
         return false;
     }

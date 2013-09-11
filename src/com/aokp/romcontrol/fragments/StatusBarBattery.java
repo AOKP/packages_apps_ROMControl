@@ -1,7 +1,7 @@
 package com.aokp.romcontrol.fragments;
 
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -25,7 +25,7 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
     ListPreference mBatteryBar;
     ListPreference mBatteryBarStyle;
     ListPreference mBatteryBarThickness;
-    CheckBoxPreference mBatteryBarChargingAnimation;
+    SwitchPreference mBatteryBarChargingAnimation;
     ColorPickerPreference mBatteryBarColor;
 
     @Override
@@ -53,7 +53,8 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
         mBatteryBarColor = (ColorPickerPreference) findPreference(PREF_BATT_BAR_COLOR);
         mBatteryBarColor.setOnPreferenceChangeListener(this);
 
-        mBatteryBarChargingAnimation = (CheckBoxPreference) findPreference(PREF_BATT_ANIMATE);
+        mBatteryBarChargingAnimation = (SwitchPreference) findPreference(PREF_BATT_ANIMATE);
+        mBatteryBarChargingAnimation.setOnPreferenceChangeListener(this);
         mBatteryBarChargingAnimation.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, false));
 
@@ -68,19 +69,6 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
             mBatteryBarChargingAnimation.setEnabled(false);
             mBatteryBarThickness.setEnabled(false);
         }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-        if (preference == mBatteryBarChargingAnimation) {
-
-            Settings.System.putInt(mContentRes,
-                    Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
@@ -130,6 +118,12 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
             return Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
 
+        } else if (preference == mBatteryBarChargingAnimation) {
+
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
+                    (Boolean) newValue);
+            return true;
         }
         return false;
     }

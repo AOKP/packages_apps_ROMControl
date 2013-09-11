@@ -16,7 +16,7 @@
             android:title="@string/custom_bootanimation_title"
             android:summary="@string/custom_bootanimation_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="disable_bootanimation"
             android:title="@string/disable_bootanimation_title" />
 
@@ -38,28 +38,28 @@
             android:key="notification_wallpaper_alpha"
             android:title="@string/notif_wallpaper_alpha_title" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="status_bar_notif_count"
             android:title="@string/status_bar_notif_count_title"
             android:summary="@string/status_bar_notif_count_summary"
             android:defaultValue="false" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="vibrate_notif_expand"
             android:title="@string/vibrate_notif_expand_title"
             android:summary="@string/vibrate_notif_expand_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="statusbar_brightness_slider"
             android:title="@string/brightness_slider_title"
             android:summary="@string/brightness_slider_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="statusbar_hidden"
             android:title="@string/statusbar_hide_title"
             android:summary="@string/statusbar_hide_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="ime_switcher"
             android:title="@string/ime_switcher_title"
             android:summary="@string/ime_switcher_summary"
@@ -78,13 +78,13 @@
             android:entries="@array/user_mode_ui_entries"
             android:entryValues="@array/user_mode_ui_values" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="hide_extras"
             android:title="@string/hide_extras"
             android:summary="@string/hide_extras_summary"
             android:defaultValue="false" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="force_dualpanel"
             android:title="@string/multipane_ui"
             android:summary="@string/multipane_ui_summary"
@@ -96,30 +96,30 @@
         android:key="display"
         android:title="@string/display_cat">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="show_overflow"
             android:title="@string/show_overflow_title"
             android:summary="@string/show_overflow_summary"
             android:defaultValue="false" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="rotate_180"
             android:title="@string/rotate_180_title"
             android:summary="@string/rotate_180_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="rotate_270"
             android:title="@string/rotate_270_title"
             android:summary="@string/rotate_270_summary"
             android:defaultValue="true" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="wakeup_when_plugged_unplugged"
             android:title="@string/wakeup_when_plugged_unplugged_title"
             android:summary="@string/wakeup_when_plugged_unplugged_summary"
             android:defaultValue="true" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="system_power_crt_screen_off"
             android:summary="@string/system_power_crt_screen_off_summary"
             android:title="@string/system_power_crt_screen_off_title" />
@@ -138,12 +138,12 @@
         android:key="recents"
         android:title="@string/recents_cat">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="recent_kill_all"
             android:title="@string/recent_kill_all"
             android:summary="@string/recent_kill_all_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="ram_usage_bar"
             android:title="@string/ram_bar"
             android:summary="@string/ram_bar_summary" />
@@ -154,7 +154,7 @@
         android:key="misc"
         android:title="@string/misc_short">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="longpress_to_kill"
             android:title="@string/longpress_to_kill"
             android:summary="@string/longpress_to_kill_summary" />

@@ -1,8 +1,9 @@
 package com.aokp.romcontrol.fragments;
 
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
@@ -18,7 +19,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Installer extends AOKPPreferenceFragment {
+public class Installer extends AOKPPreferenceFragment implements
+        OnPreferenceChangeListener {
 
     private static final String TAG = "Installer";
 
@@ -30,9 +32,9 @@ public class Installer extends AOKPPreferenceFragment {
 
     private Preference mPreference;
 
-    CheckBoxPreference mPrefPersistEnable;
-    CheckBoxPreference mPrefPersistDensity;
-    CheckBoxPreference mPrefPersistHosts;
+    SwitchPreference mPrefPersistEnable;
+    SwitchPreference mPrefPersistDensity;
+    SwitchPreference mPrefPersistHosts;
 
     boolean mPersistEnable;
     ArrayList<String> mPersistProps;
@@ -161,18 +163,17 @@ public class Installer extends AOKPPreferenceFragment {
 
         loadPrefs();
 
-        mPrefPersistEnable = (CheckBoxPreference) findPreference(PREF_PERSIST_ENABLE);
+        mPrefPersistEnable = (SwitchPreference) findPreference(PREF_PERSIST_ENABLE);
         mPrefPersistEnable.setChecked(mPersistEnable);
-        mPrefPersistDensity = (CheckBoxPreference) findPreference(PREF_PERSIST_PROP_DENSITY);
+        mPrefPersistDensity = (SwitchPreference) findPreference(PREF_PERSIST_PROP_DENSITY);
         mPrefPersistDensity.setChecked(mPersistProps.contains("ro.sf.lcd_density"));
-        mPrefPersistHosts = (CheckBoxPreference) findPreference(PREF_PERSIST_FILE_HOSTS);
+        mPrefPersistHosts = (SwitchPreference) findPreference(PREF_PERSIST_FILE_HOSTS);
         mPrefPersistHosts.setChecked(mPersistFiles.contains("etc/hosts"));
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-        boolean isChecked = ((CheckBoxPreference) preference).isChecked();
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean isChecked = (Boolean) newValue;
         if (preference == mPrefPersistEnable) {
             mPersistEnable = isChecked;
             savePrefs();
@@ -200,6 +201,6 @@ public class Installer extends AOKPPreferenceFragment {
             savePrefs();
             return true;
         }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        return false;
     }
 }

@@ -7,7 +7,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.widgets.AnimBarPreference;
@@ -45,7 +45,7 @@ public class AnimationControls extends AOKPPreferenceFragment implements OnPrefe
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
     AnimBarPreference mAnimationDuration;
-    CheckBoxPreference mAnimNoOverride;
+    SwitchPreference mAnimNoOverride;
 
     private int[] mAnimations;
     private String[] mAnimationsStrings;
@@ -68,7 +68,8 @@ public class AnimationControls extends AOKPPreferenceFragment implements OnPrefe
             mAnimationsNum[i] = String.valueOf(mAnimations[i]);
         }
 
-        mAnimNoOverride = (CheckBoxPreference) findPreference(ANIMATION_NO_OVERRIDE);
+        mAnimNoOverride = (SwitchPreference) findPreference(ANIMATION_NO_OVERRIDE);
+        mAnimNoOverride.setOnPreferenceChangeListener(this);
         mAnimNoOverride.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE, false));
 
@@ -138,17 +139,7 @@ public class AnimationControls extends AOKPPreferenceFragment implements OnPrefe
         mAnimationDuration.setInitValue((int) (defaultDuration));
         mAnimationDuration.setOnPreferenceChangeListener(this);
     }
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-       if (preference == mAnimNoOverride) {
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE,
-                        mAnimNoOverride.isChecked());
-            return true;
-        }
-        return false;
-    }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean result = false;
@@ -213,6 +204,12 @@ public class AnimationControls extends AOKPPreferenceFragment implements OnPrefe
             Settings.System.putInt(mContentRes,
                     Settings.System.ANIMATION_CONTROLS_DURATION,
                     val);
+        } else if (preference == mAnimNoOverride) {
+            boolean val = (Boolean) newValue;
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE,
+                        val);    
+            return true;
         }
         preference.setSummary(getProperSummary(preference));
         return result;

@@ -23,7 +23,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -87,13 +87,13 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
     Preference mEnabledToggles;
     Preference mLayout;
-    CheckBoxPreference mCollapseAll;
+    SwitchPreference mCollapseAll;
     ListPreference mTogglesPerRow;
     ListPreference mTogglesStyle;
     Preference mFavContact;
-    CheckBoxPreference mFastToggle;
-    CheckBoxPreference mBootState;
-    CheckBoxPreference mMatchAction;
+    SwitchPreference mFastToggle;
+    SwitchPreference mBootState;
+    SwitchPreference mMatchAction;
     ListPreference mChooseFastToggleSide;
     ListPreference mScreenshotDelay;
     ListPreference mCollapseShade;
@@ -151,7 +151,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
-        mCollapseAll = (CheckBoxPreference) findPreference(PREF_COLLAPSE_ALL);
+        mCollapseAll = (SwitchPreference) findPreference(PREF_COLLAPSE_ALL);
         mCollapseAll.setOnPreferenceChangeListener(this);
 
         mTogglesPerRow = (ListPreference) findPreference(PREF_TOGGLES_PER_ROW);
@@ -168,7 +168,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
 
         mFavContact = findPreference(PREF_TOGGLE_FAV_CONTACT);
 
-        mFastToggle = (CheckBoxPreference) findPreference(PREF_ENABLE_FASTTOGGLE);
+        mFastToggle = (SwitchPreference) findPreference(PREF_ENABLE_FASTTOGGLE);
         mFastToggle.setOnPreferenceChangeListener(this);
 
         mChooseFastToggleSide = (ListPreference) findPreference(PREF_CHOOSE_FASTTOGGLE_SIDE);
@@ -181,10 +181,10 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mScreenshotDelay.setValue(String.valueOf(Settings.System.getInt(mContentRes,
                 Settings.System.SCREENSHOT_TOGGLE_DELAY, 5000)));
 
-        mBootState = (CheckBoxPreference) findPreference(PREF_SET_BOOT_ACTION);
+        mBootState = (SwitchPreference) findPreference(PREF_SET_BOOT_ACTION);
         mBootState.setOnPreferenceChangeListener(this);
 
-        mMatchAction = (CheckBoxPreference) findPreference(PREF_MATCH_ICON_ACTION);
+        mMatchAction = (SwitchPreference) findPreference(PREF_MATCH_ICON_ACTION);
         mMatchAction.setOnPreferenceChangeListener(this);
 
         mCollapseShade = (ListPreference) findPreference(PREF_COLLAPSE_BAR);

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -34,8 +34,8 @@ public class SPenGestures extends AOKPPreferenceFragment implements
     ListPreference mDown;
     ListPreference mDouble;
     ListPreference mLong;
-    CheckBoxPreference mEnableSPen;
-    CheckBoxPreference mEnableIcon;
+    SwitchPreference mEnableSPen;
+    SwitchPreference mEnableIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,11 +56,13 @@ public class SPenGestures extends AOKPPreferenceFragment implements
             mActions[i] = AwesomeConstants.getProperName(mContext, mActionCodes[i]);
         }
 
-        mEnableSPen = (CheckBoxPreference) findPreference("enable_spen");
+        mEnableSPen = (SwitchPreference) findPreference("enable_spen");
+        mEnableSPen.setOnPreferenceChangeListener(this);
         mEnableSPen.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.ENABLE_SPEN_ACTIONS, false));
 
-        mEnableIcon = (CheckBoxPreference) findPreference("enable_stylus pointer");
+        mEnableIcon = (SwitchPreference) findPreference("enable_stylus pointer");
+        mEnableSPen.setOnPreferenceChangeListener(this);
         mEnableIcon.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STYLUS_ICON_ENABLED, true));
 
@@ -100,25 +102,6 @@ public class SPenGestures extends AOKPPreferenceFragment implements
         mLong.setEntries(mActions);
         mLong.setEntryValues(mActionCodes);
 
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-        if (preference == mEnableSPen) {
-
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.ENABLE_SPEN_ACTIONS,
-                    mEnableSPen.isChecked());
-            return true;
-        } else if (preference == mEnableIcon) {
-
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.STYLUS_ICON_ENABLED,
-                    mEnableIcon.isChecked());
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
@@ -185,6 +168,18 @@ public class SPenGestures extends AOKPPreferenceFragment implements
                         Settings.System.SPEN_ACTIONS[PRESS_LONG], (String) newValue);
                 mLong.setSummary(getProperSummary(mLong));
             }
+        } else if (preference == mEnableSPen) {
+
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.ENABLE_SPEN_ACTIONS,
+                    (Boolean) newValue);
+            return true;
+        } else if (preference == mEnableIcon) {
+
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STYLUS_ICON_ENABLED,
+                    (Boolean) newValue);
+            return true;
         }
         return result;
     }

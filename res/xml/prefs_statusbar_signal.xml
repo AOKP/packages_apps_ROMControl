@@ -23,12 +23,12 @@
         android:title="@string/wifi_signal_color_title"
         android:defaultValue="@android:color/holo_blue_light" />
 
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="alt_signal"
         android:title="@string/alt_signal_title"
         android:summary="@string/alt_signal_summary" />
 
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="hide_signal"
         android:title="@string/hide_signal_title"
         android:summary="@string/hide_signal_summary" />

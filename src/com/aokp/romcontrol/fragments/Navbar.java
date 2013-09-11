@@ -20,7 +20,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -94,7 +94,7 @@ public class Navbar extends AOKPPreferenceFragment implements
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     ListPreference mNavBarButtonQty;
-    CheckBoxPreference mEnableNavigationBar;
+    SwitchPreference mEnableNavigationBar;
     ListPreference mNavigationBarHeight;
     ListPreference mNavigationBarHeightLandscape;
     ListPreference mNavigationBarWidth;
@@ -102,12 +102,12 @@ public class Navbar extends AOKPPreferenceFragment implements
     Preference mWidthHelp;
     SeekBarPreference mWidthPort;
     SeekBarPreference mWidthLand;
-    CheckBoxPreference mMenuArrowKeysCheckBox;
+    SwitchPreference mMenuArrowKeysCheckBox;
     Preference mConfigureWidgets;
     
     // removed navbar hide
     /*
-    CheckBoxPreference mNavBarHideEnable;
+    SwitchPreference mNavBarHideEnable;
     ListPreference mNavBarHideTimeout;
     SeekBarPreference mDragHandleOpacity;
     SeekBarPreference mDragHandleWidth;
@@ -170,7 +170,7 @@ public class Navbar extends AOKPPreferenceFragment implements
 
        // removed navbar hide
         /*
-        mNavBarHideEnable = (CheckBoxPreference) findPreference(NAVBAR_HIDE_ENABLE);
+        mNavBarHideEnable = (SwitchPreference) findPreference(NAVBAR_HIDE_ENABLE);
         mNavBarHideEnable.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.NAV_HIDE_ENABLE, false));
 
@@ -193,7 +193,8 @@ public class Navbar extends AOKPPreferenceFragment implements
         */
         boolean hasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
-        mEnableNavigationBar = (CheckBoxPreference) findPreference(ENABLE_NAVIGATION_BAR);
+        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAVIGATION_BAR);
+        mEnableNavigationBar.setOnPreferenceChangeListener(this);
         mEnableNavigationBar.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault));
 
@@ -240,7 +241,8 @@ public class Navbar extends AOKPPreferenceFragment implements
         mNavigationBarWidth.setOnPreferenceChangeListener(this);
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
 
-        mMenuArrowKeysCheckBox = (CheckBoxPreference) findPreference(PREF_MENU_ARROWS);
+        mMenuArrowKeysCheckBox = (SwitchPreference) findPreference(PREF_MENU_ARROWS);
+        mMenuArrowKeysCheckBox.setOnPreferenceChangeListener(this);
         mMenuArrowKeysCheckBox.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS, true));
 
@@ -354,13 +356,6 @@ public class Navbar extends AOKPPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
-        if (preference == mEnableNavigationBar) {
-
-            Settings.System.putInt(mContentRes,
-                    Settings.System.NAVIGATION_BAR_SHOW,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            Helpers.restartSystemUI();
-            return true;
        /* } else if (preference == mNavBarHideEnable) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.NAV_HIDE_ENABLE,
@@ -374,18 +369,14 @@ public class Navbar extends AOKPPreferenceFragment implements
                     Settings.System.NAV_HIDE_TIMEOUT, 3000) + "");
             refreshSettings();
             return true; */
-        } else if (preference == mConfigureWidgets) {
+        if (preference == mConfigureWidgets) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             WidgetConfigurationFragment fragment = new WidgetConfigurationFragment();
             ft.addToBackStack("config_widgets");
             ft.replace(this.getId(), fragment);
             ft.commit();
             return true;
-        } else if (preference == mMenuArrowKeysCheckBox) {
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
-                    ((CheckBoxPreference) preference).isChecked());
-            return true;
+
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -504,6 +495,18 @@ public class Navbar extends AOKPPreferenceFragment implements
                     val * 0.4f);
             return true;
 
+        }else if (preference == mEnableNavigationBar) {
+
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.NAVIGATION_BAR_SHOW,
+                    (Boolean) newValue);
+            Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mMenuArrowKeysCheckBox) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
+                    (Boolean) newValue);
+            return true;
         }
         return false;
     }

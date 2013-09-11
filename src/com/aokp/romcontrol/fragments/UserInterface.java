@@ -22,7 +22,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -111,31 +111,31 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final String BOOTANIMATION_USER_PATH = "/data/local/bootanimation.zip";
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
 
-    CheckBoxPreference mAllow180Rotation;
-    CheckBoxPreference mAllow270Rotation;
-    CheckBoxPreference mDisableBootAnimation;
-    CheckBoxPreference mStatusBarNotifCount;
+    SwitchPreference mAllow180Rotation;
+    SwitchPreference mAllow270Rotation;
+    SwitchPreference mDisableBootAnimation;
+    SwitchPreference mStatusBarNotifCount;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
     Preference mCustomLabel;
     Preference mCustomBootAnimation;
     ImageView mView;
     TextView mError;
-    CheckBoxPreference mShowActionOverflow;
-    CheckBoxPreference mVibrateOnExpand;
-    CheckBoxPreference mLongPressToKill;
-    CheckBoxPreference mRecentKillAll;
-    CheckBoxPreference mRamBar;
-    CheckBoxPreference mShowImeSwitcher;
-    CheckBoxPreference mStatusbarSliderPreference;
+    SwitchPreference mShowActionOverflow;
+    SwitchPreference mVibrateOnExpand;
+    SwitchPreference mLongPressToKill;
+    SwitchPreference mRecentKillAll;
+    SwitchPreference mRamBar;
+    SwitchPreference mShowImeSwitcher;
+    SwitchPreference mStatusbarSliderPreference;
     AlertDialog mCustomBootAnimationDialog;
     ListPreference mUserModeUI;
-    CheckBoxPreference mHideExtras;
-    CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
-    CheckBoxPreference mDualpane;
+    SwitchPreference mHideExtras;
+    SwitchPreference mWakeUpWhenPluggedOrUnplugged;
+    SwitchPreference mDualpane;
     ListPreference mCrtMode;
-    CheckBoxPreference mCrtOff;
-    CheckBoxPreference mStatusBarHide;
+    SwitchPreference mCrtOff;
+    SwitchPreference mStatusBarHide;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -164,8 +164,10 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mInsults = mContext.getResources().getStringArray(
                 R.array.disable_bootanimation_insults);
 
-        mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
-        mAllow270Rotation = (CheckBoxPreference) findPreference(PREF_270);
+        mAllow180Rotation = (SwitchPreference) findPreference(PREF_180);
+        mAllow180Rotation.setOnPreferenceChangeListener(this);
+        mAllow270Rotation = (SwitchPreference) findPreference(PREF_270);
+        mAllow270Rotation.setOnPreferenceChangeListener(this);
         mUserRotationAngles = Settings.System.getInt(mContentResolver,
                 Settings.System.ACCELEROMETER_ROTATION_ANGLES, -1);
         if (mUserRotationAngles < 0) {
@@ -179,22 +181,26 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mAllow180Rotation.setChecked((mUserRotationAngles & 4) != 0);
         mAllow270Rotation.setChecked((mUserRotationAngles & 8) != 0);
 
-        mStatusBarNotifCount = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
+        mStatusBarNotifCount = (SwitchPreference) findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
+        mStatusBarNotifCount.setOnPreferenceChangeListener(this);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_NOTIF_COUNT, false));
 
-        mDisableBootAnimation = (CheckBoxPreference) findPreference(PREF_DISABLE_BOOTANIM);
+        mDisableBootAnimation = (SwitchPreference) findPreference(PREF_DISABLE_BOOTANIM);
+        mDisableBootAnimation.setOnPreferenceChangeListener(this);
 
         mCustomBootAnimation = findPreference(PREF_CUSTOM_BOOTANIM);
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
-        mShowImeSwitcher = (CheckBoxPreference) findPreference(PREF_IME_SWITCHER);
+        mShowImeSwitcher = (SwitchPreference) findPreference(PREF_IME_SWITCHER);
+        mShowImeSwitcher.setOnPreferenceChangeListener(this);
         mShowImeSwitcher.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.SHOW_STATUSBAR_IME_SWITCHER, true));
 
-        mStatusbarSliderPreference = (CheckBoxPreference) findPreference(PREF_STATUSBAR_BRIGHTNESS);
+        mStatusbarSliderPreference = (SwitchPreference) findPreference(PREF_STATUSBAR_BRIGHTNESS);
+        mStatusbarSliderPreference.setOnPreferenceChangeListener(this);
         mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, true));
 
@@ -202,7 +208,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
-        mVibrateOnExpand = (CheckBoxPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
+        mVibrateOnExpand = (SwitchPreference) findPreference(PREF_VIBRATE_NOTIF_EXPAND);
+        mVibrateOnExpand.setOnPreferenceChangeListener(this);
         mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.VIBRATE_NOTIF_EXPAND, true));
         if (!hasVibration) {
@@ -210,30 +217,36 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     .removePreference(mVibrateOnExpand);
         }
 
-        mLongPressToKill = (CheckBoxPreference) findPreference(PREF_LONGPRESS_TO_KILL);
+        mLongPressToKill = (SwitchPreference) findPreference(PREF_LONGPRESS_TO_KILL);
+        mLongPressToKill.setOnPreferenceChangeListener(this);
         mLongPressToKill.setChecked(Settings.System.getInt(mContentResolver,
                 Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
         if (!hasHardwareButtons) {
             getPreferenceScreen().removePreference(((PreferenceGroup) findPreference(PREF_MISC)));
         }
 
-        mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRecentKillAll = (SwitchPreference) findPreference(PREF_RECENT_KILL_ALL);
+        mRecentKillAll.setOnPreferenceChangeListener(this);
         mRecentKillAll.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.RECENT_KILL_ALL_BUTTON, false));
 
-        mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
+        mRamBar = (SwitchPreference) findPreference(PREF_RAM_USAGE_BAR);
+        mRamBar.setOnPreferenceChangeListener(this);
         mRamBar.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.RAM_USAGE_BAR, false));
 
-        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras = (SwitchPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras.setOnPreferenceChangeListener(this);
         mHideExtras.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
 
-        mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
+        mShowActionOverflow = (SwitchPreference) findPreference(PREF_SHOW_OVERFLOW);
+        mShowActionOverflow.setOnPreferenceChangeListener(this);
         mShowActionOverflow.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
-        mStatusBarHide = (CheckBoxPreference) findPreference(PREF_STATUSBAR_HIDDEN);
+        mStatusBarHide = (SwitchPreference) findPreference(PREF_STATUSBAR_HIDDEN);
+        mStatusBarHide.setOnPreferenceChangeListener(this);
         mStatusBarHide.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_HIDDEN, false));
 
@@ -244,14 +257,15 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 Settings.System.USER_UI_MODE, uiMode)));
         mUserModeUI.setOnPreferenceChangeListener(this);
 
-        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
+        mDualpane = (SwitchPreference) findPreference(PREF_FORCE_DUAL_PANEL);
+        mDualpane.setOnPreferenceChangeListener(this);
         mDualpane.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
                 com.android.internal.R.bool.preferences_prefer_dual_pane)));
 
         boolean isCrtOffChecked = (Settings.System.getBoolean(mContentResolver,
                 Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF, true));
-        mCrtOff = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_OFF);
+        mCrtOff = (SwitchPreference) findPreference(PREF_POWER_CRT_SCREEN_OFF);
         mCrtOff.setChecked(isCrtOffChecked);
 
         mCrtMode = (ListPreference) findPreference(PREF_POWER_CRT_MODE);
@@ -262,7 +276,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mCrtMode.setOnPreferenceChangeListener(this);
 
         mWakeUpWhenPluggedOrUnplugged =
-                (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
+                (SwitchPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
+        mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
         mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
 
@@ -351,60 +366,19 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
-        if (preference == mAllow180Rotation || preference == mAllow270Rotation) {
-            boolean checked180 = ((CheckBoxPreference) mAllow180Rotation).isChecked();
-            boolean checked270 = ((CheckBoxPreference) mAllow270Rotation).isChecked();
-            int result = (1 | 2);
-            if (checked180) {
-                result |= 4;
-            }
-            if (checked270) {
-                result |= 8;
-            }
-            Settings.System.putInt(mContentResolver,
-                    Settings.System.ACCELEROMETER_ROTATION_ANGLES, result);
-            return true;
-        } else if (preference == mStatusBarNotifCount) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.STATUSBAR_NOTIF_COUNT,
-                    ((TwoStatePreference) preference).isChecked());
-            return true;
-        } else if (preference == mDisableBootAnimation) {
-            DisableBootAnimation();
-            return true;
-        } else if (preference == mHideExtras) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
-                    ((TwoStatePreference) preference).isChecked());
-            return true;
-        } else if (preference == mDualpane) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.FORCE_DUAL_PANEL,
-                    ((TwoStatePreference) preference).isChecked());
-            return true;
-        } else if (preference == mCustomBootAnimation) {
-            openBootAnimationDialog();
-            return true;
-        } else if (preference == mShowActionOverflow) {
-            boolean enabled = mShowActionOverflow.isChecked();
-            Settings.System.putBoolean(mContentResolver, Settings.System.UI_FORCE_OVERFLOW_BUTTON,
-                    enabled);
-            // Show toast appropriately
-            if (enabled) {
-                Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
-                        Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
-                        Toast.LENGTH_LONG).show();
-            }
-            return true;
-        } else if (preference == mNotificationWallpaper) {
+        if (preference == mNotificationWallpaper) {
             File wallpaper = new File(mContext.getFilesDir(), WALLPAPER_NAME);
             if (wallpaper.exists()) {
                 buildWallpaperAlert();
             } else {
                 prepareAndSetWallpaper();
             }
+            return true;
+        } else if (preference == mCustomBootAnimation) {
+            openBootAnimationDialog();
+            return true;
+        } else if ("transparency_dialog".equals(preference.getKey())) {
+            openTransparencyDialog();
             return true;
         } else if (preference == mWallpaperAlpha) {
             Resources res = getActivity().getResources();
@@ -456,16 +430,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     .create()
                     .show();
             return true;
-        } else if (preference == mShowImeSwitcher) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
-                    isCheckBoxPrefernceChecked(preference));
-            return true;
-        } else if (preference == mStatusbarSliderPreference) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.STATUSBAR_BRIGHTNESS_SLIDER,
-                    isCheckBoxPrefernceChecked(preference));
-            return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.custom_carrier_label_title);
@@ -494,43 +458,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                         }
                     });
             alert.show();
-        } else if (preference == mVibrateOnExpand) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.VIBRATE_NOTIF_EXPAND,
-                    ((TwoStatePreference) preference).isChecked());
-            Helpers.restartSystemUI();
-            return true;
-        } else if (preference == mLongPressToKill) {
-            boolean checked = ((TwoStatePreference) preference).isChecked();
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.KILL_APP_LONGPRESS_BACK, checked);
-            return true;
-        } else if (preference == mRecentKillAll) {
-            boolean checked = ((TwoStatePreference) preference).isChecked();
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.RECENT_KILL_ALL_BUTTON, checked);
-            return true;
-        } else if (preference == mRamBar) {
-            boolean checked = ((TwoStatePreference) preference).isChecked();
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.RAM_USAGE_BAR, checked);
-            return true;
-        } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
-                    ((TwoStatePreference) preference).isChecked());
-        } else if ("transparency_dialog".equals(preference.getKey())) {
-            openTransparencyDialog();
-            return true;
-        } else if (preference == mCrtOff) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
-                    ((TwoStatePreference) preference).isChecked());
-        } else if (preference == mStatusBarHide) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_HIDDEN, checked ? true : false);
-            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -1008,6 +935,90 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_CRT_MODE, crtMode);
             mCrtMode.setSummary(mCrtMode.getEntries()[index]);
+            return true;
+        } else if (preference == mAllow180Rotation || preference == mAllow270Rotation) {
+            boolean checked180 = ((SwitchPreference) mAllow180Rotation).isChecked();
+            boolean checked270 = ((SwitchPreference) mAllow270Rotation).isChecked();
+            int result = (1 | 2);
+            if (checked180) {
+                result |= 4;
+            }
+            if (checked270) {
+                result |= 8;
+            }
+            Settings.System.putInt(mContentResolver,
+                    Settings.System.ACCELEROMETER_ROTATION_ANGLES, result);
+            return true;
+        } else if (preference == mStatusBarNotifCount) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.STATUSBAR_NOTIF_COUNT,
+                    (Boolean) newValue);
+            return true;
+        } else if (preference == mHideExtras) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
+                    (Boolean) newValue);
+            return true;
+        } else if (preference == mDualpane) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.FORCE_DUAL_PANEL,
+                    (Boolean) newValue);
+            return true;
+        } else if (preference == mShowActionOverflow) {
+            boolean enabled = (Boolean) newValue;
+            Settings.System.putBoolean(mContentResolver, Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    enabled);
+            // Show toast appropriately
+            if (enabled) {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
+                        Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
+                        Toast.LENGTH_LONG).show();
+            }
+            return true;
+        } else if (preference == mShowImeSwitcher) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.SHOW_STATUSBAR_IME_SWITCHER,
+                    (Boolean) newValue);
+            return true;
+        } else if (preference == mStatusbarSliderPreference) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.STATUSBAR_BRIGHTNESS_SLIDER,
+                    (Boolean) newValue);
+            return true;
+        } else if (preference == mVibrateOnExpand) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.VIBRATE_NOTIF_EXPAND,
+                    (Boolean) newValue);
+            Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mLongPressToKill) {
+            boolean checked = (Boolean) newValue;
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.KILL_APP_LONGPRESS_BACK, checked);
+            return true;
+        } else if (preference == mRecentKillAll) {
+            boolean checked = (Boolean) newValue;
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.RECENT_KILL_ALL_BUTTON, checked);
+            return true;
+        } else if (preference == mRamBar) {
+            boolean checked = (Boolean) newValue;
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.RAM_USAGE_BAR, checked);
+            return true;
+        } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
+                    (Boolean) newValue);
+        } else if (preference == mCrtOff) {
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+                    (Boolean) newValue);
+        } else if (preference == mStatusBarHide) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_HIDDEN, (Boolean) newValue);
             return true;
         }
         return false;

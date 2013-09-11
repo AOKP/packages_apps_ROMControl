@@ -1,7 +1,7 @@
 package com.aokp.romcontrol.fragments;
 
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -19,8 +19,8 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
     ListPreference mWifiStyle;
     ColorPickerPreference mColorPicker;
     ColorPickerPreference mWifiColorPicker;
-    CheckBoxPreference mHideSignal;
-    CheckBoxPreference mAltSignal;
+    SwitchPreference mHideSignal;
+    SwitchPreference mAltSignal;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,11 +45,13 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mWifiColorPicker = (ColorPickerPreference) findPreference("wifi_signal_color");
         mWifiColorPicker.setOnPreferenceChangeListener(this);
 
-        mHideSignal = (CheckBoxPreference) findPreference("hide_signal");
+        mHideSignal = (SwitchPreference) findPreference("hide_signal");
+        mHideSignal.setOnPreferenceChangeListener(this);
         mHideSignal.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, false));
 
-        mAltSignal = (CheckBoxPreference) findPreference("alt_signal");
+        mAltSignal = (SwitchPreference) findPreference("alt_signal");
+        mAltSignal.setOnPreferenceChangeListener(this);
         mAltSignal.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, false));
 
@@ -60,22 +62,6 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         if (Integer.parseInt(mWifiStyle.getValue()) == 0) {
             mWifiColorPicker.setEnabled(false);
         }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-        if (preference == mHideSignal) {
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, mHideSignal.isChecked());
-
-            return true;
-        } else if (preference == mAltSignal) {
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, mAltSignal.isChecked());
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
@@ -113,6 +99,15 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT_COLOR, intHex);
+            return true;
+        } else if (preference == mHideSignal) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUSBAR_HIDE_SIGNAL_BARS, (Boolean) newValue);
+
+            return true;
+        } else if (preference == mAltSignal) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, (Boolean) newValue);
             return true;
         }
         return false;

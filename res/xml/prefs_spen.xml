@@ -5,7 +5,7 @@
         android:key="spen_gestures"
         android:title="@string/spen_gestures_cat">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="enable_spen"
             android:title="@string/spen_enable"
             android:summary="@string/spen_enable_summary" />
@@ -45,7 +45,7 @@
         android:key="spen_extras"
         android:title="@string/spen_extras_cat">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="enable_stylus pointer"
             android:title="@string/enable_stylus_pointer_title"
             android:summary="@string/enable_stylus_pointer_summary" />

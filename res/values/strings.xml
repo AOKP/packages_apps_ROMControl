@@ -1283,4 +1283,8 @@
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
 
+    <!-- Fast Charge -->
+    <string name="fast_charge_not_supported_title">Fast Charge not supported</string>
+    <string name="fast_charge_not_supported">Fast Charge is not supported by the current kernel.</string>
+
 </resources>

@@ -96,7 +96,7 @@
             android:title="@string/width_land_title" />
 
     </PreferenceCategory>
-    <!-- removed nav bar hide
+
     <PreferenceCategory
         android:key="navbar_hide_cat"
         android:title="@string/navbar_hide">
@@ -120,8 +120,7 @@
             android:title="@string/title_navbar_timeout"
             android:summary="@string/summary_navbar_timeout" />
 
-    </PreferenceCategory> 
-    -->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="navbar_widgets_cat"

@@ -4,8 +4,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.File;
+
+import com.aokp.romcontrol.R;
 
 public class ChangeFastChargeStateReceiver extends BroadcastReceiver {
 
@@ -14,6 +17,8 @@ public class ChangeFastChargeStateReceiver extends BroadcastReceiver {
         final String fCHargePath = context
                 .getString(com.android.internal.R.string.config_fastChargePath);
         if (fCHargePath == null || fCHargePath.isEmpty() || !new File(fCHargePath).exists()) {
+            Toast.makeText(context, context.getString(R.string.fast_charge_not_supported),
+                    Toast.LENGTH_SHORT).show();
             Log.e("ROMControl", "Attempted to change fast charge state but it's not enabled?");
             return;
         }

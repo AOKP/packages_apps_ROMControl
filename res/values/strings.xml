@@ -1174,4 +1174,8 @@
     <!-- dynamic changelog -->
     <string name="dynamic_changelog_title">Dynamic ChangeLog</string>
     <string name="dynamic_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
+
+    <!-- Fast Charge -->
+    <string name="fast_charge_not_supported">Fast Charge is not supported by the current kernel</string>
+
 </resources>

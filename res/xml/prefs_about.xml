@@ -158,6 +158,13 @@
             aokp:emailDev="bajee11@gmail.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
+            android:title="DAGr8"
+            aokp:nameDev="DAGr8"
+            aokp:twitterHandle="Saurom_Projekt"
+            aokp:githubLink="@string/github_DAGr8"
+            aokp:emailDev="renocustom@gmail.com"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="dhacker29"
             aokp:nameDev="dhacker29"
             aokp:twitterHandle="dhacker29"

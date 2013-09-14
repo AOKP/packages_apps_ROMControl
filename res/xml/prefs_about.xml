@@ -156,8 +156,8 @@
             aokp:twitterHandle="bajee11"
             aokp:githubLink="@string/github_bajee11"
             aokp:emailDev="bajee11@gmail.com"/>
-	    
-	<com.aokp.romcontrol.widgets.DeveloperPreference
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="DAGr8"
             aokp:nameDev="DAGr8"
             aokp:twitterHandle="Saurom_Projekt"

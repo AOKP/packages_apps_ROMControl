@@ -75,6 +75,27 @@
     </string>
     <string name="menu_user_interface_reset">Obnovit pozadí notifikací</string>
     <string name="menu_lockscreens_reset">Obnovit pozadí zamčené obrazovky</string>
+    <!-- Preference Dependant Instruction -->
+    <string name="enable_bootanimation_unlock">Pro odemknutí: odškrtnout \"zakázat startovací animaci\"</string>
+    <string name="enable_phone_or_phablet">Pro odemknutí: zvolit telefon nebo phablet v \"Rozrhaní\"</string>
+    <string name="enable_tablet_ui">Pro odemknutí: zvolit tablet v \"Rozhraní\"</string>
+    <string name="enable_noti_wallpaper">Pro odemknutí: zvolit telefon nebo phablet v \"Rozhraní\" a nastavit \"pozadí notifikací\"
+    </string>
+    <string name="enable_menu_location">Pro odemknutí: nastavit \"Umístění menu\"</string>
+    <string name="enable_hiding_navbar">Pro odemknutí: \"Auto. skrývání navigační lišty\"</string>
+    <string name="enable_hiding_systembar">Pro odemknutí: \"zapnout skrytou stavovou lištu\"</string>
+    <string name="enable_audio_mode">Pro odemknutí: zapnout \"Režim zvuku při obrazovce dolů\"</string>
+    <string name="enable_battery_bar">Pro odemknutí: zapnout \"Pozice pruhu baterie\"</string>
+    <string name="enable_clock_location">Pro odemknutí: zapnout \"Styl hodin\"</string>
+    <string name="enable_signal_text">Pro odemknutí: nastavit \"Styl ukazatele signálu\" na textový</string>
+    <string name="enable_wifi_text">Pro odemknutí: nastavit \"Styl ukazatele WiFi\" na textový</string>
+    <string name="enable_toggle_tiles">Pro odemknutí: nastavit \"Styl přepínačů\" na dlaždice</string>
+    <string name="enable_fasttoggle">Pro odemknutí: \"Zapnout rychlý přístup\" a dlaždice ve \"Stylu přepínačů\"</string>
+    <string name="enable_favorite_toggle">Pro odemknutí: zapnout přepínač \"Oblíbený kontakt\" zde nebo v Ribbonu</string>
+    <string name="enable_screenshot_toggle">Pro odemknutí: zapnout přepínač \"Snímek obrazovky\" zde nebo v  Ribbonu</string>
+    <string name="enable_custom_toggle">Pro odemknutí: zapnout přepínač \"Vlastní\" zde nebo v Ribbonu</string>
+    <string name="enable_spen_gestures">Pro odemknutí: \"Zapnout S Pen gesta\" </string>
+    <string name="enable_persist_installer">Pro odemknutí: \"Zapnout perzistenci\"</string>
     <!--General Strings-->
     <string name="advanced_settings">Pokročilá nastavení</string>
     <string name="misc_short">Ostatní</string>
@@ -87,9 +108,6 @@
     <string name="title_show_torch_toggle">Svítilna</string>
     <string name="title_show_airplane_toggle">Letový mód</string>
     <string name="title_show_navbar_hide">Přepínače systémových lišt</string>
-    <string name="summary_show_navbar_hide">Toto nastavení zpřístupní přepínače, které mohou skrýt navigační a stavovou
-        lištu
-    </string>
     <string name="title_show_volume_state_toggle">Stavy hlasitosti</string>
     <string name="title_show_reboot_keyguard">Restartovat na zamčené obrazovce</string>
     <string name="summary_show_reboot_keyguard">Povolí volbu restartovat zařízení na zamčené obrazovce</string>
@@ -308,7 +326,7 @@
     <string name="toggles_per_row_title">Přepínačů na řádek</string>
     <string name="toggles_per_row_summary">Vybrat kolik se bude zobrazovat přepínačů na každém řádku</string>
     <string name="toggles_style_title">Styl přepínačů</string>
-    <string name="toggles_style_summary">U notifikací (tradiční) nebo dlaždice</string>
+    <string name="toggles_style_summary">Dlaždice, tradiční nebo se skrolováním</string>
     <string name="toggles_display_close">Zavřít</string>
     <string name="toggles_order_title">Pořadí přepínačů</string>
     <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
@@ -647,8 +665,8 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Testovat LED</string>
     <string name="led_test_notification_message_now">Testuje se LED pro:</string>
-    <string name="led_test_notification_message_note">. Pro testování LED Je nutné vypnout obrazovku. Tlačítko OK musí
-        být zmáčknuto až po otestování LED.
+    <string name="led_test_notification_message_note">".\nPro testování LED Je nutné vypnout obrazovku. Tlačítko OK musí
+        být zmáčknuto až po otestování barvy LED."
     </string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">Zapnout LED během nabíjení (vyžaduje restart)</string>
@@ -727,8 +745,10 @@
     </string>
     <string name="lockscreen_stock_music_layout_title">Vychozí rozložení hudby</string>
     <string name="lockscreen_stock_music_layout_summary">Použít výchozí rozložení při přehrávání hudby.</string>
-    <string name="lockscreen_wallpaper_title">Zvolit pozadí zamknuté obrazovky</string>
-    <string name="lockscreen_wallpaper_summary">Pozadí je možné odstranit v menu tohoto okna</string>
+    <string name="lockscreen_wallpaper_title">Pozadí zamknuté obrazovky</string>
+    <string name="lockscreen_wallpaper_summary">Nastavit nebo odstranit aktuální pozadí zamknuté obrazovky</string>
+    <string name="lockscreen_wallpaper_pick">Nové pozadí zamknuté obrazovky</string>
+    <string name="lockscreen_wallpaper_remove">Odstranit pozadí zamknuté obrazovky</string>
     <string name="lockscreen_text_color_title">Barva textu</string>
     <string name="lockscreen_text_color_summary">Nastavit barvu textu na zamčené obrazovce</string>
     <string name="lockscreen_weather_title">Zapnout</string>

@@ -81,6 +81,7 @@
     <string name="enable_tablet_ui">Pro odemknutí: zvolit tablet v \"Rozhraní\"</string>
     <string name="enable_noti_wallpaper">Pro odemknutí: zvolit telefon nebo phablet v \"Rozhraní\" a nastavit \"pozadí notifikací\"
     </string>
+    <string name="enable_crt_mode">Pro odemknutí: zkontrolovat \"CRT animaci vypnutí\"</string>
     <string name="enable_menu_location">Pro odemknutí: nastavit \"Umístění menu\"</string>
     <string name="enable_hiding_navbar">Pro odemknutí: \"Auto. skrývání navigační lišty\"</string>
     <string name="enable_hiding_systembar">Pro odemknutí: \"zapnout skrytou stavovou lištu\"</string>

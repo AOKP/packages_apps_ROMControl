@@ -86,6 +86,7 @@
     <string name="enable_noti_wallpaper">To Unlock: enable phone or phablet \"UI mode\" and set a
         \"notification background\"
     </string>
+    <string name="enable_crt_mode">To Unlock: check \"CRT screen off\"</string>
     <string name="enable_menu_location">To Unlock: enable a \"menu Location\"</string>
     <string name="enable_hiding_navbar">To Unlock: \"enable hidden NavBar\"</string>
     <string name="enable_hiding_systembar">To Unlock: \"enable hidden SystemBar\"</string>

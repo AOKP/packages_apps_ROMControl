@@ -259,7 +259,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         int crtMode = Settings.System.getInt(mContentResolver,
                 Settings.System.SYSTEM_POWER_CRT_MODE, 0);
         mCrtMode.setValueIndex(crtMode);
-        mCrtMode.setSummary(mCrtMode.getEntries()[crtMode]);
+        if (!isCrtOffChecked) {
+            mCrtMode.setSummary(R.string.enable_crt_mode);
+        } else {
+            mCrtMode.setSummary(mCrtMode.getEntries()[crtMode]);
+        }
         mCrtMode.setOnPreferenceChangeListener(this);
 
         mWakeUpWhenPluggedOrUnplugged =
@@ -290,6 +294,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
 
         findWallpaperStatus();
+        resetBootAnimation();
     }
 
     @Override
@@ -305,7 +310,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 mDisableBootAnimation.setSummary(null);
             }
         }
-        resetBootAnimation();
     }
 
     /**
@@ -325,13 +329,16 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         } else {
             mBootAnimationPath = "";
         }
+        setBootanimationSummary();
+        return bootAnimationExists;
+    }
+
+    private void setBootanimationSummary() {
         mCustomBootAnimation.setEnabled(!mDisableBootAnimation.isChecked());
         mCustomBootAnimation.setSummary(mDisableBootAnimation.isChecked()
                 ? R.string.enable_bootanimation_unlock
                 : R.string.custom_bootanimation_summary);
-        return bootAnimationExists;
     }
-
     private void resetSwaggedOutBootAnimation() {
         if (new File("/data/local/bootanimation.user").exists()) {
             // we're using the alt boot animation
@@ -533,9 +540,16 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             openTransparencyDialog();
             return true;
         } else if (preference == mCrtOff) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(mContentResolver,
-                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
-                    ((TwoStatePreference) preference).isChecked());
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF, checked);
+            if (!checked) {
+                mCrtMode.setSummary(R.string.enable_crt_mode);
+            } else {
+                int crtMode = Settings.System.getInt(mContentResolver,
+                        Settings.System.SYSTEM_POWER_CRT_MODE, 0);
+                mCrtMode.setSummary(mCrtMode.getEntries()[crtMode]);
+            }
         } else if (preference == mStatusBarHide) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(getActivity().getContentResolver(),
@@ -1177,14 +1191,14 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         }
 
         private void updateToggleState() {
-        	if (linkTransparencies) {
+            if (linkTransparencies) {
                 mSbLabel.setText(R.string.transparency_dialog_transparency_sb_and_nv);
                 mNavigationBarGroup.setVisibility(View.GONE);
             } else {
                 mSbLabel.setText(R.string.transparency_dialog_statusbar);
                 mNavigationBarGroup.setVisibility(View.VISIBLE);
             }
-        	mSbLabel.setText(R.string.transparency_dialog_statusbar);
+            mSbLabel.setText(R.string.transparency_dialog_statusbar);
 
             mSeekBars[STATUSBAR_KG_ALPHA]
                     .setEnabled(!mMatchStatusbarKeyguard.isChecked());

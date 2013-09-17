@@ -247,18 +247,31 @@
             android:name="com.jbirdvegas.mgerrit.GerritControllerActivity"
             android:theme="@android:style/Theme.Holo.Light"
             android:label="@string/mgerrit_activity_name"/>
-        <activity android:name="com.jbirdvegas.mgerrit.ReviewTab"
-            android:theme="@android:style/Theme.Holo.Light"/>
-        <activity android:name="com.jbirdvegas.mgerrit.MergedTab"
-            android:theme="@android:style/Theme.Holo.Light"/>
-        <activity android:name="com.jbirdvegas.mgerrit.AbandonedTab"
-            android:theme="@android:style/Theme.Holo.Light"/>
         <activity android:name="com.jbirdvegas.mgerrit.PatchSetViewerActivity"
-            android:theme="@android:style/Theme.Holo.Light"/>
-        <activity android:name="com.jbirdvegas.mgerrit.Prefs"
-            android:theme="@android:style/Theme.Holo.Light"/>
+                  android:parentActivityName="com.jbirdvegas.mgerrit.GerritControllerActivity"
+                  android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:name="com.jbirdvegas.mgerrit.PrefsActivity"
+                  android:parentActivityName="com.jbirdvegas.mgerrit.GerritControllerActivity"
+                  android:theme="@android:style/Theme.Holo.Light"/>
         <activity android:name="com.jbirdvegas.mgerrit.AOKPChangelog"
-            android:theme="@android:style/Theme.Holo.Light"/>
+                  android:parentActivityName="com.jbirdvegas.mgerrit.GerritControllerActivity"
+                  android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:name="com.jbirdvegas.mgerrit.ProjectsList"
+                  android:parentActivityName="com.jbirdvegas.mgerrit.GerritControllerActivity"
+                  android:theme="@android:style/Theme.Holo.Light"
+                  android:launchMode="singleTop">
+                  <intent-filter>
+                      <action android:name="android.intent.action.SEARCH" />
+                  </intent-filter>
+                  <meta-data android:name="android.app.searchable"
+                      android:resource="@xml/searchable"/>
+        </activity>
+        <service android:name="com.jbirdvegas.mgerrit.tasks.GerritService" />
+        <provider
+            android:name="com.jbirdvegas.mgerrit.database.DatabaseFactory"
+            android:authorities="com.jbirdvegas.provider.mgerrit"
+            android:exported="true">
+        </provider>
     </application>
 
 </manifest>

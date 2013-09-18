@@ -359,6 +359,8 @@
     <string name="toggle_choose_fasttoggle_side_title">Zvolit stranu rychlého přístupu</string>
     <string name="toggle_choose_fasttoggle_side_summary">Zvolit z jaké strany lišty bude lišta s přepínači přístupná
     </string>
+    <string name="swipe_to_switch_title">Přepnout potáhnutím</string>
+    <string name="swipe_to_switch_summary">Přepnout potáhnutím mezi notifikacemi a rychlým nastavením</string>
     <string name="toggle_dialog_arrange_title">Nastavení přepínačů</string>
     <string name="toggle_dialog_add_toggles">Přidat vybrané přepínače</string>
     <string name="toggle_style_tile">Dlaždice</string>

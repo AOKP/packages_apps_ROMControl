@@ -43,6 +43,11 @@
         android:title="@string/toggle_choose_fasttoggle_side_title"
         android:dependency="enable_fast_toggle" />
 
+    <CheckBoxPreference
+        android:key="swipe_to_switch"
+        android:title="@string/swipe_to_switch_title"
+        android:summary="@string/swipe_to_switch_summary" />
+
     <Preference
         android:key="toggle_fav_contact"
         android:summary="@string/toggle_favcontact_summary"

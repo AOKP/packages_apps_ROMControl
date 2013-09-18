@@ -68,6 +68,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     private static final String PREF_TOGGLE_FAV_CONTACT = "toggle_fav_contact";
     private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
     private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
+    private static final String PREF_SWIPE_TO_SWITCH = "swipe_to_switch";
     private static final String PREF_SCREENSHOT_DELAY = "screenshot_delay";
     private static final String PREF_SET_BOOT_ACTION = "set_boot_action";
     private static final String PREF_MATCH_ICON_ACTION = "match_icon_action";
@@ -94,6 +95,7 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
     ListPreference mTogglesStyle;
     Preference mFavContact;
     CheckBoxPreference mFastToggle;
+    CheckBoxPreference mSwipeToSwitch;
     CheckBoxPreference mBootState;
     CheckBoxPreference mMatchAction;
     ListPreference mChooseFastToggleSide;
@@ -181,6 +183,9 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         mChooseFastToggleSide.setValue(Settings.System.getInt(mContentRes,
                 Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
 
+        mSwipeToSwitch = (CheckBoxPreference) findPreference(PREF_SWIPE_TO_SWITCH);
+        mSwipeToSwitch.setOnPreferenceChangeListener(this);
+
         mScreenshotDelay = (ListPreference) findPreference(PREF_SCREENSHOT_DELAY);
         mScreenshotDelay.setOnPreferenceChangeListener(this);
         mScreenshotDelay.setValue(String.valueOf(Settings.System.getInt(mContentRes,
@@ -211,14 +216,17 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
         if (isSW600DPScreen(mContext) || isTabletUI(mContext)) {
             getPreferenceScreen().removePreference(mFastToggle);
             getPreferenceScreen().removePreference(mChooseFastToggleSide);
+            getPreferenceScreen().removePreference(mSwipeToSwitch);
         }
 
         if (Integer.parseInt(mTogglesStyle.getValue()) > 1) {
             mFastToggle.setEnabled(false);
             mTogglesPerRow.setEnabled(false);
+            mSwipeToSwitch.setEnabled(false);
             mFastToggle.setSummary(R.string.enable_toggle_tiles);
             mTogglesPerRow.setSummary(R.string.enable_toggle_tiles);
             mChooseFastToggleSide.setSummary(R.string.enable_fasttoggle);
+            mSwipeToSwitch.setSummary(R.string.enable_toggle_tiles);
         } else {
             mChooseFastToggleSide.setSummary(mFastToggle.isChecked()
                     ? R.string.toggle_choose_fasttoggle_side_summary
@@ -327,6 +335,12 @@ public class StatusBarToggles extends AOKPPreferenceFragment implements
                     Settings.System.getUriFor(Settings.System.CHOOSE_FASTTOGGLE_SIDE), null);
             mChooseFastToggleSide.setValue(Settings.System.getInt(mContentRes,
                     Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
+        } else if (preference == mSwipeToSwitch) {
+            boolean val = (Boolean) newValue;
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.SWIPE_TO_SWITCH, val);
+            mContentRes.notifyChange(Settings.System.getUriFor(Settings.System.SWIPE_TO_SWITCH), null);
+            return true;
         } else if (preference == mBootState) {
             boolean val = (Boolean) newValue;
             Settings.System.putBoolean(mContentRes,

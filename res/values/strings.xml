@@ -374,6 +374,8 @@
     <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
     <string name="toggle_choose_fasttoggle_side_summary">Select the side that triggers the fast toggle</string>
+    <string name="swipe_to_switch_title">Swipe to switch</string>
+    <string name="swipe_to_switch_summary">Swipe to switch between notifications and Quick Settings</string>
     <string name="toggle_dialog_arrange_title">Toggle setup</string>
     <string name="toggle_dialog_add_toggles">Select toggles to add</string>
     <string name="toggle_style_tile">Tiles</string>

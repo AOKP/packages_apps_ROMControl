@@ -23,7 +23,7 @@ import java.security.NoSuchAlgorithmException;
 public class DeveloperPreference extends Preference {
     private static final String TAG = "DeveloperPreference";
     public static final String GRAVATAR_API = "http://www.gravatar.com/avatar/";
-    public static int mDefaultAvatarSize = 200;
+    public static int mDefaultAvatarSize = 400;
     private ImageView twitterButton;
     private ImageView donateButton;
     private ImageView githubButton;
@@ -131,11 +131,8 @@ public class DeveloperPreference extends Preference {
 
     public String getGravatarUrl(String email) {
         try {
-            Point point = new Point();
-            mDisplay.getSize(point);
-            mDefaultAvatarSize = point.x;
             String emailMd5 = getMd5(email.trim().toLowerCase());
-            return String.format("%s%s?s=%d",
+            return String.format("%s%s?s=%d&d=mm",
                     GRAVATAR_API,
                     emailMd5,
                     mDefaultAvatarSize);

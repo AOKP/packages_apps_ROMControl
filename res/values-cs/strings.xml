@@ -473,6 +473,9 @@
     <string name="alt_signal_summary">Použít alternativní styl signálu (jako v GB)</string>
     <string name="show_4g_for_lte_title">Použít 4G ikonu u LTE</string>
     <string name="show_4g_for_lte_summary">Zobrazit ikonu 4G sítě místo LTE ikony</string>
+    <string name="status_bar_network_title">Síťový provoz</string>
+    <string name="status_bar_show_network_stats_title">Zobrazit rychlost sítě</string>
+    <string name="status_bar_network_stats_update_title">Rychlost aktualizace</string>
     <!--Color Picker-->
     <string name="dialog_color_picker">Výběr barvy</string>
     <string name="press_color_to_apply">Stisknutím se barva aplikuje</string>

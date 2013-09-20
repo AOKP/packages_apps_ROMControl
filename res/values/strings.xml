@@ -969,6 +969,11 @@
     <string name="direction_west">W</string>
     <string name="direction_north_west">NW</string>
 
+    <!-- network speed in statusbar -->
+    <string name="status_bar_network_title">Network traffic</string>
+    <string name="status_bar_show_network_stats_title">Show network speeds</string>
+    <string name="status_bar_network_stats_update_title">Update frequency</string>
+
     <!-- Share to clipboard -->
     <string name="clipboard_notification">Copied to Clipboard</string>
 

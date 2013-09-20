@@ -943,6 +943,10 @@
     <string name="direction_south_west">JZ</string>
     <string name="direction_west">Z</string>
     <string name="direction_north_west">SZ</string>
+    <!-- network speed in statusbar -->
+    <string name="status_bar_network_title">Síťový provoz</string>
+    <string name="status_bar_show_network_stats_title">Zobrazit rychlost sítě</string>
+    <string name="status_bar_network_stats_update_title">Rychlost aktualizace</string>
     <!--Share to clipboard-->
     <string name="clipboard_notification">Zkopírováno do schránky.</string>
     <!--Custom vibrations-->

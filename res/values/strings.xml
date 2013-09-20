@@ -498,6 +498,10 @@
     <string name="alt_signal_summary">Use alternate Gingerbread style signal cluster</string>
     <string name="show_4g_for_lte_title">Use 4G icon on LTE</string>
     <string name="show_4g_for_lte_summary">Show 4G network indicator icon instead of LTE icon</string>
+    <string name="status_bar_network_title">Network traffic</string>
+    <string name="status_bar_show_network_stats_title">Show network speeds</string>
+    <string name="status_bar_network_stats_update_title">Update frequency</string>
+    <string name="status_bar_network_stats_color_title">Network speeds text color</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

@@ -233,7 +233,11 @@
     <string name="rotate_270_summary">Umožnit zařízení obracet obrazovku vpravo!</string>
     <string name="recent_kill_all">Zapnout tlačítko zavření všech aplikací</string>
     <string name="recent_kill_all_summary">Zobrazuje tlačítko pro zavření všech aplikací v přehledu všech spuštěných
-        aplikací (vyžaduje restart UI)
+        aplikací
+    </string>
+    <string name="recent_google_assist_title">Zapnout tlačítko Google Now</string>
+    <string name="recent_google_assist_summary">Zobrazuje tlačítko pro spuštění Google Now v přehledu všech
+        spuštěných aplikací
     </string>
     <string name="ram_bar">Lišta s RAM</string>
     <string name="ram_bar_summary">Zobrazuje použitou RAM v okně s běžícími aplikacemi</string>

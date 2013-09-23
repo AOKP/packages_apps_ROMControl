@@ -98,6 +98,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private Switch mLockAllWidgetsSwitch;
     private Switch mLockUnlimitedWidgetsSwitch;
     private Button mLockTextColorButton;
+    private Switch mCameraWidgetSwitch;
 
     private TextView mGlowTorchText;
     private TextView mLongPressText;
@@ -111,6 +112,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private TextView mLockCarouselText;
     private TextView mLockAllWidgetsText;
     private TextView mLockUnlimitedWidgetsText;
+    private TextView mCameraWidgetText;
 
     private ShortcutPickerHelper mPicker;
     private String[] targetActivities = new String[8];
@@ -385,6 +387,19 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 updateDrawables();
             }
         });
+
+        mCameraWidgetText = ((TextView) getActivity().findViewById(R.id.lockscreen_camera_widget_id));
+        mCameraWidgetText.setOnClickListener(mLockCarouselTextListener);
+        mCameraWidgetSwitch = (Switch) getActivity().findViewById(R.id.lockscreen_camera_widget_switch);
+        mCameraWidgetSwitch
+                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton v, boolean checked) {
+                        Settings.System.putBoolean(cr,
+                                Settings.System.CAMERA_WIDGET_HIDE, checked);
+                        updateSwitches();
+                    }
+                });
         updateSwitches();
         updateDrawables();
     }
@@ -504,6 +519,16 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         }
     };
 
+    private TextView.OnClickListener mCameraWidgetListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(
+                            R.string.lockscreen_camera_widget_title),
+                    getResources().getString(
+                            R.string.lockscreen_camera_widget_summary));
+        }
+    };
+
     private void updateSwitches() {
         mGlowTorchSwitch.setSelection(Settings.System.getInt(cr,
                 Settings.System.LOCKSCREEN_GLOW_TORCH, 0));
@@ -525,6 +550,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 Settings.System.LOCKSCREEN_MINIMIZE_LOCKSCREEN_CHALLENGE, false));
         mLockCarouselSwitch.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_USE_WIDGET_CONTAINER_CAROUSEL, false));
+        mCameraWidgetSwitch.setChecked(Settings.System.getBoolean(cr,
+                Settings.System.CAMERA_WIDGET_HIDE, false));
     }
 
 

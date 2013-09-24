@@ -858,8 +858,8 @@
         Fahrenheitech a rychlost větru v km/h místo m/h.
     </string>
     <string name="weather_statusbar_style">Styl počasí ve stavové liště</string>
-    <string name="title_weather_longclick">Akce krátkého stisku panelu počasí</string>
-    <string name="title_weather_shortclick">Akce dlouhého stisku panelu počasí</string>
+    <string name="title_weather_longclick">Akce dlouhého stisku panelu počasí</string>
+    <string name="title_weather_shortclick">Akce krátkého stisku panelu počasí</string>
     <string name="update">Aktualizovat panel počasí</string>
     <string name="weather_refreshing">Dotazuje se aktualizace počasí!</string>
     <string name="weather_loc_warning_title">Polohu nelze zjistit!</string>

@@ -785,6 +785,8 @@
     <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between
         lockscreen widgets.
     </string>
+    <string name="lockscreen_camera_widget_title">Lockscreen camera widget</string>
+    <string name="lockscreen_camera_widget_summary">Allows you to disable camera widget in lockscreen.</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>

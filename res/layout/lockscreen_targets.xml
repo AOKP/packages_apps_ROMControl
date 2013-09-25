@@ -408,6 +408,35 @@
                     android:layout_marginEnd="4dip"
                     android:padding="4dip" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/lockscreen_camera_widget_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="4dip"
+                    android:layout_toLeftOf="@+id/lockscreen_camera_widget_switch"
+                    android:ellipsize="marquee"
+                    android:gravity="left"
+                    android:padding="4dip"
+                    android:singleLine="true"
+                    android:text="@string/lockscreen_camera_widget_title"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#FFFFFF" />
+
+                <Switch
+                    android:id="@id/lockscreen_camera_widget_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="4dip"
+                    android:padding="4dip" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 

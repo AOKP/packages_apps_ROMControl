@@ -23,6 +23,14 @@
         android:icon="@drawable/ic_rom_control_lockscreens"
         android:summary="@string/header_summary_lockscreens" />
 
+     <!-- Active display -->
+    <PreferenceScreen
+        android:key="active_display"
+        android:fragment="com.aokp.romcontrol.fragments.ActiveDisplaySettings"
+        android:title="@string/ad_settings_title"
+        android:summary="@string/ad_settings_summary">
+    </PreferenceScreen>
+
     <header
         android:id="@+id/power_menu"
         android:fragment="com.aokp.romcontrol.fragments.PowerMenu"

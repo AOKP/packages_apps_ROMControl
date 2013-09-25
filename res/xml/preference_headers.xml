@@ -52,6 +52,12 @@
         android:summary="@string/ribbon_settings_summary" />
 
     <header
+        android:id="@+id/active_display"
+        android:fragment="com.aokp.romcontrol.fragments.ActiveDisplaySettings"
+        android:title="@string/ad_settings_title"
+        android:summary="@string/ad_settings_summary" />
+
+    <header
         android:id="@+id/statusbar"
         android:title="@string/header_statusbar" />
 

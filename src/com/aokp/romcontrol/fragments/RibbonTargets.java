@@ -165,7 +165,7 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
     private DisplayMetrics metrics;
     private WindowManager wm;
     private IntentFilter filter;
-    private RibbonDialogReceiver reciever;
+    private RibbonDialogReceiver mRibbonDialogReceiver;
     private boolean mSetupFinished;
     private Handler mHandler = new Handler();
 
@@ -287,10 +287,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         mPackMan = getPackageManager();
         mResources = mContext.getResources();
 
-        reciever = new RibbonDialogReceiver();
+        mRibbonDialogReceiver = new RibbonDialogReceiver();
         filter = new IntentFilter();
         filter.addAction(RibbonDialogReceiver.ACTION_RIBBON_DIALOG_DISMISS);
-        mContext.registerReceiver(new RibbonDialogReceiver(), filter);
+        mContext.registerReceiver(mRibbonDialogReceiver, filter);
 
         metrics = new DisplayMetrics();
         wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
@@ -932,6 +932,10 @@ public class RibbonTargets extends AOKPPreferenceFragment implements
         if (mReceiver != null) {
             mContext.unregisterReceiver(mReceiver);
             mReceiver = null;
+        }
+        if (mRibbonDialogReceiver != null) {
+            mContext.unregisterReceiver(mRibbonDialogReceiver);
+            mRibbonDialogReceiver = null;
         }
         super.onDestroy();
     }

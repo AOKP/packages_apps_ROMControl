@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -664,21 +665,22 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
     private void prepareAndSetWallpaper() {
         Display display = getActivity().getWindowManager().getDefaultDisplay();
-        int width = display.getWidth();
-        int height = display.getHeight();
+        int width = getActivity().getWallpaperDesiredMinimumWidth();
+        int height = getActivity().getWallpaperDesiredMinimumHeight();
+        float spotlightX = (float)display.getWidth() / width;
+        float spotlightY = (float)display.getHeight() / height;
 
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
         intent.setType("image/*");
         intent.putExtra("crop", "true");
-        boolean isPortrait = getResources()
-                .getConfiguration().orientation
-                == Configuration.ORIENTATION_PORTRAIT;
-        intent.putExtra("aspectX", isPortrait ? width : height);
-        intent.putExtra("aspectY", isPortrait ? height : width);
-        intent.putExtra("outputX", width);
-        intent.putExtra("outputY", height);
         intent.putExtra("scale", true);
         intent.putExtra("scaleUpIfNeeded", true);
+        intent.putExtra("aspectX", width);
+        intent.putExtra("aspectY", height);
+        intent.putExtra("outputX", width);
+        intent.putExtra("outputY", height);
+        intent.putExtra("spotlightX", spotlightX);
+        intent.putExtra("spotlightY", spotlightY);
         intent.putExtra(MediaStore.EXTRA_OUTPUT,
                 getNotificationExternalUri());
         intent.putExtra("outputFormat",

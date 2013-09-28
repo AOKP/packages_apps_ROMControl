@@ -1,5 +1,7 @@
 package com.aokp.romcontrol.fragments;
 
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,8 +15,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class About extends AOKPPreferenceFragment {
-
     public static final String TAG = "About";
+
+    private static final String AOKP = "http://aokp.co/";
+    private static final String MGERRIT = "com.jbirdvegas.mgerrit";
+    private static final String MGERRIT_PLAYSTORE = "https://play.google.com/store/apps/details?id=com.jbirdvegas.mgerrit";
+    private static final String MGERRIT_MAIN_ENTRY = ".GerritControllerActivity";
+    private static final String MGERRIT_AOKP_CHANGELOG = ".AOKPChangelog";
+    private static final String TEAMKANG_IRC = "http://webchat.freenode.net/?channels=teamkang";
 
     Preference mSiteUrl;
     Preference mReviewUrl;
@@ -50,29 +58,40 @@ public class About extends AOKPPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://aokp.co/");
+            launchUrl(AOKP);
+            return true;
         } else if (preference == mReviewUrl) {
-            Intent mGerrit = new Intent(getActivity().getApplicationContext(),
-                    com.jbirdvegas.mgerrit.GerritControllerActivity.class);
-            mGerrit.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(mGerrit);
+            try {
+                launchActivity(MGERRIT, MGERRIT_MAIN_ENTRY);
+            } catch(ActivityNotFoundException failToMarket) {
+                launchUrl(MGERRIT_PLAYSTORE);
+            }
+            return true;
         } else if (preference == mIrcUrl) {
-            launchUrl("http://webchat.freenode.net/?channels=teamkang");
+            launchUrl(TEAMKANG_IRC);
+            return true;
         } else if (preference == mDynamicChangelog) {
-            Intent mGerritChangelog = new Intent(getActivity().getApplicationContext(),
-                    com.jbirdvegas.mgerrit.AOKPChangelog.class);
-            mGerritChangelog.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(mGerritChangelog);
+            try {
+                launchActivity(MGERRIT, MGERRIT_AOKP_CHANGELOG);
+            } catch (ActivityNotFoundException failToMarket) {
+                launchUrl(MGERRIT_PLAYSTORE);
+            }
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
+    private void launchActivity(String packageName, String activity)
+            throws ActivityNotFoundException {
+       Intent launch = new Intent();
+       launch.setComponent(new ComponentName(packageName, packageName + activity));
+       launch.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+       getActivity().startActivity(launch);
+   }
+
     private void launchUrl(String url) {
         Uri uriUrl = Uri.parse(url);
-        Intent donate = new Intent(Intent.ACTION_VIEW, uriUrl);
-        getActivity().startActivity(donate);
-        Intent github = new Intent(Intent.ACTION_VIEW, uriUrl);
-        getActivity().startActivity(github);
+        Intent website = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(website);
     }
 }

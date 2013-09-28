@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="enable_weather"
+        android:title="@string/weather_enable"
+        android:summary="@string/weather_enable_summary" />
+
+    <ListPreference
+        android:entries="@array/weather_statusbar_location_entries"
+        android:entryValues="@array/weather_statusbar_location_values"
+        android:dependency="enable_weather"
+        android:key="statusbar_location"
+        android:title="@string/weather_statusbar_style" />
+
+    <CheckBoxPreference
+        android:key="use_custom_location"
+        android:dependency="enable_weather"
+        android:title="@string/weather_use_custom_location"
+        android:summary="@string/weather_use_custom_location_summary" />
+
+    <EditTextPreference
+        android:key="custom_location"
+        android:title="@string/weather_custom_location_title"
+        android:dependency="use_custom_location"
+        android:dialogTitle="@string/weather_custom_location_dialog_title"
+        android:dialogMessage="@string/weather_custom_location_dialog_message" />
+
+    <CheckBoxPreference
+        android:key="use_celcius"
+        android:dependency="enable_weather"
+        android:title="@string/weather_use_celcius"
+        android:summary="@string/weather_use_celcius_summary" />
+
+    <ListPreference
+        android:entries="@array/weather_action_entries"
+        android:dependency="enable_weather"
+        android:entryValues="@array/weather_action_values"
+        android:key="weather_shortclick"
+        android:title="@string/title_weather_shortclick" />
+
+    <ListPreference
+        android:entries="@array/weather_action_entries"
+        android:dependency="enable_weather"
+        android:entryValues="@array/weather_action_values"
+        android:key="weather_longclick"
+        android:title="@string/title_weather_longclick" />
+
+    <ListPreference
+        android:entries="@array/weather_interval_entries"
+        android:entryValues="@array/weather_interval_values"
+        android:dependency="enable_weather"
+        android:key="refresh_interval"
+        android:title="@string/weather_refresh_interval" />
+
+</PreferenceScreen>

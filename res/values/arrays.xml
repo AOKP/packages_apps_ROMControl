@@ -411,6 +411,14 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string-array name="battery_bar_alt_entries" translatable="false">
+        <item>@string/dont_show</item>
+        <item>@string/statusbar</item>
+    </string-array>
+    <string-array name="battery_bar_alt_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
     <string-array name="battery_bar_style_entries" translatable="false">
         <item>@string/regular</item>
         <item>@string/center_mirrored</item>

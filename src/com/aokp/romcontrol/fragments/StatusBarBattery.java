@@ -62,6 +62,17 @@ public class StatusBarBattery extends AOKPPreferenceFragment implements
         mBatteryBarThickness.setValue((Settings.System.getInt(mContentRes,
                 Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1)) + "");
 
+        boolean hasNavBarByDefault = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+        if (Settings.System.getBoolean(mContentRes, Settings.System.NAVIGATION_BAR_SHOW,
+                hasNavBarByDefault)) {
+            mBatteryBar.setEntryValues(R.array.battery_bar_values);
+            mBatteryBar.setEntries(R.array.battery_bar_entries);
+        } else {
+            mBatteryBar.setEntryValues(R.array.battery_bar_alt_values);
+            mBatteryBar.setEntries(R.array.battery_bar_alt_entries);
+        }
+
         if (Integer.parseInt(mBatteryBar.getValue()) == 0) {
             mBatteryBarStyle.setEnabled(false);
             mBatteryBarColor.setEnabled(false);

@@ -1165,4 +1165,20 @@
     <string name="add_favs_or_view">Přidat do seznamu oblíbených nebo zobrazených změn?</string>
     <string name="remove_favs_or_view">Smazat ze seznamu oblíbených nebo zobrazených změn?</string>
     <string name="changelog_remove_from_favs_list">Smazat</string>
+    <!-- Animation Controls -->
+    <string name="title_animation_controls">Ovládání animací</string>
+    <string name="activity_open_title">Animace otevření aktivity</string>
+    <string name="activity_close_title">Animace zavření aktivity</string>
+    <string name="task_open_title">Animace otevření tasku</string>
+    <string name="task_close_title">Animace zavření tasku</string>
+    <string name="task_move_to_front_title">Animace přesunu do popředí</string>
+    <string name="task_move_to_back_title">Animace přesunu do pozadí</string>
+    <string name="wallpaper_open_title">Animace otevření tapety</string>
+    <string name="wallpaper_close_title">Animace zavření tapety</string>
+    <string name="wallpaper_intra_open_title">Animace otevření nové tapety</string>
+    <string name="wallpaper_intra_close_title">Animace zavření nové tapety</string>
+    <string name="animation_duration_title">Trvání animace</string>
+    <string name="title_animation_no_override">Zabránit aplikacím překrývání</string>
+    <string name="summary_animation_no_override">Zabránit aplikacím překrývat přechody.</string>
+    <string name="animation_duration_default">Výchozí</string>
 </resources>

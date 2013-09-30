@@ -21,6 +21,7 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
     ColorPickerPreference mWifiColorPicker;
     CheckBoxPreference mHideSignal;
     CheckBoxPreference mAltSignal;
+    CheckBoxPreference mShow4gForLte;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,10 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mAltSignal.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, false));
 
+        mShow4gForLte = (CheckBoxPreference) findPreference("show_4g_for_lte");
+        mShow4gForLte.setChecked(Settings.System.getBoolean(mContentRes,
+                Settings.System.STATUSBAR_SIGNAL_SHOW_4G_FOR_LTE, true));
+
         if (Integer.parseInt(mDbmStyletyle.getValue()) == 0) {
             mColorPicker.setEnabled(false);
             mColorPicker.setSummary(R.string.enable_signal_text);
@@ -75,6 +80,10 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         } else if (preference == mAltSignal) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.STATUSBAR_SIGNAL_CLUSTER_ALT, mAltSignal.isChecked());
+            return true;
+        } else if (preference == mShow4gForLte) {
+            Settings.System.putBoolean(mContentRes,
+                    Settings.System.STATUSBAR_SIGNAL_SHOW_4G_FOR_LTE, mShow4gForLte.isChecked());
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

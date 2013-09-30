@@ -489,6 +489,8 @@
     <string name="wifi_signal_color_title">WiFi signal text color</string>
     <string name="alt_signal_title">Alt signal indicator layout</string>
     <string name="alt_signal_summary">Use alternate Gingerbread style signal cluster</string>
+    <string name="show_4g_for_lte_title">Use 4G icon on LTE</string>
+    <string name="show_4g_for_lte_summary">Show 4G network indicator icon instead of LTE icon</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

@@ -33,4 +33,9 @@
         android:title="@string/hide_signal_title"
         android:summary="@string/hide_signal_summary" />
 
+    <CheckBoxPreference
+        android:key="show_4g_for_lte"
+        android:title="@string/show_4g_for_lte_title"
+        android:summary="@string/show_4g_for_lte_summary" />
+
 </PreferenceScreen>

@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
+import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -16,6 +18,7 @@ import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.service.FlipService;
 import com.aokp.romcontrol.service.HeadphoneService;
+import com.aokp.romcontrol.widgets.VibDurationPreference;
 
 public class Sound extends AOKPPreferenceFragment
         implements OnPreferenceChangeListener {
@@ -28,6 +31,7 @@ public class Sound extends AOKPPreferenceFragment
     private static final String PREF_USER_DOWN_MS = "user_down_ms";
     private static final String PREF_PHONE_RING_SILENCE = "phone_ring_silence";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
+    private static final String GENERIC_VIBRATE_INTENSITY = "generic_vibrate_intensity";
 
     SharedPreferences prefs;
     CheckBoxPreference mEnableVolumeOptions;
@@ -38,10 +42,14 @@ public class Sound extends AOKPPreferenceFragment
     ListPreference mFlipScreenOff;
     ListPreference mPhoneSilent;
     ListPreference mAnnoyingNotifications;
+    VibDurationPreference mVibtationIntensity;
+
+    Vibrator vib;
 
     private int mCallPref;
     private int mFlipPref;
 
+    private boolean mTactileFeedbackEnabled;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +57,7 @@ public class Sound extends AOKPPreferenceFragment
         addPreferencesFromResource(R.xml.prefs_sound);
         PreferenceManager.setDefaultValues(mContext, R.xml.prefs_sound, true);
         prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        vib = (Vibrator) mContext.getSystemService(mContext.VIBRATOR_SERVICE);
 
         mHeadphonesPluggedAction = (ListPreference) findPreference(PREF_HEADPHONES_PLUGGED_ACTION);
 
@@ -77,6 +86,14 @@ public class Sound extends AOKPPreferenceFragment
         mPhoneSilent.setOnPreferenceChangeListener(this);
         mCallPref = Integer.parseInt(prefs.getString(PREF_PHONE_RING_SILENCE, "-1"));
 
+        mTactileFeedbackEnabled = Settings.System.getIntForUser(mContentRes,
+                Settings.System.HAPTIC_FEEDBACK_ENABLED, 1, UserHandle.USER_CURRENT) != 0;
+        final int vibIntensity = Settings.System.getInt(mContentRes,
+                Settings.System.GENERIC_VIBRATE_INTENSITY, 0);
+        mVibtationIntensity = (VibDurationPreference) findPreference(GENERIC_VIBRATE_INTENSITY);
+        mVibtationIntensity.setInitValue((int) (vibIntensity));
+        mVibtationIntensity.setOnPreferenceChangeListener(this);
+
         if (mFlipPref != -1) {
             mUserDownMS.setEnabled(true);
             mFlipScreenOff.setEnabled(true);
@@ -102,6 +119,7 @@ public class Sound extends AOKPPreferenceFragment
         }
 
         if (!hasVibration) {
+            getPreferenceScreen().removePreference(mVibtationIntensity);
             String[] noVibEntries = {
                     getResources().getString(R.string.headphones_mode_no_action),
                     getResources().getString(R.string.headphones_mode_silent)};
@@ -166,6 +184,15 @@ public class Sound extends AOKPPreferenceFragment
         } else if (preference == mPhoneSilent) {
             mCallPref = Integer.parseInt((String) newValue);
             flipServiceCheck();
+            return true;
+        } else if (preference == mVibtationIntensity) {
+            String newVal = (String) newValue;
+            int val = Integer.parseInt(newVal);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.GENERIC_VIBRATE_INTENSITY, val);
+            if ((val % 5 == 0) && mTactileFeedbackEnabled && vib != null) {
+                vib.vibrate(10);
+            }
             return true;
         }
         return false;

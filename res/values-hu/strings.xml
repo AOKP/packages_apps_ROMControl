@@ -40,7 +40,6 @@
     <string name="title_power_menu">Power Menü</string>
     <string name="title_led">LED Vezérlés</string>
     <string name="title_spen">S Pen Gesztusok</string>
-    <string name="title_sound">Hang beállítások</string>
     <string name="title_lockscreens">Képernyőzár beállítások</string>
     <string name="title_lockscreens_targets">Zárképernyő elemek</string>
     <string name="title_sound">Hang beállítások</string>
@@ -74,8 +73,31 @@
     <string name="menu_ribbon_toggles">Beállítás váltás</string>
     <string name="menu_ribbon_na">Nem elérhető</string>
     <string name="menu_ribbon_toggles_error">Kapcsolók csak a jobb és balra húzó szalagoknál érhetőek el.</string>
-    <string name="menu_user_interface_reset">Értesítési háttér alaphelyzetbe</string>
     <string name="menu_lockscreens_reset">Zárképernyő háttér alaphelyzetbe</string>
+
+    <!-- Preference Dependant Instruction -->
+    <string name="enable_bootanimation_unlock">Feloldja: jelöletlenül \"bootanimáció tiltása\"</string>
+    <string name="enable_phone_or_phablet">Feloldja: engedélyezi a telefon vagy phablet \"UI módot\"</string>
+    <string name="enable_tablet_ui">Feloldja: engedélyezi a tablet \"UI módot\"</string>
+    <string name="enable_noti_wallpaper">Feloldja: engedélyezi a telefon vagy phablet \"UI módot\" és beállít egy
+        \"értesítési hátteret\"
+    </string>
+    <string name="enable_crt_mode">Feloldja: jelölve \"CRT képernyő ki\"</string>
+    <string name="enable_menu_location">Feloldja: engedélyezi a \"menü Helyet\"</string>
+    <string name="enable_hiding_navbar">Feloldja: \"engedélyezi a rejtett NavBar-t\"</string>
+    <string name="enable_hiding_systembar">Feloldja: \"engedélyezi a rejtett SystemBar-t\"</string>
+    <string name="enable_audio_mode">Feloldja: engedélyezi \"arccal lefelé audió módot\"</string>
+    <string name="enable_battery_bar">Feloldja: engedélyezi az \"akksi sáv helyet\"</string>
+    <string name="enable_clock_location">Feloldja: engedélyezi az  \"óra stílust\"</string>
+    <string name="enable_signal_text">Feloldja: beállítja \"jel megjelenési stílust\" kijelzőn szöveg vagy dBm</string>
+    <string name="enable_wifi_text">Feloldja: beállítja \"WiFi jel megjelenési stílust\" szöveg megjelenítéshez</string>
+    <string name="enable_toggle_tiles">Feloldja: beállítja \"kapcsoló stílust\" csempékhez</string>
+    <string name="enable_fasttoggle">Feloldja: \"gyors kapcsoló engedélíezése\" és csempék \"kapcsoló stílus\"</string>
+    <string name="enable_favorite_toggle">Feloldja: engedélyezi a \"kedvenc személy\" válthat itt vagy a Szalagsávon</string>
+    <string name="enable_screenshot_toggle">Feloldja: engedélyezi a \"képernyőképet" válthat itt vagy a Szalagsávon</string>
+    <string name="enable_custom_toggle">Feloldja: engedélyezi az \"egyéni\" válthat itt vagy a Szalagsávon</string>
+    <string name="enable_spen_gestures">Feloldja: \"engedélyezi S Pen gesztusok\" </string>
+    <string name="enable_persist_installer">Feloldja: \"engedélyezi a perzisztenciát\"</string>
 
     <!-- General Strings -->
     <string name="advanced_settings">Speciális beállítások</string>
@@ -90,12 +112,8 @@
     <string name="title_show_torch_toggle">Zseblámpa kapcsoló</string>
     <string name="title_show_airplane_toggle">Repülőgép üzemmód</string>
     <string name="title_show_navbar_hide">Navigációs sáv mutatása</string>
-    <string name="summary_show_navbar_hide">Bejelölve engedélyezi a rejtett Navigációs sáv és Értesítési sáv váltást
-    </string>
-    <string name="title_show_volume_state_toggle">Mutatja a hangerő állítást</string>
-    <string name="title_show_reboot_keyguard">Mutatja az Újraindítást a zárképernyőn</string>
-    <string name="summary_show_reboot_keyguard">Engedélyezve mutatni fogja az újraindítási opciókat a kezdőképernyőn
-    </string>
+    <string name="title_show_volume_state_toggle">Hangerő állapot</string>
+    <string name="title_show_reboot_keyguard">Zárképernyő újraindítás</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Balra húzás akciója</string>
@@ -166,7 +184,10 @@
     <string name="custom_bootanimation_summary">Saját zip kiválasztása a tárhelyről és használd boot animácónak.</string>
     <string name="install_file_manager_error">Alkalmazás nem található. Telepíts fájlkezelőt.</string>
     <string name="notification_wallpaper_title">Értesítési háttér választása</string>
-    <string name="notification_wallpaper_summary">Egyedi hátteret tudsz adni az értesítési sávnak</string>
+    <string name="notification_wallpaper_dialog">Háttérkép előnézet</string>
+    <string name="notification_wallpaper_pick">Új értesítési háttér</string>
+    <string name="notification_wallpaper_reset">Értesítési háttér eltávolítása</string>
+    <string name="notification_wallpaper_error">Nem találok képet</string>
     <string name="notif_wallpaper_alpha_title">Áttetszősége</string>
     <string name="alpha_dialog_title">Áttetszőség mértéke</string>
     <string name="custom_carrier_label_title">Egyedi szolgáltató név</string>
@@ -191,6 +212,8 @@
     <string name="rotate_270_summary">Engedélyezi a képernyő jobb oldalra forgatását</string>
     <string name="recent_kill_all">Engedélyezi a kill-all-button-t</string>
     <string name="recent_kill_all_summary">Összes alkalmazás bezárását engedélyező gomb megjelenítése.</string>
+    <string name="recent_google_assist_title">Engedélyezi Google Now gombot</string>
+    <string name="recent_google_assist_summary">Megjelenít egy gombot ami indítja a Google Now-t a Legutóbbi Alkalmazások ablakban</string>
     <string name="ram_bar">Memória sáv</string>
     <string name="ram_bar_summary">Memória használat mutatása a Legutóbbi menüben</string>
     <string name="longpress_to_kill">Vissza gombra kill</string>
@@ -297,6 +320,8 @@
     <string name="toggle_favcontact_summary">Válaszd ki a kedvenc kapcsolatod</string>
     <string name="toggle_collapse_generic_title">Collapse shade on toggle click</string>
     <string name="toggle_collapse_generic_summary">Close shade on all generic toggle actions</string>
+    <string name="toggle_vibrate_title">Rezeg a kapcsoló érintésre</string>
+    <string name="toggle_vibrate_summary">Rezeg minden általános kapcsoló akcióra</string>
     <string name="toggle_enable_fasttoggle_title">Gyors kapcsoló engedélyezése</string>
     <string name="toggle_enable_fasttoggle_summary">Alapértelmezett viselkedés felülbírálása</string>
     <string name="toggle_choose_fasttoggle_side_title">Gyors kapcsoló oldal választás</string>
@@ -374,7 +399,7 @@
     <string name="toggle_nfc">NFC</string>
     <string name="toggle_silent">Néma</string>
     <string name="toggle_swagger">Swagger</string>
-    <string name="toggle_sync">Sync</string>
+    <string name="toggle_sync">Szink.</string>
     <string name="toggle_torch">Zseblámpa</string>
     <string name="toggle_2g">2G</string>
     <string name="toggle_usb_tether">USB Megosztás</string>
@@ -416,6 +441,8 @@
     <string name="wifi_signal_color_title">WiFi jel színe</string>
     <string name="alt_signal_title">Alt jel elrendezés</string>
     <string name="alt_signal_summary">Alternativ (GB) jel használata</string>
+    <string name="show_4g_for_lte_title">Használja a 4G ikont LTE-n</string>
+    <string name="show_4g_for_lte_summary">4G ikon használata LTE ikon helyett</string>
 
 
     <!-- Color Picker -->
@@ -475,8 +502,6 @@
     <string name="navbar_height_dialog_button_reboot">Újraindítás most!</string>
     <string name="navigation_bar_color_title">Navigációs sáv színe</string>
     <string name="navigation_bar_tint_title">Navigációs sáv gomb színe</string>
-    <string name="navigation_bar_colorall_title">Összes gomb színezése</string>
-    <string name="navigation_bar_colorall_summary">Bejelölve egyéni ikonokat tudod színezni</string>
     <string name="navigation_bar_glow_tint_title">Navigációs sáv fénye</string>
     <string name="navigation_bar_glow_tint_summary">Gomb megnyomásának a háttér színe.</string>
     <string name="glow_times_title">Gomb fényének animációja</string>
@@ -558,8 +583,8 @@
     <string name="ribbon_icon_size_title">Ikon méret</string>
     <string name="ribbon_dismiss_title">Szalag elutasító akció</string>
     <string name="ribbon_animation_duration_title">Animáció hossza</string>
-    <string name="ribbon_long_swipe_title">Húzási terület hooszan húzva</string>
-    <string name="ribbon_long_press_title">Húzási terület hooszan nyomva</string>
+    <string name="ribbon_long_swipe_title">Húzási terület hosszan húzva</string>
+    <string name="ribbon_long_press_title">Húzási terület hosszan nyomva</string>
     <string name="ribbon_icon_size_summary">Add meg az ikon méreteit</string>
     <string name="ribbon_lockscreen">Zárképernyő szalag</string>
     <string name="ribbon_notifications">Értesítési szalag</string>
@@ -578,6 +603,8 @@
     <string name="ribbon_bottom_warning_title">Nem engedélyezi az alulról húzást Navigációs sávnál, rejtve kell
         lennie.
     </string>
+    <string name="ribbon_bottom_warning_hiding">Navigációs sáv Auto. Rejtésével engedélyezi a hosszan nyomást az aktiválási területen a szalagon.
+            </string>
     <string name="ribbon_button_colorize_title">Akció ikonok szöveg színei</string>
     <string name="ribbon_color_title">Húzó szalag szine</string>
     <string name="text_color_title">Alkalmazás szöveg szine</string>
@@ -587,7 +614,7 @@
     <string name="ribbon_drag_handle_height_title">Húzó fogantyú vastagsága</string>
     <string name="ribbon_insert">Gomb beillesztés</string>
     <string name="ribbon_handle_location_title">Szalag fogantyú helye</string>
-    <string name="ribbon_icon_location_title">Ikon súlya</string>
+    <string name="ribbon_icon_location_title">Ikon elhelyezkedése</string>
     <string name="window_text_color_title">Ablak szöveg szín</string>
     <string name="window_color_title">Ablak szín</string>
     <string name="window_opacity_title">Ablak áttetszősége</string>
@@ -629,6 +656,18 @@
     <string name="led_brightness_default">Alapértelmezett fényerő: 31</string>
 
     <!-- Sound -->
+    <string name="increasing_ring_title">Emelkedő csengőhang</string>
+    <string name="checkbox_increasing_ring">Engedélyezi</string>
+    <string name="increasing_ring_min_volume_title">Csengés kezdő hangereje</string>
+    <string name="increasing_ring_volume_notice">Notice:\nKezdési hangerőt állítsd magasabbra a csengő hangerőnél, a csengő dallamot a csengő hangerőn fogja lehátszani.</string>
+    <string name="increasing_ring_interval_title">Növelési időköz</string>
+    <string name="increasing_ring_interval_eachring">Minden csengőhang ismétlése</string>
+    <string name="increasing_ring_interval_half_second">0.5 mp</string>
+    <string name="increasing_ring_interval_1second">1 mp</string>
+    <string name="increasing_ring_interval_2seconds">2 mp</string>
+    <string name="increasing_ring_interval_3seconds">3 mp</string>
+    <string name="increasing_ring_interval_5seconds">5 mp</string>
+    <string name="increasing_ring_interval_10seconds">10 mp</string>
     <string name="less_notification_sounds_title">Ritkán használt értesítési hangok</string>
     <string name="less_notification_sounds_summary">Korlátozza egyes alkalmazások hangját a beállított értékre</string>
     <string name="title_headphone_audio_mode">Fejhallgató csatlakozásának jelzése</string>
@@ -697,7 +736,10 @@
     <string name="lockscreen_stock_music_layout_summary">Gyári elrendezés használata lejátszás közben.</string>
     <string name="lockscreen_wallpaper_title">Zárképernyő háttérkép választása</string>
     <string name="lockscreen_wallpaper_summary">Meg tudod változtatni a háttérképét</string>
+    <string name="lockscreen_wallpaper_pick">Új zárképernyő háttér</string>
+    <string name="lockscreen_wallpaper_remove">Zárképernyő háttér eltávolítása</string>
     <string name="lockscreen_text_color_title">Zárképernyő szöveg szín</string>
+    <string name="lockscreen_text_color_summary">Állítsd be a zárképernyő színét</string>
     <string name="lockscreen_weather_title">Engedélyez</string>
     <string name="lockscreen_weather_summary">Időjárás a zárképernyőn. RomControlban engedélyezni kell a mükődését.
     </string>
@@ -1080,5 +1122,22 @@
     <!-- dynamic changelog -->
     <string name="dynamic_changelog_title">Dinamikus VáltozásLista</string>
     <string name="dynamic_changelog_summary">Interaktív változáslista a Gerrit kérelmekről</string>
+
+    <!-- Animation Controls -->
+    <string name="title_animation_controls">Animációk</string>
+    <string name="activity_open_title">Aktivitás Nyitó Animációja</string>
+    <string name="activity_close_title">Aktivitás Záró Animációja</string>
+    <string name="task_open_title">Feladat Nyitó Animációja</string>
+    <string name="task_close_title">Feladat Záró Animációja</string>
+    <string name="task_move_to_front_title">Előre hozás Animációja</string>
+    <string name="task_move_to_back_title">Hátra hozás Animációja</string>
+    <string name="wallpaper_open_title">Háttérkép Nyitó Animációja</string>
+    <string name="wallpaper_close_title">Háttérkép Záró Animációja</string>
+    <string name="wallpaper_intra_open_title">Háttérkép belül nyitott Animációja</string>
+    <string name="wallpaper_intra_close_title">Háttérkép belül zárt Animációja</string>
+    <string name="animation_duration_title">Animáció Időtartama</string>
+    <string name="title_animation_no_override">Megakadályozza az Alklamazás felülbírálást</string>
+    <string name="summary_animation_no_override">Alkalmazások átmeneteinek felülbírálása.</string>
+    <string name="animation_duration_default">Alapértelmezett</string>
 
 </resources>

@@ -63,4 +63,12 @@
             android:title="@string/title_timeout_sec" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="vibrate_category"
+        android:title="@string/vibrations_category">
+        <com.aokp.romcontrol.widgets.VibDurationPreference
+            android:key="generic_vibrate_intensity"
+            android:title="@string/vibrate_intensity_title" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

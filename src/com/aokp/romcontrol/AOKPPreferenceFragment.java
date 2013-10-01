@@ -100,8 +100,13 @@ public class AOKPPreferenceFragment extends PreferenceFragment implements Dialog
     public static boolean isSW600DPScreen(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         int widthPixels = displayMetrics.widthPixels;
+        int heightPixels = displayMetrics.heightPixels;
         float density = displayMetrics.density;
-        return ((widthPixels / density) >= 600);
+        if (widthPixels < heightPixels) {
+            return ((widthPixels / density) >= 600);
+        } else {
+            return ((heightPixels / density) >= 600);
+        }
     }
 
     public void setTitle(int resId) {

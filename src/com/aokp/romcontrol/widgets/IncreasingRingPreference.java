@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aokp.romcontrol.fragments;
+package com.aokp.romcontrol.widgets;
 
 import android.app.Dialog;
 import android.content.Context;

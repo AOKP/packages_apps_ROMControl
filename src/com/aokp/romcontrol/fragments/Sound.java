@@ -28,6 +28,7 @@ public class Sound extends AOKPPreferenceFragment
     private static final String PREF_USER_DOWN_MS = "user_down_ms";
     private static final String PREF_PHONE_RING_SILENCE = "phone_ring_silence";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
+    private static final String PREF_INCREASING_RING = "increasing_ring";
 
     SharedPreferences prefs;
     CheckBoxPreference mEnableVolumeOptions;
@@ -38,6 +39,7 @@ public class Sound extends AOKPPreferenceFragment
     ListPreference mFlipScreenOff;
     ListPreference mPhoneSilent;
     ListPreference mAnnoyingNotifications;
+    Preference mIncreasingRing;
 
     private int mCallPref;
     private int mFlipPref;
@@ -77,6 +79,8 @@ public class Sound extends AOKPPreferenceFragment
         mPhoneSilent.setOnPreferenceChangeListener(this);
         mCallPref = Integer.parseInt(prefs.getString(PREF_PHONE_RING_SILENCE, "-1"));
 
+        mIncreasingRing = (Preference) findPreference(PREF_INCREASING_RING);
+
         if (mFlipPref != -1) {
             mUserDownMS.setEnabled(true);
             mFlipScreenOff.setEnabled(true);
@@ -91,6 +95,7 @@ public class Sound extends AOKPPreferenceFragment
 
         if (!hasPhoneAbility(mContext)) {
             getPreferenceScreen().removePreference(mPhoneSilent);
+            getPreferenceScreen().removePreference(mIncreasingRing);
         }
 
         if (HeadphoneService.DEBUG) {

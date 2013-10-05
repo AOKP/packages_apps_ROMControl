@@ -87,7 +87,7 @@
         \"notification background\"
     </string>
     <string name="enable_crt_mode">To Unlock: check \"CRT screen off\"</string>
-    <string name="enable_menu_location">To Unlock: enable a \"menu Location\"</string>
+    <string name="enable_menu_location">To Unlock: enable a \"menu location\"</string>
     <string name="enable_hiding_navbar">To Unlock: \"enable hidden NavBar\"</string>
     <string name="enable_hiding_systembar">To Unlock: \"enable hidden SystemBar\"</string>
     <string name="enable_audio_mode">To Unlock: enable \"face down audio mode\"</string>

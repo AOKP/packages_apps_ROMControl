@@ -31,6 +31,7 @@ import android.preference.PreferenceScreen;
 import android.preference.TwoStatePreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -496,6 +497,10 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
 
             // Set an EditText mView to get user input
             final EditText input = new EditText(getActivity());
+            final InputFilter[] filter = new InputFilter[1];
+            filter[0] = new InputFilter.LengthFilter(40);
+
+            input.setFilters(filter);
             input.setText(mCustomLabelText != null ? mCustomLabelText : "");
             alert.setView(input);
             alert.setPositiveButton(getResources().getString(R.string.ok),

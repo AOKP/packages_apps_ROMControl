@@ -79,6 +79,28 @@
     <string name="menu_ribbon_toggles_error">开关只在使用左右滑动操作区时有效。</string>
     <string name="menu_lockscreens_reset">重置锁屏壁纸</string>
 
+    <!-- Preference Dependant Instruction 设置依赖说明-->
+    <string name="enable_bootanimation_unlock">解除锁定：不选中“禁用开机动画”</string>
+    <string name="enable_phone_or_phablet">解除锁定：选择“用户界面模式”的手机或手机平板选项</string>
+    <string name="enable_tablet_ui">解除锁定：选择“用户界面模式”的平板选项</string>
+    <string name="enable_noti_wallpaper">解除锁定：选择“用户界面模式”的手机或手机平板选项并设置“通知栏背景”</string>
+    <string name="enable_crt_mode">解除锁定：选中“CRT 关闭屏幕”</string>
+    <string name="enable_menu_location">解除锁定：选择一个“菜单键位置”</string>
+    <string name="enable_hiding_navbar">解除锁定：选中“隐藏导航栏”</string>
+    <string name="enable_hiding_systembar">解除锁定：选中“隐藏系统栏”</string>
+    <string name="enable_audio_mode">解除锁定：启用“反转时的声音模式”</string>
+    <string name="enable_battery_bar">解除锁定：设置“电量条位置”</string>
+    <string name="enable_clock_location">解除锁定：选择一个“时钟风格”</string>
+    <string name="enable_signal_text">解除锁定：设置“信号显示风格”为文本或dBm</string>
+    <string name="enable_wifi_text">解除锁定：设置“WiFi信号显示风格”为文本</string>
+    <string name="enable_toggle_tiles">解除锁定：设置“开关风格”为方块式</string>
+    <string name="enable_fasttoggle">解除锁定：“启用快捷开关”并设置“开关风格”为方块式</string>
+    <string name="enable_favorite_toggle">解除锁定：在这里或操作区选择一个“收藏联系人”</string>
+    <string name="enable_screenshot_toggle">解除锁定：在这里或操作区选择启用“屏幕截图”开关</string>
+    <string name="enable_custom_toggle">解除锁定：在这里或操作区选择启用“自定义”开关</string>
+    <string name="enable_spen_gestures">解除锁定：“启用S Pen手势”</string>
+    <string name="enable_persist_installer">解除锁定：“启用持久化”</string>
+
     <!-- General Strings 常用文本 -->
     <string name="advanced_settings">高级设置</string>
     <string name="misc_short">其它</string>
@@ -92,10 +114,8 @@
     <string name="title_show_torch_toggle">显示灯光开关</string>
     <string name="title_show_airplane_toggle">显示飞行模式开关</string>
     <string name="title_show_navbar_hide">显示导航栏和状态栏控制</string>
-    <string name="summary_show_navbar_hide">选中将显示导航栏和状态栏开关</string>
     <string name="title_show_volume_state_toggle">显示声音状态</string>
     <string name="title_show_reboot_keyguard">锁屏时显示重新启动</string>
-    <string name="summary_show_reboot_keyguard">启用将在锁屏时显示重新启动选项</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">左滑动作</string>
@@ -123,10 +143,8 @@
     <!-- Power Saving 省电模式 -->
     <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
-
     <string name="title_pref_powersaving_data_screen_off">屏幕关闭移动数据活动</string>
     <string name="summary_pref_powersaving_data_screen_off">屏幕关闭后移动数据状态</string>
-
     <string name="title_pref_powersaving_data_screen_off_delay">移动数据活动延时</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">移动数据活动生效前的等待时间</string>
 
@@ -189,6 +207,8 @@
     <string name="rotate_270_summary">允许设备向右旋转显示</string>
     <string name="recent_kill_all">启用“全部结束”按钮</string>
     <string name="recent_kill_all_summary">在系统的近期任务界面显示“全部结束”按钮</string>
+    <string name="recent_google_assist_title">启用 Google Now 按钮</string>
+    <string name="recent_google_assist_summary">在近期任务显示 Google Now 按钮</string>
     <string name="ram_bar">近期 RAM 栏</string>
     <string name="ram_bar_summary">在近期任务显示 RAM 使用情况</string>
     <string name="longpress_to_kill">长按返回键结束程序</string>
@@ -244,7 +264,6 @@
     <string name="clear_market_data_title">3. 清理Play商店数据</string>
     <string name="clear_market_data_cleared">Play商店数据已清除</string>
     <string name="clear_market_data_donot_cleared">"Play商店数据无法清除，请手动清除！"</string>
-
     <string name="open_market_title">4. 打开Play商店选择接受</string>
     <string name="open_market_summary">然后回到此菜单</string>
     <string name="open_market_summary_could_not_open">"无法打开Play商店！如果你确定已经安装，请手动打开。"</string>
@@ -287,6 +306,8 @@
     <string name="toggle_favcontact_summary">选择你收藏的联系人</string>
     <string name="toggle_collapse_generic_title">点击开关后收起通知栏</string>
     <string name="toggle_collapse_generic_summary">执行任何开关动作后收起通知栏</string>
+    <string name="toggle_vibrate_title">点击开关振动</string>
+    <string name="toggle_vibrate_summary">点击所有开关时振动</string>
     <string name="toggle_enable_fasttoggle_title">启用快捷开关</string>
     <string name="toggle_enable_fasttoggle_summary">覆盖默认动作</string>
     <string name="toggle_choose_fasttoggle_side_title">选择快捷开关侧边</string>
@@ -399,6 +420,8 @@
     <string name="wifi_signal_color_title">WiFi 信号颜色</string>
     <string name="alt_signal_title">更改信号布局</string>
     <string name="alt_signal_summary">使用网络与信号分离的布局（姜饼风格）</string>
+    <string name="show_4g_for_lte_title">在LTE网络下显示4G图标</string>
+    <string name="show_4g_for_lte_summary">显示4G网络图标替代LTE图标</string>
 
     <!-- Color Picker 颜色选择器-->
     <string name="dialog_color_picker">颜色选择器</string>
@@ -452,8 +475,6 @@
     <string name="navbar_height_dialog_button_reboot">立刻重启</string>
     <string name="navigation_bar_color_title">导航栏颜色</string>
     <string name="navigation_bar_tint_title">导航栏按键颜色</string>
-    <string name="navigation_bar_colorall_title">着色所有按键</string>
-    <string name="navigation_bar_colorall_summary">选中后自定义图标将被着色</string>
     <string name="navigation_bar_glow_tint_title">导航栏按键按下发光颜色</string>
     <string name="navigation_bar_glow_tint_summary">当你按下一个按键时，它的背景会发光。使用该选项来改变发光的颜色。</string>
     <string name="glow_times_title">按键发光动画</string>
@@ -593,7 +614,6 @@
     <string name="led_keep_app">保持</string>
     <string name="led_custom_title">自定义 LED 程序</string>
     <string name="led_custom_message">"你想要变更应用程序: "</string>
-
     <string name="led_test_notification">测试 LED</string>
     <string name="led_test_notification_message_now">"现在测试应用程序： "</string>
     <string name="led_test_notification_message_note">". 请关闭屏幕后观察 LED 灯。在你观察完毕之前不要点击确定按钮。"</string>
@@ -603,6 +623,18 @@
     <string name="led_brightness_default">默认亮度： 31</string>
 
     <!-- Sound 声音 -->
+    <string name="increasing_ring_title">铃声渐响</string>
+    <string name="checkbox_increasing_ring">启用</string>
+    <string name="increasing_ring_min_volume_title">铃声开始音量</string>
+    <string name="increasing_ring_volume_notice">通知：\n由于铃声开始音量高于当前已设定音量，铃声将使用当前已设定音量播放。</string>
+    <string name="increasing_ring_interval_title">渐进间隔</string>
+    <string name="increasing_ring_interval_eachring">每次铃声重播时</string>
+    <string name="increasing_ring_interval_half_second">0.5 秒</string>
+    <string name="increasing_ring_interval_1second">1 秒</string>
+    <string name="increasing_ring_interval_2seconds">2 秒</string>
+    <string name="increasing_ring_interval_3seconds">3 秒</string>
+    <string name="increasing_ring_interval_5seconds">5 秒</string>
+    <string name="increasing_ring_interval_10seconds">10 秒</string>
     <string name="less_notification_sounds_title">限制通知提示音</string>
     <string name="less_notification_sounds_summary">在设定时间内应用程序通知提示音只响应一次</string>
     <string name="title_headphone_audio_mode">接入耳机时的动作</string>
@@ -634,7 +666,6 @@
     <string name="lockscreen_music_cat">音乐</string>
     <string name="lockscreen_weather_cat">天气</string>
     <string name="lockscreen_calendar_cat">日历</string>
-
     <string name="lockscreen_menu_unlock_title">菜单键解锁</string>
     <string name="lockscreen_menu_unlock_summary">通过菜单键解锁屏幕</string>
     <string name="lockscreen_auto_rotate_title">允许锁屏时旋转</string>
@@ -651,6 +682,8 @@
     <string name="lockscreen_minimize_challenge_summary">当屏幕开启时最小化解锁区（环形，图形，PIN）。</string>
     <string name="lockscreen_use_widget_container_carousel_title">小部件页面旋转动画</string>
     <string name="lockscreen_use_widget_container_carousel_summary">在切换小部件页面时使用连页旋转的动画效果</string>
+    <string name="lockscreen_camera_widget_title">锁屏相机小部件</string>
+    <string name="lockscreen_camera_widget_summary">允许禁用锁屏界面的相机小部件。</string>
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">使用音量键唤醒设备</string>
     <string name="volume_music_controls_title">音量键控制音乐</string>
@@ -659,6 +692,8 @@
     <string name="lockscreen_stock_music_layout_summary">当音乐播放时使用原生布局</string>
     <string name="lockscreen_wallpaper_title">选择锁屏壁纸</string>
     <string name="lockscreen_wallpaper_summary">在本页面按菜单键可选择重置锁屏壁纸</string>
+    <string name="lockscreen_wallpaper_pick">新锁屏背景</string>
+    <string name="lockscreen_wallpaper_remove">移除锁屏背景</string>
     <string name="lockscreen_text_color_title">锁屏文字颜色</string>
     <string name="lockscreen_text_color_summary">设置锁屏时文字颜色</string>
     <string name="lockscreen_weather_title">启用</string>
@@ -724,7 +759,8 @@
     <string name="weather_use_custom_location">使用自定义位置</string>
     <string name="weather_use_custom_location_summary">使用自定义的位置可节省一些电量；否则使用网络定位确定你的位置</string>
     <string name="weather_custom_location_dialog_title">设定你的位置</string>
-    <string name="weather_custom_location_dialog_message">"务必遵循规则！设置一个无效的位置您将无法获得天气更新，并可能导致意外的行为。\n\n举例: New York，NY //
+    <string name="weather_custom_location_dialog_message">"务必遵循规则！设置一个无效的位置您将无法获得天气更新，并可能导致意外的行为。
+        \n\n举例: New York，NY //
         New York， NY // 10033 // London， England"
     </string>
     <string name="weather_custom_location_title">自定义位置</string>
@@ -805,7 +841,6 @@
     <string name="weather_45">雷阵雨</string>
     <string name="weather_46">阵雪</string>
     <string name="weather_47">地区性雷雨</string>
-
 
     <!-- Miscellaneous 杂项 -->
     <string name="location_unavailable">无法获取当前位置的天气信息</string>
@@ -1028,4 +1063,21 @@
     <!-- dynamic changelog 动态更新日志 -->
     <string name="dynamic_changelog_title">动态更新日志</string>
     <string name="dynamic_changelog_summary">从Gerrit实例拉取交互式更新日志</string>
+
+    <!-- Animation Controls 动画控制-->
+    <string name="title_animation_controls">动画</string>
+    <string name="activity_open_title">页面打开动画</string>
+    <string name="activity_close_title">页面关闭动画</string>
+    <string name="task_open_title">任务打开动画</string>
+    <string name="task_close_title">任务关闭动画</string>
+    <string name="task_move_to_front_title">移动到前台动画</string>
+    <string name="task_move_to_back_title">移动到后台动画</string>
+    <string name="wallpaper_open_title">窗口打开动画</string>
+    <string name="wallpaper_close_title">窗口关闭动画</string>
+    <string name="wallpaper_intra_open_title">窗口内部打开动画</string>
+    <string name="wallpaper_intra_close_title">窗口内部关闭动画</string>
+    <string name="animation_duration_title">动画持续时间</string>
+    <string name="title_animation_no_override">防止应用程序覆盖</string>
+    <string name="summary_animation_no_override">防止应用程序内部的动画覆盖。</string>
+    <string name="animation_duration_default">默认</string>
 </resources>

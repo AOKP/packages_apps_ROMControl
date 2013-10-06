@@ -757,6 +757,8 @@
     <string name="lockscreen_use_widget_container_carousel_summary">Použít otočnou animaci při přepínání mezi widgety na
         zamčené obrazovce.
     </string>
+    <string name="lockscreen_camera_widget_title">Widget foťáku na zamčené obrazovce</string>
+    <string name="lockscreen_camera_widget_summary">Umožňuje vypnout widget foťáku na zamčené obrazovce.</string>
     <string name="volume_rocker_wake_title">Probouzet tlačítky hlasitosti</string>
     <string name="volume_rocker_wake_summary">Probouzet obrazovku tlačítky hlasitosti</string>
     <string name="volume_music_controls_title">Ovládání hudby tlačítky hlasitosti</string>

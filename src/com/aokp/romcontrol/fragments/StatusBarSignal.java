@@ -30,6 +30,8 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.prefs_statusbar_signal);
 
+        PreferenceScreen prefs = getPreferenceScreen();
+
         mDbmStyletyle = (ListPreference) findPreference("signal_style");
         mDbmStyletyle.setOnPreferenceChangeListener(this);
         mDbmStyletyle.setValue(Integer.toString(Settings.System.getInt(mContentRes,
@@ -66,6 +68,14 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         if (Integer.parseInt(mWifiStyle.getValue()) == 0) {
             mWifiColorPicker.setEnabled(false);
             mWifiColorPicker.setSummary(R.string.enable_wifi_text);
+        }
+
+        if (!hasPhoneAbility(mContext)) {
+            prefs.removePreference(mDbmStyletyle);
+            prefs.removePreference(mColorPicker);
+            prefs.removePreference(mHideSignal);
+            prefs.removePreference(mAltSignal);
+            prefs.removePreference(mShow4gForLte);
         }
     }
 

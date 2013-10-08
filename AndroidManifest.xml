@@ -223,6 +223,14 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".fragments.DensityChanger"
+            android:label="@string/lcd_density_wizard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name=".service.BootReceiver">
             <intent-filter>

@@ -10,13 +10,13 @@
     <string name="save">Opslaan</string>
     <string name="menu_main_activity_change_locale">Leeg!</string>
     <string name="header_statusbar">Statusbalk</string>
-    <string name="header_navbar">Navigatie Balk</string>
+    <string name="header_navbar">Navigatiebalk</string>
     <string name="toggles_layout">Schakelaars</string>
     <string name="general_ui">Algemeen</string>
     <string name="clock">Klok</string>
     <string name="battery">Batterij</string>
     <string name="signal">Signaal</string>
-    <string name="nav_bar">Navigatie Balk</string>
+    <string name="nav_bar">Navigatiebalk</string>
     <string name="power_menu">Aan/uit-menu</string>
     <string name="led_options">LED</string>
     <string name="spen_options">S Pen Gebaren</string>
@@ -35,8 +35,8 @@
     <string name="title_statusbar_toggles">Statusbalk Schakelaars</string>
     <string name="title_statusbar_battery">Statusbalk Batterij</string>
     <string name="title_statusbar_signal">Statusbalk Signaal</string>
-    <string name="title_navbar">Navigatie Balk</string>
-    <string name="title_navring">Navigatie Ring</string>
+    <string name="title_navbar">Navigatiebalk</string>
+    <string name="title_navring">Navigatiering</string>
     <string name="title_power_menu">Aan/uit-menu</string>
     <string name="title_led">LED Controle</string>
     <string name="title_spen">S Pen Gebaren</string>
@@ -99,7 +99,7 @@
     <string name="title_show_airplane_toggle">Vliegmodus</string>
     <string name="title_show_navbar_hide">Systeem Balk schakelaars</string>
     <string name="title_show_volume_state_toggle">Volume statussen</string>
-    <string name="title_show_reboot_keyguard">Schermvergrendeling Herstarten</string>
+    <string name="title_show_reboot_keyguard">Schermvergrendeling herstarten</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">Actie bij naar links vegen</string>
@@ -118,7 +118,7 @@
     <!-- Installer -->
     <string name="persist_options">Behouden</string>
     <string name="persist_enable">Schakel behouden in</string>
-    <string name="persist_enable_summary">Sta toe dat data wordt behouden over installaties</string>
+    <string name="persist_enable_summary">Sta toe dat data wordt behouden tussen installaties in</string>
     <string name="persist_prop_density">Behoud dichtheid</string>
     <string name="persist_prop_density_summary">Behoud LCD dichtheid</string>
     <string name="persist_file_hosts">Behoud hosts</string>
@@ -170,8 +170,8 @@
     <string name="notification_wallpaper_pick">Nieuwe notificatie achtergrond</string>
     <string name="notification_wallpaper_reset">Verwijder notificatie achtergrond</string>
     <string name="notification_wallpaper_error">Geen afbeelding gevonden</string>
-    <string name="notif_wallpaper_alpha_title">Doorzichtigheid notificatie achtergrond</string>
-    <string name="alpha_dialog_title">Stel de doorzichtigheidswaarde in</string>
+    <string name="notif_wallpaper_alpha_title">Transparantie notificatie achtergrond</string>
+    <string name="alpha_dialog_title">Stel de waarde voor transpirantie in</string>
     <string name="custom_carrier_label_title">Aangepast providerlabel</string>
     <string name="custom_carrier_label_explain">Geef een nieuw label op. Laat het veld leeg om terug te keren naar het 
         standaard label.
@@ -234,14 +234,14 @@ over de Statusbalk de helderheid te veranderen (opmerking: dit werkt niet als au
     <string name="phone_mode_ui">Phone - NavBalk komt aan de zijkant in landschapsmodus</string>
     <string name="tablet_mode_ui">Tablet - Gecombineerde NavBalk en Statusbalk </string>
     <string name="phablet_mode_ui">Phablet - NavBalk blijft aan de onderkant in landschapsmodus</string>
-    <string name="transparency_dialog_title">Doorzichtigheidsinstellingen</string>
-    <string name="transparency_dialog_linked_transparency">Link Statusbalk &amp; NavBalk doorzichtigheid</string>
-    <string name="transparency_dialog_transparency_sb_and_nv">Statusbalk en navigatie balk</string>
+    <string name="transparency_dialog_title">Transparantie Instellingen</string>
+    <string name="transparency_dialog_linked_transparency">Link Statusbalk &amp; Navigatiebalk transparantie</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Statusbalk en navigatiebalk</string>
     <string name="transparency_dialog_statusbar">Statusbalk</string>
-    <string name="transparency_dialog_navbar">Navigatie Balk</string>
-    <string name="transparency_dialog_match_keyguard_alpha">Laat overeenkomen met vergrendelscherm doorzichtigheid</string>
-    <string name="transparency_dialog_transparency">Thuisscherm doorzichtigheid</string>
-    <string name="transparency_dialog_transparency_keyguard">Vergrendelscherm doorzichtigheid</string>
+    <string name="transparency_dialog_navbar">Navigatiebalk</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Laat overeenkomen met vergrendelscherm transparantie</string>
+    <string name="transparency_dialog_transparency">Thuisscherm transparantie</string>
+    <string name="transparency_dialog_transparency_keyguard">Vergrendelscherm transparantie</string>
     <string name="transparency_dialog_lockscreen">Vergrendelscherm</string>
 
     <!-- LCD Density -->
@@ -305,7 +305,7 @@ over de Statusbalk de helderheid te veranderen (opmerking: dit werkt niet als au
     <string name="toggle_button_alpha_title">Regel indicator doorzochtigheid</string>
     <string name="toggle_btn_enabled_color_title">Indicator kleur ingeschakeld</string>
     <string name="toggle_btn_disabled_color_title">Indicator kleur uitgeschakeld</string>
-    <string name="toggle_btn_background_title">Regel achtergrond doorzichtigheid</string>
+    <string name="toggle_btn_background_title">Regel achtergrond transparantie</string>
     <string name="toggle_text_color_title">Regel tekst kleur</string>
     <string name="toggle_favcontact_title">Favoriete contact</string>
     <string name="toggle_favcontact_summary">Kies je favoriete contact</string>
@@ -508,10 +508,10 @@ over de Statusbalk de helderheid te veranderen (opmerking: dit werkt niet als au
     </string>
     <string name="statusbar_hide_title">Statusbalk verbergen</string>
     <string name="statusbar_hide_summary">Dit aanvinken verbergt de gehele statusbalk</string>
-    <string name="navigation_bar_alpha_title">Statusbalk en Navigatiebalk doorzichtigheid</string>
+    <string name="navigation_bar_alpha_title">Statusbalk en Navigatiebalk transparantie</string>
     <string name="navbar_hide_enable_title">Verborgen NavBalk inschakelen</string>
     <string name="systembar_hide_enable_title">Verborgen Systeem Balk inschakelen</string>
-    <string name="drag_handle_opacity_title">Sleephandvat doorzichtigheid</string>
+    <string name="drag_handle_opacity_title">Sleephandvat transparantie</string>
     <string name="drag_handle_width_title">Sleephandvat breedte</string>
     <string name="title_navbar_timeout">Verborgen NavBalk time-out</string>
     <string name="title_systembar_timeout">Verborgen Systeem Balk time-out</string>
@@ -532,19 +532,19 @@ over de Statusbalk de helderheid te veranderen (opmerking: dit werkt niet als au
     <string name="navbar_delete_menu">Verwijder knop</string>
 
     <!-- Nav Ring Targets -->
-    <string name="navbar_ring_cat">Navigatie Ring snelkoppelingen</string>
+    <string name="navbar_ring_cat">Navigatiering snelkoppelingen</string>
     <string name="navbar_ring">Aangepaste Ring snelkoppelingen</string>
-    <string name="navring_enable_long">Lang drukken voor Navigatie Ring inschakelen</string>
-    <string name="navring_target_save">Navigatie Ringen opgeslagen</string>
-    <string name="navring_target_reset_message">Wil je de Navigatie Ring resetten?</string>
-    <string name="navring_target_reset">Navigatie Ring snelkoppeling resetten.</string>
+    <string name="navring_enable_long">Lang drukken voor Navigatiering inschakelen</string>
+    <string name="navring_target_save">Navigatieringen opgeslagen</string>
+    <string name="navring_target_reset_message">Wil je de Navigatiering resetten?</string>
+    <string name="navring_target_reset">Navigatiering snelkoppeling resetten.</string>
     <string name="choose_action_title">Kies actie</string>
     <string name="choose_action_short_title">Kies tikken actie</string>
     <string name="choose_action_long_title">Kies lang drukken actie</string>
     <string name="action_long_save">instellen als lang drukken actie</string>
-    <string name="title_navring_amount">Aantal snelkoppelingen in de Navigatie Ring</string>
-    <string name="summary_navring_amount">Kies een aantal snelkoppelingen in de Navigatie Ring</string>
-    <string name="interface_navring_settings_title">Navigatie Ring</string>
+    <string name="title_navring_amount">Aantal snelkoppelingen in de Navigatiering</string>
+    <string name="summary_navring_amount">Kies een aantal snelkoppelingen in de Navigatiering</string>
+    <string name="interface_navring_settings_title">Navigatiering</string>
     <string name="navring_target_info">Sleep je vinger naar een snelkoppeling om een actie toe te wijzen</string>
     <string name="navring_clear">Weghaal actie</string>
     <string name="navring_short">Tikken actie</string>
@@ -593,7 +593,7 @@ over de Statusbalk de helderheid te veranderen (opmerking: dit werkt niet als au
     <string name="ribbon_button_colorize_title">Actie pictogrammen matchen tekstkleur</string>
     <string name="ribbon_color_title">Kleur van het Veeg Lint</string>
     <string name="text_color_title">Kleur van de app label tekst</string>
-    <string name="ribbon_opacity_title">Doorzichtigheid van Veeg Lint</string>
+    <string name="ribbon_opacity_title">Transparantie van het Veeg Lint</string>
     <string name="timeout_spinner_title">Lint auto timeout</string>
     <string name="ribbon_drag_handle_width_title">Sleep handvaklengte</string>
     <string name="ribbon_drag_handle_height_title">Sleep handvatdikte</string>
@@ -602,7 +602,7 @@ over de Statusbalk de helderheid te veranderen (opmerking: dit werkt niet als au
     <string name="ribbon_icon_location_title">Pictogram zwaartekracht</string>
     <string name="window_text_color_title">Scherm tekstkleur</string>
     <string name="window_color_title">Schermkleur</string>
-    <string name="window_opacity_title">Schermdoorzichtigheid</string>
+    <string name="window_opacity_title">Schermtransparantie</string>
     <string name="window_columns_title">Schermkolommen</string>
     <string name="window_app_hide_title">Kies apps om te verbergen</string>
     <string name="center">Gecentreerd</string>
@@ -768,11 +768,11 @@ over de Statusbalk de helderheid te veranderen (opmerking: dit werkt niet als au
     <string name="circles_lock_cat_title">Cirkel vergrendelscherm instellingen</string>
     <string name="circles_lock_bg_color_title">Achtergrondkleur</string>
     <string name="circles_lock_ring_color_title">Ring kleur</string>
-    <string name="circles_lock_ring_alpha_title">Ring doorzichtigheid</string>
+    <string name="circles_lock_ring_alpha_title">Ring transparantie</string>
     <string name="circles_lock_halo_color_title">Halo kleur</string>
-    <string name="circles_lock_halo_alpha_title">Halo doorzichtigheid</string>
+    <string name="circles_lock_halo_alpha_title">Halo transparantie</string>
     <string name="circles_lock_wave_color_title">Golf kleur</string>
-    <string name="circles_lock_wave_alpha_title">Golf doorzichtigheid</string>
+    <string name="circles_lock_wave_alpha_title">Golf transparantie</string>
 
     <!-- Lockscreen Targets-->
     <string name="lockscreen_targets_title">Schermvergrendelingssnelkoppelingen</string>

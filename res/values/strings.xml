@@ -1223,6 +1223,8 @@
     <string name="ad_text_summary">Show the notification text around the ring.</string>
     <string name="ad_all_notifications_title">All notifications</string>
     <string name="ad_all_notifications_summary">Show all notifications including ongoing, non-clearable notifications.</string>
+    <string name="ad_hide_low_priority_title">Hide low priority</string>
+    <string name="ad_hide_low_priority_summary">Hide low priority notifications such as those from Google Now.</string>
     <string name="ad_pocket_mode_title">Pocket mode</string>
     <string name="ad_pocket_mode_summary">Show active display notifications when you take the device out of your pocket.</string>
     <string name="ad_redisplay_title">Redisplay notifications</string>

@@ -197,7 +197,7 @@
             aokp:nameDev="rohan32"
             aokp:twitterHandle="rohanXm"
             aokp:githubLink="@string/github_rohan32"
-            aokp:emailDev="rohanmathur34@gmail.com"/>
+            aokp:emailDev="rohan@rmathur.com"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
             android:title="willdeberry"

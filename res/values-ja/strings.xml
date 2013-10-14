@@ -79,6 +79,44 @@
     <string name="menu_ribbon_toggles_error">トグルは左右のスワイプリボンでしか使えません</string>
     <string name="menu_lockscreens_reset">ロック画面の壁紙をリセット</string>
 
+    <!-- Preference Dependant Instruction -->
+    <string name="enable_bootanimation_unlock">ロックを解除するには:「ブートアニメーションを無効」の
+        チェックを外してください
+    </string>
+    <string name="enable_phone_or_phablet">ロックを解除するには:「UIモード」をPhoneもしくは
+        Phabletにしてください
+    </string>
+    <string name="enable_tablet_ui">ロックを解除するには:「UIモード」をTabletにしてください</string>
+    <string name="enable_noti_wallpaper">ロックを解除するには:「UIモード」をPhoneもしくはPhabletにし、
+        通知パネルの背景を設定してください
+    </string>
+    <string name="enable_crt_mode">ロックを解除するには:「CRTスクリーンオフ」をチェックしてください</string>
+    <string name="enable_menu_location">ロックを解除するには:「メニューキー表示位置」を有効にしてください</string>
+    <string name="enable_hiding_navbar">ロックを解除するには:「ナビゲーションバーを隠す」にチェックしてください</string>
+    <string name="enable_hiding_systembar">ロックを解除するには:「システムバーを隠す」にチェックしてください</string>
+    <string name="enable_audio_mode">ロックを解除するには:「フェイスダウン時の着信モード」を有効にしてください</string>
+    <string name="enable_battery_bar">ロックを解除するには:「電池残量バー表示位置」を有効にしてください</string>
+    <string name="enable_clock_location">ロックを解除するには:「時計表示スタイル」を有効にしてください</string>
+    <string name="enable_signal_text">ロックを解除するには:「電波強度表示スタイル」を数値表示か
+        数値+dBm表示にしてください
+    </string>
+    <string name="enable_wifi_text">ロックを解除するには:「Wi-Fi強度表示スタイル」を数値表示にしてください</string>
+    <string name="enable_toggle_tiles">ロックを解除するには:「トグルスタイル」をタイル表示にしてください</string>
+    <string name="enable_fasttoggle">ロックを解除するには:「トグルスタイル」をタイル表示にし、
+        「トグル優先領域を有効」にチェックしてください
+    </string>
+    <string name="enable_favorite_toggle">ロックを解除するには:トグルかリボンで「お気に入りの連絡先」を
+        有効にしてください
+    </string>
+    <string name="enable_screenshot_toggle">ロックを解除するには:トグルかリボンで「スクリーンショット」を
+        有効にしてください
+    </string>
+    <string name="enable_custom_toggle">ロックを解除するには:トグルかリボンで「カスタム」を有効にしてください</string>
+    <string name="enable_spen_gestures">ロックを解除するには:「Sペンジェスチャーを有効」にチェックしてください</string>
+    <string name="enable_persist_installer">ロックを解除するには:「データ維持を有効にする」に
+        チェックしてください
+    </string>
+
     <!-- General Strings -->
     <string name="advanced_settings">詳細設定</string>
     <string name="misc_short">その他</string>
@@ -92,10 +130,8 @@
     <string name="title_show_torch_toggle">トーチ</string>
     <string name="title_show_airplane_toggle">機内モード</string>
     <string name="title_show_navbar_hide">システムバー</string>
-    <string name="summary_show_navbar_hide">ナビゲーションバーとステータスバーの表示切替</string>
     <string name="title_show_volume_state_toggle">サウンドモード</string>
     <string name="title_show_reboot_keyguard">ロック画面で再起動</string>
-    <string name="summary_show_reboot_keyguard">ロック画面で再起動オプションを表示</string>
 
     <!-- S Pen -->
     <string name="spen_left_title">左スワイプ時の動作</string>
@@ -156,12 +192,12 @@
     <string name="github_bmc08gt">https://github.com/BMc08GT</string>
     <string name="github_birdman">https://github.com/mrbirdman</string>
     <string name="github_championswimmer">https://github.com/championswimmer</string>
+    <string name="github_DAGr8">https://github.com/DAGr8</string>
     <string name="github_dhacker29">https://github.com/dhacker29</string>
     <string name="github_graffixnyc">https://github.com/graffixnyc</string>
     <string name="github_hashcode">https://github.com/Hashcode</string>
-    <string name="github_hillbillyhacker">https://github.com/hillbillyhacker86</string>
+    <string name="github_willdeberry">https://github.com/willdeberry</string>
     <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
-    <string name="github_jubakuba">https://github.com/Jubakuba</string>
     <string name="github_k900">https://github.com/K900</string>
     <string name="github_kecinzer">https://github.com/kecinzer</string>
     <string name="github_khasmek">https://github.com/KhasMek</string>
@@ -227,6 +263,8 @@
     <string name="rotate_270_summary">端末を右側に倒したとき画面を回転する</string>
     <string name="recent_kill_all">全アプリ終了ボタンを表示</string>
     <string name="recent_kill_all_summary">アプリ履歴ウィンドウに全アプリ終了ボタンを表示する</string>
+    <string name="recent_google_assist_title">Google Nowボタンを表示</string>
+    <string name="recent_google_assist_summary">アプリ履歴ウィンドウにGoogle Nowボタンを表示する</string>
     <string name="ram_bar">RAM使用量を表示</string>
     <string name="ram_bar_summary">アプリ履歴にRAMの使用量を表示する</string>
     <string name="longpress_to_kill">戻るキー長押しでアプリ終了</string>
@@ -327,6 +365,8 @@
     <string name="toggle_favcontact_summary">お気に入りの連絡先を選択する</string>
     <string name="toggle_collapse_generic_title">パネルを閉じる</string>
     <string name="toggle_collapse_generic_summary">トグルクリックでクイック設定パネルを閉じる</string>
+    <string name="toggle_vibrate_title">トグルをタップで振動</string>
+    <string name="toggle_vibrate_summary">トグルアクションの際に端末を振動させる</string>
     <string name="toggle_enable_fasttoggle_title">ファーストトグルを有効</string>
     <string name="toggle_enable_fasttoggle_summary">ステータスバーをプルダウンするだけでクイック設定パネルを表示する</string>
     <string name="toggle_choose_fasttoggle_side_title">ファーストトグル領域の選択</string>
@@ -441,6 +481,8 @@
     <string name="wifi_signal_color_title">Wi-Fi強度の文字色</string>
     <string name="alt_signal_title">電波強度とインジケータを分離</string>
     <string name="alt_signal_summary">電波強度とインジケータを別々に表示する</string>
+    <string name="show_4g_for_lte_title">LTE接続時に4Gアイコンを表示</string>
+    <string name="show_4g_for_lte_summary">LTEアイコンの代わりに4Gネットワークのインジケータアイコンを表示する</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">色選択</string>
@@ -646,6 +688,20 @@
     <string name="led_brightness_default">デフォルトの明るさ : 31</string>
 
     <!-- Sound -->
+    <string name="increasing_ring_title">ステップトーン</string>
+    <string name="checkbox_increasing_ring">有効</string>
+    <string name="increasing_ring_min_volume_title">開始時の着信音量</string>
+    <string name="increasing_ring_volume_notice">警告:開始時の着信音量が通常の着信音量より大きく設定されています。
+        この場合は通常の着信音量で再生が始まります。
+    </string>
+    <string name="increasing_ring_interval_title">ステップ間隔</string>
+    <string name="increasing_ring_interval_eachring">着信音を繰り返すごとに</string>
+    <string name="increasing_ring_interval_half_second">0.5秒</string>
+    <string name="increasing_ring_interval_1second">1秒</string>
+    <string name="increasing_ring_interval_2seconds">2秒</string>
+    <string name="increasing_ring_interval_3seconds">3秒</string>
+    <string name="increasing_ring_interval_5seconds">5秒</string>
+    <string name="increasing_ring_interval_10seconds">10秒</string>
     <string name="less_notification_sounds_title">通知音の制限</string>
     <string name="less_notification_sounds_summary">アプリの通知音を設定時間ごとに1回の再生に制限する</string>
     <string name="title_headphone_audio_mode">ヘッドホン接続時の動作</string>
@@ -697,6 +753,8 @@
     <string name="lockscreen_minimize_challenge_summary">画面オン時にロック解除表示を最小化します。</string>
     <string name="lockscreen_use_widget_container_carousel_title">回転アニメーションを使用</string>
     <string name="lockscreen_use_widget_container_carousel_summary">ロック画面ウィジェットの切り替え時に回転アニメーションを使用します。</string>
+    <string name="lockscreen_camera_widget_title">ロック画面カメラウィジェット</string>
+    <string name="lockscreen_camera_widget_summary">ロック画面にカメラウィジェットを表示しない</string>
     <string name="volume_rocker_wake_title">ボリュームキーでスリープ解除</string>
     <string name="volume_rocker_wake_summary">ボリュームキーを押すことでスリープを解除します。</string>
     <string name="volume_music_controls_title">ボリュームキーで曲選択</string>
@@ -705,6 +763,8 @@
     <string name="lockscreen_stock_music_layout_summary">音楽再生の際に標準の音楽プレーヤーを使用する</string>
     <string name="lockscreen_wallpaper_title">ロック画面の壁紙の選択</string>
     <string name="lockscreen_wallpaper_summary">ロック画面の壁紙を元に戻すにはメニューから設定をリセットしてください</string>
+    <string name="lockscreen_wallpaper_pick">新しいロック画面背景</string>
+    <string name="lockscreen_wallpaper_remove">ロック画面の背景を削除</string>
     <string name="lockscreen_text_color_title">ロック画面の文字色</string>
     <string name="lockscreen_text_color_summary">ロック画面の文字色を設定します。</string>
     <string name="lockscreen_weather_title">ロック画面に天気情報を表示</string>
@@ -1081,4 +1141,20 @@
     <string name="dynamic_changelog_title">変更履歴</string>
     <string name="dynamic_changelog_summary">Gerritインスタンスから変更履歴を参照する</string>
 
+    <!-- Animation Controls -->
+    <string name="title_animation_controls">アニメーション</string>
+    <string name="activity_open_title">アクティビティ開始</string>
+    <string name="activity_close_title">アクティビティ終了</string>
+    <string name="task_open_title">タスクを開く</string>
+    <string name="task_close_title">タスクを閉じる</string>
+    <string name="task_move_to_front_title">前面に移動</string>
+    <string name="task_move_to_back_title">背面に移動</string>
+    <string name="wallpaper_open_title">壁紙を開く</string>
+    <string name="wallpaper_close_title">壁紙を閉じる</string>
+    <string name="wallpaper_intra_open_title">壁紙を開く（内部）</string>
+    <string name="wallpaper_intra_close_title">壁紙を閉じる（内部）</string>
+    <string name="animation_duration_title">アニメーション速度</string>
+    <string name="title_animation_no_override">アプリによる上書きを防止</string>
+    <string name="summary_animation_no_override">アプリによりアニメーションが上書きされることを防ぐ</string>
+    <string name="animation_duration_default">デフォルト</string>
 </resources>

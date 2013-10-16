@@ -26,10 +26,15 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.text.TextUtils;
 
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import static android.hardware.Sensor.TYPE_LIGHT;
 import static android.hardware.Sensor.TYPE_PROXIMITY;
@@ -45,6 +50,7 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
     private static final String KEY_POCKET_MODE = "ad_pocket_mode";
     private static final String KEY_SUNLIGHT_MODE = "ad_sunlight_mode";
     private static final String KEY_REDISPLAY = "ad_redisplay";
+    private static final String KEY_EXCLUDED_APPS = "ad_excluded_apps";
     private static final String KEY_SHOW_DATE = "ad_show_date";
     private static final String KEY_SHOW_AMPM = "ad_show_ampm";
     private static final String KEY_BRIGHTNESS = "ad_brightness";
@@ -59,6 +65,7 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
     private CheckBoxPreference mSunlightModePref;
     private ListPreference mRedisplayPref;
     private SeekBarPreference mBrightnessLevel;
+    private AppMultiSelectListPreference mExcludedAppsPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -117,6 +124,11 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
         mBrightnessLevel.setInitValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.ACTIVE_DISPLAY_BRIGHTNESS, 100));
         mBrightnessLevel.setOnPreferenceChangeListener(this);
+
+        mExcludedAppsPref = (AppMultiSelectListPreference) findPreference(KEY_EXCLUDED_APPS);
+        Set<String> excludedApps = getExcludedApps();
+        if (excludedApps != null) mExcludedAppsPref.setValues(excludedApps);
+        mExcludedAppsPref.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -133,6 +145,9 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
             int brightness = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.ACTIVE_DISPLAY_BRIGHTNESS, brightness);
+            return true;
+        } else if (preference == mExcludedAppsPref) {
+            storeExcludedApps((Set<String>) newValue);
             return true;
         }
         return false;
@@ -198,5 +213,26 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
     private boolean hasLightSensor() {
         SensorManager sm = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         return sm.getDefaultSensor(TYPE_LIGHT) != null;
+    }
+
+    private Set<String> getExcludedApps() {
+        String excluded = Settings.System.getString(getContentResolver(),
+                Settings.System.ACTIVE_DISPLAY_EXCLUDED_APPS);
+        if (TextUtils.isEmpty(excluded))
+            return null;
+
+        return new HashSet<String>(Arrays.asList(excluded.split("\\|")));
+    }
+
+    private void storeExcludedApps(Set<String> values) {
+        StringBuilder builder = new StringBuilder();
+        String delimiter = "";
+        for (String value : values) {
+            builder.append(delimiter);
+            builder.append(value);
+            delimiter = "|";
+        }
+        Settings.System.putString(getContentResolver(),
+                Settings.System.ACTIVE_DISPLAY_EXCLUDED_APPS, builder.toString());
     }
 }

@@ -722,6 +722,9 @@
     </string>
     <string name="summary_phone_flip_mode">Přepnout telefon otočením do tichého režimu během příchozího hovoru</string>
     <string name="title_phone_flip_mode">Tichý příchozí hovor</string>
+    <string name="vibrations_category">Vibrace</string>
+    <string name="vibrate_intensity_title">Délka malých vibrací</string>
+    <string name="vibrate_intensity_def">Výchozí</string>
     <!--Lockscreen-->
     <string name="lock_widgets_short">Widgety na zamčené obrazovce</string>
     <string name="lockscreen_security_cat">Zabezpečení</string>

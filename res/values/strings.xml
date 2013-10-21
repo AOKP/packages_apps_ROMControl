@@ -809,6 +809,8 @@
     <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
+    <string name="lockscreen_color_title">Lockscreen lock color</string>
+    <string name="lockscreen_color_summary">Set the color of the lock-icon and glow-dots</string>
     <string name="lockscreen_weather_title">Enable</string>
     <string name="lockscreen_weather_summary">Show Weather Information on Lockscreen. You need to enable ROMControl\'s
         Weather service to use this

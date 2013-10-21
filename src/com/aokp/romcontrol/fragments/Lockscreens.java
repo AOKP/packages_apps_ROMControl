@@ -112,12 +112,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private Switch mLockAllWidgetsSwitch;
     private Switch mLockUnlimitedWidgetsSwitch;
     private Button mLockTextColorButton;
+    private Button mLockColorButton;
     private Switch mCameraWidgetSwitch;
 
     private TextView mWallpaperText;
     private TextView mGlowTorchText;
     private TextView mLongPressText;
     private TextView mLockTextColorText;
+    private TextView mLockColorText;
     private TextView mLockBatteryText;
     private TextView mLockRotateText;
     private TextView mLockVolControlText;
@@ -136,9 +138,11 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private ViewGroup mContainer;
 
     private int defaultColor;
-    private int textColor;
+    private int mTextColor;
+    private int mIconColor;
 
     private boolean mBoolLongPress;
+    private boolean mNowTextColor;
     private int mTargetIndex;
     private int mTarget = 0;
 
@@ -222,17 +226,37 @@ public class Lockscreens extends AOKPPreferenceFragment implements
         mHelperText = ((TextView) getActivity().findViewById(R.id.helper_text));
         defaultColor = mResources
                 .getColor(com.android.internal.R.color.config_defaultNotificationColor);
-        textColor = Settings.System.getInt(mContext.getContentResolver(),
+        mTextColor = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, defaultColor);
 
         mLockTextColorText = ((TextView) getActivity().findViewById(R.id.lockscreen_button_id));
         mLockTextColorText.setOnClickListener(mLockTextColorTextListener);
         mLockTextColorButton = ((Button) getActivity().findViewById(R.id.lockscreen_color_button));
-        mLockTextColorButton.setBackgroundColor(textColor);
+        mLockTextColorButton.setBackgroundColor(mTextColor);
         mLockTextColorButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ColorPickerDialog picker = new ColorPickerDialog(mContext, textColor);
+                mNowTextColor = true;
+                ColorPickerDialog picker = new ColorPickerDialog(mContext, mTextColor);
+                picker.setOnColorChangedListener(Lockscreens.this);
+                picker.show();
+            }
+        });
+
+        mIconColor = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.LOCKSCREEN_MISC_COLOR, -1);
+
+        mLockColorText = ((TextView)
+                getActivity().findViewById(R.id.lockscreen_color_icon_id));
+        mLockColorText.setOnClickListener(mLockColorTextListener);
+        mLockColorButton = ((Button)
+                getActivity().findViewById(R.id.lockscreen_color_icon_button));
+        mLockColorButton.setBackgroundColor(mIconColor);
+        mLockColorButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNowTextColor = false;
+                ColorPickerDialog picker = new ColorPickerDialog(mContext, mIconColor);
                 picker.setOnColorChangedListener(Lockscreens.this);
                 picker.show();
             }
@@ -450,6 +474,14 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             createMessage(
                     getResources().getString(R.string.lockscreen_text_color_title),
                     getResources().getString(R.string.lockscreen_text_color_summary));
+        }
+    };
+
+    private TextView.OnClickListener mLockColorTextListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            createMessage(
+                    getResources().getString(R.string.lockscreen_color_title),
+                    getResources().getString(R.string.lockscreen_color_summary));
         }
     };
 
@@ -1106,10 +1138,17 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     @Override
     public void onColorChanged(int color) {
-        Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, color);
-        textColor = color;
-        mLockTextColorButton.setBackgroundColor(textColor);
+        if (mNowTextColor) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_CUSTOM_TEXT_COLOR, color);
+            mTextColor = color;
+            mLockTextColorButton.setBackgroundColor(mTextColor);
+        } else {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_MISC_COLOR, color);
+            mIconColor = color;
+            mLockColorButton.setBackgroundColor(mIconColor);
+        }
     }
 
     @Override

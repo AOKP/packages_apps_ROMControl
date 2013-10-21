@@ -59,6 +59,35 @@
             android:gravity="center_vertical">
 
             <TextView
+                android:id="@+id/lockscreen_color_icon_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="4dip"
+                android:layout_toLeftOf="@id/lockscreen_color_icon_button"
+                android:gravity="left"
+                android:padding="4dip"
+                android:text="@string/lockscreen_color_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/lockscreen_color_icon_button"
+                android:layout_width="wrap_content"
+                android:layout_height="20dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dip"
+                android:clickable="true"
+                android:padding="4dip" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
                 android:id="@+id/lockscreen_wallpaper_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

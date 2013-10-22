@@ -25,6 +25,7 @@
     <string name="weather">Počasí</string>
     <string name="tools">Nástroje</string>
     <string name="installer">Instalátor</string>
+    <string name="active_display">Aktivní displej</string>
     <!--Activity titles defined in AndroidManifest.xml-->
     <string name="title_about">O AOKP</string>
     <string name="title_ui">Hlavní uživatelské rozhraní</string>
@@ -63,6 +64,7 @@
     <string name="header_summary_vibrations">@null</string>
     <string name="ribbon_settings_summary">@null</string>
     <string name="header_summary_installer">@null</string>
+    <string name="header_summary_activedisplay">@null</string>
     <!--Menu Strings-->
     <string name="menu_nav_bar_reset">Obnovit navigační lištu</string>
     <string name="menu_ribbon_reset">Obnovit ribbon</string>
@@ -1189,4 +1191,38 @@
     <string name="title_animation_no_override">Zabránit aplikacím překrývání</string>
     <string name="summary_animation_no_override">Zabránit aplikacím překrývat přechody.</string>
     <string name="animation_duration_default">Výchozí</string>
+    <!-- Active Display -->
+    <string name="ad_settings_title">Aktivní displej</string>
+    <string name="ad_settings_summary">Změnit nastavení aktivního displeje</string>
+    <string name="ad_enable_title">Zapnout</string>
+    <string name="ad_enable_summary_on">Aktivní displej zapnut</string>
+    <string name="ad_enable_summary_off">Aktivní displej vypnut</string>
+    <string name="ad_text_title">Text notifikace</string>
+    <string name="ad_text_summary">Zobrazit text notifikace okolo kruhu.</string>
+    <string name="ad_all_notifications_title">Všechny notifikace</string>
+    <string name="ad_all_notifications_summary">Zobrazit všechny notifikace včetně probíhajících a nezrušitelných.</string>
+    <string name="ad_hide_low_priority_title">Skrýt s nízkou prioritou</string>
+    <string name="ad_hide_low_priority_summary">Skrýt notifikace s nízkou prioritou (jako oznámení z Google Now).</string>
+    <string name="ad_pocket_mode_title">Režim v kapse</string>
+    <string name="ad_pocket_mode_summary">Zobrazit aktivní notifikace na displeji po vyndání zařízení z kapsy.</string>
+    <string name="ad_redisplay_title">Cyklit notifikace</string>
+    <string name="ad_customizations_title">Přizpůsobení</string>
+    <string name="ad_excluded_apps_title">Vyjmuté aplikace</string>
+    <string name="ad_excluded_apps_summary">Vyjmuté aplikace nebudou zobrazeny na aktivním displeji.</string>
+    <string name="ad_sunlight_mode_title">Sluneční režim</string>
+    <string name="ad_sunlight_mode_summary">Invertovat barvy kvůli prostředím s jasným svělem jako je přímý sluneční svit.</string>
+    <string name="ad_brightness_title">Jas notifikace</string>
+    <string name="ad_brightness_summary">Hodnota jasu zobrazené notifikace v případě vypnutého automatického jasu.</string>
+    <string name="ad_show_date_title">Zobrazit datum</string>
+    <string name="ad_show_date_summary">Zobrazit datum pod hodinami</string>
+    <string name="ad_show_ampm_title">Zobrazit AM/PM</string>
+    <string name="ad_show_ampm_summary">Zobrazit AM/PM vedle 12 hodinového formátu</string>
+    <string name="ad_redisplay_never">Nikdy</string>
+    <string name="ad_redisplay_1m">1 minuta</string>
+    <string name="ad_redisplay_5m">5 minut</string>
+    <string name="ad_redisplay_15m">15 minut</string>
+    <string name="ad_redisplay_30m">30 minut</string>
+    <string name="ad_redisplay_1h">1 hodina</string>
+    <string name="ad_redisplay_2h">2 hodiny</string>
+    <string name="ad_redisplay_5h">5 hodin</string>
 </resources>

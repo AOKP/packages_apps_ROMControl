@@ -815,8 +815,7 @@
     <!--Lockscreen Targets-->
     <string name="lockscreen_targets_title">Položky zamčené obrazovky</string>
     <string name="lockscreen_targets_summary">Zobrazit nebo změnit položky na zamčené obrazovce</string>
-    <string name="lockscreen_target_longpress_text">Dlouhhý stisk</string>
-    <string name="lockscreen_target_longpress_text">Stav dlouhého stisku</string>
+    <string name="lockscreen_target_longpress_text">Dlouhý stisk</string>
     <string name="lockscreen_glow_torch_text">Svítilna v odemykacím kruhu</string>
     <string name="lockscreen_glow_torch_summary">Dlouhým stiskem a následným držením středu odemykacího či navigačního kruhu dojde k
         zapnutí svítilny. Uvolněním prstu dojde k vypnutí.

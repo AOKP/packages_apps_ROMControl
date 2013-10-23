@@ -69,6 +69,13 @@
         android:entryValues="@array/ad_redisplay_values"
         android:dependency="ad_enable"/>
 
+    <CheckBoxPreference
+        android:key="ad_respect_qh"
+        android:persistent="false"
+        android:title="@string/ad_respect_quiet_hours_title"
+        android:summary="@string/ad_respect_quiet_hours_summary"
+        android:dependency="ad_enable" />
+
     <PreferenceCategory
         android:key="ad_customizations"
         android:title="@string/ad_customizations_title" />

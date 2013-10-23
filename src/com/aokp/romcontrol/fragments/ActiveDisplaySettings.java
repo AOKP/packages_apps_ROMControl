@@ -54,6 +54,7 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
     private static final String KEY_SHOW_DATE = "ad_show_date";
     private static final String KEY_SHOW_AMPM = "ad_show_ampm";
     private static final String KEY_BRIGHTNESS = "ad_brightness";
+    private static final String KEY_RESPECT_QUIET_HOURS ="ad_respect_qh";
 
     private SwitchPreference mEnabledPref;
     private CheckBoxPreference mShowTextPref;
@@ -66,6 +67,7 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
     private ListPreference mRedisplayPref;
     private SeekBarPreference mBrightnessLevel;
     private AppMultiSelectListPreference mExcludedAppsPref;
+    private CheckBoxPreference mRespectQuietHours;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -129,6 +131,10 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
         Set<String> excludedApps = getExcludedApps();
         if (excludedApps != null) mExcludedAppsPref.setValues(excludedApps);
         mExcludedAppsPref.setOnPreferenceChangeListener(this);
+
+        mRespectQuietHours = (CheckBoxPreference) findPreference(KEY_RESPECT_QUIET_HOURS);
+        mRespectQuietHours.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.ACTIVE_DISPLAY_RESPECT_QH, 0) == 1));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -191,6 +197,11 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
             value = mShowAmPmPref.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.ACTIVE_DISPLAY_SHOW_AMPM,
+                    value ? 1 : 0);
+        } else if (preference == mRespectQuietHours) {
+            value = mRespectQuietHours.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.ACTIVE_DISPLAY_RESPECT_QH,
                     value ? 1 : 0);
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);

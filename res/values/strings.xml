@@ -1251,5 +1251,7 @@
     <string name="ad_redisplay_1h">1 hour</string>
     <string name="ad_redisplay_2h">2 hours</string>
     <string name="ad_redisplay_5h">5 hours</string>
+    <string name="ad_respect_quiet_hours_title">Respect Quiet Hours</string>
+    <string name="ad_respect_quiet_hours_summary">Inhibit active display notifications showing while in Quiet Hours</string>
 
 </resources>

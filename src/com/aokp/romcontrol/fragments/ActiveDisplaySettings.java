@@ -61,7 +61,7 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
     private CheckBoxPreference mShowAmPmPref;
     private CheckBoxPreference mAllNotificationsPref;
     private CheckBoxPreference mHideLowPriorityPref;
-    private CheckBoxPreference mPocketModePref;
+    private ListPreference mPocketModePref;
     private CheckBoxPreference mSunlightModePref;
     private ListPreference mRedisplayPref;
     private SeekBarPreference mBrightnessLevel;
@@ -90,9 +90,12 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
         mHideLowPriorityPref.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.ACTIVE_DISPLAY_HIDE_LOW_PRIORITY_NOTIFICATIONS, 0) == 1));
 
-        mPocketModePref = (CheckBoxPreference) findPreference(KEY_POCKET_MODE);
-        mPocketModePref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.ACTIVE_DISPLAY_POCKET_MODE, 0) == 1));
+        mPocketModePref = (ListPreference) findPreference(KEY_POCKET_MODE);
+        mPocketModePref.setOnPreferenceChangeListener(this);
+        int mode = Settings.System.getInt(getContentResolver(),
+                Settings.System.ACTIVE_DISPLAY_POCKET_MODE, 0);
+        mPocketModePref.setValue(String.valueOf(mode));
+        updatePocketModeSummary(mode);
         if (!hasProximitySensor()) {
             getPreferenceScreen().removePreference(mPocketModePref);
         }
@@ -136,6 +139,10 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
             int timeout = Integer.valueOf((String) newValue);
             updateRedisplaySummary(timeout);
             return true;
+        } else if (preference == mPocketModePref) {
+            int mode = Integer.valueOf((String) newValue);
+            updatePocketModeSummary(mode);
+            return true;
         } else if (preference == mEnabledPref) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.ENABLE_ACTIVE_DISPLAY,
@@ -172,11 +179,6 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.ACTIVE_DISPLAY_HIDE_LOW_PRIORITY_NOTIFICATIONS,
                     value ? 1 : 0);
-        } else if (preference == mPocketModePref) {
-            value = mPocketModePref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.ACTIVE_DISPLAY_POCKET_MODE,
-                    value ? 1 : 0);
         } else if (preference == mSunlightModePref) {
             value = mSunlightModePref.isChecked();
             Settings.System.putInt(getContentResolver(),
@@ -197,6 +199,13 @@ public class ActiveDisplaySettings extends AOKPPreferenceFragment implements
         }
 
         return true;
+    }
+
+    private void updatePocketModeSummary(int value) {
+        mPocketModePref.setSummary(
+                mPocketModePref.getEntries()[mPocketModePref.findIndexOfValue( "" + value)]);
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.ACTIVE_DISPLAY_POCKET_MODE, value);
     }
 
     private void updateRedisplaySummary(long value) {

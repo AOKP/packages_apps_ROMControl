@@ -1255,6 +1255,9 @@
     <string name="ad_redisplay_5h">5 hours</string>
     <string name="ad_respect_quiet_hours_title">Respect Quiet Hours</string>
     <string name="ad_respect_quiet_hours_summary">Inhibit active display notifications showing while in Quiet Hours</string>
+    <string name="ad_pocket_mode_off">Off</string>
+    <string name="ad_pocket_mode_notifications">Notifications only</string>
+    <string name="ad_pocket_mode_always">Always</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_enable_custom_title">Allow custom buttons</string>

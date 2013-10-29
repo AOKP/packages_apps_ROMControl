@@ -135,6 +135,9 @@
     <string name="persist_prop_density_summary">Zachovat LCD densitu</string>
     <string name="persist_file_hosts">Uložit hosts</string>
     <string name="persist_file_hosts_summary">Zachovat soubor hosts</string>
+    <string name="persist_file_xposed">Uložit Xposed</string>
+    <string name="persist_file_xposed_summary">Zachovat soubor app_process Xposed frameworku</string>
+    <string name="persist_file_xposed_notinstalled">XposedInstaller není nainstalován</string>
     <!--Power Saving-->
     <string name="title_pref_powersaving_pref_mode">Zapnout spořič energie</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>

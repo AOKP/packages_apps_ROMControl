@@ -145,6 +145,9 @@
     <string name="persist_prop_density_summary">Persist LCD density</string>
     <string name="persist_file_hosts">Persist Hosts</string>
     <string name="persist_file_hosts_summary">Persist hosts file</string>
+    <string name="persist_file_xposed">Persist Xposed</string>
+    <string name="persist_file_xposed_summary">Persist file app_process for Xposed framework</string>
+    <string name="persist_file_xposed_notinstalled">XposedInstaller is not installed</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>

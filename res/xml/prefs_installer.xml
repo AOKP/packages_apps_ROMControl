@@ -18,4 +18,10 @@
         android:title="@string/persist_file_hosts"
         android:summary="@string/persist_file_hosts_summary" />
 
+    <CheckBoxPreference
+        android:key="persist_file_xposed"
+        android:dependency="enable_persist"
+        android:title="@string/persist_file_xposed"
+        android:summary="@string/persist_file_xposed_summary" />
+
 </PreferenceScreen>

@@ -10,6 +10,7 @@ import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.CMDProcessor;
 import com.aokp.romcontrol.util.CommandResult;
 import com.aokp.romcontrol.util.Helpers;
+import android.content.pm.PackageManager;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -27,12 +28,14 @@ public class Installer extends AOKPPreferenceFragment {
     private static final String PREF_PERSIST_ENABLE = "enable_persist";
     private static final String PREF_PERSIST_PROP_DENSITY = "persist_prop_density";
     private static final String PREF_PERSIST_FILE_HOSTS = "persist_file_hosts";
+    private static final String PREF_PERSIST_FILE_XPOSED = "persist_file_xposed";
 
     private Preference mPreference;
 
     CheckBoxPreference mPrefPersistEnable;
     CheckBoxPreference mPrefPersistDensity;
     CheckBoxPreference mPrefPersistHosts;
+    CheckBoxPreference mPrefPersistXposed;
 
     boolean mPersistEnable;
     ArrayList<String> mPersistProps;
@@ -56,7 +59,15 @@ public class Installer extends AOKPPreferenceFragment {
         mPrefPersistDensity.setChecked(mPersistProps.contains("ro.sf.lcd_density"));
         mPrefPersistHosts = (CheckBoxPreference) findPreference(PREF_PERSIST_FILE_HOSTS);
         mPrefPersistHosts.setChecked(mPersistFiles.contains("etc/hosts"));
+        mPrefPersistXposed = (CheckBoxPreference) findPreference(PREF_PERSIST_FILE_XPOSED);
+        mPrefPersistXposed.setChecked(mPersistFiles.contains("bin/app_process"));
+
         setSummaries();
+        if (!isAppInstalled("de.robv.android.xposed.installer")) {
+            mPrefPersistXposed.setEnabled(false);
+            mPrefPersistXposed.setSummary(mPersistEnable ? R.string.persist_file_xposed_notinstalled
+                : R.string.enable_persist_installer);
+        }
     }
 
     @Override
@@ -87,6 +98,17 @@ public class Installer extends AOKPPreferenceFragment {
                 }
             } else {
                 mPersistFiles.remove("etc/hosts");
+            }
+            savePrefs();
+            return true;
+        }
+        if (preference == mPrefPersistXposed) {
+            if (isChecked) {
+                if (!mPersistFiles.contains("bin/app_process")) {
+                    mPersistFiles.add("bin/app_process");
+                }
+            } else {
+                mPersistFiles.remove("bin/app_process");
             }
             savePrefs();
             return true;
@@ -208,5 +230,20 @@ public class Installer extends AOKPPreferenceFragment {
                 : R.string.enable_persist_installer);
         mPrefPersistHosts.setSummary(mPersistEnable ? R.string.persist_file_hosts_summary
                 : R.string.enable_persist_installer);
+        mPrefPersistXposed.setSummary(mPersistEnable ? R.string.persist_file_xposed_summary
+                : R.string.enable_persist_installer);
     }
+
+    private boolean isAppInstalled(String packageName) {
+        PackageManager pm = getPackageManager();
+        boolean installed = false;
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            installed = false;
+        }
+        return installed;
+    }
+
 }

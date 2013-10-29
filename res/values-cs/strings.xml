@@ -781,6 +781,8 @@
     <string name="lockscreen_wallpaper_remove">Odstranit pozadí zamknuté obrazovky</string>
     <string name="lockscreen_text_color_title">Barva textu</string>
     <string name="lockscreen_text_color_summary">Nastavit barvu textu na zamčené obrazovce</string>
+    <string name="lockscreen_color_title">Barva odemykacího kruhu</string>
+    <string name="lockscreen_color_summary">Nastavit barvu odemykacího kruhu a okolních teček</string>
     <string name="lockscreen_weather_title">Zapnout</string>
     <string name="lockscreen_weather_summary">Zobrazovat informace o počasí na zamčené obrazovce. Je třeba mít zapnutou
         službu počasí!

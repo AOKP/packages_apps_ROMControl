@@ -1012,6 +1012,7 @@
     <string name="on_the_bottom">Dole</string>
     <!--Battery styles-->
     <string name="icon_with_text">Ikona s textem</string>
+    <string name="icon_with_big_text">Ikona s velkým textem</string>
     <string name="icon_with_centered_text">Ikona s vycentrovaným textem</string>
     <string name="circlemod">CircleMOD</string>
     <!--NavBar-->

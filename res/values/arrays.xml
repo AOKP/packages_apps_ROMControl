@@ -227,6 +227,7 @@
         <item>@string/icon_only</item>
         <item>@string/text_only</item>
         <item>@string/icon_with_text</item>
+        <item>@string/icon_with_big_text</item>
         <item>@string/icon_with_centered_text</item>
         <item>@string/circlemod</item>
         <item>@string/dont_show</item>
@@ -238,6 +239,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
     </string-array>
 
     <!-- NavBar -->

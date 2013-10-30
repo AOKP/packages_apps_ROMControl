@@ -30,7 +30,7 @@
         android:theme="@android:style/Theme.Holo"
         android:uiOptions="none">
         <activity
-            android:name=".ROMControlActivity"
+            android:name=".FragmentDrawer"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

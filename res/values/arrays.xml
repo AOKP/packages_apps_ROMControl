@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Headers -->
+    <string-array name="header_titles" translatable="false">
+        <item>About Us</item>
+        <item>User Interface</item>
+        <item>Lockscreen</item>
+        <item>Power Menu</item>
+        <item>Navigation Bar</item>
+        <item>Navigation Ring</item>
+        <item>Ribbons</item>
+        <item>Active Display</item>
+        <item>Toggles</item>
+        <item>Battery</item>
+        <item>Clock</item>
+        <item>Signal</item>
+        <item>Animations</item>
+        <item>Sound</item>
+        <item>Vibrations</item>
+        <item>Installer</item>
+    </string-array>
+
     <!-- boot animation stuff -->
     <string-array name="disable_bootanimation_insults" translatable="false">
         <item>@string/insult_jerk</item>

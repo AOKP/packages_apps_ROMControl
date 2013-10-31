@@ -145,6 +145,9 @@
     <string name="persist_prop_density_summary">Persist LCD density</string>
     <string name="persist_file_hosts">Persist Hosts</string>
     <string name="persist_file_hosts_summary">Persist hosts file</string>
+    <string name="persist_prop_network_swap">Persist network changes</string>
+    <string name="persist_prop_network_summary">Persist lteOnXXXDevice and defaultNetwork 
+properties</string>
 
     <!-- Power Saving -->
     <string name="title_pref_powersaving_pref_mode">Enable power saver</string>

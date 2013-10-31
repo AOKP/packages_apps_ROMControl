@@ -1,9 +1,11 @@
 package com.aokp.romcontrol.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import com.aokp.romcontrol.AOKPPreferenceFragment;
 import com.aokp.romcontrol.R;
@@ -27,17 +29,21 @@ public class Installer extends AOKPPreferenceFragment {
     private static final String PREF_PERSIST_ENABLE = "enable_persist";
     private static final String PREF_PERSIST_PROP_DENSITY = "persist_prop_density";
     private static final String PREF_PERSIST_FILE_HOSTS = "persist_file_hosts";
+    private static final String PREF_PERSIST_NETWORK_SWAP = "persist_network_swap";
 
     private Preference mPreference;
 
     CheckBoxPreference mPrefPersistEnable;
     CheckBoxPreference mPrefPersistDensity;
     CheckBoxPreference mPrefPersistHosts;
+    CheckBoxPreference mPrefPersistNetwork;
 
     boolean mPersistEnable;
     ArrayList<String> mPersistProps;
     ArrayList<String> mPersistFiles;
     ArrayList<String> mPersistTrailer;
+
+    TelephonyManager tm;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,8 @@ public class Installer extends AOKPPreferenceFragment {
 
         PreferenceScreen prefs = getPreferenceScreen();
 
+        tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+
         loadPrefs();
 
         mPrefPersistEnable = (CheckBoxPreference) findPreference(PREF_PERSIST_ENABLE);
@@ -56,6 +64,14 @@ public class Installer extends AOKPPreferenceFragment {
         mPrefPersistDensity.setChecked(mPersistProps.contains("ro.sf.lcd_density"));
         mPrefPersistHosts = (CheckBoxPreference) findPreference(PREF_PERSIST_FILE_HOSTS);
         mPrefPersistHosts.setChecked(mPersistFiles.contains("etc/hosts"));
+        mPrefPersistNetwork = (CheckBoxPreference) findPreference(PREF_PERSIST_NETWORK_SWAP);
+        if (tm.getPhoneType() == tm.PHONE_TYPE_CDMA) {
+            mPrefPersistNetwork.setChecked(mPersistProps.contains("ro.telephony.default_network") &&
+                                          mPersistProps.contains("telephony.lteOnGsmDevice"));
+        } else {
+            mPrefPersistNetwork.setChecked(mPersistProps.contains("ro.telephony.default_network") &&
+                                          mPersistProps.contains("telephony.lteOnCdmaDevice"));
+        }
         setSummaries();
     }
 
@@ -76,6 +92,29 @@ public class Installer extends AOKPPreferenceFragment {
                 }
             } else {
                 mPersistProps.remove("ro.sf.lcd_density");
+            }
+            savePrefs();
+            return true;
+        }
+        if (preference == mPrefPersistNetwork) {
+            if (isChecked) {
+                if (!mPersistProps.contains("ro.telephony.default_network")) {
+                     mPersistProps.add("ro.telephony.default_network");
+                }
+                if (tm.getPhoneType() == tm.PHONE_TYPE_CDMA) {
+                    if (!mPersistProps.contains("ro.lteOnGsmDevice")) {
+                         mPersistProps.add("ro.lteOnGsmDevice");
+                    } else {
+                          mPersistProps.add("ro.lteOnCdmaDevice");
+                    }
+                }
+            } else {
+                    mPersistProps.remove("ro.telephony.default_network");
+                    if (mPersistProps.contains("ro.lteOnGsmDevice")) {
+                        mPersistProps.remove("ro.lteOnGsmDevice");
+                    } else {
+                        mPersistProps.remove("ro.lteOnCdmaDevice");
+                    }
             }
             savePrefs();
             return true;
@@ -207,6 +246,8 @@ public class Installer extends AOKPPreferenceFragment {
         mPrefPersistDensity.setSummary(mPersistEnable ? R.string.persist_prop_density_summary
                 : R.string.enable_persist_installer);
         mPrefPersistHosts.setSummary(mPersistEnable ? R.string.persist_file_hosts_summary
+                : R.string.enable_persist_installer);
+        mPrefPersistNetwork.setSummary(mPersistEnable ? R.string.persist_prop_network_summary
                 : R.string.enable_persist_installer);
     }
 }

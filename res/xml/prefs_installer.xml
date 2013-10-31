@@ -18,4 +18,10 @@
         android:title="@string/persist_file_hosts"
         android:summary="@string/persist_file_hosts_summary" />
 
+    <CheckBoxPreference
+        android:key="persist_network_swap"
+        android:dependency="enable_persist"
+        android:title="@string/persist_prop_network_swap"
+        android:summary="@string/persist_prop_network_summary" />
+
 </PreferenceScreen>

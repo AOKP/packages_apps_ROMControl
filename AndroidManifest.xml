@@ -52,6 +52,15 @@
             android:theme="@android:style/Theme.Dialog">
         </activity>
         <activity
+            android:name=".fragments.StatusBarNotifications"
+            android:label="@string/title_statusbar_notifications">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="com.aokp.romcontrol.SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.StatusBarClock"
             android:label="@string/title_statusbar_clock">
             <intent-filter>

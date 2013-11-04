@@ -13,6 +13,7 @@
     <string name="header_navbar">Navigation Bar</string>
     <string name="toggles_layout">Toggles</string>
     <string name="general_ui">General UI</string>
+    <string name="statusbar_notifications">Notifications</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>
@@ -32,6 +33,7 @@
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_about">About AOKP</string>
     <string name="title_ui">General User Interface</string>
+    <string name="title_statusbar_notifications">Notifications</string>
     <string name="title_statusbar_clock">Statusbar Clock</string>
     <string name="title_statusbar_toggles">Statusbar Toggles</string>
     <string name="title_statusbar_battery">Statusbar Battery</string>
@@ -55,6 +57,7 @@
     <!-- Header Summaries -->
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_notifications">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
     <string name="header_summary_signal">@null</string>

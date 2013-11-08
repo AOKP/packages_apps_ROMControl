@@ -230,6 +230,7 @@
         <item>@string/icon_with_centered_text</item>
         <item>@string/circlemod</item>
         <item>@string/dont_show</item>
+        <item>@string/icon_with_big_text</item>
     </string-array>
     <string-array name="battery_icon_values" translatable="false">
         <item>0</item>
@@ -238,6 +239,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
     </string-array>
 
     <!-- NavBar -->

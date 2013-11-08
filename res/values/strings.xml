@@ -1063,6 +1063,7 @@
 
     <!-- Battery styles -->
     <string name="icon_with_text">Icon with text</string>
+    <string name="icon_with_big_text">Icon with big text</string>
     <string name="icon_with_centered_text">Icon with centered text</string>
     <string name="circlemod">CircleMOD</string>
 

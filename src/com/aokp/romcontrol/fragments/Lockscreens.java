@@ -101,7 +101,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private ImageView mWallpaperButton;
     private Spinner mGlowTorchSwitch;
-    private Switch mLongPressStatus;
     private Switch mLockBatterySwitch;
     private Switch mLockRotateSwitch;
     private Switch mLockVolControlSwitch;
@@ -117,7 +116,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
     private TextView mWallpaperText;
     private TextView mGlowTorchText;
-    private TextView mLongPressText;
     private TextView mLockTextColorText;
     private TextView mLockColorText;
     private TextView mLockBatteryText;
@@ -141,7 +139,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     private int mTextColor;
     private int mIconColor;
 
-    private boolean mBoolLongPress;
     private boolean mNowTextColor;
     private int mTargetIndex;
     private int mTarget = 0;
@@ -414,19 +411,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     }
                 });
 
-        mLongPressText = ((TextView) getActivity()
-                .findViewById(R.id.lockscreen_target_longpress_id));
-        mLongPressText.setOnClickListener(mLongPressTextListener);
-        mLongPressStatus = (Switch) getActivity().findViewById(R.id.longpress_switch);
-        mLongPressStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton v, boolean checked) {
-                Settings.System.putBoolean(cr, Settings.System.LOCKSCREEN_TARGETS_LONGPRESS,
-                        checked);
-                updateDrawables();
-            }
-        });
-
         mCameraWidgetText = ((TextView) getActivity().findViewById(R.id.lockscreen_camera_widget_id));
         mCameraWidgetText.setOnClickListener(mCameraWidgetTextListener);
         mCameraWidgetSwitch = (Switch) getActivity().findViewById(R.id.lockscreen_camera_widget_switch);
@@ -508,14 +492,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
             createMessage(
                     getResources().getString(R.string.lockscreen_glow_torch_text),
                     getResources().getString(R.string.lockscreen_glow_torch_summary));
-        }
-    };
-
-    private TextView.OnClickListener mLongPressTextListener = new TextView.OnClickListener() {
-        public void onClick(View v) {
-            createMessage(
-                    getResources().getString(R.string.lockscreen_target_longpress_text),
-                    getResources().getString(R.string.lockscreen_target_longpress_summary));
         }
     };
 
@@ -639,7 +615,6 @@ public class Lockscreens extends AOKPPreferenceFragment implements
 
 
     private void setDrawables() {
-        mLongPressStatus.setChecked(mBoolLongPress);
 
         // Custom Targets
         ArrayList<TargetDrawable> storedDraw = new ArrayList<TargetDrawable>();
@@ -754,6 +729,7 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                 Settings.System.putString(cr,
                         Settings.System.LOCKSCREEN_TARGETS_ICON[i], customIcons[i]);
             }
+
             updateDrawables();
             Toast.makeText(mContext, R.string.lockscreen_target_save, Toast.LENGTH_LONG).show();
         } else {
@@ -853,6 +829,8 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     }
 
     public void updateDrawables() {
+        boolean hasLongAction = false;
+
         for (int i = 0; i < 8; i++) {
             targetActivities[i] = Settings.System.getString(cr,
                     Settings.System.LOCKSCREEN_TARGETS_SHORT[i]);
@@ -860,9 +838,15 @@ public class Lockscreens extends AOKPPreferenceFragment implements
                     Settings.System.LOCKSCREEN_TARGETS_LONG[i]);
             customIcons[i] = Settings.System.getString(cr,
                     Settings.System.LOCKSCREEN_TARGETS_ICON[i]);
+            if (!"**null**".equals(longActivities[i])) {
+                hasLongAction = true;
+            }
         }
-        mBoolLongPress = (Settings.System.getBoolean(cr,
-                Settings.System.LOCKSCREEN_TARGETS_LONGPRESS, false));
+
+        // Save to setting string so we don't have process this for-loop on every
+        // Lockscreen inflation.  Instead just check system setting.
+        Settings.System.putBoolean(cr,
+                Settings.System.LOCKSCREEN_TARGETS_LONGPRESS, hasLongAction);
 
         if (mUnlockCounter() < 1) {
             targetActivities[0] = AwesomeConstant.ACTION_UNLOCK.value();
@@ -1012,25 +996,15 @@ public class Lockscreens extends AOKPPreferenceFragment implements
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = target;
-        if (mBoolLongPress) {
-            final String[] stringArray = mContext.getResources().getStringArray(
-                    R.array.navring_long_dialog_entries);
-            stringArray[0] = stringArray[0] + "  :  "
-                    + getProperSummary(targetActivities[mTargetIndex]);
-            stringArray[1] = stringArray[1] + "  :  "
-                    + getProperSummary(longActivities[mTargetIndex]);
-            createDialog(
-                    getResources().getString(R.string.choose_action_title), stringArray,
-                    getResources().getStringArray(R.array.navring_long_dialog_values));
-        } else {
-            final String[] stringArray = mContext.getResources().getStringArray(
-                    R.array.navring_short_dialog_entries);
-            stringArray[0] = stringArray[0] + "  :  "
-                    + getProperSummary(targetActivities[mTargetIndex]);
-            createDialog(
-                    getResources().getString(R.string.choose_action_title), stringArray,
-                    getResources().getStringArray(R.array.navring_short_dialog_values));
-        }
+        final String[] stringArray = mContext.getResources().getStringArray(
+                R.array.navring_long_dialog_entries);
+        stringArray[0] = stringArray[0] + "  :  "
+                + getProperSummary(targetActivities[mTargetIndex]);
+        stringArray[1] = stringArray[1] + "  :  "
+                + getProperSummary(longActivities[mTargetIndex]);
+        createDialog(
+                getResources().getString(R.string.choose_action_title), stringArray,
+                getResources().getStringArray(R.array.navring_long_dialog_values));
     }
 
     @Override

@@ -81,7 +81,6 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
 
     private GlowPadView mGlowPadView;
     private Spinner mTargetNumAmount;
-    private Switch mLongPressStatus;
 
     private ShortcutPickerHelper mPicker;
     private String[] targetActivities = new String[5];
@@ -98,7 +97,6 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     private int mNavRingAmount;
     private int mCurrentUIMode;
     private boolean mLefty;
-    private boolean mBoolLongPress;
     private int mTarget = 0;
 
 
@@ -207,15 +205,6 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
             }
         });
 
-        mLongPressStatus = (Switch) getActivity().findViewById(R.id.longpress_switch);
-        mLongPressStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton v, boolean checked) {
-                Settings.System
-                        .putBoolean(cr, Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE, checked);
-                updateDrawables();
-            }
-        });
         updateDrawables();
     }
 
@@ -238,7 +227,6 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
         intentCounter = 0;
         intentList.clear();
         mTargetNumAmount.setSelection(mNavRingAmount - 1);
-        mLongPressStatus.setChecked(mBoolLongPress);
 
         // Custom Targets
         ArrayList<TargetDrawable> storedDraw = new ArrayList<TargetDrawable>();
@@ -493,6 +481,7 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     }
 
     public void updateDrawables() {
+        boolean hasLongAction = false;
         for (int i = 0; i < 5; i++) {
             targetActivities[i] =
                     Settings.System.getString(cr, Settings.System.SYSTEMUI_NAVRING[i]);
@@ -500,9 +489,12 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
                     Settings.System.getString(cr, Settings.System.SYSTEMUI_NAVRING_LONG[i]);
             customIcons[i] =
                     Settings.System.getString(cr, Settings.System.SYSTEMUI_NAVRING_ICON[i]);
+            if (!"**null**".equals(longActivities[i])) {
+                hasLongAction = true;
+            }
         }
-        mBoolLongPress = (Settings.System
-                .getBoolean(cr, Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE, false));
+
+        Settings.System.putBoolean(cr, Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE, hasLongAction);
 
         mNavRingAmount = Settings.System.getInt(cr, Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
         // Not using getBoolean here, because CURRENT_UI_MODE can be 0,1 or 2
@@ -570,25 +562,15 @@ public class NavRingTargets extends AOKPPreferenceFragment implements
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = intentList.get(target);
-        if (mBoolLongPress) {
-            final String[] stringArray =
-                    mContext.getResources().getStringArray(R.array.navring_long_dialog_entries);
-            stringArray[0] = stringArray[0] + "  :  " +
-                    AwesomeConstants.getProperName(mContext, targetActivities[mTargetIndex]);
-            stringArray[1] = stringArray[1] + "  :  " +
-                    AwesomeConstants.getProperName(mContext, longActivities[mTargetIndex]);
-            createDialog(
-                    getResources().getString(R.string.choose_action_title), stringArray,
-                    getResources().getStringArray(R.array.navring_long_dialog_values));
-        } else {
-            final String[] stringArray =
-                    mContext.getResources().getStringArray(R.array.navring_short_dialog_entries);
-            stringArray[0] = stringArray[0] + "  :  " +
-                    AwesomeConstants.getProperName(mContext, targetActivities[mTargetIndex]);
-            createDialog(
-                    getResources().getString(R.string.choose_action_title), stringArray,
-                    getResources().getStringArray(R.array.navring_short_dialog_values));
-        }
+        final String[] stringArray =
+                mContext.getResources().getStringArray(R.array.navring_long_dialog_entries);
+        stringArray[0] = stringArray[0] + "  :  " +
+                AwesomeConstants.getProperName(mContext, targetActivities[mTargetIndex]);
+        stringArray[1] = stringArray[1] + "  :  " +
+                AwesomeConstants.getProperName(mContext, longActivities[mTargetIndex]);
+        createDialog(
+                getResources().getString(R.string.choose_action_title), stringArray,
+                getResources().getStringArray(R.array.navring_long_dialog_values));
     }
 
     @Override

@@ -27,6 +27,7 @@
     <string name="weather">天气</string>
     <string name="tools">工具</string>
     <string name="installer">安装器</string>
+    <string name="active_display">主动显示</string>
 
     <!-- Activity titles defined in AndroidManifest.xml Activity标题 -->
     <string name="title_about">关于 AOKP</string>
@@ -49,6 +50,7 @@
     <string name="title_clipboard_share">分享到剪贴板</string>
     <string name="mgerrit_activity_name">代码评审</string>
     <string name="ribbon_settings_title">操作区</string>
+    <string name="title_hardware_keys">实体按键</string>
 
     <!-- Header Summaries 标题说明 -->
     <string name="header_summary_clock">@null</string>
@@ -65,8 +67,10 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
-    <string name="ribbon_settings_summary">@null</string>
+    <string name="header_summary_summary">@null</string>
     <string name="header_summary_installer">@null</string>
+    <string name="header_summary_hardware_keys">@null</string>
+    <string name="header_summary_activedisplay">@null</string>
 
     <!-- Menu Strings 菜单文本 -->
     <string name="menu_nav_bar_reset">重置导航栏</string>
@@ -83,7 +87,9 @@
     <string name="enable_bootanimation_unlock">解除锁定：不选中“禁用开机动画”</string>
     <string name="enable_phone_or_phablet">解除锁定：选择“用户界面模式”的手机或手机平板选项</string>
     <string name="enable_tablet_ui">解除锁定：选择“用户界面模式”的平板选项</string>
-    <string name="enable_noti_wallpaper">解除锁定：选择“用户界面模式”的手机或手机平板选项并设置“通知栏背景”</string>
+    <string name="enable_noti_wallpaper">解除锁定：
+    选择“用户界面模式”的手机或手机平板选项并设置“通知栏背景”
+    </string>
     <string name="enable_crt_mode">解除锁定：选中“CRT 关闭屏幕”</string>
     <string name="enable_menu_location">解除锁定：选择一个“菜单键位置”</string>
     <string name="enable_hiding_navbar">解除锁定：选中“隐藏导航栏”</string>
@@ -139,12 +145,17 @@
     <string name="persist_prop_density_summary">保持LCD密度</string>
     <string name="persist_file_hosts">保持Hosts</string>
     <string name="persist_file_hosts_summary">保持hosts文件</string>
+    <string name="persist_file_xposed">保持Xposed</string>
+    <string name="persist_file_xposed_summary">为Xposed框架保持文件应用程序进程</string>
+    <string name="persist_file_xposed_notinstalled">XposedInstaller没有安装</string>
 
     <!-- Power Saving 省电模式 -->
     <string name="title_pref_powersaving_pref_mode">启用省电模式</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
+
     <string name="title_pref_powersaving_data_screen_off">屏幕关闭移动数据活动</string>
     <string name="summary_pref_powersaving_data_screen_off">屏幕关闭后移动数据状态</string>
+
     <string name="title_pref_powersaving_data_screen_off_delay">移动数据活动延时</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">移动数据活动生效前的等待时间</string>
 
@@ -176,8 +187,11 @@
     <string name="vibrate_notif_expand_summary">当展开通知栏时振动（将重启用户界面）</string>
     <string name="disable_bootanimation_title">禁用开机动画</string>
     <string name="custom_bootanimation_title">自定义开机动画</string>
-    <string name="custom_bootanimation_summary">从SD卡选择开机动画的ZIP文件，原开机动画将备份在/system/media目录</string>
-    <string name="install_file_manager_error">未找到可选择 ZIP 文件的应用程序，请至少安装一款文件管理程序。</string>
+    <string name="custom_bootanimation_summary">从SD卡选择开机动画的ZIP文件，原开机动画将备份在/system/media目录
+    </string>
+    <string name="install_file_manager_error">未找到可选择 ZIP 文件的应用程序，
+    请至少安装一款文件管理程序。
+    </string>
     <string name="notification_wallpaper_title">通知栏背景</string>
     <string name="notification_wallpaper_dialog">背景预览</string>
     <string name="notification_wallpaper_pick">新建通知栏背景</string>
@@ -186,7 +200,9 @@
     <string name="notif_wallpaper_alpha_title">通知栏背景不透明度</string>
     <string name="alpha_dialog_title">设置不透明度</string>
     <string name="custom_carrier_label_title">自定义运营商名称</string>
-    <string name="custom_carrier_label_explain">请输入新名称，输入空字符将恢复为原始名称。</string>
+    <string name="custom_carrier_label_explain">请输入新名称，
+    输入空字符将恢复为原始名称。
+    </string>
     <string name="custom_carrier_label_notset">当前未自定义运营商名称</string>
     <string name="ime_switcher_title">显示输入法切换</string>
     <string name="ime_switcher_summary">输入时状态栏显示键盘图标</string>
@@ -212,7 +228,8 @@
     <string name="ram_bar">近期 RAM 栏</string>
     <string name="ram_bar_summary">在近期任务显示 RAM 使用情况</string>
     <string name="longpress_to_kill">长按返回键结束程序</string>
-    <string name="longpress_to_kill_summary">长时间按住返回键可以强行结束当前程序</string>
+    <string name="longpress_to_kill_summary">长时间按住返回键可以强行结束当前程序
+    </string>
     <string name="tablet_ui">强制使用平板界面</string>
     <string name="tablet_ui_summary">可强制使用平板设备专用的界面（需重启）</string>
     <string name="hide_extras">隐藏多余内容</string>
@@ -225,15 +242,20 @@
     <string name="error_reading_zip_file">读取 ZIP 文件错误</string>
     <string name="error_creating_preview">创建预览错误</string>
     <string name="multipane_ui">启用双面板</string>
-    <string name="multipane_ui_summary">启用双面板视图（需重启）</string>
+    <string name="multipane_ui_summary">启用双面板视图（需重启）
+    </string>
     <string name="show_overflow_title">显示菜单按钮</string>
     <string name="show_overflow_summary">无论是否存在导航栏均在应用程序中显示内置的菜单按钮（3个点）</string>
-    <string name="show_overflow_toast_enable">在应用程序重新运行前菜单按钮可能依然显示</string>
-    <string name="show_overflow_toast_disable">在应用程序重新运行前菜单按钮可能依然隐藏</string>
+    <string name="show_overflow_toast_enable">在应用程序重新运行前菜单按钮可能依然显示
+    </string>
+    <string name="show_overflow_toast_disable">在应用程序重新运行前菜单按钮可能依然隐藏
+    </string>
     <string name="notification_show_wifi_ssid_title">显示 Wifi 名称</string>
     <string name="notification_show_wifi_ssid_summary">显示当前链接的 WiFi 网络名称</string>
     <string name="brightness_slider_title">状态栏调节亮度</string>
-    <string name="brightness_slider_summary">未启用自动亮度时，在状态栏滑动可改变亮度。</string>
+    <string name="brightness_slider_summary">未启用自动亮度时，
+    在状态栏滑动可改变亮度。
+    </string>
     <string name="user_mode_ui">用户界面模式</string>
     <string name="user_mode_ui_summary">选择导航栏和状态栏显示风格（将重启用户界面）</string>
     <string name="phone_mode_ui">手机 - 横屏时导航栏在侧边</string>
@@ -248,6 +270,7 @@
     <string name="transparency_dialog_transparency">主屏幕不透明度</string>
     <string name="transparency_dialog_transparency_keyguard">锁屏界面不透明度</string>
     <string name="transparency_dialog_lockscreen">锁屏界面</string>
+    <string name="dark_ui">暗黑 AOKP</string>
 
     <!-- LCD Density 密度 -->
     <string name="lcd_density_title">LCD 密度</string>
@@ -255,26 +278,37 @@
     <string name="current_lcd_density">"当前 LCD 密度："</string>
     <string name="lcd_density_wizard">LCD 密度设置向导</string>
     <string name="follow_through_title">务必遵循!</string>
-    <string name="follow_through_summary">确保一步一步完成</string>
+    <string name="follow_through_summary">确保按照步骤
+    一步一步完成
+    </string>
     <string name="stock_density_title">1. 改变密度为默认值</string>
-    <string name="stock_density_summary">平板以及旧款电话 160，大多数电话 240，Galaxy Nexus 使用 320 为默认值</string>
+    <string name="stock_density_summary">平板以及旧款电话 160，大多数电话 240，
+    Galaxy Nexus 使用 320 为默认值
+    </string>
     <string name="stock_density_changed_summary">"密度设置为："</string>
     <string name="reboot_title">2. 点我重启</string>
     <string name="reboot_summary">回到此菜单，完成其余的步骤</string>
     <string name="clear_market_data_title">3. 清理Play商店数据</string>
     <string name="clear_market_data_cleared">Play商店数据已清除</string>
     <string name="clear_market_data_donot_cleared">"Play商店数据无法清除，请手动清除！"</string>
+
     <string name="open_market_title">4. 打开Play商店选择接受</string>
     <string name="open_market_summary">然后回到此菜单</string>
-    <string name="open_market_summary_could_not_open">"无法打开Play商店！如果你确定已经安装，请手动打开。"</string>
+    <string name="open_market_summary_could_not_open">"无法打开Play商店！如果你确定已经安装，
+    请手动打开。"
+    </string>
     <string name="custom_density_title">5. 再选择你需要的密度</string>
-    <string name="custom_density_summary">如果你遇到市场兼容问题，回到这里，重复步骤</string>
+    <string name="custom_density_summary">如果你遇到市场兼容问题，回到这里，
+    重复步骤
+    </string>
     <string name="custom_density_summary_invalid">"无效的密度！"</string>
     <string name="custom_density">自定义</string>
     <string name="set_custom_density_title">设置自定义密度</string>
     <string name="set_custom_density_set">设置</string>
     <string name="custom_density_dialog_title">"警告！"</string>
-    <string name="custom_density_dialog_summary">"改变 LCD 密度可能导致应用程序意外关闭。如果你遇到应用程序不兼容的情况请回到这里，重新从第一步开始。"</string>
+    <string name="custom_density_dialog_summary">"改变 LCD 密度可能导致应用程序意外关闭。如果你遇到应用程序不兼容的情况请回到这里，
+    重新从第一步开始。"
+    </string>
     <string name="custom_density_dialog_button_got">确定改变！</string>
     <string name="custom_density_dialog_button_reboot">立即重启</string>
 
@@ -312,6 +346,8 @@
     <string name="toggle_enable_fasttoggle_summary">覆盖默认动作</string>
     <string name="toggle_choose_fasttoggle_side_title">选择快捷开关侧边</string>
     <string name="toggle_choose_fasttoggle_side_summary">选择快捷开关触发区域</string>
+    <string name="swipe_to_switch_title">滑动切换</string>
+    <string name="swipe_to_switch_summary">滑动可切换通知和快速设置</string>
     <string name="toggle_dialog_arrange_title">开关设置</string>
     <string name="toggle_dialog_add_toggles">选择并添加开关</string>
     <string name="toggle_style_tile">方块式</string>
@@ -324,7 +360,10 @@
     <string name="toggle_action_title">%1$s &amp; 动作图标</string>
     <string name="toggle_action_title_alt">%1$s &amp; 长按动作图标</string>
     <string name="toggle_longpress_title">%1$s 长按动作</string>
-    <string name="custom_toggle_desc">每次点击将切换到下一个动作。如果点击动作为空并且无图标，将显示长按动作的图标。适用于用户希望通过简单的点击可以循环动作并执行。</string>
+    <string name="custom_toggle_desc">每次点击将切换到下一个动作。
+    如果点击动作为空并且无图标，将显示长按动作的图标。
+    适用于用户希望通过简单的点击可以循环动作并执行。
+    </string>
     <string name="custom_help_title">使用指导</string>
     <string name="custom_help_summary">点击查看更多信息</string>
     <string name="custom_toggle_okay">取消</string>
@@ -409,19 +448,27 @@
     <string name="battery_bar_style_title">电量条风格</string>
     <string name="battery_bar_thickness_title">电量条厚度</string>
     <string name="battery_bar_animate_title">充电动画</string>
-    <string name="battery_bar_animate_summary">充电动画可能会给您不好的用户体验，请自行决定是否启用。</string>
+    <string name="battery_bar_animate_summary">充电动画可能会给您不好的用户体验，
+    请自行决定是否启用。
+    </string>
 
     <!-- Statusbar | Signal 状态栏|信号 -->
     <string name="signal_style">信号显示风格</string>
     <string name="signal_color_title">信号颜色</string>
     <string name="hide_signal_title">隐藏信号图标</string>
-    <string name="hide_signal_summary">当信号发生变化时生效</string>
+    <string name="hide_signal_summary">隐藏信号指示图标
+    （当信号发生变化时生效）
+    </string>
     <string name="wifi_signal_style">WiFi 信号显示风格</string>
     <string name="wifi_signal_color_title">WiFi 信号颜色</string>
     <string name="alt_signal_title">更改信号布局</string>
     <string name="alt_signal_summary">使用网络与信号分离的布局（姜饼风格）</string>
     <string name="show_4g_for_lte_title">在LTE网络下显示4G图标</string>
     <string name="show_4g_for_lte_summary">显示4G网络图标替代LTE图标</string>
+    <string name="status_bar_network_title">网络流量</string>
+    <string name="status_bar_show_network_stats_title">显示网络速度</string>
+    <string name="status_bar_network_stats_update_title">更新频率</string>
+    <string name="status_bar_network_stats_color_title">网络速度文字颜色</string>
 
     <!-- Color Picker 颜色选择器-->
     <string name="dialog_color_picker">颜色选择器</string>
@@ -439,7 +486,9 @@
     <string name="navbar_button_cat">导航栏按键</string>
     <string name="navbar_color_cat">颜色与透明度</string>
     <string name="title_pref_menu_display">菜单键位置</string>
-    <string name="summary_pref_menu_display">使用大菜单键时请务必选择“不显示”</string>
+    <string name="summary_pref_menu_display">可以重新排列菜单键位置或隐藏
+    （当使用大菜单键时）
+    </string>
     <string name="title_pref_navigation_menu_display">菜单键可见性</string>
     <string name="summary_pref_navigation_menu_display">你想菜单键在什么情况下显示？</string>
     <string name="navbar_qty_title">导航栏按键数量</string>
@@ -447,7 +496,9 @@
     <string name="navbar_action_title">按键 %1$s 的行为与图标</string>
     <string name="button_transparency_title">导航栏按键不透明度</string>
     <string name="navbar_width_help_title">导航栏组合高度帮助</string>
-    <string name="navbar_width_help_summary">100 是屏幕高度的 70\%% 。5 是屏幕高度的 30\%% 。0 默认是按钮高度。</string>
+    <string name="navbar_width_help_summary">100 是屏幕高度的 70\%% 。5 是屏幕高度的 30\%% 。
+    0 默认是按钮高度。
+    </string>
     <string name="width_port_title">竖屏组合高度</string>
     <string name="width_land_title">横屏组合高度</string>
     <string name="navbar_widgets">导航栏小部件</string>
@@ -476,7 +527,9 @@
     <string name="navigation_bar_color_title">导航栏颜色</string>
     <string name="navigation_bar_tint_title">导航栏按键颜色</string>
     <string name="navigation_bar_glow_tint_title">导航栏按键按下发光颜色</string>
-    <string name="navigation_bar_glow_tint_summary">当你按下一个按键时，它的背景会发光。使用该选项来改变发光的颜色。</string>
+    <string name="navigation_bar_glow_tint_summary">当你按下一个按键时，它的背景会发光。
+    使用该选项来改变发光的颜色。
+    </string>
     <string name="glow_times_title">按键发光动画</string>
     <string name="glow_times_off">关闭</string>
     <string name="glow_times_superquick">超快</string>
@@ -491,7 +544,9 @@
     <string name="navbar_widgets_shiftRight">右移</string>
     <string name="navbar_widgets_delete">删除小部件</string>
     <string name="navigation_bar_menu_arrow_keys_title">箭头按键</string>
-    <string name="navigation_bar_menu_arrow_keys_summary">在导航栏显示箭头按键用于准确定位输入光标或选择菜单</string>
+    <string name="navigation_bar_menu_arrow_keys_summary">导航栏显示箭头按键，
+    在输入状态下用于准确定位输入光标
+    </string>
     <string name="statusbar_hide_title">隐藏状态栏</string>
     <string name="statusbar_hide_summary">选中将完全隐藏状态栏</string>
     <string name="navigation_bar_alpha_title">状态栏与导航栏透明度</string>
@@ -571,8 +626,12 @@
     <string name="ribbon_left_enable_title">启用左侧滑动</string>
     <string name="ribbon_right_enable_title">启用右侧滑动</string>
     <string name="ribbon_bottom_enable_title">启用底部滑动</string>
-    <string name="ribbon_bottom_warning_title">当导航栏启用时无法使用底部滑动，必须使导航栏自动隐藏或始终隐藏。</string>
-    <string name="ribbon_bottom_warning_hiding">当启用导航栏自动隐藏时，长按滑动区域显示操作区。</string>
+    <string name="ribbon_bottom_warning_title">当导航栏启用时无法使用底部滑动，
+    必须使导航栏自动隐藏或始终隐藏。
+    </string>
+    <string name="ribbon_bottom_warning_hiding">当启用导航栏自动隐藏时，
+    长按滑动区域显示操作区。
+    </string>
     <string name="ribbon_button_colorize_title">图标颜色匹配文字颜色</string>
     <string name="ribbon_color_title">操作区颜色</string>
     <string name="text_color_title">应用程序文字颜色</string>
@@ -614,9 +673,12 @@
     <string name="led_keep_app">保持</string>
     <string name="led_custom_title">自定义 LED 程序</string>
     <string name="led_custom_message">"你想要变更应用程序: "</string>
+
     <string name="led_test_notification">测试 LED</string>
     <string name="led_test_notification_message_now">"现在测试应用程序： "</string>
-    <string name="led_test_notification_message_note">". 请关闭屏幕后观察 LED 灯。在你观察完毕之前不要点击确定按钮。"</string>
+    <string name="led_test_notification_message_note">". 请关闭屏幕后观察 LED 灯。
+    在你观察完毕之前不要点击确定按钮。"
+    </string>
     <string name="led_test_ok">确定</string>
     <string name="title_charging_led_on">充电指示灯（需重启）</string>
     <string name="led_change_brightness">更改亮度</string>
@@ -626,7 +688,8 @@
     <string name="increasing_ring_title">铃声渐响</string>
     <string name="checkbox_increasing_ring">启用</string>
     <string name="increasing_ring_min_volume_title">铃声开始音量</string>
-    <string name="increasing_ring_volume_notice">通知：\n由于铃声开始音量高于当前已设定音量，铃声将使用当前已设定音量播放。</string>
+    <string name="increasing_ring_volume_notice">通知：\n由于铃声开始音量高于当前已设定音量，
+    铃声将使用当前已设定音量播放。</string>
     <string name="increasing_ring_interval_title">渐进间隔</string>
     <string name="increasing_ring_interval_eachring">每次铃声重播时</string>
     <string name="increasing_ring_interval_half_second">0.5 秒</string>
@@ -654,10 +717,16 @@
     <string name="flip_action_positive">确定</string>
     <string name="flip_dialog_title">功能说明</string>
     <string name="flip_dialog_msg">
-        设备将在它正面朝下后自动进入所设定的振动或静音模式。在反转1.5秒后（默认）进入所选模式。在开启屏幕15秒后（默认）保持所选模式。备注：**必须在正面依旧朝下的情况下开启屏幕并超过所设定的“屏幕超时时间”才可保持。
+        设备将在它正面朝下后自动进入所设定的振动或静音模式。在反转1.5秒后（默认）进入所选模式。
+        在开启屏幕15秒后（默认）保持所选模式。
+        备注：
+        **必须在正面依旧朝下的情况下开启屏幕并超过所设定的“屏幕超时时间”才可保持。
     </string>
     <string name="summary_phone_flip_mode">来电响铃时翻转进入静音状态</string>
     <string name="title_phone_flip_mode">来电响铃静音</string>
+    <string name="vibrations_category">振动</string>
+    <string name="vibrate_intensity_title">最小持续振动时间</string>
+    <string name="vibrate_intensity_def">默认</string>
 
     <!-- Lockscreen 锁屏 -->
     <string name="lock_widgets_short">锁屏界面小部件</string>
@@ -666,6 +735,7 @@
     <string name="lockscreen_music_cat">音乐</string>
     <string name="lockscreen_weather_cat">天气</string>
     <string name="lockscreen_calendar_cat">日历</string>
+
     <string name="lockscreen_menu_unlock_title">菜单键解锁</string>
     <string name="lockscreen_menu_unlock_summary">通过菜单键解锁屏幕</string>
     <string name="lockscreen_auto_rotate_title">允许锁屏时旋转</string>
@@ -696,6 +766,8 @@
     <string name="lockscreen_wallpaper_remove">移除锁屏背景</string>
     <string name="lockscreen_text_color_title">锁屏文字颜色</string>
     <string name="lockscreen_text_color_summary">设置锁屏时文字颜色</string>
+    <string name="lockscreen_color_title">锁屏主题颜色</string>
+    <string name="lockscreen_color_summary">设置锁屏界面的大部分元素颜色</string>
     <string name="lockscreen_weather_title">启用</string>
     <string name="lockscreen_weather_summary">锁屏中显示天气，你需要在ROM控制中开启天气服务</string>
     <string name="lockscreen_weather_type_title">锁屏天气风格</string>
@@ -1064,7 +1136,7 @@
     <string name="dynamic_changelog_title">动态更新日志</string>
     <string name="dynamic_changelog_summary">从Gerrit实例拉取交互式更新日志</string>
 
-    <!-- Animation Controls 动画控制-->
+    <!-- Animation Controls 动画控制 -->
     <string name="title_animation_controls">动画</string>
     <string name="activity_open_title">页面打开动画</string>
     <string name="activity_close_title">页面关闭动画</string>
@@ -1080,4 +1152,66 @@
     <string name="title_animation_no_override">防止应用程序覆盖</string>
     <string name="summary_animation_no_override">防止应用程序内部的动画覆盖。</string>
     <string name="animation_duration_default">默认</string>
+
+    <!-- Active Display 主动显示 -->
+    <string name="ad_enable_title">启用</string>
+    <string name="ad_enable_summary_on">主动显示已启用</string>
+    <string name="ad_enable_summary_off">主动显示已禁用</string>
+    <string name="ad_text_title">通知文字</string>
+    <string name="ad_text_summary">显示环形通知文字</string>
+    <string name="ad_all_notifications_title">全部通知</string>
+    <string name="ad_all_notifications_summary">显示全部通知，包括正在进行中的通知、不可清除的通知。</string>
+    <string name="ad_hide_low_priority_title">隐藏低优先级</string>
+    <string name="ad_hide_low_priority_summary">隐藏低优先级的通知，如Google Now。</string>
+    <string name="ad_pocket_mode_title">口袋模式</string>
+    <string name="ad_pocket_mode_summary">当你从口袋里取出设备时显示主动显示通知。</string>
+    <string name="ad_redisplay_title">重新显示通知</string>
+    <string name="ad_customizations_title">自定义</string>
+    <string name="ad_excluded_apps_title">排除程序</string>
+    <string name="ad_excluded_apps_summary">主动显示状态下排除的程序将不显示</string>
+    <string name="ad_sunlight_mode_title">日光模式</string>
+    <string name="ad_sunlight_mode_summary">当大面积受到强烈光线时反转颜色，如阳光直射时。</string>
+    <string name="ad_brightness_title">通知亮度</string>
+    <string name="ad_brightness_summary">未启用自动亮度时通知的亮度等级。</string>
+    <string name="ad_show_date_title">显示日期</string>
+    <string name="ad_show_date_summary">显示日期在时钟之上</string>
+    <string name="ad_show_ampm_title">显示上午/下午</string>
+    <string name="ad_show_ampm_summary">在使用12小时制时显示上午/下午</string>
+    <string name="ad_redisplay_never">永不</string>
+    <string name="ad_redisplay_1m">1 分钟</string>
+    <string name="ad_redisplay_5m">5 分钟</string>
+    <string name="ad_redisplay_15m">15 分钟</string>
+    <string name="ad_redisplay_30m">30 分钟</string>
+    <string name="ad_redisplay_1h">1 小时</string>
+    <string name="ad_redisplay_2h">2 小时</string>
+    <string name="ad_redisplay_5h">5 小时</string>
+    <string name="ad_pocket_mode_off">关闭</string>
+    <string name="ad_pocket_mode_notifications">仅通知</string>
+    <string name="ad_pocket_mode_always">始终</string>
+
+    <!-- Hardware keys 实体键 -->
+    <string name="hardware_keys_enable_custom_title">允许自定义按键</string>
+    <string name="hardware_keys_home_key_title">主屏幕键</string>
+    <string name="hardware_keys_menu_key_title">菜单键</string>
+    <string name="hardware_keys_assist_key_title">搜索键</string>
+    <string name="hardware_keys_appswitch_key_title">近期任务键</string>
+    <string name="hardware_keys_volume_keys_title">音量键</string>
+    <string name="hardware_keys_short_press_title">短按动作</string>
+    <string name="hardware_keys_long_press_title">长按动作</string>
+    <string name="hardware_keys_double_tap_title">双击动作</string>
+    <string name="hardware_keys_show_overflow_title">显示简化按钮</string>
+    <string name="hardware_keys_show_overflow_summary">在应用程序中显示简化的菜单按钮（3个点）</string>
+    <string name="hardware_keys_show_overflow_toast_enable">应用程序重新启动前简化按钮可能仍然没有显示</string>
+    <string name="hardware_keys_show_overflow_toast_disable">应用程序重新启动前简化按钮可能仍然没有隐藏</string>
+    <string name="hardware_keys_action_nothing">无动作</string>
+    <string name="hardware_keys_action_menu">打开/关闭菜单</string>
+    <string name="hardware_keys_action_app_switch">近期应用程序切换</string>
+    <string name="hardware_keys_action_search">搜索助手</string>
+    <string name="hardware_keys_action_voice_search">语音搜索</string>
+    <string name="hardware_keys_action_in_app_search">应用内搜索</string>
+
+    <!-- Fast Charge 快速充电 -->
+    <string name="fast_charge_not_supported_title">不支持快速充电</string>
+    <string name="fast_charge_not_supported">当前内核不支持快速充电。</string>
+
 </resources>

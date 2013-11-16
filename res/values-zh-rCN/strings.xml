@@ -13,6 +13,7 @@
     <string name="header_navbar">导航栏</string>
     <string name="toggles_layout">开关</string>
     <string name="general_ui">常规界面</string>
+    <string name="statusbar_notifications">通知栏</string>
     <string name="clock">时钟</string>
     <string name="battery">电量</string>
     <string name="signal">信号</string>
@@ -32,6 +33,7 @@
     <!-- Activity titles defined in AndroidManifest.xml Activity标题 -->
     <string name="title_about">关于 AOKP</string>
     <string name="title_ui">常规界面设置</string>
+    <string name="title_statusbar_notifications">通知栏设置</string>
     <string name="title_statusbar_clock">状态栏时钟</string>
     <string name="title_statusbar_toggles">状态栏开关</string>
     <string name="title_statusbar_battery">状态栏电量</string>
@@ -55,6 +57,7 @@
     <!-- Header Summaries 标题说明 -->
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_notifications">@null</string>
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_battery">@null</string>
     <string name="header_summary_signal">@null</string>

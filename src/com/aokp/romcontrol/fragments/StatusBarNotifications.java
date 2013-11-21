@@ -58,7 +58,6 @@ public class StatusBarNotifications extends AOKPPreferenceFragment implements On
     private static final CharSequence PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final CharSequence PREF_IME_SWITCHER = "ime_switcher";
     private static final CharSequence PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
-    private static final CharSequence PREF_NOTIFICATION_VIBRATE = "notification";
     private static final CharSequence PREF_STATUSBAR_HIDDEN = "statusbar_hidden";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
@@ -119,8 +118,7 @@ public class StatusBarNotifications extends AOKPPreferenceFragment implements On
         mVibrateOnExpand.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.VIBRATE_NOTIF_EXPAND, true));
         if (!hasVibration) {
-            ((PreferenceGroup) findPreference(PREF_NOTIFICATION_VIBRATE))
-                    .removePreference(mVibrateOnExpand);
+            prefs.removePreference(mVibrateOnExpand);
         }
 
         mStatusBarHide = (CheckBoxPreference) findPreference(PREF_STATUSBAR_HIDDEN);

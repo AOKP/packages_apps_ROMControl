@@ -25,4 +25,13 @@
             android:defaultValue="true"
             />
 
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/battery_percentage_indicator_title"
+            android:summary="@string/battery_percentage_indicator_summary"
+            android:key="battery_percentage_indicator"
+            android:defaultValue="false"
+            />
 </LinearLayout>

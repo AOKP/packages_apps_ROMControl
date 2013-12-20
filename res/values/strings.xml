@@ -96,5 +96,7 @@
     <string name="category_advanced">Advanced</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Volume Smash Rotation</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
+    <string name="battery_percentage_indicator_title">Show battery percentage indicator</string>
+    <string name="battery_percentage_indicator_summary">Show battery percentage indicator front of battery icon</string>
 
 </resources>

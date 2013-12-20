@@ -88,4 +88,6 @@
     <string name="category_advanced">Pokročilé</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>
+    <string name="battery_percentage_indicator_title">Zobrazit procenta baterie</string>
+    <string name="battery_percentage_indicator_summary">Zobrazit ukazatel procent před ikonou baterie</string>
 </resources>

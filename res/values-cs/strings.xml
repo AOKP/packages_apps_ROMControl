@@ -95,11 +95,6 @@
     <string name="title_hardware_keys_switch_app">Přehled aplikací</string>
     <string name="title_hardware_keys_switch_app_long_press">Přehled aplikací - dlouhý stisk</string>
     <string name="title_setting_enable_custom_hardware_keys">Přizpůsobit hardwarová tlačítka</string>
-    <!-- Statusbar Notifications -->
-    <string name="adb_notify">Upozornění na ladění USB</string>
-    <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
-    <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
-    <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
     <!-- Installer -->
     <string name="persist_options">Perzistence</string>
     <string name="persist_enable">Zapnout perzistenci</string>
@@ -108,4 +103,9 @@
     <string name="persist_prop_density_summary">Zachovat LCD densitu</string>
     <string name="persist_file_hosts">Uložit hosts</string>
     <string name="persist_file_hosts_summary">Zachovat soubor hosts</string>
+    <!-- Statusbar Notifications -->
+    <string name="adb_notify">Upozornění na ladění USB</string>
+    <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
+    <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
+    <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
 </resources>

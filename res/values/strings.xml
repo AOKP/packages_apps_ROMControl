@@ -76,6 +76,17 @@
     <string name="set">Set</string>
     <string name="ics_color">Holo</string>
 
+    <!-- General -->
+    <string name="brightness_slider_title">Statusbar brightness slider</string>
+    <string name="brightness_slider_summary">When enabled, this option will allow you to change the brightness by
+        sliding your finger across the Statusbar. Note: Will not be active when auto-brightness is on
+    </string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
+    <string name="category_advanced">Advanced</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">Volume Smash Rotation</string>
+    <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
+
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>
     <string name="title_hardware_keys_home_double_tap">Home - double tap</string>
@@ -87,14 +98,7 @@
     <string name="title_hardware_keys_switch_app_long_press">Recents - long press</string>
     <string name="title_setting_enable_custom_hardware_keys">Customize hardware keys</string>
 
-    <string name="brightness_slider_title">Statusbar brightness slider</string>
-    <string name="brightness_slider_summary">When enabled, this option will allow you to change the brightness by
-        sliding your finger across the Statusbar. Note: Will not be active when auto-brightness is on
-    </string>
-    <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
-    <string name="category_advanced">Advanced</string>
-    <string name="title_hardware_keys_volume_keys_double_tap">Volume Smash Rotation</string>
-    <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
-
+    <!-- Statusbar Notifications -->
+    <string name="ime_switcher_title">Show IME Switcher</string>
+    <string name="ime_switcher_summary">In Statusbar while typing</string>
 </resources>

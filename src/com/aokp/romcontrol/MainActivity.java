@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.aokp.romcontrol.fragments.AboutFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
+import com.aokp.romcontrol.fragments.InstallerFragment;
 import com.aokp.romcontrol.fragments.UncatagorizedSettingsFragment;
 
 
@@ -72,6 +73,10 @@ public class MainActivity extends Activity
 
             case 2:
                 fragment = new HardwareKeysFragment();
+                break;
+
+            case 3:
+                fragment = new InstallerFragment();
                 break;
         }
         return fragment;

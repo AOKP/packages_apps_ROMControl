@@ -11,9 +11,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.aokp.romcontrol.fragments.AboutFragment;
+import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
-import com.aokp.romcontrol.fragments.UncatagorizedSettingsFragment;
 
 
 public class MainActivity extends Activity
@@ -68,7 +68,7 @@ public class MainActivity extends Activity
                 break;
 
             case 1:
-                fragment = new UncatagorizedSettingsFragment();
+                fragment = new GeneralSettingsFragment();
                 break;
 
             case 2:

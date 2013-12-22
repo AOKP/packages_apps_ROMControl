@@ -12,8 +12,8 @@
     <string name="category_about_aokp">About</string>
     <string name="category_hardware_keys">Hardware Keys</string>
 
-    <!-- menu items -->
-    <string name="menu_show_drawer_icon">Show in app drwer</string>
+    <!-- Menu Items -->
+    <string name="menu_show_drawer_icon">Show in app drawer</string>
 
     <!-- About -->
     <string name="devs">The Crew</string>

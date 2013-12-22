@@ -1,4 +1,4 @@
-package com.aokp.romcontrol;
+package com.aokp.romcontrol.fragments;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import com.aokp.romcontrol.R;
 
 ;
 

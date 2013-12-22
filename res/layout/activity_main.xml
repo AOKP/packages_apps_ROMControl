@@ -25,6 +25,6 @@
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:name="com.aokp.romcontrol.NavigationDrawerFragment" />
+        android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
 
 </android.support.v4.widget.DrawerLayout>

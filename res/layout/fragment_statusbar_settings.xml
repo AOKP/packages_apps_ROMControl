@@ -9,6 +9,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:title="@string/adb_notify"
+            android:summary="@string/adb_notify_summary"
+            android:key="adb_notify"
+            android:defaultValue="true"
+            />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
             android:title="@string/ime_switcher_title"
             android:summary="@string/ime_switcher_summary"
             android:key="ime_switcher"

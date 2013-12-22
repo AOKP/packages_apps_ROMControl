@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.aokp.romcontrol.fragments.AboutFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
-import com.aokp.romcontrol.fragments.UncatagorizedSettingsFragment;
+import com.aokp.romcontrol.fragments.GeneralFragment;
 
 
 public class MainActivity extends Activity
@@ -67,7 +67,7 @@ public class MainActivity extends Activity
                 break;
 
             case 1:
-                fragment = new UncatagorizedSettingsFragment();
+                fragment = new GeneralFragment();
                 break;
 
             case 2:

@@ -3,16 +3,12 @@ package com.aokp.romcontrol.widgets;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
-import android.graphics.Point;
 import android.net.Uri;
-import android.preference.Preference;
 import android.util.AttributeSet;
-import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.aokp.romcontrol.R;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
@@ -20,7 +16,7 @@ import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class DeveloperPreference extends Preference {
+public class DeveloperPreference extends LinearLayout {
     private static final String TAG = "DeveloperPreference";
     public static final String GRAVATAR_API = "http://www.gravatar.com/avatar/";
     public static int mDefaultAvatarSize = 400;
@@ -36,10 +32,22 @@ public class DeveloperPreference extends Preference {
     private String donateLink;
     private String githubLink;
     private String devEmail;
-    private final Display mDisplay;
+
+    public DeveloperPreference(Context context) {
+        this(context, null);
+    }
 
     public DeveloperPreference(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
+    }
+
+    @Override
+    public boolean isInEditMode() {
+        return true;
+    }
+
+    public DeveloperPreference(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
 
         TypedArray typedArray = null;
         try {
@@ -54,25 +62,23 @@ public class DeveloperPreference extends Preference {
                 typedArray.recycle();
             }
         }
-        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
-        mDisplay = wm.getDefaultDisplay();
-    }
 
-    @Override
-    protected View onCreateView(ViewGroup parent) {
-        super.onCreateView(parent);
-        View layout = View.inflate(getContext(), R.layout.dev_card, null);
+        /**
+         * Inflate views
+         */
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.dev_card, this, true);
+
         twitterButton = (ImageView) layout.findViewById(R.id.twitter_button);
         donateButton = (ImageView) layout.findViewById(R.id.donate_button);
         githubButton = (ImageView) layout.findViewById(R.id.github_button);
         devName = (TextView) layout.findViewById(R.id.name);
         photoView = (ImageView) layout.findViewById(R.id.photo);
-        return layout;
-    }
 
-    @Override
-    protected void onBindView(View view) {
-        super.onBindView(view);
+        /**
+         * Initialize buttons
+         */
         if (donateLink != null) {
             final OnClickListener openDonate = new OnClickListener() {
                 @Override
@@ -104,20 +110,20 @@ public class DeveloperPreference extends Preference {
         }
 
         if (twitterName != null) {
-            final OnPreferenceClickListener openTwitter = new OnPreferenceClickListener() {
+            final OnClickListener openTwitter = new OnClickListener() {
+
                 @Override
-                public boolean onPreferenceClick(Preference preference) {
+                public void onClick(View v) {
                     Uri twitterURL = Uri.parse("http://twitter.com/#!/" + twitterName);
                     final Intent intent = new Intent(Intent.ACTION_VIEW, twitterURL);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     getContext().startActivity(intent);
-                    return true;
                 }
             };
 
             // changed to clicking the preference to open twitter
             // it was a hit or miss to click the twitter bird
-            this.setOnPreferenceClickListener(openTwitter);
+            this.setOnClickListener(openTwitter);
             UrlImageViewHelper.setUrlDrawable(this.photoView,
                     getGravatarUrl(devEmail),
                     R.drawable.ic_null,

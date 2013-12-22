@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:aokp="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView">
+
+    <LinearLayout
+            style="@style/settingsFragmentStyle">
+
+        <!-- AOKP -->
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                android:title="@string/aokp"
+                style="@style/defaultSize"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                aokp:nameDev="AOKP"
+                aokp:twitterHandle="AOKP_ROM"
+                aokp:githubLink="@string/github_aokp"
+                aokp:donateLink="@string/donate_aokp"
+                aokp:emailDev="github@aokp.co"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        <com.aokp.romcontrol.settings.UrlSetting
+                android:id="@+id/aokp"
+                android:title="@string/aokp_website_title"
+                android:summary="@string/aokp_website_summary"
+                aokp:url="@string/url_aokp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.settings.UrlSetting
+                android:id="@+id/aokp_review"
+                android:title="@string/aokp_review_title"
+                android:summary="@string/aokp_review_summary"
+                aokp:url="@string/url_aokp_gerrit"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.settings.UrlSetting
+                android:id="@+id/aokp_irc"
+                android:title="@string/aokp_irc_title"
+                android:summary="@string/aokp_irc_summary"
+                aokp:url="@string/url_aokp_irc"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.settings.UrlSetting
+                android:id="@+id/aokp_mgerrit_changelog"
+                android:title="@string/mgerrit_changelog_title"
+                android:summary="@string/mgerrit_changelog_summary"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <!-- devs -->
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                android:title="@string/devs"
+                style="@style/defaultSize"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Roman"
+                aokp:nameDev="romanbb"
+                aokp:twitterHandle="romanbb"
+                aokp:githubLink="@string/github_roman"
+                aokp:emailDev="romanbirg@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Whitehawkx"
+                aokp:nameDev="Whitehawkx"
+                aokp:twitterHandle="whitehawkx"
+                aokp:githubLink="@string/github_whitehawk"
+                aokp:emailDev="xxwhitehawk@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="kwes"
+                aokp:nameDev="kwes"
+                aokp:twitterHandle="kwes1020"
+                aokp:githubLink="@string/github_kwes"
+                aokp:emailDev="kwesley1020@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Zaphod-Beeble"
+                aokp:nameDev="Zaphod-Beeble"
+                aokp:twitterHandle="Dont_Panic_Zaph"
+                aokp:githubLink="@string/github_zaph"
+                aokp:emailDev="mwilson@acesappraisal.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="ProTekk"
+                aokp:nameDev="ProTekk"
+                aokp:twitterHandle="protekkfzs"
+                aokp:githubLink="@string/github_protekk"
+                aokp:emailDev="fzservers@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Khas Mek"
+                aokp:nameDev="Khas Mek"
+                aokp:twitterHandle="KhasMek"
+                aokp:githubLink="@string/github_khasmek"
+                aokp:emailDev="boushh@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="sethyx"
+                aokp:nameDev="sethyx"
+                aokp:twitterHandle="sethyx"
+                aokp:githubLink="@string/github_sethyx"
+                aokp:emailDev="sethyx@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="MarcLandis"
+                aokp:nameDev="MarcLandis"
+                aokp:twitterHandle="MarcLandis"
+                aokp:githubLink="@string/github_marclandis"
+                aokp:emailDev="dirk.rettschlag@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="justreboot"
+                aokp:nameDev="Just Reboot"
+                aokp:twitterHandle="just_reboot"
+                aokp:emailDev="deidein.justreboot@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="nitroz"
+                aokp:nameDev="Nitroz"
+                aokp:twitterHandle="NitrozK"
+                aokp:emailDev="kcolbeck1@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="sixstringsg"
+                aokp:nameDev="sixstringsg"
+                aokp:twitterHandle="sixstringsg"
+                aokp:githubLink="@string/github_sixstringsg"
+                aokp:emailDev="sixstringsg@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="adamthecashew"
+                aokp:nameDev="adamthecashew"
+                aokp:twitterHandle="adamthecashew"
+                aokp:githubLink="@string/github_adam"
+                aokp:emailDev="adammfisch@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="xoom"
+                aokp:nameDev="xoomdev"
+                aokp:twitterHandle="xoomdev"
+                aokp:githubLink="@string/github_xoom"
+                aokp:emailDev="roberj13@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="stevespear"
+                aokp:nameDev="Stevespear426"
+                aokp:twitterHandle="stevespeartweet"
+                aokp:githubLink="@string/github_stevespear"
+                aokp:emailDev="Stephen.k.spear@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="birdman"
+                aokp:nameDev="birdman"
+                aokp:twitterHandle="_mrbirdman_"
+                aokp:githubLink="@string/github_birdman"
+                aokp:emailDev="thebirdman.08@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="akellar"
+                aokp:nameDev="akellar"
+                aokp:twitterHandle="AKBraves"
+                aokp:githubLink="@string/github_akellar"
+                aokp:emailDev="apkellar@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="bajee11"
+                aokp:nameDev="bajee11"
+                aokp:twitterHandle="bajee11"
+                aokp:githubLink="@string/github_bajee11"
+                aokp:emailDev="bajee11@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="DAGr8"
+                aokp:nameDev="DAGr8"
+                aokp:twitterHandle="Saurom_Projekt"
+                aokp:githubLink="@string/github_DAGr8"
+                aokp:emailDev="renocustom@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="dhacker29"
+                aokp:nameDev="dhacker29"
+                aokp:twitterHandle="dhacker29"
+                aokp:githubLink="@string/github_dhacker29"
+                aokp:emailDev="davidhackerdvm@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="graffixnyc"
+                aokp:nameDev="graffixnyc"
+                aokp:twitterHandle="graffixnyc"
+                aokp:githubLink="@string/github_graffixnyc"
+                aokp:emailDev="graffixnyc@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="jbirdvegas"
+                aokp:nameDev="JBirdVegas"
+                aokp:twitterHandle="JBird_Vegas"
+                aokp:githubLink="@string/github_jbirdvegas"
+                aokp:emailDev="jbirdvegas@aokp.co"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="k900"
+                aokp:nameDev="K900"
+                aokp:twitterHandle="AOKP_ROM"
+                aokp:githubLink="@string/github_k900"
+                aokp:emailDev="k0009000@gmail.co"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="rohan32"
+                aokp:nameDev="rohan32"
+                aokp:twitterHandle="rohanXm"
+                aokp:githubLink="@string/github_rohan32"
+                aokp:emailDev="rohan@rmathur.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="willdeberry"
+                aokp:nameDev="willdeberry"
+                aokp:twitterHandle="willdeberry"
+                aokp:githubLink="@string/github_willdeberry"
+                aokp:emailDev="willdeberry@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="bmc08gt"
+                aokp:nameDev="bmc08gt"
+                aokp:twitterHandle="bmc08gt"
+                aokp:githubLink="@string/github_bmc08gt"
+                aokp:emailDev="brandon.mcansh@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="tdm"
+                aokp:nameDev="tdm"
+                aokp:twitterHandle="AOKP_ROM"
+                aokp:githubLink="@string/github_tdm"
+                aokp:emailDev="tdm.code@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="qnhoang81"
+                aokp:nameDev="qnhoang81"
+                aokp:twitterHandle="AOKP_ROM"
+                aokp:githubLink="@string/github_qnhoang81"
+                aokp:emailDev="qnhoang81@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Hashcode"
+                aokp:nameDev="Hashcode"
+                aokp:twitterHandle="Hashcode0f"
+                aokp:githubLink="@string/github_hashcode"
+                aokp:emailDev="hashcode0f@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="scar45"
+                aokp:nameDev="scar45"
+                aokp:twitterHandle="scar45"
+                aokp:githubLink="@string/github_scar45"
+                aokp:emailDev="scar45@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="championswimmer"
+                aokp:nameDev="championswimmer"
+                aokp:twitterHandle="championswimmer"
+                aokp:githubLink="@string/github_championswimmer"
+                aokp:emailDev="championswimmer@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="kecinzer"
+                aokp:nameDev="Petr Reznicek"
+                aokp:twitterHandle="kecinzer"
+                aokp:githubLink="@string/github_kecinzer"
+                aokp:emailDev="kecinzer@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+    </LinearLayout>
+</ScrollView>

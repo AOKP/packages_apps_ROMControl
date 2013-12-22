@@ -76,7 +76,7 @@ public final class UrlImageViewHelper {
 //        Log.v(Constants.LOGTAG,targetWidth);
 //        Log.v(Constants.LOGTAG,targetHeight);
         try {
-            BitmapFactory.Options o = new BitmapFactory.Options();
+            Options o = new Options();
             o.inJustDecodeBounds = true;
             FileInputStream stream = new FileInputStream(filename);
             BitmapFactory.decodeStream(stream, null, o);

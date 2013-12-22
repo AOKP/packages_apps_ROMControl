@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- * 0 - Nothing
+         * 1 - Menu
+         * 2 - App-switch
+         * 3 - Search
+         * 4 - Voice search
+         * 5 - In-app search -->
+    <string-array name="setting_keyActionEntries" translatable="false">
+        <item>@string/setting_key_home_long_press_action_nothing</item>
+        <item>@string/setting_key_home_long_press_action_menu</item>
+        <item>@string/setting_key_home_long_press_action_appswitch</item>
+        <item>@string/setting_key_home_long_press_action_search</item>
+        <item>@string/setting_key_home_long_press_action_voicesearch</item>
+        <item>@string/setting_key_home_long_press_action_inappsearch</item>
+    </string-array>
+    <string-array name="setting_keyActionValues" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="setting_key_home_long_press_action_nothing">Nothing</string>
+    <string name="setting_key_home_long_press_action_menu">Menu</string>
+    <string name="setting_key_home_long_press_action_appswitch">App-switch</string>
+    <string name="setting_key_home_long_press_action_search">Search</string>
+    <string name="setting_key_home_long_press_action_voicesearch">Voice search</string>
+    <string name="setting_key_home_long_press_action_inappsearch">In-app search</string>
+</resources>

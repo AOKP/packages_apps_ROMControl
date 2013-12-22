@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+              style="?android:attr/listSeparatorTextViewStyle"
+              android:id="@+id/title"
+              android:visibility="gone"
+            />
+
+    <View style="@style/settingSeparator"/>
+</merge>

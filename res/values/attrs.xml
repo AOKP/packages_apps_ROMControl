@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ListPreferenceMultiSelect">
-        <attr format="string" name="checkAll" />
-        <attr format="string" name="separator" />
-    </declare-styleable>
 
     <declare-styleable name="DeveloperPreference">
-        <attr name="twitterHandle" format="string" />
-        <attr name="nameDev" format="string" />
-        <attr name="donateLink" format="string" />
-        <attr name="githubLink" format="string" />
-        <attr name="emailDev" format="string" />
+        <attr name="twitterHandle" format="string"/>
+        <attr name="nameDev" format="string"/>
+        <attr name="donateLink" format="string"/>
+        <attr name="githubLink" format="string"/>
+        <attr name="emailDev" format="string"/>
     </declare-styleable>
 
-    <declare-styleable name="ImageListPreference">
-        <attr name="summaryImage" format="reference" />
-        <attr name="entryImages" format="reference" />
+    <attr name="table" format="string"/>
+
+    <declare-styleable name="UrlSetting">
+        <attr name="url" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="CheckboxSetting">
+        <attr name="descriptionOn" format="string"/>
+        <attr name="descriptionOff" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorPickerSetting">
+        <attr name="colorPickerDefaultValue" format="color"/>
+        <attr name="colorPickerShowAlphaSlider" format="boolean"/>
+    </declare-styleable>
+
 
 </resources>

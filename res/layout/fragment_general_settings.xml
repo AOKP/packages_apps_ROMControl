@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/settingsFragmentStyle">
+
+    <com.aokp.romcontrol.widgets.CategorySeparator
+            style="@style/defaultSize"
+            android:title="@string/category_general"/>
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/brightness_slider_title"
+            android:summary="@string/brightness_slider_summary"
+            android:key="statusbar_enable_brightness_slider"
+            android:defaultValue="true"
+            />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/wakeup_when_plugged_unplugged_title"
+            android:summary="@string/wakeup_when_plugged_unplugged_summary"
+            android:key="wakeup_when_plugged_unplugged"
+            android:defaultValue="true"
+            />
+</LinearLayout>

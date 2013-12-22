@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout style="@style/settingsFragmentStyle">
+
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                android:title="@string/category_hardware_keys"
+                style="@style/defaultSize"/>
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/title_setting_enable_custom_hardware_keys"
+                android:key="hardware_key_rebinding"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_home_long_press"
+                android:title="@string/title_hardware_keys_home_long_press"
+                android:key="key_home_long_press_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_home_double_tap"
+
+                android:title="@string/title_hardware_keys_home_double_tap"
+                android:key="key_home_double_tap_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_menu"
+
+                android:title="@string/title_hardware_keys_menu"
+                android:key="key_menu_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_menu_long_press"
+
+                android:title="@string/title_hardware_keys_menu_long_press"
+                android:key="key_menu_long_press_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_search"
+
+                android:title="@string/title_hardware_keys_search"
+                android:key="key_assist_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_search_long_press"
+
+                android:title="@string/title_hardware_keys_search_long_press"
+                android:key="key_assist_long_press_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_recents"
+
+                android:title="@string/title_hardware_keys_switch_app"
+                android:key="key_app_switch_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_recents_long_press"
+
+                android:title="@string/title_hardware_keys_switch_app_long_press"
+                android:key="key_app_switch_long_press_action"
+
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
+
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                android:title="@string/category_advanced"
+                style="@style/defaultSize"/>
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/title_hardware_keys_volume_keys_double_tap"
+                android:summary="@string/summary_hardware_keys_volume_keys_double_tap"
+                android:key="volume_keys_double_tap_action"
+                android:defaultValue="true"
+                />
+    </LinearLayout>
+</ScrollView>

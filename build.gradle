@@ -10,12 +10,11 @@ apply plugin: 'android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
-    compile 'com.android.support:support-v4:+'
 }
 
 android {
     compileSdkVersion 119
-    buildToolsVersion "19"
+    buildToolsVersion "19.0.0"
 
     sourceSets {
         main {
@@ -41,3 +40,9 @@ android {
         release.setRoot('build-types/release')
     }
 }
+
+dependencies {
+    compile 'com.android.support:support-v4:19.0.0'
+    compile 'com.android.support:appcompat-v7:+'
+}
+

@@ -73,6 +73,10 @@ public class MainActivity extends Activity
             case 2:
                 fragment = new HardwareKeysFragment();
                 break;
+
+            case 3:
+                fragment = new StatusbarSettingsFragment();
+                break;
         }
         return fragment;
     }

@@ -11,6 +11,7 @@
     <string name="category_statusbar">Statusbar</string>
     <string name="category_about_aokp">About</string>
     <string name="category_hardware_keys">Hardware Keys</string>
+    <string name="category_installer">Installer</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -76,6 +77,12 @@
     <string name="set">Set</string>
     <string name="ics_color">Holo</string>
 
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+    <string name="select_custom_app_title">Select custom application</string>
+    <string name="group_applications">Applications</string>
+
     <!-- General -->
     <string name="brightness_slider_title">Statusbar brightness slider</string>
     <string name="brightness_slider_summary">When enabled, this option will allow you to change the brightness by
@@ -103,4 +110,13 @@
     <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
+
+    <!-- Installer -->
+    <string name="persist_options">Persistence</string>
+    <string name="persist_enable">Enable Persistence</string>
+    <string name="persist_enable_summary">Enable data to persist across installs</string>
+    <string name="persist_prop_density">Persist Density</string>
+    <string name="persist_prop_density_summary">Persist LCD density</string>
+    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts_summary">Persist hosts file</string>
 </resources>

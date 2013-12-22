@@ -98,7 +98,7 @@ public class CheckboxSetting extends BaseSetting implements OnClickListener {
         updateSummary();
     }
 
-    private void setChecked(boolean checked) {
+    public void setChecked(boolean checked) {
         setValue(checked ? "1" : "0");
         mChecked = checked;
         mCheckBox.setChecked(checked);

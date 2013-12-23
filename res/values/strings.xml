@@ -119,4 +119,8 @@
     <string name="persist_prop_density_summary">Persist LCD density</string>
     <string name="persist_file_hosts">Persist Hosts</string>
     <string name="persist_file_hosts_summary">Persist hosts file</string>
+
+    <!-- Device Options -->
+    <string name="category_device_options">Device Options</string>
+
 </resources>

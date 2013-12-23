@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.fragments.AboutFragment;
+import com.aokp.romcontrol.fragments.DeviceOptionsFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
@@ -85,6 +86,11 @@ public class MainActivity extends Activity
             case 4:
                 fragment = new InstallerSettingsFragment();
                 break;
+
+            case 5:
+                fragment = new DeviceOptionsFragment();
+                break;
+
         }
         return fragment;
     }

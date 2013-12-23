@@ -37,5 +37,14 @@
                 android:title="@string/persist_file_hosts"
                 android:summary="@string/persist_file_hosts_summary" />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/persist_file_xposed"
+                android:dependency="enable_persist"
+                android:title="@string/persist_file_xposed"
+                android:summary="@string/persist_file_xposed_summary" />
+
     </LinearLayout>
 </ScrollView>

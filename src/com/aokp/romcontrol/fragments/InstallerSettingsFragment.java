@@ -2,6 +2,7 @@
 package com.aokp.romcontrol.fragments;
 
 import android.app.Fragment;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,13 +31,16 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
 
     public static final String RO_SF_LCD_DENSITY = "ro.sf.lcd_density";
     public static final String ETC_HOSTS = "etc/hosts";
+    public static final String BIN_APP_PROCESS = "bin/app_process";
     public static final String PERSIST_ENABLE = "persist_enable";
     public static final String PERSIST_PROPS = "persist_props";
     public static final String PERSIST_FILES = "persist_files";
+    public static final String PREF_PERSIST_FILE_XPOSED = "persist_file_xposed";
 
     CheckboxSetting mPrefPersistEnable;
     CheckboxSetting mPrefPersistDensity;
     CheckboxSetting mPrefPersistHosts;
+    CheckboxSetting mPrefPersistXposed;
 
     boolean mPersistEnable;
     ArrayList<String> mPersistProps;
@@ -151,6 +155,9 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
         mPrefPersistHosts = (CheckboxSetting) v.findViewById(R.id.persist_file_hosts);
         mPrefPersistHosts.setOnClickListener(this);
 
+        if(!isAppInstalled("de.robv.android.xposed.installer")) {
+            mPrefPersistXposed.setEnabled(false);
+        }
 
         return v;
     }
@@ -195,6 +202,17 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
                     }
                 } else {
                     mPersistFiles.remove(ETC_HOSTS);
+                }
+                break;
+
+
+            case R.id.persist_file_xposed:
+                if (isChecked) {
+                    if (!mPersistFiles.contains(BIN_APP_PROCESS)) {
+                        mPersistFiles.add(BIN_APP_PROCESS);
+                    }
+                } else {
+                    mPersistFiles.remove(BIN_APP_PROCESS);
                 }
                 break;
 
@@ -244,4 +262,15 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
         return ret;
     }
 
+    private boolean isAppInstalled(String packageName) {
+        PackageManager pm = getContext().getPackageManager();
+        boolean installed = false;
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            installed = false;
+        }
+        return installed;
+    }
 }

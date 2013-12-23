@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.aokp.romcontrol.fragments.AboutFragment;
+import com.aokp.romcontrol.fragments.DeviceOptionsFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
@@ -79,6 +80,11 @@ public class MainActivity extends Activity
             case 3:
                 fragment = new StatusbarSettingsFragment();
                 break;
+
+            case 5:
+                fragment = new DeviceOptionsFragment();
+                break;
+
         }
         return fragment;
     }

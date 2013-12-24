@@ -47,7 +47,9 @@ public class UrlSetting extends BaseSetting implements OnClickListener {
 
         addView(mRootView);
         setFocusable(true);
-        setOnClickListener(this);
+        if(mUrl != null) {
+            setOnClickListener(this);
+        }
     }
 
     @Override

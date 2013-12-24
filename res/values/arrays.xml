@@ -5,6 +5,7 @@
         <item>@string/category_general</item>
         <item>@string/category_hardware_keys</item>
         <item>@string/category_statusbar</item>
+        <item>@string/category_toggles</item>
         <!--<item>@string/category_installer</item>-->
     </string-array>
     <string-array name="navigation_drawer_icons">
@@ -12,6 +13,7 @@
         <item>@drawable/ic_rom_control_general</item>
         <item>@drawable/ic_rom_control_hardware_keys</item>
         <item>@drawable/ic_rom_control_signal</item>
+        <item>@drawable/ic_rom_control_toggles</item>
         <!--<item>@drawable/ic_rom_control_installer</item>-->
     </string-array>
 </resources>

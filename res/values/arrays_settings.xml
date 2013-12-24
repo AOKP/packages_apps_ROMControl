@@ -23,6 +23,17 @@
         <item>5</item>
     </string-array>
 
+    <string-array name="setting_toggleStyles" translatable="false">
+        <item>@string/toggles_style_tile</item>
+        <item>@string/toggles_style_traditional</item>
+        <item>@string/toggles_style_scrollable</item>
+    </string-array>
+    <string-array name="setting_toggleStylesValues" translatable="false">
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <string name="setting_key_home_long_press_action_nothing">Nothing</string>
     <string name="setting_key_home_long_press_action_menu">Menu</string>
     <string name="setting_key_home_long_press_action_appswitch">App-switch</string>

@@ -12,6 +12,7 @@
     <string name="category_about_aokp">About</string>
     <string name="category_hardware_keys">Hardware Keys</string>
     <string name="category_installer">Installer</string>
+    <string name="category_toggles">Toggles</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -119,4 +120,20 @@
     <string name="persist_prop_density_summary">Persist LCD density</string>
     <string name="persist_file_hosts">Persist Hosts</string>
     <string name="persist_file_hosts_summary">Persist hosts file</string>
+
+    <!-- Toggles -->
+    <string name="title_toggles">Toggles</string>
+    <string name="toggles_style_tile">Tiles</string>
+    <string name="toggles_style_traditional">Traditional pulldown</string>
+    <string name="toggles_style_scrollable">Traditional Scrollable</string>
+    <string name="toggles_display_close">Close</string>
+
+    <string name="toggles_order_title">Toggle order</string>
+    <string name="toggles_order_summary">Choose the order in which your toggles are displayed</string>
+
+    <string name="toggle_dialog_arrange_title">Toggle setup</string>
+    <string name="toggle_dialog_add_toggles">Select toggles to show</string>
+
+    <string name="toggle_swap_handle_side">Drag handle on right</string>
+    <string name="toggles_style_title">Toggle style</string>
 </resources>

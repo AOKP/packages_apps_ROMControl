@@ -10,6 +10,7 @@
     <string name="category_about_aokp">O AOKP</string>
     <string name="category_hardware_keys">Hardwarová tlačítka</string>
     <string name="category_installer">Instalátor</string>
+    <string name="category_toggles">Přepínače</string>
     <!-- menu items -->
     <string name="menu_show_drawer_icon">Zobrazit v navigační liště</string>
     <!--About-->
@@ -108,4 +109,16 @@
     <string name="persist_prop_density_summary">Zachovat LCD densitu</string>
     <string name="persist_file_hosts">Uložit hosts</string>
     <string name="persist_file_hosts_summary">Zachovat soubor hosts</string>
+    <!-- Toggles -->
+    <string name="title_toggles">Přepínače</string>
+    <string name="toggles_style_tile">Dlaždice</string>
+    <string name="toggles_style_traditional">Tradiční</string>
+    <string name="toggles_style_scrollable">Tradiční (s posunem do stran)</string>
+    <string name="toggles_display_close">Zavřít</string>
+    <string name="toggles_order_title">Pořadí přepínačů</string>
+    <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
+    <string name="toggle_dialog_arrange_title">Nastavení přepínačů</string>
+    <string name="toggle_dialog_add_toggles">Přidat vybrané přepínače</string>
+    <string name="toggle_swap_handle_side">Uchopením vpravo je možné přetahovat</string>
+    <string name="toggles_style_title">Styl přepínačů</string>
 </resources>

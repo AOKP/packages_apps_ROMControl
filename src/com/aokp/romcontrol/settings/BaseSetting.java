@@ -227,7 +227,7 @@ public class BaseSetting extends LinearLayout {
     /**
      * @return the key value which this preference is supposed to represent
      */
-    protected final String getKey() {
+    public final String getKey() {
         return aKey;
     }
 
@@ -274,6 +274,10 @@ public class BaseSetting extends LinearLayout {
 
     public void setOnSettingChangedListener(OnSettingChangedListener listener) {
         this.mOnSettingChangedListener = listener;
+        if(listener != null) {
+            // set initial value
+            listener.onSettingChanged(getTable(), getKey(), null, getValue());
+        }
     }
 
     /**

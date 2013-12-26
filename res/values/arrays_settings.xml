@@ -33,6 +33,16 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string-array name="setting_togglesPerRow" translatable="false">
+        <item>@string/toggles_per_row_three</item>
+        <item>@string/toggles_per_row_four</item>
+        <item>@string/toggles_per_row_five</item>
+    </string-array>
+    <string-array name="setting_togglesPerRowValues" translatable="false">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 
     <string name="setting_key_home_long_press_action_nothing">Nothing</string>
     <string name="setting_key_home_long_press_action_menu">Menu</string>

@@ -11,6 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:id="@+id/toggles_style"
             android:title="@string/toggles_style_title"
             android:key="statusbar_toggles_style"
 
@@ -34,6 +35,18 @@
             android:id="@+id/arrange_toggles"
             android:title="@string/toggles_order_title"
             android:summary="@string/toggles_order_summary"
+            />
+
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_per_row"
+            android:title="@string/toggles_per_row_title"
+            android:key="statusbar_toggles_number_per_row"
+
+            android:entries="@array/setting_togglesPerRow"
+            android:entryValues="@array/setting_togglesPerRowValues"
             />
 
 </LinearLayout>

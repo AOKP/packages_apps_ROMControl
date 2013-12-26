@@ -17,17 +17,17 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.BaseSetting;
-import com.aokp.romcontrol.settings.CheckboxSetting;
+import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
+import com.aokp.romcontrol.settings.SingleChoiceSetting;
 import com.aokp.romcontrol.util.EasyPair;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by roman on 12/23/13.
  */
-public class ToggleSetupFragment extends Fragment implements OnClickListener {
+public class ToggleSetupFragment extends Fragment implements OnClickListener, OnSettingChangedListener {
 
     private static final String TAG = ToggleSetupFragment.class.getSimpleName();
 
@@ -36,6 +36,7 @@ public class ToggleSetupFragment extends Fragment implements OnClickListener {
     ArrayList<String> mToggles;
 
     BaseSetting mEnabledToggles, mArrangeToggles;
+    SingleChoiceSetting mTogglesPerRow, mToggleStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -151,9 +152,13 @@ public class ToggleSetupFragment extends Fragment implements OnClickListener {
         View v = inflater.inflate(R.layout.fragment_toggle_setup, container, false);
 
         mEnabledToggles = (BaseSetting) v.findViewById(R.id.enabled_toggles);
-        mEnabledToggles.setOnClickListener(this);
         mArrangeToggles = (BaseSetting) v.findViewById(R.id.arrange_toggles);
+        mTogglesPerRow = (SingleChoiceSetting) v.findViewById(R.id.toggles_per_row);
+        mToggleStyle = (SingleChoiceSetting) v.findViewById(R.id.toggles_style);
+
+        mEnabledToggles.setOnClickListener(this);
         mArrangeToggles.setOnClickListener(this);
+        mToggleStyle.setOnSettingChangedListener(this);
 
         return v;
     }
@@ -246,5 +251,18 @@ public class ToggleSetupFragment extends Fragment implements OnClickListener {
 
         d.show();
 
+    }
+
+    @Override
+    public void onSettingChanged(String table, String key, String oldValue, String value) {
+        if(table.equals("aokp") && key.equals(mToggleStyle.getKey())) {
+            if(value == null || value.isEmpty()) {
+                // defualt state
+                mTogglesPerRow.setVisibility(View.VISIBLE);
+            } else {
+                mTogglesPerRow.setVisibility(value.equals("0" /* 0 is the tile */)
+                                        ? View.VISIBLE : View.GONE);
+            }
+        }
     }
 }

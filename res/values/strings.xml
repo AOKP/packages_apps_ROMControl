@@ -136,4 +136,9 @@
 
     <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="toggles_style_title">Toggle style</string>
+
+    <string name="toggles_per_row_title">Toggles per row</string>
+    <string name="toggles_per_row_three">3</string>
+    <string name="toggles_per_row_four">4</string>
+    <string name="toggles_per_row_five">5</string>
 </resources>

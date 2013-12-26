@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nastavení ROM</string>
+    <string name="rom_control">Nastavení ROM</string>
+    <string name="navigation_drawer_open">Otevřít navigační lištu</string>
+    <string name="navigation_drawer_close">Zavřít navigační lištu</string>
+    <!--Header Strings-->
+    <string name="category_general">Obecné</string>
+    <string name="category_statusbar">Stavová lišta</string>
+    <string name="category_about_aokp">O AOKP</string>
+    <string name="category_hardware_keys">Hardwarová tlačítka</string>
+    <string name="category_installer">Instalátor</string>
+    <!-- menu items -->
+    <string name="menu_show_drawer_icon">Zobrazit v navigační liště</string>
+    <!--About-->
+    <string name="devs">Tým</string>
+    <string name="aokp">Android Open Kang Project</string>
+    <string name="aokp_website_title">Web AOKP</string>
+    <string name="aokp_website_summary">www.aokp.co - Všechny nejnovější verze k nalezení zde.</string>
+    <string name="aokp_review_title">mGerrit</string>
+    <string name="aokp_review_summary">Rychle a jednoduše zobrazit AOKP a AOSP instance gerrit serverů</string>
+    <string name="aokp_irc_title">Připojit se na IRC</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">O AOKP</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
+    </string>
+    <string name="github_aokp">https://github.com/AOKP</string>
+    <string name="github_adam">https://github.com/syaoran12</string>
+    <string name="github_akellar">https://github.com/akellar</string>
+    <string name="github_bajee11">https://github.com/Bajee11</string>
+    <string name="github_bmc08gt">https://github.com/BMc08GT</string>
+    <string name="github_birdman">https://github.com/mrbirdman</string>
+    <string name="github_championswimmer">https://github.com/championswimmer</string>
+    <string name="github_DAGr8">https://github.com/DAGr8</string>
+    <string name="github_dhacker29">https://github.com/dhacker29</string>
+    <string name="github_graffixnyc">https://github.com/graffixnyc</string>
+    <string name="github_hashcode">https://github.com/Hashcode</string>
+    <string name="github_willdeberry">https://github.com/willdeberry</string>
+    <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
+    <string name="github_k900">https://github.com/K900</string>
+    <string name="github_kecinzer">https://github.com/kecinzer</string>
+    <string name="github_khasmek">https://github.com/KhasMek</string>
+    <string name="github_kwes">https://github.com/kwes1020</string>
+    <string name="github_marclandis">https://github.com/MarcLandis</string>
+    <string name="github_rohan32">https://github.com/rohanmathur</string>
+    <string name="github_roman">https://github.com/romanbb</string>
+    <string name="github_protekk">https://github.com/ProTekk</string>
+    <string name="github_qnhoang81">https://github.com/qnhoang81</string>
+    <string name="github_scar45">https://github.com/scar45</string>
+    <string name="github_sethyx">https://github.com/sethyx</string>
+    <string name="github_sixstringsg">https://github.com/sixstringsg</string>
+    <string name="github_stevespear">https://github.com/Stevespear426</string>
+    <string name="github_tdm">https://github.com/tdm</string>
+    <string name="github_whitehawk">https://github.com/Whitehawkx</string>
+    <string name="github_xoom">https://github.com/xoomdev</string>
+    <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
+    <string name="url_aokp">http://aokp.co/</string>
+    <string name="url_aokp_gerrit">http://gerrit.aokp.co</string>
+    <string name="url_aokp_irc">http://webchat.freenode.net/?channels=teamkang</string>
+    <!-- dynamic changelog -->
+    <string name="mgerrit_changelog_title">mGerrit: Aktivní seznam změn</string>
+    <string name="mgerrit_changelog_summary">Interaktivní seznam změn stahovaný živě z Gerrit webu</string>
+    <!--Color Picker-->
+    <string name="dialog_color_picker">Výběr barvy</string>
+    <string name="press_color_to_apply">Stisknutím se barva aplikuje</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Nastavit</string>
+    <string name="ics_color">Holo</string>
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Použít vlastní aplikaci</string>
+    <string name="use_custom_app_summary">Místo přehledu posledních otevřených aplikací použít vlastní aplikaci</string>
+    <string name="select_custom_app_title">Vybrat vlastní aplikaci</string>
+    <string name="group_applications">Aplikace</string>
+    <!-- General -->
+    <string name="brightness_slider_title">Jas v notifikační liště</string>
+    <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v
+        případě, že je vypnut automatický jas.
+    </string>
+    <string name="wakeup_when_plugged_unplugged_title">Probudit nabíječkou</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
+    <string name="category_advanced">Pokročilé</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
+    <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>
+    <!-- Hardware keys -->
+    <string name="title_hardware_keys_home_long_press">Domů - dlouhý stisk</string>
+    <string name="title_hardware_keys_home_double_tap">Domů - dvojitý stisk</string>
+    <string name="title_hardware_keys_menu">Menu</string>
+    <string name="title_hardware_keys_menu_long_press">Menu - dlouhý stisk</string>
+    <string name="title_hardware_keys_search">Hledat</string>
+    <string name="title_hardware_keys_search_long_press">Hledat - dlouhý stisk</string>
+    <string name="title_hardware_keys_switch_app">Přehled aplikací</string>
+    <string name="title_hardware_keys_switch_app_long_press">Přehled aplikací - dlouhý stisk</string>
+    <string name="title_setting_enable_custom_hardware_keys">Přizpůsobit hardwarová tlačítka</string>
+    <!-- Statusbar Notifications -->
+    <string name="adb_notify">Upozornění na ladění USB</string>
+    <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
+    <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
+    <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
+    <!-- Installer -->
+    <string name="persist_options">Perzistence</string>
+    <string name="persist_enable">Zapnout perzistenci</string>
+    <string name="persist_enable_summary">Zapnout uložení dat pro setrvání mezi instalacemi</string>
+    <string name="persist_prop_density">Uložit DPI</string>
+    <string name="persist_prop_density_summary">Zachovat LCD densitu</string>
+    <string name="persist_file_hosts">Uložit hosts</string>
+    <string name="persist_file_hosts_summary">Zachovat soubor hosts</string>
+</resources>

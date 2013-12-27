@@ -78,12 +78,17 @@ public class MainActivity extends Activity
                 break;
 
             case 3:
-                fragment = new StatusbarSettingsFragment();
+                fragment = new LockscreenSettingsFragment();
                 break;
 
             case 4:
+                fragment = new StatusbarSettingsFragment();
+                break;
+
+            case 5:
                 fragment = new ToggleSetupFragment();
                 break;
+
             /**case 4:
                 fragment = new InstallerSettingsFragment();
                 break;*/

@@ -72,6 +72,30 @@
             android:entryValues="@array/setting_togglesPerRowValues"
             />
 
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_fast_toggle"
+            android:title="@string/toggles_enable_fasttoggle_title"
+            android:summary="@string/toggles_enable_fasttoggle_summary"
+            android:key="fast_toggle"
+            android:defaultValue="false"
+            />
+
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_fast_side"
+            android:title="@string/toggles_choose_fasttoggle_side_title"
+            android:summary="@string/toggles_choose_fasttoggle_side_summary"
+            android:key="choose_fasttoggle_side"
+
+            android:entries="@array/choose_toggle_side_entries"
+            android:entryValues="@array/choose_toggle_side_values"
+            />
+
     <com.aokp.romcontrol.widgets.CategorySeparator
             style="@style/defaultSize"/>
 

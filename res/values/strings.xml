@@ -140,4 +140,11 @@
     <string name="toggles_per_row_four">4</string>
     <string name="toggles_per_row_five">5</string>
     <string name="add_toggles">Add toggle</string>
+
+    <string name="toggles_enable_fasttoggle_title">Enable fast toggle</string>
+    <string name="toggles_enable_fasttoggle_summary">Overrides default behavior</string>
+    <string name="toggles_choose_fasttoggle_side_title">Choose fast toggle side</string>
+    <string name="toggles_choose_fasttoggle_side_summary">Select the side that triggers the fast toggle</string>
+    <string name="right">Right</string>
+    <string name="left">Left</string>
 </resources>

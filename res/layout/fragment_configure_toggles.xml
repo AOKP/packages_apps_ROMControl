@@ -16,25 +16,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_margin="10dp"
+              android:layout_height="match_parent"
+              android:layout_margin="0dp"
               android:background="@color/configure_light_background"
-              android:minWidth="@dimen/list_toggle_width"
-              android:orientation="vertical">
-
-
-    <Switch
-            android:id="@+id/handle_switch"
-            style="?android:attr/buttonBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="@string/toggle_swap_handle_side"/>
-
-    <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/divider_horizontal_dim_dark"/>
+              android:orientation="vertical"
+              style="@style/settingsFragmentStyle">
 
     <!--  <LinearLayout
           android:id="@+id/title_container"
@@ -62,44 +48,37 @@
               android:visibility="visible" />
       </LinearLayout>-->
 
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_style"
+            android:title="@string/toggles_style_title"
+            android:key="statusbar_toggles_style"
+
+            android:entries="@array/setting_toggleStyles"
+            android:entryValues="@array/setting_toggleStylesValues"
+            />
+
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_per_row"
+            android:title="@string/toggles_per_row_title"
+            android:key="statusbar_toggles_number_per_row"
+
+            android:entries="@array/setting_togglesPerRow"
+            android:entryValues="@array/setting_togglesPerRowValues"
+            />
+
+    <com.aokp.romcontrol.widgets.CategorySeparator
+            style="@style/defaultSize"/>
+
     <com.mobeta.android.dslv.DragSortListView
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            app:drag_start_mode="onDown"
-            app:remove_enabled="false"/>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-        <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@drawable/divider_horizontal_dim_dark"/>
-
-        <LinearLayout
-                android:id="@+id/buttons"
-                style="?android:attr/buttonBarStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-            <Button
-                    android:id="@+id/close"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/toggles_display_close"/>
-
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_weight="1"/>
 
 </LinearLayout>

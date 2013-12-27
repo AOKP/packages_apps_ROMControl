@@ -132,13 +132,12 @@
     <string name="toggles_order_summary">Choose the order in which your toggles are displayed</string>
 
     <string name="toggle_dialog_arrange_title">Toggle setup</string>
-    <string name="toggle_dialog_add_toggles">Select toggles to show</string>
-
+    <string name="toggle_dialog_add_toggles">Add a toggle</string>
     <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="toggles_style_title">Toggle style</string>
-
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_three">3</string>
     <string name="toggles_per_row_four">4</string>
     <string name="toggles_per_row_five">5</string>
+    <string name="add_toggles">Add toggle</string>
 </resources>

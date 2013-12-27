@@ -33,7 +33,7 @@ public class DragGripView extends View {
             android.R.attr.color,
     };
 
-    private static final int HORIZ_RIDGES = 4;
+    private static final int HORIZ_RIDGES = 3;
 
     private int mGravity = Gravity.START;
     private int mColor = 0x33333333;

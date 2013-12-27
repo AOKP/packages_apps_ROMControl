@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ROM Vezérlés</string>
+    <string name="rom_control">ROM Vezérlés</string>
+    <string name="navigation_drawer_open">Értesítési fiók megnyítása</string>
+    <string name="navigation_drawer_close">Értesítési fiók zárása</string>
+
+    <!-- Header Strings -->
+    <string name="category_general">Általános</string>
+    <string name="category_statusbar">Állapotsáv</string>
+    <string name="category_about_aokp">Rólunk</string>
+    <string name="category_hardware_keys">Hardveres gombok</string>
+    <string name="category_installer">Telepítő</string>
+    <string name="category_toggles">Kapcsolók</string>
+
+    <!-- Menu Items -->
+    <string name="menu_show_drawer_icon">Mutassa az alkalmazás fiókban</string>
+
+    <!-- About -->
+    <string name="devs">A csapat</string>
+    <string name="aokp">Android Open Kang Project</string>
+    <string name="aokp_website_title">AOKP Weboldal</string>
+    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+    <string name="aokp_review_title">AOKP Kód Áttekintés - Gerrit</string>
+    <string name="aokp_review_summary">View AOKP\'s Gerrit instance</string>
+    <string name="aokp_irc_title">Csatlakozz az IRC-hez</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">AOKP-ról</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
+    </string>
+    <string name="github_aokp">https://github.com/AOKP</string>
+    <string name="github_adam">https://github.com/syaoran12</string>
+    <string name="github_akellar">https://github.com/akellar</string>
+    <string name="github_bajee11">https://github.com/Bajee11</string>
+    <string name="github_bmc08gt">https://github.com/BMc08GT</string>
+    <string name="github_birdman">https://github.com/mrbirdman</string>
+    <string name="github_championswimmer">https://github.com/championswimmer</string>
+    <string name="github_DAGr8">https://github.com/DAGr8</string>
+    <string name="github_dhacker29">https://github.com/dhacker29</string>
+    <string name="github_graffixnyc">https://github.com/graffixnyc</string>
+    <string name="github_hashcode">https://github.com/Hashcode</string>
+    <string name="github_willdeberry">https://github.com/willdeberry</string>
+    <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
+    <string name="github_k900">https://github.com/K900</string>
+    <string name="github_kecinzer">https://github.com/kecinzer</string>
+    <string name="github_khasmek">https://github.com/KhasMek</string>
+    <string name="github_kwes">https://github.com/kwes1020</string>
+    <string name="github_marclandis">https://github.com/MarcLandis</string>
+    <string name="github_rohan32">https://github.com/rohanmathur</string>
+    <string name="github_roman">https://github.com/romanbb</string>
+    <string name="github_protekk">https://github.com/ProTekk</string>
+    <string name="github_qnhoang81">https://github.com/qnhoang81</string>
+    <string name="github_scar45">https://github.com/scar45</string>
+    <string name="github_sethyx">https://github.com/sethyx</string>
+    <string name="github_sixstringsg">https://github.com/sixstringsg</string>
+    <string name="github_stevespear">https://github.com/Stevespear426</string>
+    <string name="github_tdm">https://github.com/tdm</string>
+    <string name="github_whitehawk">https://github.com/Whitehawkx</string>
+    <string name="github_xoom">https://github.com/xoomdev</string>
+    <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
+    <string name="url_aokp">http://aokp.co/</string>
+    <string name="url_aokp_gerrit">http://gerrit.aokp.co</string>
+    <string name="url_aokp_irc">http://webchat.freenode.net/?channels=teamkang</string>
+
+    <!-- dynamic changelog -->
+    <string name="mgerrit_changelog_title">mGerrit: Dinamikus Változáslista</string>
+    <string name="mgerrit_changelog_summary">Interaktív változáslista a Gerrit-ről</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Szín választó</string>
+    <string name="press_color_to_apply">Nyomj a színre az alkalmazáshoz</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">Holo</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Egyéni alkalmazás használata</string>
+    <string name="use_custom_app_summary">Egyéni alkalmazás használata a legutóbbi alkalmazások párbeszéd ablakban</string>
+    <string name="select_custom_app_title">Egyéni alkalmazás választása</string>
+    <string name="group_applications">Alkalmazások</string>
+
+    <!-- General -->
+    <string name="brightness_slider_title">Állapotsáv fényerő állítás</string>
+    <string name="brightness_slider_summary">Engedélyezve lehetséges a fényerőállítás az állapotsávon újjal húzva. Nem lesz aktív, ha az automatikus fényerőállítás beállítva.
+    </string>
+    <string name="wakeup_when_plugged_unplugged_title">Töltésre feléled</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Feléled az eszköz, ha töltőre csatlakozik</string>
+    <string name="category_advanced">Haladó</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">Hangerő forgatási változtatás</string>
+    <string name="summary_hardware_keys_volume_keys_double_tap">Mikor kétszer nyomsz a hangerő gombra megváltoztatod az automatikus forgatási beállítást</string>
+
+    <!-- Hardware keys -->
+    <string name="title_hardware_keys_home_long_press">Kezdőoldal - hosszan nyomás</string>
+    <string name="title_hardware_keys_home_double_tap">Kezdőoldal -dupla érintés</string>
+    <string name="title_hardware_keys_menu">Menü</string>
+    <string name="title_hardware_keys_menu_long_press">Menü- hosszan nyomás</string>
+    <string name="title_hardware_keys_search">Keresés</string>
+    <string name="title_hardware_keys_search_long_press">Keresés - hosszan nyomás</string>
+    <string name="title_hardware_keys_switch_app">Legutóbbiak</string>
+    <string name="title_hardware_keys_switch_app_long_press">Legutóbbiak - hosszan nyomás</string>
+    <string name="title_setting_enable_custom_hardware_keys">Hardveres gombok testreszabása</string>
+
+    <!-- Statusbar Notifications -->
+    <string name="adb_notify">USB hiba keresés</string>
+    <string name="adb_notify_summary">Értesítés ha az USB hibakeresés csatlakozva</string>
+    <string name="ime_switcher_title">Billentyűzet váltó mutatása</string>
+    <string name="ime_switcher_summary">Állapotsávon gépeléskor</string>
+
+    <!-- Installer -->
+    <string name="persist_options">Perzisztancia</string>
+    <string name="persist_enable">Perzisztancia engedélyezése</string>
+    <string name="persist_enable_summary">Adat hozzáférés engedélyezése a telepítés során</string>
+    <string name="persist_prop_density">Felbontás megtartása</string>
+    <string name="persist_prop_density_summary">LCD felbontás megtartása</string>
+    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts_summary">Persist hosts file</string>
+
+    <!-- Toggles -->
+    <string name="title_toggles">Kapcsolók</string>
+    <string name="toggles_style_tile">Csempék</string>
+    <string name="toggles_style_traditional">Hagyományos legördülő</string>
+    <string name="toggles_style_scrollable">Hagyományosan görgethető</string>
+    <string name="toggles_display_close">Bezár</string>
+
+    <string name="toggles_order_title">Kapcsoló sorrend</string>
+    <string name="toggles_order_summary">Változtasd meg a kapcsolók sorrendjét</string>
+
+    <string name="toggle_dialog_arrange_title">Kapcsoló beállítás</string>
+    <string name="toggle_dialog_add_toggles">Megjelenítendő kapcsolók</string>
+
+    <string name="toggle_swap_handle_side">Húzd jobbra a fogantyút</string>
+    <string name="toggles_style_title">Kapcsoló stílus</string>
+</resources>

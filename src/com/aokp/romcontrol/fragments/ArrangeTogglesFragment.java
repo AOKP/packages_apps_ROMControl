@@ -120,10 +120,6 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
         });
         mListView.setItemsCanFocus(true);
 
-        mToggle = (Switch) rootView.findViewById(R.id.handle_switch);
-        mToggle.setChecked(useRightSideLayout());
-        mToggle.setOnCheckedChangeListener(this);
-
         mClose = (Button) rootView.findViewById(R.id.close);
         mClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,10 +153,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
                 convertView = getActivity().getLayoutInflater()
-                        .inflate(useRightSideLayout()
-                                ? R.layout.list_item_toggle
-                                : R.layout.list_item_toggle_left,
-                                parent, false);
+                        .inflate(R.layout.list_item_toggle, parent, false);
             }
 
             TextView titleView = (TextView) convertView.findViewById(android.R.id.text1);
@@ -209,18 +202,8 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
 
     }
 
-    private boolean useRightSideLayout() {
-        return getActivity().getPreferences(Context.MODE_PRIVATE).getBoolean(PREF_HANDLE_KEY, true);
-    }
-
-    private void setUseRightSideHandle(boolean right) {
-        getActivity().getPreferences(Context.MODE_PRIVATE).edit()
-                .putBoolean(PREF_HANDLE_KEY, right).commit();
-    }
-
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        setUseRightSideHandle(isChecked);
 //        dismiss();
         ArrangeTogglesFragment f = ArrangeTogglesFragment.newInstance(getArguments());
 //        f.show(getFragmentManager(), getTag());

@@ -134,7 +134,6 @@
     <string name="toggle_dialog_arrange_title">Toggle setup</string>
     <string name="toggle_dialog_add_toggles">Select toggles to show</string>
 
-    <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="toggles_style_title">Toggle style</string>
 
     <string name="toggles_per_row_title">Toggles per row</string>

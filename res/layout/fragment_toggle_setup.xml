@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              style="@style/settingsFragmentStyle">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout style="@style/settingsFragmentStyle">
 
     <com.aokp.romcontrol.widgets.CategorySeparator
             style="@style/defaultSize"
@@ -41,6 +45,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:title="@string/toggles_collapse_generic_title"
+            android:summary="@string/toggles_collapse_generic_summary"
+            android:key="status_bar_toggles_shade_collapse_all"
+            android:defaultValue="false"
+            />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/toggles_vibrate_title"
+            android:summary="@string/toggles_vibrate_summary"
+            android:key="statusbar_toggles_vibrate_on_click"
+            android:defaultValue="false"
+            />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
             android:id="@+id/toggles_fast_toggle"
             android:title="@string/toggles_enable_fasttoggle_title"
             android:summary="@string/toggles_enable_fasttoggle_summary"
@@ -71,4 +95,5 @@
             android:key="swipe_to_switch"
             android:defaultValue="false"
             />
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

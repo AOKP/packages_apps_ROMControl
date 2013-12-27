@@ -150,4 +150,9 @@
 
     <string name="toggles_swipe_to_switch_title">Swipe to switch</string>
     <string name="toggles_swipe_to_switch_summary">Swipe to switch between notifications and Quick Settings</string>
+
+    <string name="toggles_collapse_generic_title">Collapse shade on toggle click</string>
+    <string name="toggles_collapse_generic_summary">Close shade on all generic toggle actions</string>
+    <string name="toggles_vibrate_title">Vibrate on toggle click</string>
+    <string name="toggles_vibrate_summary">Vibrate on all generic toggle actions</string>
 </resources>

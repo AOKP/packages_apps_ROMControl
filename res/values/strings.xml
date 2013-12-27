@@ -140,4 +140,9 @@
     <string name="toggles_per_row_four">4</string>
     <string name="toggles_per_row_five">5</string>
     <string name="add_toggles">Add toggle</string>
+
+    <string name="toggles_collapse_generic_title">Collapse shade on toggle click</string>
+    <string name="toggles_collapse_generic_summary">Close shade on all generic toggle actions</string>
+    <string name="toggles_vibrate_title">Vibrate on toggle click</string>
+    <string name="toggles_vibrate_summary">Vibrate on all generic toggle actions</string>
 </resources>

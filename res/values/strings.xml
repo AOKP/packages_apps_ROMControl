@@ -114,7 +114,8 @@
 
     <string name="battery_percentage_indicator_title">Show battery percentage indicator</string>
     <string name="battery_percentage_indicator_summary">Show battery percentage indicator front of battery icon</string>
-
+    <string name="hide_battery_icon_title">Hide battery icon</string>
+    <string name="hide_battery_icon_summary">Completly hide battery icon from statusbar</string>
 
     <!-- Installer -->
     <string name="persist_options">Persistence</string>

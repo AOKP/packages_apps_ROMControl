@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.aokp.romcontrol.fragments.AboutFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
+import com.aokp.romcontrol.fragments.LockscreenSettingsFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
@@ -81,15 +82,19 @@ public class MainActivity extends Activity
                 fragment = new HardwareKeysFragment();
                 break;
 
-            case 3:
-                fragment = new StatusbarSettingsFragment();
+	    case 3:
+                fragment = new LockscreenSettingsFragment();
                 break;
 
             case 4:
-                fragment = new TogglesTabHostFragment();
+                fragment = new StatusbarSettingsFragment();
                 break;
 
             case 5:
+                fragment = new TogglesTabHostFragment();
+                break;
+
+            case 6:
                 fragment = new InstallerSettingsFragment();
                 break;
         }

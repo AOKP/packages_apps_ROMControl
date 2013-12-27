@@ -22,7 +22,7 @@
     <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP Weboldal</string>
     <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
-    <string name="aokp_review_title">AOKP Code Review - Gerrit</string>
+    <string name="aokp_review_title">AOKP Kód Áttekintés - Gerrit</string>
     <string name="aokp_review_summary">View AOKP\'s Gerrit instance</string>
     <string name="aokp_irc_title">Csatlakozz az IRC-hez</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>

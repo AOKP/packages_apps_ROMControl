@@ -35,8 +35,8 @@ public class ToggleSetupFragment extends Fragment implements OnClickListener, On
     BroadcastReceiver mReceiver;
     ArrayList<String> mToggles;
 
-    BaseSetting mEnabledToggles, mArrangeToggles;
-    SingleChoiceSetting mTogglesPerRow, mToggleStyle;
+    BaseSetting mEnabledToggles, mArrangeToggles, mTogglesFast;
+    SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -153,8 +153,10 @@ public class ToggleSetupFragment extends Fragment implements OnClickListener, On
 
         mEnabledToggles = (BaseSetting) v.findViewById(R.id.enabled_toggles);
         mArrangeToggles = (BaseSetting) v.findViewById(R.id.arrange_toggles);
+        mTogglesFast = (BaseSetting) v.findViewById(R.id.toggles_fast_toggle);
         mTogglesPerRow = (SingleChoiceSetting) v.findViewById(R.id.toggles_per_row);
         mToggleStyle = (SingleChoiceSetting) v.findViewById(R.id.toggles_style);
+        mToggleSide = (SingleChoiceSetting) v.findViewById(R.id.toggles_fast_side);
 
         mEnabledToggles.setOnClickListener(this);
         mArrangeToggles.setOnClickListener(this);
@@ -259,8 +261,14 @@ public class ToggleSetupFragment extends Fragment implements OnClickListener, On
             if(value == null || value.isEmpty()) {
                 // defualt state
                 mTogglesPerRow.setVisibility(View.VISIBLE);
+                mTogglesFast.setVisibility(View.VISIBLE);
+                mToggleSide.setVisibility(View.VISIBLE);
             } else {
                 mTogglesPerRow.setVisibility(value.equals("0" /* 0 is the tile */)
+                                        ? View.VISIBLE : View.GONE);
+                mTogglesFast.setVisibility(value.equals("0" /* 0 is the tile */)
+                                        ? View.VISIBLE : View.GONE);
+                mToggleSide.setVisibility(value.equals("0" /* 0 is the tile */)
                                         ? View.VISIBLE : View.GONE);
             }
         }

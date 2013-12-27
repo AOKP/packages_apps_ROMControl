@@ -112,6 +112,9 @@
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
 
+    <string name="hide_battery_icon_title">Hide battery icon</string>
+    <string name="hide_battery_icon_summary">Completly hide battery icon from statusbar</string>
+
     <!-- Installer -->
     <string name="persist_options">Persistence</string>
     <string name="persist_enable">Enable Persistence</string>

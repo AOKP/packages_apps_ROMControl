@@ -25,4 +25,13 @@
             android:defaultValue="true"
             />
 
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/hide_battery_icon_title"
+            android:summary="@string/hide_battery_icon_summary"
+            android:key="hide_battery_icon"
+            android:defaultValue="false"
+            />
 </LinearLayout>

@@ -11,6 +11,7 @@
     <string name="category_statusbar">Statusbar</string>
     <string name="category_about_aokp">About</string>
     <string name="category_hardware_keys">Hardware Keys</string>
+    <string name="category_lockscreen">Lockscreen</string>
     <string name="category_installer">Installer</string>
     <string name="category_toggles">Toggles</string>
     <string name="category_navring">Navigation Ring</string>
@@ -171,8 +172,7 @@
     <string name="toggles_tab_settings">Configure</string>
     <string name="toggles_arrange_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
 
-
-        <!-- Nav Ring Targets -->
+    <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>
     <string name="navring_enable_long">Enable Longpress for Navigation Ring</string>
@@ -205,4 +205,11 @@
     <string name="four_targets">4 targets</string>
     <string name="five_targets">5 targets</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+
+    <!-- Lockscreen -->
+    <string name="volume_wake_screen">Volume Rocker Wake</string>
+    <string name="volume_wake_screen_summary">Use the volume keys wake the screen.</string>
+    <string name="volume_music_controls">Volume Music Controls</string>
+    <string name="volume_music_controls_summary">Whether volume up/down can be long pressed to skip track</string>
+
 </resources>

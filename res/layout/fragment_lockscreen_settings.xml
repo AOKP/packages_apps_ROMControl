@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/settingsFragmentStyle">
+
+    <com.aokp.romcontrol.widgets.CategorySeparator
+        style="@style/defaultSize"
+        android:title="@string/category_lockscreen"/>
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:title="@string/volume_wake_screen"
+        android:summary="@string/volume_wake_screen_summary"
+        android:key="volume_wake_screen"
+        />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/volume_music_controls"
+        android:summary="@string/volume_music_controls_summary"
+        android:key="volume_music_controls"
+        />
+
+</LinearLayout>

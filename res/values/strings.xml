@@ -13,6 +13,8 @@
     <string name="category_hardware_keys">Hardware Keys</string>
     <string name="category_installer">Installer</string>
     <string name="category_toggles">Toggles</string>
+    <string name="category_navring">Navigation Ring</string>
+    <string name="category_ribbons">Ribbons</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -85,6 +87,10 @@
     <string name="group_applications">Applications</string>
 
     <!-- General -->
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
     <string name="brightness_slider_summary">When enabled, this option will allow you to change the brightness by
         sliding your finger across the Statusbar. Note: Will not be active when auto-brightness is on
@@ -128,6 +134,10 @@
     <string name="persist_file_xposed">Persist Xposed</string>
     <string name="persist_file_xposed_summary">Persist file app_process for Xposed framework</string>
 
+    <!-- Ribbons -->
+    <string name="toggles_ribbon_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
+    <string name="add_ribbon">Add Item</string>
+ 
     <!-- Toggles -->
     <string name="title_toggles">Toggles</string>
     <string name="toggles_style_tile">Tiles</string>
@@ -154,10 +164,44 @@
     <string name="toggles_choose_fasttoggle_side_summary">Select the side that triggers the fast toggle</string>
     <string name="right">Right</string>
     <string name="left">Left</string>
-
     <string name="toggles_swipe_to_switch_title">Swipe to switch</string>
     <string name="toggles_swipe_to_switch_summary">Swipe to switch between notifications and Quick Settings</string>
     <string name="toggle_tab_arrange">Toggle Setup</string>
     <string name="toggles_tab_settings">Configure</string>
     <string name="toggles_arrange_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
+
+
+        <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">Navigation Ring Targets</string>
+    <string name="navbar_ring">Custom Ring Targets</string>
+    <string name="navring_enable_long">Enable Longpress for Navigation Ring</string>
+    <string name="navring_target_save">Navigation Rings saved</string>
+    <string name="navring_target_reset_message">Do you want to reset the Navigation Ring?</string>
+    <string name="navring_target_reset">Navigation Ring targets reset.</string>
+    <string name="choose_action_title">Choose action</string>
+    <string name="choose_action_short_title">Choose short action</string>
+    <string name="choose_action_long_title">Choose long action</string>
+    <string name="action_long_save">set as long action</string>
+    <string name="title_navring_amount">Number of Navigation Ring targets</string>
+    <string name="summary_navring_amount">Choose number of targets in the Navigation Ring</string>
+    <string name="interface_navring_settings_title">Navigation Ring</string>
+    <string name="interface_navring_settings_summary">@null</string>
+    <string name="navring_target_info">Drag your finger to targets to assign actions</string>
+    <string name="navring_clear">Clear action</string>
+    <string name="navring_short">Short action</string>
+    <string name="navring_long">Long action</string>
+    <string name="navring_icon">Custom icon</string>
+    <string name="navring_target_amount_text">Current number of targets</string>
+    <string name="navring_target_longpress_text">Longpress actions</string>
+    <string name="description_target_unlock">Unlock</string>
+    <string name="description_direction_up">Slide up for unlock</string>
+    <string name="description_direction_down">Slide down for unlock</string>
+    <string name="description_direction_left">"Slide left for unlock</string>
+    <string name="description_direction_right">Slide right for unlock</string>
+    <string name="one_target">1 target</string>
+    <string name="two_targets">2 targets</string>
+    <string name="three_targets">3 targets</string>
+    <string name="four_targets">4 targets</string>
+    <string name="five_targets">5 targets</string>
+    <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
 </resources>

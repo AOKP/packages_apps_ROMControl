@@ -129,4 +129,8 @@
     <string name="left">Vlevo</string>
     <string name="toggles_swipe_to_switch_title">Přepnout potáhnutím</string>
     <string name="toggles_swipe_to_switch_summary">Přepnout potáhnutím mezi notifikacemi a rychlým nastavením</string>
+    <string name="toggles_collapse_generic_title">Zavřít notifikační okno po stisku přepínače</string>
+    <string name="toggles_collapse_generic_summary">Zavřít okno notifikací/přepínačů po stisku přepínače</string>
+    <string name="toggles_vibrate_title">Vibrovat při stisku přepínače</string>
+    <string name="toggles_vibrate_summary">Vibrovat při každém základním stisku přepínačů</string>
 </resources>

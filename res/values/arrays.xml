@@ -29,6 +29,7 @@
         <item>@string/category_navring</item>
         <item>@string/category_sound</item>
         <item>@string/category_installer</item>
+        <item>@string/category_ribbons</item>
     </string-array>
     <string-array name="navigation_drawer_icons">
         <item>@drawable/ic_rom_control_about</item>
@@ -41,5 +42,6 @@
         <item>@drawable/ic_rom_control_navigation_ring</item>
         <item>@drawable/ic_rom_control_sound</item>
         <item>@drawable/ic_rom_control_installer</item>
+        <item>@drawable/ic_rom_control_ribbon</item>
     </string-array>
 </resources>

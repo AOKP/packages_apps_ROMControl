@@ -177,4 +177,33 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="ribbon_handle_location_entries" translatable="false">
+        <item>@string/center</item>
+        <item>@string/top</item>
+        <item>@string/bottom</item>
+    </string-array>
+    <string-array name="ribbon_handle_location_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="hide_ribbon_timeout_entries" translatable="false">
+        <item>@string/hide_ribbon_timeout_never</item>
+        <item>@string/hide_ribbon_timeout_1500</item>
+        <item>@string/hide_ribbon_timeout_3000</item>
+        <item>@string/hide_ribbon_timeout_5000</item>
+        <item>@string/hide_ribbon_timeout_10000</item>
+        <item>@string/hide_ribbon_timeout_15000</item>
+        <item>@string/hide_ribbon_timeout_30000</item>
+    </string-array>
+    <string-array name="hide_ribbon_timeout_values" translatable="false">
+        <item>0</item>
+        <item>1500</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>30000</item>
+    </string-array>
+
 </resources>

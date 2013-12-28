@@ -78,7 +78,9 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	private boolean checkedTabWidths = false;
 
 	private int indicatorColor = 0xFF666666;
+
 	private int underlineColor = 0xFFFFFFFF;
+
 	private int dividerColor = 0x1A000000;
 
 	private boolean shouldExpand = false;
@@ -93,6 +95,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 	private int tabTextSize = 12;
 	private int tabTextColor = 0xFFFFFFFF;
+
 	private Typeface tabTypeface = null;
 	private int tabTypefaceStyle = Typeface.BOLD;
 
@@ -115,10 +118,10 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 		setFillViewport(true);
 		setWillNotDraw(false);
-
 		tabsContainer = new LinearLayout(context);
 		tabsContainer.setOrientation(LinearLayout.HORIZONTAL);
 		tabsContainer.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+
 		addView(tabsContainer);
 
 		DisplayMetrics dm = getResources().getDisplayMetrics();
@@ -246,7 +249,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		});
 
 		tabsContainer.addView(tab);
-
 	}
 
 	private void addIconTab(final int position, int resId) {
@@ -308,7 +310,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 		if (!shouldExpand || MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.UNSPECIFIED) {
 			return;
 		}
-
 		int myWidth = getMeasuredWidth();
 		int childWidth = 0;
 		for (int i = 0; i < tabCount; i++) {
@@ -322,7 +323,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 					tabsContainer.getChildAt(i).setLayoutParams(expandedTabLayoutParams);
 				}
 			}
-
 			checkedTabWidths = true;
 		}
 	}

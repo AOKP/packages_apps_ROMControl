@@ -84,6 +84,11 @@ public class MainActivity extends Activity
             case 4:
                 fragment = new ArrangeTogglesFragment();
                 break;
+
+            case 5:
+                fragment = new ActiveDisplaySettingsFragment();
+                break;
+
             /**case 4:
                 fragment = new InstallerSettingsFragment();
                 break;*/

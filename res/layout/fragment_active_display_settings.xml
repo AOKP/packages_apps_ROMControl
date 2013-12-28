@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:romcontrol="http://schemas.android.com/apk/res/com.aokp.romcontrol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout style="@style/settingsFragmentStyle">
+
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                android:title="@string/category_active_display"
+                style="@style/defaultSize"/>
+
+        <SwitchPreference
+            android:key="ad_enable"
+            android:persistent="false"
+            android:title="@string/ad_enable_title"
+            android:summaryOff="@string/ad_enable_summary_off"
+            android:summaryOn="@string/ad_enable_summary_on" />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="ad_text"
+            android:id="@+id/setting_ad_text"
+            android:persistent="false"
+            android:title="@string/ad_text_title"
+            android:summary="@string/ad_text_summary"
+            android:dependency="ad_enable"/>
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="ad_all_notifications"
+            android:id="@+id/setting_ad_all_notifications"
+            android:persistent="false"
+            android:title="@string/ad_all_notifications_title"
+            android:summary="@string/ad_all_notifications_summary"
+            android:dependency="ad_enable"/>
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="ad_pocket_mode"
+            android:id="@+id/setting_ad_pocket_mode"
+            android:persistent="false"
+            android:title="@string/ad_pocket_mode_title"
+            android:summary="@string/ad_pocket_mode_summary"
+            android:dependency="ad_enable"/>
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:key="ad_redisplay"
+            android:id="@+id/setting_ad_redisplay"
+            android:persistent="false"
+            android:title="@string/ad_redisplay_title"
+            android:entries="@array/ad_redisplay_entries"
+            android:entryValues="@array/ad_redisplay_values"
+            android:dependency="ad_enable"/>
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="ad_brightness"
+            android:persistent="false"
+            android:title="@string/ad_brightness_title"
+            android:summary="@string/ad_brightness_summary"
+            android:max="100"
+            android:defaultValue="100"
+            android:dependency="ad_enable" />
+
+</PreferenceScreen>

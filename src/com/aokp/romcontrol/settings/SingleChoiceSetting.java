@@ -128,7 +128,7 @@ public class SingleChoiceSetting extends BaseSetting implements OnClickListener 
 
     }
 
-    private void updateSummary() {
+    public void updateSummary() {
         if (getDefaultSummary() != null && getValue() == null) {
             // let's not touch it if one was already set
         } else {

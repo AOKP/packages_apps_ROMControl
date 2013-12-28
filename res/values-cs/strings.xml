@@ -118,7 +118,12 @@
     <string name="toggles_order_title">Pořadí přepínačů</string>
     <string name="toggles_order_summary">Určuje pořadí, v jakém jsou přepínače zobrazovány</string>
     <string name="toggle_dialog_arrange_title">Nastavení přepínačů</string>
-    <string name="toggle_dialog_add_toggles">Přidat vybrané přepínače</string>
+    <string name="toggle_dialog_add_toggles">Přidat přepínač</string>
     <string name="toggle_swap_handle_side">Uchopením vpravo je možné přetahovat</string>
     <string name="toggles_style_title">Styl přepínačů</string>
+    <string name="toggles_per_row_title">Přepínačů na řádek</string>
+    <string name="toggles_per_row_three">3</string>
+    <string name="toggles_per_row_four">4</string>
+    <string name="toggles_per_row_five">5</string>
+    <string name="add_toggles">Přidat přepínač</string>
 </resources>

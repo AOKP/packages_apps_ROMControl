@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/settingsFragmentStyle">
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enable_ribbon"
+            android:title="@string/enable_ribbon_title"
+            android:summary="@string/enable_ribbon_summary"
+            android:defaultValue="false" />
+    
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ribbon_long_swipe"
+            android:title="@string/ribbon_long_swipe_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ribbon_long_press"
+            android:title="@string/ribbon_long_press_title" />
+        
+</LinearLayout>

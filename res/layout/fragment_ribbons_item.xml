@@ -20,15 +20,15 @@
               android:orientation="vertical"
               >
 
-    <TextView
-            android:text="@string/toggles_arrange_instructions"
+        <TextView
+            android:text="@string/toggles_ribbon_instructions"
             android:padding="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
     <com.aokp.romcontrol.widgets.CategorySeparator
             style="@style/defaultSize"/>
-
+    
     <com.mobeta.android.dslv.DragSortListView
             android:id="@android:id/list"
             android:layout_width="match_parent"

@@ -232,6 +232,13 @@ public class BaseSetting extends LinearLayout {
     }
 
     /**
+     * Used to assign or change a key value
+     */
+    public final void setKey(String key) {
+        aKey = key;
+    }
+
+    /**
      * @return returns the supplied default value. null if none was provided.
      */
     protected final String getDefaultValue() {

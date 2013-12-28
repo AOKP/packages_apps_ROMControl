@@ -15,6 +15,7 @@
     <string name="category_installer">Installer</string>
     <string name="category_toggles">Toggles</string>
     <string name="category_navring">Navigation Ring</string>
+    <string name="category_ribbons">Ribbons</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -142,6 +143,18 @@
     <string name="persist_file_xposed">Persist Xposed</string>
     <string name="persist_file_xposed_summary">Persist file app_process for Xposed framework</string>
 
+    <!-- Ribbons -->
+    <string name="toggles_ribbon_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
+    <string name="add_ribbon">Add Item</string>
+    <string name="left_ribbon_items">Left Ribbon Items</string>
+    <string name="left_ribbon_settings">Left Ribbon Settings</string>
+    <string name="right_ribbon_items">Right Ribbon Items</string>
+    <string name="right_ribbon_settings">Right Ribbon Settings</string>
+    <string name="enable_ribbon_title">Enable Ribbon</string>
+    <string name="enable_ribbon_summary">Enable the swipe area for this Ribbon</string>
+    <string name="ribbon_long_swipe_title">Swipe area longswipe</string>
+    <string name="ribbon_long_press_title">Swipe area longpress</string>
+ 
     <!-- Toggles -->
     <string name="title_toggles">Toggles</string>
     <string name="toggles_style_tile">Tiles</string>

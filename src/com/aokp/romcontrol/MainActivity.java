@@ -7,21 +7,24 @@ import android.app.FragmentManager;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
 import com.aokp.romcontrol.fragments.AboutFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.NavRingTargets;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+import com.aokp.romcontrol.fragments.RibbonsFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.TogglesTabHostFragment;
 
 
-public class MainActivity extends Activity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends Activity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -95,6 +98,9 @@ public class MainActivity extends Activity
             case 6:
                 fragment = new NavRingTargets();
                 break;
+            case 7:
+                fragment = new RibbonsFragment(this);
+                break;
         }
         return fragment;
     }
@@ -151,6 +157,4 @@ public class MainActivity extends Activity
         int componentStatus = p.getComponentEnabledSetting(new ComponentName(this, LauncherActivity.class));
         return componentStatus != PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
     }
-
-
 }

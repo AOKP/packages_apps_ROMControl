@@ -28,7 +28,7 @@
             android:text="@string/toggles_arrange_instructions"
             android:padding="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     <com.aokp.romcontrol.widgets.CategorySeparator
             style="@style/defaultSize"/>

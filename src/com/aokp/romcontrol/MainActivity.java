@@ -16,11 +16,13 @@ import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.NavRingTargets;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+import com.aokp.romcontrol.fragments.RibbonsFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.TogglesTabHostFragment;
 
 
-public class MainActivity extends Activity
+public class 
+ extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -94,6 +96,9 @@ public class MainActivity extends Activity
                 break;
             case 6:
                 fragment = new NavRingTargets();
+                break;
+            case 7:
+                fragment = new RibbonsFragment(this);
                 break;
         }
         return fragment;

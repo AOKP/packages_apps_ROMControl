@@ -96,7 +96,7 @@ public class ColorPickerSetting extends BaseSetting implements
         setOnClickListener(this);
     }
 
-    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
+    public void onSetInitialValue(boolean restoreValue, Object defaultValue) {
         onColorChanged(restoreValue ? getColor() : (Integer) defaultValue);
     }
 

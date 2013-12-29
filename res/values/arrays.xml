@@ -6,6 +6,7 @@
         <item>@string/category_hardware_keys</item>
         <item>@string/category_statusbar</item>
         <item>@string/category_toggles</item>
+        <item>@string/category_navbar</item>
         <!--<item>@string/category_installer</item>-->
     </string-array>
     <string-array name="navigation_drawer_icons">
@@ -14,6 +15,121 @@
         <item>@drawable/ic_rom_control_hardware_keys</item>
         <item>@drawable/ic_rom_control_signal</item>
         <item>@drawable/ic_rom_control_toggles</item>
+        <item>@drawable/ic_rom_control_navigation_bar</item>
         <!--<item>@drawable/ic_rom_control_installer</item>-->
+    </string-array>
+
+    <!-- NavBar -->
+    <string-array name="pref_navigation_menu_entries" translatable="false">
+        <item>@string/right</item>
+        <item>@string/left</item>
+        <item>@string/both</item>
+        <item>@string/dont_show</item>
+    </string-array>
+
+    <!-- right is the default, easier to keep 0 as first index -->
+    <string-array name="pref_navigation_menu_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="pref_navigation_menu_display_entries" translatable="false">
+        <item>@string/default_behavior</item>
+        <item>@string/always_show_invisible_icons</item>
+        <item>@string/always_show</item>
+        <item>@string/default_with_invisible_icons_when_hidden</item>
+    </string-array>
+    <string-array name="pref_navigation_menu_display_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="navigation_bar_width_entries" translatable="false">
+        <item>@string/size_42_dp_default</item>
+        <item>@string/size_40_dp</item>
+        <item>@string/size_36_dp</item>
+        <item>@string/size_30_dp</item>
+        <item>@string/size_24_dp</item>
+        <item>@string/size_0_dp</item>
+    </string-array>
+    <string-array name="navigation_bar_width" translatable="false">
+        <item>42</item>
+        <item>40</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="navigation_bar_height_entries" translatable="false">
+        <item>@string/size_48_dp_default</item>
+        <item>@string/size_44_dp</item>
+        <item>@string/size_42_dp</item>
+        <item>@string/size_40_dp</item>
+        <item>@string/size_36_dp</item>
+        <item>@string/size_30_dp</item>
+        <item>@string/size_24_dp</item>
+        <item>@string/size_0_dp</item>
+    </string-array>
+    <string-array name="navigation_bar_height" translatable="false">
+        <item>48</item>
+        <item>44</item>
+        <item>42</item>
+        <item>40</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="navigation_bar_height_landscape_entries" translatable="false">
+        <item>@string/size_48_dp_default</item>
+        <item>@string/size_44_dp</item>
+        <item>@string/size_42_dp</item>
+        <item>@string/size_40_dp</item>
+        <item>@string/size_36_dp</item>
+        <item>@string/size_30_dp</item>
+        <item>@string/size_24_dp</item>
+        <item>@string/size_0_dp</item>
+    </string-array>
+    <string-array name="navigation_bar_height_landscape" translatable="false">
+        <item>48</item>
+        <item>44</item>
+        <item>42</item>
+        <item>40</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="glow_times_entries" translatable="false">
+        <item>@string/glow_times_off</item>
+        <item>@string/glow_times_superquick</item>
+        <item>@string/glow_times_quick</item>
+        <item>@string/glow_times_normal</item>
+    </string-array>
+    <string-array name="glow_times_values" translatable="false">
+        <item>0|0</item>
+        <item>100|10</item>
+        <item>250|25</item>
+        <item>500|50</item>
+    </string-array>
+    <string-array name="hide_navbar_timeout_entries" translatable="false">
+        <item>@string/hide_navbar_timeout_never</item>
+        <item>@string/hide_navbar_timeout_1500</item>
+        <item>@string/hide_navbar_timeout_3000</item>
+        <item>@string/hide_navbar_timeout_5000</item>
+        <item>@string/hide_navbar_timeout_10000</item>
+        <item>@string/hide_navbar_timeout_15000</item>
+        <item>@string/hide_navbar_timeout_30000</item>
+    </string-array>
+    <string-array name="hide_navbar_timeout_values" translatable="false">
+        <item>0</item>
+        <item>1500</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>30000</item>
     </string-array>
 </resources>

@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.settings.BaseSetting;
 import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
 import com.aokp.romcontrol.settings.SingleChoiceSetting;
 import com.google.android.apps.dashclock.ui.DragGripView;
@@ -63,7 +64,8 @@ public class ArrangeTogglesFragment extends Fragment implements OnSettingChanged
     };
 
     ArrayList<String> mToggles;
-    SingleChoiceSetting mTogglesPerRow, mToggleStyle;
+    BaseSetting mTogglesFast, mSwipeToSwitch;
+    SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide;
     ArrayList<String> toggles = new ArrayList<String>();
 
     @Override
@@ -164,8 +166,11 @@ public class ArrangeTogglesFragment extends Fragment implements OnSettingChanged
         ViewGroup rootView = (ViewGroup)
                 inflater.inflate(R.layout.fragment_configure_toggles, container, false);
 
+        mTogglesFast = (BaseSetting) rootView.findViewById(R.id.toggles_fast_toggle);
+        mSwipeToSwitch = (BaseSetting) rootView.findViewById(R.id.toggles_swipe_to_switch);
         mTogglesPerRow = (SingleChoiceSetting) rootView.findViewById(R.id.toggles_per_row);
         mToggleStyle = (SingleChoiceSetting) rootView.findViewById(R.id.toggles_style);
+        mToggleSide = (SingleChoiceSetting) rootView.findViewById(R.id.toggles_fast_side);
         mListView = (DragSortListView) rootView.findViewById(android.R.id.list);
 
         mToggleStyle.setOnSettingChangedListener(this);
@@ -300,8 +305,17 @@ public class ArrangeTogglesFragment extends Fragment implements OnSettingChanged
             if (value == null || value.isEmpty()) {
                 // defualt state
                 mTogglesPerRow.setVisibility(View.VISIBLE);
+                mTogglesFast.setVisibility(View.VISIBLE);
+                mToggleSide.setVisibility(View.VISIBLE);
+                mSwipeToSwitch.setVisibility(View.VISIBLE);
             } else {
                 mTogglesPerRow.setVisibility(value.equals("0" /* 0 is the tile */)
+                        ? View.VISIBLE : View.GONE);
+                mTogglesFast.setVisibility(value.equals("0" /* 0 is the tile */)
+                        ? View.VISIBLE : View.GONE);
+                mToggleSide.setVisibility(value.equals("0" /* 0 is the tile */)
+                        ? View.VISIBLE : View.GONE);
+                mSwipeToSwitch.setVisibility(value.equals("0" /* 0 is the tile */)
                         ? View.VISIBLE : View.GONE);
             }
         }

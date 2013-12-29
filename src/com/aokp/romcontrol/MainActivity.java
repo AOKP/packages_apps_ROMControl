@@ -18,6 +18,7 @@ import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
+import com.aokp.romcontrol.fragments.NavBarFragment;
 
 
 public class MainActivity extends Activity
@@ -86,9 +87,11 @@ public class MainActivity extends Activity
             case 4:
                 fragment = new ArrangeTogglesFragment();
                 break;
-
-            case 5:
+            /**case 4:
                 fragment = new InstallerSettingsFragment();
+                break;*/
+            case 5:
+                fragment = new NavBarFragment();
                 break;
         }
         return fragment;

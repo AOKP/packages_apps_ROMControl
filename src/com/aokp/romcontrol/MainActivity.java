@@ -10,10 +10,12 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.fragments.AboutFragment;
 import com.aokp.romcontrol.fragments.ArrangeTogglesFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
+import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 
@@ -84,9 +86,10 @@ public class MainActivity extends Activity
             case 4:
                 fragment = new ArrangeTogglesFragment();
                 break;
-            /**case 4:
+
+            case 5:
                 fragment = new InstallerSettingsFragment();
-                break;*/
+                break;
         }
         return fragment;
     }

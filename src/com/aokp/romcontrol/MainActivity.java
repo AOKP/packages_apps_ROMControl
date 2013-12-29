@@ -82,9 +82,9 @@ public class MainActivity extends Activity
                 fragment = new StatusbarSettingsFragment();
                 break;
 
-            /**case 4:
+            case 4:
                 fragment = new InstallerSettingsFragment();
-                break;*/
+                break;
         }
         return fragment;
     }

@@ -188,4 +188,9 @@
     <string name="four_targets">4 položky</string>
     <string name="five_targets">5 položek</string>
     <string name="custom_app_icon_successfully">ikony úspěšně nastaveny!</string>
+    <!-- Sound -->
+    <string name="enable_volume_options_title">Zapnout panel hlasitosti</string>
+    <string name="enable_volume_options_summary">Volba pro zapnutí možností hlasitosti.</string>
+    <string name="volume_link_notification_title">Spojit hlasitosti</string>
+    <string name="volume_link_notification_summary">Volba pro spojení hlasitosti vyzvánení a notifikací.</string>
 </resources>

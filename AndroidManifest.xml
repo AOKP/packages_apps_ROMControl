@@ -19,6 +19,7 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name="com.aokp.romcontrol.MainActivity"
+                android:configChanges="orientation|keyboardHidden"
                 android:label="@string/rom_control" />
 
         <activity

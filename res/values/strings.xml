@@ -112,6 +112,10 @@
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
 
+    <string name="category_signalbars">Signal Bars</string>
+    <string name="statusbar_hide_signal_bars_title">Hide Signal Bars</string>
+    <string name="statusbar_hide_signal_bars_summary">Ability to hide the signal bars</string>
+
     <!-- Installer -->
     <string name="persist_options">Persistence</string>
     <string name="persist_enable">Enable Persistence</string>

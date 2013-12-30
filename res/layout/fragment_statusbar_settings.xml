@@ -25,4 +25,17 @@
             android:defaultValue="true"
             />
 
+    <com.aokp.romcontrol.widgets.CategorySeparator
+            style="@style/defaultSize"
+            android:title="@string/category_signalbars"/>
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/statusbar_hide_signal_bars_title"
+            android:summary="@string/statusbar_hide_signal_bars_summary"
+            android:key="statusbar_hide_signal_bars"
+            />
+
 </LinearLayout>

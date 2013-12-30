@@ -8,11 +8,13 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,9 +28,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.settings.BaseSetting;
-import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
-import com.aokp.romcontrol.settings.SingleChoiceSetting;
 import com.google.android.apps.dashclock.ui.DragGripView;
 import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 import com.mobeta.android.dslv.DragSortController;
@@ -38,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ArrangeTogglesFragment extends Fragment implements OnSettingChangedListener {
+public class ArrangeTogglesFragment extends Fragment {
 
     private static final String TAG = ArrangeTogglesFragment.class.getSimpleName();
     private static final String PREF_HANDLE_KEY = "toggles_arrange_right_handle";
@@ -64,9 +63,11 @@ public class ArrangeTogglesFragment extends Fragment implements OnSettingChanged
     };
 
     ArrayList<String> mToggles;
-    BaseSetting mTogglesFast, mSwipeToSwitch;
-    SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide;
+
     ArrayList<String> toggles = new ArrayList<String>();
+
+    public ArrangeTogglesFragment() {
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -158,22 +159,24 @@ public class ArrangeTogglesFragment extends Fragment implements OnSettingChanged
     public void onPause() {
         super.onPause();
         getActivity().unregisterReceiver(mReceiver);
+        mListView.setAdapter(null);
+        mAdapter = null;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)
-                inflater.inflate(R.layout.fragment_configure_toggles, container, false);
+                inflater.inflate(R.layout.fragment_arrange_toggles, container, false);
 
-        mTogglesFast = (BaseSetting) rootView.findViewById(R.id.toggles_fast_toggle);
-        mSwipeToSwitch = (BaseSetting) rootView.findViewById(R.id.toggles_swipe_to_switch);
-        mTogglesPerRow = (SingleChoiceSetting) rootView.findViewById(R.id.toggles_per_row);
-        mToggleStyle = (SingleChoiceSetting) rootView.findViewById(R.id.toggles_style);
-        mToggleSide = (SingleChoiceSetting) rootView.findViewById(R.id.toggles_fast_side);
         mListView = (DragSortListView) rootView.findViewById(android.R.id.list);
 
-        mToggleStyle.setOnSettingChangedListener(this);
+        TextView instructions = new TextView(getActivity());
+        instructions.setText(R.string.toggles_arrange_instructions);
+        Resources r = getResources();
+        float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, r.getDisplayMetrics());
+        int padding = (int) px;
+        instructions.setPadding(padding, padding, padding, padding);
+        mListView.addHeaderView(instructions);
 
         return rootView;
     }
@@ -299,27 +302,6 @@ public class ArrangeTogglesFragment extends Fragment implements OnSettingChanged
 
     }
 
-    @Override
-    public void onSettingChanged(String table, String key, String oldValue, String value) {
-        if (table.equals("aokp") && key.equals(mToggleStyle.getKey())) {
-            if (value == null || value.isEmpty()) {
-                // defualt state
-                mTogglesPerRow.setVisibility(View.VISIBLE);
-                mTogglesFast.setVisibility(View.VISIBLE);
-                mToggleSide.setVisibility(View.VISIBLE);
-                mSwipeToSwitch.setVisibility(View.VISIBLE);
-            } else {
-                mTogglesPerRow.setVisibility(value.equals("0" /* 0 is the tile */)
-                        ? View.VISIBLE : View.GONE);
-                mTogglesFast.setVisibility(value.equals("0" /* 0 is the tile */)
-                        ? View.VISIBLE : View.GONE);
-                mToggleSide.setVisibility(value.equals("0" /* 0 is the tile */)
-                        ? View.VISIBLE : View.GONE);
-                mSwipeToSwitch.setVisibility(value.equals("0" /* 0 is the tile */)
-                        ? View.VISIBLE : View.GONE);
-            }
-        }
-    }
 
     private void requestAvailableToggles() {
         Intent request =

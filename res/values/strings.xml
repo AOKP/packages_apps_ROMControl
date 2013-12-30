@@ -154,4 +154,7 @@
 
     <string name="toggles_swipe_to_switch_title">Swipe to switch</string>
     <string name="toggles_swipe_to_switch_summary">Swipe to switch between notifications and Quick Settings</string>
+    <string name="toggle_tab_arrange">Toggle Setup</string>
+    <string name="toggles_tab_settings">Configure</string>
+    <string name="toggles_arrange_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
 </resources>

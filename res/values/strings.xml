@@ -111,6 +111,8 @@
     <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
+    <string name="vibrate_notif_expand_title">Vibrate on expand</string>
+    <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications</string>
 
     <string name="battery_percentage_indicator_title">Show battery percentage indicator</string>
     <string name="battery_percentage_indicator_summary">Show battery percentage indicator front of battery icon</string>

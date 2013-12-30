@@ -162,6 +162,8 @@
     <string name="category_signalbars">Signal Bars</string>
     <string name="statusbar_signal_text_title">Show signal text</string>
     <string name="statusbar_signal_text_summary">Show signal with dBm</string>
+    <string name="statusbar_hide_signal_bars_title">Hide Signal Bars</string>
+    <string name="statusbar_hide_signal_bars_summary">Ability to hide the signal bars</string>
 
     <!-- Installer -->
     <string name="persist_options">Persistence</string>

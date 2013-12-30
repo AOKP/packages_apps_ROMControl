@@ -3,10 +3,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               style="@style/settingsFragmentStyle">
 
-    <com.aokp.romcontrol.widgets.CategorySeparator
-            style="@style/defaultSize"
-            android:title="@string/category_toggles"/>
-
     <com.aokp.romcontrol.settings.SingleChoiceSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,21 +15,50 @@
             android:entryValues="@array/setting_toggleStylesValues"
             />
 
-    <com.aokp.romcontrol.settings.UrlSetting
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:id="@+id/enabled_toggles"
-            android:title="@string/toggle_dialog_arrange_title"
-            android:summary="@string/toggle_dialog_add_toggles"
+            android:id="@+id/toggles_per_row"
+            android:title="@string/toggles_per_row_title"
+            android:key="statusbar_toggles_number_per_row"
+
+            android:entries="@array/setting_togglesPerRow"
+            android:entryValues="@array/setting_togglesPerRowValues"
             />
 
-    <com.aokp.romcontrol.settings.UrlSetting
+    <com.aokp.romcontrol.settings.CheckboxSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:id="@+id/arrange_toggles"
-            android:title="@string/toggles_order_title"
-            android:summary="@string/toggles_order_summary"
+            android:id="@+id/toggles_fast_toggle"
+            android:title="@string/toggles_enable_fasttoggle_title"
+            android:summary="@string/toggles_enable_fasttoggle_summary"
+            android:key="fast_toggle"
+            android:defaultValue="false"
+            />
+
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_fast_side"
+            android:title="@string/toggles_choose_fasttoggle_side_title"
+            android:summary="@string/toggles_choose_fasttoggle_side_summary"
+            android:key="choose_fasttoggle_side"
+
+            android:entries="@array/choose_toggle_side_entries"
+            android:entryValues="@array/choose_toggle_side_values"
+            />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_swipe_to_switch"
+            android:title="@string/toggles_swipe_to_switch_title"
+            android:summary="@string/toggles_swipe_to_switch_summary"
+            android:key="swipe_to_switch"
+            android:defaultValue="false"
             />
 </LinearLayout>

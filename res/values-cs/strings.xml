@@ -101,6 +101,10 @@
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
     <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
     <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
+    <string name="battery_percentage_indicator_title">Zobrazit % baterie</string>
+    <string name="battery_percentage_indicator_summary">Zobrazit indikátor procent vedle ikony baterie</string>
+    <string name="hide_battery_icon_title">Skrýt ikonu baterie</string>
+    <string name="hide_battery_icon_summary">Skrýt ikonu baterie ze stavové lišty</string>
     <!-- Installer -->
     <string name="persist_options">Perzistence</string>
     <string name="persist_enable">Zapnout perzistenci</string>
@@ -109,6 +113,8 @@
     <string name="persist_prop_density_summary">Zachovat LCD densitu</string>
     <string name="persist_file_hosts">Uložit hosts</string>
     <string name="persist_file_hosts_summary">Zachovat soubor hosts</string>
+    <string name="persist_file_xposed">Zachovat Xposed</string>
+    <string name="persist_file_xposed_summary">Zachovat soubore app_process pro Xposed framework</string>
     <!-- Toggles -->
     <string name="title_toggles">Přepínače</string>
     <string name="toggles_style_tile">Dlaždice</string>
@@ -126,4 +132,15 @@
     <string name="toggles_per_row_four">4</string>
     <string name="toggles_per_row_five">5</string>
     <string name="add_toggles">Přidat přepínač</string>
+    <string name="toggles_enable_fasttoggle_title">Zapnout rychlý přístup</string>
+    <string name="toggles_enable_fasttoggle_summary">Zapnout přímý přístup k přepínačům jedním prstem</string>
+    <string name="toggles_choose_fasttoggle_side_title">Zvolit stranu rychlého přístupu</string>
+    <string name="toggles_choose_fasttoggle_side_summary">Zvolit z jaké strany lišty bude lišta s přepínači přístupná</string>
+    <string name="right">Vpravo</string>
+    <string name="left">Vlevo</string>
+    <string name="toggles_swipe_to_switch_title">Přepnout potáhnutím</string>
+    <string name="toggles_swipe_to_switch_summary">Přepnout potáhnutím mezi notifikacemi a rychlým nastavením</string>
+    <string name="toggle_tab_arrange">Nastavení přepínačů</string>
+    <string name="toggles_tab_settings">Konfigurace</string>
+    <string name="toggles_arrange_instructions">Přetáhnutím po pravé straně je možné měnit pořadí. Vysunutím do strany mazat.</string>
 </resources>

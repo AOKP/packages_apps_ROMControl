@@ -12,6 +12,7 @@
     <string name="category_about_aokp">About</string>
     <string name="category_hardware_keys">Hardware Keys</string>
     <string name="category_installer">Installer</string>
+    <string name="category_sound">Sound</string>
     <string name="category_toggles">Toggles</string>
 
     <!-- Menu Items -->
@@ -150,4 +151,11 @@
 
     <string name="toggles_swipe_to_switch_title">Swipe to switch</string>
     <string name="toggles_swipe_to_switch_summary">Swipe to switch between notifications and Quick Settings</string>
+
+    <!-- Sound -->
+    <string name="enable_volume_options_title">Enable volume-panel</string>
+    <string name="enable_volume_options_summary">Setting to enable volume options.</string>
+    <string name="volume_link_notification_title">Link volumes</string>
+    <string name="volume_link_notification_summary">Setting to Link Ringtone and Notification.</string>
+
 </resources>

@@ -93,6 +93,21 @@
                 android:defaultValue="false"
                 />
 
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/category_signalbars"/>
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/statusbar_signal_text_title"
+                android:key="statusbar_signal_text"
+
+                android:entries="@array/signal_text_entries"
+                android:entryValues="@array/signal_text_values"
+                />
+
     </LinearLayout>
 
 </ScrollView>

@@ -131,4 +131,15 @@
         <item>**icon**</item>
     </string-array>
 
+    <string-array name="signal_text_entries" translatable="false">
+        <item>@string/signal_text_entry_hide</item>
+        <item>@string/signal_text_entry_show</item>
+        <item>@string/signal_text_entry_show_with_dbm</item>
+    </string-array>
+    <string-array name="signal_text_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

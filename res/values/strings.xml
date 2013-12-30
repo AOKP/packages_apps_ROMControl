@@ -157,6 +157,13 @@
     <string name="hide_battery_icon_title">Hide battery icon</string>
     <string name="hide_battery_icon_summary">Completly hide battery icon from statusbar</string>
 
+    <string name="category_signalbars">Signal Bars</string>
+    <string name="statusbar_signal_text_title">Signal text</string>
+
+    <string name="signal_text_entry_hide">Hide signal text</string>
+    <string name="signal_text_entry_show">Show signal text</string>
+    <string name="signal_text_entry_show_with_dbm">Show signal text w/dBm</string>
+
     <!-- Installer -->
     <string name="persist_options">Persistence</string>
     <string name="persist_enable">Enable persistence</string>

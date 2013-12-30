@@ -36,6 +36,7 @@ import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
+import com.aokp.romcontrol.fragments.SoundSettingsFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -90,19 +91,15 @@ public class MainActivity extends Activity
             case 0:
                 fragment = new AboutTabHostFragment();
                 break;
-
             case 1:
                 fragment = new GeneralSettingsFragment();
                 break;
-
             case 2:
                 fragment = new LockscreenSettingsFragment();
                 break;
-
             case 3:
                 fragment = new StatusbarSettingsFragment();
                 break;
-
             case 4:
                 fragment = new TogglesTabHostFragment();
                 break;
@@ -112,14 +109,18 @@ public class MainActivity extends Activity
                 break;
 
             case 6:
-                fragment = new NavbarTabHostFragment();
+                fragment = new SoundSettingsFragment();
                 break;
 
             case 7:
-                fragment = new NavRingTargets();
+                fragment = new NavbarTabHostFragment();
                 break;
 
             case 8:
+                fragment = new NavRingTargets();
+                break;
+
+            case 9:
                 fragment = new InstallerSettingsFragment();
                 break;
         }

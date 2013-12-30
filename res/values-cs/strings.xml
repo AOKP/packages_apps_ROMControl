@@ -126,4 +126,12 @@
     <string name="toggles_per_row_four">4</string>
     <string name="toggles_per_row_five">5</string>
     <string name="add_toggles">Přidat přepínač</string>
+    <string name="toggles_enable_fasttoggle_title">Zapnout rychlý přístup</string>
+    <string name="toggles_enable_fasttoggle_summary">Zapnout přímý přístup k přepínačům jedním prstem</string>
+    <string name="toggles_choose_fasttoggle_side_title">Zvolit stranu rychlého přístupu</string>
+    <string name="toggles_choose_fasttoggle_side_summary">Zvolit z jaké strany lišty bude lišta s přepínači přístupná</string>
+    <string name="right">Vpravo</string>
+    <string name="left">Vlevo</string>
+    <string name="toggles_swipe_to_switch_title">Přepnout potáhnutím</string>
+    <string name="toggles_swipe_to_switch_summary">Přepnout potáhnutím mezi notifikacemi a rychlým nastavením</string>
 </resources>

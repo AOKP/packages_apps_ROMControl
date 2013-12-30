@@ -44,4 +44,17 @@
             android:key="hide_battery_icon"
             android:defaultValue="false"
             />
+    <com.aokp.romcontrol.widgets.CategorySeparator
+        style="@style/defaultSize"
+        android:title="@string/category_signalbars"/>
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:title="@string/statusbar_signal_text_title"
+        android:summary="@string/statusbar_signal_text_summary"
+        android:key="statusbar_signal_text"
+        />
+
 </LinearLayout>

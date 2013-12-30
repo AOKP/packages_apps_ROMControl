@@ -17,6 +17,7 @@ import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.TogglesTabHostFragment;
+import com.aokp.romcontrol.fragments.SoundSettingsFragment;
 
 
 public class MainActivity extends Activity
@@ -86,10 +87,14 @@ public class MainActivity extends Activity
                 break;
 
             case 4:
-                fragment = new TogglesTabHostFragment();
+                fragment = new SoundSettingsFragment();
                 break;
 
             case 5:
+                fragment = new TogglesTabHostFragment();
+                break;
+
+            case 6:
                 fragment = new InstallerSettingsFragment();
                 break;
         }

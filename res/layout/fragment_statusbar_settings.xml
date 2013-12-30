@@ -25,4 +25,13 @@
             android:defaultValue="true"
             />
 
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/vibrate_notif_expand_title"
+            android:summary="@string/vibrate_notif_expand_summary"
+            android:key="vibrate_notif_expand"
+            />
+
 </LinearLayout>

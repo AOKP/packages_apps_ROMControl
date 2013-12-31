@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.fragments;
+package com.aokp.romcontrol.fragments.about;
 
 import android.app.Fragment;
 import android.content.ActivityNotFoundException;
@@ -55,12 +55,6 @@ public class AboutFragment extends Fragment {
         });
 
         return root;
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        // TODO scramble dev list
     }
 
     private void launchUrl(String url) {

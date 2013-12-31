@@ -7,10 +7,6 @@
 
     <LinearLayout style="@style/settingsFragmentStyle">
 
-        <com.aokp.romcontrol.widgets.CategorySeparator
-                android:title="@string/category_hardware_keys"
-                style="@style/defaultSize"/>
-
         <com.aokp.romcontrol.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

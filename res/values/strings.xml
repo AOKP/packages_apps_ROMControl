@@ -107,12 +107,14 @@
     <string name="title_setting_enable_custom_hardware_keys">Customize hardware keys</string>
 
     <!-- Statusbar Notifications -->
+    <string name="category_statusbar_notification">Notifications</string>
+    <string name="category_statusbar_battery">Battery</string>
     <string name="adb_notify">USB debugging notify</string>
     <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
 
-    <string name="battery_percentage_indicator_title">Show battery percentage indicator</string>
+    <string name="battery_percentage_indicator_title">Show battery % indicator</string>
     <string name="battery_percentage_indicator_summary">Show battery percentage indicator front of battery icon</string>
     <string name="hide_battery_icon_title">Hide battery icon</string>
     <string name="hide_battery_icon_summary">Completly hide battery icon from statusbar</string>

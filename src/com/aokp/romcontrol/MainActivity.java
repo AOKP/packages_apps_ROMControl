@@ -10,14 +10,14 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
-import com.aokp.romcontrol.fragments.LockscreenSettingsFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
+import com.aokp.romcontrol.fragments.LockscreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavRingTargets;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
+import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
 
 
@@ -83,7 +83,7 @@ public class MainActivity extends Activity
                 fragment = new HardwareKeysFragment();
                 break;
 
-	    case 3:
+            case 3:
                 fragment = new LockscreenSettingsFragment();
                 break;
 
@@ -93,11 +93,10 @@ public class MainActivity extends Activity
             case 5:
                 fragment = new TogglesTabHostFragment();
                 break;
-
             case 6:
                 fragment = new InstallerSettingsFragment();
                 break;
-            case 6:
+            case 7:
                 fragment = new NavRingTargets();
                 break;
         }

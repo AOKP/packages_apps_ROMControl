@@ -151,6 +151,10 @@
     <string name="toggle_tab_arrange">Nastavení přepínačů</string>
     <string name="toggles_tab_settings">Konfigurace</string>
     <string name="toggles_arrange_instructions">Přetáhnutím po pravé straně je možné měnit pořadí. Vysunutím do strany mazat.</string>
+    <string name="toggles_collapse_generic_title">Zavřít notifikační okno po stisku přepínače</string>
+    <string name="toggles_collapse_generic_summary">Zavřít okno notifikací/přepínačů po stisku přepínače</string>
+    <string name="toggles_vibrate_title">Vibrovat při stisku přepínače</string>
+    <string name="toggles_vibrate_summary">Vibrovat při každém základním stisku přepínačů</string>
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Položky navigačního kruhu</string>
     <string name="navbar_ring">Vlastní položky kruhu</string>

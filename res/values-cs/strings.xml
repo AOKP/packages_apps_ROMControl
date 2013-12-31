@@ -103,16 +103,30 @@
     <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>
     <!-- Statusbar Notifications -->
+    <string name="category_statusbar_clock">Hodiny</string>
     <string name="adb_notify">Upozornění na ladění USB</string>
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
     <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
     <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
     <string name="vibrate_notif_expand_title">Vibrovat při roztažení</string>
     <string name="vibrate_notif_expand_summary">Vibrovat při roztažení notifikací</string>
+    <string name="notification_count_title">Zobrazit počet notifikací</string>
+    <string name="notification_count_summary">Zobrazit počet čekajících notifikací ve stavové liště</string>
     <string name="battery_percentage_indicator_title">Zobrazit % baterie</string>
     <string name="battery_percentage_indicator_summary">Zobrazit indikátor procent vedle ikony baterie</string>
     <string name="hide_battery_icon_title">Skrýt ikonu baterie</string>
     <string name="hide_battery_icon_summary">Skrýt ikonu baterie ze stavové lišty</string>
+    <string name="statusbar_clock_am_pm_style_title">AM/PM styl</string>
+    <string name="statusbar_clock_style_title">Styl hodin</string>
+    <string name="statusbar_clock_weekday_title">Den v týdnu</string>
+    <string name="right_clock">Hodiny vpravo</string>
+    <string name="center_clock">Hodiny uprostřed</string>
+    <string name="no_clock">Bez hodin</string>
+    <string name="dont_show">Nezobrazovat</string>
+    <string name="small_am_pm">Malé AM/PM</string>
+    <string name="regular_am_pm">Normální AM/PM</string>
+    <string name="small_weekday">Malý den</string>
+    <string name="regular_weekday">Normální den</string>
     <!-- Installer -->
     <string name="persist_options">Perzistence</string>
     <string name="persist_enable">Zapnout perzistenci</string>

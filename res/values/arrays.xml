@@ -16,4 +16,5 @@
         <item>@drawable/ic_rom_control_toggles</item>
         <item>@drawable/ic_rom_control_installer</item>
     </string-array>
+
 </resources>

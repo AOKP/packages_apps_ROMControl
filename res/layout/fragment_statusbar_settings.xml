@@ -3,7 +3,7 @@
 
     <com.aokp.romcontrol.widgets.CategorySeparator
             style="@style/defaultSize"
-            android:title="@string/category_statusbar"/>
+            android:title="@string/category_statusbar_notification"/>
 
     <com.aokp.romcontrol.settings.CheckboxSetting
             android:layout_width="match_parent"
@@ -29,6 +29,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:title="@string/vibrate_notif_expand_title"
+            android:summary="@string/vibrate_notif_expand_summary"
+            android:key="vibrate_notif_expand"
+            />
+
+    <com.aokp.romcontrol.widgets.CategorySeparator
+            style="@style/defaultSize"
+            android:title="@string/category_statusbar_battery"/>
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
             android:title="@string/battery_percentage_indicator_title"
             android:summary="@string/battery_percentage_indicator_summary"
             android:key="battery_percentage_indicator"
@@ -44,6 +57,7 @@
             android:key="hide_battery_icon"
             android:defaultValue="false"
             />
+
     <com.aokp.romcontrol.settings.CheckboxSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

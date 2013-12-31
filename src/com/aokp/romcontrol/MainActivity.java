@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.aokp.romcontrol.fragments.AboutFragment;
+import com.aokp.romcontrol.fragments.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
@@ -70,7 +70,7 @@ public class MainActivity extends Activity
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new AboutFragment();
+                fragment = new AboutTabHostFragment();
                 break;
 
             case 1:

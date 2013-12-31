@@ -57,12 +57,6 @@ public class AboutFragment extends Fragment {
         return root;
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        // TODO scramble dev list
-    }
-
     private void launchUrl(String url) {
         Uri uriUrl = Uri.parse(url);
         Intent website = new Intent(Intent.ACTION_VIEW, uriUrl);

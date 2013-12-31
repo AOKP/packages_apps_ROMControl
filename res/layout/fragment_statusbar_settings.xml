@@ -1,72 +1,126 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              style="@style/settingsFragmentStyle">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+    <LinearLayout style="@style/settingsFragmentStyle">
 
-            android:title="@string/brightness_slider_title"
-            android:summary="@string/brightness_slider_summary"
-            android:key="statusbar_enable_brightness_slider"
-            android:defaultValue="true"
-            />
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/category_statusbar_notification"/>
 
-    <com.aokp.romcontrol.widgets.CategorySeparator
-            style="@style/defaultSize"
-            android:title="@string/category_statusbar_notification"/>
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                android:title="@string/brightness_slider_title"
+                android:summary="@string/brightness_slider_summary"
+                android:key="statusbar_enable_brightness_slider"
+                android:defaultValue="true"
+                />
 
-            android:title="@string/adb_notify"
-            android:summary="@string/adb_notify_summary"
-            android:key="adb_notify"
-            android:defaultValue="true"
-            />
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                android:title="@string/adb_notify"
+                android:summary="@string/adb_notify_summary"
+                android:key="adb_notify"
+                android:defaultValue="true"
+                />
 
-            android:title="@string/ime_switcher_title"
-            android:summary="@string/ime_switcher_summary"
-            android:key="show_statusbar_ime_switcher"
-            android:defaultValue="true"
-            />
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                android:title="@string/ime_switcher_title"
+                android:summary="@string/ime_switcher_summary"
+                android:key="show_statusbar_ime_switcher"
+                android:defaultValue="true"
+                />
 
-            android:title="@string/vibrate_notif_expand_title"
-            android:summary="@string/vibrate_notif_expand_summary"
-            android:key="vibrate_notif_expand"
-            android:defaultValue="true"
-            />
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    <com.aokp.romcontrol.widgets.CategorySeparator
-            style="@style/defaultSize"
-            android:title="@string/category_statusbar_battery"/>
+                android:title="@string/vibrate_notif_expand_title"
+                android:summary="@string/vibrate_notif_expand_summary"
+                android:key="vibrate_notif_expand"
+                android:defaultValue="true"
+                />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-            android:title="@string/battery_percentage_indicator_title"
-            android:summary="@string/battery_percentage_indicator_summary"
-            android:key="battery_percentage_indicator"
-            android:defaultValue="false"
-            />
+                android:title="@string/notification_count_title"
+                android:summary="@string/notification_count_summary"
+                android:key="status_bar_notif_count"
+                android:defaultValue="true"
+                />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/category_statusbar_battery"/>
 
-            android:title="@string/hide_battery_icon_title"
-            android:summary="@string/hide_battery_icon_summary"
-            android:key="hide_battery_icon"
-            android:defaultValue="false"
-            />
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-</LinearLayout>
+                android:title="@string/battery_percentage_indicator_title"
+                android:summary="@string/battery_percentage_indicator_summary"
+                android:key="battery_percentage_indicator"
+                android:defaultValue="false"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/hide_battery_icon_title"
+                android:summary="@string/hide_battery_icon_summary"
+                android:key="hide_battery_icon"
+                android:defaultValue="false"
+                />
+
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/category_statusbar_clock"/>
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_am_pm_style"
+
+                android:title="@string/statusbar_clock_am_pm_style_title"
+                android:key="statusbar_clock_am_pm_style"
+
+                android:entries="@array/statusbar_clock_am_pm_styleEntries"
+                android:entryValues="@array/statusbar_clock_am_pm_styleValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_style"
+
+                android:title="@string/statusbar_clock_style_title"
+                android:key="statusbar_clock_style"
+
+                android:entries="@array/statusbar_clock_styleEntries"
+                android:entryValues="@array/statusbar_clock_styleValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_weekday"
+
+                android:title="@string/statusbar_clock_weekday_title"
+                android:key="statusbar_clock_weekday"
+
+                android:entries="@array/statusbar_clock_weekdayEntries"
+                android:entryValues="@array/statusbar_clock_weekdayValues"
+                />
+
+    </LinearLayout>
+</ScrollView>

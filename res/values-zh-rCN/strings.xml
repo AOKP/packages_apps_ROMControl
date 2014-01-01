@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ROM 控制</string>
+    <string name="rom_control">ROM 控制</string>
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
+
+    <!-- 标题文本 -->
+    <string name="category_general">通用</string>
+    <string name="category_statusbar">状态栏</string>
+    <string name="category_about_aokp">关于</string>
+    <string name="category_hardware_keys">实体按键</string>
+    <string name="category_installer">安装器</string>
+    <string name="category_toggles">开关</string>
+
+    <!-- 菜单项目 -->
+    <string name="menu_show_drawer_icon">在应用列表中显示</string>
+
+    <!-- 关于 -->
+    <string name="devs">开发团队</string>
+    <string name="aokp_website_title">AOKP 网站</string>
+    <string name="aokp_website_summary">www.aokp.co - 在这里可以找到最新发布的消息</string>
+    <string name="aokp_review_summary">查看AOKP的Gerrit评审实例</string>
+    <string name="aokp_irc_title">加入我们的 IRC 聊天室</string>
+    <string name="about_aokp">关于 AOKP</string>
+
+    <!-- 动态更新日志 -->
+    <string name="mgerrit_changelog_title">mGerrit：动态更新日志</string>
+    <string name="mgerrit_changelog_summary">从Gerrit实例拉取交互式更新日志</string>
+
+    <!-- 颜色选择器 -->
+    <string name="dialog_color_picker">颜色选择器</string>
+    <string name="press_color_to_apply">点击颜色应用</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">设置</string>
+    <string name="ics_color">默认</string>
+
+    <!-- 快捷方式选择器 -->
+    <string name="use_custom_app_title">使用自定义程序</string>
+    <string name="use_custom_app_summary">使用自定义程序代替近期使用程序列表</string>
+    <string name="select_custom_app_title">选择自定义程序</string>
+    <string name="group_applications">应用程序</string>
+
+    <!-- 通用 -->
+    <string name="brightness_slider_title">状态栏调节亮度</string>
+    <string name="brightness_slider_summary">未启用自动亮度时，
+    在状态栏滑动可改变亮度。
+    </string>
+    <string name="wakeup_when_plugged_unplugged_title">充电唤醒</string>
+    <string name="wakeup_when_plugged_unplugged_summary">当连接或移除充电器时唤醒设备</string>
+    <string name="category_advanced">高级</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">音量键控制旋转</string>
+    <string name="summary_hardware_keys_volume_keys_double_tap">当双击音量键将锁定或解锁屏幕自动旋转</string>
+
+    <!-- 实体按键 -->
+    <string name="title_hardware_keys_home_long_press">主屏幕键 - 长按</string>
+    <string name="title_hardware_keys_home_double_tap">主屏幕键 - 双击</string>
+    <string name="title_hardware_keys_menu">菜单键</string>
+    <string name="title_hardware_keys_menu_long_press">菜单键 - 长按</string>
+    <string name="title_hardware_keys_search">搜索键</string>
+    <string name="title_hardware_keys_search_long_press">搜索键 - 长按</string>
+    <string name="title_hardware_keys_switch_app">近期任务键</string>
+    <string name="title_hardware_keys_switch_app_long_press">近期任务键 - 长按</string>
+    <string name="title_setting_enable_custom_hardware_keys">自定义实体按键</string>
+
+    <!-- 状态栏通知 -->
+    <string name="adb_notify">USB调试通知</string>
+    <string name="adb_notify_summary">当USB调试链接时显示通知</string>
+    <string name="ime_switcher_title">显示输入法切换</string>
+    <string name="ime_switcher_summary">输入时状态栏显示键盘图标</string>
+    <string name="vibrate_notif_expand_title">展开时振动</string>
+    <string name="vibrate_notif_expand_summary">当通知栏展开时振动</string>
+    <string name="battery_percentage_indicator_title">显示电量百分比</string>
+    <string name="battery_percentage_indicator_summary">在电量图标前显示电量百分比</string>
+    <string name="hide_battery_icon_title">隐藏电量图标</string>
+    <string name="hide_battery_icon_summary">在状态栏完全隐藏电量图标</string>
+
+    <!-- 安装器 -->
+    <string name="persist_options">持久化</string>
+    <string name="persist_enable">启用持久化</string>
+    <string name="persist_enable_summary">保持安装数据</string>
+    <string name="persist_prop_density">保持密度</string>
+    <string name="persist_prop_density_summary">保持LCD密度</string>
+    <string name="persist_file_hosts">保持Hosts</string>
+    <string name="persist_file_hosts_summary">保持hosts文件</string>
+    <string name="persist_file_xposed">保持Xposed</string>
+    <string name="persist_file_xposed_summary">为Xposed框架保持文件应用程序进程</string>
+
+    <!-- 开关 -->
+    <string name="title_toggles">开关</string>
+    <string name="toggles_style_tile">方块磁贴式</string>
+    <string name="toggles_style_traditional">传统下拉式</string>
+    <string name="toggles_style_scrollable">传统滑动式</string>
+    <string name="toggles_display_close">关闭</string>
+
+    <string name="toggles_order_title">开关排序</string>
+    <string name="toggles_order_summary">排列要显示的开关顺序</string>
+
+    <string name="toggle_dialog_arrange_title">开关设置</string>
+    <string name="toggle_dialog_add_toggles">添加一个开关</string>
+    <string name="toggle_swap_handle_side">拖动区右置</string>
+    <string name="toggles_style_title">开关风格</string>
+    <string name="toggles_per_row_title">每行开关数量</string>
+    <string name="add_toggles">添加开关</string>
+
+    <string name="toggles_enable_fasttoggle_title">默认显示右侧下拉窗口</string>
+    <string name="toggles_enable_fasttoggle_summary">覆盖默认设置的左侧</string>
+    <string name="toggles_choose_fasttoggle_side_title">选择快捷开关位置</string>
+    <string name="toggles_choose_fasttoggle_side_summary">选择快捷开关在下拉窗口中的位置</string>
+    <string name="right">右侧</string>
+    <string name="left">左侧</string>
+
+    <string name="toggles_swipe_to_switch_title">滑动切换</string>
+    <string name="toggles_swipe_to_switch_summary">滑动可切换通知和快捷开关</string>
+    <string name="toggle_tab_arrange">开关设置</string>
+    <string name="toggles_tab_settings">配置</string>
+    <string name="toggles_arrange_instructions">拖动右边区域可重新排列。滑动可删除。</string>
+</resources>

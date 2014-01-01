@@ -110,6 +110,13 @@
     <string name="adb_notify_summary">Értesítés ha az USB hibakeresés csatlakozva</string>
     <string name="ime_switcher_title">Billentyűzet váltó mutatása</string>
     <string name="ime_switcher_summary">Állapotsávon gépeléskor</string>
+    <string name="vibrate_notif_expand_title">Rezgés kiterjesztetten</string>
+    <string name="vibrate_notif_expand_summary">Rezeg a kiterjesztett értesítéseknél</string>
+
+    <string name="battery_percentage_indicator_title">Százalékos akksi kijelzés</string>
+    <string name="battery_percentage_indicator_summary">Százalékos akksi kijelzés az akksi ikonon</string>
+    <string name="hide_battery_icon_title">Akksi ikon rejtése</string>
+    <string name="hide_battery_icon_summary">Teljesen elrejti az akksi ikont az állapotsávon</string>
 
     <!-- Installer -->
     <string name="persist_options">Perzisztancia</string>
@@ -135,4 +142,22 @@
 
     <string name="toggle_swap_handle_side">Húzd jobbra a fogantyút</string>
     <string name="toggles_style_title">Kapcsoló stílus</string>
+    <string name="toggles_per_row_title">Kapcsolók soronként</string>
+    <string name="toggles_per_row_three">3</string>
+    <string name="toggles_per_row_four">4</string>
+    <string name="toggles_per_row_five">5</string>
+    <string name="add_toggles">Kapcsoló hozzáadása</string>
+
+    <string name="toggles_enable_fasttoggle_title">Engedélyezi a gyors kapcsolót</string>
+    <string name="toggles_enable_fasttoggle_summary">Alapértelmezett viselkedés felülbírálása</string>
+    <string name="toggles_choose_fasttoggle_side_title">Válassz gyors váltási oldalt</string>
+    <string name="toggles_choose_fasttoggle_side_summary">Válaszd ki a gyors váltási oldalt</string>
+    <string name="right">Right</string>
+    <string name="left">Left</string>
+
+    <string name="toggles_swipe_to_switch_title">Húzásra váltás</string>
+    <string name="toggles_swipe_to_switch_summary">Húzásra vált az Értesítések és a Gyors beállítások közt</string>
+    <string name="toggle_tab_arrange">Kapcsoló beállítás</string>
+    <string name="toggles_tab_settings">Beállítás</string>
+    <string name="toggles_arrange_instructions">Húzó fogantyú átrendezése a jobb oldalról. Húzás eltávolítása.</string>
 </resources>

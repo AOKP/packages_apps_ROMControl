@@ -159,5 +159,5 @@
     <string name="toggles_swipe_to_switch_summary">Húzásra vált az Értesítések és a Gyors beállítások közt</string>
     <string name="toggle_tab_arrange">Kapcsoló beállítás</string>
     <string name="toggles_tab_settings">Beállítás</string>
-    <string name="toggles_arrange_instructions">Húzó fogantyú átrendezése a jobb oldalról. Húzás eltávolítása.</string>
+    <string name="toggles_arrange_instructions">Húzd a jobb oldali fogantyút az átrendezéshez. Húzva eltávolítja.</string>
 </resources>

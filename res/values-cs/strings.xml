@@ -101,6 +101,8 @@
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
     <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
     <string name="ime_switcher_summary">Během psaní ve stavové liště</string>
+    <string name="vibrate_notif_expand_title">Vibrovat při roztažení</string>
+    <string name="vibrate_notif_expand_summary">Vibrovat při roztažení notifikací</string>
     <string name="battery_percentage_indicator_title">Zobrazit % baterie</string>
     <string name="battery_percentage_indicator_summary">Zobrazit indikátor procent vedle ikony baterie</string>
     <string name="hide_battery_icon_title">Skrýt ikonu baterie</string>

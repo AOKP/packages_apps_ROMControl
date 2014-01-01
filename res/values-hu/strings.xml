@@ -114,7 +114,7 @@
     <string name="vibrate_notif_expand_summary">Rezeg a kiterjesztett értesítéseknél</string>
 
     <string name="battery_percentage_indicator_title">Százalékos akksi kijelzés</string>
-    <string name="battery_percentage_indicator_summary">Százalékos akksi kijelzés az akksi ikonon</string>
+    <string name="battery_percentage_indicator_summary">Százalékos akksi kijelzés az akksi ikon mellett</string>
     <string name="hide_battery_icon_title">Akksi ikon rejtése</string>
     <string name="hide_battery_icon_summary">Teljesen elrejti az akksi ikont az állapotsávon</string>
 

@@ -401,5 +401,17 @@
                 android:layout_height="wrap_content"
                 />
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Andrew"
+                aokp:nameDev="BytecodeMe"
+                aokp:twitterHandle="BytecodeMe"
+                aokp:githubLink="@string/github_bytecodeme"
+                aokp:emailDev="hiasant@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
     </LinearLayout>
 </ScrollView>

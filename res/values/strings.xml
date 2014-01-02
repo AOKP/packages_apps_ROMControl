@@ -14,6 +14,7 @@
     <string name="category_installer">Installer</string>
     <string name="category_toggles">Toggles</string>
     <string name="category_navring">Navigation Ring</string>
+    <string name="category_lockscreen">Lockscreen</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -171,7 +172,6 @@
     <string name="toggles_tab_settings">Configure</string>
     <string name="toggles_arrange_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
 
-
         <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>
@@ -205,4 +205,10 @@
     <string name="four_targets">4 targets</string>
     <string name="five_targets">5 targets</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+
+    <!-- Lockscreen -->
+    <string name="lockscreen_wallpaper_title">Lockscreen background</string>
+    <string name="lockscreen_wallpaper_summary">Set or remove the current lockscreen background</string>
+    <string name="lockscreen_wallpaper_pick">New lockscreen background</string>
+    <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
 </resources>

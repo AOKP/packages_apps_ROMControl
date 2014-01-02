@@ -35,6 +35,7 @@
                 android:title="@string/vibrate_notif_expand_title"
                 android:summary="@string/vibrate_notif_expand_summary"
                 android:key="vibrate_notif_expand"
+                android:defaultValue="true"
                 />
 
         <com.aokp.romcontrol.settings.CheckboxSetting

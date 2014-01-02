@@ -170,14 +170,6 @@ public class ArrangeTogglesFragment extends Fragment {
 
         mListView = (DragSortListView) rootView.findViewById(android.R.id.list);
 
-        TextView instructions = new TextView(getActivity());
-        instructions.setText(R.string.toggles_arrange_instructions);
-        Resources r = getResources();
-        float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, r.getDisplayMetrics());
-        int padding = (int) px;
-        instructions.setPadding(padding, padding, padding, padding);
-        mListView.addHeaderView(instructions);
-
         return rootView;
     }
 

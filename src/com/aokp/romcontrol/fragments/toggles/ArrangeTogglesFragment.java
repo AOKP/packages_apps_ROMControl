@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.fragments;
+package com.aokp.romcontrol.fragments.toggles;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -8,13 +8,11 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;

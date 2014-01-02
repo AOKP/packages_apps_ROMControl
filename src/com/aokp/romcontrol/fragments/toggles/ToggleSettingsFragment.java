@@ -1,4 +1,4 @@
-package com.aokp.romcontrol.fragments;
+package com.aokp.romcontrol.fragments.toggles;
 
 import android.app.Fragment;
 import android.os.Bundle;

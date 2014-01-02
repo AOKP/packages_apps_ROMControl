@@ -16,7 +16,7 @@ import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
-import com.aokp.romcontrol.fragments.TogglesTabHostFragment;
+import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
 
 
 public class MainActivity extends Activity

@@ -51,6 +51,54 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <array name="lockscreen_target_descriptions_unlock_only">
+        <item>@string/description_target_unlock</item>
+    </array>
+
+    <array name="lockscreen_targets_unlock_only">
+        <item>@drawable/ic_lockscreen_unlock</item>
+    </array>
+
+    <array name="lockscreen_direction_descriptions">
+        <item>@string/description_direction_right</item>
+        <item>@string/description_direction_up</item>
+        <item>@string/description_direction_left</item>
+        <item>@null</item>
+    </array>
+
+    <string-array name="navring_long_dialog_entries" translatable="false">
+        <item>@string/navring_short</item>
+        <item>@string/navring_long</item>
+        <item>@string/navring_icon</item>
+    </string-array>
+    <string-array name="navring_long_dialog_values" translatable="false">
+        <item>**short**</item>
+        <item>**long**</item>
+        <item>**icon**</item>
+    </string-array>
+    <string-array name="navring_short_dialog_entries" translatable="false">
+        <item>@string/navring_short</item>
+        <item>@string/navring_icon</item>
+    </string-array>
+    <string-array name="navring_short_dialog_values" translatable="false">
+        <item>**short**</item>
+        <item>**icon**</item>
+    </string-array>
+    <string-array name="pref_navring_amount_entries" translatable="false">
+        <item>@string/one_target</item>
+        <item>@string/two_targets</item>
+        <item>@string/three_targets</item>
+        <item>@string/four_targets</item>
+        <item>@string/five_targets</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 
     <string name="setting_key_home_long_press_action_nothing">Nothing</string>
     <string name="setting_key_home_long_press_action_menu">Menu</string>

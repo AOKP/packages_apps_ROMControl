@@ -92,9 +92,6 @@
     </string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
-    <string name="category_advanced">Advanced</string>
-    <string name="title_hardware_keys_volume_keys_double_tap">Volume Smash Rotation</string>
-    <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>
@@ -106,6 +103,10 @@
     <string name="title_hardware_keys_switch_app">Recents</string>
     <string name="title_hardware_keys_switch_app_long_press">Recents - long press</string>
     <string name="title_setting_enable_custom_hardware_keys">Customize hardware keys</string>
+
+    <string name="category_advanced">Advanced</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">Volume Smash Rotation</string>
+    <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
 
     <!-- Statusbar Notifications -->
     <string name="category_statusbar_notification">Notifications</string>

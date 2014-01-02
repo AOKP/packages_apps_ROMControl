@@ -92,6 +92,8 @@
     </string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
+    <string name="non_intrusive_incall_summary">Use non-intrusive dialog for incoming calls</string>
+    <string name="non_intrusive_incall_title">Non-intrusive calls</string>
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>

@@ -24,4 +24,15 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/non_intrusive_incall_title"
+            android:summary="@string/non_intrusive_incall_summary"
+            android:key="non_intrusive_incall"
+            android:defaultValue="true"
+            />
+
 </LinearLayout>

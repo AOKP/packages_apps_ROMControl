@@ -32,6 +32,7 @@
             android:title="@string/vibrate_notif_expand_title"
             android:summary="@string/vibrate_notif_expand_summary"
             android:key="vibrate_notif_expand"
+            android:defaultValue="true"
             />
 
     <com.aokp.romcontrol.widgets.CategorySeparator
@@ -56,16 +57,6 @@
             android:summary="@string/hide_battery_icon_summary"
             android:key="hide_battery_icon"
             android:defaultValue="false"
-            />
-
-    <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:title="@string/vibrate_notif_expand_title"
-            android:summary="@string/vibrate_notif_expand_summary"
-            android:key="vibrate_notif_expand"
-            android:defaultValue="true"
             />
 
 </LinearLayout>

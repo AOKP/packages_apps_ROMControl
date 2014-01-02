@@ -95,7 +95,8 @@
     <string name="category_advanced">Advanced</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Volume Smash Rotation</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
-
+    <string name="immersive_mode_title">Immersive mode</string>
+    <string name="immersive_mode_summary">Hides status and navigation bars</string>
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>
     <string name="title_hardware_keys_home_double_tap">Home - double tap</string>

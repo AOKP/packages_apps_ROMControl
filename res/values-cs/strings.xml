@@ -86,6 +86,8 @@
     <string name="category_advanced">Pokročilé</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>
+    <string name="immersive_mode_title">Nerušivý režim</string>
+    <string name="immersive_mode_summary">Skryje stavovou a navigační lištu</string>
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Domů - dlouhý stisk</string>
     <string name="title_hardware_keys_home_double_tap">Domů - dvojitý stisk</string>

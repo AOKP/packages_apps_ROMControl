@@ -24,4 +24,14 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/immersive_mode_title"
+            android:summary="@string/immersive_mode_summary"
+            android:key="immersive_mode"
+            android:defaultValue="false"
+            />
 </LinearLayout>

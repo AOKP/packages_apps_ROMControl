@@ -166,4 +166,9 @@
     <string name="toggle_tab_arrange">Toggle Setup</string>
     <string name="toggles_tab_settings">Configure</string>
     <string name="toggles_arrange_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>
+
+    <string name="lockscreen_wallpaper_title">Lockscreen background</string>
+    <string name="lockscreen_wallpaper_summary">Set or remove the current lockscreen background</string>
+    <string name="lockscreen_wallpaper_pick">New lockscreen background</string>
+    <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
 </resources>

@@ -25,5 +25,4 @@
         <attr name="colorPickerShowAlphaSlider" format="boolean"/>
     </declare-styleable>
 
-
 </resources>

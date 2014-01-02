@@ -25,5 +25,8 @@
         <attr name="colorPickerShowAlphaSlider" format="boolean"/>
     </declare-styleable>
 
+    <declare-styleable name="ImagePickerSetting">
+        <attr name="imageName" format="string"/>
+    </declare-styleable>
 
 </resources>

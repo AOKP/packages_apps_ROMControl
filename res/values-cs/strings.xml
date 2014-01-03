@@ -11,6 +11,7 @@
     <string name="category_hardware_keys">Hardwarová tlačítka</string>
     <string name="category_installer">Instalátor</string>
     <string name="category_toggles">Přepínače</string>
+    <string name="category_navring">Navigační kruh</string>
     <!-- menu items -->
     <string name="menu_show_drawer_icon">Zobrazit v navigační liště</string>
     <!--About-->
@@ -32,6 +33,7 @@
     <string name="github_bajee11">https://github.com/Bajee11</string>
     <string name="github_bmc08gt">https://github.com/BMc08GT</string>
     <string name="github_birdman">https://github.com/mrbirdman</string>
+    <string name="github_bytecodeme">https://github.com/BytecodeMe</string>
     <string name="github_championswimmer">https://github.com/championswimmer</string>
     <string name="github_DAGr8">https://github.com/DAGr8</string>
     <string name="github_dhacker29">https://github.com/dhacker29</string>
@@ -77,15 +79,16 @@
     <string name="select_custom_app_title">Vybrat vlastní aplikaci</string>
     <string name="group_applications">Aplikace</string>
     <!-- General -->
+    <string name="ok">OK</string>
+    <string name="save">Uložit</string>
+    <string name="reset">Resetovat</string>
+    <string name="cancel">Zrušit</string>
     <string name="brightness_slider_title">Jas v notifikační liště</string>
     <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v
         případě, že je vypnut automatický jas.
     </string>
     <string name="wakeup_when_plugged_unplugged_title">Probudit nabíječkou</string>
     <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
-    <string name="category_advanced">Pokročilé</string>
-    <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
-    <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Domů - dlouhý stisk</string>
     <string name="title_hardware_keys_home_double_tap">Domů - dvojitý stisk</string>
@@ -96,6 +99,9 @@
     <string name="title_hardware_keys_switch_app">Přehled aplikací</string>
     <string name="title_hardware_keys_switch_app_long_press">Přehled aplikací - dlouhý stisk</string>
     <string name="title_setting_enable_custom_hardware_keys">Přizpůsobit hardwarová tlačítka</string>
+    <string name="category_advanced">Pokročilé</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
+    <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>
     <!-- Statusbar Notifications -->
     <string name="adb_notify">Upozornění na ladění USB</string>
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
@@ -145,4 +151,37 @@
     <string name="toggle_tab_arrange">Nastavení přepínačů</string>
     <string name="toggles_tab_settings">Konfigurace</string>
     <string name="toggles_arrange_instructions">Přetáhnutím po pravé straně je možné měnit pořadí. Vysunutím do strany mazat.</string>
+    <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">Položky navigačního kruhu</string>
+    <string name="navbar_ring">Vlastní položky kruhu</string>
+    <string name="navring_enable_long">Zapnout dlouhý stisk pro navigační kruh</string>
+    <string name="navring_target_save">Navigační kruh uložen</string>
+    <string name="navring_target_reset_message">Opravdu obnovit výchozí nastavení navigačního kruhu?</string>
+    <string name="navring_target_reset">Obnovení položek navigačního kruhu.</string>
+    <string name="choose_action_title">Zvolit akci</string>
+    <string name="choose_action_short_title">Zvolit krátkou akci</string>
+    <string name="choose_action_long_title">Zvolit dlouhou akci</string>
+    <string name="action_long_save">nastavit jako dlouhou akci</string>
+    <string name="title_navring_amount">Počet položek navigačného kruhu</string>
+    <string name="summary_navring_amount">Zvolit počet položek v navigačním kruhu</string>
+    <string name="interface_navring_settings_title">Navigační kruh</string>
+    <string name="interface_navring_settings_summary">@null</string>
+    <string name="navring_target_info">Tažením prstu na položky je k nim možné přiřadit akce</string>
+    <string name="navring_clear">Čistící akce</string>
+    <string name="navring_short">Krátká akce</string>
+    <string name="navring_long">Dlouhá akce</string>
+    <string name="navring_icon">Vlastní ikona</string>
+    <string name="navring_target_amount_text">Aktuální počet položek</string>
+    <string name="navring_target_longpress_text">Stav dlouhého stisku</string>
+    <string name="description_target_unlock">Odemknout</string>
+    <string name="description_direction_up">Odemknout tažením nahoru</string>
+    <string name="description_direction_down">Odemknout tažením dolů</string>
+    <string name="description_direction_left">Odemknout tažením vlevo</string>
+    <string name="description_direction_right">Odemknout tažením vpravo</string>
+    <string name="one_target">1 položka</string>
+    <string name="two_targets">2 položky</string>
+    <string name="three_targets">3 položky</string>
+    <string name="four_targets">4 položky</string>
+    <string name="five_targets">5 položek</string>
+    <string name="custom_app_icon_successfully">ikony úspěšně nastaveny!</string>
 </resources>

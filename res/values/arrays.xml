@@ -8,6 +8,7 @@
         <item>@string/category_toggles</item>
         <item>@string/category_installer</item>
         <item>@string/category_navring</item>
+        <item>@string/category_navbar</item>
     </string-array>
     <string-array name="navigation_drawer_icons">
         <item>@drawable/ic_rom_control_about</item>
@@ -17,6 +18,9 @@
         <item>@drawable/ic_rom_control_toggles</item>
         <item>@drawable/ic_rom_control_installer</item>
         <item>@drawable/ic_rom_control_navigation_ring</item>
+        <item>@drawable/ic_rom_control_navigation_bar</item>
+
     </string-array>
 
+    <string name="category_navbar">Navigation bar</string>
 </resources>

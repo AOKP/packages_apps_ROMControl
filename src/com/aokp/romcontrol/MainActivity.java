@@ -18,8 +18,8 @@ import com.aokp.romcontrol.fragments.NavRingTargets;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
+import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
-
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -98,6 +98,9 @@ public class MainActivity extends Activity
                 break;
             case 7:
                 fragment = new NavRingTargets();
+                break;
+            case 8:
+                fragment = new NavbarTabHostFragment();
                 break;
         }
         return fragment;

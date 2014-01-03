@@ -21,8 +21,9 @@ public class HardwareKeysFragment extends Fragment {
     SingleChoiceSetting setting_key_menu, setting_key_menu_long_press;
     SingleChoiceSetting setting_key_search, setting_key_search_long_press;
     SingleChoiceSetting setting_key_recents, setting_key_recents_long_press;
+    SingleChoiceSetting setting_key_camera;
 
-    boolean mHasMenu, mHasHome, mHasAssist, mHasAppSwitch;
+    boolean mHasMenu, mHasHome, mHasAssist, mHasAppSwitch, mHasCamera;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class HardwareKeysFragment extends Fragment {
         mHasHome = (hardwareKeyMask & KEY_MASK_HOME) != 0;
         mHasAssist = (hardwareKeyMask & KEY_MASK_ASSIST) != 0;
         mHasAppSwitch = (hardwareKeyMask & KEY_MASK_APP_SWITCH) != 0;
+        mHasCamera = (hardwareKeyMask & KEY_MASK_CAMERA) != 0;
     }
 
     @Override
@@ -69,6 +71,11 @@ public class HardwareKeysFragment extends Fragment {
         if (!mHasAppSwitch) {
             setting_key_recents.setVisibility(View.GONE);
             setting_key_recents_long_press.setVisibility(View.GONE);
+        }
+
+        setting_key_camera = (SingleChoiceSetting) v.findViewById(R.id.setting_key_camera);
+        if (!mHasCamera) {
+            setting_key_camera.setVisibility(View.GONE);
         }
 
         return v;

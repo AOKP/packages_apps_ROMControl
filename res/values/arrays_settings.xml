@@ -67,9 +67,9 @@
     </array>
 
     <string-array name="navring_long_dialog_entries" translatable="false">
-        <item>@string/navring_short</item>
-        <item>@string/navring_long</item>
-        <item>@string/navring_icon</item>
+        <item>@string/action_short</item>
+        <item>@string/action_long</item>
+        <item>@string/action_icon</item>
     </string-array>
     <string-array name="navring_long_dialog_values" translatable="false">
         <item>**short**</item>
@@ -77,8 +77,8 @@
         <item>**icon**</item>
     </string-array>
     <string-array name="navring_short_dialog_entries" translatable="false">
-        <item>@string/navring_short</item>
-        <item>@string/navring_icon</item>
+        <item>@string/action_short</item>
+        <item>@string/action_icon</item>
     </string-array>
     <string-array name="navring_short_dialog_values" translatable="false">
         <item>**short**</item>
@@ -98,6 +98,19 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
+
+    <string-array name="navbar_dialog_entries" translatable="false">
+        <item>@string/action_short</item>
+        <item>@string/action_long</item>
+        <item>@string/action_double</item>
+        <item>@string/action_icon</item>
+    </string-array>
+    <string-array name="navbar_dialog_values" translatable="false">
+        <item>**short**</item>
+        <item>**long**</item>
+        <item>**double**</item>
+        <item>**icon**</item>
     </string-array>
 
     <string name="setting_key_home_long_press_action_nothing">Nothing</string>

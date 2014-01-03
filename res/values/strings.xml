@@ -189,9 +189,10 @@
     <string name="interface_navring_settings_summary">@null</string>
     <string name="navring_target_info">Drag your finger to targets to assign actions</string>
     <string name="navring_clear">Clear action</string>
-    <string name="navring_short">Short action</string>
-    <string name="navring_long">Long action</string>
-    <string name="navring_icon">Custom icon</string>
+    <string name="action_short">Short action</string>
+    <string name="action_long">Long action</string>
+    <string name="action_double">Double tap action</string>
+    <string name="action_icon">Custom icon</string>
     <string name="navring_target_amount_text">Current number of targets</string>
     <string name="navring_target_longpress_text">Longpress actions</string>
     <string name="description_target_unlock">Unlock</string>
@@ -205,4 +206,7 @@
     <string name="four_targets">4 targets</string>
     <string name="five_targets">5 targets</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+    <string name="add_button">Add button</string>
+    <string name="navbar_tab_arrange">Rearrange</string>
+    <string name="navbar_tab_settings">Settings</string>
 </resources>

@@ -133,10 +133,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/setting_key_back_long_press"
-
                 android:title="@string/title_hardware_keys_back_long_press"
                 android:key="key_back_long_press_action"
+                android:entries="@array/setting_keyActionEntries"
+                android:entryValues="@array/setting_keyActionValues"
+                />
 
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_key_camera"
+                android:title="@string/title_hardware_keys_camera"
+                android:key="key_camera_action"
                 android:entries="@array/setting_keyActionEntries"
                 android:entryValues="@array/setting_keyActionValues"
                 />

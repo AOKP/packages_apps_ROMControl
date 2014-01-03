@@ -173,6 +173,7 @@
     <string name="title_hardware_keys_search_long_press">Search - long press</string>
     <string name="title_hardware_keys_switch_app">Recents</string>
     <string name="title_hardware_keys_switch_app_long_press">Recents - long press</string>
+    <string name="title_hardware_keys_camera">Camera</string>
     <string name="title_setting_enable_custom_hardware_keys">Customize hardware keys</string>
     <string name="summary_setting_enable_custom_hardware_keys">Enable to allow custom actions for the hardware keys to be set.</string>
 

@@ -85,5 +85,15 @@
             android:key="swipe_to_switch"
             android:defaultValue="false"
             />
+
+    <com.aokp.romcontrol.settings.UrlSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/toggles_fav_contact"
+            android:summary="@string/toggle_favcontact_summary"
+            android:title="@string/toggle_favcontact_title"
+            />
+
     </LinearLayout>
 </ScrollView>

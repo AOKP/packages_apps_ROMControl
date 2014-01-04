@@ -219,6 +219,10 @@
     <string name="volume_wake_screen_summary">Use the volume keys wake the screen.</string>
     <string name="volume_music_controls">Volume Music Controls</string>
     <string name="volume_music_controls_summary">Whether volume up/down can be long pressed to skip track</string>
+    <string name="lockscreen_wallpaper_title">Lockscreen background</string>
+    <string name="lockscreen_wallpaper_summary">Set or remove the current lockscreen background</string>
+    <string name="lockscreen_wallpaper_pick">New lockscreen background</string>
+    <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
 
     <string name="add_button">Add button</string>
     <string name="navbar_tab_arrange">Rearrange</string>

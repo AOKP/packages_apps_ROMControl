@@ -15,13 +15,12 @@
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_general</item>
         <item>@drawable/ic_rom_control_hardware_keys</item>
-        <item>@drawable/ic_rom_control_lockscreens</item>
+        <item>@drawable/ic_rom_control_lockscreen</item>
         <item>@drawable/ic_rom_control_signal</item>
         <item>@drawable/ic_rom_control_toggles</item>
         <item>@drawable/ic_rom_control_installer</item>
         <item>@drawable/ic_rom_control_navigation_ring</item>
         <item>@drawable/ic_rom_control_navigation_bar</item>
-
     </string-array>
 
     <string name="category_navbar">Navigation bar</string>

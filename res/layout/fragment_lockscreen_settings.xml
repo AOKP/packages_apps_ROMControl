@@ -24,4 +24,12 @@
         android:key="volume_music_controls"
         />
 
+    <com.aokp.romcontrol.settings.CheckboxSetting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/lockscreen_see_through"
+        android:summary="@string/lockscreen_see_through_summary"
+        android:key="lockscreen_see_through"
+        />
+
 </LinearLayout>

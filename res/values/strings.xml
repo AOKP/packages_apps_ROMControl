@@ -244,4 +244,8 @@
     <string name="add_button">Add button</string>
     <string name="navbar_tab_arrange">Rearrange</string>
     <string name="navbar_tab_settings">Settings</string>
+
+    <string name="lockscreen_see_through">Transparent Lockscreen</string>
+    <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+
 </resources>

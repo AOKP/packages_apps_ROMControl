@@ -9,6 +9,7 @@
     <string name="category_statusbar">Stavová lišta</string>
     <string name="category_about_aokp">O AOKP</string>
     <string name="category_hardware_keys">Hardwarová tlačítka</string>
+    <string name="category_lockscreen">Zamčená obrazovka</string>
     <string name="category_installer">Instalátor</string>
     <string name="category_toggles">Přepínače</string>
     <string name="category_navring">Navigační kruh</string>
@@ -61,6 +62,8 @@
     <string name="url_aokp">http://aokp.co/</string>
     <string name="url_aokp_gerrit">http://gerrit.aokp.co</string>
     <string name="url_aokp_irc">http://webchat.freenode.net/?channels=teamkang</string>
+    <string name="android_open_kang_project">Android Open Kang Project</string>
+    <string name="kanglings">Autoři</string>
     <!-- dynamic changelog -->
     <string name="mgerrit_changelog_title">mGerrit: Aktivní seznam změn</string>
     <string name="mgerrit_changelog_summary">Interaktivní seznam změn stahovaný živě z Gerrit webu</string>
@@ -103,6 +106,8 @@
     <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>
     <!-- Statusbar Notifications -->
+    <string name="category_statusbar_notification">Notifikace</string>
+    <string name="category_statusbar_battery">Baterie</string>
     <string name="adb_notify">Upozornění na ladění USB</string>
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
     <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
@@ -171,10 +176,11 @@
     <string name="interface_navring_settings_title">Navigační kruh</string>
     <string name="interface_navring_settings_summary">@null</string>
     <string name="navring_target_info">Tažením prstu na položky je k nim možné přiřadit akce</string>
-    <string name="navring_clear">Čistící akce</string>
-    <string name="navring_short">Krátká akce</string>
-    <string name="navring_long">Dlouhá akce</string>
-    <string name="navring_icon">Vlastní ikona</string>
+    <string name="navring_clear">Akce výmazu</string>
+    <string name="action_short">Akce krátkého stisku</string>
+    <string name="action_long">Akce dlouhého stisku</string>
+    <string name="action_double">Akce dvojitého stisku</string>
+    <string name="action_icon">Vlastní ikona</string>
     <string name="navring_target_amount_text">Aktuální počet položek</string>
     <string name="navring_target_longpress_text">Stav dlouhého stisku</string>
     <string name="description_target_unlock">Odemknout</string>
@@ -188,4 +194,12 @@
     <string name="four_targets">4 položky</string>
     <string name="five_targets">5 položek</string>
     <string name="custom_app_icon_successfully">ikony úspěšně nastaveny!</string>
+    <!-- Lockscreen -->
+    <string name="volume_wake_screen">Probudit tlačítky hlasitosti</string>
+    <string name="volume_wake_screen_summary">Použít tlačítka hlasitosti k zapnutí obrazovky.</string>
+    <string name="volume_music_controls">Ovládání tlačítky hlasitosti</string>
+    <string name="volume_music_controls_summary">Dlouhým stiskem je možné přeskakovat jednitlivé skladby</string>
+    <string name="add_button">Přidat tlačítko</string>
+    <string name="navbar_tab_arrange">Přeuspořádat</string>
+    <string name="navbar_tab_settings">Nastavení</string>
 </resources>

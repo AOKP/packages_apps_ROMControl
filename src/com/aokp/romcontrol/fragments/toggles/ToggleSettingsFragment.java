@@ -1,9 +1,17 @@
 package com.aokp.romcontrol.fragments.toggles;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.CursorLoader;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.BaseSetting;
@@ -13,9 +21,11 @@ import com.aokp.romcontrol.settings.SingleChoiceSetting;
 /**
  * Created by roman on 12/30/13.
  */
-public class ToggleSettingsFragment extends Fragment implements OnSettingChangedListener {
+public class ToggleSettingsFragment extends Fragment implements OnSettingChangedListener, OnClickListener {
 
-    BaseSetting mTogglesFast, mSwipeToSwitch;
+    private final int PICK_CONTACT = 200;
+
+    BaseSetting mTogglesFast, mSwipeToSwitch, mFavContact;
     SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide;
 
     public ToggleSettingsFragment() {
@@ -31,9 +41,10 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
         mTogglesPerRow = (SingleChoiceSetting) v.findViewById(R.id.toggles_per_row);
         mToggleStyle = (SingleChoiceSetting) v.findViewById(R.id.toggles_style);
         mToggleSide = (SingleChoiceSetting) v.findViewById(R.id.toggles_fast_side);
+        mFavContact = (BaseSetting) v.findViewById(R.id.toggles_fav_contact);
 
         mToggleStyle.setOnSettingChangedListener(this);
-
+        mFavContact.setOnClickListener(this);
 
         return v;
     }
@@ -59,5 +70,43 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
                         ? View.VISIBLE : View.GONE);
             }
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.toggles_fav_contact:
+                Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+                startActivityForResult(intent, PICK_CONTACT);
+                break;
+        }
+    };
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == PICK_CONTACT) {
+                Uri contactData = data.getData();
+                String[] projection = new String[]{
+                        ContactsContract.Contacts.LOOKUP_KEY
+                };
+                String selection = ContactsContract.Contacts.DISPLAY_NAME + " IS NOT NULL";
+                CursorLoader cursorLoader = new CursorLoader(getActivity().getBaseContext(),
+                        contactData, projection, selection, null, null);
+                Cursor cursor = cursorLoader.loadInBackground();
+                if (cursor != null) {
+                    try {
+                        if (cursor.moveToFirst()) {
+                            String lookup_key = cursor.getString(cursor
+                                    .getColumnIndex(ContactsContract.Contacts.LOOKUP_KEY));
+                            Settings.AOKP.putString(getActivity().getContentResolver(),
+                                    Settings.AOKP.QUICK_TOGGLE_FAV_CONTACT, lookup_key);
+                        }
+                    } finally {
+                        cursor.close();
+                    }
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

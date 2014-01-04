@@ -179,6 +179,9 @@
     <string name="toggles_vibrate_title">Vibrate on toggle click</string>
     <string name="toggles_vibrate_summary">Vibrate on all generic toggle actions</string>
 
+    <string name="toggle_favcontact_title">Favorite contact</string>
+    <string name="toggle_favcontact_summary">Choose your favorite contact</string>
+
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>

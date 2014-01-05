@@ -15,6 +15,7 @@
     <string name="category_installer">Installer</string>
     <string name="category_toggles">Toggles</string>
     <string name="category_navring">Navigation Ring</string>
+    <string name="category_navbar">Navigation bar</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>

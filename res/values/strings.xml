@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ROM Control</string>
-    <string name="rom_control">ROM Control</string>
+    <string name="app_name">ROM control</string>
+    <string name="rom_control">ROM control</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -10,11 +10,11 @@
     <string name="category_general">General</string>
     <string name="category_statusbar">Statusbar</string>
     <string name="category_about_aokp">About</string>
-    <string name="category_hardware_keys">Hardware Keys</string>
+    <string name="category_hardware_keys">Hardware keys</string>
     <string name="category_lockscreen">Lockscreen</string>
     <string name="category_installer">Installer</string>
     <string name="category_toggles">Toggles</string>
-    <string name="category_navring">Navigation Ring</string>
+    <string name="category_navring">Navigation ring</string>
     <string name="category_navbar">Navigation bar</string>
 
     <!-- Menu Items -->
@@ -23,7 +23,7 @@
     <!-- About -->
     <string name="devs">The Crew</string>
     <string name="aokp">Android Open Kang Project</string>
-    <string name="aokp_website_title">AOKP Website</string>
+    <string name="aokp_website_title">AOKP website</string>
     <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
     <string name="aokp_review_title">AOKP Code Review - Gerrit</string>
     <string name="aokp_review_summary">View AOKP\'s Gerrit instance</string>
@@ -114,7 +114,7 @@
     <string name="title_setting_enable_custom_hardware_keys">Customize hardware keys</string>
 
     <string name="category_advanced">Advanced</string>
-    <string name="title_hardware_keys_volume_keys_double_tap">Volume Smash Rotation</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">Volume smash rotation</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
 
     <!-- Statusbar Notifications -->
@@ -122,7 +122,7 @@
     <string name="category_statusbar_battery">Battery</string>
     <string name="adb_notify">USB debugging notify</string>
     <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
-    <string name="ime_switcher_title">Show IME Switcher</string>
+    <string name="ime_switcher_title">Show IME switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
     <string name="vibrate_notif_expand_title">Vibrate on expand</string>
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications</string>
@@ -134,11 +134,11 @@
 
     <!-- Installer -->
     <string name="persist_options">Persistence</string>
-    <string name="persist_enable">Enable Persistence</string>
+    <string name="persist_enable">Enable persistence</string>
     <string name="persist_enable_summary">Enable data to persist across installs</string>
-    <string name="persist_prop_density">Persist Density</string>
+    <string name="persist_prop_density">Persist density</string>
     <string name="persist_prop_density_summary">Persist LCD density</string>
-    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts">Persist hosts</string>
     <string name="persist_file_hosts_summary">Persist hosts file</string>
     <string name="persist_file_xposed">Persist Xposed</string>
     <string name="persist_file_xposed_summary">Persist file app_process for Xposed framework</string>
@@ -147,7 +147,7 @@
     <string name="title_toggles">Toggles</string>
     <string name="toggles_style_tile">Tiles</string>
     <string name="toggles_style_traditional">Traditional pulldown</string>
-    <string name="toggles_style_scrollable">Traditional Scrollable</string>
+    <string name="toggles_style_scrollable">Traditional scrollable</string>
     <string name="toggles_display_close">Close</string>
 
     <string name="toggles_order_title">Toggle order</string>
@@ -181,18 +181,18 @@
     <string name="toggles_vibrate_summary">Vibrate on all generic toggle actions</string>
 
     <!-- Nav Ring Targets -->
-    <string name="navbar_ring_cat">Navigation Ring Targets</string>
-    <string name="navbar_ring">Custom Ring Targets</string>
-    <string name="navring_enable_long">Enable Longpress for Navigation Ring</string>
-    <string name="navring_target_save">Navigation Rings saved</string>
+    <string name="navbar_ring_cat">Navigation ring targets</string>
+    <string name="navbar_ring">Custom ring targets</string>
+    <string name="navring_enable_long">Enable longpress for navigation ring</string>
+    <string name="navring_target_save">Navigation rings saved</string>
     <string name="navring_target_reset_message">Do you want to reset the Navigation Ring?</string>
-    <string name="navring_target_reset">Navigation Ring targets reset.</string>
+    <string name="navring_target_reset">Navigation ring targets reset.</string>
     <string name="choose_action_title">Choose action</string>
     <string name="choose_action_short_title">Choose short action</string>
     <string name="choose_action_long_title">Choose long action</string>
     <string name="action_long_save">set as long action</string>
-    <string name="title_navring_amount">Number of Navigation Ring targets</string>
-    <string name="summary_navring_amount">Choose number of targets in the Navigation Ring</string>
+    <string name="title_navring_amount">Number of navigation ring targets</string>
+    <string name="summary_navring_amount">Choose number of targets in the navigation ring</string>
     <string name="interface_navring_settings_title">Navigation Ring</string>
     <string name="interface_navring_settings_summary">@null</string>
     <string name="navring_target_info">Drag your finger to targets to assign actions</string>

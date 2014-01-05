@@ -29,6 +29,7 @@
     <string name="category_hardware_keys">Hardwarová tlačítka</string>
     <string name="category_lockscreen">Zamčená obrazovka</string>
     <string name="category_installer">Instalátor</string>
+    <string name="category_sound">Zvuk</string>
     <string name="category_toggles">Přepínače</string>
     <string name="category_navring">Navigační kruh</string>
     <string name="category_navbar">Navigační lišta</string>
@@ -223,4 +224,9 @@
     <string name="add_button">Přidat tlačítko</string>
     <string name="navbar_tab_arrange">Přeuspořádat</string>
     <string name="navbar_tab_settings">Nastavení</string>
+    <!-- Sound -->
+    <string name="enable_volume_options_title">Zapnout panel hlasitosti</string>
+    <string name="enable_volume_options_summary">Volba pro zapnutí možností hlasitosti.</string>
+    <string name="volume_link_notification_title">Spojit hlasitosti</string>
+    <string name="volume_link_notification_summary">Volba pro spojení hlasitosti vyzvánení a notifikací.</string>
 </resources>

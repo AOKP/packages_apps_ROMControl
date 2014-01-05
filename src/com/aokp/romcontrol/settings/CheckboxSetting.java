@@ -55,7 +55,7 @@ public class CheckboxSetting extends BaseSetting implements OnClickListener {
         /**
          * Inflate Views
          */
-        addView(View.inflate(context, R.layout.setting_checkbox, mRootView));
+        addView(View.inflate(context, getLayout(), mRootView));
         mCheckBox = (CheckBox) findViewById(R.id.checkbox);
 
 
@@ -79,6 +79,10 @@ public class CheckboxSetting extends BaseSetting implements OnClickListener {
 
         setOnClickListener(this);
         setFocusable(true);
+    }
+
+    protected int getLayout() {
+        return R.layout.setting_checkbox;
     }
 
     private void updateSummary() {
@@ -106,5 +110,25 @@ public class CheckboxSetting extends BaseSetting implements OnClickListener {
 
     public boolean isChecked() {
         return mChecked;
+    }
+
+    public CheckboxSetting setCheckedText(int checkedTextResource) {
+        return setCheckedText(getContext().getString(checkedTextResource));
+    }
+
+    public CheckboxSetting setCheckedText(String checkedText) {
+        aDescriptionOn = checkedText;
+        updateSummary();
+        return this;
+    }
+
+    public CheckboxSetting setUncheckedText(int uncheckedTextResource) {
+        return setUncheckedText(getContext().getString(uncheckedTextResource));
+    }
+
+    public CheckboxSetting setUncheckedText(String checkedText) {
+        aDescriptionOn = checkedText;
+        updateSummary();
+        return this;
     }
 }

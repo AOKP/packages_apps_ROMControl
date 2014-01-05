@@ -23,6 +23,4 @@
         <item>@drawable/ic_rom_control_navigation_bar</item>
 
     </string-array>
-
-    <string name="category_navbar">Navigation bar</string>
 </resources>

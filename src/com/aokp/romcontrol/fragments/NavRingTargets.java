@@ -45,19 +45,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
-import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.Toast;
 import com.android.internal.util.aokp.AwesomeConstants;
+import com.android.internal.util.aokp.NavBarHelpers;
 import com.android.internal.util.aokp.NavRingHelpers;
 import com.android.internal.widget.multiwaveview.GlowPadView;
 import com.android.internal.widget.multiwaveview.TargetDrawable;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.ShortcutPickerHelper;
+import com.aokp.romcontrol.settings.CheckboxSetting;
+import com.aokp.romcontrol.settings.SingleChoiceSetting;
+import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -68,7 +66,7 @@ import static com.android.internal.util.aokp.AwesomeConstants.ASSIST_ICON_METADA
 import static com.android.internal.util.aokp.AwesomeConstants.AwesomeConstant;
 
 public class NavRingTargets extends Fragment implements
-        ShortcutPickerHelper.OnPickListener, GlowPadView.OnTriggerListener {
+        ShortcutPickerHelper.OnPickListener, GlowPadView.OnTriggerListener, OnSettingChangedListener {
     private static final String TAG = "NavRing";
     private static final boolean DEBUG = false;
 
@@ -80,8 +78,7 @@ public class NavRingTargets extends Fragment implements
     private ContentResolver cr;
 
     private GlowPadView mGlowPadView;
-    private Spinner mTargetNumAmount;
-    private Switch mLongPressStatus;
+    private SingleChoiceSetting mRingAmount;
 
     private ShortcutPickerHelper mPicker;
     private String[] targetActivities = new String[5];
@@ -96,7 +93,6 @@ public class NavRingTargets extends Fragment implements
     private int startPosOffset;
     private int endPosOffset;
     private int mNavRingAmount;
-    private boolean mBoolLongPress;
     private int mTarget = 0;
 
     public static enum DialogConstant {
@@ -183,64 +179,15 @@ public class NavRingTargets extends Fragment implements
         mGlowPadView = ((GlowPadView) getActivity().findViewById(
                 R.id.navring_target));
         mGlowPadView.setOnTriggerListener(this);
-
-        mTargetNumAmount = (Spinner) getActivity().findViewById(
-                R.id.amount_spinner);
-        ArrayAdapter<CharSequence> spinnerAdapter = new ArrayAdapter<CharSequence>(
-                getActivity(), android.R.layout.simple_spinner_item);
-        spinnerAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        final String[] entries = getResources().getStringArray(
-                R.array.pref_navring_amount_entries);
-        for (int i = 0; i < entries.length; i++) {
-            spinnerAdapter.add(entries[i]);
-        }
-        mTargetNumAmount.setAdapter(spinnerAdapter);
-        mTargetNumAmount.post(new Runnable() {
-            public void run() {
-                mTargetNumAmount
-                        .setOnItemSelectedListener(new AmountListener());
-            }
-        });
-
-        mLongPressStatus = (Switch) getActivity().findViewById(
-                R.id.longpress_switch);
-        mLongPressStatus
-                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton v,
-                            boolean checked) {
-                        Settings.AOKP.putBoolean(cr,
-                                Settings.AOKP.SYSTEMUI_NAVRING_LONG_ENABLE,
-                                checked);
-                        updateDrawables();
-                    }
-                });
+        mRingAmount = (SingleChoiceSetting) getActivity().findViewById(R.id.ring_amount);
+        mRingAmount.setOnSettingChangedListener(this);
         updateDrawables();
-    }
-
-    public class AmountListener implements OnItemSelectedListener {
-        public void onItemSelected(AdapterView<?> parent, View view, int pos,
-                long id) {
-            final String[] values = getResources().getStringArray(
-                    R.array.pref_navring_amount_values);
-            int val = Integer.parseInt((String) values[pos]);
-            Settings.AOKP
-                    .putInt(cr, Settings.AOKP.SYSTEMUI_NAVRING_AMOUNT, val);
-            updateDrawables();
-        }
-
-        public void onNothingSelected(AdapterView<?> parent) {
-            // Do nothing.
-        }
     }
 
     private void setDrawables() {
         final Context context = getActivity();
         intentCounter = 0;
         intentList.clear();
-        mTargetNumAmount.setSelection(mNavRingAmount - 1);
-        mLongPressStatus.setChecked(mBoolLongPress);
 
         // Custom Targets
         ArrayList<TargetDrawable> storedDraw = new ArrayList<TargetDrawable>();
@@ -333,12 +280,6 @@ public class NavRingTargets extends Fragment implements
                 .setShowAsAction(
                         MenuItem.SHOW_AS_ACTION_IF_ROOM
                                 | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-        menu.add(0, MENU_SAVE, 0, R.string.save)
-                .setIcon(R.drawable.ic_menu_save)
-                .setAlphabeticShortcut('s')
-                .setShowAsAction(
-                        MenuItem.SHOW_AS_ACTION_IF_ROOM
-                                | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
     }
 
     @Override
@@ -346,11 +287,6 @@ public class NavRingTargets extends Fragment implements
         switch (item.getItemId()) {
             case MENU_RESET:
                 resetAll();
-                return true;
-            case MENU_SAVE:
-                saveAll();
-                Toast.makeText(getActivity(), R.string.navring_target_save,
-                        Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return false;
@@ -436,8 +372,7 @@ public class NavRingTargets extends Fragment implements
             default:
                 break;
         }
-
-        setDrawables();
+        saveAll();
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -453,9 +388,13 @@ public class NavRingTargets extends Fragment implements
                 String iconName = getIconFileName(mTargetIndex);
                 FileOutputStream iconStream = null;
                 try {
+                    Log.e(TAG,
+                            "iconStream: "
+                                    + iconStream.toString());
                     iconStream = mContext.openFileOutput(iconName,
                             Context.MODE_WORLD_READABLE);
                 } catch (FileNotFoundException e) {
+                    Log.e(TAG, e.getMessage());
                     return; // NOOOOO
                 }
 
@@ -468,7 +407,7 @@ public class NavRingTargets extends Fragment implements
                             .getPath());
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
                 } catch (NullPointerException npe) {
-                    Log.e(TAG, "SeletedImageUri was null.");
+                    Log.e(TAG, npe.getMessage());
                     super.onActivityResult(requestCode, resultCode, data);
                     return;
                 }
@@ -486,7 +425,7 @@ public class NavRingTargets extends Fragment implements
                                 + getResources().getString(
                                         R.string.custom_app_icon_successfully),
                         Toast.LENGTH_LONG).show();
-                setDrawables();
+                saveAll();
             }
         } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
 
@@ -503,8 +442,6 @@ public class NavRingTargets extends Fragment implements
             customIcons[i] = Settings.AOKP.getString(cr,
                     Settings.AOKP.SYSTEMUI_NAVRING_ICON[i]);
         }
-        mBoolLongPress = (Settings.AOKP.getBoolean(cr,
-                Settings.AOKP.SYSTEMUI_NAVRING_LONG_ENABLE, false));
 
         mNavRingAmount = Settings.AOKP.getInt(cr,
                 Settings.AOKP.SYSTEMUI_NAVRING_AMOUNT, 1);
@@ -566,6 +503,7 @@ public class NavRingTargets extends Fragment implements
                                         + getResources().getString(
                                                 R.string.action_long_save),
                                 Toast.LENGTH_LONG).show();
+                        saveAll();
                         break;
                     default:
                         break;
@@ -573,41 +511,26 @@ public class NavRingTargets extends Fragment implements
                 break;
 
         }
-        setDrawables();
     }
 
     @Override
     public void onTrigger(View v, final int target) {
         mTargetIndex = intentList.get(target);
-        if (mBoolLongPress) {
             final String[] stringArray = mContext.getResources()
                     .getStringArray(R.array.navring_long_dialog_entries);
             stringArray[0] = stringArray[0]
                     + "  :  "
-                    + AwesomeConstants.getProperName(mContext,
+                    + NavBarHelpers.getProperSummary(mContext,
                             targetActivities[mTargetIndex]);
             stringArray[1] = stringArray[1]
                     + "  :  "
-                    + AwesomeConstants.getProperName(mContext,
+                    + NavBarHelpers.getProperSummary(mContext,
                             longActivities[mTargetIndex]);
             createDialog(
                     getResources().getString(R.string.choose_action_title),
                     stringArray,
                     getResources().getStringArray(
                             R.array.navring_long_dialog_values));
-        } else {
-            final String[] stringArray = mContext.getResources()
-                    .getStringArray(R.array.navring_short_dialog_entries);
-            stringArray[0] = stringArray[0]
-                    + "  :  "
-                    + AwesomeConstants.getProperName(mContext,
-                            targetActivities[mTargetIndex]);
-            createDialog(
-                    getResources().getString(R.string.choose_action_title),
-                    stringArray,
-                    getResources().getStringArray(
-                            R.array.navring_short_dialog_values));
-        }
     }
 
     @Override
@@ -686,5 +609,10 @@ public class NavRingTargets extends Fragment implements
 
     @Override
     public void onFinishFinalAnimation() {
+    }
+
+    @Override
+    public void onSettingChanged(String table, String key, String oldValue, String value) {
+        updateDrawables();
     }
 }

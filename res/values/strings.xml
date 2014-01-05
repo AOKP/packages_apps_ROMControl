@@ -195,7 +195,7 @@
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>
-    <string name="navring_enable_long">Enable Longpress for Navigation Ring</string>
+    <string name="navring_enable_long">Enable longpress options </string>
     <string name="navring_target_save">Navigation Rings saved</string>
     <string name="navring_target_reset_message">Do you want to reset the Navigation Ring?</string>
     <string name="navring_target_reset">Navigation Ring targets reset.</string>
@@ -213,7 +213,7 @@
     <string name="action_long">Long action</string>
     <string name="action_double">Double tap action</string>
     <string name="action_icon">Custom icon</string>
-    <string name="navring_target_amount_text">Current number of targets</string>
+    <string name="navring_target_amount_text">Set number of targets</string>
     <string name="navring_target_longpress_text">Longpress actions</string>
     <string name="description_target_unlock">Unlock</string>
     <string name="description_direction_up">Slide up for unlock</string>

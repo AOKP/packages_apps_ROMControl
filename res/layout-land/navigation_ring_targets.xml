@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:prvandroid="http://schemas.android.com/apk/prv/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="@string/navring_target_info"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textStyle="italic" />
+
+       <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/ring_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:entries="@array/pref_navring_amount_entries"
+            android:entryValues="@array/pref_navring_amount_values"
+            android:key="systemui_navring_amount"
+            android:title="@string/navring_target_amount_text" />
+
+    <com.android.internal.widget.multiwaveview.GlowPadView
+        android:id="@+id/navring_target"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:layout_gravity="right"
+                prvandroid:targetDescriptions="@array/lockscreen_target_descriptions_unlock_only"
+                prvandroid:targetDrawables="@array/lockscreen_targets_unlock_only"
+                prvandroid:directionDescriptions="@array/lockscreen_target_descriptions_unlock_only"
+                prvandroid:outerRingDrawable="@drawable/navbar_search_outerring"
+                prvandroid:outerRadius="@dimen/navbar_search_outerring_radius"
+                prvandroid:innerRadius="@*android:dimen/glowpadview_inner_radius"
+                prvandroid:snapMargin="@dimen/navbar_search_snap_margin"
+                prvandroid:feedbackCount="1"
+                prvandroid:vibrationDuration="20"
+                prvandroid:alwaysTrackFinger="true"
+                prvandroid:handleDrawable="@drawable/ic_navigation_ring_hint"
+                prvandroid:glowRadius="@*android:dimen/glowpadview_glow_radius"
+                prvandroid:pointDrawable="@*android:drawable/ic_lockscreen_glowdot" />
+
+</FrameLayout>

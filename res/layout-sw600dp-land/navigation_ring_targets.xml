@@ -26,8 +26,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content">
 
         <com.aokp.romcontrol.settings.SingleChoiceSetting
             android:id="@+id/ring_amount"
@@ -60,10 +59,11 @@
 
         <com.android.internal.widget.multiwaveview.GlowPadView
             android:id="@+id/navring_target"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="-15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="-150dp"
             android:contentDescription="@*android:string/keyguard_accessibility_slide_area"
             android:orientation="horizontal"
             prvandroid:allowScaling="false"

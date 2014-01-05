@@ -26,6 +26,9 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.aokp.romcontrol.fragments.AboutFragment;
+import com.aokp.romcontrol.fragments.ArrangeTogglesFragment;
+import com.aokp.romcontrol.fragments.BackupFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
@@ -90,19 +93,15 @@ public class MainActivity extends Activity
             case 0:
                 fragment = new AboutTabHostFragment();
                 break;
-
             case 1:
                 fragment = new GeneralSettingsFragment();
                 break;
-
             case 2:
                 fragment = new HardwareKeysFragment();
                 break;
-
             case 3:
                 fragment = new LockscreenSettingsFragment();
                 break;
-
             case 4:
                 fragment = new StatusbarSettingsFragment();
                 break;
@@ -117,6 +116,9 @@ public class MainActivity extends Activity
                 break;
             case 8:
                 fragment = new NavbarTabHostFragment();
+                break;
+            case 9:
+                fragment = new BackupFragment();
                 break;
         }
         return fragment;
@@ -174,6 +176,4 @@ public class MainActivity extends Activity
         int componentStatus = p.getComponentEnabledSetting(new ComponentName(this, LauncherActivity.class));
         return componentStatus != PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
     }
-
-
 }

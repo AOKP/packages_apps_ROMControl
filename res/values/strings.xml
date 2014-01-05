@@ -13,6 +13,7 @@
     <string name="category_hardware_keys">Hardware Keys</string>
     <string name="category_installer">Installer</string>
     <string name="category_toggles">Toggles</string>
+    <string name="category_backup">Backup/Restore</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -150,4 +151,5 @@
 
     <string name="toggles_swipe_to_switch_title">Swipe to switch</string>
     <string name="toggles_swipe_to_switch_summary">Swipe to switch between notifications and Quick Settings</string>
+    <string name="loading_please_wait">Loading...</string>
 </resources>

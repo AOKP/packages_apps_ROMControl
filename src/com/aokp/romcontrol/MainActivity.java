@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.fragments.AboutFragment;
 import com.aokp.romcontrol.fragments.ArrangeTogglesFragment;
+import com.aokp.romcontrol.fragments.BackupFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
@@ -89,6 +89,9 @@ public class MainActivity extends Activity
 
             case 5:
                 fragment = new InstallerSettingsFragment();
+                break;
+            case 6:
+                fragment = new BackupFragment();
                 break;
         }
         return fragment;

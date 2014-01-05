@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright (c) 2013, The Android Open Kang Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
--->
-
 <resources>
 
     <string name="app_name">ROM Vezérlés</string>
@@ -29,8 +11,10 @@
     <string name="category_statusbar">Állapotsáv</string>
     <string name="category_about_aokp">Rólunk</string>
     <string name="category_hardware_keys">Hardveres gombok</string>
+    <string name="category_lockscreen">Zárképernyő</string>
     <string name="category_installer">Telepítő</string>
     <string name="category_toggles">Kapcsolók</string>
+    <string name="category_navring">Navigációs gyűrűk</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Mutassa az alkalmazás fiókban</string>
@@ -178,4 +162,49 @@
     <string name="toggle_tab_arrange">Kapcsoló beállítás</string>
     <string name="toggles_tab_settings">Beállítás</string>
     <string name="toggles_arrange_instructions">Húzd a jobb oldali fogantyút az átrendezéshez. Húzva eltávolítja.</string>
+
+    <!-- Nav Ring Targets -->
+    <string name="navbar_ring_cat">Navigációs Gyűrű Elemek</string>
+    <string name="navbar_ring">Egyéni Gyűrű Elemek</string>
+    <string name="navring_enable_long">Hosszan nyomás engedélyezése a Navigációs Gyűrűn</string>
+    <string name="navring_target_save">Navigációs Gyűrűk mentve</string>
+    <string name="navring_target_reset_message">Alaphelyzetbe állítod a Gyűrűket?</string>
+    <string name="navring_target_reset">Navigációs Gyűrű elemeinek alaphelyzetbe.</string>
+    <string name="choose_action_title">Akció választása</string>
+    <string name="choose_action_short_title">Rövid akció választás</string>
+    <string name="choose_action_long_title">Hosszú akció választás</string>
+    <string name="action_long_save">beállítva hosszú akciónak</string>
+    <string name="title_navring_amount">Navigációs Gyűrűk elmeinek száma</string>
+    <string name="summary_navring_amount">Válaszd ki hány eleme legyen a Navigációs Gyűrűknek</string>
+    <string name="interface_navring_settings_title">Navigációs Gyűrű</string>
+    <string name="interface_navring_settings_summary">@null</string>
+    <string name="navring_target_info">Húzd az elemre az ujjad akcióhoz</string>
+    <string name="navring_clear">Akció törlése</string>
+    <string name="action_short">Rövid akció</string>
+    <string name="action_long">Hosszú akció</string>
+    <string name="action_double">Dupla érintés akciója</string>
+    <string name="action_icon">Saját ikon</string>
+    <string name="navring_target_amount_text">Jelenlegi elemek száma</string>
+    <string name="navring_target_longpress_text">Hosszan nyomás akciója</string>
+    <string name="description_target_unlock">Feloldás</string>
+    <string name="description_direction_up">Felhúzásra felold</string>
+    <string name="description_direction_down">Lehúzásra felold</string>
+    <string name="description_direction_left">"Balra húzásra felold</string>
+    <string name="description_direction_right">Jobbra húzásra felold</string>
+    <string name="one_target">1 elem</string>
+    <string name="two_targets">2 elem</string>
+    <string name="three_targets">3 elem</string>
+    <string name="four_targets">4 elem</string>
+    <string name="five_targets">5 elem</string>
+    <string name="custom_app_icon_successfully">"ikon beállítás sikeres!"</string>
+
+    <!-- Lockscreen -->
+    <string name="volume_wake_screen">Hangerő gombra ébred</string>
+    <string name="volume_wake_screen_summary">Használd a hangerő gombokat a képernyő felélesztéséhez.</string>
+    <string name="volume_music_controls">Hangerő zene vezérlés</string>
+    <string name="volume_music_controls_summary">Hangerő fel/le hosszan nyomva lépteti a számokat</string>
+
+    <string name="add_button">Gomb hozzáadása</string>
+    <string name="navbar_tab_arrange">Átrendezés</string>
+    <string name="navbar_tab_settings">Beállítások</string>
 </resources>

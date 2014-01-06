@@ -115,7 +115,7 @@
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Kezdőoldal - hosszan nyomás</string>
-    <string name="title_hardware_keys_home_double_tap">Kezdőoldal -dupla érintés</string>
+    <string name="title_hardware_keys_home_double_tap">Kezdőoldal - dupla érintés</string>
     <string name="title_hardware_keys_menu">Menü</string>
     <string name="title_hardware_keys_menu_long_press">Menü- hosszan nyomás</string>
     <string name="title_hardware_keys_search">Keresés</string>

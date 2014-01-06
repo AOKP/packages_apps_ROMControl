@@ -42,7 +42,7 @@
     <string name="devs">The Crew</string>
     <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP website</string>
-    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here.</string>
+    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here</string>
     <string name="aokp_review_title">AOKP Code Review - Gerrit</string>
     <string name="aokp_review_summary">View AOKP\'s Gerrit instance</string>
     <string name="aokp_irc_title">Join us on IRC</string>
@@ -207,7 +207,7 @@
     <string name="navring_enable_long">Enable longpress for navigation ring</string>
     <string name="navring_target_save">Navigation rings saved</string>
     <string name="navring_target_reset_message">Do you want to reset the Navigation Ring?</string>
-    <string name="navring_target_reset">Navigation ring targets reset.</string>
+    <string name="navring_target_reset">Navigation ring targets reset</string>
     <string name="choose_action_title">Choose action</string>
     <string name="choose_action_short_title">Choose short action</string>
     <string name="choose_action_long_title">Choose long action</string>
@@ -238,7 +238,7 @@
 
     <!-- Lockscreen -->
     <string name="volume_wake_screen">Volume rocker wake</string>
-    <string name="volume_wake_screen_summary">Use the volume keys wake the screen.</string>
+    <string name="volume_wake_screen_summary">Use the volume keys to wake the screen</string>
     <string name="volume_music_controls">Volume music controls</string>
     <string name="volume_music_controls_summary">Whether volume up/down can be long pressed to skip track</string>
 

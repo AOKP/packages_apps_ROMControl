@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2013, The Android Open Kang Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
 <resources>
 
     <string name="app_name">ROM Vezérlés</string>
@@ -15,6 +32,7 @@
     <string name="category_installer">Telepítő</string>
     <string name="category_toggles">Kapcsolók</string>
     <string name="category_navring">Navigációs gyűrűk</string>
+    <string name="category_navbar">Navigációs sáv</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Mutassa az alkalmazás fiókban</string>
@@ -77,7 +95,7 @@
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
-    <string name="set">Set</string>
+    <string name="set">Beállítás</string>
     <string name="ics_color">Holo</string>
 
     <!-- Shortcut picker -->
@@ -87,14 +105,15 @@
     <string name="group_applications">Alkalmazások</string>
 
     <!-- General -->
+    <string name="ok">OK</string>
+    <string name="save">Mentés</string>
+    <string name="reset">Alaphelyzet</string>
+    <string name="cancel">Mégsem</string>
     <string name="brightness_slider_title">Állapotsáv fényerő állítás</string>
     <string name="brightness_slider_summary">Engedélyezve lehetséges a fényerőállítás az állapotsávon újjal húzva. Nem lesz aktív, ha az automatikus fényerőállítás beállítva.
     </string>
     <string name="wakeup_when_plugged_unplugged_title">Töltésre feléled</string>
     <string name="wakeup_when_plugged_unplugged_summary">Feléled az eszköz, ha töltőre csatlakozik</string>
-    <string name="category_advanced">Haladó</string>
-    <string name="title_hardware_keys_volume_keys_double_tap">Hangerő forgatási változtatás</string>
-    <string name="summary_hardware_keys_volume_keys_double_tap">Mikor kétszer nyomsz a hangerő gombra megváltoztatod az automatikus forgatási beállítást</string>
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Kezdőoldal - hosszan nyomás</string>
@@ -106,8 +125,13 @@
     <string name="title_hardware_keys_switch_app">Legutóbbiak</string>
     <string name="title_hardware_keys_switch_app_long_press">Legutóbbiak - hosszan nyomás</string>
     <string name="title_setting_enable_custom_hardware_keys">Hardveres gombok testreszabása</string>
+    <string name="category_advanced">Haladó</string>
+    <string name="title_hardware_keys_volume_keys_double_tap">Hangerő forgatási változtatás</string>
+    <string name="summary_hardware_keys_volume_keys_double_tap">Mikor kétszer nyomsz a hangerő gombra megváltoztatod az automatikus forgatási beállítást</string>
 
     <!-- Statusbar Notifications -->
+    <string name="category_statusbar_notification">Értesítések</string>
+    <string name="category_statusbar_battery">Akkumulátor</string>
     <string name="adb_notify">USB hiba keresés</string>
     <string name="adb_notify_summary">Értesítés ha az USB hibakeresés csatlakozva</string>
     <string name="ime_switcher_title">Billentyűzet váltó mutatása</string>
@@ -162,6 +186,13 @@
     <string name="toggle_tab_arrange">Kapcsoló beállítás</string>
     <string name="toggles_tab_settings">Beállítás</string>
     <string name="toggles_arrange_instructions">Húzd a jobb oldali fogantyút az átrendezéshez. Húzva eltávolítja.</string>
+    <string name="toggles_collapse_generic_title">Kapcsoló árnyékolás</string>
+    <string name="toggles_collapse_generic_summary">Árnyékolja a kapcsolót minden műveletnél</string>
+    <string name="toggles_vibrate_title">Kapcsoló rezgése</string>
+    <string name="toggles_vibrate_summary">Rezeg minden kapcsoló műveletnél</string>
+
+    <string name="toggle_favcontact_title">Favorite contact</string>
+    <string name="toggle_favcontact_summary">Choose your favorite contact</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigációs Gyűrű Elemek</string>

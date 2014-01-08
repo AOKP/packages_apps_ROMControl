@@ -32,4 +32,12 @@
         android:key="lockscreen_see_through"
         />
 
+    <com.aokp.romcontrol.settings.CheckboxSetting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/lockscreen_minimize_challenge_title"
+        android:summary="@string/lockscreen_minimize_challenge_summary"
+        android:key="lockscreen_minimize_lockscreen_challenge"
+        />
+
 </LinearLayout>

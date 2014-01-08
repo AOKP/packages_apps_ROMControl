@@ -223,4 +223,6 @@
     <string name="add_button">Přidat tlačítko</string>
     <string name="navbar_tab_arrange">Přeuspořádat</string>
     <string name="navbar_tab_settings">Nastavení</string>
+    <string name="lockscreen_see_through">Průhledná zamčená obrazovka</string>
+    <string name="lockscreen_see_through_summary">Zobrazí obsah za zamčenou obrazovkou. Data budou viditelná pro okolí!</string>
 </resources>

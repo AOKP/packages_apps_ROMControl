@@ -1,35 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2013, The Android Open Kang Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/settingsFragmentStyle">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <com.aokp.romcontrol.widgets.CategorySeparator
-        style="@style/defaultSize"
-        android:title="@string/category_lockscreen"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:title="@string/volume_wake_screen"
-        android:summary="@string/volume_wake_screen_summary"
-        android:key="volume_wake_screen"
-        />
+    <LinearLayout style="@style/settingsFragmentStyle">
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="@string/volume_music_controls"
-        android:summary="@string/volume_music_controls_summary"
-        android:key="volume_music_controls"
-        />
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/category_lockscreen"
+                />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="@string/lockscreen_see_through"
-        android:summary="@string/lockscreen_see_through_summary"
-        android:key="lockscreen_see_through"
-        />
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-</LinearLayout>
+                android:title="@string/volume_wake_screen"
+                android:summary="@string/volume_wake_screen_summary"
+                android:key="volume_wake_screen"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/volume_music_controls"
+                android:summary="@string/volume_music_controls_summary"
+                android:key="volume_music_controls"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/lockscreen_see_through"
+                android:summary="@string/lockscreen_see_through_summary"
+                android:key="lockscreen_see_through"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/lockscreen_minimize_challenge_title"
+                android:summary="@string/lockscreen_minimize_challenge_summary"
+                android:key="lockscreen_minimize_lockscreen_challenge"
+                />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.settings.CheckboxSetting;
 import com.aokp.romcontrol.settings.SingleChoiceSetting;
 
 public class HardwareKeysFragment extends Fragment {
@@ -33,18 +34,21 @@ public class HardwareKeysFragment extends Fragment {
     private static final int KEY_MASK_APP_SWITCH = 0x10;
     private static final int KEY_MASK_CAMERA = 0x20;
 
+    CheckboxSetting setting_customize;
+
     SingleChoiceSetting setting_key_home_long_press, setting_key_home_double_tap;
     SingleChoiceSetting setting_key_menu, setting_key_menu_long_press;
     SingleChoiceSetting setting_key_search, setting_key_search_long_press;
     SingleChoiceSetting setting_key_recents, setting_key_recents_long_press;
 
+    int hardwareKeyMask;
     boolean mHasMenu, mHasHome, mHasAssist, mHasAppSwitch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        int hardwareKeyMask = getActivity().getResources()
+        hardwareKeyMask = getActivity().getResources()
                 .getInteger(com.android.internal.R.integer.config_deviceHardwareKeys);
         mHasMenu = (hardwareKeyMask & KEY_MASK_MENU) != 0;
         mHasHome = (hardwareKeyMask & KEY_MASK_HOME) != 0;
@@ -55,6 +59,14 @@ public class HardwareKeysFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_hardware_keys, container, false);
+
+        /**
+         * Hide customize hardware buttons checkbox
+         */
+        if (hardwareKeyMask == 0) {
+            setting_customize = (CheckboxSetting) v.findViewById(R.id.setting_customize_hardware_keys);
+            setting_customize.setVisibility(View.GONE);
+        }
 
         /**
          * Filter out buttons

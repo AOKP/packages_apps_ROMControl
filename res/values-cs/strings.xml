@@ -220,6 +220,10 @@
     <string name="volume_wake_screen_summary">Použít tlačítka hlasitosti k zapnutí obrazovky.</string>
     <string name="volume_music_controls">Ovládání tlačítky hlasitosti</string>
     <string name="volume_music_controls_summary">Dlouhým stiskem je možné přeskakovat jednitlivé skladby</string>
+    <string name="lockscreen_minimize_challenge_title">Zmenšený symbol odemknutí</string>
+    <string name="lockscreen_minimize_challenge_summary">Nastavit výchozí stav symbolu odemknutí (kruh, gesto, pin) na
+        zmenšený po zapnutí obrazovky.
+    </string>
     <string name="add_button">Přidat tlačítko</string>
     <string name="navbar_tab_arrange">Přeuspořádat</string>
     <string name="navbar_tab_settings">Nastavení</string>

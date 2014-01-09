@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2013, The Android Open Kang Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<resources>
+    <!-- * 0 - Nothing
+         * 1 - Menu
+         * 2 - App-switch
+         * 3 - Search
+         * 4 - Voice search
+         * 5 - In-app search -->
+    <string-array name="setting_keyActionEntries" translatable="false">
+        <item>@string/setting_key_home_long_press_action_nothing</item>
+        <item>@string/setting_key_home_long_press_action_menu</item>
+        <item>@string/setting_key_home_long_press_action_appswitch</item>
+        <item>@string/setting_key_home_long_press_action_search</item>
+        <item>@string/setting_key_home_long_press_action_voicesearch</item>
+        <item>@string/setting_key_home_long_press_action_inappsearch</item>
+    </string-array>
+    <string-array name="setting_keyActionValues" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="setting_toggleStyles" translatable="false">
+        <item>@string/toggles_style_tile</item>
+        <item>@string/toggles_style_traditional</item>
+        <item>@string/toggles_style_scrollable</item>
+    </string-array>
+    <string-array name="setting_toggleStylesValues" translatable="false">
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="setting_togglesPerRow" translatable="false">
+        <item>@string/toggles_per_row_three</item>
+        <item>@string/toggles_per_row_four</item>
+        <item>@string/toggles_per_row_five</item>
+    </string-array>
+    <string-array name="setting_togglesPerRowValues" translatable="false">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="choose_toggle_side_entries" translatable="false">
+        <item>@string/right</item>
+        <item>@string/left</item>
+    </string-array>
+    <string-array name="choose_toggle_side_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <array name="lockscreen_target_descriptions_unlock_only">
+        <item>@string/description_target_unlock</item>
+    </array>
+
+    <array name="lockscreen_targets_unlock_only">
+        <item>@drawable/ic_lockscreen_unlock</item>
+    </array>
+
+    <array name="lockscreen_direction_descriptions">
+        <item>@string/description_direction_right</item>
+        <item>@string/description_direction_up</item>
+        <item>@string/description_direction_left</item>
+        <item>@null</item>
+    </array>
+
+    <string-array name="navring_long_dialog_entries" translatable="false">
+        <item>@string/action_short</item>
+        <item>@string/action_long</item>
+        <item>@string/action_icon</item>
+    </string-array>
+    <string-array name="navring_long_dialog_values" translatable="false">
+        <item>**breve**</item>
+        <item>**lungo**</item>
+        <item>**icona**</item>
+    </string-array>
+    <string-array name="navring_short_dialog_entries" translatable="false">
+        <item>@string/action_short</item>
+        <item>@string/action_icon</item>
+    </string-array>
+    <string-array name="navring_short_dialog_values" translatable="false">
+        <item>**breve**</item>
+        <item>**icona**</item>
+    </string-array>
+    <string-array name="pref_navring_amount_entries" translatable="false">
+        <item>@string/one_target</item>
+        <item>@string/two_targets</item>
+        <item>@string/three_targets</item>
+        <item>@string/four_targets</item>
+        <item>@string/five_targets</item>
+    </string-array>
+
+    <string-array name="pref_navring_amount_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="navbar_dialog_entries" translatable="false">
+        <item>@string/action_short</item>
+        <item>@string/action_long</item>
+        <item>@string/action_double</item>
+        <item>@string/action_icon</item>
+    </string-array>
+    <string-array name="navbar_dialog_values" translatable="false">
+        <item>**breve**</item>
+        <item>**lungo**</item>
+        <item>**doppio**</item>
+        <item>**icona**</item>
+    </string-array>
+
+    <string name="setting_key_home_long_press_action_nothing">Nothing</string>
+    <string name="setting_key_home_long_press_action_menu">Menu</string>
+    <string name="setting_key_home_long_press_action_appswitch">App-switch</string>
+    <string name="setting_key_home_long_press_action_search">Search</string>
+    <string name="setting_key_home_long_press_action_voicesearch">Voice search</string>
+    <string name="setting_key_home_long_press_action_inappsearch">In-app search</string>
+</resources>

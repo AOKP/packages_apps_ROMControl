@@ -20,10 +20,14 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.settings.CheckboxSetting;
 
-public class StatusbarSettingsFragment extends Fragment {
+public class StatusbarSettingsFragment extends Fragment implements OnClickListener {
+
+    CheckboxSetting mBatteryIndicator, mBatteryIndicatorPlugged;
 
     public StatusbarSettingsFragment() {
 
@@ -33,6 +37,27 @@ public class StatusbarSettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_statusbar_settings, container, false);
 
+        mBatteryIndicator = (CheckboxSetting) v.findViewById(R.id.battery_percentage_indicator);
+        mBatteryIndicator.setOnClickListener(this);
+        mBatteryIndicatorPlugged = (CheckboxSetting) v.findViewById(R.id.battery_percentage_indicator_plugged);
+
         return v;
+    }
+
+    @Override
+    public void onClick(View view) {
+        boolean isChecked = false;
+        if (view instanceof CheckboxSetting) {
+            isChecked = ((CheckboxSetting) view).isChecked();
+        }
+        switch (view.getId()) {
+            case R.id.battery_percentage_indicator:
+                if (isChecked) {
+                    mBatteryIndicatorPlugged.setVisibility(View.VISIBLE); 
+                } else {
+                    mBatteryIndicatorPlugged.setVisibility(View.GONE);
+                }
+                break;
+        }
     }
 }

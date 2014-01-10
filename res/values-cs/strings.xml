@@ -135,6 +135,8 @@
     <string name="vibrate_notif_expand_summary">Vibrovat při roztažení notifikací</string>
     <string name="battery_percentage_indicator_title">Zobrazit % baterie</string>
     <string name="battery_percentage_indicator_summary">Zobrazit indikátor procent vedle ikony baterie</string>
+    <string name="battery_percentage_indicator_plugged_title">Zvýraznit nabíjení</string>
+    <string name="battery_percentage_indicator_plugged_summary">Změnit barvu indikace během nabíjení</string>
     <string name="hide_battery_icon_title">Skrýt ikonu baterie</string>
     <string name="hide_battery_icon_summary">Skrýt ikonu baterie ze stavové lišty</string>
     <!-- Installer -->

@@ -90,6 +90,13 @@
     <string name="title_hardware_keys_switch_app_long_press">近期任务键 - 长按</string>
     <string name="title_setting_enable_custom_hardware_keys">自定义实体按键</string>
 
+    <string name="setting_key_home_long_press_action_nothing">无</string>
+    <string name="setting_key_home_long_press_action_menu">菜单</string>
+    <string name="setting_key_home_long_press_action_appswitch">应用切换</string>
+    <string name="setting_key_home_long_press_action_search">搜索</string>
+    <string name="setting_key_home_long_press_action_voicesearch">语音搜索</string>
+    <string name="setting_key_home_long_press_action_inappsearch">应用搜索</string>
+
     <string name="category_advanced">高级</string>
     <string name="title_hardware_keys_volume_keys_double_tap">音量键控制旋转</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">当双击音量键将锁定或解锁屏幕自动旋转</string>
@@ -197,8 +204,14 @@
     <string name="volume_wake_screen_summary">使用音量键唤醒设备</string>
     <string name="volume_music_controls">音量键控制音乐</string>
     <string name="volume_music_controls_summary">长按音量键可以切换歌曲</string>
+    <string name="lockscreen_minimize_challenge_title">最小化解锁区</string>
+    <string name="lockscreen_minimize_challenge_summary">当屏幕开启时最小化解锁区（环形，图形，PIN）</string>
 
     <string name="add_button">添加按钮</string>
     <string name="navbar_tab_arrange">排列</string>
     <string name="navbar_tab_settings">设置</string>
+
+    <string name="lockscreen_see_through">透明锁屏</string>
+    <string name="lockscreen_see_through_summary">显示锁屏背后的内容，可能造成你的数据被周围人看到。</string>
+
 </resources>

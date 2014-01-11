@@ -29,6 +29,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:title="@string/traffic_speed_title"
+                android:summary="@string/traffic_speed_summary"
+                android:key="status_bar_traffic"
+                android:defaultValue="true"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:title="@string/brightness_slider_title"
                 android:summary="@string/brightness_slider_summary"
                 android:key="statusbar_enable_brightness_slider"

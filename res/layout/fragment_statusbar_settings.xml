@@ -183,6 +183,43 @@
                 android:key="statusbar_hide_signal_bars"
                 />
 
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/status_bar_network_title"/>
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/status_bar_show_network_stats_title"
+                android:summary="@string/status_bar_show_network_stats_summary"
+                android:key="status_bar_network_stats"
+                android:defaultValue="false"
+                />
+
+        <com.aokp.romcontrol.settings.ColorPickerSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/status_bar_network_stats_text_color"
+                android:title="@string/status_bar_network_stats_color_title"
+                android:summary="@string/status_bar_network_stats_color_summary"
+                android:key="status_bar_network_stats_text_color"
+                aokp:colorPickerDefaultValue="@android:color/white"
+                aokp:colorPickerShowAlphaSlider="false"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/status_bar_network_stats_update_title"
+                android:summary="@string/status_bar_network_stats_update_summary"
+                android:key="status_bar_network_stats_update_frequency"
+
+                android:entries="@array/entries_status_bar_network_stats_update"
+                android:entryValues="@array/values_status_bar_network_stats_update"
+                />
+
     </LinearLayout>
 
 </ScrollView>

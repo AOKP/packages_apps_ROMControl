@@ -131,6 +131,20 @@
         <item>**icon**</item>
     </string-array>
 
+    <string-array name="entries_status_bar_network_stats_update" translatable="false">
+        <item>@string/time_0_5_seconds</item>
+        <item>@string/time_1_second</item>
+        <item>@string/time_2_seconds</item>
+        <item>@string/time_5_seconds</item>
+    </string-array>
+
+    <string-array name="values_status_bar_network_stats_update" translatable="false">
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+    </string-array>
+
     <!-- clock stuff -->
     <string-array name="statusbar_clock_styleEntries" translatable="false">
         <item>@string/right_clock</item>

@@ -95,6 +95,11 @@
     <string name="hex_hint">#FF000000</string>
     <string name="set">Nastavit</string>
     <string name="ics_color">Holo</string>
+    <!-- Time -->
+    <string name="time_0_5_seconds">500 ms</string>
+    <string name="time_1_second">1 s</string>
+    <string name="time_2_seconds">2 s</string>
+    <string name="time_5_seconds">5 s</string>
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Použít vlastní aplikaci</string>
     <string name="use_custom_app_summary">Místo přehledu posledních otevřených aplikací použít vlastní aplikaci</string>
@@ -167,6 +172,13 @@
     <string name="statusbar_signal_text_summary">Zobrazit signál v dBm</string>
     <string name="statusbar_hide_signal_bars_title">Skrýt ukazatel signálu</string>
     <string name="statusbar_hide_signal_bars_summary">Skrýt grafický ukazatel signálu</string>
+    <string name="status_bar_network_title">Síťový provoz</string>
+    <string name="status_bar_show_network_stats_title">Zobrazit rychlost sítě</string>
+    <string name="status_bar_show_network_stats_summary">Zobrazit rychlost sítě ve stavové liště</string>
+    <string name="status_bar_network_stats_update_title">Rychlost aktualizace</string>
+    <string name="status_bar_network_stats_update_summary">Jak často je ukazatel aktualizován</string>
+    <string name="status_bar_network_stats_color_title">Barva textu rychlosti sítě</string>
+    <string name="status_bar_network_stats_color_summary">Nastavit barvu textu rychlosti sítě ve stavové liště</string>
     <!-- Installer -->
     <string name="persist_options">Perzistence</string>
     <string name="persist_enable">Zapnout perzistenci</string>

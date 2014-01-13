@@ -158,6 +158,8 @@
     <string name="ime_switcher_summary">In Statusbar while typing</string>
     <string name="vibrate_notif_expand_title">Vibrate on expand</string>
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications</string>
+    <string name="notification_count_title">Show notification count</string>
+    <string name="notification_count_summary">Display number of pending notifications in the Statusbar</string>
 
     <string name="statusbar_clock_am_pm_style_title">AM/PM style</string>
     <string name="statusbar_clock_am_pm_style_summary">How is AM/PM displayed</string>

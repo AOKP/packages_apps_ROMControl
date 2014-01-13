@@ -71,6 +71,16 @@
                 android:defaultValue="true"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/notification_count_title"
+                android:summary="@string/notification_count_summary"
+                android:key="status_bar_notif_count"
+                android:defaultValue="true"
+                />
+
         <com.aokp.romcontrol.widgets.CategorySeparator
                 style="@style/defaultSize"
                 android:title="@string/category_statusbar_clock"/>

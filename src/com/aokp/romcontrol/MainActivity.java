@@ -32,6 +32,7 @@ import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.LockscreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavRingTargets;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+import com.aokp.romcontrol.fragments.PowerMenuOptionsFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
@@ -117,6 +118,9 @@ public class MainActivity extends Activity
                 break;
             case 8:
                 fragment = new NavbarTabHostFragment();
+                break;
+            case 9:
+                fragment = new PowerMenuOptionsFragment();
                 break;
         }
         return fragment;

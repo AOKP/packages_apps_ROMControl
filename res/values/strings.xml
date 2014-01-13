@@ -127,6 +127,9 @@
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
     <string name="ram_bar_title">Recents RAM bar</string>
     <string name="ram_bar_summary">Shows RAM usage in the recent apps window</string>
+    <string name="show_pointer_icon_title">Show pointer icon</string>
+    <string name="show_pointer_icon_summary">Show the pointer arrow when using a mouse or hovering stylus</string>
+
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>

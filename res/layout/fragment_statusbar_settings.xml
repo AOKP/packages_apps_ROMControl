@@ -93,6 +93,60 @@
                 android:defaultValue="false"
                 />
 
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/category_statusbar_clock"/>
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_am_pm_style"
+
+                android:title="@string/statusbar_clock_am_pm_style_title"
+                android:summary="@string/statusbar_clock_am_pm_style_summary"
+                android:key="statusbar_clock_am_pm_style"
+
+                android:entries="@array/statusbar_clock_am_pm_styleEntries"
+                android:entryValues="@array/statusbar_clock_am_pm_styleValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_style"
+
+                android:title="@string/statusbar_clock_style_title"
+                android:summary="@string/statusbar_clock_style_summary"
+                android:key="statusbar_clock_style"
+
+                android:entries="@array/statusbar_clock_styleEntries"
+                android:entryValues="@array/statusbar_clock_styleValues"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_weekday"
+
+                android:title="@string/statusbar_clock_weekday_title"
+                android:summary="@string/statusbar_clock_weekday_summary"
+                android:key="statusbar_clock_weekday"
+
+                android:entries="@array/statusbar_clock_weekdayEntries"
+                android:entryValues="@array/statusbar_clock_weekdayValues"
+                />
+
+        <com.aokp.romcontrol.settings.ColorPickerSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_color"
+                android:title="@string/statusbar_clock_color_title"
+                android:summary="@string/statusbar_clock_color_summary"
+                android:key="statusbar_clock_color"
+                aokp:colorPickerDefaultValue="@color/status_bar_clock_color"
+                aokp:colorPickerShowAlphaSlider="false"
+                />
+
     </LinearLayout>
 
 </ScrollView>

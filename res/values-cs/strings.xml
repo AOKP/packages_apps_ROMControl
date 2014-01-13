@@ -133,6 +133,7 @@
     <!-- Statusbar Notifications -->
     <string name="category_statusbar_notification">Notifikace</string>
     <string name="category_statusbar_battery">Baterie</string>
+    <string name="category_statusbar_clock">Hodiny</string>
     <string name="adb_notify">Upozornění na ladění USB</string>
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
     <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>
@@ -145,6 +146,22 @@
     <string name="battery_percentage_indicator_plugged_summary">Změnit barvu indikace během nabíjení</string>
     <string name="hide_battery_icon_title">Skrýt ikonu baterie</string>
     <string name="hide_battery_icon_summary">Skrýt ikonu baterie ze stavové lišty</string>
+    <string name="statusbar_clock_am_pm_style_title">AM/PM styl</string>
+    <string name="statusbar_clock_am_pm_style_summary">Styl zobrazení AM/PM</string>
+    <string name="statusbar_clock_style_title">Styl hodin</string>
+    <string name="statusbar_clock_style_summary">Pozice zobrazení hodin</string>
+    <string name="statusbar_clock_weekday_title">Den v týdnu</string>
+    <string name="statusbar_clock_weekday_summary">Zobrazit den v týdnu před hodinami</string>
+    <string name="right_clock">Hodiny vpravo</string>
+    <string name="center_clock">Hodiny uprostřed</string>
+    <string name="no_clock">Bez hodin</string>
+    <string name="dont_show">Nezobrazovat</string>
+    <string name="small_am_pm">Malé AM/PM</string>
+    <string name="regular_am_pm">Normální AM/PM</string>
+    <string name="small_weekday">Malý den</string>
+    <string name="regular_weekday">Normální den</string>
+    <string name="statusbar_clock_color_title">Barva hodin</string>
+    <string name="statusbar_clock_color_summary">Nastavit barvu hodin ve stavové liště</string>
     <!-- Installer -->
     <string name="persist_options">Perzistence</string>
     <string name="persist_enable">Zapnout perzistenci</string>

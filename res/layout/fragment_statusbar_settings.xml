@@ -19,7 +19,7 @@
 
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-
+            xmlns:aokp="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -66,6 +66,16 @@
                 android:title="@string/vibrate_notif_expand_title"
                 android:summary="@string/vibrate_notif_expand_summary"
                 android:key="vibrate_notif_expand"
+                android:defaultValue="true"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/notification_count_title"
+                android:summary="@string/notification_count_summary"
+                android:key="status_bar_notif_count"
                 android:defaultValue="true"
                 />
 

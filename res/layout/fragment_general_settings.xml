@@ -29,4 +29,14 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/show_pointer_icon_title"
+            android:summary="@string/show_pointer_icon_summary"
+            android:key="pointer_icon_enabled"
+            android:defaultValue="true"
+            />
+
 </LinearLayout>

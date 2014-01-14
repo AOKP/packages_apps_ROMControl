@@ -29,6 +29,7 @@
     <string name="category_hardware_keys">Hardwarová tlačítka</string>
     <string name="category_lockscreen">Zamčená obrazovka</string>
     <string name="category_installer">Instalátor</string>
+    <string name="category_sound">Zvuk</string>
     <string name="category_toggles">Přepínače</string>
     <string name="category_navring">Navigační kruh</string>
     <string name="category_navbar">Navigační lišta</string>
@@ -237,4 +238,9 @@
     <string name="navbar_tab_settings">Nastavení</string>
     <string name="lockscreen_see_through">Průhledná zamčená obrazovka</string>
     <string name="lockscreen_see_through_summary">Zobrazí obsah za zamčenou obrazovkou. Data budou viditelná pro okolí!</string>
+    <!-- Sound -->
+    <string name="enable_volume_options_title">Zapnout panel hlasitosti</string>
+    <string name="enable_volume_options_summary">Zapnout možnosti hlasitosti</string>
+    <string name="volume_link_notification_title">Spojit hlasitosti</string>
+    <string name="volume_link_notification_summary">Spojit hlasitosti vyzvánění a upozornění</string>
 </resources>

@@ -165,6 +165,10 @@
     <string name="statusbar_hide_signal_bars_title">Hide Signal Bars</string>
     <string name="statusbar_hide_signal_bars_summary">Ability to hide the signal bars</string>
 
+    <string name="category_clock">Clock</string>
+    <string name="statusbar_clock_color_title">Clock color</string>
+    <string name="statusbar_clock_color_summary">Ability to choose color of clock</string>
+
     <!-- Installer -->
     <string name="persist_options">Persistence</string>
     <string name="persist_enable">Enable persistence</string>

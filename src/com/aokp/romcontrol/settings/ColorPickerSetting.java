@@ -134,7 +134,9 @@ public class ColorPickerSetting extends BaseSetting implements
 
     @Override
     public void onColorChanged(int color) {
-        setValue(convertToARGB(color));
+        String hex = convertToARGB(color);
+        int intHex = convertToColorInt(hex);
+        setValue(String.valueOf(intHex));
         mValue = color;
         setPreviewColor();
 //        try {

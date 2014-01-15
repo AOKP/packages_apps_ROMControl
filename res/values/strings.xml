@@ -100,7 +100,7 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
-    <string name="ics_color">Holo</string>
+    <string name="default_color">Default</string>
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>

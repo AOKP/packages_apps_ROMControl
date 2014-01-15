@@ -81,8 +81,8 @@
             android:hint="@string/hex_hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_marginBottom="5dp" />
 
         <Button
@@ -92,8 +92,8 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/ics_color"
-            android:text="@string/ics_color"
+            android:id="@+id/default_color"
+            android:text="@string/default_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

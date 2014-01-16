@@ -21,24 +21,23 @@
     <string-array name="navigation_drawer_entries">
         <item>@string/category_about_aokp</item>
         <item>@string/category_general</item>
-        <item>@string/category_hardware_keys</item>
         <item>@string/category_lockscreen</item>
         <item>@string/category_statusbar</item>
         <item>@string/category_toggles</item>
-        <item>@string/category_installer</item>
-        <item>@string/category_navring</item>
+        <item>@string/category_hardware_keys</item>
         <item>@string/category_navbar</item>
+        <item>@string/category_navring</item>
+        <item>@string/category_installer</item>
     </string-array>
     <string-array name="navigation_drawer_icons">
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_general</item>
-        <item>@drawable/ic_rom_control_hardware_keys</item>
         <item>@drawable/ic_rom_control_lockscreens</item>
         <item>@drawable/ic_rom_control_signal</item>
         <item>@drawable/ic_rom_control_toggles</item>
-        <item>@drawable/ic_rom_control_installer</item>
-        <item>@drawable/ic_rom_control_navigation_ring</item>
+        <item>@drawable/ic_rom_control_hardware_keys</item>
         <item>@drawable/ic_rom_control_navigation_bar</item>
-
+        <item>@drawable/ic_rom_control_navigation_ring</item>
+        <item>@drawable/ic_rom_control_installer</item>
     </string-array>
 </resources>

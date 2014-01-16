@@ -96,27 +96,31 @@ public class MainActivity extends Activity
                 break;
 
             case 2:
-                fragment = new HardwareKeysFragment();
-                break;
-
-            case 3:
                 fragment = new LockscreenSettingsFragment();
                 break;
 
-            case 4:
+            case 3:
                 fragment = new StatusbarSettingsFragment();
                 break;
-            case 5:
+
+            case 4:
                 fragment = new TogglesTabHostFragment();
                 break;
-            case 6:
-                fragment = new InstallerSettingsFragment();
+
+            case 5:
+                fragment = new HardwareKeysFragment();
                 break;
+
+            case 6:
+                fragment = new NavbarTabHostFragment();
+                break;
+
             case 7:
                 fragment = new NavRingTargets();
                 break;
+
             case 8:
-                fragment = new NavbarTabHostFragment();
+                fragment = new InstallerSettingsFragment();
                 break;
         }
         return fragment;

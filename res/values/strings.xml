@@ -319,6 +319,13 @@
     <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
+    <string name="clock_font_style_title">Font</string>
+    <string name="clock_font_bold">Bold</string>
+    <string name="clock_font_condensed">Condensed</string>
+    <string name="clock_font_light">Light</string>
+    <string name="clock_font_light_italic">Light Italic</string>
+    <string name="clock_font_normal">Normal</string>
+
     <!--Status bar date -->
     <string name="status_bar_clock_category">Clock</string>
     <string name="status_bar_date_title">Date</string>

@@ -108,6 +108,16 @@
     <string name="time_2_seconds">2 seconds</string>
     <string name="time_5_seconds">5 seconds</string>
 
+    <!-- Dimens -->
+    <string name="size_42_dp_default">42 dp (default)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (default)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
@@ -298,6 +308,13 @@
     <string name="add_button">Add button</string>
     <string name="navbar_tab_arrange">Rearrange</string>
     <string name="navbar_tab_settings">Settings</string>
+
+    <string name="navigation_bar_height_title">Navigation Bar height</string>
+    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait</string>
+    <string name="navigation_bar_height_landscape_title">Navigation Bar height landscape</string>
+    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape</string>
+    <string name="navigation_bar_width_title">Navigation Bar width</string>
+    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side</string>
 
     <string name="lockscreen_see_through">Transparent lockscreen</string>
     <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>

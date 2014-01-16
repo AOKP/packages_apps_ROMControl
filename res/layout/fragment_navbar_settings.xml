@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-
+            xmlns:aokp="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
     <LinearLayout style="@style/settingsFragmentStyle">
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation_bar_height"
+
+                android:title="@string/navigation_bar_height_title"
+                android:summary="@string/navigation_bar_height_summary"
+                android:key="navigation_bar_height"
+
+                android:entries="@array/navigation_bar_height_entries"
+                android:entryValues="@array/navigation_bar_height_values"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation_bar_height_landscape"
+
+                android:title="@string/navigation_bar_height_landscape_title"
+                android:summary="@string/navigation_bar_height_landscape_summary"
+                android:key="navigation_bar_height_landscape"
+
+                android:entries="@array/navigation_bar_height_landscape_entries"
+                android:entryValues="@array/navigation_bar_height_landscape_values"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation_bar_width"
+
+                android:title="@string/navigation_bar_width_title"
+                android:summary="@string/navigation_bar_width_summary"
+                android:key="navigation_bar_width"
+
+                android:entries="@array/navigation_bar_width_entries"
+                android:entryValues="@array/navigation_bar_width_values"
+                />
+
     </LinearLayout>
 </ScrollView>

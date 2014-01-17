@@ -116,6 +116,8 @@
     </string>
     <string name="wakeup_when_plugged_unplugged_title">Probudit nabíječkou</string>
     <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
+    <string name="ram_bar_title">Lišta s RAM</string>
+    <string name="ram_bar_summary">Zobrazuje použitou RAM v přepínači běžících aplikací</string>
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Domů - dlouhý stisk</string>
     <string name="title_hardware_keys_home_double_tap">Domů - dvojitý stisk</string>

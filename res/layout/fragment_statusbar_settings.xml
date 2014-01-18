@@ -37,6 +37,16 @@
                 android:defaultValue="true"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/status_bar_double_tap_to_sleep_title"
+                android:summary="@string/status_bar_double_tap_to_sleep_summary"
+                android:key="double_tap_sleep_gesture"
+                android:defaultValue="false"
+                />
+
         <com.aokp.romcontrol.widgets.CategorySeparator
                 style="@style/defaultSize"
                 android:title="@string/category_statusbar_notification"/>

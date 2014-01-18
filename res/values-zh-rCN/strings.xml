@@ -59,7 +59,13 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">设置</string>
-    <string name="ics_color">默认</string>
+    <string name="default_color">默认</string>
+
+    <!-- 时间 -->
+    <string name="time_0_5_seconds">0.5 秒</string>
+    <string name="time_1_second">1 秒</string>
+    <string name="time_2_seconds">2 秒</string>
+    <string name="time_5_seconds">5 秒</string>
 
     <!-- 快捷方式选择器 -->
     <string name="use_custom_app_title">使用自定义程序</string>
@@ -78,6 +84,8 @@
     </string>
     <string name="wakeup_when_plugged_unplugged_title">充电唤醒</string>
     <string name="wakeup_when_plugged_unplugged_summary">当连接或移除充电器时唤醒设备</string>
+    <string name="ram_bar_title">近期 RAM 栏</string>
+    <string name="ram_bar_summary">在近期任务显示 RAM 使用情况</string>
 
     <!-- 实体按键 -->
     <string name="title_hardware_keys_home_long_press">主屏幕键 - 长按</string>
@@ -104,17 +112,53 @@
     <!-- 状态栏通知 -->
     <string name="category_statusbar_notification">通知</string>
     <string name="category_statusbar_battery">电量</string>
+    <string name="category_statusbar_clock">时钟</string>
     <string name="adb_notify">USB调试通知</string>
     <string name="adb_notify_summary">当USB调试链接时显示通知</string>
     <string name="ime_switcher_title">显示输入法切换</string>
     <string name="ime_switcher_summary">输入时状态栏显示键盘图标</string>
     <string name="vibrate_notif_expand_title">展开时振动</string>
     <string name="vibrate_notif_expand_summary">当通知栏展开时振动</string>
+    <string name="notification_count_title">显示通知数量</string>
+    <string name="notification_count_summary">在状态栏显示未查看的通知数量</string>
+
+    <string name="statusbar_clock_am_pm_style_title">上午/下午 风格</string>
+    <string name="statusbar_clock_am_pm_style_summary">上午/下午 如何显示</string>
+    <string name="statusbar_clock_style_title">时钟风格</string>
+    <string name="statusbar_clock_style_summary">状态栏时钟的位置</string>
+    <string name="statusbar_clock_weekday_title">星期计数</string>
+    <string name="statusbar_clock_weekday_summary">在时间前显示周几</string>
+    <string name="right_clock">时钟右置</string>
+    <string name="center_clock">时钟中置</string>
+    <string name="no_clock">不显示时钟</string>
+    <string name="dont_show">不显示</string>
+    <string name="small_am_pm">小号 上午/下午</string>
+    <string name="regular_am_pm">正常 上午/下午</string>
+    <string name="small_weekday">小号 星期</string>
+    <string name="regular_weekday">正常 星期</string>
+    <string name="statusbar_clock_color_title">时钟颜色</string>
+    <string name="statusbar_clock_color_summary">状态栏时钟的颜色</string>
 
     <string name="battery_percentage_indicator_title">显示电量百分比</string>
     <string name="battery_percentage_indicator_summary">在电量图标前显示电量百分比</string>
+    <string name="battery_percentage_indicator_plugged_title">充电指示</string>
+    <string name="battery_percentage_indicator_plugged_summary">在充电过程中电量百分比显示不同颜色</string>
     <string name="hide_battery_icon_title">隐藏电量图标</string>
     <string name="hide_battery_icon_summary">在状态栏完全隐藏电量图标</string>
+
+    <string name="category_signalbars">信号栏</string>
+    <string name="statusbar_signal_text_title">显示信号文字</string>
+    <string name="statusbar_signal_text_summary">显示信号 dBm</string>
+    <string name="statusbar_hide_signal_bars_title">隐藏信号栏</string>
+    <string name="statusbar_hide_signal_bars_summary">可以完全隐藏信号栏</string>
+
+    <string name="status_bar_network_title">网络流量</string>
+    <string name="status_bar_show_network_stats_title">显示网络速度</string>
+    <string name="status_bar_show_network_stats_summary">在状态栏显示网络速度</string>
+    <string name="status_bar_network_stats_update_title">更新频率</string>
+    <string name="status_bar_network_stats_update_summary">指示器更新间隔</string>
+    <string name="status_bar_network_stats_color_title">网络速度文字颜色</string>
+    <string name="status_bar_network_stats_color_summary">状态栏显示的网络速度文字颜色</string>
 
     <!-- 安装器 -->
     <string name="persist_options">持久化</string>

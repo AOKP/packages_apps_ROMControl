@@ -97,6 +97,7 @@
             android:layout_height="wrap_content"
 
             android:id="@+id/toggles_swipe_to_switch"
+            android:dependency="toggles_fast_side"
             android:title="@string/toggles_swipe_to_switch_title"
             android:summary="@string/toggles_swipe_to_switch_summary"
             android:key="swipe_to_switch"

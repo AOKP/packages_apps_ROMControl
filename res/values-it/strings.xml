@@ -100,7 +100,13 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
-    <string name="ics_color">Holo</string>
+    <string name="default_color">Default</string>
+
+    <!-- Time -->
+    <string name="time_0_5_seconds">.5 secondi</string>
+    <string name="time_1_second">1 secondo</string>
+    <string name="time_2_seconds">2 secondi</string>
+    <string name="time_5_seconds">5 secondi</string>
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Usa applicazione personalizzata</string>
@@ -117,6 +123,8 @@
     <string name="brightness_slider_summary">Quando abilitato, questa opzione consente di cambiare la luminosità dello schermo strisciando lungo la barra di stato. Nota: non è disponibile quando la luminosità è gestita automaticamente</string>
     <string name="wakeup_when_plugged_unplugged_title">Accendi su carica</string>
     <string name="wakeup_when_plugged_unplugged_summary">Accendi il dispositivo se collegato in carica</string>
+    <string name="ram_bar_title">Recenti barra RAM</string>
+    <string name="ram_bar_summary">Mostra uso della RAM nella finestra applicazioni recenti</string>
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - pressione lunga</string>
@@ -128,6 +136,13 @@
     <string name="title_hardware_keys_switch_app">Recenti</string>
     <string name="title_hardware_keys_switch_app_long_press">Recenti - pressione lunga</string>
     <string name="title_setting_enable_custom_hardware_keys">Personalizza Tasti fisici</string>
+
+    <string name="setting_key_home_long_press_action_nothing">Niente</string>
+    <string name="setting_key_home_long_press_action_menu">Menu</string>
+    <string name="setting_key_home_long_press_action_appswitch">App-switch</string>
+    <string name="setting_key_home_long_press_action_search">Ricerca</string>
+    <string name="setting_key_home_long_press_action_voicesearch">Ricerca vocale</string>
+    <string name="setting_key_home_long_press_action_inappsearch">Ricerca con In-app</string>
 
     <string name="category_advanced">Avanzate</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Volume cambia la rotazione</string>
@@ -143,10 +158,43 @@
     <string name="vibrate_notif_expand_title">Vibra su espanso</string>
     <string name="vibrate_notif_expand_summary">Vibra quando ci sono delle notifiche espanse</string>
 
+    <string name="statusbar_clock_am_pm_style_title">Stile AM/PM</string>
+    <string name="statusbar_clock_am_pm_style_summary">Scegli come AM/PM venga visualizzato</string>
+    <string name="statusbar_clock_style_title">Stile orologio</string>
+    <string name="statusbar_clock_style_summary">Posizione orologio nella barra di stato</string>
+    <string name="statusbar_clock_weekday_title">Giorno della settimana</string>
+    <string name="statusbar_clock_weekday_summary">Mostra il giorno della settimana davanti all\'orologio</string>
+    <string name="right_clock">Orologio a destra</string>
+    <string name="center_clock">Orologio al centro</string>
+    <string name="no_clock">No orologio</string>
+    <string name="dont_show">Non mostrare</string>
+    <string name="small_am_pm">AM/PM piccolo</string>
+    <string name="regular_am_pm">AM/PM normale</string>
+    <string name="small_weekday">Giorno settimana piccolo</string>
+    <string name="regular_weekday">Giorno settimana normale</string>
+    <string name="statusbar_clock_color_title">Colore orologio</string>
+    <string name="statusbar_clock_color_summary">Colore dell\'orologio visualizzato sulla barra di stato</string>
+
     <string name="battery_percentage_indicator_title">Mostra % di batteria</string>
     <string name="battery_percentage_indicator_summary">Mostra la percentuale di batteria rimanente davanti all\'icona</string>
+    <string name="battery_percentage_indicator_plugged_title">Indicatore di carica</string>
+    <string name="battery_percentage_indicator_plugged_summary">Mostra la percentuale di batteria con un colore differente durante la carica</string>
     <string name="hide_battery_icon_title">Nascondi icona batteria</string>
     <string name="hide_battery_icon_summary">Nascondi completamente l\'icona batteria dalla barra di stato</string>
+
+    <string name="category_signalbars">Barre di Segnale</string>
+    <string name="statusbar_signal_text_title">Mostra testo di segnale</string>
+    <string name="statusbar_signal_text_summary">Mostra il segnale con i dBm</string>
+    <string name="statusbar_hide_signal_bars_title">Nascondi barre di segnale</string>
+    <string name="statusbar_hide_signal_bars_summary">Possibilità di nascondere le barre di segnale</string>
+
+    <string name="status_bar_network_title">Traffico di rete</string>
+    <string name="status_bar_show_network_stats_title">Mostra le velocità di rete</string>
+    <string name="status_bar_show_network_stats_summary">Mostra le velocità di rete nella barra di stato</string>
+    <string name="status_bar_network_stats_update_title">Frequenza di aggiornamento</string>
+    <string name="status_bar_network_stats_update_summary">Scegli quanto spesso deve essere aggiornato l\'indicatore</string>
+    <string name="status_bar_network_stats_color_title">Colore velocità di rete</string>
+    <string name="status_bar_network_stats_color_summary">Scegli il colore dell\'indicatore velocità di rete nella barra di stato</string>
 
     <!-- Installer -->
     <string name="persist_options">Persistenza</string>

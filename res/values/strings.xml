@@ -254,6 +254,9 @@
     <string name="toggle_favcontact_title">Favorite contact</string>
     <string name="toggle_favcontact_summary">Choose your favorite contact</string>
 
+    <string name="toggle_screenshot_delay_title">Screenshot delay</string>
+    <string name="toggle_screenshot_delay_summary">Delay for screenshot toggle to send intent to capture screen</string>
+
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation ring targets</string>
     <string name="navbar_ring">Custom ring targets</string>

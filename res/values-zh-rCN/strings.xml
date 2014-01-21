@@ -78,10 +78,6 @@
     <string name="save">保存</string>
     <string name="reset">重置</string>
     <string name="cancel">取消</string>
-    <string name="brightness_slider_title">状态栏调节亮度</string>
-    <string name="brightness_slider_summary">未启用自动亮度时，
-    在状态栏滑动可改变亮度。
-    </string>
     <string name="wakeup_when_plugged_unplugged_title">充电唤醒</string>
     <string name="wakeup_when_plugged_unplugged_summary">当连接或移除充电器时唤醒设备</string>
     <string name="ram_bar_title">近期 RAM 栏</string>
@@ -113,6 +109,12 @@
     <string name="category_statusbar_notification">通知</string>
     <string name="category_statusbar_battery">电量</string>
     <string name="category_statusbar_clock">时钟</string>
+
+    <string name="brightness_slider_title">状态栏调节亮度</string>
+    <string name="brightness_slider_summary">未启用自动亮度时，在状态栏滑动可改变亮度。</string>
+    <string name="status_bar_double_tap_to_sleep_title">双击休眠</string>
+    <string name="status_bar_double_tap_to_sleep_summary">双击状态栏可使设备休眠</string>
+
     <string name="adb_notify">USB调试通知</string>
     <string name="adb_notify_summary">当USB调试链接时显示通知</string>
     <string name="ime_switcher_title">显示输入法切换</string>

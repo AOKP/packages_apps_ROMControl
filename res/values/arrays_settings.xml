@@ -176,5 +176,23 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <string-array name="screenshot_delayEntries" translatable="false">
+        <item>2 seconds</item>
+        <item>3 seconds</item>
+        <item>4 seconds</item>
+        <item>5 seconds</item>
+        <item>6 seconds</item>
+        <item>7 seconds</item>
+        <item>8 seconds</item>
+    </string-array>
+    <string-array name="screenshot_delayValues" translatable="false">
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+    </string-array>
 
 </resources>

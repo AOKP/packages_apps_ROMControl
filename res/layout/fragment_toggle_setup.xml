@@ -112,5 +112,17 @@
             android:title="@string/toggle_favcontact_title"
             />
 
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/screenshot_delay"
+
+            android:key="screenshot_toggle_delay"
+            android:title="@string/toggle_screenshot_delay_title"
+            android:summary="@string/toggle_screenshot_delay_summary"
+            android:entries="@array/screenshot_delayEntries"
+            android:entryValues="@array/screenshot_delayValues"
+            />
+
     </LinearLayout>
 </ScrollView>

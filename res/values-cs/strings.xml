@@ -110,10 +110,6 @@
     <string name="save">Uložit</string>
     <string name="reset">Resetovat</string>
     <string name="cancel">Zrušit</string>
-    <string name="brightness_slider_title">Jas v notifikační liště</string>
-    <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v
-        případě, že je vypnut automatický jas.
-    </string>
     <string name="wakeup_when_plugged_unplugged_title">Probudit nabíječkou</string>
     <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
     <string name="ram_bar_title">Lišta s RAM</string>
@@ -141,6 +137,12 @@
     <string name="category_statusbar_notification">Notifikace</string>
     <string name="category_statusbar_battery">Baterie</string>
     <string name="category_statusbar_clock">Hodiny</string>
+    <string name="brightness_slider_title">Jas v notifikační liště</string>
+    <string name="brightness_slider_summary">Umožňuje měnit jas tažením prstu navrchu notifikační lišty. Funguje pouze v
+        případě, že je vypnut automatický jas.
+    </string>
+    <string name="status_bar_double_tap_to_sleep_title">Uspat dvojitým stiskem</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Dvojitý stisk stavové lišty uspí zařízení</string>
     <string name="adb_notify">Upozornění na ladění USB</string>
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
     <string name="ime_switcher_title">Zobrazovat výběr metody vstupu</string>

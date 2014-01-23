@@ -62,6 +62,21 @@
                 android:summary="@string/lockscreen_minimize_challenge_summary"
                 android:key="lockscreen_minimize_lockscreen_challenge"
                 />
+               
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:key="active_display"
+                android:fragment="com.android.settings.chameleonos.ActiveDisplaySettings"
+                android:title="@string/ad_settings_title"
+                android:summary="@string/ad_settings_summary"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:key="ad_sunlight_mode"
+                android:persistent="false"
+                android:title="@string/ad_sunlight_mode_title"
+                android:summary="@string/ad_sunlight_mode_summary"
+                android:dependency="ad_enable"
+                />
 
     </LinearLayout>
 

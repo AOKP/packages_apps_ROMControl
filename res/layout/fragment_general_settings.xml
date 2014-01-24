@@ -39,4 +39,27 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:key="breathing_notifications_title"
+            android:title="@string/breathing_notifications_title">
+
+            <CheckBoxPreference	
+                android:key="sms_breath"
+                android:title="@string/sms_breath_title"
+                android:summary="@string/sms_breath_summary"
+                android:persistent="false"/>
+				
+            <CheckBoxPreference
+                android:key="missed_call_breath"
+                android:title="@string/missed_call_breath_title" 
+                android:summary="@string/missed_call_breath_summary"
+                android:persistent="false"/>
+
+            <CheckBoxPreference
+                android:key="voicemail_breath"
+                android:title="@string/voicemail_breath_title"
+                android:summary="@string/voicemail_breath_summary"
+                android:persistent="false"/>
+
 </LinearLayout>

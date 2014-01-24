@@ -16,6 +16,7 @@
 
 package com.aokp.romcontrol.fragments;
 
+import android.net.ConnectivityManager;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,11 +24,47 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
 
+private static final String SMS_BREATH = "sms_breath";
+private static final String MISSED_CALL_BREATH = "missed_call_breath";
+private static final String VOICEMAIL_BREATH = "voicemail_breath";
+
+private CheckBoxPreference mSMSBreath;
+private CheckBoxPreference mMissedCallBreath;
+private CheckBoxPreference mVoicemailBreath;
+
 public class GeneralSettingsFragment extends Fragment {
 
     public GeneralSettingsFragment() {
 
     }
+
+    mSMSBreath = (CheckBoxPreference) findPreference(SMS_BREATH);
+    mMissedCallBreath = (CheckBoxPreference) findPreference(MISSED_CALL_BREATH);
+    mVoicemailBreath = (CheckBoxPreference) findPreference(VOICEMAIL_BREATH);
+
+    Context context = getActivity();
+    ConnectivityManager cm = (ConnectivityManager)
+            context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+    if(cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+        mSMSBreath.setChecked(Settings.System.getInt(resolver,
+                Settings.System.KEY_SMS_BREATH, 0) == 1);
+        mSMSBreath.setOnPreferenceChangeListener(this);
+
+        mMissedCallBreath.setChecked(Settings.System.getInt(resolver,
+                Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1);
+        mMissedCallBreath.setOnPreferenceChangeListener(this);
+
+        mVoicemailBreath.setChecked(Settings.System.getInt(resolver,
+                Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
+	mVoicemailBreath.setOnPreferenceChangeListener(this);
+    } else {
+        prefSet.removePreference(mSMSBreath);
+        prefSet.removePreference(mMissedCallBreath); 
+        prefSet.removePreference(mVoicemailBreath);
+    }	
+ }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

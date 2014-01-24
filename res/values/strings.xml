@@ -228,6 +228,18 @@
     <string name="status_bar_network_stats_color_title">Network speeds text color</string>
     <string name="status_bar_network_stats_color_summary">Network speeds text color in statusbar</string>
 
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_title">Breathing Notifications</string>
+    <string name="sms_breath_title">Breathing SMS</string>
+    <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the sta
+tusbar</string>
+    <string name="missed_call_breath_title">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Will give your missed call notifications a breathing e
+ffect in the statusbar</string>
+    <string name="voicemail_breath_title">Breathing Voicemail</string>
+    <string name="voicemail_breath_summary">Will give your voicemail notifications a breathing effec
+t in the statusbar</string>
+
     <!-- Installer -->
     <string name="persist_options">Persistence</string>
     <string name="persist_enable">Enable persistence</string>

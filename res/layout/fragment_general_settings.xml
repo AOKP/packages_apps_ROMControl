@@ -39,4 +39,16 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:title="@string/dual_panel_title"
+            android:summary="@string/dual_panel_summary"
+            android:key="force_dual_panel"
+            android:defaultValue="false"
+            />
+
+
 </LinearLayout>

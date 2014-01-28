@@ -309,4 +309,8 @@
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>
 
+    <!-- Kill app -->
+    <string name="kill_app_longpress_back_title">Hardware back-to-kill</string>
+    <string name="kill_app_longpress_back_summary">Holding the hardware back button will kill the activity in the foreground</string>
+
 </resources>

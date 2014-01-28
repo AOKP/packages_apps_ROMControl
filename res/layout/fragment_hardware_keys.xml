@@ -131,6 +131,14 @@
                 android:title="@string/category_advanced"
                 style="@style/defaultSize"/>
 
+        <com.aokp.romcontrol.settings.CheckBoxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:key="kill_app_longpress_back"
+                android:title="@string/kill_app_longpress_back_title"
+                android:summary="@string/kill_app_longpress_back_summary"
+                />
+
         <com.aokp.romcontrol.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

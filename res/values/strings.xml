@@ -309,4 +309,8 @@
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>
 
+    <string name="enable_volume_options_title">Enable volume-panel</string>
+    <string name="enable_volume_options_summary">Setting to enable volume options.</string>
+    <string name="volume_link_notification_title">Link volumes</string>
+    <string name="volume_link_notification_summary">Setting to link ringtone and notification.</string>
 </resources>

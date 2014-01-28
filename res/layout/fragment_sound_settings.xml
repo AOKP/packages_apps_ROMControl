@@ -36,6 +36,22 @@
             android:defaultValue="true"
             />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/enable_volume_options_title"
+            android:summary="@string/enable_volume_options_summary"
+            android:key="enable_volume_options"
+            />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/volume_link_notification_title"
+            android:summary="@string/volume_link_notification_summary"
+            android:key="volume_link_notification"
+            />
+
     </LinearLayout>
 
 </ScrollView>

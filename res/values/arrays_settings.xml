@@ -23,7 +23,8 @@
          * 2 - App-switch
          * 3 - Search
          * 4 - Voice search
-         * 5 - In-app search -->
+         * 5 - In-app search
+         * 6 - Kill app -->
     <string-array name="setting_keyActionEntries" translatable="false">
         <item>@string/setting_key_home_long_press_action_nothing</item>
         <item>@string/setting_key_home_long_press_action_menu</item>
@@ -31,6 +32,7 @@
         <item>@string/setting_key_home_long_press_action_search</item>
         <item>@string/setting_key_home_long_press_action_voicesearch</item>
         <item>@string/setting_key_home_long_press_action_inappsearch</item>
+        <item>@string/setting_key_home_long_press_action_killapp</item>
     </string-array>
     <string-array name="setting_keyActionValues" translatable="false">
         <item>0</item>
@@ -39,6 +41,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
     </string-array>
 
     <string-array name="setting_toggleStyles" translatable="false">

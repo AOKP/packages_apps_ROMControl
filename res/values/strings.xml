@@ -129,6 +129,7 @@
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>
     <string name="title_hardware_keys_home_double_tap">Home - double tap</string>
+    <string name="title_hardware_keys_back_long_press">Back - long press</string>
     <string name="title_hardware_keys_menu">Menu</string>
     <string name="title_hardware_keys_menu_long_press">Menu - long press</string>
     <string name="title_hardware_keys_search">Search</string>
@@ -143,6 +144,7 @@
     <string name="setting_key_home_long_press_action_search">Search</string>
     <string name="setting_key_home_long_press_action_voicesearch">Voice search</string>
     <string name="setting_key_home_long_press_action_inappsearch">In-app search</string>
+    <string name="setting_key_home_long_press_action_killapp">Kill app</string>
 
     <string name="category_advanced">Advanced</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Volume smash rotation</string>

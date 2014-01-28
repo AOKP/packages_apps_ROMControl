@@ -37,12 +37,13 @@ public class HardwareKeysFragment extends Fragment {
     CheckboxSetting setting_customize;
 
     SingleChoiceSetting setting_key_home_long_press, setting_key_home_double_tap;
+    SingleChoiceSetting setting_key_back, setting_key_back_long_press;
     SingleChoiceSetting setting_key_menu, setting_key_menu_long_press;
     SingleChoiceSetting setting_key_search, setting_key_search_long_press;
     SingleChoiceSetting setting_key_recents, setting_key_recents_long_press;
 
     int hardwareKeyMask;
-    boolean mHasMenu, mHasHome, mHasAssist, mHasAppSwitch;
+    boolean mHasMenu, mHasBack, mHasHome, mHasAssist, mHasAppSwitch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class HardwareKeysFragment extends Fragment {
         hardwareKeyMask = getActivity().getResources()
                 .getInteger(com.android.internal.R.integer.config_deviceHardwareKeys);
         mHasMenu = (hardwareKeyMask & KEY_MASK_MENU) != 0;
+        mHasBack = (hardwareKeyMask & KEY_MASK_BACK) != 0;
         mHasHome = (hardwareKeyMask & KEY_MASK_HOME) != 0;
         mHasAssist = (hardwareKeyMask & KEY_MASK_ASSIST) != 0;
         mHasAppSwitch = (hardwareKeyMask & KEY_MASK_APP_SWITCH) != 0;
@@ -76,6 +78,11 @@ public class HardwareKeysFragment extends Fragment {
         if (!mHasHome) {
             setting_key_home_long_press.setVisibility(View.GONE);
             setting_key_home_double_tap.setVisibility(View.GONE);
+        }
+
+        setting_key_back_long_press = (SingleChoiceSetting) v.findViewById(R.id.setting_key_back_long_press);
+        if (!mHasBack) {
+            setting_key_back_long_press.setVisibility(View.GONE);
         }
 
         setting_key_menu = (SingleChoiceSetting) v.findViewById(R.id.setting_key_menu);

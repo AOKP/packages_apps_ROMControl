@@ -134,6 +134,14 @@
         <com.aokp.romcontrol.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:key="kill_app_longpress_back"
+                android:title="@string/kill_app_longpress_back_title"
+                android:summary="@string/kill_app_longpress_back_summary"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
                 android:title="@string/title_hardware_keys_volume_keys_double_tap"
                 android:summary="@string/summary_hardware_keys_volume_keys_double_tap"

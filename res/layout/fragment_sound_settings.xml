@@ -36,6 +36,15 @@
             android:defaultValue="true"
             />
 
+        <com.aokp.romcontrol.settings.IncreasingRingPreference
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="increasing_ring"
+            android:title="@string/increasing_ring_title"
+            android:dialogTitle="@string/increasing_ring_title"
+            android:persistent="false"
+            />
+
     </LinearLayout>
 
 </ScrollView>

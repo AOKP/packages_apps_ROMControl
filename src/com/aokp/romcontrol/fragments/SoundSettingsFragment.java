@@ -17,13 +17,21 @@
 package com.aokp.romcontrol.fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.widgets.IncreasingRingPreference;
+// import com.aokp.romcontrol.settings.BaseSetting;
 
 public class SoundSettingsFragment extends Fragment {
+
+    protected Context mContext;
+
+    IncreasingRingPreference increasing_ring;
 
     public SoundSettingsFragment() {
 
@@ -33,6 +41,24 @@ public class SoundSettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_sound_settings, container, false);
 
+        mContext = getActivity();
+
+        increasing_ring = (IncreasingRingPreference) v.findViewById(R.id.increasing_ring);
+
+        if (!hasPhoneAbility(mContext)) {
+            increasing_ring.setVisibility(View.GONE);
+        }
+
         return v;
+    }
+
+    public static boolean hasPhoneAbility(Context context) {
+        TelephonyManager telephonyManager =
+                (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        if (telephonyManager.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE) {
+            return false;
+        }
+
+        return true;
     }
 }

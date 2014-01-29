@@ -238,4 +238,41 @@
         <item>30000</item>
     </string-array>
 
+    <string-array name="increasing_ring_min_volume_entries" translatable="false">
+        <item>@string/increasing_ring_min_volume_level1</item>
+        <item>@string/increasing_ring_min_volume_level2</item>
+        <item>@string/increasing_ring_min_volume_level3</item>
+        <item>@string/increasing_ring_min_volume_level4</item>
+        <item>@string/increasing_ring_min_volume_level5</item>
+        <item>@string/increasing_ring_min_volume_level6</item>
+        <item>@string/increasing_ring_min_volume_level7</item>
+    </string-array>
+    <integer-array name="increasing_ring_min_volume_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </integer-array>
+    <string-array name="increasing_ring_interval_entries" translatable="false">
+        <item>@string/increasing_ring_interval_eachring</item>
+        <item>@string/increasing_ring_interval_half_second</item>
+        <item>@string/increasing_ring_interval_1second</item>
+        <item>@string/increasing_ring_interval_2seconds</item>
+        <item>@string/increasing_ring_interval_3seconds</item>
+        <item>@string/increasing_ring_interval_5seconds</item>
+        <item>@string/increasing_ring_interval_10seconds</item>
+    </string-array>
+    <integer-array name="increasing_ring_interval_values" translatable="false">
+        <item>0</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>10000</item>
+    </integer-array>
+
 </resources>

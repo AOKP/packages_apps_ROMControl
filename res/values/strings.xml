@@ -379,6 +379,26 @@
     <!-- Sound -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>
+    <string name="increasing_ring_title">Ascending ringtone</string>
+    <string name="increasing_ring_summary">Other options will be exposed after enable this</string>
+    <string name="increasing_ring_min_volume_title">Ringing start volume</string>
+    <string name="increasing_ring_volume_notice">Notice:\nAs the start volume is set higher than the
+        ringer volume, the ring tone will be played using the ringer volume.</string>
+    <string name="increasing_ring_interval_title">Increase interval</string>
+    <string name="increasing_ring_interval_eachring">On each ringtone repeat</string>
+    <string name="increasing_ring_interval_half_second">0.5 seconds</string>
+    <string name="increasing_ring_interval_1second">1 second</string>
+    <string name="increasing_ring_interval_2seconds">2 seconds</string>
+    <string name="increasing_ring_interval_3seconds">3 seconds</string>
+    <string name="increasing_ring_interval_5seconds">5 seconds</string>
+    <string name="increasing_ring_interval_10seconds">10 seconds</string>
+    <string name="increasing_ring_min_volume_level1">Level 1</string>
+    <string name="increasing_ring_min_volume_level2">Level 2</string>
+    <string name="increasing_ring_min_volume_level3">Level 3</string>
+    <string name="increasing_ring_min_volume_level4">Level 4</string>
+    <string name="increasing_ring_min_volume_level5">Level 5</string>
+    <string name="increasing_ring_min_volume_level6">Level 6</string>
+    <string name="increasing_ring_min_volume_level7">Level 7</string>
 
     <!-- Power Menu -->
     <string name="airplane_mode_options">Airplane mode</string>

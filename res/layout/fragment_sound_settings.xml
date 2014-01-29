@@ -36,6 +36,37 @@
             android:defaultValue="true"
             />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/increasing_ring"
+            android:title="@string/increasing_ring_title"
+            android:summary="@string/increasing_ring_summary"
+            android:key="increasing_ring"
+            android:defaultValue="false"
+            />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/increasing_ring_min_vol"
+            android:title="@string/increasing_ring_min_volume_title"
+            android:summary="@string/increasing_ring_volume_notice"
+            android:key="increasing_ring_min_vol"
+            android:entries="@array/increasing_ring_min_volume_entries"
+            android:entryValues="@array/increasing_ring_min_volume_values"
+            />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/increasing_ring_interval"
+            android:title="@string/increasing_ring_interval_title"
+            android:key="increasing_ring_interval"
+            android:entries="@array/increasing_ring_interval_entries"
+            android:entryValues="@array/increasing_ring_interval_values"
+            />
+
     </LinearLayout>
 
 </ScrollView>

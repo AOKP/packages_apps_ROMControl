@@ -26,17 +26,20 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
 import com.aokp.romcontrol.fragments.LockscreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavRingTargets;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
+import com.aokp.romcontrol.fragments.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
-import com.aokp.romcontrol.fragments.SoundSettingsFragment;
+
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -113,18 +116,22 @@ public class MainActivity extends Activity
                 break;
 
             case 6:
-                fragment = new NavbarTabHostFragment();
+                fragment = new PowerMenuSettingsFragment();
                 break;
 
             case 7:
-                fragment = new NavRingTargets();
+                fragment = new NavbarTabHostFragment();
                 break;
 
             case 8:
-                fragment = new SoundSettingsFragment();
+                fragment = new NavRingTargets();
                 break;
 
             case 9:
+                fragment = new SoundSettingsFragment();
+                break;
+
+            case 10:
                 fragment = new InstallerSettingsFragment();
                 break;
         }

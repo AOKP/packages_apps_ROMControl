@@ -32,6 +32,7 @@
     <string name="category_toggles">Přepínače</string>
     <string name="category_navring">Navigační kruh</string>
     <string name="category_navbar">Navigační lišta</string>
+    <string name="category_sound">Zvuk</string>
     <!-- menu items -->
     <string name="menu_show_drawer_icon">Zobrazit v navigační liště</string>
     <!--About-->
@@ -277,4 +278,7 @@
     <string name="navbar_tab_settings">Nastavení</string>
     <string name="lockscreen_see_through">Průhledná zamčená obrazovka</string>
     <string name="lockscreen_see_through_summary">Zobrazí obsah za zamčenou obrazovkou. Data budou viditelná pro okolí!</string>
+    <!-- Sound -->
+    <string name="safe_headset_volume_title">Bezpečná hlasitost sluchátek</string>
+    <string name="safe_headset_volume_summary">Zobrazit upozornění na bezpečnou hlasitost sluchátek</string>
 </resources>

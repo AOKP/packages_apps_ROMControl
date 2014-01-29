@@ -35,6 +35,7 @@
     <string name="category_navring">Navigation ring</string>
     <string name="category_navbar">Navigation bar</string>
     <string name="category_sound">Sound</string>
+    <string name="category_power_menu">Power menu </string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -308,5 +309,15 @@
     <!-- Sound -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>
+
+    <!-- Power Menu -->
+    <string name="airplane_mode_options">Airplane mode</string>
+    <string name="immersive_mode_options">Immersive mode</string>
+    <string name="reboot_options">Reboot</string>
+    <string name="screenshot_mode_options">Screenshot</string>
+
+    <string name="hide_option">Hide option</string>
+    <string name="on_always">Show option</string>
+    <string name="on_when_insecure">Show option (except on secure lockscreen)</string>
 
 </resources>

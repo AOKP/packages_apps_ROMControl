@@ -309,4 +309,15 @@
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>
 
+    <!-- Power Menu -->
+    <string name="enable_power_menu_customizations">Customize Power Menu</string>
+    <string name="airplane_mode_options">Airplane mode</string>
+    <string name="immersive_mode_options">Immersive mode</string>
+    <string name="reboot_options">Reboot</string>
+    <string name="screenshot_options">Screenshot</string>
+
+    <string name="hide_option">Hide option</string>
+    <string name="on_always">Show option (always)</string>
+    <string name="on_when_insecure">Show option (unlocked or insecure)</string>
+
 </resources>

@@ -90,6 +90,30 @@ public class SingleChoiceSetting extends BaseSetting implements OnClickListener 
                 .show();
     }
 
+    public String[] getEntries() {
+        return mEntries;
+    }
+
+    public void setEntries(String[] entries) {
+        mEntries = entries;
+    }
+
+    public void setEntries(int entriesResId) {
+        setEntries(getContext().getResources().getStringArray(entriesResId));
+    }
+
+    public String[] getEntryValues() {
+        return mValues;
+    }
+
+    public void setEntryValues(String[] entryValues) {
+        mValues = entryValues;
+    }
+
+    public void setEntryValues(int entryValuesResId) {
+        setEntryValues(getContext().getResources().getStringArray(entryValuesResId));
+    }
+
     private int getCurrentValueIndex() {
         // returns the index of the current value, relative to the given R.array
         String val = getValue();

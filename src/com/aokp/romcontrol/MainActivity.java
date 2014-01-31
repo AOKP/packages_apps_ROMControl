@@ -28,6 +28,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.view.View;
+import com.aokp.romcontrol.fragments.about.AboutFragment;
+import com.aokp.romcontrol.fragments.AnimationsFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
@@ -140,6 +143,9 @@ public class MainActivity extends Activity
 
             case 11:
                 fragment = new RibbonsFragment();
+                break;
+            case 11:
+                fragment = new AnimationsFragment();
                 break;
         }
         return fragment;

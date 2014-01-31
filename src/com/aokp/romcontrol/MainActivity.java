@@ -31,6 +31,7 @@ import android.view.MenuItem;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import android.view.View;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
+import com.aokp.romcontrol.fragments.AnimationsFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
@@ -136,6 +137,9 @@ public class MainActivity extends Activity
                 break;
             case 10:
                 fragment = new RibbonsFragment();
+                break;
+            case 11:
+                fragment = new AnimationsFragment();
                 break;
         }
         return fragment;

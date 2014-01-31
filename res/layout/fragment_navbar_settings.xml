@@ -6,5 +6,16 @@
             android:layout_height="match_parent">
 
     <LinearLayout style="@style/settingsFragmentStyle">
+
+         <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_toggle_navbar"
+                android:title="@string/enable_navigation_bar_title"
+                android:summary="@string/enable_navigation_bar_summary"
+                android:key="enable_navigation_bar"
+                android:defaultValue="false"
+                />
+
     </LinearLayout>
 </ScrollView>

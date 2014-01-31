@@ -299,6 +299,7 @@
     <string name="lockscreen_minimize_challenge_summary">Set wether the lockscreen challenge (circle, pattern, pin) is minimized when the screen is turned on.</string>
 
     <string name="add_button">Add button</string>
+    <string name="toggle_navbar">Toggle navbar</string>
     <string name="navbar_tab_arrange">Rearrange</string>
     <string name="navbar_tab_settings">Settings</string>
 

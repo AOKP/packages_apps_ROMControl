@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.provider.Settings.AOKP;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -130,7 +129,6 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.navbar_setup, menu);
-
     }
 
     @Override
@@ -160,12 +158,9 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
             mActions[i] = AwesomeConstants.getProperName(getActivity(),
                     mActionCodes[i]);
         }
-
         mPicker = new ShortcutPickerHelper(this, this);
         readUserConfig();
     }
-
-
 
     @Override
     public void onResume() {
@@ -527,7 +522,7 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
                 s.append("|");
             }
         }
-        Settings.AOKP.putString(getActivity().getContentResolver(), AOKP.NAVIGATION_BAR_BUTTONS, s.toString());
+        Settings.AOKP.putString(getActivity().getContentResolver(), Settings.AOKP.NAVIGATION_BAR_BUTTONS, s.toString());
     }
 
     private void readUserConfig() {

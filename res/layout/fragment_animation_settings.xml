@@ -1,0 +1,126 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout style="@style/settingsFragmentStyle" >
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:id="@+id/animation_controls_no_override"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="animation_controls_no_override"
+            android:summary="@string/summary_animation_no_override"
+            android:title="@string/title_animation_no_override" />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:id="@+id/animation_controls_exit_only"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="animation_controls_exit_only"
+            android:summary="@string/animation_exit_only_title"
+            android:title="@string/animation_exit_only_title" />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:id="@+id/animation_controls_reverse_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="animation_controls_reverse_exit"
+            android:summary="@string/animation_reverse_exit_title"
+            android:title="@string/animation_reverse_exit_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/activity_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="activity_open"
+            android:title="@string/activity_open_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/activity_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="activity_close"
+            android:title="@string/activity_close_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/task_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="task_open"
+            android:title="@string/task_open_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/task_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="task_close"
+            android:title="@string/task_close_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/task_move_to_front"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="task_move_to_front"
+            android:title="@string/task_move_to_front_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/task_move_to_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="task_move_to_back"
+            android:title="@string/task_move_to_back_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/wallpaper_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="wallpaper_open"
+            android:title="@string/wallpaper_open_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/wallpaper_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="wallpaper_close"
+            android:title="@string/wallpaper_close_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/wallpaper_intra_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="wallpaper_intra_open"
+            android:title="@string/wallpaper_intra_open_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/wallpaper_intra_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:key="wallpaper_intra_close"
+            android:title="@string/wallpaper_intra_close_title" />
+
+        <TextView
+            android:id="@+id/animation_duration_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginTop="6dip"
+            android:gravity="center"
+            android:text="@string/animation_duration_title"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
+
+        <SeekBar
+            android:id="@+id/animation_duration"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp" />
+    </LinearLayout>
+
+</ScrollView>

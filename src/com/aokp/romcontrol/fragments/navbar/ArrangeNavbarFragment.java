@@ -63,10 +63,13 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
     private ShortcutPickerHelper mPicker;
     private int mTargetIndex = 0;
     private int mTarget = 0;
+    private int hardwareKeyMask;
     DialogConstant mActionTypeToChange;
     AwesomeButtonInfo mSelectedButton;
     private String[] mActions;
     private String[] mActionCodes;
+
+    private Context mContext;
 
     public static enum DialogConstant {
         ICON_ACTION {
@@ -129,12 +132,28 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.navbar_setup, menu);
+        MenuItem navbar = menu.findItem(R.id.toggle_navbar);
+        if (harwareKeyMask == 0) {
+            navbar.setVisible(false);
+        }
 
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.toggle_navbar:
+                int currentVal = Settings.AOKP.getInt(mContext.getContentResolver(),
+                        Settings.AOKP.ENABLE_NAVIGATION_BAR, 0);
+                int newVal;
+                if (currentVal == 0) {
+                    newVal = 1;
+                } else {
+                    newVal = 0;
+                }
+                Settings.AOKP.putInt(mContext.getContentResolver(),
+                        Settings.AOKP.ENABLE_NAVIGATION_BAR, newVal);
+                return true;
             case R.id.menu_add_button:
                 mNavButtons.add(new AwesomeButtonInfo(null, null, null, null));
                 saveUserConfig();
@@ -159,6 +178,8 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
             mActions[i] = AwesomeConstants.getProperName(getActivity(),
                     mActionCodes[i]);
         }
+        hardwareKeyMask = getActivity().getResources()
+                .getInteger(com.android.internal.R.integer.config_deviceHardwareKeys);
 
         mPicker = new ShortcutPickerHelper(this, this);
         readUserConfig();

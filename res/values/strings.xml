@@ -255,6 +255,10 @@
     <string name="toggle_favcontact_title">Favorite contact</string>
     <string name="toggle_favcontact_summary">Choose your favorite contact</string>
 
+    <!-- Navigation Bar -->
+    <string name="enable_navigation_bar_title">Enable navigation bar</string>
+    <string name="enable_navigation_bar_summary">Enable the navigation bar seen on nexus devices</string>
+
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation ring targets</string>
     <string name="navbar_ring">Custom ring targets</string>

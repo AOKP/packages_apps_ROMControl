@@ -116,8 +116,8 @@
                 android:layout_weight="0.5" />
 
             <Button
-                android:id="@+id/ics_color"
-                android:text="@string/ics_color"
+                android:id="@+id/default_color"
+                android:text="@string/default_color"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5" />

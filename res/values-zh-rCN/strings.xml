@@ -34,6 +34,10 @@
     <string name="category_toggles">开关</string>
     <string name="category_navring">导航环</string>
     <string name="category_navbar">导航栏</string>
+    <string name="category_sound">声音</string>
+    <string name="category_power_menu">电源菜单</string>
+    <string name="category_ribbons">操作区</string>
+    <string name="category_animations">动画</string>
 
     <!-- 菜单项目 -->
     <string name="menu_show_drawer_icon">在应用列表中显示</string>
@@ -78,6 +82,9 @@
     <string name="save">保存</string>
     <string name="reset">重置</string>
     <string name="cancel">取消</string>
+    <string name="center">中</string>
+    <string name="top">上</string>
+    <string name="bottom">下</string>
     <string name="wakeup_when_plugged_unplugged_title">充电唤醒</string>
     <string name="wakeup_when_plugged_unplugged_summary">当连接或移除充电器时唤醒设备</string>
     <string name="ram_bar_title">近期 RAM 栏</string>
@@ -86,6 +93,7 @@
     <!-- 实体按键 -->
     <string name="title_hardware_keys_home_long_press">主屏幕键 - 长按</string>
     <string name="title_hardware_keys_home_double_tap">主屏幕键 - 双击</string>
+    <string name="title_hardware_keys_back_long_press">返回键 - 长按</string>
     <string name="title_hardware_keys_menu">菜单键</string>
     <string name="title_hardware_keys_menu_long_press">菜单键 - 长按</string>
     <string name="title_hardware_keys_search">搜索键</string>
@@ -93,6 +101,7 @@
     <string name="title_hardware_keys_switch_app">近期任务键</string>
     <string name="title_hardware_keys_switch_app_long_press">近期任务键 - 长按</string>
     <string name="title_setting_enable_custom_hardware_keys">自定义实体按键</string>
+    <string name="summary_setting_enable_custom_hardware_keys">允许设置自定义动作的实体按键，需要重启。</string>
 
     <string name="setting_key_home_long_press_action_nothing">无</string>
     <string name="setting_key_home_long_press_action_menu">菜单</string>
@@ -100,6 +109,7 @@
     <string name="setting_key_home_long_press_action_search">搜索</string>
     <string name="setting_key_home_long_press_action_voicesearch">语音搜索</string>
     <string name="setting_key_home_long_press_action_inappsearch">应用搜索</string>
+    <string name="setting_key_home_long_press_action_killapp">结束程序</string>
 
     <string name="category_advanced">高级</string>
     <string name="title_hardware_keys_volume_keys_double_tap">音量键控制旋转</string>
@@ -173,6 +183,44 @@
     <string name="persist_file_xposed">保持Xposed</string>
     <string name="persist_file_xposed_summary">为Xposed框架保持文件应用程序进程</string>
 
+    <!-- 操作区 -->
+    <string name="toggles_ribbon_instructions">拖动右边区域可重新排列。滑动可删除。</string>
+    <string name="add_ribbon">添加项目</string>
+    <string name="left_ribbon_items">左侧操作区项目</string>
+    <string name="left_ribbon_settings">左侧操作区设置</string>
+    <string name="right_ribbon_items">右侧操作区项目</string>
+    <string name="right_ribbon_settings">右侧操作区设置</string>
+    <string name="lockscreen_ribbon_items">锁屏操作区项目</string>
+    <string name="lockscreen_ribbon_settings">锁屏操作区设置</string>
+    <string name="enable_ribbon_title">启用操作区</string>
+    <string name="enable_ribbon_summary">滑动可启用操作区</string>
+    <string name="ribbon_long_swipe_title">滑动区长滑</string>
+    <string name="ribbon_long_press_title">滑动区长按</string>
+    <string name="enable_ribbon_vibrate_title">滑动区振动</string>
+    <string name="enable_ribbon_vibrate_summary">触摸滑动区时振动</string>
+    <string name="swipe_handle_location_title">滑动区位置</string>
+    <string name="ribbon_auto_hide_title">操作区自动隐藏超时</string>
+    <string name="hide_ribbon_timeout_never">永不</string>
+    <string name="hide_ribbon_timeout_1500">1.5 秒</string>
+    <string name="hide_ribbon_timeout_3000">3 秒</string>
+    <string name="hide_ribbon_timeout_5000">5 秒</string>
+    <string name="hide_ribbon_timeout_10000">10 秒</string>
+    <string name="hide_ribbon_timeout_15000">15 秒</string>
+    <string name="hide_ribbon_timeout_30000">30 秒</string>
+
+    <string name="ribbon_drag_handle_width_title">滑动区宽度</string>
+    <string name="ribbon_drag_handle_height_title">滑动区高度</string>
+    <string name="ribbon_handle_color_title">滑动区颜色</string>
+    <string name="ribbon_color_title">操作区颜色</string>
+    <string name="animation_type_title">动画类型</string>
+    <string name="animation_duration_title">自动保持</string>
+    <string name="ribbon_space_title">图标间隔</string>
+    <string name="ribbon_size_title">图标尺寸</string>
+    <string name="window_color_title">窗口颜色</string>
+    <string name="window_space_title">纵列间隔</string>
+    <string name="window_size_title">图标尺寸</string>
+    <string name="window_settings">窗口设置</string>
+
     <!-- 开关 -->
     <string name="title_toggles">开关</string>
     <string name="toggles_style_tile">方块磁贴式</string>
@@ -210,10 +258,13 @@
     <string name="toggle_favcontact_title">收藏联系人</string>
     <string name="toggle_favcontact_summary">选择你收藏的联系人</string>
 
+    <string name="toggle_screenshot_delay_title">截图延迟</string>
+    <string name="toggle_screenshot_delay_summary">开始屏幕截图前的延迟时间</string>
+
     <!-- 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
     <string name="navbar_ring">自定义导航环目标</string>
-    <string name="navring_enable_long">长按“主屏幕”键启动导航环</string>
+    <string name="navring_enable_long">启用长按操作</string>
     <string name="navring_target_save">导航环已保存</string>
     <string name="navring_target_reset_message">你想要重置导航环吗？</string>
     <string name="navring_target_reset">导航环目标重置。</string>
@@ -231,7 +282,7 @@
     <string name="action_long">长按动作</string>
     <string name="action_double">双击动作</string>
     <string name="action_icon">自定义图标</string>
-    <string name="navring_target_amount_text">当前目标数量</string>
+    <string name="navring_target_amount_text">设置目标数量</string>
     <string name="navring_target_longpress_text">长按动作</string>
     <string name="description_target_unlock">解锁</string>
     <string name="description_direction_up">上滑解锁</string>
@@ -245,6 +296,24 @@
     <string name="five_targets">5 目标</string>
     <string name="custom_app_icon_successfully">"的图标设置成功！"</string>
 
+    <!-- 动画 -->
+    <string name="title_animation_controls">动画</string>
+    <string name="activity_open_title">页面打开动画</string>
+    <string name="activity_close_title">页面关闭动画</string>
+    <string name="task_open_title">任务打开动画</string>
+    <string name="task_close_title">任务关闭动画</string>
+    <string name="task_move_to_front_title">移动到前台动画</string>
+    <string name="task_move_to_back_title">移动到后台动画</string>
+    <string name="wallpaper_open_title">窗口打开动画</string>
+    <string name="wallpaper_close_title">窗口关闭动画</string>
+    <string name="wallpaper_intra_open_title">窗口内部打开动画</string>
+    <string name="wallpaper_intra_close_title">窗口内部关闭动画</string>
+    <string name="title_animation_no_override">防止应用程序覆盖</string>
+    <string name="summary_animation_no_override">防止应用程序内部的动画覆盖。</string>
+    <string name="animation_duration_default">默认</string>
+    <string name="animation_exit_only_title">仅进入动画</string>
+    <string name="animation_reverse_exit_title">反转退出动画</string>
+
     <!-- 锁屏 -->
     <string name="volume_wake_screen">音量键唤醒</string>
     <string name="volume_wake_screen_summary">使用音量键唤醒设备</string>
@@ -252,6 +321,10 @@
     <string name="volume_music_controls_summary">长按音量键可以切换歌曲</string>
     <string name="lockscreen_minimize_challenge_title">最小化解锁区</string>
     <string name="lockscreen_minimize_challenge_summary">当屏幕开启时最小化解锁区（环形，图形，PIN）</string>
+    <string name="lockscreen_wallpaper_title">锁屏背景</string>
+    <string name="lockscreen_wallpaper_summary">选择或移除当前锁屏背景</string>
+    <string name="lockscreen_wallpaper_pick">新锁屏背景</string>
+    <string name="lockscreen_wallpaper_remove">移除锁屏背景</string>
 
     <string name="add_button">添加按钮</string>
     <string name="navbar_tab_arrange">排列</string>
@@ -259,5 +332,19 @@
 
     <string name="lockscreen_see_through">透明锁屏</string>
     <string name="lockscreen_see_through_summary">显示锁屏背后的内容，可能造成你的数据被周围人看到。</string>
+
+    <!-- 声音 -->
+    <string name="safe_headset_volume_title">耳机安全音量</string>
+    <string name="safe_headset_volume_summary">是否显示安全音量警告</string>
+
+    <!-- 电源菜单 -->
+    <string name="airplane_mode_options">飞行模式</string>
+    <string name="immersive_mode_options">沉浸模式</string>
+    <string name="reboot_options">重新启动</string>
+    <string name="screenshot_mode_options">屏幕截图</string>
+
+    <string name="hide_option">隐藏选项</string>
+    <string name="on_always">显示选项</string>
+    <string name="on_when_insecure">显示选项 (锁屏除外)</string>
 
 </resources>

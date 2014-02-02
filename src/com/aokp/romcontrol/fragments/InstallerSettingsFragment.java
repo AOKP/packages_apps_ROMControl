@@ -179,6 +179,8 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
             mPrefPersistXposed.setVisibility(View.GONE);
         }
 
+        loadPrefs();
+
         return v;
     }
 

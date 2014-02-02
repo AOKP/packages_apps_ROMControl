@@ -52,10 +52,14 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
     public static final String PERSIST_FILES = "persist_files";
     public static final String PREF_PERSIST_FILE_XPOSED = "persist_file_xposed";
 
+    public static final String PREF_PERSIST_VMLIB = "persist_vmlib";
+    public static final String PERSIST_SYS_DALVIK_VM_LIB ="persist.sys.dalvik.vm.lib";
+
     CheckboxSetting mPrefPersistEnable;
     CheckboxSetting mPrefPersistDensity;
     CheckboxSetting mPrefPersistHosts;
     CheckboxSetting mPrefPersistXposed;
+    CheckboxSetting mPrefPersistVmLib;
 
     boolean mPersistEnable;
     ArrayList<String> mPersistProps;
@@ -128,6 +132,9 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
                 if (mPrefPersistXposed != null) {
                     mPrefPersistXposed.setChecked(mPersistFiles.contains(BIN_APP_PROCESS));
                 }
+                if (mPrefPersistVmLib != null){
+                    mPrefPersistVmLib.setChecked(mPersistProps.contains(PERSIST_SYS_DALVIK_VM_LIB));
+                }
             }
         }.execute((Void) null);
 
@@ -174,6 +181,8 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
         mPrefPersistHosts.setOnClickListener(this);
         mPrefPersistXposed = (CheckboxSetting) v.findViewById(R.id.persist_file_xposed);
         mPrefPersistXposed.setOnClickListener(this);
+        mPrefPersistVmLib = (CheckboxSetting) v.findViewById(R.id.persist_vm_lib);
+        mPrefPersistVmLib.setOnClickListener(this);
 
         if(!isAppInstalled("de.robv.android.xposed.installer")) {
             mPrefPersistXposed.setVisibility(View.GONE);
@@ -214,6 +223,15 @@ public class InstallerSettingsFragment extends Fragment implements OnClickListen
 
                 break;
 
+            case R.id.persist_vm_lib:
+                if (isChecked) {
+                    if (!mPersistProps.contains(PERSIST_SYS_DALVIK_VM_LIB)) {
+                        mPersistProps.add(PERSIST_SYS_DALVIK_VM_LIB);
+                    }
+                } else {
+                    mPersistProps.remove(PERSIST_SYS_DALVIK_VM_LIB);
+                }
+                break;
 
             case R.id.persist_file_hosts:
                 if (isChecked) {

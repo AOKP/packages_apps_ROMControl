@@ -223,6 +223,8 @@
     <string name="persist_file_hosts_summary">Persist hosts file</string>
     <string name="persist_file_xposed">Persist Xposed</string>
     <string name="persist_file_xposed_summary">Persist file app_process for Xposed framework</string>
+    <string name="persist_prop_vm_lib">Persist VM lib</string>
+    <string name="persist_prop_vm_lib_summary">Persist the vm library used (allow art to override dalvik)</string>
 
     <!-- Ribbons -->
     <string name="toggles_ribbon_instructions">Rearrange by dragging by the handle on the right. Remove by swiping.</string>

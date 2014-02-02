@@ -33,6 +33,7 @@ public class RibbonSettings extends Fragment implements OnSeekBarChangeListener,
     private SingleChoiceSetting mLongPress;
     private CheckboxSetting mSwipeVibrate;
     private SingleChoiceSetting mHandleLocation;
+    private SingleChoiceSetting mIconGravity;
     private SingleChoiceSetting mAutoTimeout;
     private SingleChoiceSetting mAnimationType;
     private SeekBar mAnimationDuration;
@@ -111,6 +112,12 @@ public class RibbonSettings extends Fragment implements OnSeekBarChangeListener,
         mHandleLocation.setEntryValues(mContext.getResources().getStringArray(R.array.ribbon_handle_location_values));
         mHandleLocation.setEntries(mContext.getResources().getStringArray(R.array.ribbon_handle_location_entries));
         mHandleLocation.updateSummary();
+
+        mIconGravity = (SingleChoiceSetting) main.findViewById(R.id.ribbon_icon_gravity);
+        mIconGravity.setKey(SETTINGS_AOKP[AokpRibbonHelper.RIBBON_ICON_GRAVITY]);
+        mIconGravity.setEntryValues(mContext.getResources().getStringArray(R.array.ribbon_handle_location_values));
+        mIconGravity.setEntries(mContext.getResources().getStringArray(R.array.ribbon_handle_location_entries));
+        mIconGravity.updateSummary();
 
         mAnimationType = (SingleChoiceSetting) main.findViewById(R.id.animation_type);
         mAnimationType.setKey(SETTINGS_AOKP[AokpRibbonHelper.RIBBON_ANIMATION_TYPE]);

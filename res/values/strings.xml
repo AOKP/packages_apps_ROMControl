@@ -248,6 +248,7 @@
     <string name="hide_ribbon_timeout_15000">15 Sec</string>
     <string name="hide_ribbon_timeout_30000">30 Sec</string>
 
+    <string name="icon_gravity_title">Icon gravity</string>
     <string name="ribbon_drag_handle_width_title">Swipe area width</string>
     <string name="ribbon_drag_handle_height_title">Swipe area height</string>
     <string name="ribbon_handle_color_title">Swipe area color</string>

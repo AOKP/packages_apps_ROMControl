@@ -442,6 +442,8 @@
     <string name="immersive_mode_options">Immersive mode</string>
     <string name="reboot_options">Reboot</string>
     <string name="screenshot_mode_options">Screenshot</string>
+    <string name="screenrecord_mode_options">Screen Record</string>
+
 
     <string name="hide_option">Hide option</string>
     <string name="on_always">Show option</string>

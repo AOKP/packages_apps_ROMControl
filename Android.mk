@@ -13,6 +13,7 @@ LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 
 LOCAL_PACKAGE_NAME := ROMControl
 LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PACKAGE)
 
 # Use the folloing include to make our test apk.

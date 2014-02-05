@@ -36,6 +36,15 @@
             android:defaultValue="true"
             />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/volume_adjust_sounds_enable_title"
+            android:summary="@string/volume_adjust_sounds_enable_summary"
+            android:key="volume_adjust_sounds_enabled"
+            android:defaultValue="true"
+            />
+
     </LinearLayout>
 
 </ScrollView>

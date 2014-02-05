@@ -380,6 +380,8 @@
     <!-- Sound -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>
+    <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
+    <string name="volume_adjust_sounds_enable_summary">Play sound when adjusting volume with hard keys</string>
 
     <!-- Power Menu -->
     <string name="airplane_mode_options">Airplane mode</string>

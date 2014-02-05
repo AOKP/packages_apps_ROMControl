@@ -24,28 +24,6 @@
 
     <LinearLayout style="@style/settingsFragmentStyle">
 
-         <com.aokp.romcontrol.settings.SingleChoiceSetting
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/setting_airplane_mode_options"
-                android:title="@string/airplane_mode_options"
-                android:key="airplane_mode_options"
-
-                android:entries="@array/power_menuEntries"
-                android:entryValues="@array/power_menuValues"
-                />
-
-          <com.aokp.romcontrol.settings.SingleChoiceSetting
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/setting_immersive_mode_options"
-                android:title="@string/immersive_mode_options"
-                android:key="immersive_mode_options"
-
-                android:entries="@array/power_menuEntries"
-                android:entryValues="@array/power_menuValues"
-                />
-
            <com.aokp.romcontrol.settings.SingleChoiceSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,5 +46,27 @@
                 android:entryValues="@array/power_menuValues"
                 />
 
+         <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_airplane_mode_options"
+                android:title="@string/airplane_mode_options"
+                android:key="airplane_mode_options"
+
+                android:entries="@array/power_menuEntries"
+                android:entryValues="@array/power_menuValues"
+                />
+
+          <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_immersive_mode_options"
+                android:title="@string/immersive_mode_options"
+                android:key="immersive_mode_options"
+
+                android:entries="@array/power_menuEntries"
+                android:entryValues="@array/power_menuValues"
+                />
+
        </LinearLayout>
-</ScrollView> 
+</ScrollView>

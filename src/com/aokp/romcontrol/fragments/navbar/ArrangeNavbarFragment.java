@@ -44,6 +44,7 @@ import com.mobeta.android.dslv.DragSortListView;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -427,17 +428,28 @@ public class ArrangeNavbarFragment extends Fragment implements OnPickListener {
                 }
 
                 Uri tempSelectedUri = getTempFileUri();
-                try {
-                    Log.e(TAG,
-                            "Selected image path: "
-                                    + tempSelectedUri.getPath());
-                    Bitmap bitmap = BitmapFactory.decodeFile(tempSelectedUri
-                            .getPath());
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
-                } catch (NullPointerException npe) {
-                    Log.e(TAG, "SeletedImageUri was null.");
-                    super.onActivityResult(requestCode, resultCode, data);
-                    return;
+                Bitmap bitmap;
+                if (data != null) {
+                    Uri mUri = data.getData();
+                    try {
+                        bitmap = MediaStore.Images.Media.getBitmap(
+                                getActivity().getContentResolver(), mUri);
+                        Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 100, 100, true);
+                        resizedbitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    try {
+                        bitmap = BitmapFactory.decodeFile(tempSelectedUri.getPath());
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, iconStream);
+                    } catch (NullPointerException npe) {
+                        Log.e(TAG, "SeletedImageUri was null.");
+                        super.onActivityResult(requestCode, resultCode, data);
+                        return;
+                    }
                 }
 
                 String imageUri = Uri.fromFile(

@@ -124,6 +124,16 @@ public class SingleChoiceSetting extends BaseSetting implements OnClickListener 
                 }
             }
         }
+        else {
+            if (getDefaultValue() != null) {
+                for (int i = 0; i < mValues.length; i++) {
+                   if (getDefaultValue().equals(mValues[i])) {
+                        return i;
+                    }
+                }
+            }
+        }
+
         return -1;
 
     }

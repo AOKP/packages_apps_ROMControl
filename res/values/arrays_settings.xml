@@ -72,15 +72,15 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-    <array name="lockscreen_target_descriptions_unlock_only">
+    <array name="lockscreen_target_descriptions_unlock_only" translatable="false">
         <item>@string/description_target_unlock</item>
     </array>
 
-    <array name="lockscreen_targets_unlock_only">
+    <array name="lockscreen_targets_unlock_only" translatable="false">
         <item>@drawable/ic_lockscreen_unlock</item>
     </array>
 
-    <array name="lockscreen_direction_descriptions">
+    <array name="lockscreen_direction_descriptions" translatable="false">
         <item>@string/description_direction_right</item>
         <item>@string/description_direction_up</item>
         <item>@string/description_direction_left</item>

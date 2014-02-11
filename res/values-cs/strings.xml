@@ -48,7 +48,6 @@
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">O AOKP</string>
     <string name="about_aokp_summary">@null</string>
-    </string>
     <string name="kanglings">Autoři</string>
     <!-- dynamic changelog -->
     <string name="mgerrit_changelog_title">mGerrit: Aktivní seznam změn</string>

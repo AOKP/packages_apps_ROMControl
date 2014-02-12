@@ -39,6 +39,12 @@
             android:title="@string/swipe_handle_location_title" />
 
         <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/ribbon_icon_gravity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/icon_gravity_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
             android:id="@+id/auto_hide_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

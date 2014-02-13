@@ -190,6 +190,7 @@
     <string name="hide_ribbon_timeout_10000">10 sekund</string>
     <string name="hide_ribbon_timeout_15000">15 sekund</string>
     <string name="hide_ribbon_timeout_30000">30 sekund</string>
+    <string name="icon_gravity_title">Umístění ikony</string>
     <string name="ribbon_drag_handle_width_title">Šířka prostoru pro gesto</string>
     <string name="ribbon_drag_handle_height_title">Výška prostoru pro gesto</string>
     <string name="ribbon_handle_color_title">Barva prostoru pro gesto</string>

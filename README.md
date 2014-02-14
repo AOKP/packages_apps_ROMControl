@@ -1,3 +1,3 @@
-packages_apps_ROMControl
+VanillaUnicorn RomControl
 ========================
 THANKS TO AOKP FOR BASE AND CODE !

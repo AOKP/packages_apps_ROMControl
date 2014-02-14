@@ -40,7 +40,6 @@
     <string name="menu_show_drawer_icon">Zobrazit v navigační liště</string>
     <!--About-->
     <string name="devs">Tým</string>
-    <string name="aokp">Android Open Kang Project</string>
     <string name="aokp_website_title">Web AOKP</string>
     <string name="aokp_website_summary">www.aokp.co - Všechny nejnovější verze k nalezení zde.</string>
     <string name="aokp_review_title">mGerrit</string>
@@ -49,43 +48,6 @@
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">O AOKP</string>
     <string name="about_aokp_summary">@null</string>
-    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
-    </string>
-    <string name="github_aokp">https://github.com/AOKP</string>
-    <string name="github_adam">https://github.com/syaoran12</string>
-    <string name="github_akellar">https://github.com/akellar</string>
-    <string name="github_bajee11">https://github.com/Bajee11</string>
-    <string name="github_bmc08gt">https://github.com/BMc08GT</string>
-    <string name="github_birdman">https://github.com/mrbirdman</string>
-    <string name="github_bytecodeme">https://github.com/BytecodeMe</string>
-    <string name="github_championswimmer">https://github.com/championswimmer</string>
-    <string name="github_DAGr8">https://github.com/DAGr8</string>
-    <string name="github_dhacker29">https://github.com/dhacker29</string>
-    <string name="github_graffixnyc">https://github.com/graffixnyc</string>
-    <string name="github_hashcode">https://github.com/Hashcode</string>
-    <string name="github_willdeberry">https://github.com/willdeberry</string>
-    <string name="github_jbirdvegas">https://github.com/JBirdVegas</string>
-    <string name="github_k900">https://github.com/K900</string>
-    <string name="github_kecinzer">https://github.com/kecinzer</string>
-    <string name="github_khasmek">https://github.com/KhasMek</string>
-    <string name="github_kwes">https://github.com/kwes1020</string>
-    <string name="github_marclandis">https://github.com/MarcLandis</string>
-    <string name="github_rohan32">https://github.com/rohanmathur</string>
-    <string name="github_roman">https://github.com/romanbb</string>
-    <string name="github_protekk">https://github.com/ProTekk</string>
-    <string name="github_qnhoang81">https://github.com/qnhoang81</string>
-    <string name="github_scar45">https://github.com/scar45</string>
-    <string name="github_sethyx">https://github.com/sethyx</string>
-    <string name="github_sixstringsg">https://github.com/sixstringsg</string>
-    <string name="github_stevespear">https://github.com/Stevespear426</string>
-    <string name="github_tdm">https://github.com/tdm</string>
-    <string name="github_whitehawk">https://github.com/Whitehawkx</string>
-    <string name="github_xoom">https://github.com/xoomdev</string>
-    <string name="github_zaph">https://github.com/Zaphod-Beeblebrox</string>
-    <string name="url_aokp">http://aokp.co/</string>
-    <string name="url_aokp_gerrit">http://gerrit.aokp.co</string>
-    <string name="url_aokp_irc">http://webchat.freenode.net/?channels=teamkang</string>
-    <string name="android_open_kang_project">Android Open Kang Project</string>
     <string name="kanglings">Autoři</string>
     <!-- dynamic changelog -->
     <string name="mgerrit_changelog_title">mGerrit: Aktivní seznam změn</string>
@@ -96,7 +58,6 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint">#FF000000</string>
     <string name="set">Nastavit</string>
     <string name="ics_color">Holo</string>
     <!-- Time -->
@@ -229,6 +190,7 @@
     <string name="hide_ribbon_timeout_10000">10 sekund</string>
     <string name="hide_ribbon_timeout_15000">15 sekund</string>
     <string name="hide_ribbon_timeout_30000">30 sekund</string>
+    <string name="icon_gravity_title">Umístění ikony</string>
     <string name="ribbon_drag_handle_width_title">Šířka prostoru pro gesto</string>
     <string name="ribbon_drag_handle_height_title">Výška prostoru pro gesto</string>
     <string name="ribbon_handle_color_title">Barva prostoru pro gesto</string>

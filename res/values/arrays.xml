@@ -18,7 +18,7 @@
 -->
 
 <resources>
-    <string-array name="navigation_drawer_entries">
+    <string-array name="navigation_drawer_entries" translatable="false">
         <item>@string/category_about_aokp</item>
         <item>@string/category_general</item>
         <item>@string/category_lockscreen</item>
@@ -33,7 +33,7 @@
         <item>@string/category_ribbons</item>
         <item>@string/category_animations</item>
     </string-array>
-    <string-array name="navigation_drawer_icons">
+    <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_general</item>
         <item>@drawable/ic_rom_control_lockscreen</item>

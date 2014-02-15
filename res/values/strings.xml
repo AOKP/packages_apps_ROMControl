@@ -50,12 +50,16 @@
     <string name="vu_review_title">VanillaUnicorn Code Review - Gerrit</string>
     <string name="vu_review_summary">View VanillaUnicorn\'s Gerrit instance</string>
     <string name="vu_irc_title">Join us on IRC</string>
-    <string name="vu_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="vu_irc_summary">#teamvu @ irc.freenode.net</string>
     <string name="about_vu">About VanillaUnicorn</string>
     <string name="about_vu_summary">@null</string>
-    <string name="donate_vu" translatable="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
-    </string>
-    <string name="github_vz" translatable="false">https://github.com/VanillaUnicorn</string>
+    <string name="donate_vu" translatable="false">http://forum.xda-developers.com/donatetome.php?u=4583359</string>
+    <string name="github_vu" translatable="false">https://github.com/VanillaUnicorn</string>
+    
+    <!-- VU TEAM -->
+    <string name="donate_jesus" translatable="false">http://forum.xda-developers.com/donatetome.php?u=4620435</string>
+    
+    <!-- AOKP TEAM -->
     <string name="github_adam" translatable="false">https://github.com/syaoran12</string>
     <string name="github_akellar" translatable="false">https://github.com/akellar</string>
     <string name="github_bajee11" translatable="false">https://github.com/Bajee11</string>
@@ -87,8 +91,8 @@
     <string name="github_xoom" translatable="false">https://github.com/xoomdev</string>
     <string name="github_zaph" translatable="false">https://github.com/Zaphod-Beeblebrox</string>
     <string name="url_aokp" translatable="false">http://aokp.co/</string>
-    <string name="url_aokp_gerrit" translatable="false">http://gerrit.aokp.co</string>
-    <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
+    <string name="url_vu_gerrit" translatable="false">http://gerrit.aokp.co</string>
+    <string name="url_vu_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
     <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
     <string name="kanglings">The Kanglings</string>
 

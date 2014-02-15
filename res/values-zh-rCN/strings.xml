@@ -58,10 +58,6 @@
     <!-- 颜色选择器 -->
     <string name="dialog_color_picker">颜色选择器</string>
     <string name="press_color_to_apply">点击颜色应用</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#FF000000</string>
     <string name="set">设置</string>
     <string name="default_color">默认</string>
 
@@ -208,6 +204,7 @@
     <string name="hide_ribbon_timeout_15000">15 秒</string>
     <string name="hide_ribbon_timeout_30000">30 秒</string>
 
+    <string name="icon_gravity_title">图标位置</string>
     <string name="ribbon_drag_handle_width_title">滑动区宽度</string>
     <string name="ribbon_drag_handle_height_title">滑动区高度</string>
     <string name="ribbon_handle_color_title">滑动区颜色</string>
@@ -336,6 +333,8 @@
     <!-- 声音 -->
     <string name="safe_headset_volume_title">耳机安全音量</string>
     <string name="safe_headset_volume_summary">是否显示安全音量警告</string>
+    <string name="volume_adjust_sounds_enable_title">调节音量提示音</string>
+    <string name="volume_adjust_sounds_enable_summary">调节音量时发出提示音</string>
 
     <!-- 电源菜单 -->
     <string name="airplane_mode_options">飞行模式</string>

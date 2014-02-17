@@ -70,6 +70,13 @@
                 android:key="lockscreen_minimize_lockscreen_challenge"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/battery_arc_lockscreen_handle"
+                android:summary="@string/battery_arc_lockscreen_handle_summary"
+                android:key="battery_arc_lockscreen_handle"
+                />
     </LinearLayout>
 
 </ScrollView>

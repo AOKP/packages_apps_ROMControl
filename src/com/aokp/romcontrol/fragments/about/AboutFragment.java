@@ -33,7 +33,7 @@ public class AboutFragment extends Fragment {
 
     private static final String MGERRIT = "com.jbirdvegas.mgerrit";
     private static final String MGERRIT_MAIN_ENTRY = ".GerritControllerActivity";
-    private static final String MGERRIT_AOKP_CHANGELOG = ".AOKPChangelog";
+    private static final String MGERRIT_VU_CHANGELOG = ".VUChangelog";
     private static final String MGERRIT_PLAYSTORE = "https://play.google.com/store/apps/details?id=com.jbirdvegas.mgerrit";
 
     public AboutFragment() {
@@ -44,7 +44,7 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_about_aokp, container, false);
 
-        root.findViewById(R.id.aokp_mgerrit_changelog).setOnClickListener(new OnClickListener() {
+        root.findViewById(R.id.vu_mgerrit_changelog).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // open mGerrit if we can. otherwise launch gerrit url.
@@ -57,14 +57,14 @@ public class AboutFragment extends Fragment {
             }
         });
 
-        root.findViewById(R.id.aokp_review).setOnClickListener(new OnClickListener() {
+        root.findViewById(R.id.vu_review).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // open mGerrit if we can. otherwise launch gerrit url.
                 try {
-                    launchActivity(MGERRIT, MGERRIT_AOKP_CHANGELOG);
+                    launchActivity(MGERRIT, MGERRIT_VU_CHANGELOG);
                 } catch (ActivityNotFoundException failToMarket) {
-                    launchUrl(getString(R.string.url_aokp_gerrit));
+                    launchUrl(getString(R.string.url_vu_gerrit));
                 }
 
             }

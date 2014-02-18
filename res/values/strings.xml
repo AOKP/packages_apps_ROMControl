@@ -19,8 +19,8 @@
 
 <resources>
 
-    <string name="app_name">ROM Control</string>
-    <string name="rom_control">ROM Control</string>
+    <string name="app_name">ROMControl</string>
+    <string name="rom_control">ROMControl</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

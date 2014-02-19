@@ -96,6 +96,13 @@
     <string name="android_open_kang_project" translatable="false">VanillaUnicorn</string>
     <string name="kanglings">The Team</string>
 
+     <!--Battery Icon selection-->
+     <string name="battery_status_icon_title">StatusIcon</string>
+     <string name="battery_bar_nopercent">BatteryBar</string>
+     <string name="battery_bar_percent">BatteryBar &amp; percent</string>
+     <string name="battery_circle">BatteryCircle</string>
+     <string name="battery_circle_percent">BatteryCircle &amp; percent</string>
+
     <!-- dynamic changelog -->
     <string name="mgerrit_changelog_title">mGerrit: Dynamic ChangeLog</string>
     <string name="mgerrit_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>

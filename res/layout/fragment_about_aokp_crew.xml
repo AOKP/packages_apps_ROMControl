@@ -10,7 +10,8 @@
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Jesus Partida"
-                aokp:nameDev="Partimus Prime"
+                aokp:nameDev="Jesus Partida"
+                aokp:githubLink="@string/github_jesus"
                 aokp:twitterHandle="partimusprime"
                 aokp:emailDev="partimus.prime@gmail.com"
                 aokp:donateLink="@string/donate_jesus"

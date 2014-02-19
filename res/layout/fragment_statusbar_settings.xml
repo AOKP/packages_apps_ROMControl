@@ -166,6 +166,16 @@
                 style="@style/defaultSize"
                 android:title="@string/category_statusbar_battery"/>
 
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_status_bar_battery_style"
+                android:key="status_bar_battery_style"
+                android:title="@string/battery_status_icon_title"
+                android:entries="@array/entries_battery_submenu"
+                android:entryValues="@array/values_battery_submenu"
+                android:defaultValue="1" />
+
         <com.aokp.romcontrol.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

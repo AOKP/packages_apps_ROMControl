@@ -258,6 +258,10 @@
     <string name="toggle_screenshot_delay_title">截图延迟</string>
     <string name="toggle_screenshot_delay_summary">开始屏幕截图前的延迟时间</string>
 
+    <!-- 导航栏 -->
+    <string name="enable_navigation_bar_title">启用导航栏</string>
+    <string name="enable_navigation_bar_summary">启用屏幕内导航栏</string>
+
     <!-- 导航环目标 -->
     <string name="navbar_ring_cat">导航环目标</string>
     <string name="navbar_ring">自定义导航环目标</string>
@@ -329,6 +333,9 @@
 
     <string name="lockscreen_see_through">透明锁屏</string>
     <string name="lockscreen_see_through_summary">显示锁屏背后的内容，可能造成你的数据被周围人看到。</string>
+
+    <string name="battery_arc_lockscreen_handle">锁屏环电量指示</string>
+    <string name="battery_arc_lockscreen_handle_summary">在锁屏环显示一个用于指示电量的图标</string>
 
     <!-- 声音 -->
     <string name="safe_headset_volume_title">耳机安全音量</string>

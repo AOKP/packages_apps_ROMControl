@@ -47,8 +47,8 @@
     <string name="vu" translatable="false">Vanilla Unicorn Project</string>
     <string name="vu_website_title">VanillaUnicorn website</string>
     <string name="vu_website_summary">www.vanilla-roms.com - Find all newest releases here</string>
-    <string name="vu_review_title">VanillaUnicorn Code Review - Gerrit</string>
-    <string name="vu_review_summary">View VanillaUnicorn\'s Gerrit instance</string>
+    <string name="vu_review_title">VanillaUnicorn EMail</string>
+    <string name="vu_review_summary">Contact the Developer via. email</string>
     <string name="vu_irc_title">Join us on G+</string>
     <string name="vu_irc_summary">VanillaUnicorn on g+</string>
     <string name="about_vu">About VanillaUnicorn</string>
@@ -91,7 +91,7 @@
     <string name="github_xoom" translatable="false">https://github.com/xoomdev</string>
     <string name="github_zaph" translatable="false">https://github.com/Zaphod-Beeblebrox</string>
     <string name="url_vu" translatable="false">http://vanilla-roms.com//</string>
-    <string name="url_vu_gerrit" translatable="false">http://vanilla-roms.com/</string>
+    <string name="url_vu_gerrit" translatable="false">rootagnex@gmail.com</string>
     <string name="url_vu_irc" translatable="false">https://plus.google.com/communities/113421451898131433024</string>
     <string name="android_open_kang_project" translatable="false">VanillaUnicorn</string>
     <string name="kanglings">The Team</string>

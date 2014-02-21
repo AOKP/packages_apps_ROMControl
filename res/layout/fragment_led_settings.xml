@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout style="@style/settingsFragmentStyle">
+
+         <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/setting_toggle_charging_led"
+                android:title="@string/enable_charging_led_title"
+                android:summary="@string/enable_charging_led_summary"
+                android:key="battery_charging_led_enabled"
+                android:defaultValue="true"
+                />
+
+    </LinearLayout>
+</ScrollView>

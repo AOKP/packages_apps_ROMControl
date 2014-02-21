@@ -32,6 +32,7 @@
         <item>@string/category_installer</item>
         <item>@string/category_ribbons</item>
         <item>@string/category_animations</item>
+        <item>@string/category_led</item>
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
@@ -47,5 +48,6 @@
         <item>@drawable/ic_rom_control_installer</item>
         <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_animations</item>
+        <item>@drawable/ic_rom_control_led</item>
     </string-array>
 </resources>

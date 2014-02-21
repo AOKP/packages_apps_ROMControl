@@ -239,6 +239,9 @@
     <string name="toggle_favcontact_summary">Zvolit oblíbený kontakt</string>
     <string name="toggle_screenshot_delay_title">Prodleva snímku obrazovky</string>
     <string name="toggle_screenshot_delay_summary">Prodleva před odesláním pokynu k pořízení snímku obrazovky</string>
+    <!-- Navigation Bar -->
+    <string name="enable_navigation_bar_title">Zapnout navigační lištu</string>
+    <string name="enable_navigation_bar_summary">Zapnout navigační lištu na obrazovce</string>
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Položky navigačního kruhu</string>
     <string name="navbar_ring">Vlastní položky kruhu</string>
@@ -308,9 +311,13 @@
     <string name="navbar_tab_settings">Nastavení</string>
     <string name="lockscreen_see_through">Průhledná zamčená obrazovka</string>
     <string name="lockscreen_see_through_summary">Zobrazí obsah za zamčenou obrazovkou. Data budou viditelná pro okolí!</string>
+    <string name="battery_arc_lockscreen_handle">Kulatý indikátor baterie</string>
+    <string name="battery_arc_lockscreen_handle_summary">Indikátor okolo odemykacího kruhu ukazující stav baterie</string>
     <!-- Sound -->
     <string name="safe_headset_volume_title">Bezpečná hlasitost sluchátek</string>
     <string name="safe_headset_volume_summary">Zobrazit upozornění na bezpečnou hlasitost sluchátek</string>
+    <string name="volume_adjust_sounds_enable_title">Zvuky změny hlasitosti</string>
+    <string name="volume_adjust_sounds_enable_summary">Při změně hlasitosti hw tlačítky upozornit zvukovou signalizací</string>
     <!-- Power Menu -->
     <string name="airplane_mode_options">Režim v letadle</string>
     <string name="immersive_mode_options">Skryté lišty</string>

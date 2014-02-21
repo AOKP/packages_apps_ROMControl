@@ -34,6 +34,22 @@
         <item>@string/category_animations</item>
         <item>@string/category_led</item>
     </string-array>
+    <string-array name="navigation_drawer_values" translatable="false">
+        <item>about_aokp</item>
+        <item>general</item>
+        <item>lockscreen</item>
+        <item>statusbar</item>
+        <item>toggles</item>
+        <item>hardware_keys</item>
+        <item>power_menu</item>
+        <item>navbar</item>
+        <item>navring</item>
+        <item>sound</item>
+        <item>installer</item>
+        <item>ribbons</item>
+        <item>animations</item>
+        <item>led</item>
+    </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_general</item>

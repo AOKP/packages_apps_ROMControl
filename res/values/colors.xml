@@ -18,9 +18,9 @@
 -->
 
 <resources>
-    <color name="transparent">#00000000</color>
+    <color name="transparent">#00ffffff</color>
     <color name="navigation_drawer_background">#cc000000</color>
-    <color name="extension_list_item_color">#ffc9c9c9</color>
-    <color name="configure_light_background">#00000000</color>
+    <color name="extension_list_item_color">#ff888888</color>
+    <color name="configure_light_background">#00ffffff</color>
     <color name="background_tab_pressed">#6633B5E5</color>
 </resources>

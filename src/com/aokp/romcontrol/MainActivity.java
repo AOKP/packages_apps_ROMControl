@@ -62,12 +62,14 @@ public class MainActivity extends Activity
 
     private Fragment mSelectedFragment;
     private String[] mDrawerEntries;
+    private String[] mDrawerValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mDrawerEntries = getResources().getStringArray(R.array.navigation_drawer_entries);
+        mDrawerValues = getResources().getStringArray(R.array.navigation_drawer_values);
 
         setContentView(R.layout.activity_main);
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -95,59 +97,51 @@ public class MainActivity extends Activity
     public Fragment getFragmentToAttach(int position) {
         int index = position;
         mTitle = mDrawerEntries[index];
+        String item = mDrawerValues[index];
         Fragment fragment = null;
-        switch (position) {
-            case 0:
-                fragment = new AboutTabHostFragment();
-                break;
-
-            case 1:
-                fragment = new GeneralSettingsFragment();
-                break;
-
-            case 2:
-                fragment = new LockscreenSettingsFragment();
-                break;
-
-            case 3:
-                fragment = new StatusbarSettingsFragment();
-                break;
-
-            case 4:
-                fragment = new TogglesTabHostFragment();
-                break;
-
-            case 5:
-                fragment = new HardwareKeysFragment();
-                break;
-
-            case 6:
-                fragment = new PowerMenuSettingsFragment();
-                break;
-
-            case 7:
-                fragment = new NavbarTabHostFragment();
-                break;
-
-            case 8:
-                fragment = new NavRingTargets();
-                break;
-
-            case 9:
-                fragment = new SoundSettingsFragment();
-                break;
-
-            case 10:
-                fragment = new InstallerSettingsFragment();
-                break;
-
-            case 11:
-                fragment = new RibbonsFragment();
-                break;
-
-            case 12:
-                fragment = new AnimationsFragment();
-                break;
+        // blame Google for not using Java 7 yet
+        if ("about_aokp".equals(item)) {
+            fragment = new AboutTabHostFragment();
+        }
+        else if ("general".equals(item)) {
+            fragment = new GeneralSettingsFragment();
+        }
+        else if ("lockscreen".equals(item)) {
+            fragment = new LockscreenSettingsFragment();
+        }
+        else if ("statusbar".equals(item)) {
+            fragment = new StatusbarSettingsFragment();
+        }
+        else if ("toggles".equals(item)) {
+            fragment = new TogglesTabHostFragment();
+        }
+        else if ("hardware_keys".equals(item)) {
+            fragment = new HardwareKeysFragment();
+        }
+        else if ("power_menu".equals(item)) {
+            fragment = new PowerMenuSettingsFragment();
+        }
+        else if ("navbar".equals(item)) {
+            fragment = new NavbarTabHostFragment();
+        }
+        else if ("navring".equals(item)) {
+            fragment = new NavRingTargets();
+        }
+        else if ("sound".equals(item)) {
+            fragment = new SoundSettingsFragment();
+        }
+        else if ("installer".equals(item)) {
+            fragment = new InstallerSettingsFragment();
+        }
+        else if ("ribbons".equals(item)) {
+            fragment = new RibbonsFragment();
+        }
+        else if ("animations".equals(item)) {
+            fragment = new AnimationsFragment();
+        }
+        else {
+            // who knows
+            fragment = new AboutTabHostFragment();
         }
         return fragment;
     }

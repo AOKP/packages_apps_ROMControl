@@ -397,8 +397,6 @@
     <string name="lockscreen_wallpaper_summary">Set or remove the current lockscreen background</string>
     <string name="lockscreen_wallpaper_pick">New lockscreen background</string>
     <string name="lockscreen_wallpaper_remove">Remove lockscreen background</string>
-    <string name="lockscreen_glowpad_torch_title">Slider torch</string>
-    <string name="lockscreen_glowpad_torch_summary">Double-tap and hold the slider to start torch</string>
 
     <string name="add_button">Add button</string>
     <string name="navbar_tab_arrange">Rearrange</string>

@@ -22,5 +22,5 @@
     <color name="navigation_drawer_background">#cc000000</color>
     <color name="extension_list_item_color">#ff888888</color>
     <color name="configure_light_background">#00ffffff</color>
-    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="background_tab_pressed">#66666666</color>
 </resources>

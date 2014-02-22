@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="48dip"
         android:background="@drawable/background_tab"
-        aokp:dividerColor="@android:color/white"
-        aokp:indicatorColor="@android:color/white" />
+        aokp:dividerColor="@android:color/black"
+        aokp:indicatorColor="@android:color/black" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

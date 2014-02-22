@@ -19,8 +19,8 @@
 
 <resources>
 
-    <string name="app_name">ROM control</string>
-    <string name="rom_control">ROM control</string>
+    <string name="app_name">ROMControl</string>
+    <string name="rom_control">ROMControl</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -43,20 +43,24 @@
     <string name="menu_show_drawer_icon">Show in app drawer</string>
 
     <!-- About -->
-    <string name="devs">The Crew</string>
-    <string name="aokp" translatable="false">Android Open Kang Project</string>
-    <string name="aokp_website_title">AOKP website</string>
-    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here</string>
-    <string name="aokp_review_title">AOKP Code Review - Gerrit</string>
-    <string name="aokp_review_summary">View AOKP\'s Gerrit instance</string>
-    <string name="aokp_irc_title">Join us on IRC</string>
-    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">About AOKP</string>
-    <string name="about_aokp_summary">@null</string>
-    <string name="donate_aokp" translatable="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
-    </string>
-    <string name="github_aokp" translatable="false">https://github.com/AOKP</string>
-    <string name="github_adam" translatable="false">https://github.com/syaoran12</string>
+    <string name="devs">The Team</string>
+    <string name="vu" translatable="false">Vanilla Unicorn Project</string>
+    <string name="vu_website_title">VanillaUnicorn website</string>
+    <string name="vu_website_summary">www.vanilla-roms.com - Find all newest releases here</string>
+    <string name="vu_review_title">VanillaUnicorn EMail</string>
+    <string name="vu_review_summary">Contact the Developer via. email</string>
+    <string name="vu_irc_title">Join us on G+</string>
+    <string name="vu_irc_summary">VanillaUnicorn on g+</string>
+    <string name="about_vu">About VanillaUnicorn</string>
+    <string name="about_vu_summary">@null</string>
+    <string name="donate_vu" translatable="false">http://forum.xda-developers.com/donatetome.php?u=4583359</string>
+    <string name="github_vu" translatable="false">https://github.com/VanillaUnicorn</string>
+    
+    <!-- VU TEAM -->
+    <string name="donate_jesus" translatable="false">http://forum.xda-developers.com/donatetome.php?u=4620435</string>
+    <string name="github_jesus" translatable="false">https://github.com/PartimusPrime</string>
+    
+    <!-- AOKP TEAM -->
     <string name="github_akellar" translatable="false">https://github.com/akellar</string>
     <string name="github_bajee11" translatable="false">https://github.com/Bajee11</string>
     <string name="github_bmc08gt" translatable="false">https://github.com/BMc08GT</string>
@@ -86,11 +90,20 @@
     <string name="github_whitehawk" translatable="false">https://github.com/Whitehawkx</string>
     <string name="github_xoom" translatable="false">https://github.com/xoomdev</string>
     <string name="github_zaph" translatable="false">https://github.com/Zaphod-Beeblebrox</string>
-    <string name="url_aokp" translatable="false">http://aokp.co/</string>
-    <string name="url_aokp_gerrit" translatable="false">http://gerrit.aokp.co</string>
-    <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
-    <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
-    <string name="kanglings">The Kanglings</string>
+    <string name="url_vu" translatable="false">http://vanilla-roms.com//</string>
+    <string name="url_vu_gerrit" translatable="false">rootagnex@gmail.com</string>
+    <string name="url_vu_irc" translatable="false">https://plus.google.com/communities/113421451898131433024</string>
+    <string name="android_open_kang_project" translatable="false">VanillaUnicorn</string>
+    <string name="kanglings">The Team</string>
+
+     <!--Battery Icon selection-->
+     <string name="battery_status_icon_title">StatusIcon</string>
+     <string name="battery_bar_nopercent">BatteryBar</string>
+     <string name="battery_bar">BatteryBar</string>
+     <string name="battery_bar_percent">BatteryBar &amp; percent</string>
+     <string name="battery_circle">BatteryCircle</string>
+     <string name="battery_circle_percent">BatteryCircle &amp; percent</string>
+
 
     <!-- dynamic changelog -->
     <string name="mgerrit_changelog_title">mGerrit: Dynamic ChangeLog</string>
@@ -111,6 +124,16 @@
     <string name="time_1_second">1 second</string>
     <string name="time_2_seconds">2 seconds</string>
     <string name="time_5_seconds">5 seconds</string>
+
+    <!-- Dimens -->
+    <string name="size_42_dp_default">42 dp (default)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (default)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
 
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>
@@ -378,6 +401,13 @@
     <string name="add_button">Add button</string>
     <string name="navbar_tab_arrange">Rearrange</string>
     <string name="navbar_tab_settings">Settings</string>
+
+    <string name="navigation_bar_height_title">Navigation Bar height</string>
+    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait</string>
+    <string name="navigation_bar_height_landscape_title">Navigation Bar height landscape</string>
+    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape</string>
+    <string name="navigation_bar_width_title">Navigation Bar width</string>
+    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side</string>
 
     <string name="lockscreen_see_through">Transparent lockscreen</string>
     <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>

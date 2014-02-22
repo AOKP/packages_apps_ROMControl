@@ -27,51 +27,51 @@
             style="@style/settingsFragmentStyle">
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
-                aokp:nameDev="AOKP"
-                aokp:twitterHandle="AOKP_ROM"
-                aokp:githubLink="@string/github_aokp"
-                aokp:donateLink="@string/donate_aokp"
-                aokp:emailDev="github@aokp.co"
+                aokp:nameDev="VanillaUnicorn"
+                aokp:twitterHandle="root_ad"
+                aokp:githubLink="@string/github_vu"
+                aokp:donateLink="@string/donate_vu"
+                aokp:emailDev="rootagnex@gmail.com"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
 
         <com.aokp.romcontrol.settings.UrlSetting
-                android:id="@+id/aokp"
-                android:title="@string/aokp_website_title"
-                android:summary="@string/aokp_website_summary"
-                aokp:url="@string/url_aokp"
+                android:id="@+id/vu"
+                android:title="@string/vu_website_title"
+                android:summary="@string/vu_website_summary"
+                aokp:url="@string/url_vu"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+       <com.aokp.romcontrol.settings.UrlSetting
+                android:id="@+id/vu_review"
+                android:title="@string/vu_review_title"
+                android:summary="@string/vu_review_summary"
+                aokp:url="@string/url_vu_gerrit"
+                
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <com.aokp.romcontrol.settings.UrlSetting
+                android:id="@+id/vu_irc"
+                android:title="@string/vu_irc_title"
+                android:summary="@string/vu_irc_summary"
+                aokp:url="@string/url_vu_irc"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
 
         <com.aokp.romcontrol.settings.UrlSetting
-                android:id="@+id/aokp_review"
-                android:title="@string/aokp_review_title"
-                android:summary="@string/aokp_review_summary"
-                aokp:url="@string/url_aokp_gerrit"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        <com.aokp.romcontrol.settings.UrlSetting
-                android:id="@+id/aokp_irc"
-                android:title="@string/aokp_irc_title"
-                android:summary="@string/aokp_irc_summary"
-                aokp:url="@string/url_aokp_irc"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        <com.aokp.romcontrol.settings.UrlSetting
-                android:id="@+id/aokp_mgerrit_changelog"
+                android:id="@+id/vu_mgerrit_changelog"
                 android:title="@string/mgerrit_changelog_title"
                 android:summary="@string/mgerrit_changelog_summary"
-
+                
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />

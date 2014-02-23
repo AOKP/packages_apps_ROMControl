@@ -205,6 +205,8 @@
     <string name="statusbar_signal_text_summary">Show signal with dBm</string>
     <string name="statusbar_hide_signal_bars_title">Hide Signal Bars</string>
     <string name="statusbar_hide_signal_bars_summary">Ability to hide the signal bars</string>
+    <string name="show_4g_for_lte_title">Use 4G icon on LTE</string>
+    <string name="show_4g_for_lte_summary">Show 4G network indicator icon instead of LTE icon</string>
 
     <string name="status_bar_network_title">Network traffic</string>
     <string name="status_bar_show_network_stats_title">Show network speeds</string>

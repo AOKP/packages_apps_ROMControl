@@ -188,6 +188,8 @@
   <string name="statusbar_signal_text_title">Zobrazit signál textově</string>
   <string name="statusbar_signal_text_summary">Zobrazit signál v dBm</string>
   <string name="statusbar_hide_signal_bars_title">Skrýt ukazatel signálu</string>
+  <string name="show_4g_for_lte_title">Použít 4G ikonu u LTE</string>
+  <string name="show_4g_for_lte_summary">Zobrazit ikonu 4G sítě místo LTE ikony</string>
   <string name="statusbar_hide_signal_bars_summary">Skrýt grafický ukazatel signálu</string>
   <string name="status_bar_network_title">Síťový provoz</string>
   <string name="status_bar_show_network_stats_title">Zobrazit rychlost sítě</string>

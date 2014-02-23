@@ -34,6 +34,7 @@ import com.aokp.romcontrol.fragments.AnimationsFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
+import com.aokp.romcontrol.fragments.LedSettingsFragment;
 import com.aokp.romcontrol.fragments.LockscreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavRingTargets;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
@@ -147,6 +148,10 @@ public class MainActivity extends Activity
 
             case 12:
                 fragment = new AnimationsFragment();
+                break;
+
+            case 13:
+                fragment = new LedSettingsFragment();
                 break;
         }
         return fragment;

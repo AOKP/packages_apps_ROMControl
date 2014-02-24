@@ -38,7 +38,7 @@
     <string name="category_power_menu">Power menu </string>
     <string name="category_ribbons">Ribbons</string>
     <string name="category_animations">Animations</string>
-    <string name="category_led">Led</string>
+    <string name="category_led">LED</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -403,7 +403,7 @@
     <string name="on_when_insecure">Show option (except on secure lockscreen)</string>
 
     <!-- LED -->
-    <string name="enable_charging_led_title">Enable charging led</string>
+    <string name="enable_charging_led_title">Enable charging LED</string>
     <string name="enable_charging_led_summary">The LED is used as charging indicator</string>
 
 </resources>

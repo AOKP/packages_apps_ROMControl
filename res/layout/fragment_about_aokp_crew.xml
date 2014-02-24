@@ -6,6 +6,7 @@
             android:id="@+id/scrollView">
 
     <LinearLayout
+            android:id="@+id/crew"
             style="@style/settingsFragmentStyle">
 
         <com.aokp.romcontrol.widgets.DeveloperPreference

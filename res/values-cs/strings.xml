@@ -36,6 +36,7 @@
     <string name="category_power_menu">Menu napájení</string>
     <string name="category_ribbons">Ribbony</string>
     <string name="category_animations">Animace</string>
+    <string name="category_led">LED</string>
     <!-- menu items -->
     <string name="menu_show_drawer_icon">Zobrazit v navigační liště</string>
     <!--About-->
@@ -326,4 +327,7 @@
     <string name="hide_option">Skrýt volbu</string>
     <string name="on_always">Zobrazit volbu</string>
     <string name="on_when_insecure">Zobrazit volbu (mimo zabezpečené zamčené obrazovky)</string>
+    <!-- LED -->
+    <string name="enable_charging_led_title">Zapnout LED při nabíjení</string>
+    <string name="enable_charging_led_summary">LED je použita jako indikátor nabíjení</string>
 </resources>

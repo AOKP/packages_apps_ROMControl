@@ -19,8 +19,8 @@
 
 <resources>
 
-    <string name="app_name">ROM control</string>
-    <string name="rom_control">ROM control</string>
+    <string name="app_name">Controllo ROM</string>
+    <string name="rom_control">Controllo ROM</string>
     <string name="navigation_drawer_open">Apri Drawer di navigazione</string>
     <string name="navigation_drawer_close">Chiudi Drawer di navigazione</string>
 
@@ -89,17 +89,17 @@
     <string name="kanglings">The Kanglings</string>
 
     <!-- dynamic changelog -->
-    <string name="mgerrit_changelog_title">mGerrit: Dynamic ChangeLog</string>
-    <string name="mgerrit_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
+    <string name="mgerrit_changelog_title">mGerrit: ChangeLog Dinamico</string>
+    <string name="mgerrit_changelog_summary">Live Changelog</string>
 
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color picker</string>
+    <string name="dialog_color_picker">Selettore colore</string>
     <string name="press_color_to_apply">Premi su un colore per applicare</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
-    <string name="set">Set</string>
+    <string name="set">Applica</string>
     <string name="default_color">Default</string>
 
     <!-- Time -->
@@ -121,8 +121,8 @@
     <string name="cancel">Annulla</string>
     <string name="brightness_slider_title">Slider luminosità sulla barra di stato</string>
     <string name="brightness_slider_summary">Quando abilitato, questa opzione consente di cambiare la luminosità dello schermo strisciando lungo la barra di stato. Nota: non è disponibile quando la luminosità è gestita automaticamente</string>
-    <string name="wakeup_when_plugged_unplugged_title">Accendi su carica</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Accendi il dispositivo se collegato in carica</string>
+    <string name="wakeup_when_plugged_unplugged_title">Accendi quando connesso ad una rete elettrica</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Accendi il dispositivo se collegato o scollegato dalla rete elettrica</string>
     <string name="ram_bar_title">Recenti barra RAM</string>
     <string name="ram_bar_summary">Mostra uso della RAM nella finestra applicazioni recenti</string>
 
@@ -209,12 +209,12 @@
 
     <!-- Toggles -->
     <string name="title_toggles">Interruttori</string>
-    <string name="toggles_style_tile">Mattonelle</string>
-    <string name="toggles_style_traditional">Tradizionali pulldown</string>
-    <string name="toggles_style_scrollable">Tradizionali scrollabili</string>
+    <string name="toggles_style_tile">Stile interruttori</string>
+    <string name="toggles_style_traditional">Pulldown tradizionale</string>
+    <string name="toggles_style_scrollable">Interruttori scrollabili</string>
     <string name="toggles_display_close">Chiudi</string>
 
-    <string name="toggles_order_title">Ordine Interruttori order</string>
+    <string name="toggles_order_title">Ordine Interruttori</string>
     <string name="toggles_order_summary">Scegli l\'ordine con cui vuoi che gli interruttori vengano visualizzati</string>
 
     <string name="toggle_dialog_arrange_title">Setup Interruttori</string>
@@ -248,38 +248,38 @@
     <string name="toggle_favcontact_summary">Scegli un contatto preferito</string>
 
     <!-- Nav Ring Targets -->
-    <string name="navbar_ring_cat">Anello di Navigazione Obbiettivi</string>
-    <string name="navbar_ring">Personalizza obbiettivi Anello</string>
-    <string name="navring_enable_long">Abilita pressione lunga per obbiettivi Anello</string>
-    <string name="navring_target_save">Obbiettivi Anello Navigazione salvati</string>
-    <string name="navring_target_reset_message">Vuoi azzerare obbiettivi Anello Navigazione?</string>
-    <string name="navring_target_reset">Azzeramento obbiettivi Anello Navigazione</string>
+    <string name="navbar_ring_cat">Anello di Navigazione Obiettivi</string>
+    <string name="navbar_ring">Personalizza obiettivi Anello</string>
+    <string name="navring_enable_long">Abilita pressione lunga per obiettivi Anello</string>
+    <string name="navring_target_save">Obiettivi Anello Navigazione salvati</string>
+    <string name="navring_target_reset_message">Vuoi azzerare obiettivi Anello Navigazione?</string>
+    <string name="navring_target_reset">Azzeramento obiettivi Anello Navigazione</string>
     <string name="choose_action_title">Scegli azione</string>
     <string name="choose_action_short_title">Azione su pressione breve</string>
     <string name="choose_action_long_title">Azione su pressione lunga</string>
     <string name="action_long_save">Scelta azione su pressione lunga</string>
-    <string name="title_navring_amount">Numero di obbiettivi Anello di Navigazione</string>
-    <string name="summary_navring_amount">Scegli numero di obbiettivi su Anello di Navigazione</string>
+    <string name="title_navring_amount">Numero di obiettivi Anello di Navigazione</string>
+    <string name="summary_navring_amount">Scegli numero di obiettivi su Anello di Navigazione</string>
     <string name="interface_navring_settings_title">Anello di Navigazione</string>
     <string name="interface_navring_settings_summary">@null</string>
-    <string name="navring_target_info">Trascina sugli obbiettivi per assegnargli un\'azione</string>
+    <string name="navring_target_info">Trascina sugli obiettivi per assegnargli un\'azione</string>
     <string name="navring_clear">Elimina azione</string>
     <string name="action_short">Azione pressione breve</string>
     <string name="action_long">Azione pressione lunga</string>
     <string name="action_double">Azione pressione doppia</string>
     <string name="action_icon">Icona personalizzata</string>
-    <string name="navring_target_amount_text">Numero corrente di obbiettivi</string>
+    <string name="navring_target_amount_text">Numero corrente di obiettivi</string>
     <string name="navring_target_longpress_text">Azione su pressione lunga</string>
     <string name="description_target_unlock">Sblocca</string>
     <string name="description_direction_up">Striscia in su per sbloccare</string>
     <string name="description_direction_down">Striscia in giu per sbloccare</string>
     <string name="description_direction_left">"Striscia a sinistra per sbloccare</string>
     <string name="description_direction_right">Striscia a destra per sbloccare</string>
-    <string name="one_target">1 obbiettivo</string>
-    <string name="two_targets">2 obbiettivi</string>
-    <string name="three_targets">3 obbiettivi</string>
-    <string name="four_targets">4 obbiettivi</string>
-    <string name="five_targets">5 obbiettivi</string>
+    <string name="one_target">1 obiettivo</string>
+    <string name="two_targets">2 obiettivi</string>
+    <string name="three_targets">3 obiettivi</string>
+    <string name="four_targets">4 obiettivi</string>
+    <string name="five_targets">5 obiettivi</string>
     <string name="custom_app_icon_successfully">"'s icona impostata con successo!"</string>
 
     <!-- Lockscreen -->

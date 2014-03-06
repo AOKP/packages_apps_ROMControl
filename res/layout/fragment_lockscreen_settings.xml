@@ -17,7 +17,9 @@
  */
 -->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aokp="http://schemas.android.com/apk/res-auto"
 
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -77,6 +79,124 @@
                 android:summary="@string/battery_arc_lockscreen_handle_summary"
                 android:key="battery_arc_lockscreen_handle"
                 />
+
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/lockscreen_notifications"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/lockscreen_notifications"
+                android:summary="@string/lockscreen_notifications_summary"
+                android:key="lockscreen_notifications"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/pocket_mode"
+                android:summary="@string/pocket_mode_summary"
+                android:key="pocket_mode"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/show_always"
+                android:summary="@string/show_always_summary"
+                android:key="show_always"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/wake_on_notification"
+                android:summary="@string/wake_on_notification_summary"
+                android:key="wake_on_notification"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/hide_low_priority"
+                android:summary="@string/hide_low_priority_summary"
+                android:key="hide_low_priority"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/hide_non_clearable"
+                android:summary="@string/hide_non_clearable_summary"
+                android:key="hide_non_clearable"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/dismiss_all"
+                android:summary="@string/dismiss_all_summary"
+                android:key="dismiss_all"
+                />
+
+        <!-- App blacklist temporary removed -->
+
+        <SeekBar
+                android:key="offset_top"
+                android:title="@string/offset_top"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:max="100"
+                android:defaultValue="30"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/title_hardware_keys_home_double_tap"
+                android:summary="@string/notifications_height_summary"
+                android:key="notifications_height"
+                android:entryValues="@array/notifications_heightValues"
+                />
+
+        <com.aokp.romcontrol.settings.ColorPickerSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/notification_color"
+                android:key="notification_color"
+                aokp:colorPickerDefaultValue="@android:color/white"
+                aokp:colorPickerShowAlphaSlider="false"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/privacy_mode"
+                android:summary="@string/privacy_mode_summary"
+                android:key="privacy_mode"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/expanded_view"
+                android:summary="@string/expanded_view_summary"
+                android:key="expanded_view"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/force_expanded_view"
+                android:summary="@string/force_expanded_view_summary"
+                android:key="force_expanded_view"
+                />
+
     </LinearLayout>
 
 </ScrollView>

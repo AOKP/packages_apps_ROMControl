@@ -77,6 +77,7 @@ public class DisplayAnimationsSettings extends Fragment {
 
         private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
         private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+        private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
         private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
         private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
@@ -89,6 +90,7 @@ public class DisplayAnimationsSettings extends Fragment {
         private ListPreference mScrollingCachePref;
         private SwitchPreference mTransitionAnimations;
         private ListPreference mScreenOffAnimation;
+        private ListPreference mToastAnimation;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -136,6 +138,15 @@ public class DisplayAnimationsSettings extends Fragment {
             mScreenOffAnimation.setValue(String.valueOf(screenoffanimation));
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
             mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
+            // Toast Animations
+            mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+            mToastAnimation.setSummary(mToastAnimation.getEntry());
+            int CurrentToastAnimation = Settings.System.getInt(resolver,
+                    Settings.System.TOAST_ANIMATION, 1);
+            mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
+            mToastAnimation.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -192,6 +203,14 @@ public class DisplayAnimationsSettings extends Fragment {
                         Settings.System.SCREEN_OFF_ANIMATION,
                         value);
                 mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
+                return true;
+            } else if (preference == mToastAnimation) {
+                int index = mToastAnimation.findIndexOfValue((String) objValue);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.TOAST_ANIMATION, index);
+                mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+                Toast.makeText(getActivity(), mToastAnimation.getEntries()[index],
+                        Toast.LENGTH_SHORT).show();
                 return true;
             }
             return false;

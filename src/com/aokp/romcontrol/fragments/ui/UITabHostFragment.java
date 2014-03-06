@@ -38,7 +38,7 @@ public class UITabHostFragment extends Fragment {
 
     private static final int[] mFragments = new int[] {
             R.string.gesture_anywhere_title,
-            R.string.listview_animation_title,
+            R.string.title_animation_controls,
             R.string.app_circle_bar_title
     };
 

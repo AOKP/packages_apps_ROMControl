@@ -26,18 +26,36 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content" >
 
-        <com.aokp.romcontrol.settings.SingleChoiceSetting
-            android:id="@+id/ring_amount"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:entries="@array/pref_navring_amount_entries"
-            android:entryValues="@array/pref_navring_amount_values"
-            android:key="systemui_navring_amount"
-            android:title="@string/navring_target_amount_text" />
+            android:layout_gravity="top">
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:id="@+id/setting_enable_navring"
+                android:title="@string/enable_navring_title"
+                android:summary="@string/enable_navring_summary"
+                android:key="enable_navring"
+                android:defaultValue="true" />
+
+            <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:id="@+id/ring_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:entries="@array/pref_navring_amount_entries"
+                android:entryValues="@array/pref_navring_amount_values"
+                android:key="systemui_navring_amount"
+                android:title="@string/navring_target_amount_text" />
+
+        </LinearLayout>
+
     </FrameLayout>
 
     <FrameLayout
@@ -63,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
-            android:layout_marginTop="-15dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="@*android:string/keyguard_accessibility_slide_area"
             android:orientation="horizontal"
             prvandroid:allowScaling="false"

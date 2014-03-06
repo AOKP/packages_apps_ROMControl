@@ -345,6 +345,8 @@
     <string name="four_targets">4 targets</string>
     <string name="five_targets">5 targets</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
+    <string name="enable_navring_without_navbar_title">Enable navigation ring</string>
+    <string name="enable_navring_without_navbar_summary">Enable navigation ring if navigation bar is hidden</string>
 
     <!-- Animation Controls -->
     <string name="title_animation_controls">Animations</string>

@@ -17,7 +17,9 @@
  */
 -->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aokp="http://schemas.android.com/apk/res-auto"
 
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -70,6 +72,134 @@
                 android:summary="@string/battery_arc_lockscreen_handle_summary"
                 android:key="battery_arc_lockscreen_handle"
                 />
+
+        <com.aokp.romcontrol.widgets.CategorySeparator
+                style="@style/defaultSize"
+                android:title="@string/lockscreen_notifications"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications"
+                android:title="@string/lockscreen_notifications"
+                android:summary="@string/lockscreen_notifications_summary"
+                android:key="lockscreen_notifications"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_pocket_mode"
+                android:title="@string/pocket_mode"
+                android:summary="@string/pocket_mode_summary"
+                android:key="lockscreen_notifications_pocket_mode"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_show_always"
+                android:title="@string/show_always"
+                android:summary="@string/show_always_summary"
+                android:key="lockscreen_notifications_show_always"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_wake_on_notification"
+                android:title="@string/wake_on_notification"
+                android:summary="@string/wake_on_notification_summary"
+                android:key="lockscreen_notifications_wake_on_notification"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_hide_low_priority"
+                android:title="@string/hide_low_priority"
+                android:summary="@string/hide_low_priority_summary"
+                android:key="lockscreen_notifications_hide_low_priority"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_hide_non_clearable"
+                android:title="@string/hide_non_clearable"
+                android:summary="@string/hide_non_clearable_summary"
+                android:key="lockscreen_notifications_hide_non_clearable"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_dismiss_all"
+                android:title="@string/dismiss_all"
+                android:summary="@string/dismiss_all_summary"
+                android:key="lockscreen_notifications_dismiss_all"
+                />
+
+        <!-- App blacklist temporary removed -->
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_offset_top"
+                android:title="@string/offset_top"
+                android:key="lockscreen_notifications_offset_top"
+                android:entries="@array/notifications_offset_entries"
+                android:entryValues="@array/notifications_offset_values"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_height"
+                android:title="@string/notifications_height"
+                android:summary="@string/notifications_height_summary"
+                android:key="lockscreen_notifications_height"
+                android:entries="@array/notifications_height_entries"
+                android:entryValues="@array/notifications_height_values"
+                />
+
+        <com.aokp.romcontrol.settings.ColorPickerSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_color"
+                android:title="@string/notification_color"
+                android:key="lockscreen_notifications_color"
+                aokp:colorPickerDefaultValue="@color/notification_background"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_privacy_mode"
+                android:title="@string/privacy_mode"
+                android:summary="@string/privacy_mode_summary"
+                android:key="lockscreen_notifications_privacy_mode"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_expanded_view"
+                android:title="@string/expanded_view"
+                android:summary="@string/expanded_view_summary"
+                android:key="lockscreen_notifications_expanded_view"
+                />
+
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_notifications_force_expanded_view"
+                android:title="@string/force_expanded_view"
+                android:summary="@string/force_expanded_view_summary"
+                android:key="lockscreen_notifications_force_expanded_view"
+                />
+
     </LinearLayout>
 
 </ScrollView>

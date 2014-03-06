@@ -427,4 +427,30 @@
   <string name="led_test_notification_message_note">.\nPro testování LED je nutné vypnout obrazovku.
 Tlačítko OK musí být zmáčknuto až po otestování barvy LED.</string>
   <string name="led_test_ok">OK</string>
+  <string name="lockscreen_notifications">Notifikace na zamčené obrazovce</string>
+  <string name="lockscreen_notifications_summary">Zobrazit aktivní notifikace na zamčené obrazovce</string>
+  <string name="pocket_mode">Režim v kapse</string>
+  <string name="pocket_mode_summary">Zapnout obrazovku a zobrazit všechny notifikace po vytažení zařízení z kapsy. Po vrácení do kapsy obrazovku zase vypnout.</string>
+  <string name="show_always">Zobrazit vždy</string>
+  <string name="show_always_summary">Vždy zapnout obrazovku po vytažení z kapsy, i když nejsou k dispozici žádné notifikace.</string>
+  <string name="hide_low_priority">Skrýt s nízkou prioritou</string>
+  <string name="hide_low_priority_summary">Skrýt notikfikace s nízkou prioritou jako upozornění na počasí z Google Now.</string>
+  <string name="hide_non_clearable">Skrýt perzistentní</string>
+  <string name="hide_non_clearable_summary">Skrýt všechny notifikace, které nemohou být odstraněny (Tasker).</string>
+  <string name="dismiss_all">Umožnit odstranění všech notifikací</string>
+  <string name="dismiss_all_summary">Umožnit odstranění i perzistentních notifikací. Samozřejmě jsou jen skryty na zamčené obrazovce a ne v notifikační liště.</string>
+  <string name="expanded_view">Rozšířené zobrazení notifikací</string>
+  <string name="expanded_view_summary">Přidat možnost přepnutí mezi normálním a rozšířeným zobrazením notikikací dlouhým stiskem. Rozšířené zobrazení občas obsahuje citlivé soukromé informace, proto je někdy lepší ho vypnout.</string>
+  <string name="force_expanded_view">Vynutit rozšířené zobrazení</string>
+  <string name="force_expanded_view_summary">Zobrazit notifikace v rozšířeném zobrazení jako výchozí. Stále je možné přepínat mezi klasickým a rozšířeným zobrazením.</string>
+  <string name="wake_on_notification">Probudit při notifikaci</string>
+  <string name="wake_on_notification_summary">Probudit zařízení po obdržení nové notifikace</string>
+  <string name="notifications_height">Počet notifikací</string>
+  <string name="notifications_height_summary">Počet notifikací zobrazených najednou</string>
+  <string name="offset_top">Odsazení od horní části obrazovky:</string>
+  <string name="privacy_mode">Soukromý režim</string>
+  <string name="privacy_mode_summary">Zakáže notifikacím zobrazení a odstranění. V tomto režimu je možné vidět pouze ikony notifikací.</string>
+  <string name="excluded_apps_title">Vyjmuté aplikace</string>
+  <string name="excluded_apps_summary">Vyjmuté aplikace nebudou zobrazeny jako notifikace na zamčené obrazovce.</string>
+  <string name="notification_color">Barva pozadí notifikace</string>
 </resources>

@@ -66,6 +66,15 @@
     <string name="time_1_second">1 s</string>
     <string name="time_2_seconds">2 s</string>
     <string name="time_5_seconds">5 s</string>
+    <!-- Dimens -->
+    <string name="size_42_dp_default">42 bodů (výchozí)</string>
+    <string name="size_36_dp">36 bodů</string>
+    <string name="size_30_dp">30 bodů</string>
+    <string name="size_24_dp">24 bodů</string>
+    <string name="size_48_dp_default">48 bodů (výchozí)</string>
+    <string name="size_44_dp">44 bodů</string>
+    <string name="size_40_dp">40 bodů</string>
+    <string name="size_42_dp">42 bodů</string>
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Použít vlastní aplikaci</string>
     <string name="use_custom_app_summary">Místo přehledu posledních otevřených aplikací použít vlastní aplikaci</string>
@@ -277,6 +286,8 @@
     <string name="four_targets">4 položky</string>
     <string name="five_targets">5 položek</string>
     <string name="custom_app_icon_successfully">ikony úspěšně nastaveny!</string>
+    <string name="enable_navring_title">Zapnout navigační kruh</string>
+    <string name="enable_navring_summary">@null</string>
     <!-- Animation Controls -->
     <string name="title_animation_controls">Animace</string>
     <string name="activity_open_title">Animace otevření aktivity</string>
@@ -310,6 +321,12 @@
     <string name="add_button">Přidat tlačítko</string>
     <string name="navbar_tab_arrange">Přeuspořádat</string>
     <string name="navbar_tab_settings">Nastavení</string>
+    <string name="navigation_bar_height_title">Výška navigační lišty</string>
+    <string name="navigation_bar_height_summary">Výška navigační lišty v režimu na výšku</string>
+    <string name="navigation_bar_height_landscape_title">Výška navigační lišty v režimu na šířku</string>
+    <string name="navigation_bar_height_landscape_summary">Výška navigační lišty v režimu na šířku.</string>
+    <string name="navigation_bar_width_title">Šířka navigační lišty</string>
+    <string name="navigation_bar_width_summary">Šířka navigační lišty když je zobrazena na straně.</string>
     <string name="lockscreen_see_through">Průhledná zamčená obrazovka</string>
     <string name="lockscreen_see_through_summary">Zobrazí obsah za zamčenou obrazovkou. Data budou viditelná pro okolí!</string>
     <string name="battery_arc_lockscreen_handle">Kulatý indikátor baterie</string>

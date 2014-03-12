@@ -234,6 +234,11 @@
   <string name="toggle_favcontact_summary">Zvolit oblíbený kontakt</string>
   <string name="toggle_screenshot_delay_title">Prodleva snímku obrazovky</string>
   <string name="toggle_screenshot_delay_summary">Prodleva před odesláním pokynu k pořízení snímku obrazovky</string>
+  <string name="network_modes_toggle_title">Síťové režimy k přepínání</string>
+  <string name="network_modes_toggle_all">Všechny (LTE/3G/2G)</string>
+  <string name="network_modes_toggle_lte2g">LTE/2G</string>
+  <string name="hide_ribbon_timeout_lte3g">LTE/3G</string>
+  <string name="hide_ribbon_timeout_3g2g">3G/2G</string>
   <string name="enable_navigation_bar_title">Zapnout navigační lištu</string>
   <string name="enable_navigation_bar_summary">Zapnout navigační lištu na obrazovce</string>
   <string name="navbar_ring_cat">Položky navigačního kruhu</string>

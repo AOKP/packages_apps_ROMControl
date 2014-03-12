@@ -124,5 +124,17 @@
             android:entryValues="@array/screenshot_delayValues"
             />
 
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/network_modes_toggle"
+
+            android:key="network_modes_toggle"
+            android:title="@string/network_modes_toggle_title"
+            android:entries="@array/network_modes_toggle_entries"
+            android:entryValues="@array/network_modes_toggle_values"
+            android:defaultValue="1"
+            />
+
     </LinearLayout>
 </ScrollView>

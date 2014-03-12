@@ -248,6 +248,18 @@
         <item>7000</item>
         <item>8000</item>
     </string-array>
+    <string-array name="network_modes_toggle_entries" translatable="false">
+        <item>@string/network_modes_toggle_all</item>
+        <item>@string/network_modes_toggle_lte2g</item>
+        <item>@string/hide_ribbon_timeout_lte3g</item>
+        <item>@string/hide_ribbon_timeout_3g2g</item>
+    </string-array>
+    <string-array name="network_modes_toggle_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
 
     <string-array name="power_menuEntries" translatable="false">
         <item>@string/hide_option</item>

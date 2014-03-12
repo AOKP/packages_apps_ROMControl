@@ -317,6 +317,12 @@
     <string name="toggle_screenshot_delay_title">Screenshot delay</string>
     <string name="toggle_screenshot_delay_summary">Delay for screenshot toggle to send intent to capture screen</string>
 
+    <string name="network_modes_toggle_title">Network modes for toggle</string>
+    <string name="network_modes_toggle_all">All (LTE/3G/2G)</string>
+    <string name="network_modes_toggle_lte2g">LTE/2G</string>
+    <string name="hide_ribbon_timeout_lte3g">LTE/3G</string>
+    <string name="hide_ribbon_timeout_3g2g">3G/2G</string>
+
     <!-- Navigation Bar -->
     <string name="enable_navigation_bar_title">Enable navigation bar</string>
     <string name="enable_navigation_bar_summary">Enable the on-screen navigation bar</string>

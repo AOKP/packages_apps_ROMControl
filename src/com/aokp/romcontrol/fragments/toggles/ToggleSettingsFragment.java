@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,7 +43,7 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
     private final int PICK_CONTACT = 200;
 
     BaseSetting mTogglesFast, mSwipeToSwitch, mFavContact;
-    SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide;
+    SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide, mToggleNetworkModes;
 
     public ToggleSettingsFragment() {
 
@@ -58,6 +59,10 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
         mToggleStyle = (SingleChoiceSetting) v.findViewById(R.id.toggles_style);
         mToggleSide = (SingleChoiceSetting) v.findViewById(R.id.toggles_fast_side);
         mFavContact = (BaseSetting) v.findViewById(R.id.toggles_fav_contact);
+        mToggleNetworkModes = (SingleChoiceSetting) v.findViewById(R.id.network_modes_toggle);
+        if (!hasLTE()) {
+            mToggleNetworkModes.setVisibility(View.GONE);
+        }
 
         mToggleStyle.setOnSettingChangedListener(this);
         mFavContact.setOnClickListener(this);
@@ -124,5 +129,14 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void hasLTE() {
+        if (TelephonyManager.getLteOnCdmaModeStatic() == PhoneConstants.LTE_ON_CDMA_TRUE
+                    || TelephonyManager.getLteOnGsmModeStatic() != 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

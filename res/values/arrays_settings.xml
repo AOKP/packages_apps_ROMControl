@@ -258,6 +258,28 @@
         <item>7000</item>
         <item>8000</item>
     </string-array>
+    <string-array name="location_modes_toggle_entries" translatable="false">
+        <item>@string/location_modes_toggle_all</item>
+        <item>@string/location_modes_toggle_hbs</item>
+        <item>@string/location_modes_toggle_hb</item>
+        <item>@string/location_modes_toggle_hs</item>
+        <item>@string/location_modes_toggle_ho</item>
+        <item>@string/location_modes_toggle_bso</item>
+        <item>@string/location_modes_toggle_bs</item>
+        <item>@string/location_modes_toggle_bo</item>
+        <item>@string/location_modes_toggle_so</item>
+    </string-array>
+    <string-array name="location_modes_toggle_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
 
     <string-array name="power_menuEntries" translatable="false">
         <item>@string/hide_option</item>

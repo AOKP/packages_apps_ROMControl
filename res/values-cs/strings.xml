@@ -126,6 +126,8 @@
   <string name="statusbar_clock_style_summary">Pozice zobrazení hodin</string>
   <string name="statusbar_clock_weekday_title">Den v týdnu</string>
   <string name="statusbar_clock_weekday_summary">Zobrazit den v týdnu před hodinami</string>
+  <string name="statusbar_clock_date_title">Datum</string>
+  <string name="statusbar_clock_date_summary">Zobrazit datum před hodinami</string>
   <string name="right_clock">Hodiny vpravo</string>
   <string name="center_clock">Hodiny uprostřed</string>
   <string name="no_clock">Bez hodin</string>
@@ -134,6 +136,8 @@
   <string name="regular_am_pm">Normální AM/PM</string>
   <string name="small_weekday">Malý den</string>
   <string name="regular_weekday">Normální den</string>
+  <string name="small_date">Malé datum</string>
+  <string name="regular_date">Normální datum</string>
   <string name="statusbar_clock_color_title">Barva hodin</string>
   <string name="statusbar_clock_color_summary">Nastavit barvu hodin ve stavové liště</string>
   <string name="battery_percentage_indicator_title">Zobrazit % baterie</string>

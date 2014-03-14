@@ -137,6 +137,20 @@
                 android:defaultValue="0"
                 />
 
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusbar_clock_date"
+
+                android:title="@string/statusbar_clock_date_title"
+                android:summary="@string/statusbar_clock_date_summary"
+                android:key="statusbar_clock_date"
+
+                android:entries="@array/statusbar_clock_dateEntries"
+                android:entryValues="@array/statusbar_clock_dateValues"
+                android:defaultValue="0"
+                />
+
         <com.aokp.romcontrol.settings.ColorPickerSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

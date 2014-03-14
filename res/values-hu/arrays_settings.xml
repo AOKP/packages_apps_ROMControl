@@ -51,11 +51,4 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-
-    <string name="setting_key_home_long_press_action_nothing">Nincs</string>
-    <string name="setting_key_home_long_press_action_menu">Menü</string>
-    <string name="setting_key_home_long_press_action_appswitch">Alkalmazás váltás</string>
-    <string name="setting_key_home_long_press_action_search">Keresés</string>
-    <string name="setting_key_home_long_press_action_voicesearch">Hang keresés</string>
-    <string name="setting_key_home_long_press_action_inappsearch">Alkalmazáson belüli keresés</string>
 </resources>

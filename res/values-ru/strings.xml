@@ -35,7 +35,7 @@
   <string name="category_power_menu">Меню выключения </string>
   <string name="category_ribbons">Ленты</string>
   <string name="category_animations">Анимации</string>
-  <string name="category_led">Светодиод</string>
+  <string name="category_led">Индикация</string>
   <string name="menu_show_drawer_icon">Показать в навигации</string>
   <string name="devs">Команда</string>
   <string name="aokp_website_title">Сайт AOKP</string>
@@ -224,7 +224,7 @@
   <string name="toggles_swipe_to_switch_summary">Листание для переключения между уведомлениями и быстрыми настройками</string>
   <string name="toggle_tab_arrange">Настройка переключателей</string>
   <string name="toggles_tab_settings">Установки</string>
-  <string name="toggles_arrange_instructions">Измените порядок перемещением ручки справа. Удалите смещением.</string>
+  <string name="toggles_arrange_instructions">Измените порядок перемещением ручки справа. Удалите сдвигом</string>
   <string name="toggles_collapse_generic_title">Закрывать после нажатия</string>
   <string name="toggles_collapse_generic_summary">Панель закрывается после любого действия с переключателем</string>
   <string name="toggles_vibrate_title">Вибрация при нажатии</string>
@@ -233,7 +233,7 @@
   <string name="toggle_favcontact_summary">Выберите нужный контакт</string>
   <string name="toggle_screenshot_delay_title">Задержка снимка</string>
   <string name="toggle_screenshot_delay_summary">Задержка отправки команды на снимок экрана для плитки снимка</string>
-  <string name="enable_navigation_bar_title">Включить панель навигации</string>
+  <string name="enable_navigation_bar_title">Вкл панель навигации</string>
   <string name="enable_navigation_bar_summary">Включить экранную панель навигации</string>
   <string name="navbar_ring_cat">Ярлыки нав. кольца</string>
   <string name="navbar_ring">Свои ярлыки кольца</string>
@@ -251,14 +251,14 @@
   <string name="interface_navring_settings_summary">@null</string>
   <string name="navring_target_info">Переместите палец к ярлыкам для назначения действий</string>
   <string name="navring_clear">Убрать действие</string>
-  <string name="action_short">Короткое действие</string>
+  <string name="action_short">Нажатие</string>
   <string name="action_long">Удержание</string>
   <string name="action_double">Двойное нажатие</string>
   <string name="action_icon">Свой значок</string>
   <string name="navring_target_amount_text">Количество ярлыков</string>
   <string name="navring_target_longpress_text">Длит. действия</string>
   <string name="description_target_unlock">Разблокировка</string>
-  <string name="description_direction_up">Смещение для разблокировки</string>
+  <string name="description_direction_up">Вверх для разблокировки</string>
   <string name="description_direction_down">Вниз для разблокировки</string>
   <string name="description_direction_left">Влево для разблокировки</string>
   <string name="description_direction_right">Вправо для разблокировки</string>
@@ -268,7 +268,7 @@
   <string name="four_targets">4 ярлыка</string>
   <string name="five_targets">5 ярлыков</string>
   <string name="custom_app_icon_successfully">"- значок успешно установлен!"</string>
-  <string name="enable_navring_title">Включить кольцо навигации</string>
+  <string name="enable_navring_title">Вкл кольцо навигации</string>
   <string name="title_animation_controls">Анимации</string>
   <string name="activity_open_title">Открытие активности</string>
   <string name="activity_close_title">Закрытие активности</string>

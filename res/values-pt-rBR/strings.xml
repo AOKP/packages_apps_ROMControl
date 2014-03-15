@@ -216,6 +216,8 @@
   <string name="interface_navring_settings_summary">@null</string>
   <string name="action_icon">Ícone personalizado</string>
   <string name="description_target_unlock">Desbloquear</string>
+  <string name="one_target">1 alvo</string>
+  <string name="two_targets">2 alvos</string>
   <string name="three_targets">3 alvos</string>
   <string name="four_targets">4 alvos</string>
   <string name="five_targets">5 alvos</string>

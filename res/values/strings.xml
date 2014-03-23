@@ -153,7 +153,7 @@
     <string name="title_hardware_keys_switch_app">Recents</string>
     <string name="title_hardware_keys_switch_app_long_press">Recents - long press</string>
     <string name="title_setting_enable_custom_hardware_keys">Customize hardware keys</string>
-    <string name="summary_setting_enable_custom_hardware_keys">Enable to allow custom actions for the hardware keys to be set. Requires reboot.</string>
+    <string name="summary_setting_enable_custom_hardware_keys">Enable to allow custom actions for the hardware keys to be set.</string>
 
     <string name="setting_key_home_long_press_action_nothing">Nothing</string>
     <string name="setting_key_home_long_press_action_menu">Menu</string>

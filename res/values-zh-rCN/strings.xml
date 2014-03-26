@@ -68,6 +68,10 @@
     <string name="time_2_seconds">2 秒</string>
     <string name="time_5_seconds">5 秒</string>
 
+    <!-- 尺寸 -->
+    <string name="size_42_dp_default">42 dp (默认)</string>
+    <string name="size_48_dp_default">48 dp (默认)</string>
+
     <!-- 快捷方式选择器 -->
     <string name="use_custom_app_title">使用自定义程序</string>
     <string name="use_custom_app_summary">使用自定义程序代替近期使用程序列表</string>
@@ -297,6 +301,7 @@
     <string name="four_targets">4 目标</string>
     <string name="five_targets">5 目标</string>
     <string name="custom_app_icon_successfully">"的图标设置成功！"</string>
+    <string name="enable_navring_title">启用导航环</string>
 
     <!-- 动画 -->
     <string name="title_animation_controls">动画</string>
@@ -331,6 +336,13 @@
     <string name="add_button">添加按钮</string>
     <string name="navbar_tab_arrange">排列</string>
     <string name="navbar_tab_settings">设置</string>
+
+    <string name="navigation_bar_height_title">竖屏导航栏高度</string>
+    <string name="navigation_bar_height_summary">当屏幕显示为纵向时导航栏的高度</string>
+    <string name="navigation_bar_height_landscape_title">横屏导航栏高度</string>
+    <string name="navigation_bar_height_landscape_summary">当屏幕显示为横向时导航栏的高度</string>
+    <string name="navigation_bar_width_title">导航栏宽度</string>
+    <string name="navigation_bar_width_summary">当屏幕为横向并且导航栏显示在侧边时的宽度</string>
 
     <string name="lockscreen_see_through">透明锁屏</string>
     <string name="lockscreen_see_through_summary">显示锁屏背后的内容，可能造成你的数据被周围人看到。</string>

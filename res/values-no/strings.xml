@@ -17,4 +17,10 @@
  * limitations under the License.
  */
 -->
-<resources/>
+<resources>
+  <string name="app_name">ROM instillinger</string>
+  <string name="rom_control">ROM instillinger</string>
+  <string name="category_general">Generelt</string>
+  <string name="category_lockscreen">Låseskjerm</string>
+  <string name="category_sound">Lyd</string>
+</resources>

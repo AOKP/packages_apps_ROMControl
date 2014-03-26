@@ -158,7 +158,7 @@
   <string name="persist_enable_summary">Abilita la persistenza dei dati da sovra-installazioni</string>
   <string name="persist_prop_density">Densità LCD persistente</string>
   <string name="persist_prop_density_summary">La densità LCD del display è fissa e non cambia</string>
-  <string name="persist_file_hosts">Hosts persistenti</string>
+  <string name="persist_file_hosts">Rendi persistenti gli Host</string>
   <string name="persist_file_hosts_summary">Rendi persistenti i file host</string>
   <string name="persist_file_xposed">Rendi Xposed persistente</string>
   <string name="persist_file_xposed_summary">Rendi persistente il file app_process per Xposed framework</string>
@@ -192,7 +192,7 @@
   <string name="ribbon_color_title">Colore barra multifunzione</string>
   <string name="animation_type_title">Tipo animazione</string>
   <string name="animation_duration_title">Durata animazione</string>
-  <string name="ribbon_space_title">Spazio Icona</string>
+  <string name="ribbon_space_title">Spazio tra le icone</string>
   <string name="ribbon_size_title">Dimensione Icona</string>
   <string name="window_color_title">Colore finestra</string>
   <string name="window_space_title">Spazio Colonna</string>
@@ -304,7 +304,7 @@
   <string name="navigation_bar_height_landscape_summary">Altezza barra di navigazione quando lo schermo è in orizzontale</string>
   <string name="navigation_bar_width_title">Larghezza barra di navigazione</string>
   <string name="navigation_bar_width_summary">Altezza barra di navigazione se questa si trova a un lato</string>
-  <string name="lockscreen_see_through">Blocco schermo Trasparente</string>
+  <string name="lockscreen_see_through">Blocco schermo trasparente</string>
   <string name="lockscreen_see_through_summary">Mostra il contenuto del dispositivo sotto il blocco schermo. Diventa quindi visibile anche ad altri attorno a te</string>
   <string name="battery_arc_lockscreen_handle">Livello batteria nella losckreen</string>
   <string name="battery_arc_lockscreen_handle_summary">Un arco intorno al simbolo di lockscreen rappresenta il livello della batteria</string>

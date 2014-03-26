@@ -44,4 +44,8 @@
   <string name="size_44_dp">44 dp</string>
   <string name="size_40_dp">40 dp</string>
   <string name="size_42_dp">42 dp</string>
+  <string name="save">儲存</string>
+  <string name="reset">重設</string>
+  <string name="cancel">取消</string>
+  <string name="center">置中</string>
 </resources>

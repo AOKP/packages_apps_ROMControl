@@ -154,5 +154,19 @@
                 android:key="volume_keys_double_tap_action"
                 android:defaultValue="true"
                 />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/volume_key_cursor_control"
+
+                android:title="@string/volume_key_cursor_control_title"
+                android:key="volume_key_cursor_control"
+
+                android:entries="@array/volume_key_cursor_control_entries"
+                android:entryValues="@array/volume_key_cursor_control_values"
+                android:defaultValue="0"
+                />
+
     </LinearLayout>
 </ScrollView>

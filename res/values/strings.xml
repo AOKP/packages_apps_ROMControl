@@ -173,6 +173,10 @@
     <string name="category_advanced">Advanced</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Volume smash rotation</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>
+    <string name="volume_key_cursor_control_title">Volume key cursor control</string>
+    <string name="volume_key_cursor_control_off">Disabled</string>
+    <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
+    <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
     <!-- Statusbar Notifications -->
     <string name="category_statusbar_notification">Notifications</string>

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -42,7 +43,19 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
     private SingleChoiceSetting mTaskMoveFront;
     private SingleChoiceSetting mTaskMoveBack;
     private SingleChoiceSetting mToastAnimation;
-    private SeekBar mDuration;
+    private SeekBar mAnimationDuration;
+    private SeekBar mProgressBarSpeed;
+    private SeekBar mProgressBarWidth;
+    private SeekBar mProgressBarLength;
+    private SeekBar mProgressBarCount;
+    private ProgressBar mProgressBarSample;
+    private CheckboxSetting mProgressBarMirror;
+    private CheckboxSetting mProgressBarReverse;
+    private ColorPickerSetting mProgressBarColor1;
+    private ColorPickerSetting mProgressBarColor2;
+    private ColorPickerSetting mProgressBarColor3;
+    private ColorPickerSetting mProgressBarColor4;
+
     private Context mContext;
     private int mSeekBarProgress;
 
@@ -127,12 +140,48 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
         mWallpaperIntraOpen.setEntries(mAnimationsStrings);
         mWallpaperIntraOpen.updateSummary();
 
-        mDuration = (SeekBar) main.findViewById(R.id.animation_duration);
-        mDuration.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, 25));
-        mDuration.setOnSeekBarChangeListener(this);
+        mAnimationDuration = (SeekBar) main.findViewById(R.id.animation_duration);
+        mAnimationDuration.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, 50));
+        mAnimationDuration.setOnSeekBarChangeListener(this);
+
+        mProgressBarSpeed = (SeekBar) main.findViewById(R.id.progressbar_speed);
+        mProgressBarSpeed.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_SPEED, 4));
+        mProgressBarSpeed.setOnSeekBarChangeListener(this);
+
+        mProgressBarWidth = (SeekBar) main.findViewById(R.id.progressbar_width);
+        mProgressBarWidth.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_WIDTH, 4));
+        mProgressBarWidth.setOnSeekBarChangeListener(this);
+
+        mProgressBarLength = (SeekBar) main.findViewById(R.id.progressbar_length);
+        mProgressBarLength.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_LENGTH, 10));
+        mProgressBarLength.setOnSeekBarChangeListener(this);
+
+        mProgressBarCount = (SeekBar) main.findViewById(R.id.progressbar_count);
+        mProgressBarCount.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_COUNT, 6));
+        mProgressBarCount.setOnSeekBarChangeListener(this);
 
         mToastAnimation =  (SingleChoiceSetting) main.findViewById(R.id.toast_animation);
         mToastAnimation.setOnSettingChangedListener(this);
+
+        mProgressBarSample = (ProgressBar) main.findViewById(R.id.sample_progressBar);
+
+        mProgressBarMirror = (CheckboxSetting) main.findViewById(R.id.progressbar_mirror);
+        mProgressBarMirror.setOnSettingChangedListener(this);
+
+        mProgressBarReverse = (CheckboxSetting) main.findViewById(R.id.progressbar_reverse);
+        mProgressBarReverse.setOnSettingChangedListener(this);
+
+        mProgressBarColor1 = (ColorPickerSetting) main.findViewById(R.id.progressbar_color_1);
+        mProgressBarColor1.setOnSettingChangedListener(this);
+
+        mProgressBarColor2 = (ColorPickerSetting) main.findViewById(R.id.progressbar_color_2);
+        mProgressBarColor2.setOnSettingChangedListener(this);
+
+        mProgressBarColor3 = (ColorPickerSetting) main.findViewById(R.id.progressbar_color_3);
+        mProgressBarColor3.setOnSettingChangedListener(this);
+
+        mProgressBarColor4 = (ColorPickerSetting) main.findViewById(R.id.progressbar_color_4);
+        mProgressBarColor4.setOnSettingChangedListener(this);
 
         mInit = false;
 
@@ -151,8 +200,20 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-        if (seekBar == mDuration) {
+        if (seekBar == mAnimationDuration) {
             Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, mSeekBarProgress);
+        } else if (seekBar == mProgressBarSpeed) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_SPEED, mSeekBarProgress);
+            recreateProgressBarSample();
+        } else if (seekBar == mProgressBarWidth) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_WIDTH, mSeekBarProgress);
+            recreateProgressBarSample();
+        } else if (seekBar == mProgressBarLength) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_LENGTH, mSeekBarProgress);
+            recreateProgressBarSample();
+        } else if (seekBar == mProgressBarCount) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_COUNT, mSeekBarProgress);
+            recreateProgressBarSample();
         }
     }
 
@@ -164,6 +225,21 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
                         .getString(R.string.toast_animation_title), Toast.LENGTH_SHORT);
                 toast.show();
             }
+        } else if (key.equals("progressbar_mirror") || key.equals("progressbar_reverse") ||
+                key.equals("progressbar_color_1") || key.equals("progressbar_color_2") ||
+                key.equals("progressbar_color_3") || key.equals("progressbar_color_4") ) {
+            recreateProgressBarSample();
         }
+    }
+
+    private void recreateProgressBarSample() {
+        // This is needed as the options are set in the contructor of the ProgressBar
+        ViewGroup parent = (ViewGroup) mProgressBarSample.getParent();
+        int index = parent.indexOfChild(mProgressBarSample);
+        parent.removeView(mProgressBarSample);
+        mProgressBarSample = new ProgressBar(mContext, null, android.R.attr.progressBarStyleHorizontal);
+        mProgressBarSample.setIndeterminate(true);
+        mProgressBarSample.setProgress(android.R.integer.config_longAnimTime);
+        parent.addView(mProgressBarSample, index);
     }
 }

@@ -402,6 +402,20 @@
     <string name="animation_exit_only_title">Enter only animation</string>
     <string name="animation_reverse_exit_title">Reverse exit animation</string>
 
+    <!-- Smooth ProgressBar -->
+    <string name="progressbar_title">ProgressBar</string>
+    <string name="progressbar_mirror_title">Mirror Mode</string>
+    <string name="progressbar_reverse_title">Reversed</string>
+    <string name="progressbar_speed_title">Speed</string>
+    <string name="progressbar_width_title">Section Width</string>
+    <string name="progressbar_length_title">Separator Length</string>
+    <string name="progressbar_count_title">Section Count</string>
+    <string name="progressbar_color_1_title">Color 1</string>
+    <string name="progressbar_color_2_title">Color 2</string>
+    <string name="progressbar_color_3_title">Color 3</string>
+    <string name="progressbar_color_4_title">Color 4</string>
+    <string name="sample_progressbar_text">Preview</string>
+
     <!-- Lockscreen -->
     <string name="volume_wake_screen">Volume rocker wake</string>
     <string name="volume_wake_screen_summary">Use the volume keys to wake the screen</string>

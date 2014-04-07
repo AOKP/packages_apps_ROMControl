@@ -82,7 +82,6 @@
   <string name="title_hardware_keys_switch_app">Πρόσφατα</string>
   <string name="title_hardware_keys_switch_app_long_press">Πρόσφατα - Παρατεταμένο πάτημα</string>
   <string name="title_setting_enable_custom_hardware_keys">Προσαρμόσετε τα πλήκτρα συσκευής</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Ενεργοποιήστε για να βάλετε δικές σας ενέργειες στα κουμπιά της συσκευής. Απαιτείται επανεκκίνηση.</string>
   <string name="setting_key_home_long_press_action_nothing">Καμία</string>
   <string name="setting_key_home_long_press_action_menu">Μενού</string>
   <string name="setting_key_home_long_press_action_search">Αναζήτηση</string>

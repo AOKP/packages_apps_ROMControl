@@ -29,10 +29,10 @@
   <string name="category_lockscreen">Sperrbildschirm</string>
   <string name="category_installer">Installationsprogramm</string>
   <string name="category_toggles">Schalter</string>
-  <string name="category_navring">Navigations-Ring</string>
+  <string name="category_navring">Navigation-Ring</string>
   <string name="category_navbar">Navigationsleiste</string>
   <string name="category_sound">Töne</string>
-  <string name="category_power_menu">Power-Menü </string>
+  <string name="category_power_menu">Ein/Aus-Taste </string>
   <string name="category_ribbons">Ribbons</string>
   <string name="category_animations">Animationen</string>
   <string name="category_led">Benachrichtigungs-LED</string>
@@ -46,8 +46,13 @@
   <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
   <string name="about_aokp">Über AOKP</string>
   <string name="about_aokp_summary">@null</string>
-  <string name="kanglings">Die Kanklings</string>
-  <string name="mgerrit_changelog_title">mGerrit: Dynamisches Änderungsprotokoll</string>
+  <string name="kanglings">Die Kanglings</string>
+  <string name="battery_status_icon_title">Statussymbol</string>
+  <string name="battery_bar_percent">Akkuleiste &amp; Prozent</string>
+  <string name="battery_bar">Akkuleiste</string>
+  <string name="battery_circle">Akkukreis</string>
+  <string name="battery_circle_percent">Akkukreis &amp; Prozent</string>
+  <string name="mgerrit_changelog_title">mGerrit: Dynamisches ChangeLog</string>
   <string name="mgerrit_changelog_summary">Interaktives Changelog, das live von unserer Gerrit-Instanz geladen wird</string>
   <string name="dialog_color_picker">Farbauswahl</string>
   <string name="press_color_to_apply">Auf Farbe tippen zum Anwenden</string>
@@ -56,7 +61,7 @@
   <string name="hex">Hexadezimalwert:</string>
   <string name="set">OK</string>
   <string name="default_color">Standard</string>
-  <string name="time_0_5_seconds">.5 Sekunden</string>
+  <string name="time_0_5_seconds">0,5 Sekunden</string>
   <string name="time_1_second">1 Sekunde</string>
   <string name="time_2_seconds">2 Sekunden</string>
   <string name="time_5_seconds">5 Sekunden</string>
@@ -79,8 +84,8 @@
   <string name="center">Zentriert</string>
   <string name="top">Oben</string>
   <string name="bottom">Unten</string>
-  <string name="wakeup_when_plugged_unplugged_title">Beim Anschließen an Ladegerät aufwachen</string>
-  <string name="wakeup_when_plugged_unplugged_summary">Gerät aufwecken, sobald ein Ladegerät ein- bzw. ausgesteckt wird</string>
+  <string name="wakeup_when_plugged_unplugged_title">Bei Ladegerätaktion aufwachen</string>
+  <string name="wakeup_when_plugged_unplugged_summary">Display anschalten, sobald ein Ladegerät ein- bzw. ausgesteckt wird</string>
   <string name="ram_bar_title">Anzeige des derzeit genutzten RAMs</string>
   <string name="ram_bar_summary">RAM-Auslastung im Fenster Aktuelle Apps anzeigen</string>
   <string name="title_hardware_keys_home_long_press">Home-Taste lange drücken</string>
@@ -93,8 +98,7 @@
   <string name="title_hardware_keys_switch_app">Kürzlich verwendet</string>
   <string name="title_hardware_keys_switch_app_long_press">Kürzlich verwendet lange drücken</string>
   <string name="title_setting_enable_custom_hardware_keys">Gerätetasten anpassen</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Aktivieren, um eigene Aktionen für Gerätetasten festzulegen.
-Benötigt Neustart.</string>
+  <string name="summary_setting_enable_custom_hardware_keys">Aktivieren, um den Gerätetasten benutzerdefinierte Aktionen zuzuweisen.</string>
   <string name="setting_key_home_long_press_action_nothing">Nichts</string>
   <string name="setting_key_home_long_press_action_menu">Menü</string>
   <string name="setting_key_home_long_press_action_appswitch">App-Umschalten</string>
@@ -126,6 +130,8 @@ Benötigt Neustart.</string>
   <string name="statusbar_clock_style_summary">Uhr-Position in der Statusleiste</string>
   <string name="statusbar_clock_weekday_title">Wochentag</string>
   <string name="statusbar_clock_weekday_summary">Wochentag neben der Uhr anzeigen</string>
+  <string name="statusbar_clock_date_title">Datum</string>
+  <string name="statusbar_clock_date_summary">Datum vor der Uhr anzeigen</string>
   <string name="right_clock">Uhr rechts</string>
   <string name="center_clock">Uhr mittig</string>
   <string name="no_clock">Keine Uhr</string>
@@ -134,6 +140,8 @@ Benötigt Neustart.</string>
   <string name="regular_am_pm">Normale AM/PM</string>
   <string name="small_weekday">Kleiner Wochentag</string>
   <string name="regular_weekday">Normaler Wochentag</string>
+  <string name="small_date">Kleines Datum</string>
+  <string name="regular_date">Normales Datum</string>
   <string name="statusbar_clock_color_title">Farbe der Uhr</string>
   <string name="statusbar_clock_color_summary">Farbe der Statusleisten-Uhr</string>
   <string name="battery_percentage_indicator_title">Batterie in % anzeigen</string>
@@ -202,6 +210,7 @@ Benötigt Neustart.</string>
   <string name="title_toggles">Schalter</string>
   <string name="toggles_style_tile">Kacheln</string>
   <string name="toggles_style_traditional">Klassisches ziehen</string>
+  <string name="toggles_style_scrollable">Traditionell als Scrollleiste</string>
   <string name="toggles_display_close">Schließen</string>
   <string name="toggles_order_title">Reihenfolge der Schalter</string>
   <string name="toggles_order_summary">Die Reihenfolge wählen, in der die Schalter angezeigt werden.</string>
@@ -225,6 +234,8 @@ Benötigt Neustart.</string>
   <string name="toggle_tab_arrange">Einstellungen für Schalter</string>
   <string name="toggles_tab_settings">Konfigurieren</string>
   <string name="toggles_arrange_instructions">Anordnen durch Ziehen des Griffes auf der rechten Seite. Entfernen durch Wischen.</string>
+  <string name="toggles_collapse_generic_title">Leiste schließen nach Berühren einer Umschalttaste</string>
+  <string name="toggles_collapse_generic_summary">Leiste schließen nach jeder Umschaltaktion</string>
   <string name="toggles_vibrate_title">Vibrieren bei Kachelauswahl</string>
   <string name="toggles_vibrate_summary">Vibriere bei alle generischen Schalterbetätigungen</string>
   <string name="toggle_favcontact_title">Favoriten</string>

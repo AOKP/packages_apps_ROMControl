@@ -47,6 +47,11 @@
   <string name="about_aokp">关于 AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">The Kanglings</string>
+  <string name="battery_status_icon_title">状态图标</string>
+  <string name="battery_bar_percent">电池栏显示百分比</string>
+  <string name="battery_bar">电池栏</string>
+  <string name="battery_circle">电池栏圈状显示</string>
+  <string name="battery_circle_percent">电池栏圈状显示百分比</string>
   <string name="mgerrit_changelog_title">mGerrit：动态更新日志</string>
   <string name="mgerrit_changelog_summary">从Gerrit实例拉取交互式更新日志</string>
   <string name="dialog_color_picker">颜色选择器</string>
@@ -93,7 +98,7 @@
   <string name="title_hardware_keys_switch_app">近期任务键</string>
   <string name="title_hardware_keys_switch_app_long_press">近期任务键 - 长按</string>
   <string name="title_setting_enable_custom_hardware_keys">自定义实体按键</string>
-  <string name="summary_setting_enable_custom_hardware_keys">允许设置自定义动作的实体按键，需要重启。</string>
+  <string name="summary_setting_enable_custom_hardware_keys">允许用户对实体按键进行设置</string>
   <string name="setting_key_home_long_press_action_nothing">无</string>
   <string name="setting_key_home_long_press_action_menu">菜单</string>
   <string name="setting_key_home_long_press_action_appswitch">应用切换</string>
@@ -125,6 +130,8 @@
   <string name="statusbar_clock_style_summary">状态栏时钟的位置</string>
   <string name="statusbar_clock_weekday_title">星期计数</string>
   <string name="statusbar_clock_weekday_summary">在时间前显示周几</string>
+  <string name="statusbar_clock_date_title">日期</string>
+  <string name="statusbar_clock_date_summary">在时钟所处位置的前面显示日期。</string>
   <string name="right_clock">时钟右置</string>
   <string name="center_clock">时钟中置</string>
   <string name="no_clock">不显示时钟</string>
@@ -133,6 +140,8 @@
   <string name="regular_am_pm">正常 上午/下午</string>
   <string name="small_weekday">小号 星期</string>
   <string name="regular_weekday">正常 星期</string>
+  <string name="small_date">小号 日期</string>
+  <string name="regular_date">正常 日期</string>
   <string name="statusbar_clock_color_title">时钟颜色</string>
   <string name="statusbar_clock_color_summary">状态栏时钟的颜色</string>
   <string name="battery_percentage_indicator_title">显示电量百分比</string>

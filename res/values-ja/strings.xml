@@ -93,7 +93,6 @@
   <string name="title_hardware_keys_switch_app">アプリ履歴</string>
   <string name="title_hardware_keys_switch_app_long_press">アプリ履歴 - 長押し</string>
   <string name="title_setting_enable_custom_hardware_keys">ハードウェアキーのカスタマイズ</string>
-  <string name="summary_setting_enable_custom_hardware_keys">ハードウェアキーへのアクションの割り当てを有効にする(要再起動)</string>
   <string name="setting_key_home_long_press_action_nothing">なし</string>
   <string name="setting_key_home_long_press_action_menu">メニュー</string>
   <string name="setting_key_home_long_press_action_appswitch">アプリ切替え</string>

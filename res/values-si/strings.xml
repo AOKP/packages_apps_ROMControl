@@ -47,6 +47,11 @@
   <string name="about_aokp">AOKP පිලිබඳ</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">කතෘන්</string>
+  <string name="battery_status_icon_title">තත්ව අයිකනය</string>
+  <string name="battery_bar_percent">බැටරි තීරුව &amp; ප්‍රතිශතය</string>
+  <string name="battery_bar">බැටරි තීරුව</string>
+  <string name="battery_circle">බැටරි චක්‍රය</string>
+  <string name="battery_circle_percent">බැටරි චක්‍රය &amp; ප්‍රතිශතය</string>
   <string name="mgerrit_changelog_title">mGerrit: ක්‍රියාශීලී වෙනස්කම් ලොගය</string>
   <string name="mgerrit_changelog_summary">අපගේ Gerrit ප්‍රස්තාවෙන් සජීවීව ඇදගත් අන්තර් ක්‍රියාකාරී වෙනස්කම් ලොගය</string>
   <string name="dialog_color_picker">වර්ණ තෝරන්නා</string>
@@ -93,7 +98,7 @@
   <string name="title_hardware_keys_switch_app">මෑත</string>
   <string name="title_hardware_keys_switch_app_long_press">මෑත - ඔබාසිටීම</string>
   <string name="title_setting_enable_custom_hardware_keys">දෘඩාංග යතුරු රිසිකරණය</string>
-  <string name="summary_setting_enable_custom_hardware_keys">දෘඩාංග යතුරු සඳහා රිසිකළ ක්‍රියා පිහිටුවීම අනුමත කරන්න. නැවත පණගැන්වීමට අවශ්‍යයි.</string>
+  <string name="summary_setting_enable_custom_hardware_keys">දෘඩාංග යතුරු සඳහා රිසිකළ ක්‍රියාවක් පිහිටුවීමට සක්‍රීය කරන්න.</string>
   <string name="setting_key_home_long_press_action_nothing">කිසිවක් නැත</string>
   <string name="setting_key_home_long_press_action_menu">මෙනුව</string>
   <string name="setting_key_home_long_press_action_appswitch">යෙදුම් මාරුව</string>
@@ -125,6 +130,8 @@
   <string name="statusbar_clock_style_summary">තත්ව තීරුව මත වේලාවේ පිහිටීම</string>
   <string name="statusbar_clock_weekday_title">සතියේ දවස</string>
   <string name="statusbar_clock_weekday_summary">සතියේ දවස වේලාවට ඉදිරියෙන් පෙන්වන්න</string>
+  <string name="statusbar_clock_date_title">දිනය</string>
+  <string name="statusbar_clock_date_summary">ඔරලෝසුව ඉදිරියෙන් දිනය පෙන්වන්න</string>
   <string name="right_clock">වේලාව දකුණුපසින්</string>
   <string name="center_clock">වේලාව මැදින්</string>
   <string name="no_clock">වේලාව නැත</string>
@@ -133,6 +140,8 @@
   <string name="regular_am_pm">සාමාන්‍ය පෙ.ව./ප.ව.</string>
   <string name="small_weekday">කුඩා සතියේ දවස</string>
   <string name="regular_weekday">සාමාන්‍ය සතියේ දවස</string>
+  <string name="small_date">කුඩා දිනය</string>
+  <string name="regular_date">නිත්‍ය දිනය</string>
   <string name="statusbar_clock_color_title">වේලාවේ පැහැය</string>
   <string name="statusbar_clock_color_summary">තත්ව තීරුවේ පෙන්වන වේලාවේ පැහැය</string>
   <string name="battery_percentage_indicator_title">බැටරි ප්‍රතිශතය පෙන්වන්න</string>

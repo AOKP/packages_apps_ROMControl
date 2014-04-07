@@ -47,6 +47,11 @@
   <string name="about_aokp">Об AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Команда</string>
+  <string name="battery_status_icon_title">Значок состояния</string>
+  <string name="battery_bar_percent">Полоса батареи с процентами</string>
+  <string name="battery_bar">Полоса батареи</string>
+  <string name="battery_circle">Круг батареи</string>
+  <string name="battery_circle_percent">Круг батареи с процентами</string>
   <string name="mgerrit_changelog_title">mGerrit: динамика изменений</string>
   <string name="mgerrit_changelog_summary">Интерактивная история изменений из нашего Gerrit</string>
   <string name="dialog_color_picker">Выбор цвета</string>
@@ -93,7 +98,7 @@
   <string name="title_hardware_keys_switch_app">Недавние</string>
   <string name="title_hardware_keys_switch_app_long_press">Недавние - удержание</string>
   <string name="title_setting_enable_custom_hardware_keys">Настройка физических клавиш</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Включение возможности назначения физическим клавишам своих действий. Необходима перезагрузка.</string>
+  <string name="summary_setting_enable_custom_hardware_keys">Включить для установки пользовательских действий на физические клавиши.</string>
   <string name="setting_key_home_long_press_action_nothing">Ничего</string>
   <string name="setting_key_home_long_press_action_menu">Меню</string>
   <string name="setting_key_home_long_press_action_appswitch">Перекл. приложений</string>
@@ -125,6 +130,8 @@
   <string name="statusbar_clock_style_summary">Положение часов в строке состояния</string>
   <string name="statusbar_clock_weekday_title">День недели</string>
   <string name="statusbar_clock_weekday_summary">Отображение дня недели рядом с часами</string>
+  <string name="statusbar_clock_date_title">Дата</string>
+  <string name="statusbar_clock_date_summary">Отображать дату рядом с часами</string>
   <string name="right_clock">Часы справа</string>
   <string name="center_clock">Часы в центре</string>
   <string name="no_clock">Нет часов</string>
@@ -133,6 +140,8 @@
   <string name="regular_am_pm">Обычный AM/PM</string>
   <string name="small_weekday">Маленький день недели</string>
   <string name="regular_weekday">Обычный день недели</string>
+  <string name="small_date">Маленькая дата</string>
+  <string name="regular_date">Обычная дата</string>
   <string name="statusbar_clock_color_title">Цвет часов</string>
   <string name="statusbar_clock_color_summary">Цвет часов в строке состояния</string>
   <string name="battery_percentage_indicator_title">Индикатор % батареи</string>

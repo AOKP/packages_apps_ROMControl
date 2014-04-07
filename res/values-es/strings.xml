@@ -47,12 +47,18 @@
   <string name="about_aokp">Acerca de AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Los Kanglings</string>
+  <string name="battery_status_icon_title">Icono de estado</string>
+  <string name="battery_bar_percent">Barra de batería y porcentaje</string>
+  <string name="battery_bar">Barra de batería</string>
+  <string name="battery_circle">Batería circular</string>
+  <string name="battery_circle_percent">Batería circular y porcentaje</string>
   <string name="mgerrit_changelog_title">mGerrit: ChangeLog dinámico</string>
   <string name="mgerrit_changelog_summary">Changelog interactivo directo desde nuestro Gerrit</string>
   <string name="dialog_color_picker">Selector de color</string>
   <string name="press_color_to_apply">Pulse sobre el color para aplicar</string>
   <string name="arrow_right">→</string>
   <string name="arrow_down">↓</string>
+  <string name="hex">Hex:</string>
   <string name="set">Establecer</string>
   <string name="default_color">Por defecto</string>
   <string name="time_0_5_seconds">.5 segundos</string>
@@ -92,7 +98,6 @@
   <string name="title_hardware_keys_switch_app">Recientes</string>
   <string name="title_hardware_keys_switch_app_long_press">Recientes - pulsación larga</string>
   <string name="title_setting_enable_custom_hardware_keys">Personalizar las teclas físicas</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Activar para establecer acciones personalizadas para las teclas fisicas. Requiere reiniciar el sistema.</string>
   <string name="setting_key_home_long_press_action_nothing">Nada</string>
   <string name="setting_key_home_long_press_action_menu">Menú</string>
   <string name="setting_key_home_long_press_action_appswitch">App-interruptor</string>
@@ -124,6 +129,8 @@
   <string name="statusbar_clock_style_summary">Posición de reloj en la barra de estado</string>
   <string name="statusbar_clock_weekday_title">Día de la semana</string>
   <string name="statusbar_clock_weekday_summary">Mostrar día de la semana a un lado del reloj</string>
+  <string name="statusbar_clock_date_title">Fecha</string>
+  <string name="statusbar_clock_date_summary">Mostrar fecha delante del reloj</string>
   <string name="right_clock">Derecha</string>
   <string name="center_clock">Centrado</string>
   <string name="no_clock">Sin reloj</string>
@@ -132,6 +139,8 @@
   <string name="regular_am_pm">AM/PM normal</string>
   <string name="small_weekday">Día de la semana pequeño</string>
   <string name="regular_weekday">Día de la semana normal</string>
+  <string name="small_date">Fecha pequeña</string>
+  <string name="regular_date">Fecha regular</string>
   <string name="statusbar_clock_color_title">Color del reloj</string>
   <string name="statusbar_clock_color_summary">Color del reloj en la barra de estado</string>
   <string name="battery_percentage_indicator_title">Mostrar porcentaje (%) de la batería</string>
@@ -172,6 +181,7 @@
   <string name="enable_ribbon_title">Activar Cinta</string>
   <string name="enable_ribbon_summary">Habilitar el area para deslizar este ribbon</string>
   <string name="enable_ribbon_vibrate_title">Vibrar en área de delizamiento</string>
+  <string name="enable_ribbon_vibrate_summary">Vibrar al tocar el área de barrido</string>
   <string name="ribbon_auto_hide_title">Tiempo para auto ocultar ribbon</string>
   <string name="hide_ribbon_timeout_never">Nunca</string>
   <string name="hide_ribbon_timeout_1500">1.5 seg</string>
@@ -225,6 +235,7 @@
   <string name="toggle_favcontact_summary">Elegir tu contacto favorito</string>
   <string name="toggle_screenshot_delay_title">Retraso en la captura de pantalla</string>
   <string name="enable_navigation_bar_title">Activar la barra de navegación</string>
+  <string name="enable_navigation_bar_summary">Activar barra de navegación en la pantalla</string>
   <string name="navbar_ring_cat">Accesos en barra de navegación</string>
   <string name="navbar_ring">Accesos personalizados</string>
   <string name="navring_enable_long">Habilitar opciones de presión prolongada</string>

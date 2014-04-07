@@ -47,6 +47,7 @@
   <string name="about_aokp">À propos de AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Les Kanglings</string>
+  <string name="battery_circle">Jauge de batterie circulaire</string>
   <string name="mgerrit_changelog_title">Changelog dynamique</string>
   <string name="mgerrit_changelog_summary">Changelog directement prélevé depuis notre Gerrit</string>
   <string name="dialog_color_picker">Sélecteur de couleurs</string>
@@ -93,7 +94,7 @@
   <string name="title_hardware_keys_switch_app">Récent</string>
   <string name="title_hardware_keys_switch_app_long_press">Recents - appui long</string>
   <string name="title_setting_enable_custom_hardware_keys">Personnaliser les touches virtuelles</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Activer pour permettre des modifications personnelles. Redémarrage requis.</string>
+  <string name="summary_setting_enable_custom_hardware_keys">Activer pour autoriser la personnalisation des touches matérielles.</string>
   <string name="setting_key_home_long_press_action_nothing">Aucune</string>
   <string name="setting_key_home_long_press_action_menu">Menu</string>
   <string name="setting_key_home_long_press_action_appswitch">Switcher d\'application</string>

@@ -93,7 +93,6 @@
   <string name="title_hardware_keys_switch_app">Recent gebruikt</string>
   <string name="title_hardware_keys_switch_app_long_press">Recent gebruikt - lang indrukken</string>
   <string name="title_setting_enable_custom_hardware_keys">Hardware toetsen aanpassen</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Toestaan om aangepaste acties van de hardware knoppen te gebruiken. Vereist een herstart.</string>
   <string name="setting_key_home_long_press_action_nothing">Niets</string>
   <string name="setting_key_home_long_press_action_menu">Menu</string>
   <string name="setting_key_home_long_press_action_appswitch">App-wissel</string>

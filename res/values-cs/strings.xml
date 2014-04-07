@@ -47,6 +47,11 @@
   <string name="about_aokp">O AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Autoři</string>
+  <string name="battery_status_icon_title">Styl ikony baterie</string>
+  <string name="battery_bar_percent">Klasická ikona s procenty uvnitř</string>
+  <string name="battery_bar">Klasická ikona</string>
+  <string name="battery_circle">Kruhová ikona</string>
+  <string name="battery_circle_percent">Kruhová ikona s procenty uvnitř</string>
   <string name="mgerrit_changelog_title">mGerrit: Aktivní seznam změn</string>
   <string name="mgerrit_changelog_summary">Interaktivní seznam změn stahovaný živě z Gerrit webu</string>
   <string name="dialog_color_picker">Výběr barvy</string>
@@ -93,7 +98,7 @@
   <string name="title_hardware_keys_switch_app">Přehled aplikací</string>
   <string name="title_hardware_keys_switch_app_long_press">Přehled aplikací - dlouhý stisk</string>
   <string name="title_setting_enable_custom_hardware_keys">Přizpůsobit hardwarová tlačítka</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Zapnout pro umožnění nastavení vlastních akcí k hardwarovým tlačítkům. Vyžaduje restart.</string>
+  <string name="summary_setting_enable_custom_hardware_keys">Zapnout pro umožnění přiřazení vlastní akce hardwarovým tlačítkům.</string>
   <string name="setting_key_home_long_press_action_nothing">Žádná akce</string>
   <string name="setting_key_home_long_press_action_menu">Otevřít/zavřít menu</string>
   <string name="setting_key_home_long_press_action_appswitch">Přepínač spuštěných aplikací</string>
@@ -238,16 +243,6 @@
   <string name="toggle_favcontact_summary">Zvolit oblíbený kontakt</string>
   <string name="toggle_screenshot_delay_title">Prodleva snímku obrazovky</string>
   <string name="toggle_screenshot_delay_summary">Prodleva před odesláním pokynu k pořízení snímku obrazovky</string>
-  <string name="location_modes_toggle_title">Režimy polohy k přepínání</string>
-  <string name="location_modes_toggle_all">Všechny</string>
-  <string name="location_modes_toggle_hbs">Vysoká přesnost/Úspora baterie/Pouze zařízení</string>
-  <string name="location_modes_toggle_hb">Vysoká přesnost/Úspora baterie</string>
-  <string name="location_modes_toggle_hs">Vysoká přesnost/Pouze zařízení</string>
-  <string name="location_modes_toggle_ho">Vysoká přesnost/Vypnuto</string>
-  <string name="location_modes_toggle_bso">Úspora baterie/Pouze zařízení/Vypnuto</string>
-  <string name="location_modes_toggle_bs">Úspora baterie/Pouze zařízení</string>
-  <string name="location_modes_toggle_bo">Úspora baterie/Vypnuto</string>
-  <string name="location_modes_toggle_so">Pouze zařízení/Vypnuto</string>
   <string name="enable_navigation_bar_title">Zapnout navigační lištu</string>
   <string name="enable_navigation_bar_summary">Zapnout navigační lištu na obrazovce</string>
   <string name="navbar_ring_cat">Položky navigačního kruhu</string>

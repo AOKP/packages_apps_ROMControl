@@ -47,6 +47,11 @@
   <string name="about_aokp">Om AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Kanglings</string>
+  <string name="battery_status_icon_title">Statusikon</string>
+  <string name="battery_bar_percent">Batterimätare &amp; procent</string>
+  <string name="battery_bar">Batterimätare</string>
+  <string name="battery_circle">Battericirkel</string>
+  <string name="battery_circle_percent">Battericirkel &amp; procent</string>
   <string name="mgerrit_changelog_title">mGerrit: Dynamisk Ändringslogg</string>
   <string name="mgerrit_changelog_summary">Interaktiv ändringslogg hämtad live från vår Gerrit</string>
   <string name="dialog_color_picker">Färgväljare</string>
@@ -93,7 +98,7 @@
   <string name="title_hardware_keys_switch_app">Senaste</string>
   <string name="title_hardware_keys_switch_app_long_press">Senaste - långtryck</string>
   <string name="title_setting_enable_custom_hardware_keys">Anpassa hårdvaruknappar</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Aktivera anpassade åtgärder för hårdvaruknapparna. Kräver omstart.</string>
+  <string name="summary_setting_enable_custom_hardware_keys">Aktivera möjligheten för anpassade åtgärder att ställa in hårdvaruknapparna.</string>
   <string name="setting_key_home_long_press_action_nothing">Ingenting</string>
   <string name="setting_key_home_long_press_action_menu">Meny</string>
   <string name="setting_key_home_long_press_action_appswitch">Byt app</string>
@@ -125,6 +130,8 @@
   <string name="statusbar_clock_style_summary">Klockposition i statusbaren</string>
   <string name="statusbar_clock_weekday_title">Veckodag</string>
   <string name="statusbar_clock_weekday_summary">Visa veckodag före klockan</string>
+  <string name="statusbar_clock_date_title">Datum</string>
+  <string name="statusbar_clock_date_summary">Visa datum-front för klockan</string>
   <string name="right_clock">Klocka till höger</string>
   <string name="center_clock">Klocka i mitten</string>
   <string name="no_clock">Ingen klocka</string>
@@ -133,6 +140,8 @@
   <string name="regular_am_pm">Vanlig AM/PM</string>
   <string name="small_weekday">Liten veckodag</string>
   <string name="regular_weekday">Vanlig veckodag</string>
+  <string name="small_date">Kort datum</string>
+  <string name="regular_date">Vanligt datum</string>
   <string name="statusbar_clock_color_title">Färg på klocka</string>
   <string name="statusbar_clock_color_summary">Färg på klocka som visas i statusbaren</string>
   <string name="battery_percentage_indicator_title">Visa batteri % indikator</string>

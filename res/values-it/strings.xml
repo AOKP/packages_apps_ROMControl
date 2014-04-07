@@ -93,7 +93,7 @@
   <string name="title_hardware_keys_switch_app">Recenti</string>
   <string name="title_hardware_keys_switch_app_long_press">Recenti - pressione prolungata</string>
   <string name="title_setting_enable_custom_hardware_keys">Personalizza tasti fisici</string>
-  <string name="summary_setting_enable_custom_hardware_keys">Permetti di impostare azioni personalizzate ai tasti hardware. Richiede un riavvio.</string>
+  <string name="summary_setting_enable_custom_hardware_keys">Attiva per consentire azione personalizzate per impostare i tasti fisici.</string>
   <string name="setting_key_home_long_press_action_nothing">Niente</string>
   <string name="setting_key_home_long_press_action_menu">Menu</string>
   <string name="setting_key_home_long_press_action_appswitch">App-switch</string>

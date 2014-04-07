@@ -84,7 +84,6 @@
   <string name="title_hardware_keys_switch_app">יישומים אחרונים</string>
   <string name="title_hardware_keys_switch_app_long_press">יישומים אחרונים - לחיצה ארוכה</string>
   <string name="title_setting_enable_custom_hardware_keys">התאם אישית לחצני חומרה</string>
-  <string name="summary_setting_enable_custom_hardware_keys">אפשר הגדרת פעולות מותאמות אישית עבור לחצני החומרה. דורש אתחול מחדש.</string>
   <string name="setting_key_home_long_press_action_nothing">ללא</string>
   <string name="setting_key_home_long_press_action_menu">תפריט</string>
   <string name="setting_key_home_long_press_action_appswitch">החלפת יישומים</string>

@@ -38,7 +38,11 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
     private SingleChoiceSetting mWallpaperIntraClose;
     private SingleChoiceSetting mTaskMoveFront;
     private SingleChoiceSetting mTaskMoveBack;
-    private SeekBar mDuration;
+    private SeekBar mAnimationDuration;
+    private SeekBar mProgressBarSpeed;
+    private SeekBar mProgressBarWidth;
+    private SeekBar mProgressBarLength;
+    private SeekBar mProgressBarCount;
     private Context mContext;
     private int mSeekBarProgress;
 
@@ -119,9 +123,25 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
         mWallpaperIntraOpen.setEntries(mAnimationsStrings);
         mWallpaperIntraOpen.updateSummary();
 
-        mDuration = (SeekBar) main.findViewById(R.id.animation_duration);
-        mDuration.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, 50));
-        mDuration.setOnSeekBarChangeListener(this);
+        mAnimationDuration = (SeekBar) main.findViewById(R.id.animation_duration);
+        mAnimationDuration.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, 50));
+        mAnimationDuration.setOnSeekBarChangeListener(this);
+
+        mProgressBarSpeed = (SeekBar) main.findViewById(R.id.progressbar_speed);
+        mProgressBarSpeed.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_SPEED, 4));
+        mProgressBarSpeed.setOnSeekBarChangeListener(this);
+
+        mProgressBarWidth = (SeekBar) main.findViewById(R.id.progressbar_width);
+        mProgressBarWidth.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_WIDTH, 4));
+        mProgressBarWidth.setOnSeekBarChangeListener(this);
+
+        mProgressBarLength = (SeekBar) main.findViewById(R.id.progressbar_length);
+        mProgressBarLength.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_LENGTH, 10));
+        mProgressBarWidth.setOnSeekBarChangeListener(this);
+
+        mProgressBarCount = (SeekBar) main.findViewById(R.id.progressbar_count);
+        mProgressBarCount.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_COUNT, 6));
+        mProgressBarCount.setOnSeekBarChangeListener(this);
 
         return main;
     }
@@ -138,8 +158,20 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-        if (seekBar == mDuration) {
+        if (seekBar == mAnimationDuration) {
             Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, mSeekBarProgress);
+        }
+        if (seekBar == mProgressBarSpeed) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_SPEED, mSeekBarProgress);
+        }
+        if (seekBar == mProgressBarWidth) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_WIDTH, mSeekBarProgress);
+        }
+        if (seekBar == mProgressBarLength) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_LENGTH, mSeekBarProgress);
+        }
+        if (seekBar == mProgressBarCount) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.PROGRESSBAR_COUNT, mSeekBarProgress);
         }
     }
 }

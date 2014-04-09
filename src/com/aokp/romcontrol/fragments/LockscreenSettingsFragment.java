@@ -15,10 +15,10 @@ import com.aokp.romcontrol.settings.SingleChoiceSetting;
 
 public class LockscreenSettingsFragment extends Fragment implements OnSettingChangedListener {
 
-    CheckboxSetting mLockscreenNotifications, mPocketMode, mShowAlways, mWakeOnNotification,
+    CheckboxSetting mLockscreenNotifications, mPocketMode, mShowAlways, mWakeOnNotification, mSeeThrough,
         mHideLowPriority, mHideNonClearable, mDismissAll, mPrivacyMode, mExpandedView, mExpandedViewForce;
     ColorPickerSetting mNotificationColor;
-    SingleChoiceSetting mOffsetTop, mNotificationHeight;
+    SingleChoiceSetting mOffsetTop, mNotificationHeight, mBlurRadius;
     boolean mHasProximitySensor;
 
     public LockscreenSettingsFragment() {
@@ -54,6 +54,9 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mExpandedView = (CheckboxSetting) v.findViewById(R.id.lockscreen_notifications_expanded_view);
         mExpandedViewForce = (CheckboxSetting) v.findViewById(R.id.lockscreen_notifications_force_expanded_view);
 
+        mSeeThrough = (CheckboxSetting) v.findViewById(R.id.lockscreen_see_through);
+        mBlurRadius = (SingleChoiceSetting) v.findViewById(R.id.lockscreen_blur_radius);
+
         return v;
     }
 
@@ -65,6 +68,7 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mHideNonClearable.setOnSettingChangedListener(this);
         mPrivacyMode.setOnSettingChangedListener(this);
         mExpandedView.setOnSettingChangedListener(this);
+	mSeeThrough.setOnSettingChangedListener(this);
     }
 
     @Override
@@ -91,6 +95,9 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
             mExpandedView.setVisibility(mLockscreenNotifications.isChecked() ? (mPrivacyMode.isChecked() ? View.GONE : View.VISIBLE) : View.GONE);
             // Display only if expanded view is enabled
             mExpandedViewForce.setVisibility(mLockscreenNotifications.isChecked() ? (mExpandedView.isChecked() ? View.VISIBLE : View.GONE) : View.GONE);
+        }
+	if (key.equals("lockscreen_see_through")) {
+            mBlurRadius.setVisibility(mSeeThrough.isChecked() ? View.VISIBLE : View.GONE);
         }
     }
 

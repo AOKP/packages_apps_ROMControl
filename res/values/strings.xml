@@ -496,6 +496,7 @@
 
     <string name="lockscreen_see_through">Transparent lockscreen</string>
     <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+    <string name="lockscreen_blur_radius">Blur radius</string>
 
     <string name="battery_arc_lockscreen_handle">Battery arc handle</string>
     <string name="battery_arc_lockscreen_handle_summary">An arc around the lockscreen handle representing battery level</string>

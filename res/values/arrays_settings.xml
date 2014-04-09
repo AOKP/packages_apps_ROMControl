@@ -335,6 +335,26 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="lockscreen_blur_radius_entries">
+        <item>0</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>16</item>
+        <item>20</item>
+        <item>24</item>
+    </string-array>
+
+    <string-array name="lockscreen_blur_radius_values">
+        <item>0</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>16</item>
+        <item>20</item>
+        <item>24</item>
+    </string-array>
+
     <!--- Volume key cursor control -->
     <string-array name="volume_key_cursor_control_entries">
         <item>@string/volume_key_cursor_control_off</item>

@@ -37,6 +37,8 @@ public class LockscreenSettingsFragment extends Fragment implements OnClickListe
     private static final String WALLPAPER_NAME = "lockscreen_wallpaper.png";
 
     private ImageSetting mImageSettingLockscreenWallpaper;
+    CheckboxSetting mSeeThrough;
+    SingleChoiceSetting mBlurRadius;
 
     public LockscreenSettingsFragment() {
 
@@ -49,7 +51,22 @@ public class LockscreenSettingsFragment extends Fragment implements OnClickListe
         mImageSettingLockscreenWallpaper = (ImageSetting) v.findViewById(R.id.lockscreen_wallpaper);
         mImageSettingLockscreenWallpaper.setOnClickListener(this);
 
+        mSeeThrough = (CheckboxSetting) v.findViewById(R.id.lockscreen_see_through);
+        mBlurRadius = (SingleChoiceSetting) v.findViewById(R.id.lockscreen_blur_radius);
+
         return v;
+    }
+
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mSeeThrough.setOnSettingChangedListener(this);
+    }
+
+    @Override
+    public void onSettingChanged(String table, String key, String oldValue, String value) {
+        if ("aokp".equals(table)) {
+            mBlurRadius.setVisibility(mSeeThrough.isChecked() ? View.VISIBLE : View.GONE);
+        }
     }
 
     @Override

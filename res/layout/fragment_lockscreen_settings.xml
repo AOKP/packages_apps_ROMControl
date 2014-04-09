@@ -52,9 +52,21 @@
         <com.aokp.romcontrol.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_see_through"
                 android:title="@string/lockscreen_see_through"
                 android:summary="@string/lockscreen_see_through_summary"
                 android:key="lockscreen_see_through"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_blur_radius"
+                android:title="@string/lockscreen_blur_radius"
+                android:key="lockscreen_blur_radius"
+                android:entries="@array/lockscreen_blur_radius_entries"
+                android:entryValues="@array/lockscreen_blur_radius_values"
+                android:defaultValue="12"
                 />
 
         <com.aokp.romcontrol.settings.CheckboxSetting

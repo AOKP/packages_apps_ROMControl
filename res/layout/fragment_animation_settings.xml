@@ -143,6 +143,30 @@
             android:entryValues="@array/toast_animation_values"
             android:defaultValue="1" />
 
+        <com.aokp.romcontrol.widgets.CategorySeparator
+            style="@style/defaultSize"
+            android:title="@string/listview_title" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:key="listview_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dialogTitle="@string/listview_animation_title"
+            android:title="@string/listview_animation_title"
+            android:entries="@array/listview_animation_entries"
+            android:entryValues="@array/listview_animation_values"
+            android:defaultValue="0" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:key="listview_interpolator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dialogTitle="@string/listview_interpolator_title"
+            android:title="@string/listview_interpolator_title"
+            android:entries="@array/listview_interpolator_entries"
+            android:entryValues="@array/listview_interpolator_values"
+            android:defaultValue="0" />
+
     </LinearLayout>
 
 </ScrollView>

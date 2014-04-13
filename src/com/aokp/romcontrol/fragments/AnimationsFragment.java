@@ -16,18 +16,21 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.internal.util.aokp.AokpRibbonHelper;
 import com.android.internal.util.aokp.AwesomeAnimationHelper;
 import com.android.internal.util.aokp.AwesomeConstants;
 import com.android.internal.util.aokp.NavRingHelpers;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
 import com.aokp.romcontrol.settings.CheckboxSetting;
 import com.aokp.romcontrol.settings.ColorPickerSetting;
 import com.aokp.romcontrol.settings.SingleChoiceSetting;
 import net.margaritov.preference.colorpicker.ColorPickerDialog.OnColorChangedListener;
 
-public class AnimationsFragment extends Fragment implements OnSeekBarChangeListener {
+public class AnimationsFragment extends Fragment implements OnSeekBarChangeListener,
+        OnSettingChangedListener {
     private SingleChoiceSetting mActivityOpen;
     private SingleChoiceSetting mActivityClose;
     private SingleChoiceSetting mTaskOpen;
@@ -38,6 +41,7 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
     private SingleChoiceSetting mWallpaperIntraClose;
     private SingleChoiceSetting mTaskMoveFront;
     private SingleChoiceSetting mTaskMoveBack;
+    private SingleChoiceSetting mToastAnimation;
     private SeekBar mDuration;
     private Context mContext;
     private int mSeekBarProgress;
@@ -45,6 +49,8 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
     private int[] mAnimations;
     private String[] mAnimationsStrings;
     private String[] mAnimationsNum;
+
+    private boolean mInit;
 
     public AnimationsFragment() {
     }
@@ -68,6 +74,8 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
         View main = inflater.inflate(R.layout.fragment_animation_settings, container, false);
+
+        mInit = true;
 
         mActivityOpen = (SingleChoiceSetting) main.findViewById(R.id.activity_open);
         mActivityOpen.setEntryValues(mAnimationsNum);
@@ -123,6 +131,11 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
         mDuration.setProgress(Settings.AOKP.getInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, 25));
         mDuration.setOnSeekBarChangeListener(this);
 
+        mToastAnimation =  (SingleChoiceSetting) main.findViewById(R.id.toast_animation);
+        mToastAnimation.setOnSettingChangedListener(this);
+
+        mInit = false;
+
         return main;
     }
 
@@ -140,6 +153,17 @@ public class AnimationsFragment extends Fragment implements OnSeekBarChangeListe
     public void onStopTrackingTouch(SeekBar seekBar) {
         if (seekBar == mDuration) {
             Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.ANIMATION_CONTROLS_DURATION, mSeekBarProgress);
+        }
+    }
+
+    @Override
+    public void onSettingChanged(String table, String key, String oldValue, String value) {
+        if (key.equals("toast_animation")) {
+            if (!mInit) {
+                Toast toast = Toast.makeText(mContext, mContext.getResources()
+                        .getString(R.string.toast_animation_title), Toast.LENGTH_SHORT);
+                toast.show();
+            }
         }
     }
 }

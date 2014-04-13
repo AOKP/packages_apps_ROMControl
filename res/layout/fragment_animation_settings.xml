@@ -132,6 +132,17 @@
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             android:defaultValue="50" />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+            android:id="@+id/toast_animation"
+            android:key="toast_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
+            android:defaultValue="1" />
+
     </LinearLayout>
 
 </ScrollView>

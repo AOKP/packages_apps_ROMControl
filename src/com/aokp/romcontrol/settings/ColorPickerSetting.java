@@ -30,6 +30,8 @@ import com.aokp.romcontrol.R;
 import net.margaritov.preference.colorpicker.ColorPickerDialog;
 import net.margaritov.preference.colorpicker.ColorPickerDialog.OnColorChangedListener;
 
+import java.lang.NumberFormatException;
+
 /**
  * Setting toggle which represents a boolean value
  * <p/>
@@ -87,7 +89,11 @@ public class ColorPickerSetting extends BaseSetting implements
          */
         String value = getValue();
         if (value != null && !value.isEmpty()) {
-            mValue = convertToColorInt(value);
+            try {
+                mValue = Integer.parseInt(value);
+            } catch (NumberFormatException ex) {
+                mValue = mDefaultValue;
+            }
         } else {
             mValue = mDefaultValue;
         }

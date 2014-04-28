@@ -70,6 +70,7 @@
 
         <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings" />
+        <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppSideBarSettings" />
         <activity android:name="com.aokp.romcontrol.fragments.applauncher.GestureAnywhereSettings" />
         <activity android:name="com.aokp.romcontrol.fragments.applauncher.GestureAnywhereBuilderActivity" />
         <activity android:name="com.aokp.romcontrol.fragments.applauncher.GestureAnywhereCreateGestureActivity" />

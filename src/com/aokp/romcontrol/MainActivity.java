@@ -36,6 +36,7 @@ import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
 import com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment;
 import com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings;
+import com.aokp.romcontrol.fragments.applauncher.AppSideBarSettings;
 
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;

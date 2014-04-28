@@ -19,7 +19,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res-auto" >
+    xmlns:AOKP="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="enable_app_circle_bar"
@@ -39,9 +39,9 @@
         android:summary="@string/trigger_width_summary"
         android:defaultValue="4"
         android:max="64"
-        aokp:min="4"
-        aokp:unitsLeft=""
-        aokp:unitsRight="px"
+        AOKP:min="4"
+        AOKP:unitsLeft=""
+        AOKP:unitsRight="px"
         android:dependency="enable_app_circle_bar" />
 
     <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
@@ -50,9 +50,9 @@
         android:summary="@string/trigger_top_summary"
         android:defaultValue="0"
         android:max="99"
-        aokp:min="0"
-        aokp:unitsLeft=""
-        aokp:unitsRight="%"
+        AOKP:min="0"
+        AOKP:unitsLeft=""
+        AOKP:unitsRight="%"
         android:dependency="enable_app_circle_bar" />
 
     <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
@@ -61,9 +61,9 @@
         android:summary="@string/trigger_bottom_summary"
         android:defaultValue="100"
         android:max="100"
-        aokp:min="1"
-        aokp:unitsLeft=""
-        aokp:unitsRight="%"
+        AOKP:min="1"
+        AOKP:unitsLeft=""
+        AOKP:unitsRight="%"
         android:dependency="enable_app_circle_bar" />
 
 </PreferenceScreen>

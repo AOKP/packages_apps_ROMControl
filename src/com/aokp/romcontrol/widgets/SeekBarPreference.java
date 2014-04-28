@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.aokp.romcontrol.R;
 
-public class SeekBarPreferenceCham extends Preference implements OnSeekBarChangeListener {
+public class SeekBarPreference extends Preference implements OnSeekBarChangeListener {
 
     private final String TAG = getClass().getName();
 
@@ -27,6 +27,7 @@ public class SeekBarPreferenceCham extends Preference implements OnSeekBarChange
     private int mMaxValue      = 100;
     private int mMinValue      = 0;
     private int mInterval      = 1;
+    private int mDefaultValue  = -1;
     private int mCurrentValue;
     private String mUnitsLeft  = "";
     private String mUnitsRight = "";
@@ -35,12 +36,12 @@ public class SeekBarPreferenceCham extends Preference implements OnSeekBarChange
 
     private TextView mStatusText;
 
-    public SeekBarPreferenceCham(Context context, AttributeSet attrs) {
+    public SeekBarPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         initPreference(context, attrs);
     }
 
-    public SeekBarPreferenceCham(Context context, AttributeSet attrs, int defStyle) {
+    public SeekBarPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initPreference(context, attrs);
     }
@@ -54,10 +55,10 @@ public class SeekBarPreferenceCham extends Preference implements OnSeekBarChange
 
     private void setValuesFromXml(AttributeSet attrs) {
         mMaxValue = attrs.getAttributeIntValue(ANDROIDNS, "max", 100);
-        mMinValue = attrs.getAttributeIntValue(AOKP, "min", 0);
+        mMinValue = attrs.getAttributeIntValue(AOKP, "minimum", 0);
+        mDefaultValue = attrs.getAttributeIntValue(AOKP, "defaultVal", -1);
         mUnitsLeft = getAttributeStringValue(attrs, AOKP, "unitsLeft", "");
-        String units = getAttributeStringValue(attrs, AOKP, "units", "");
-        mUnitsRight = getAttributeStringValue(attrs, AOKP, "unitsRight", units);
+        mUnitsRight = getAttributeStringValue(attrs, AOKP, "unitsRight", "");
         try {
             String newInterval = attrs.getAttributeValue(AOKP, "interval");
             if(newInterval != null)
@@ -129,7 +130,7 @@ public class SeekBarPreferenceCham extends Preference implements OnSeekBarChange
     }
 
     /**
-     * Update a SeekBarPreferenceCham view with our current state
+     * Update a SeekBarPreference view with our current state
      * @param view
      */
     protected void updateView(View view) {
@@ -168,7 +169,10 @@ public class SeekBarPreferenceCham extends Preference implements OnSeekBarChange
         }
         // change accepted, store it
         mCurrentValue = newValue;
-        mStatusText.setText(String.valueOf(newValue));
+        if (mCurrentValue == mDefaultValue && mDefaultValue != -1)
+            mStatusText.setText(R.string.default_string);
+        else
+            mStatusText.setText(String.valueOf(newValue));
         persistInt(newValue);
     }
 

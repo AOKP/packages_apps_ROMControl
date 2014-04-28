@@ -38,7 +38,8 @@ public class AppLauncherTabHostFragment extends Fragment {
 
     private static final int[] mFragments = new int[] {
             R.string.gesture_anywhere_title,
-            R.string.app_circle_bar_title
+            R.string.app_circle_bar_title,
+            R.string.app_sidebar_title
     };
 
     public AppLauncherTabHostFragment() {
@@ -93,6 +94,8 @@ public class AppLauncherTabHostFragment extends Fragment {
                     return new GestureAnywhereSettings();
                 case 1:
                     return new AppCircleBarSettings();
+                case 2:
+                    return new AppSideBarSettings();
             }
             return null;
         }

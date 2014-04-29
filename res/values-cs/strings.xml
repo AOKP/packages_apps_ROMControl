@@ -143,6 +143,8 @@
   <string name="vibrate_notif_expand_summary">Vibrovat při roztažení notifikací</string>
   <string name="notification_count_title">Zobrazit počet notifikací</string>
   <string name="notification_count_summary">Zobrazit počet čekajících notifikací ve stavové liště</string>
+  <string name="notification_peek_title">Vyskakující notifikace</string>
+  <string name="notification_peek_summary">Zobrazit poslední notifikaci po zvednutí zařízení</string>
   <string name="statusbar_clock_am_pm_style_title">AM/PM styl</string>
   <string name="statusbar_clock_am_pm_style_summary">Styl zobrazení AM/PM</string>
   <string name="statusbar_clock_style_title">Styl hodin</string>

@@ -91,6 +91,16 @@
                 android:defaultValue="true"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/notification_peek_title"
+                android:summary="@string/notification_peek_summary"
+                android:key="peek_state"
+                android:defaultValue="false"
+                />
+
         <com.aokp.romcontrol.widgets.CategorySeparator
                 style="@style/defaultSize"
                 android:title="@string/category_statusbar_clock"/>

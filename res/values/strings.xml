@@ -211,6 +211,8 @@
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications</string>
     <string name="notification_count_title">Show notification count</string>
     <string name="notification_count_summary">Display number of pending notifications in the statusbar</string>
+    <string name="notification_peek_title">Notification peek</string>
+    <string name="notification_peek_summary">Show latest notification after picking up your device</string>
 
     <string name="statusbar_clock_am_pm_style_title">AM/PM style</string>
     <string name="statusbar_clock_am_pm_style_summary">How is AM/PM displayed</string>

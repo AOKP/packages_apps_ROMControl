@@ -47,7 +47,11 @@
   <string name="about_aokp">À propos de AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Les Kanglings</string>
+  <string name="battery_status_icon_title">Icône d\'État</string>
+  <string name="battery_bar_percent">Barre de batterie &amp; pourcentage</string>
+  <string name="battery_bar">Barre de batterie</string>
   <string name="battery_circle">Jauge de batterie circulaire</string>
+  <string name="battery_circle_percent">Pourcentage pour la batterie en cercle &amp;</string>
   <string name="mgerrit_changelog_title">Changelog dynamique</string>
   <string name="mgerrit_changelog_summary">Changelog directement prélevé depuis notre Gerrit</string>
   <string name="dialog_color_picker">Sélecteur de couleurs</string>
@@ -105,6 +109,10 @@
   <string name="category_advanced">Avancé</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Contrôle de la rotation via les touches de volume</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">En appuyant deux fois sur les touches volume, l\'auto rotation sera activée/désactivée</string>
+  <string name="volume_key_cursor_control_title">Contrôle du curseur avec les touches de volume</string>
+  <string name="volume_key_cursor_control_off">Désactivé</string>
+  <string name="volume_key_cursor_control_on">Volume haut/bas déplace le curseur vers la gauche/droite</string>
+  <string name="volume_key_cursor_control_on_reverse">Volume haut/bas déplace le curseur vers la droite/gauche</string>
   <string name="category_statusbar_notification">Notifications</string>
   <string name="category_statusbar_battery">Batterie</string>
   <string name="category_statusbar_clock">Horloge</string>
@@ -126,6 +134,8 @@
   <string name="statusbar_clock_style_summary">Position de l\'horloge sur la barre de notification</string>
   <string name="statusbar_clock_weekday_title">Jour de la semaine</string>
   <string name="statusbar_clock_weekday_summary">Afficher le jour de la semaine aux côtés de l\'horloge</string>
+  <string name="statusbar_clock_date_title">Date</string>
+  <string name="statusbar_clock_date_summary">Afficher la date devant l\'horloge</string>
   <string name="right_clock">Horloge à droite</string>
   <string name="center_clock">Horloge au milieu</string>
   <string name="no_clock">Aucune horloge</string>
@@ -134,6 +144,8 @@
   <string name="regular_am_pm">AM/PM Normal</string>
   <string name="small_weekday">Jour de la semaine petit</string>
   <string name="regular_weekday">Jour de la semaine normal</string>
+  <string name="small_date">Petits caractères pour la date</string>
+  <string name="regular_date">Date classique</string>
   <string name="statusbar_clock_color_title">Couleur de l\'horloge</string>
   <string name="statusbar_clock_color_summary">Couleur de l\'horloge affichée dans la barre de notification</string>
   <string name="battery_percentage_indicator_title">Afficher le pourcentage de la batterie</string>
@@ -234,6 +246,16 @@
   <string name="toggle_favcontact_summary">Choisissez votre contact favori</string>
   <string name="toggle_screenshot_delay_title">Délai de capture d\'écran</string>
   <string name="toggle_screenshot_delay_summary">Temps avant exécution lors de l\'appui sur la tuile de capture d\'écran</string>
+  <string name="location_modes_toggle_title">Modes de localisation pour l\'interrupteur</string>
+  <string name="location_modes_toggle_all">Tout</string>
+  <string name="location_modes_toggle_hbs">Haute précision/Économie de la batterie/Appareil seulement</string>
+  <string name="location_modes_toggle_hb">Haute précision/Économie de la batterie</string>
+  <string name="location_modes_toggle_hs">Haute précision/Appareil seulement</string>
+  <string name="location_modes_toggle_ho">Haute précision/Désactivé</string>
+  <string name="location_modes_toggle_bso">Économie de la batterie/Appareil seulement/Désactivé</string>
+  <string name="location_modes_toggle_bs">Économie de la batterie/Appareil seulement</string>
+  <string name="location_modes_toggle_bo">Économie de la batterie/Désactivé</string>
+  <string name="location_modes_toggle_so">Appareil seulement/Désactivé</string>
   <string name="enable_navigation_bar_title">Activer la barre de navigation</string>
   <string name="enable_navigation_bar_summary">Activez la barre de navigation ecran allumé</string>
   <string name="navbar_ring_cat">Cible du cercle de navigation rapide</string>

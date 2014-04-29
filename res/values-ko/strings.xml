@@ -109,6 +109,10 @@
   <string name="category_advanced">고급</string>
   <string name="title_hardware_keys_volume_keys_double_tap">볼륨 키 연타로 화면 회전</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">볼륨 키를 두 번 눌러 회전 잠금/자동 회전 토글(볼륨 상/하 버튼을 동시에 눌러야 함)</string>
+  <string name="volume_key_cursor_control_title">볼륨 키 커서 제어</string>
+  <string name="volume_key_cursor_control_off">사용 중지됨</string>
+  <string name="volume_key_cursor_control_on">볼륨 업/다운 커서 왼쪽/오른쪽 이동</string>
+  <string name="volume_key_cursor_control_on_reverse">볼륨 업/다운 이동 커서 오른쪽/왼쪽</string>
   <string name="category_statusbar_notification">알림</string>
   <string name="category_statusbar_battery">배터리</string>
   <string name="category_statusbar_clock">시계</string>
@@ -242,6 +246,16 @@
   <string name="toggle_favcontact_summary">즐겨찾는 연락처를 추가합니다.</string>
   <string name="toggle_screenshot_delay_title">스크린샷 딜레이</string>
   <string name="toggle_screenshot_delay_summary">스크린샷 토글 클릭 후 스크린샷을 찍을 때까지의 딜레이</string>
+  <string name="location_modes_toggle_title">위치 모드 토글</string>
+  <string name="location_modes_toggle_all">전체</string>
+  <string name="location_modes_toggle_hbs">높은 정확도/배터리 절약 / 기기전용</string>
+  <string name="location_modes_toggle_hb">높은 정확도/배터리 절약</string>
+  <string name="location_modes_toggle_hs">높은 정확도/기기전용</string>
+  <string name="location_modes_toggle_ho">높은 정확도/끄기</string>
+  <string name="location_modes_toggle_bso">배터리 절약 / 기기전용/끄기</string>
+  <string name="location_modes_toggle_bs">배터리 절약 / 기기전용</string>
+  <string name="location_modes_toggle_bo">배터리 절약/끄기</string>
+  <string name="location_modes_toggle_so">기기전용/끄기</string>
   <string name="enable_navigation_bar_title">네비게이션 바 사용</string>
   <string name="enable_navigation_bar_summary">네비게이션 바 활성화</string>
   <string name="navbar_ring_cat">네비게이션 링 타겟</string>

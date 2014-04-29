@@ -109,6 +109,10 @@
   <string name="category_advanced">උසස්</string>
   <string name="title_hardware_keys_volume_keys_double_tap">ශබ්ද යතුරින් භ්‍රමණය</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">ශබ්ද යතුරු මත දෙවරක් තට්ටු කිරීමෙන් ස්වයංක්‍රීය භ්‍රමණය අගුළු දැමීම හෝ අගුළු ඇරීම කලයුතුද නැද්ද යන්න</string>
+  <string name="volume_key_cursor_control_title">ශබ්ද යතුරින් කර්සරය හැසිරවීම</string>
+  <string name="volume_key_cursor_control_off">අක්‍රීයයි</string>
+  <string name="volume_key_cursor_control_on">ඉහළ/පහළ ශබ්ද යතුරු කර්සරය වමට/දකුණට ගෙනයයි</string>
+  <string name="volume_key_cursor_control_on_reverse">ඉහළ/පහළ ශබ්ද යතුරු කර්සරය දකුණට/වමට ගෙනයයි</string>
   <string name="category_statusbar_notification">දැනුම්දීම්</string>
   <string name="category_statusbar_battery">බැටරිය</string>
   <string name="category_statusbar_clock">ඔරලෝසුව</string>
@@ -242,6 +246,16 @@
   <string name="toggle_favcontact_summary">ඔබගේ ප්‍රියතම සම්බන්ධතාවය තෝරන්න</string>
   <string name="toggle_screenshot_delay_title">තිර සේයාවේ ප්‍රමාදය</string>
   <string name="toggle_screenshot_delay_summary">තිර සේයාව ටොගලයේ අභිප්‍රාය, ග්‍රහණය කිරීමේ තිරයට යැවීම සඳහා ප්‍රමාදය</string>
+  <string name="location_modes_toggle_title">ටොගලනය සඳහා ස්ථාන ප්‍රකාර</string>
+  <string name="location_modes_toggle_all">සියල්ල</string>
+  <string name="location_modes_toggle_hbs">ඉහළ නිරවද්‍යතාව/බැටරි සුරැකීම/සංවේදක පමණි</string>
+  <string name="location_modes_toggle_hb">ඉහළ නිරවද්‍යතාව/බැටරි සුරැකීම</string>
+  <string name="location_modes_toggle_hs">ඉහළ නිරවද්‍යතාව/සංවේදක පමණි</string>
+  <string name="location_modes_toggle_ho">ඉහළ නිරවද්‍යතාව/අක්‍රීය</string>
+  <string name="location_modes_toggle_bso">බැටරි සුරැකීම/සංවේදක පමණි/අක්‍රීය</string>
+  <string name="location_modes_toggle_bs">බැටරි සුරැකීම/සංවේදක පමණි</string>
+  <string name="location_modes_toggle_bo">බැටරි සුරැකීම/අක්‍රීය</string>
+  <string name="location_modes_toggle_so">සංවේදක පමණි/අක්‍රීය</string>
   <string name="enable_navigation_bar_title">සංචාලන තීරුව සක්‍රීයයි</string>
   <string name="enable_navigation_bar_summary">තිරය මත සංචාලන තීරුව සක්‍රීය කරන්න</string>
   <string name="navbar_ring_cat">සංචාලන මුදු ඉලක්ක</string>

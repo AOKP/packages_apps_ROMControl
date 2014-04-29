@@ -109,6 +109,7 @@
   <string name="category_advanced">高级</string>
   <string name="title_hardware_keys_volume_keys_double_tap">音量键控制旋转</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">当双击音量键将锁定或解锁屏幕自动旋转</string>
+  <string name="volume_key_cursor_control_off">已禁用</string>
   <string name="category_statusbar_notification">通知</string>
   <string name="category_statusbar_battery">电量</string>
   <string name="category_statusbar_clock">时钟</string>

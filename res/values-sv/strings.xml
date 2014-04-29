@@ -109,6 +109,10 @@
   <string name="category_advanced">Avancerat</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Volymrotation</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Lås/ lås upp autorotation vid dubbeltryck på volymknapparna</string>
+  <string name="volume_key_cursor_control_title">Volym knapp som markörkontroll</string>
+  <string name="volume_key_cursor_control_off">Inaktiverad</string>
+  <string name="volume_key_cursor_control_on">Volym upp/ned flyttar markören vänster/höger</string>
+  <string name="volume_key_cursor_control_on_reverse">Volym upp/ned flyttar markören höger/vänster</string>
   <string name="category_statusbar_notification">Notifikationer</string>
   <string name="category_statusbar_battery">Batteri</string>
   <string name="category_statusbar_clock">Klocka</string>
@@ -131,7 +135,7 @@
   <string name="statusbar_clock_weekday_title">Veckodag</string>
   <string name="statusbar_clock_weekday_summary">Visa veckodag före klockan</string>
   <string name="statusbar_clock_date_title">Datum</string>
-  <string name="statusbar_clock_date_summary">Visa datum-front för klockan</string>
+  <string name="statusbar_clock_date_summary">Visa datum framför klockan</string>
   <string name="right_clock">Klocka till höger</string>
   <string name="center_clock">Klocka i mitten</string>
   <string name="no_clock">Ingen klocka</string>
@@ -242,6 +246,16 @@
   <string name="toggle_favcontact_summary">Välj favoritkontakt</string>
   <string name="toggle_screenshot_delay_title">Fördröjning på skärmbild</string>
   <string name="toggle_screenshot_delay_summary">Fördröjning för skärmbild vid användning av snabbval</string>
+  <string name="location_modes_toggle_title">Plats lägen för växling</string>
+  <string name="location_modes_toggle_all">Alla</string>
+  <string name="location_modes_toggle_hbs">Hög noggrannhet/Batteri sparande/Enheten endast</string>
+  <string name="location_modes_toggle_hb">Hög noggrannhet/Batteri sparande</string>
+  <string name="location_modes_toggle_hs">Hög noggrannhet/Enhet endast</string>
+  <string name="location_modes_toggle_ho">Hög noggrannhet/Av</string>
+  <string name="location_modes_toggle_bso">Batteri sparande/enheten bara/Av</string>
+  <string name="location_modes_toggle_bs">Batteri sparande/Enheten endast</string>
+  <string name="location_modes_toggle_bo">Batteri sparande/Av</string>
+  <string name="location_modes_toggle_so">Enheten bara/Av</string>
   <string name="enable_navigation_bar_title">Aktivera navigationsbar</string>
   <string name="enable_navigation_bar_summary">Aktivera skärm-på navigationsbar</string>
   <string name="navbar_ring_cat">Navigationsringar</string>

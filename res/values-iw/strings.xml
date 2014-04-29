@@ -42,9 +42,16 @@
   <string name="aokp_website_summary">www.aokp.co - מצא שחרורים חדשים כאן</string>
   <string name="aokp_review_title">סקירת קוד AOKP - Gerrit</string>
   <string name="aokp_irc_title">הצטרפו אלינו ב- IRC</string>
+  <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
   <string name="about_aokp">אודות AOKP</string>
+  <string name="kanglings">ה-Kanglings</string>
+  <string name="battery_bar">בר הסוללה</string>
+  <string name="battery_circle">סוללת מעגל</string>
+  <string name="battery_circle_percent">סוללת מעגל &amp; אחוז</string>
+  <string name="dialog_color_picker">בוחר צבע</string>
   <string name="arrow_right">→</string>
   <string name="arrow_down">↓</string>
+  <string name="hex">Hex:</string>
   <string name="set">הגדר</string>
   <string name="default_color">ברירת המחדל</string>
   <string name="time_0_5_seconds">0.5 שניות</string>
@@ -93,6 +100,7 @@
   <string name="setting_key_home_long_press_action_killapp">נקה אפליקציה</string>
   <string name="category_advanced">מתקדם</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">קובע אם הקשה כפולה על מקשי עוצמת הקול תנעל ותשחרר את הגדרת סיבוב המסך האוטומטי</string>
+  <string name="volume_key_cursor_control_off">מושבת</string>
   <string name="category_statusbar_notification">התראות</string>
   <string name="category_statusbar_battery">סוללה</string>
   <string name="category_statusbar_clock">שעון</string>
@@ -106,6 +114,7 @@
   <string name="statusbar_clock_style_title">סגנון שעון</string>
   <string name="statusbar_clock_style_summary">מיקום השעון בשורת המצב</string>
   <string name="statusbar_clock_weekday_title">היום בשבוע</string>
+  <string name="statusbar_clock_date_title">תאריך</string>
   <string name="right_clock">שעון בצד ימין</string>
   <string name="center_clock">שעון במרכז</string>
   <string name="no_clock">ללא שעון</string>

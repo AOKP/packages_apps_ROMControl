@@ -109,6 +109,10 @@
   <string name="category_advanced">Zaawansowane</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Automatyczna rotacja po dwukrotnym puknięciu</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Naciśnięcie obu klawiszy głośności odblokuje/zablokuje ustawienie auto-obracania</string>
+  <string name="volume_key_cursor_control_title">Kontrola kursora za pomocą klawiszy głośności</string>
+  <string name="volume_key_cursor_control_off">Wyłączone</string>
+  <string name="volume_key_cursor_control_on">Przyciski głośności w górę/dół poruszają kursorem w lewo/prawo</string>
+  <string name="volume_key_cursor_control_on_reverse">Przyciski głośności w górę/dół poruszają kursorem w prawo/lewo</string>
   <string name="category_statusbar_notification">Powiadomienia</string>
   <string name="category_statusbar_battery">Bateria</string>
   <string name="category_statusbar_clock">Zegar</string>
@@ -242,6 +246,16 @@
   <string name="toggle_favcontact_summary">Wybierz swój ulubiony kontakt</string>
   <string name="toggle_screenshot_delay_title">Opóźnienie zrzutu ekranu</string>
   <string name="toggle_screenshot_delay_summary">Opóźnienie przełącznika zrzutu ekranu w celu wysłania powiadomienia przechwytywania obrazu</string>
+  <string name="location_modes_toggle_title">Tryby lokalizacji (przełącznik)</string>
+  <string name="location_modes_toggle_all">Wszystkie</string>
+  <string name="location_modes_toggle_hbs">Wysoka dokładność/Oszczędzanie baterii/Tylko urządzenie</string>
+  <string name="location_modes_toggle_hb">Wysoka dokładność/Oszczędzanie baterii</string>
+  <string name="location_modes_toggle_hs">Wysoka dokładność/Tylko urządzenie</string>
+  <string name="location_modes_toggle_ho">Wysoka dokładność/Wyłączone</string>
+  <string name="location_modes_toggle_bso">Oszczędzanie baterii/Tylko urządzenie/Wyłączone</string>
+  <string name="location_modes_toggle_bs">Oszczędzanie baterii/Tylko urządzenie</string>
+  <string name="location_modes_toggle_bo">Oszczędzanie baterii/Wyłączone</string>
+  <string name="location_modes_toggle_so">Tylko urządzenie/Wyłączone</string>
   <string name="enable_navigation_bar_title">Aktywuj pas nawigacji</string>
   <string name="enable_navigation_bar_summary">Aktywuj pas nawigacji na ekranie</string>
   <string name="navbar_ring_cat">Akcje kręgu nawigacji</string>

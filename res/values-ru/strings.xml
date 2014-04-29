@@ -109,6 +109,10 @@
   <string name="category_advanced">Дополнительно</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Громкость для автоповорота</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Двойное нажатие на клавиши громкости будет блокировать и разблокировать автоповорот</string>
+  <string name="volume_key_cursor_control_title">Громкость для курсора</string>
+  <string name="volume_key_cursor_control_off">Отключено</string>
+  <string name="volume_key_cursor_control_on">Громкость вверх/вниз перемещает курсор влево/вправо</string>
+  <string name="volume_key_cursor_control_on_reverse">Громкость вверх/вниз перемещает курсор вправо/влево</string>
   <string name="category_statusbar_notification">Уведомления</string>
   <string name="category_statusbar_battery">Батарея</string>
   <string name="category_statusbar_clock">Часы</string>
@@ -118,7 +122,7 @@
   <string name="status_bar_double_tap_to_sleep_summary">Двойное нажатие на строке состояния переводит устройство в режим сна</string>
   <string name="adb_notify">Уведомление об отладке USB</string>
   <string name="adb_notify_summary">Отображение уведомления при включении отладки по USB</string>
-  <string name="ime_switcher_title">Показывать IME</string>
+  <string name="ime_switcher_title">Переключатель способа ввода</string>
   <string name="ime_switcher_summary">В строке состояния при наборе текста</string>
   <string name="vibrate_notif_expand_title">Вибрация при раскрытии</string>
   <string name="vibrate_notif_expand_summary">Вибрация при раскрытии уведомлений</string>
@@ -242,6 +246,16 @@
   <string name="toggle_favcontact_summary">Выберите нужный контакт</string>
   <string name="toggle_screenshot_delay_title">Задержка снимка</string>
   <string name="toggle_screenshot_delay_summary">Задержка отправки команды на снимок экрана для плитки снимка</string>
+  <string name="location_modes_toggle_title">Режимы для плитки геоданных</string>
+  <string name="location_modes_toggle_all">Все</string>
+  <string name="location_modes_toggle_hbs">Высокая точность/Экономия батареи/Только устройство</string>
+  <string name="location_modes_toggle_hb">Высокая точность/Экономия батареи</string>
+  <string name="location_modes_toggle_hs">Высокая точность/Только устройство</string>
+  <string name="location_modes_toggle_ho">Высокая точность/Выкл</string>
+  <string name="location_modes_toggle_bso">Высокая точность/Только устройство/Выкл</string>
+  <string name="location_modes_toggle_bs">Экономия батареи/Только устройство</string>
+  <string name="location_modes_toggle_bo">Экономия батареи/Выкл</string>
+  <string name="location_modes_toggle_so">Только устройство/Выкл</string>
   <string name="enable_navigation_bar_title">Вкл панель навигации</string>
   <string name="enable_navigation_bar_summary">Включить экранную панель навигации</string>
   <string name="navbar_ring_cat">Ярлыки нав. кольца</string>

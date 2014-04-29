@@ -58,7 +58,7 @@
   <string name="press_color_to_apply">Auf Farbe tippen zum Anwenden</string>
   <string name="arrow_right">→</string>
   <string name="arrow_down">↓</string>
-  <string name="hex">Hexadezimalwert:</string>
+  <string name="hex">Hex:</string>
   <string name="set">OK</string>
   <string name="default_color">Standard</string>
   <string name="time_0_5_seconds">0,5 Sekunden</string>
@@ -109,6 +109,10 @@
   <string name="category_advanced">Erweitert</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Gerätelautstärketasten doppelter Klick</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Ob doppeltes Betätigen der Lautstärketasten die Autorotation sperrt und entsperrt</string>
+  <string name="volume_key_cursor_control_title">Cursor verschieben mit Lauter/Leiser</string>
+  <string name="volume_key_cursor_control_off">Deaktiviert</string>
+  <string name="volume_key_cursor_control_on">Lauter-/Leiser-Taste bewegt den Cursor nach links/rechts</string>
+  <string name="volume_key_cursor_control_on_reverse">Lauter-/Leiser-Taste bewegt den Cursor nach rechts/links</string>
   <string name="category_statusbar_notification">Benachrichtigungen</string>
   <string name="category_statusbar_battery">Akku</string>
   <string name="category_statusbar_clock">Uhr</string>
@@ -242,6 +246,16 @@
   <string name="toggle_favcontact_summary">Bitte Favorit aus den Kontakten wählen</string>
   <string name="toggle_screenshot_delay_title">Verzögerung vor Bildschirmfoto</string>
   <string name="toggle_screenshot_delay_summary">Betätigungsdauer des Screenshots-Schalters zum Aufnahmen eines Screenshots</string>
+  <string name="location_modes_toggle_title">Standort Modi zum Ändern</string>
+  <string name="location_modes_toggle_all">Alle</string>
+  <string name="location_modes_toggle_hbs">Hohe Genauigkeit/Energie sparen/Nur Gerät</string>
+  <string name="location_modes_toggle_hb">Hohe Genauigkeit/Energie sparen</string>
+  <string name="location_modes_toggle_hs">Hohe Genauigkeit/Nur Gerät</string>
+  <string name="location_modes_toggle_ho">Hohe Genauigkeit/Aus</string>
+  <string name="location_modes_toggle_bso">Energie sparen/Nur Gerät/Aus</string>
+  <string name="location_modes_toggle_bs">Energie sparen/Nur Gerät</string>
+  <string name="location_modes_toggle_bo">Energie sparen/Aus</string>
+  <string name="location_modes_toggle_so">Nur Gerät/Aus</string>
   <string name="enable_navigation_bar_title">Navigationsleiste aktivieren</string>
   <string name="enable_navigation_bar_summary">Navigationsleiste auf dem Bildschirm aktivieren</string>
   <string name="navbar_ring_cat">Ziele des Navigationsrings</string>
@@ -319,7 +333,7 @@
   <string name="battery_arc_lockscreen_handle_summary">Ein Bogen um den Sperrbildschirm Ring, der die Akkuladung anzeigt</string>
   <string name="safe_headset_volume_title">Hinweis bei hoher Kopfhörer Lautstärke</string>
   <string name="safe_headset_volume_summary">Lautstärkewarnung bei Benutzung eines Kopfhörers anzeigen</string>
-  <string name="volume_adjust_sounds_enable_title">Ton durch Lautstärke anpassen</string>
+  <string name="volume_adjust_sounds_enable_title">Ton bei Lautstärkeänderung</string>
   <string name="volume_adjust_sounds_enable_summary">Ton abspielen, wenn die Lautstärke mit den Hardwaretasten eingestellt wird</string>
   <string name="airplane_mode_options">Flugmodus</string>
   <string name="immersive_mode_options">Immersiver Modus</string>

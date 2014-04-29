@@ -39,7 +39,7 @@
   <string name="menu_show_drawer_icon">アプリドロワーに表示</string>
   <string name="devs">開発者</string>
   <string name="aokp_website_title">AOKPウェブサイト</string>
-  <string name="aokp_website_summary">http://aokp.co/\nAOKPの最新情報を確認する</string>
+  <string name="aokp_website_summary">http://aokp.co/\n最新情報を確認する</string>
   <string name="aokp_review_title">AOKPコードレビュー - Gerrit</string>
   <string name="aokp_review_summary">AOKPのGerritレビューインスタンスを参照する</string>
   <string name="aokp_irc_title">IRCに参加</string>
@@ -47,7 +47,12 @@
   <string name="about_aokp">AOKPについて</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">The Kanglings</string>
-  <string name="mgerrit_changelog_title">mGerrit: ダイナミックチェンジログ</string>
+  <string name="battery_status_icon_title">電池残量アイコンスタイル</string>
+  <string name="battery_bar_percent">アイコン＋パーセンテージ</string>
+  <string name="battery_bar">アイコンのみ</string>
+  <string name="battery_circle">サークルのみ</string>
+  <string name="battery_circle_percent">サークル＋パーセンテージ</string>
+  <string name="mgerrit_changelog_title">mGerrit:ダイナミックチェンジログ</string>
   <string name="mgerrit_changelog_summary">Gerritインスタンスからインタラクティブな変更履歴をライブで確認</string>
   <string name="dialog_color_picker">カラーピッカー</string>
   <string name="press_color_to_apply">色をタップして適用</string>
@@ -93,6 +98,7 @@
   <string name="title_hardware_keys_switch_app">アプリ履歴</string>
   <string name="title_hardware_keys_switch_app_long_press">アプリ履歴 - 長押し</string>
   <string name="title_setting_enable_custom_hardware_keys">ハードウェアキーのカスタマイズ</string>
+  <string name="summary_setting_enable_custom_hardware_keys">ハードウェアキーへのアクションの割り当てを有効にする</string>
   <string name="setting_key_home_long_press_action_nothing">なし</string>
   <string name="setting_key_home_long_press_action_menu">メニュー</string>
   <string name="setting_key_home_long_press_action_appswitch">アプリ切替え</string>
@@ -103,6 +109,10 @@
   <string name="category_advanced">詳細設定</string>
   <string name="title_hardware_keys_volume_keys_double_tap">ボリュームキーで自動回転</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">ボリュームキーのダブルタップで画面の自動回転のオン/オフを切替える</string>
+  <string name="volume_key_cursor_control_title">ボリュームキーでカーソル移動</string>
+  <string name="volume_key_cursor_control_off">無効</string>
+  <string name="volume_key_cursor_control_on">ボリュームアップで左に、ダウンで右に移動する</string>
+  <string name="volume_key_cursor_control_on_reverse">ボリュームアップで右に、ダウンで左に移動する</string>
   <string name="category_statusbar_notification">通知</string>
   <string name="category_statusbar_battery">電池残量</string>
   <string name="category_statusbar_clock">時計</string>
@@ -124,6 +134,8 @@
   <string name="statusbar_clock_style_summary">ステータスバーの時計の表示位置を設定する</string>
   <string name="statusbar_clock_weekday_title">曜日を表示</string>
   <string name="statusbar_clock_weekday_summary">時計の横に曜日を表示する</string>
+  <string name="statusbar_clock_date_title">日付を表示</string>
+  <string name="statusbar_clock_date_summary">時計の横に日付を表示する</string>
   <string name="right_clock">右側に表示</string>
   <string name="center_clock">中央に表示</string>
   <string name="no_clock">表示しない</string>
@@ -132,6 +144,8 @@
   <string name="regular_am_pm">AM/PM(標準)</string>
   <string name="small_weekday">曜日(小)</string>
   <string name="regular_weekday">曜日(標準)</string>
+  <string name="small_date">日付(小)</string>
+  <string name="regular_date">日付(標準)</string>
   <string name="statusbar_clock_color_title">時計の文字色</string>
   <string name="statusbar_clock_color_summary">ステータスバーに表示する時計の色を変更する</string>
   <string name="battery_percentage_indicator_title">電池残量をパーセンテージ表示</string>
@@ -232,6 +246,16 @@
   <string name="toggle_favcontact_summary">お気に入りの連絡先を選択する</string>
   <string name="toggle_screenshot_delay_title">スクリーンショット遅延時間</string>
   <string name="toggle_screenshot_delay_summary">タップしてから実際にスクリーンショットを撮影するまでの秒数を設定する</string>
+  <string name="location_modes_toggle_title">トグルの位置情報モード</string>
+  <string name="location_modes_toggle_all">全て</string>
+  <string name="location_modes_toggle_hbs">高精度/省電力/デバイスのみ</string>
+  <string name="location_modes_toggle_hb">高精度/省電力</string>
+  <string name="location_modes_toggle_hs">高精度/デバイスのみ</string>
+  <string name="location_modes_toggle_ho">高精度/オフ</string>
+  <string name="location_modes_toggle_bso">省電力/デバイスのみ/オフ</string>
+  <string name="location_modes_toggle_bs">省電力/デバイスのみ</string>
+  <string name="location_modes_toggle_bo">省電力/オフ</string>
+  <string name="location_modes_toggle_so">デバイスのみ/オフ</string>
   <string name="enable_navigation_bar_title">ナビゲーションバーを表示</string>
   <string name="enable_navigation_bar_summary">画面上にナビゲーションバーを表示する</string>
   <string name="navbar_ring_cat">リングターゲット</string>

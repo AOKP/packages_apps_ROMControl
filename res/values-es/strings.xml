@@ -98,6 +98,7 @@
   <string name="title_hardware_keys_switch_app">Recientes</string>
   <string name="title_hardware_keys_switch_app_long_press">Recientes - pulsación larga</string>
   <string name="title_setting_enable_custom_hardware_keys">Personalizar las teclas físicas</string>
+  <string name="summary_setting_enable_custom_hardware_keys">Activar para permitir establecer acciones personalizadas para las teclas de hardware.</string>
   <string name="setting_key_home_long_press_action_nothing">Nada</string>
   <string name="setting_key_home_long_press_action_menu">Menú</string>
   <string name="setting_key_home_long_press_action_appswitch">App-interruptor</string>
@@ -108,6 +109,10 @@
   <string name="category_advanced">Conf. avanzada</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Rotación de volumen</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Ya sea tocando dos veces la tecla de volumen se bloquea y desbloquea el parámetro de rotación automática</string>
+  <string name="volume_key_cursor_control_title">Control de la tecla de volumen</string>
+  <string name="volume_key_cursor_control_off">Desactivado</string>
+  <string name="volume_key_cursor_control_on">Volumen arriba/abajo mueve el cursor hacia la izquierda/derecha</string>
+  <string name="volume_key_cursor_control_on_reverse">Volumen arriba/abajo mueve el cursor izquierda/derecha</string>
   <string name="category_statusbar_notification">Notificaciones</string>
   <string name="category_statusbar_battery">Batería</string>
   <string name="category_statusbar_clock">Reloj</string>
@@ -180,6 +185,7 @@
   <string name="lockscreen_ribbon_settings">Configuracuón de Riboon en pantalla de bloqueo</string>
   <string name="enable_ribbon_title">Activar Cinta</string>
   <string name="enable_ribbon_summary">Habilitar el area para deslizar este ribbon</string>
+  <string name="ribbon_long_swipe_title">Longitud del área de deslizamiento</string>
   <string name="enable_ribbon_vibrate_title">Vibrar en área de delizamiento</string>
   <string name="enable_ribbon_vibrate_summary">Vibrar al tocar el área de barrido</string>
   <string name="ribbon_auto_hide_title">Tiempo para auto ocultar ribbon</string>
@@ -234,6 +240,14 @@
   <string name="toggle_favcontact_title">Contacto favorito</string>
   <string name="toggle_favcontact_summary">Elegir tu contacto favorito</string>
   <string name="toggle_screenshot_delay_title">Retraso en la captura de pantalla</string>
+  <string name="location_modes_toggle_all">Todo</string>
+  <string name="location_modes_toggle_hb">Alta precisión/Ahorro de batería</string>
+  <string name="location_modes_toggle_hs">Alta precisión/Dispositivo Solamente</string>
+  <string name="location_modes_toggle_ho">Alta precisión/Apagado</string>
+  <string name="location_modes_toggle_bso">Ahorro de la batería/Dispositivo Solamente/Apagado</string>
+  <string name="location_modes_toggle_bs">Ahorro de la batería/Dispositivo Solamente</string>
+  <string name="location_modes_toggle_bo">Ahorro de batería/Apagado</string>
+  <string name="location_modes_toggle_so">Dispositivo sólo/apagado</string>
   <string name="enable_navigation_bar_title">Activar la barra de navegación</string>
   <string name="enable_navigation_bar_summary">Activar barra de navegación en la pantalla</string>
   <string name="navbar_ring_cat">Accesos en barra de navegación</string>

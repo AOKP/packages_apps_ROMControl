@@ -383,4 +383,48 @@
         <item>13</item>
     </string-array>
 
+    <!-- LED Values -->
+    <string-array name="led_entries" translatable="false">
+        <item>@string/time_0_seconds_off</item>
+        <item>@string/time_0_2_seconds</item>
+        <item>@string/time_0_5_seconds</item>
+        <item>@string/time_1_second</item>
+        <item>@string/time_1_5_seconds</item>
+        <item>@string/time_2_seconds</item>
+        <item>@string/time_2_5_seconds</item>
+        <item>@string/time_3_seconds</item>
+        <item>@string/time_3_5_seconds</item>
+        <item>@string/time_4_seconds</item>
+        <item>@string/time_4_5_seconds</item>
+        <item>@string/time_5_seconds</item>
+        <item>@string/time_5_5_seconds</item>
+        <item>@string/time_6_seconds</item>
+        <item>@string/time_7_seconds</item>
+        <item>@string/time_8_seconds</item>
+        <item>@string/time_9_seconds</item>
+        <item>@string/time_10_seconds</item>
+    </string-array>
+
+    <!-- values must be in milliseconds! -->
+    <integer-array name="led_values" translatable="false">
+        <item>0</item>
+        <item>200</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+        <item>5000</item>
+        <item>5500</item>
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+        <item>9000</item>
+        <item>10000</item>
+    </integer-array>
+
 </resources>

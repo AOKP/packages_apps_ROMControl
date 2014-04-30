@@ -115,10 +115,24 @@
     <string name="default_color">Default</string>
 
     <!-- Time -->
+    <string name="time_0_seconds_off">Off</string>
+    <string name="time_0_2_seconds">.2 seconds</string>
     <string name="time_0_5_seconds">.5 seconds</string>
     <string name="time_1_second">1 second</string>
+    <string name="time_1_5_seconds">1.5 seconds</string>
     <string name="time_2_seconds">2 seconds</string>
+    <string name="time_2_5_seconds">2.5 seconds</string>
+    <string name="time_3_seconds">3 seconds</string>
+    <string name="time_3_5_seconds">3.5 seconds</string>
+    <string name="time_4_seconds">4 seconds</string>
+    <string name="time_4_5_seconds">4.5 seconds</string>
     <string name="time_5_seconds">5 seconds</string>
+    <string name="time_5_5_seconds">5.5 seconds</string>
+    <string name="time_6_seconds">6 seconds</string>
+    <string name="time_7_seconds">7 seconds</string>
+    <string name="time_8_seconds">8 seconds</string>
+    <string name="time_9_seconds">9 seconds</string>
+    <string name="time_10_seconds">10 seconds</string>
 
     <!-- Dimens -->
     <string name="size_42_dp_default">42 dp (default)</string>
@@ -469,5 +483,26 @@
     <!-- LED -->
     <string name="enable_charging_led_title">Enable charging LED</string>
     <string name="enable_charging_led_summary">The LED is used as charging indicator</string>
+    <string name="led_on">LED on</string>
+    <string name="led_time_on">Time Light is on</string>
+    <string name="led_off">LED off</string>
+    <string name="led_time_off">Time Light is off</string>
+    <string name="led_time_seconds">" seconds"</string>
+    <string name="led_color_click">Click on the LED to change the color</string>
+    <string name="title_led_screen_on">Flash LED while screen is on</string>
+    <string name="led_custom_app">Selected app</string>
+    <string name="led_custom_default">Default</string>
+    <string name="led_change_app">Change</string>
+    <string name="led_delete_app">Delete</string>
+    <string name="led_keep_app">Keep</string>
+    <string name="led_custom_title">Custom LED apps</string>
+    <string name="led_custom_message">"Would you like to change the app: "</string>
+    <string name="led_edit_button">-</string>
+    <string name="led_test_notification">Test LED</string>
+    <string name="led_test_notification_message_now">"Now testing LED for: "</string>
+    <string name="led_test_notification_message_note">.\n\nPlease turn off your screen to see the
+        LED. Don\'t hit OK on this popup until you\'re done viewing the LED color.
+    </string>
+    <string name="led_test_ok">OK</string>
 
 </resources>

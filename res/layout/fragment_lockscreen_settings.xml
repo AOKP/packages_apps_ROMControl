@@ -22,19 +22,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
     <LinearLayout style="@style/settingsFragmentStyle">
 
         <com.aokp.romcontrol.widgets.CategorySeparator
                 style="@style/defaultSize"
                 android:title="@string/category_lockscreen"
-                />
-
-        <com.aokp.romcontrol.settings.ImageSetting
-                android:id="@+id/lockscreen_wallpaper"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:title="@string/lockscreen_wallpaper_title"
-                android:summary="@string/lockscreen_wallpaper_summary"
                 />
 
         <com.aokp.romcontrol.settings.CheckboxSetting

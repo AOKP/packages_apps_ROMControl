@@ -283,10 +283,6 @@
   <string name="volume_music_controls_summary">A zeneszám kihagyása a hangerő le/fel gomb hosszan nyomására</string>
   <string name="lockscreen_minimize_challenge_title">Kisebb zárfeloldó</string>
   <string name="lockscreen_minimize_challenge_summary">Zárképernyő (kör, minta, pin) kihívás minimalizálása, amikor a képernyő bekapcsol.</string>
-  <string name="lockscreen_wallpaper_title">Zárképernyő háttere</string>
-  <string name="lockscreen_wallpaper_summary">Zárképernyő háttér beállítása vagy eltávolítása</string>
-  <string name="lockscreen_wallpaper_pick">Új zárképernyő háttér</string>
-  <string name="lockscreen_wallpaper_remove">Zárképernyő háttér eltávolítása</string>
   <string name="add_button">Gomb hozzáadása</string>
   <string name="navbar_tab_arrange">Újra elrendez</string>
   <string name="navbar_tab_settings">Beállítások</string>

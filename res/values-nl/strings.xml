@@ -290,10 +290,6 @@
   <string name="volume_music_controls_summary">Of volume omhoog/omlaag lang ingedrukt kan worden om nummer over te slaan</string>
   <string name="lockscreen_minimize_challenge_title">Minimaliseer vergrendelscherm uitdaging</string>
   <string name="lockscreen_minimize_challenge_summary">Stel in of de vergrendelscherm uitdaging (cirkel, patroon, pin) wordt geminimaliseerd als het scherm aangezet wordt.</string>
-  <string name="lockscreen_wallpaper_title">Vergrendelscherm achtergrond</string>
-  <string name="lockscreen_wallpaper_summary">Verwijder of stel de huidige vergrendelscherm achtergrond in</string>
-  <string name="lockscreen_wallpaper_pick">Nieuwe vergrendelscherm achtergrond</string>
-  <string name="lockscreen_wallpaper_remove">Verwijder vergrendelscherm achtergrond</string>
   <string name="add_button">Voeg knop toe</string>
   <string name="navbar_tab_arrange">Herordenen</string>
   <string name="navbar_tab_settings">Instellingen</string>

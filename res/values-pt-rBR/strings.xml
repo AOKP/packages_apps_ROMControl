@@ -303,10 +303,6 @@
   <string name="volume_music_controls_summary">Permitir segurar teclas de volume para avançar/recuar faixa de áudio</string>
   <string name="lockscreen_minimize_challenge_title">Reduzir o desafio ao destravar tela</string>
   <string name="lockscreen_minimize_challenge_summary">Definir se o método de desbloqueio (círculo, padrão, pin) é minimizado quando a tela está ativada.</string>
-  <string name="lockscreen_wallpaper_title">Fundo da lockscreen</string>
-  <string name="lockscreen_wallpaper_summary">Definir ou remover fundo da lockscreen</string>
-  <string name="lockscreen_wallpaper_pick">Novo fundo da lockscreen</string>
-  <string name="lockscreen_wallpaper_remove">Remover fundo da lockscreen</string>
   <string name="add_button">Adicionar botão</string>
   <string name="navbar_tab_arrange">Reorganizar</string>
   <string name="navbar_tab_settings">Configurações</string>

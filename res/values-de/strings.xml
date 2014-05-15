@@ -314,10 +314,6 @@
   <string name="volume_music_controls_summary">Lautstärke hoch/runter lange drücken für Titelwechsel</string>
   <string name="lockscreen_minimize_challenge_title">Bildschirmsperre minimieren</string>
   <string name="lockscreen_minimize_challenge_summary">Beim Einschalten des Bildschirms die Sperre (Kreis, Muster, PIN) minimieren.</string>
-  <string name="lockscreen_wallpaper_title">Hintergrund Sperrbildschirm</string>
-  <string name="lockscreen_wallpaper_summary">Setze oder entferne den aktuellen Hintergrund des Sperrbildschirms</string>
-  <string name="lockscreen_wallpaper_pick">Neuer Sperrbildschirm-Hintergrund</string>
-  <string name="lockscreen_wallpaper_remove">Entferne Sperrbildschirm-Hintergrund</string>
   <string name="add_button">Füge Button hinzu</string>
   <string name="navbar_tab_arrange">Umorganisieren</string>
   <string name="navbar_tab_settings">Einstellungen</string>

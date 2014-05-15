@@ -301,10 +301,6 @@
   <string name="volume_music_controls_summary">长按音量键可以切换歌曲</string>
   <string name="lockscreen_minimize_challenge_title">最小化解锁区</string>
   <string name="lockscreen_minimize_challenge_summary">当屏幕开启时最小化解锁区（环形，图形，PIN）</string>
-  <string name="lockscreen_wallpaper_title">锁屏背景</string>
-  <string name="lockscreen_wallpaper_summary">选择或移除当前锁屏背景</string>
-  <string name="lockscreen_wallpaper_pick">新锁屏背景</string>
-  <string name="lockscreen_wallpaper_remove">移除锁屏背景</string>
   <string name="add_button">添加按钮</string>
   <string name="navbar_tab_arrange">排列</string>
   <string name="navbar_tab_settings">设置</string>

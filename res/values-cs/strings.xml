@@ -271,6 +271,17 @@
   <string name="location_modes_toggle_bs">Úspora baterie/Pouze zařízení</string>
   <string name="location_modes_toggle_bo">Úspora baterie/Vypnuto</string>
   <string name="location_modes_toggle_so">Pouze zařízení/Vypnuto</string>
+  <string name="network_modes_category">Síťové režimy k přepínání</string>
+  <string name="network_mode_4g_title">2G/3G/4G preferováno</string>
+  <string name="network_mode_4g_3g_title">3G/4G preferováno</string>
+  <string name="network_mode_4g_only_title">Jen 4G</string>
+  <string name="network_mode_3g_title">2G/3G preferováno</string>
+  <string name="network_mode_3g_auto_title">2G/3G automaticky</string>
+  <string name="network_mode_3g_only_title">Jen 3G</string>
+  <string name="network_mode_2g_title">Jen 2G</string>
+  <string name="network_mode_2g_cdma_title">Jen 2G (CDMA)</string>
+  <string name="network_mode_2g_evdo_title">Jen 2G (EvDo)</string>
+  <string name="network_mode_warning">Nejméně 2 režimy musí být vybrány!</string>
   <string name="enable_navigation_bar_title">Zapnout navigační lištu</string>
   <string name="enable_navigation_bar_summary">Zapnout navigační lištu na obrazovce</string>
   <string name="navbar_ring_cat">Položky navigačního kruhu</string>

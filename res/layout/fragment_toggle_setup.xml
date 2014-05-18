@@ -136,5 +136,73 @@
             android:defaultValue="1"
             />
 
+    <com.aokp.romcontrol.widgets.CategorySeparator
+            style="@style/defaultSize"
+            android:id="@+id/network_modes_category"
+            android:title="@string/network_modes_category"/>
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_4g"
+                    android:title="@string/network_mode_4g_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_4g_3g"
+                    android:title="@string/network_mode_4g_3g_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_4g_only"
+                    android:title="@string/network_mode_4g_only_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_3g"
+                    android:title="@string/network_mode_3g_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_3g_auto"
+                    android:title="@string/network_mode_3g_auto_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_3g_only"
+                    android:title="@string/network_mode_3g_only_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_2g"
+                    android:title="@string/network_mode_2g_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_2g_cdma"
+                    android:title="@string/network_mode_2g_cdma_title"
+                    />
+
+            <com.aokp.romcontrol.settings.CheckboxSetting
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/network_mode_2g_evdo"
+                    android:title="@string/network_mode_2g_evdo_title"
+                    />
+
     </LinearLayout>
 </ScrollView>

@@ -18,6 +18,7 @@ package com.aokp.romcontrol.fragments.toggles;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
@@ -25,14 +26,22 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Toast;
+import android.widget.CheckBox;
+import com.android.internal.telephony.PhoneConstants;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.BaseSetting;
 import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
 import com.aokp.romcontrol.settings.SingleChoiceSetting;
+import com.aokp.romcontrol.widgets.CategorySeparator;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by roman on 12/30/13.
@@ -43,6 +52,15 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
 
     BaseSetting mTogglesFast, mSwipeToSwitch, mFavContact;
     SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide;
+    CategorySeparator mNetworkModesCat;
+    CheckBox mNetworkMode4G, mNetworkMode4G3G, mNetworkMode4Gonly, mNetworkMode4Gcdma, mNetworkMode3G,
+                mNetworkMode3Gauto, mNetworkMode3Gonly, mNetworkMode3Gcdma, mNetworkMode2G,
+                mNetworkMode2Gcdma, mNetworkMode2Gevdo;
+
+    private Activity mActivity;
+    private TelephonyManager mTelephonyManager;
+
+    List<Integer> mMobileNetworks = new ArrayList<Integer>();
 
     public ToggleSettingsFragment() {
 
@@ -52,6 +70,8 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_toggle_setup, container, false);
 
+        mTelephonyManager = (TelephonyManager) mActivity.getSystemService(mActivity.TELEPHONY_SERVICE);
+
         mTogglesFast = (BaseSetting) v.findViewById(R.id.toggles_fast_toggle);
         mSwipeToSwitch = (BaseSetting) v.findViewById(R.id.toggles_swipe_to_switch);
         mTogglesPerRow = (SingleChoiceSetting) v.findViewById(R.id.toggles_per_row);
@@ -59,8 +79,31 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
         mToggleSide = (SingleChoiceSetting) v.findViewById(R.id.toggles_fast_side);
         mFavContact = (BaseSetting) v.findViewById(R.id.toggles_fav_contact);
 
+        mNetworkModesCat = (CategorySeparator) v.findViewById(R.id.network_modes_category);
+        mNetworkMode4G = (CheckBox) v.findViewById(R.id.network_mode_4g);
+        mNetworkMode4G3G = (CheckBox) v.findViewById(R.id.network_mode_4g_3g);
+        mNetworkMode4Gonly = (CheckBox) v.findViewById(R.id.network_mode_4g_only);
+        mNetworkMode3G = (CheckBox) v.findViewById(R.id.network_mode_3g);
+        mNetworkMode3Gauto = (CheckBox) v.findViewById(R.id.network_mode_3g_auto);
+        mNetworkMode3Gonly = (CheckBox) v.findViewById(R.id.network_mode_3g_only);
+        mNetworkMode2G = (CheckBox) v.findViewById(R.id.network_mode_2g);
+        mNetworkMode2Gcdma = (CheckBox) v.findViewById(R.id.network_mode_2g_cdma);
+        mNetworkMode2Gevdo = (CheckBox) v.findViewById(R.id.network_mode_2g_evdo);
+
         mToggleStyle.setOnSettingChangedListener(this);
         mFavContact.setOnClickListener(this);
+
+        mNetworkMode4G.setOnClickListener(this);
+        mNetworkMode4G3G.setOnClickListener(this);
+        mNetworkMode4Gonly.setOnClickListener(this);
+        mNetworkMode3G.setOnClickListener(this);
+        mNetworkMode3Gauto.setOnClickListener(this);
+        mNetworkMode3Gonly.setOnClickListener(this);
+        mNetworkMode2G.setOnClickListener(this);
+        mNetworkMode2Gcdma.setOnClickListener(this);
+        mNetworkMode2Gevdo.setOnClickListener(this);
+
+        setModes();
 
         return v;
     }
@@ -95,8 +138,148 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
                 Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
                 startActivityForResult(intent, PICK_CONTACT);
                 break;
+            case R.id.network_mode_4g:
+            case R.id.network_mode_4g_3g:
+            case R.id.network_mode_4g_only:
+            case R.id.network_mode_3g:
+            case R.id.network_mode_3g_auto:
+            case R.id.network_mode_3g_only:
+            case R.id.network_mode_2g:
+            case R.id.network_mode_2g_cdma:
+            case R.id.network_mode_2g_evdo:
+                createModesList();
+                if (mMobileNetworks.size() >= 2) {
+                    final String value = TextUtils.join("|", mMobileNetworks);
+                    Settings.AOKP.putString(mActivity.getContentResolver(),
+                            Settings.AOKP.NETWORK_MODES_TOGGLE, value);
+                } else {
+                    Toast.makeText(getActivity(), R.string.network_mode_warning, Toast.LENGTH_LONG).show();
+                }
+                break;
         }
     };
+
+    private void setModes() {
+        String default_modes = "";
+        if (isDeviceGSM()) {
+            if (deviceSupportsGSMLTE()) {
+                default_modes = "9|0|1";
+            } else {
+                default_modes = "0|1";
+                mNetworkMode4G.setVisibility(View.GONE);
+                mNetworkMode4G3G.setVisibility(View.GONE);
+                mNetworkMode4Gonly.setVisibility(View.GONE);
+            }
+            mNetworkMode2Gcdma.setVisibility(View.GONE);
+            mNetworkMode2Gevdo.setVisibility(View.GONE);
+        } else if (isDeviceCDMA()) {
+            if (deviceSupportsCDMALTE()) {
+                default_modes = "8|4|5";
+            } else {
+                default_modes = "4|5";
+                mNetworkMode4G.setVisibility(View.GONE);
+            }
+            mNetworkMode4G3G.setVisibility(View.GONE);
+            mNetworkMode4Gonly.setVisibility(View.GONE);
+            mNetworkMode3Gauto.setVisibility(View.GONE);
+            mNetworkMode3Gonly.setVisibility(View.GONE);
+            mNetworkMode2G.setVisibility(View.GONE);
+        } else {
+            mNetworkModesCat.setVisibility(View.GONE);
+            mNetworkMode4G.setVisibility(View.GONE);
+            mNetworkMode4G3G.setVisibility(View.GONE);
+            mNetworkMode4Gonly.setVisibility(View.GONE);
+            mNetworkMode3G.setVisibility(View.GONE);
+            mNetworkMode3Gauto.setVisibility(View.GONE);
+            mNetworkMode3Gonly.setVisibility(View.GONE);
+            mNetworkMode2G.setVisibility(View.GONE);
+            mNetworkMode2Gcdma.setVisibility(View.GONE);
+            mNetworkMode2Gevdo.setVisibility(View.GONE);
+        }
+
+        if (!default_modes.equals("")) {
+            String toggles_string = Settings.AOKP.getString(mActivity.getContentResolver(),
+                Settings.AOKP.NETWORK_MODES_TOGGLE);
+            toggles_string = toggles_string.equals("") ? default_modes : toggles_string;
+            setCheckedModes(toggles_string);
+        }
+    }
+
+    private void setCheckedModes(String toggles) {
+        String[] toggle_modes = toggles.split("|");
+        for (String mode : toggle_modes) {
+            switch (Integer.parseInt(mode)) {
+                case 9:
+                case 8:
+                    mNetworkMode4G.setChecked(true);
+                    break;
+                case 12:
+                    mNetworkMode4G3G.setChecked(true);
+                    break;
+                case 11:
+                    mNetworkMode4Gonly.setChecked(true);
+                    break;
+                case 0:
+                case 4:
+                    mNetworkMode3G.setChecked(true);
+                    break;
+                case 3:
+                    mNetworkMode3Gauto.setChecked(true);
+                    break;
+                case 2:
+                    mNetworkMode3Gonly.setChecked(true);
+                    break;
+                case 1:
+                    mNetworkMode2G.setChecked(true);
+                    break;
+                case 5:
+                    mNetworkMode2Gcdma.setChecked(true);
+                    break;
+                case 6:
+                    mNetworkMode2Gevdo.setChecked(true);
+                    break;
+            }
+        }
+    }
+
+    private void createModesList() {
+        mMobileNetworks.clear();
+        if (mNetworkMode4G.isChecked()) {
+            if (deviceSupportsCDMALTE()) {
+                mMobileNetworks.add(8);
+            } else if (deviceSupportsGSMLTE()) {
+                mMobileNetworks.add(9);
+            }
+        }
+        if (mNetworkMode4G3G.isChecked()) {
+            mMobileNetworks.add(12);
+        }
+        if (mNetworkMode4Gonly.isChecked()) {
+            mMobileNetworks.add(11);
+        }
+        if (mNetworkMode3G.isChecked()) {
+            if (isDeviceCDMA()) {
+                mMobileNetworks.add(4);
+            } else if (isDeviceGSM()) {
+                mMobileNetworks.add(0);
+            }
+        }
+        if (mNetworkMode3Gauto.isChecked()) {
+            mMobileNetworks.add(3);
+        }
+        if (mNetworkMode3Gonly.isChecked()) {
+            mMobileNetworks.add(2);
+        }
+        if (mNetworkMode2G.isChecked()) {
+            mMobileNetworks.add(1);
+        }
+        if (mNetworkMode2Gcdma.isChecked()) {
+            mMobileNetworks.add(5);
+        }
+        if (mNetworkMode2Gevdo.isChecked()) {
+            mMobileNetworks.add(6);
+        }
+    }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
@@ -124,5 +307,21 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private boolean isDeviceCDMA() {
+        return (mTelephonyManager.getPhoneType() == PhoneConstants.PHONE_TYPE_CDMA);
+    }
+
+    private boolean isDeviceGSM() {
+        return (mTelephonyManager.getPhoneType() == PhoneConstants.PHONE_TYPE_GSM);
+    }
+
+    private boolean deviceSupportsCDMALTE() {
+        return (mTelephonyManager.getLteOnCdmaMode() == PhoneConstants.LTE_ON_CDMA_TRUE);
+    }
+
+    private boolean deviceSupportsGSMLTE() {
+        return (mTelephonyManager.getLteOnGsmMode() != 0);
     }
 }

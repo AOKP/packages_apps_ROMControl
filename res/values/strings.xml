@@ -358,6 +358,18 @@
     <string name="location_modes_toggle_bo">Battery saving/Off</string>
     <string name="location_modes_toggle_so">Device only/Off</string>
 
+    <string name="network_modes_category">Network modes to toggle</string>
+    <string name="network_mode_4g_title">2G/3G/4G Preferred</string>
+    <string name="network_mode_4g_3g_title">3G/4G Preferred</string>
+    <string name="network_mode_4g_only_title">4G Only</string>
+    <string name="network_mode_3g_title">2G/3G Preferred</string>
+    <string name="network_mode_3g_auto_title">2G/3G Auto</string>
+    <string name="network_mode_3g_only_title">3G Only</string>
+    <string name="network_mode_2g_title">2G Only</string>
+    <string name="network_mode_2g_cdma_title">2G Only (CDMA)</string>
+    <string name="network_mode_2g_evdo_title">2G Only (EvDo)</string>
+    <string name="network_mode_warning">At least 2 modes have to be selected!</string>
+
     <!-- Navigation Bar -->
     <string name="enable_navigation_bar_title">Enable navigation bar</string>
     <string name="enable_navigation_bar_summary">Enable the on-screen navigation bar</string>

@@ -151,6 +151,7 @@
                 android:title="@string/dismiss_all"
                 android:summary="@string/dismiss_all_summary"
                 android:key="lockscreen_notifications_dismiss_all"
+                android:defaultValue="true"
                 />
 
         <!-- App blacklist temporary removed -->
@@ -163,6 +164,7 @@
                 android:key="lockscreen_notifications_offset_top"
                 android:entries="@array/notifications_offset_entries"
                 android:entryValues="@array/notifications_offset_values"
+                android:defaultValue="0.3"
                 />
 
         <com.aokp.romcontrol.settings.SingleChoiceSetting
@@ -174,6 +176,7 @@
                 android:key="lockscreen_notifications_height"
                 android:entries="@array/notifications_height_entries"
                 android:entryValues="@array/notifications_height_values"
+                android:defaultValue="4"
                 />
 
         <com.aokp.romcontrol.settings.ColorPickerSetting
@@ -201,6 +204,7 @@
                 android:title="@string/expanded_view"
                 android:summary="@string/expanded_view_summary"
                 android:key="lockscreen_notifications_expanded_view"
+                android:defaultValue="true"
                 />
 
         <com.aokp.romcontrol.settings.CheckboxSetting

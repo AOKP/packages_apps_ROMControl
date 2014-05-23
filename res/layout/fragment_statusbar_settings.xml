@@ -254,6 +254,16 @@
                 android:defaultValue="false"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:title="@string/status_bar_show_network_stats_flip_title"
+                android:summary="@string/status_bar_show_network_stats_flip_summary"
+                android:key="status_bar_network_stats_flip"
+                android:defaultValue="false"
+                />
+
         <com.aokp.romcontrol.settings.ColorPickerSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

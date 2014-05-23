@@ -251,6 +251,8 @@
     <string name="status_bar_show_network_stats_summary">Show network speeds in statusbar</string>
     <string name="status_bar_show_network_stats_hide_title">Hide on inactivity</string>
     <string name="status_bar_show_network_stats_hide_summary">Hide network speeds if there is no activity</string>
+    <string name="status_bar_show_network_stats_flip_title">Flip Stats Positions</string>
+    <string name="status_bar_show_network_stats_flip_summary">Swap which is on top/bottom</string>
     <string name="status_bar_network_stats_update_title">Update frequency</string>
     <string name="status_bar_network_stats_update_summary">How often is indicator updated</string>
     <string name="status_bar_network_stats_color_title">Network speeds text color</string>

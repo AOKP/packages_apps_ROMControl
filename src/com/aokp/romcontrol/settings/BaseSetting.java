@@ -238,6 +238,10 @@ public class BaseSetting extends LinearLayout {
         aKey = key;
     }
 
+    public void setDefaultValue(String defaultValue) {
+        aDefaultValue = defaultValue;
+    }
+
     /**
      * @return returns the supplied default value. null if none was provided.
      */
@@ -256,7 +260,7 @@ public class BaseSetting extends LinearLayout {
         return aSummary;
     }
 
-    protected void setSummary(String summary) {
+    public void setSummary(String summary) {
         mSummary = summary;
         if (mDescriptionTextView != null) {
             mDescriptionTextView.setText(summary);

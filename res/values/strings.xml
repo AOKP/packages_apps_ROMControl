@@ -17,7 +17,7 @@
  */
 -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">ROM control</string>
     <string name="rom_control">ROM control</string>
@@ -43,6 +43,16 @@
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
+
+    <!-- MultiChoiceSetting -->
+    <plurals name="multichoice_at_least">
+        <item quantity="one">Please select at least <xliff:g id="number">%d</xliff:g> item.</item>
+        <item quantity="other">Please select at least <xliff:g id="number">%d</xliff:g> items.</item>
+    </plurals>
+    <plurals name="multichoice_at_most">
+        <item quantity="one">Please select at most <xliff:g id="number">%d</xliff:g> item.</item>
+        <item quantity="other">Please select at most <xliff:g id="number">%d</xliff:g> items.</item>
+    </plurals>
 
     <!-- About -->
     <string name="devs">The Crew</string>

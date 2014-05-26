@@ -238,6 +238,10 @@ public class BaseSetting extends LinearLayout {
         aKey = key;
     }
 
+    public void setDefaultValue(String defaultValue) {
+        aDefaultValue = defaultValue;
+    }
+
     /**
      * @return returns the supplied default value. null if none was provided.
      */

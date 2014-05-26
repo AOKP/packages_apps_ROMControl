@@ -42,8 +42,8 @@ public class BaseSetting extends LinearLayout {
     public static final String NAMESPACE_RC = "http://schemas.android.com/apk/res/res-auto";
 
     // values obtained from attributes
-    private String aKey, aTable, aTitle, aSummary, aDefaultValue;
-
+    private String aKey, aTable, aTitle, aSummary;
+    public String aDefaultValue;
     // separate in case we want to query whether one was supplied
     private String mSummary;
 

@@ -391,6 +391,8 @@
   <string name="navigation_bar_height_landscape_summary">Výška navigační lišty v režimu na šířku.</string>
   <string name="navigation_bar_width_title">Šířka navigační lišty</string>
   <string name="navigation_bar_width_summary">Šířka navigační lišty když je zobrazena na straně.</string>
+  <string name="navigation_bar_on_bottom_title">Navigační lišta dole</string>
+  <string name="navigation_bar_on_bottom_summary">Zobrazit navigační lištu v režimu na šířku dole</string>
   <string name="lockscreen_see_through">Průhledná zamčená obrazovka</string>
   <string name="lockscreen_see_through_summary">Zobrazí obsah za zamčenou obrazovkou. Data budou viditelná pro okolí!</string>
   <string name="lockscreen_blur_radius">Rádius rozostření</string>

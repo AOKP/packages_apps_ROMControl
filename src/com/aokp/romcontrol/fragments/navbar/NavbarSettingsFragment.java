@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.android.internal.util.aokp.DeviceUtils;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.BaseSetting;
 import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
@@ -20,6 +21,7 @@ public class NavbarSettingsFragment extends Fragment implements OnSettingChanged
     protected Context mContext;
 
     SingleChoiceSetting navbar_width, navbar_height, navbar_height_landscape;
+    CheckboxSetting navbar_on_bottom;
 
     public NavbarSettingsFragment() {
 
@@ -47,14 +49,14 @@ public class NavbarSettingsFragment extends Fragment implements OnSettingChanged
         mToggleNavbar.setChecked(Settings.AOKP.getBoolean(mContext.getContentResolver(),
                 Settings.AOKP.ENABLE_NAVIGATION_BAR, hasNavbar));
 
+        navbar_on_bottom = (CheckboxSetting) v.findViewById(R.id.navigation_bar_on_bottom);
         navbar_width = (SingleChoiceSetting) v.findViewById(R.id.navigation_bar_width);
         navbar_height = (SingleChoiceSetting) v.findViewById(R.id.navigation_bar_height);
         navbar_height_landscape = (SingleChoiceSetting) v.findViewById(R.id.navigation_bar_height_landscape);
 
-        if (isTablet()) {
+        if (!DeviceUtils.isPhone(mContext)) {
             navbar_width.setVisibility(View.GONE);
-        } else {
-            navbar_height_landscape.setVisibility(View.GONE);
+            navbar_on_bottom.setVisibility(View.GONE);
         }
 
         return v;
@@ -62,17 +64,5 @@ public class NavbarSettingsFragment extends Fragment implements OnSettingChanged
 
     @Override
     public void onSettingChanged(String table, String key, String oldValue, String value) {
-    }
-
-    private boolean isTablet() {
-        DisplayMetrics displayMetrics = mContext.getResources().getDisplayMetrics();
-        int widthPixels = displayMetrics.widthPixels;
-        int heightPixels = displayMetrics.heightPixels;
-        float density = displayMetrics.density;
-        if (widthPixels < heightPixels) {
-            return ((widthPixels / density) >= 600);
-        } else {
-            return ((heightPixels / density) >= 600);
-        }
     }
 }

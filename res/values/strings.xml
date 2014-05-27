@@ -494,6 +494,8 @@
     <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape</string>
     <string name="navigation_bar_width_title">Navigation Bar width</string>
     <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side</string>
+    <string name="navigation_bar_can_move_title">Navigation Bar on side</string>
+    <string name="navigation_bar_can_move_summary">Shows navigation bar in lanscape on the right side</string>
 
     <string name="lockscreen_see_through">Transparent lockscreen</string>
     <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>

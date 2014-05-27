@@ -17,6 +17,16 @@
                 android:defaultValue="false"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation_bar_can_move"
+                android:title="@string/navigation_bar_can_move_title"
+                android:summary="@string/navigation_bar_can_move_summary"
+                android:key="navigation_bar_can_move"
+                android:defaultValue="true"
+                />
+
         <com.aokp.romcontrol.settings.SingleChoiceSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

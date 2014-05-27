@@ -17,6 +17,16 @@
                 android:defaultValue="false"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation_bar_on_bottom"
+                android:title="@string/navigation_bar_on_bottom_title"
+                android:summary="@string/navigation_bar_on_bottom_summary"
+                android:key="navigation_bar_on_bottom"
+                android:defaultValue="false"
+                />
+
         <com.aokp.romcontrol.settings.SingleChoiceSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

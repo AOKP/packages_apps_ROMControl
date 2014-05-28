@@ -258,6 +258,32 @@
         <item>7000</item>
         <item>8000</item>
     </string-array>
+    <string-array name="network_modes_entries" translatable="false">
+        <item>@string/network_mode_4g</item>
+        <item>@string/network_mode_4g</item>
+        <item>@string/network_mode_4g_3g</item>
+        <item>@string/network_mode_4g_only</item>
+        <item>@string/network_mode_3g</item>
+        <item>@string/network_mode_3g</item>
+        <item>@string/network_mode_3g_auto</item>
+        <item>@string/network_mode_3g_only</item>
+        <item>@string/network_mode_2g</item>
+        <item>@string/network_mode_2g_cdma</item>
+        <item>@string/network_mode_2g_evdo</item>
+    </string-array>
+    <string-array name="network_modes_values" translatable="false">
+        <item>9</item>
+        <item>8</item>
+        <item>12</item>
+        <item>11</item>
+        <item>0</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
     <string-array name="location_modes_toggle_entries" translatable="false">
         <item>@string/location_modes_toggle_all</item>
         <item>@string/location_modes_toggle_hbs</item>

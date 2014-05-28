@@ -39,4 +39,5 @@
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
             />
+
 </LinearLayout>

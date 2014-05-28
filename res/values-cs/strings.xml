@@ -282,6 +282,17 @@
   <string name="toggle_favcontact_summary">Zvolit oblíbený kontakt</string>
   <string name="toggle_screenshot_delay_title">Prodleva snímku obrazovky</string>
   <string name="toggle_screenshot_delay_summary">Prodleva před odesláním pokynu k pořízení snímku obrazovky</string>
+  <string name="network_modes_title">Síťové režimy</string>
+  <string name="network_modes_summary">Síťové režimy k přepínání</string>
+  <string name="network_mode_4g">2G/3G/4G preferováno</string>
+  <string name="network_mode_4g_3g">3G/4G preferováno</string>
+  <string name="network_mode_4g_only">Jen 4G</string>
+  <string name="network_mode_3g">2G/3G preferováno</string>
+  <string name="network_mode_3g_auto">2G/3G automaticky</string>
+  <string name="network_mode_3g_only">Jen 3G</string>
+  <string name="network_mode_2g">Jen 2G</string>
+  <string name="network_mode_2g_cdma">Jen 2G (CDMA)</string>
+  <string name="network_mode_2g_evdo">Jen 2G (EvDo)</string>
   <string name="location_modes_toggle_title">Režimy polohy k přepínání</string>
   <string name="location_modes_toggle_all">Všechny</string>
   <string name="location_modes_toggle_hbs">Vysoká přesnost/Úspora baterie/Pouze zařízení</string>

@@ -18,6 +18,7 @@ package com.aokp.romcontrol.fragments.toggles;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
@@ -25,14 +26,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import com.android.internal.telephony.PhoneConstants;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.BaseSetting;
 import com.aokp.romcontrol.settings.BaseSetting.OnSettingChangedListener;
 import com.aokp.romcontrol.settings.SingleChoiceSetting;
+import com.aokp.romcontrol.settings.MultiChoiceSetting;
+import java.util.ArrayList;
 
 /**
  * Created by roman on 12/30/13.
@@ -43,6 +49,10 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
 
     BaseSetting mTogglesFast, mSwipeToSwitch, mFavContact;
     SingleChoiceSetting mTogglesPerRow, mToggleStyle, mToggleSide;
+    MultiChoiceSetting mNetworkModes;
+
+    protected Context mContext;
+    private TelephonyManager mTelephonyManager;
 
     public ToggleSettingsFragment() {
 
@@ -52,12 +62,18 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_toggle_setup, container, false);
 
+        mContext = getActivity();
+        mTelephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+
         mTogglesFast = (BaseSetting) v.findViewById(R.id.toggles_fast_toggle);
         mSwipeToSwitch = (BaseSetting) v.findViewById(R.id.toggles_swipe_to_switch);
         mTogglesPerRow = (SingleChoiceSetting) v.findViewById(R.id.toggles_per_row);
         mToggleStyle = (SingleChoiceSetting) v.findViewById(R.id.toggles_style);
         mToggleSide = (SingleChoiceSetting) v.findViewById(R.id.toggles_fast_side);
         mFavContact = (BaseSetting) v.findViewById(R.id.toggles_fav_contact);
+
+        mNetworkModes = (MultiChoiceSetting) v.findViewById(R.id.network_modes_toggle);
+        setModes();
 
         mToggleStyle.setOnSettingChangedListener(this);
         mFavContact.setOnClickListener(this);
@@ -124,5 +140,66 @@ public class ToggleSettingsFragment extends Fragment implements OnSettingChanged
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void setModes() {
+        if (isDeviceGSM() || isDeviceCDMA()) {
+            ArrayList<String> defaultValues = new ArrayList<String>();
+            ArrayList<String> defaultEntries = new ArrayList<String>();
+            String default_modes = "";
+            if (isDeviceGSM()) {
+                if (deviceSupportsLTE()) {
+                    defaultValues.add("9");
+                    defaultValues.add("12");
+                    defaultValues.add("11");
+                    defaultEntries.add(mContext.getResources().getString(R.string.network_mode_4g));
+                    defaultEntries.add(mContext.getResources().getString(R.string.network_mode_4g_3g));
+                    defaultEntries.add(mContext.getResources().getString(R.string.network_mode_4g_only));
+                    default_modes = "9|0|1";
+                } else {
+                    default_modes = "0|1";
+                }
+                defaultValues.add("0");
+                defaultValues.add("3");
+                defaultValues.add("2");
+                defaultValues.add("1");
+                defaultEntries.add(mContext.getResources().getString(R.string.network_mode_3g));
+                defaultEntries.add(mContext.getResources().getString(R.string.network_mode_3g_auto));
+                defaultEntries.add(mContext.getResources().getString(R.string.network_mode_3g_only));
+                defaultEntries.add(mContext.getResources().getString(R.string.network_mode_2g));
+            } else if (isDeviceCDMA()) {
+                if (deviceSupportsLTE()) {
+                    defaultValues.add("8");
+                    defaultEntries.add(mContext.getResources().getString(R.string.network_mode_4g));
+                    default_modes = "8|4|5";
+                } else {
+                    default_modes = "4|5";
+                }
+                defaultValues.add("4");
+                defaultValues.add("5");
+                defaultValues.add("6");
+                defaultEntries.add(mContext.getResources().getString(R.string.network_mode_3g));
+                defaultEntries.add(mContext.getResources().getString(R.string.network_mode_2g_cdma));
+                defaultEntries.add(mContext.getResources().getString(R.string.network_mode_2g_evdo));
+            }
+            mNetworkModes.setDefaultValue(default_modes);
+            mNetworkModes.setEntryValues(defaultValues.toArray(new String[defaultValues.size()]));
+            mNetworkModes.setEntries(defaultEntries.toArray(new String[defaultEntries.size()]));
+        } else {
+            mNetworkModes.setVisibility(View.GONE);
+        }
+    }
+
+    private boolean isDeviceCDMA() {
+        return (mTelephonyManager.getPhoneType() == PhoneConstants.PHONE_TYPE_CDMA);
+    }
+
+    private boolean isDeviceGSM() {
+        return (mTelephonyManager.getPhoneType() == PhoneConstants.PHONE_TYPE_GSM);
+    }
+
+    private boolean deviceSupportsLTE() {
+        return (mTelephonyManager.getLteOnCdmaMode() == PhoneConstants.LTE_ON_CDMA_TRUE
+                    || mTelephonyManager.getLteOnGsmMode() != 0);
     }
 }

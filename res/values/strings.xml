@@ -516,6 +516,8 @@
     <string name="lockscreen_menu_unlock_title">Menu unlock</string>
     <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
 
+    <string name="display_lockscreen_rotation_title">Rotate lockscreen</string>
+
     <!-- Sound -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Whether safe headset volume warning is shown</string>

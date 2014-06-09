@@ -111,6 +111,7 @@
   <string name="title_hardware_keys_search_long_press">Hledat - dlouhý stisk</string>
   <string name="title_hardware_keys_switch_app">Přehled aplikací</string>
   <string name="title_hardware_keys_switch_app_long_press">Přehled aplikací - dlouhý stisk</string>
+  <string name="title_hardware_keys_camera">Fotoaparát</string>
   <string name="title_setting_enable_custom_hardware_keys">Přizpůsobit hardwarová tlačítka</string>
   <string name="summary_setting_enable_custom_hardware_keys">Zapnout pro umožnění přiřazení vlastní akce hardwarovým tlačítkům.</string>
   <string name="setting_key_home_long_press_action_nothing">Žádná akce</string>
@@ -179,6 +180,8 @@
   <string name="status_bar_show_network_stats_summary">Zobrazit rychlost sítě ve stavové liště</string>
   <string name="status_bar_show_network_stats_hide_title">Skrýt při neaktivitě</string>
   <string name="status_bar_show_network_stats_hide_summary">Skrýt rychlost sítě při neaktivitě</string>
+  <string name="status_bar_show_network_stats_flip_title">Obrátit pozici šipek</string>
+  <string name="status_bar_show_network_stats_flip_summary">Obrátit pozici nahoře/dole</string>
   <string name="status_bar_network_stats_update_title">Rychlost aktualizace</string>
   <string name="status_bar_network_stats_update_summary">Jak často je ukazatel aktualizován</string>
   <string name="status_bar_network_stats_color_title">Barva textu rychlosti sítě</string>
@@ -309,7 +312,6 @@
   <string name="five_targets">5 položek</string>
   <string name="custom_app_icon_successfully">"ikona úspěšně nastavena!"</string>
   <string name="enable_navring_title">Zapnout navigační kruh</string>
-  <string name="enable_navring_summary">[prázdný řetězec]</string>
   <string name="title_animation_controls">Animace</string>
   <string name="activity_open_title">Animace otevření aktivity</string>
   <string name="activity_close_title">Animace zavření aktivity</string>
@@ -437,9 +439,9 @@ Tlačítko OK musí být zmáčknuto až po otestování barvy LED.</string>
   <string name="show_always">Zobrazit vždy</string>
   <string name="show_always_summary">Vždy zapnout obrazovku po vytažení z kapsy, i když nejsou k dispozici žádné notifikace.</string>
   <string name="hide_low_priority">Skrýt s nízkou prioritou</string>
-  <string name="hide_low_priority_summary">Skrýt notikfikace s nízkou prioritou jako upozornění na počasí z Google Now.</string>
+  <string name="hide_low_priority_summary">Skrýt notifikace s nízkou prioritou jako upozornění na počasí z Google Now.</string>
   <string name="hide_non_clearable">Skrýt perzistentní</string>
-  <string name="hide_non_clearable_summary">Skrýt všechny notifikace, které nemohou být odstraněny (Tasker).</string>
+  <string name="hide_non_clearable_summary">Skrýt všechny notifikace, které nemohou být odstraněny (např. Tasker).</string>
   <string name="dismiss_all">Umožnit odstranění všech notifikací</string>
   <string name="dismiss_all_summary">Umožnit odstranění i perzistentních notifikací. Samozřejmě jsou jen skryty na zamčené obrazovce a ne v notifikační liště.</string>
   <string name="expanded_view">Rozšířené zobrazení notifikací</string>
@@ -447,9 +449,9 @@ Tlačítko OK musí být zmáčknuto až po otestování barvy LED.</string>
   <string name="force_expanded_view">Vynutit rozšířené zobrazení</string>
   <string name="force_expanded_view_summary">Zobrazit notifikace v rozšířeném zobrazení jako výchozí. Stále je možné přepínat mezi klasickým a rozšířeným zobrazením.</string>
   <string name="wake_on_notification">Probudit při notifikaci</string>
-  <string name="wake_on_notification_summary">Probudit zařízení po obdržení nové notifikace</string>
+  <string name="wake_on_notification_summary">Probudit zařízení po obdržení nové notifikace.</string>
   <string name="notifications_height">Počet notifikací</string>
-  <string name="notifications_height_summary">Počet notifikací zobrazených najednou</string>
+  <string name="notifications_height_summary">Počet notifikací zobrazených najednou.</string>
   <string name="offset_top">Odsazení od horní části obrazovky:</string>
   <string name="privacy_mode">Soukromý režim</string>
   <string name="privacy_mode_summary">Zakáže notifikacím zobrazení a odstranění. V tomto režimu je možné vidět pouze ikony notifikací.</string>

@@ -55,6 +55,7 @@
   <string name="dialog_color_picker">顏色選擇器</string>
   <string name="arrow_right">→</string>
   <string name="arrow_down">↓</string>
+  <string name="hex">Hex：</string>
   <string name="set">設定</string>
   <string name="default_color">預設</string>
   <string name="time_0_seconds_off">關閉</string>
@@ -84,6 +85,7 @@
   <string name="size_40_dp">40 dp</string>
   <string name="size_42_dp">42 dp</string>
   <string name="use_custom_app_title">使用自訂應用程式</string>
+  <string name="use_custom_app_summary">使用自訂程式替代最近的應用程式對話方塊</string>
   <string name="select_custom_app_title">選擇自訂應用程式</string>
   <string name="group_applications">應用程式</string>
   <string name="ok">確定</string>
@@ -93,7 +95,18 @@
   <string name="center">置中</string>
   <string name="top">頂部</string>
   <string name="bottom">底部</string>
+  <string name="wakeup_when_plugged_unplugged_title">保持啓用</string>
+  <string name="wakeup_when_plugged_unplugged_summary">連線或斷開充電器時取消休眠狀態</string>
+  <string name="title_hardware_keys_home_long_press">首頁 - 長按</string>
+  <string name="title_hardware_keys_home_double_tap">Home - 雙擊</string>
+  <string name="title_hardware_keys_back_long_press">Back - 長按</string>
+  <string name="title_hardware_keys_menu">功能表</string>
+  <string name="title_hardware_keys_menu_long_press">功能表 - 長按</string>
   <string name="title_hardware_keys_search">搜尋</string>
+  <string name="title_hardware_keys_search_long_press">Search - 長按</string>
+  <string name="title_hardware_keys_camera">相機</string>
+  <string name="title_setting_enable_custom_hardware_keys">自訂實體按鍵</string>
+  <string name="summary_setting_enable_custom_hardware_keys">允許自訂實體按鍵的操作。</string>
   <string name="setting_key_home_long_press_action_nothing">無</string>
   <string name="setting_key_home_long_press_action_menu">功能表</string>
   <string name="setting_key_home_long_press_action_appswitch">應用程式開關</string>
@@ -109,6 +122,7 @@
   <string name="adb_notify_summary">當 USB 偵錯模式連接時顯示通知</string>
   <string name="ime_switcher_title">顯示輸入法切換器</string>
   <string name="vibrate_notif_expand_title">展開時震動</string>
+  <string name="notification_count_title">顯示通知數量</string>
   <string name="statusbar_clock_am_pm_style_title">AM/PM 風格</string>
   <string name="statusbar_clock_am_pm_style_summary">如何顯示 AM/PM</string>
   <string name="statusbar_clock_style_title">時鐘風格</string>
@@ -120,9 +134,11 @@
   <string name="small_am_pm">細 AM/PM</string>
   <string name="regular_am_pm">正常 AM/PM</string>
   <string name="small_date">細日期</string>
+  <string name="regular_date">正常日期</string>
   <string name="statusbar_clock_color_title">時鐘顏色</string>
   <string name="statusbar_clock_color_summary">在狀態列中顯示的時鐘顏色</string>
   <string name="battery_percentage_indicator_title">顯示電量百分比</string>
+  <string name="battery_percentage_indicator_summary">在電池圖示前顯示電池狀態的百分比</string>
   <string name="battery_percentage_indicator_plugged_title">顯示充電</string>
   <string name="battery_percentage_indicator_plugged_summary">在充電過程中顯示出不同顏色的電池百分比指示器</string>
   <string name="hide_battery_icon_title">隱藏電池圖示</string>
@@ -134,6 +150,7 @@
   <string name="status_bar_network_title">網絡流量</string>
   <string name="status_bar_show_network_stats_title">顯示網絡速度</string>
   <string name="status_bar_show_network_stats_summary">在狀態欄顯示網絡速度</string>
+  <string name="status_bar_show_network_stats_hide_summary">無活動時隱藏網絡連線速度，</string>
   <string name="status_bar_network_stats_update_title">更新頻率</string>
   <string name="persist_options">持續性</string>
   <string name="persist_enable">啟用持續性</string>
@@ -157,6 +174,7 @@
   <string name="window_size_title">圖示的大小</string>
   <string name="window_settings">視窗設定</string>
   <string name="title_toggles">切換</string>
+  <string name="toggles_style_tile">按鈕</string>
   <string name="toggles_display_close">關閉</string>
   <string name="toggles_order_title">切換順序</string>
   <string name="toggles_style_title">切換風格</string>
@@ -201,11 +219,19 @@
   <string name="animation_duration_default">預設</string>
   <string name="toast_none_animation">無</string>
   <string name="toast_default_animation">預設</string>
+  <string name="toast_Tn_animation">Tn 動畫</string>
+  <string name="toast_Honami_animation">Honami 動畫</string>
+  <string name="toast_FastFade_animation">FastFade 動畫</string>
   <string name="listview_title">列表</string>
   <string name="listview_animation_title">列表視圖動畫</string>
   <string name="listview_off">預設</string>
   <string name="listview_alpha">檢索</string>
+  <string name="listview_translate_left">翻轉 (左)</string>
+  <string name="listview_translate_right">翻轉 (右)</string>
   <string name="listview_interpolator_title">列表視圖插補器</string>
+  <string name="listview_accelerate_interpolator">加速</string>
+  <string name="listview_decelerate_interpolator">減速</string>
+  <string name="listview_accelerate_decelerate_interpolator">加速和減速</string>
   <string name="progressbar_title">進度欄</string>
   <string name="progressbar_mirror_title">鏡像模式</string>
   <string name="progressbar_reverse_title">反轉</string>
@@ -225,6 +251,8 @@
   <string name="hide_option">隱藏選項</string>
   <string name="on_always">顯示選項</string>
   <string name="enable_charging_led_title">啟用充電的 LED</string>
+  <string name="led_on">LED 開啟</string>
+  <string name="led_off">LED 關閉</string>
   <string name="led_time_seconds">"秒"</string>
   <string name="led_custom_app">選定的應用程式</string>
   <string name="led_custom_default">預設</string>
@@ -238,4 +266,6 @@
   <string name="led_test_notification_message_now">"現在測試 LED："</string>
   <string name="led_test_notification_message_note">請關閉您的螢幕來看一看 LED。不要在這個彈出點擊「確定」，直到大功告成觀看 LED 的顏色。</string>
   <string name="led_test_ok">確定</string>
+  <string name="privacy_mode">私隱模式</string>
+  <string name="privacy_mode_summary">從所顯示並駁回禁用通知。通過這種方式，你只看到你的通知圖示。</string>
 </resources>

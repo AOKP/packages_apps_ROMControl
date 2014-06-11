@@ -85,6 +85,16 @@
                 android:key="battery_arc_lockscreen_handle"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_menu_unlock"
+                android:title="@string/lockscreen_menu_unlock_title"
+                android:summary="@string/lockscreen_menu_unlock_summary"
+                android:key="lockscreen_menu_unlock"
+                android:defaultValue="true"
+                />
+
         <com.aokp.romcontrol.widgets.CategorySeparator
                 style="@style/defaultSize"
                 android:title="@string/lockscreen_notifications"

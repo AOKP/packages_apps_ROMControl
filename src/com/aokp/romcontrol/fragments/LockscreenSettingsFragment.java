@@ -16,7 +16,8 @@ import com.aokp.romcontrol.settings.SingleChoiceSetting;
 public class LockscreenSettingsFragment extends Fragment implements OnSettingChangedListener {
 
     CheckboxSetting mLockscreenNotifications, mPocketMode, mShowAlways, mWakeOnNotification, mSeeThrough,
-        mHideLowPriority, mHideNonClearable, mDismissAll, mPrivacyMode, mExpandedView, mExpandedViewForce;
+        mHideLowPriority, mHideNonClearable, mDismissAll, mPrivacyMode, mExpandedView, mExpandedViewForce,
+        mMenuUnlock;
     ColorPickerSetting mNotificationColor;
     SingleChoiceSetting mOffsetTop, mNotificationHeight, mBlurRadius;
     boolean mHasProximitySensor;
@@ -57,6 +58,12 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mSeeThrough = (CheckboxSetting) v.findViewById(R.id.lockscreen_see_through);
         mBlurRadius = (SingleChoiceSetting) v.findViewById(R.id.lockscreen_blur_radius);
 
+        mMenuUnlock = (CheckboxSetting) v.findViewById(R.id.lockscreen_menu_unlock);
+        if (getActivity().getResources().getBoolean(
+                com.android.internal.R.bool.config_disableMenuKeyInLockScreen)) {
+            mMenuUnlock.setVisibility(View.GONE);
+        }
+
         return v;
     }
 
@@ -68,7 +75,7 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mHideNonClearable.setOnSettingChangedListener(this);
         mPrivacyMode.setOnSettingChangedListener(this);
         mExpandedView.setOnSettingChangedListener(this);
-	mSeeThrough.setOnSettingChangedListener(this);
+        mSeeThrough.setOnSettingChangedListener(this);
     }
 
     @Override
@@ -111,7 +118,7 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
             mExpandedViewForce.setVisibility(mLockscreenNotifications.isChecked() ?
                     (mExpandedView.isChecked() ? View.VISIBLE : View.GONE) : View.GONE);
         }
-	if (key.equals("lockscreen_see_through")) {
+    if (key.equals("lockscreen_see_through")) {
             mBlurRadius.setVisibility(mSeeThrough.isChecked() ? View.VISIBLE : View.GONE);
         }
     }

@@ -39,6 +39,7 @@
     <string name="category_ribbons">Ribbons</string>
     <string name="category_animations">Animations</string>
     <string name="category_led">LED</string>
+    <string name="category_auto_immersive">Auto Immersive</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -572,4 +573,8 @@
     <string name="excluded_apps_title">Excluded applications</string>
     <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
     <string name="notification_color">Notification background color</string>
+
+    <!-- Auto Immersive Settings -->
+    <string name="add_immersive_item">Add</string>
+    
 </resources>

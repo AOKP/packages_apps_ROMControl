@@ -28,6 +28,8 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.aokp.romcontrol.R;
 
 import java.net.URISyntaxException;
@@ -114,6 +116,7 @@ public class ShortcutPickerHelper {
     }
 
     private void completeSetCustomApp(Intent data) {
+        Log.d("OMERJERK", "INTENT data = " + data.toString());
         mListener.shortcutPicked(data.toUri(0), getFriendlyActivityName(data, false), null, true);
     }
 

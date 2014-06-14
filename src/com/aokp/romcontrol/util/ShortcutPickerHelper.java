@@ -28,6 +28,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
+
 import com.aokp.romcontrol.R;
 
 import java.net.URISyntaxException;

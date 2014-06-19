@@ -111,6 +111,7 @@
   <string name="title_hardware_keys_search_long_press">Buscar - pulsación larga</string>
   <string name="title_hardware_keys_switch_app">Recientes</string>
   <string name="title_hardware_keys_switch_app_long_press">Recientes - pulsación larga</string>
+  <string name="title_hardware_keys_camera">Cámara</string>
   <string name="title_setting_enable_custom_hardware_keys">Personalizar las teclas físicas</string>
   <string name="summary_setting_enable_custom_hardware_keys">Activar para permitir establecer acciones personalizadas para las teclas de hardware.</string>
   <string name="setting_key_home_long_press_action_nothing">Nada</string>
@@ -176,6 +177,10 @@
   <string name="status_bar_network_title">Tráfico de la Red</string>
   <string name="status_bar_show_network_stats_title">Mostrar velocidad de la Red</string>
   <string name="status_bar_show_network_stats_summary">Mostrar velocidad de la Red en la barra de estado</string>
+  <string name="status_bar_show_network_stats_hide_title">Ocultar por inactividad</string>
+  <string name="status_bar_show_network_stats_hide_summary">Ocultar la velocidad de red sino hay actividad</string>
+  <string name="status_bar_show_network_stats_flip_title">Rotar las Posiciones de las Estadísticas</string>
+  <string name="status_bar_show_network_stats_flip_summary">Swap está en la parte superior/inferior</string>
   <string name="status_bar_network_stats_update_title">Frecuencia de actualización</string>
   <string name="status_bar_network_stats_update_summary">Con qué frecuencia se actualiza el indicador</string>
   <string name="status_bar_network_stats_color_title">Color de texto de velocidades de red</string>
@@ -387,6 +392,7 @@
   <string name="navigation_bar_width_summary">Ancho de la barra de navegación cuando está a lo largo de un lateral.</string>
   <string name="lockscreen_see_through">Pantalla de bloqueo transparente</string>
   <string name="lockscreen_see_through_summary">Muestra el contenido detrás de tu lockscreen, sus datos pueden ser visibles a los que te rodean</string>
+  <string name="lockscreen_blur_radius">Desajuste de la radio</string>
   <string name="battery_arc_lockscreen_handle">Anillo de batería</string>
   <string name="battery_arc_lockscreen_handle_summary">Aro alrededor del candado de la pantalla de bloqueo que indica el nivel de batería</string>
   <string name="safe_headset_volume_title">Volumen de auriculares seguros</string>
@@ -422,4 +428,30 @@
   <string name="led_test_notification_message_now">"Probando LED para: "</string>
   <string name="led_test_notification_message_note">\n\nPor favor apague la pantalla para ver el LED. No presione OK en este popup hasta que haya terminado de ver el color del LED.</string>
   <string name="led_test_ok">OK</string>
+  <string name="lockscreen_notifications">Notificaciones en la Pantalla de Bloqueo</string>
+  <string name="lockscreen_notifications_summary">Mostrar notificaciones pendientes en la pantalla de bloqueo</string>
+  <string name="pocket_mode">Modo bolsillo</string>
+  <string name="pocket_mode_summary">Encender la pantalla y mostrar todas las notificaciones al extraer su dispositivo del bolsillo. Gire la pantalla del dispositivo al devolverlo al bolsillo.</string>
+  <string name="show_always">Mostrar siempre</string>
+  <string name="show_always_summary">Encender siempre la pantalla al sacarlo del bolsillo, aunque no hayan notificaciones pendientes</string>
+  <string name="hide_low_priority">Ocultar prioridad baja</string>
+  <string name="hide_low_priority_summary">Ocultar notificaciones de prioridad baja, tales como las notificaciones del tiempo ahora de google</string>
+  <string name="hide_non_clearable">Ocultar imborrables</string>
+  <string name="hide_non_clearable_summary">Ocultar todas las notificaciones imborrables</string>
+  <string name="dismiss_all">Permite desestimar todas las notificaciones</string>
+  <string name="dismiss_all_summary">Permitir desestimar incluso las notificaciones imborrables. Por supuesto solo estarán escondidas en la pantalla de bloqueo y no en el panel de notificaciones.</string>
+  <string name="expanded_view">Ampliar la vista de notificaciones</string>
+  <string name="expanded_view_summary">Añadir la posibilidad de cambiar entre vista normal y ampliada con pulsación larga. La vista expandida en ocasiones mostrara información más privada que tal vez desees deshabilitar.</string>
+  <string name="force_expanded_view">Forzar vista ampliada</string>
+  <string name="force_expanded_view_summary">Mostrar las notificaciones ampliables de manera predeterminada. Usted seguirá siendo capaz de cambiar entre vista ampliada y normal.</string>
+  <string name="wake_on_notification">Enceder la pantalla al recibir alguna notificación</string>
+  <string name="wake_on_notification_summary">Encender el dispositivo al recibir alguna notificación nueva</string>
+  <string name="notifications_height">Contador de notificaciones</string>
+  <string name="notifications_height_summary">Número de notificaciones que aparecerán de repente</string>
+  <string name="offset_top">Compensación de la parte superior de la pantalla:</string>
+  <string name="privacy_mode">Modo de Privacidad</string>
+  <string name="privacy_mode_summary">Desactiva las notificaciones para mostrar y rechazar. De esta manera, solo se verán los iconos de las notificaciones.</string>
+  <string name="excluded_apps_title">Aplicaciones excluidas</string>
+  <string name="excluded_apps_summary">Las aplicaciones excluidas no serán mostradas en la pantalla de bloqueo</string>
+  <string name="notification_color">Color del fondo de las notificaciones</string>
 </resources>

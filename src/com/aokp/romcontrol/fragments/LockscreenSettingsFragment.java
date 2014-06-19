@@ -15,11 +15,18 @@ import com.aokp.romcontrol.settings.SingleChoiceSetting;
 
 public class LockscreenSettingsFragment extends Fragment implements OnSettingChangedListener {
 
+    private static final int KEY_MASK_MENU = 0x04;
+
     CheckboxSetting mLockscreenNotifications, mPocketMode, mShowAlways, mWakeOnNotification, mSeeThrough,
-        mHideLowPriority, mHideNonClearable, mDismissAll, mPrivacyMode, mExpandedView, mExpandedViewForce;
+        mHideLowPriority, mHideNonClearable, mDismissAll, mPrivacyMode, mExpandedView, mExpandedViewForce,
+        mMenuUnlock;
     ColorPickerSetting mNotificationColor;
     SingleChoiceSetting mOffsetTop, mNotificationHeight, mBlurRadius;
     boolean mHasProximitySensor;
+    boolean mDisableMenuKeyInLockScreen;
+
+    int mHardwareKeyMask;
+    boolean mHasMenu;
 
     public LockscreenSettingsFragment() {
 
@@ -29,7 +36,12 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mHasProximitySensor = getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_PROXIMITY);
+        mHasProximitySensor = getActivity().getPackageManager()
+                .hasSystemFeature(PackageManager.FEATURE_SENSOR_PROXIMITY);
+
+        mHardwareKeyMask = getActivity().getResources()
+                .getInteger(com.android.internal.R.integer.config_deviceHardwareKeys);
+        mHasMenu = (mHardwareKeyMask & KEY_MASK_MENU) != 0;
     }
 
     @Override
@@ -57,6 +69,11 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mSeeThrough = (CheckboxSetting) v.findViewById(R.id.lockscreen_see_through);
         mBlurRadius = (SingleChoiceSetting) v.findViewById(R.id.lockscreen_blur_radius);
 
+        mMenuUnlock = (CheckboxSetting) v.findViewById(R.id.lockscreen_menu_unlock);
+        if(!mHasMenu) {
+            mMenuUnlock.setVisibility(View.GONE);
+        }
+
         return v;
     }
 
@@ -68,7 +85,7 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mHideNonClearable.setOnSettingChangedListener(this);
         mPrivacyMode.setOnSettingChangedListener(this);
         mExpandedView.setOnSettingChangedListener(this);
-	mSeeThrough.setOnSettingChangedListener(this);
+        mSeeThrough.setOnSettingChangedListener(this);
     }
 
     @Override
@@ -111,7 +128,7 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
             mExpandedViewForce.setVisibility(mLockscreenNotifications.isChecked() ?
                     (mExpandedView.isChecked() ? View.VISIBLE : View.GONE) : View.GONE);
         }
-	if (key.equals("lockscreen_see_through")) {
+    if (key.equals("lockscreen_see_through")) {
             mBlurRadius.setVisibility(mSeeThrough.isChecked() ? View.VISIBLE : View.GONE);
         }
     }

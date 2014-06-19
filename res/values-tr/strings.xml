@@ -111,6 +111,7 @@
   <string name="title_hardware_keys_search_long_press">Arama - Uzun Basıldığında</string>
   <string name="title_hardware_keys_switch_app">Son Uygulamalar</string>
   <string name="title_hardware_keys_switch_app_long_press">Son Uygulamalar - Uzun Basıldığında</string>
+  <string name="title_hardware_keys_camera">Kamera</string>
   <string name="title_setting_enable_custom_hardware_keys">Fiziksel tuşları özelleştir</string>
   <string name="summary_setting_enable_custom_hardware_keys">Donanımsal tuşlara özel işlevler ayarlamayı etkin hale getir.</string>
   <string name="setting_key_home_long_press_action_nothing">Hiçbir şey</string>
@@ -176,6 +177,10 @@
   <string name="status_bar_network_title">Ağ trafiği</string>
   <string name="status_bar_show_network_stats_title">Ağ hızını göster</string>
   <string name="status_bar_show_network_stats_summary">Ağ hızını durum çubuğunda gösterir</string>
+  <string name="status_bar_show_network_stats_hide_title">Hiçbirşey olmadığında gizle</string>
+  <string name="status_bar_show_network_stats_hide_summary">Herhangi bir hareketlilik olmadığı zaman ağ hızını gizle</string>
+  <string name="status_bar_show_network_stats_flip_title">İstatistiklerin Konumunu Tersine Çevir</string>
+  <string name="status_bar_show_network_stats_flip_summary">Hangisinin yukarıda/aşağıda olacağını değiştir</string>
   <string name="status_bar_network_stats_update_title">Güncelleştirme sıklığı</string>
   <string name="status_bar_network_stats_update_summary">Göstergenin ne sıklıkla güncelleneceğini belirler</string>
   <string name="status_bar_network_stats_color_title">Ağ hızı rengi</string>
@@ -387,6 +392,7 @@
   <string name="navigation_bar_width_summary">Yatay moddaki tuş kalınlığı</string>
   <string name="lockscreen_see_through">Şeffaf kilit ekranı</string>
   <string name="lockscreen_see_through_summary">Kilit ekranın arkasında açık olan içeriği gösterir, verileriniz görülebilir</string>
+  <string name="lockscreen_blur_radius">Bulanıklık yarıçapı</string>
   <string name="battery_arc_lockscreen_handle">Halka pil göstergesi</string>
   <string name="battery_arc_lockscreen_handle_summary">Kilit ekranındaki tutamaç etrafında halka şeklinde pil seviyesini gösterir</string>
   <string name="safe_headset_volume_title">Kulaklık güvenli ses seviyesi</string>
@@ -422,4 +428,30 @@
   <string name="led_test_notification_message_now">"LED ışığı şunun için test edilecek: "</string>
   <string name="led_test_notification_message_note">.\n\nLED ışığını görmek için lütfen ekranı kapatın. LED rengiyle işiniz bitene kadar bu penceredeki Tamam\'a basmayın.</string>
   <string name="led_test_ok">Tamam</string>
+  <string name="lockscreen_notifications">Kilit Ekranı Bildirimleri</string>
+  <string name="lockscreen_notifications_summary">Kilit Ekranında gelen bildirimleri göster</string>
+  <string name="pocket_mode">Cep modu</string>
+  <string name="pocket_mode_summary">Cihaz cepten çıkarıldığı zaman ekranı aç ve bütün bildirimleri göster. Cihaz cebe girdiğinde ekranı kapat.</string>
+  <string name="show_always">Her zaman göster</string>
+  <string name="show_always_summary">Cihaz cepten çıkınca her zaman ekranı aç, bekleyen bildirim olmasa bile</string>
+  <string name="hide_low_priority">Düşük öncelikleri gizle</string>
+  <string name="hide_low_priority_summary">Google Now hava durumu bildirimleri gibi önemli olmayan bildirimleri gizle</string>
+  <string name="hide_non_clearable">Silinemeyenleri gizle</string>
+  <string name="hide_non_clearable_summary">Tüm silinemeyen bildirimleri gizle</string>
+  <string name="dismiss_all">Bütün bildirimlerin reddedilmesine izin ver</string>
+  <string name="dismiss_all_summary">Silinemeyen bildirimleri bile reddetmeye izin ver.Tabii ki, sadece kilit ekranında gizlenir, bildirim panelinden değil.</string>
+  <string name="expanded_view">Genişletilmiş bildirim görünümü</string>
+  <string name="expanded_view_summary">Uzun basmayla normal görünüm ile genişletilmiş görünüm arasında değişim yapma imkanı ver. Genişletilmiş görünüm bazen daha özel bilgileri gösterebileceği için devre dışı bırakmak isteyebilirsiniz.</string>
+  <string name="force_expanded_view">Genişletilmiş görünümü zorla</string>
+  <string name="force_expanded_view_summary">Varsayılan olarak genişletilmiş bildirimleri göster. Normal ve genişletilmiş görünümü arasında geçiş yapma imkanınız devam edecek.</string>
+  <string name="wake_on_notification">Bildirim geldiğinde uyan</string>
+  <string name="wake_on_notification_summary">Yeni bir bildirim geldiğinde cihazı uyandır</string>
+  <string name="notifications_height">Bildirim sayısı</string>
+  <string name="notifications_height_summary">Bir defada gösterilen bildirim sayısı</string>
+  <string name="offset_top">Ekranın üstünde kaydır:</string>
+  <string name="privacy_mode">Gizlilik modu</string>
+  <string name="privacy_mode_summary">Gösterilen ve reddedilen bildirimleri devre dışı bırakır. Bu şekilde sadece bildirimlerin simgelerini göreceksiniz.</string>
+  <string name="excluded_apps_title">Dışlanan uygulamalar</string>
+  <string name="excluded_apps_summary">Kilit ekranı bildirimlerinde dışlanan uygulamalar gösterilmeyecek</string>
+  <string name="notification_color">Bildirim arka plan rengi</string>
 </resources>

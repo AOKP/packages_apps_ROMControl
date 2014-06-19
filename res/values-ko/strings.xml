@@ -111,6 +111,7 @@
   <string name="title_hardware_keys_search_long_press">검색 - 길게 누르기</string>
   <string name="title_hardware_keys_switch_app">최근 실행한 앱</string>
   <string name="title_hardware_keys_switch_app_long_press">최근 실행한 앱 - 길게 누르기</string>
+  <string name="title_hardware_keys_camera">카메라</string>
   <string name="title_setting_enable_custom_hardware_keys">사용자 정의 하드웨어 키</string>
   <string name="summary_setting_enable_custom_hardware_keys">사용자가 하드웨어 키설정을 할수 있도록 허용합니다.</string>
   <string name="setting_key_home_long_press_action_nothing">없음</string>
@@ -176,6 +177,10 @@
   <string name="status_bar_network_title">네트워크 트래픽</string>
   <string name="status_bar_show_network_stats_title">네트워크 속도 표시</string>
   <string name="status_bar_show_network_stats_summary">상단바에 네트워크 속도 표시</string>
+  <string name="status_bar_show_network_stats_hide_title">비활동시 숨기기</string>
+  <string name="status_bar_show_network_stats_hide_summary">활동이 없는 경우 네트워크 속도 숨기기</string>
+  <string name="status_bar_show_network_stats_flip_title">통계 포지션 플립</string>
+  <string name="status_bar_show_network_stats_flip_summary">스왑 위/아래</string>
   <string name="status_bar_network_stats_update_title">업데이트 빈도</string>
   <string name="status_bar_network_stats_update_summary">네트워크 속도 표시가 업데이트되는 빈도</string>
   <string name="status_bar_network_stats_color_title">네트워크 속도 글자 색</string>
@@ -306,8 +311,6 @@
   <string name="five_targets">5 타겟</string>
   <string name="custom_app_icon_successfully">"의 아이콘이 성공적으로 설정되었습니다!"</string>
   <string name="enable_navring_title">네비게이션 링 사용</string>
-  <string name="enable_navring_summary">[empty string]
-[empty string]</string>
   <string name="title_animation_controls">애니메이션</string>
   <string name="activity_open_title">액티비티 열기 애니메이션</string>
   <string name="activity_close_title">액티비티 종료 애니메이션</string>
@@ -389,6 +392,7 @@
   <string name="navigation_bar_width_summary">가로시 소프트 키 넒이</string>
   <string name="lockscreen_see_through">투명 잠금화면</string>
   <string name="lockscreen_see_through_summary">잠금화면 뒤의 내용을 표시합니다.</string>
+  <string name="lockscreen_blur_radius">블러 반경</string>
   <string name="battery_arc_lockscreen_handle">배터리 핸들</string>
   <string name="battery_arc_lockscreen_handle_summary">잠금화면 락 핸들에 원형으로 배터리 양 표시</string>
   <string name="safe_headset_volume_title">안전한 헤드셋 볼륨</string>
@@ -426,4 +430,30 @@
         LED. Don\'t hit OK on this popup until you\'re done viewing the LED color.
     </string>
   <string name="led_test_ok">확인</string>
+  <string name="lockscreen_notifications">잠금화면 알림</string>
+  <string name="lockscreen_notifications_summary">잠금화면에 보류된 알림 표시</string>
+  <string name="pocket_mode">포켓 모드</string>
+  <string name="pocket_mode_summary">Turn screen on and show all notifications when device is pulled out of pocket. Turn screen off when device gets back into pocket.</string>
+  <string name="show_always">항상 표시</string>
+  <string name="show_always_summary">Always turn screen on when pulled out of pocket, even when there are no notifications pending</string>
+  <string name="hide_low_priority">낮은 우선 순위를 숨기기</string>
+  <string name="hide_low_priority_summary">Hide low priority notifications such as google now weather notifications</string>
+  <string name="hide_non_clearable">Hide non clearable</string>
+  <string name="hide_non_clearable_summary">Hide all non clearable notifications</string>
+  <string name="dismiss_all">모든 알림 해제 허용</string>
+  <string name="dismiss_all_summary">Allow dismissing even non clearable notifications. Of course, they\'re just hidden from lockscreen and not from the notification panel.</string>
+  <string name="expanded_view">확장 알림 보기</string>
+  <string name="expanded_view_summary">Add possibility to toggle between normal and expanded view by longpress. The expanded view sometimes shows more private information so you might want to disable it.</string>
+  <string name="force_expanded_view">강제 확대보기</string>
+  <string name="force_expanded_view_summary">기본적으로 확장 된 알림을 표시합니다. 당신은 확장된알림 이나 일반 알림 을 전환 할 수있을 것입니다.</string>
+  <string name="wake_on_notification">알림 시 화면 켜기</string>
+  <string name="wake_on_notification_summary">새 알림을 받을경우 장치를 깨웁니다</string>
+  <string name="notifications_height">알림 카운트</string>
+  <string name="notifications_height_summary">한 번에 표시 하는 알림 수</string>
+  <string name="offset_top">화면 상단을 오프셋:</string>
+  <string name="privacy_mode">개인 정보 보호 모드</string>
+  <string name="privacy_mode_summary">Disables notifications from beeing shown and dismissed. This way, you just see the icons of your notifications.</string>
+  <string name="excluded_apps_title">제외된 응용 프로그램</string>
+  <string name="excluded_apps_summary">제외된 응용프로그램은 잠금화면 알림에 표시되지 않습니다</string>
+  <string name="notification_color">알림 배경 색상</string>
 </resources>

@@ -110,6 +110,7 @@
   <string name="title_hardware_keys_search_long_press">Tìm kiếm - chạm - giữ</string>
   <string name="title_hardware_keys_switch_app">Gần đây</string>
   <string name="title_hardware_keys_switch_app_long_press">Gần đây - Chạm - giữ</string>
+  <string name="title_hardware_keys_camera">Camera</string>
   <string name="title_setting_enable_custom_hardware_keys">Tuỳ biến phím cứng</string>
   <string name="summary_setting_enable_custom_hardware_keys">Kích hoạt để cho phép các hoạt động tuỳ chỉnh với phím cứng được đặt.</string>
   <string name="setting_key_home_long_press_action_nothing">Không có</string>
@@ -175,6 +176,10 @@
   <string name="status_bar_network_title">Lưu thông mạng</string>
   <string name="status_bar_show_network_stats_title">Hiện tốc độ mạng</string>
   <string name="status_bar_show_network_stats_summary">Hiện tốc độ mạng trong thanh trạng thái</string>
+  <string name="status_bar_show_network_stats_hide_title">Ẩn khi không hoạt động</string>
+  <string name="status_bar_show_network_stats_hide_summary">Ẩn tốc độ mạng nếu không có hoạt động</string>
+  <string name="status_bar_show_network_stats_flip_title">Lật vị trí thống kê</string>
+  <string name="status_bar_show_network_stats_flip_summary">Trao đổi vị trên/dưới cùng</string>
   <string name="status_bar_network_stats_update_title">Tần suất cập nhật</string>
   <string name="status_bar_network_stats_update_summary">Mức độ cập nhật chỉ số</string>
   <string name="status_bar_network_stats_color_title">Màu chữ tốc độ mạng</string>
@@ -386,6 +391,7 @@
   <string name="navigation_bar_width_summary">Chiều cao thanh điều hướng  nếu nằm một bên</string>
   <string name="lockscreen_see_through">Màn hình khoá trong suốt</string>
   <string name="lockscreen_see_through_summary">Hiện nội dung dưới màn hình khoá, dữ liệu của bạn có thể được người xung quanh nhìn thấy</string>
+  <string name="lockscreen_blur_radius">Mờ bán kính</string>
   <string name="battery_arc_lockscreen_handle">Vòng cung pin</string>
   <string name="battery_arc_lockscreen_handle_summary">Một vòng cung xung quanh màn hình khoá đại diện cho mức pin</string>
   <string name="safe_headset_volume_title">Âm lượng tai nghe an toàn</string>
@@ -423,4 +429,30 @@
         đèn LED. Không chọn OK tại mục này đến khi bạn xem xong màu đèn LED.
     </string>
   <string name="led_test_ok">OK</string>
+  <string name="lockscreen_notifications">Thông báo màn hình khoá</string>
+  <string name="lockscreen_notifications_summary">Hiện thông báo đang chờ trên màn hình khoá</string>
+  <string name="pocket_mode">Chế độ bỏ túi</string>
+  <string name="pocket_mode_summary">Bật màn hình và hiện tất cả thông báo khi thiết bị được lấy ra khỏi túi. Tắt màn hình khi thiết bị được cho vào túi.</string>
+  <string name="show_always">Luôn hiện</string>
+  <string name="show_always_summary">Luôn bật màn hình khi lấy ra khỏi túi, kể cả khi không có thông báo đang chờ</string>
+  <string name="hide_low_priority">Ẩn ưu tiên thấp</string>
+  <string name="hide_low_priority_summary">Ẩn thông báo ưu tiên thấp như thông báo thời tiết Google Now chẳng hạn</string>
+  <string name="hide_non_clearable">Ẩn không thể xoá</string>
+  <string name="hide_non_clearable_summary">Ẩn tất cả thông báo không thể xoá</string>
+  <string name="dismiss_all">Cho phép bỏ qua tất cả thông báo</string>
+  <string name="dismiss_all_summary">Cho phép bỏ qua kể cả các thông báo không thể xoá. Dĩ nhiên bạn chỉ có thể ẩn nó khỏi màn hình khoá chứ không phải bảng thông báo.</string>
+  <string name="expanded_view">Xem thông báo mở rộng</string>
+  <string name="expanded_view_summary">Thêm chuyển đổi giữa chế độ xem bình thường và mở rộng bằng cách chạm và giữ. Chế độ xem mở rộng đôi khi hiện nhiều thông tin cá nhân, vậy nên có thể bạn cần vô hiệu nó.</string>
+  <string name="force_expanded_view">Buộc chế độ xem mở rộng</string>
+  <string name="force_expanded_view_summary">Mặc định hiện thông báo mở rộng. Bạn vẫn sẽ có thể chuyển giữa hai chế độ xem.</string>
+  <string name="wake_on_notification">Đánh thức khi có thông báo</string>
+  <string name="wake_on_notification_summary">Đánh thức thiết bị khi nhận được một thông báo mới</string>
+  <string name="notifications_height">Số thông báo</string>
+  <string name="notifications_height_summary">Số thông báo hiển thị cùng lúc</string>
+  <string name="offset_top">Khoảng cách đến trên cùng màn hình:</string>
+  <string name="privacy_mode">Chế độ bảo mật</string>
+  <string name="privacy_mode_summary">Vô hiệu hiển thị, bỏ qua thông báo. Bằng cách này, bạn chỉ thấy biểu tượng của thông báo.</string>
+  <string name="excluded_apps_title">Loại trừ ứng dụng</string>
+  <string name="excluded_apps_summary">Loại trừ ứng dụng sẽ không hiện trong thông báo màn hình khoá</string>
+  <string name="notification_color">Màu nền thông báo</string>
 </resources>

@@ -111,6 +111,7 @@
   <string name="title_hardware_keys_search_long_press">Поиск - удержание</string>
   <string name="title_hardware_keys_switch_app">Недавние</string>
   <string name="title_hardware_keys_switch_app_long_press">Недавние - удержание</string>
+  <string name="title_hardware_keys_camera">Камера</string>
   <string name="title_setting_enable_custom_hardware_keys">Настройка физических клавиш</string>
   <string name="summary_setting_enable_custom_hardware_keys">Включить для установки пользовательских действий на физические клавиши.</string>
   <string name="setting_key_home_long_press_action_nothing">Ничего</string>
@@ -176,6 +177,10 @@
   <string name="status_bar_network_title">Трафик сети</string>
   <string name="status_bar_show_network_stats_title">Скорость сети</string>
   <string name="status_bar_show_network_stats_summary">Отображение скорости сети в строке состояния</string>
+  <string name="status_bar_show_network_stats_hide_title">Скрыть при бездействии</string>
+  <string name="status_bar_show_network_stats_hide_summary">Скрывать скорость сети при отсутствии активности</string>
+  <string name="status_bar_show_network_stats_flip_title">Поменять местами</string>
+  <string name="status_bar_show_network_stats_flip_summary">Поменять местами верхнюю/нижнюю статистику</string>
   <string name="status_bar_network_stats_update_title">Частота обновления</string>
   <string name="status_bar_network_stats_update_summary">Периодичность обновления индикатора</string>
   <string name="status_bar_network_stats_color_title">Цвет текста скорости</string>
@@ -387,6 +392,7 @@
   <string name="navigation_bar_width_summary">Высота навигационной панели при нахождении вдоль края</string>
   <string name="lockscreen_see_through">Прозрачный экран</string>
   <string name="lockscreen_see_through_summary">Отображение содержимого за экраном блокировки. Ваши данные могут быть видимы тем, кто рядом</string>
+  <string name="lockscreen_blur_radius">Радиус размытия</string>
   <string name="battery_arc_lockscreen_handle">Арка батареи</string>
   <string name="battery_arc_lockscreen_handle_summary">Арка вокруг кольца разблокировки, отображающая уровень батареи</string>
   <string name="safe_headset_volume_title">Безопасная громкость</string>
@@ -424,4 +430,30 @@
         индикации. Не нажимайте OK в данном окне, пока пока не увидите цвет индикатора.
     </string>
   <string name="led_test_ok">OK</string>
+  <string name="lockscreen_notifications">Уведомления на экр.блокировки</string>
+  <string name="lockscreen_notifications_summary">Отображение текущих уведомлений на экране блокировки</string>
+  <string name="pocket_mode">Режим кармана</string>
+  <string name="pocket_mode_summary">Включение экрана и отображение всех уведомлений при извлечении устройства из кармана. Выключение экрана при помещении устройства обратно в карман.</string>
+  <string name="show_always">Всегда показывать</string>
+  <string name="show_always_summary">Включение экрана при каждом извлечении устройства из кармана, даже когда уведомления отсутствуют</string>
+  <string name="hide_low_priority">Скрыть низк. приоритет</string>
+  <string name="hide_low_priority_summary">Скрытие низкоприоритетных уведомлений, таких как уведомления о погоде от Google Now</string>
+  <string name="hide_non_clearable">Скрыть неубираемые</string>
+  <string name="hide_non_clearable_summary">Скрытие всех неубираемыех уведомлений</string>
+  <string name="dismiss_all">Разрешить убрать все</string>
+  <string name="dismiss_all_summary">Разрешение скрывать даже неубираемые уведомления. Конечно, они убираются только с экрана блокировки, оставаясь в панели уведомлений.</string>
+  <string name="expanded_view">Развёрнутый вид</string>
+  <string name="expanded_view_summary">Добавление возможности переключения между нормальным и развёрнутым видом удержанием нажатия. В развёрнутом виде иногда отображается больше частной информации, поэтому Вы, возможно, захотите его отключить.</string>
+  <string name="force_expanded_view">Развёрнутый по умолчанию</string>
+  <string name="force_expanded_view_summary">Показывать уведомления развёрнутыми по умолчанию. Вы всё ещё сможете переключаться между развернутым и обычным видом.</string>
+  <string name="wake_on_notification">Пробуждать при уведомлении</string>
+  <string name="wake_on_notification_summary">Пробуждение устройства при получении нового уведомления</string>
+  <string name="notifications_height">Количество уведомлений</string>
+  <string name="notifications_height_summary">Количество отображаемых одновременно уведомлений</string>
+  <string name="offset_top">Отступ от верхнего края экрана:</string>
+  <string name="privacy_mode">Режим инкогнито</string>
+  <string name="privacy_mode_summary">Предотвращение отображения и скрытия уведомлений. В данном режиме Вы просто видите значки Ваших уведомлений.</string>
+  <string name="excluded_apps_title">Исключения</string>
+  <string name="excluded_apps_summary">Исключённые приложения не будут отображать свои уведомления на экране блокировки</string>
+  <string name="notification_color">Цвет фона уведомлений</string>
 </resources>

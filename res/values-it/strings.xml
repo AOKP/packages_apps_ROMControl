@@ -25,7 +25,7 @@
   <string name="category_general">Generale</string>
   <string name="category_statusbar">Barra di stato</string>
   <string name="category_about_aokp">A proposito di</string>
-  <string name="category_hardware_keys">Tasti Fisici</string>
+  <string name="category_hardware_keys">Tasti fisici</string>
   <string name="category_lockscreen">Blocco schermo</string>
   <string name="category_installer">Installatore</string>
   <string name="category_toggles">Toggles</string>
@@ -111,6 +111,7 @@
   <string name="title_hardware_keys_search_long_press">Ricerca - pressione prolungata</string>
   <string name="title_hardware_keys_switch_app">Recenti</string>
   <string name="title_hardware_keys_switch_app_long_press">Recenti - pressione prolungata</string>
+  <string name="title_hardware_keys_camera">Fotocamera</string>
   <string name="title_setting_enable_custom_hardware_keys">Personalizza tasti fisici</string>
   <string name="summary_setting_enable_custom_hardware_keys">Attiva per consentire azione personalizzate per impostare i tasti fisici.</string>
   <string name="setting_key_home_long_press_action_nothing">Niente</string>
@@ -176,6 +177,10 @@
   <string name="status_bar_network_title">Traffico di rete</string>
   <string name="status_bar_show_network_stats_title">Mostra le velocità di rete</string>
   <string name="status_bar_show_network_stats_summary">Mostra le velocità di rete nella barra di stato</string>
+  <string name="status_bar_show_network_stats_hide_title">Nascondi quando inattivo</string>
+  <string name="status_bar_show_network_stats_hide_summary">Nascondi la velocità della rete se non c\'è attività</string>
+  <string name="status_bar_show_network_stats_flip_title">Ruota la posizione delle statistiche</string>
+  <string name="status_bar_show_network_stats_flip_summary">Scambia quale è in basso e quale in alto</string>
   <string name="status_bar_network_stats_update_title">Frequenza di aggiornamento</string>
   <string name="status_bar_network_stats_update_summary">Scegli quanto spesso deve essere aggiornato l\'indicatore</string>
   <string name="status_bar_network_stats_color_title">Colore del testo della velocità di rete</string>
@@ -387,6 +392,7 @@
   <string name="navigation_bar_width_summary">Altezza barra di navigazione se questa si trova a un lato</string>
   <string name="lockscreen_see_through">Blocco schermo trasparente</string>
   <string name="lockscreen_see_through_summary">Mostra il contenuto del dispositivo sotto il blocco schermo. Diventa quindi visibile anche ad altri attorno a te</string>
+  <string name="lockscreen_blur_radius">Raggio di sfocatura</string>
   <string name="battery_arc_lockscreen_handle">Livello batteria nella losckreen</string>
   <string name="battery_arc_lockscreen_handle_summary">Un arco intorno al simbolo di lockscreen rappresenta il livello della batteria</string>
   <string name="safe_headset_volume_title">Volume di sicurezza cuffie</string>
@@ -422,4 +428,30 @@
   <string name="led_test_notification_message_now">"Testando ora il LED per: "</string>
   <string name="led_test_notification_message_note">.\n\nPer favore spegni lo schermo per vedere il LED. Non premere OK su questo pop-up finché non hai finito di guardare il colore del LED.</string>
   <string name="led_test_ok">OK</string>
+  <string name="lockscreen_notifications">Notifiche schermata di sblocco</string>
+  <string name="lockscreen_notifications_summary">Mostra notifiche in sospeso nella lockscreen</string>
+  <string name="pocket_mode">Modalità in tasca</string>
+  <string name="pocket_mode_summary">Accendi lo schermo e mostra le notifiche quando il telefono viene tirato fuori dalla tasca. Spegni lo schermo quando il telefono viene riposto in tasca.</string>
+  <string name="show_always">Mostra sempre</string>
+  <string name="show_always_summary">Accendi sempre lo schermo quando viene estratto dalla tasca, anche quando non ci sono notifiche in sospeso</string>
+  <string name="hide_low_priority">Nascondi priorità bassa</string>
+  <string name="hide_low_priority_summary">Nascondi le notifiche di priorità bassa come le notifiche meteo di Google</string>
+  <string name="hide_non_clearable">Nascondi le non cancellabili</string>
+  <string name="hide_non_clearable_summary">Nascondi tutte le notifiche non cancellabili</string>
+  <string name="dismiss_all">Permetti di respingere tutte le notifiche</string>
+  <string name="dismiss_all_summary">Permetti l\'eliminazione anche delle notifiche non eliminabili. Ovviamente saranno nascoste solamente dalla schermata di blocco, ma non dal pannello notifiche.</string>
+  <string name="expanded_view">Visualizzazione espansa delle notifiche</string>
+  <string name="expanded_view_summary">Aggiungi la possibilità di passare dalla visualizzazione normale a quella espansa con una pressione prolungata. La modalità espansa a volte mostra più informazioni private dunque potresti volerla disabilitare.</string>
+  <string name="force_expanded_view">Forza visualizzazione espansa</string>
+  <string name="force_expanded_view_summary">Visualizza notifiche espanse in modo predefinito. Potrai comunque alternare la visualizzazione estesa e normale.</string>
+  <string name="wake_on_notification">Riaccendi alla notifica</string>
+  <string name="wake_on_notification_summary">Riattiva il dispositivo quando viene ricevuta una nuova notifica</string>
+  <string name="notifications_height">Conteggio delle notifiche</string>
+  <string name="notifications_height_summary">Numero di notifiche visualizzate contemporaneamente</string>
+  <string name="offset_top">Rientro dalla parte superiore dello schermo:</string>
+  <string name="privacy_mode">Modalità privacy</string>
+  <string name="privacy_mode_summary">Disabilita le notifiche dalla visualizzazione o dalla eliminazione. In questo modo, puoi solo vedere le icone delle notifiche.</string>
+  <string name="excluded_apps_title">Applicazioni escluse</string>
+  <string name="excluded_apps_summary">Le applicazioni escluse non appariranno come notifiche nel blocco schermo</string>
+  <string name="notification_color">Colore di sfondo della notifica</string>
 </resources>

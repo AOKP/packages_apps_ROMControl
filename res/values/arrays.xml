@@ -33,6 +33,7 @@
         <item>@string/category_ribbons</item>
         <item>@string/category_animations</item>
         <item>@string/category_led</item>
+        <item>@string/category_auto_immersive</item>
     </string-array>
     <string-array name="navigation_drawer_values" translatable="false">
         <item>about_aokp</item>
@@ -49,6 +50,7 @@
         <item>ribbons</item>
         <item>animations</item>
         <item>led</item>
+        <item>auto_immersive</item>
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
@@ -65,5 +67,6 @@
         <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_animations</item>
         <item>@drawable/ic_rom_control_led</item>
+        <item>@drawable/ic_rom_control_auto_immersive</item>
     </string-array>
 </resources>

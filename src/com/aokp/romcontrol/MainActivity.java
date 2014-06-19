@@ -45,6 +45,7 @@ import com.aokp.romcontrol.fragments.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
+import com.aokp.romcontrol.fragments.AutoImmersiveSettingsFragment;
 
 
 public class MainActivity extends Activity
@@ -143,6 +144,9 @@ public class MainActivity extends Activity
         }
         else if ("led".equals(item)) {
             fragment = new LedSettingsFragment();
+        }
+        else if ("auto_immersive".equals(item)) {
+            fragment = new AutoImmersiveSettingsFragment();
         }
         else {
             // who knows

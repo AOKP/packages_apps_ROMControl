@@ -111,6 +111,7 @@
   <string name="title_hardware_keys_search_long_press">検索 - 長押し</string>
   <string name="title_hardware_keys_switch_app">アプリ履歴</string>
   <string name="title_hardware_keys_switch_app_long_press">アプリ履歴 - 長押し</string>
+  <string name="title_hardware_keys_camera">カメラ</string>
   <string name="title_setting_enable_custom_hardware_keys">ハードウェアキーのカスタマイズ</string>
   <string name="summary_setting_enable_custom_hardware_keys">ハードウェアキーへのアクションの割り当てを有効にする</string>
   <string name="setting_key_home_long_press_action_nothing">なし</string>
@@ -176,6 +177,10 @@
   <string name="status_bar_network_title">ネットワークトラフィック</string>
   <string name="status_bar_show_network_stats_title">ネットワーク速度を表示</string>
   <string name="status_bar_show_network_stats_summary">ステータスバーにネットワーク速度を表示する</string>
+  <string name="status_bar_show_network_stats_hide_title">非アクティブの場合は非表示</string>
+  <string name="status_bar_show_network_stats_hide_summary">アクティビティがない場合ネットワーク速度を表示しない</string>
+  <string name="status_bar_show_network_stats_flip_title">統計の位置を反転</string>
+  <string name="status_bar_show_network_stats_flip_summary">統計の上下の位置を入れ替える</string>
   <string name="status_bar_network_stats_update_title">更新間隔</string>
   <string name="status_bar_network_stats_update_summary">表示する情報の更新間隔を設定する</string>
   <string name="status_bar_network_stats_color_title">ネットワーク速度の文字色</string>
@@ -263,13 +268,13 @@
   <string name="location_modes_toggle_title">トグルの位置情報モード</string>
   <string name="location_modes_toggle_all">全て</string>
   <string name="location_modes_toggle_hbs">高精度/省電力/デバイスのみ</string>
-  <string name="location_modes_toggle_hb">高精度/省電力</string>
-  <string name="location_modes_toggle_hs">高精度/デバイスのみ</string>
+  <string name="location_modes_toggle_hb">高精度/バッテリー節約</string>
+  <string name="location_modes_toggle_hs">高精度/端末のみ</string>
   <string name="location_modes_toggle_ho">高精度/オフ</string>
-  <string name="location_modes_toggle_bso">省電力/デバイスのみ/オフ</string>
-  <string name="location_modes_toggle_bs">省電力/デバイスのみ</string>
-  <string name="location_modes_toggle_bo">省電力/オフ</string>
-  <string name="location_modes_toggle_so">デバイスのみ/オフ</string>
+  <string name="location_modes_toggle_bso">バッテリー節約/端末のみ/オフ</string>
+  <string name="location_modes_toggle_bs">バッテリー節約/端末のみ</string>
+  <string name="location_modes_toggle_bo">バッテリー節約/オフ</string>
+  <string name="location_modes_toggle_so">端末のみ/オフ</string>
   <string name="enable_navigation_bar_title">ナビゲーションバーを表示</string>
   <string name="enable_navigation_bar_summary">画面上にナビゲーションバーを表示する</string>
   <string name="navbar_ring_cat">リングターゲット</string>
@@ -387,6 +392,7 @@
   <string name="navigation_bar_width_summary">ナビゲーションバーがサイドに表示されるときの幅を変更する</string>
   <string name="lockscreen_see_through">ロック画面を透過</string>
   <string name="lockscreen_see_through_summary">ロック画面を透過して後ろの内容を表示する</string>
+  <string name="lockscreen_blur_radius">ぼかしの半径</string>
   <string name="battery_arc_lockscreen_handle">バッテリーアークを表示</string>
   <string name="battery_arc_lockscreen_handle_summary">ロックハンドルの周囲にバッテリー残量を示す弧を表示する</string>
   <string name="safe_headset_volume_title">安全なヘッドセット音量</string>
@@ -424,4 +430,30 @@
         LEDをテストするにはこのまま画面をオフにしてください。LEDのテストが完了するまでOKをタップしないでください。\"
     </string>
   <string name="led_test_ok">OK</string>
+  <string name="lockscreen_notifications">ロック画面通知</string>
+  <string name="lockscreen_notifications_summary">ロック画面に保留中の通知を表示する</string>
+  <string name="pocket_mode">ポケットモード</string>
+  <string name="pocket_mode_summary">デバイスをポケットから取り出すと画面をオンにして全ての通知を表示し、ポケットに戻すと画面をオフにする</string>
+  <string name="show_always">常時ポケットモード</string>
+  <string name="show_always_summary">保留中の通知がない場合でもポケットからデバイスを取り出すと画面をオンにする</string>
+  <string name="hide_low_priority">優先度の低い通知は非表示</string>
+  <string name="hide_low_priority_summary">Google Noｗのような優先度の低い通知は表示しない</string>
+  <string name="hide_non_clearable">削除不可能な通知は非表示</string>
+  <string name="hide_non_clearable_summary">削除することができない通知は表示しない</string>
+  <string name="dismiss_all">全ての通知の削除を許可する</string>
+  <string name="dismiss_all_summary">削除不可能な通知をロック画面上では削除できるようする</string>
+  <string name="expanded_view">通知の展開表示</string>
+  <string name="expanded_view_summary">通知を長押しすることで通知を展開して表示できるようにする</string>
+  <string name="force_expanded_view">デフォルトで通知を展開</string>
+  <string name="force_expanded_view_summary">通知を最初から展開した状態で表示する</string>
+  <string name="wake_on_notification">通知時にウェイクアップ</string>
+  <string name="wake_on_notification_summary">新しい通知を受信した際にデバイスをウェイクアップさせる</string>
+  <string name="notifications_height">表示する通知数</string>
+  <string name="notifications_height_summary">一度に表示する通知の数を設定する</string>
+  <string name="offset_top">画面上部からのオフセット</string>
+  <string name="privacy_mode">プライバシーモード</string>
+  <string name="privacy_mode_summary">通知の内容を表示せずにアイコンだけを表示する</string>
+  <string name="excluded_apps_title">除外アプリ</string>
+  <string name="excluded_apps_summary">除外アプリはロック画面通知に表示しない</string>
+  <string name="notification_color">通知の背景色</string>
 </resources>

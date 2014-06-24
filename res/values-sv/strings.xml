@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ROM Kontroll</string>
   <string name="rom_control">ROM Kontroll</string>
   <string name="navigation_drawer_open">Öppna navigeringslåda</string>

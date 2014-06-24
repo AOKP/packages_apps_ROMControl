@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Ustawienia ROM</string>
   <string name="rom_control">Ustawienia ROM</string>
   <string name="navigation_drawer_open">Otwórz szufladę nawigacji</string>
@@ -36,6 +36,7 @@
   <string name="category_ribbons">Wstążki</string>
   <string name="category_animations">Animacje</string>
   <string name="category_led">LED</string>
+  <string name="category_auto_immersive">Automatycznie rozszerzaj</string>
   <string name="menu_show_drawer_icon">Pokaż w szufladzie aplikacji</string>
   <string name="devs">Ekipa</string>
   <string name="aokp_website_title">Strona AOKP</string>
@@ -363,6 +364,14 @@
   <string name="listview_overshoot_interpolator">Przekraczaj</string>
   <string name="listview_anticipate_overshoot_interpolator">Przewiduj i przekraczaj</string>
   <string name="listview_bounce_interpolator">Podskocz</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">Animacja CRT</string>
+  <string name="system_power_crt_mode_dialog_title">Animacja CRT</string>
+  <string name="system_power_crt_mode_off">Nie pokazuj</string>
+  <string name="system_power_crt_mode_horizontal">Opadanie poziomo</string>
+  <string name="system_power_crt_mode_vertical">Opadanie pionowo</string>
+  <string name="system_power_crt_mode_both">Opadanie zależne od położenia telefonu</string>
+  <string name="system_power_crt_mode_scale">Zmniejszanie</string>
   <string name="progressbar_title">Pasek postępu</string>
   <string name="progressbar_mirror_title">Tryb odbicia</string>
   <string name="progressbar_reverse_title">Odwrócone</string>
@@ -395,6 +404,9 @@
   <string name="lockscreen_blur_radius">Promień rozmycia</string>
   <string name="battery_arc_lockscreen_handle">Uchwyt łuku baterii</string>
   <string name="battery_arc_lockscreen_handle_summary">Łuk dookoła ekranu blokady reprezentujący stan baterii</string>
+  <string name="lockscreen_menu_unlock_title">Odblokowywanie przyciskiem Menu</string>
+  <string name="lockscreen_menu_unlock_summary">Użyj przycisku menu by odblokować telefon</string>
+  <string name="display_lockscreen_rotation_title">Obrót ekranu blokady</string>
   <string name="safe_headset_volume_title">Bezpieczna głośność słuchawek</string>
   <string name="safe_headset_volume_summary">Czy pokazywać ostrzeżenie o zbyt wysokiej głośności przy podłączonych słuchawkach?</string>
   <string name="volume_adjust_sounds_enable_title">Dźwięk zmiany głośności</string>
@@ -454,4 +466,5 @@
   <string name="excluded_apps_title">Wykluczone aplikacje</string>
   <string name="excluded_apps_summary">Powiadomienia wykluczonych aplikacje nie będą pojawiały się na ekranie blokady</string>
   <string name="notification_color">Kolor tła powiadomień</string>
+  <string name="add_immersive_item">Dodaj</string>
 </resources>

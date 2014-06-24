@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Kiểm soát ROM</string>
   <string name="rom_control">Kiểm soát ROM</string>
   <string name="navigation_drawer_open">Mở ngăn điều hướng</string>
@@ -36,7 +36,14 @@
   <string name="category_ribbons">Dải băng</string>
   <string name="category_animations">Hoạt ảnh</string>
   <string name="category_led">LED</string>
+  <string name="category_auto_immersive">Tự bật chế độ thực tại ảo</string>
   <string name="menu_show_drawer_icon">Hiện trong ngăn ứng dụng</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="other">Vui lòng chọn ít nhất <xliff:g id="number">%d</xliff:g> mục.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="other">Vui lòng chọn ít nhất <xliff:g id="number">%d</xliff:g> mục.</item>
+  </plurals>
   <string name="devs">Nhóm phát triển</string>
   <string name="aokp_website_title">Website AOKP</string>
   <string name="aokp_website_summary">www.aokp.co - Tìm những bản phát hành mới nhất tại đây</string>
@@ -362,6 +369,14 @@
   <string name="listview_overshoot_interpolator">Quá đích</string>
   <string name="listview_anticipate_overshoot_interpolator">Dự đoán và quá đích</string>
   <string name="listview_bounce_interpolator">Nảy lên</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">Hoạt ảnh CRT</string>
+  <string name="system_power_crt_mode_dialog_title">Hoạt ảnh CRT</string>
+  <string name="system_power_crt_mode_off">Không hiển thị</string>
+  <string name="system_power_crt_mode_horizontal">Thu hẹp theo chiều ngang</string>
+  <string name="system_power_crt_mode_vertical">Thu hẹp theo chiều dọc</string>
+  <string name="system_power_crt_mode_both">Thu hẹp hai chiều</string>
+  <string name="system_power_crt_mode_scale">Giảm xuống</string>
   <string name="progressbar_title">Thanh tiến trình</string>
   <string name="progressbar_mirror_title">Chế độ gương</string>
   <string name="progressbar_reverse_title">Đảo ngược</string>
@@ -394,6 +409,9 @@
   <string name="lockscreen_blur_radius">Mờ bán kính</string>
   <string name="battery_arc_lockscreen_handle">Vòng cung pin</string>
   <string name="battery_arc_lockscreen_handle_summary">Một vòng cung xung quanh màn hình khoá đại diện cho mức pin</string>
+  <string name="lockscreen_menu_unlock_title">Mở menu</string>
+  <string name="lockscreen_menu_unlock_summary">Dùng phím menu để mở khoá màn hình</string>
+  <string name="display_lockscreen_rotation_title">Xoay màn hình</string>
   <string name="safe_headset_volume_title">Âm lượng tai nghe an toàn</string>
   <string name="safe_headset_volume_summary">Hiện cảnh báo mức âm lượng tai nghe an toàn</string>
   <string name="volume_adjust_sounds_enable_title">Âm báo điều chỉnh âm lượng</string>
@@ -455,4 +473,5 @@
   <string name="excluded_apps_title">Loại trừ ứng dụng</string>
   <string name="excluded_apps_summary">Loại trừ ứng dụng sẽ không hiện trong thông báo màn hình khoá</string>
   <string name="notification_color">Màu nền thông báo</string>
+  <string name="add_immersive_item">Thêm</string>
 </resources>

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">הגדרות רום</string>
   <string name="rom_control">הגדרות רום</string>
   <string name="navigation_drawer_open">פתח מגירת ניווט</string>

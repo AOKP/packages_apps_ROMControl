@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ROM Kontrol</string>
   <string name="rom_control">ROM Kontrol</string>
   <string name="navigation_drawer_open">Navigasyon çekmecesini aç</string>
@@ -36,7 +36,14 @@
   <string name="category_ribbons">Şeritler</string>
   <string name="category_animations">Animasyonlar</string>
   <string name="category_led">LED Seçenekleri</string>
+  <string name="category_auto_immersive">Otomatik Tam Ekran</string>
   <string name="menu_show_drawer_icon">Uygulamalar arasında göster</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="other">Lütfen en az bir seçim <xliff:g id="number">%d</xliff:g> yapın.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="other">Lütfen en çok seçim <xliff:g id="number">%d</xliff:g>yapın.</item>
+  </plurals>
   <string name="devs">Geliştiriciler</string>
   <string name="aokp_website_title">AOKP Web sitesi</string>
   <string name="aokp_website_summary">www.aokp.co - Yeni sürümleri burada bulabilirsiniz</string>
@@ -363,6 +370,14 @@
   <string name="listview_overshoot_interpolator">Aşırı Salınım</string>
   <string name="listview_anticipate_overshoot_interpolator">Öngör ve Aşırısalın</string>
   <string name="listview_bounce_interpolator">Sıçra</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">CRT animasyonu</string>
+  <string name="system_power_crt_mode_dialog_title">CRT animasyonu</string>
+  <string name="system_power_crt_mode_off">Gösterme</string>
+  <string name="system_power_crt_mode_horizontal">Yatay Daralt</string>
+  <string name="system_power_crt_mode_vertical">Dikey Daralt</string>
+  <string name="system_power_crt_mode_both">Oryantasyon bağımlı daralt</string>
+  <string name="system_power_crt_mode_scale">Küçült</string>
   <string name="progressbar_title">İlerleme Çubuğu</string>
   <string name="progressbar_mirror_title">Ayna Modu</string>
   <string name="progressbar_reverse_title">Tersine Çevir</string>
@@ -395,6 +410,9 @@
   <string name="lockscreen_blur_radius">Bulanıklık yarıçapı</string>
   <string name="battery_arc_lockscreen_handle">Halka pil göstergesi</string>
   <string name="battery_arc_lockscreen_handle_summary">Kilit ekranındaki tutamaç etrafında halka şeklinde pil seviyesini gösterir</string>
+  <string name="lockscreen_menu_unlock_title">Menü kilidini aç</string>
+  <string name="lockscreen_menu_unlock_summary">Ekran kilidini açmak için menü tuşunu kullanın</string>
+  <string name="display_lockscreen_rotation_title">Kilit ekranını döndür</string>
   <string name="safe_headset_volume_title">Kulaklık güvenli ses seviyesi</string>
   <string name="safe_headset_volume_summary">Kulaklık takılıyken güvenli ses seviyesinde olup olmadığını hakkında uyarı gösterir</string>
   <string name="volume_adjust_sounds_enable_title">Ses seviyesi değiştirme sesi</string>
@@ -454,4 +472,5 @@
   <string name="excluded_apps_title">Dışlanan uygulamalar</string>
   <string name="excluded_apps_summary">Kilit ekranı bildirimlerinde dışlanan uygulamalar gösterilmeyecek</string>
   <string name="notification_color">Bildirim arka plan rengi</string>
+  <string name="add_immersive_item">Ekle</string>
 </resources>

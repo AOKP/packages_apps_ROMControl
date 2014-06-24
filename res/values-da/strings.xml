@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="devs">Holdet</string>
   <string name="aokp_irc_title">Besøg os på IRC</string>
   <string name="about_aokp">Om AOKP</string>

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ROM Steuerung</string>
   <string name="rom_control">ROM Steuerung</string>
   <string name="navigation_drawer_open">Navigationsleiste öffnen</string>
@@ -36,7 +36,16 @@
   <string name="category_ribbons">Ribbons</string>
   <string name="category_animations">Animationen</string>
   <string name="category_led">Benachrichtigungs-LED</string>
+  <string name="category_auto_immersive">Auto Immersive</string>
   <string name="menu_show_drawer_icon">Zeige in App-Übersicht</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="one">Bitte wählen Sie mindestens <xliff:g id="number"> %d </xliff:g> Element.</item>
+    <item quantity="other">Bitte wählen Sie mindestens <xliff:g id="number"> %d </xliff:g> Elemente.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="one">Bitte wählen Sie höchstens <xliff:g id="number"> %d </xliff:g> Element.</item>
+    <item quantity="other">Bitte wählen Sie höchstens <xliff:g id="number"> %d </xliff:g> Elemente.</item>
+  </plurals>
   <string name="devs">Entwickler</string>
   <string name="aokp_website_title">AOKP Webseite</string>
   <string name="aokp_website_summary">www.aokp.co - Deine Quelle für Neuerscheinungen</string>
@@ -363,6 +372,14 @@
   <string name="listview_overshoot_interpolator">Überschwingen</string>
   <string name="listview_anticipate_overshoot_interpolator">Vorraussehen und Überzeichnen</string>
   <string name="listview_bounce_interpolator">Hüpfend</string>
+  <string name="crt_title">Bildschirm</string>
+  <string name="system_power_crt_mode_title">Abschaltanimation</string>
+  <string name="system_power_crt_mode_dialog_title">Abschaltanimation</string>
+  <string name="system_power_crt_mode_off">Nicht anzeigen</string>
+  <string name="system_power_crt_mode_horizontal">Horizontal zusammenklappen</string>
+  <string name="system_power_crt_mode_vertical">Vertikal Zusammenklappen</string>
+  <string name="system_power_crt_mode_both">Orientierungsabhängig Zusammenklappen</string>
+  <string name="system_power_crt_mode_scale">Verkleinere</string>
   <string name="progressbar_title">Fortschritts-Anzeige</string>
   <string name="progressbar_mirror_title">Gespiegelt</string>
   <string name="progressbar_reverse_title">Umgekehrt</string>
@@ -395,6 +412,9 @@
   <string name="lockscreen_blur_radius">Weichzeichnen-Radius</string>
   <string name="battery_arc_lockscreen_handle">Batterie-Bogen Ring</string>
   <string name="battery_arc_lockscreen_handle_summary">Ein Bogen um den Sperrbildschirm Ring, der die Akkuladung anzeigt</string>
+  <string name="lockscreen_menu_unlock_title">Mit Menü entsperren</string>
+  <string name="lockscreen_menu_unlock_summary">Verwenden Sie die Menü-Taste, um den Bildschirm zu entsperren</string>
+  <string name="display_lockscreen_rotation_title">Lockscreen drehen</string>
   <string name="safe_headset_volume_title">Hinweis bei hoher Kopfhörer Lautstärke</string>
   <string name="safe_headset_volume_summary">Lautstärkewarnung bei Benutzung eines Kopfhörers anzeigen</string>
   <string name="volume_adjust_sounds_enable_title">Ton bei Lautstärkeänderung</string>
@@ -454,4 +474,5 @@
   <string name="excluded_apps_title">Ausgeschlossene Anwendungen</string>
   <string name="excluded_apps_summary">Ausgeschlossenen Anwendungen werden nicht als Sperrbildschirmsbenachrichtigungen angezeigt</string>
   <string name="notification_color">Benachrichtigungshintergrundfarbe</string>
+  <string name="add_immersive_item">Hinzufügen</string>
 </resources>

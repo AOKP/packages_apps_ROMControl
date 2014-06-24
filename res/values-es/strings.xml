@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Control de la ROM</string>
   <string name="rom_control">Control de la ROM</string>
   <string name="navigation_drawer_open">Abrir menú de navegación</string>
@@ -363,6 +363,9 @@
   <string name="listview_overshoot_interpolator">Adelantar la interpolación</string>
   <string name="listview_anticipate_overshoot_interpolator">Anticipar y adelantar la interpolación</string>
   <string name="listview_bounce_interpolator">Rebotar la interpolación</string>
+  <string name="system_power_crt_mode_dialog_title">Animación CRT</string>
+  <string name="system_power_crt_mode_off">No mostrar</string>
+  <string name="system_power_crt_mode_scale">Reducir escala</string>
   <string name="progressbar_title">Barra de progeso</string>
   <string name="progressbar_mirror_title">Modo espejo</string>
   <string name="progressbar_reverse_title">Invertido</string>
@@ -395,6 +398,9 @@
   <string name="lockscreen_blur_radius">Desajuste de la radio</string>
   <string name="battery_arc_lockscreen_handle">Anillo de batería</string>
   <string name="battery_arc_lockscreen_handle_summary">Aro alrededor del candado de la pantalla de bloqueo que indica el nivel de batería</string>
+  <string name="lockscreen_menu_unlock_title">Menú de desbloqueo</string>
+  <string name="lockscreen_menu_unlock_summary">Usar el botón de menú para desbloquear la pantalla</string>
+  <string name="display_lockscreen_rotation_title">Girar pantalla de bloqueo</string>
   <string name="safe_headset_volume_title">Volumen de auriculares seguros</string>
   <string name="safe_headset_volume_summary">Mostrar advertencia de volumen de auricular seguro</string>
   <string name="volume_adjust_sounds_enable_title">Ajustar volumen de sonido</string>
@@ -454,4 +460,5 @@
   <string name="excluded_apps_title">Aplicaciones excluidas</string>
   <string name="excluded_apps_summary">Las aplicaciones excluidas no serán mostradas en la pantalla de bloqueo</string>
   <string name="notification_color">Color del fondo de las notificaciones</string>
+  <string name="add_immersive_item">Añadir</string>
 </resources>

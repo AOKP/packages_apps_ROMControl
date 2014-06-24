@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ROMコントロール</string>
   <string name="rom_control">ROMコントロール</string>
   <string name="navigation_drawer_open">ナビゲーションドロワーを開く</string>
@@ -36,7 +36,14 @@
   <string name="category_ribbons">リボン</string>
   <string name="category_animations">アニメーション</string>
   <string name="category_led">LED</string>
+  <string name="category_auto_immersive">自動拡張デスクトップ</string>
   <string name="menu_show_drawer_icon">アプリドロワーに表示</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="other">少なくとも%d個のアイテムを選択してください</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="other">多くとも%d個のアイテムを選択してください</item>
+  </plurals>
   <string name="devs">開発者</string>
   <string name="aokp_website_title">AOKPウェブサイト</string>
   <string name="aokp_website_summary">http://aokp.co/\n最新情報を確認する</string>
@@ -363,6 +370,14 @@
   <string name="listview_overshoot_interpolator">通り越し</string>
   <string name="listview_anticipate_overshoot_interpolator">先取りと通り越し</string>
   <string name="listview_bounce_interpolator">バウンス</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">CRTアニメーション</string>
+  <string name="system_power_crt_mode_dialog_title">CRTアニメーション</string>
+  <string name="system_power_crt_mode_off">なし</string>
+  <string name="system_power_crt_mode_horizontal">水平方向</string>
+  <string name="system_power_crt_mode_vertical">垂直方向</string>
+  <string name="system_power_crt_mode_both">画面の向きに依存</string>
+  <string name="system_power_crt_mode_scale">スケールダウン</string>
   <string name="progressbar_title">プログレスバー</string>
   <string name="progressbar_mirror_title">ミラーモード</string>
   <string name="progressbar_reverse_title">リバース</string>
@@ -395,6 +410,9 @@
   <string name="lockscreen_blur_radius">ぼかしの半径</string>
   <string name="battery_arc_lockscreen_handle">バッテリーアークを表示</string>
   <string name="battery_arc_lockscreen_handle_summary">ロックハンドルの周囲にバッテリー残量を示す弧を表示する</string>
+  <string name="lockscreen_menu_unlock_title">メニューキーでロックを解除</string>
+  <string name="lockscreen_menu_unlock_summary">メニューキーでロックを解除する</string>
+  <string name="display_lockscreen_rotation_title">ロック画面の回転</string>
   <string name="safe_headset_volume_title">安全なヘッドセット音量</string>
   <string name="safe_headset_volume_summary">ヘッドセット接続時に音量に関する警告を表示する</string>
   <string name="volume_adjust_sounds_enable_title">ボリューム調整音</string>
@@ -456,4 +474,5 @@
   <string name="excluded_apps_title">除外アプリ</string>
   <string name="excluded_apps_summary">除外アプリはロック画面通知に表示しない</string>
   <string name="notification_color">通知の背景色</string>
+  <string name="add_immersive_item">追加</string>
 </resources>

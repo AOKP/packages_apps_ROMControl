@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ROM control</string>
   <string name="rom_control">ROM control</string>
   <string name="navigation_drawer_open">Открыть навигацию</string>
@@ -36,7 +36,18 @@
   <string name="category_ribbons">Ленты</string>
   <string name="category_animations">Анимации</string>
   <string name="category_led">Индикация</string>
+  <string name="category_auto_immersive">Автопогружение</string>
   <string name="menu_show_drawer_icon">Показать в навигации</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="one">Пожалуйста, выберите хотя бы <xliff:g id="number">%d</xliff:g> элемент.</item>
+    <item quantity="few">Пожалуйста, выберите хотя бы <xliff:g id="number">%d</xliff:g> элемента.</item>
+    <item quantity="other">Пожалуйста, выберите хотя бы <xliff:g id="number">%d</xliff:g> элементов.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="one">Пожалуйста, выберите хотя бы <xliff:g id="number">%d</xliff:g>  элемент.</item>
+    <item quantity="few">Пожалуйста, выберите хотя бы <xliff:g id="number">%d</xliff:g>  элемента.</item>
+    <item quantity="other">Пожалуйста, выберите хотя бы <xliff:g id="number">%d</xliff:g>  элементов.</item>
+  </plurals>
   <string name="devs">Команда</string>
   <string name="aokp_website_title">Сайт AOKP</string>
   <string name="aokp_website_summary">www.aokp.co - все новые релизы здесь</string>
@@ -363,6 +374,14 @@
   <string name="listview_overshoot_interpolator">Перекрытие</string>
   <string name="listview_anticipate_overshoot_interpolator">Опережение и перекрытие</string>
   <string name="listview_bounce_interpolator">Отскок</string>
+  <string name="crt_title">Кинескоп</string>
+  <string name="system_power_crt_mode_title">Анимация кинескопа</string>
+  <string name="system_power_crt_mode_dialog_title">Анимация кинескопа</string>
+  <string name="system_power_crt_mode_off">Не показывать</string>
+  <string name="system_power_crt_mode_horizontal">По горизонтали</string>
+  <string name="system_power_crt_mode_vertical">По вертикали</string>
+  <string name="system_power_crt_mode_both">В зависимости от ориентации</string>
+  <string name="system_power_crt_mode_scale">Масштабирование</string>
   <string name="progressbar_title">Шкала выполнения</string>
   <string name="progressbar_mirror_title">Зеркальный режим</string>
   <string name="progressbar_reverse_title">Обратное движение</string>
@@ -395,6 +414,9 @@
   <string name="lockscreen_blur_radius">Радиус размытия</string>
   <string name="battery_arc_lockscreen_handle">Арка батареи</string>
   <string name="battery_arc_lockscreen_handle_summary">Арка вокруг кольца разблокировки, отображающая уровень батареи</string>
+  <string name="lockscreen_menu_unlock_title">Разблокировка кнопкой меню</string>
+  <string name="lockscreen_menu_unlock_summary">Использовать кнопку меню для разблокировки экрана</string>
+  <string name="display_lockscreen_rotation_title">Поворот экрана блокировки</string>
   <string name="safe_headset_volume_title">Безопасная громкость</string>
   <string name="safe_headset_volume_summary">Установка отображения предупреждения о безопасной громкости для наушников</string>
   <string name="volume_adjust_sounds_enable_title">Звук при настройке громкости</string>
@@ -430,7 +452,7 @@
         индикации. Не нажимайте OK в данном окне, пока пока не увидите цвет индикатора.
     </string>
   <string name="led_test_ok">OK</string>
-  <string name="lockscreen_notifications">Уведомления на экр.блокировки</string>
+  <string name="lockscreen_notifications">Уведомления на экране</string>
   <string name="lockscreen_notifications_summary">Отображение текущих уведомлений на экране блокировки</string>
   <string name="pocket_mode">Режим кармана</string>
   <string name="pocket_mode_summary">Включение экрана и отображение всех уведомлений при извлечении устройства из кармана. Выключение экрана при помещении устройства обратно в карман.</string>
@@ -456,4 +478,5 @@
   <string name="excluded_apps_title">Исключения</string>
   <string name="excluded_apps_summary">Исключённые приложения не будут отображать свои уведомления на экране блокировки</string>
   <string name="notification_color">Цвет фона уведомлений</string>
+  <string name="add_immersive_item">Добавить</string>
 </resources>

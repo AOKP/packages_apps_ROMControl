@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Impostazioni ROM</string>
   <string name="rom_control">Impostazioni ROM</string>
   <string name="navigation_drawer_open">Apri Drawer di navigazione</string>
@@ -36,7 +36,16 @@
   <string name="category_ribbons">Nastri</string>
   <string name="category_animations">Animazioni</string>
   <string name="category_led">LED</string>
+  <string name="category_auto_immersive">Auto Immersiva</string>
   <string name="menu_show_drawer_icon">Mostra in drawer applicazioni</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="one">Per favore, seleziona almeno <xliff:g id="number">%d</xliff:g> elemento.</item>
+    <item quantity="other">Per favore, seleziona almeno <xliff:g id="number">%d</xliff:g> elementi.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="one">Per favore, seleziona al massimo  <xliff:g id="number">%d</xliff:g> elemento.</item>
+    <item quantity="other">Per favore, seleziona al massimo  <xliff:g id="number">%d</xliff:g> elementi.</item>
+  </plurals>
   <string name="devs">Il Team</string>
   <string name="aokp_website_title">Sito Web AOKP</string>
   <string name="aokp_website_summary">www.aokp.co - Trovi qui tutte le nuove release</string>
@@ -363,6 +372,14 @@
   <string name="listview_overshoot_interpolator">Supera</string>
   <string name="listview_anticipate_overshoot_interpolator">Anticipa e supera</string>
   <string name="listview_bounce_interpolator">Rimbalza</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">Animazione CRT</string>
+  <string name="system_power_crt_mode_dialog_title">Animazione CRT</string>
+  <string name="system_power_crt_mode_off">Non mostrare</string>
+  <string name="system_power_crt_mode_horizontal">Collasso orizzontale</string>
+  <string name="system_power_crt_mode_vertical">Collasso verticale</string>
+  <string name="system_power_crt_mode_both">Collasso dipendente dall\'orientamento</string>
+  <string name="system_power_crt_mode_scale">Scala verso il basso</string>
   <string name="progressbar_title">Barra di progresso</string>
   <string name="progressbar_mirror_title">Modalità specchio</string>
   <string name="progressbar_reverse_title">Invertita</string>
@@ -395,6 +412,9 @@
   <string name="lockscreen_blur_radius">Raggio di sfocatura</string>
   <string name="battery_arc_lockscreen_handle">Livello batteria nella losckreen</string>
   <string name="battery_arc_lockscreen_handle_summary">Un arco intorno al simbolo di lockscreen rappresenta il livello della batteria</string>
+  <string name="lockscreen_menu_unlock_title">Sblocca con Menu</string>
+  <string name="lockscreen_menu_unlock_summary">Usa il tasto menu per sbloccare lo schermo</string>
+  <string name="display_lockscreen_rotation_title">Ruota la lockscreen</string>
   <string name="safe_headset_volume_title">Volume di sicurezza cuffie</string>
   <string name="safe_headset_volume_summary">Viene visualizzato l\'avviso per il volume delle cuffie troppo alto</string>
   <string name="volume_adjust_sounds_enable_title">Suono di regolazione volume</string>
@@ -454,4 +474,5 @@
   <string name="excluded_apps_title">Applicazioni escluse</string>
   <string name="excluded_apps_summary">Le applicazioni escluse non appariranno come notifiche nel blocco schermo</string>
   <string name="notification_color">Colore di sfondo della notifica</string>
+  <string name="add_immersive_item">Aggiungi</string>
 </resources>

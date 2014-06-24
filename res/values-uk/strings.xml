@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="devs">Команда</string>
   <string name="aokp_irc_title">Приєднуйтесь до нас на IRC</string>
   <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ROM 控制</string>
   <string name="rom_control">ROM 控制</string>
   <string name="navigation_drawer_open">打開導覽抽屜</string>

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">التحكم في الروم</string>
   <string name="rom_control">التحكم في الروم</string>
   <string name="navigation_drawer_open">فتح لوحة الملاحة</string>

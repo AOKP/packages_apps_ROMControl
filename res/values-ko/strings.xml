@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">ROM 컨트롤</string>
   <string name="rom_control">ROM 컨트롤</string>
   <string name="navigation_drawer_open">네비게이션 서랍 열기</string>
@@ -36,7 +36,14 @@
   <string name="category_ribbons">리본</string>
   <string name="category_animations">애니메이션</string>
   <string name="category_led">LED 옵션</string>
+  <string name="category_auto_immersive">자동 몰입</string>
   <string name="menu_show_drawer_icon">어플서랍에서 ROM 컨트롤 보기</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="other">Please select at least <xliff:g id="number">%d</xliff:g> items.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="other">Please select at most <xliff:g id="number">%d</xliff:g> items.</item>
+  </plurals>
   <string name="devs">개발자들</string>
   <string name="aokp_website_title">AOKP 웹사이트</string>
   <string name="aokp_website_summary">www.aokp.co - 최신 버전을 여기서 찾으세요.</string>
@@ -363,6 +370,14 @@
   <string name="listview_overshoot_interpolator">Overshoot</string>
   <string name="listview_anticipate_overshoot_interpolator">Anticipate 및 overshoot</string>
   <string name="listview_bounce_interpolator">튕기기</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">CRT 애니메이션 </string>
+  <string name="system_power_crt_mode_dialog_title">CRT 애니메이션 </string>
+  <string name="system_power_crt_mode_off">표시 안 함</string>
+  <string name="system_power_crt_mode_horizontal">가로 축소</string>
+  <string name="system_power_crt_mode_vertical">세로 축소</string>
+  <string name="system_power_crt_mode_both">오리엔테이션 의존 축소</string>
+  <string name="system_power_crt_mode_scale">Scale down</string>
   <string name="progressbar_title">ProgressBar</string>
   <string name="progressbar_mirror_title">미러 모드</string>
   <string name="progressbar_reverse_title">반전</string>
@@ -395,6 +410,9 @@
   <string name="lockscreen_blur_radius">블러 반경</string>
   <string name="battery_arc_lockscreen_handle">배터리 핸들</string>
   <string name="battery_arc_lockscreen_handle_summary">잠금화면 락 핸들에 원형으로 배터리 양 표시</string>
+  <string name="lockscreen_menu_unlock_title">메뉴 언락</string>
+  <string name="lockscreen_menu_unlock_summary">메뉴 키를 사용 하여 화면 잠금을 해제</string>
+  <string name="display_lockscreen_rotation_title">잠금화면 회전</string>
   <string name="safe_headset_volume_title">안전한 헤드셋 볼륨</string>
   <string name="safe_headset_volume_summary">헤드셋 볼륨 경고 표시 여부</string>
   <string name="volume_adjust_sounds_enable_title">볼륨 소리 조정</string>
@@ -456,4 +474,5 @@
   <string name="excluded_apps_title">제외된 응용 프로그램</string>
   <string name="excluded_apps_summary">제외된 응용프로그램은 잠금화면 알림에 표시되지 않습니다</string>
   <string name="notification_color">알림 배경 색상</string>
+  <string name="add_immersive_item">추가</string>
 </resources>

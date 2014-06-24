@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">රොම් පාලකය</string>
   <string name="rom_control">රොම් පාලකය</string>
   <string name="navigation_drawer_open">සංචාලන ලාච්චුව දිගහරින්න</string>
@@ -36,7 +36,16 @@
   <string name="category_ribbons">පීත්තපටි</string>
   <string name="category_animations">සජීවීකරණ</string>
   <string name="category_led">එළිය</string>
+  <string name="category_auto_immersive">ස්වයං ගිල්වුම</string>
   <string name="menu_show_drawer_icon">යෙදුම් ලාච්චුවේ පෙන්වන්න</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="one">කරුණාකර අවම වශයෙන් <xliff:g id="number">%d</xliff:g> අයිතමයක් වත් තෝරන්න.</item>
+    <item quantity="other">කරුණාකර අවම වශයෙන් අයිතම <xliff:g id="number">%d</xliff:g> වත් තෝරන්න.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="one">කරුණාකර උපරිම වශයෙන් <xliff:g id="number">%d</xliff:g> අයිතමයක් තෝරන්න.</item>
+    <item quantity="other">කරුණාකර උපරිම වශයෙන් අයිතම <xliff:g id="number">%d</xliff:g> තෝරන්න.</item>
+  </plurals>
   <string name="devs">කතෘන් සමූහය</string>
   <string name="aokp_website_title">AOKP වෙබ්අඩවිය</string>
   <string name="aokp_website_summary">සියලු නවතම නිකුත්කිරීම් සඳහා www.aokp.co වෙත පිවිසෙන්න</string>
@@ -363,6 +372,14 @@
   <string name="listview_overshoot_interpolator">වැඩිපුර විදීම</string>
   <string name="listview_anticipate_overshoot_interpolator">පුර්වාපේක්ෂාව සහ වැඩිපුර විදීම</string>
   <string name="listview_bounce_interpolator">පොළා පැනීම</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">CRT සජීවීකරණය</string>
+  <string name="system_power_crt_mode_dialog_title">CRT සජීවීකරණය</string>
+  <string name="system_power_crt_mode_off">නොපෙන්වන්න</string>
+  <string name="system_power_crt_mode_horizontal">තිරස්ව අකුළන්න</string>
+  <string name="system_power_crt_mode_vertical">සිරස්ව අකුළන්න</string>
+  <string name="system_power_crt_mode_both">දිශානතියට පරායත්තව අකුළන්න</string>
+  <string name="system_power_crt_mode_scale">ප්‍රමාණය අව කරන්න</string>
   <string name="progressbar_title">ප්‍රගති පාදය</string>
   <string name="progressbar_mirror_title">කැඩපත් ප්‍රකාරය</string>
   <string name="progressbar_reverse_title">ප්‍රතිවර්තිත</string>
@@ -395,6 +412,9 @@
   <string name="lockscreen_blur_radius">අවිශදතා අරය</string>
   <string name="battery_arc_lockscreen_handle">අගුලේ බැටරි චාපය</string>
   <string name="battery_arc_lockscreen_handle_summary">බැටරියේ ආරෝපණ මට්ටම පිළිබිඹු කරමින් අගුළු තිරයේ අගුල වටා චාපයක් පෙන්වන්න</string>
+  <string name="lockscreen_menu_unlock_title">මෙනුවෙන් අගුළු ඇරීම</string>
+  <string name="lockscreen_menu_unlock_summary">තිරය අඟුළු ඇරීමට මෙනුව යතුර භාවිතා කරන්න</string>
+  <string name="display_lockscreen_rotation_title">අගුළු තිරය භ්‍රමණය කරන්න</string>
   <string name="safe_headset_volume_title">සුරක්ෂිත කන්යොමු ශබ්දය</string>
   <string name="safe_headset_volume_summary">සුරක්ෂිත කන්යොමු ශබ්ද අවවාදය පෙන්වියයුතුද යන්න</string>
   <string name="volume_adjust_sounds_enable_title">ශබ්දය වෙනස්කිරීමේ හඬ</string>
@@ -441,7 +461,7 @@
   <string name="hide_non_clearable">ඉවත්කළ නොහැකි දෑ සඟවන්න</string>
   <string name="hide_non_clearable_summary">සියලුම ඉවත්කළ නොහැකි දැනුම්දීම් සඟවන්න</string>
   <string name="dismiss_all">සියලු දැනුම්දීම් ඉවතලෑම අනුමත කරන්න</string>
-  <string name="dismiss_all_summary">ඉවත්කළ නොහැකි දැනුම්දීම් සඳහාද ඉවතලෑම අනුමත කරන්න. ඇත්තෙන්ම, ඒවා අගුළු තිරයෙන් සැඟවෙනවා පමණය දැනුම්දීම් පනේලයෙන් ඉවත්වන්නේ නැත.</string>
+  <string name="dismiss_all_summary">ඉවත්කළ නොහැකි දැනුම්දීම් සඳහාද ඉවතලෑම අනුමත කරන්න. ඇත්තෙන්ම, ඒවා අගුළු තිරයෙන් සැඟවෙනවා පමණය, දැනුම්දීම් පුවරුවෙන් ඉවත්වන්නේ නැත.</string>
   <string name="expanded_view">විහිදුණු දැනුම්දීම් දැක්ම</string>
   <string name="expanded_view_summary">දිගු එබීම මගින් සාමාන්‍ය සහ විහිදුණු දැක්ම අතර ටොගලනය කිරීමේ හැකියාව එක් කරන්න. සමහරවිට විහිදුණු දැක්ම වැඩියෙන් පුද්ගලික තොරතුරු පෙන්වයි එබැවින් ඔබට එය අබල කිරීමට අවශ්‍යවනු ඇත.</string>
   <string name="force_expanded_view">විහිදුණු දැක්ම බල කරන්න</string>
@@ -456,4 +476,5 @@
   <string name="excluded_apps_title">බැහැර කළ යෙදුම්</string>
   <string name="excluded_apps_summary">බැහැර කළ යෙදුම් අගුළු තිර දැනුම්දීම් ලෙස නොපෙන්වනු ඇත</string>
   <string name="notification_color">දැනුම්දීමේ පසුබිම් පැහැය</string>
+  <string name="add_immersive_item">එකතු කරන්න</string>
 </resources>

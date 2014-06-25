@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aokp.romcontrol.fragments;
+package com.aokp.romcontrol.fragments.headsup;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -40,7 +40,7 @@ import com.google.android.apps.dashclock.ui.SwipeDismissListViewTouchListener;
 
 import java.util.ArrayList;
 
-public class HeadsUpSettingsFragment extends Fragment {
+public class HeadsUpBlacklistSettingsFragment extends Fragment {
 
     private Context mContext;
 
@@ -48,7 +48,7 @@ public class HeadsUpSettingsFragment extends Fragment {
     private ArrayList<String> appsNameList = new ArrayList<String>();
     private ArrayAdapter<String> mArrayAdapter;
 
-    public HeadsUpSettingsFragment() {
+    public HeadsUpBlacklistSettingsFragment() {
 
     }
 
@@ -60,10 +60,10 @@ public class HeadsUpSettingsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_headsup_settings, container, false);
+        View v = inflater.inflate(R.layout.fragment_headsup_blacklist_settings, container, false);
         mContext = getActivity();
         appsPackageList = Settings.AOKP.getArrayList(mContext.getContentResolver(),
-                Settings.AOKP.HEADS_UP_CUSTOM_VALUES);
+                Settings.AOKP.HEADS_UP_BLACKLIST_VALUES);
         appsNameList = generateApplicationsNameList(appsPackageList);
         ListView mAppsListView = (ListView) v.findViewById(R.id.listview_headsup);
         SwipeDismissListViewTouchListener touchListener =
@@ -83,7 +83,7 @@ public class HeadsUpSettingsFragment extends Fragment {
                                 }
                                 mArrayAdapter.notifyDataSetChanged();
                                 Settings.AOKP.putArrayList(mContext.getContentResolver(),
-                                        Settings.AOKP.HEADS_UP_CUSTOM_VALUES, appsPackageList);
+                                        Settings.AOKP.HEADS_UP_BLACKLIST_VALUES, appsPackageList);
                             }
                         });
         mAppsListView.setOnTouchListener(touchListener);
@@ -129,7 +129,7 @@ public class HeadsUpSettingsFragment extends Fragment {
                     if (!appsPackageList.contains(packageName)) {
                         appsPackageList.add(packageName);
                         appsNameList.add(getApplicationName(mContext.getPackageManager(), packageName));
-                        Settings.AOKP.putArrayList(mContext.getContentResolver(), Settings.AOKP.HEADS_UP_CUSTOM_VALUES, appsPackageList);
+                        Settings.AOKP.putArrayList(mContext.getContentResolver(), Settings.AOKP.HEADS_UP_BLACKLIST_VALUES, appsPackageList);
                         mArrayAdapter.notifyDataSetChanged();
                         break;
                     }

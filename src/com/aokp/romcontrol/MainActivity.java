@@ -46,7 +46,7 @@ import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
 import com.aokp.romcontrol.fragments.AutoImmersiveSettingsFragment;
-import com.aokp.romcontrol.fragments.HeadsUpSettingsFragment;
+import com.aokp.romcontrol.fragments.headsup.HeadsUpTabHostFragment;
 
 
 public class MainActivity extends Activity
@@ -150,7 +150,7 @@ public class MainActivity extends Activity
             fragment = new AutoImmersiveSettingsFragment();
         }
         else if ("headsup".equals(item)) {
-            fragment = new HeadsUpSettingsFragment();
+            fragment = new HeadsUpTabHostFragment();
         }
         else {
             // who knows

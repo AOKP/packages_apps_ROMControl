@@ -19,19 +19,19 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               style="@style/settingsFragmentStyle">
+    <TextView
+            android:text="@string/add_heads_up_dnd_summary"
+            android:padding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:key="heads_up_enabled"
-        android:title="@string/title_heads_up_enabled"
-        android:defaultValue="false" 
-        />
+    <com.aokp.romcontrol.widgets.CategorySeparator
+            style="@style/defaultSize"/>
 
     <ListView
         android:id="@+id/listview_headsup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
+        android:layout_height="match_parent"
         />
 
 </LinearLayout>

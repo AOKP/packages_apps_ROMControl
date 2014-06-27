@@ -606,10 +606,10 @@
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>
     <string name="title_heads_up_enabled">Enable heads up</string>
-    <string name="add_heads_up_package">Add app</string>
+    <string name="add_app">Add app</string>
     <string name="heads_up_dnd_title">Do not disturb</string>
     <string name="heads_up_blacklist_title">Blacklist</string>
-    <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
-    <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
+    <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications. Remove by swiping.</string>
+    <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications. Remove by swiping.</string>
 
 </resources>

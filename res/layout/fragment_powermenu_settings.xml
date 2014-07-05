@@ -45,7 +45,7 @@
 
                 android:entries="@array/power_menuEntries"
                 android:entryValues="@array/power_menuValues"
-                android:defaultValue="0"
+                android:defaultValue="1"
                 />
 
         <com.aokp.romcontrol.settings.SingleChoiceSetting
@@ -81,7 +81,7 @@
 
                 android:entries="@array/power_menuEntries"
                 android:entryValues="@array/power_menuValues"
-                android:defaultValue="0"
+                android:defaultValue="2"
                 />
 
     </LinearLayout>

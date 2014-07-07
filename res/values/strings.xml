@@ -377,6 +377,8 @@
     <!-- Navigation Bar -->
     <string name="enable_navigation_bar_title">Enable navigation bar</string>
     <string name="enable_navigation_bar_summary">Enable the on-screen navigation bar</string>
+    <string name="navigation_bar_dpad_keys_title">Navigation bar keys</string>
+    <string name="navigation_bar_dpad_keys_summary">Show arrow keys while keyboard is shown</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation ring targets</string>

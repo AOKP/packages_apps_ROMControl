@@ -59,5 +59,15 @@
                 android:defaultValue="42"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation_bar_dpad_keys"
+                android:title="@string/navigation_bar_dpad_keys_title"
+                android:summary="@string/navigation_bar_dpad_keys_summary"
+                android:key="navigation_bar_dpad_keys"
+                android:defaultValue="false"
+                />
+
     </LinearLayout>
 </ScrollView>

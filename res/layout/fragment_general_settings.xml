@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2013, The Android Open Kang Project
+ * Copyright (c) 2013-2014, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,5 +38,14 @@
             android:summary="@string/wakeup_when_plugged_unplugged_summary"
             android:key="wakeup_when_plugged_unplugged"
             android:defaultValue="true"
+            />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/setting_force_highend_gfx"
+            android:title="@string/force_highend_gfx_title"
+            android:summary="@string/force_highend_gfx_summary"
             />
 </LinearLayout>

@@ -37,6 +37,7 @@
   <string name="category_animations">Animasyonlar</string>
   <string name="category_led">LED Seçenekleri</string>
   <string name="category_auto_immersive">Otomatik Tam Ekran</string>
+  <string name="category_headsup">Üst bildirim</string>
   <string name="menu_show_drawer_icon">Uygulamalar arasında göster</string>
   <plurals name="multichoice_at_least">
     <item quantity="other">Lütfen en az bir seçim <xliff:g id="number">%d</xliff:g> yapın.</item>
@@ -472,5 +473,11 @@
   <string name="excluded_apps_title">Dışlanan uygulamalar</string>
   <string name="excluded_apps_summary">Kilit ekranı bildirimlerinde dışlanan uygulamalar gösterilmeyecek</string>
   <string name="notification_color">Bildirim arka plan rengi</string>
-  <string name="add_immersive_item">Ekle</string>
+  <string name="category_heads_up">Üst bildirim</string>
+  <string name="title_heads_up_enabled">Üst bildirimi etkinleştir</string>
+  <string name="add_app">Uygulama Ekle</string>
+  <string name="heads_up_dnd_title">Rahatsız Etme</string>
+  <string name="heads_up_blacklist_title">Kara liste</string>
+  <string name="add_heads_up_dnd_summary">Bu uygulamalarda üst bildirimi gösterme. Kaydırarak sil.</string>
+  <string name="add_heads_up_blacklist_summary">Bu uygulamalardan gelecek üst bildirimleri gösterme. Kaydırarak sil.</string>
 </resources>

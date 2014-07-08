@@ -37,6 +37,7 @@
   <string name="category_animations">Hoạt ảnh</string>
   <string name="category_led">LED</string>
   <string name="category_auto_immersive">Tự bật chế độ thực tại ảo</string>
+  <string name="category_headsup">Heads up</string>
   <string name="menu_show_drawer_icon">Hiện trong ngăn ứng dụng</string>
   <plurals name="multichoice_at_least">
     <item quantity="other">Vui lòng chọn ít nhất <xliff:g id="number">%d</xliff:g> mục.</item>
@@ -473,5 +474,11 @@
   <string name="excluded_apps_title">Loại trừ ứng dụng</string>
   <string name="excluded_apps_summary">Loại trừ ứng dụng sẽ không hiện trong thông báo màn hình khoá</string>
   <string name="notification_color">Màu nền thông báo</string>
-  <string name="add_immersive_item">Thêm</string>
+  <string name="category_heads_up">Heads up</string>
+  <string name="title_heads_up_enabled">Sử dụng Heads up</string>
+  <string name="add_app">Thêm ứ.dụng</string>
+  <string name="heads_up_dnd_title">Không làm phiền</string>
+  <string name="heads_up_blacklist_title">Danh sách đen</string>
+  <string name="add_heads_up_dnd_summary">Không hiện heads up trong những ứng dụng này. Loại bỏ bằng cách vuốt.</string>
+  <string name="add_heads_up_blacklist_summary">Không hiện heads up từ những ứng dụng này. Loại bỏ bằng cách vuốt.</string>
 </resources>

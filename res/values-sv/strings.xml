@@ -36,6 +36,8 @@
   <string name="category_ribbons">Ribbons</string>
   <string name="category_animations">Animationer</string>
   <string name="category_led">LED</string>
+  <string name="category_auto_immersive">Auto Omslutande</string>
+  <string name="category_headsup">Heads-up</string>
   <string name="menu_show_drawer_icon">Visa bland appar</string>
   <string name="devs">The Crew</string>
   <string name="aokp_website_title">AOKP Hemsida</string>
@@ -363,6 +365,14 @@
   <string name="listview_overshoot_interpolator">Överskridande</string>
   <string name="listview_anticipate_overshoot_interpolator">Förutse och överskridande</string>
   <string name="listview_bounce_interpolator">Studsa</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">CRT animation</string>
+  <string name="system_power_crt_mode_dialog_title">CRT animation</string>
+  <string name="system_power_crt_mode_off">Visa inte</string>
+  <string name="system_power_crt_mode_horizontal">Dölja horisontella</string>
+  <string name="system_power_crt_mode_vertical">Dölja lodräta</string>
+  <string name="system_power_crt_mode_both">Kollaps orienterings beroende</string>
+  <string name="system_power_crt_mode_scale">Skala ner</string>
   <string name="progressbar_title">ProgressBar</string>
   <string name="progressbar_mirror_title">Spegel-läge</string>
   <string name="progressbar_reverse_title">Omvänd</string>
@@ -395,6 +405,9 @@
   <string name="lockscreen_blur_radius">Suddig radius</string>
   <string name="battery_arc_lockscreen_handle">Batteri hanterings båge</string>
   <string name="battery_arc_lockscreen_handle_summary">En båge runt lås ringen i låsskärmen som representerar batterinivå</string>
+  <string name="lockscreen_menu_unlock_title">Lås upp med meny</string>
+  <string name="lockscreen_menu_unlock_summary">Använd meny knappen för att låsa upp skärmen</string>
+  <string name="display_lockscreen_rotation_title">Rotera låsskärm</string>
   <string name="safe_headset_volume_title">Säker headset volym</string>
   <string name="safe_headset_volume_summary">Om säker headset volym varning visas</string>
   <string name="volume_adjust_sounds_enable_title">Justera ljudets volym</string>
@@ -454,4 +467,11 @@
   <string name="excluded_apps_title">Undantagna program</string>
   <string name="excluded_apps_summary">Undantagna program syns inte på låsskärmsmeddelande</string>
   <string name="notification_color">Meddelande bakgrundsfärg</string>
+  <string name="category_heads_up">Heads-up</string>
+  <string name="title_heads_up_enabled">Aktivera heads up</string>
+  <string name="add_app">Lägg till app</string>
+  <string name="heads_up_dnd_title">Stör ej</string>
+  <string name="heads_up_blacklist_title">Svartlista</string>
+  <string name="add_heads_up_dnd_summary">Visa inte heads up i dessa program. Ta bort genom att dra.</string>
+  <string name="add_heads_up_blacklist_summary">Visa inte heads up i dessa program. Ta bort genom att dra.</string>
 </resources>

@@ -36,6 +36,7 @@
   <string name="category_ribbons">Barre de raccourcis</string>
   <string name="category_animations">Animations</string>
   <string name="category_led">Voyant de notification</string>
+  <string name="category_headsup">Notifications flottantes</string>
   <string name="menu_show_drawer_icon">Afficher l\'application dans la liste</string>
   <string name="devs">L\'équipe</string>
   <string name="aokp_website_title">Site Web AOKP</string>
@@ -356,6 +357,7 @@
   <string name="listview_overshoot_interpolator">Dépasser</string>
   <string name="listview_anticipate_overshoot_interpolator">Anticiper et Dépasser</string>
   <string name="listview_bounce_interpolator">Rebond</string>
+  <string name="system_power_crt_mode_off">Ne pas afficher</string>
   <string name="progressbar_title">Barre de progression</string>
   <string name="progressbar_mirror_title">Mode Miroir</string>
   <string name="progressbar_reverse_title">Inversé</string>
@@ -409,4 +411,11 @@
   <string name="led_color_click">Cliquez sur la LED pour changer la couleur</string>
   <string name="title_led_screen_on">Clignoter la LED quand l\'écran est allumé</string>
   <string name="led_custom_app">Application sélectionnée</string>
+  <string name="led_custom_default">Par défaut</string>
+  <string name="led_change_app">Changer</string>
+  <string name="led_delete_app">Supprimer</string>
+  <string name="led_keep_app">Garder</string>
+  <string name="category_heads_up">Notifications flottantes</string>
+  <string name="title_heads_up_enabled">Activer les notifications flottantes</string>
+  <string name="heads_up_dnd_title">Ne pas déranger</string>
 </resources>

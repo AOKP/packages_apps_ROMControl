@@ -37,6 +37,7 @@
   <string name="category_animations">动画</string>
   <string name="category_led">灯光</string>
   <string name="category_auto_immersive">自动沉浸</string>
+  <string name="category_headsup">浮动通知</string>
   <string name="menu_show_drawer_icon">在应用列表中显示</string>
   <plurals name="multichoice_at_least">
     <item quantity="other">请至少选择 <xliff:g id="number"> %d 个 </xliff:g> 项目。</item>
@@ -472,5 +473,11 @@
   <string name="excluded_apps_title">被排除的应用程序</string>
   <string name="excluded_apps_summary">已排除的应用程序将不会显示在锁屏界面通知</string>
   <string name="notification_color">通知背景颜色</string>
-  <string name="add_immersive_item">添加</string>
+  <string name="category_heads_up">浮动通知</string>
+  <string name="title_heads_up_enabled">启用浮动通知</string>
+  <string name="add_app">添加应用程序</string>
+  <string name="heads_up_dnd_title">请勿打扰</string>
+  <string name="heads_up_blacklist_title">黑名单</string>
+  <string name="add_heads_up_dnd_summary">不要在这些应用上显示浮动通知。滑动可移除。</string>
+  <string name="add_heads_up_blacklist_summary">不要显示来自这些应用的浮动通知。滑动可移除。</string>
 </resources>

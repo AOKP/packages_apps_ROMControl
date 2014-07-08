@@ -37,6 +37,7 @@
   <string name="category_animations">Animazioni</string>
   <string name="category_led">LED</string>
   <string name="category_auto_immersive">Auto Immersiva</string>
+  <string name="category_headsup">Fluttuanti</string>
   <string name="menu_show_drawer_icon">Mostra in drawer applicazioni</string>
   <plurals name="multichoice_at_least">
     <item quantity="one">Per favore, seleziona almeno <xliff:g id="number">%d</xliff:g> elemento.</item>
@@ -474,5 +475,11 @@
   <string name="excluded_apps_title">Applicazioni escluse</string>
   <string name="excluded_apps_summary">Le applicazioni escluse non appariranno come notifiche nel blocco schermo</string>
   <string name="notification_color">Colore di sfondo della notifica</string>
-  <string name="add_immersive_item">Aggiungi</string>
+  <string name="category_heads_up">Fluttuanti</string>
+  <string name="title_heads_up_enabled">Abilita fluttuanti</string>
+  <string name="add_app">Aggiungi App</string>
+  <string name="heads_up_dnd_title">Non disturbare</string>
+  <string name="heads_up_blacklist_title">Lista Nera</string>
+  <string name="add_heads_up_dnd_summary">Non mostrare le notifiche fluttuanti in queste applicazioni. Rimuovi con uno swipe.</string>
+  <string name="add_heads_up_blacklist_summary">Non mostrare le notifiche fluttuanti di queste applicazioni. Rimuovi con uno swipe.</string>
 </resources>

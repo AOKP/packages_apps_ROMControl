@@ -37,6 +37,7 @@
   <string name="category_animations">애니메이션</string>
   <string name="category_led">LED 옵션</string>
   <string name="category_auto_immersive">자동 몰입</string>
+  <string name="category_headsup">Heads up</string>
   <string name="menu_show_drawer_icon">어플서랍에서 ROM 컨트롤 보기</string>
   <plurals name="multichoice_at_least">
     <item quantity="other">Please select at least <xliff:g id="number">%d</xliff:g> items.</item>
@@ -474,5 +475,11 @@
   <string name="excluded_apps_title">제외된 응용 프로그램</string>
   <string name="excluded_apps_summary">제외된 응용프로그램은 잠금화면 알림에 표시되지 않습니다</string>
   <string name="notification_color">알림 배경 색상</string>
-  <string name="add_immersive_item">추가</string>
+  <string name="category_heads_up">Heads up</string>
+  <string name="title_heads_up_enabled">heads up 활성화</string>
+  <string name="add_app">응용 프로그램 추가</string>
+  <string name="heads_up_dnd_title">방해 금지:</string>
+  <string name="heads_up_blacklist_title">블랙리스트</string>
+  <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications. Remove by swiping.</string>
+  <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications. Remove by swiping.</string>
 </resources>

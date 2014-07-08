@@ -37,6 +37,7 @@
   <string name="category_animations">Animace</string>
   <string name="category_led">LED</string>
   <string name="category_auto_immersive">Automatické skrývání lišt</string>
+  <string name="category_headsup">Plovoucí notifikace</string>
   <string name="menu_show_drawer_icon">Zobrazit v navigační liště</string>
   <plurals name="multichoice_at_least">
     <item quantity="one">Je nutné vybrat nejméně <xliff:g id="number">%d</xliff:g> položku.</item>
@@ -480,5 +481,11 @@ Tlačítko OK musí být zmáčknuto až po otestování barvy LED.</string>
   <string name="excluded_apps_title">Vyjmuté aplikace</string>
   <string name="excluded_apps_summary">Vyjmuté aplikace nebudou zobrazeny jako notifikace na zamčené obrazovce.</string>
   <string name="notification_color">Barva pozadí notifikace</string>
-  <string name="add_immersive_item">Přidat</string>
+  <string name="category_heads_up">Plovoucí notifikace</string>
+  <string name="title_heads_up_enabled">Zapnout plovoucí notifikace</string>
+  <string name="add_app">Přidat aplikaci</string>
+  <string name="heads_up_dnd_title">Nerušit</string>
+  <string name="heads_up_blacklist_title">Černá listina</string>
+  <string name="add_heads_up_dnd_summary">Nezobrazovat plovoucí notifikace v těchto aplikacích. Odstranit vysunutím.</string>
+  <string name="add_heads_up_blacklist_summary">Nepoužívat plovoucí notifikace pro tyto aplikace. Odstranit vysunutím.</string>
 </resources>

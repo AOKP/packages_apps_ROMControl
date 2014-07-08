@@ -36,7 +36,17 @@
   <string name="category_ribbons">Cintas</string>
   <string name="category_animations">Animaciones</string>
   <string name="category_led">Opciones LED</string>
+  <string name="category_auto_immersive">Auto inmersivo</string>
+  <string name="category_headsup">Notificaciones emergentes</string>
   <string name="menu_show_drawer_icon">Mostrar aplicación en el menu</string>
+  <plurals name="multichoice_at_least">
+    <item quantity="one">Por favor seleccione al menos <xliff:g id="number"> %d </xliff:g> elemeto.</item>
+    <item quantity="other">Por favor seleccione al menos <xliff:g id="number"> %d </xliff:g> elementos.</item>
+  </plurals>
+  <plurals name="multichoice_at_most">
+    <item quantity="one">Por favor seleccione como máximo <xliff:g id="number"> %d </xliff:g> elemeto.</item>
+    <item quantity="other">Por favor seleccione como máximo <xliff:g id="number"> %d </xliff:g> elemetos.</item>
+  </plurals>
   <string name="devs">El equipo</string>
   <string name="aokp_website_title">Página web de AOKP</string>
   <string name="aokp_website_summary">www.aokp.co - Encuentre todos los nuevos lanzamientos aquí</string>
@@ -363,8 +373,13 @@
   <string name="listview_overshoot_interpolator">Adelantar la interpolación</string>
   <string name="listview_anticipate_overshoot_interpolator">Anticipar y adelantar la interpolación</string>
   <string name="listview_bounce_interpolator">Rebotar la interpolación</string>
+  <string name="crt_title">CRT</string>
+  <string name="system_power_crt_mode_title">Animación CRT</string>
   <string name="system_power_crt_mode_dialog_title">Animación CRT</string>
   <string name="system_power_crt_mode_off">No mostrar</string>
+  <string name="system_power_crt_mode_horizontal">Colapso horizontal</string>
+  <string name="system_power_crt_mode_vertical">Colapso vertical</string>
+  <string name="system_power_crt_mode_both">Colapso dependiente de la orientación</string>
   <string name="system_power_crt_mode_scale">Reducir escala</string>
   <string name="progressbar_title">Barra de progeso</string>
   <string name="progressbar_mirror_title">Modo espejo</string>
@@ -460,5 +475,11 @@
   <string name="excluded_apps_title">Aplicaciones excluidas</string>
   <string name="excluded_apps_summary">Las aplicaciones excluidas no serán mostradas en la pantalla de bloqueo</string>
   <string name="notification_color">Color del fondo de las notificaciones</string>
-  <string name="add_immersive_item">Añadir</string>
+  <string name="category_heads_up">Notificaciones emergentes</string>
+  <string name="title_heads_up_enabled">Mostrar notificaciones</string>
+  <string name="add_app">Añadir aplicación</string>
+  <string name="heads_up_dnd_title">No molestar</string>
+  <string name="heads_up_blacklist_title">Lista negra</string>
+  <string name="add_heads_up_dnd_summary">No se muestran las notificacones en estas aplicaciones. Elimine deslizando.</string>
+  <string name="add_heads_up_blacklist_summary">No se muestran las notificacones procedentes de estas aplicaciones. Elimine deslizando.</string>
 </resources>

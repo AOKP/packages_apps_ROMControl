@@ -37,6 +37,7 @@
   <string name="category_animations">Анимации</string>
   <string name="category_led">Индикация</string>
   <string name="category_auto_immersive">Автопогружение</string>
+  <string name="category_headsup">Всплытие</string>
   <string name="menu_show_drawer_icon">Показать в навигации</string>
   <plurals name="multichoice_at_least">
     <item quantity="one">Пожалуйста, выберите хотя бы <xliff:g id="number">%d</xliff:g> элемент.</item>
@@ -374,7 +375,7 @@
   <string name="listview_overshoot_interpolator">Перекрытие</string>
   <string name="listview_anticipate_overshoot_interpolator">Опережение и перекрытие</string>
   <string name="listview_bounce_interpolator">Отскок</string>
-  <string name="crt_title">Кинескоп</string>
+  <string name="crt_title">Выключение экрана</string>
   <string name="system_power_crt_mode_title">Анимация кинескопа</string>
   <string name="system_power_crt_mode_dialog_title">Анимация кинескопа</string>
   <string name="system_power_crt_mode_off">Не показывать</string>
@@ -478,5 +479,11 @@
   <string name="excluded_apps_title">Исключения</string>
   <string name="excluded_apps_summary">Исключённые приложения не будут отображать свои уведомления на экране блокировки</string>
   <string name="notification_color">Цвет фона уведомлений</string>
-  <string name="add_immersive_item">Добавить</string>
+  <string name="category_heads_up">Всплытие</string>
+  <string name="title_heads_up_enabled">Вкл всплытие (heads up)</string>
+  <string name="add_app">Добавить прил.</string>
+  <string name="heads_up_dnd_title">Не беспокоить</string>
+  <string name="heads_up_blacklist_title">Исключения</string>
+  <string name="add_heads_up_dnd_summary">Не показывать уведомления в режиме всплытия в этих приложениях. Удалить сдвигом.</string>
+  <string name="add_heads_up_blacklist_summary">Не показывать уведомления в режиме всплытия от этих приложений. Удалить сдвигом.</string>
 </resources>

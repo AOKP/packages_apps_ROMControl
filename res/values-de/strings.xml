@@ -37,6 +37,7 @@
   <string name="category_animations">Animationen</string>
   <string name="category_led">Benachrichtigungs-LED</string>
   <string name="category_auto_immersive">Auto Immersive</string>
+  <string name="category_headsup">HUD (Heads-Up Display)</string>
   <string name="menu_show_drawer_icon">Zeige in App-Übersicht</string>
   <plurals name="multichoice_at_least">
     <item quantity="one">Bitte wählen Sie mindestens <xliff:g id="number"> %d </xliff:g> Element.</item>
@@ -474,5 +475,11 @@
   <string name="excluded_apps_title">Ausgeschlossene Anwendungen</string>
   <string name="excluded_apps_summary">Ausgeschlossenen Anwendungen werden nicht als Sperrbildschirmsbenachrichtigungen angezeigt</string>
   <string name="notification_color">Benachrichtigungshintergrundfarbe</string>
-  <string name="add_immersive_item">Hinzufügen</string>
+  <string name="category_heads_up">HUD (Heads-Up Display)</string>
+  <string name="title_heads_up_enabled">HUD aktivieren</string>
+  <string name="add_app">App hinzufügen</string>
+  <string name="heads_up_dnd_title">Bitte nicht stören</string>
+  <string name="heads_up_blacklist_title">Sperrliste</string>
+  <string name="add_heads_up_dnd_summary">Heads Up in diesen Anwendungen nicht anzeigen. Durch wischen löschen.</string>
+  <string name="add_heads_up_blacklist_summary">Heads Ups von diesen Anwendungen nicht anzeigen. Durch wischen löschen.</string>
 </resources>

@@ -37,6 +37,7 @@
   <string name="category_animations">සජීවීකරණ</string>
   <string name="category_led">එළිය</string>
   <string name="category_auto_immersive">ස්වයං ගිල්වුම</string>
+  <string name="category_headsup">හිස් එසවීම</string>
   <string name="menu_show_drawer_icon">යෙදුම් ලාච්චුවේ පෙන්වන්න</string>
   <plurals name="multichoice_at_least">
     <item quantity="one">කරුණාකර අවම වශයෙන් <xliff:g id="number">%d</xliff:g> අයිතමයක් වත් තෝරන්න.</item>
@@ -476,5 +477,11 @@
   <string name="excluded_apps_title">බැහැර කළ යෙදුම්</string>
   <string name="excluded_apps_summary">බැහැර කළ යෙදුම් අගුළු තිර දැනුම්දීම් ලෙස නොපෙන්වනු ඇත</string>
   <string name="notification_color">දැනුම්දීමේ පසුබිම් පැහැය</string>
-  <string name="add_immersive_item">එකතු කරන්න</string>
+  <string name="category_heads_up">හිස් එසවීම</string>
+  <string name="title_heads_up_enabled">හිස් එසවීම සබල කරන්න</string>
+  <string name="add_app">යෙදුමක් එක් කරන්න</string>
+  <string name="heads_up_dnd_title">කරදර කරන්න එපා</string>
+  <string name="heads_up_blacklist_title">අපලේඛණය</string>
+  <string name="add_heads_up_dnd_summary">මෙම යෙදුම් තුල හිස් එසවීම් නොපෙන්වන්න. අතුල්ලා ඉවත්කරන්න.</string>
+  <string name="add_heads_up_blacklist_summary">මෙම යෙදුම් සඳහා හිස් එසවීම් නොපෙන්වන්න. අතුල්ලා ඉවත්කරන්න.</string>
 </resources>

@@ -37,6 +37,7 @@
   <string name="category_animations">アニメーション</string>
   <string name="category_led">LED</string>
   <string name="category_auto_immersive">自動拡張デスクトップ</string>
+  <string name="category_headsup">ヘッドアップ</string>
   <string name="menu_show_drawer_icon">アプリドロワーに表示</string>
   <plurals name="multichoice_at_least">
     <item quantity="other">少なくとも%d個のアイテムを選択してください</item>
@@ -474,5 +475,11 @@
   <string name="excluded_apps_title">除外アプリ</string>
   <string name="excluded_apps_summary">除外アプリはロック画面通知に表示しない</string>
   <string name="notification_color">通知の背景色</string>
-  <string name="add_immersive_item">追加</string>
+  <string name="category_heads_up">ヘッドアップ</string>
+  <string name="title_heads_up_enabled">ヘッドアップを有効にする</string>
+  <string name="add_app">アプリを追加</string>
+  <string name="heads_up_dnd_title">通知不要アプリ</string>
+  <string name="heads_up_blacklist_title">ブラックリスト</string>
+  <string name="add_heads_up_dnd_summary">選択したアプリがフォアグラウンドにある間はヘッドアップを表示しない\n選択を解除するにはスワイプしてください</string>
+  <string name="add_heads_up_blacklist_summary">選択したアプリからのヘッドアップを表示しない\n選択を解除するにはスワイプしてください</string>
 </resources>

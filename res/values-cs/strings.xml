@@ -114,6 +114,8 @@
   <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
   <string name="ram_bar_title">Lišta s RAM</string>
   <string name="ram_bar_summary">Zobrazuje použitou RAM v přepínači běžících aplikací</string>
+  <string name="force_highend_gfx_title">Vynutit nejkvalitnější grafiku</string>
+  <string name="force_highend_gfx_summary">Povolí high-end grafické efekty jako je průhledná stavová/navigační lišta (vyžaduje restart)</string>
   <string name="title_hardware_keys_home_long_press">Domů - dlouhý stisk</string>
   <string name="title_hardware_keys_home_double_tap">Domů - dvojitý stisk</string>
   <string name="title_hardware_keys_back_long_press">Zpět - dlouhý stisk</string>

@@ -110,6 +110,8 @@
   <string name="wakeup_when_plugged_unplugged_summary">Şarja takıldığında veya şarjdan çıkarıldığında cihazı uyandırır</string>
   <string name="ram_bar_title">RAM Çubuğu</string>
   <string name="ram_bar_summary">Son uygulamalar penceresinde RAM kullanımını gösterir</string>
+  <string name="force_highend_gfx_title">Üst düzey grafiklere zorla</string>
+  <string name="force_highend_gfx_summary">Şeffaf durum/gezinme çubuğu gibi üst düzey görsel efektleri etkinleştirir (yeniden başlatma gerektirir)</string>
   <string name="title_hardware_keys_home_long_press">Ana Sayfa - Uzun Basıldığında</string>
   <string name="title_hardware_keys_home_double_tap">Ana Sayfa - İki Kez Basıldığında</string>
   <string name="title_hardware_keys_back_long_press">Geri - Uzun Basıldığında</string>
@@ -417,7 +419,7 @@
   <string name="lockscreen_menu_unlock_summary">Ekran kilidini açmak için menü tuşunu kullanın</string>
   <string name="display_lockscreen_rotation_title">Kilit ekranını döndür</string>
   <string name="safe_headset_volume_title">Kulaklık güvenli ses seviyesi</string>
-  <string name="safe_headset_volume_summary">Kulaklık takılıyken güvenli ses seviyesinde olup olmadığını hakkında uyarı gösterir</string>
+  <string name="safe_headset_volume_summary">Kulaklık takılıyken güvenli ses seviyesinde olup olmadığı hakkında uyarı gösterilir</string>
   <string name="volume_adjust_sounds_enable_title">Ses seviyesi değiştirme sesi</string>
   <string name="volume_adjust_sounds_enable_summary">Fiziksel tuşlarla ses seviyesini değiştirirken ses çıkarır</string>
   <string name="airplane_mode_options">Uçak Modu</string>

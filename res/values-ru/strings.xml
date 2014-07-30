@@ -60,10 +60,10 @@
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Команда</string>
   <string name="battery_status_icon_title">Значок состояния</string>
-  <string name="battery_bar_percent">Полоса батареи с процентами</string>
-  <string name="battery_bar">Полоса батареи</string>
-  <string name="battery_circle">Круг батареи</string>
-  <string name="battery_circle_percent">Круг батареи с процентами</string>
+  <string name="battery_bar_percent">Столбик с процентами</string>
+  <string name="battery_bar">Батарейка</string>
+  <string name="battery_circle">Кольцо</string>
+  <string name="battery_circle_percent">Кольцо с процентами</string>
   <string name="mgerrit_changelog_title">mGerrit: динамика изменений</string>
   <string name="mgerrit_changelog_summary">Интерактивная история изменений из нашего Gerrit</string>
   <string name="dialog_color_picker">Выбор цвета</string>
@@ -285,7 +285,7 @@
   <string name="location_modes_toggle_hb">Высокая точность/Экономия батареи</string>
   <string name="location_modes_toggle_hs">Высокая точность/Только устройство</string>
   <string name="location_modes_toggle_ho">Высокая точность/Выкл</string>
-  <string name="location_modes_toggle_bso">Высокая точность/Только устройство/Выкл</string>
+  <string name="location_modes_toggle_bso">Экономия батареи/Только устройство/Выкл</string>
   <string name="location_modes_toggle_bs">Экономия батареи/Только устройство</string>
   <string name="location_modes_toggle_bo">Экономия батареи/Выкл</string>
   <string name="location_modes_toggle_so">Только устройство/Выкл</string>

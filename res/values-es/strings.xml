@@ -112,6 +112,8 @@
   <string name="wakeup_when_plugged_unplugged_summary">Enciende le pantalla si se enchufa o desenchufa un cargador</string>
   <string name="ram_bar_title">Barra de RAM en aplicaciones recientes</string>
   <string name="ram_bar_summary">Mostrar consumo de Ram en el menu de aplicaciones recientes</string>
+  <string name="force_highend_gfx_title">Forzar las mejoras gráficas de alta gama</string>
+  <string name="force_highend_gfx_summary">Activa las mejoras gráficas de alta gama como la transparencia en la barra de estado/navegación (requiere de reinicio)</string>
   <string name="title_hardware_keys_home_long_press">Inicio - pulsación larga</string>
   <string name="title_hardware_keys_home_double_tap">Inicio - Pulsación Doble</string>
   <string name="title_hardware_keys_back_long_press">Atras - pulsación larga</string>

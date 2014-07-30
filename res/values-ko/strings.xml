@@ -110,6 +110,8 @@
   <string name="wakeup_when_plugged_unplugged_summary">충전기가 연결되거나 분리되면 화면을 켭니다.</string>
   <string name="ram_bar_title">최근 실행한 앱 창 RAM 바</string>
   <string name="ram_bar_summary">최근 실행한 앱 화면에서 RAM 사용량 보기</string>
+  <string name="force_highend_gfx_title">고급 그래픽 강제 사용</string>
+  <string name="force_highend_gfx_summary">투명한 알림 창이나 내비게이션 바와 같은 고급 시각 기능 사용 (재부팅 필요)</string>
   <string name="title_hardware_keys_home_long_press">홈 - 길게 누르기</string>
   <string name="title_hardware_keys_home_double_tap">홈 - 두 번 탭</string>
   <string name="title_hardware_keys_back_long_press">뒤로 - 길게 누르기</string>

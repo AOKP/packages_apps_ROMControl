@@ -22,6 +22,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.widget.DrawerLayout;
@@ -92,9 +93,12 @@ public class MainActivity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, getFragmentToAttach(position))
+        Fragment fragment = getFragmentToAttach(position);
+        if (fragment != null) {
+            fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
                 .commit();
+        }
     }
 
     public Fragment getFragmentToAttach(int position) {
@@ -138,7 +142,16 @@ public class MainActivity extends Activity
             fragment = new InstallerSettingsFragment();
         }
         else if ("ribbons".equals(item)) {
-            fragment = new RibbonsFragment();
+            Intent intent = new Intent("com.stingers.ivy.RIBBONS");
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            return null;
+        }
+        else if ("widgets".equals(item)) {
+            Intent intent = new Intent("com.stingers.ivy.WIDGETS");
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            return null;
         }
         else if ("animations".equals(item)) {
             fragment = new AnimationsFragment();

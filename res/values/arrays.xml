@@ -31,6 +31,7 @@
         <item>@string/category_sound</item>
         <item>@string/category_installer</item>
         <item>@string/category_ribbons</item>
+        <item>@string/category_widgets</item>
         <item>@string/category_animations</item>
         <item>@string/category_led</item>
         <item>@string/category_auto_immersive</item>
@@ -49,6 +50,7 @@
         <item>sound</item>
         <item>installer</item>
         <item>ribbons</item>
+        <item>widgets</item>
         <item>animations</item>
         <item>led</item>
         <item>auto_immersive</item>
@@ -66,6 +68,7 @@
         <item>@drawable/ic_rom_control_navigation_ring</item>
         <item>@drawable/ic_rom_control_sound</item>
         <item>@drawable/ic_rom_control_installer</item>
+        <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_animations</item>
         <item>@drawable/ic_rom_control_led</item>

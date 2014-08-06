@@ -44,6 +44,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:title="@string/wakeup_with_proximity_check_title"
+            android:summary="@string/wakeup_with_proximity_check_summary"
+            android:key="proximity_on_wake"
+            android:defaultValue="false"
+            />
+
+    <com.aokp.romcontrol.settings.CheckboxSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
             android:id="@+id/setting_force_highend_gfx"
             android:title="@string/force_highend_gfx_title"
             android:summary="@string/force_highend_gfx_summary"

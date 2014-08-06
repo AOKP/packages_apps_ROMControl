@@ -627,4 +627,8 @@
     <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications. Remove by swiping.</string>
     <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications. Remove by swiping.</string>
 
+    <!-- Proximity Wakeup Check -->
+    <string name="wakeup_with_proximity_check_title">Prevent accidental wake-up</string>
+    <string name="wakeup_with_proximity_check_summary">Check the proximity sensor prior to waking up screen</string>
+
 </resources>

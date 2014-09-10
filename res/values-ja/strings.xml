@@ -488,7 +488,6 @@
   <string name="notifications_height_summary">一度に表示する通知の数を設定する</string>
   <string name="offset_top">画面上部からのオフセット</string>
   <string name="privacy_mode">プライバシーモード</string>
-  <string name="privacy_mode_summary">通知の内容を表示せずにアイコンだけを表示する</string>
   <string name="excluded_apps_title">除外アプリ</string>
   <string name="excluded_apps_summary">除外アプリはロック画面通知に表示しない</string>
   <string name="notification_color">通知の背景色</string>

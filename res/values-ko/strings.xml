@@ -488,7 +488,7 @@
   <string name="notifications_height_summary">한 번에 표시 하는 알림 수</string>
   <string name="offset_top">화면 상단을 오프셋:</string>
   <string name="privacy_mode">개인 정보 보호 모드</string>
-  <string name="privacy_mode_summary">Disables notifications from beeing shown and dismissed. This way, you just see the icons of your notifications.</string>
+  <string name="privacy_mode_summary">Disables notifications from being shown and dismissed. This way, you just see the icons of your notifications.</string>
   <string name="excluded_apps_title">제외된 응용 프로그램</string>
   <string name="excluded_apps_summary">제외된 응용프로그램은 잠금화면 알림에 표시되지 않습니다</string>
   <string name="notification_color">알림 배경 색상</string>

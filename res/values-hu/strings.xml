@@ -491,7 +491,6 @@
   <string name="notifications_height_summary">Az egyszerre megjelenítendő értesítések száma</string>
   <string name="offset_top">Eltolás a képernyő tetejétől:</string>
   <string name="privacy_mode">Adatvédelmi üzemmód</string>
-  <string name="privacy_mode_summary">Az értesítések mutatásának és törlésének kikapcsolása. Ebben az üzemmódban csak az értesítési ikon látható.</string>
   <string name="excluded_apps_title">Kizárt alkalmazások</string>
   <string name="excluded_apps_summary">A kizárt alkalmazások értesítései nem jelennek meg a zárképernyőn</string>
   <string name="notification_color">Értesítés háttér színe</string>

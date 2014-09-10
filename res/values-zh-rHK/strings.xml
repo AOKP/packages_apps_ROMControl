@@ -267,5 +267,4 @@
   <string name="led_test_notification_message_note">請關閉您的螢幕來看一看 LED。不要在這個彈出點擊「確定」，直到大功告成觀看 LED 的顏色。</string>
   <string name="led_test_ok">確定</string>
   <string name="privacy_mode">私隱模式</string>
-  <string name="privacy_mode_summary">從所顯示並駁回禁用通知。通過這種方式，你只看到你的通知圖示。</string>
 </resources>

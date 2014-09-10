@@ -486,7 +486,6 @@
   <string name="notifications_height_summary">同时显示的通知数量</string>
   <string name="offset_top">偏移到屏幕顶部</string>
   <string name="privacy_mode">隐私模式</string>
-  <string name="privacy_mode_summary">禁用通知显示和清除。这种方式，你只是看到您的通知图标。</string>
   <string name="excluded_apps_title">被排除的应用程序</string>
   <string name="excluded_apps_summary">已排除的应用程序将不会显示在锁屏界面通知</string>
   <string name="notification_color">通知背景颜色</string>

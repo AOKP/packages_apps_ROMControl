@@ -488,7 +488,6 @@
   <string name="notifications_height_summary">Anzahl der Benachrichtungen, die auf einmal angezeigt werden</string>
   <string name="offset_top">Versatz zum oberen Rand des Bildschirms:</string>
   <string name="privacy_mode">Privater Modus</string>
-  <string name="privacy_mode_summary">Deaktiviert die Anzeige und das Entfernen von Benachrichtungen. Auf diese Weise sehen Sie nur die Icons Ihrer Benachrichtigungen.</string>
   <string name="excluded_apps_title">Ausgeschlossene Anwendungen</string>
   <string name="excluded_apps_summary">Ausgeschlossenen Anwendungen werden nicht als Sperrbildschirmsbenachrichtigungen angezeigt</string>
   <string name="notification_color">Benachrichtigungshintergrundfarbe</string>

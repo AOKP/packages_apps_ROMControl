@@ -488,7 +488,7 @@
   <string name="notifications_height_summary">Numero di notifiche visualizzate contemporaneamente</string>
   <string name="offset_top">Rientro dalla parte superiore dello schermo:</string>
   <string name="privacy_mode">Modalità privacy</string>
-  <string name="privacy_mode_summary">Disabilita le notifiche dalla visualizzazione o dalla eliminazione. In questo modo, puoi solo vedere le icone delle notifiche.</string>
+  <string name="privacy_mode_summary">Disabilita la visualizzazione e la rimozione delle notifiche. In questo modo, vedrai soltanto le icone delle tue notifiche.</string>
   <string name="excluded_apps_title">Applicazioni escluse</string>
   <string name="excluded_apps_summary">Le applicazioni escluse non appariranno come notifiche nel blocco schermo</string>
   <string name="notification_color">Colore di sfondo della notifica</string>

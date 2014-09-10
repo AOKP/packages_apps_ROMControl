@@ -487,7 +487,6 @@
   <string name="notifications_height_summary">Số thông báo hiển thị cùng lúc</string>
   <string name="offset_top">Khoảng cách đến trên cùng màn hình:</string>
   <string name="privacy_mode">Chế độ bảo mật</string>
-  <string name="privacy_mode_summary">Vô hiệu hiển thị, bỏ qua thông báo. Bằng cách này, bạn chỉ thấy biểu tượng của thông báo.</string>
   <string name="excluded_apps_title">Loại trừ ứng dụng</string>
   <string name="excluded_apps_summary">Loại trừ ứng dụng sẽ không hiện trong thông báo màn hình khoá</string>
   <string name="notification_color">Màu nền thông báo</string>

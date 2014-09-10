@@ -480,7 +480,7 @@
   <string name="notifications_height_summary">Liczba powiadomień wyświetlonych na raz</string>
   <string name="offset_top">Odstęp od górnej krawędzi ekranu:</string>
   <string name="privacy_mode">Tryb prywatny</string>
-  <string name="privacy_mode_summary">Zablokuj możliwość pokazywania i usuwania powiadomień. W ten sposób zobaczysz tylko ikony powiadomień.</string>
+  <string name="privacy_mode_summary">Blokuje możliwość pokazywania i usuwania powiadomień. W ten sposób będziesz widzieć tylko ikony powiadomień.</string>
   <string name="excluded_apps_title">Wykluczone aplikacje</string>
   <string name="excluded_apps_summary">Powiadomienia wykluczonych aplikacje nie będą pojawiały się na ekranie blokady</string>
   <string name="notification_color">Kolor tła powiadomień</string>

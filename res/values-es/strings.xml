@@ -488,7 +488,7 @@
   <string name="notifications_height_summary">Número de notificaciones que aparecerán de repente</string>
   <string name="offset_top">Compensación de la parte superior de la pantalla:</string>
   <string name="privacy_mode">Modo de Privacidad</string>
-  <string name="privacy_mode_summary">Desactiva las notificaciones para mostrar y rechazar. De esta manera, solo se verán los iconos de las notificaciones.</string>
+  <string name="privacy_mode_summary">Desactiva las notificaciones para ser mostradas y rechazadas. De esta manera, sólo se ven los iconos de las notificaciones.</string>
   <string name="excluded_apps_title">Aplicaciones excluidas</string>
   <string name="excluded_apps_summary">Las aplicaciones excluidas no serán mostradas en la pantalla de bloqueo</string>
   <string name="notification_color">Color del fondo de las notificaciones</string>
@@ -499,4 +499,6 @@
   <string name="heads_up_blacklist_title">Lista negra</string>
   <string name="add_heads_up_dnd_summary">No se muestran las notificacones en estas aplicaciones. Elimine deslizando.</string>
   <string name="add_heads_up_blacklist_summary">No se muestran las notificacones procedentes de estas aplicaciones. Elimine deslizando.</string>
+  <string name="wakeup_with_proximity_check_title">Prevenir encendido accidental</string>
+  <string name="wakeup_with_proximity_check_summary">Comprobar el sensor de proximidad antes de encender la pantalla</string>
 </resources>

@@ -465,7 +465,6 @@
   <string name="notifications_height_summary">Antal meddelanden visas på en gång</string>
   <string name="offset_top">Förskjutning till toppen av skärmen:</string>
   <string name="privacy_mode">Integritetsläge</string>
-  <string name="privacy_mode_summary">Inaktiverar aviseringar från att visas och avfärdas. Detta sätt, kan du bara se ikonerna för dina meddelanden.</string>
   <string name="excluded_apps_title">Undantagna program</string>
   <string name="excluded_apps_summary">Undantagna program syns inte på låsskärmsmeddelande</string>
   <string name="notification_color">Meddelande bakgrundsfärg</string>

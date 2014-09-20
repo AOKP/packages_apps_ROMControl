@@ -491,6 +491,7 @@
   <string name="notifications_height_summary">Az egyszerre megjelenítendő értesítések száma</string>
   <string name="offset_top">Eltolás a képernyő tetejétől:</string>
   <string name="privacy_mode">Adatvédelmi üzemmód</string>
+  <string name="privacy_mode_summary">Az értesítések mutatásának és törlésének kikapcsolása. Ebben az üzemmódban csak az értesítési ikon látható.</string>
   <string name="excluded_apps_title">Kizárt alkalmazások</string>
   <string name="excluded_apps_summary">A kizárt alkalmazások értesítései nem jelennek meg a zárképernyőn</string>
   <string name="notification_color">Értesítés háttér színe</string>
@@ -501,4 +502,6 @@
   <string name="heads_up_blacklist_title">Tiltólista</string>
   <string name="add_heads_up_dnd_summary">Ne mutasson felugró értesítéseket ezekhez az alkalmazásokhoz. Eltávolítás csúsztatással.</string>
   <string name="add_heads_up_blacklist_summary">Ne mutasson felugró értesítéseket ezekhez az alkalmazásokhoz. Eltávolítás csúsztatással.</string>
+  <string name="wakeup_with_proximity_check_title">Véletlen ébresztés megakadályozása</string>
+  <string name="wakeup_with_proximity_check_summary">Közelség érzékelő ellenőrzése a képernyő felébresztése előtt</string>
 </resources>

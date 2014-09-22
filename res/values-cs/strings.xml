@@ -135,6 +135,15 @@
   <string name="setting_key_home_long_press_action_voicesearch">Hlasové vyhledávání</string>
   <string name="setting_key_home_long_press_action_inappsearch">Vyhledávání v aplikaci</string>
   <string name="setting_key_home_long_press_action_killapp">Ukončit aplikaci</string>
+  <string name="category_backlight">Podsvícení</string>
+  <string name="buttons_backlight_timeout">Prodleva vypnutí podsvícení</string>
+  <string name="buttons_brightness">Podsvícení tlačítek</string>
+  <string name="backlight_timeout_unlimited">Nevypínat</string>
+  <plurals name="backlight_timeout_time">
+    <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+    <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekundy</item>
+    <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+  </plurals>
   <string name="category_advanced">Pokročilé</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Přepnutí rotace hlasitostí</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Dvojité stisknutí tlačítek hlasitosti přepne zámek rotace obrazovky</string>

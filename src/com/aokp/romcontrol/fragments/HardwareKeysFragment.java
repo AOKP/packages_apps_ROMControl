@@ -18,14 +18,20 @@ package com.aokp.romcontrol.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.content.Context;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.CheckboxSetting;
 import com.aokp.romcontrol.settings.SingleChoiceSetting;
+import com.aokp.romcontrol.widgets.CategorySeparator;
 
-public class HardwareKeysFragment extends Fragment {
+public class HardwareKeysFragment extends Fragment implements OnSeekBarChangeListener {
 
     private static final int KEY_MASK_HOME = 0x01;
     private static final int KEY_MASK_BACK = 0x02;
@@ -33,6 +39,9 @@ public class HardwareKeysFragment extends Fragment {
     private static final int KEY_MASK_ASSIST = 0x08;
     private static final int KEY_MASK_APP_SWITCH = 0x10;
     private static final int KEY_MASK_CAMERA = 0x20;
+
+    private Context mContext;
+    private int mSeekBarProgress;
 
     CheckboxSetting setting_customize;
 
@@ -46,9 +55,14 @@ public class HardwareKeysFragment extends Fragment {
     int hardwareKeyMask;
     boolean mHasMenu, mHasBack, mHasHome, mHasAssist, mHasAppSwitch, mHasCamera;
 
+    private SeekBar mButtonsBrightness, mButtonsBacklightTimeout;
+    private TextView mButtonsBrightness_title, mButtonsBacklightTimeout_title, mTimeoutValue;
+    private CategorySeparator mBacklight;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = getActivity();
 
         hardwareKeyMask = getActivity().getResources()
                 .getInteger(com.android.internal.R.integer.config_deviceHardwareKeys);
@@ -64,12 +78,38 @@ public class HardwareKeysFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_hardware_keys, container, false);
 
+        mButtonsBrightness = (SeekBar) v.findViewById(R.id.buttons_brightness);
+        mButtonsBacklightTimeout = (SeekBar) v.findViewById(R.id.buttons_backlight_timeout);
+        mButtonsBrightness_title = (TextView) v.findViewById(R.id.buttons_brightness_title);
+        mButtonsBacklightTimeout_title = (TextView) v.findViewById(R.id.buttons_backlight_timeout_title);
+        mTimeoutValue = (TextView) v.findViewById(R.id.timeout_value);
+        mBacklight = (CategorySeparator) v.findViewById(R.id.category_backlight);
+
         /**
          * Hide customize hardware buttons checkbox
          */
         if (hardwareKeyMask == 0) {
             setting_customize = (CheckboxSetting) v.findViewById(R.id.setting_customize_hardware_keys);
             setting_customize.setVisibility(View.GONE);
+            mButtonsBrightness.setVisibility(View.GONE);
+            mButtonsBacklightTimeout.setVisibility(View.GONE);
+            mButtonsBrightness_title.setVisibility(View.GONE);
+            mButtonsBacklightTimeout_title.setVisibility(View.GONE);
+            mBacklight.setVisibility(View.GONE);
+            mTimeoutValue.setVisibility(View.GONE);
+        } else {
+            mButtonsBrightness.setProgress(Settings.AOKP.getInt(
+                    mContext.getContentResolver(), Settings.AOKP.BUTTON_BRIGHTNESS, 255));
+            mButtonsBrightness.setOnSeekBarChangeListener(this);
+            mButtonsBacklightTimeout.setProgress(Settings.AOKP.getInt(
+                    mContext.getContentResolver(), Settings.AOKP.BUTTON_BACKLIGHT_TIMEOUT, 5));
+            mButtonsBacklightTimeout.setOnSeekBarChangeListener(this);
+            handleTimeoutUpdate(mButtonsBacklightTimeout.getProgress());
+            if (mButtonsBrightness.getProgress() == 0) {
+                mButtonsBacklightTimeout.setVisibility(View.GONE);
+                mButtonsBacklightTimeout_title.setVisibility(View.GONE);
+                mTimeoutValue.setVisibility(View.GONE);
+            }
         }
 
         /**
@@ -114,5 +154,41 @@ public class HardwareKeysFragment extends Fragment {
         }
 
         return v;
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        if (seekBar == mButtonsBrightness) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.BUTTON_BRIGHTNESS, progress);
+            mButtonsBacklightTimeout.setVisibility(progress == 0 ? View.GONE : View.VISIBLE);
+            mButtonsBacklightTimeout_title.setVisibility(progress == 0 ? View.GONE : View.VISIBLE);
+            mTimeoutValue.setVisibility(progress == 0 ? View.GONE : View.VISIBLE);
+        } else if (seekBar == mButtonsBacklightTimeout) {
+            Settings.AOKP.putInt(mContext.getContentResolver(), Settings.AOKP.BUTTON_BACKLIGHT_TIMEOUT, progress);
+            handleTimeoutUpdate(progress);
+        }
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    private void handleTimeoutUpdate(int timeout) {
+        if (timeout == 0) {
+            mTimeoutValue.setText(R.string.backlight_timeout_unlimited);
+        } else {
+            mTimeoutValue.setText(getTimeoutString(timeout));
+        }
+    }
+
+    private String getTimeoutString(int timeout) {
+        return mContext.getResources().getQuantityString(
+                R.plurals.backlight_timeout_time, timeout, timeout);
     }
 }

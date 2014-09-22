@@ -200,6 +200,15 @@
     <string name="setting_key_home_long_press_action_inappsearch">In-app search</string>
     <string name="setting_key_home_long_press_action_killapp">Kill app</string>
 
+    <string name="category_backlight">Backlight</string>
+    <string name="buttons_backlight_timeout">Illumination timeout</string>
+    <string name="buttons_brightness">Button brightness</string>
+    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
+
     <string name="category_advanced">Advanced</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Volume smash rotation</string>
     <string name="summary_hardware_keys_volume_keys_double_tap">Whether double tapping the volume keys will lock and unlock the auto-rotate setting</string>

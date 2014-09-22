@@ -150,6 +150,65 @@
                 />
 
         <com.aokp.romcontrol.widgets.CategorySeparator
+                android:title="@string/category_backlight"
+                android:id="@+id/category_backlight"
+                style="@style/defaultSize" />
+
+        <TextView
+                android:id="@+id/buttons_brightness_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="6dip"
+                android:layout_marginTop="6dip"
+                android:gravity="center"
+                android:text="@string/buttons_brightness"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <SeekBar
+                android:id="@+id/buttons_brightness"
+                android:key="buttons_brightness"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:max="255"
+                android:defaultValue="255" />
+
+        <TextView
+                android:id="@+id/buttons_backlight_timeout_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="6dip"
+                android:layout_marginTop="6dip"
+                android:gravity="center"
+                android:text="@string/buttons_backlight_timeout"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+                android:id="@+id/timeout_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="16dip"
+                android:paddingRight="16dip" />
+
+        <SeekBar
+                android:id="@+id/buttons_backlight_timeout"
+                android:key="buttons_backlight_timeout"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:max="30"
+                android:defaultValue="5" />
+
+        <com.aokp.romcontrol.widgets.CategorySeparator
                 android:title="@string/category_advanced"
                 style="@style/defaultSize"/>
 

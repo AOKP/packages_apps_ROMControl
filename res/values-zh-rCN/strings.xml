@@ -484,7 +484,7 @@
   <string name="wake_on_notification_summary">当收到新通知时唤醒设备</string>
   <string name="notifications_height">通知数量</string>
   <string name="notifications_height_summary">同时显示的通知数量</string>
-  <string name="offset_top">偏移到屏幕顶部</string>
+  <string name="offset_top">屏幕顶部相对距离</string>
   <string name="privacy_mode">隐私模式</string>
   <string name="privacy_mode_summary">禁用通知显示和清除。这种方式，你只是看到您的通知图标。</string>
   <string name="excluded_apps_title">被排除的应用程序</string>

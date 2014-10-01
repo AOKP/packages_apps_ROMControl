@@ -133,6 +133,14 @@
   <string name="setting_key_home_long_press_action_voicesearch">Hangalapú keresés</string>
   <string name="setting_key_home_long_press_action_inappsearch">Alkalmazáson belüli keresés</string>
   <string name="setting_key_home_long_press_action_killapp">Alkalmazás kilövése</string>
+  <string name="category_backlight">Háttérvilágítás</string>
+  <string name="buttons_backlight_timeout">Megvilágítás időkorlát</string>
+  <string name="buttons_brightness">Gombok fényereje</string>
+  <string name="backlight_timeout_unlimited">Ne kapcsoljon ki</string>
+  <plurals name="backlight_timeout_time">
+    <item quantity="one"><xliff:g id="seconds">%d</xliff:g> másodperc</item>
+    <item quantity="other"><xliff:g id="seconds">%d</xliff:g> másodperc</item>
+  </plurals>
   <string name="category_advanced">Haladó</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Forgatási változtatás hangerővel</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Kétszer nyomva a hangerő gombot változtatható az automatikus forgatási beállítás</string>

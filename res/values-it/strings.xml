@@ -133,6 +133,14 @@
   <string name="setting_key_home_long_press_action_voicesearch">Voice Search</string>
   <string name="setting_key_home_long_press_action_inappsearch">Ricerca all\'interno dell\'applicazione</string>
   <string name="setting_key_home_long_press_action_killapp">Termina applicazione</string>
+  <string name="category_backlight">Retroilluminazione</string>
+  <string name="buttons_backlight_timeout">Timeout illuminazione</string>
+  <string name="buttons_brightness">Luminosità tasti</string>
+  <string name="backlight_timeout_unlimited">Non spegnere</string>
+  <plurals name="backlight_timeout_time">
+    <item quantity="one"><xliff:g id="seconds">%d</xliff:g> secondo</item>
+    <item quantity="other"><xliff:g id="seconds"> %d </xliff:g> secondi</item>
+  </plurals>
   <string name="category_advanced">Avanzate</string>
   <string name="title_hardware_keys_volume_keys_double_tap">I tasti del Volume cambiano la rotazione del display</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">Decidi se un doppio tap sui tasti del Volume bloccherà o sbloccherà la rotazione automatica del display</string>

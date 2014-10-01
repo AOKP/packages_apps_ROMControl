@@ -133,6 +133,14 @@
   <string name="setting_key_home_long_press_action_voicesearch">කටහඬ සෙවීම</string>
   <string name="setting_key_home_long_press_action_inappsearch">යෙදුම තුල සෙවීම</string>
   <string name="setting_key_home_long_press_action_killapp">යෙදුම නසන්න</string>
+  <string name="category_backlight">පසුපස එළිය</string>
+  <string name="buttons_backlight_timeout">ප්‍රදීපනයේ කල්ඉකුත් වීම</string>
+  <string name="buttons_brightness">බොත්තම් දීප්තිය</string>
+  <string name="backlight_timeout_unlimited">වහන්න එපා</string>
+  <plurals name="backlight_timeout_time">
+    <item quantity="one">තත්පර <xliff:g id="seconds">%d</xliff:g></item>
+    <item quantity="other">තත්පර <xliff:g id="seconds">%d</xliff:g></item>
+  </plurals>
   <string name="category_advanced">උසස්</string>
   <string name="title_hardware_keys_volume_keys_double_tap">ශබ්ද යතුරින් භ්‍රමණය</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">ශබ්ද යතුරු මත දෙවරක් තට්ටු කිරීමෙන් ස්වයංක්‍රීය භ්‍රමණය අගුළු දැමීම හෝ අගුළු ඇරීම කලයුතුද නැද්ද යන්න</string>

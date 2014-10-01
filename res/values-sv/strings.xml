@@ -45,7 +45,7 @@
   <string name="aokp_review_title">AOKP Kodgranskning - Gerrit</string>
   <string name="aokp_review_summary">Visa AOKP\'s Gerrit</string>
   <string name="aokp_irc_title">Kom till oss på IRC</string>
-  <string name="aokp_irc_summary"># teamkang @ irc.freenode.net</string>
+  <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
   <string name="about_aokp">Om AOKP</string>
   <string name="about_aokp_summary">@null</string>
   <string name="kanglings">Kanglings</string>
@@ -54,7 +54,7 @@
   <string name="battery_bar">Batterimätare</string>
   <string name="battery_circle">Battericirkel</string>
   <string name="battery_circle_percent">Battericirkel &amp; procent</string>
-  <string name="mgerrit_changelog_title">mGerrit: Dynamisk Ändringslogg</string>
+  <string name="mgerrit_changelog_title">mGerrit: Dynamisk ändringslogg</string>
   <string name="mgerrit_changelog_summary">Interaktiv ändringslogg hämtad live från vår Gerrit</string>
   <string name="dialog_color_picker">Färgväljare</string>
   <string name="press_color_to_apply">Tryck på färg för att välja</string>
@@ -100,10 +100,12 @@
   <string name="center">Centrerad</string>
   <string name="top">Topp</string>
   <string name="bottom">Botten</string>
-  <string name="wakeup_when_plugged_unplugged_title">Vakna vid anslutning av laddare</string>
+  <string name="wakeup_when_plugged_unplugged_title">Väck vid anslutning av laddare</string>
   <string name="wakeup_when_plugged_unplugged_summary">Väck enheten när en laddare ansluts eller kopplas ur</string>
-  <string name="ram_bar_title">Nyligen använda RAM bar</string>
+  <string name="ram_bar_title">RAM-användning i senaste appar</string>
   <string name="ram_bar_summary">Visar RAM-användning i fönstret senaste appar</string>
+  <string name="force_highend_gfx_title">Tvinga högklassgrafik</string>
+  <string name="force_highend_gfx_summary">Aktivera visuella effekter av hög klass som exempelvis transparent status- och navigeringsfält (kräver omstart)</string>
   <string name="title_hardware_keys_home_long_press">Hem - långtryck</string>
   <string name="title_hardware_keys_home_double_tap">Hem - dubbeltryck</string>
   <string name="title_hardware_keys_back_long_press">Tillbaka - långtryck</string>
@@ -176,6 +178,8 @@
   <string name="statusbar_signal_text_summary">Visa signal med dBm</string>
   <string name="statusbar_hide_signal_bars_title">Dölj signalpinnar</string>
   <string name="statusbar_hide_signal_bars_summary">Möjlighet att dölja signalpinnarna</string>
+  <string name="show_4g_for_lte_title">Använda 4G-ikonen för LTE</string>
+  <string name="show_4g_for_lte_summary">Visa 4G nätverks indikatorikon i stället för LTE ikon</string>
   <string name="status_bar_network_title">Nätverkstrafik</string>
   <string name="status_bar_show_network_stats_title">Visa nätverkshastighet</string>
   <string name="status_bar_show_network_stats_summary">Visa nätverkshastighet i statusbaren</string>
@@ -267,6 +271,17 @@
   <string name="toggle_favcontact_summary">Välj favoritkontakt</string>
   <string name="toggle_screenshot_delay_title">Fördröjning på skärmbild</string>
   <string name="toggle_screenshot_delay_summary">Fördröjning för skärmbild vid användning av snabbval</string>
+  <string name="network_modes_title">Nätverkstyp</string>
+  <string name="network_modes_summary">Växla nätverkslägen</string>
+  <string name="network_mode_4g">Föredra 2G / 3G / 4G</string>
+  <string name="network_mode_4g_3g">Föredra 3G / 4G</string>
+  <string name="network_mode_4g_only">Bara 4G</string>
+  <string name="network_mode_3g">Föredra 2G / 3G</string>
+  <string name="network_mode_3g_auto">2G / 3G Auto</string>
+  <string name="network_mode_3g_only">Bara 3G</string>
+  <string name="network_mode_2g">Bara 2G</string>
+  <string name="network_mode_2g_cdma">Bara 2G (CDMA)</string>
+  <string name="network_mode_2g_evdo">Bara 2G (EvDo)</string>
   <string name="location_modes_toggle_title">Plats lägen för växling</string>
   <string name="location_modes_toggle_all">Alla</string>
   <string name="location_modes_toggle_hbs">Hög noggrannhet/Batteri sparande/Enheten endast</string>
@@ -465,6 +480,7 @@
   <string name="notifications_height_summary">Antal meddelanden visas på en gång</string>
   <string name="offset_top">Förskjutning till toppen av skärmen:</string>
   <string name="privacy_mode">Integritetsläge</string>
+  <string name="privacy_mode_summary">Inaktiverar aviseringar från att visas och avfärdas. På detta sätt, kan du bara se ikonerna för dina meddelanden.</string>
   <string name="excluded_apps_title">Undantagna program</string>
   <string name="excluded_apps_summary">Undantagna program syns inte på låsskärmsmeddelande</string>
   <string name="notification_color">Meddelande bakgrundsfärg</string>
@@ -475,4 +491,6 @@
   <string name="heads_up_blacklist_title">Svartlista</string>
   <string name="add_heads_up_dnd_summary">Visa inte heads up i dessa program. Ta bort genom att dra.</string>
   <string name="add_heads_up_blacklist_summary">Visa inte heads up i dessa program. Ta bort genom att dra.</string>
+  <string name="wakeup_with_proximity_check_title">Förhindra oavsiktlig väckning</string>
+  <string name="wakeup_with_proximity_check_summary">Kontrollera närhetssensorn innan väckning av skärmen</string>
 </resources>

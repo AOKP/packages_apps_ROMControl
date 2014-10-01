@@ -37,7 +37,7 @@
   <string name="category_animations">애니메이션</string>
   <string name="category_led">LED 옵션</string>
   <string name="category_auto_immersive">자동 몰입</string>
-  <string name="category_headsup">Heads up</string>
+  <string name="category_headsup">헤드 업</string>
   <string name="menu_show_drawer_icon">어플서랍에서 ROM 컨트롤 보기</string>
   <plurals name="multichoice_at_least">
     <item quantity="other">Please select at least <xliff:g id="number">%d</xliff:g> items.</item>

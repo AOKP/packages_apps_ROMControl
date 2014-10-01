@@ -108,7 +108,7 @@
   <string name="center">Centré</string>
   <string name="top">Haut</string>
   <string name="bottom">Bas</string>
-  <string name="wakeup_when_plugged_unplugged_title">Allumer l\'écran lorsque le téléphone est branché </string>
+  <string name="wakeup_when_plugged_unplugged_title">Réveiller au branchement</string>
   <string name="wakeup_when_plugged_unplugged_summary">L\'écran s\'allumera si le chargeur est branché ou débranché</string>
   <string name="ram_bar_title">Barre de RAM</string>
   <string name="ram_bar_summary">Affiche l\'utilisation de la RAM dans la fenêtre applications récentes</string>
@@ -131,6 +131,14 @@
   <string name="setting_key_home_long_press_action_voicesearch">Recherche vocale</string>
   <string name="setting_key_home_long_press_action_inappsearch">Recherche dans l\'application</string>
   <string name="setting_key_home_long_press_action_killapp">Fermer les applications</string>
+  <string name="category_backlight">Rétroéclairage</string>
+  <string name="buttons_backlight_timeout">Temps d\'éclairage</string>
+  <string name="buttons_brightness">Luminosité du bouton</string>
+  <string name="backlight_timeout_unlimited">Ne pas éteindre</string>
+  <plurals name="backlight_timeout_time">
+    <item quantity="one"><xliff:g id="seconds">%d</xliff:g> seconde</item>
+    <item quantity="other"><xliff:g id="seconds">%d</xliff:g> secondes</item>
+  </plurals>
   <string name="category_advanced">Avancé</string>
   <string name="title_hardware_keys_volume_keys_double_tap">Contrôle de la rotation via les touches de volume</string>
   <string name="summary_hardware_keys_volume_keys_double_tap">En appuyant deux fois sur les touches volume, l\'auto rotation sera activée/désactivée</string>
@@ -148,7 +156,7 @@
   <string name="adb_notify">Notification liée au débogage USB</string>
   <string name="adb_notify_summary">Afficher une notification quand le débogage USB est actif</string>
   <string name="ime_switcher_title">Afficher le modificateur d\'IME</string>
-  <string name="ime_switcher_summary">Affiche le sélecteur de claviers dans la barre d\'état lors de la frappe</string>
+  <string name="ime_switcher_summary">Dans la barre d\'état lors de la frappe</string>
   <string name="vibrate_notif_expand_title">Vibrer à l\'ouverture</string>
   <string name="vibrate_notif_expand_summary">Retour haptique à l\'agrandissement des notifications</string>
   <string name="notification_count_title">Afficher le compteur de notification</string>
@@ -405,7 +413,7 @@
   <string name="progressbar_color_3_title">Couleur 3</string>
   <string name="progressbar_color_4_title">Couleur 4</string>
   <string name="sample_progressbar_text">Aperçu</string>
-  <string name="volume_wake_screen">Activer l\'écran avec les touches volumes</string>
+  <string name="volume_wake_screen">Réveil par les boutons de volume</string>
   <string name="volume_wake_screen_summary">Utiliser les touches de volume pour allumer l\'écran</string>
   <string name="volume_music_controls">Contrôle du volume de la musique</string>
   <string name="volume_music_controls_summary">Les touches volume haut/bas peuvent êtres utilisées pour passer la piste</string>

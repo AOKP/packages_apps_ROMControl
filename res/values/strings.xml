@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2013, The Android Open Kang Project
+ * Copyright (c) 2013-2014, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,7 @@
     <string name="github_championswimmer" translatable="false">https://github.com/championswimmer</string>
     <string name="github_DAGr8" translatable="false">https://github.com/DAGr8</string>
     <string name="github_dhacker29" translatable="false">https://github.com/dhacker29</string>
+    <string name="github_elelinux" translatable="false">https://github.com/elelinux</string>
     <string name="github_graffixnyc" translatable="false">https://github.com/graffixnyc</string>
     <string name="github_hashcode" translatable="false">https://github.com/Hashcode</string>
     <string name="github_willdeberry" translatable="false">https://github.com/willdeberry</string>
@@ -174,6 +175,8 @@
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
     <string name="ram_bar_title">Recents RAM bar</string>
     <string name="ram_bar_summary">Shows RAM usage in the recent apps window</string>
+    <string name="force_highend_gfx_title">Force high-end graphics</string>
+    <string name="force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>
@@ -196,6 +199,15 @@
     <string name="setting_key_home_long_press_action_voicesearch">Voice search</string>
     <string name="setting_key_home_long_press_action_inappsearch">In-app search</string>
     <string name="setting_key_home_long_press_action_killapp">Kill app</string>
+
+    <string name="category_backlight">Backlight</string>
+    <string name="buttons_backlight_timeout">Illumination timeout</string>
+    <string name="buttons_brightness">Button brightness</string>
+    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
 
     <string name="category_advanced">Advanced</string>
     <string name="title_hardware_keys_volume_keys_double_tap">Volume smash rotation</string>
@@ -257,6 +269,8 @@
     <string name="statusbar_signal_text_summary">Show signal with dBm</string>
     <string name="statusbar_hide_signal_bars_title">Hide Signal Bars</string>
     <string name="statusbar_hide_signal_bars_summary">Ability to hide the signal bars</string>
+    <string name="show_4g_for_lte_title">Use 4G icon on LTE</string>
+    <string name="show_4g_for_lte_summary">Show 4G network indicator icon instead of LTE icon</string>
 
     <string name="status_bar_network_title">Network traffic</string>
     <string name="status_bar_show_network_stats_title">Show network speeds</string>
@@ -363,6 +377,18 @@
     <string name="toggle_screenshot_delay_title">Screenshot delay</string>
     <string name="toggle_screenshot_delay_summary">Delay for screenshot toggle to send intent to capture screen</string>
 
+    <string name="network_modes_title">Network modes</string>
+    <string name="network_modes_summary">Network modes to toggle</string>
+    <string name="network_mode_4g">2G/3G/4G Preferred</string>
+    <string name="network_mode_4g_3g">3G/4G Preferred</string>
+    <string name="network_mode_4g_only">4G Only</string>
+    <string name="network_mode_3g">2G/3G Preferred</string>
+    <string name="network_mode_3g_auto">2G/3G Auto</string>
+    <string name="network_mode_3g_only">3G Only</string>
+    <string name="network_mode_2g">2G Only</string>
+    <string name="network_mode_2g_cdma">2G Only (CDMA)</string>
+    <string name="network_mode_2g_evdo">2G Only (EvDo)</string>
+
     <string name="location_modes_toggle_title">Location modes for toggle</string>
     <string name="location_modes_toggle_all">All</string>
     <string name="location_modes_toggle_hbs">High accuracy/Battery saving/Device only</string>
@@ -377,6 +403,8 @@
     <!-- Navigation Bar -->
     <string name="enable_navigation_bar_title">Enable navigation bar</string>
     <string name="enable_navigation_bar_summary">Enable the on-screen navigation bar</string>
+    <string name="navigation_bar_dpad_keys_title">Arrow keys</string>
+    <string name="navigation_bar_dpad_keys_summary">Show arrow keys while keyboard is shown</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation ring targets</string>
@@ -595,21 +623,22 @@
     <string name="notifications_height_summary">Number of notifications displayed at once</string>
     <string name="offset_top">Offset to the top of the screen:</string>
     <string name="privacy_mode">Privacy Mode</string>
-    <string name="privacy_mode_summary">Disables notifications from beeing shown and dismissed. This way, you just see the icons of your notifications.</string>
+    <string name="privacy_mode_summary">Disables notifications from being shown and dismissed. This way, you just see the icons of your notifications.</string>
     <string name="excluded_apps_title">Excluded applications</string>
     <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
     <string name="notification_color">Notification background color</string>
 
-    <!-- Auto Immersive Settings -->
-    <string name="add_immersive_item">Add</string>
-
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>
     <string name="title_heads_up_enabled">Enable heads up</string>
-    <string name="add_heads_up_package">Add app</string>
+    <string name="add_app">Add app</string>
     <string name="heads_up_dnd_title">Do not disturb</string>
     <string name="heads_up_blacklist_title">Blacklist</string>
-    <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
-    <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
+    <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications. Remove by swiping.</string>
+    <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications. Remove by swiping.</string>
+
+    <!-- Proximity Wakeup Check -->
+    <string name="wakeup_with_proximity_check_title">Prevent accidental wake-up</string>
+    <string name="wakeup_with_proximity_check_summary">Check the proximity sensor prior to waking up screen</string>
 
 </resources>

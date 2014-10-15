@@ -18,7 +18,7 @@
 -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-
+            xmlns:aokp="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -122,6 +122,21 @@
             android:summary="@string/toggle_screenshot_delay_summary"
             android:entries="@array/screenshot_delayEntries"
             android:entryValues="@array/screenshot_delayValues"
+            />
+
+    <com.aokp.romcontrol.settings.MultiChoiceSetting
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/network_modes_toggle"
+
+            android:key="network_modes_toggle"
+            android:dialogTitle="@string/network_modes_title"
+            android:title="@string/network_modes_title"
+            android:summary="@string/network_modes_summary"
+            android:entries="@array/network_modes_entries"
+            android:entryValues="@array/network_modes_values"
+            android:defaultValue="0|1"
+            aokp:minSelectionCount="2"
             />
 
     <com.aokp.romcontrol.settings.SingleChoiceSetting

@@ -10,6 +10,16 @@
             style="@style/settingsFragmentStyle">
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="STELIX Stefano Mura"
+                aokp:nameDev="STELIX"
+                aokp:twitterHandle="stefanomura1973"
+                aokp:githubLink="@string/github_stelix"
+                aokp:emailDev="ssspinni@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Roman"
                 aokp:nameDev="romanbb"
                 aokp:twitterHandle="romanbb"

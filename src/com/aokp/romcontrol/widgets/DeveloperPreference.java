@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.aokp.romcontrol.R;
-import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+import com.koushikdutta.ion.Ion;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -124,10 +124,10 @@ public class DeveloperPreference extends LinearLayout {
             // changed to clicking the preference to open twitter
             // it was a hit or miss to click the twitter bird
             this.setOnClickListener(openTwitter);
-            UrlImageViewHelper.setUrlDrawable(this.photoView,
-                    getGravatarUrl(devEmail),
-                    R.drawable.ic_null,
-                    UrlImageViewHelper.CACHE_DURATION_ONE_WEEK);
+            Ion.with(photoView)
+                    .error(R.drawable.ic_null)
+                    .placeholder(R.drawable.loading)
+                    .load(getGravatarUrl(devEmail));
         } else {
             twitterButton.setVisibility(View.INVISIBLE);
             photoView.setVisibility(View.GONE);

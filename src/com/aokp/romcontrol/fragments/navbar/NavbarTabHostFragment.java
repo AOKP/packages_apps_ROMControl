@@ -25,6 +25,8 @@ public class NavbarTabHostFragment extends Fragment implements OnTabChangeListen
 
         mTabHost.addTab(mTabHost.newTabSpec("rearrange").setIndicator(getString(R.string.navbar_tab_arrange)),
                 ArrangeNavbarFragment.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("navring").setIndicator(getString(R.string.navring_tab_settings)),
+                NavringSettingsFragment.class, null);
         mTabHost.addTab(mTabHost.newTabSpec("settings").setIndicator(getString(R.string.navbar_tab_settings)),
                 NavbarSettingsFragment.class, null);
 

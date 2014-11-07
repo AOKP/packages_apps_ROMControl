@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The Android Open Kang Project
+ * Copyright (C) 2015 The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,25 +29,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.view.View;
+
+import com.aokp.romcontrol.fragments.about.AboutCrewFragment;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
+import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
+
+import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
+import com.aokp.romcontrol.fragments.navbar.ArrangeNavbarFragment;
+import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
+import com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment;
+
 import com.aokp.romcontrol.fragments.AnimationsFragment;
 import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
-import com.aokp.romcontrol.fragments.InstallerSettingsFragment;
-import com.aokp.romcontrol.fragments.LedSettingsFragment;
-import com.aokp.romcontrol.fragments.LockscreenSettingsFragment;
-import com.aokp.romcontrol.fragments.NavRingTargets;
+import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
 import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
-import com.aokp.romcontrol.fragments.ribbons.RibbonsFragment;
-import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.SoundSettingsFragment;
-import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
-import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
-import com.aokp.romcontrol.fragments.toggles.TogglesTabHostFragment;
-import com.aokp.romcontrol.fragments.AutoImmersiveSettingsFragment;
-import com.aokp.romcontrol.fragments.headsup.HeadsUpTabHostFragment;
-
+import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -111,13 +111,13 @@ public class MainActivity extends Activity
             fragment = new GeneralSettingsFragment();
         }
         else if ("lockscreen".equals(item)) {
-            fragment = new LockscreenSettingsFragment();
+            fragment = new LockScreenSettingsFragment();
         }
         else if ("statusbar".equals(item)) {
             fragment = new StatusbarSettingsFragment();
         }
-        else if ("toggles".equals(item)) {
-            fragment = new TogglesTabHostFragment();
+        else if ("notifications_drawer".equals(item)) {
+            fragment = new NotificationsDrawerFragment();
         }
         else if ("hardware_keys".equals(item)) {
             fragment = new HardwareKeysFragment();
@@ -128,29 +128,11 @@ public class MainActivity extends Activity
         else if ("navbar".equals(item)) {
             fragment = new NavbarTabHostFragment();
         }
-        else if ("navring".equals(item)) {
-            fragment = new NavRingTargets();
-        }
         else if ("sound".equals(item)) {
             fragment = new SoundSettingsFragment();
         }
-        else if ("installer".equals(item)) {
-            fragment = new InstallerSettingsFragment();
-        }
-        else if ("ribbons".equals(item)) {
-            fragment = new RibbonsFragment();
-        }
         else if ("animations".equals(item)) {
             fragment = new AnimationsFragment();
-        }
-        else if ("led".equals(item)) {
-            fragment = new LedSettingsFragment();
-        }
-        else if ("auto_immersive".equals(item)) {
-            fragment = new AutoImmersiveSettingsFragment();
-        }
-        else if ("headsup".equals(item)) {
-            fragment = new HeadsUpTabHostFragment();
         }
         else {
             // who knows

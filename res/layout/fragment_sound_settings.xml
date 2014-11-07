@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2013, The Android Open Kang Project
+ * Copyright (c) 2015, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,34 +17,8 @@
  */
 -->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/settingsFragmentStyle">
 
-    <LinearLayout style="@style/settingsFragmentStyle">
 
-        <com.aokp.romcontrol.widgets.CategorySeparator
-            style="@style/defaultSize"
-            android:title="@string/category_sound"/>
-
-        <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:title="@string/safe_headset_volume_title"
-            android:summary="@string/safe_headset_volume_summary"
-            android:key="manual_safe_media_volume"
-            android:defaultValue="true"
-            />
-
-        <com.aokp.romcontrol.settings.CheckboxSetting
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:title="@string/volume_adjust_sounds_enable_title"
-            android:summary="@string/volume_adjust_sounds_enable_summary"
-            android:key="volume_adjust_sounds_enabled"
-            android:defaultValue="true"
-            />
-
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>

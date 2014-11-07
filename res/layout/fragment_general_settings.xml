@@ -20,7 +20,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               style="@style/settingsFragmentStyle">
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
+    <com.aokp.romcontrol.settings.SwitchSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -30,7 +30,7 @@
             android:defaultValue="true"
             />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
+    <com.aokp.romcontrol.settings.SwitchSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -40,7 +40,7 @@
             android:defaultValue="true"
             />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
+    <com.aokp.romcontrol.settings.SwitchSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -51,7 +51,7 @@
             android:defaultValue="false"
             />
 
-    <com.aokp.romcontrol.settings.CheckboxSetting
+    <com.aokp.romcontrol.settings.SwitchSetting
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 

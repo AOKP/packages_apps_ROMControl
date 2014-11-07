@@ -30,17 +30,11 @@
     <string name="category_about_aokp">About</string>
     <string name="category_hardware_keys">Hardware keys</string>
     <string name="category_lockscreen">Lockscreen</string>
-    <string name="category_installer">Installer</string>
-    <string name="category_toggles">Toggles</string>
-    <string name="category_navring">Navigation ring</string>
+    <string name="category_notifications_drawer">Notifications Drawer</string>
     <string name="category_navbar">Navigation bar</string>
     <string name="category_sound">Sound</string>
     <string name="category_power_menu">Power menu </string>
-    <string name="category_ribbons">Ribbons</string>
     <string name="category_animations">Animations</string>
-    <string name="category_led">LED</string>
-    <string name="category_auto_immersive">Auto Immersive</string>
-    <string name="category_headsup">Heads up</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -81,7 +75,6 @@
     <string name="github_elelinux" translatable="false">https://github.com/elelinux</string>
     <string name="github_graffixnyc" translatable="false">https://github.com/graffixnyc</string>
     <string name="github_hashcode" translatable="false">https://github.com/Hashcode</string>
-    <string name="github_willdeberry" translatable="false">https://github.com/willdeberry</string>
     <string name="github_jbirdvegas" translatable="false">https://github.com/JBirdVegas</string>
     <string name="github_k900" translatable="false">https://github.com/K900</string>
     <string name="github_kecinzer" translatable="false">https://github.com/kecinzer</string>
@@ -95,9 +88,11 @@
     <string name="github_scar45" translatable="false">https://github.com/scar45</string>
     <string name="github_sethyx" translatable="false">https://github.com/sethyx</string>
     <string name="github_sixstringsg" translatable="false">https://github.com/sixstringsg</string>
+    <string name="github_stelix" translatable="false">https://github.com/STELIX</string>
     <string name="github_stevespear" translatable="false">https://github.com/Stevespear426</string>
     <string name="github_tdm" translatable="false">https://github.com/tdm</string>
     <string name="github_whitehawk" translatable="false">https://github.com/Whitehawkx</string>
+    <string name="github_willdeberry" translatable="false">https://github.com/willdeberry</string>
     <string name="github_xoom" translatable="false">https://github.com/xoomdev</string>
     <string name="github_zaph" translatable="false">https://github.com/Zaphod-Beeblebrox</string>
     <string name="url_aokp" translatable="false">http://aokp.co/</string>
@@ -536,6 +531,7 @@
 
     <string name="add_button">Add button</string>
     <string name="navbar_tab_arrange">Rearrange</string>
+    <string name="navring_tab_settings">Navring</string>
     <string name="navbar_tab_settings">Settings</string>
 
     <string name="navigation_bar_height_title">Navigation Bar height</string>

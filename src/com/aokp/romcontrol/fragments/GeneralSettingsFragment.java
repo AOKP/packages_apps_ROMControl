@@ -30,11 +30,6 @@ import com.aokp.romcontrol.settings.CheckboxSetting;
 
 public class GeneralSettingsFragment extends Fragment {
 
-    private static final String FORCE_HIGHEND_GFX_PERSIST_PROP = "persist.sys.force_highendgfx";
-
-    CheckboxSetting mForceHighEndGfx;
-    CheckboxSetting mCheckProximity;
-
     public GeneralSettingsFragment() {
 
     }
@@ -45,27 +40,6 @@ public class GeneralSettingsFragment extends Fragment {
 
         Resources res = getResources();
 
-        mForceHighEndGfx = (CheckboxSetting) v.findViewById(R.id.setting_force_highend_gfx);
-        if (ActivityManager.isLowRamDeviceStatic()) {
-            String forceHighendGfx = SystemProperties.get(FORCE_HIGHEND_GFX_PERSIST_PROP, "false");
-            mForceHighEndGfx.setChecked("true".equals(forceHighendGfx));
-            mForceHighEndGfx.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    SystemProperties.set(FORCE_HIGHEND_GFX_PERSIST_PROP,
-                            mForceHighEndGfx.isChecked() ? "true" : "false");
-                }
-            });
-        } else {
-            mForceHighEndGfx.setVisibility(View.GONE);
-        }
-
-        boolean proximityCheckOnWait = res.getBoolean(
-                com.android.internal.R.bool.config_proximityCheckOnWake);
-        if (!proximityCheckOnWait) {
-            mCheckProximity = (CheckboxSetting) v.findViewById(R.id.proximity_on_wake);
-            mCheckProximity.setVisibility(View.GONE);
-        }
         return v;
     }
 }

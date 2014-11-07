@@ -23,36 +23,24 @@
         <item>@string/category_general</item>
         <item>@string/category_lockscreen</item>
         <item>@string/category_statusbar</item>
-        <item>@string/category_toggles</item>
+        <item>@string/category_notifications_drawer</item>
         <item>@string/category_hardware_keys</item>
         <item>@string/category_power_menu</item>
         <item>@string/category_navbar</item>
-        <item>@string/category_navring</item>
         <item>@string/category_sound</item>
-        <item>@string/category_installer</item>
-        <item>@string/category_ribbons</item>
         <item>@string/category_animations</item>
-        <item>@string/category_led</item>
-        <item>@string/category_auto_immersive</item>
-        <item>@string/category_headsup</item>
     </string-array>
     <string-array name="navigation_drawer_values" translatable="false">
         <item>about_aokp</item>
         <item>general</item>
         <item>lockscreen</item>
         <item>statusbar</item>
-        <item>toggles</item>
+        <item>notifications_drawer</item>
         <item>hardware_keys</item>
         <item>power_menu</item>
         <item>navbar</item>
-        <item>navring</item>
         <item>sound</item>
-        <item>installer</item>
-        <item>ribbons</item>
         <item>animations</item>
-        <item>led</item>
-        <item>auto_immersive</item>
-        <item>headsup</item>
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
@@ -63,13 +51,7 @@
         <item>@drawable/ic_rom_control_hardware_keys</item>
         <item>@drawable/ic_rom_control_power_menu</item>
         <item>@drawable/ic_rom_control_navigation_bar</item>
-        <item>@drawable/ic_rom_control_navigation_ring</item>
         <item>@drawable/ic_rom_control_sound</item>
-        <item>@drawable/ic_rom_control_installer</item>
-        <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_animations</item>
-        <item>@drawable/ic_rom_control_led</item>
-        <item>@drawable/ic_rom_control_auto_immersive</item>
-        <item>@drawable/ic_rom_control_headsup</item>
     </string-array>
 </resources>

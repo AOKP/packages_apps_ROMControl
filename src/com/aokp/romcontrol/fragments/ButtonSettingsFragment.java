@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod project
+ * Copyright (C) 2015 The CyanogenMod project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,10 @@
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -29,6 +33,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
@@ -38,6 +43,8 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
+import android.util.Log;
 
 import android.util.Log;
 import android.view.IWindowManager;
@@ -52,9 +59,8 @@ import com.aokp.romcontrol.R;
 import cyanogenmod.hardware.CMHardwareManager;
 import cyanogenmod.providers.CMSettings;
 
-import org.cyanogenmod.internal.util.ScreenType;
-
 import java.util.List;
+import org.cyanogenmod.internal.util.ScreenType;
 
 import static android.provider.Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED;
 
@@ -136,6 +142,15 @@ public class ButtonSettingsFragment extends Fragment {
         public static final int KEY_MASK_CAMERA = 0x20;
         public static final int KEY_MASK_VOLUME = 0x40;
 
+        private static final int DLG_KEYBOARD_ROTATION = 0;
+
+        private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
+        private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
+        private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
+        private static final String SHOW_ENTER_KEY = "show_enter_key";
+
+        private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
+
         private ListPreference mHomeLongPressAction;
         private ListPreference mHomeDoubleTapAction;
         private ListPreference mMenuPressAction;
@@ -156,6 +171,11 @@ public class ButtonSettingsFragment extends Fragment {
         private SwitchPreference mCameraDoubleTapPowerGesture;
 
         private SwitchPreference mEnableHwKeys;
+
+        private SwitchPreference mDisableFullscreenKeyboard;
+        private SwitchPreference mKeyboardRotationToggle;
+        private ListPreference mKeyboardRotationTimeout;
+        private SwitchPreference mShowEnterKey;
 
         private Handler mHandler;
 
@@ -420,7 +440,39 @@ public class ButtonSettingsFragment extends Fragment {
                 }
             }
 
+            mDisableFullscreenKeyboard =
+                (SwitchPreference) findPreference(PREF_DISABLE_FULLSCREEN_KEYBOARD);
+            mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
+            mDisableFullscreenKeyboard.setOnPreferenceChangeListener(this);
+
+            mKeyboardRotationToggle = (SwitchPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
+            mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+            mKeyboardRotationToggle.setOnPreferenceChangeListener(this);
+
+            mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
+            mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
+            updateRotationTimeout(Settings.System.getInt(
+                    getActivity().getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                    KEYBOARD_ROTATION_TIMEOUT_DEFAULT));
+
+            mShowEnterKey = (SwitchPreference) findPreference(SHOW_ENTER_KEY);
+            mShowEnterKey.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.FORMAL_TEXT_INPUT, 0) == 1);
+            mShowEnterKey.setOnPreferenceChangeListener(this);
+
             updateDisableHwKeysOption();
+        }
+
+        public void updateRotationTimeout(int timeout) {
+            if (timeout == 0) {
+                timeout = KEYBOARD_ROTATION_TIMEOUT_DEFAULT;
+            }
+            mKeyboardRotationTimeout.setValue(Integer.toString(timeout));
+            mKeyboardRotationTimeout.setSummary(
+                getString(R.string.keyboard_rotation_timeout_summary,
+                mKeyboardRotationTimeout.getEntry()));
         }
 
         @Override
@@ -525,6 +577,31 @@ public class ButtonSettingsFragment extends Fragment {
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                         CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
                         value ? 0 : 1 /* Backwards because setting is for disabling */);
+            } else if (preference == mDisableFullscreenKeyboard) {
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.DISABLE_FULLSCREEN_KEYBOARD,  (Boolean) newValue ? 1 : 0);
+                return true;
+            } else if (preference == mKeyboardRotationToggle) {
+                boolean isAutoRotate = (Settings.System.getIntForUser(getActivity().getContentResolver(),
+                            Settings.System.ACCELEROMETER_ROTATION, 0, UserHandle.USER_CURRENT) == 1);
+                if (isAutoRotate && (Boolean) newValue) {
+                    showDialogInner(DLG_KEYBOARD_ROTATION);
+                }
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                        (Boolean) newValue ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
+                updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
+                return true;
+            } else if (preference == mShowEnterKey) {
+                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.FORMAL_TEXT_INPUT, (Boolean) newValue ? 1 : 0);
+                return true;
+            } else if (preference == mKeyboardRotationTimeout) {
+                int timeout = Integer.parseInt((String) newValue);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.KEYBOARD_ROTATION_TIMEOUT, timeout);
+                updateRotationTimeout(timeout);
+                return true;
             }
             return false;
         }
@@ -643,6 +720,51 @@ public class ButtonSettingsFragment extends Fragment {
         private static boolean isCameraDoubleTapPowerGestureAvailable(Resources res) {
             return res.getBoolean(
                     com.android.internal.R.bool.config_cameraDoubleTapPowerGestureEnabled);
+        }
+
+        private void showDialogInner(int id) {
+            DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
+            newFragment.setTargetFragment(this, 0);
+            newFragment.show(getFragmentManager(), "dialog " + id);
+        }
+
+        public static class MyAlertDialogFragment extends DialogFragment {
+
+            public static MyAlertDialogFragment newInstance(int id) {
+                MyAlertDialogFragment frag = new MyAlertDialogFragment();
+                Bundle args = new Bundle();
+                args.putInt("id", id);
+                frag.setArguments(args);
+                return frag;
+            }
+
+            ButtonSettingsFragment.SettingsPreferenceFragment getOwner() {
+                return (ButtonSettingsFragment.SettingsPreferenceFragment) getTargetFragment();
+            }
+
+            @Override
+            public Dialog onCreateDialog(Bundle savedInstanceState) {
+                int id = getArguments().getInt("id");
+                switch (id) {
+                    case DLG_KEYBOARD_ROTATION:
+                        return new AlertDialog.Builder(getActivity())
+                        .setTitle(R.string.attention)
+                        .setMessage(R.string.keyboard_rotation_dialog)
+                        .setPositiveButton(R.string.ok,
+                            new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .create();
+                }
+                throw new IllegalArgumentException("unknown id " + id);
+            }
+
+            @Override
+            public void onCancel(DialogInterface dialog) {
+
+            }
         }
     }
 }

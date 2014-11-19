@@ -237,4 +237,36 @@
             android:summary="@string/swap_volume_buttons_summary" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="ime_features"
+        android:title="@string/title_ime_features" >
+        <SwitchPreference
+            android:key="keyboard_rotation_toggle"
+            android:title="@string/keyboard_rotation_toggle_title"
+            android:summary="@string/keyboard_rotation_toggle_summary"
+            android:defaultValue="false"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="keyboard_rotation_timeout"
+            android:persistent="false"
+            android:dialogTitle="@string/keyboard_rotation_timeout_title"
+            android:title="@string/keyboard_rotation_timeout_title"
+            android:entries="@array/keyboard_rotation_timeout_entries"
+            android:entryValues="@array/keyboard_rotation_timeout_values"
+            android:dependency="keyboard_rotation_toggle" />
+
+        <SwitchPreference
+            android:key="disable_fullscreen_keyboard"
+            android:title="@string/disable_fullscreen_keyboard_title"
+            android:summary="@string/disable_fullscreen_keyboard_summary"
+            android:defaultValue="false"
+            android:persistent="false" />
+
+        <SwitchPreference
+            android:key="show_enter_key"
+            android:title="@string/show_enter_key_title"
+            android:summary="@string/show_enter_key_summary"
+            android:persistent="false" />
+    </PreferenceCategory>
 </PreferenceScreen>

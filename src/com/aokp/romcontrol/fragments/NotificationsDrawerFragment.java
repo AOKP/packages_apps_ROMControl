@@ -73,6 +73,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
         private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
         private static final String PREF_COLUMNS = "qs_columns";
+        private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
 
         private ListPreference mTileAnimationStyle;
         private ListPreference mTileAnimationDuration;
@@ -81,6 +82,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private ListPreference mRowsPortrait;
         private ListPreference mRowsLandscape;
         private ListPreference mQsColumns;
+        private ListPreference mSmartPulldown;
 
         private ContentResolver mResolver;
 
@@ -152,6 +154,13 @@ public class NotificationsDrawerFragment extends Fragment {
             mQsColumns.setSummary(mQsColumns.getEntry());
             mQsColumns.setOnPreferenceChangeListener(this);
 
+            mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+            mSmartPulldown.setOnPreferenceChangeListener(this);
+            int smartPulldown = Settings.System.getInt(mResolver,
+                    Settings.System.QS_SMART_PULLDOWN, 0);
+            mSmartPulldown.setValue(String.valueOf(smartPulldown));
+            updateSmartPulldownSummary(smartPulldown);
+
             setHasOptionsMenu(true);
             return prefSet;
         }
@@ -215,6 +224,12 @@ public class NotificationsDrawerFragment extends Fragment {
                         Settings.Secure.QS_COLUMNS, intValue);
                 preference.setSummary(mQsColumns.getEntries()[index]);
                 return true;
+            } else if (preference == mSmartPulldown) {
+                int smartPulldown = Integer.valueOf((String) newValue);
+                Settings.System.putInt(mResolver,
+                        Settings.System.QS_SMART_PULLDOWN, smartPulldown);
+                updateSmartPulldownSummary(smartPulldown);
+                return true;
             }
             return false;
         }
@@ -246,6 +261,21 @@ public class NotificationsDrawerFragment extends Fragment {
                     mTileAnimationDuration.setSelectable(true);
                     mTileAnimationInterpolator.setSelectable(true);
                 }
+            }
+        }
+
+        private void updateSmartPulldownSummary(int value) {
+            Resources res = getResources();
+            if (value == 0) {
+                // Smart pulldown deactivated
+                mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+            } else if (value == 3) {
+                mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+            } else {
+                String type = res.getString(value == 1
+                        ? R.string.smart_pulldown_dismissable
+                        : R.string.smart_pulldown_ongoing);
+                mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
             }
         }
     }

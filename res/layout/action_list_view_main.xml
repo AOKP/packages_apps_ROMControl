@@ -16,7 +16,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:aokp="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -38,7 +38,6 @@
         android:layout_marginTop="20dip"
         android:layout_gravity="center"
         android:gravity="center_horizontal"
-        android:textColor="@android:color/white"
         android:text="@string/shortcut_action_disable_message"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:visibility="gone" />
@@ -51,17 +50,18 @@
         android:paddingLeft="0dp"
         android:layout_margin="0dp"
         android:dividerHeight="1dp"
-        settings:dragEnabled="true"
-        settings:collapsedHeight="2dp"
-        settings:dragScrollStart="0.33"
-        settings:maxDragScrollSpeed="0.5"
-        settings:floatAlpha="0.6"
-        settings:slideShuffleSpeed="0.3"
-        settings:trackDragSort="false"
-        settings:useDefaultController="true"
-        settings:dragHandleId="@id/drag_handle"
-        settings:sortEnabled="true"
-        settings:removeEnabled="true"
-        settings:dragStartMode="onMove"
-        settings:removeMode="flingRemove" />
+        aokp:dragEnabled="true"
+        aokp:collapsedHeight="2dp"
+        aokp:dragScrollStart="0.33"
+        aokp:maxDragScrollSpeed="0.5"
+        aokp:floatAlpha="0.6"
+        aokp:slideShuffleSpeed="0.3"
+        aokp:trackDragSort="false"
+        aokp:useDefaultController="true"
+        aokp:dragHandleId="@id/drag_handle"
+        aokp:sortEnabled="true"
+        aokp:removeEnabled="true"
+        aokp:dragStartMode="onMove"
+        aokp:removeMode="flingRemove"
+        aokp:floatBackgroundColor="@color/dslv_float_cackground_color" />
 </LinearLayout>

@@ -42,4 +42,10 @@
     <dimen name="navbar_search_outerring_diameter">340dp</dimen>
     <!-- Height of search panel including navigation bar height -->
     <dimen name="navbar_search_panel_height">230dip</dimen>
+
+    <!-- Gesture Anywhere -->
+    <dimen name="ga_gesture_thumbnail_inset">8dip</dimen>
+    <dimen name="ga_gesture_thumbnail_size">64dip</dimen>
+    <dimen name="shortcut_picker_left_padding">70dip</dimen>
+
 </resources>

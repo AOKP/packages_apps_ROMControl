@@ -48,7 +48,9 @@ import com.aokp.romcontrol.fragments.navbar.ArrangeNavbarFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
 import com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment;
 
-import com.aokp.romcontrol.fragments.AnimationsFragment;
+import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
+import com.aokp.romcontrol.fragments.ui.GestureAnywhereSettings;
+
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
@@ -149,7 +151,7 @@ public class MainActivity extends Activity
                 break;
 
             case 9:
-                fragment = new AnimationsFragment();
+                fragment = new UITabHostFragment();
                 break;
 
         /*

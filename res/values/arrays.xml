@@ -28,7 +28,7 @@
         <item>@string/category_power_menu</item>
         <item>@string/category_navbar</item>
         <item>@string/category_sound</item>
-        <item>@string/category_animations</item>
+        <item>@string/category_ui</item>
     </string-array>
     <string-array name="navigation_drawer_values" translatable="false">
         <item>about_aokp</item>
@@ -40,7 +40,7 @@
         <item>power_menu</item>
         <item>navbar</item>
         <item>sound</item>
-        <item>animations</item>
+        <item>ui</item>
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
@@ -179,6 +179,17 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+    </string-array>
+
+    <!-- Gesture Anywhere -->
+    <string-array name="gesture_anywhere_position_entries" translatable="false">
+        <item>@string/gesture_anywhere_position_left</item>
+        <item>@string/gesture_anywhere_position_right</item>
+    </string-array>
+
+    <string-array name="gesture_anywhere_position_values" translatable="false">
+        <item>3</item>
+        <item>5</item>
     </string-array>
 
 </resources>

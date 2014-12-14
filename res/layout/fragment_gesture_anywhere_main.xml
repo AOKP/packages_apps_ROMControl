@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2013, The Android Open Kang Project
+ * Copyright (c) 2015, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,9 @@
  * limitations under the License.
  */
 -->
-
-<resources>
-    <color name="transparent">#00000000</color>
-    <color name="navigation_drawer_background">#cc000000</color>
-    <color name="extension_list_item_color">#ffc9c9c9</color>
-    <color name="configure_light_background">#00000000</color>
-    <color name="background_tab_pressed">#6633B5E5</color>
-    <color name="notification_background">#55555555</color>
-
-    <!-- Gesture Anywhere -->
-    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
-
-</resources>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/gesture_anywhere_main"
+    android:orientation="vertical" >
+</LinearLayout>

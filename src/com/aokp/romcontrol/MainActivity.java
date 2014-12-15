@@ -48,6 +48,9 @@ import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
 
+import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
+import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
+
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -116,6 +119,10 @@ public class MainActivity extends Activity
                 
             case 3:
                 fragment = new StatusBarTabHostFragment();
+                break;
+
+            case 4:
+                fragment = new UITabHostFragment();
                 break;
         }
         return fragment;

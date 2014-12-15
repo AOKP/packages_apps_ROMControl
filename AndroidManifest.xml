@@ -71,7 +71,12 @@
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.sound.LiveVolumeFragment" />
 
-        <activity android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment" />
+
+        <activity android:name="com.aokp.romcontrol.fragments.statusbar.UITabHostFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.statusbar.DisplayAnimationsSettings" />
+
     </application>
 
 </manifest>

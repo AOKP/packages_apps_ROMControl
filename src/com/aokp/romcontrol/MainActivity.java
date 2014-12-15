@@ -51,6 +51,9 @@ import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
 
+import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
+import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
+
 import cyanogenmod.providers.CMSettings;
 
 public class MainActivity extends Activity
@@ -125,6 +128,10 @@ public class MainActivity extends Activity
 
             case 4:
                 fragment = new StatusBarTabHostFragment();
+                break;
+
+            case 5:
+                fragment = new UITabHostFragment();
                 break;
         }
         return fragment;

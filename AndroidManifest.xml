@@ -79,6 +79,9 @@
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment" />
 
+        <activity android:name="com.aokp.romcontrol.fragments.statusbar.UITabHostFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.statusbar.DisplayAnimationsSettings" />
+
     </application>
 
 </manifest>

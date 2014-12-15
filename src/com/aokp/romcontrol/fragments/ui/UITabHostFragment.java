@@ -37,7 +37,8 @@ public class UITabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.gesture_anywhere_title
+            R.string.gesture_anywhere_title,
+            R.string.listview_animation_title
     };
 
     @Override
@@ -82,6 +83,8 @@ public class UITabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new GestureAnywhereSettings();
+                case 1:
+                    return new DisplayAnimationsSettings();
             }
             return null;
         }

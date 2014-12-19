@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.aokp.romcontrol.fragments;
+package com.aokp.romcontrol.fragments.statusbar;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -22,6 +22,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -32,12 +33,12 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.android.internal.logging.MetricsLogger;
 import cyanogenmod.providers.CMSettings;
-
-import static com.android.internal.util.cm.PowerMenuConstants.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,11 +49,20 @@ import com.aokp.romcontrol.R;
 public class StatusbarSettingsFragment extends Fragment {
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_statusbar_settings_main, container, false);
+
+        Resources res = getResources();
+
+        return v;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.container, new SettingsPreferenceFragment())
+                .replace(R.id.statusbar_settings_main, new SettingsPreferenceFragment())
                 .commit();
     }
 

@@ -47,5 +47,6 @@
     <dimen name="ga_gesture_thumbnail_inset">8dip</dimen>
     <dimen name="ga_gesture_thumbnail_size">64dip</dimen>
     <dimen name="shortcut_picker_left_padding">70dip</dimen>
+    <dimen name="header_icon_width">28dp</dimen>
 
 </resources>

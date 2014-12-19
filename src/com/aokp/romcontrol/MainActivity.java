@@ -52,12 +52,15 @@ import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
 import com.aokp.romcontrol.fragments.ui.GestureAnywhereSettings;
 import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
 
+import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
+import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
+import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
+
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
 import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
-import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 
 import cyanogenmod.providers.CMSettings;
 
@@ -128,7 +131,7 @@ public class MainActivity extends Activity
                 break;
 
             case 3:
-                fragment = new StatusbarSettingsFragment();
+                fragment = new StatusBarTabHostFragment();
                 break;
 
             case 4:

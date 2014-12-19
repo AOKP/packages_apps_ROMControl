@@ -43,6 +43,11 @@
         <attr name="colorPickerShowAlphaSlider" format="boolean"/>
     </declare-styleable>
 
+    <!-- Value to pass to callback when restore button is pressed -->
+    <declare-styleable name="ColorPreference">
+        <attr name="defaultColorValue" format="integer" />
+    </declare-styleable>
+
     <declare-styleable name="MultiChoiceSetting">
         <attr name="minSelectionCount" format="integer"/>
         <attr name="maxSelectionCount" format="integer"/>

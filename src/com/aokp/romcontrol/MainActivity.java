@@ -47,6 +47,7 @@ import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
 
 import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
+import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
 
 import cyanogenmod.providers.CMSettings;
 

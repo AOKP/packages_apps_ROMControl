@@ -42,6 +42,7 @@ import com.aokp.romcontrol.fragments.general.HostnamePreference;
 
 import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
+import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
 
 import lineageos.providers.LineageSettings;
 

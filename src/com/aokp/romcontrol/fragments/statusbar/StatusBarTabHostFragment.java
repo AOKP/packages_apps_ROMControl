@@ -37,7 +37,8 @@ public class StatusBarTabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.statusbar_settings
+            R.string.statusbar_settings,
+            R.string.network_traffic_title
     };
 
     public StatusBarTabHostFragment() {
@@ -90,6 +91,8 @@ public class StatusBarTabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new StatusbarSettingsFragment();
+                case 1:
+                    return new TrafficSettingsFragment();
             }
             return null;
         }

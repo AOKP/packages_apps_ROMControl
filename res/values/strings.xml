@@ -83,6 +83,7 @@
     <string name="category_about_aokp">About</string>
     <string name="category_general">General</string>
     <string name="category_sound">Sound</string>
+    <string name="category_statusbar">Statusbar</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
     <string name="devs">The Crew</string>
@@ -197,5 +198,33 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     <!-- ****************************** Sound Cat ends ****************************** -->
+
+    <!-- ****************************** StatusBar Cat starts ****************************** -->
+    <!-- Sound settings -->
+    <string name="statusbar_settings">StatusBar settings</string>
+    
+    <!-- Network traffic -->
+    <string name="traffic_category">Traffic Indicators</string>
+    <string name="network_traffic_title">Network traffic</string>
+    <string name="show_network_traffic_state">Status bar traffic monitor</string>
+    <string name="show_network_traffic_unit">Display unit</string>
+    <string name="show_network_traffic_frequency">Update interval</string>
+    <string name="show_network_traffic_disable">Disabled</string>
+    <string name="show_network_traffic_up">Outgoing</string>
+    <string name="show_network_traffic_down">Incoming</string>
+    <string name="show_network_traffic_all">Outgoing and incoming</string>
+    <string name="show_network_traffic_bit">Bits per second</string>
+    <string name="show_network_traffic_byte">Bytes per second</string>
+    <string name="show_network_traffic_500">500 ms</string>
+    <string name="show_network_traffic_1000">1000 ms</string>
+    <string name="show_network_traffic_1500">1500 ms</string>
+    <string name="show_network_traffic_2000">2000 ms</string>
+    <string name="network_traffic_autohide">Auto hide</string>
+    <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
+    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+    <string name="network_traffic_color_style">Color style</string>
+    <string name="network_traffic_color_reset">Reset color</string>
+    <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+    <!-- ****************************** StatusBar Cat ends ****************************** -->
 
 </resources>

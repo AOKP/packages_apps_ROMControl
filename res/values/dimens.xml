@@ -43,4 +43,6 @@
     <!-- Height of search panel including navigation bar height -->
     <dimen name="navbar_search_panel_height">230dip</dimen>
 
+    <dimen name="header_icon_width">28dp</dimen>
+
 </resources>

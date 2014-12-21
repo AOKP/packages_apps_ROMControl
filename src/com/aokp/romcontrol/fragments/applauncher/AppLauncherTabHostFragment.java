@@ -37,7 +37,8 @@ public class AppLauncherTabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.gesture_anywhere_title
+            R.string.gesture_anywhere_title,
+            R.string.app_circle_bar_title
     };
 
     public AppLauncherTabHostFragment() {
@@ -90,6 +91,8 @@ public class AppLauncherTabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new GestureAnywhereSettings();
+                case 1:
+                    return new AppCircleBarSettings();
             }
             return null;
         }

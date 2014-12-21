@@ -51,6 +51,7 @@ import com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment;
 import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
 import com.aokp.romcontrol.fragments.ui.GestureAnywhereSettings;
 import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
+import com.aokp.romcontrol.fragments.ui.AppCircleBarSettings;
 
 import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;

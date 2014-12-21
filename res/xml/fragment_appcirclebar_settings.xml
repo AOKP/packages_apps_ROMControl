@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 /**
 * Copyright (c) 2015, The Android Open Kang Project
 *
@@ -14,8 +15,11 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+-->
+
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aokp="http://schemas.android.com/apk/res-auto"
     android:title="@string/category_app_circle_bar_title" >
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
@@ -28,6 +32,39 @@
         android:persistent="false"
         android:title="@string/app_circle_bar_included_apps_title"
         android:summary="@string/app_circle_bar_included_apps_summary"
+        android:dependency="enable_app_circle_bar" />
+
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        android:key="trigger_width"
+        android:title="@string/trigger_width_title"
+        android:summary="@string/trigger_width_summary"
+        android:defaultValue="4"
+        android:max="64"
+        aokp:min="4"
+        aokp:unitsLeft=""
+        aokp:unitsRight="px"
+        android:dependency="enable_app_circle_bar" />
+
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        android:key="trigger_top"
+        android:title="@string/trigger_top_title"
+        android:summary="@string/trigger_top_summary"
+        android:defaultValue="0"
+        android:max="99"
+        aokp:min="0"
+        aokp:unitsLeft=""
+        aokp:unitsRight="%"
+        android:dependency="enable_app_circle_bar" />
+
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        android:key="trigger_bottom"
+        android:title="@string/trigger_bottom_title"
+        android:summary="@string/trigger_bottom_summary"
+        android:defaultValue="100"
+        android:max="100"
+        aokp:min="1"
+        aokp:unitsLeft=""
+        aokp:unitsRight="%"
         android:dependency="enable_app_circle_bar" />
 
 </PreferenceScreen>

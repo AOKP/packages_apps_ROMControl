@@ -32,7 +32,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.UserHandle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -48,13 +47,14 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManagerGlobal;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.AppMultiSelectListPreference;
+import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
 import java.io.File;
 import java.lang.Thread;
@@ -90,8 +90,15 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements
         private static final String TAG = "AppCircleSidebarSettings";
 
         private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
+        private static final String KEY_TRIGGER_WIDTH = "trigger_width";
+        private static final String KEY_TRIGGER_TOP = "trigger_top";
+        private static final String KEY_TRIGGER_BOTTOM = "trigger_bottom";
 
         private AppMultiSelectListPreference mIncludedAppCircleBar;
+
+        private SeekBarPreferenceCham mTriggerWidthPref;
+        private SeekBarPreferenceCham mTriggerTopPref;
+        private SeekBarPreferenceCham mTriggerBottomPref;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -107,21 +114,47 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements
             Set<String> includedApps = getIncludedApps();
             if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
             mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
+            mTriggerWidthPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_WIDTH);
+            mTriggerWidthPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_TRIGGER_WIDTH, 10));
+            mTriggerWidthPref.setOnPreferenceChangeListener(this);
+
+            mTriggerTopPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_TOP);
+            mTriggerTopPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_TRIGGER_TOP, 0));
+            mTriggerTopPref.setOnPreferenceChangeListener(this);
+
+            mTriggerBottomPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_BOTTOM);
+            mTriggerBottomPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, 100));
+            mTriggerBottomPref.setOnPreferenceChangeListener(this);
         }
 
         @Override
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-            ContentResolver resolver = getActivity().getContentResolver();
-            boolean value;
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         @Override
         public boolean onPreferenceChange(Preference preference, Object objValue) {
-            ContentResolver resolver = getActivity().getContentResolver();
             final String key = preference.getKey();
             if (preference == mIncludedAppCircleBar) {
                 storeIncludedApps((Set<String>) objValue);
+            } else if (preference == mTriggerWidthPref) {
+                int width = ((Integer)objValue).intValue();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.APP_CIRCLE_BAR_TRIGGER_WIDTH, width);
+                return true;
+            } else if (preference == mTriggerTopPref) {
+                int top = ((Integer)objValue).intValue();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.APP_CIRCLE_BAR_TRIGGER_TOP, top);
+                return true;
+            } else if (preference == mTriggerBottomPref) {
+                int bottom = ((Integer)objValue).intValue();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, bottom);
+                return true;
             }
 
             return true;
@@ -151,6 +184,20 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements
             }
             Settings.System.putString(getActivity().getContentResolver(),
                     Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_SHOW_TRIGGER, 0);
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_SHOW_TRIGGER, 1);
         }
     }
 }

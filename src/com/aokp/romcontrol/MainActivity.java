@@ -39,6 +39,9 @@ import com.aokp.romcontrol.fragments.about.AboutFragment;
 import com.aokp.romcontrol.fragments.about.AboutMaintainersFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
+import com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment;
+import com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings;
+
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.general.HostnamePreference;
@@ -117,28 +120,32 @@ public class MainActivity extends Activity
             case 0:
                 fragment = new AboutTabHostFragment();
                 break;
-
+                
             case 1:
+                fragment = new AppLauncherTabHostFragment();
+                break;
+                
+            case 2:
                 fragment = new GeneralTabHostFragment();
                 break;
 
-            case 2:
+            case 3:
                 fragment = new NotificationsDrawerFragment();
                 break;
                 
-            case 3:
+            case 4:
                 fragment = new SoundTabHostFragment();
                 break;
 
-            case 4:
+            case 5:
                 fragment = new StatusBarTabHostFragment();
                 break;
 
-            case 5:
+            case 6:
                 fragment = new UITabHostFragment();
                 break;
 
-            case 6:
+            case 7:
                 fragment = new ChangelogFragment();
                 break;
 

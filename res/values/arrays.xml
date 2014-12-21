@@ -20,6 +20,7 @@
 <resources>
     <string-array name="navigation_drawer_entries" translatable="false">
         <item>@string/category_about_aokp</item>
+        <item>@string/category_app_launcher</item> 
         <item>@string/category_general</item>
         <item>@string/category_notifications_drawer</item>
         <item>@string/category_sound</item>
@@ -29,6 +30,7 @@
     </string-array>
     <string-array name="navigation_drawer_values" translatable="false">
         <item>about_aokp</item>
+        <item>applauncher</item>
         <item>general</item>
         <item>notifications_drawer</item>
         <item>sound</item>
@@ -38,6 +40,7 @@
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
+        <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_general</item>
         <item>@drawable/ic_rom_control_toggles</item>
         <item>@drawable/ic_rom_control_sound</item>

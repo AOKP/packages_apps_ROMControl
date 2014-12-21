@@ -66,6 +66,9 @@
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutMaintainersFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutTabHostFragment" />
 
+        <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings" />
+
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.HostnamePreference" />

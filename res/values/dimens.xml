@@ -44,5 +44,7 @@
     <dimen name="navbar_search_panel_height">230dip</dimen>
 
     <dimen name="header_icon_width">28dp</dimen>
+    
+    <dimen name="alert_dialog_padding_material">12dp</dimen>
 
 </resources>

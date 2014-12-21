@@ -34,4 +34,37 @@
         android:summary="@string/app_circle_bar_included_apps_summary"
         android:dependency="enable_app_circle_bar" />
 
+    <com.aokp.romcontrol.widgets.SeekBarPreference
+        android:key="trigger_width"
+        android:title="@string/trigger_width_title"
+        android:summary="@string/trigger_width_summary"
+        android:max="64"
+        AOKP:minimum="4"
+        AOKP:defaultVal="4"
+        AOKP:unitsLeft=""
+        AOKP:unitsRight="px"
+        android:dependency="enable_app_circle_bar" />
+
+    <com.aokp.romcontrol.widgets.SeekBarPreference
+        android:key="trigger_top"
+        android:title="@string/trigger_top_title"
+        android:summary="@string/trigger_top_summary"
+        android:max="99"
+        AOKP:minimum="0"
+        AOKP:defaultVal="0"
+        AOKP:unitsLeft=""
+        AOKP:unitsRight="%"
+        android:dependency="enable_app_circle_bar" />
+
+    <com.aokp.romcontrol.widgets.SeekBarPreference
+        android:key="trigger_bottom"
+        android:title="@string/trigger_bottom_title"
+        android:summary="@string/trigger_bottom_summary"
+        android:max="100"
+        AOKP:minimum="1"
+        AOKP:defaultVal="100"
+        AOKP:unitsLeft=""
+        AOKP:unitsRight="%"
+        android:dependency="enable_app_circle_bar" />
+
 </PreferenceScreen>

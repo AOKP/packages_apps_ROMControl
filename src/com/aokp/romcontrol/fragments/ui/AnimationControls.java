@@ -86,6 +86,7 @@ public class AnimationControls extends Fragment {
         private static final String WALLPAPER_CLOSE = "wallpaper_close";
         private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
         private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
+        private static final String TASK_OPEN_BEHIND = "task_open_behind";
 
         ListPreference mActivityOpenPref;
         ListPreference mActivityClosePref;
@@ -97,6 +98,7 @@ public class AnimationControls extends Fragment {
         ListPreference mWallpaperClose;
         ListPreference mWallpaperIntraOpen;
         ListPreference mWallpaperIntraClose;
+        ListPreference mTaskOpenBehind;
         AnimBarPreference mAnimationDuration;
         SwitchPreference mAnimNoOverride;
 
@@ -185,6 +187,12 @@ public class AnimationControls extends Fragment {
             mWallpaperIntraClose.setEntries(mAnimationsStrings);
             mWallpaperIntraClose.setEntryValues(mAnimationsNum);
 
+            mTaskOpenBehind = (ListPreference) findPreference(TASK_OPEN_BEHIND);
+            mTaskOpenBehind.setOnPreferenceChangeListener(this);
+            mTaskOpenBehind.setSummary(getProperSummary(mTaskOpenBehind));
+            mTaskOpenBehind.setEntries(mAnimationsStrings);
+            mTaskOpenBehind.setEntryValues(mAnimationsNum);
+
             int defaultDuration = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.ANIMATION_CONTROLS_DURATION, 0);
             mAnimationDuration = (AnimBarPreference) findPreference(ANIMATION_DURATION);
@@ -251,6 +259,10 @@ public class AnimationControls extends Fragment {
                 int val = Integer.parseInt((String) newValue);
                 result = Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.ACTIVITY_ANIMATION_CONTROLS[9], val);
+            } else if (preference == mTaskOpenBehind) {
+                int val = Integer.parseInt((String) newValue);
+                result = Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], val);
             } else if (preference == mAnimationDuration) {
                 int val = Integer.parseInt((String) newValue);
                 Settings.System.putInt(getActivity().getContentResolver(),
@@ -282,6 +294,8 @@ public class AnimationControls extends Fragment {
                 mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[8];
             } else if (preference == mWallpaperIntraClose) {
                 mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[9];
+            } else if (preference == mTaskOpenBehind) {
+                mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[10];
             }
 
             int mNum = Settings.System.getInt(getActivity().getContentResolver(), mString, 0);

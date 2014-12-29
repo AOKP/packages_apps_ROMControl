@@ -73,8 +73,10 @@
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment" />
 
-        <activity android:name="com.aokp.romcontrol.fragments.statusbar.UITabHostFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.statusbar.DisplayAnimationsSettings" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.UITabHostFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.AnimBarPreference" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.AnimationControls" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings" />
 
     </application>
 

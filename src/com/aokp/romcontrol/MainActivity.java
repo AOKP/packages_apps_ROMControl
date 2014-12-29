@@ -47,6 +47,8 @@ import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
 
 import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
+import com.aokp.romcontrol.fragments.ui.AnimBarPreference;
+import com.aokp.romcontrol.fragments.ui.AnimationControls;
 import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
 
 import lineageos.providers.LineageSettings;

@@ -83,6 +83,7 @@
         <activity android:name="com.aokp.romcontrol.fragments.ui.GestureAnywhereCreateGestureActivity" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.AppCircleBarSettings" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.AnimationControls" />
 
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment" />

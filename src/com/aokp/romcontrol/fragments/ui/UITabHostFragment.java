@@ -37,7 +37,8 @@ public class UITabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.category_ui
+            R.string.category_ui,
+            R.string.aokp_animation_title
     };
 
     public UITabHostFragment() {
@@ -90,6 +91,8 @@ public class UITabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new DisplayAnimationsSettings();
+                case 1:
+                    return new AnimationControls();
             }
             return null;
         }

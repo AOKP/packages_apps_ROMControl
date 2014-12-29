@@ -37,7 +37,8 @@ public class UITabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.category_ui
+            R.string.category_ui,
+            R.string.aokp_animation_title
     };
 
     public UITabHostFragment() {
@@ -56,7 +57,7 @@ public class UITabHostFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
-        View main = inflater.inflate(R.layout.fragment_ui_settings, container, false);
+        View main = inflater.inflate(R.layout.fragment_ui_main, container, false);
         mAdapter = new TabAdapter(getChildFragmentManager());
         mPager = (ViewPager) main.findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
@@ -90,6 +91,8 @@ public class UITabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new DisplayAnimationsSettings();
+                case 1:
+                    return new AnimationControls();
             }
             return null;
         }

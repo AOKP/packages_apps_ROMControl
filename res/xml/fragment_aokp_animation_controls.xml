@@ -65,6 +65,10 @@
             android:key="wallpaper_intra_close"
             android:title="@string/wallpaper_intra_close_title" />
 
+        <ListPreference
+            android:key="task_open_behind"
+            android:title="@string/task_open_behind_title" />
+
         <com.aokp.romcontrol.fragments.ui.AnimBarPreference
             android:key="animation_duration"
             android:title="@string/animation_duration_title" />

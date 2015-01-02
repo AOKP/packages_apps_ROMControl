@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
 /**
  * Copyright (c) 2016, The Android Open Kang Project
  *
@@ -14,16 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+-->
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/aokp_animation_title">
-
-        <SwitchPreference
-            android:key="animation_no_override"
-            android:title="@string/title_animation_no_override"
-            android:summary="@string/summary_animation_no_override" />
 
         <ListPreference
             android:key="activity_open"

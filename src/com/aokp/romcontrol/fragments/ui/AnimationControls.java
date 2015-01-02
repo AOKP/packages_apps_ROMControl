@@ -29,7 +29,6 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,7 +80,6 @@ public class AnimationControls extends Fragment {
         private static final String TASK_MOVE_TO_FRONT = "task_move_to_front";
         private static final String TASK_MOVE_TO_BACK = "task_move_to_back";
         private static final String ANIMATION_DURATION = "animation_duration";
-        private static final String ANIMATION_NO_OVERRIDE = "animation_no_override";
         private static final String WALLPAPER_OPEN = "wallpaper_open";
         private static final String WALLPAPER_CLOSE = "wallpaper_close";
         private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
@@ -100,7 +98,6 @@ public class AnimationControls extends Fragment {
         ListPreference mWallpaperIntraClose;
         ListPreference mTaskOpenBehind;
         AnimBarPreference mAnimationDuration;
-        SwitchPreference mAnimNoOverride;
 
         private int[] mAnimations;
         private String[] mAnimationsStrings;
@@ -122,10 +119,6 @@ public class AnimationControls extends Fragment {
                 mAnimationsStrings[i] = AwesomeAnimationHelper.getProperName(getActivity().getApplicationContext(), mAnimations[i]);
                 mAnimationsNum[i] = String.valueOf(mAnimations[i]);
             }
-
-            mAnimNoOverride = (SwitchPreference) findPreference(ANIMATION_NO_OVERRIDE);
-            mAnimNoOverride.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
-                    Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE, false));
 
             mActivityOpenPref = (ListPreference) findPreference(ACTIVITY_OPEN);
             mActivityOpenPref.setOnPreferenceChangeListener(this);
@@ -207,12 +200,6 @@ public class AnimationControls extends Fragment {
         @Override
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
-            if (preference == mAnimNoOverride) {
-                Settings.System.putBoolean(getActivity().getContentResolver(),
-                        Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE,
-                            mAnimNoOverride.isChecked());
-                return true;
-            }
             return false;
         }
 

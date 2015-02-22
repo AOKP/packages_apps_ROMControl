@@ -15,11 +15,11 @@ import com.aokp.romcontrol.settings.CheckboxSetting;
 import com.aokp.romcontrol.settings.SingleChoiceSetting;
 
 
-public class ArrangeNavbarFragment extends Fragment implements OnSettingChangedListener {
+public class NavbarArrangeFragment extends Fragment implements OnSettingChangedListener {
 
     protected Context mContext;
 
-    public ArrangeNavbarFragment() {
+    public NavbarArrangeFragment() {
 
     }
 
@@ -31,7 +31,7 @@ public class ArrangeNavbarFragment extends Fragment implements OnSettingChangedL
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_navbar_settings, container, false);
+        View v = inflater.inflate(R.layout.fragment_navbar_arrange, container, false);
 
         mContext = getActivity();
 

@@ -358,7 +358,7 @@
 
     <string name="status_bar_show_clock_second_title">Clock seconds</string>
 
-    <!--Status bar date -->
+    <!-- Status bar date -->
     <string name="status_bar_clock_category">Clock</string>
     <string name="status_bar_date_title">Date</string>
     <string name="status_bar_date_none">Hidden (default)</string>
@@ -515,10 +515,9 @@
     <string name="location_modes_toggle_so">Device only/Off</string>
 
     <!-- Navigation Bar -->
-    <string name="enable_navigation_bar_title">Enable navigation bar</string>
-    <string name="enable_navigation_bar_summary">Enable the on-screen navigation bar</string>
-    <string name="navigation_bar_dpad_keys_title">Arrow keys</string>
-    <string name="navigation_bar_dpad_keys_summary">Show arrow keys while keyboard is shown</string>
+    <string name="navbar_tab_settings">Settings</string>
+    <string name="navbar_tab_arrange">Rearrange</string>
+    <string name="navring_tab_settings">Navring</string>
 
     <!-- Nav Ring Targets -->
     <string name="navbar_ring_cat">Navigation ring targets</string>
@@ -556,6 +555,9 @@
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
     <string name="enable_navring_title">Enable navigation ring</string>
     <string name="enable_navring_summary"></string>
+    <!-- Double Tap Navbar to Sleep -->
+    <string name="double_tap_sleep_nav_bar_title">Double-tap to sleep</string>
+    <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>
 
     <!-- Animation Controls -->
     <string name="title_animation_controls">Animations</string>
@@ -797,7 +799,6 @@
     <!-- Proximity Wakeup Check -->
     <string name="wakeup_with_proximity_check_title">Prevent accidental wake-up</string>
     <string name="wakeup_with_proximity_check_summary">Check the proximity sensor prior to waking up screen</string>
-
     <!-- Superuser indicator on status bar -->
     <string name="su_indicator">Superuser indicator</string>
     <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
@@ -935,7 +936,6 @@
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
-
 
     <string name="shortcuts_applications">Applications</string>
     <string name="shortcuts_select_custom_app_title">Select custom application</string>

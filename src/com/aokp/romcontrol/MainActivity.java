@@ -44,7 +44,7 @@ import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
 
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
-import com.aokp.romcontrol.fragments.navbar.ArrangeNavbarFragment;
+import com.aokp.romcontrol.fragments.navbar.NavbarArrangeFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
 import com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment;
 

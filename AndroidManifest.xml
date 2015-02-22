@@ -72,7 +72,7 @@
         <activity android:name="com.aokp.romcontrol.fragments.general.WakelockBlockerFragment" />
 
         <activity android:name="com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.navbar.ArrangeNavbarFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.navbar.NavbarArrangeFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment" />
 

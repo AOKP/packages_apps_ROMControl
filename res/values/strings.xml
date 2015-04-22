@@ -327,6 +327,9 @@
     <string name="status_bar_date_format_custom">Custom java format</string>
     <string name="status_bar_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
     <string name="status_bar_date_string_edittext_summary">Enter string</string>
+    <string name="clock_color_title">Clock Color</string>
+    <string name="status_bar_clock_style_reset">Reset color</string>
+    <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
     <!-- Superuser indicator on status bar -->
     <string name="su_indicator">Superuser indicator</string>

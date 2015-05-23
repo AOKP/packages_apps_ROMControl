@@ -503,6 +503,7 @@
         <item>yyyy-MM-dd</item>
         <item>yyyy-dd-MM</item>
         <item>dd-MM-yyyy</item>
+        <item>dd.MM.yyyy</item>
         <item>MM-dd-yyyy</item>
         <item>MMM dd</item>
         <item>MMM dd, yyyy</item>
@@ -510,11 +511,15 @@
         <item>EEE</item>
         <item>EEE dd</item>
         <item>EEE dd/MM</item>
+        <item>EEE dd.MM.</item>
         <item>EEE MM/dd</item>
         <item>EEE dd MMM</item>
+        <item>EEE dd. MMMM</item>
         <item>EEE MMM dd</item>
         <item>EEE MMMM dd</item>
+        <item>EEE dd.MMMM</item>
         <item>EEEE dd/MM</item>
+        <item>EEEE dd.MM.</item>
         <item>EEEE MM/dd</item>
         <item>@string/status_bar_date_format_custom</item>
     </string-array>

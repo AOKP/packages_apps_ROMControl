@@ -110,7 +110,7 @@ public class StatusbarSettingsFragment extends Fragment {
 
         public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
         public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
-        private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
+        private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 23;
 
         private static final int MENU_RESET = Menu.FIRST;
         private static final int DLG_RESET = 0;

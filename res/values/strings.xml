@@ -143,6 +143,10 @@
     <string name="recents_fullscreen_summary_enabled">Recents in fullscreen is enabled</string>
     <string name="recents_fullscreen_summary_disabled">Recents in fullscreen is disabled</string>
 
+    <!-- Task Manager -->
+    <string name="enable_task_manager_title">Task Manager</string>
+    <string name="enable_task_manager_summary">Enable/Disable action for the task manager button in the expanded statusbar area.</string>
+
     <!-- Sound settings -->
     <string name="sound_title">Sound</string>
     <!-- Safe headset volume restore checkbox -->

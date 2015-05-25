@@ -82,6 +82,7 @@ public class NotificationsDrawerFragment extends Fragment {
                 "notification_drawer_clear_all_icon_color";
         private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
         private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
+        private static final String PREF_ENABLE_TASK_MANAGER = "enable_task_manager";
 
         private static final int WHITE = 0xffffffff;
         private static final int HOLO_BLUE_LIGHT = 0xff33b5e5;
@@ -97,6 +98,7 @@ public class NotificationsDrawerFragment extends Fragment {
 
         private SeekBarPreference mQSShadeAlpha;
         private SeekBarPreference mQSHeaderAlpha;
+        private SwitchPreference mEnableTaskManager;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -146,6 +148,11 @@ public class NotificationsDrawerFragment extends Fragment {
             mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
             mQSHeaderAlpha.setOnPreferenceChangeListener(this);
 
+            // Task manager
+            mEnableTaskManager = (SwitchPreference) prefSet.findPreference(PREF_ENABLE_TASK_MANAGER);
+            mEnableTaskManager.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
+
             setHasOptionsMenu(true);
             return prefSet;
         }
@@ -166,6 +173,16 @@ public class NotificationsDrawerFragment extends Fragment {
                  default:
                     return super.onContextItemSelected(item);
             }
+        }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+           if  (preference == mEnableTaskManager) {
+                boolean enabled = ((SwitchPreference)preference).isChecked();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.ENABLE_TASK_MANAGER, enabled ? 1:0);
+            }
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         @Override

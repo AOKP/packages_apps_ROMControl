@@ -37,6 +37,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -95,6 +96,9 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
         private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
         private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
+        private static final String SMS_BREATH = "sms_breath";
+        private static final String MISSED_CALL_BREATH = "missed_call_breath";
+        private static final String VOICEMAIL_BREATH = "voicemail_breath";
 
         public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
         public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -115,6 +119,9 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mStatusBarAmPm;
         private ListPreference mStatusBarBattery;
         private ListPreference mStatusBarBatteryShowPercent;
+        private SwitchPreference mSmsBreath;
+        private SwitchPreference mMissedCallBreath;
+        private SwitchPreference mVoicemailBreath;
 
         private ColorPickerPreference mAokpLogoColor;
         private ListPreference mAokpLogoStyle;
@@ -225,6 +232,32 @@ public class StatusbarSettingsFragment extends Fragment {
             mAokpLogoStyle.setValue(String.valueOf(AokpLogoStyle));
             mAokpLogoStyle.setSummary(mAokpLogoStyle.getEntry());
             mAokpLogoStyle.setOnPreferenceChangeListener(this);
+
+            // Breathing Notifications
+            mMissedCallBreath = (SwitchPreference) findPreference(MISSED_CALL_BREATH);
+            mVoicemailBreath = (SwitchPreference) findPreference(VOICEMAIL_BREATH);
+
+            ConnectivityManager cm = (ConnectivityManager)
+                    getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+            if (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+
+                mSmsBreath.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.KEY_SMS_BREATH, 0) == 1);
+                mSmsBreath.setOnPreferenceChangeListener(this);
+
+                mMissedCallBreath.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1);
+                mMissedCallBreath.setOnPreferenceChangeListener(this);
+
+                mVoicemailBreath.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
+                mVoicemailBreath.setOnPreferenceChangeListener(this);
+            } else {
+                prefSet.removePreference(mSmsBreath);
+                prefSet.removePreference(mMissedCallBreath);
+                prefSet.removePreference(mVoicemailBreath);
+            }
 
             return prefSet;
         }
@@ -369,6 +402,18 @@ public class StatusbarSettingsFragment extends Fragment {
                         UserHandle.USER_CURRENT);
                 mAokpLogoStyle.setSummary(
                         mAokpLogoStyle.getEntries()[index]);
+                return true;
+            } else if (preference == mSmsBreath) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver, Settings.System.KEY_SMS_BREATH, value ? 1 : 0);
+                return true;
+            } else if (preference == mMissedCallBreath) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver, Settings.System.KEY_MISSED_CALL_BREATH, value ? 1 : 0);
+                return true;
+            } else if (preference == mVoicemailBreath) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver, Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
                 return true;
             }
             return false;

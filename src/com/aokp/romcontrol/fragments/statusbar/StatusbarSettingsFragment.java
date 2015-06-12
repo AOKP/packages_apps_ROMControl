@@ -29,6 +29,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.ListPreference;
@@ -36,6 +37,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -97,6 +99,8 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
         private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
+        private static final String MISSED_CALL_BREATH = "missed_call_breath";
+        private static final String VOICEMAIL_BREATH = "voicemail_breath";
 
         static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
@@ -110,6 +114,8 @@ public class StatusbarSettingsFragment extends Fragment {
         private String mCustomCarrierLabelText;
         private ColorPickerPreference mCarrierColorPicker;
         private SeekBarPreference mStatusBarCarrierSize;
+        private SwitchPreference mMissedCallBreath;
+        private SwitchPreference mVoicemailBreath;
 
         private boolean mCheckPreferences;
 
@@ -194,6 +200,27 @@ public class StatusbarSettingsFragment extends Fragment {
             mStatusBarCarrierSize.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 14));
             mStatusBarCarrierSize.setOnPreferenceChangeListener(this);
+
+            // Breathing Notifications
+            mMissedCallBreath = (SwitchPreference) findPreference(MISSED_CALL_BREATH);
+            mVoicemailBreath = (SwitchPreference) findPreference(VOICEMAIL_BREATH);
+
+            ConnectivityManager cm = (ConnectivityManager)
+                    getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+            if (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+
+                mMissedCallBreath.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1);
+                mMissedCallBreath.setOnPreferenceChangeListener(this);
+
+                mVoicemailBreath.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.KEY_VOICEMAIL_BREATH, 0) == 1);
+                mVoicemailBreath.setOnPreferenceChangeListener(this);
+            } else {
+                prefSet.removePreference(mMissedCallBreath);
+                prefSet.removePreference(mVoicemailBreath);
+            }
 
             updateWeatherOptions();
             setHasOptionsMenu(true);
@@ -332,6 +359,14 @@ public class StatusbarSettingsFragment extends Fragment {
                 int width = ((Integer)newValue).intValue();
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, width);
+                return true;
+            } else if (preference == mMissedCallBreath) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver, Settings.System.KEY_MISSED_CALL_BREATH, value ? 1 : 0);
+                return true;
+            } else if (preference == mVoicemailBreath) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver, Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
                 return true;
             }
             return false;

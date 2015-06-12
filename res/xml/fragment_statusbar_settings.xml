@@ -110,6 +110,24 @@
         android:summaryOff="@string/su_indicator_summary_off"
         android:defaultValue="false" />
 
+    <SwitchPreference
+        android:key="sms_breath"
+        android:title="@string/sms_breath_title"
+        android:summary="@string/sms_breath_summary"
+        android:persistent="false"/>
+
+    <SwitchPreference
+        android:key="missed_call_breath"
+        android:title="@string/missed_call_breath_title"
+        android:summary="@string/missed_call_breath_summary"
+        android:persistent="false"/>
+
+    <SwitchPreference
+        android:key="voicemail_breath"
+        android:title="@string/voicemail_breath_title"
+        android:summary="@string/voicemail_breath_summary"
+        android:persistent="false"/>
+
     <PreferenceScreen
         android:key="status_bar_icons"
         android:title="@string/status_bar_icons_title"

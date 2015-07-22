@@ -105,6 +105,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String PREF_STATUS_BAR_CLOCK_FONT_SIZE  = "status_bar_clock_font_size";
         private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
         private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+        private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
 
         private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
         private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -126,6 +127,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mStatusBarClockFontSize;
         private ListPreference mStatusBarBattery;
         private ListPreference mStatusBarBatteryShowPercent;
+        private ListPreference mStatusBarTemperature;
 
         private boolean mCheckPreferences;
 
@@ -237,6 +239,13 @@ public class StatusbarSettingsFragment extends Fragment {
                     .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_SIZE,
                     14)));
             mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntry());
+
+            mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE_STYLE);
+            int temperatureStyle = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0);
+            mStatusBarTemperature.setValue(String.valueOf(temperatureStyle));
+            mStatusBarTemperature.setSummary(mStatusBarTemperature.getEntry());
+            mStatusBarTemperature.setOnPreferenceChangeListener(this);
 
             setHasOptionsMenu(true);
             mCheckPreferences = true;
@@ -384,6 +393,14 @@ public class StatusbarSettingsFragment extends Fragment {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUSBAR_CLOCK_FONT_SIZE, val);
                 mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntries()[index]);
+                return true;
+            } else if (preference == mStatusBarTemperature) {
+                int temperatureStyle = Integer.valueOf((String) newValue);
+                int index = mStatusBarTemperature.findIndexOfValue((String) newValue);
+                Settings.System.putInt(
+                        resolver, Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, temperatureStyle);
+                mStatusBarTemperature.setSummary(
+                        mStatusBarTemperature.getEntries()[index]);
                 return true;
             }
             return false;

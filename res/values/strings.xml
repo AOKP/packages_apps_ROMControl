@@ -237,10 +237,14 @@
     <string name="status_bar_icons_summary">Control which status bar icons are shown</string>
 
     <!-- Status bar temperature -->
-    <string name="status_bar_temperature_title">Temperature style</string>
+    <string name="status_bar_temperature_title">Temperature</string>
     <string name="status_bar_temperature_hidden">Hidden</string>
-    <string name="status_bar_temperature_show_scale">Scale showing</string>
-    <string name="status_bar_temperature_hide_scale">Scale hidden</string>
+    <string name="status_bar_temperature_show_scale">Shown with scale</string>
+    <string name="status_bar_temperature_hide_scale">Shown without scale</string>
+    <string name="status_bar_temperature_location_title">Placement</string>
+    <string name="status_bar_temperature_location_summary">Select where the weather temperature is shown on the statusbar</string>
+    <string name="status_bar_temperature_location_right">Show on right</string>
+    <string name="status_bar_temperature_location_left">Show on left</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_style_title">Clock style</string>

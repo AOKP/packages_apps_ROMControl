@@ -365,6 +365,10 @@
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
 
+    <!-- StatusBar Headphones icon switch -->
+    <string name="show_headset_icon_title">Headset icon</string>
+    <string name="show_headset_icon_summary">Shows icon when headsets are connected.</string>
+
     <!-- Notifications Drawer -->
     <string name="notifications_drawer_title">Notif Drawer Settings</string>
 

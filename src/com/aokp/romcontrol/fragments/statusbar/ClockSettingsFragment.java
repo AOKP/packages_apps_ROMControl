@@ -99,6 +99,7 @@ public class ClockSettingsFragment extends Fragment {
         private static final String STATUS_BAR_DATE = "status_bar_date";
         private static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
         private static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
+        private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
         private static final String PREF_COLOR_PICKER = "clock_color";
         private static final String PREF_FONT_STYLE = "font_style";
         private static final String PREF_STATUS_BAR_CLOCK_FONT_SIZE  = "status_bar_clock_font_size";
@@ -116,6 +117,7 @@ public class ClockSettingsFragment extends Fragment {
         private ListPreference mStatusBarDate;
         private ListPreference mStatusBarDateStyle;
         private ListPreference mStatusBarDateFormat;
+        private ListPreference mClockDatePosition;
         private ColorPickerPreference mColorPicker;
         private ListPreference mFontStyle;
         private ListPreference mStatusBarClockFontSize;
@@ -151,6 +153,14 @@ public class ClockSettingsFragment extends Fragment {
             mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
             mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
             mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
+
+            mClockDatePosition = (ListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
+            mClockDatePosition.setOnPreferenceChangeListener(this);
+            mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.STATUSBAR_CLOCK_DATE_POSITION,
+                    0)));
+            mClockDatePosition.setSummary(mClockDatePosition.getEntry());
+
             mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
             int clockStyle = CMSettings.System.getInt(resolver,
                     CMSettings.System.STATUS_BAR_CLOCK, 1);
@@ -371,6 +381,14 @@ public class ClockSettingsFragment extends Fragment {
                         Settings.System.STATUSBAR_CLOCK_FONT_SIZE, val);
                 mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntries()[index]);
                 return true;
+            } else if (preference == mClockDatePosition) {
+                int val = Integer.parseInt((String) newValue);
+                int index = mClockDatePosition.findIndexOfValue((String) newValue);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
+                mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
+                parseClockDateFormats();
+                return true;
             }
             return false;
         }
@@ -382,10 +400,12 @@ public class ClockSettingsFragment extends Fragment {
                 mStatusBarDate.setEnabled(false);
                 mStatusBarDateStyle.setEnabled(false);
                 mStatusBarDateFormat.setEnabled(false);
+                mClockDatePosition.setEnabled(false);
             } else {
                 mStatusBarDate.setEnabled(true);
                 mStatusBarDateStyle.setEnabled(true);
                 mStatusBarDateFormat.setEnabled(true);
+                mClockDatePosition.setEnabled(true);
             }
         }
 

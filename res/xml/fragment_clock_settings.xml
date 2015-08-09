@@ -73,4 +73,10 @@
         android:entryValues="@array/clock_font_size_values"
         android:title="@string/clock_font_size_title" />
 
+    <ListPreference
+        android:key="clock_date_position"
+        android:title="@string/clock_date_position"
+        android:entries="@array/clock_date_position_entries"
+        android:entryValues="@array/clock_date_position_values" />
+
 </PreferenceScreen>

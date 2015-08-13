@@ -77,9 +77,13 @@ public class DisplayAnimationsSettings extends Fragment {
         private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
         private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
+        private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+        private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+        private static final String SCROLLINGCACHE_DEFAULT = "1";
+
         private ListPreference mListViewAnimation;
         private ListPreference mListViewInterpolator;
-
+        private ListPreference mScrollingCachePref;
         private Context mContext;
 
         @Override
@@ -110,6 +114,12 @@ public class DisplayAnimationsSettings extends Fragment {
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
             mListViewInterpolator.setOnPreferenceChangeListener(this);
             mListViewInterpolator.setEnabled(listviewanimation > 0);
+
+            // Scrolling cache
+            mScrollingCachePref = (ListPreference) prefSet.findPreference(SCROLLINGCACHE_PREF);
+            mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                    SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+            mScrollingCachePref.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -148,6 +158,12 @@ public class DisplayAnimationsSettings extends Fragment {
                         Settings.System.LISTVIEW_INTERPOLATOR,
                         value);
                 mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
+            }
+            if (preference == mScrollingCachePref) {
+                if (objValue != null) {
+                    SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)objValue);
+                return true;
+                }
             }
             return false;
         }

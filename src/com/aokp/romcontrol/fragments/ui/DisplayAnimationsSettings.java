@@ -26,6 +26,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -76,10 +77,14 @@ public class DisplayAnimationsSettings extends Fragment {
         private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
         private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
         private static final String KEY_TOAST_ANIMATION = "toast_animation";
+        private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+        private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+        private static final String SCROLLINGCACHE_DEFAULT = "1";
 
         private ListPreference mListViewAnimation;
         private ListPreference mListViewInterpolator;
         private ListPreference mToastAnimation;
+        private ListPreference mScrollingCachePref;
         private Context mContext;
 
         @Override
@@ -119,6 +124,13 @@ public class DisplayAnimationsSettings extends Fragment {
             mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
             mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
             mToastAnimation.setOnPreferenceChangeListener(this);
+
+            // Scrolling cache
+            mScrollingCachePref = (ListPreference) prefSet.findPreference(SCROLLINGCACHE_PREF);
+            mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                    SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+            mScrollingCachePref.setOnPreferenceChangeListener(this);
+
             return prefSet;
         }
 
@@ -164,6 +176,12 @@ public class DisplayAnimationsSettings extends Fragment {
                 mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
                 Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
                 return true;
+            }
+            if (preference == mScrollingCachePref) {
+                if (objValue != null) {
+                    SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)objValue);
+                return true;
+                }
             }
             return false;
         }

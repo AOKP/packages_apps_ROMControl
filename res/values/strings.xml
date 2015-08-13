@@ -379,43 +379,31 @@
     <string name="status_bar_quick_qs_pulldown_left">Left</string>
     <string name="status_bar_quick_qs_pulldown_right">Right</string>
 
-    <!-- Weather in status bar -->
+    <!-- Weather in expanded status bar -->
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 
-    <!-- Animation Controls -->
+    <!-- Display Animations -->
     <string name="title_animation_controls">Animations</string>
-    <string name="activity_open_title">Activity Open Animation</string>
-    <string name="activity_close_title">Activity Close Animation</string>
-    <string name="task_open_title">Task Open Animation</string>
-    <string name="task_close_title">Task Close Animation</string>
-    <string name="task_move_to_front_title">Move To Front Animation</string>
-    <string name="task_move_to_back_title">Move To Back Animation</string>
-    <string name="wallpaper_open_title">Wallpaper Open Animation</string>
-    <string name="wallpaper_close_title">Wallpaper Close Animation</string>
-    <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>
-    <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>
-    <string name="task_open_behind_title">Task open behind animation</string>
-    <string name="animation_duration_default">Default</string>
-    <string name="animation_exit_only_title">Enter only animation</string>
-    <string name="animation_reverse_exit_title">Reverse exit animation</string>
 
-    <!-- Toast Animations -->
-    <string name="toast_animation_title">Toast Animations</string>
+    <!-- Toast Animation -->
+    <string name="toast_animation_title">Toast animation</string>
     <string name="toast_none_animation">None</string>
     <string name="toast_default_animation">Default</string>
-    <string name="toast_fade_animation">Fade Animation</string>
-    <string name="toast_SlideRight_animation">SlideRight Animation</string>
-    <string name="toast_SlideLeft_animation">SlideLeft Animation</string>
-    <string name="toast_Xylon_animation">Xylon Animation</string>
-    <string name="toast_Toko_animation">Toko Animation</string>
-    <string name="toast_Tn_animation">Tn Animation</string>
-    <string name="toast_Honami_animation">Honami Animation</string>
-    <string name="toast_FastFade_animation">FastFade Animation</string>
-    <string name="toast_GrowFade_animation">GrowFade Animation</string>
-    <string name="toast_GrowFadeCenter_animation">GrowFadeCenter Animation</string>
-    <string name="toast_GrowFadeBottom_animation">GrowFadeBottom Animation</string>
-    <string name="toast_Translucent_animation">Translucent Animation</string>
+    <string name="toast_fade_animation">Fade</string>
+    <string name="toast_SlideRight_animation">Slide right</string>
+    <string name="toast_SlideLeft_animation">Slide left</string>
+    <string name="toast_Xylon_animation">Xylon</string>
+    <string name="toast_Toko_animation">Toko</string>
+    <string name="toast_Tn_animation">Tn</string>
+    <string name="toast_Honami_animation">Honami</string>
+    <string name="toast_FastFade_animation">Fast fade</string>
+    <string name="toast_GrowFade_animation">Grow fade</string>
+    <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
+    <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
+    <string name="toast_Translucent_animation">Translucent</string>
+    <string name="toast_SlideLeftRight_animation">Slide left to right</string>
+    <string name="toast_SlideRightLeft_animation">Slide right to left</string>
 
     <!-- Toast Icons -->
     <string name="toast_icon_title">Toast icon</string>
@@ -444,31 +432,13 @@
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
 
-    <!-- Toast Animation -->
-    <string name="toast_animation_title">Toast animation</string>
-    <string name="toast_none_animation">None</string>
-    <string name="toast_default_animation">Default</string>
-    <string name="toast_fade_animation">Fade</string>
-    <string name="toast_SlideRight_animation">Slide right</string>
-    <string name="toast_SlideLeft_animation">Slide left</string>
-    <string name="toast_Xylon_animation">Xylon</string>
-    <string name="toast_Toko_animation">Toko</string>
-    <string name="toast_Tn_animation">Tn</string>
-    <string name="toast_Honami_animation">Honami</string>
-    <string name="toast_FastFade_animation">Fast fade</string>
-    <string name="toast_GrowFade_animation">Grow fade</string>
-    <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
-    <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
-    <string name="toast_Translucent_animation">Translucent</string>
-    <string name="toast_SlideLeftRight_animation">Slide left to right</string>
-    <string name="toast_SlideRightLeft_animation">Slide right to left</string>
-
     <!-- AOKP custom system animations -->
     <string name="aokp_animation_title">System animations</string>
     <string name="aokp_animation_summary">AOKP custom animation</string>
     <string name="activity_open_title">Activity open animation</string>
     <string name="activity_close_title">Activity close animation</string>
     <string name="task_open_title">Task open animation</string>
+    <string name="task_open_behind_title">Task open behind animation</string>
     <string name="task_close_title">Task close animation</string>
     <string name="task_move_to_front_title">Move to front animation</string>
     <string name="task_move_to_back_title">Move to back animation</string>
@@ -480,6 +450,14 @@
     <string name="title_animation_no_override">Prevent app overrides</string>
     <string name="summary_animation_no_override">Prevent apps from overriding transitions</string>
     <string name="animation_duration_default">Default</string>
+
+    <!-- Scrolling Cache -->
+    <string name="pref_scrollingcache_title">Scrolling cache</string>
+    <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
+    <string name="pref_scrollingcache_force_enable">Force enable</string>
+    <string name="pref_scrollingcache_default_enable">Default enable</string>
+    <string name="pref_scrollingcache_default_disable">Default disable</string>
+    <string name="pref_scrollingcache_force_disable">Force disable</string>
 
     <!-- Sound -->
     <string name="safe_headset_volume_title">Safe headset volume</string>

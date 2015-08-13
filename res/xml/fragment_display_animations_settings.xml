@@ -34,6 +34,14 @@
         android:defaultValue="0" />
 
     <ListPreference
+        android:key="pref_scrollingcache"
+        android:dialogTitle="@string/pref_scrollingcache_title"
+        android:title="@string/pref_scrollingcache_title"
+        android:summary="@string/pref_scrollingcache_summary"
+        android:entries="@array/entries_scrollingcache"
+        android:entryValues="@array/values_scrollingcache" />
+
+    <ListPreference
         android:key="toast_animation"
         android:title="@string/toast_animation_title"
         android:entries="@array/toast_animation_entries"

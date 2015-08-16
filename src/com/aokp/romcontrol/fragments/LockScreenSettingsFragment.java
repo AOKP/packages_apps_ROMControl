@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2014 The Android Open Kang Project
+ * Copyright (C) 2016 The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,31 @@
 
 package com.aokp.romcontrol.fragments;
 
-import android.app.ActivityManager;
+import android.app.Activity;
+import android.app.WallpaperManager;
 import android.app.Fragment;
-import android.content.res.Resources;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.SystemProperties;
-import android.view.LayoutInflater;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
+import android.widget.Toast;
+
+import cyanogenmod.providers.CMSettings;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.settings.CheckboxSetting;
 
 public class LockScreenSettingsFragment extends Fragment {
 
@@ -35,11 +49,80 @@ public class LockScreenSettingsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_lockscreen_settings, container, false);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        Resources res = getResources();
+        getActivity().getFragmentManager().beginTransaction()
+                .replace(R.id.container, new SettingsPreferenceFragment())
+                .commit();
+    }
 
-        return v;
+    public static class SettingsPreferenceFragment extends PreferenceFragment {
+
+        public SettingsPreferenceFragment() {
+
+        }
+
+        private static final String TAG = "LockScreenSettings";
+
+        public static final int IMAGE_PICK = 1;
+
+        private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
+        private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
+
+        private Preference mSetWallpaper;
+        private Preference mClearWallpaper;
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            // Load the preferences from an XML resource
+            addPreferencesFromResource(R.xml.fragment_lockscreen_settings);
+
+            mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
+            mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
+        }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+            if (preference == mSetWallpaper) {
+                setKeyguardWallpaper();
+                return true;
+            } else if (preference == mClearWallpaper) {
+                clearKeyguardWallpaper();
+                Toast.makeText(getView().getContext(), getString(R.string.reset_lockscreen_wallpaper),
+                Toast.LENGTH_LONG).show();
+                return true;
+            }
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+
+        @Override
+        public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            if (requestCode == IMAGE_PICK && resultCode == Activity.RESULT_OK) {
+                if (data != null && data.getData() != null) {
+                    Uri uri = data.getData();
+                    Intent intent = new Intent();
+                    intent.setClassName("com.android.wallpapercropper", "com.android.wallpapercropper.WallpaperCropActivity");
+                    intent.putExtra("keyguardMode", "1");
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    intent.setData(uri);
+                    startActivity(intent);
+                }
+            }
+        }
+
+        private void setKeyguardWallpaper() {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("image/*");
+            startActivityForResult(intent, IMAGE_PICK);
+        }
+
+        private void clearKeyguardWallpaper() {
+            WallpaperManager wallpaperManager = null;
+            wallpaperManager = WallpaperManager.getInstance(getActivity());
+            wallpaperManager.clearKeyguardWallpaper();
+        }
     }
 }

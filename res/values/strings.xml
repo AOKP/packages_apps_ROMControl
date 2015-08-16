@@ -815,4 +815,13 @@
     <string name="dim_nav_buttons_touch_anywhere_summary_on">Touching anywhere on the screen will cause buttons to un-dim</string>
     <string name="dim_nav_buttons_touch_anywhere_summary_off">Only touches on the navbar will cause buttons to un-dim</string>
 
+    <!-- Lockscreen -->
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Set lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
+    <string name="reset_lockscreen_wallpaper">Set to default</string>
+
 </resources>

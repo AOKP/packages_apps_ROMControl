@@ -40,5 +40,11 @@
         android:entryValues="@array/toast_animation_values"
         android:persistent="false" />
 
+    <!-- Toast Icons -->
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="toast_icon"
+        android:title="@string/toast_icon_title"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
 

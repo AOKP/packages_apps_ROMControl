@@ -533,6 +533,9 @@
     <string name="toast_GrowFadeBottom_animation">GrowFadeBottom Animation</string>
     <string name="toast_Translucent_animation">Translucent Animation</string>
 
+    <!-- Toast Icons -->
+    <string name="toast_icon_title">Toast icon</string>
+
     <!-- ListView -->
     <string name="listview_title">ListView</string>
     <string name="listview_animation_title">ListView Animation</string>

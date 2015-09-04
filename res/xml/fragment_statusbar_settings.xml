@@ -152,6 +152,15 @@
         android:title="@string/status_bar_carrier_color"
         android:defaultValue="0xffffffff" />
 
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        android:key="status_bar_carrier_font_size"
+        android:title="@string/status_bar_carrier_size"
+        android:defaultValue="14"
+        android:max="23"
+        aokp:min="4"
+        aokp:unitsLeft=""
+        aokp:unitsRight="dp" />
+
      <com.aokp.romcontrol.settings.CMSystemSettingSwitchPreference
         android:key="status_bar_brightness_control"
         android:title="@string/status_bar_toggle_brightness"

@@ -14,7 +14,10 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/lockscreen_settings_title"
+    xmlns:aokp="http://schemas.android.com/apk/res-auto" >
 
     <PreferenceCategory
         android:key="lockscreen_wallpaper"
@@ -29,6 +32,22 @@
             android:key="lockscreen_wallpaper_clear"
             android:title="@string/lockscreen_wallpaper_clear_title"
             android:persistent="false"/>
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="lockscreen_see_through"
+            android:title="@string/lockscreen_see_through_title"
+            android:summary="@string/lockscreen_see_through_summary"
+            android:defaultValue="false" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+            android:key="lockscreen_blur_radius"
+            android:title="@string/lockscreen_blur_radius"
+            android:dependency="lockscreen_see_through"
+            android:defaultValue="14"
+            android:max="25"
+            aokp:min="0"
+            aokp:unitsLeft=""
+            aokp:unitsRight="perc" />
 
     </PreferenceCategory>
 </PreferenceScreen>

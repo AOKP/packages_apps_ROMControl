@@ -162,6 +162,7 @@ public class PowerMenuSettingsFragment extends Fragment {
             if (mUsersPref != null) {
                 if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
                     getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
+                    mUsersPref = null;
                 } else {
                     List<UserInfo> users = ((UserManager) mContext.getSystemService(
                             Context.USER_SERVICE)).getUsers();

@@ -60,6 +60,13 @@
         android:summary="@string/status_bar_notif_count_summary"
         android:defaultValue="false" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="show_su_indicator"
+        android:title="@string/su_indicator"
+        android:summaryOn="@string/su_indicator_summary_on"
+        android:summaryOff="@string/su_indicator_summary_off"
+        android:defaultValue="true" />
+
      <com.aokp.romcontrol.settings.CMSystemSettingSwitchPreference
         android:key="double_tap_sleep_gesture"
         android:title="@string/double_tap_to_sleep_title"

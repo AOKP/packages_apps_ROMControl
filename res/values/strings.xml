@@ -686,4 +686,9 @@
     <string name="wakeup_with_proximity_check_title">Prevent accidental wake-up</string>
     <string name="wakeup_with_proximity_check_summary">Check the proximity sensor prior to waking up screen</string>
 
+    <!-- Superuser indicator on status bar -->
+    <string name="su_indicator">Superuser indicator</string>
+    <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
+    <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
+
 </resources>

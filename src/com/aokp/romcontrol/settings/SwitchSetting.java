@@ -2,11 +2,14 @@ package com.aokp.romcontrol.settings;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Switch;
 import com.aokp.romcontrol.R;
+
+import cyanogenmod.providers.CMSettings;
 
 /**
  * Setting toggle which represents a boolean value

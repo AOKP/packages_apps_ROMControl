@@ -49,6 +49,8 @@ import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
 import com.aokp.romcontrol.fragments.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 
+import cyanogenmod.providers.CMSettings;
+
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -100,9 +102,51 @@ public class MainActivity extends Activity
     public Fragment getFragmentToAttach(int position) {
         int index = position;
         mTitle = mDrawerEntries[index];
-        String item = mDrawerValues[index];
         Fragment fragment = null;
 
+        switch (position) {
+            case 0:
+                fragment = new AboutTabHostFragment();
+                break;
+
+            case 1:
+                fragment = new GeneralSettingsFragment();
+                break;
+
+            case 2:
+                fragment = new LockScreenSettingsFragment();
+                break;
+
+            case 3:
+                fragment = new StatusbarSettingsFragment();
+                break;
+
+            case 4:
+                fragment = new NotificationsDrawerFragment();
+                break;
+
+            case 5:
+                fragment = new HardwareKeysFragment();
+                break;
+
+            case 6:
+                fragment = new PowerMenuSettingsFragment();
+                break;
+
+            case 7:
+                fragment = new NavbarTabHostFragment();
+                break;
+
+            case 8:
+                fragment = new SoundSettingsFragment();
+                break;
+
+            case 9:
+                fragment = new AnimationsFragment();
+                break;
+
+        /*
+        String item = mDrawerValues[index];
         // blame Google for not using Java 7 yet
         if ("about_aokp".equals(item)) {
             fragment = new AboutTabHostFragment();
@@ -136,7 +180,7 @@ public class MainActivity extends Activity
         }
         else {
             // who knows
-            fragment = new AboutTabHostFragment();
+            fragment = new AboutTabHostFragment(); */
         }
         return fragment;
     }

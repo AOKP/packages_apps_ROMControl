@@ -307,17 +307,6 @@
         <item>9</item>
     </string-array>
 
-    <string-array name="power_menuEntries" translatable="false">
-        <item>@string/hide_option</item>
-        <item>@string/on_always</item>
-        <item>@string/on_when_insecure</item>
-    </string-array>
-    <string-array name="power_menuValues" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <string-array name="ribbon_handle_location_entries" translatable="false">
         <item>@string/center</item>
         <item>@string/top</item>

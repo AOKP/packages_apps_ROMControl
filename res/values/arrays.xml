@@ -22,6 +22,7 @@
         <item>@string/category_about_aokp</item>
         <item>@string/category_general</item>
         <item>@string/category_notifications_drawer</item>
+        <item>@string/category_power_menu</item>
         <item>@string/category_sound</item>
         <item>@string/category_statusbar</item>
         <item>@string/category_ui</item>
@@ -30,6 +31,7 @@
         <item>about_aokp</item>
         <item>general</item>
         <item>notifications_drawer</item>
+        <item>power_menu</item>
         <item>sound</item>
         <item>statusbar</item>
         <item>ui</item>
@@ -38,9 +40,20 @@
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_general</item>
         <item>@drawable/ic_rom_control_toggles</item>
+        <item>@drawable/ic_rom_control_power_menu</item>
         <item>@drawable/ic_rom_control_sound</item>
         <item>@drawable/ic_rom_control_signal</item>
         <item>@drawable/ic_rom_control_animations</item>
+    </string-array>
+
+    <string-array name="power_menu_actions_array" translatable="false">
+        <item>power</item>
+        <item>restart</item>
+        <item>screenshot</item>
+        <item>airplane</item>
+        <item>users</item>
+        <item>bugreport</item>
+        <item>silent</item>
     </string-array>
 
     <string-array name="less_notification_sounds_entries">

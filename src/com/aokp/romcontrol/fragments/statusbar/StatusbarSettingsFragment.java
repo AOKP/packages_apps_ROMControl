@@ -112,6 +112,9 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String PREF_STATUS_BAR_WEATHER_COLOR = "status_bar_weather_color";
         private static final String PREF_STATUS_BAR_WEATHER_SIZE = "status_bar_weather_size";
         private static final String PREF_STATUS_BAR_WEATHER_FONT_STYLE = "status_bar_weather_font_style";
+        private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
+        private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+        private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
 
         private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
         private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -122,6 +125,7 @@ public class StatusbarSettingsFragment extends Fragment {
 
         private static final int MENU_RESET = Menu.FIRST;
         private static final int DLG_RESET = 0;
+        static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
         private ListPreference mStatusBarClock;
         private ListPreference mStatusBarAmPm;
@@ -138,6 +142,10 @@ public class StatusbarSettingsFragment extends Fragment {
         private ColorPickerPreference mStatusBarTemperatureColor;
         private SeekBarPreferenceCham mStatusBarTemperatureSize;
         private ListPreference mStatusBarTemperatureFontStyle;
+        private PreferenceScreen mCustomCarrierLabel;
+        private ListPreference mShowCarrierLabel;
+        private String mCustomCarrierLabelText;
+        private ColorPickerPreference mCarrierColorPicker;
 
         private boolean mCheckPreferences;
 
@@ -153,6 +161,9 @@ public class StatusbarSettingsFragment extends Fragment {
             addPreferencesFromResource(R.xml.fragment_statusbar_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
             ContentResolver resolver = getActivity().getContentResolver();
+
+            int intColor;
+            String hexColor;
 
             PackageManager pm = getActivity().getPackageManager();
             Resources systemUiResources;
@@ -285,10 +296,38 @@ public class StatusbarSettingsFragment extends Fragment {
                     .getContentResolver(), Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, 0)));
             mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntry());
 
+            mShowCarrierLabel =
+                    (ListPreference) findPreference(SHOW_CARRIER_LABEL);
+            int showCarrierLabel = Settings.System.getIntForUser(resolver,
+                    Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+            mShowCarrierLabel.setValue(String.valueOf(showCarrierLabel));
+            mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
+            mShowCarrierLabel.setOnPreferenceChangeListener(this);
+            mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
+
+            mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+            mCarrierColorPicker.setOnPreferenceChangeListener(this);
+            intColor = Settings.System.getInt(getContentResolver(),
+                        Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mCarrierColorPicker.setSummary(hexColor);
+            mCarrierColorPicker.setNewPreviewColor(intColor);
+
             updateWeatherOptions();
             setHasOptionsMenu(true);
             mCheckPreferences = true;
             return prefSet;
+        }
+
+        private void updateCustomLabelTextSummary() {
+            mCustomCarrierLabelText = Settings.System.getString(
+                this.getContentResolver(), Settings.System.CUSTOM_CARRIER_LABEL);
+
+            if (TextUtils.isEmpty(mCustomCarrierLabelText)) {
+                mCustomCarrierLabel.setSummary(R.string.custom_carrier_label_notset);
+            } else {
+                mCustomCarrierLabel.setSummary(mCustomCarrierLabelText);
+            }
         }
 
         protected ContentResolver getContentResolver() {
@@ -314,6 +353,37 @@ public class StatusbarSettingsFragment extends Fragment {
                             R.array.status_bar_clock_style_entries_rtl));
                     mStatusBarClock.setSummary(mStatusBarClock.getEntry());
             }
+        }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+                final Preference preference) {
+            final ContentResolver resolver = this.getContentResolver();
+            if (preference.getKey().equals(CUSTOM_CARRIER_LABEL)) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+                alert.setTitle(R.string.custom_carrier_label_title);
+                alert.setMessage(R.string.custom_carrier_label_explain);
+
+                // Set an EditText view to get user input
+                final EditText input = new EditText(getActivity());
+                input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
+                input.setSelection(input.getText().length());
+                alert.setView(input);
+                alert.setPositiveButton(getString(android.R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                String value = ((Spannable) input.getText()).toString().trim();
+                                Settings.System.putString(resolver, Settings.System.CUSTOM_CARRIER_LABEL, value);
+                                updateCustomLabelTextSummary();
+                                Intent i = new Intent();
+                                i.setAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
+                                getActivity().sendBroadcast(i);
+                    }
+                });
+                alert.setNegativeButton(getString(android.R.string.cancel), null);
+                alert.show();
+            }
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         @Override
@@ -471,6 +541,21 @@ public class StatusbarSettingsFragment extends Fragment {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, val);
                 mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntries()[index]);
+                return true;
+            else if (preference == mCarrierColorPicker) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
+                return true;
+             } else if (preference == mShowCarrierLabel) {
+                int showCarrierLabel = Integer.valueOf((String) newValue);
+                int index = mShowCarrierLabel.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(resolver, Settings.System.
+                    STATUS_BAR_SHOW_CARRIER, showCarrierLabel, UserHandle.USER_CURRENT);
+                mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntries()[index]);
                 return true;
             }
             return false;

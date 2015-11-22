@@ -34,13 +34,16 @@ import com.aokp.romcontrol.fragments.about.AboutCrewFragment;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
+import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
+import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
+import com.aokp.romcontrol.fragments.general.RecentsSettingsFragment;
+
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.ArrangeNavbarFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
 import com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment;
 
 import com.aokp.romcontrol.fragments.AnimationsFragment;
-import com.aokp.romcontrol.fragments.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
@@ -110,7 +113,7 @@ public class MainActivity extends Activity
                 break;
 
             case 1:
-                fragment = new GeneralSettingsFragment();
+                fragment = new GeneralTabHostFragment();
                 break;
 
             case 2:

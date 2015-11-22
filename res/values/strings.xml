@@ -101,6 +101,14 @@
     <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
     <string name="kanglings">The Kanglings</string>
 
+    <!-- General -->
+    <string name="general_settings">General settings</string>
+    <string name="recents_settings">Recents settings</string>
+
+    <!-- EdgeGesture service -->
+    <string name="edge_gesture_service_title">Block gesture touch events</string>
+    <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
+
     <!--Battery Icon selection-->
     <string name="battery_status_icon_title">Status icon</string>
     <string name="battery_bar_percent">Battery bar &amp; percent</string>
@@ -168,10 +176,10 @@
     <string name="bottom">Bottom</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
-    <string name="ram_bar_title">Recents RAM bar</string>
-    <string name="ram_bar_summary">Shows RAM usage in the recent apps window</string>
-    <string name="force_highend_gfx_title">Force high-end graphics</string>
-    <string name="force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
+
+    <!-- Recents settings -->
+    <string name="recents_show_searchbar">Recents Search-bar</string>
+    <string name="recents_show_searchbar_summary">Shows Search-bar in the recent apps window</string>
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>

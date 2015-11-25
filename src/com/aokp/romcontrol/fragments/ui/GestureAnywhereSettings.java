@@ -110,7 +110,7 @@ public class GestureAnywhereSettings extends Fragment {
 
             mTriggerWidthPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_WIDTH);
             mTriggerWidthPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.GESTURE_ANYWHERE_TRIGGER_WIDTH, 10));
+                    Settings.System.GESTURE_ANYWHERE_TRIGGER_WIDTH, 40));
             mTriggerWidthPref.setOnPreferenceChangeListener(this);
 
             mTriggerTopPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_TOP);

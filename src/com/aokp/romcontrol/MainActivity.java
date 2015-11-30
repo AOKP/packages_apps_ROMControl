@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The Android Open Kang Project
+ * Copyright (C) 2016 The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,8 @@ import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
+import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
+import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.general.HostnamePreference;
 
 import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
@@ -109,6 +111,10 @@ public class MainActivity extends Activity
                 break;
 
             case 2:
+                fragment = new SoundTabHostFragment();
+                break;
+                
+            case 3:
                 fragment = new StatusBarTabHostFragment();
                 break;
         }

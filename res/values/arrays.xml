@@ -21,14 +21,52 @@
     <string-array name="navigation_drawer_entries" translatable="false">
         <item>@string/category_about_aokp</item>
         <item>@string/category_general</item>
+        <item>@string/category_sound</item>
     </string-array>
     <string-array name="navigation_drawer_values" translatable="false">
         <item>about_aokp</item>
         <item>general</item>
+        <item>sound</item>
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_general</item>
+        <item>@drawable/ic_rom_control_sound</item>
     </string-array>
 
+    <string-array name="less_notification_sounds_entries">
+        <item>@string/less_notification_sounds_default</item>
+        <item>@string/less_notification_sounds_3s</item>
+        <item>@string/less_notification_sounds_5s</item>
+        <item>@string/less_notification_sounds_10s</item>
+        <item>@string/less_notification_sounds_15s</item>
+        <item>@string/less_notification_sounds_30s</item>
+        <item>@string/less_notification_sounds_45s</item>
+        <item>@string/less_notification_sounds_1m</item>
+        <item>@string/less_notification_sounds_2m</item>
+        <item>@string/less_notification_sounds_5m</item>
+    </string-array>
+
+    <string-array name="less_notification_sounds_values" translatable="false">
+        <item>0</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>30000</item>
+        <item>45000</item>
+        <item>60000</item>
+        <item>120000</item>
+        <item>300000</item>
+    </string-array>
+
+    <!-- Volume step options. -->
+    <string-array name="volume_steps_entries" translatable="false">
+        <item>@string/volume_steps_60</item>
+        <item>@string/volume_steps_45</item>
+        <item>@string/volume_steps_30</item>
+        <item>@string/volume_steps_15</item>
+        <item>@string/volume_steps_7</item>
+        <item>@string/volume_steps_5</item>
+    </string-array>
 </resources>

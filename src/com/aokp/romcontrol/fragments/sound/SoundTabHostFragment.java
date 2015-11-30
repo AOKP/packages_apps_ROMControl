@@ -38,6 +38,7 @@ public class SoundTabHostFragment extends Fragment {
 
     private static final int[] mFragments = new int[] {
             R.string.sound_settings,
+            R.string.volume_steps_title
     };
 
     public SoundTabHostFragment() {
@@ -90,6 +91,10 @@ public class SoundTabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new SoundSettingsFragment();
+
+                case 1:
+                    return new LiveVolumeFragment();
+
             }
             return null;
         }

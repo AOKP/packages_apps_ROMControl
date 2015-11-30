@@ -38,9 +38,11 @@ import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
+import com.aokp.romcontrol.fragments.general.HostnamePreference;
+
 import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
 import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
-import com.aokp.romcontrol.fragments.general.HostnamePreference;
+import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
 
 import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
@@ -118,7 +120,7 @@ public class MainActivity extends Activity
             case 2:
                 fragment = new SoundTabHostFragment();
                 break;
-                
+
             case 3:
                 fragment = new StatusBarTabHostFragment();
                 break;
@@ -126,6 +128,7 @@ public class MainActivity extends Activity
             case 4:
                 fragment = new UITabHostFragment();
                 break;
+
         }
         return fragment;
     }

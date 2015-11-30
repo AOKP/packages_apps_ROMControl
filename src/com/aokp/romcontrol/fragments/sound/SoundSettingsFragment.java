@@ -78,8 +78,10 @@ public class SoundSettingsFragment extends Fragment {
         private static final int DLG_CAMERA_SOUND = 1;
 
         private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
+        private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
         private SwitchPreference mSafeHeadsetVolume;
+        private ListPreference mAnnoyingNotifications;
         private SwitchPreference mCameraSounds;
 
         private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
@@ -100,6 +102,13 @@ public class SoundSettingsFragment extends Fragment {
             mSafeHeadsetVolume.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.SAFE_HEADSET_VOLUME, 1) != 0);
             mSafeHeadsetVolume.setOnPreferenceChangeListener(this);
+
+            mAnnoyingNotifications = (ListPreference) findPreference(PREF_LESS_NOTIFICATION_SOUNDS);
+            int notificationThreshold = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
+                    0);
+            mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
+            mAnnoyingNotifications.setOnPreferenceChangeListener(this);
 
             mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
             mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
@@ -133,6 +142,13 @@ public class SoundSettingsFragment extends Fragment {
                     showDialogInner(DLG_SAFE_HEADSET_VOLUME);
                 }
             }
+
+            if (PREF_LESS_NOTIFICATION_SOUNDS.equals(key)) {
+                final int val = Integer.valueOf((String) objValue);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
+            }
+
             if (KEY_CAMERA_SOUNDS.equals(key)) {
                if ((Boolean) objValue) {
                    SystemProperties.set(PROP_CAMERA_SOUND, "1");

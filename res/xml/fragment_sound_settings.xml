@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
-* Copyright (c) 2016, The Android Open Kang Project
+* Copyright (c) 2018, The Android Open Kang Project
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -40,5 +40,13 @@
         android:summary="@string/safe_headset_volume_summary"
         android:persistent="false"
         android:defaultValue="true" />
+
+    <ListPreference
+        android:key="less_notification_sounds"
+        android:title="@string/less_notification_sounds_title"
+        android:summary="@string/less_notification_sounds_summary"
+        android:entries="@array/less_notification_sounds_entries"
+        android:entryValues="@array/less_notification_sounds_values"
+        android:persistent="false" />
 
 </PreferenceScreen>

@@ -58,7 +58,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
 
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutCrewFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutFragment" />
@@ -66,9 +65,11 @@
 
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralSettingsFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.general.HostnamePreference" />
+
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundSettingsFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.general.HostnamePreference" />
+        <activity android:name="com.aokp.romcontrol.fragments.sound.LiveVolumeFragment" />
 
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment" />

@@ -16,19 +16,9 @@
  * limitations under the License.
  */
 -->
-
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/general_settings">
-
-    <!-- LockClock settings -->
-    <PreferenceScreen
-        android:key="lock_clock"
-        android:title="@string/lock_clock_title"
-        android:summary="@string/lock_clock_summary">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.cyanogenmod.lockclock"
-            android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-    </PreferenceScreen>
-
-</PreferenceScreen>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/live_volume_main"
+    android:orientation="vertical" >
+</LinearLayout>

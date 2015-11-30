@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2013-2014, The Android Open Kang Project
+ * Copyright (c) 2015, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,35 +19,26 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- ROMControl -->
     <string name="app_name">ROM control</string>
     <string name="rom_control">ROM control</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- Header Strings -->
-    <string name="category_general">General</string>
-    <string name="category_statusbar">Statusbar</string>
-    <string name="category_about_aokp">About</string>
-    <string name="category_hardware_keys">Hardware keys</string>
-    <string name="category_lockscreen">Lockscreen</string>
-    <string name="category_notifications_drawer">Notifications Drawer</string>
-    <string name="category_navbar">Navigation bar</string>
-    <string name="category_sound">Sound</string>
-    <string name="category_power_menu">Power menu </string>
-    <string name="category_animations">Animations</string>
-
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
 
-    <!-- MultiChoiceSetting -->
-    <plurals name="multichoice_at_least">
-        <item quantity="one">Please select at least <xliff:g id="number">%d</xliff:g> item.</item>
-        <item quantity="other">Please select at least <xliff:g id="number">%d</xliff:g> items.</item>
-    </plurals>
-    <plurals name="multichoice_at_most">
-        <item quantity="one">Please select at most <xliff:g id="number">%d</xliff:g> item.</item>
-        <item quantity="other">Please select at most <xliff:g id="number">%d</xliff:g> items.</item>
-    </plurals>
+    <!-- Header Strings -->
+    <string name="category_about_aokp">About</string>
+    <string name="category_general">General</string>
+    <string name="category_lockscreen">Lockscreen</string>
+    <string name="category_statusbar">Statusbar</string>
+    <string name="category_notifications_drawer">Notifications Drawer</string>
+    <string name="category_hardware_keys">Hardware keys</string>
+    <string name="category_power_menu">Power menu </string>
+    <string name="category_navbar">Navigation bar</string>
+    <string name="category_sound">Sound</string>
+    <string name="category_animations">Animations</string>
 
     <!-- About -->
     <string name="devs">The Crew</string>
@@ -105,11 +96,25 @@
     <string name="general_settings">General settings</string>
     <string name="recents_settings">Recents settings</string>
 
+    <!-- Recents Panel settings -->
+    <string name="recents_show_searchbar">Recents Search-bar</string>
+    <string name="recents_show_searchbar_summary">Shows Search-bar in the recent apps window</string>
+    <string name="recents_panel_title">Recents panel</string>
+    <string name="show_clear_all_recents_button_title">Clear all button</string>
+    <string name="show_clear_all_recents_button_summary">Show clear all button</string>
+    <string name="recents_clear_all_location_title">Clear all location</string>
+    <string name="recents_clear_all_location_top_right">Top right</string>
+    <string name="recents_clear_all_location_top_left">Top left</string>
+    <string name="recents_clear_all_location_top_center">Top center</string>
+    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
+    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
+    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
     <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
 
-    <!--Battery Icon selection-->
+    <!-- Battery Icon selection -->
     <string name="battery_status_icon_title">Status icon</string>
     <string name="battery_bar_percent">Battery bar &amp; percent</string>
     <string name="battery_bar">Battery bar</string>
@@ -119,6 +124,16 @@
     <!-- dynamic changelog -->
     <string name="mgerrit_changelog_title">mGerrit: Dynamic ChangeLog</string>
     <string name="mgerrit_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
+
+    <!-- MultiChoiceSetting -->
+    <plurals name="multichoice_at_least">
+        <item quantity="one">Please select at least <xliff:g id="number">%d</xliff:g> item.</item>
+        <item quantity="other">Please select at least <xliff:g id="number">%d</xliff:g> items.</item>
+    </plurals>
+    <plurals name="multichoice_at_most">
+        <item quantity="one">Please select at most <xliff:g id="number">%d</xliff:g> item.</item>
+        <item quantity="other">Please select at most <xliff:g id="number">%d</xliff:g> items.</item>
+    </plurals>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>
@@ -176,10 +191,6 @@
     <string name="bottom">Bottom</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if a charger is plugged in or unplugged</string>
-
-    <!-- Recents settings -->
-    <string name="recents_show_searchbar">Recents Search-bar</string>
-    <string name="recents_show_searchbar_summary">Shows Search-bar in the recent apps window</string>
 
     <!-- Hardware keys -->
     <string name="title_hardware_keys_home_long_press">Home - long press</string>

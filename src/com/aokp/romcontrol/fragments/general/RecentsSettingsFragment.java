@@ -21,14 +21,22 @@ import android.app.ActivityManager;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 
 import com.aokp.romcontrol.R;
 
@@ -55,9 +63,17 @@ public class RecentsSettingsFragment extends Fragment {
                 .replace(R.id.recents_settings_main, new SettingsPreferenceFragment())
                 .commit();
     }
-    public static class SettingsPreferenceFragment extends PreferenceFragment {
+    public static class SettingsPreferenceFragment extends PreferenceFragment
+           implements Preference.OnPreferenceChangeListener {
+
         public SettingsPreferenceFragment() {
         }
+
+        private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+        private SwitchPreference mRecentsClearAll;
+        private ListPreference mRecentsClearAllLocation;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -67,7 +83,28 @@ public class RecentsSettingsFragment extends Fragment {
 
             PreferenceScreen prefSet = getPreferenceScreen();
             Activity activity = getActivity();
-            final ContentResolver resolver = getActivity().getContentResolver();
+            ContentResolver resolver = getActivity().getContentResolver();
+            mRecentsClearAllLocation = (ListPreference) prefSet.findPreference(RECENTS_CLEAR_ALL_LOCATION);
+            int location = Settings.System.getIntForUser(resolver,
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setValue(String.valueOf(location));
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+            mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+
+        }
+
+        @Override
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+            ContentResolver resolver = getActivity().getContentResolver();
+            if (preference == mRecentsClearAllLocation) {
+                int location = Integer.valueOf((String) newValue);
+                int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(getActivity().getContentResolver(),
+                        Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+                mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+                return true;
+            }
+            return false;
         }
     }
 }

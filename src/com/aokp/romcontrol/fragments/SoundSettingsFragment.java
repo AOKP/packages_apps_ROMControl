@@ -62,12 +62,17 @@ public class SoundSettingsFragment extends Fragment {
         private static final String TAG = "SettingsPreferenceFragment";
 
         private static final int DLG_SAFE_HEADSET_VOLUME = 0;
+        private static final int DLG_CAMERA_SOUND = 1;
 
         private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
         private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
         private SwitchPreference mSafeHeadsetVolume;
         private ListPreference mAnnoyingNotifications;
+        private SwitchPreference mCameraSounds;
+
+        private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
+        private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -87,6 +92,9 @@ public class SoundSettingsFragment extends Fragment {
                     0);
             mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
             mAnnoyingNotifications.setOnPreferenceChangeListener(this);
+            mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
+            mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
+            mCameraSounds.setOnPreferenceChangeListener(this);
         }
 
         @Override
@@ -114,6 +122,13 @@ public class SoundSettingsFragment extends Fragment {
                 final int val = Integer.valueOf((String) objValue);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
+            }
+            if (KEY_CAMERA_SOUNDS.equals(key)) {
+               if ((Boolean) objValue) {
+                   SystemProperties.set(PROP_CAMERA_SOUND, "1");
+               } else {
+                   showDialogInner(DLG_CAMERA_SOUND);
+               }
             }
             return true;
         }
@@ -161,6 +176,23 @@ public class SoundSettingsFragment extends Fragment {
                             }
                         })
                         .create();
+                    case DLG_CAMERA_SOUND:
+                        return new AlertDialog.Builder(getActivity())
+                        .setTitle(R.string.attention)
+                        .setMessage(R.string.camera_sound_warning_dialog_text)
+                        .setPositiveButton(R.string.ok,
+                            new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                SystemProperties.set(PROP_CAMERA_SOUND, "0");
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel,
+                            new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .create();
                 }
                 throw new IllegalArgumentException("unknown id " + id);
             }
@@ -171,7 +203,10 @@ public class SoundSettingsFragment extends Fragment {
                 switch (id) {
                     case DLG_SAFE_HEADSET_VOLUME:
                         getOwner().mSafeHeadsetVolume.setChecked(true);
-                    break;
+                        break;
+                    case DLG_CAMERA_SOUND:
+                        getOwner().mCameraSounds.setChecked(true);
+                        break;
                 }
             }
         }

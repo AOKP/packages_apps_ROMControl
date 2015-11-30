@@ -111,6 +111,10 @@
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
     <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
     <string name="recents_clear_all_dismiss_all_summary">Include foreground task when clearing all</string>
+    <!-- Recents Fullscreen -->
+    <string name="recents_show_fullscreen">Recents in fullscreen</string>
+    <string name="recents_fullscreen_summary_enabled">Recents in fullscreen is enabled</string>
+    <string name="recents_fullscreen_summary_disabled">Recents in fullscreen is disabled</string>
 
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>

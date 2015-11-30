@@ -28,6 +28,13 @@
         android:summary="@string/camera_sounds_summary"
         android:defaultValue="true" />
 
+    <!-- Screenshot tone -->
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="screenshot_sound"
+        android:title="@string/screenshot_sound_title"
+        android:summary="@string/screenshot_sound_summary"
+        android:defaultValue="true" />
+
     <SwitchPreference
         android:key="safe_headset_volume"
         android:title="@string/safe_headset_volume_title"

@@ -81,9 +81,10 @@
     <!-- Header Strings -->
     <string name="category_about_aokp">About</string>
     <string name="category_general">General</string>
+    <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>
 
-    <!-- About Cat starts -->
+    <!-- ****************************** About Cat starts ****************************** -->
     <string name="devs">The Crew</string>
     <string name="aokp" translatable="false">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP website</string>
@@ -134,9 +135,9 @@
     <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
     <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
     <string name="kanglings">The Kanglings</string>
-    <!-- About Cat ends -->
+    <!-- ****************************** About Cat ends ****************************** -->
 
-    <!-- General Cat starts -->
+    <!-- ****************************** General Cat starts ****************************** -->
     <!-- General -->
     <string name="general_settings">General settings</string>
     <!-- Toast Icons -->
@@ -146,13 +147,27 @@
     <!-- LockClocK -->
     <string name="lock_clock_title">cLock settings</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
-    <!-- General Cat ends -->
 
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
     <!-- ****************************** General Cat ends ****************************** -->
 
+    <!-- ****************************** Sound Cat starts ****************************** -->
+    <!-- Sound settings -->
+    <string name="sound_settings">Sound settings</string>
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_volume_title">Safe headset volume</string>
+    <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
+    <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
+    <!-- Camera sound switch -->
+    <string name="camera_sounds_title">Camera shutter sound</string>
+    <string name="camera_sounds_summary">Enable system camera shutter sound</string>
+    <string name="camera_sound_warning_dialog_text">Disabling the camera shutter sound is illegal in some areas! Please check the applicable law in your country</string>
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
+    <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
+    <!-- ****************************** Sound Cat ends ****************************** -->
 
     <!-- ****************************** StatusBar Cat starts ****************************** -->
     <!-- Statusbar settings -->

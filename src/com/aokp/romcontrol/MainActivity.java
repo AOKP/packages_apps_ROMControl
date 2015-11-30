@@ -38,6 +38,10 @@ import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.general.RecentsSettingsFragment;
 
+import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
+import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
+import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
+
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.ArrangeNavbarFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
@@ -49,7 +53,6 @@ import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
 import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
-import com.aokp.romcontrol.fragments.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.StatusbarSettingsFragment;
 
 import cyanogenmod.providers.CMSettings;
@@ -141,7 +144,7 @@ public class MainActivity extends Activity
                 break;
 
             case 8:
-                fragment = new SoundSettingsFragment();
+                fragment = new SoundTabHostFragment();
                 break;
 
             case 9:

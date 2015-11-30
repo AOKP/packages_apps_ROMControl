@@ -15,7 +15,7 @@
 * limitations under the License.
 */
 
-package com.aokp.romcontrol.fragments;
+package com.aokp.romcontrol.fragments.sound;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -39,17 +39,34 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
 
 public class SoundSettingsFragment extends Fragment {
+
+    public SoundSettingsFragment() {
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_sound_settings_main, container, false);
+
+        Resources res = getResources();
+
+        return v;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.container, new SettingsPreferenceFragment())
+                .replace(R.id.sound_settings_main, new SettingsPreferenceFragment())
                 .commit();
     }
 

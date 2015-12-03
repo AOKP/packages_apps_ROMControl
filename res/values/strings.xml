@@ -32,6 +32,7 @@
     <string name="category_about_aokp">About</string>
     <string name="category_app_launcher">App Launcher</string>
     <string name="category_general">General</string>
+    <string name="category_lockscreen">Lockscreen</string>
     <string name="category_notifications_drawer">Notifications Drawer</string>
     <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>
@@ -206,6 +207,16 @@
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
     <!-- ****************************** General Cat ends ****************************** -->
+
+    <!-- ****************************** Lockscreen Cat starts ****************************** -->
+    <!-- Lockscreen -->
+    <string name="lockscreen_settings_title">Lockscreen</string>
+
+    <!-- Lockscreen Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->
     <!-- Notifications Drawer -->

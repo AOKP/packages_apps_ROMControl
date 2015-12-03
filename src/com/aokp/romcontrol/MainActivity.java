@@ -48,6 +48,8 @@ import com.aokp.romcontrol.fragments.general.HostnamePreference;
 import com.aokp.romcontrol.fragments.general.RecentsSettingsFragment;
 import com.aokp.romcontrol.fragments.general.WakelockBlockerFragment;
 
+import com.aokp.romcontrol.fragments.lockscreen.LockScreenSettingsFragment; 
+
 import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
 import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
@@ -128,24 +130,28 @@ public class MainActivity extends Activity
             case 2:
                 fragment = new GeneralTabHostFragment();
                 break;
-
+                
             case 3:
-                fragment = new NotificationsDrawerFragment();
+                fragment = new LockScreenSettingsFragment();
                 break;
                 
             case 4:
+                fragment = new NotificationsDrawerFragment();
+                break;
+                
+            case 5:
                 fragment = new SoundTabHostFragment();
                 break;
 
-            case 5:
+            case 6:
                 fragment = new StatusBarTabHostFragment();
                 break;
-
-            case 6:
+                
+            case 7:
                 fragment = new UITabHostFragment();
                 break;
 
-            case 7:
+            case 8:
                 fragment = new ChangelogFragment();
                 break;
 

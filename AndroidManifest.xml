@@ -74,6 +74,8 @@
         <activity android:name="com.aokp.romcontrol.fragments.general.HostnamePreference" />
         <activity android:name="com.aokp.romcontrol.fragments.general.RecentsSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.WakelockBlockerFragment" />
+        
+        <activity android:name="com.aokp.romcontrol.fragments.lockscreen.LockScreenSettingsFragment" />
 
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundSettingsFragment" />

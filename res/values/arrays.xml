@@ -22,6 +22,7 @@
         <item>@string/category_about_aokp</item>
         <item>@string/category_app_launcher</item> 
         <item>@string/category_general</item>
+        <item>@string/category_lockscreen</item>
         <item>@string/category_notifications_drawer</item>
         <item>@string/category_sound</item>
         <item>@string/category_statusbar</item>
@@ -32,6 +33,7 @@
         <item>about_aokp</item>
         <item>applauncher</item>
         <item>general</item>
+        <item>lockscreen</item>
         <item>notifications_drawer</item>
         <item>sound</item>
         <item>statusbar</item>
@@ -42,6 +44,7 @@
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_general</item>
+        <item>@drawable/ic_rom_control_lockscreens</item>
         <item>@drawable/ic_rom_control_toggles</item>
         <item>@drawable/ic_rom_control_sound</item>
         <item>@drawable/ic_rom_control_signal</item>

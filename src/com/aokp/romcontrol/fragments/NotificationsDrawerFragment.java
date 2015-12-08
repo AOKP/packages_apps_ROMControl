@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013-2014 The Android Open Kang Project
+ * Copyright (C) 2015 The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,30 +16,64 @@
 
 package com.aokp.romcontrol.fragments;
 
-import android.app.ActivityManager;
+import android.app.Activity;
 import android.app.Fragment;
-import android.content.res.Resources;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.SystemProperties;
-import android.view.LayoutInflater;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
+
+import cyanogenmod.providers.CMSettings;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.settings.CheckboxSetting;
 
 public class NotificationsDrawerFragment extends Fragment {
 
-    public NotificationsDrawerFragment() {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+        getActivity().getFragmentManager().beginTransaction()
+                .replace(R.id.container, new SettingsPreferenceFragment())
+                .commit();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_notificationsdrawer_settings, container, false);
+    public static class SettingsPreferenceFragment extends PreferenceFragment {
+        public SettingsPreferenceFragment() {
+        }
 
-        Resources res = getResources();
+        private static final String TAG = "NotificationsDrawer";
 
-        return v;
+        private ContentResolver mContentResolver;
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            // Load the preferences from an XML resource
+            addPreferencesFromResource(R.xml.fragment_notificationsdrawer_settings);
+
+            ContentResolver resolver = getActivity().getContentResolver();
+        }
+
+        protected ContentResolver getContentResolver() {
+            Context context = getActivity();
+            if (context != null) {
+                mContentResolver = context.getContentResolver();
+            }
+            return mContentResolver;
+        }
     }
 }

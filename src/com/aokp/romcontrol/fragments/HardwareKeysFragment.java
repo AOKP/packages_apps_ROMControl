@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The Android Open Kang Project
+ * Copyright (C) 2015 The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,55 +16,30 @@
 
 package com.aokp.romcontrol.fragments;
 
+import android.app.ActivityManager;
 import android.app.Fragment;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.content.Context;
-import android.provider.Settings;
+import android.os.SystemProperties;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
-import android.widget.TextView;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.CheckboxSetting;
-import com.aokp.romcontrol.settings.SingleChoiceSetting;
-import com.aokp.romcontrol.widgets.CategorySeparator;
 
-public class HardwareKeysFragment extends Fragment implements OnSeekBarChangeListener {
+public class HardwareKeysFragment extends Fragment {
 
-    private Context mContext;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mContext = getActivity();
+    public HardwareKeysFragment() {
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_hardware_keys, container, false);
+        View v = inflater.inflate(R.layout.fragment_hardwarekeys_settings, container, false);
+
+        Resources res = getResources();
 
         return v;
-    }
-
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    private void handleTimeoutUpdate(int timeout) {
-
     }
 }

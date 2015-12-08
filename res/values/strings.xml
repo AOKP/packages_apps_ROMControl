@@ -164,13 +164,6 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
 
-    <!-- Battery Icon selection -->
-    <string name="battery_status_icon_title">Status icon</string>
-    <string name="battery_bar_percent">Battery bar &amp; percent</string>
-    <string name="battery_bar">Battery bar</string>
-    <string name="battery_circle">Battery circle</string>
-    <string name="battery_circle_percent">Battery circle &amp; percent</string>
-
     <!-- dynamic changelog -->
     <string name="mgerrit_changelog_title">mGerrit: Dynamic ChangeLog</string>
     <string name="mgerrit_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
@@ -288,72 +281,50 @@
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
-    <!-- Statusbar Notifications -->
-    <string name="category_statusbar_notification">Notifications</string>
-    <string name="category_statusbar_battery">Battery</string>
-    <string name="category_statusbar_clock">Clock</string>
+    <!-- Status bar -->
+    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
-    <string name="brightness_slider_title">Statusbar brightness slider</string>
-    <string name="brightness_slider_summary">Slide finger across statusbar to change brightness. Disabled when auto-brightness is on.</string>
-    <string name="status_bar_double_tap_to_sleep_title">Double-tap to sleep</string>
-    <string name="status_bar_double_tap_to_sleep_summary">Double-tap on statusbar to put device to sleep</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_style_title">Clock style</string>
+    <string name="status_bar_clock_style_right">Right</string>
+    <string name="status_bar_clock_style_left">Left</string>
+    <string name="status_bar_clock_style_center">Center</string>
+    <string name="status_bar_clock_style_hidden">Hidden</string>
 
-    <string name="adb_notify">USB debugging notify</string>
-    <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
-    <string name="ime_switcher_title">Show IME switcher</string>
-    <string name="ime_switcher_summary">In Statusbar while typing</string>
-    <string name="vibrate_notif_expand_title">Vibrate on expand</string>
-    <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications</string>
-    <string name="notification_count_title">Show notification count</string>
-    <string name="notification_count_summary">Display number of pending notifications in the statusbar</string>
+    <string name="status_bar_am_pm_title">AM/PM style</string>
+    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Small</string>
+    <string name="status_bar_am_pm_hidden">Hidden (default)</string>
 
-    <string name="statusbar_clock_am_pm_style_title">AM/PM style</string>
-    <string name="statusbar_clock_am_pm_style_summary">How is AM/PM displayed</string>
-    <string name="statusbar_clock_style_title">Clock style</string>
-    <string name="statusbar_clock_style_summary">Clock position in statusbar</string>
-    <string name="statusbar_clock_weekday_title">Day of the week</string>
-    <string name="statusbar_clock_weekday_summary">Display day of the week front of clock</string>
-    <string name="statusbar_clock_date_title">Date</string>
-    <string name="statusbar_clock_date_summary">Display date front of clock</string>
-    <string name="right_clock">Right clock</string>
-    <string name="center_clock">Center clock</string>
-    <string name="no_clock">No clock</string>
-    <string name="dont_show">Don\'t show</string>
-    <string name="small_am_pm">Small AM/PM</string>
-    <string name="regular_am_pm">Regular AM/PM</string>
-    <string name="small_weekday">Small weekday</string>
-    <string name="regular_weekday">Regular weekday</string>
-    <string name="small_date">Small date</string>
-    <string name="regular_date">Regular date</string>
-    <string name="statusbar_clock_color_title">Clock color</string>
-    <string name="statusbar_clock_color_summary">Clock color displayed in statusbar</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Battery status style</string>
+    <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
+    <string name="status_bar_battery_style_circle">Circle</string>
+    <string name="status_bar_battery_style_text">Text</string>
+    <string name="status_bar_battery_style_hidden">Hidden</string>
 
-    <string name="battery_percentage_indicator_title">Show battery % indicator</string>
-    <string name="battery_percentage_indicator_summary">Show battery percentage indicator front of battery icon</string>
-    <string name="battery_percentage_indicator_plugged_title">Indicate charging</string>
-    <string name="battery_percentage_indicator_plugged_summary">Show battery percentage indicator in different color during charging</string>
-    <string name="hide_battery_icon_title">Hide battery icon</string>
-    <string name="hide_battery_icon_summary">Completly hide battery icon from statusbar</string>
+    <!-- Status bar - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
-    <string name="category_signalbars">Signal Bars</string>
-    <string name="statusbar_signal_text_title">Show signal text</string>
-    <string name="statusbar_signal_text_summary">Show signal with dBm</string>
-    <string name="statusbar_hide_signal_bars_title">Hide Signal Bars</string>
-    <string name="statusbar_hide_signal_bars_summary">Ability to hide the signal bars</string>
-    <string name="show_4g_for_lte_title">Use 4G icon on LTE</string>
-    <string name="show_4g_for_lte_summary">Show 4G network indicator icon instead of LTE icon</string>
+    <!-- StatusBar DT2Sleep -->
+    <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
+    <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
 
-    <string name="status_bar_network_title">Network traffic</string>
-    <string name="status_bar_show_network_stats_title">Show network speeds</string>
-    <string name="status_bar_show_network_stats_summary">Show network speeds in statusbar</string>
-    <string name="status_bar_show_network_stats_hide_title">Hide on inactivity</string>
-    <string name="status_bar_show_network_stats_hide_summary">Hide network speeds if there is no activity</string>
-    <string name="status_bar_show_network_stats_flip_title">Flip Stats Positions</string>
-    <string name="status_bar_show_network_stats_flip_summary">Swap which is on top/bottom</string>
-    <string name="status_bar_network_stats_update_title">Update frequency</string>
-    <string name="status_bar_network_stats_update_summary">How often is indicator updated</string>
-    <string name="status_bar_network_stats_color_title">Network speeds text color</string>
-    <string name="status_bar_network_stats_color_summary">Network speeds text color in statusbar</string>
+    <!-- Notifications Drawer -->
+    <string name="notifications_drawer_title">Notif Drawer Settings</string>
+    
+    <!-- Weather in status bar -->
+    <string name="status_bar_show_weather_title">Show weather</string>
+    <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 
     <!-- Installer -->
     <string name="persist_options">Persistence</string>

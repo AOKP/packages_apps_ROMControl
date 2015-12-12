@@ -113,7 +113,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="statusbar_general_settings"
+        android:key="lockscreen_general_settings"
         android:title="@string/general_settings">
 
         <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
@@ -126,6 +126,11 @@
             android:title="@string/media_art_title"
             android:summary="@string/media_art_summary"
             android:defaultValue="true" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_anywhere"
+            android:title="@string/double_tap_sleep_anywhere_title"
+            android:summary="@string/double_tap_sleep_anywhere_summary" />
 
     </PreferenceCategory>
 </PreferenceScreen>

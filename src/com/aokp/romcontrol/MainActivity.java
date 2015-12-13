@@ -48,6 +48,11 @@ import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarArrangeFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
 
+import com.aokp.romcontrol.fragments.pie.PieColorFragment;
+import com.aokp.romcontrol.fragments.pie.PieControlFragment;
+import com.aokp.romcontrol.fragments.pie.PieTabHostFragment;
+import com.aokp.romcontrol.fragments.pie.PieTargetsFragment;
+
 import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
 import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
@@ -162,14 +167,18 @@ public class MainActivity extends Activity
                 break;
 
             case 8:
-                fragment = new SoundTabHostFragment();
+                fragment = new PieTabHostFragment();
                 break;
 
             case 9:
-                fragment = new UITabHostFragment();
+                fragment = new SoundTabHostFragment();
                 break;
 
             case 10:
+                fragment = new UITabHostFragment();
+                break;
+
+            case 11:
                 fragment = new AppLauncherTabHostFragment();
                 break;
         }

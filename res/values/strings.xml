@@ -34,6 +34,7 @@
     <string name="category_general">General</string>
     <string name="category_lockscreen">Lockscreen</string>
     <string name="category_notifications_drawer">Notifications Drawer</string>
+    <string name="category_pie">PIE</string>
     <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>
     <string name="category_ui">User Interface</string>
@@ -279,6 +280,33 @@
     <string name="qs_tile_title_visibility_summary">Display tile titles underneath when checked</string>
 
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
+    
+    <!-- ****************************** PIE Cat starts ****************************** -->
+    <!-- PA Pie control -->
+    <string name="pa_pie_control_summary">Edge shortcuts and navigation controls</string>
+    <string name="pie_enable_title">Enable pie control</string> 
+    <string name="pa_pie_control_title">Pie Control</string> 
+    <string name="pie_settings">Pie settings</string> 
+    <string name="pie_settings_summary">Adjust pie to your liking</string> 
+    <string name="pie_theme_mode_title">Theme</string> 
+    <string name="pie_auto">Automatic</string> 
+    <string name="pie_white">White</string> 
+    <string name="pie_dark">Dark</string> 
+    <string name="pie_battery_title">Battery indicator</string> 
+    <string name="pie_battery_text">Text only</string> 
+    <string name="pie_battery_circle">Circle only</string> 
+    <string name="pie_battery_both">Both</string> 
+    <string name="pie_status_indicator">Network indicator</string> 
+    <string name="pie_status_wifi">Wifi only</string> 
+    <string name="pie_status_mobile">Mobile network only</string> 
+    <string name="pie_status_none">None</string> 
+    <string name="pie_status_both">Both</string> 
+    <string name="pa_pie_gravity_title">Pie Gravity</string> 
+    <string name="pa_pie_gravity_summary">Select the location where the Pie will be placed</string> 
+    <string name="pa_pie_gravity_bottom">Bottom</string> 
+    <string name="pa_pie_gravity_right">Right</string> 
+    <string name="pa_pie_gravity_left">Left</string>
+    <!-- ****************************** PIE Cat ends ****************************** -->
 
     <!-- ****************************** Sound Cat starts ****************************** -->
     <!-- Sound settings -->

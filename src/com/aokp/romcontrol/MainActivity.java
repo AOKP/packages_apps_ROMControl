@@ -51,6 +51,9 @@ import com.aokp.romcontrol.fragments.general.WakelockBlockerFragment;
 
 import com.aokp.romcontrol.fragments.lockscreen.LockScreenSettingsFragment; 
 
+import com.aokp.romcontrol.fragments.pie.PieControlFragment;
+import com.aokp.romcontrol.fragments.pie.PieTabHostFragment;
+
 import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
 import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
@@ -139,23 +142,26 @@ public class MainActivity extends Activity
             case 4:
                 fragment = new NotificationsDrawerFragment();
                 break;
-                
+
             case 5:
+                fragment = new PieTabHostFragment();
+                break;
+                
+            case 6:
                 fragment = new SoundTabHostFragment();
                 break;
 
-            case 6:
+            case 7:
                 fragment = new StatusBarTabHostFragment();
                 break;
                 
-            case 7:
+            case 8:
                 fragment = new UITabHostFragment();
                 break;
 
-            case 8:
+            case 9:
                 fragment = new ChangelogFragment();
                 break;
-
         }
         return fragment;
     }

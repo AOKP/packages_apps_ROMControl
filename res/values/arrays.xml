@@ -24,6 +24,7 @@
         <item>@string/category_general</item>
         <item>@string/category_lockscreen</item>
         <item>@string/category_notifications_drawer</item>
+        <item>@string/category_pie</item>
         <item>@string/category_sound</item>
         <item>@string/category_statusbar</item>
         <item>@string/category_ui</item>
@@ -35,6 +36,7 @@
         <item>general</item>
         <item>lockscreen</item>
         <item>notifications_drawer</item>
+        <item>pie</item>
         <item>sound</item>
         <item>statusbar</item>
         <item>ui</item>
@@ -46,6 +48,7 @@
         <item>@drawable/ic_rom_control_general</item>
         <item>@drawable/ic_rom_control_lockscreens</item>
         <item>@drawable/ic_rom_control_toggles</item>
+        <item>@drawable/ic_rom_control_pie</item>
         <item>@drawable/ic_rom_control_sound</item>
         <item>@drawable/ic_rom_control_signal</item>
         <item>@drawable/ic_rom_control_animations</item>
@@ -608,6 +611,57 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
+
+    <!-- PA PIE -->
+    <string-array name="pie_theme_mode_entries"> 
+         <item>@string/pie_auto</item> 
+         <item>@string/pie_white</item> 
+         <item>@string/pie_dark</item> 
+    </string-array> 
+  
+    <string-array name="pie_theme_mode_values"> 
+         <item>0</item> 
+         <item>1</item> 
+         <item>2</item> 
+    </string-array> 
+  
+    <string-array name="pie_battery_mode_entries"> 
+         <item>@string/pie_battery_text</item> 
+         <item>@string/pie_battery_circle</item> 
+         <item>@string/pie_battery_both</item> 
+    </string-array> 
+  
+    <string-array name="pie_battery_mode_values"> 
+         <item>0</item> 
+         <item>1</item> 
+         <item>2</item> 
+    </string-array> 
+  
+    <string-array name="pie_status_mode_entries"> 
+         <item>@string/pie_status_none</item> 
+         <item>@string/pie_status_wifi</item> 
+         <item>@string/pie_status_mobile</item> 
+         <item>@string/pie_status_both</item> 
+    </string-array> 
+  
+    <string-array name="pie_status_mode_values"> 
+         <item>3</item> 
+         <item>1</item> 
+         <item>2</item> 
+         <item>0</item> 
+    </string-array> 
+ 
+    <string-array name="entries_pa_pie_gravity"> 
+        <item>@string/pa_pie_gravity_left</item> 
+        <item>@string/pa_pie_gravity_right</item> 
+        <item>@string/pa_pie_gravity_bottom</item> 
+    </string-array> 
+ 
+    <string-array name="values_pa_pie_gravity" translatable="false"> 
+        <item>0</item> 
+        <item>1</item> 
+        <item>2</item> 
     </string-array>
 
 </resources>

@@ -21,10 +21,4 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/general_settings">
 
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-            android:key="edge_service_for_gestures"
-            android:title="@string/edge_gesture_service_title"
-            android:summary="@string/edge_gesture_service_summary"
-            android:defaultValue="1"/>
-
 </PreferenceScreen>

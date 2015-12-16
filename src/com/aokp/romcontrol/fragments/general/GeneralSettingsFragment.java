@@ -26,6 +26,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.view.LayoutInflater;
@@ -55,7 +56,8 @@ public class GeneralSettingsFragment extends Fragment {
         return v;
     }
 
-    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment {
+    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment implements
+            Preference.OnPreferenceChangeListener {
 
         public GeneralSettingsPreferenceFragment() {
 
@@ -100,5 +102,10 @@ public class GeneralSettingsFragment extends Fragment {
         public void onResume() {
             super.onResume();
         }
+
+        public boolean onPreferenceChange(Preference preference, Object objValue) {
+            return false;
+        }
+
     }
 }

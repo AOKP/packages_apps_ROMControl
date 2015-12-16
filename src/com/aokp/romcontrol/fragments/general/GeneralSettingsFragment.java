@@ -20,17 +20,22 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Fragment;
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
 
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.Helpers;
 
 public class GeneralSettingsFragment extends Fragment {
 
@@ -55,19 +60,46 @@ public class GeneralSettingsFragment extends Fragment {
                 .replace(R.id.general_settings_main, new SettingsPreferenceFragment())
                 .commit();
     }
-    public static class SettingsPreferenceFragment extends PreferenceFragment {
+    public static class SettingsPreferenceFragment extends PreferenceFragment implements
+            Preference.OnPreferenceChangeListener {
+
         public SettingsPreferenceFragment() {
+
         }
+
+        private static final String KEY_LOCKCLOCK = "lock_clock";
+        // Package name of the cLock app
+        public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+
+        private Context mContext;
+        private Preference mLockClock;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_general_settings);
-
             PreferenceScreen prefSet = getPreferenceScreen();
-            Activity activity = getActivity();
-            final ContentResolver resolver = getActivity().getContentResolver();
+            mContext = getActivity().getApplicationContext();
+            PackageManager pm = getActivity().getPackageManager();
+
+            // cLock app check
+            mLockClock = (Preference)
+                    prefSet.findPreference(KEY_LOCKCLOCK);
+            if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
+                prefSet.removePreference(mLockClock);
+            }
         }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+        }
+
+        public boolean onPreferenceChange(Preference preference, Object objValue) {
+            return false;
+        }
+
     }
 }

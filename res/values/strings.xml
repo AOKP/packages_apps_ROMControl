@@ -96,6 +96,10 @@
     <string name="general_settings">General settings</string>
     <string name="recents_settings">Recents settings</string>
 
+    <!-- LockClocK -->
+    <string name="lock_clock_title">cLock settings</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
+
     <!-- Recents Panel settings -->
     <string name="recents_show_searchbar">Recents Search-bar</string>
     <string name="recents_show_searchbar_summary">Shows Search-bar in the recent apps window</string>

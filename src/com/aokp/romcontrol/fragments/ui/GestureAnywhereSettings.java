@@ -42,6 +42,10 @@ import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
 public class GestureAnywhereSettings extends Fragment {
 
+    public GestureAnywhereSettings() {
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_gesture_anywhere_main, container, false);
@@ -63,6 +67,10 @@ public class GestureAnywhereSettings extends Fragment {
 
     public static class SettingsPreferenceFragment extends PreferenceFragment
            implements Preference.OnPreferenceChangeListener {
+
+        public SettingsPreferenceFragment() {
+
+        }
 
         private static final String TAG = "GestureAnywhereSettings";
 

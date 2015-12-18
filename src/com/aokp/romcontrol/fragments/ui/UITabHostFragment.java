@@ -42,10 +42,18 @@ public class UITabHostFragment extends Fragment {
             R.string.app_circle_bar_title
     };
 
+    public UITabHostFragment() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override

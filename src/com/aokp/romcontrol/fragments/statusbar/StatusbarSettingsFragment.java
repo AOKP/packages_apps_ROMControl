@@ -48,6 +48,10 @@ import com.aokp.romcontrol.R;
 
 public class StatusbarSettingsFragment extends Fragment {
 
+    public StatusbarSettingsFragment() {
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_statusbar_settings_main, container, false);
@@ -68,7 +72,9 @@ public class StatusbarSettingsFragment extends Fragment {
 
     public static class SettingsPreferenceFragment extends PreferenceFragment
             implements OnPreferenceChangeListener {
+
         public SettingsPreferenceFragment() {
+
         }
 
         private static final String TAG = "StatusBar";

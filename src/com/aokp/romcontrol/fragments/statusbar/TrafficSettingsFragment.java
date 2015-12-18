@@ -49,6 +49,10 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class TrafficSettingsFragment extends Fragment {
 
+    public TrafficSettingsFragment() {
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_traffic_settings_main, container, false);
@@ -69,7 +73,9 @@ public class TrafficSettingsFragment extends Fragment {
 
     public static class SettingsPreferenceFragment extends PreferenceFragment
             implements OnPreferenceChangeListener {
+
         public SettingsPreferenceFragment() {
+
         }
 
         private static final String TAG = "TrafficSettingsFragment";

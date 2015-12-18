@@ -67,6 +67,7 @@ public class LiveVolumeFragment extends Fragment {
             implements Preference.OnPreferenceChangeListener {
 
         public SettingsPreferenceFragment() {
+
         }
 
         private static final String TAG = "VolumeSteps";

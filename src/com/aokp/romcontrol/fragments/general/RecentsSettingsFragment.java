@@ -67,6 +67,7 @@ public class RecentsSettingsFragment extends Fragment {
            implements Preference.OnPreferenceChangeListener {
 
         public SettingsPreferenceFragment() {
+
         }
 
         private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";

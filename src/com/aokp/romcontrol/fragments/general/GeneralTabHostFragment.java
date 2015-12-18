@@ -42,10 +42,18 @@ public class GeneralTabHostFragment extends Fragment {
             R.string.wakelock_blocker_title
     };
 
+    public GeneralTabHostFragment() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override

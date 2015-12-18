@@ -41,10 +41,18 @@ public class SoundTabHostFragment extends Fragment {
             R.string.volume_steps_title
     };
 
+    public SoundTabHostFragment() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override

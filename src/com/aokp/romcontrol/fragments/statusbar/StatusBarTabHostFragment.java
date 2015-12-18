@@ -41,10 +41,18 @@ public class StatusBarTabHostFragment extends Fragment {
             R.string.network_traffic_title
     };
 
+    public StatusBarTabHostFragment() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override

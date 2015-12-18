@@ -65,6 +65,10 @@ import java.util.Arrays;
 
 public class AppCircleBarSettings extends Fragment {
 
+    public AppCircleBarSettings() {
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_appcirclebar_main, container, false);
@@ -86,6 +90,10 @@ public class AppCircleBarSettings extends Fragment {
 
 public class SettingsPreferenceFragment extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener, OnPreferenceClickListener {
+
+        public SettingsPreferenceFragment() {
+
+        }
 
         private static final String TAG = "AppCircleSidebarSettings";
 

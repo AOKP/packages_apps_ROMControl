@@ -74,6 +74,7 @@ public class SoundSettingsFragment extends Fragment {
             Preference.OnPreferenceChangeListener {
 
         public SettingsPreferenceFragment() {
+
         }
 
         private static final String TAG = "SettingsPreferenceFragment";

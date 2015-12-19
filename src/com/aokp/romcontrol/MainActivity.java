@@ -51,12 +51,14 @@ import com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment;
 import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
 import com.aokp.romcontrol.fragments.ui.GestureAnywhereSettings;
 import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
-import com.aokp.romcontrol.fragments.ui.AppCircleBarSettings;
 import com.aokp.romcontrol.fragments.ui.AnimationControls;
 
 import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
+
+import com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment;
+import com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings;
 
 import com.aokp.romcontrol.fragments.HardwareKeysFragment;
 import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
@@ -160,42 +162,9 @@ public class MainActivity extends Activity
                 fragment = new UITabHostFragment();
                 break;
 
-        /*
-        String item = mDrawerValues[index];
-        // blame Google for not using Java 7 yet
-        if ("about_aokp".equals(item)) {
-            fragment = new AboutTabHostFragment();
-        }
-        else if ("general".equals(item)) {
-            fragment = new GeneralSettingsFragment();
-        }
-        else if ("lockscreen".equals(item)) {
-            fragment = new LockScreenSettingsFragment();
-        }
-        else if ("statusbar".equals(item)) {
-            fragment = new StatusbarSettingsFragment();
-        }
-        else if ("notifications_drawer".equals(item)) {
-            fragment = new NotificationsDrawerFragment();
-        }
-        else if ("hardware_keys".equals(item)) {
-            fragment = new HardwareKeysFragment();
-        }
-        else if ("power_menu".equals(item)) {
-            fragment = new PowerMenuSettingsFragment();
-        }
-        else if ("navbar".equals(item)) {
-            fragment = new NavbarTabHostFragment();
-        }
-        else if ("sound".equals(item)) {
-            fragment = new SoundSettingsFragment();
-        }
-        else if ("animations".equals(item)) {
-            fragment = new AnimationsFragment();
-        }
-        else {
-            // who knows
-            fragment = new AboutTabHostFragment(); */
+            case 10:
+                fragment = new AppLauncherTabHostFragment();
+                break;
         }
         return fragment;
     }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aokp.romcontrol.fragments.ui;
+package com.aokp.romcontrol.fragments.applauncher;
 
 import android.app.ActivityManagerNative;
 import android.app.Dialog;

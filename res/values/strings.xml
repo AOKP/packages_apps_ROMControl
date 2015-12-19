@@ -39,6 +39,7 @@
     <string name="category_navbar">Navigation bar</string>
     <string name="category_sound">Sound</string>
     <string name="category_ui">User Interface</string>
+    <string name="category_app_launcher">App launcher</string>
 
     <!-- About -->
     <string name="devs">The Crew</string>
@@ -834,7 +835,6 @@
     <string name="ok">OK</string>
 
     <!-- Circle app bar -->
-    <string name="category_app_circle_bar_title">App launcher</string>
     <string name="app_circle_bar_title">App circle bar</string>
     <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>

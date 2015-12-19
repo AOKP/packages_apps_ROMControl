@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.aokp.romcontrol.fragments.ui;
+package com.aokp.romcontrol.fragments.applauncher;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -29,7 +29,7 @@ import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 
-public class UITabHostFragment extends Fragment {
+public class AppLauncherTabHostFragment extends Fragment {
     private static Context mContext;
 
     private TabAdapter mAdapter;
@@ -37,11 +37,10 @@ public class UITabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.gesture_anywhere_title,
-            R.string.title_animation_controls
+            R.string.app_circle_bar_title
     };
 
-    public UITabHostFragment() {
+    public AppLauncherTabHostFragment() {
     }
 
     @Override
@@ -90,9 +89,7 @@ public class UITabHostFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new GestureAnywhereSettings();
-                case 1:
-                    return new DisplayAnimationsSettings();
+                    return new AppCircleBarSettings();
             }
             return null;
         }

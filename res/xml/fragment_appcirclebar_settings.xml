@@ -19,8 +19,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res-auto"
-    android:title="@string/category_app_circle_bar_title" >
+    xmlns:aokp="http://schemas.android.com/apk/res-auto" >
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="enable_app_circle_bar"

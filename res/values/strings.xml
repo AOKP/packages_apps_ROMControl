@@ -121,10 +121,6 @@
     <string name="recents_fullscreen_summary_enabled">Recents in fullscreen is enabled</string>
     <string name="recents_fullscreen_summary_disabled">Recents in fullscreen is disabled</string>
 
-    <!-- EdgeGesture service -->
-    <string name="edge_gesture_service_title">Block gesture touch events</string>
-    <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
-
     <!-- Sound settings -->
     <string name="sound_title">Sound</string>
     <!-- Safe headset volume restore checkbox -->
@@ -303,6 +299,8 @@
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Right edge of the status bar pulls down Quick Settings</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_style_title">Clock style</string>

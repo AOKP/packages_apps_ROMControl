@@ -195,9 +195,9 @@ public class ActionListViewSettings extends ListFragment implements
         FilteredDeviceFeaturesArray finalActionDialogArray = new FilteredDeviceFeaturesArray();
         finalActionDialogArray = DeviceUtils.filterUnsupportedDeviceFeatures(mActivity,
             res.getStringArray(res.getIdentifier(
-                    mActionValuesKey, "array", "com.android.settings")),
+                    mActionValuesKey, "array", "com.aokp.romcontrol")),
             res.getStringArray(res.getIdentifier(
-                    mActionEntriesKey, "array", "com.android.settings")));
+                    mActionEntriesKey, "array", "com.aokp.romcontrol")));
         mActionDialogValues = finalActionDialogArray.values;
         mActionDialogEntries = finalActionDialogArray.entries;
 

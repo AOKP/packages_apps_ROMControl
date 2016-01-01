@@ -40,6 +40,8 @@ import com.aokp.romcontrol.fragments.applauncher.AppSideBarSettings;
 
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
+import com.aokp.romcontrol.fragments.general.RecentAppSidebarFragment;
+import com.aokp.romcontrol.fragments.general.RecentAppSidebarSettings;
 import com.aokp.romcontrol.fragments.general.RecentsSettingsFragment;
 import com.aokp.romcontrol.fragments.general.WakelockBlockerFragment;
 

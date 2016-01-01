@@ -86,6 +86,18 @@
             android:title="@string/recents_max_apps_title"
             android:dependency="use_slim_recents" />
 
+        <PreferenceScreen
+                android:dependency="use_slim_recents"
+                android:key="recent_app_sidebar_content"
+                android:fragment="com.aokp.romcontrol.slim.dslv.ActionListViewSettings"
+                android:title="@string/recent_app_sidebar_title"
+                android:summary="@string/recent_app_sidebar_summary">
+            <extra android:name="actionMode" android:value="7" />
+            <extra android:name="maxAllowedActions" android:value="-1" />
+            <extra android:name="useAppPickerOnly" android:value="true" />
+            <extra android:name="fragment" android:value="com.aokp.romcontrol.fragments.general.RecentAppSidebarFragment" />
+        </PreferenceScreen>
+
         <ListPreference
             android:dependency="use_slim_recents"
             android:key="recent_panel_expanded_mode"

@@ -101,7 +101,7 @@ public class MultiChoiceSetting extends BaseSetting implements OnClickListener {
         final AlertDialog d = new Builder(getContext())
                 .setTitle(getTitle())
                 .setCancelable(true)
-                .setPositiveButton(R.string.toggles_display_close, null)
+                .setPositiveButton(R.string.close, null)
                 .setOnKeyListener(new DialogInterface.OnKeyListener() {
 
                         @Override

@@ -67,6 +67,5 @@
         <item name="android:orientation">vertical</item>
     </style>
 
-
     <color name="setting_separator">#ff484848</color>
 </resources>

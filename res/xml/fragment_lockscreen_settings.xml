@@ -39,7 +39,7 @@
             android:summary="@string/lockscreen_see_through_summary"
             android:defaultValue="false" />
 
-        <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        <com.aokp.romcontrol.widgets.SeekBarPreference
             android:key="lockscreen_blur_radius"
             android:title="@string/lockscreen_blur_radius"
             android:dependency="lockscreen_see_through"
@@ -47,7 +47,7 @@
             android:max="25"
             aokp:min="0"
             aokp:unitsLeft=""
-            aokp:unitsRight="perc" />
+            aokp:unitsRight="%" />
 
     </PreferenceCategory>
 
@@ -131,6 +131,23 @@
             android:key="double_tap_sleep_anywhere"
             android:title="@string/double_tap_sleep_anywhere_title"
             android:summary="@string/double_tap_sleep_anywhere_summary" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="lock_screen_custom_notif"
+            android:title="@string/lockscreen_maxnotif_title"
+            android:summary="@string/lockscreen_maxnotif_sumary"
+            android:defaultValue="false" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="lockscreen_max_notif_cofig"
+            android:title="@string/lockscreen_maxnotif_config"
+            android:dependency="lock_screen_custom_notif"
+            android:defaultValue="5"
+            android:max="5"
+            aokp:min="3"
+            aokp:interval="1"
+            aokp:unitsLeft=""
+            aokp:unitsRight="n" />
 
     </PreferenceCategory>
 </PreferenceScreen>

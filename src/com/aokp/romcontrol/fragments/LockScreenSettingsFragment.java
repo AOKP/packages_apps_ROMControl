@@ -22,7 +22,6 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.WallpaperManager;
 import android.app.Fragment;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -52,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LockScreenSettingsFragment extends Fragment {
@@ -101,10 +100,13 @@ public class LockScreenSettingsFragment extends Fragment {
                 "weather_text_color";
         private static final String PREF_ICON_COLOR =
                 "weather_icon_color";
+        private static final String LOCKSCREEN_MAX_NOTIF_CONFIG =
+                "lockscreen_max_notif_cofig";
 
         private Preference mSetWallpaper;
         private Preference mClearWallpaper;
-        private SeekBarPreferenceCham mBlurRadius;
+        private SeekBarPreference mBlurRadius;
+        private SeekBarPreference mMaxKeyguardNotifConfig;
 
         private static final int MONOCHROME_ICON = 0;
         private static final int DEFAULT_COLOR = 0xffffffff;
@@ -143,17 +145,15 @@ public class LockScreenSettingsFragment extends Fragment {
             }
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_lockscreen_settings);
-            ContentResolver resolver = getActivity().getContentResolver();
-
+            mResolver = getActivity().getContentResolver();
+            
             mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
             mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
 
-            mBlurRadius = (SeekBarPreferenceCham) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
-            mBlurRadius.setValue(Settings.System.getInt(resolver,
+            mBlurRadius = (SeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
+            mBlurRadius.setValue(Settings.System.getInt(mResolver,
                     Settings.System.LOCKSCREEN_BLUR_RADIUS, 14));
             mBlurRadius.setOnPreferenceChangeListener(this);
-
-            mResolver = getActivity().getContentResolver();
 
             boolean showWeather = Settings.System.getInt(mResolver,
                     Settings.System.LOCK_SCREEN_SHOW_WEATHER, 0) == 1;
@@ -176,6 +176,12 @@ public class LockScreenSettingsFragment extends Fragment {
                     (ColorPickerPreference) findPreference(PREF_TEXT_COLOR);
             mIconColor =
                     (ColorPickerPreference) findPreference(PREF_ICON_COLOR);
+
+            mMaxKeyguardNotifConfig = (SeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+            int kgconf = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
+            mMaxKeyguardNotifConfig.setValue(kgconf);
+            mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
 
             if (showWeather) {
                 mShowLocation =
@@ -257,10 +263,9 @@ public class LockScreenSettingsFragment extends Fragment {
             boolean value;
             String hex;
             int intHex;
-            ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
             if (preference == mBlurRadius) {
                 int width = ((Integer)newValue).intValue();
-                Settings.System.putInt(resolver,
+                Settings.System.putInt(mResolver,
                         Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
                 return true;
             } else if (preference == mShowWeather) {
@@ -312,6 +317,11 @@ public class LockScreenSettingsFragment extends Fragment {
                 Settings.System.putInt(mResolver,
                         Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR, intHex);
                 preference.setSummary(hex);
+                return true;
+        	} else if (preference == mMaxKeyguardNotifConfig) {
+                int kgconf = (Integer) newValue;
+                Settings.System.putInt(mResolver,
+                        Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
                 return true;
             }
             return false;

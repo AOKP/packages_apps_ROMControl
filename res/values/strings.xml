@@ -869,7 +869,7 @@
     <string name="weather_show_timestamp_title">Show timestamp</string>
     <string name="weather_show_timestamp_summary">Enable to show the timestamp</string>
     <string name="weather_condition_icon_title">Condition icon</string>
-    <string name="weather_condition_icon_dlg_title">Coose an icon for displaying the weather condition</string>
+    <string name="weather_condition_icon_dlg_title">Choose an icon for displaying the weather condition</string>
     <string name="weather_condition_icon_monochrome_title">Monochrome</string>
     <string name="weather_condition_icon_colored_title">Colored</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
@@ -895,4 +895,10 @@
     <!-- Double tap to sleep on lockscreen -->
     <string name="double_tap_sleep_anywhere_title">DT2S on Lockscreen</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to sleep</string>
+
+    <!-- Max Lockscreen Notification count -->
+    <string name="weather_cat_notifications_title">Notifications</string>
+    <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
+    <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
+    <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
 </resources>

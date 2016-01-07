@@ -606,4 +606,105 @@
         <item>23</item>
     </string-array>
 
+    <!-- Navigation bar custom dimensions -->
+    <string-array name="navigation_bar_width_entries" translatable="false">
+        <item>@string/navigation_bar_size_42_dp_default</item>
+        <item>@string/navigation_bar_size_40_dp</item>
+        <item>@string/navigation_bar_size_36_dp</item>
+        <item>@string/navigation_bar_size_30_dp</item>
+        <item>@string/navigation_bar_size_24_dp</item>
+        <item>@string/navigation_bar_size_0_dp</item>
+    </string-array>
+
+    <string-array name="navigation_bar_width" translatable="false">
+        <item>42</item>
+        <item>40</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="navigation_bar_height_entries" translatable="false">
+        <item>@string/navigation_bar_size_48_dp_default</item>
+        <item>@string/navigation_bar_size_44_dp</item>
+        <item>@string/navigation_bar_size_42_dp</item>
+        <item>@string/navigation_bar_size_40_dp</item>
+        <item>@string/navigation_bar_size_36_dp</item>
+        <item>@string/navigation_bar_size_30_dp</item>
+        <item>@string/navigation_bar_size_24_dp</item>
+        <item>@string/navigation_bar_size_0_dp</item>
+    </string-array>
+
+    <string-array name="navigation_bar_height" translatable="false">
+        <item>48</item>
+        <item>44</item>
+        <item>42</item>
+        <item>40</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="navigation_bar_height_entries_landscape" translatable="false">
+        <item>@string/navigation_bar_size_48_dp_default</item>
+        <item>@string/navigation_bar_size_44_dp</item>
+        <item>@string/navigation_bar_size_42_dp</item>
+        <item>@string/navigation_bar_size_40_dp</item>
+        <item>@string/navigation_bar_size_36_dp</item>
+        <item>@string/navigation_bar_size_30_dp</item>
+        <item>@string/navigation_bar_size_24_dp</item>
+        <item>@string/navigation_bar_size_0_dp</item>
+    </string-array>
+
+    <string-array name="navigation_bar_height_landscape" translatable="false">
+        <item>48</item>
+        <item>44</item>
+        <item>42</item>
+        <item>40</item>
+        <item>36</item>
+        <item>30</item>
+        <item>24</item>
+        <item>0</item>
+    </string-array>
+
+    <!-- Volume key cursor control -->
+    <string-array name="volbtn_cursor_control_entries" translatable="false">
+        <item>@string/volbtn_cursor_control_off</item>
+        <item>@string/volbtn_cursor_control_on</item>
+        <item>@string/volbtn_cursor_control_on_reverse</item>
+    </string-array>
+
+    <string-array name="volbtn_cursor_control_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Hardware key rebinding -->
+    <string-array name="hardware_keys_action_entries" translatable="false">
+        <item>@string/hardware_keys_action_nothing</item>
+        <item>@string/hardware_keys_action_menu</item>
+        <item>@string/hardware_keys_action_app_switch</item>
+        <item>@string/hardware_keys_action_search</item>
+        <item>@string/hardware_keys_action_voice_search</item>
+        <item>@string/hardware_keys_action_in_app_search</item>
+        <item>@string/hardware_keys_action_launch_camera</item>
+        <item>@string/hardware_keys_action_sleep</item>
+        <item>@string/hardware_keys_action_last_app</item>
+    </string-array>
+
+    <string-array name="hardware_keys_action_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
 </resources>

@@ -59,6 +59,12 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".fragments.BootReceiver" android:enabled="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutCrewFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutTabHostFragment" />
@@ -89,11 +95,13 @@
         <activity android:name="com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.AnimationControls" />
 
-        <activity android:name="com.aokp.romcontrol.fragments.HardwareKeysFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.ButtonSettingsFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.ButtonBacklightBrightness" />
         <activity android:name="com.aokp.romcontrol.fragments.LockScreenSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.NotificationsDrawerFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.PowerMenuSettingsFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.Utils" />
 
     </application>
 

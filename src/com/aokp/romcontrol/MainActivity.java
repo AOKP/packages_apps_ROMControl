@@ -60,7 +60,7 @@ import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
 import com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment;
 import com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings;
 
-import com.aokp.romcontrol.fragments.HardwareKeysFragment;
+import com.aokp.romcontrol.fragments.ButtonSettingsFragment;
 import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
@@ -143,7 +143,7 @@ public class MainActivity extends Activity
                 break;
 
             case 5:
-                fragment = new HardwareKeysFragment();
+                fragment = new ButtonSettingsFragment();
                 break;
 
             case 6:

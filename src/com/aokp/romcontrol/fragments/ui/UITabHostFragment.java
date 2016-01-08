@@ -37,6 +37,7 @@ public class UITabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
+            R.string.category_ui,
             R.string.gesture_anywhere_title,
             R.string.title_animation_controls
     };
@@ -90,10 +91,11 @@ public class UITabHostFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new GestureAnywhereSettings();
-                case 1:
                     return new DisplayAnimationsSettings();
-            }
+                case 1:
+                    return new GestureAnywhereSettings();
+                case 2:
+                    return new AnimationControls();            }
             return null;
         }
     }

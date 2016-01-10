@@ -20,6 +20,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/notifications_drawer_title">
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="persist_add"
+        android:title="@string/persist_add_title"
+        android:summary="@string/persist_add_summary"
+        android:defaultValue="true"/>
+
     <ListPreference
         android:key="qs_quick_pulldown"
         android:title="@string/status_bar_quick_qs_pulldown_title"

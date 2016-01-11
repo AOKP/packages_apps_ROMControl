@@ -40,6 +40,8 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
+import android.text.Spannable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -164,8 +166,8 @@ public class StatusbarSettingsFragment extends Fragment {
             PreferenceScreen prefSet = getPreferenceScreen();
             ContentResolver resolver = getActivity().getContentResolver();
 
-            int intColor;
-            String hexColor;
+            int intColorCarrierColor;
+            String hexColorCarrierColor;
 
             PackageManager pm = getActivity().getPackageManager();
             Resources systemUiResources;
@@ -237,17 +239,17 @@ public class StatusbarSettingsFragment extends Fragment {
 
             mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
             mColorPicker.setOnPreferenceChangeListener(this);
-            int intColor = Settings.System.getInt(getActivity().getContentResolver(),
+            int intColorClockColor = Settings.System.getInt(getActivity().getContentResolver(),
                         Settings.System.STATUSBAR_CLOCK_COLOR, -2);
-            if (intColor == -2) {
-                intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
+            if (intColorClockColor == -2) {
+                intColorClockColor = systemUiResources.getColor(systemUiResources.getIdentifier(
                         "com.android.systemui:color/status_bar_clock_color", null, null));
                 mColorPicker.setSummary(getResources().getString(R.string.default_string));
             } else {
-                String hexColor = String.format("#%08x", (0xffffffff & intColor));
-                mColorPicker.setSummary(hexColor);
+                String hexColorClockColor = String.format("#%08x", (0xffffffff & intColorClockColor));
+                mColorPicker.setSummary(hexColorClockColor);
             }
-            mColorPicker.setNewPreviewColor(intColor);
+            mColorPicker.setNewPreviewColor(intColorClockColor);
 
             mFontStyle = (ListPreference) findPreference(PREF_FONT_STYLE);
             mFontStyle.setOnPreferenceChangeListener(this);
@@ -281,11 +283,11 @@ public class StatusbarSettingsFragment extends Fragment {
             mStatusBarTemperatureColor =
                 (ColorPickerPreference) findPreference(PREF_STATUS_BAR_WEATHER_COLOR);
             mStatusBarTemperatureColor.setOnPreferenceChangeListener(this);
-            int intColor = Settings.System.getInt(resolver,
+            int intColorWeatherColor = Settings.System.getInt(resolver,
                     Settings.System.STATUS_BAR_WEATHER_COLOR, 0xffffffff);
-            String hexColor = String.format("#%08x", (0xffffffff & intColor));
-                mStatusBarTemperatureColor.setSummary(hexColor);
-                mStatusBarTemperatureColor.setNewPreviewColor(intColor);
+            String hexColorWeatherColor = String.format("#%08x", (0xffffffff & intColorWeatherColor));
+                mStatusBarTemperatureColor.setSummary(hexColorWeatherColor);
+                mStatusBarTemperatureColor.setNewPreviewColor(intColorWeatherColor);
 
             mStatusBarTemperatureSize = (SeekBarPreferenceCham) findPreference(PREF_STATUS_BAR_WEATHER_SIZE);
             mStatusBarTemperatureSize.setValue(Settings.System.getInt(resolver,
@@ -309,11 +311,11 @@ public class StatusbarSettingsFragment extends Fragment {
 
             mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
             mCarrierColorPicker.setOnPreferenceChangeListener(this);
-            intColor = Settings.System.getInt(getContentResolver(),
+            intColorCarrierColor = Settings.System.getInt(getContentResolver(),
                         Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mCarrierColorPicker.setSummary(hexColor);
-            mCarrierColorPicker.setNewPreviewColor(intColor);
+            hexColorCarrierColor = String.format("#%08x", (0xffffffff & intColorCarrierColor));
+            mCarrierColorPicker.setSummary(hexColorCarrierColor);
+            mCarrierColorPicker.setNewPreviewColor(intColorCarrierColor);
 
             mStatusBarCarrierSize = (SeekBarPreferenceCham) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
             mStatusBarCarrierSize.setValue(Settings.System.getInt(getActivity().getContentResolver(),
@@ -549,7 +551,7 @@ public class StatusbarSettingsFragment extends Fragment {
                         Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, val);
                 mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntries()[index]);
                 return true;
-            else if (preference == mCarrierColorPicker) {
+            } else if (preference == mCarrierColorPicker) {
                 String hex = ColorPickerPreference.convertToARGB(
                         Integer.valueOf(String.valueOf(newValue)));
                 preference.setSummary(hex);

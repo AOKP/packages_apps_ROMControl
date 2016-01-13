@@ -379,6 +379,10 @@
     <string name="status_bar_quick_qs_pulldown_left">Left</string>
     <string name="status_bar_quick_qs_pulldown_right">Right</string>
 
+    <!-- Notification color settings -->
+    <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>
+    <string name="cat_colors_title">Customize notification colors</string>
+
     <!-- Weather in expanded status bar -->
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
@@ -879,6 +883,7 @@
     <string name="hidden_title">Hidden</string>
     <string name="dlg_reset_values_message">Reset values to default?</string>
     <string name="dlg_reset_android">Ok</string>
+    <string name="dlg_reset_aokp">AOKP</string>
     <string name="colors_title">Colors</string>
     <string name="text_title">Text</string>
 

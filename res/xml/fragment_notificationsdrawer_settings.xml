@@ -32,4 +32,15 @@
         android:summary="@string/status_bar_show_weather_summary"
         android:defaultValue="true" />
 
+    <PreferenceCategory
+        android:key="notification_cat_colors"
+        android:title="@string/colors_title">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+           android:key="notification_drawer_clear_all_icon_color"
+           android:title="@string/notification_drawer_clear_all_icon_color_title"
+           android:defaultValue="0xffffffff" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -37,6 +37,7 @@ import android.provider.Settings;
 
 import com.android.internal.util.cm.PowerMenuConstants;
 import cyanogenmod.providers.CMSettings;
+import org.cyanogenmod.internal.logging.CMMetricsLogger;
 
 import static com.android.internal.util.cm.PowerMenuConstants.*;
 
@@ -358,5 +359,8 @@ public class PowerMenuSettingsFragment extends Fragment {
             mContext.sendBroadcastAsUser(u, UserHandle.ALL);
         }
 
+        protected int getMetricsCategory() {
+            return CMMetricsLogger.POWER_MENU_ACTIONS;
+        }
     }
 }

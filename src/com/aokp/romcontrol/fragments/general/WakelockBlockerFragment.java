@@ -47,7 +47,7 @@ import java.util.Collections;
 
 import com.aokp.romcontrol.R;
 
-import com.android.internal.logging.MetricsLogger;
+import org.cyanogenmod.internal.logging.CMMetricsLogger;
 
 public class WakelockBlockerFragment extends Fragment {
 
@@ -109,7 +109,7 @@ public class WakelockBlockerFragment extends Fragment {
 
     protected int getMetricsCategory() {
         // todo add a constant in MetricsLogger.java
-        return MetricsLogger.MAIN_SETTINGS;
+        return CMMetricsLogger.DONT_LOG;
     }
 
     @Override

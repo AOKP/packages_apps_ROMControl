@@ -40,7 +40,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.internal.logging.MetricsLogger;
+import org.cyanogenmod.internal.logging.CMMetricsLogger;
 
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
@@ -164,7 +164,7 @@ public class TrafficSettingsFragment extends Fragment {
         }
 
         protected int getMetricsCategory() {
-           return MetricsLogger.MAIN_SETTINGS;
+           return CMMetricsLogger.DONT_LOG;
         }
 
         private void updateNetworkTrafficState(int mIndex) {

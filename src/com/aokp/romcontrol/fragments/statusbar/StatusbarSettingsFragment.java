@@ -51,8 +51,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.android.internal.logging.MetricsLogger;
 import cyanogenmod.providers.CMSettings;
+import org.cyanogenmod.internal.logging.CMMetricsLogger;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -349,7 +349,7 @@ public class StatusbarSettingsFragment extends Fragment {
 
         protected int getMetricsCategory() {
             // todo add a constant in MetricsLogger.java
-            return MetricsLogger.MAIN_SETTINGS;
+            return CMMetricsLogger.DONT_LOG;
         }
 
         @Override

@@ -45,7 +45,7 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 
-import com.android.internal.logging.MetricsLogger;
+import org.cyanogenmod.internal.logging.CMMetricsLogger;
 import com.aokp.romcontrol.fragments.ButtonBacklightBrightness;
 import com.aokp.romcontrol.R;
 
@@ -472,7 +472,7 @@ public class ButtonSettingsFragment extends Fragment {
         }
 
         protected int getMetricsCategory() {
-            return MetricsLogger.DONT_TRACK_ME_BRO;
+            return CMMetricsLogger.BUTTON_SETTINGS;
         }
 
         @Override

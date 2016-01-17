@@ -50,12 +50,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
-import com.android.internal.logging.MetricsLogger;
 import com.android.internal.util.aokp.AOKPUtils;
 import com.aokp.romcontrol.R;
 import cyanogenmod.providers.CMSettings;
 import java.util.List;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+import org.cyanogenmod.internal.logging.CMMetricsLogger;
 import org.cyanogenmod.internal.util.ScreenType;
 
 public class NavbarSettingsFragment extends Fragment {
@@ -294,7 +295,7 @@ public class NavbarSettingsFragment extends Fragment {
         }
 
         protected int getMetricsCategory() {
-            return MetricsLogger.DONT_TRACK_ME_BRO;
+            return CMMetricsLogger.DONT_LOG;
         }
 
        private void updateNavBarSettings() {

@@ -391,6 +391,9 @@
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 
+    <!-- QS shade transparency -->
+    <string name="qs_transparent_shade">QS shade transparency</string>
+
     <!-- Display Animations -->
     <string name="title_animation_controls">Animations</string>
 

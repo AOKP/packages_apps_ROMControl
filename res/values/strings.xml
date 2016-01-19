@@ -411,6 +411,10 @@
     <string name="smart_pulldown_persistent">No persistent</string>
     <string name="smart_pulldown_all">No dismissable or persistent</string>
 
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_title">Number of QS tiles per row</string>
+    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+
     <!-- Notification color settings -->
     <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>
     <string name="cat_colors_title">Customize notification colors</string>

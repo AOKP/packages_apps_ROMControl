@@ -789,6 +789,19 @@
         <item>3</item>
     </string-array>
 
+    <!-- QS Tiles Columns -->
+    <string-array name="qs_num_columns_values" translatable="false">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="qs_num_columns_entries">
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </string-array>
+
     <!-- Scrolling Cache -->
     <string-array name="entries_scrollingcache" translatable="false">
         <item>@string/pref_scrollingcache_force_enable</item>

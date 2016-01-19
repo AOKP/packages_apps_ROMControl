@@ -34,6 +34,13 @@
         android:entryValues="@array/smart_pulldown_values"
         android:persistent="false" />
 
+    <ListPreference
+        android:key="sysui_qs_num_columns"
+        android:title="@string/qs_num_columns_title"
+        android:entries="@array/qs_num_columns_entries"
+        android:entryValues="@array/qs_num_columns_values"
+        android:persistent="false" />
+
     <com.aokp.romcontrol.settings.CMSystemSettingSwitchPreference
         android:key="status_bar_show_weather"
         android:title="@string/status_bar_show_weather_title"

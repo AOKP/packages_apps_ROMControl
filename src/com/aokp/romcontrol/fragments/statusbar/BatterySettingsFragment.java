@@ -1,0 +1,186 @@
+/*
+* Copyright (C) 2015 The Android Open Kang Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+package com.aokp.romcontrol.fragments.statusbar;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.os.UserHandle;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
+import android.provider.Settings;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+
+import cyanogenmod.providers.CMSettings;
+import org.cyanogenmod.internal.logging.CMMetricsLogger;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
+
+public class BatterySettingsFragment extends Fragment {
+
+    public BatterySettingsFragment() {
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_battery_settings_main, container, false);
+
+        Resources res = getResources();
+
+        return v;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        getActivity().getFragmentManager().beginTransaction()
+                .replace(R.id.battery_settings_main, new BatterySettingsPreferenceFragment())
+                .commit();
+    }
+
+    public static class BatterySettingsPreferenceFragment extends PreferenceFragment
+            implements OnPreferenceChangeListener {
+
+        public BatterySettingsPreferenceFragment() {
+
+        }
+
+        private static final String TAG = "BatterySettings";
+
+        private ContentResolver mContentResolver;
+
+        private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+        private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+
+        private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
+        private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
+
+        private ListPreference mStatusBarBattery;
+        private ListPreference mStatusBarBatteryShowPercent;
+
+        private boolean mCheckPreferences;
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            createCustomView();
+        }
+
+        private PreferenceScreen createCustomView() {
+            mCheckPreferences = false;
+            // Load the preferences from an XML resource
+            addPreferencesFromResource(R.xml.fragment_battery_settings);
+            PreferenceScreen prefSet = getPreferenceScreen();
+            ContentResolver resolver = getActivity().getContentResolver();
+
+            int intColorCarrierColor;
+            String hexColorCarrierColor;
+
+            mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+            mStatusBarBatteryShowPercent =
+                    (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+
+            int batteryStyle = CMSettings.System.getInt(resolver,
+                CMSettings.System.STATUS_BAR_BATTERY_STYLE, 0);
+            mStatusBarBattery.setValue(String.valueOf(batteryStyle));
+                mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+            mStatusBarBattery.setOnPreferenceChangeListener(this);
+
+            int batteryShowPercent = CMSettings.System.getInt(resolver,
+                    CMSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+            mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
+            mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
+            enableStatusBarBatteryDependents(batteryStyle);
+            mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+
+            setHasOptionsMenu(true);
+            mCheckPreferences = true;
+            return prefSet;
+        }
+
+        protected ContentResolver getContentResolver() {
+            Context context = getActivity();
+            if (context != null) {
+                mContentResolver = context.getContentResolver();
+            }
+            return mContentResolver;
+        }
+
+        protected int getMetricsCategory() {
+            // todo add a constant in MetricsLogger.java
+            return CMMetricsLogger.DONT_LOG;
+        }
+
+        @Override
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+            if (!mCheckPreferences) {
+                return false;
+            }
+            ContentResolver resolver = getActivity().getContentResolver();
+            if (preference == mStatusBarBattery) {
+                int batteryStyle = Integer.valueOf((String) newValue);
+                int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+                CMSettings.System.putInt(
+                        resolver, CMSettings.System.STATUS_BAR_BATTERY_STYLE, batteryStyle);
+                mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+                enableStatusBarBatteryDependents(batteryStyle);
+                return true;
+            } else if (preference == mStatusBarBatteryShowPercent) {
+                int batteryShowPercent = Integer.valueOf((String) newValue);
+                int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
+                CMSettings.System.putInt(
+                        resolver, CMSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryShowPercent);
+                mStatusBarBatteryShowPercent.setSummary(
+                        mStatusBarBatteryShowPercent.getEntries()[index]);
+                return true;
+            }
+            return false;
+        }
+
+        private void enableStatusBarBatteryDependents(int batteryIconStyle) {
+            if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
+                    batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+                mStatusBarBatteryShowPercent.setEnabled(false);
+            } else {
+                mStatusBarBatteryShowPercent.setEnabled(true);
+            }
+        }
+    }
+}

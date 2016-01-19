@@ -38,6 +38,8 @@ public class StatusBarTabHostFragment extends Fragment {
 
     private static final int[] mFragments = new int[] {
             R.string.status_bar_title,
+            R.string.status_bar_battery_style_title,
+            R.string.status_bar_clock_style_title,
             R.string.network_traffic_title
     };
 
@@ -92,6 +94,10 @@ public class StatusBarTabHostFragment extends Fragment {
                 case 0:
                     return new StatusbarSettingsFragment();
                 case 1:
+                    return new BatterySettingsFragment();
+                case 2:
+                    return new ClockSettingsFragment();
+                case 3:
                     return new TrafficSettingsFragment();
             }
             return null;

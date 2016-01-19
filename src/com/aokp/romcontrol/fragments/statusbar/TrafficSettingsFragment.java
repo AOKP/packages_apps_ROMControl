@@ -67,14 +67,14 @@ public class TrafficSettingsFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.traffic_settings_main, new SettingsPreferenceFragment())
+                .replace(R.id.traffic_settings_main, new TrafficSettingsPreferenceFragment())
                 .commit();
     }
 
-    public static class SettingsPreferenceFragment extends PreferenceFragment
+    public static class TrafficSettingsPreferenceFragment extends PreferenceFragment
             implements OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public TrafficSettingsPreferenceFragment() {
 
         }
 

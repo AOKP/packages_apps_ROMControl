@@ -58,7 +58,7 @@ public class NavbarTabHostFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
-        View main = inflater.inflate(R.layout.fragment_statusbar_main, container, false);
+        View main = inflater.inflate(R.layout.fragment_navbar_main, container, false);
         mAdapter = new TabAdapter(getChildFragmentManager());
         mPager = (ViewPager) main.findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);

@@ -36,10 +36,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
-import android.text.format.DateFormat;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -54,15 +51,10 @@ import android.widget.EditText;
 import cyanogenmod.providers.CMSettings;
 import org.cyanogenmod.internal.logging.CMMetricsLogger;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 public class StatusbarSettingsFragment extends Fragment {
 
@@ -84,14 +76,14 @@ public class StatusbarSettingsFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.statusbar_settings_main, new SettingsPreferenceFragment())
+                .replace(R.id.statusbar_settings_main, new StatusBarSettingsPreferenceFragment())
                 .commit();
     }
 
-    public static class SettingsPreferenceFragment extends PreferenceFragment
+    public static class StatusBarSettingsPreferenceFragment extends PreferenceFragment
             implements OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public StatusBarSettingsPreferenceFragment() {
 
         }
 
@@ -99,16 +91,6 @@ public class StatusbarSettingsFragment extends Fragment {
 
         private ContentResolver mContentResolver;
 
-        private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
-        private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
-        private static final String STATUS_BAR_DATE = "status_bar_date";
-        private static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
-        private static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
-        private static final String PREF_COLOR_PICKER = "clock_color";
-        private static final String PREF_FONT_STYLE = "font_style";
-        private static final String PREF_STATUS_BAR_CLOCK_FONT_SIZE  = "status_bar_clock_font_size";
-        private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-        private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
         private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
         private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
         private static final String PREF_STATUS_BAR_WEATHER_COLOR = "status_bar_weather_color";
@@ -119,37 +101,18 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
         private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
 
-        private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
-        private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
-
-        public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
-        public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
-        private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 23;
-
-        private static final int MENU_RESET = Menu.FIRST;
-        private static final int DLG_RESET = 0;
         static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
-        private ListPreference mStatusBarClock;
-        private ListPreference mStatusBarAmPm;
-        private ListPreference mStatusBarDate;
-        private ListPreference mStatusBarDateStyle;
-        private ListPreference mStatusBarDateFormat;
-        private ColorPickerPreference mColorPicker;
-        private ListPreference mFontStyle;
-        private ListPreference mStatusBarClockFontSize;
-        private ListPreference mStatusBarBattery;
-        private ListPreference mStatusBarBatteryShowPercent;
         private ListPreference mStatusBarTemperature;
         private ListPreference mStatusBarTemperatureStyle;
         private ColorPickerPreference mStatusBarTemperatureColor;
-        private SeekBarPreferenceCham mStatusBarTemperatureSize;
+        private SeekBarPreference mStatusBarTemperatureSize;
         private ListPreference mStatusBarTemperatureFontStyle;
         private PreferenceScreen mCustomCarrierLabel;
         private ListPreference mShowCarrierLabel;
         private String mCustomCarrierLabelText;
         private ColorPickerPreference mCarrierColorPicker;
-        private SeekBarPreferenceCham mStatusBarCarrierSize;
+        private SeekBarPreference mStatusBarCarrierSize;
 
         private boolean mCheckPreferences;
 
@@ -178,93 +141,6 @@ public class StatusbarSettingsFragment extends Fragment {
                 return null;
             }
 
-            mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
-            mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
-            mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
-            mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
-            mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
-            mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
-            mStatusBarBatteryShowPercent =
-                    (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-
-            int clockStyle = CMSettings.System.getInt(resolver,
-                    CMSettings.System.STATUS_BAR_CLOCK, 1);
-            mStatusBarClock.setValue(String.valueOf(clockStyle));
-            mStatusBarClock.setSummary(mStatusBarClock.getEntry());
-            mStatusBarClock.setOnPreferenceChangeListener(this);
-
-            if (DateFormat.is24HourFormat(getActivity())) {
-                mStatusBarAmPm.setEnabled(false);
-                mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
-            } else {
-                int statusBarAmPm = CMSettings.System.getInt(resolver,
-                        CMSettings.System.STATUS_BAR_AM_PM, 2);
-                mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
-                mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
-                mStatusBarAmPm.setOnPreferenceChangeListener(this);
-            }
-
-            int showDate = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_DATE, 0);
-            mStatusBarDate.setValue(String.valueOf(showDate));
-            mStatusBarDate.setSummary(mStatusBarDate.getEntry());
-            mStatusBarDate.setOnPreferenceChangeListener(this);
-
-            int dateStyle = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_DATE_STYLE, 0);
-            mStatusBarDateStyle.setValue(String.valueOf(dateStyle));
-            mStatusBarDateStyle.setSummary(mStatusBarDateStyle.getEntry());
-            mStatusBarDateStyle.setOnPreferenceChangeListener(this);
-
-            mStatusBarDateFormat.setOnPreferenceChangeListener(this);
-            mStatusBarDateFormat.setSummary(mStatusBarDateFormat.getEntry());
-            if (mStatusBarDateFormat.getValue() == null) {
-                mStatusBarDateFormat.setValue("EEE");
-            }
-
-            parseClockDateFormats();
-
-            int batteryStyle = CMSettings.System.getInt(resolver,
-                CMSettings.System.STATUS_BAR_BATTERY_STYLE, 0);
-            mStatusBarBattery.setValue(String.valueOf(batteryStyle));
-                mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
-            mStatusBarBattery.setOnPreferenceChangeListener(this);
-
-            int batteryShowPercent = CMSettings.System.getInt(resolver,
-                    CMSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
-            mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
-            mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
-            enableStatusBarBatteryDependents(batteryStyle);
-            mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
-
-            mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
-            mColorPicker.setOnPreferenceChangeListener(this);
-            int intColorClockColor = Settings.System.getInt(getActivity().getContentResolver(),
-                        Settings.System.STATUSBAR_CLOCK_COLOR, -2);
-            if (intColorClockColor == -2) {
-                intColorClockColor = systemUiResources.getColor(systemUiResources.getIdentifier(
-                        "com.android.systemui:color/status_bar_clock_color", null, null));
-                mColorPicker.setSummary(getResources().getString(R.string.default_string));
-            } else {
-                String hexColorClockColor = String.format("#%08x", (0xffffffff & intColorClockColor));
-                mColorPicker.setSummary(hexColorClockColor);
-            }
-            mColorPicker.setNewPreviewColor(intColorClockColor);
-
-            mFontStyle = (ListPreference) findPreference(PREF_FONT_STYLE);
-            mFontStyle.setOnPreferenceChangeListener(this);
-            mFontStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_STYLE,
-                    0)));
-            mFontStyle.setSummary(mFontStyle.getEntry());
-
-            mStatusBarClockFontSize = (ListPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
-            mStatusBarClockFontSize.setOnPreferenceChangeListener(this);
-            mStatusBarClockFontSize.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.STATUSBAR_CLOCK_FONT_SIZE,
-                    14)));
-            mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntry());
-
             mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE);
             int temperatureShow = Settings.System.getIntForUser(resolver,
                     Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
@@ -289,7 +165,7 @@ public class StatusbarSettingsFragment extends Fragment {
                 mStatusBarTemperatureColor.setSummary(hexColorWeatherColor);
                 mStatusBarTemperatureColor.setNewPreviewColor(intColorWeatherColor);
 
-            mStatusBarTemperatureSize = (SeekBarPreferenceCham) findPreference(PREF_STATUS_BAR_WEATHER_SIZE);
+            mStatusBarTemperatureSize = (SeekBarPreference) findPreference(PREF_STATUS_BAR_WEATHER_SIZE);
             mStatusBarTemperatureSize.setValue(Settings.System.getInt(resolver,
                     Settings.System.STATUS_BAR_WEATHER_SIZE, 14));
             mStatusBarTemperatureSize.setOnPreferenceChangeListener(this);
@@ -317,7 +193,7 @@ public class StatusbarSettingsFragment extends Fragment {
             mCarrierColorPicker.setSummary(hexColorCarrierColor);
             mCarrierColorPicker.setNewPreviewColor(intColorCarrierColor);
 
-            mStatusBarCarrierSize = (SeekBarPreferenceCham) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
+            mStatusBarCarrierSize = (SeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
             mStatusBarCarrierSize.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 14));
             mStatusBarCarrierSize.setOnPreferenceChangeListener(this);
@@ -350,18 +226,6 @@ public class StatusbarSettingsFragment extends Fragment {
         protected int getMetricsCategory() {
             // todo add a constant in MetricsLogger.java
             return CMMetricsLogger.DONT_LOG;
-        }
-
-        @Override
-        public void onResume() {
-            super.onResume();
-            // Adjust clock position for RTL if necessary
-            Configuration config = getResources().getConfiguration();
-            if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-                    mStatusBarClock.setEntries(getActivity().getResources().getStringArray(
-                            R.array.status_bar_clock_style_entries_rtl));
-                    mStatusBarClock.setSummary(mStatusBarClock.getEntry());
-            }
         }
 
         @Override
@@ -402,117 +266,7 @@ public class StatusbarSettingsFragment extends Fragment {
             }
             AlertDialog dialog;
             ContentResolver resolver = getActivity().getContentResolver();
-            if (preference == mStatusBarClock) {
-                int clockStyle = Integer.parseInt((String) newValue);
-                int index = mStatusBarClock.findIndexOfValue((String) newValue);
-                CMSettings.System.putInt(
-                        resolver, CMSettings.System.STATUS_BAR_CLOCK, clockStyle);
-                mStatusBarClock.setSummary(mStatusBarClock.getEntries()[index]);
-                return true;
-            } else if (preference == mStatusBarAmPm) {
-                int statusBarAmPm = Integer.valueOf((String) newValue);
-                int index = mStatusBarAmPm.findIndexOfValue((String) newValue);
-                CMSettings.System.putInt(
-                        resolver, CMSettings.System.STATUS_BAR_AM_PM, statusBarAmPm);
-                mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
-                return true;
-            } else if (preference == mStatusBarDate) {
-                int statusBarDate = Integer.valueOf((String) newValue);
-                int index = mStatusBarDate.findIndexOfValue((String) newValue);
-                Settings.System.putInt(
-                        resolver, STATUS_BAR_DATE, statusBarDate);
-                mStatusBarDate.setSummary(mStatusBarDate.getEntries()[index]);
-                return true;
-            } else if (preference == mStatusBarDateStyle) {
-                int statusBarDateStyle = Integer.parseInt((String) newValue);
-                int index = mStatusBarDateStyle.findIndexOfValue((String) newValue);
-                Settings.System.putInt(
-                        resolver, STATUS_BAR_DATE_STYLE, statusBarDateStyle);
-                mStatusBarDateStyle.setSummary(mStatusBarDateStyle.getEntries()[index]);
-                return true;
-            } else if (preference ==  mStatusBarDateFormat) {
-                int index = mStatusBarDateFormat.findIndexOfValue((String) newValue);
-                if (index == CUSTOM_CLOCK_DATE_FORMAT_INDEX) {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-                    alert.setTitle(R.string.status_bar_date_string_edittext_title);
-                    alert.setMessage(R.string.status_bar_date_string_edittext_summary);
-
-                    final EditText input = new EditText(getActivity());
-                    String oldText = Settings.System.getString(
-                        getActivity().getContentResolver(),
-                        Settings.System.STATUS_BAR_DATE_FORMAT);
-                    if (oldText != null) {
-                        input.setText(oldText);
-                    }
-                    alert.setView(input);
-
-                    alert.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialogInterface, int whichButton) {
-                            String value = input.getText().toString();
-                            if (value.equals("")) {
-                                return;
-                            }
-                            Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.STATUS_BAR_DATE_FORMAT, value);
-
-                            return;
-                        }
-                    });
-
-                    alert.setNegativeButton(R.string.cancel,
-                        new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialogInterface, int which) {
-                            return;
-                        }
-                    });
-                    dialog = alert.create();
-                    dialog.show();
-                } else {
-                    if ((String) newValue != null) {
-                        Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.STATUS_BAR_DATE_FORMAT, (String) newValue);
-                    }
-                }
-                return true;
-            } else if (preference == mStatusBarBattery) {
-                int batteryStyle = Integer.valueOf((String) newValue);
-                int index = mStatusBarBattery.findIndexOfValue((String) newValue);
-                CMSettings.System.putInt(
-                        resolver, CMSettings.System.STATUS_BAR_BATTERY_STYLE, batteryStyle);
-                mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
-                enableStatusBarBatteryDependents(batteryStyle);
-                return true;
-            } else if (preference == mStatusBarBatteryShowPercent) {
-                int batteryShowPercent = Integer.valueOf((String) newValue);
-                int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
-                CMSettings.System.putInt(
-                        resolver, CMSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryShowPercent);
-                mStatusBarBatteryShowPercent.setSummary(
-                        mStatusBarBatteryShowPercent.getEntries()[index]);
-                return true;
-            } else if (preference == mColorPicker) {
-                String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
-                        .valueOf(newValue)));
-                preference.setSummary(hex);
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
-                return true;
-            } else if (preference == mFontStyle) {
-                int val = Integer.parseInt((String) newValue);
-                int index = mFontStyle.findIndexOfValue((String) newValue);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUSBAR_CLOCK_FONT_STYLE, val);
-                mFontStyle.setSummary(mFontStyle.getEntries()[index]);
-                return true;
-            } else if (preference == mStatusBarClockFontSize) {
-                int val = Integer.parseInt((String) newValue);
-                int index = mStatusBarClockFontSize.findIndexOfValue((String) newValue);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUSBAR_CLOCK_FONT_SIZE, val);
-                mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntries()[index]);
-                return true;
-            } else if (preference == mStatusBarTemperature) {
+            if (preference == mStatusBarTemperature) {
                 int temperatureShow = Integer.valueOf((String) newValue);
                 int index = mStatusBarTemperature.findIndexOfValue((String) newValue);
                 Settings.System.putIntForUser(
@@ -575,59 +329,6 @@ public class StatusbarSettingsFragment extends Fragment {
             return false;
         }
 
-        private void enableStatusBarBatteryDependents(int batteryIconStyle) {
-            if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
-                    batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
-                mStatusBarBatteryShowPercent.setEnabled(false);
-            } else {
-                mStatusBarBatteryShowPercent.setEnabled(true);
-            }
-        }
-
-        private void enableStatusBarClockDependents() {
-            int clockStyle = CMSettings.System.getInt(getActivity()
-                    .getContentResolver(), CMSettings.System.STATUS_BAR_CLOCK, 1);
-            if (clockStyle == 0) {
-                mStatusBarDate.setEnabled(false);
-                mStatusBarDateStyle.setEnabled(false);
-                mStatusBarDateFormat.setEnabled(false);
-            } else {
-                mStatusBarDate.setEnabled(true);
-                mStatusBarDateStyle.setEnabled(true);
-                mStatusBarDateFormat.setEnabled(true);
-            }
-        }
-
-        private void parseClockDateFormats() {
-            // Parse and repopulate mClockDateFormats's entries based on current date.
-            String[] dateEntries = getResources().getStringArray(R.array.status_bar_date_format_entries_values);
-            CharSequence parsedDateEntries[];
-            parsedDateEntries = new String[dateEntries.length];
-            Date now = new Date();
-
-            int lastEntry = dateEntries.length - 1;
-            int dateFormat = Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.STATUS_BAR_DATE_STYLE, 0);
-            for (int i = 0; i < dateEntries.length; i++) {
-                if (i == lastEntry) {
-                    parsedDateEntries[i] = dateEntries[i];
-                } else {
-                    String newDate;
-                    CharSequence dateString = DateFormat.format(dateEntries[i], now);
-                    if (dateFormat == CLOCK_DATE_STYLE_LOWERCASE) {
-                        newDate = dateString.toString().toLowerCase();
-                    } else if (dateFormat == CLOCK_DATE_STYLE_UPPERCASE) {
-                        newDate = dateString.toString().toUpperCase();
-                    } else {
-                        newDate = dateString.toString();
-                    }
-
-                    parsedDateEntries[i] = newDate;
-                }
-            }
-            mStatusBarDateFormat.setEntries(parsedDateEntries);
-        }
-
         private void updateWeatherOptions() {
             if (Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0) == 0) {
@@ -640,72 +341,6 @@ public class StatusbarSettingsFragment extends Fragment {
                 mStatusBarTemperatureColor.setEnabled(true);
                 mStatusBarTemperatureSize.setEnabled(true);
                 mStatusBarTemperatureFontStyle.setEnabled(true);
-            }
-        }
-
-        private void showDialogInner(int id) {
-            DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
-            newFragment.setTargetFragment(this, 0);
-            newFragment.show(getFragmentManager(), "dialog " + id);
-        }
-
-        public static class MyAlertDialogFragment extends DialogFragment {
-
-            public static MyAlertDialogFragment newInstance(int id) {
-                MyAlertDialogFragment frag = new MyAlertDialogFragment();
-                Bundle args = new Bundle();
-                args.putInt("id", id);
-                frag.setArguments(args);
-                return frag;
-            }
-
-            StatusbarSettingsFragment.SettingsPreferenceFragment getOwner() {
-                return (StatusbarSettingsFragment.SettingsPreferenceFragment) getTargetFragment();
-            }
-
-            @Override
-            public Dialog onCreateDialog(Bundle savedInstanceState) {
-                int id = getArguments().getInt("id");
-                switch (id) {
-                    case DLG_RESET:
-                        return new AlertDialog.Builder(getActivity())
-                        .setTitle(R.string.reset)
-                        .setMessage(R.string.status_bar_clock_style_reset_message)
-                        .setNegativeButton(R.string.cancel, null)
-                        .setPositiveButton(R.string.ok,
-                            new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                Settings.System.putInt(getActivity().getContentResolver(),
-                                    Settings.System.STATUSBAR_CLOCK_COLOR, -2);
-                                getOwner().createCustomView();
-                            }
-                        })
-                        .create();
-                }
-                throw new IllegalArgumentException("unknown id " + id);
-            }
-
-            @Override
-            public void onCancel(DialogInterface dialog) {
-
-            }
-        }
-
-        @Override
-        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-            menu.add(0, MENU_RESET, 0, R.string.reset)
-                    .setIcon(R.drawable.ic_settings_reset)
-                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case MENU_RESET:
-                    showDialogInner(DLG_RESET);
-                    return true;
-                 default:
-                    return super.onContextItemSelected(item);
             }
         }
     }

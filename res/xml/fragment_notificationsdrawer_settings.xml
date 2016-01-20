@@ -42,6 +42,15 @@
         AOKP:unitsRight=""
         android:persistent="false" />
 
+    <com.aokp.romcontrol.widgets.SeekBarPreference
+        android:key="qs_transparent_header"
+        android:title="@string/qs_transparent_header"
+        android:max="255"
+        AOKP:minimum="0"
+        AOKP:unitsLeft=""
+        AOKP:unitsRight=""
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="notification_cat_colors"
         android:title="@string/colors_title">

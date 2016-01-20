@@ -81,6 +81,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private static final String PREF_CLEAR_ALL_ICON_COLOR =
                 "notification_drawer_clear_all_icon_color";
         private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
+        private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
 
         private static final int WHITE = 0xffffffff;
         private static final int HOLO_BLUE_LIGHT = 0xff33b5e5;
@@ -95,6 +96,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private ContentResolver mResolver;
 
         private SeekBarPreference mQSShadeAlpha;
+        private SeekBarPreference mQSHeaderAlpha;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -131,10 +133,18 @@ public class NotificationsDrawerFragment extends Fragment {
             // QS shade alpha
             mQSShadeAlpha =
                     (SeekBarPreference) prefSet.findPreference(PREF_QS_TRANSPARENT_SHADE);
-            int qSShadeAlpha = Settings.System.getInt(resolver,
+            int qSShadeAlpha = Settings.System.getInt(mResolver,
                     Settings.System.QS_TRANSPARENT_SHADE, 255);
             mQSShadeAlpha.setValue(qSShadeAlpha / 1);
             mQSShadeAlpha.setOnPreferenceChangeListener(this);
+
+            // QS header alpha
+            mQSHeaderAlpha =
+                    (SeekBarPreference) prefSet.findPreference(PREF_QS_TRANSPARENT_HEADER);
+            int qSHeaderAlpha = Settings.System.getInt(mResolver,
+                    Settings.System.QS_TRANSPARENT_HEADER, 255);
+            mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
+            mQSHeaderAlpha.setOnPreferenceChangeListener(this);
 
             setHasOptionsMenu(true);
             return prefSet;
@@ -180,8 +190,13 @@ public class NotificationsDrawerFragment extends Fragment {
                 return true;
             } else if (preference == mQSShadeAlpha) {
                 int alpha = (Integer) newValue;
-                Settings.System.putInt(resolver,
+                Settings.System.putInt(mResolver,
                         Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
+                return true;
+            } else if (preference == mQSHeaderAlpha) {
+                int alpha = (Integer) newValue;
+                Settings.System.putInt(mResolver,
+                        Settings.System.QS_TRANSPARENT_HEADER, alpha * 1);
                 return true;
             }
             return false;

@@ -51,22 +51,18 @@ public class RecentsSettingsFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_recents_settings_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.recents_settings_main, new SettingsPreferenceFragment())
+                .replace(R.id.recents_settings_main, new RecentsSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
-    public static class SettingsPreferenceFragment extends PreferenceFragment
+
+    public static class RecentsSettingsPreferenceFragment extends PreferenceFragment
            implements Preference.OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public RecentsSettingsPreferenceFragment() {
 
         }
 
@@ -78,6 +74,10 @@ public class RecentsSettingsFragment extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
+
+        private PreferenceScreen createCustomView() {
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_recents_settings);
@@ -91,7 +91,18 @@ public class RecentsSettingsFragment extends Fragment {
             mRecentsClearAllLocation.setValue(String.valueOf(location));
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
             mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+            return prefSet;
 
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
         }
 
         @Override

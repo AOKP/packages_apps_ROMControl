@@ -68,16 +68,13 @@ public class StatusbarSettingsFragment extends Fragment {
 
         Resources res = getResources();
 
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
                 .replace(R.id.statusbar_settings_main, new StatusBarSettingsPreferenceFragment())
                 .commit();
+
+        return v;
     }
 
     public static class StatusBarSettingsPreferenceFragment extends PreferenceFragment
@@ -202,6 +199,16 @@ public class StatusbarSettingsFragment extends Fragment {
             setHasOptionsMenu(true);
             mCheckPreferences = true;
             return prefSet;
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
         }
 
         private void updateCustomLabelTextSummary() {

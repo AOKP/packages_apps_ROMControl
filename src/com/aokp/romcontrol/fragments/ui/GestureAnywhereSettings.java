@@ -51,24 +51,18 @@ public class GestureAnywhereSettings extends Fragment {
         View v = inflater.inflate(R.layout.fragment_gesture_anywhere_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.gesture_anywhere_main, new SettingsPreferenceFragment())
+                .replace(R.id.gesture_anywhere_main, new GestureAnywhereSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
-
-    public static class SettingsPreferenceFragment extends PreferenceFragment
+    public static class GestureAnywhereSettingsPreferenceFragment extends PreferenceFragment
            implements Preference.OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public GestureAnywhereSettingsPreferenceFragment() {
 
         }
 
@@ -92,15 +86,18 @@ public class GestureAnywhereSettings extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
 
+        private PreferenceScreen createCustomView() {
             addPreferencesFromResource(R.xml.fragment_gesture_anywhere);
+            PreferenceScreen prefSet = getPreferenceScreen();
 
             mEnabledPref = (SwitchPreference) findPreference(KEY_ENABLED);
             mEnabledPref.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.GESTURE_ANYWHERE_ENABLED, 0) == 1));
             mEnabledPref.setOnPreferenceChangeListener(this);
 
-            PreferenceScreen prefSet = getPreferenceScreen();
             mPositionPref = (ListPreference) prefSet.findPreference(KEY_POSITION);
             mPositionPref.setOnPreferenceChangeListener(this);
             int position = Settings.System.getInt(getActivity().getContentResolver(),
@@ -131,6 +128,7 @@ public class GestureAnywhereSettings extends Fragment {
                     return true;
                 }
             });
+            return prefSet;
         }
 
         @Override

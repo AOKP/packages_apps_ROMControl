@@ -38,8 +38,7 @@ public class NavbarTabHostFragment extends Fragment {
 
     private static final int[] mFragments = new int[] {
             R.string.navbar_tab_settings,
-            R.string.navbar_tab_arrange,
-            R.string.navring_tab_settings
+            R.string.navbar_tab_arrange
     };
 
     public NavbarTabHostFragment() {
@@ -94,8 +93,6 @@ public class NavbarTabHostFragment extends Fragment {
                     return new NavbarSettingsFragment();
                 case 1:
                     return new NavbarArrangeFragment();
-                case 2:
-                    return new NavringSettingsFragment();
             }
             return null;
         }

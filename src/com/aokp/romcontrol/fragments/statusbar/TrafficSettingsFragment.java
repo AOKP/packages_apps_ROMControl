@@ -59,16 +59,13 @@ public class TrafficSettingsFragment extends Fragment {
 
         Resources res = getResources();
 
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
                 .replace(R.id.traffic_settings_main, new TrafficSettingsPreferenceFragment())
                 .commit();
+
+        return v;
     }
 
     public static class TrafficSettingsPreferenceFragment extends PreferenceFragment
@@ -105,13 +102,15 @@ public class TrafficSettingsFragment extends Fragment {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
-           super.onCreate(savedInstanceState);
+            super.onCreate(savedInstanceState);
+            createCustomView();
+        }
 
+        private PreferenceScreen createCustomView() {
+            // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_traffic_settings);
-
-            loadResources();
-
             PreferenceScreen prefSet = getPreferenceScreen();
+            loadResources();
 
             mNetTrafficState = (ListPreference) prefSet.findPreference(NETWORK_TRAFFIC_STATE);
             mNetTrafficUnit = (ListPreference) prefSet.findPreference(NETWORK_TRAFFIC_UNIT);
@@ -161,6 +160,17 @@ public class TrafficSettingsFragment extends Fragment {
                 mNetTrafficPeriod.setSummary(mNetTrafficPeriod.getEntry());
                 mNetTrafficPeriod.setOnPreferenceChangeListener(this);
             }
+            return prefSet;
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
         }
 
         protected int getMetricsCategory() {

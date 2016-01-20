@@ -26,7 +26,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.view.LayoutInflater;
@@ -48,25 +47,21 @@ public class GeneralSettingsFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_general_settings_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.general_settings_main, new SettingsPreferenceFragment())
+                .replace(R.id.general_settings_main, new GeneralSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
-    public static class SettingsPreferenceFragment extends PreferenceFragment implements
-            Preference.OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment {
+
+        public GeneralSettingsPreferenceFragment() {
 
         }
 
+        private static final String TAG = "GeneralSettingsPreferenceFragment";
         private static final String KEY_LOCKCLOCK = "lock_clock";
         // Package name of the cLock app
         public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
@@ -77,7 +72,10 @@ public class GeneralSettingsFragment extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
 
+        private PreferenceScreen createCustomView() {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_general_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
@@ -90,16 +88,17 @@ public class GeneralSettingsFragment extends Fragment {
             if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
                 prefSet.removePreference(mLockClock);
             }
+            return prefSet;
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
         }
 
         @Override
         public void onResume() {
             super.onResume();
         }
-
-        public boolean onPreferenceChange(Preference preference, Object objValue) {
-            return false;
-        }
-
     }
 }

@@ -57,27 +57,22 @@ public class SoundSettingsFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_sound_settings_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.sound_settings_main, new SettingsPreferenceFragment())
+                .replace(R.id.sound_settings_main, new SoundSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
-    public static class SettingsPreferenceFragment extends PreferenceFragment implements
+    public static class SoundSettingsPreferenceFragment extends PreferenceFragment implements
             Preference.OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public SoundSettingsPreferenceFragment() {
 
         }
 
-        private static final String TAG = "SettingsPreferenceFragment";
+        private static final String TAG = "SoundSettingsPreferenceFragment";
 
         private static final int DLG_SAFE_HEADSET_VOLUME = 0;
         private static final int DLG_CAMERA_SOUND = 1;
@@ -95,9 +90,13 @@ public class SoundSettingsFragment extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
 
+        private PreferenceScreen createCustomView() {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_sound_settings);
+            PreferenceScreen prefSet = getPreferenceScreen();
 
             mSafeHeadsetVolume = (SwitchPreference) findPreference(KEY_SAFE_HEADSET_VOLUME);
             mSafeHeadsetVolume.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -113,6 +112,12 @@ public class SoundSettingsFragment extends Fragment {
             mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
             mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
             mCameraSounds.setOnPreferenceChangeListener(this);
+            return prefSet;
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
         }
 
         @Override
@@ -153,7 +158,7 @@ public class SoundSettingsFragment extends Fragment {
 
         private void showDialogInner(int id) {
             DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
-        newFragment.setTargetFragment(this, 0);
+            newFragment.setTargetFragment(this, 0);
             newFragment.show(getFragmentManager(), "dialog " + id);
         }
 
@@ -167,8 +172,8 @@ public class SoundSettingsFragment extends Fragment {
                 return frag;
             }
 
-            SoundSettingsFragment.SettingsPreferenceFragment getOwner() {
-                return (SoundSettingsFragment.SettingsPreferenceFragment) getTargetFragment();
+            SoundSettingsFragment.SoundSettingsPreferenceFragment getOwner() {
+                return (SoundSettingsFragment.SoundSettingsPreferenceFragment) getTargetFragment();
             }
 
             @Override

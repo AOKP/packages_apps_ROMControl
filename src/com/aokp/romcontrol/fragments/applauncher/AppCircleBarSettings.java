@@ -35,7 +35,6 @@ import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
@@ -76,23 +75,19 @@ public class AppCircleBarSettings extends Fragment {
 
         Resources res = getResources();
 
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.appcirclebar_main, new SettingsPreferenceFragment())
+                .replace(R.id.appcirclebar_main, new AppCircleSidebarSettingsPreferenceFragment())
                 .commit();
+
+        return v;
     }
 
+    public class AppCircleSidebarSettingsPreferenceFragment extends PreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
-    public class SettingsPreferenceFragment extends PreferenceFragment implements
-        Preference.OnPreferenceChangeListener, OnPreferenceClickListener {
-
-        public SettingsPreferenceFragment() {
+        public AppCircleSidebarSettingsPreferenceFragment() {
 
         }
 
@@ -112,11 +107,14 @@ public class AppCircleBarSettings extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
+
+        private PreferenceScreen createCustomView() {
             ContentResolver resolver = getActivity().getContentResolver();
             Resources res = getResources();
 
             addPreferencesFromResource(R.xml.fragment_appcirclebar_settings);
-
             PreferenceScreen prefSet = getPreferenceScreen();
 
             mIncludedAppCircleBar = (AppMultiSelectListPreference) prefSet.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
@@ -137,11 +135,7 @@ public class AppCircleBarSettings extends Fragment {
             mTriggerBottomPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, 100));
             mTriggerBottomPref.setOnPreferenceChangeListener(this);
-        }
-
-        @Override
-        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
+            return prefSet;
         }
 
         @Override
@@ -167,11 +161,6 @@ public class AppCircleBarSettings extends Fragment {
             }
 
             return true;
-        }
-
-        @Override
-        public boolean onPreferenceClick(Preference preference) {
-            return false;
         }
 
         private Set<String> getIncludedApps() {

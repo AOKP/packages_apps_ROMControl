@@ -52,24 +52,18 @@ public class AnimationControls extends Fragment {
         View v = inflater.inflate(R.layout.fragment_aokp_animation_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.aokp_animation_main, new SettingsPreferenceFragment())
+                .replace(R.id.aokp_animation_main, new AnimationControlsSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
-
-    public static class SettingsPreferenceFragment extends PreferenceFragment implements
+    public static class AnimationControlsSettingsPreferenceFragment extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public AnimationControlsSettingsPreferenceFragment() {
 
         }
 
@@ -106,11 +100,15 @@ public class AnimationControls extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
+
+        private PreferenceScreen createCustomView() {
             setTitle(R.string.aokp_animation_title);
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_aokp_animation_controls);
 
-            PreferenceScreen prefs = getPreferenceScreen();
+            PreferenceScreen prefSet = getPreferenceScreen();
             mAnimations = AwesomeAnimationHelper.getAnimationsList();
             int animqty = mAnimations.length;
             mAnimationsStrings = new String[animqty];
@@ -191,6 +189,7 @@ public class AnimationControls extends Fragment {
             mAnimationDuration = (AnimBarPreference) findPreference(ANIMATION_DURATION);
             mAnimationDuration.setInitValue((int) (defaultDuration));
             mAnimationDuration.setOnPreferenceChangeListener(this);
+            return prefSet;
         }
 
         public void setTitle(int resId) {

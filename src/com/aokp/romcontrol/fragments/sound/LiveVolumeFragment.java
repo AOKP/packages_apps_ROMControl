@@ -50,23 +50,18 @@ public class LiveVolumeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_live_volume_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.live_volume_main, new SettingsPreferenceFragment())
+                .replace(R.id.live_volume_main, new LiveVolumeSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
-    public static class SettingsPreferenceFragment extends PreferenceFragment
+    public static class LiveVolumeSettingsPreferenceFragment extends PreferenceFragment
             implements Preference.OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public LiveVolumeSettingsPreferenceFragment() {
 
         }
 
@@ -92,10 +87,13 @@ public class LiveVolumeFragment extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
 
+        private PreferenceScreen createCustomView() {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_live_volume);
-
+            PreferenceScreen prefSet = getPreferenceScreen();
             Resources res = getResources();
             ContentResolver resolver = getActivity().getContentResolver();
 
@@ -139,8 +137,20 @@ public class LiveVolumeFragment extends Fragment {
             if (isPhone) {
                 updateVolumeSteps(mVolumeStepsVoiceCall.getKey(), mAudioManager.getStreamMaxVolume(mAudioManager.STREAM_VOICE_CALL));
                 mVolumeStepsVoiceCall.setOnPreferenceChangeListener(this);
-            } else
+            } else {
                 getPreferenceScreen().removePreference(mVolumeStepsVoiceCall);
+            }
+            return prefSet;
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
         }
 
         @Override

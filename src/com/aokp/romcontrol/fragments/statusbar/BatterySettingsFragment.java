@@ -63,17 +63,16 @@ public class BatterySettingsFragment extends Fragment {
 
         Resources res = getResources();
 
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
                 .replace(R.id.battery_settings_main, new BatterySettingsPreferenceFragment())
                 .commit();
+
+        return v;
     }
+
+
 
     public static class BatterySettingsPreferenceFragment extends PreferenceFragment
             implements OnPreferenceChangeListener {
@@ -141,6 +140,16 @@ public class BatterySettingsFragment extends Fragment {
                 mContentResolver = context.getContentResolver();
             }
             return mContentResolver;
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
         }
 
         protected int getMetricsCategory() {

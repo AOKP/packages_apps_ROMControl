@@ -74,16 +74,13 @@ public class ClockSettingsFragment extends Fragment {
 
         Resources res = getResources();
 
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
                 .replace(R.id.clock_settings_main, new ClockSettingsPreferenceFragment())
                 .commit();
+
+        return v;
     }
 
     public static class ClockSettingsPreferenceFragment extends PreferenceFragment
@@ -248,6 +245,11 @@ public class ClockSettingsFragment extends Fragment {
                             R.array.status_bar_clock_style_entries_rtl));
                     mStatusBarClock.setSummary(mStatusBarClock.getEntry());
             }
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
         }
 
         @Override

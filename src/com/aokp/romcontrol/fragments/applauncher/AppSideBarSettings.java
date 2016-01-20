@@ -31,24 +31,22 @@ public class AppSideBarSettings extends Fragment {
         View v = inflater.inflate(R.layout.fragment_appsidebar_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.appsidebar_main, new SettingsPreferenceFragment())
+                .replace(R.id.appsidebar_main, new AppSideBarSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
-
-public class SettingsPreferenceFragment extends PreferenceFragment implements
+    public class AppSideBarSettingsPreferenceFragment extends PreferenceFragment implements
             OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
 
-        private static final String TAG = "AppSideBar";
+        public AppSideBarSettingsPreferenceFragment() {
+
+        }
+
+        private static final String TAG = "AppSideBarSettings";
 
         private static final String KEY_ENABLED = "sidebar_enable";
         private static final String KEY_TRANSPARENCY = "sidebar_transparency";
@@ -70,8 +68,12 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
 
+        private PreferenceScreen createCustomView() {
             addPreferencesFromResource(R.xml.fragment_appsidebar_settings);
+            PreferenceScreen prefSet = getPreferenceScreen();
 
             mEnabledPref = (SwitchPreference) findPreference(KEY_ENABLED);
             mEnabledPref.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
@@ -82,7 +84,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements
             mHideLabelsPref.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.APP_SIDEBAR_DISABLE_LABELS, 0) == 1));
 
-            PreferenceScreen prefSet = getPreferenceScreen();
             mPositionPref = (ListPreference) prefSet.findPreference(KEY_POSITION);
             mPositionPref.setOnPreferenceChangeListener(this);
             int position = Settings.System.getInt(getActivity().getContentResolver(),
@@ -111,6 +112,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements
             mTriggerBottomPref.setOnPreferenceChangeListener(this);
 
             findPreference(KEY_SETUP_ITEMS).setOnPreferenceClickListener(this);
+            return prefSet;
         }
 
         public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -185,14 +187,14 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements
 
         @Override
         public void onPause() {
-        super.onPause();
-        Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.APP_SIDEBAR_SHOW_TRIGGER, 0);
+            super.onPause();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.APP_SIDEBAR_SHOW_TRIGGER, 0);
         }
 
         @Override
         public void onResume() {
-            super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
+            super.onResume();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.APP_SIDEBAR_SHOW_TRIGGER, 1);
         }

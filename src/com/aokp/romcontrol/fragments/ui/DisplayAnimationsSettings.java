@@ -30,7 +30,6 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -57,27 +56,22 @@ public class DisplayAnimationsSettings extends Fragment {
         View v = inflater.inflate(R.layout.fragment_display_animation_main, container, false);
 
         Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.display_animation_main, new SettingsPreferenceFragment())
+                .replace(R.id.display_animation_main, new DisplayAnimationsSettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
-    public static class SettingsPreferenceFragment extends PreferenceFragment implements
-        Preference.OnPreferenceChangeListener, OnPreferenceClickListener {
+    public static class DisplayAnimationsSettingsPreferenceFragment extends PreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
-        public SettingsPreferenceFragment() {
+        public DisplayAnimationsSettingsPreferenceFragment() {
 
         }
 
-        private static final String TAG = "DisplayAnimationsSettings";
+        private static final String TAG = "DisplayAnimationsSettingsPreference";
 
         private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
         private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
@@ -91,7 +85,10 @@ public class DisplayAnimationsSettings extends Fragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            createCustomView();
+        }
 
+        private PreferenceScreen createCustomView() {
             mContext = getActivity();
             ContentResolver resolver = getActivity().getContentResolver();
 
@@ -122,6 +119,17 @@ public class DisplayAnimationsSettings extends Fragment {
             mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
             mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
             mToastAnimation.setOnPreferenceChangeListener(this);
+            return prefSet;
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
         }
 
         @Override
@@ -157,11 +165,6 @@ public class DisplayAnimationsSettings extends Fragment {
                 Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
                 return true;
             }
-            return false;
-        }
-
-        @Override
-        public boolean onPreferenceClick(Preference preference) {
             return false;
         }
     }

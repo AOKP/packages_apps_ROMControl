@@ -46,7 +46,6 @@ import com.aokp.romcontrol.fragments.general.WakelockBlockerFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarArrangeFragment;
 import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
-import com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment;
 
 import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
 import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;

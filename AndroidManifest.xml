@@ -81,7 +81,6 @@
         <activity android:name="com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.navbar.NavbarArrangeFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.navbar.NavringSettingsFragment" />
 
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundSettingsFragment" />

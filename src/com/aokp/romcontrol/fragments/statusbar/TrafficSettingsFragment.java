@@ -83,12 +83,14 @@ public class TrafficSettingsFragment extends Fragment {
         private static final String NETWORK_TRAFFIC_PERIOD = "network_traffic_period";
         private static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
         private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
+        private static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
 
         private ListPreference mNetTrafficState;
         private ColorPickerPreference mNetTrafficColor;
         private ListPreference mNetTrafficUnit;
         private ListPreference mNetTrafficPeriod;
         private SwitchPreference mNetTrafficAutohide;
+        private SwitchPreference mNetTrafficHidearrow;
         private SeekBarPreferenceCham mNetTrafficAutohideThreshold;
 
         private static final int MENU_RESET = Menu.FIRST;
@@ -128,6 +130,12 @@ public class TrafficSettingsFragment extends Fragment {
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 10);
                 mNetTrafficAutohideThreshold.setValue(netTrafficAutohideThreshold / 1);
                 mNetTrafficAutohideThreshold.setOnPreferenceChangeListener(this);
+
+            mNetTrafficHidearrow =
+                (SwitchPreference) prefSet.findPreference(NETWORK_TRAFFIC_HIDEARROW);
+            mNetTrafficHidearrow.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0) == 1));
+            mNetTrafficHidearrow.setOnPreferenceChangeListener(this);
 
             mNetTrafficColor =
                 (ColorPickerPreference) prefSet.findPreference(NETWORK_TRAFFIC_COLOR);
@@ -184,12 +192,14 @@ public class TrafficSettingsFragment extends Fragment {
                 mNetTrafficPeriod.setEnabled(false);
                 mNetTrafficAutohide.setEnabled(false);
                 mNetTrafficAutohideThreshold.setEnabled(false);
+                mNetTrafficHidearrow.setEnabled(false);
             } else {
                 mNetTrafficUnit.setEnabled(true);
                 mNetTrafficColor.setEnabled(true);
                 mNetTrafficPeriod.setEnabled(true);
                 mNetTrafficAutohide.setEnabled(true);
                 mNetTrafficAutohideThreshold.setEnabled(true);
+                mNetTrafficHidearrow.setEnabled(true);
             }
         }
 
@@ -276,6 +286,11 @@ public class TrafficSettingsFragment extends Fragment {
                 int threshold = (Integer) newValue;
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, threshold * 1);
+                return true;
+            } else if (preference == mNetTrafficHidearrow) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NETWORK_TRAFFIC_HIDEARROW, value ? 1 : 0);
                 return true;
             }
             return false;

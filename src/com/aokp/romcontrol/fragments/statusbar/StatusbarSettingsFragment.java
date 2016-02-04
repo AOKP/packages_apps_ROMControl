@@ -56,6 +56,7 @@ import org.cyanogenmod.internal.logging.CMMetricsLogger;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
+import com.android.internal.util.aokp.AOKPUtils;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.widgets.SeekBarPreference;
 
@@ -98,6 +99,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String MISSED_CALL_BREATH = "missed_call_breath";
         private static final String VOICEMAIL_BREATH = "voicemail_breath";
         private static final String KEY_AOKP_LOGO_COLOR = "status_bar_aokp_logo_color";
+        private static final String SHOW_FOURG = "show_fourg";
 
         static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
@@ -110,6 +112,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private SwitchPreference mMissedCallBreath;
         private SwitchPreference mVoicemailBreath;
         private ColorPickerPreference mAokpLogoColor;
+        private SwitchPreference mShowFourG;
 
         private boolean mCheckPreferences;
 
@@ -191,6 +194,15 @@ public class StatusbarSettingsFragment extends Fragment {
             mAokpLogoColor.setSummary(hexColor);
             mAokpLogoColor.setNewPreviewColor(intColor);
 
+            // Show 4G
+            mShowFourG = (SwitchPreference) findPreference(SHOW_FOURG);
+            if (AOKPUtils.isWifiOnly(getActivity())) {
+                prefSet.removePreference(mShowFourG);
+            } else {
+               mShowFourG.setChecked((Settings.System.getInt(resolver,
+               Settings.System.SHOW_FOURG, 0) == 1));
+            }
+
             setHasOptionsMenu(true);
             mCheckPreferences = true;
             return prefSet;
@@ -257,6 +269,11 @@ public class StatusbarSettingsFragment extends Fragment {
                 });
                 alert.setNegativeButton(getString(android.R.string.cancel), null);
                 alert.show();
+            } else if (preference == mShowFourG) {
+                boolean checked = ((SwitchPreference)preference).isChecked();
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.SHOW_FOURG, checked ? 1:0);
+                return true;
             }
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }

@@ -88,10 +88,28 @@
             aokp:unitsLeft=""
             aokp:unitsRight="n" />
 
+    </PreferenceCategory>
+
+    <!-- Hide Lockscreen items -->
+    <PreferenceCategory
+        android:key="hide_lockscreen_items_category"
+        android:title="@string/hide_lockscreen_items_title" >
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_clock"
+            android:title="@string/hide_lockscreen_clock_title"
+            android:defaultValue="true" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_date"
+            android:title="@string/hide_lockscreen_date_title"
+            android:defaultValue="true" />
+
         <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
             android:key="lock_screen_weather_enabled"
             android:title="@string/lockscreen_weather_enabled_title"
             android:defaultValue="false"/>
 
     </PreferenceCategory>
+
 </PreferenceScreen>

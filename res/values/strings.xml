@@ -903,6 +903,11 @@
     <!-- Lockscreen weather -->
     <string name="lockscreen_weather_enabled_title">Show weather</string>
 
+    <!-- Hide Lockscreen clock & date -->
+    <string name="hide_lockscreen_items_title">Lockscreen items</string>
+    <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
+    <string name="hide_lockscreen_date_title">Show lockscreen date</string>
+
     <!-- PA Pie control -->
     <string name="pa_piecontrol_settings_summary">Customize PA Pie 2.0 targets, sytle, size and color</string>
     <string name="pa_pie_control_title">PA Pie Control</string>

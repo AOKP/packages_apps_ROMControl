@@ -105,6 +105,23 @@
 
     </PreferenceCategory>
 
+    <!-- Hide Lockscreen clock & date -->
+    <PreferenceCategory
+        android:key="hide_lockscreen_items_category"
+        android:title="@string/hide_lockscreen_items_title" >
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_clock"
+            android:title="@string/hide_lockscreen_clock_title"
+            android:defaultValue="true" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_date"
+            android:title="@string/hide_lockscreen_date_title"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
     <!-- Lockscreen colors -->
     <PreferenceCategory
             android:key="lockscreen_colors_category"
@@ -123,12 +140,14 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lockscreen_clock_color"
             android:title="@string/lockscreen_clock_color"
-            android:defaultValue="0xffffffff" />
+            android:defaultValue="0xffffffff"
+            android:dependency="hide_lockscreen_clock" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lockscreen_clock_date_color"
             android:title="@string/lockscreen_clock_date_color"
-            android:defaultValue="0xffffffff" />
+            android:defaultValue="0xffffffff"
+            android:dependency="hide_lockscreen_date" />
 
         <Preference
             android:key="lockscreen_colors_reset"

@@ -20,8 +20,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo">
-        <item name="android:actionBarStyle">@android:style/Widget.Holo.ActionBar.Solid</item>
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="android:actionBarStyle">@android:style/Widget.Material.ActionBar.Solid</item>
     </style>
 
     <style name="settingStyle">

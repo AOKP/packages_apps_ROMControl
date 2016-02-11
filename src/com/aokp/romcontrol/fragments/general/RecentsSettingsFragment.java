@@ -21,7 +21,10 @@ import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -37,6 +40,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
@@ -106,6 +110,15 @@ public class RecentsSettingsFragment extends Fragment {
         private static final String RECENT_CARD_TEXT_COLOR =
             "recent_card_text_color";
 
+        //OmniSwitch
+        private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
+        private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
+        // Package name of the omnniswitch app
+        public static final String OMNISWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
+        // Intent for launching the omniswitch settings actvity
+        public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
+                .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
+
         private SwitchPreference mRecentsSearchBar;
         private SwitchPreference mRecentsFullscreen;
         private SwitchPreference mRecentsClearAll;
@@ -121,6 +134,10 @@ public class RecentsSettingsFragment extends Fragment {
         private ColorPickerPreference mRecentPanelBgColor;
         private ColorPickerPreference mRecentCardBgColor;
         private ColorPickerPreference mRecentCardTextColor;
+
+        private SwitchPreference mRecentsUseOmniSwitch;
+        private Preference mOmniSwitchSettings;
+        private boolean mOmniSwitchInitCalled;
 
         private static final int MENU_RESET = Menu.FIRST;
         private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
@@ -160,6 +177,22 @@ public class RecentsSettingsFragment extends Fragment {
                     Settings.System.USE_SLIM_RECENTS, 0) == 1);
             mUseSlimRecents.setOnPreferenceChangeListener(this);
 
+            //OmniSwitch
+            mRecentsUseOmniSwitch = (SwitchPreference)
+                    prefSet.findPreference(RECENTS_USE_OMNISWITCH);
+            try {
+                mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.RECENTS_USE_OMNISWITCH) == 1);
+                mOmniSwitchInitCalled = true;
+            } catch(SettingNotFoundException e){
+                // if the settings value is unset
+            }
+            mRecentsUseOmniSwitch.setOnPreferenceChangeListener(this);
+
+            mOmniSwitchSettings = (Preference)
+                    prefSet.findPreference(OMNISWITCH_START_SETTINGS);
+            mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
+
             updatePreference();
             return prefSet;
         }
@@ -194,6 +227,19 @@ public class RecentsSettingsFragment extends Fragment {
                 mRecentsDismissAll.setEnabled(true);
                 mRecentsClearAllLocation.setEnabled(true);
             }
+        }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+            if (preference == mOmniSwitchSettings){
+                try {
+                    startActivity(INTENT_OMNISWITCH_SETTINGS);
+                } catch(ActivityNotFoundException e){
+                    // if OmniSwitch was uninstalled/frozen
+                }
+                return true;
+            }
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         @Override
@@ -279,8 +325,31 @@ public class RecentsSettingsFragment extends Fragment {
                 Settings.System.putInt(resolver,
                     Settings.System.RECENTS_MAX_APPS, value);
                 return true;
+            } else if (preference == mRecentsUseOmniSwitch) {
+                boolean value = (Boolean) newValue;
+
+                // if value has never been set before
+                if (value && !mOmniSwitchInitCalled){
+                    openOmniSwitchFirstTimeWarning();
+                    mOmniSwitchInitCalled = true;
+                }
+
+                Settings.System.putInt(
+                        resolver, Settings.System.RECENTS_USE_OMNISWITCH, value ? 1 : 0);
+                mOmniSwitchSettings.setEnabled(value);
+                return true;
             }
             return false;
+        }
+
+        private void openOmniSwitchFirstTimeWarning() {
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(getResources().getString(R.string.omniswitch_first_time_title))
+                    .setMessage(getResources().getString(R.string.omniswitch_first_time_message))
+                    .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                            }
+                    }).show();
         }
 
         @Override

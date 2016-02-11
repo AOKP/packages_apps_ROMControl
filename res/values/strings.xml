@@ -394,6 +394,7 @@
     <!-- Notifications Drawer -->
     <string name="notifications_drawer_title">Notif Drawer Settings</string>
 
+    <!-- Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
     <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
     <string name="status_bar_quick_qs_pulldown_summary_left">Left</string>
@@ -401,6 +402,14 @@
     <string name="status_bar_quick_qs_pulldown_off">Off</string>
     <string name="status_bar_quick_qs_pulldown_left">Left</string>
     <string name="status_bar_quick_qs_pulldown_right">Right</string>
+
+    <!-- Smart pulldown -->
+    <string name="smart_pulldown_title">Smart pulldown</string>
+    <string name="smart_pulldown_summary">Open Quick Settings when there are %1$s notifications present</string>
+    <string name="smart_pulldown_off">Off</string>
+    <string name="smart_pulldown_dismissable">No dismissable</string>
+    <string name="smart_pulldown_persistent">No persistent</string>
+    <string name="smart_pulldown_all">No dismissable or persistent</string>
 
     <!-- Notification color settings -->
     <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>

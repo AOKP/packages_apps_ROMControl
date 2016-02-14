@@ -57,7 +57,7 @@ public class AppLauncherTabHostFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedinstanceState) {
-        View main = inflater.inflate(R.layout.fragment_ui_settings, container, false);
+        View main = inflater.inflate(R.layout.fragment_applauncher_settings, container, false);
         mAdapter = new TabAdapter(getChildFragmentManager());
         mPager = (ViewPager) main.findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);

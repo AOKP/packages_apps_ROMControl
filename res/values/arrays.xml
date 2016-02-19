@@ -802,6 +802,17 @@
         <item>Five</item>
     </string-array>
 
+    <!-- QS Tiles Rows -->
+    <string-array name="qs_num_rows_values" translatable="false">
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="qs_num_rows_entries">
+        <item>Three</item>
+        <item>Four</item>
+    </string-array>
+
     <!-- Scrolling Cache -->
     <string-array name="entries_scrollingcache" translatable="false">
         <item>@string/pref_scrollingcache_force_enable</item>

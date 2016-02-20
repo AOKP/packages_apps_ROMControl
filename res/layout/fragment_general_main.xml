@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res-auto"
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="48dip"
         android:background="@drawable/background_tab"
-        aokp:dividerColor="@android:color/white"
-        aokp:indicatorColor="@android:color/white" />
+        aokp:dividerColor="@color/divider_color"
+        aokp:indicatorColor="@color/indicator_color" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

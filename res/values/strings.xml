@@ -902,6 +902,16 @@
     <string name="position_centered_title">Centered</string>
     <string name="hidden_title">Hidden</string>
 
+    <!-- Lockscreen Colors -->
+    <string name="lockscreen_colors_title">Lockscreen colors</string>
+    <string name="lockscreen_owner_info_color">Owner info</string>
+    <string name="lockscreen_alarm_color">Alarm</string>
+    <string name="lockscreen_clock_color">Clock</string>
+    <string name="lockscreen_clock_date_color">Date</string>
+    <string name="lockscreen_colors_reset_title">Reset lockscreen colors</string>
+    <string name="lockscreen_colors_reset_message">Are you sure you want to reset these colors to default?</string>
+    <string name="yes">YES</string>
+
     <!-- Lockscreen Media art -->
     <string name="media_art_title">Media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>

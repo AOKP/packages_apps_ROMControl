@@ -33,5 +33,3 @@ build/
 .gradle/
 
 .DS_Store
-classes-processed.map
-*.map

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+     Copyright (C) 2016 AOKP Project
      Copyright (C) 2010-2014 ParanoidAndroid Project
      Copyright (C) 2015 Fusion & Cyanidel Project (PIE2.0 - Ported & modified)
 
@@ -25,6 +26,13 @@
 
     <PreferenceCategory
         android:title="@string/pa_pie_style_title">
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="pa_pie_always_right"
+            android:title="@string/pa_pie_always_right_title"
+            android:summary="@string/pa_pie_always_right_summary"
+            android:defaultValue="true"
+            android:dependency="pa_pie_state" />
 
         <ListPreference
             android:key="pa_pie_size"

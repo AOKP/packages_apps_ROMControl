@@ -932,6 +932,8 @@
     <string name="pa_piecontrol_settings_summary">Customize PA Pie 2.0 targets, sytle, size and color</string>
     <string name="pa_pie_control_title">PA Pie Control</string>
     <string name="pa_pie_control_enable_title">Enable Pie Control</string>
+    <string name="pa_pie_always_right_title">Pie always on the right</string>
+    <string name="pa_pie_always_right_summary">Pie will be always shown on the right while in landscape</string>
     <string name="pa_pie_targets_title">Pie Targets</string>
     <string name="pa_pie_style_title">Pie Style</string>
     <string name="pa_pie_menu_title">Always show menu button</string>

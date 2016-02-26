@@ -191,10 +191,6 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
 
-    <!-- dynamic changelog -->
-    <string name="mgerrit_changelog_title">mGerrit: Dynamic ChangeLog</string>
-    <string name="mgerrit_changelog_summary">Interactive changelog pulled live from our Gerrit instance</string>
-
     <!-- MultiChoiceSetting -->
     <plurals name="multichoice_at_least">
         <item quantity="one">Please select at least <xliff:g id="number">%d</xliff:g> item.</item>

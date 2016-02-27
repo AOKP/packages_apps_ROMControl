@@ -20,12 +20,12 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light">
-        <item name="android:actionBarStyle">@android:style/Widget.Material.Light.ActionBar.Solid</item>
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="android:actionBarStyle">@android:style/Widget.Material.ActionBar.Solid</item>
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="settingStyle">

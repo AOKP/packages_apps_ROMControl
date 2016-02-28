@@ -32,4 +32,10 @@
         android:summary="@string/status_bar_show_weather_summary"
         android:defaultValue="true" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="status_bar_custom_header"
+        android:title="@string/status_bar_custom_header_title"
+        android:summary="@string/status_bar_custom_header_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>

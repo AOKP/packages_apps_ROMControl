@@ -159,8 +159,8 @@ public class StatusbarSettingsFragment extends Fragment {
             int intColorWeatherColor = Settings.System.getInt(resolver,
                     Settings.System.STATUS_BAR_WEATHER_COLOR, 0xffffffff);
             String hexColorWeatherColor = String.format("#%08x", (0xffffffff & intColorWeatherColor));
-                mStatusBarTemperatureColor.setSummary(hexColorWeatherColor);
-                mStatusBarTemperatureColor.setNewPreviewColor(intColorWeatherColor);
+            mStatusBarTemperatureColor.setSummary(hexColorWeatherColor);
+            mStatusBarTemperatureColor.setNewPreviewColor(intColorWeatherColor);
 
             mStatusBarTemperatureSize = (SeekBarPreference) findPreference(PREF_STATUS_BAR_WEATHER_SIZE);
             mStatusBarTemperatureSize.setValue(Settings.System.getInt(resolver,
@@ -281,6 +281,7 @@ public class StatusbarSettingsFragment extends Fragment {
                         UserHandle.USER_CURRENT);
                 mStatusBarTemperature.setSummary(
                         mStatusBarTemperature.getEntries()[index]);
+                updateWeatherOptions();
                 return true;
             } else if (preference == mStatusBarTemperatureStyle) {
                 int temperatureStyle = Integer.valueOf((String) newValue);

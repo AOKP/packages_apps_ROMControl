@@ -358,6 +358,10 @@
     <string name="show_carrier_statusbar">Status bar carrier</string>
     <string name="show_carrier_enabled">Enabled</string>
 
+    <!--Time contexual header -->
+    <string name="status_bar_custom_header_title">Time contextual header</string>
+    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+
     <!-- StatusBar DT2Sleep -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>

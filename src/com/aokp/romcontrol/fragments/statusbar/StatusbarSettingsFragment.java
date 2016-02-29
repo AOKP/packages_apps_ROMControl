@@ -53,6 +53,7 @@ import cyanogenmod.providers.CMSettings;
 import java.util.Date;
 
 import com.aokp.romcontrol.R;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusbarSettingsFragment extends Fragment {
 
@@ -102,6 +103,9 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
         private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
+        private static final String KEY_AOKP_LOGO_COLOR = "status_bar_aokp_logo_color";
+        private static final String KEY_AOKP_LOGO_STYLE = "status_bar_aokp_logo_style";
+
         private ListPreference mStatusBarDate;
         private ListPreference mStatusBarDateStyle;
         private ListPreference mStatusBarDateFormat;
@@ -111,6 +115,9 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mStatusBarBattery;
         private ListPreference mStatusBarBatteryShowPercent;
         private ListPreference mQuickPulldown;
+
+        private ColorPickerPreference mAokpLogoColor;
+        private ListPreference mAokpLogoStyle;
 
         private boolean mCheckPreferences;
 
@@ -125,7 +132,7 @@ public class StatusbarSettingsFragment extends Fragment {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_statusbar_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
-            ContentResolver resolver = getActivity().getContentResolver();
+            final ContentResolver resolver = getActivity().getContentResolver();
 
             PackageManager pm = getActivity().getPackageManager();
             Resources systemUiResources;
@@ -202,6 +209,23 @@ public class StatusbarSettingsFragment extends Fragment {
             mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
             enableStatusBarBatteryDependents(batteryStyle);
             mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+
+            // Aokp logo color & Style
+            mAokpLogoColor =
+                (ColorPickerPreference) prefSet.findPreference(KEY_AOKP_LOGO_COLOR);
+            mAokpLogoColor.setOnPreferenceChangeListener(this);
+            int intColor = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, 0xffffffff);
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mAokpLogoColor.setSummary(hexColor);
+            mAokpLogoColor.setNewPreviewColor(intColor);
+            mAokpLogoStyle = (ListPreference) findPreference(KEY_AOKP_LOGO_STYLE);
+            int AokpLogoStyle = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_AOKP_LOGO_STYLE, 0,
+                    UserHandle.USER_CURRENT);
+            mAokpLogoStyle.setValue(String.valueOf(AokpLogoStyle));
+            mAokpLogoStyle.setSummary(mAokpLogoStyle.getEntry());
+            mAokpLogoStyle.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -327,6 +351,23 @@ public class StatusbarSettingsFragment extends Fragment {
                             Settings.System.STATUS_BAR_DATE_FORMAT, (String) newValue);
                     }
                 }
+                return true;
+            } else if (preference == mAokpLogoColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, intHex);
+                return true;
+            } else if (preference == mAokpLogoStyle) {
+                int AokpLogoStyle = Integer.valueOf((String) newValue);
+                int index = mAokpLogoStyle.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(
+                        resolver, Settings.System.STATUS_BAR_AOKP_LOGO_STYLE, AokpLogoStyle,
+                        UserHandle.USER_CURRENT);
+                mAokpLogoStyle.setSummary(
+                        mAokpLogoStyle.getEntries()[index]);
                 return true;
             }
             return false;

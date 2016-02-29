@@ -51,6 +51,7 @@ import lineageos.providers.LineageSettings;
 import java.util.Date;
 
 import com.aokp.romcontrol.R;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusbarSettingsFragment extends Fragment {
 
@@ -93,11 +94,19 @@ public class StatusbarSettingsFragment extends Fragment {
         public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
         private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
+        private static final String PREF_AOKP_LOGO = "status_bar_aokp_logo";
+        private static final String KEY_AOKP_LOGO_COLOR = "status_bar_aokp_logo_color";
+        private static final String KEY_AOKP_LOGO_STYLE = "status_bar_aokp_logo_style";
+
         private ListPreference mStatusBarDate;
         private ListPreference mStatusBarDateStyle;
         private ListPreference mStatusBarDateFormat;
         private ListPreference mClockDatePosition;
         private SwitchPreference mShowSU;
+
+        private SwitchPreference mAokpLogo;
+        private ColorPickerPreference mAokpLogoColor;
+        private ListPreference mAokpLogoStyle;
 
         private boolean mCheckPreferences;
 
@@ -113,6 +122,15 @@ public class StatusbarSettingsFragment extends Fragment {
             addPreferencesFromResource(R.xml.fragment_statusbar_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
             final ContentResolver resolver = getActivity().getContentResolver();
+
+            PackageManager pm = getActivity().getPackageManager();
+            Resources systemUiResources;
+            try {
+                systemUiResources = pm.getResourcesForApplication("com.android.systemui");
+            } catch (Exception e) {
+                Log.e(TAG, "can't access systemui resources",e);
+                return null;
+            }
 
             mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
             mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
@@ -149,6 +167,27 @@ public class StatusbarSettingsFragment extends Fragment {
             mShowSU.setChecked(Settings.System.getInt(resolver,
                     Settings.System.SHOW_SU_INDICATOR, 1) != 0);
             mShowSU.setOnPreferenceChangeListener(this);
+
+            // Aokp logo color & Style
+            mAokpLogo = (SwitchPreference) findPreference(PREF_AOKP_LOGO);
+            mAokpLogo.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_AOKP_LOGO, 1) != 0);
+            mAokpLogo.setOnPreferenceChangeListener(this);
+            mAokpLogoColor =
+                (ColorPickerPreference) prefSet.findPreference(KEY_AOKP_LOGO_COLOR);
+            mAokpLogoColor.setOnPreferenceChangeListener(this);
+            int intColor = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, 0xffffffff);
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mAokpLogoColor.setSummary(hexColor);
+            mAokpLogoColor.setNewPreviewColor(intColor);
+            mAokpLogoStyle = (ListPreference) findPreference(KEY_AOKP_LOGO_STYLE);
+            int AokpLogoStyle = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_AOKP_LOGO_STYLE, 0,
+                    UserHandle.USER_CURRENT);
+            mAokpLogoStyle.setValue(String.valueOf(AokpLogoStyle));
+            mAokpLogoStyle.setSummary(mAokpLogoStyle.getEntry());
+            mAokpLogoStyle.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -250,6 +289,28 @@ public class StatusbarSettingsFragment extends Fragment {
                 boolean value = (Boolean) newValue;
                 Settings.System.putInt(resolver,
                         Settings.System.SHOW_SU_INDICATOR, value ? 1 : 0);
+                return true;
+            } else if (preference == mAokpLogo) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver,
+                        Settings.System.STATUS_BAR_AOKP_LOGO, value ? 1 : 0);
+                return true;
+            } else if (preference == mAokpLogoColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, intHex);
+                return true;
+            } else if (preference == mAokpLogoStyle) {
+                int AokpLogoStyle = Integer.valueOf((String) newValue);
+                int index = mAokpLogoStyle.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(
+                        resolver, Settings.System.STATUS_BAR_AOKP_LOGO_STYLE, AokpLogoStyle,
+                        UserHandle.USER_CURRENT);
+                mAokpLogoStyle.setSummary(
+                        mAokpLogoStyle.getEntries()[index]);
                 return true;
             }
             return false;

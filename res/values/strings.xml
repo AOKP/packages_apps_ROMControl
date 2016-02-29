@@ -269,6 +269,16 @@
     <string name="network_traffic_color_style">Color style</string>
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+
+    <!-- Statusbar AOKP logo -->
+    <string name="status_bar_aokp_logo_title">AOKP logo</string>
+    <string name="status_bar_aokp_logo_summary">Enable to show AOKP logo on the left side of statusbar</string>
+    <string name="status_bar_aokp_logo_color">AOKP logo color</string>
+    <string name="status_bar_aokp_logo_position">Logo location</string>
+    <string name="status_bar_aokp_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_logo_position_right">Right</string>
+    <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_logo_position_center">Center</string>
     <!-- ****************************** StatusBar Cat ends ****************************** -->
 
     <!-- ****************************** UI Interface Cat starts ****************************** -->

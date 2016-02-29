@@ -34,6 +34,7 @@ import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -97,6 +98,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
         private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
+        private static final String KEY_AOKP_LOGO_COLOR = "status_bar_aokp_logo_color";
 
         static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
@@ -110,6 +112,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private String mCustomCarrierLabelText;
         private ColorPickerPreference mCarrierColorPicker;
         private SeekBarPreference mStatusBarCarrierSize;
+        private ColorPickerPreference mAokpLogoColor;
 
         private boolean mCheckPreferences;
 
@@ -124,7 +127,7 @@ public class StatusbarSettingsFragment extends Fragment {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_statusbar_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
-            ContentResolver resolver = getActivity().getContentResolver();
+            final ContentResolver resolver = getActivity().getContentResolver();
 
             int intColorCarrierColor;
             String hexColorCarrierColor;
@@ -194,6 +197,16 @@ public class StatusbarSettingsFragment extends Fragment {
             mStatusBarCarrierSize.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 14));
             mStatusBarCarrierSize.setOnPreferenceChangeListener(this);
+
+            // Aokp logo color
+            mAokpLogoColor =
+                (ColorPickerPreference) prefSet.findPreference(KEY_AOKP_LOGO_COLOR);
+            mAokpLogoColor.setOnPreferenceChangeListener(this);
+            int intColor = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, 0xffffffff);
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mAokpLogoColor.setSummary(hexColor);
+            mAokpLogoColor.setNewPreviewColor(intColor);
 
             updateWeatherOptions();
             setHasOptionsMenu(true);
@@ -333,6 +346,14 @@ public class StatusbarSettingsFragment extends Fragment {
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, width);
                 return true;
+            } else if (preference == mAokpLogoColor) {
+              String hex = ColorPickerPreference.convertToARGB(
+                      Integer.valueOf(String.valueOf(newValue)));
+              preference.setSummary(hex);
+              int intHex = ColorPickerPreference.convertToColorInt(hex);
+              Settings.System.putInt(resolver,
+                      Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, intHex);
+              return true;
             }
             return false;
         }

@@ -35,6 +35,7 @@ import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -96,6 +97,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
         private static final String MISSED_CALL_BREATH = "missed_call_breath";
         private static final String VOICEMAIL_BREATH = "voicemail_breath";
+        private static final String KEY_AOKP_LOGO_COLOR = "status_bar_aokp_logo_color";
 
         static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
@@ -107,6 +109,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private SeekBarPreference mStatusBarCarrierSize;
         private SwitchPreference mMissedCallBreath;
         private SwitchPreference mVoicemailBreath;
+        private ColorPickerPreference mAokpLogoColor;
 
         private boolean mCheckPreferences;
 
@@ -121,7 +124,7 @@ public class StatusbarSettingsFragment extends Fragment {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_statusbar_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
-            ContentResolver resolver = getActivity().getContentResolver();
+            final ContentResolver resolver = getActivity().getContentResolver();
 
             int intColorCarrierColor;
             String hexColorCarrierColor;
@@ -177,6 +180,17 @@ public class StatusbarSettingsFragment extends Fragment {
                 prefSet.removePreference(mMissedCallBreath);
                 prefSet.removePreference(mVoicemailBreath);
             }
+
+            // Aokp logo color
+            mAokpLogoColor =
+                (ColorPickerPreference) prefSet.findPreference(KEY_AOKP_LOGO_COLOR);
+            mAokpLogoColor.setOnPreferenceChangeListener(this);
+            int intColor = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, 0xffffffff);
+            String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mAokpLogoColor.setSummary(hexColor);
+            mAokpLogoColor.setNewPreviewColor(intColor);
+
             setHasOptionsMenu(true);
             mCheckPreferences = true;
             return prefSet;
@@ -282,6 +296,14 @@ public class StatusbarSettingsFragment extends Fragment {
                 boolean value = (Boolean) newValue;
                 Settings.System.putInt(resolver, Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
                 return true;
+            } else if (preference == mAokpLogoColor) {
+              String hex = ColorPickerPreference.convertToARGB(
+                      Integer.valueOf(String.valueOf(newValue)));
+              preference.setSummary(hex);
+              int intHex = ColorPickerPreference.convertToColorInt(hex);
+              Settings.System.putInt(resolver,
+                      Settings.System.STATUS_BAR_AOKP_LOGO_COLOR, intHex);
+              return true;
             }
             return false;
         }

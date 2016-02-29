@@ -345,6 +345,11 @@
     <string name="show_carrier_statusbar">Status bar carrier</string>
     <string name="show_carrier_enabled">Enabled</string>
 
+    <!-- Statusbar AOKP logo -->
+    <string name="status_bar_aokp_logo_title">AOKP logo</string>
+    <string name="status_bar_aokp_logo_summary">Enable to show AOKP logo on the left side of statusbar</string>
+    <string name="status_bar_aokp_logo_color">AOKP logo color</string>
+
     <!--Time contexual header -->
     <string name="status_bar_custom_header_title">Time contextual header</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>

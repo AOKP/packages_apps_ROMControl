@@ -560,6 +560,16 @@
     <!-- Status bar - double tap to sleep -->
     <string name="status_bar_double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="status_bar_double_tap_to_sleep_summary">Double-tap on the status bar to turn off the display</string>
+
+    <!-- Statusbar AOKP logo -->
+    <string name="status_bar_aokp_logo_title">AOKP logo</string>
+    <string name="status_bar_aokp_logo_summary">Enable to show AOKP logo on the left side of statusbar</string>
+    <string name="status_bar_aokp_logo_color">AOKP logo color</string>
+    <string name="status_bar_aokp_logo_position">Logo location</string>
+    <string name="status_bar_aokp_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_logo_position_right">Right</string>
+    <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_logo_position_center">Center</string>
     <!-- ****************************** StatusBar Cat ends ****************************** -->
 
     <!-- ****************************** UI Interface Cat starts ****************************** -->

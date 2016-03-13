@@ -54,6 +54,7 @@ import android.view.WindowManagerGlobal;
 
 import org.cyanogenmod.internal.logging.CMMetricsLogger;
 import com.aokp.romcontrol.fragments.ButtonBacklightBrightness;
+import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.R;
 
 import cyanogenmod.hardware.CMHardwareManager;
@@ -142,6 +143,8 @@ public class ButtonSettingsFragment extends Fragment {
         public static final int KEY_MASK_CAMERA = 0x20;
         public static final int KEY_MASK_VOLUME = 0x40;
 
+        private static final String KEY_EXTRA_BUTTONS_SETTINGS = "extra_buttons_settings";
+
         private static final int DLG_KEYBOARD_ROTATION = 0;
 
         private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
@@ -150,6 +153,8 @@ public class ButtonSettingsFragment extends Fragment {
         private static final String SHOW_ENTER_KEY = "show_enter_key";
 
         private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
+
+        public static final String EXTRA_BUTTONS_SETTINGS_PACKAGE_NAME = "com.cyanogenmod.settings.device.ButtonSettings";
 
         private ListPreference mHomeLongPressAction;
         private ListPreference mHomeDoubleTapAction;
@@ -178,6 +183,8 @@ public class ButtonSettingsFragment extends Fragment {
         private SwitchPreference mShowEnterKey;
 
         private Handler mHandler;
+        private Context mContext;
+        private Preference mExtraButtonsSettings;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -187,6 +194,9 @@ public class ButtonSettingsFragment extends Fragment {
 
             final Resources res = getResources();
             final PreferenceScreen prefScreen = getPreferenceScreen();
+            PreferenceScreen prefSet = getPreferenceScreen();
+            mContext = getActivity().getApplicationContext();
+            PackageManager pm = getActivity().getPackageManager();
 
             final int deviceKeys = getResources().getInteger(
                     com.android.internal.R.integer.config_deviceHardwareKeys);
@@ -461,6 +471,12 @@ public class ButtonSettingsFragment extends Fragment {
             mShowEnterKey.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.FORMAL_TEXT_INPUT, 0) == 1);
             mShowEnterKey.setOnPreferenceChangeListener(this);
+
+            mExtraButtonsSettings = (Preference)
+                    prefSet.findPreference(KEY_EXTRA_BUTTONS_SETTINGS);
+            if (!Helpers.isPackageInstalled(EXTRA_BUTTONS_SETTINGS_PACKAGE_NAME, pm)) {
+                prefSet.removePreference(mExtraButtonsSettings);
+            }
 
             updateDisableHwKeysOption();
         }

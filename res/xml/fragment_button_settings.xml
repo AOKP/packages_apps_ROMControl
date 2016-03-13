@@ -35,6 +35,17 @@
         android:dialogTitle="@string/button_backlight_title"
         android:persistent="false" />
 
+    <!-- Extra Device Buttons settings -->
+    <PreferenceScreen
+        android:key="extra_buttons_settings"
+        android:title="@string/extra_buttons_settings_title"
+        android:summary="@string/extra_buttons_settings_summary">
+        <intent
+                android:action="com.cyanogenmod.action.EXTRA_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.ButtonSettings" />
+    </PreferenceScreen>
+
     <PreferenceCategory
         android:key="power_key"
         android:title="@string/hardware_keys_power_key_title" >

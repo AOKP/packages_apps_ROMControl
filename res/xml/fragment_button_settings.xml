@@ -35,6 +35,17 @@
         android:dialogTitle="@string/button_backlight_title"
         android:persistent="false" />
 
+    <!-- Notification Slider settings -->
+    <PreferenceScreen
+        android:key="notification_slider_settings"
+        android:title="@string/notification_slider_title"
+        android:summary="@string/notification_slider_summary">
+        <intent
+                android:action="com.cyanogenmod.action.EXTRA_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.SliderSettings" />
+    </PreferenceScreen>
+
     <PreferenceCategory
         android:key="power_key"
         android:title="@string/hardware_keys_power_key_title" >

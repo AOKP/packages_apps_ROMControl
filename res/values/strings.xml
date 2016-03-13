@@ -754,6 +754,9 @@
     <string name="show_enter_key_title">Show enter key</string>
     <string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
 
+    <string name="notification_slider_title">Notifications slider settings</string>
+    <string name="notification_slider_summary">Customize Notifications slider settings</string>
+
     <!-- Navigation Bar -->
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="navbar_tab_settings">Settings</string>

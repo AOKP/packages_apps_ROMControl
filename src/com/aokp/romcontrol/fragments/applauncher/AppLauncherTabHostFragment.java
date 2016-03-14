@@ -37,8 +37,7 @@ public class AppLauncherTabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.app_circle_bar_title,
-            R.string.app_sidebar_title
+            R.string.app_circle_bar_title
     };
 
     public AppLauncherTabHostFragment() {
@@ -91,8 +90,6 @@ public class AppLauncherTabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new AppCircleBarSettings();
-                case 1:
-                    return new AppSideBarSettings();
             }
             return null;
         }

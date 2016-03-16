@@ -85,6 +85,7 @@ public class NotificationsDrawerFragment extends Fragment {
                 "notification_drawer_clear_all_icon_color";
         private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
         private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
+        private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
         private static final String PREF_ENABLE_TASK_MANAGER = "enable_task_manager";
 
         private static final int WHITE = 0xffffffff;
@@ -103,6 +104,7 @@ public class NotificationsDrawerFragment extends Fragment {
 
         private SeekBarPreference mQSShadeAlpha;
         private SeekBarPreference mQSHeaderAlpha;
+        private SeekBarPreference mHeaderShadow;
         private SwitchPreference mEnableTaskManager;
 
         @Override
@@ -178,6 +180,13 @@ public class NotificationsDrawerFragment extends Fragment {
                     Settings.System.QS_TRANSPARENT_HEADER, 255);
             mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
             mQSHeaderAlpha.setOnPreferenceChangeListener(this);
+
+            // Custom shadow on header images
+            mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+            final int headerShadow = Settings.System.getInt(mResolver,
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
+            mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
+            mHeaderShadow.setOnPreferenceChangeListener(this);
 
             // Task manager
             mEnableTaskManager = (SwitchPreference) prefSet.findPreference(PREF_ENABLE_TASK_MANAGER);
@@ -266,6 +275,12 @@ public class NotificationsDrawerFragment extends Fragment {
                         numRows, UserHandle.USER_CURRENT);
                 updateNumRowsSummary(numRows);
                 return true;
+            } else if (preference == mHeaderShadow) {
+               Integer headerShadow = (Integer) newValue;
+               int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
+               Settings.System.putInt(mResolver,
+                       Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
+               return true;
             }
             return false;
         }

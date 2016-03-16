@@ -371,9 +371,12 @@
     <string name="status_bar_aokp_logo_summary">Enable to show AOKP logo on the left side of statusbar</string>
     <string name="status_bar_aokp_logo_color">AOKP logo color</string>
 
-    <!--Time contexual header -->
+    <!-- Time contexual header -->
     <string name="status_bar_custom_header_title">Time contextual header</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+    <!-- Header image shadow -->
+    <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
+    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
 
     <!-- StatusBar DT2Sleep -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>

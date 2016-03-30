@@ -183,9 +183,9 @@ public class NotificationsDrawerFragment extends Fragment {
 
             // Custom shadow on header images
             mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-            final int headerShadow = Settings.System.getInt(mResolver,
+            int headerShadow = Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
-            mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
+            mHeaderShadow.setValue(headerShadow);
             mHeaderShadow.setOnPreferenceChangeListener(this);
 
             // Task manager
@@ -276,10 +276,9 @@ public class NotificationsDrawerFragment extends Fragment {
                 updateNumRowsSummary(numRows);
                 return true;
             } else if (preference == mHeaderShadow) {
-               Integer headerShadow = (Integer) newValue;
-               int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
+               int headerShadow = (Integer) newValue;
                Settings.System.putInt(mResolver,
-                       Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
+                       Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
                return true;
             }
             return false;

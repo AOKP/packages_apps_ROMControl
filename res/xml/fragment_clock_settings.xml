@@ -73,9 +73,4 @@
         android:entryValues="@array/clock_font_size_values"
         android:title="@string/clock_font_size_title" />
 
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-        android:key="clock_use_second"
-        android:title="@string/status_bar_show_clock_second_title"
-        android:defaultValue="false" />
-
 </PreferenceScreen>

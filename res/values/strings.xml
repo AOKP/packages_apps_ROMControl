@@ -315,8 +315,6 @@
     <string name="clock_font_size_22">22</string>
     <string name="clock_font_size_23">23</string>
 
-    <string name="status_bar_show_clock_second_title">Clock seconds</string>
-
     <!-- Status bar date -->
     <string name="status_bar_clock_category">Clock</string>
     <string name="status_bar_date_title">Date</string>

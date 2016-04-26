@@ -39,7 +39,8 @@ public class UITabHostFragment extends Fragment {
     private static final int[] mFragments = new int[] {
             R.string.category_ui,
             R.string.gesture_anywhere_title,
-            R.string.title_animation_controls
+            R.string.title_animation_controls,
+            R.string.floating_windows
     };
 
     public UITabHostFragment() {
@@ -95,7 +96,9 @@ public class UITabHostFragment extends Fragment {
                 case 1:
                     return new GestureAnywhereSettings();
                 case 2:
-                    return new AnimationControls();            }
+                    return new AnimationControls();
+                case 3:
+                    return new FloatingWindows(); }
             return null;
         }
     }

@@ -94,8 +94,9 @@
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment" />
 
-        <activity android:name="com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.AnimationControls" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.FloatingWindows" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.GestureAnywhereBuilderActivity" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.GestureAnywhereSettings" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.GestureAnywhereCreateGestureActivity" />
@@ -123,5 +124,17 @@
                 android:resource="@id/pie_settings_main" />
         </activity>
     </application>
+
+        <!-- Floating Window -->
+        <activity android:name="ROMControl$FloatingWindowActivity"
+             android:label="@string/shortcut_action_floating_windows"
+             android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.aokp.romcontrol.FRAGMENT_CLASS"
+                android:value="com.aokp.romcontrol.fragments.ui.FloatingWindows" />
+        </activity>
 
 </manifest>

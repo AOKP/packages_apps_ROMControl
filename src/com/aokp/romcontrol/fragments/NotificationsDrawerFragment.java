@@ -49,7 +49,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.aokp.romcontrol.R;
-
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class NotificationsDrawerFragment extends Fragment {
@@ -80,6 +80,7 @@ public class NotificationsDrawerFragment extends Fragment {
 
         private static final String PREF_CLEAR_ALL_ICON_COLOR =
                 "notification_drawer_clear_all_icon_color";
+        private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
 
         private static final int WHITE = 0xffffffff;
         private static final int HOLO_BLUE_LIGHT = 0xff33b5e5;
@@ -92,6 +93,8 @@ public class NotificationsDrawerFragment extends Fragment {
         private ColorPickerPreference mClearAllIconColor;
 
         private ContentResolver mResolver;
+
+        private SeekBarPreference mQSShadeAlpha;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -124,6 +127,14 @@ public class NotificationsDrawerFragment extends Fragment {
             hexColor = String.format("#%08x", (0xffffffff & intColor));
             mClearAllIconColor.setSummary(hexColor);
             mClearAllIconColor.setOnPreferenceChangeListener(this);
+
+            // QS shade alpha
+            mQSShadeAlpha =
+                    (SeekBarPreference) prefSet.findPreference(PREF_QS_TRANSPARENT_SHADE);
+            int qSShadeAlpha = Settings.System.getInt(mResolver,
+                    Settings.System.QS_TRANSPARENT_SHADE, 255);
+            mQSShadeAlpha.setValue(qSShadeAlpha / 1);
+            mQSShadeAlpha.setOnPreferenceChangeListener(this);
 
             setHasOptionsMenu(true);
             return prefSet;
@@ -166,6 +177,11 @@ public class NotificationsDrawerFragment extends Fragment {
                 Settings.System.putInt(mResolver,
                     Settings.System.NOTIFICATION_DRAWER_CLEAR_ALL_ICON_COLOR, intHex);
                 preference.setSummary(hex);
+                return true;
+            } else if (preference == mQSShadeAlpha) {
+                int alpha = (Integer) newValue;
+                Settings.System.putInt(mResolver,
+                        Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
                 return true;
             }
             return false;

@@ -92,7 +92,6 @@ public class StatusbarSettingsFragment extends Fragment {
 
         private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
         private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
-        private static final String PREF_STATUS_BAR_WEATHER_COLOR = "status_bar_weather_color";
         private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
         private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
@@ -104,7 +103,6 @@ public class StatusbarSettingsFragment extends Fragment {
 
         private ListPreference mStatusBarTemperature;
         private ListPreference mStatusBarTemperatureStyle;
-        private ColorPickerPreference mStatusBarTemperatureColor;
         private PreferenceScreen mCustomCarrierLabel;
         private ListPreference mShowCarrierLabel;
         private String mCustomCarrierLabelText;
@@ -155,15 +153,6 @@ public class StatusbarSettingsFragment extends Fragment {
             mStatusBarTemperatureStyle.setSummary(mStatusBarTemperatureStyle.getEntry());
             mStatusBarTemperatureStyle.setOnPreferenceChangeListener(this);
 
-            mStatusBarTemperatureColor =
-                (ColorPickerPreference) findPreference(PREF_STATUS_BAR_WEATHER_COLOR);
-            mStatusBarTemperatureColor.setOnPreferenceChangeListener(this);
-            int intColorWeatherColor = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_WEATHER_COLOR, 0xffffffff);
-            String hexColorWeatherColor = String.format("#%08x", (0xffffffff & intColorWeatherColor));
-            mStatusBarTemperatureColor.setSummary(hexColorWeatherColor);
-            mStatusBarTemperatureColor.setNewPreviewColor(intColorWeatherColor);
-
             mShowCarrierLabel =
                     (ListPreference) findPreference(SHOW_CARRIER_LABEL);
             int showCarrierLabel = Settings.System.getIntForUser(resolver,
@@ -206,7 +195,6 @@ public class StatusbarSettingsFragment extends Fragment {
                 prefSet.removePreference(mMissedCallBreath);
                 prefSet.removePreference(mVoicemailBreath);
             }
-            updateWeatherOptions();
             setHasOptionsMenu(true);
             mCheckPreferences = true;
             return prefSet;
@@ -303,15 +291,6 @@ public class StatusbarSettingsFragment extends Fragment {
                 mStatusBarTemperatureStyle.setSummary(
                         mStatusBarTemperatureStyle.getEntries()[index]);
                 return true;
-            } else if (preference == mStatusBarTemperatureColor) {
-                String hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
-                preference.setSummary(hex);
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.STATUS_BAR_WEATHER_COLOR, intHex);
-                updateWeatherOptions();
-                return true;
             } else if (preference == mCarrierColorPicker) {
                 String hex = ColorPickerPreference.convertToARGB(
                         Integer.valueOf(String.valueOf(newValue)));
@@ -342,17 +321,6 @@ public class StatusbarSettingsFragment extends Fragment {
                 return true;
             }
             return false;
-        }
-
-        private void updateWeatherOptions() {
-            if (Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0) == 0) {
-                mStatusBarTemperatureStyle.setEnabled(false);
-                mStatusBarTemperatureColor.setEnabled(false);
-            } else {
-                mStatusBarTemperatureStyle.setEnabled(true);
-                mStatusBarTemperatureColor.setEnabled(true);
-            }
         }
     }
 }

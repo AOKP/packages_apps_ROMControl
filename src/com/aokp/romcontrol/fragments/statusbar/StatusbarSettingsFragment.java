@@ -94,7 +94,6 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
         private static final String PREF_STATUS_BAR_WEATHER_COLOR = "status_bar_weather_color";
         private static final String PREF_STATUS_BAR_WEATHER_SIZE = "status_bar_weather_size";
-        private static final String PREF_STATUS_BAR_WEATHER_FONT_STYLE = "status_bar_weather_font_style";
         private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
         private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
         private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
@@ -108,7 +107,6 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mStatusBarTemperatureStyle;
         private ColorPickerPreference mStatusBarTemperatureColor;
         private SeekBarPreference mStatusBarTemperatureSize;
-        private ListPreference mStatusBarTemperatureFontStyle;
         private PreferenceScreen mCustomCarrierLabel;
         private ListPreference mShowCarrierLabel;
         private String mCustomCarrierLabelText;
@@ -172,12 +170,6 @@ public class StatusbarSettingsFragment extends Fragment {
             mStatusBarTemperatureSize.setValue(Settings.System.getInt(resolver,
                     Settings.System.STATUS_BAR_WEATHER_SIZE, 14));
             mStatusBarTemperatureSize.setOnPreferenceChangeListener(this);
-
-            mStatusBarTemperatureFontStyle = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER_FONT_STYLE);
-            mStatusBarTemperatureFontStyle.setOnPreferenceChangeListener(this);
-            mStatusBarTemperatureFontStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, 0)));
-            mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntry());
 
             mShowCarrierLabel =
                     (ListPreference) findPreference(SHOW_CARRIER_LABEL);
@@ -333,13 +325,6 @@ public class StatusbarSettingsFragment extends Fragment {
                 Settings.System.putInt(resolver,
                         Settings.System.STATUS_BAR_WEATHER_SIZE, width);
                 return true;
-            } else if (preference == mStatusBarTemperatureFontStyle) {
-                int val = Integer.parseInt((String) newValue);
-                int index = mStatusBarTemperatureFontStyle.findIndexOfValue((String) newValue);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, val);
-                mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntries()[index]);
-                return true;
             } else if (preference == mCarrierColorPicker) {
                 String hex = ColorPickerPreference.convertToARGB(
                         Integer.valueOf(String.valueOf(newValue)));
@@ -378,12 +363,10 @@ public class StatusbarSettingsFragment extends Fragment {
                 mStatusBarTemperatureStyle.setEnabled(false);
                 mStatusBarTemperatureColor.setEnabled(false);
                 mStatusBarTemperatureSize.setEnabled(false);
-                mStatusBarTemperatureFontStyle.setEnabled(false);
             } else {
                 mStatusBarTemperatureStyle.setEnabled(true);
                 mStatusBarTemperatureColor.setEnabled(true);
                 mStatusBarTemperatureSize.setEnabled(true);
-                mStatusBarTemperatureFontStyle.setEnabled(true);
             }
         }
     }

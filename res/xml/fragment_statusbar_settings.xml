@@ -44,15 +44,6 @@
             android:title="@string/status_bar_weather_color_title"
             android:defaultValue="0xffffffff" />
 
-        <com.aokp.romcontrol.widgets.SeekBarPreference
-            android:key="status_bar_weather_size"
-            android:title="@string/status_bar_weather_size_title"
-            android:defaultValue="14"
-            android:max="23"
-            AOKP:min="4"
-            AOKP:unitsLeft=""
-            AOKP:unitsRight="dp" />
-
     </PreferenceCategory>
 
     <PreferenceCategory

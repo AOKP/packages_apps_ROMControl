@@ -31,7 +31,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -90,7 +89,6 @@ public class StatusbarSettingsFragment extends Fragment {
 
         private ContentResolver mContentResolver;
 
-        private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
         private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
         private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
         private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
@@ -102,7 +100,6 @@ public class StatusbarSettingsFragment extends Fragment {
         static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
         private ListPreference mStatusBarTemperature;
-        private ListPreference mStatusBarTemperatureStyle;
         private PreferenceScreen mCustomCarrierLabel;
         private ListPreference mShowCarrierLabel;
         private String mCustomCarrierLabelText;
@@ -145,13 +142,6 @@ public class StatusbarSettingsFragment extends Fragment {
             mStatusBarTemperature.setValue(String.valueOf(temperatureShow));
             mStatusBarTemperature.setSummary(mStatusBarTemperature.getEntry());
             mStatusBarTemperature.setOnPreferenceChangeListener(this);
-            mStatusBarTemperatureStyle = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE_STYLE);
-            int temperatureStyle = Settings.System.getIntForUser(resolver,
-                    Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE, 0,
-                    UserHandle.USER_CURRENT);
-            mStatusBarTemperatureStyle.setValue(String.valueOf(temperatureStyle));
-            mStatusBarTemperatureStyle.setSummary(mStatusBarTemperatureStyle.getEntry());
-            mStatusBarTemperatureStyle.setOnPreferenceChangeListener(this);
 
             mShowCarrierLabel =
                     (ListPreference) findPreference(SHOW_CARRIER_LABEL);
@@ -281,15 +271,6 @@ public class StatusbarSettingsFragment extends Fragment {
                 mStatusBarTemperature.setSummary(
                         mStatusBarTemperature.getEntries()[index]);
                 updateWeatherOptions();
-                return true;
-            } else if (preference == mStatusBarTemperatureStyle) {
-                int temperatureStyle = Integer.valueOf((String) newValue);
-                int index = mStatusBarTemperatureStyle.findIndexOfValue((String) newValue);
-                Settings.System.putIntForUser(
-                        resolver, Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE, temperatureStyle,
-                        UserHandle.USER_CURRENT);
-                mStatusBarTemperatureStyle.setSummary(
-                        mStatusBarTemperatureStyle.getEntries()[index]);
                 return true;
             } else if (preference == mCarrierColorPicker) {
                 String hex = ColorPickerPreference.convertToARGB(

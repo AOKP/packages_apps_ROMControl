@@ -722,6 +722,25 @@
         <item>3</item>
     </string-array>
 
+    <!-- LS Weather -->
+    <string-array name="weather_condition_icon_entries">
+        <item>@string/weather_condition_icon_monochrome_title</item>
+        <item>@string/weather_condition_icon_colored_title</item>
+        <item>@string/weather_condition_icon_vclouds_title</item>
+    </string-array>
+
+    <string-array name="weather_condition_icon_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="clock_date_position_entries">
+        <item>@string/position_right_title</item>
+        <item>@string/position_centered_title</item>
+        <item>@string/hidden_title</item>
+    </string-array>
+
     <!-- Quick pulldown -->
     <string-array name="status_bar_quick_qs_pulldown_entries" translatable="false">
         <item>@string/status_bar_quick_qs_pulldown_off</item>

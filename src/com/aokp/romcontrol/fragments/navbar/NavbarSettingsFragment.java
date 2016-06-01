@@ -78,7 +78,7 @@ public class NavbarSettingsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.navbar_settings_main, new SettingsPreferenceFragment())
                 .commit();
     }

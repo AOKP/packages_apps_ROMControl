@@ -49,7 +49,7 @@ public class GeneralSettingsFragment extends Fragment {
         Resources res = getResources();
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.general_settings_main, new GeneralSettingsPreferenceFragment())
                 .commit();
         return v;

@@ -61,7 +61,7 @@ public class TrafficSettingsFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.traffic_settings_main, new TrafficSettingsPreferenceFragment())
                 .commit();
 

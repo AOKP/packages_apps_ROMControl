@@ -73,7 +73,7 @@ public class StatusbarSettingsFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.statusbar_settings_main, new StatusBarSettingsPreferenceFragment())
                 .commit();
 

@@ -67,7 +67,7 @@ public class RecentsSettingsFragment extends Fragment {
         Resources res = getResources();
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.recents_settings_main, new RecentsSettingsPreferenceFragment())
                 .commit();
         return v;

@@ -77,14 +77,14 @@ public class AppCircleBarSettings extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.appcirclebar_main, new AppCircleSidebarSettingsPreferenceFragment())
                 .commit();
 
         return v;
     }
 
-    public class AppCircleSidebarSettingsPreferenceFragment extends PreferenceFragment implements
+    public static class AppCircleSidebarSettingsPreferenceFragment extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
         public AppCircleSidebarSettingsPreferenceFragment() {

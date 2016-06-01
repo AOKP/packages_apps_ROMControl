@@ -59,7 +59,7 @@ public class DisplayAnimationsSettings extends Fragment {
         Resources res = getResources();
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.display_animation_main, new DisplayAnimationsSettingsPreferenceFragment())
                 .commit();
         return v;

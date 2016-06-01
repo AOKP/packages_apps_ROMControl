@@ -53,7 +53,7 @@ public class GestureAnywhereSettings extends Fragment {
         Resources res = getResources();
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.gesture_anywhere_main, new GestureAnywhereSettingsPreferenceFragment())
                 .commit();
         return v;

@@ -52,7 +52,7 @@ public class LiveVolumeFragment extends Fragment {
         Resources res = getResources();
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.live_volume_main, new LiveVolumeSettingsPreferenceFragment())
                 .commit();
         return v;

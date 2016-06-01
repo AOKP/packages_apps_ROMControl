@@ -168,7 +168,7 @@ public class MainActivity extends Activity
                 break;
 
             case 10:
-                fragment = new AppLauncherTabHostFragment();
+                fragment = new AppCircleBarSettings();
                 break;
         }
         return fragment;

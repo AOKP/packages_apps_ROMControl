@@ -59,7 +59,7 @@ public class SoundSettingsFragment extends Fragment {
         Resources res = getResources();
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.sound_settings_main, new SoundSettingsPreferenceFragment())
                 .commit();
         return v;

@@ -54,7 +54,7 @@ public class AnimationControls extends Fragment {
         Resources res = getResources();
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.aokp_animation_main, new AnimationControlsSettingsPreferenceFragment())
                 .commit();
         return v;

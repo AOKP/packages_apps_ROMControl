@@ -67,7 +67,7 @@ public class BatterySettingsFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.battery_settings_main, new BatterySettingsPreferenceFragment())
                 .commit();
 

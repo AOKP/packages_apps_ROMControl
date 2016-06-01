@@ -76,7 +76,7 @@ public class ClockSettingsFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        getActivity().getFragmentManager().beginTransaction()
+        getChildFragmentManager().beginTransaction()
                 .replace(R.id.clock_settings_main, new ClockSettingsPreferenceFragment())
                 .commit();
 

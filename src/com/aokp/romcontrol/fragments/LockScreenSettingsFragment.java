@@ -94,6 +94,12 @@ public class LockScreenSettingsFragment extends Fragment {
             mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
             mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
 
+            mMaxKeyguardNotifConfig = (SeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+            int kgconf = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
+            mMaxKeyguardNotifConfig.setValue(kgconf);
+            mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+
             mBlurRadius = (SeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
             mBlurRadius.setValue(CMSettings.Secure.getInt(mResolver,
                     CMSettings.Secure.LOCKSCREEN_BLUR_RADIUS, 14));
@@ -109,7 +115,7 @@ public class LockScreenSettingsFragment extends Fragment {
                 CMSettings.Secure.putInt(mResolver,
                         CMSettings.Secure.LOCKSCREEN_BLUR_RADIUS, width);
                 return true;
-        	} else if (preference == mMaxKeyguardNotifConfig) {
+            } else if (preference == mMaxKeyguardNotifConfig) {
                 int kgconf = (Integer) newValue;
                 Settings.System.putInt(mResolver,
                         Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);

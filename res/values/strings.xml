@@ -899,4 +899,7 @@
     <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
     <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
     <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
+
+    <!-- Lockscreen weather -->
+    <string name="lockscreen_weather_enabled_title">Show weather</string>
 </resources>

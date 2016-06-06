@@ -88,5 +88,10 @@
             aokp:unitsLeft=""
             aokp:unitsRight="n" />
 
+        <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
+            android:key="lock_screen_weather_enabled"
+            android:title="@string/lockscreen_weather_enabled_title"
+            android:defaultValue="false"/>
+
     </PreferenceCategory>
 </PreferenceScreen>

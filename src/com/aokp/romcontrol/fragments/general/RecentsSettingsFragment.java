@@ -81,7 +81,6 @@ public class RecentsSettingsFragment extends Fragment {
         }
 
         private static final String SHOW_RECENTS_SEARCHBAR = "recents_show_search_bar";
-        private static final String SHOW_MEMBAR_RECENTS = "systemui_recents_mem_display";
         private static final String SHOW_FULLSCREEN_RECENTS = "recents_full_screen";
         private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
         private static final String RECENTS_DISMISS_ALL = "recents_clear_all_dismiss_all";
@@ -146,8 +145,9 @@ public class RecentsSettingsFragment extends Fragment {
 
             mRecentsClearAll = (SwitchPreference) prefSet.findPreference(SHOW_CLEAR_ALL_RECENTS);
             mRecentsClearAll.setChecked(Settings.System.getIntForUser(resolver,
-                Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT) == 1);
+                    Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT) == 1);
             mRecentsClearAll.setOnPreferenceChangeListener(this);
+
             mRecentsClearAllLocation = (ListPreference) prefSet.findPreference(RECENTS_CLEAR_ALL_LOCATION);
             int location = Settings.System.getIntForUser(resolver,
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
@@ -198,8 +198,12 @@ public class RecentsSettingsFragment extends Fragment {
 
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
-            ContentResolver resolver = getActivity().getContentResolver();
-            if (preference == mRecentsClearAllLocation) {
+                ContentResolver resolver = getActivity().getContentResolver();
+            if (preference == mRecentsClearAll) {
+                Settings.System.putInt(resolver, Settings.System.SHOW_CLEAR_ALL_RECENTS,
+                        ((Boolean) newValue) ? 1 : 0);
+                return true;
+            } else if (preference == mRecentsClearAllLocation) {
                 int location = Integer.valueOf((String) newValue);
                 int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
                 Settings.System.putIntForUser(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION,

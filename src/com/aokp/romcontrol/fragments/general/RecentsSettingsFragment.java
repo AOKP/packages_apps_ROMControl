@@ -81,7 +81,6 @@ public class RecentsSettingsFragment extends Fragment {
         }
 
         private static final String SHOW_RECENTS_SEARCHBAR = "recents_show_search_bar";
-        private static final String SHOW_MEMBAR_RECENTS = "systemui_recents_mem_display";
         private static final String SHOW_FULLSCREEN_RECENTS = "recents_full_screen";
         private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
         private static final String RECENTS_DISMISS_ALL = "recents_clear_all_dismiss_all";
@@ -172,7 +171,6 @@ public class RecentsSettingsFragment extends Fragment {
         @Override
         public void onResume() {
             super.onResume();
-            updatePreference();
         }
 
         private void updatePreference() {

@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="pref_navigation_menu_entries">
+        <item>右側のみ</item>
+        <item>左側のみ</item>
+        <item>両サイド</item>
+        <item>表示しない</item>
+	</string-array>
+
+	<!-- right is the default, easier to keep 0 as first index -->
+	<string-array name="pref_navigation_menu_values"
+		translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>4</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_entries_cdma">
+        <item>制限しない</item>
+        <item>LTEをオフ</item>
+        <item>データ通信をオフ</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_values_cdma" translatable="false">
+		<item>20</item>
+		<item>21</item>
+		<item>22</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_entries">
+        <item>制限しない</item>
+        <item>データ通信をオフ</item>
+        <item>2Gモードに切り替え</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_values" translatable="false">
+		<item>20</item>
+		<item>22</item>
+		<item>21</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_delay_entries">
+        <item>待ち時間なし</item>
+        <item>10秒</item>
+        <item>30秒</item>
+        <item>45秒</item>
+        <item>1分</item>
+        <item>5分</item>
+        <item>10分</item>
+        <item>15分</item>
+        <item>30分</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_data_screen_off_delay_values" translatable="false">
+		<item>0</item>
+		<item>10</item>
+		<item>30</item>
+		<item>45</item>
+		<item>60</item>
+		<item>300</item>
+		<item>600</item>
+		<item>900</item>
+		<item>1800</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_interval_entries">
+        <item>15分</item>
+        <item>30分</item>
+        <item>1時間</item>
+        <item>2時間</item>
+        <item>3時間</item>
+        <item>4時間</item>
+        <item>5時間</item>
+        <item>6時間</item>
+        <item>8時間</item>
+        <item>12時間</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_interval_values" translatable="false">
+		<item>900</item>
+		<item>1800</item>
+		<item>3600</item>
+		<item>7200</item>
+		<item>10800</item>
+		<item>14400</item>
+		<item>18000</item>
+		<item>21600</item>
+		<item>28800</item>
+		<item>43200</item>
+	</string-array>
+
+
+	<string-array name="pref_powersaving_sync_screen_off_entries">
+        <item>標準の同期間隔</item>
+        <item>自動同期をオフ</item>
+        <item>一定間隔で自動同期</item>
+	</string-array>
+
+	<string-array name="pref_powersaving_sync_screen_off_values" translatable="false">
+		<item>35</item>
+		<item>33</item>
+		<item>34</item>
+	</string-array>
+
+	<string-array name="powersaving_screen_off_wifi_entries">
+        <item>標準の動作</item>
+        <item>Wi-Fiをオフにする</item>
+        <item>Wi-Fiをオンにする</item>
+	</string-array>
+
+	<string-array name="powersaving_screen_off_wifi_values" translatable="false">
+		<item>40</item>
+		<item>41</item>
+		<item>42</item>
+	</string-array>
+
+	<string-array name="powersaving_sync_data_mode_entries">
+        <item>標準の動作</item>
+        <item>Wi-Fi接続時のみ</item>
+        <item>Wi-Fi接続時優先</item>
+        <item>データ通信時のみ</item>
+	</string-array>
+
+	<string-array name="powersaving_sync_data_mode_values" translatable="false">
+		<item>54</item>
+		<item>50</item>
+		<item>51</item>
+		<item>53</item>
+	</string-array>
+
+	<string-array name="powersaving_sync_data_mobile_mode_entries">
+        <item>2Gのみ</item>
+        <item>3G優先</item>
+	</string-array>
+
+	<string-array name="powersaving_sync_data_mobile_mode_values" translatable="false">
+		<item>62</item>
+		<item>63</item>
+	</string-array>
+
+	<string-array name="led_entries">
+        <item>0.5秒</item>
+        <item>1.0秒</item>
+        <item>1.5秒</item>
+        <item>2.0秒</item>
+        <item>2.5秒</item>
+        <item>3.0秒</item>
+        <item>3.5秒</item>
+        <item>4.0秒</item>
+        <item>4.5秒</item>
+        <item>5.0秒</item>
+        <item>5.5秒</item>
+        <item>6.0秒</item>
+        <item>7.0秒</item>
+        <item>8.0秒</item>
+        <item>9.0秒</item>
+        <item>10.0秒</item>
+	</string-array>
+
+	<!-- values must be in milliseconds!~@@#E!@ -->
+	<string-array name="led_values" translatable="false">
+		<item>500</item>
+		<item>1000</item>
+		<item>1500</item>
+		<item>2000</item>
+		<item>2500</item>
+		<item>3000</item>
+		<item>3500</item>
+		<item>4000</item>
+		<item>4500</item>
+		<item>5000</item>
+		<item>5500</item>
+		<item>6000</item>
+		<item>7000</item>
+		<item>8000</item>
+		<item>9000</item>
+		<item>10000</item>
+	</string-array>
+
+	<string-array name="pref_navigation_menu_display_entries">
+        <item>表示、配置ともにアプリ依存</item>
+        <item>非表示だが常時配置</item>
+        <item>常時表示、常時配置</item>
+        <item>表示はアプリ依存、常時配置</item>
+	</string-array>
+
+	<string-array name="pref_navigation_menu_display_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<string-array name="statusbar_transparency_entries">
+        <item>透過しない</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+        <item>完全透過</item>
+	</string-array>
+
+	<string-array name="statusbar_transparency_values" translatable="false">
+		<item>100</item>
+		<item>75</item>
+		<item>50</item>
+		<item>25</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="statusbar_fontsize_entries">
+		<item>8dp</item>
+		<item>12dp</item>
+		<item>14dp</item>
+		<item>16dp(デフォルト値)</item>
+		<item>20dp</item>
+		<item>24dp</item>
+	</string-array>
+
+	<string-array name="statusbar_fontsize_values">
+		<item>8</item>
+		<item>12</item>
+		<item>14</item>
+		<item>16</item>
+		<item>20</item>
+		<item>24</item>
+	</string-array>
+
+	<string-array name="statusbar_layout_entries">
+        <item>標準レイアウト</item>
+        <item>反転レイアウト</item>
+        <item>トグルを最上部に表示</item>
+	</string-array>
+
+	<string-array name="statusbar_layout_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+	<!-- clock stuff -->
+	<string-array name="clock_style_entries">
+        <item>右側に表示</item>
+        <item>中央に表示</item>
+        <item>表示しない</item>
+	</string-array>
+
+	<string-array name="clock_style_values" translatable="false">
+		<item>1</item>
+		<item>2</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="clock_ampm_entries">
+        <item>表示しない</item>
+        <item>AM/PM（小）</item>
+        <item>AM/PM（標準）</item>
+	</string-array>
+
+	<string-array name="clock_ampm_values" translatable="false">
+		<item>2</item>
+		<item>1</item>
+		<item>0</item>
+	</string-array>
+
+	<string-array name="clock_weekday_entries">
+        <item>表示しない</item>
+        <item>曜日を表示（小）</item>
+        <item>曜日を表示（標準）</item>
+	</string-array>
+
+	<string-array name="clock_weekday_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+	<!-- Toggles -->
+
+	<string-array name="brightness_location_entries">
+        <item>上部に表示</item>
+        <item>下部に表示</item>
+        <item>表示しない</item>
+	</string-array>
+
+	<string-array name="brightness_location_values" translatable="false">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<!-- animation rotation -->
+	<string-array name="rotation_animation_delay_entries">
+        <item>10ミリ秒</item>
+        <item>25ミリ秒</item>
+        <item>50ミリ秒</item>
+        <item>75ミリ秒</item>
+        <item>100ミリ秒</item>
+        <item>150ミリ秒</item>
+        <item>200ミリ秒</item>
+        <item>250ミリ秒</item>
+        <item>300ミリ秒</item>
+	</string-array>
+
+	<string-array name="rotation_animation_delay_values" translatable="false">
+		<item>10</item>
+		<item>25</item>
+		<item>50</item>
+		<item>75</item>
+		<item>100</item>
+		<item>150</item>
+		<item>200</item>
+		<item>250</item>
+		<item>300</item>
+	</string-array>
+
+	<!-- toggle style -->
+	<string-array name="toggle_style_entries">
+        <item>アイコンのみ</item>
+        <item>テキストのみ</item>
+	</string-array>
+
+	<string-array name="toggle_style_values" translatable="false">
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<!-- long press home -->
+	<string-array name="long_press_home_entries">
+        <item>端末既定の動作</item>
+        <item>設定なし</item>
+        <item>Pre-ICS recents</item>
+        <item>アプリ履歴を表示</item>
+	</string-array>
+
+	<string-array name="long_press_home_values" translatable="false">
+		<item>-1</item>
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+    <string-array name="pref_lockscreen_options_values" translatable="false">
+		<item>2</item>
+		<item>6</item>
+		<item>8</item>
+		<item>1</item>
+		<item>0</item>
+	</string-array>
+
+        <string-array name="pref_lockscreen_options_entries">
+        <item>2方向</item>
+        <item>4方向</item>
+        <item>8方向</item>
+        <item>AOSP</item>
+        <item>Honeycomb</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_interval_values" translatable="false">
+		<item>1000</item>
+		<item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_interval_entries">
+        <item>1.0秒</item>
+        <item>1.5秒</item>
+        <item>2.0秒</item>
+        <item>2.5秒</item>
+        <item>3.0秒</item>
+        <item>3.5秒</item>
+        <item>4.0秒</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_range_values" translatable="false">
+		<item>86400000</item>
+		<item>172800000</item>
+        <item>259200000</item>
+        <item>345600000</item>
+        <item>432000000</item>
+        <item>518400000</item>
+        <item>604800000</item>
+	</string-array>
+
+	<string-array name="pref_lockscreen_calendar_range_entries">
+        <item>1日</item>
+        <item>2日</item>
+        <item>3日</item>
+        <item>4日</item>
+        <item>5日</item>
+        <item>6日</item>
+        <item>1週間</item>
+	</string-array>
+
+	<string-array name="minfree">
+        <item>25MB</item>
+        <item>50MB</item>
+        <item>75MB</item>
+        <item>80MB</item>
+        <item>100MB</item>
+	</string-array>
+
+	<string-array name="minfree_values" translatable="false">
+		<item>1536,2048,4096,5120,5632,6144</item>
+		<item>2560,3840,6400,7680,10240,12800</item>
+		<item>2560,3840,6400,10240,12800,19200</item>
+		<item>2048,3072,6144,15360,17920,20480</item>
+		<item>2560,3840,6400,12800,12800,25600</item>
+	</string-array>
+
+        <string-array name="entries_scrollingcache" translatable="false">
+                <item>@string/pref_scrollingcache_force_enable</item>
+                <item>@string/pref_scrollingcache_default_enable</item>
+                <item>@string/pref_scrollingcache_default_disable</item>
+                <item>@string/pref_scrollingcache_force_disable</item>
+         </string-array>
+
+        <string-array name="values_scrollingcache" translatable="false">
+                <item>0</item>
+                <item>1</item>
+                <item>2</item>
+                <item>3</item>
+        </string-array>
+
+	<string-array name="battery_icon_entries">
+        <item>アイコンのみ</item>
+        <item>テキストのみ</item>
+        <item>アイコンとテキスト</item>
+        <item>アイコンとテキスト(中央)</item>
+        <item>サークルMOD</item>
+        <item>表示しない</item>
+	</string-array>
+
+	<string-array name="battery_icon_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="battery_bar_entries">
+        <item>表示しない</item>
+        <item>ステータスバーに表示</item>
+        <item>ナビゲーションバー上部</item>
+        <item>ナビゲーションバー下部</item>
+	</string-array>
+
+	<string-array name="battery_bar_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+
+	<string-array name="battery_bar_style_entries">
+        <item>標準</item>
+        <item>中央</item>
+	</string-array>
+
+	<string-array name="battery_bar_style_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+	</string-array>
+
+	<string-array name="battery_bar_thickness_entries">
+		<item>1 dp</item>
+		<item>2 dp</item>
+		<item>3 dp</item>
+		<item>4 dp</item>
+	</string-array>
+
+	<string-array name="battery_bar_thickness_values" translatable="false">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+	</string-array>
+
+	<string-array name="available_toggles_entries" translatable="false">
+		<item>ROTATE</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>WIFI</item>
+		<item>AIRPLANE_MODE</item>
+		<item>VIBRATE</item>
+		<item>SILENT</item>
+		<item>TORCH</item>
+		<item>SYNC</item>
+		<item>SWAGGER</item>
+	</string-array>
+
+	<string-array name="available_toggles_values">
+		<item>Auto-rotate</item>
+		<item>BT</item>
+		<item>GPS</item>
+		<item>Wi-Fi</item>
+		<item>Airplane mode</item>
+		<item>Vibrate</item>
+		<item>Silent</item>
+		<item>Torch</item>
+		<item>Sync</item>
+		<item>Swagger</item>
+	</string-array>
+
+	<string-array name="lockscreen_choice_entries">
+        <item>ロック解除</item>
+        <item>サウンド</item>
+        <item>電話</item>
+        <item>カメラ</item>
+        <item>メッセージ</item>
+        <item>アプリを指定</item>
+        <item>設定なし</item>
+	</string-array>
+
+	<string-array name="lockscreen_choice_values" translatable="false">
+		<item>**unlock**</item>
+		<item>**sound**</item>
+		<item>**phone**</item>
+		<item>**camera**</item>
+		<item>**mms**</item>
+		<item>**app**</item>
+		<item>**null**</item>
+	</string-array>
+
+	<string-array name="glow_times_entries">
+        <item>なし</item>
+        <item>超高速</item>
+        <item>高速</item>
+        <item>標準</item>
+	</string-array>
+
+	<string-array name="glow_times_values" translatable="false">
+		<item>0|0</item>
+		<item>100|10</item>
+		<item>250|25</item>
+		<item>500|50</item>
+	</string-array>
+
+	<string-array name="lcd_density_entries" translatable="false">
+		<item>160</item>
+		<item>180</item>
+		<item>200</item>
+		<item>220</item>
+		<item>240</item>
+		<item>241</item>
+		<item>260</item>
+		<item>280</item>
+		<item>300</item>
+		<item>320</item>
+		<item>340</item>
+		<item>custom</item>
+	</string-array>
+
+	<string-array name="weather_interval_entries">
+        <item>自動更新オフ</item>
+        <item>1分</item>
+        <item>5分</item>
+        <item>10分</item>
+        <item>30分</item>
+        <item>45分</item>
+        <item>60分</item>
+        <item>2時間</item>
+        <item>3時間</item>
+        <item>4時間</item>
+        <item>6時間</item>
+        <item>8時間</item>
+	</string-array>
+
+	<string-array name="weather_interval_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>5</item>
+		<item>10</item>
+		<item>30</item>
+		<item>45</item>
+		<item>60</item>
+		<item>120</item>
+		<item>180</item>
+		<item>240</item>
+		<item>360</item>
+		<item>480</item>
+	</string-array>
+
+	<string-array name="lcd_density_stock_entries">
+		<item>160 -- mdpi</item>
+		<item>240 -- hdpi</item>
+		<item>320 -- xhdpi</item>
+	</string-array>
+
+	<string-array name="lcd_density_stock_values" translatable="false">
+		<item>160</item>
+		<item>240</item>
+		<item>320</item>
+	</string-array>
+
+	<string-array name="signal_style_entries">
+        <item>アイコン表示</item>
+        <item>数値表示</item>
+        <item>数値+dBm表示</item>
+	</string-array>
+
+	<string-array name="signal_style_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+	<string-array name="wifi_signal_style_entries">
+        <item>アイコン表示</item>
+        <item>テキスト表示</item>
+	</string-array>
+
+	<string-array name="wifi_signal_style_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+	</string-array>
+
+	<string-array name="weather_statusbar_location_entries">
+        <item>キャリアラベルの上に表示</item>
+        <item>天気情報パネル</item>
+        <item>表示しない</item>
+	</string-array>
+
+	<string-array name="weather_statusbar_location_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+
+	<string-array name="navigation_bar_width_entries">
+        <item>42 dp (デフォルト値)</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+	</string-array>
+
+	<string-array name="navigation_bar_width" translatable="false">
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
+	</string-array>
+
+	<string-array name="navigation_bar_height_entries">
+        <item>48 dp (デフォルト値)</item>
+        <item>42 dp</item>
+        <item>36 dp</item>
+        <item>30 dp</item>
+        <item>24 dp</item>
+	</string-array>
+
+
+	<string-array name="navigation_bar_height" translatable="false">
+		<item>48</item>
+		<item>42</item>
+		<item>36</item>
+		<item>30</item>
+		<item>24</item>
+	</string-array>
+
+	<string-array name="navigation_bar_qty_entries">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+
+	<string-array name="navigation_bar_qty_values" translatable="false">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</string-array>
+
+	<string-array name="navbar_button_entries">
+        <item>ホーム</item>
+        <item>戻る</item>
+        <item>アプリ履歴</item>
+        <item>検索</item>
+        <item>メニュー</item>
+        <item>タスクキル</item>
+        <item>電源</item>
+        <item>アプリを指定</item>
+        <item>設定なし</item>
+	</string-array>
+
+	<string-array name="navbar_button_values" translatable="false">
+		<item>**home**</item>
+		<item>**back**</item>
+		<item>**recents**</item>
+		<item>**search**</item>
+		<item>**menu**</item>
+		<item>**kill**</item>
+		<item>**power**</item>
+		<item>**app**</item>
+		<item>**null**</item>
+	</string-array>
+
+	<string-array name="recent_app_switcher_entries">
+        <item>標準スタイル</item>
+        <item>WebOSスタイル</item>
+        <item>Sense4.0スタイル</item>
+	</string-array>
+
+	<string-array name="recent_app_switcher_values" translatable="false">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+</resources>

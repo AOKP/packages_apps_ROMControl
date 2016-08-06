@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ROMコントロール</string>
+
+    <!-- Main -->
+    <string name="user_interface">ユーザーインターフェース</string>
+    <string name="general_ui">UI全般設定</string>
+    <string name="lockscreen_options">ロック画面オプション</string>
+    <string name="power_menu_optons">電源メニューオプション</string>
+    <string name="functionality">機能</string>
+    <string name="power_saver">省電力設定</string>
+    <string name="led_options">LEDオプション</string>
+    <string name="statusbar">ステータスバー</string>
+    <string name="general">ステータスバー全般設定</string>
+    <string name="toggles_layout">トグルレイアウト</string>
+    <string name="clock">時計表示</string>
+    <string name="battery">バッテリー</string>
+    <string name="nav_bar">ナビゲーションバー</string>
+    <string name="tools">ツール</string>
+    <string name="weather">天気情報</string>
+    <string name="signal">電波強度</string>
+
+    <string name="header_summary_battery">電池残量バーや電池残量の数値化、充電中アニメーションなどの設定</string>
+    <string name="header_summary_general_ui">ブートアニメーションやバグレポート、画面密度などのUIに関する設定</string>
+    <string name="header_summary_navigation_bar">ソフトキーの配置や色などのナビゲーションバーに関する設定</string>
+    <string name="header_summary_lockscreens">ロック解除時に起動させるアプリやターゲットのレイアウトなどの設定</string>
+    <string name="header_summary_power_menu">電源メニューに表示させる項目の設定</string>
+    <string name="header_summary_powersaver">バッテリーを長持ちさせるための設定</string>
+    <string name="header_summary_led">LEDの点滅間隔や点灯色の設定</string>
+    <string name="header_summary_general">ステータスバーの設定ボタンの動作に関する設定</string>
+    <string name="header_summary_toggles">使用するトグルの選択や表示順、明るさ調整バーの表示位置などの設定</string>
+	<string name="header_summary_clock">時計の位置や表示スタイル、色の設定</string>
+	<string name="header_summary_weather">天気情報の表示/非表示や地域設定、\n更新間隔などの設定</string>
+	<string name="header_summary_signal">電波強度の表示方法の設定</string>
+
+    <string name="advanced_settings">高度な設定</string>
+    <string name="misc_short">その他の設定</string>
+
+    <!-- General Strings -->
+    <string name="cancel">キャンセル</string>
+    <string name="ok">OK</string>
+
+    <!-- Navigation Bar -->
+    <string name="title_pref_menu_display">メニューキー表示位置設定</string>
+    <string name="summary_pref_menu_display">メニューキーをどこに表示するかの設定。 ソフトキー設定でメニューを表示する場合は「表示しない」を選択してください。</string>
+    <string name="navigation_bar">ナビゲーションバー</string>
+    <string name="navigation_bar_tint_title">ソフトキー配色設定</string>
+    <string name="navigation_bar_glow_tint_title">グローアニメーションの色変更</string>
+    <string name="navigation_bar_glow_tint_summary">ソフトキーをタップしたときのグローアニメーションの色を変更します。</string>
+    <string name="navigation_bar_height_title">ナビゲーションバーの高さ</string>
+    <string name="navigation_bar_width_title">ナビゲーションバーの幅</string>
+
+    <string name="title_pref_navigation_menu_display">メニューキー表示方法設定</string>
+    <string name="summary_pref_navigation_menu_display">メニューキーをいつ、どのように表示するかを設定します。</string>
+
+    <string name="navbar_order_title">ソフトキー表示順の変更</string>
+    <string name="navbar_order_summary">表示するソフトキーの順番を変更できます。</string>
+
+    <string name="navbar_button_cat">ソフトキー設定</string>
+
+    <string name="navbar_qty_title">配置するソフトキーの数</string>
+    <string name="navbar_qty_summary">ナビゲーションバーにソフトキーをいくつ配置するかを設定します。</string>
+
+    <string name="enabled_navbar_buttons_title">使用するソフトキーの選択</string>
+    <string name="enabled_navbar_buttons_summary">選択したソフトキーのみをナビゲーションバーに表示します。</string>
+
+    <string name="navbar_action_title">ソフトキー%1$sの動作とアイコン</string>
+    <string name="navbar_longpress_title">ソフトキー%1$s長押し時の動作</string>
+
+    <string name="navbar_action_home">ホーム</string>
+    <string name="navbar_action_back">戻る</string>
+    <string name="navbar_action_recents">アプリ履歴</string>
+    <string name="navbar_action_search">検索</string>
+    <string name="navbar_action_menu">メニュー</string>
+    <string name="navbar_action_kill">タスクキル</string>
+    <string name="navbar_action_power">電源</string>
+    <string name="navbar_action_none">設定なし</string>
+
+    <string name="button_transparency_title">ソフトキーの不透明度設定</string>
+
+    <string name="long_press_home_title">ホームキー長押し時の動作</string>
+    <string name="long_press_home_summary">ホームキーの長押しに機能を割り当てるかどうかを設定します。設定を反映させるには再起動が必要です。</string>
+
+    <string name="glow_times_title">グローアニメーションの速度</string>
+    <string name="glow_times_summary">ソフトキーをタップした時のアニメーションの速度を変更できます。速度を下げることによってパフォーマンスの向上が図れます。</string>
+
+    <!-- UI -->
+    <string name="rotation_animation_delay_title">画面回転までの待機時間の設定</string>
+    <string name="rotation_animation_delay_summary">端末を傾けてから画面が回転するまでの時間を設定します。デフォルト値は200ミリ秒です。</string>
+
+	<string name="ime_switcher_title">IME変更アイコンを表示する</string>
+	<string name="ime_switcher_summary">文字入力時、ステータスバーにIME変更アイコンを表示します。設定を反映させるには再起動が必要です。</string>
+
+	<string name="custom_carrier_label_title">キャリアラベルの変更</string>
+	<string name="custom_carrier_label_empty">表示する文字列の入力</string>
+	<string name="custom_carrier_label_warning">キャリアラベル表示スペースに任意の文字列を表示させることができます。変更したキャリアラベルを元に戻すにはデータのワイプが必要になります。</string>
+	<string name="longpress_to_kill_title">バックキー長押しでタスク終了</string>
+	<string name="longpress_to_kill_summary">現在開いているタスクを終了させる機能をバックキーの長押しに割り当てます。</string>
+
+    <string name="enable_volume_options">ボリュームオプションを有効</string>
+
+	<string name="rotate_180_title">180°画面回転を有効にする</string>
+	<string name="rotate_180_summary">画面を上下反対に180°回転させることを可能にします。</string>
+
+	<string name="recent_app_switcher_title">アプリ履歴表示スタイル</string>
+	<string name="recent_app_switcher_summary">アプリ履歴の表示スタイルを変更します。設定変更後にUIが再起動します。</string>
+
+	<string name="disable_bootanimation_title">ブートアニメーションを無効</string>
+	<string name="disable_bootanimation_summary">Jerk.</string>
+
+	<string name="disable_bootaudio_title">ブートオーディオを無効</string>
+	<string name="disable_bootaudio_summary">Quiet.</string>
+	<string name="disable_bootaudio_summary_disabled">ブートオーディオを有効にするには以下の場所にMP3ファイルを配置する必要があります。\n/system/media/boot_audio.mp3</string>
+
+	<string name="disable_bugmailer_title">バグレポートを作成しない</string>
+
+	<string name="lcd_density_title">画面密度の変更</string>
+	<string name="lcd_density_summary">unknown</string>
+
+	<!-- CRT animations -->
+	<string name="crt_animations_header">CRTアニメーション</string>
+	<string name="crt_on_title">CRT-ONアニメーション</string>
+	<string name="crt_off_title">CRT-OFFアニメーション</string>
+
+	<!-- LCD Density -->
+	<string name="lcd_density_wizard">画面密度設定ウィザード</string>
+	<string name="follow_through_title">画面密度の変更手順</string>
+	<string name="follow_through_summary">以下の設問に順を追って回答することで設定を完了させてください。</string>
+	<string name="stock_density_title">1. 画面密度を既定値に設定</string>
+	<string name="stock_density_summary">160:タブレットや初期のスマートフォン\n240:多数のスマートフォン\n320:GALAXY NEXUS</string></string>
+	<string name="reboot_title">2. 再起動</string>
+	<string name="reboot_summary">再起動後にこの画面へ戻り、残りの手順を完了させてください。</string>
+	<string name="clear_market_data_title">3. Playストアのデータを消去</string>
+	<string name="clear_market_data_cleared">Playストアのデータは消去されました。</string>
+	<string name="open_market_title">4. Google Playの利用規約に同意</string>
+	<string name="open_market_summary">Google Playの利用規約に同意した後にこの画面へ戻り、残りの手順を完了させてください。</string>
+	<string name="custom_density_title">5. 好みの画面密度に変更</string>
+	<string name="custom_density_summary">Playストアの互換性に問題がある場合は、再度このプロセスをやり直してください。</string>
+
+    <!-- Lockscreens -->
+    <string name="pref_lockscreen_layout_title">ロック解除スタイル</string>
+    <string name="pref_lockscreen_layout_summary">ロック解除スタイルを変更した後、ターゲットの設定を忘れないようにしてください。</string>
+
+    <string name="title_pref_lockscreen_quad_targets">４方向ロック解除</string>
+    <string name="summary_pref_lockscreen_quad_targets">ロック画面に電話とメッセージのショートカットを追加します。</string>
+
+    <string name="title_pref_lockscreen_octo_targets">8方向ロック解除</string>
+    <string name="summary_pref_lockscreen_octo_targets">さらに多くのショートカットをロック画面に追加します。</string>
+
+    <string name="title_pref_lockscreen_menu_unlock">メニューキーでロックを解除</string>
+    <string name="summary_pref_lockscreen_menu_unlock">メニューキーをタップするだけでロックを解除します。設定を反映させるには再起動が必要です。</string>
+    <string name="title_lockscreen_user_timeout_override">ロック遅延を有効にする</string>
+    <string name="summary_lockscreen_user_timeout_override">電源ボタンを押してスリープモードにした時にロックが掛かるまでの時間を遅らせます。チェックを外すとロック遅延は画面のタイムアウト時のみになります。</string>
+    <string name="show_lock_before_unlock_title">二重ロックを有効にする</string>
+    <string name="show_lock_before_unlock_summary">ロック解除方法をスライド以外に設定している場合、スライド解除をしてから設定したロック画面を表示します。</string>
+    <string name="lockscreen_battery_title">ロック画面に電池残量を表示</string>
+    <string name="lockscreen_battery_summary">ロック画面に電池残量を表示します。</string>
+	<string name="lockscreen_weather_title">ロック画面に天気情報を表示</string>
+    <string name="lockscreen_weather_summary">ロック画面に天気情報を表示します。この機能を利用するには天気情報表示を有効にする必要があります。</string>
+    <string name="volume_wake_title">ボリュームキーでスリープ解除</string>
+    <string name="volume_wake_summary">スリープ時にボリュームキーを押すことでスリープを解除します。</string>
+    <string name="volume_music_controls_title">ボリュームキーで曲選択</string>
+    <string name="volume_music_controls_summary">ボリュームキーの長押しで曲をスキップします。音楽再生中はボリュームキーを押してもスリープは解除されません。</string>
+    <string name="lockscreen_show_nav_title">ナビゲーションバーを隠す</string>
+    <string name="lockscreen_show_nav_summary">ロック画面でナビゲーションバーを非表示にします。</string>
+    <string name="custom_app_n_dialog_title">ターゲット %1$s</string>
+    <string name="custom_app_n">ターゲット %1$s</string>
+    <string name="lockscreen_targets">ロック解除ターゲット</string>
+    <string name="lockscreen_action_unlock">ロック解除</string>
+    <string name="lockscreen_action_sound">サウンドトグル</string>
+    <string name="lockscreen_action_camera">カメラ</string>
+    <string name="lockscreen_action_mms">メッセージ</string>
+    <string name="lockscreen_action_phone">電話</string>
+    <string name="lockscreen_action_none">設定なし</string>
+    <string name="lockscreen_landscape_title">ロック画面の回転を有効にする</string>
+    <string name="lockscreen_landscape_summary">ロック画面にも画面の自動回転を適用します。</string>
+    <string name="lockscreen_quick_unlock_control_title">クイックPINロック解除</string>
+    <string name="lockscreen_quick_unlock_control_summary">PINコードでのロック解除時にコード入力後のOKのタップを省略します。</string>
+    <string name="enable_fast_torch_title">クイックトーチを有効にする</string>
+    <string name="enable_fast_torch_summary">スリープ時に電源ボタンを長押しするとトーチが点灯、指を離すと消灯します。</string>
+    <string name="lockscreen_wallpaper_title">ロック画面の壁紙の選択</string>
+    <string name="lockscreen_wallpaper_summary">ロック画面の壁紙を元に戻すにはメニューから設定をリセットしてください。</string>
+    <string name="lockscreen_text_color_title">ロック画面の文字色設定</string>
+    <string name="lockscreen_calendar">カレンダー</string>
+    <string name="lockscreen_calendar_title">ロック画面にカレンダーを表示</string>
+    <string name="lockscreen_calendar_summary">ロック画面にカレンダーに記載された予定を表示します。</string>
+    <string name="lockscreen_calendar_sources_title">カレンダーの選択</string>
+    <string name="lockscreen_calendar_sources_summary">表示するカレンダーを選択します。</string>
+    <string name="lockscreen_calendar_range_title">予定表示期間の設定</string>
+    <string name="lockscreen_calendar_range_summary">どれくらいの期間の予定を表示するかを設定します。</string>
+    <string name="lockscreen_calendar_use_colors_title">予定の色付け</string>
+    <string name="lockscreen_calendar_use_colors_summary">有効にすると、カレンダーのように予定が色付け表示されます。</string>
+    <string name="lockscreen_calendar_hide_ongoing_title">開始済みの予定を非表示にする</string>
+    <string name="lockscreen_calendar_hide_ongoing_summary">有効にすると、既に開始された予定は表示しません。</string>
+    <string name="lockscreen_calendar_flip_title">複数の予定を表示</string>
+    <string name="lockscreen_calendar_flip_summary">現在の時刻から24時間以内に複数の予定が登録されている場合、予定の表示をスクロールさせて順番に表示します。</string>
+    <string name="lockscreen_calendar_interval_title">スクロール間隔</string>
+    <string name="lockscreen_calendar_interval_summary">次の予定を表示するまでの間隔を設定します。</string>
+
+    <!-- Power Menu -->
+    <string name="title_show_power_saver">省電力モードトグル</string>
+    <string name="summary_show_power_saver">電源メニューで省電力モードトグルを表示するには、事前に省電力設定を有効にする必要があります。</string>
+    <string name="title_show_screenshot">スクリーンショットトグル</string>
+    <string name="title_show_torch_toggle">トーチトグル</string>
+    <string name="title_show_airplane_toggle">機内モードトグル</string>
+    <string name="title_show_navbar_hide">ナビゲーションバートグル</string>
+
+    <!-- Power Saving -->
+    <string name="title_pref_powersaving_pref_mode">省電力設定を有効にする</string>
+    <string name="summary_pref_powersaving_pref_mode">@null</string>
+
+    <string name="title_pref_powersaving_data_screen_off">データ通信制限設定</string>
+    <string name="summary_pref_powersaving_data_screen_off">スリープ時のデータ通信を制限することで電池の持ちを改善します。</string>
+    
+    <string name="title_pref_powersaving_data_screen_off_delay">データ通信制限の待機時間</string>
+    <string name="summary_pref_powersaving_data_screen_off_delay">スリープ時にデータ通信の制限を開始するまでの待機時間を設定します。</string>
+
+    <string name="title_pref_powersaving_sync_screen_off">アカウント自動同期設定</string>
+    <string name="summary_pref_powersaving_sync_screen_off">アカウントの自動同期を使用するかどうかを設定します。</string>
+
+    <string name="title_pref_powersaving_sync_screen_off_delay">自動同期間隔設定</string>
+    <string name="summary_pref_powersaving_sync_screen_off_delay">自動同期させる間隔を設定します。間隔が長ければ長いほど電池の持ちはよくなります。</string>
+
+    <string name="powersaver_data_cat">スリープ時のデータ通信設定</string>
+    <string name="powersaver_sync_cat">アカウントの同期</string>
+
+    <string name="screen_off_wifi_action">スリープ時のWi-Fi制限</string>
+    <string name="sync_data_usage">自動同期制限</string>
+    <string name="sync_mobile_data_preference">データ通信同期優先設定</string>
+
+    <!--  LED -->
+    <string name="title_led_on">LED点灯時間の設定</string>
+    <string name="summary_led_on">@null</string>
+    <string name="title_led_off">LED消灯時間の設定</string>
+    <string name="summary_led_off">@null</string>
+    <string name="led_color_title">LEDの配色設定</string>
+    <string name="led_color_summary">デフォルトのLED点灯色を変更します。アプリでLED点灯色を設定した場合はそちらの設定が優先されます。</string>
+    <string name="title_led_screen_on">ウェイク時も通知LEDを点灯</string>
+    <string name="summary_led_screen_on">@null</string>
+
+    <!--  Statusbar | General -->
+    <string name="title_settings_behavior">デフォルトの設定を維持する</string>
+    <string name="summary_settings_behavior">ステータスバーの設定アイコンをタップでシステム設定を、長押しでトグルを表示します。チェックを外すと逆の動作になります。</string>
+
+    <string name="title_auto_hide_toggles">トグルを自動的に隠す</string>
+    <string name="summary_auto_hide_toggles">ステータスバーのトグルを自動的に隠すかどうかを設定します。チェックを外すと常にトグルが表示されます。</string>
+
+    <string name="title_status_bar_brightness_toggle">画面の明るさ調整を有効にする</string>
+    <string name="summary_status_bar_brightness_toggle">ステータスバーを指でスライドすることで画面の明るさ調整を可能にします。</string>
+
+    <string name="icon_transparency_title">通知アイコンの不透明度</string>
+
+    <string name="adb_icon_title">USBデバッグアイコンを表示</string>
+    <string name="adb_icon_summary">Wutang</string>
+
+    <string name="statusbar_transparency">ステータスバー透過設定</string>
+    <string name="statusbar_transparency_summary">ステータスバーを透過した場合、パフォーマンスとバッテリー消費に影響を与える可能性があります。設定変更後にUIが再起動します。</string>
+
+    <string name="statusbar_layout">通知パネルレイアウト</string>
+    <string name="statusbar_layout_summary">通知パネルのレイアウトを変更することができます。設定変更後にUIが再起動します。</string>
+    <string name="statusbar_fontsize">ステータスバーのフォントサイズ</string>
+    <string name="statusbar_fontsize_summary">ステータスバーのテキストの文字サイズを変更します。</string>
+
+    <!-- Statusbar | Battery -->
+    <string name="battery_icon">電池残量アイコン表示設定</string>
+    <string name="battery_summary_text_widget">@null</string>
+    <string name="battery_bar">電池残量バー表示設定</string>
+    <string name="battery_bar_color">電池残量バー配色設定</string>
+    <string name="battery_bar_cat">電池残量バーオプション</string>
+    <string name="battery_bar_style_title">電池残量バー表示スタイル</string>
+    <string name="battery_bar_thickness_title">電池残量バーの太さ</string>
+    <string name="battery_bar_animate_title">充電中アニメーション</string>
+    <string name="battery_bar_animate_summary">アニメーションを有効にするとパフォーマンスが低下する恐れがあります。ご自身の判断で有効にして下さい。</string>
+
+
+    <!-- Statusbar | Clock -->
+    <string name="clock_title_enable">時計表示スタイル</string>
+    <string name="title_clock_ampm_entries">AM/PMスタイル</string>
+    <string name="colors">配色設定</string>
+    <string name="clock_color_title">時計の配色変更</string>
+    <string name="reset_color_title">時計の配色を元に戻す</string>
+    <string name="enable_alarm_title">アラームアイコンを表示する</string>
+    <string name="enable_alarm_summary">表示／非表示を切り替えた後で再度アイコンを表示するには、アラームの再設定か端末の再起動が必要です。</string>
+    <string name="enable_clock_weekday">曜日表示スタイル</string>
+    <string name="enable_clock_weekday_summary">曜日の表示方法を設定します。</string>
+
+    <!-- Statusbar | Toggles -->
+    <string name="toggle_style_title">トグルスタイル</string>
+    <string name="toggle_style_summary">トグルの表示をアイコン表示にするかテキスト表示にするかを選択できます。</string>
+
+    <string name="alternate_button_layout_title">トグルをボタン表示にする</string>
+    <string name="alternate_button_layout_summary">トグルをスイッチ表示からボタン表示に変更します。</string>
+
+    <string name="enabled_toggles_title">使用するトグルの選択</string>
+    <string name="enabled_toggles_summary">通知パネルに表示させるトグルを選択します。</string>
+
+    <string name="toggles_display_dialog">使用するトグルの選択</string>
+    <string name="toggles_display_close">閉じる</string>
+
+    <string name="toggles_order_title">トグル表示順の変更</string>
+    <string name="toggles_order_summary">表示させるトグルの順番を変更できます。</string>
+    <string name="brightness_location_title">明るさ調整バーの表示位置設定</string>
+    <string name="reset_toggles_title">トグル設定のリセット</string>
+    <string name="reset_toggles_summary">トグルの設定や並び順をリセットします。</string>
+
+	<!-- Statusbar | Signal -->
+    <string name="signal_style">電波強度表示スタイル</string>
+    <string name="signal_color_title">電波強度表示の配色設定</string>
+    <string name="hide_signal_title">電波アイコンを非表示</string>
+    <string name="hide_signal_summary">データインジケータも非表示になります。</string>
+    <string name="wifi_signal_style">Wi-Fi強度表示スタイル</string>
+    <string name="wifi_signal_color_title">Wi-Fi強度表示の配色設定</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">色選択</string>
+    <string name="press_color_to_apply">選択した色をタップで適用</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">16進数</string>
+    <string name="hex_hint">\#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">指定したアプリを起動する</string>
+    <string name="use_custom_app_summary">タスクキーの代わりに任意のアプリケーションを配置します。</string>
+    <string name="select_custom_app_title">アプリケーションの選択</string>
+    <string name="group_applications">アプリケーション</string>
+
+	<!-- Weather -->
+    <string name="weather_enable">天気情報表示を有効にする</string>
+    <string name="weather_enable_summary">ロック画面やステータスバーを展開した時に天気情報を表示します。</string>
+    <string name="weather_use_custom_location">地域指定を有効にする</string>
+    <string name="weather_use_custom_location_summary">地域を指定した場合バッテリーを節約することができます。指定しない場合は現在地を特定するためにネットワークを利用します。</string>
+    <string name="weather_custom_location_dialog_title">地域を指定してください</string>
+    <string name="weather_custom_location_dialog_message">"例のように地域を指定してください。無効な地域を指定すると天気情報の更新を停止し、予期しない動作を引き起こす可能性があります。\n\n例：Tokyo / Osaka / Nagoya"</string>
+    <string name="weather_custom_location_title">地域を指定する</string>
+    <string name="weather_show_location_title">地域を表示する</string>
+    <string name="weather_show_location_summary">天気情報を取得中の地域を表示します。</string>
+    <string name="weather_refresh_interval">更新間隔の設定</string>
+    <string name="weather_use_celcius">気温を摂氏、風速をkm/h表示</string>
+    <string name="weather_use_celcius_summary">無効にすると気温は華氏、風速はmphでの表示になります。</string>
+    <string name="weather_statusbar_style">天気情報表示スタイル</string>
+    <string name="weather_start_custom_app">アプリを指定して起動</string>
+    <string name="weather_start_custom_app_summary">天気画像をタップしたときに指定したアプリを起動します。</string>
+    <string name="weather_custom_app_title">アプリを指定</string>
+    <string name="weather_custom_app_dialog_title">アプリの選択</string>
+    <string name="weather_custom_app_dialog_message">現在のアプリ</string>
+    <string name="weather_refreshing">天気情報を更新中</string>
+
+	<!-- Dialog Titles -->
+	<string name="dt_free_memory">自動タスクキル設定</string>
+
+	<!-- Preference Categories -->
+    <string name="prefcat_cpu">CPU設定</string>
+    <string name="prefcat_free_memory">RAM管理</string>
+    <string name="pc_tweaks">Tweaks</string>
+    <string name="pc_init_d">Tweaksの有効/無効</string>
+    <string name="pc_init_d_tweaks">Tweaks編集</string>
+
+	<!-- Preference Titles -->
+	<!-- Main -->
+	<string name="pt_performance">Performance</string>
+	<string name="pt_customization">Customization</string>
+	<string name="pt_tools">Tools</string>
+	<string name="pt_mod_version">Mod version</string>
+	<!-- Customization -->
+    <string name="pt_liberty_customizer">Liberty Customizer</string>
+    <string name="pt_lockscreen">ロック画面設定</string>
+    <string name="pt_ui_status_bar">ステータスバー</string>
+    <string name="pt_pulldown_text">テキストのプルダウン</string>
+    <string name="pt_theme_manager">テーママネージャー</string>
+	<!-- Tools -->
+	<string name="pt_spare_parts">Spare Parts</string>
+    <string name="pt_dev_tools">開発ツール</string>
+    <string name="pt_dsp_manager">DSP Manager</string>
+    <string name="pt_testing_menu">試験実装メニュー</string>
+	<!-- Start up tweaks -->
+    <string name="pt_init_d">Tweaks設定</string>
+    <string name="pt_enable_init_d">起動時にTweaksを有効にする</string>
+    <string name="pt_zipalign">アプリの最適化</string>
+    <string name="pt_enable_sd_boost">SDブーストを有効にする</string>
+    <string name="pt_sd_boost">SDのキャッシュサイズ</string>
+    <string name="pt_fix_permissions">パーミッションの修正</string>
+    <string name="pt_clear_cache">キャッシュをクリア</string>
+    <string name="pt_enable_sysctl">Sysctlコマンドを有効にする</string>
+    <string name="pt_enable_cron">タスクスケジュールの有効化</string>
+	<!-- Performance -->
+    <string name="pt_set_cpu_activity">CPU設定</string>
+    <string name="pt_free_memory">タスクキル条件設定</string>
+    <string name="pt_free_memory_boot">起動時に有効にする</string>
+	<!-- Cpu -->
+    <string name="pt_set_max">最大CPUクロック数</string>
+    <string name="pt_set_min">最小CPUクロック数</string>
+    <string name="pt_set_gov">CPUスケーリング設定</string>
+    <string name="pt_cpu_boot">起動時に有効にする</string>
+        <string name="pt_volt_control">CPU動作電圧設定</string>
+    <!-- Scrolling Cache -->
+    <string name="pref_scrollingcache_title">スクロールキャッシュ設定</string>
+    <string name="pref_scrollingcache_summary">スクロールキャッシュはメモリを消費することでスクロールのパフォーマンスが向上します。</string>
+    <string name="pref_scrollingcache_force_enable">強制的に有効</string>
+    <string name="pref_scrollingcache_default_enable">デフォルトでは有効</string>
+    <string name="pref_scrollingcache_default_disable">デフォルトでは無効</string>
+    <string name="pref_scrollingcache_force_disable">強制的に無効</string>
+
+	<!-- Preference Summaries -->
+	<!-- Main -->
+	<string name="ps_performance"CPUとRAM管理の設定</string>
+	<string name="ps_customization">ロック画面とステータスバーをカスタマイズすることができます。 blur/AOSPアプリとLiberty Customizerをインストールしてください。</string>
+	<string name="ps_tools">様々なシステムツール</string>
+	<!-- Customization -->
+	<string name="ps_liberty_customizer">好みに合わせてROMをカスタマイズしてください。</string>
+	<string name="ps_lockscreen">ロック画面のスタイルの変更とウィジェットの管理	</string>
+    <string name="ps_ui_status_bar">ステータスバーのカスタマイズ</string>
+    <string name="ps_pulldown_text">プルダウンバーのテキストを変更します。</string>
+    <string name="ps_theme_manager">Liberty ROM用のカスタムテーマをインストール</string>
+	<!-- Tools -->
+    <string name="ps_spare_parts">様々なtweaksとカスタマイズ</string>
+    <string name="ps_dev_tools">開発者や上級者向けのツール</string>
+    <string name="ps_dsp_manager">スタンドアロンイコライザ</string>
+    <string name="ps_testing_menu">端末情報、電池情報、使用状況の統計</string>
+	<!-- Start up tweaks -->
+	<string name="ps_init_d">端末起動時のTweaksの設定(init.d)</string>
+    <string name="ps_enable_init_d">Tweaksの有効/無効を切り替えます。</string>
+    <string name="ps_zipalign">起動する度に最適化されていないアプリを最適化します。</string>
+    <string name="ps_enable_sd_boost">SDブーストの有効/無効を切り替えます。</string>
+    <string name="ps_sd_boost">SDキャッシュサイズ設定</string>
+    <string name="ps_fix_permissions">起動する度にアプリのパーミッションを修正します。</string>
+    <string name="ps_clear_cache">起動する度にキャッシュデータを消去します。</string>
+    <string name="ps_enable_sysctl">起動時にカーネルパラメータをチューニングします。</string>
+    <string name="ps_enable_cron">cronによる定期実行を有効にします。</string>
+	<!-- CPU -->
+    <string name="ps_set_max">"最大CPUクロック数の設定\n現在の設定:%s"</string>
+    <string name="ps_set_min">"最小CPUクロック数の設定\n現在の設定:%s"</string>
+    <string name="ps_set_gov">"CPUの動作に関する規則を設定します。\n現在の設定:%s"</string>
+    <string name="ps_cpu_boot">CPU設定を起動時に有効にします。</string>
+	<!-- Performance -->
+	<string name="ps_set_cpu_activity">CPUの最小/最大クロック数とスケーリング設定を適用します。</string>
+	<string name="ps_free_memory">"空きメモリが設定値以下になった場合に自動でタスクキルします。\n現在の設定:%s"</string>
+	<string name="ps_free_memory_boot">Apply the amount above at boot</string>
+
+	<!-- Toast Messages -->
+    <string name="toast_min_max_error01">最大CPUクロック数は最小CPUクロック数より低く設定できません。</string>
+    <string name="toast_min_max_error02">最小CPUクロック数は最小CPUクロック数より高く設定できません。</string>
+
+	<!-- list_voltage -->
+    <string name="freq">周波数</string>
+    <string name="current">mV 現在の設定値</string>
+    <string name="saved">mV 編集後の設定値</string>
+
+	<!-- voltage -->
+    <string name="error_values">設定値が不正な値です。</string>
+    <string name="set_boot">起動時に適用</string>
+    <string name="apply_values">設定を適用</string>
+
+	<string name="dpi">設定するdpi値の入力</string>
+	<string name="donate_roman">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=MZD7JLRX6P99Y</string>
+	<string name="donate_whitehawk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8W7F2Y7S7KRM6</string>
+	<string name="donate_zaph">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AW4DJFL3UWKS2</string>
+	<string name="donate_protekk">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=YJTUMSBC2TRHS</string>
+	<string name="donate_khasmek">http://nyan.cat</string>
+	<string name="donate_sethyx">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5R4DYJLDYDRAU</string>
+	<string name="devs">開発者</string>
+	<string name="aokp">Android Open Kang Project</string>
+	<string name="aokp_website_title">AOKPウェブサイト</string>
+	<string name="aokp_website_summary">www.aokp.co\nこちらからAOKPの最新情報が確認できます。</string>
+	<string name="aokp_source_title">AOKPソース</string>
+	<string name="aokp_source_summary">AOKPは完全にオープンソースです。\ngithub.com/aokpで最新のソースを確認することができます。</string>
+    <string name="aokp_review_title">AOKP Code Review</string>
+    <string name="aokp_review_summary">パッチを提出し、テストするためのAOKPのGerrit Reviewインスタンス</string>
+    <string name="aokp_irc_title">IRCに参加</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">AOKPについて</string>
+    <string name="about_aokp_summary">@null</string>
+
+    <!--  Kernel Tweaks -->
+    <string name="pt_fast_charge_boot">急速充電</string>
+    <string name="ps_fast_charge_boot">起動時に急速充電を有効にします。</string>
+    <string name="fast_charge_warning">再起動後に急速充電が有効になります。\n急速充電を有効にしている間は端末をPCに接続してもメディアデバイスとしては認識されず、充電のみが可能となります。</string>
+    <string name="fast_charge_notification_title">急速充電オン</string>
+    <string name="fast_charge_notification_message">PC接続時も充電のみしかできません。</string>
+
+    <string name="kernel">カーネルTweaks（要対応カーネル）</string>
+    <string name="color_tuning_title_head">スクリーンカラー調整</string>
+    <string name="color_tuning_summary_head">赤/緑/青のバランスを変更し、画面の色味を調整します。</string>
+    <string name="gamma_tuning_title_head">ガンマ補正</string>
+    <string name="gamma_tuning_summary_head">画像データの色と実際に出力される信号との相対関係を調整します。</string>
+    <string name="color_red_title">赤</string>
+    <string name="color_green_title">緑</string>
+    <string name="color_blue_title">青</string>
+    <string name="reset_defaults">既定値に戻す</string>
+
+    <!-- Weather Codes -->
+    <string name="weather_0">竜巻</string>
+    <string name="weather_1">熱帯暴風雨</string>
+    <string name="weather_2">台風</string>
+    <string name="weather_3">強雷雨</string>
+    <string name="weather_4">激しい雷雨</string>
+    <string name="weather_5">みぞれ</string>
+    <string name="weather_6">みぞれ混じりの雨</string>
+    <string name="weather_7">みぞれ混じりの雪</string>
+    <string name="weather_8">着氷性の霧雨</string>
+    <string name="weather_9">霧雨</string>
+    <string name="weather_10">着氷性の雨</string>
+    <string name="weather_11">にわか雨</string>
+    <string name="weather_12">雨</string>
+    <string name="weather_13">にわか雪</string>
+    <string name="weather_14">弱いにわか雪</string>
+    <string name="weather_15">吹雪</string>
+    <string name="weather_16">雪</string>
+    <string name="weather_17">あられ</string>
+    <string name="weather_18">みぞれ</string>
+    <string name="weather_19">塵</string>
+    <string name="weather_20">霧</string>
+    <string name="weather_21">煙霧</string>
+    <string name="weather_22">もや</string>
+    <string name="weather_23">暴風</string>
+    <string name="weather_24">強風</string>
+    <string name="weather_25">酷寒</string>
+    <string name="weather_26">曇り</string>
+    <!-- mostly cloudy (night) -->
+    <string name="weather_27">概ね曇り</string>
+    <!-- mostly cloudy (day) -->
+    <string name="weather_28">概ね曇り</string>
+    <!-- partly cloudy (night) -->
+    <string name="weather_29">晴れ時々曇り</string>
+    <!-- partly cloudy (day) -->
+    <string name="weather_30">晴れ時々曇り</string>
+    <!-- clear (night) -->
+    <string name="weather_31">快晴</string>
+    <string name="weather_32">快晴</string>
+    <!-- fair (night) -->
+    <string name="weather_33">晴れ</string>
+    <!-- fair (day) -->
+    <string name="weather_34">晴れ</string>
+    <string name="weather_35">あられ混じりの雨</string>
+    <string name="weather_36">猛暑</string>
+    <string name="weather_37">晴れ 所により雷雨</string>
+    <string name="weather_38">晴れ 所により雷雨</string>
+    <string name="weather_39">晴れ 所により雨</string>
+    <string name="weather_40">晴れ 所によりにわか雨</string>
+    <string name="weather_41">大雪</string>
+    <string name="weather_42">晴れ 所によりにわか雪</string>
+    <string name="weather_43">晴れ 所によりにわか雪</string>
+    <string name="weather_44">晴れ時々曇り</string>
+    <string name="weather_45">雷雨</string>
+    <string name="weather_46">にわか雪</string>
+    <string name="weather_47">晴れ 所により雷雨</string>
+    <!-- Forecase unavailable -->
+    <string name="weather_3200"></string>
+
+</resources>

@@ -69,6 +69,7 @@ import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
 import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
 import com.aokp.romcontrol.fragments.ui.AnimBarPreference;
 import com.aokp.romcontrol.fragments.ui.AnimationControls;
+import com.aokp.romcontrol.fragments.ui.BlurPersonalizations;
 import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
 import com.aokp.romcontrol.fragments.ui.TransparencyPornFragment;
 

@@ -39,7 +39,8 @@ public class UITabHostFragment extends Fragment {
     private static final int[] mFragments = new int[] {
             R.string.category_ui,
             R.string.aokp_animation_title,
-            R.string.transparency_porn_title
+            R.string.transparency_porn_title,
+            R.string.blur_ui_category_title
     };
 
     public UITabHostFragment() {
@@ -96,6 +97,8 @@ public class UITabHostFragment extends Fragment {
                     return new AnimationControls();
                 case 2:
                     return new TransparencyPornFragment();
+                case 3:
+                    return new BlurPersonalizations();
             }
             return null;
         }

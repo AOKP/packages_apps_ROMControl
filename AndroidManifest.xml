@@ -98,6 +98,7 @@
         <activity android:name="com.aokp.romcontrol.fragments.ui.UITabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.AnimBarPreference" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.AnimationControls" />
+        <activity android:name="com.aokp.romcontrol.fragments.ui.BlurPersonalizations" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings" />
         <activity android:name="com.aokp.romcontrol.fragments.ui.TransparencyPornFragment" />
 

@@ -947,7 +947,7 @@
     <string name="blurred_radius">Blur Radius</string>
     <string name="blurred_radius_summary">Amount of blur</string>
     <string name="blur_cat_notice">Notice</string>
-    <string name="blur_cat_notice_summary">Blur personlizations are disabled during Keyguard view! QS panel and expanded statusbar transparency, stroke and logo are automatically disabled!</string>
+    <string name="blur_cat_notice_summary">Blur personlizations are disabled during Keyguard view! Only Translucent Notifications are enabled! QS header and panel transparency are automatically disabled!</string>
     <string name="blurred_scale">Blur Scale</string>
     <string name="blurred_scale_summary">Quality of blur image</string>
     <string name="blurred_radius">Blur Radius</string>

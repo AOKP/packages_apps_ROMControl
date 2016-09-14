@@ -396,6 +396,10 @@
     <string name="smart_pixels_shift_times_30min">30 minutes</string>
     <string name="smart_pixels_shift_times_1h">1 hour</string>
 
+   <!-- Disabling immersive mode messages -->
+   <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
+   <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
+
     <!-- ****************************** UI Interface Cat ends ****************************** -->
 
 </resources>

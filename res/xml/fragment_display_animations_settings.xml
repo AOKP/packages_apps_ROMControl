@@ -78,5 +78,11 @@
         android:entryValues="@array/screen_off_animation_values"
         android:defaultValue="0" />
         
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="disable_immersive_message"
+        android:title="@string/disable_immersive_message_title"
+        android:summary="@string/disable_immersive_message_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
 

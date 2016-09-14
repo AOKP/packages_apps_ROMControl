@@ -33,6 +33,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
@@ -80,10 +81,12 @@ public class DisplayAnimationsSettings extends Fragment {
         private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
         private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
         private static final String SCROLLINGCACHE_DEFAULT = "1";
+        private static final String PREF_TRANSITION_ANIMATION = "disable_transition_animations";
 
         private ListPreference mListViewAnimation;
         private ListPreference mListViewInterpolator;
         private ListPreference mScrollingCachePref;
+        private SwitchPreference mTransitionAnimations;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -118,6 +121,11 @@ public class DisplayAnimationsSettings extends Fragment {
             mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
                     SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
             mScrollingCachePref.setOnPreferenceChangeListener(this);
+
+            mTransitionAnimations = (SwitchPreference) findPreference(PREF_TRANSITION_ANIMATION);
+            mTransitionAnimations.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.DISABLE_TRANSITION_ANIMATIONS, 1) != 0);
+            mTransitionAnimations.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -162,6 +170,11 @@ public class DisplayAnimationsSettings extends Fragment {
                     SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)objValue);
                 return true;
                 }
+            } else if (preference == mTransitionAnimations) {
+                boolean value = (Boolean) objValue;
+                Settings.System.putInt(resolver,
+                        Settings.System.DISABLE_TRANSITION_ANIMATIONS, value ? 1 : 0);
+                return true;
             }
             return false;
         }

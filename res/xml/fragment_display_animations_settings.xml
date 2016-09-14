@@ -60,5 +60,11 @@
         android:summary="@string/disable_animations_summary"
         android:defaultValue="false" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="force_expanded_notifications"
+        android:title="@string/force_expanded_notifications_title"
+        android:summary="@string/force_expanded_notifications_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
 

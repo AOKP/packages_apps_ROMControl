@@ -168,8 +168,12 @@
     <string name="device_hostname">Device Hostname</string>
 
     <!-- Recents setting -->
-    <string name="recents_settings">Recents Settings</string>
-    
+
+    <string name="recents_settings">Recents settings</string>
+
+    <string name="systemui_recents_mem_display_title">Show Memory Bar</string>
+    <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string>
+
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Block system wakelocks</string>

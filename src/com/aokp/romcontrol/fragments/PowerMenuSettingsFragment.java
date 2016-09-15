@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
@@ -57,12 +58,18 @@ public class PowerMenuSettingsFragment extends Fragment {
                 .commit();
     }
 
-    public static class SettingsPreferenceFragment extends PreferenceFragment {
+    public static class SettingsPreferenceFragment extends PreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+
         public SettingsPreferenceFragment() {
         }
 
         final static String TAG = "PowerMenuActions";
+
+        private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
+
         private ContentResolver mContentResolver;
+        private ListPreference mPowerMenuAnimations;
         private SwitchPreference mRebootPref;
         private SwitchPreference mScreenshotPref;
         private SwitchPreference mScreenrecordPref;
@@ -86,6 +93,12 @@ public class PowerMenuSettingsFragment extends Fragment {
 
             addPreferencesFromResource(R.xml.fragment_powermenu_settings);
             mContext = getActivity().getApplicationContext();
+
+            mPowerMenuAnimations = (ListPreference) findPreference(POWER_MENU_ANIMATIONS);
+            mPowerMenuAnimations.setValue(String.valueOf(Settings.System.getInt(
+                    getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
+            mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+            mPowerMenuAnimations.setOnPreferenceChangeListener(this);
 
             mAvailableActions = getActivity().getResources().getStringArray(
                     R.array.power_menu_actions_array);
@@ -198,6 +211,18 @@ public class PowerMenuSettingsFragment extends Fragment {
         public void onResume() {
             super.onResume();
             updatePreferences();
+        }
+
+        @Override
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+            if (preference == mPowerMenuAnimations) {
+                Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
+                        Integer.valueOf((String) newValue));
+                mPowerMenuAnimations.setValue(String.valueOf(newValue));
+                mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+                return true;
+            }
+            return false;
         }
 
         @Override

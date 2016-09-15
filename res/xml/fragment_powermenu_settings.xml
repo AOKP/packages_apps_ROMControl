@@ -17,6 +17,20 @@
     android:key="power_menu"
     android:title="@string/power_menu_title">
 
+    <PreferenceCategory
+      android:title="@string/power_menu_title">
+
+      <ListPreference
+          android:key="power_menu_animations"
+          android:title="@string/power_menu_animation_title"
+          android:dialogTitle="@string/power_menu_animation_dialog_title"
+          android:entries="@array/power_menu_animations_entries"
+          android:entryValues="@array/power_menu_animations_values"
+          android:summary="@string/power_menu_animation_summary"
+          android:persistent="false" />
+
+    </PreferenceCategory>
+
     <SwitchPreference
         android:key="restart"
         android:title="@string/power_menu_reboot_title"

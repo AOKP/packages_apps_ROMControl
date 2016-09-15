@@ -73,6 +73,9 @@ public class RecentsSettingsFragment extends Fragment {
 
         }
 
+        private static final String IMMERSIVE_RECENTS = "immersive_recents";
+        private ListPreference mImmersiveRecents;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -84,10 +87,17 @@ public class RecentsSettingsFragment extends Fragment {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_recents_settings);
 
-            PreferenceScreen prefSet = getPreferenceScreen();
             ContentResolver resolver = getActivity().getContentResolver();
+            final PreferenceScreen prefScreen = getPreferenceScreen();
+            final Resources res = getResources();
 
-            return prefSet;
+            mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
+            mImmersiveRecents.setValue(String.valueOf(Settings.System.getInt(
+                    resolver, Settings.System.IMMERSIVE_RECENTS, 0)));
+            mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+    		mImmersiveRecents.setOnPreferenceChangeListener(this);
+
+            return prefScreen;
         }
 
         @Override
@@ -100,10 +110,16 @@ public class RecentsSettingsFragment extends Fragment {
             super.onResume();
         }
 
-        @Override
-        public boolean onPreferenceChange(Preference preference, Object newValue) {
-                ContentResolver resolver = getActivity().getContentResolver();
-            return false;
+        public boolean onPreferenceChange(Preference preference, Object newValue) 	  {
+            ContentResolver resolver = getActivity().getContentResolver();
+            if (preference == mImmersiveRecents) {
+                Settings.System.putInt(resolver, Settings.System.IMMERSIVE_RECENTS,
+                        Integer.valueOf((String) newValue));
+                mImmersiveRecents.setValue(String.valueOf(newValue));
+                mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+                return true;
+            }
+    		return false;
         }
     }
 }

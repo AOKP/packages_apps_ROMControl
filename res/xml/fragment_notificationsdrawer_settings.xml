@@ -98,4 +98,10 @@
         android:summary="@string/status_bar_show_weather_summary"
         android:defaultValue="true" />
 
+    <com.aokp.romcontrol.settings.SecureSettingSwitchPreference
+        android:key="qs_fancy_animation"
+        android:title="@string/qs_fancy_animation_title"
+        android:summary="@string/qs_fancy_animation_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

@@ -38,6 +38,7 @@ public class StatusBarTabHostFragment extends Fragment {
 
     private static final int[] mFragments = new int[] {
             R.string.statusbar_settings,
+            R.string.status_bar_temperature_title,
             R.string.network_traffic_title
     };
 
@@ -92,8 +93,9 @@ public class StatusBarTabHostFragment extends Fragment {
                 case 0:
                     return new StatusbarSettingsFragment();
                 case 1:
-                    return new TrafficSettingsFragment();
-            }
+                    return new StatusBarWeatherSettingsFragment();
+                case 2:
+                    return new TrafficSettingsFragment();           }
             return null;
         }
     }

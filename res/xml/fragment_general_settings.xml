@@ -31,7 +31,7 @@
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
-       <com.aokp.romcontrol.fragments.general.HostnamePreference
+    <com.aokp.romcontrol.fragments.general.HostnamePreference
             android:key="device_hostname"
             android:title="@string/device_hostname"
             android:dialogTitle="@string/device_hostname"
@@ -41,5 +41,11 @@
             android:imeOptions="actionDone"
             android:inputType="textNoSuggestions"
             android:persistent="false" />
+
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="toast_icon"
+            android:title="@string/toast_icon_title"
+            android:summary="@string/toast_icon_summary"
+            android:defaultValue="true" />
 
 </PreferenceScreen>

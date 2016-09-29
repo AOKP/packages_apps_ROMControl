@@ -69,12 +69,23 @@ public class LockScreenSettingsFragment extends Fragment {
 
         private static final String TAG = "LockScreenSettings";
         private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
+        private static final String PREF_CONDITION_ICON =
+                "weather_condition_icon";
+        private static final String PREF_HIDE_WEATHER =
+                "weather_hide_panel";
+        private static final String PREF_NUMBER_OF_NOTIFICATIONS =
+                "weather_number_of_notifications";
 
         private ContentResolver mResolver;
 
         private FingerprintManager mFingerprintManager;
         private SwitchPreference mFingerprintVib;
         private SeekBarPreference mMaxKeyguardNotifConfig;
+        private static final int MONOCHROME_ICON = 0;
+
+        private ListPreference mConditionIcon;
+        private ListPreference mHideWeather;
+        private SeekBarPreference mNumberOfNotifications;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -98,19 +109,84 @@ public class LockScreenSettingsFragment extends Fragment {
             mMaxKeyguardNotifConfig.setValue(kgconf);
             mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
 
+            mConditionIcon =
+                    (ListPreference) findPreference(PREF_CONDITION_ICON);
+            int conditionIcon = Settings.System.getInt(mResolver,
+                   Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, MONOCHROME_ICON);
+            mConditionIcon.setValue(String.valueOf(conditionIcon));
+            mConditionIcon.setSummary(mConditionIcon.getEntry());
+            mConditionIcon.setOnPreferenceChangeListener(this);
+
+            mHideWeather =
+                    (ListPreference) findPreference(PREF_HIDE_WEATHER);
+            int hideWeather = Settings.System.getInt(mResolver,
+                   Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, 0);
+            mHideWeather.setValue(String.valueOf(hideWeather));
+            mHideWeather.setOnPreferenceChangeListener(this);
+
+            mNumberOfNotifications =
+                    (SeekBarPreference) findPreference(PREF_NUMBER_OF_NOTIFICATIONS);
+            int numberOfNotifications = Settings.System.getInt(mResolver,
+                    Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS, 4);
+            mNumberOfNotifications.setValue(numberOfNotifications);
+            mNumberOfNotifications.setOnPreferenceChangeListener(this);
+
+            updatePreference();
             setHasOptionsMenu(true);
         }
 
         @Override
+        public void onResume() {
+            super.onResume();
+            updatePreference();
+        }
+
+        private void updatePreference() {
+            int hideWeather = Settings.System.getInt(mResolver,
+                    Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, 0);
+            if (hideWeather == 0) {
+                mNumberOfNotifications.setEnabled(false);
+                mHideWeather.setSummary(R.string.weather_hide_panel_auto_summary);
+            } else if (hideWeather == 1) {
+                mNumberOfNotifications.setEnabled(true);
+                mHideWeather.setSummary(R.string.weather_hide_panel_custom_summary);
+            } else {
+                mNumberOfNotifications.setEnabled(false);
+                mHideWeather.setSummary(R.string.weather_hide_panel_never_summary);
+            }
+        }
+
+        @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
+            boolean value;
+
             if (preference == mMaxKeyguardNotifConfig) {
                 int kgconf = (Integer) newValue;
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(mResolver,
                         Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
                 return true;
+            } else if (preference == mConditionIcon) {
+                int intValue = Integer.valueOf((String) newValue);
+                int index = mConditionIcon.findIndexOfValue((String) newValue);
+                Settings.System.putInt(mResolver,
+                        Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, intValue);
+                mConditionIcon.setSummary(mConditionIcon.getEntries()[index]);
+                return true;
+            } else if (preference == mHideWeather) {
+                int intValue = Integer.valueOf((String) newValue);
+                int index = mHideWeather.findIndexOfValue((String) newValue);
+                    Settings.System.putInt(mResolver,
+                        Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, intValue);
+                updatePreference();
+                return true;
+            } else if (preference == mNumberOfNotifications) {
+                int numberOfNotifications = (Integer) newValue;
+                Settings.System.putInt(mResolver,
+                        Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS,
+                numberOfNotifications);
+                return true;
             }
-        return false;
+            return false;
         }
 
         @Override

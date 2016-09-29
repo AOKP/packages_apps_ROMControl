@@ -271,6 +271,9 @@
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Visualizza la musica sul display</string>
 
+    <!-- title for lock screen weather preference -->
+    <string name="lockscreen_weather_enabled_title">Mostra meteo</string>
+
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Autenticazione impronta digitale con vibrazione</string>
     <string name="fprint_sucess_vib_summary">Vibra all\'avvenuta autenticazione tramite impronta digitale</string>

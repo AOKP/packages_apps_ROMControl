@@ -35,4 +35,25 @@
         android:dependency="qs_show_brightness"
         android:defaultValue="true"/>
 
+    <ListPreference
+        android:key="qs_tile_animation_style"
+        android:title="@string/qs_tile_animation_style_title"
+        android:entries="@array/qs_tile_animation_style_entries"
+        android:entryValues="@array/qs_tile_animation_style_values"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="qs_tile_animation_duration"
+        android:title="@string/qs_tile_animation_duration_title"
+        android:entries="@array/qs_tile_animation_duration_entries"
+        android:entryValues="@array/qs_tile_animation_duration_values"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="qs_tile_animation_interpolator"
+        android:title="@string/qs_tile_animation_interpolator_title"
+        android:entries="@array/qs_tile_animation_interpolator_entries"
+        android:entryValues="@array/qs_tile_animation_interpolator_values"
+        android:persistent="false" />
+
 </PreferenceScreen>

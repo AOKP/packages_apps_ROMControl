@@ -88,6 +88,7 @@
     <string name="category_ui">User Interface</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
+
     <string name="devs">The Crew</string>
     <string name="aokp" translatable="false">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP website</string>
@@ -138,9 +139,11 @@
     <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
     <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
     <string name="kanglings">The Kanglings</string>
+
     <!-- ****************************** About Cat ends ****************************** -->
 
     <!-- ****************************** General Cat starts ****************************** -->
+
     <!-- General -->
     <string name="general_settings">General settings</string>
     <!-- Toast Icons -->
@@ -162,7 +165,9 @@
     <string name="wakelock_blocker_reload">Reload</string>
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
+
     <!-- ****************************** General Cat ends ****************************** -->
+
     <!-- ****************************** Not Drawer Cat starts ****************************** -->
 
     <!-- Notifications Drawer -->
@@ -174,7 +179,32 @@
     <string name="qs_brightness_slider_disabled">Disabled</string>
     <string name="brightness_icon_title">Brightness icon </string>
     <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
+
+    <!-- Tiles animation style  -->
+    <string name="qs_tile_animation_style_title">Tiles animation style</string>
+    <string name="qs_tile_animation_duration_title">Tiles animation duration</string>
+    <string name="qs_tile_animation_interpolator_title">Tiles animation interpolator</string>
+    <string name="qs_tile_animation_style_off">No animation</string>
+    <string name="qs_tile_animation_style_flip">Flip</string>
+    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_duration_low">Low</string>
+    <string name="qs_tile_animation_duration_default">Default</string>
+    <string name="qs_tile_animation_duration_fast">Fast</string>
+    <string name="qs_tile_animation_duration_superfast">SuperFast</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_set_animation_style">%1$s</string>
+    <string name="qs_set_animation_duration">%1$s</string>
+    <string name="qs_set_animation_interpolator">%1$s</string>
+
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
+
     <!-- ****************************** Sound Cat starts ****************************** -->
     <!-- Sound settings -->
     <string name="sound_settings">Sound settings</string>

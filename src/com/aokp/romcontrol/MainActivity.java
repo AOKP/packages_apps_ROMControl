@@ -44,6 +44,9 @@ import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
 import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
 import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
 
+import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
+import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
+
 import cyanogenmod.providers.CMSettings;
 
 public class MainActivity extends Activity
@@ -110,6 +113,10 @@ public class MainActivity extends Activity
 
             case 2:
                 fragment = new SoundTabHostFragment();
+                break;
+
+            case 3:
+                fragment = new StatusBarTabHostFragment();
                 break;
         }
         return fragment;

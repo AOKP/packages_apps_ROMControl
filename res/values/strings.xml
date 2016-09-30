@@ -83,6 +83,7 @@
     <string name="category_about_aokp">About</string>
     <string name="category_general">General</string>
     <string name="category_sound">Sound</string>
+    <string name="category_statusbar">Statusbar</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
     <string name="devs">The Crew</string>
@@ -198,5 +199,15 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     <!-- ****************************** Sound Cat ends ****************************** -->
+
+    <!-- ****************************** StatusBar Cat starts ****************************** -->
+    <!-- Sound settings -->
+    <string name="statusbar_settings">StatusBar settings</string>
+    
+    <!-- Superuser indicator on status bar -->
+    <string name="su_indicator">Superuser indicator</string>
+    <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
+    <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
+    <!-- ****************************** StatusBar Cat ends ****************************** -->
 
 </resources>

@@ -40,6 +40,9 @@ import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.general.HostnamePreference;
 
+import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
+import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
+
 import lineageos.providers.LineageSettings;
 
 public class MainActivity extends Activity
@@ -102,6 +105,10 @@ public class MainActivity extends Activity
 
             case 1:
                 fragment = new GeneralTabHostFragment();
+                break;
+
+            case 2:
+                fragment = new StatusBarTabHostFragment();
                 break;
         }
         return fragment;

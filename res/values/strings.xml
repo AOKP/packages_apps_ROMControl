@@ -465,6 +465,10 @@
 
     <!-- title for lock screen blur preference -->
     <string name="lockscreen_blur_enabled_title">Blur background</string>
+
+    <!-- Lockscreen Torch -->
+    <string name="keyguard_torch_title">Lockscreen torch</string>
+    <string name="keyguard_torch_summary">Longpress power button while screen is off to turn on flashlight</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->

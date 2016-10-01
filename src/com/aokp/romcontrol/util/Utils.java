@@ -20,6 +20,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraManager;
 import android.telephony.TelephonyManager;
 
 import android.view.Surface;
@@ -75,5 +78,49 @@ public class Utils {
                 break;
         }
         activity.setRequestedOrientation(frozenRotation);
+    }
+
+    /**
+     * Check if system has a camera.
+     *
+     * @param context
+     * @return
+     */
+    public static boolean hasCamera(final Context context) {
+        final PackageManager pm = context.getPackageManager();
+        return pm != null && pm.hasSystemFeature(PackageManager.FEATURE_CAMERA);
+    }
+
+    /**
+     * Check if system has a front camera.
+     *
+     * @param context
+     * @return
+     */
+    public static boolean hasFrontCamera(final Context context) {
+        final PackageManager pm = context.getPackageManager();
+        return pm != null && pm.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT);
+    }
+
+    public static boolean deviceSupportsFlashLight(Context context) {
+        CameraManager cameraManager = (CameraManager) context.getSystemService(
+                Context.CAMERA_SERVICE);
+        try {
+            String[] ids = cameraManager.getCameraIdList();
+            for (String id : ids) {
+                CameraCharacteristics c = cameraManager.getCameraCharacteristics(id);
+                Boolean flashAvailable = c.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+                Integer lensFacing = c.get(CameraCharacteristics.LENS_FACING);
+                if (flashAvailable != null
+                        && flashAvailable
+                        && lensFacing != null
+                        && lensFacing == CameraCharacteristics.LENS_FACING_BACK) {
+                    return true;
+                }
+            }
+        } catch (CameraAccessException e) {
+            // Ignore
+        }
+        return false;
     }
 }

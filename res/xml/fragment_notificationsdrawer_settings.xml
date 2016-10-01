@@ -62,4 +62,10 @@
         android:summary="@string/quick_settings_vibrate_summary"
         android:defaultValue="false"/>
 
+    <com.aokp.romcontrol.settings.SecureSettingSwitchPreference
+        android:key="qs_data_advanced"
+        android:title="@string/qs_advanced_data_title"
+        android:summary="@string/qs_advanced_data_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

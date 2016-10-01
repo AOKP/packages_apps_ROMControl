@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.Utils;
 import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
 public class LockScreenSettingsFragment extends Fragment {
@@ -69,12 +70,14 @@ public class LockScreenSettingsFragment extends Fragment {
 
         private static final String TAG = "LockScreenSettings";
         private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
+        private static final String PREF_KEYGUARD_TORCH = "keyguard_toggle_torch";
 
         private ContentResolver mResolver;
 
         private FingerprintManager mFingerprintManager;
         private SwitchPreference mFingerprintVib;
         private SeekBarPreferenceCham mMaxKeyguardNotifConfig;
+        private SwitchPreference mKeyguardTorch;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -97,6 +100,12 @@ public class LockScreenSettingsFragment extends Fragment {
                     Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
             mMaxKeyguardNotifConfig.setValue(kgconf);
             mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+
+            // Keyguard Torch
+            mKeyguardTorch = (SwitchPreference) prefSet.findPreference(PREF_KEYGUARD_TORCH);
+            if (!Utils.deviceSupportsFlashLight(getActivity())) {
+                prefSet.removePreference(mKeyguardTorch);
+            }
 
             setHasOptionsMenu(true);
         }

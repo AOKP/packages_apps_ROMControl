@@ -25,4 +25,10 @@
         android:summary="@string/media_art_summary"
         android:defaultValue="true" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="fingerprint_success_vib"
+        android:title="@string/fprint_sucess_vib_title"
+        android:summary="@string/fprint_sucess_vib_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

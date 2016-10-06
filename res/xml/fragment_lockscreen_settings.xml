@@ -31,4 +31,9 @@
         android:summary="@string/fprint_sucess_vib_summary"
         android:defaultValue="true" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_anywhere"
+        android:title="@string/double_tap_sleep_anywhere_title"
+        android:summary="@string/double_tap_sleep_anywhere_summary" />
+
 </PreferenceScreen>

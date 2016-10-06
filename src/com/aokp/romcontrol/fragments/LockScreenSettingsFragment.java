@@ -23,6 +23,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.content.res.Configuration;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -69,6 +70,9 @@ public class LockScreenSettingsFragment extends Fragment {
         private SwitchPreference mLockscreenLeftClock;
 
 
+        private FingerprintManager mFingerprintManager;
+        private SwitchPreference mFingerprintVib;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -81,6 +85,13 @@ public class LockScreenSettingsFragment extends Fragment {
             addPreferencesFromResource(R.xml.fragment_lockscreen_settings);
             ContentResolver resolver = getActivity().getContentResolver();
             PreferenceScreen prefSet = getPreferenceScreen();
+
+            // Fingerprint vibration
+            mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+            mFingerprintVib = (SwitchPreference) prefSet.findPreference("fingerprint_success_vib");
+            if (!mFingerprintManager.isHardwareDetected()){
+                prefSet.removePreference(mFingerprintVib);
+            }
 
             mLockscreenClock = (SwitchPreference) findPreference(PREF_LS_CLOCK);
             mLockscreenClock.setChecked(Settings.System.getInt(resolver,

@@ -285,6 +285,10 @@
     <!-- Keyguard Statusbar Clock -->
     <string name="keyguard_statusbar_clock_title">Keyguard statusbar clock</string>
     <string name="keyguard_statusbar_clock_summary">Enables the statusbar clock in the keyguard on the left side</string>
+    
+    <!-- Fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->

@@ -41,4 +41,10 @@
         android:title="@string/unlock_quick_unlock_control_title"
         android:summary="@string/unlock_quick_unlock_control_summary" />
 
+    <com.aokp.romcontrol.settings.SecureSettingSwitchPreference
+        android:key="status_bar_locked_on_secure_keyguard"
+        android:title="@string/block_on_secure_keyguard_title"
+        android:summary="@string/block_on_secure_keyguard_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>

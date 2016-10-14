@@ -28,6 +28,14 @@
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
 
+    <!-- Header Strings -->
+    <string name="category_about_aokp">About</string>
+    <string name="category_general">General</string>
+    <string name="category_notifications_drawer">Notifications Drawer</string>
+    <string name="category_sound">Sound</string>
+    <string name="category_statusbar">Statusbar</string>
+    <string name="category_ui">User Interface</string>
+
     <!-- Generic -->
     <string name="ok">OK</string>
     <string name="save">Save</string>
@@ -78,13 +86,6 @@
     <string name="group_applications">Applications</string>
     <string name="picker_activities">Activities</string>
     <string name="select_custom_activity_title">Select custom activity</string>
-
-    <!-- Header Strings -->
-    <string name="category_about_aokp">About</string>
-    <string name="category_general">General</string>
-    <string name="category_sound">Sound</string>
-    <string name="category_statusbar">Statusbar</string>
-    <string name="category_ui">User Interface</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
     <string name="devs">The Legacy Crew</string>
@@ -164,6 +165,14 @@
     <string name="device_hostname">Device hostname</string>
 
     <!-- ****************************** General Cat ends ****************************** -->
+
+    <!-- ****************************** Not Drawer Cat starts ****************************** -->
+    <!-- Notifications Drawer -->
+    <string name="notifications_drawer_settings">Notif Drawer Settings</string>
+
+    <string name="sysui_qqs_count_title">Small QS tiles</string>
+
+    <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** Sound Cat starts ****************************** -->
     <!-- Sound settings -->

@@ -28,6 +28,14 @@
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
 
+    <!-- Header Strings -->
+    <string name="category_about_aokp">About</string>
+    <string name="category_general">General</string>
+    <string name="category_notifications_drawer">Notifications Drawer</string>
+    <string name="category_sound">Sound</string>
+    <string name="category_statusbar">Statusbar</string>
+    <string name="category_ui">User Interface</string>
+
     <!-- Generic -->
     <string name="ok">OK</string>
     <string name="save">Save</string>
@@ -77,13 +85,6 @@
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
-
-    <!-- Header Strings -->
-    <string name="category_about_aokp">About</string>
-    <string name="category_general">General</string>
-    <string name="category_sound">Sound</string>
-    <string name="category_statusbar">Statusbar</string>
-    <string name="category_ui">User Interface</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
     <string name="devs">The Crew</string>
@@ -161,6 +162,14 @@
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
     <!-- ****************************** General Cat ends ****************************** -->
+
+    <!-- ****************************** Not Drawer Cat starts ****************************** -->
+    <!-- Notifications Drawer -->
+    <string name="notifications_drawer_settings">Notif Drawer Settings</string>
+
+    <string name="sysui_qqs_count_title">Small QS tiles</string>
+
+    <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** Sound Cat starts ****************************** -->
     <!-- Sound settings -->

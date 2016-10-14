@@ -171,7 +171,10 @@
     <string name="notifications_drawer_settings">Notif Drawer Settings</string>
 
     <string name="sysui_qqs_count_title">Small QS tiles</string>
-
+    <!-- Quick settings tiles columns and rows config -->
+    <string name="qs_rows_portrait_title">Rows (portrait)</string>
+    <string name="qs_rows_landscape_title">Rows (landscape)</string>
+    <string name="qs_columns_title">Columns</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** Sound Cat starts ****************************** -->

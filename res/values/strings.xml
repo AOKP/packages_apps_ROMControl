@@ -370,6 +370,8 @@
     <string name="qs_advanced_data_title">Advanced data tile</string>
     <string name="qs_advanced_data_summary">Enable one tap action to enable or disable data</string>
 
+    <string name="sysui_qqs_count_title">Small QS tiles</string>
+
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PowerMenu Cat starts ****************************** -->

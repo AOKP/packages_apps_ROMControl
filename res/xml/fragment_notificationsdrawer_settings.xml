@@ -56,6 +56,12 @@
         android:entryValues="@array/qs_tile_animation_interpolator_values"
         android:persistent="false" />
 
+    <ListPreference
+        android:key="sysui_qqs_count_key"
+        android:title="@string/sysui_qqs_count_title"
+        android:entries="@array/sysui_qqs_count_entries"
+        android:entryValues="@array/sysui_qqs_count_values" />
+
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="quick_settings_vibrate"
         android:title="@string/quick_settings_vibrate_title"

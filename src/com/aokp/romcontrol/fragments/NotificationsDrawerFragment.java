@@ -69,10 +69,12 @@ public class NotificationsDrawerFragment extends Fragment {
         private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
         private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
         private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+        private static final String PREF_SYSUI_QQS_COUNT = "sysui_qqs_count_key";
 
         private ListPreference mTileAnimationStyle;
         private ListPreference mTileAnimationDuration;
         private ListPreference mTileAnimationInterpolator;
+        private ListPreference mSysuiQqsCount;
 
         private ContentResolver mResolver;
 
@@ -114,6 +116,13 @@ public class NotificationsDrawerFragment extends Fragment {
             updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
             mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
 
+            mSysuiQqsCount = (ListPreference) findPreference(PREF_SYSUI_QQS_COUNT);
+            int SysuiQqsCount = Settings.Secure.getInt(mResolver,
+                   Settings.Secure.QQS_COUNT, 5);
+            mSysuiQqsCount.setValue(Integer.toString(SysuiQqsCount));
+            mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntry());
+            mSysuiQqsCount.setOnPreferenceChangeListener(this);
+
             setHasOptionsMenu(true);
             return prefSet;
         }
@@ -146,6 +155,14 @@ public class NotificationsDrawerFragment extends Fragment {
                         tileAnimationInterpolator, UserHandle.USER_CURRENT);
                 updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
                 return true;
+            } else if (preference == mSysuiQqsCount) {
+                String SysuiQqsCount = (String) newValue;
+                int SysuiQqsCountValue = Integer.parseInt(SysuiQqsCount);
+                Settings.Secure.putInt(mResolver,
+                        Settings.Secure.QQS_COUNT, SysuiQqsCountValue);
+                int SysuiQqsCountIndex = mSysuiQqsCount.findIndexOfValue(SysuiQqsCount);
+                mSysuiQqsCount.setSummary(mSysuiQqsCount.getEntries()[SysuiQqsCountIndex]);
+            return true;
             }
             return false;
         }

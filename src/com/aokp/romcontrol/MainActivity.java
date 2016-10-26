@@ -34,49 +34,9 @@ import com.aokp.romcontrol.fragments.about.AboutCrewFragment;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
-import com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment;
-import com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings;
-
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
-import com.aokp.romcontrol.fragments.general.RecentsSettingsFragment;
-import com.aokp.romcontrol.fragments.general.WakelockBlockerFragment;
-
-import com.aokp.romcontrol.fragments.navbar.NavbarTabHostFragment;
-import com.aokp.romcontrol.fragments.navbar.NavbarArrangeFragment;
-import com.aokp.romcontrol.fragments.navbar.NavbarSettingsFragment;
-
-import com.aokp.romcontrol.fragments.pie.PieColorFragment;
-import com.aokp.romcontrol.fragments.pie.PieControlFragment;
-import com.aokp.romcontrol.fragments.pie.PieTabHostFragment;
-import com.aokp.romcontrol.fragments.pie.PieTargetsFragment;
-
-import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
-import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
-import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
-
-import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
-import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
-import com.aokp.romcontrol.fragments.statusbar.ClockSettingsFragment;
-import com.aokp.romcontrol.fragments.statusbar.BatterySettingsFragment;
-import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
-
-import com.aokp.romcontrol.fragments.ui.AnimationControls;
-import com.aokp.romcontrol.fragments.ui.AnimBarPreference;
-import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
-import com.aokp.romcontrol.fragments.ui.GestureAnywhereBuilderActivity;
-import com.aokp.romcontrol.fragments.ui.GestureAnywhereCreateGestureActivity;
-import com.aokp.romcontrol.fragments.ui.GestureAnywhereGestureOverlayView;
-import com.aokp.romcontrol.fragments.ui.GestureAnywhereSettings;
-import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
-
-import com.aokp.romcontrol.fragments.ButtonSettingsFragment;
-import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
-import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
-import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
-
-import cyanogenmod.providers.CMSettings;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -138,46 +98,6 @@ public class MainActivity extends Activity
 
             case 1:
                 fragment = new GeneralTabHostFragment();
-                break;
-
-            case 2:
-                fragment = new LockScreenSettingsFragment();
-                break;
-
-            case 3:
-                fragment = new StatusBarTabHostFragment();
-                break;
-
-            case 4:
-                fragment = new NotificationsDrawerFragment();
-                break;
-
-            case 5:
-                fragment = new ButtonSettingsFragment();
-                break;
-
-            case 6:
-                fragment = new PowerMenuSettingsFragment();
-                break;
-
-            case 7:
-                fragment = new NavbarTabHostFragment();
-                break;
-
-            case 8:
-                fragment = new PieTabHostFragment();
-                break;
-
-            case 9:
-                fragment = new SoundTabHostFragment();
-                break;
-
-            case 10:
-                fragment = new UITabHostFragment();
-                break;
-
-            case 11:
-                fragment = new AppCircleBarSettings();
                 break;
         }
         return fragment;

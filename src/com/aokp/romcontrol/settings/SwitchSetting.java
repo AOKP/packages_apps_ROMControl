@@ -9,8 +9,6 @@ import android.view.View.OnClickListener;
 import android.widget.Switch;
 import com.aokp.romcontrol.R;
 
-import cyanogenmod.providers.CMSettings;
-
 /**
  * Setting toggle which represents a boolean value
  * <p/>

@@ -82,7 +82,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private int dividerColor = R.color.divider_color;
 
     private boolean shouldExpand = false;
-    private boolean textAllCaps = true;
 
     private int scrollOffset = 52;
     private int indicatorHeight = 6;
@@ -154,7 +153,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         tabBackgroundResId = a.getResourceId(R.styleable.PagerSlidingTabStrip_tabBackground, tabBackgroundResId);
         shouldExpand = a.getBoolean(R.styleable.PagerSlidingTabStrip_shouldExpand, shouldExpand);
         scrollOffset = a.getDimensionPixelSize(R.styleable.PagerSlidingTabStrip_scrollOffset, scrollOffset);
-        textAllCaps = a.getBoolean(R.styleable.PagerSlidingTabStrip_textAllCaps, textAllCaps);
 
         a.recycle();
 
@@ -287,15 +285,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
                 tab.setTypeface(tabTypeface, tabTypefaceStyle);
                 tab.setTextColor(tabTextColor);
 
-                // setAllCaps() is only available from API 14, so the upper case is made manually if we are on a
-                // pre-ICS-build
-                if (textAllCaps) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                        tab.setAllCaps(true);
-                    } else {
-                        tab.setText(tab.getText().toString().toUpperCase(locale));
-                    }
-                }
             }
         }
 
@@ -514,14 +503,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     public boolean getShouldExpand() {
         return shouldExpand;
-    }
-
-    public boolean isTextAllCaps() {
-        return textAllCaps;
-    }
-
-    public void setAllCaps(boolean textAllCaps) {
-        this.textAllCaps = textAllCaps;
     }
 
     public void setTextSize(int textSizePx) {

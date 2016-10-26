@@ -37,9 +37,7 @@ public class GeneralTabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.general_settings,
-            R.string.recents_settings,
-            R.string.wakelock_blocker_title
+            R.string.general_settings
     };
 
     public GeneralTabHostFragment() {
@@ -92,10 +90,6 @@ public class GeneralTabHostFragment extends Fragment {
             switch (position) {
                 case 0:
                     return new GeneralSettingsFragment();
-                case 1:
-                    return new RecentsSettingsFragment();
-                case 2:
-                    return new WakelockBlockerFragment();
             }
             return null;
         }

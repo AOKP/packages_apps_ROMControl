@@ -100,7 +100,6 @@ public class ShortcutPickHelper {
             }
         }
         shortcutIcons.add(ShortcutIconResource.fromContext(mParent, android.R.drawable.sym_def_app_icon));
-        shortcutIcons.add(ShortcutIconResource.fromContext(mParent, R.drawable.activities_icon));
         bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
 
         Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
@@ -173,7 +172,7 @@ public class ShortcutPickHelper {
     public class AppExpandableAdapter extends BaseExpandableListAdapter {
 
         ArrayList<GroupInfo> allList = new ArrayList<GroupInfo>();
-        final int groupPadding;
+        final int groupPadding= 0;
 
         public class LabelCompare implements Comparator<GroupInfo>{
             @Override
@@ -205,7 +204,6 @@ public class ShortcutPickHelper {
                 allList.add(new GroupInfo(i.applicationInfo.loadLabel(mPackageManager).toString(), i));
             }
             Collections.sort(allList, new LabelCompare());
-            groupPadding = context.getResources().getDimensionPixelSize(R.dimen.shortcut_picker_left_padding);
         }
 
         public String getChild(int groupPosition, int childPosition) {

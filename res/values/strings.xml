@@ -300,6 +300,11 @@
     <string name="wakelock_blocker_reload">Reload</string>
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
+
+    <!-- Screenshot delay -->
+    <string name="screenshot_options_category">Screenshot options</string>
+    <string name="screenshot_delay_title">Screenshot delay</string>
+    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
     <!-- ****************************** General Cat ends ****************************** -->
 
     <!-- ****************************** Lockscreen Cat starts ****************************** -->

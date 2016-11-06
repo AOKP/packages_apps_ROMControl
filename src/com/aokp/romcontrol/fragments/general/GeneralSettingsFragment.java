@@ -26,8 +26,10 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,6 +37,8 @@ import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.Helpers;
+
+import com.aokp.romcontrol.widgets.SeekBarPreference;
 
 public class GeneralSettingsFragment extends Fragment {
 
@@ -55,7 +59,8 @@ public class GeneralSettingsFragment extends Fragment {
         return v;
     }
 
-    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment {
+    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment
+            implements Preference.OnPreferenceChangeListener {
 
         public GeneralSettingsPreferenceFragment() {
 
@@ -65,9 +70,11 @@ public class GeneralSettingsFragment extends Fragment {
         private static final String KEY_LOCKCLOCK = "lock_clock";
         // Package name of the cLock app
         public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+        private static final String SCREENSHOT_DELAY = "screenshot_delay";
 
         private Context mContext;
         private Preference mLockClock;
+        private SeekBarPreference mScreenshotDelay;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +87,7 @@ public class GeneralSettingsFragment extends Fragment {
             addPreferencesFromResource(R.xml.fragment_general_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
             mContext = getActivity().getApplicationContext();
+            ContentResolver resolver = getActivity().getContentResolver();
             PackageManager pm = getActivity().getPackageManager();
 
             // cLock app check
@@ -88,6 +96,12 @@ public class GeneralSettingsFragment extends Fragment {
             if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
                 prefSet.removePreference(mLockClock);
             }
+
+            mScreenshotDelay = (SeekBarPreference) findPreference(SCREENSHOT_DELAY);
+            int screenshotDelay = Settings.System.getInt(resolver,
+                    Settings.System.SCREENSHOT_DELAY, 100);
+            mScreenshotDelay.setValue(screenshotDelay / 1);
+            mScreenshotDelay.setOnPreferenceChangeListener(this);
             return prefSet;
         }
 
@@ -99,6 +113,19 @@ public class GeneralSettingsFragment extends Fragment {
         @Override
         public void onResume() {
             super.onResume();
+        }
+
+        @Override
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+            ContentResolver resolver = getActivity().getContentResolver();
+
+            if (preference == mScreenshotDelay) {
+                int screenshotDelay = (Integer) newValue;
+                Settings.System.putInt(resolver,
+                        Settings.System.SCREENSHOT_DELAY, screenshotDelay * 1);
+                return true;
+            }
+            return false;
         }
     }
 }

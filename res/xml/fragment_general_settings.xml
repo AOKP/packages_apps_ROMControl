@@ -19,6 +19,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol"
     android:title="@string/general_settings">
 
     <!-- LockClock settings -->
@@ -40,6 +41,17 @@
             android:selectAllOnFocus="true"
             android:imeOptions="actionDone"
             android:inputType="textNoSuggestions"
+            android:persistent="false" />
+
+    <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="screenshot_delay"
+            android:title="@string/screenshot_delay_title"
+            android:summary="@string/screenshot_delay_summary"
+            android:max="10000"
+            aokp:min="100"
+            aokp:interval="100"
+            aokp:unitsLeft=""
+            aokp:unitsRight="ms"
             android:persistent="false" />
 
 </PreferenceScreen>

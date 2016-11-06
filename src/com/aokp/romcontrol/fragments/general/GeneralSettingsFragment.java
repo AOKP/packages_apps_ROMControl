@@ -25,6 +25,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
@@ -70,10 +71,12 @@ public class GeneralSettingsFragment extends Fragment {
         private static final String KEY_LOCKCLOCK = "lock_clock";
         // Package name of the cLock app
         public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+        private static final String SCREENSHOT_TYPE = "screenshot_type";
         private static final String SCREENSHOT_DELAY = "screenshot_delay";
 
         private Context mContext;
         private Preference mLockClock;
+        private ListPreference mScreenshotType;
         private SeekBarPreferenceCham mScreenshotDelay;
 
         @Override
@@ -97,6 +100,13 @@ public class GeneralSettingsFragment extends Fragment {
                 prefSet.removePreference(mLockClock);
             }
 
+            mScreenshotType = (ListPreference) findPreference(SCREENSHOT_TYPE);
+            int mScreenshotTypeValue = Settings.System.getInt(resolver,
+                    Settings.System.SCREENSHOT_TYPE, 0);
+            mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
+            mScreenshotType.setSummary(mScreenshotType.getEntry());
+            mScreenshotType.setOnPreferenceChangeListener(this);
+
             mScreenshotDelay = (SeekBarPreferenceCham) findPreference(SCREENSHOT_DELAY);
             int screenshotDelay = Settings.System.getInt(resolver,
                     Settings.System.SCREENSHOT_DELAY, 100);
@@ -119,7 +129,15 @@ public class GeneralSettingsFragment extends Fragment {
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             ContentResolver resolver = getActivity().getContentResolver();
 
-            if (preference == mScreenshotDelay) {
+            if  (preference == mScreenshotType) {
+                int mScreenshotTypeValue = Integer.parseInt(((String) newValue).toString());
+                mScreenshotType.setSummary(
+                        mScreenshotType.getEntries()[mScreenshotTypeValue]);
+                Settings.System.putInt(resolver,
+                        Settings.System.SCREENSHOT_TYPE, mScreenshotTypeValue);
+                mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
+                return true;
+            } else if (preference == mScreenshotDelay) {
                 int screenshotDelay = (Integer) newValue;
                 Settings.System.putInt(resolver,
                         Settings.System.SCREENSHOT_DELAY, screenshotDelay * 1);

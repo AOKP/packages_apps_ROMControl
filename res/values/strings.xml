@@ -468,6 +468,11 @@
     <!-- Lockscreen Torch -->
     <string name="keyguard_torch_title">Lockscreen torch</string>
     <string name="keyguard_torch_summary">Longpress power button while screen is off to turn on flashlight</string>
+
+    <!-- Lockscreen charging current indicator  -->
+    <string name="lockscreen_charging_current_title">Lockscreen charging info</string>
+    <string name="lockscreen_charging_current_summary">Display negociated charger max current and voltage on lockscreen</string>
+
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->

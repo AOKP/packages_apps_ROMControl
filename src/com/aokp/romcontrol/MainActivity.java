@@ -30,13 +30,15 @@ import android.view.MenuItem;
 
 import android.view.View;
 
+import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+
 import com.aokp.romcontrol.fragments.about.AboutCrewFragment;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
-import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+import com.aokp.romcontrol.fragments.general.HostnamePreference;
 
 import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
 import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;

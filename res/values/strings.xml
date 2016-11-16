@@ -145,4 +145,10 @@
     <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
     <!-- General Cat ends -->
 
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
+
+    <!-- ****************************** General Cat ends ****************************** -->
+
+
 </resources>

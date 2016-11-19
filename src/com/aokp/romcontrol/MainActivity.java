@@ -32,6 +32,8 @@ import android.view.View;
 
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 
+import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
+
 import com.aokp.romcontrol.fragments.about.AboutCrewFragment;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
@@ -114,10 +116,14 @@ public class MainActivity extends Activity
                 break;
 
             case 2:
-                fragment = new SoundTabHostFragment();
+                fragment = new NotificationsDrawerFragment();
                 break;
 
             case 3:
+                fragment = new SoundTabHostFragment();
+                break;
+
+            case 4:
                 fragment = new StatusBarTabHostFragment();
                 break;
         }

@@ -40,4 +40,6 @@
 
     <color name="seekbar_dot_color">@android:color/holo_red_light</color>
 
+    <color name="floating_action_button_touch_tint">#80ffffff</color>
+
 </resources>

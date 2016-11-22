@@ -18,6 +18,8 @@ package com.aokp.romcontrol.fragments.general;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -45,6 +47,9 @@ import android.view.MenuItem;
 import android.view.MenuInflater;
 
 import com.aokp.romcontrol.R;
+
+import java.util.List;
+import java.util.ArrayList;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -78,9 +83,30 @@ public class RecentsSettingsFragment extends Fragment {
         private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
         private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
+        private static final String FAB_COLOR = "fab_button_color";
+        private static final String RECENTS_STYLE = "clear_recents_style";
+        private static final String MEMBAR_COLOR = "mem_bar_color";
+        private static final String MEM_TEXT_COLOR = "mem_text_color";
+        private static final String CLEAR_BUTTON_COLOR = "clear_button_color";
+        private static final String FAB_ANIM_STYLE = "fab_animation_style";
+
+        static final int DEFAULT = 0xffffffff;
+        static final int DEFAULT_BG_ICON = 0xff4285f4;
+        static final int DEFAULT_BG_MEM_BAR = 0xff009688;
+        static final int DEFAULT_BG_FAB = 0xff21272b;
+        private static final int MENU_RESET = Menu.FIRST;
+
+        private ColorPickerPreference mMemTextColor;
+        private ColorPickerPreference mMemBarColor;
+        private ColorPickerPreference mClearButtonColor;
+        private ColorPickerPreference mfabColor;
+
         private ListPreference mImmersiveRecents;
         private SwitchPreference mRecentsClearAll;
         private ListPreference mRecentsClearAllLocation;
+
+        private ListPreference mClearStyle;
+        private ListPreference mFabanimation;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -114,6 +140,54 @@ public class RecentsSettingsFragment extends Fragment {
             mRecentsClearAllLocation.setValue(String.valueOf(location));
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
             mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+
+            int intColor;
+            String hexColor;
+
+            mfabColor = (ColorPickerPreference) prefScreen.findPreference(FAB_COLOR);
+            mfabColor.setOnPreferenceChangeListener(this);
+            intColor = Settings.System.getInt(resolver,
+                        Settings.System.FAB_BUTTON_COLOR, DEFAULT_BG_FAB);
+            hexColor = String.format("#%08x", (0xff21272b & intColor));
+            mfabColor.setSummary(hexColor);
+            mfabColor.setNewPreviewColor(intColor);
+
+            mClearStyle = (ListPreference) prefScreen.findPreference(RECENTS_STYLE);
+            mClearStyle.setValue(String.valueOf(Settings.System.getInt(
+                    resolver, Settings.System.CLEAR_RECENTS_STYLE, 0)));
+            mClearStyle.setSummary(mClearStyle.getEntry());
+            mClearStyle.setOnPreferenceChangeListener(this);
+
+            mFabanimation = (ListPreference) prefScreen.findPreference(FAB_ANIM_STYLE);
+            mFabanimation.setValue(String.valueOf(Settings.System.getInt(
+                    resolver, Settings.System.FAB_ANIMATION_STYLE, 0)));
+            mFabanimation.setSummary(mFabanimation.getEntry());
+            mFabanimation.setOnPreferenceChangeListener(this);
+
+            mMemTextColor = (ColorPickerPreference) prefScreen.findPreference(MEM_TEXT_COLOR);
+            mMemTextColor.setOnPreferenceChangeListener(this);
+            intColor = Settings.System.getInt(resolver,
+                        Settings.System.MEM_TEXT_COLOR, DEFAULT);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mMemTextColor.setSummary(hexColor);
+            mMemTextColor.setNewPreviewColor(intColor);
+
+            mMemBarColor= (ColorPickerPreference) prefScreen.findPreference(MEMBAR_COLOR);
+            mMemBarColor.setOnPreferenceChangeListener(this);
+            intColor = Settings.System.getInt(resolver,
+                        Settings.System.MEM_BAR_COLOR, DEFAULT_BG_MEM_BAR);
+            hexColor = String.format("#%08x", (0xff009688 & intColor));
+            mMemBarColor.setSummary(hexColor);
+            mMemBarColor.setNewPreviewColor(intColor);
+
+            mClearButtonColor= (ColorPickerPreference) prefScreen.findPreference(CLEAR_BUTTON_COLOR);
+            mClearButtonColor.setOnPreferenceChangeListener(this);
+            intColor = Settings.System.getInt(resolver,
+                        Settings.System.CLEAR_BUTTON_COLOR,
+                        getResources().getColor(R.color.floating_action_button_touch_tint));
+            hexColor = String.format("#%08x", (0xff4285f4 & intColor));
+            mClearButtonColor.setSummary(hexColor);
+            mClearButtonColor.setNewPreviewColor(intColor);
 
             return prefScreen;
         }
@@ -149,8 +223,105 @@ public class RecentsSettingsFragment extends Fragment {
                         location, UserHandle.USER_CURRENT);
                 mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
                 return true;
+            } else if (preference == mClearStyle) {
+                Settings.System.putInt(resolver, Settings.System.CLEAR_RECENTS_STYLE,
+                        Integer.valueOf((String) newValue));
+                mClearStyle.setValue(String.valueOf(newValue));
+                mClearStyle.setSummary(mClearStyle.getEntry());
+                return true;
+            } else if (preference == mfabColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.System.FAB_BUTTON_COLOR, intHex);
+                return true;
+            } else if (preference == mMemTextColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.System.MEM_TEXT_COLOR, intHex);
+                return true;
+            } else if (preference == mMemBarColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.System.MEM_BAR_COLOR, intHex);
+                return true;
+            } else if (preference == mClearButtonColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.System.CLEAR_BUTTON_COLOR, intHex);
+                return true;
+            } else if (preference == mFabanimation) {
+                Settings.System.putInt(resolver, Settings.System.FAB_ANIMATION_STYLE,
+                        Integer.valueOf((String) newValue));
+                mFabanimation.setValue(String.valueOf(newValue));
+                mFabanimation.setSummary(mFabanimation.getEntry());
+                return true;
             }
             return false;
+        }
+
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+            menu.add(0, MENU_RESET, 0, R.string.reset)
+                    .setIcon(R.drawable.ic_settings_reset)
+                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            switch (item.getItemId()) {
+                case MENU_RESET:
+                    resetToDefault();
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }
+
+        private void resetToDefault() {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+            alertDialog.setTitle(R.string.reset);
+            alertDialog.setMessage(R.string.reset_message);
+            alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    resetValues();
+                }
+            });
+            alertDialog.setNegativeButton(R.string.cancel, null);
+            alertDialog.create().show();
+        }
+
+        private void resetValues() {
+            ContentResolver resolver = getActivity().getContentResolver();
+            Settings.System.putInt(resolver,
+                    Settings.System.FAB_BUTTON_COLOR, DEFAULT_BG_FAB);
+            mfabColor.setNewPreviewColor(DEFAULT_BG_FAB);
+            mfabColor.setSummary(R.string.default_string);
+            Settings.System.putInt(resolver,
+                    Settings.System.FAB_BUTTON_COLOR, DEFAULT_BG_FAB);
+            mMemTextColor.setNewPreviewColor(DEFAULT);
+            mMemTextColor.setSummary(R.string.default_string);
+            Settings.System.putInt(resolver,
+                    Settings.System.MEM_BAR_COLOR,DEFAULT);
+            mMemBarColor.setNewPreviewColor(DEFAULT_BG_MEM_BAR);
+            mMemBarColor.setSummary(R.string.default_string);
+            Settings.System.putInt(resolver,
+                    Settings.System.MEM_BAR_COLOR, DEFAULT_BG_MEM_BAR);
+            mClearButtonColor.setNewPreviewColor(DEFAULT);
+            mClearButtonColor.setSummary(R.string.default_string);
+            Settings.System.putInt(resolver,
+                    Settings.System.CLEAR_BUTTON_COLOR, DEFAULT);
         }
     }
 }

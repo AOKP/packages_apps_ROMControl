@@ -84,6 +84,13 @@
         android:entryValues="@array/status_bar_battery_percentage_values"
         android:defaultValue="0" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="status_bar_charge_color"
+        android:title="@string/status_bar_charge_color_title"
+        android:summary="@string/status_bar_charge_color_summary"
+        android:persistent="false"
+        android:defaultValue="0xffffff" />
+
     <com.aokp.romcontrol.settings.CMSystemSettingSwitchPreference
         android:key="status_bar_brightness_control"
         android:title="@string/status_bar_toggle_brightness"

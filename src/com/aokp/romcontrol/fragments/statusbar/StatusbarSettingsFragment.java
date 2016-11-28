@@ -28,6 +28,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -95,6 +96,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
         private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
         private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+        private static final String STATUS_BAR_CHARGE_COLOR = "status_bar_charge_color";
         private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
         private static final String SMS_BREATH = "sms_breath";
         private static final String MISSED_CALL_BREATH = "missed_call_breath";
@@ -260,6 +262,12 @@ public class StatusbarSettingsFragment extends Fragment {
                 prefSet.removePreference(mVoicemailBreath);
             }
 
+            int chargeColor = Settings.Secure.getInt(resolver,
+                    Settings.Secure.STATUS_BAR_CHARGE_COLOR, Color.WHITE);
+            mChargeColor = (ColorPickerPreference) findPreference("status_bar_charge_color");
+            mChargeColor.setNewPreviewColor(chargeColor);
+            mChargeColor.setOnPreferenceChangeListener(this);
+
             return prefSet;
         }
 
@@ -415,6 +423,11 @@ public class StatusbarSettingsFragment extends Fragment {
             } else if (preference == mVoicemailBreath) {
                 boolean value = (Boolean) newValue;
                 Settings.System.putInt(resolver, Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
+                return true;
+            } else if (preference.equals(mChargeColor)) {
+                int color = ((Integer) newValue).intValue();
+                Settings.Secure.putInt(resolver,
+                        Settings.Secure.STATUS_BAR_CHARGE_COLOR, color);
                 return true;
             }
             return false;

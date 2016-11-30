@@ -164,10 +164,12 @@
     <string name="lockscreen_battery_info_title">Lockscreen Charging Info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
 
-
     <!-- Hostname setting -->
     <string name="device_hostname">Device Hostname</string>
 
+    <!-- Recents setting -->
+    <string name="recents_settings">Recents Settings</string>
+    
     <!-- ****************************** General Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->

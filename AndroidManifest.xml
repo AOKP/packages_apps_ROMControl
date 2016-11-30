@@ -61,6 +61,7 @@
 
         <activity android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.NotificationsDrawerFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.PowerMenuSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.LockScreenSettingsFragment" />
 
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutCrewFragment" />
@@ -71,6 +72,7 @@
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.HostnamePreference" />
+        <activity android:name="com.aokp.romcontrol.fragments.general.RecentsSettingsFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.WakelockBlockerFragment" />
 
         <activity android:name="com.aokp.romcontrol.fragments.sound.SoundTabHostFragment" />

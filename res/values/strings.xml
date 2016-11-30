@@ -160,6 +160,9 @@
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
+    <!-- Recents setting -->
+    <string name="recents_settings">Recents settings</string>
+
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Block system wakelocks</string>
@@ -173,7 +176,7 @@
     <!-- ****************************** Lockscreen Cat starts ****************************** -->
     <!-- Lockscreen -->
     <string name="lockscreen_settings_title">Lockscreen</string>
-
+    
     <!-- Hide Lockscreen clock & date -->
     <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
     <string name="hide_lockscreen_date_title">Show lockscreen date</string>

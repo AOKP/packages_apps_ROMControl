@@ -28,6 +28,16 @@
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
 
+    <!-- Header Strings -->
+    <string name="category_about_aokp">About</string>
+    <string name="category_general">General</string>
+    <string name="category_lockscreen">Lockscreen</string>
+    <string name="category_notifications_drawer">Notifications Drawer</string>
+    <string name="category_power_menu">Power menu</string>
+    <string name="category_sound">Sound</string>
+    <string name="category_statusbar">Statusbar</string>
+    <string name="category_ui">User Interface</string>
+
     <!-- Generic -->
     <string name="ok">OK</string>
     <string name="save">Save</string>
@@ -78,15 +88,6 @@
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
-
-    <!-- Header Strings -->
-    <string name="category_about_aokp">About</string>
-    <string name="category_general">General</string>
-    <string name="category_notifications_drawer">Notifications Drawer</string>
-    <string name="category_power_menu">Power menu</string>
-    <string name="category_sound">Sound</string>
-    <string name="category_statusbar">Statusbar</string>
-    <string name="category_ui">User Interface</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
 
@@ -158,6 +159,9 @@
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
+    <!-- Recents setting -->
+    <string name="recents_settings">Recents settings</string>
+
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Block system wakelocks</string>
@@ -169,8 +173,12 @@
 
     <!-- ****************************** General Cat ends ****************************** -->
 
-    <!-- ****************************** Not Drawer Cat starts ****************************** -->
+    <!-- ****************************** Lockscreen Cat starts ****************************** -->
+    <!-- Lockscreen -->
+    <string name="lockscreen_settings_title">Lockscreen</string>
+    <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
+    <!-- ****************************** Not Drawer Cat starts ****************************** -->
     <!-- Notifications Drawer -->
     <string name="notifications_drawer_settings">Notif Drawer Settings</string>
 

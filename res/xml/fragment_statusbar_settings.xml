@@ -19,7 +19,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/statusbar_settings"
-    xmlns:AOKP="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="show_su_indicator"

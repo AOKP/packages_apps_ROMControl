@@ -17,7 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/lockscreen_settings_title"
-    xmlns:aokp="http://schemas.android.com/apk/res-auto" >
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="lockscreen_media_metadata"

@@ -16,7 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res-auto"
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol"
     android:title="@string/app_sidebar_title" >
 
     <SwitchPreference
@@ -53,10 +53,10 @@
         android:title="@string/app_sidebar_transparency_title"
         android:summary="@string/app_sidebar_transparency_summary"
         android:max="50"
-        AOKP:defaultVal="0"
-        AOKP:minimum="0"
-        AOKP:unitsLeft=""
-        AOKP:unitsRight="%"
+        aokp:defaultVal="0"
+        aokp:minimum="0"
+        aokp:unitsLeft=""
+        aokp:unitsRight="%"
         android:dependency="sidebar_enable" />
 
     <PreferenceCategory
@@ -67,10 +67,10 @@
         android:title="@string/trigger_width_title"
         android:summary="@string/trigger_width_summary"
         android:max="64"
-        AOKP:defaultVal="4"
-        AOKP:minimum="4"
-        AOKP:unitsLeft=""
-        AOKP:unitsRight="px"
+        aokp:defaultVal="4"
+        aokp:minimum="4"
+        aokp:unitsLeft=""
+        aokp:unitsRight="px"
         android:dependency="sidebar_enable" />
 
     <com.aokp.romcontrol.widgets.SeekBarPreference
@@ -78,10 +78,10 @@
         android:title="@string/trigger_top_title"
         android:summary="@string/trigger_top_summary"
         android:max="99"
-        AOKP:defaultVal="0"
-        AOKP:minimum="0"
-        AOKP:unitsLeft=""
-        AOKP:unitsRight="%"
+        aokp:defaultVal="0"
+        aokp:minimum="0"
+        aokp:unitsLeft=""
+        aokp:unitsRight="%"
         android:dependency="sidebar_enable" />
 
     <com.aokp.romcontrol.widgets.SeekBarPreference
@@ -89,10 +89,10 @@
         android:title="@string/trigger_bottom_title"
         android:summary="@string/trigger_bottom_summary"
         android:max="100"
-        AOKP:defaultVal="100"
-        AOKP:minimum="1"
-        AOKP:unitsLeft=""
-        AOKP:unitsRight="%"
+        aokp:defaultVal="100"
+        aokp:minimum="1"
+        aokp:unitsLeft=""
+        aokp:unitsRight="%"
         android:dependency="sidebar_enable" />
 
 </PreferenceScreen>

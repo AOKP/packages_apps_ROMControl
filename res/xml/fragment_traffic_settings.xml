@@ -17,7 +17,7 @@
 <PreferenceScreen
     android:title="@string/network_traffic_title"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res-auto">
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
 
     <ListPreference
         android:key="network_traffic_state"

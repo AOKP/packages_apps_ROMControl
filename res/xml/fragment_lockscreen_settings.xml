@@ -25,9 +25,4 @@
         android:summary="@string/media_art_summary"
         android:defaultValue="true" />
 
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-        android:key="lockscreen_quick_unlock_control"
-        android:title="@string/unlock_quick_unlock_control_title"
-        android:summary="@string/unlock_quick_unlock_control_summary" />
-
 </PreferenceScreen>

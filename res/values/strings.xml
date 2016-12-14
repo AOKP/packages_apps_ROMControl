@@ -61,6 +61,9 @@
     <string name="colors_title">Colors</string>
     <string name="text_title">Text</string>
 
+    <!-- Title for the button to restart a print job. [CHAR LIMIT=25] -->
+    <string name="print_restart">Restart</string>
+
     <!-- MultiChoiceSetting -->
     <plurals name="multichoice_at_least">
         <item quantity="one">Please select at least <xliff:g id="number">%d</xliff:g> item.</item>
@@ -89,6 +92,10 @@
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
+
+    <!-- SystemUI restart prompt -->
+    <string name="systemui_restart_title">WARNING</string>
+    <string name="systemui_restart_message">SystemUI will be restarted so that selected setting can be applied correctly.</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
     <string name="devs">The Crew</string>
@@ -556,6 +563,42 @@
    <!-- Disabling immersive mode messages -->
    <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
    <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
+
+   <!-- Transparency Porn -->
+   <string name="transparency_porn_title">Transparency porn</string>
+   <!-- QS shade transparency -->
+   <string name="qs_transparent_shade">QS shade transparency</string>
+   <!-- QS header transparency -->
+   <string name="qs_transparent_header">QS header transparency</string>
+   <!-- Volume dialog transparency -->
+   <string name="volume_dialog_transparency">Volume dialog transparency</string>
+   <!-- Power menu and dialogs transparency -->
+   <string name="power_menu_transparency">Power/reboot menu transparency</string>
+   <!-- Power/reboot dialogs dim amount -->
+   <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
+   <!-- Notifications transparency -->
+   <string name="notifications_transparency">Notifications transparency</string>
+   <!-- QS stroke settings -->
+   <string name="qs_stroke_title">QS shade stroke</string>
+   <string name="qs_stroke_disabled">Disabled</string>
+   <string name="qs_stroke_accent">Accent color</string>
+   <string name="qs_stroke_custom">Custom color</string>
+   <string name="qs_stroke_color_title">QS shade stroke color</string>
+   <string name="qs_stroke_thickness_title">QS shade stroke thickness</string>
+   <string name="qs_corner_radius_title">QS shade corner radius</string>
+   <string name="qs_dash_width_title">QS stroke dash width</string>
+   <string name="qs_dash_gap_title">QS stroke dash gap</string>
+   <!-- Volume dialog stroke settings -->
+   <string name="volume_dialog_title">Volume dialog</string>
+   <string name="volume_dialog_stroke_title">Volume dialog stroke</string>
+   <string name="volume_dialog_stroke_disabled">Disabled</string>
+   <string name="volume_dialog_stroke_accent">Accent color</string>
+   <string name="volume_dialog_stroke_custom">Custom color</string>
+   <string name="volume_dialog_stroke_color_title">Volume dialog stroke color</string>
+   <string name="volume_dialog_stroke_thickness_title">Volume dialog stroke thickness</string>
+   <string name="volume_dialog_corner_radius_title">Volume dialog corner radius</string>
+   <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
+   <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
    <!-- ****************************** UI Interface Cat ends ****************************** -->
 
 </resources>

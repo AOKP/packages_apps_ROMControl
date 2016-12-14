@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.net.TrafficStats;
 import android.os.Bundle;
@@ -54,22 +53,18 @@ public class TrafficSettingsFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_traffic_settings_main, container, false);
 
         Resources res = getResources();
+        super.onCreate(savedInstanceState);
 
+        getChildFragmentManager().beginTransaction()
+                .replace(R.id.traffic_settings_main, new TrafficSettingsPreferenceFragment())
+                .commit();
         return v;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.traffic_settings_main, new SettingsPreferenceFragment())
-                .commit();
-    }
-
-    public static class SettingsPreferenceFragment extends PreferenceFragment
+    public static class TrafficSettingsPreferenceFragment extends PreferenceFragment
             implements OnPreferenceChangeListener {
-        public SettingsPreferenceFragment() {
+
+        public TrafficSettingsPreferenceFragment() {
         }
 
         private static final String TAG = "TrafficSettingsFragment";
@@ -79,6 +74,7 @@ public class TrafficSettingsFragment extends Fragment {
         private static final String NETWORK_TRAFFIC_UNIT = "network_traffic_unit";
         private static final String NETWORK_TRAFFIC_PERIOD = "network_traffic_period";
         private static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
+        private static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
         private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
 
         private ListPreference mNetTrafficState;
@@ -86,6 +82,7 @@ public class TrafficSettingsFragment extends Fragment {
         private ListPreference mNetTrafficUnit;
         private ListPreference mNetTrafficPeriod;
         private SwitchPreference mNetTrafficAutohide;
+        private SwitchPreference mNetTrafficHidearrow;
         private SeekBarPreferenceCham mNetTrafficAutohideThreshold;
 
         private static final int MENU_RESET = Menu.FIRST;
@@ -123,6 +120,12 @@ public class TrafficSettingsFragment extends Fragment {
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 10);
                 mNetTrafficAutohideThreshold.setValue(netTrafficAutohideThreshold / 1);
                 mNetTrafficAutohideThreshold.setOnPreferenceChangeListener(this);
+
+            mNetTrafficHidearrow =
+            (SwitchPreference) prefSet.findPreference(NETWORK_TRAFFIC_HIDEARROW);
+            mNetTrafficHidearrow.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0) == 1));
+            mNetTrafficHidearrow.setOnPreferenceChangeListener(this);
 
             mNetTrafficColor =
                 (ColorPickerPreference) prefSet.findPreference(NETWORK_TRAFFIC_COLOR);
@@ -163,46 +166,17 @@ public class TrafficSettingsFragment extends Fragment {
                 mNetTrafficColor.setEnabled(false);
                 mNetTrafficPeriod.setEnabled(false);
                 mNetTrafficAutohide.setEnabled(false);
+                mNetTrafficHidearrow.setEnabled(false);
                 mNetTrafficAutohideThreshold.setEnabled(false);
             } else {
                 mNetTrafficUnit.setEnabled(true);
                 mNetTrafficColor.setEnabled(true);
                 mNetTrafficPeriod.setEnabled(true);
                 mNetTrafficAutohide.setEnabled(true);
+                mNetTrafficHidearrow.setEnabled(true);
                 mNetTrafficAutohideThreshold.setEnabled(true);
             }
         }
-
-        @Override
-        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-            menu.add(0, MENU_RESET, 0, R.string.network_traffic_color_reset)
-                    .setIcon(R.drawable.ic_settings_backup)
-                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case MENU_RESET:
-                    resetToDefault();
-                    return true;
-                default:
-                    return super.onContextItemSelected(item);
-            }
-        }
-
-        private void resetToDefault() {
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
-            alertDialog.setTitle(R.string.network_traffic_color_reset);
-            alertDialog.setMessage(R.string.network_traffic_color_reset_message);
-            alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    NetworkTrafficColorReset();
-                }
-            });
-            alertDialog.setNegativeButton(R.string.cancel, null);
-            alertDialog.create().show();
-     }
 
         private void NetworkTrafficColorReset() {
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -246,6 +220,11 @@ public class TrafficSettingsFragment extends Fragment {
                         Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal);
                 int index = mNetTrafficPeriod.findIndexOfValue((String) newValue);
                 mNetTrafficPeriod.setSummary(mNetTrafficPeriod.getEntries()[index]);
+                return true;
+            } else if (preference == mNetTrafficHidearrow) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.NETWORK_TRAFFIC_HIDEARROW, value ? 1 : 0);
                 return true;
             } else if (preference == mNetTrafficAutohide) {
                 boolean value = (Boolean) newValue;

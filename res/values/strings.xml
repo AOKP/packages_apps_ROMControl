@@ -398,6 +398,8 @@
     <string name="network_traffic_color_style">Color style</string>
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+    <string name="network_traffic_hidearrow">Hide arrows</string>
+    <string name="network_traffic_hidearrow_summary">Hide the arrows in the traffic indicators</string>
 
     <!-- Battery Styles -->
     <string name="battery_style_title">Battery icon style</string>

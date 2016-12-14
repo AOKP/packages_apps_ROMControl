@@ -55,10 +55,14 @@
     <string name="choose_app">Choose application</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="dlg_reset_values_message">Reset values to default?</string>
+    <string name="restarting_ui">Restarting UI\u2026</string>
     <string name="dlg_reset_aokp">AOKP</string>
     <string name="dlg_reset_android">Android</string>
     <string name="colors_title">Colors</string>
     <string name="text_title">Text</string>
+
+    <!-- Title for the button to restart a print job. [CHAR LIMIT=25] -->
+    <string name="print_restart">Restart</string>
 
     <!-- MultiChoiceSetting -->
     <plurals name="multichoice_at_least">
@@ -87,6 +91,10 @@
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
+
+    <!-- SystemUI restart prompt -->
+    <string name="systemui_restart_title">WARNING</string>
+    <string name="systemui_restart_message">SystemUI will be restarted so that selected setting can be applied correctly.</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
     <string name="devs">The Legacy Crew</string>
@@ -510,12 +518,34 @@
    <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
    <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
 
-    <!-- ****************************** UI Interface Cat ends ****************************** -->
+   <!-- Transparency Porn -->
+   <string name="transparency_porn_title">Transparency porn</string>
+
+   <!-- Volume dialog stroke settings -->
+   <string name="volume_dialog_title">Volume dialog</string>
+   <string name="volume_dialog_transparency">Volume dialog opacity</string>
+   <string name="volume_dialog_stroke_title">Volume dialog stroke</string>
+   <string name="volume_dialog_stroke_disabled">Disabled</string>
+   <string name="volume_dialog_stroke_accent">Accent color</string>
+   <string name="volume_dialog_stroke_custom">Custom color</string>
+   <string name="volume_dialog_stroke_color_title">Volume dialog stroke color</string>
+   <string name="volume_dialog_stroke_thickness_title">Volume dialog stroke thickness</string>
+   <string name="volume_dialog_corner_radius_title">Volume dialog corner radius</string>
+   <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
+   <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
+
+   <!-- Power menu and dialogs opacity -->
+   <string name="power">Power Menu Tweaks</string>
+   <string name="power_menu_transparency">Power/reboot menu opacity</string>
+   <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
+
+   <!-- ****************************** UI Interface Cat ends ****************************** -->
 
    <!-- ****************************** Changelog Cat starts ****************************** -->
    <!-- Changelog -->
    <string name="changelog_title">Changelog</string>
    <string name="changelog_error">Unable to load changelog</string>
+
    <!-- ****************************** Changelog Cat ends ****************************** -->
 
 </resources>

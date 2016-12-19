@@ -56,4 +56,10 @@ public class CMSecureSettingSwitchPreference extends SwitchPreference {
         return LineageSettings.Secure.getInt(getContext().getContentResolver(),
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
+
+    protected boolean isPersisted() {
+        // Using getString instead of getInt so we can simply check for null
+        // instead of catching an exception. (All values are stored as strings.)
+        return LineageSettings.Secure.getString(getContext().getContentResolver(), getKey()) != null;
+    }
 }

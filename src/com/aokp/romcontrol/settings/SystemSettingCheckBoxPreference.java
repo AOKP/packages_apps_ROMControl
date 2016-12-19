@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod project
+ * Copyright (C) 2013 The CyanogenMod project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,21 +17,20 @@
 package com.aokp.romcontrol.settings;
 
 import android.content.Context;
-import android.preference.SwitchPreference;
+import android.preference.CheckBoxPreference;
 import android.provider.Settings;
 import android.util.AttributeSet;
-import lineageos.providers.LineageSettings;
 
-public class CMSecureSettingSwitchPreference extends SwitchPreference {
-    public CMSecureSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+public class SystemSettingCheckBoxPreference extends CheckBoxPreference {
+    public SystemSettingCheckBoxPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public CMSecureSettingSwitchPreference(Context context, AttributeSet attrs) {
+    public SystemSettingCheckBoxPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public CMSecureSettingSwitchPreference(Context context) {
+    public SystemSettingCheckBoxPreference(Context context) {
         super(context, null);
     }
 
@@ -42,7 +41,8 @@ public class CMSecureSettingSwitchPreference extends SwitchPreference {
                 // It's already there, so the same as persisting
                 return true;
             }
-            LineageSettings.Secure.putInt(getContext().getContentResolver(), getKey(), value ? 1 : 0);
+
+            Settings.System.putInt(getContext().getContentResolver(), getKey(), value ? 1 : 0);
             return true;
         }
         return false;
@@ -53,7 +53,8 @@ public class CMSecureSettingSwitchPreference extends SwitchPreference {
         if (!shouldPersist()) {
             return defaultReturnValue;
         }
-        return LineageSettings.Secure.getInt(getContext().getContentResolver(),
+
+        return Settings.System.getInt(getContext().getContentResolver(),
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
 
@@ -61,6 +62,6 @@ public class CMSecureSettingSwitchPreference extends SwitchPreference {
     protected boolean isPersisted() {
         // Using getString instead of getInt so we can simply check for null
         // instead of catching an exception. (All values are stored as strings.)
-        return CMSettings.Secure.getString(getContext().getContentResolver(), getKey()) != null;
+        return Settings.System.getString(getContext().getContentResolver(), getKey()) != null;
     }
 }

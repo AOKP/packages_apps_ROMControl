@@ -83,8 +83,10 @@ public class SoundSettingsFragment extends Fragment {
         private SwitchPreference mSafeHeadsetVolume;
         private ListPreference mAnnoyingNotifications;
         private SwitchPreference mCameraSounds;
+        private SwitchPreference mScreenshotSound;
 
         private static final String KEY_CAMERA_SOUNDS = "camera_sounds";
+        private static final String PREF_SCREENSHOT_SOUND = "screenshot_sound";
         private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
 
         @Override
@@ -97,14 +99,15 @@ public class SoundSettingsFragment extends Fragment {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_sound_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
+            final ContentResolver resolver = getActivity().getContentResolver();
 
             mSafeHeadsetVolume = (SwitchPreference) findPreference(KEY_SAFE_HEADSET_VOLUME);
-            mSafeHeadsetVolume.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+            mSafeHeadsetVolume.setChecked(Settings.System.getInt(resolver,
                     Settings.System.SAFE_HEADSET_VOLUME, 1) != 0);
             mSafeHeadsetVolume.setOnPreferenceChangeListener(this);
 
             mAnnoyingNotifications = (ListPreference) findPreference(PREF_LESS_NOTIFICATION_SOUNDS);
-            int notificationThreshold = Settings.System.getInt(getActivity().getContentResolver(),
+            int notificationThreshold = Settings.System.getInt(resolver,
                     Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
                     0);
             mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
@@ -113,6 +116,11 @@ public class SoundSettingsFragment extends Fragment {
             mCameraSounds = (SwitchPreference) findPreference(KEY_CAMERA_SOUNDS);
             mCameraSounds.setChecked(SystemProperties.getBoolean(PROP_CAMERA_SOUND, true));
             mCameraSounds.setOnPreferenceChangeListener(this);
+
+            mScreenshotSound = (SwitchPreference) findPreference(PREF_SCREENSHOT_SOUND);
+            mScreenshotSound.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.SCREENSHOT_SOUND, 1) != 0);
+            mScreenshotSound.setOnPreferenceChangeListener(this);
             return prefSet;
         }
 
@@ -134,29 +142,34 @@ public class SoundSettingsFragment extends Fragment {
 
         public boolean onPreferenceChange(Preference preference, Object objValue) {
             final String key = preference.getKey();
+            final ContentResolver resolver = getActivity().getContentResolver();
+
             if (KEY_SAFE_HEADSET_VOLUME.equals(key)) {
                 if ((Boolean) objValue) {
-                    Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.putInt(resolver,
                             Settings.System.SAFE_HEADSET_VOLUME, 1);
                 } else {
                     showDialogInner(DLG_SAFE_HEADSET_VOLUME);
                 }
-            }
-
-            if (PREF_LESS_NOTIFICATION_SOUNDS.equals(key)) {
+                return true;
+            } else if (PREF_LESS_NOTIFICATION_SOUNDS.equals(key)) {
                 final int val = Integer.valueOf((String) objValue);
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
-            }
-
-            if (KEY_CAMERA_SOUNDS.equals(key)) {
+                return true;
+            } else if (KEY_CAMERA_SOUNDS.equals(key)) {
                if ((Boolean) objValue) {
                    SystemProperties.set(PROP_CAMERA_SOUND, "1");
                } else {
                    showDialogInner(DLG_CAMERA_SOUND);
                }
+               return true;
+            } else if (preference == mScreenshotSound) {
+                boolean value = (Boolean) objValue;
+                Settings.System.putInt(resolver, Settings.System.SCREENSHOT_SOUND, value ? 1 : 0);
+                return true;
             }
-            return true;
+            return false;
         }
 
         private void showDialogInner(int id) {

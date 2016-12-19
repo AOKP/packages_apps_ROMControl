@@ -28,8 +28,7 @@
         android:summary="@string/camera_sounds_summary"
         android:defaultValue="true" />
 
-    <!-- Screenshot tone -->
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+    <SwitchPreference
         android:key="screenshot_sound"
         android:title="@string/screenshot_sound_title"
         android:summary="@string/screenshot_sound_summary"

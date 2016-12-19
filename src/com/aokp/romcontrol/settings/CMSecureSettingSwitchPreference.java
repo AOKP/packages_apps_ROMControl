@@ -18,8 +18,8 @@ package com.aokp.romcontrol.settings;
 
 import android.content.Context;
 import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.util.AttributeSet;
-
 import cyanogenmod.providers.CMSettings;
 
 public class CMSecureSettingSwitchPreference extends SwitchPreference {
@@ -55,5 +55,12 @@ public class CMSecureSettingSwitchPreference extends SwitchPreference {
         }
         return CMSettings.Secure.getInt(getContext().getContentResolver(),
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
+    }
+
+    @Override
+    protected boolean isPersisted() {
+        // Using getString instead of getInt so we can simply check for null
+        // instead of catching an exception. (All values are stored as strings.)
+        return CMSettings.Secure.getString(getContext().getContentResolver(), getKey()) != null;
     }
 }

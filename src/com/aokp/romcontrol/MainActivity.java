@@ -38,6 +38,7 @@ import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
 
 import com.aokp.romcontrol.fragments.about.AboutCrewFragment;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
+import com.aokp.romcontrol.fragments.about.AboutMaintainersFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
 
 import com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment;

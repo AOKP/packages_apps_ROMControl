@@ -99,7 +99,7 @@
     <string name="systemui_restart_message">SystemUI will be restarted so that selected setting can be applied correctly.</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
-    <string name="devs">The Crew</string>
+    <string name="devs">The Legacy Crew</string>
     <string name="aokp" translatable="false">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP website</string>
     <string name="aokp_website_summary">www.aokp.co - Find all newest releases here</string>
@@ -149,6 +149,9 @@
     <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
     <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
     <string name="kanglings">The Kanglings</string>
+
+    <string name="maintainers">The Maintainers</string>
+    <string name="github_task650" translatable="false">https://github.com/task650</string>
 
     <!-- ****************************** About Cat ends ****************************** -->
 

@@ -77,12 +77,30 @@
         android:key="blur_recents_cat"
         android:title="@string/blur_recents_cat" >
 
-      <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-         android:key="blurred_recent_app_enabled_pref"
-         android:title="@string/blurred_recent_app_enabled_pref"
-         android:summary="@string/blurred_recent_app_enabled_pref_summary"
-         android:defaultValue="false"
-         android:dependency="blurred_status_bar_expanded_enabled_pref" />
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="blurred_recent_app_enabled_pref"
+            android:title="@string/blurred_recent_app_enabled_pref"
+            android:summary="@string/blurred_recent_app_enabled_pref_summary"
+            android:defaultValue="false"
+            android:dependency="blurred_status_bar_expanded_enabled_pref" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+            android:key="recents_blur_scale"
+            android:title="@string/blurred_scale"
+            android:summary="@string/blurred_scale_summary"
+            android:max="20"
+            aokp:min="1"
+            android:dependency="blurred_recent_app_enabled_pref"
+            aokp:defaultValue="6" />
+
+        <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+            android:key="recents_blur_radius"
+            android:title="@string/blurred_radius"
+            android:summary="@string/blurred_radius_summary"
+            android:max="25"
+            aokp:min="1"
+            android:dependency="blurred_recent_app_enabled_pref"
+            aokp:defaultValue="3" />
     </PreferenceCategory>
 
 </PreferenceScreen>

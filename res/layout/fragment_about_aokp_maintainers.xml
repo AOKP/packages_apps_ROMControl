@@ -26,12 +26,26 @@
             android:id="@+id/maintainers"
             style="@style/settingsFragmentStyle">
 
-            <com.aokp.romcontrol.widgets.DeveloperPreference
+              
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Sean Hacker"
+                aokp:nameDev="task650"
+                aokp:twitterHandle="task650"
+                aokp:githubLink="@string/github_task650"
+                aokp:emailDev="task650@gmail.com"
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+                
+        <com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Sven Jautz"
                 aokp:nameDev="tribual"
                 aokp:twitterHandle=""
                 aokp:githubLink="@string/github_tribual"
                 aokp:emailDev="tribual81@gmail.com"
+                
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

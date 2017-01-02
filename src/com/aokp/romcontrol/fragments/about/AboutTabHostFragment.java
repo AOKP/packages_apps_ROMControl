@@ -21,7 +21,9 @@ public class AboutTabHostFragment extends Fragment {
     private ViewPager mPager;
 
     private static final int[] mFragments = new int[] {
-            R.string.android_open_kang_project, R.string.kanglings
+            R.string.android_open_kang_project,
+            R.string.kanglings,
+            R.string.maintainers
     };
 
     @Override
@@ -68,6 +70,8 @@ public class AboutTabHostFragment extends Fragment {
                     return new AboutFragment();
                 case 1:
                     return new AboutCrewFragment();
+                case 2:
+                    return new AboutMaintainersFragment();
             }
             return null;
         }

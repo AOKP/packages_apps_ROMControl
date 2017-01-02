@@ -55,44 +55,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="blur_notifications_cat"
-        android:title="@string/blur_notifications_cat" >
-
-        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-            android:key="translucent_notifications_pref"
-            android:title="@string/translucent_notifications_pref"
-            android:summary="@string/translucent_notifications_pref_summary"
-            android:defaultValue="false" />
-
-        <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
-            android:key="notifications_transluency"
-            android:title="@string/transluency_level_universal"
-            android:max="100"
-            aokp:min="0"
-            android:dependency="translucent_notifications_pref"
-            aokp:defaultValue="60" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="blur_header_cat"
-        android:title="@string/blur_header_cat" >
-
-        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-            android:key="translucent_header_pref"
-            android:title="@string/translucent_header_pref"
-            android:summary="@string/translucent_header_pref_summary"
-            android:defaultValue="false" />
-
-        <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
-            android:key="header_transluency"
-            android:title="@string/transluency_level_universal"
-            android:max="100"
-            aokp:min="0"
-            android:dependency="translucent_header_pref"
-            aokp:defaultValue="60" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="blur_qs_cat"
         android:title="@string/blur_qs_cat" >
 

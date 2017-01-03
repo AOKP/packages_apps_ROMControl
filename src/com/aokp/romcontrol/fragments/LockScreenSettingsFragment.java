@@ -62,9 +62,11 @@ public class LockScreenSettingsFragment extends Fragment {
 
         private static final String PREF_LS_CLOCK = "hide_lockscreen_clock";
         private static final String PREF_LS_DATE = "hide_lockscreen_date";
+        private static final String PREF_LS_LEFT_CLOCK = "keyguard_show_clock";
 
         private SwitchPreference mLockscreenClock;
         private SwitchPreference mLockscreenDate;
+        private SwitchPreference mLockscreenLeftClock;
 
 
         @Override
@@ -90,6 +92,11 @@ public class LockScreenSettingsFragment extends Fragment {
                     Settings.System.HIDE_LOCKSCREEN_DATE, 1) != 0);
             mLockscreenDate.setOnPreferenceChangeListener(this);
 
+            mLockscreenLeftClock = (SwitchPreference) findPreference(PREF_LS_LEFT_CLOCK);
+            mLockscreenLeftClock.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.KEYGUARD_SHOW_CLOCK, 1) != 0);
+            mLockscreenLeftClock.setOnPreferenceChangeListener(this);
+
             return prefSet;
         }
 
@@ -111,6 +118,11 @@ public class LockScreenSettingsFragment extends Fragment {
                 boolean value = (Boolean) newValue;
                 Settings.System.putInt(resolver,
                         Settings.System.HIDE_LOCKSCREEN_DATE, value ? 1 : 0);
+                return true;
+            } else if (preference == mLockscreenLeftClock) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver,
+                        Settings.System.KEYGUARD_SHOW_CLOCK, value ? 1 : 0);
                 return true;
             }
             return false;

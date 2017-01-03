@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.widgets.SeekBarPreference;
+import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
 public class LockScreenSettingsFragment extends Fragment {
 
@@ -68,10 +68,13 @@ public class LockScreenSettingsFragment extends Fragment {
         }
 
         private static final String TAG = "LockScreenSettings";
+        private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
+
         private ContentResolver mResolver;
 
         private FingerprintManager mFingerprintManager;
         private SwitchPreference mFingerprintVib;
+        private SeekBarPreferenceCham mMaxKeyguardNotifConfig;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -89,12 +92,25 @@ public class LockScreenSettingsFragment extends Fragment {
                 prefSet.removePreference(mFingerprintVib);
             }
 
+            mMaxKeyguardNotifConfig = (SeekBarPreferenceCham) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+            int kgconf = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
+            mMaxKeyguardNotifConfig.setValue(kgconf);
+            mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+
             setHasOptionsMenu(true);
         }
 
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
-            return false;
+        ContentResolver resolver = getActivity().getContentResolver();
+            if (preference == mMaxKeyguardNotifConfig) {
+                int kgconf = (Integer) newValue;
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
+                return true;
+            }
+        return false;
         }
 
         @Override

@@ -333,6 +333,10 @@
     <!-- Disable OS on lockscreen -->
     <string name="block_on_secure_keyguard_title">Disable quick settings</string>
     <string name="block_on_secure_keyguard_summary">Disables quick settings on secure lockscreen</string>
+
+    <!-- Hide Lockscreen clock & date -->
+    <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
+    <string name="hide_lockscreen_date_title">Show lockscreen date</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->

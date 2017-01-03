@@ -47,4 +47,14 @@
         android:summary="@string/block_on_secure_keyguard_summary"
         android:defaultValue="false"/>
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_clock"
+        android:title="@string/hide_lockscreen_clock_title"
+        android:defaultValue="true" />
+
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_date"
+        android:title="@string/hide_lockscreen_date_title"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

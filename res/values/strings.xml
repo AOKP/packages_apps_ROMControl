@@ -31,6 +31,7 @@
     <!-- Header Strings -->
     <string name="category_about_aokp">About</string>
     <string name="category_general">General</string>
+    <string name="category_lockscreen">Lockscreen</string>
     <string name="category_notifications_drawer">Notifications Drawer</string>
     <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>
@@ -162,6 +163,15 @@
     <string name="wakelock_blocker_warning_title">Proceed with caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
     <!-- ****************************** General Cat ends ****************************** -->
+
+    <!-- ****************************** Lockscreen Cat starts ****************************** -->
+    <!-- Lockscreen -->
+    <string name="lockscreen_settings_title">Lockscreen</string>
+
+    <!-- Hide Lockscreen clock & date -->
+    <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
+    <string name="hide_lockscreen_date_title">Show lockscreen date</string>
+    <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->
     <!-- Notifications Drawer -->

@@ -21,6 +21,7 @@
     <string-array name="navigation_drawer_entries" translatable="false">
         <item>@string/category_about_aokp</item>
         <item>@string/category_general</item>
+        <item>@string/category_lockscreen</item>
         <item>@string/category_notifications_drawer</item>
         <item>@string/category_sound</item>
         <item>@string/category_statusbar</item>
@@ -29,6 +30,7 @@
     <string-array name="navigation_drawer_values" translatable="false">
         <item>about_aokp</item>
         <item>general</item>
+        <item>lockscreen</item>
         <item>notifications_drawer</item>
         <item>sound</item>
         <item>statusbar</item>
@@ -37,6 +39,7 @@
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_general</item>
+        <item>@drawable/ic_rom_control_lockscreens</item>
         <item>@drawable/ic_rom_control_toggles</item>
         <item>@drawable/ic_rom_control_sound</item>
         <item>@drawable/ic_rom_control_signal</item>

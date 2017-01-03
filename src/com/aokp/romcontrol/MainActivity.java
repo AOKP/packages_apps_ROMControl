@@ -30,6 +30,7 @@ import android.view.MenuItem;
 
 import android.view.View;
 
+import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
 
@@ -120,18 +121,22 @@ public class MainActivity extends Activity
                 break;
 
             case 2:
-                fragment = new NotificationsDrawerFragment();
+                fragment = new LockScreenSettingsFragment();
                 break;
 
             case 3:
-                fragment = new SoundTabHostFragment();
+                fragment = new NotificationsDrawerFragment();
                 break;
 
             case 4:
-                fragment = new StatusBarTabHostFragment();
+                fragment = new SoundTabHostFragment();
                 break;
 
             case 5:
+                fragment = new StatusBarTabHostFragment();
+                break;
+
+            case 6:
                 fragment = new UITabHostFragment();
                 break;
 

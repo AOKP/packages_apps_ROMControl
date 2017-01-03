@@ -62,4 +62,20 @@
         android:title="@string/keyguard_statusbar_clock_title"
         android:summary="@string/keyguard_statusbar_clock_summary" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="lock_screen_custom_notif"
+        android:title="@string/lockscreen_maxnotif_title"
+        android:summary="@string/lockscreen_maxnotif_sumary"
+        android:defaultValue="false" />
+
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        android:key="lockscreen_max_notif_cofig"
+        android:title="@string/lockscreen_maxnotif_config"
+        android:max="8"
+        aokp:minimum="3"
+        aokp:unitsLeft=""
+        aokp:unitsRight=""
+        android:persistent="false"
+        android:dependency="lock_screen_custom_notif" />
+
 </PreferenceScreen>

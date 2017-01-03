@@ -57,4 +57,9 @@
         android:title="@string/hide_lockscreen_date_title"
         android:defaultValue="true" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="keyguard_show_clock"
+        android:title="@string/keyguard_statusbar_clock_title"
+        android:summary="@string/keyguard_statusbar_clock_summary" />
+
 </PreferenceScreen>

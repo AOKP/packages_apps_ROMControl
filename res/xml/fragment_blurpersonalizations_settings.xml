@@ -81,8 +81,7 @@
             android:key="blurred_recent_app_enabled_pref"
             android:title="@string/blurred_recent_app_enabled_pref"
             android:summary="@string/blurred_recent_app_enabled_pref_summary"
-            android:defaultValue="false"
-            android:dependency="blurred_status_bar_expanded_enabled_pref" />
+            android:defaultValue="false" />
 
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="recents_blur_scale"

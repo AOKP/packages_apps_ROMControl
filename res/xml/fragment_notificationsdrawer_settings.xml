@@ -111,4 +111,11 @@
         android:entryValues="@array/smart_pulldown_values"
         android:persistent="false" />
 
+    <ListPreference
+        android:key="qs_quick_pulldown"
+        android:title="@string/status_bar_quick_qs_pulldown_title"
+        android:entries="@array/status_bar_quick_qs_pulldown_entries"
+        android:entryValues="@array/status_bar_quick_qs_pulldown_values"
+        android:defaultValue="1" />
+
 </PreferenceScreen>

@@ -25,6 +25,16 @@
         android:summary="@string/media_art_summary"
         android:defaultValue="true" />
 
+    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
+        android:key="lockscreen_visualizer"
+        android:title="@string/lockscreen_visualizer_title"
+        android:defaultValue="true"/>
+
+    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
+        android:key="lock_screen_weather_enabled"
+        android:title="@string/lockscreen_weather_enabled_title"
+        android:defaultValue="false"/>
+
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="fingerprint_success_vib"
         android:title="@string/fprint_sucess_vib_title"

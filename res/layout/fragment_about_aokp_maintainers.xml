@@ -53,5 +53,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="NepoRood"
+                aokp:nameDev="NepoRood"
+                aokp:twitterHandle="nepo_rood"
+                aokp:githubLink="@string/github_roodbuild"
+                aokp:emailDev="neporood@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

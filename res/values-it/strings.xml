@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2016, The Android Open Kang Project
+ * Copyright (c) 2017, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- ROMControl -->
-    <string name="app_name">ROM control</string>
-    <string name="rom_control">ROM control</string>
+    <string name="app_name">ROM Control</string>
+    <string name="rom_control">ROM Control</string>
     <string name="navigation_drawer_open">Apri drawer navigazione</string>
     <string name="navigation_drawer_close">Chiudi drawer navigazione</string>
 
@@ -99,7 +99,7 @@
     <string name="systemui_restart_message">Il systemUI verrà riavviato in modo che l\'impostazione selezionata può essere applicata in modo corretto.</string>
 
     <!-- ****************************** About Cat starts ****************************** -->
-    <string name="devs">Lo staff</string>
+    <string name="devs">Kangers storici</string>
 
     <string name="aokp_website_title">AOKP website</string>
     <string name="aokp_website_summary">www.aokp.co - Trovare tutte le più recenti uscite qui</string>
@@ -108,7 +108,7 @@
     <string name="aokp_irc_title">Unisciti a noi su IRC</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">About AOKP</string>
-    <string name="about_aokp_summary">@null</string>
+    <string name="maintainers">I Manutentori</string>
     <!-- ****************************** About Cat ends ****************************** -->
 
     <!-- ****************************** AppLauncher Cat starts ****************************** -->
@@ -191,7 +191,6 @@
     <string name="trigger_bottom_title">Altezza area attivazione</string>
     <string name="trigger_bottom_summary">Regola l\'altezza dell\'area di attivazione</string>
 
-
      <!-- App Sidebar -->
     <string name="app_sidebar_title">Barra Laterale Applicazioni</string>
     <string name="app_sidebar_enable_title">Abilita barra laterale applicazioni</string>
@@ -224,7 +223,6 @@
     <!-- ****************************** AppLauncher Cat ends ****************************** -->
 
     <!-- ****************************** General Cat starts ****************************** -->
-
     <!-- General -->
     <string name="general_settings">Impostazioni generali</string>
     <!-- Toast Icons -->
@@ -232,8 +230,8 @@
     <string name="toast_icon_summary">Mostra con il toast l\'icona corrispondente all\'applicazione</string>
 
     <!-- LockClocK -->
-    <string name="lock_clock_title">Impostazioni orologio</string>
-    <string name="lock_clock_summary">Visualizza o modifica la modalità di visualizzazione del widget orologio.</string>
+    <string name="lock_clock_title">Impostazioni cLock</string>
+    <string name="lock_clock_summary">Visualizza o modifica la modalità di visualizzazione del widget cLock.</string>
 
     <!-- Hostname setting -->
     <string name="device_hostname">Hostname dispositivo</string>
@@ -438,7 +436,7 @@
 
     <!-- Superuser indicator on status bar -->
     <string name="su_indicator">Indicatore Superuser</string>
-    <string name="su_indicator_summary_on">"L\'indicatore Superuser è visibile quando una sessione è attiva"</string>
+    <string name="su_indicator_summary_on">"L\'indicatore Superuser è visibile quando una sessione SU è attiva"</string>
     <string name="su_indicator_summary_off">"Comando per mostrare l\'indicatore Superuser quando una sessione è attiva. Solo per root CM integrato"</string>
 
     <!-- Network traffic -->

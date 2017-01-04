@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.aokp.romcontrol.R;
+import cyanogenmod.providers.CMSettings;
 
 public class NotificationsDrawerFragment extends Fragment {
 
@@ -74,6 +75,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
         private static final String PREF_COLUMNS = "qs_columns";
         private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
+        private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
 
         private ListPreference mTileAnimationStyle;
         private ListPreference mTileAnimationDuration;
@@ -83,6 +85,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private ListPreference mRowsLandscape;
         private ListPreference mQsColumns;
         private ListPreference mSmartPulldown;
+        private ListPreference mQuickPulldown;
 
         private ContentResolver mResolver;
 
@@ -161,6 +164,13 @@ public class NotificationsDrawerFragment extends Fragment {
             mSmartPulldown.setValue(String.valueOf(smartPulldown));
             updateSmartPulldownSummary(smartPulldown);
 
+            mQuickPulldown = (ListPreference) findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
+            int quickPulldown = CMSettings.System.getInt(mResolver,
+                    CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
+            mQuickPulldown.setValue(String.valueOf(quickPulldown));
+            updatePulldownSummary(quickPulldown);
+            mQuickPulldown.setOnPreferenceChangeListener(this);
+
             setHasOptionsMenu(true);
             return prefSet;
         }
@@ -230,6 +240,12 @@ public class NotificationsDrawerFragment extends Fragment {
                         Settings.System.QS_SMART_PULLDOWN, smartPulldown);
                 updateSmartPulldownSummary(smartPulldown);
                 return true;
+            } else if (preference == mQuickPulldown) {
+                int quickPulldown = Integer.valueOf((String) newValue);
+                CMSettings.System.putInt(
+                        mResolver, CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, quickPulldown);
+                updatePulldownSummary(quickPulldown);
+                return true;
             }
             return false;
         }
@@ -276,6 +292,20 @@ public class NotificationsDrawerFragment extends Fragment {
                         ? R.string.smart_pulldown_dismissable
                         : R.string.smart_pulldown_ongoing);
                 mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
+            }
+        }
+
+        private void updatePulldownSummary(int value) {
+            Resources res = getResources();
+
+            if (value == 0) {
+                // quick pulldown deactivated
+                mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
+            } else {
+                String direction = res.getString(value == 2
+                        ? R.string.status_bar_quick_qs_pulldown_summary_left
+                        : R.string.status_bar_quick_qs_pulldown_summary_right);
+                mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
             }
         }
     }

@@ -62,5 +62,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Rolando D'Andrea"
+                aokp:nameDev="RolanDroid"
+                aokp:twitterHandle=""
+                aokp:githubLink="@string/github_rolandroid"
+                aokp:emailDev="rolandosimoncelli8@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

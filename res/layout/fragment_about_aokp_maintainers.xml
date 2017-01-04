@@ -36,5 +36,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Jérôme Respaut"
+                aokp:nameDev="Shreps"
+                aokp:twitterHandle="shr3ps"
+                aokp:githubLink="@string/github_Shr3ps"
+                aokp:emailDev="shr3ps@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

@@ -42,6 +42,12 @@
         android:entries="@array/status_bar_date_format_entries_values"
         android:entryValues="@array/status_bar_date_format_entries_values" />
 
+   <ListPreference
+        android:key="clock_date_position"
+        android:title="@string/clock_date_position"
+        android:entries="@array/clock_date_position_entries"
+        android:entryValues="@array/clock_date_position_values" />
+
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="show_su_indicator"
         android:title="@string/su_indicator"

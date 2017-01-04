@@ -94,6 +94,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
         private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
         private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+        private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
 
         public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
         public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -108,6 +109,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mStatusBarDate;
         private ListPreference mStatusBarDateStyle;
         private ListPreference mStatusBarDateFormat;
+        private ListPreference mClockDatePosition;
 
         private ListPreference mStatusBarClock;
         private ListPreference mStatusBarAmPm;
@@ -186,6 +188,13 @@ public class StatusbarSettingsFragment extends Fragment {
                 mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
                 mStatusBarAmPm.setOnPreferenceChangeListener(this);
             }
+
+            mClockDatePosition = (ListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
+            mClockDatePosition.setOnPreferenceChangeListener(this);
+            mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(resolver,
+                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION,
+                    0)));
+            mClockDatePosition.setSummary(mClockDatePosition.getEntry());
 
             int batteryStyle = CMSettings.System.getInt(resolver,
                 CMSettings.System.STATUS_BAR_BATTERY_STYLE, 0);
@@ -336,6 +345,14 @@ public class StatusbarSettingsFragment extends Fragment {
                     }
                 }
                 return true;
+            } else if (preference == mClockDatePosition) {
+                int val = Integer.parseInt((String) newValue);
+                int index = mClockDatePosition.findIndexOfValue((String) newValue);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
+                mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
+                parseClockDateFormats();
+                 return true;
             } else if (preference == mAokpLogoColor) {
                 String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));

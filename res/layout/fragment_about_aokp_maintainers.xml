@@ -36,5 +36,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Endre Cseko"
+                aokp:nameDev="csendre"
+                aokp:twitterHandle=""
+                aokp:githubLink="@string/github_csendre"
+                aokp:emailDev="ecseko@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
     </LinearLayout>
 </ScrollView>

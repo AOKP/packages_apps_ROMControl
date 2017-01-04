@@ -901,14 +901,14 @@
 
    <!-- Transparency Porn -->
    <string name="transparency_porn_title">Transparency porn</string>
-   <!-- QS shade transparency -->
-   <string name="qs_transparent_shade">QS shade transparency</string>
+   <!-- QS shade opacity -->
+   <string name="qs_transparent_shade">QS shade opacity</string>
    <!-- QS header transparency -->
    <string name="qs_transparent_header">QS header transparency</string>
-   <!-- Volume dialog transparency -->
-   <string name="volume_dialog_transparency">Volume dialog transparency</string>
-   <!-- Power menu and dialogs transparency -->
-   <string name="power_menu_transparency">Power/reboot menu transparency</string>
+   <!-- Volume dialog opacity -->
+   <string name="volume_dialog_transparency">Volume dialog opacity</string>
+   <!-- Power menu and dialogs opacity -->
+   <string name="power_menu_transparency">Power/reboot menu opacity</string>
    <!-- Power/reboot dialogs dim amount -->
    <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
    <!-- Notifications transparency -->

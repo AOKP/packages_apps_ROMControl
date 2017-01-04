@@ -88,7 +88,6 @@
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
-    <string name="select_custom_app_title">Select custom application</string>
     <string name="group_applications">Applications</string>
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
@@ -209,10 +208,6 @@
     <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
-    <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom app</string>
-    <string name="select_custom_activity_title">Select custom activity</string>
-    <string name="profile_applist_title">Applications</string>
     <!-- Gesture Anywhere -->
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>

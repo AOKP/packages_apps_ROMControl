@@ -32,7 +32,15 @@
                 aokp:twitterHandle="task650"
                 aokp:githubLink="@string/github_task650"
                 aokp:emailDev="task650@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Jérôme Respaut"
+                aokp:nameDev="Shreps"
+                aokp:twitterHandle="shr3ps"
+                aokp:githubLink="@string/github_shr3ps"
+                aokp:emailDev="shr3ps@gmail.com"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

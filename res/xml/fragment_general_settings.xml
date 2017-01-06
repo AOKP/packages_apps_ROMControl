@@ -43,7 +43,7 @@
             android:inputType="textNoSuggestions"
             android:persistent="false" />
 
-    <com.aokp.romcontrol.widgets.SeekBarPreference
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="screenshot_delay"
             android:title="@string/screenshot_delay_title"
             android:summary="@string/screenshot_delay_summary"

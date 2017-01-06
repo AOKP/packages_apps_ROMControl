@@ -38,7 +38,7 @@ import android.view.ViewGroup;
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.Helpers;
 
-import com.aokp.romcontrol.widgets.SeekBarPreference;
+import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
 public class GeneralSettingsFragment extends Fragment {
 
@@ -74,7 +74,7 @@ public class GeneralSettingsFragment extends Fragment {
 
         private Context mContext;
         private Preference mLockClock;
-        private SeekBarPreference mScreenshotDelay;
+        private SeekBarPreferenceCham mScreenshotDelay;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -97,7 +97,7 @@ public class GeneralSettingsFragment extends Fragment {
                 prefSet.removePreference(mLockClock);
             }
 
-            mScreenshotDelay = (SeekBarPreference) findPreference(SCREENSHOT_DELAY);
+            mScreenshotDelay = (SeekBarPreferenceCham) findPreference(SCREENSHOT_DELAY);
             int screenshotDelay = Settings.System.getInt(resolver,
                     Settings.System.SCREENSHOT_DELAY, 100);
             mScreenshotDelay.setValue(screenshotDelay / 1);

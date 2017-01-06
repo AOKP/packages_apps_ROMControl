@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
-import com.aokp.romcontrol.widgets.SeekBarPreference;
+import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
 public class AppSideBarSettings extends Fragment {
 
@@ -59,14 +59,16 @@ public class AppSideBarSettings extends Fragment {
         private static final String KEY_TRIGGER_WIDTH = "trigger_width";
         private static final String KEY_TRIGGER_TOP = "trigger_top";
         private static final String KEY_TRIGGER_BOTTOM = "trigger_bottom";
+        private static final String KEY_HIDE_TIMEOUT = "app_sidebar_hide_timeout";
 
         private SwitchPreference mEnabledPref;
-        private SeekBarPreference mTransparencyPref;
+        private SeekBarPreferenceCham mTransparencyPref;
         private ListPreference mPositionPref;
         private CheckBoxPreference mHideLabelsPref;
-        private SeekBarPreference mTriggerWidthPref;
-        private SeekBarPreference mTriggerTopPref;
-        private SeekBarPreference mTriggerBottomPref;
+        private SeekBarPreferenceCham mTriggerWidthPref;
+        private SeekBarPreferenceCham mTriggerTopPref;
+        private SeekBarPreferenceCham mTriggerBottomPref;
+        private SeekBarPreferenceCham mHideTimeoutPref;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -76,67 +78,73 @@ public class AppSideBarSettings extends Fragment {
 
         private PreferenceScreen createCustomView() {
             addPreferencesFromResource(R.xml.fragment_appsidebar_settings);
-
+            final ContentResolver resolver = getActivity().getContentResolver();
             mEnabledPref = (SwitchPreference) findPreference(KEY_ENABLED);
-            mEnabledPref.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+            mEnabledPref.setChecked((Settings.System.getInt(resolver,
                     Settings.System.APP_SIDEBAR_ENABLED, 0) == 1));
             mEnabledPref.setOnPreferenceChangeListener(this);
 
             mHideLabelsPref = (CheckBoxPreference) findPreference(KEY_HIDE_LABELS);
-            mHideLabelsPref.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+            mHideLabelsPref.setChecked((Settings.System.getInt(resolver,
                     Settings.System.APP_SIDEBAR_DISABLE_LABELS, 0) == 1));
 
             PreferenceScreen prefSet = getPreferenceScreen();
             mPositionPref = (ListPreference) prefSet.findPreference(KEY_POSITION);
             mPositionPref.setOnPreferenceChangeListener(this);
-            int position = Settings.System.getInt(getActivity().getContentResolver(),
+            int position = Settings.System.getInt(resolver,
                     Settings.System.APP_SIDEBAR_POSITION, 0);
             mPositionPref.setValue(String.valueOf(position));
             updatePositionSummary(position);
 
-            mTransparencyPref = (SeekBarPreference) findPreference(KEY_TRANSPARENCY);
-            mTransparencyPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+            mTransparencyPref = (SeekBarPreferenceCham) findPreference(KEY_TRANSPARENCY);
+            mTransparencyPref.setValue(Settings.System.getInt(resolver,
                     Settings.System.APP_SIDEBAR_TRANSPARENCY, 0));
             mTransparencyPref.setOnPreferenceChangeListener(this);
 
-            mTriggerWidthPref = (SeekBarPreference) findPreference(KEY_TRIGGER_WIDTH);
-            mTriggerWidthPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+            mTriggerWidthPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_WIDTH);
+            mTriggerWidthPref.setValue(Settings.System.getInt(resolver,
                 Settings.System.APP_SIDEBAR_TRIGGER_WIDTH, 10));
             mTriggerWidthPref.setOnPreferenceChangeListener(this);
 
-            mTriggerTopPref = (SeekBarPreference) findPreference(KEY_TRIGGER_TOP);
-            mTriggerTopPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+            mTriggerTopPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_TOP);
+            mTriggerTopPref.setValue(Settings.System.getInt(resolver,
                     Settings.System.APP_SIDEBAR_TRIGGER_TOP, 0));
             mTriggerTopPref.setOnPreferenceChangeListener(this);
 
-            mTriggerBottomPref = (SeekBarPreference) findPreference(KEY_TRIGGER_BOTTOM);
-            mTriggerBottomPref.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+            mTriggerBottomPref = (SeekBarPreferenceCham) findPreference(KEY_TRIGGER_BOTTOM);
+            mTriggerBottomPref.setValue(Settings.System.getInt(resolver,
                     Settings.System.APP_SIDEBAR_TRIGGER_HEIGHT, 100));
             mTriggerBottomPref.setOnPreferenceChangeListener(this);
+
+            mHideTimeoutPref = (SeekBarPreferenceCham) findPreference(KEY_HIDE_TIMEOUT);
+            mHideTimeoutPref.setValue(Settings.System.getInt(resolver,
+                Settings.System.APP_SIDEBAR_HIDE_TIMEOUT, 3000));
+            mHideTimeoutPref.setOnPreferenceChangeListener(this);
 
             findPreference(KEY_SETUP_ITEMS).setOnPreferenceClickListener(this);
             return prefSet;
         }
 
         public boolean onPreferenceChange(Preference preference, Object newValue) {
+            ContentResolver resolver = getActivity().getContentResolver();
             if (preference == mTransparencyPref) {
                 int transparency = ((Integer)newValue).intValue();
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.APP_SIDEBAR_TRANSPARENCY, transparency);
                 return true;
             } else if (preference == mTriggerWidthPref) {
                 int width = ((Integer)newValue).intValue();
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.APP_SIDEBAR_TRIGGER_WIDTH, width);
                 return true;
             } else if (preference == mTriggerTopPref) {
                 int top = ((Integer)newValue).intValue();
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.APP_SIDEBAR_TRIGGER_TOP, top);
                 return true;
             } else if (preference == mTriggerBottomPref) {
                 int bottom = ((Integer)newValue).intValue();
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.APP_SIDEBAR_TRIGGER_HEIGHT, bottom);
                 return true;
             } else if (preference == mPositionPref) {
@@ -145,9 +153,14 @@ public class AppSideBarSettings extends Fragment {
                 return true;
             } else if (preference == mEnabledPref) {
                 boolean value = ((Boolean)newValue).booleanValue();
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.APP_SIDEBAR_ENABLED,
                         value ? 1 : 0);
+                return true;
+            } else if (preference == mHideTimeoutPref) {
+                int timeout = ((Integer)newValue).intValue();
+                Settings.System.putInt(resolver,
+                    Settings.System.APP_SIDEBAR_HIDE_TIMEOUT, timeout);
                 return true;
             }
             return false;

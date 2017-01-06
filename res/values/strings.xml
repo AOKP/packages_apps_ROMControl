@@ -270,6 +270,8 @@
     <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+    <string name="app_sidebar_hide_timeout_title">Appbar auto hide</string>
+    <string name="app_sidebar_hide_timeout_summary">Timeout to auto hide Appbar.</string>
     <!-- ****************************** AppLauncher Cat ends ****************************** -->
 
     <!-- ****************************** Hardware keys Cat starts ****************************** -->

@@ -48,7 +48,7 @@
         android:defaultValue="false"
         android:dependency="sidebar_enable" />
 
-    <com.aokp.romcontrol.widgets.SeekBarPreference
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
         android:key="sidebar_transparency"
         android:title="@string/app_sidebar_transparency_title"
         android:summary="@string/app_sidebar_transparency_summary"
@@ -59,10 +59,21 @@
         aokp:unitsRight="%"
         android:dependency="sidebar_enable" />
 
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        android:key="app_sidebar_hide_timeout"
+        android:title="@string/app_sidebar_hide_timeout_title"
+        android:summary="@string/app_sidebar_hide_timeout_summary"
+        android:max="10000"
+        aokp:min="0"
+        aokp:unitsLeft=""
+        aokp:unitsRight="ms"
+        android:defaultValue="3000"
+        android:dependency="sidebar_enable" />
+
     <PreferenceCategory
         android:title="@string/trigger_category" />
 
-    <com.aokp.romcontrol.widgets.SeekBarPreference
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
         android:key="trigger_width"
         android:title="@string/trigger_width_title"
         android:summary="@string/trigger_width_summary"
@@ -73,7 +84,7 @@
         aokp:unitsRight="px"
         android:dependency="sidebar_enable" />
 
-    <com.aokp.romcontrol.widgets.SeekBarPreference
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
         android:key="trigger_top"
         android:title="@string/trigger_top_title"
         android:summary="@string/trigger_top_summary"
@@ -84,7 +95,7 @@
         aokp:unitsRight="%"
         android:dependency="sidebar_enable" />
 
-    <com.aokp.romcontrol.widgets.SeekBarPreference
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
         android:key="trigger_bottom"
         android:title="@string/trigger_bottom_title"
         android:summary="@string/trigger_bottom_summary"

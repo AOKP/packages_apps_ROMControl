@@ -554,6 +554,10 @@
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
     <string name="unit_percent">\u0025</string>
+
+    <!-- qqs scroller -->
+    <string name="qqs_scroll_title">Scroll small QS tiles</string>
+    <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PIE Cat starts ****************************** -->

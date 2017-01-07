@@ -35,6 +35,12 @@
         android:dependency="qs_show_brightness"
         android:defaultValue="true"/>
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="qs_quickbar_scroll_enabled"
+        android:title="@string/qqs_scroll_title"
+        android:summary="@string/qqs_scroll_summary"
+        android:defaultValue="false"/>
+
     <ListPreference
         android:key="qs_rows_portrait"
         android:title="@string/qs_rows_portrait_title"

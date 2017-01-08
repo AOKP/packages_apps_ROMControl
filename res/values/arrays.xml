@@ -22,6 +22,7 @@
         <item>@string/category_about_aokp</item>
         <item>@string/category_app_launcher</item>
         <item>@string/category_general</item>
+        <item>@string/category_hardware_keys</item>
         <item>@string/category_lockscreen</item>
         <item>@string/category_notifications_drawer</item>
         <item>@string/category_power_menu</item>
@@ -33,6 +34,7 @@
         <item>about_aokp</item>
         <item>applauncher</item>
         <item>general</item>
+        <item>hardware_keys</item>
         <item>lockscreen</item>
         <item>notifications_drawer</item>
         <item>power_menu</item>
@@ -44,6 +46,7 @@
         <item>@drawable/ic_rom_control_about</item>
         <item>@drawable/ic_rom_control_ribbon</item>
         <item>@drawable/ic_rom_control_general</item>
+        <item>@drawable/ic_rom_control_hardware_keys</item>
         <item>@drawable/ic_rom_control_lockscreens</item>
         <item>@drawable/ic_rom_control_toggles</item>
         <item>@drawable/ic_rom_control_power_menu</item>
@@ -631,5 +634,62 @@
         <item>0</item>
         <item>1</item>
      </string-array>
+
+    <!-- Volume key cursor control -->
+    <string-array name="volbtn_cursor_control_entries" translatable="false">
+        <item>@string/volbtn_cursor_control_off</item>
+        <item>@string/volbtn_cursor_control_on</item>
+        <item>@string/volbtn_cursor_control_on_reverse</item>
+    </string-array>
+
+    <string-array name="volbtn_cursor_control_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Hardware key rebinding -->
+    <string-array name="hardware_keys_action_entries" translatable="false">
+        <item>@string/hardware_keys_action_nothing</item>
+        <item>@string/hardware_keys_action_menu</item>
+        <item>@string/hardware_keys_action_app_switch</item>
+        <item>@string/hardware_keys_action_search</item>
+        <item>@string/hardware_keys_action_voice_search</item>
+        <item>@string/hardware_keys_action_in_app_search</item>
+        <item>@string/hardware_keys_action_launch_camera</item>
+        <item>@string/hardware_keys_action_sleep</item>
+        <item>@string/hardware_keys_action_last_app</item>
+    </string-array>
+
+    <string-array name="hardware_keys_action_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <!-- Auto keyboard rotation -->
+    <string-array name="keyboard_rotation_timeout_entries" translatable="false">
+        <item>2s</item>
+        <item>5s</item>
+        <item>10s</item>
+        <item>20s</item>
+        <item>30s</item>
+        <item>60s</item>
+    </string-array>
+
+    <string-array name="keyboard_rotation_timeout_values" translatable="false">
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>60000</item>
+    </string-array>
 
 </resources>

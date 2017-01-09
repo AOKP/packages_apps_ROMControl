@@ -268,6 +268,12 @@
     <string name="media_art_title">Copertina multimediale</string>
     <string name="media_art_summary">Abilita supporto copertina sulla schermata di blocco</string>
 
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Visualizza la musica sul display</string>
+
+    <!-- title for lock screen weather preference -->
+    <string name="lockscreen_weather_enabled_title">Mostra meteo</string>
+  
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Autenticazione impronta digitale con vibrazione</string>
     <string name="fprint_sucess_vib_summary">Vibra all\'avvenuta autenticazione tramite impronta digitale</string>
@@ -283,6 +289,19 @@
     <!-- Disable OS on lockscreen -->
     <string name="block_on_secure_keyguard_title">Disattiva le impostazioni rapide</string>
     <string name="block_on_secure_keyguard_summary">Disattiva le impostazioni rapide nella schermata di sblocco</string>
+  
+    <!-- Hide Lockscreen clock & date -->
+    <string name="hide_lockscreen_clock_title">Mostra l\'orologio</string>
+    <string name="hide_lockscreen_date_title">Mostra la data</string>
+
+    <!-- Keyguard Statusbar Clock -->
+    <string name="keyguard_statusbar_clock_title">Orologio nella barra di stato della schermata di blocco</string>
+    <string name="keyguard_statusbar_clock_summary">Abilita l\'orologio sul lato sinistro della barra di stato nella schermata di blocco</string>
+
+    <!-- Lockscreen notif count -->
+    <string name="lockscreen_maxnotif_title">Contatore notifiche schermata di blocco</string>
+    <string name="lockscreen_maxnotif_sumary">Limita il numero massimo di notifiche nella schermata di blocco</string>
+    <string name="lockscreen_maxnotif_config">Notifiche massime nella schermata di blocco</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->
@@ -332,6 +351,18 @@
     <string name="qs_rows_portrait_title">Righe (verticale)</string>
     <string name="qs_rows_landscape_title">Righe (orizzontale)</string>
     <string name="qs_columns_title">Colonne</string>
+  
+    <string name="qs_fancy_animation_title">Animazione di fantasia</string>
+    <string name="qs_fancy_animation_summary">Abilita un effetto di animazione diverso quando si tira giù la barra di stato</string>
+
+    <!-- Smart pulldown-->
+    <string name="smart_pulldown_title">Discesa intelligente</string>
+    <string name="smart_pulldown_summary">Apri le impostazioni rapide quando ci sono %1$s notifiche presenti</string>
+    <string name="smart_pulldown_none_summary">Apri le impostazioni rapide quando non ci sono notifiche presenti</string>
+    <string name="smart_pulldown_off">Spenta</string>
+    <string name="smart_pulldown_none">Nessuna notifica</string>
+    <string name="smart_pulldown_dismissable">Non removibili</string>
+    <string name="smart_pulldown_ongoing">Non in corso</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PowerMenu Cat starts ****************************** -->
@@ -433,6 +464,9 @@
     <string name="status_bar_date_format_custom">Formato Java personalizzato</string>
     <string name="status_bar_date_string_edittext_title">Deve essere in formato data es. MM/dd/yy</string>
     <string name="status_bar_date_string_edittext_summary">Inserisci stringa</string>
+    <string name="clock_date_position">Posizione della data</string>
+    <string name="clock_date_right">A destra dell\'ora</string>
+    <string name="clock_date_left">A sinistra dell\'ora</string>
 
     <!-- Superuser indicator on status bar -->
     <string name="su_indicator">Indicatore Superuser</string>
@@ -463,6 +497,66 @@
     <string name="network_traffic_color_reset_message">Ripristinare il colore predefinito del traffico di rete?</string>
     <string name="network_traffic_hidearrow">Nascondi frecce</string>
     <string name="network_traffic_hidearrow_summary">Nascondere le frecce degli indicatori di traffico</string>
+  
+    <!-- Status bar -->
+    <string name="status_bar_title">Barra di stato</string>
+    <string name="status_bar_toggle_brightness">Controllo della luminosità</string>
+    <string name="status_bar_toggle_brightness_summary">Regola la luminosità facendo scorrere il dito sulla barra di stato</string>
+    <string name="status_bar_notif_count_title">Mostra contatore notifiche</string>
+    <string name="status_bar_notif_count_summary">Mostra il numero di notifiche in sospeso</string>
+    <string name="status_bar_show_weather_title">Mostra il meteo</string>
+    <string name="status_bar_show_weather_summary">Visualizza la temperatura attuale sulla barra di stato</string>
+    <string name="status_bar_quick_qs_pulldown_title">Discesa rapida</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Il bordo %1$s della barra di stato mostra le impostazioni rapide</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Sinistra</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Destra</string>
+    <string name="status_bar_quick_qs_pulldown_off">Spenta</string>
+    <string name="status_bar_quick_qs_pulldown_left">Sinistra</string>
+    <string name="status_bar_quick_qs_pulldown_right">Destra</string>
+  
+    <string name="status_bar_clock_style_title">Stile orologio</string>
+    <string name="status_bar_clock_style_right">Destra</string>
+    <string name="status_bar_clock_style_left">Sinistra</string>
+    <string name="status_bar_clock_style_center">Centro</string>
+    <string name="status_bar_clock_style_hidden">Nascosta</string>
+  
+    <string name="status_bar_am_pm_title">Stile AM/PM</string>
+    <string name="status_bar_am_pm_info">Formato 24 ore attivo</string>
+    <string name="status_bar_am_pm_normal">Normale</string>
+    <string name="status_bar_am_pm_small">Piccola</string>
+    <string name="status_bar_am_pm_hidden">Nascosta</string>
+  
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Stile indicatore batteria</string>
+    <string name="status_bar_battery_style_icon_portrait">Icona verticale</string>
+    <string name="status_bar_battery_style_icon_landscape">Icona orizzontale</string>
+    <string name="status_bar_battery_style_circle">Cerchio</string>
+    <string name="status_bar_battery_style_text">Testo</string>
+    <string name="status_bar_battery_style_hidden">Nascosta</string>
+  
+    <!-- Status bar - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Percentuale della batteria</string>
+    <string name="status_bar_battery_percentage_default">Nascosta</string>
+    <string name="status_bar_battery_percentage_text_inside">All\'interno dell\'icona</string>
+    <string name="status_bar_battery_percentage_text_next">Accanto all\'icona</string>
+  
+    <!-- Status bar - icon blacklist -->
+    <string name="status_bar_icons_title">Icone della barra di stato</string>
+    <string name="status_bar_icons_summary">Controlla quali icone della barra di stato vengono visualizzati</string>
+  
+    <!-- Status bar - double tap to sleep -->
+    <string name="status_bar_double_tap_to_sleep_title">Doppio tocco per spegnere lo schermo</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Doppio tocco sulla barra di stato per spegnere lo schermo</string>
+  
+    <!-- Statusbar AOKP logo -->
+    <string name="status_bar_aokp_logo_title">Logo AOKP</string>
+    <string name="status_bar_aokp_logo_summary">Abilita la visualizzazione del logo di AOKP sul lato sinistro della barra di stato</string>
+    <string name="status_bar_aokp_logo_color">Colore logo AOKP</string>
+    <string name="status_bar_aokp_logo_position">Posizione logo</string>
+    <string name="status_bar_aokp_logo_position_summary">Sceglie da quale parte far visualizzare il logo, sinistra o destra</string>
+    <string name="status_bar_logo_position_right">Destra</string>
+    <string name="status_bar_logo_position_left">Sinistra</string>
+    <string name="status_bar_logo_position_center">Centro</string>
     <!-- ****************************** StatusBar Cat ends ****************************** -->
 
     <!-- ****************************** UI Interface Cat starts ****************************** -->

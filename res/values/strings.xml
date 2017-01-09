@@ -936,6 +936,7 @@
    <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
    <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
     <!-- Blur UI -->
+    <string name="header_tweaks">Header Tweaks</string>
     <string name="blur_ui_category_title">Blur personalizations</string>
     <string name="blurred_status_bar_expanded_enabled_pref">Blur StatusBar Background</string>
     <string name="blurred_status_bar_expanded_enabled_pref_summary">Blur the background when you pull down the status bar</string>
@@ -963,6 +964,12 @@
     <string name="blurred_scale_summary">Quality of blur image</string>
     <string name="blurred_radius">Blur Radius</string>
     <string name="blurred_radius_summary">Amount of blur</string>
+    <string name="blur_colors_cat">Blur Color filters</string>
+    <string name="blur_light_color">Light image color filter</string>
+    <string name="blur_dark_color">Dark image color filter</string>
+    <string name="blur_mixed_color">Mixed image color filter</string>
+    <string name="blur_colors_notice">What are these colors for?</string>
+    <string name="blur_colors_notice_summary">These colors are the ones tinting the BlurBackground. Instead of the normal Grey, you can now choose colors in any way you like.\nThere are three color filters available for: Light backgrounds, Dark backgrounds and Light/Dark backgrounds.\nSo how are these colors working?? \n Simple, as the titles say, the Light filter will be used for Lighter backgrounds, Dark filter for dark backgrounds and the mixed filter one will be used for backgrounds not too dark but neither too light.\nThese colors are used for both BlurBackgrounds: NotificationsDrawer and RecentsApps </string>
    <!-- ****************************** UI Interface Cat ends ****************************** -->
 
 </resources>

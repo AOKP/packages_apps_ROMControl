@@ -55,6 +55,7 @@ import android.view.WindowManagerGlobal;
 import com.aokp.romcontrol.util.ButtonBacklightBrightness;
 import com.aokp.romcontrol.util.Utils;
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
 import cyanogenmod.hardware.CMHardwareManager;
 import cyanogenmod.providers.CMSettings;
@@ -153,6 +154,9 @@ public class ButtonSettingsFragment extends Fragment {
 
         private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
 
+        private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+        private static final String KILL_APP_LONGPRESS_TIMEOUT = "kill_app_longpress_timeout";
+
         private ListPreference mHomeLongPressAction;
         private ListPreference mHomeDoubleTapAction;
         private ListPreference mMenuPressAction;
@@ -178,6 +182,9 @@ public class ButtonSettingsFragment extends Fragment {
         private SwitchPreference mKeyboardRotationToggle;
         private ListPreference mKeyboardRotationTimeout;
         private SwitchPreference mShowEnterKey;
+
+        private SwitchPreference mKillAppLongPressBack;
+        private SeekBarPreferenceCham mKillAppLongpressTimeout;
 
         private Handler mHandler;
 
@@ -255,6 +262,20 @@ public class ButtonSettingsFragment extends Fragment {
                 getPreferenceScreen().removePreference(hwKeysPref);
             }
             final CMHardwareManager hardware = CMHardwareManager.getInstance(getActivity());
+
+            // Kill-app long press back
+            mKillAppLongPressBack = (SwitchPreference) findPreference(KILL_APP_LONGPRESS_BACK);
+            mKillAppLongPressBack.setOnPreferenceChangeListener(this);
+            int killAppLongPressBack = Settings.Secure.getInt(mResolver,
+                    Settings.Secure.KILL_APP_LONGPRESS_BACK, 0);
+            mKillAppLongPressBack.setChecked(killAppLongPressBack != 0);
+
+            // Kill-app long press back delay
+            mKillAppLongpressTimeout = (SeekBarPreferenceCham) findPreference(KILL_APP_LONGPRESS_TIMEOUT);
+            int killconf = Settings.Secure.getInt(mResolver,
+                    Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, 1000);
+            mKillAppLongpressTimeout.setValue(killconf);
+            mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
 
             if (hasPowerKey) {
                 if (!Utils.isVoiceCapable(getActivity())) {
@@ -608,6 +629,16 @@ public class ButtonSettingsFragment extends Fragment {
                 Settings.System.putInt(mResolver,
                         Settings.System.KEYBOARD_ROTATION_TIMEOUT, timeout);
                 updateRotationTimeout(timeout);
+                return true;
+            } else if (preference == mKillAppLongPressBack) {
+                boolean value = (Boolean) newValue;
+                Settings.Secure.putInt(mResolver,
+                        Settings.Secure.KILL_APP_LONGPRESS_BACK, value ? 1 : 0);
+                return true;
+            } else if (preference == mKillAppLongpressTimeout) {
+                int killconf = (Integer) newValue;
+                Settings.Secure.putInt(mResolver,
+                        Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, killconf);
                 return true;
             }
             return false;

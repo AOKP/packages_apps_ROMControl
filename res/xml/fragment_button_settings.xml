@@ -15,7 +15,8 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
 
     <PreferenceCategory
         android:key="hw_keys"
@@ -85,6 +86,21 @@
             android:persistent="false" />
 
     </PreferenceCategory>
+
+    <SwitchPreference
+        android:key="kill_app_longpress_back"
+        android:title="@string/kill_app_longpress_back"
+        android:summary="@string/kill_app_longpress_back_summary"/>
+
+    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+        android:key="kill_app_longpress_timeout"
+        android:title="@string/kill_app_longpress_timeout_title"
+        android:max="3000"
+        aokp:minimum="250"
+        aokp:unitsLeft=""
+        aokp:unitsRight="ms"
+        android:dependency="kill_app_longpress_back"
+        android:persistent="false" />
 
     <PreferenceCategory
         android:key="back_key"

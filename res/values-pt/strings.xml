@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2016, The Android Open Kang Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- ROMControl -->
+    <string name="app_name">ROM control</string>
+    <string name="rom_control">ROM control</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Menu Items -->
+    <string name="menu_show_drawer_icon">Show in app drawer</string>
+
+    <!-- Header Strings -->
+    <string name="category_about_aokp">About</string>
+    <string name="category_app_launcher">App Launcher</string>
+    <string name="category_general">General</string>
+    <string name="category_lockscreen">Lockscreen</string>
+    <string name="category_notifications_drawer">Notifications Drawer</string>
+    <string name="category_power_menu">Power menu</string>
+    <string name="category_sound">Sound</string>
+    <string name="category_statusbar">Statusbar</string>
+    <string name="category_ui">User Interface</string>
+
+    <!-- Generic -->
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="center">Centered</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="add">Add</string>
+    <string name="help">Help</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="default_string">Default</string>
+    <string name="choose_app">Choose application</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="dlg_reset_values_message">Reset values to default?</string>
+    <string name="restarting_ui">Restarting UI\u2026</string>
+    <string name="dlg_reset_aokp">AOKP</string>
+    <string name="dlg_reset_android">Android</string>
+    <string name="colors_title">Colors</string>
+    <string name="text_title">Text</string>
+
+    <!-- Title for the button to restart a print job. [CHAR LIMIT=25] -->
+    <string name="print_restart">Restart</string>
+
+    <!-- MultiChoiceSetting -->
+    <plurals name="multichoice_at_least">
+        <item quantity="one">Please select at least <xliff:g id="number">%d</xliff:g> item.</item>
+        <item quantity="other">Please select at least <xliff:g id="number">%d</xliff:g> items.</item>
+    </plurals>
+    <plurals name="multichoice_at_most">
+        <item quantity="one">Please select at most <xliff:g id="number">%d</xliff:g> item.</item>
+        <item quantity="other">Please select at most <xliff:g id="number">%d</xliff:g> items.</item>
+    </plurals>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color picker</string>
+    <string name="press_color_to_apply">Press on color to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint" translatable="false">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="default_color">Default</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+    <string name="group_applications">Applications</string>
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom app</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
+
+    <!-- SystemUI restart prompt -->
+    <string name="systemui_restart_title">WARNING</string>
+    <string name="systemui_restart_message">SystemUI will be restarted so that selected setting can be applied correctly.</string>
+
+    <!-- ****************************** About Cat starts ****************************** -->
+    <string name="devs">The Legacy Crew</string>
+    <string name="aokp" translatable="false">Android Open Kang Project</string>
+    <string name="aokp_website_title">AOKP website</string>
+    <string name="aokp_website_summary">www.aokp.co - Find all newest releases here</string>
+    <string name="aokp_review_title">AOKP Code Review - Gerrit</string>
+    <string name="aokp_review_summary">View AOKP\'s Gerrit instance</string>
+    <string name="aokp_irc_title">Join us on IRC</string>
+    <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
+    <string name="about_aokp">About AOKP</string>
+    <string name="about_aokp_summary">@null</string>
+    <string name="donate_aokp" translatable="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
+    </string>
+    <string name="github_aokp" translatable="false">https://github.com/AOKP</string>
+    <string name="github_adam" translatable="false">https://github.com/syaoran12</string>
+    <string name="github_akellar" translatable="false">https://github.com/akellar</string>
+    <string name="github_bajee11" translatable="false">https://github.com/Bajee11</string>
+    <string name="github_bmc08gt" translatable="false">https://github.com/BMc08GT</string>
+    <string name="github_birdman" translatable="false">https://github.com/mrbirdman</string>
+    <string name="github_bytecodeme" translatable="false">https://github.com/BytecodeMe</string>
+    <string name="github_championswimmer" translatable="false">https://github.com/championswimmer</string>
+    <string name="github_DAGr8" translatable="false">https://github.com/DAGr8</string>
+    <string name="github_dhacker29" translatable="false">https://github.com/dhacker29</string>
+    <string name="github_elelinux" translatable="false">https://github.com/elelinux</string>
+    <string name="github_graffixnyc" translatable="false">https://github.com/graffixnyc</string>
+    <string name="github_hashcode" translatable="false">https://github.com/Hashcode</string>
+    <string name="github_jbirdvegas" translatable="false">https://github.com/JBirdVegas</string>
+    <string name="github_k900" translatable="false">https://github.com/K900</string>
+    <string name="github_kecinzer" translatable="false">https://github.com/kecinzer</string>
+    <string name="github_khasmek" translatable="false">https://github.com/KhasMek</string>
+    <string name="github_kwes" translatable="false">https://github.com/kwes1020</string>
+    <string name="github_marclandis" translatable="false">https://github.com/MarcLandis</string>
+    <string name="github_rohan32" translatable="false">https://github.com/rohanmathur</string>
+    <string name="github_roman" translatable="false">https://github.com/romanbb</string>
+    <string name="github_protekk" translatable="false">https://github.com/ProTekk</string>
+    <string name="github_qnhoang81" translatable="false">https://github.com/qnhoang81</string>
+    <string name="github_scar45" translatable="false">https://github.com/scar45</string>
+    <string name="github_sethyx" translatable="false">https://github.com/sethyx</string>
+    <string name="github_sixstringsg" translatable="false">https://github.com/sixstringsg</string>
+    <string name="github_stelix" translatable="false">https://github.com/STELIX</string>
+    <string name="github_stevespear" translatable="false">https://github.com/Stevespear426</string>
+    <string name="github_tdm" translatable="false">https://github.com/tdm</string>
+    <string name="github_whitehawk" translatable="false">https://github.com/Whitehawkx</string>
+    <string name="github_willdeberry" translatable="false">https://github.com/willdeberry</string>
+    <string name="github_xoom" translatable="false">https://github.com/xoomdev</string>
+    <string name="github_zaph" translatable="false">https://github.com/Zaphod-Beeblebrox</string>
+    <string name="url_aokp" translatable="false">http://aokp.co/</string>
+    <string name="url_aokp_gerrit" translatable="false">http://gerrit.aokp.co</string>
+    <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
+    <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
+    <string name="kanglings">Os Kanglings</string>
+
+    <string name="maintainers">Os Maintainers</string>
+    <string name="github_task650" translatable="false">https://github.com/task650</string>
+    <string name="github_shr3ps" translatable="false">https://github.com/Shr3ps</string>
+    <string name="github_ischneiderle" translatable="false">https://github.com/iSchneiderle</string>
+    <string name="github_roodbuild" translatable="false">https://github.com/roodbuild</string>
+    <string name="github_rolandroid" translatable="false">https://github.com/RolanDroid</string>
+    <string name="github_csendre" translatable="false">https://github.com/csendre</string>
+    <string name="github_varuniyer" translatable="false">https://github.com/varuniyer</string>
+    <string name="github_blackscorpion3" translatable="false">https://github.com/blackscorpion3</string>
+    <!-- ****************************** About Cat ends ****************************** -->
+
+    <!-- ****************************** AppLauncher Cat starts ****************************** -->
+    <!-- Gesture Anywhere -->
+    <string name="gesture_anywhere_title">Gesture Anywhere</string>
+    <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
+    <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
+    <string name="gesture_anywhere_position_title">Location</string>
+    <string name="gesture_anywhere_position_left">Left edge</string>
+    <string name="gesture_anywhere_position_right">Right edge</string>
+    <string name="gesture_anywhere_gestures_title">Gestures</string>
+    <string name="gesture_anywhere_gestures_summary">Add, remove, and edit gestures</string>
+    <!-- Label, button used to add a gesture -->
+    <string name="ga_button_add">Add gesture</string>
+    <!-- Label, button used to reload all gestures -->
+    <string name="ga_button_reload">Reload</string>
+    <!-- Label, button used to cancel the operation of adding a gesture -->
+    <string name="ga_button_discard">Discard</string>
+    <!-- Label, button used to save a gesture newly created -->
+    <string name="ga_button_done">Done</string>
+    <!-- Label, prompt asking the user to enter the name of the gesture -->
+    <string name="ga_prompt_gesture_name">Name</string>
+    <!-- Error message, informs the user he needs to enter a name before saving a gesture -->
+    <string name="ga_error_missing_name">You must enter a name</string>
+    <!-- success message, tells the user where the gesture was saved -->
+    <string name="ga_save_success">Gesture saved in %s</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_rename_action">OK</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_cancel_action">Cancel</string>
+    <!-- Message displayed when the user opens the gestures settings screen -->
+    <string name="ga_gestures_loading">Loading gestures...</string>
+    <!-- Message displayed when the user has no gestures -->
+    <string name="ga_gestures_empty">No gestures</string>
+    <!-- Title of the screen used to view/manage gestures -->
+    <string name="ga_gestures_activity">Gestures</string>
+    <!-- Noun, menu item used to edit a gesture -->
+    <string name="ga_gestures_edit">Edit</string>
+    <!-- Noun, menu item used to remove a gesture -->
+    <string name="ga_gestures_delete">Delete</string>
+    <!-- Message displayed when a gesture is successfully deleted -->
+    <string name="ga_gestures_delete_success">Gesture deleted</string>
+    <!-- Title of dialog box -->
+    <string name="ga_gestures_rename_title">Rename gesture</string>
+    <!-- Label of gesture name field in Rename gesture dialog box -->
+    <string name="ga_gestures_rename_label">Gesture name</string>
+    <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
+    <string name="ga_gestures_error_loading">Could not load %s. Make sure you have storage available.</string>
+    <string name="trigger_category">Trigger region</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+    <!-- Gesture Anywhere -->
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom app</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
+    <string name="profile_appgroups_title">App groups</string>
+    <string name="profile_applist_title">Apps</string>
+    <string name="profile_new_appgroup">New app group</string>
+    <string name="profile_delete_appgroup">Delete this app group?</string>
+    <string name="profile_appgroup_name_prompt">Enter a name for the new app group</string>
+    <string name="profile_appgroup_name_title">Name</string>
+
+    <!-- Circle app bar -->
+    <string name="app_circle_bar_title">App circle bar</string>
+    <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
+    <string name="app_circle_bar_included_apps_title">Included apps</string>
+    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+
+    <!-- App Sidebar -->
+    <string name="app_sidebar_title">AppSidebar</string>
+    <string name="app_sidebar_enable_title">Enable Appbar</string>
+    <string name="app_sidebar_enable_summaryOn">Appbar is enabled</string>
+    <string name="app_sidebar_enable_summaryOff">Appbar is disabled</string>
+    <string name="app_sidebar_setup_items_title">Setup Appbar content</string>
+    <string name="app_sidebar_setup_items_summary">Add, remove, and position items in the appbar</string>
+    <string name="app_sidebar_transparency_title">Appbar transparency</string>
+    <string name="app_sidebar_transparency_summary">Adjust the Appbar transparency level</string>
+    <string name="app_sidebar_position_title">Appbar position</string>
+    <string name="app_sidebar_position_summary">Position the Appbar on the left or right side of the screen</string>
+    <string name="app_sidebar_position_left">Left</string>
+    <string name="app_sidebar_position_right">Right</string>
+    <string name="app_sidebar_hide_labels_title">Hide icon labels</string>
+    <string name="app_sidebar_hide_labels_summary">Hide Appbar icon labels</string>
+    <string name="tab_category">Visible Tab</string>
+    <string name="use_tab_title">Display tab</string>
+    <string name="use_tab_summary">Display a visible tab on the side which will display the appbar when touched.</string>
+    <string name="tab_position_title">Tab location</string>
+    <string name="tab_position_summary">Display the tab on the top, middle, or bottom on the side of the screen.</string>
+    <string name="tab_size_title">Tab size</string>
+    <string name="tab_size_summary">Change the size of the visible tab.</string>
+    <string name="trigger_category">Trigger region</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+    <!-- ****************************** AppLauncher Cat ends ****************************** -->
+
+    <!-- ****************************** General Cat starts ****************************** -->
+
+    <!-- General -->
+    <string name="general_settings">General settings</string>
+    <!-- Toast Icons -->
+    <string name="toast_icon_title">Toast icon</string>
+    <string name="toast_icon_summary">Show app icon behind toast notification</string>
+
+    <!-- LockClocK -->
+    <string name="lock_clock_title">cLock settings</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
+
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
+
+    <!-- Recents setting -->
+    <string name="recents_settings">Recents settings</string>
+
+    <string name="systemui_recents_mem_display_title">Show Memory Bar</string>
+    <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string>
+    <!-- Immersive Recents -->
+    <string name="immersive_recents_title">Immersive Recents</string>
+    <string name="immersive_recents_summary">Change the view of the recents screen</string>
+    <string name="immersive_recents_dialog_title">Select recents view</string>
+    <string name="immersive_recents_default">Default</string>
+    <string name="immersive_recents_fullscreen">Fullscreen</string>
+    <string name="immersive_recents_statusbar">Statusbar only</string>
+    <string name="immersive_recents_navbar">Navbar only</string>
+
+    <!-- Wakelock blocker -->
+    <string name="wakelock_blocker_title">Wakelock Blocker</string>
+    <string name="wakelock_blocker_summary">Block system wakelocks</string>
+    <string name="wakelock_blocker_save">Save</string>
+    <string name="wakelock_list_header">Available wakelocks</string>
+    <string name="wakelock_blocker_reload">Reload</string>
+    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
+    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
+
+    <!-- Screenshot delay -->
+    <string name="screenshot_options_category">Screenshot options</string>
+    <string name="screenshot_delay_title">Screenshot delay</string>
+    <string name="screenshot_delay_summary">Adjust the time for when a screenshot is captured</string>
+    <!-- ****************************** General Cat ends ****************************** -->
+
+    <!-- ****************************** Lockscreen Cat starts ****************************** -->
+    <!-- Lockscreen -->
+    <string name="lockscreen_settings_title">Lockscreen</string>
+
+    <!-- Lockscreen Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+
+    <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
+
+    <!-- title for lock screen weather preference -->
+    <string name="lockscreen_weather_enabled_title">Show weather</string>
+
+    <!-- Fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
+
+    <!-- Double tap to sleep on lockscreen -->
+    <string name="double_tap_sleep_anywhere_title">DT2S on Lockscreen</string>
+    <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to sleep</string>
+
+    <!-- Lockscreen Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- Disable OS on lockscreen -->
+    <string name="block_on_secure_keyguard_title">Disable quick settings</string>
+    <string name="block_on_secure_keyguard_summary">Disables quick settings on secure lockscreen</string>
+
+    <!-- Hide Lockscreen clock & date -->
+    <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
+    <string name="hide_lockscreen_date_title">Show lockscreen date</string>
+
+    <!-- Keyguard Statusbar Clock -->
+    <string name="keyguard_statusbar_clock_title">Keyguard statusbar clock</string>
+    <string name="keyguard_statusbar_clock_summary">Enables the statusbar clock in the keyguard on the left side</string>
+
+    <!-- Lockscreen notif count -->
+    <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
+    <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
+    <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
+    <!-- ****************************** Lockscreen Cat ends ****************************** -->
+
+    <!-- ****************************** Not Drawer Cat starts ****************************** -->
+    <!-- Notifications Drawer -->
+    <string name="notifications_drawer_settings">Notif Drawer Settings</string>
+
+    <!-- Brightness slider -->
+    <string name="qs_brightness_slider_title">Brightness slider switch</string>
+    <string name="qs_brightness_slider_enabled">Enabled</string>
+    <string name="qs_brightness_slider_disabled">Disabled</string>
+    <string name="brightness_icon_title">Brightness icon </string>
+    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
+
+    <!-- Tiles animation style  -->
+    <string name="qs_tile_animation_style_title">Tiles animation style</string>
+    <string name="qs_tile_animation_duration_title">Tiles animation duration</string>
+    <string name="qs_tile_animation_interpolator_title">Tiles animation interpolator</string>
+    <string name="qs_tile_animation_style_off">No animation</string>
+    <string name="qs_tile_animation_style_flip">Flip</string>
+    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_duration_low">Low</string>
+    <string name="qs_tile_animation_duration_default">Default</string>
+    <string name="qs_tile_animation_duration_fast">Fast</string>
+    <string name="qs_tile_animation_duration_superfast">SuperFast</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_set_animation_style">%1$s</string>
+    <string name="qs_set_animation_duration">%1$s</string>
+    <string name="qs_set_animation_interpolator">%1$s</string>
+
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
+
+    <!-- Advanced data tile -->
+    <string name="qs_advanced_data_title">Advanced data tile</string>
+    <string name="qs_advanced_data_summary">Enable one tap action to enable or disable data</string>
+
+    <string name="sysui_qqs_count_title">Small QS tiles</string>
+    <!-- Quick settings tiles columns and rows config -->
+    <string name="qs_rows_portrait_title">Rows (portrait)</string>
+    <string name="qs_rows_landscape_title">Rows (landscape)</string>
+    <string name="qs_columns_title">Columns</string>
+
+    <string name="qs_fancy_animation_title">Fancy QS animation</string>
+    <string name="qs_fancy_animation_summary">Enable a different animation effect when pulling down the statusbar</string>
+
+    <!-- Smart pulldown-->
+    <string name="smart_pulldown_title">Smart pulldown</string>
+    <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
+    <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
+    <string name="smart_pulldown_off">Off</string>
+    <string name="smart_pulldown_none">no notifications</string>
+    <string name="smart_pulldown_dismissable">no dismissable</string>
+    <string name="smart_pulldown_ongoing">no ongoing</string>
+    <!-- ****************************** Not Drawer Cat ends ****************************** -->
+
+    <!-- ****************************** PowerMenu Cat starts ****************************** -->
+    <!-- Power menu -->
+    <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_reboot_title">Restart menu</string>
+    <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
+    <string name="power_menu_airplane_title">Airplane mode</string>
+    <string name="power_menu_users_title">User switcher</string>
+    <string name="power_menu_settings_title">Settings shortcut</string>
+    <string name="power_menu_lockdown_title">Device lockdown</string>
+    <string name="power_menu_bug_report_title">Bug report</string>
+    <string name="power_menu_sound_title">Sound panel</string>
+    <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
+
+    <!-- Power menu Animations  -->
+    <string name="power_menu_animation_title">Power menu animation</string>
+    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
+    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
+    <string name="power_menu_animation_aosp">AOSP (default)</string>
+    <string name="power_menu_animation_bottom">Bottom</string>
+    <string name="power_menu_animation_top">Top</string>
+    <string name="power_menu_animation_rotate">Rotation</string>
+    <string name="power_menu_animation_xylon">Fly</string>
+    <string name="power_menu_animation_slide">Slide</string>
+    <string name="power_menu_animation_turn">Turn</string>
+    <string name="power_menu_animation_fly">Glow</string>
+    <string name="power_menu_animation_card">3D</string>
+    <string name="power_menu_animation_translucent_top">Translucent (top)</string>
+    <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
+    <!-- ****************************** PowerMenu Cat ends ****************************** -->
+
+    <!-- ****************************** Sound Cat starts ****************************** -->
+    <!-- Sound settings -->
+    <string name="sound_settings">Sound settings</string>
+    <!-- Safe headset volume restore checkbox -->
+    <string name="attention">Attention</string>
+    <string name="safe_headset_volume_title">Safe headset volume</string>
+    <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
+    <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
+    <!-- Less Notification sounds -->
+    <string name="notifications_category_title">Notifications</string>
+    <string name="less_notification_sounds_title">Less frequent notification sounds</string>
+    <string name="less_notification_sounds_summary">Limit the notification sounds of each app to only play once per set time period</string>
+    <string name="less_notification_sounds_default">Default Behaviour</string>
+    <string name="less_notification_sounds_3s">3 seconds</string>
+    <string name="less_notification_sounds_5s">5 seconds</string>
+    <string name="less_notification_sounds_10s">10 seconds</string>
+    <string name="less_notification_sounds_15s">15 seconds</string>
+    <string name="less_notification_sounds_30s">30 seconds</string>
+    <string name="less_notification_sounds_45s">45 seconds</string>
+    <string name="less_notification_sounds_1m">1 minute</string>
+    <string name="less_notification_sounds_2m">2 minutes</string>
+    <string name="less_notification_sounds_5m">5 minutes</string>
+    <!-- Camera sound switch -->
+    <string name="camera_sounds_title">Camera shutter sound</string>
+    <string name="camera_sounds_summary">Enable system camera shutter sound</string>
+    <string name="camera_sound_warning_dialog_text">Disabling the camera shutter sound is illegal in some areas! Please check the applicable law in your country</string>
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
+    <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Volume steps</string>
+    <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
+    <string name="volume_steps_dtmf_title">Volume steps: DTMF</string>
+    <string name="volume_steps_music_title">Volume steps: Music</string>
+    <string name="volume_steps_notification_title">Volume steps: Notification</string>
+    <string name="volume_steps_ring_title">Volume steps: Ringer</string>
+    <string name="volume_steps_system_title">Volume steps: System</string>
+    <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
+    <string name="volume_steps_60">60</string>
+    <string name="volume_steps_45">45</string>
+    <string name="volume_steps_30">30</string>
+    <string name="volume_steps_15">15</string>
+    <string name="volume_steps_7">7</string>
+    <string name="volume_steps_5">5</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Launch music app</string>
+    <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
+    <!-- ****************************** Sound Cat ends ****************************** -->
+
+    <!-- ****************************** StatusBar Cat starts ****************************** -->
+    <!-- StatusBar settings -->
+    <string name="statusbar_settings">StatusBar settings</string>
+
+    <!-- Status bar date -->
+    <string name="status_bar_date_title">Date</string>
+    <string name="status_bar_date_none">Hidden (default)</string>
+    <string name="status_bar_date_small">Small</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="status_bar_date_format_title">Date format</string>
+    <string name="status_bar_date_style">Date style</string>
+    <string name="status_bar_date_style_normal">Normal</string>
+    <string name="status_bar_date_style_lowercase">Lowercase</string>
+    <string name="status_bar_date_style_uppercase">Uppercase</string>
+    <string name="status_bar_date_format_custom">Custom java format</string>
+    <string name="status_bar_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="status_bar_date_string_edittext_summary">Enter string</string>
+    <string name="clock_date_position">Date position</string>
+    <string name="clock_date_right">Right of time</string>
+    <string name="clock_date_left">Left of time</string>
+
+    <!-- Superuser indicator on status bar -->
+    <string name="su_indicator">Superuser indicator</string>
+    <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
+    <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
+
+    <!-- Network traffic -->
+    <string name="traffic_category">Traffic Indicators</string>
+    <string name="network_traffic_title">Network traffic</string>
+    <string name="show_network_traffic_state">Status bar traffic monitor</string>
+    <string name="show_network_traffic_unit">Display unit</string>
+    <string name="show_network_traffic_frequency">Update interval</string>
+    <string name="show_network_traffic_disable">Disabled</string>
+    <string name="show_network_traffic_up">Outgoing</string>
+    <string name="show_network_traffic_down">Incoming</string>
+    <string name="show_network_traffic_all">Outgoing and incoming</string>
+    <string name="show_network_traffic_bit">Bits per second</string>
+    <string name="show_network_traffic_byte">Bytes per second</string>
+    <string name="show_network_traffic_500">500 ms</string>
+    <string name="show_network_traffic_1000">1000 ms</string>
+    <string name="show_network_traffic_1500">1500 ms</string>
+    <string name="show_network_traffic_2000">2000 ms</string>
+    <string name="network_traffic_autohide">Auto hide</string>
+    <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
+    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+    <string name="network_traffic_color_style">Color style</string>
+    <string name="network_traffic_color_reset">Reset color</string>
+    <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+    <string name="network_traffic_hidearrow">Hide arrows</string>
+    <string name="network_traffic_hidearrow_summary">Hide the arrows in the traffic indicators</string>
+
+    <!-- Status bar -->
+    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="status_bar_show_weather_title">Show weather</string>
+    <string name="status_bar_show_weather_summary">Display the current temperature on the status bar</string>
+    <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Left</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Right</string>
+    <string name="status_bar_quick_qs_pulldown_off">Off</string>
+    <string name="status_bar_quick_qs_pulldown_left">Left</string>
+    <string name="status_bar_quick_qs_pulldown_right">Right</string>
+
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_style_title">Clock style</string>
+    <string name="status_bar_clock_style_right">Right</string>
+    <string name="status_bar_clock_style_left">Left</string>
+    <string name="status_bar_clock_style_center">Center</string>
+    <string name="status_bar_clock_style_hidden">Hidden</string>
+
+    <string name="status_bar_am_pm_title">AM/PM style</string>
+    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Small</string>
+    <string name="status_bar_am_pm_hidden">Hidden</string>
+
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Battery status style</string>
+    <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
+    <string name="status_bar_battery_style_circle">Circle</string>
+    <string name="status_bar_battery_style_text">Text</string>
+    <string name="status_bar_battery_style_hidden">Hidden</string>
+
+    <!-- Status bar - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
+
+    <!-- Status bar - icon blacklist -->
+    <string name="status_bar_icons_title">Status bar icons</string>
+    <string name="status_bar_icons_summary">Control which status bar icons are shown</string>
+
+    <!-- Status bar - double tap to sleep -->
+    <string name="status_bar_double_tap_to_sleep_title">Double-tap to sleep</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Double-tap on the status bar to turn off the display</string>
+
+    <!-- Statusbar AOKP logo -->
+    <string name="status_bar_aokp_logo_title">AOKP logo</string>
+    <string name="status_bar_aokp_logo_summary">Enable to show AOKP logo on the left side of statusbar</string>
+    <string name="status_bar_aokp_logo_color">AOKP logo color</string>
+    <string name="status_bar_aokp_logo_position">Logo location</string>
+    <string name="status_bar_aokp_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_logo_position_right">Right</string>
+    <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_logo_position_center">Center</string>
+
+    <!-- ****************************** StatusBar Cat ends ****************************** -->
+
+    <!-- ****************************** UI Interface Cat starts ****************************** -->
+    <!-- UI Interface -->
+    <string name="ui_settings">UI Interface settings</string>
+
+    <!-- Toast Animation -->
+    <string name="toast_animation_title">Toast animation</string>
+    <string name="toast_none_animation">None</string>
+    <string name="toast_default_animation">Default</string>
+    <string name="toast_fade_animation">Fade</string>
+    <string name="toast_SlideRight_animation">Slide right</string>
+    <string name="toast_SlideLeft_animation">Slide left</string>
+    <string name="toast_Xylon_animation">Xylon</string>
+    <string name="toast_Toko_animation">Toko</string>
+    <string name="toast_Tn_animation">Tn</string>
+    <string name="toast_Honami_animation">Honami</string>
+    <string name="toast_FastFade_animation">Fast fade</string>
+    <string name="toast_GrowFade_animation">Grow fade</string>
+    <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
+    <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
+    <string name="toast_Translucent_animation">Translucent</string>
+    <string name="toast_SlideLeftRight_animation">Slide left to right</string>
+    <string name="toast_SlideRightLeft_animation">Slide right to left</string>
+
+    <!-- ListView animation -->
+    <string name="listview_animation_title">ListView animation</string>
+    <string name="listview_off">Default</string>
+    <string name="listview_wave_left">Wave (left)</string>
+    <string name="listview_wave_right">Wave (right)</string>
+    <string name="listview_alpha">Alpha</string>
+    <string name="listview_scale">Scale</string>
+    <string name="listview_stack_top">Stack (top)</string>
+    <string name="listview_stack_bottom">Stack (bottom)</string>
+    <string name="listview_unfold">Unfold</string>
+    <string name="listview_fold">Fold</string>
+    <string name="listview_translate_left">Translate (left)</string>
+    <string name="listview_translate_right">Translate (right)</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">ListView interpolator</string>
+    <string name="listview_accelerate_interpolator">Accelerate</string>
+    <string name="listview_decelerate_interpolator">Decelerate</string>
+    <string name="listview_accelerate_decelerate_interpolator">Accelerate and decelerate</string>
+    <string name="listview_anticipate_interpolator">Anticipate</string>
+    <string name="listview_overshoot_interpolator">Overshoot</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
+    <string name="listview_bounce_interpolator">Bounce</string>
+
+    <!-- AOKP custom system animations -->
+    <string name="aokp_animation_title">AOKP Animations</string>
+    <string name="aokp_animation_summary">AOKP system custom animation</string>
+    <string name="activity_open_title">Activity open animation</string>
+    <string name="activity_close_title">Activity close animation</string>
+    <string name="task_open_title">Task open animation</string>
+    <string name="task_open_behind_title">Task open behind animation</string>
+    <string name="task_close_title">Task close animation</string>
+    <string name="task_move_to_front_title">Move to front animation</string>
+    <string name="task_move_to_back_title">Move to back animation</string>
+    <string name="wallpaper_open_title">Wallpaper open animation</string>
+    <string name="wallpaper_close_title">Wallpaper close animation</string>
+    <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
+    <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
+    <string name="animation_duration_title">Animation duration</string>
+    <string name="animation_duration_default">Default</string>
+
+    <!-- Scrolling Cache -->
+    <string name="pref_scrollingcache_title">Scrolling cache</string>
+    <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
+    <string name="pref_scrollingcache_force_enable">Force enable</string>
+    <string name="pref_scrollingcache_default_enable">Default enable</string>
+    <string name="pref_scrollingcache_default_disable">Default disable</string>
+    <string name="pref_scrollingcache_force_disable">Force disable</string>
+
+    <!-- Disable animations -->
+    <string name="disable_animations">Disable animations</string>
+    <string name="disable_animations_summary">Disables transition animations such as when launching an app</string>
+
+   <!-- Force expanded notifications -->
+   <string name="force_expanded_notifications_title">Force Expanded Notifications</string>
+   <string name="force_expanded_notifications_summary">Available only for apps that support expanded notifications</string>
+
+   <!-- Disabling immersive mode messages -->
+   <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
+   <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
+
+   <!-- Transparency Porn -->
+   <string name="transparency_porn_title">Transparency porn</string>
+   <!-- QS shade transparency -->
+   <string name="qs_transparent_shade">QS shade transparency</string>
+   <!-- QS header transparency -->
+   <string name="qs_transparent_header">QS header transparency</string>
+   <!-- Volume dialog transparency -->
+   <string name="volume_dialog_transparency">Volume dialog transparency</string>
+   <!-- Power menu and dialogs transparency -->
+   <string name="power_menu_transparency">Power/reboot menu transparency</string>
+   <!-- Power/reboot dialogs dim amount -->
+   <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
+   <!-- Notifications transparency -->
+   <string name="notifications_transparency">Notifications transparency</string>
+   <!-- QS stroke settings -->
+   <string name="qs_stroke_title">QS shade stroke</string>
+   <string name="qs_stroke_disabled">Disabled</string>
+   <string name="qs_stroke_accent">Accent color</string>
+   <string name="qs_stroke_custom">Custom color</string>
+   <string name="qs_stroke_color_title">QS shade stroke color</string>
+   <string name="qs_stroke_thickness_title">QS shade stroke thickness</string>
+   <string name="qs_corner_radius_title">QS shade corner radius</string>
+   <string name="qs_dash_width_title">QS stroke dash width</string>
+   <string name="qs_dash_gap_title">QS stroke dash gap</string>
+   <!-- Volume dialog stroke settings -->
+   <string name="volume_dialog_title">Volume dialog</string>
+   <string name="volume_dialog_stroke_title">Volume dialog stroke</string>
+   <string name="volume_dialog_stroke_disabled">Disabled</string>
+   <string name="volume_dialog_stroke_accent">Accent color</string>
+   <string name="volume_dialog_stroke_custom">Custom color</string>
+   <string name="volume_dialog_stroke_color_title">Volume dialog stroke color</string>
+   <string name="volume_dialog_stroke_thickness_title">Volume dialog stroke thickness</string>
+   <string name="volume_dialog_corner_radius_title">Volume dialog corner radius</string>
+   <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
+   <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
+   <!-- ****************************** UI Interface Cat ends ****************************** -->
+
+</resources>
+

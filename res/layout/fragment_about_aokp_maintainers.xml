@@ -98,5 +98,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Alexander Gemsa"
+                aokp:nameDev="schwabe93"
+                aokp:twitterHandle="schwabe93"
+                aokp:githubLink="@string/github_schwabe93"
+                aokp:emailDev="schwabe93@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

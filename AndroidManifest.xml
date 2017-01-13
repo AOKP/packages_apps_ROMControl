@@ -59,6 +59,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.aokp.romcontrol.fragments.ChangelogFragment" />
+
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutCrewFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutMaintainersFragment" />

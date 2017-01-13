@@ -90,7 +90,6 @@ public class DisplayAnimationsSettings extends Fragment {
         }
 
         private PreferenceScreen createCustomView() {
-            mContext = getActivity();
             ContentResolver resolver = getActivity().getContentResolver();
 
             addPreferencesFromResource(R.xml.fragment_display_animations_settings);
@@ -98,14 +97,14 @@ public class DisplayAnimationsSettings extends Fragment {
 
             // ListView Animations
             mListViewAnimation = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_ANIMATION);
-            int listviewanimation = Settings.System.getInt(getActivity().getContentResolver(),
+            int listviewanimation = Settings.System.getInt(resolver,
                     Settings.System.LISTVIEW_ANIMATION, 0);
             mListViewAnimation.setValue(String.valueOf(listviewanimation));
             mListViewAnimation.setSummary(mListViewAnimation.getEntry());
             mListViewAnimation.setOnPreferenceChangeListener(this);
 
             mListViewInterpolator = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_INTERPOLATOR);
-            int listviewinterpolator = Settings.System.getInt(getActivity().getContentResolver(),
+            int listviewinterpolator = Settings.System.getInt(resolver,
                     Settings.System.LISTVIEW_INTERPOLATOR, 0);
             mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
@@ -115,7 +114,7 @@ public class DisplayAnimationsSettings extends Fragment {
             // Toast Animations
             mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
             mToastAnimation.setSummary(mToastAnimation.getEntry());
-            int CurrentToastAnimation = Settings.System.getInt(getActivity().getContentResolver(),
+            int CurrentToastAnimation = Settings.System.getInt(resolver,
                     Settings.System.TOAST_ANIMATION, 1);
             mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
             mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
@@ -140,30 +139,30 @@ public class DisplayAnimationsSettings extends Fragment {
 
         @Override
         public boolean onPreferenceChange(Preference preference, Object objValue) {
-            final String key = preference.getKey();
-            if (KEY_LISTVIEW_ANIMATION.equals(key)) {
+            ContentResolver resolver = getActivity().getContentResolver();
+            if (preference == mListViewAnimation) {
                 int value = Integer.parseInt((String) objValue);
                 int index = mListViewAnimation.findIndexOfValue((String) objValue);
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.LISTVIEW_ANIMATION,
                         value);
                 mListViewAnimation.setSummary(mListViewAnimation.getEntries()[index]);
                 mListViewInterpolator.setEnabled(value > 0);
-            }
-            if (KEY_LISTVIEW_INTERPOLATOR.equals(key)) {
+                return true;
+            } else if (preference == mListViewInterpolator) {
                 int value = Integer.parseInt((String) objValue);
                 int index = mListViewInterpolator.findIndexOfValue((String) objValue);
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(resolver,
                         Settings.System.LISTVIEW_INTERPOLATOR,
                         value);
                 mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
-            }
-            if (preference == mToastAnimation) {
+                return true;
+            } else if (preference == mToastAnimation) {
                 int index = mToastAnimation.findIndexOfValue((String) objValue);
-                Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.putString(resolver,
                         Settings.System.TOAST_ANIMATION, (String) objValue);
                 mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
-                Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "AOKP ToasTest", Toast.LENGTH_SHORT).show();
                 return true;
             }
             return false;

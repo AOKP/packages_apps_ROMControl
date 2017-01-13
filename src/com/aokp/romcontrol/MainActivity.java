@@ -33,6 +33,7 @@ import android.view.View;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 
 import com.aokp.romcontrol.fragments.ButtonSettingsFragment;
+import com.aokp.romcontrol.fragments.ChangelogFragment;
 import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
 import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
@@ -161,6 +162,10 @@ public class MainActivity extends Activity
 
             case 9:
                 fragment = new UITabHostFragment();
+                break;
+
+            case 10:
+                fragment = new ChangelogFragment();
                 break;
         }
         return fragment;

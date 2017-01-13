@@ -60,6 +60,7 @@
         </activity>
 
         <activity android:name="com.aokp.romcontrol.fragments.ButtonSettingsFragment" />
+        <activity android:name="com.aokp.romcontrol.fragments.ChangelogFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.NotificationsDrawerFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.PowerMenuSettingsFragment" />

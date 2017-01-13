@@ -30,6 +30,7 @@ import android.view.MenuItem;
 
 import android.view.View;
 
+import com.aokp.romcontrol.fragments.ChangelogFragment;
 import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
 import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
 import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
@@ -140,6 +141,10 @@ public class MainActivity extends Activity
 
             case 6:
                 fragment = new UITabHostFragment();
+                break;
+
+            case 7:
+                fragment = new ChangelogFragment();
                 break;
 
         }

@@ -36,6 +36,7 @@
     <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>
     <string name="category_ui">User Interface</string>
+    <string name="category_changelog">Changelog</string>
 
     <!-- Generic -->
     <string name="ok">OK</string>
@@ -505,5 +506,11 @@
    <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
 
     <!-- ****************************** UI Interface Cat ends ****************************** -->
+
+   <!-- ****************************** Changelog Cat starts ****************************** -->
+   <!-- Changelog -->
+   <string name="changelog_title">Changelog</string>
+   <string name="changelog_error">Unable to load changelog</string>
+   <!-- ****************************** Changelog Cat ends ****************************** -->
 
 </resources>

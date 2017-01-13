@@ -30,6 +30,7 @@
         <item>@string/category_sound</item>
         <item>@string/category_statusbar</item>
         <item>@string/category_ui</item>
+        <item>@string/category_changelog</item>
     </string-array>
     <string-array name="navigation_drawer_values" translatable="false">
         <item>about_aokp</item>
@@ -43,6 +44,7 @@
         <item>sound</item>
         <item>statusbar</item>
         <item>ui</item>
+        <item>changelog</item>
     </string-array>
     <string-array name="navigation_drawer_icons" translatable="false">
         <item>@drawable/ic_rom_control_about</item>
@@ -56,6 +58,7 @@
         <item>@drawable/ic_rom_control_sound</item>
         <item>@drawable/ic_rom_control_signal</item>
         <item>@drawable/ic_rom_control_animations</item>
+        <item>@drawable/ic_rom_control_clock</item>
     </string-array>
 
     <string-array name="power_menu_actions_array" translatable="false">

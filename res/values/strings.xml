@@ -41,6 +41,7 @@
     <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>
     <string name="category_ui">User Interface</string>
+    <string name="category_changelog">Changelog</string>
 
     <!-- Generic -->
     <string name="ok">OK</string>
@@ -985,5 +986,10 @@
     <string name="blur_colors_notice">What are these colors for?</string>
     <string name="blur_colors_notice_summary">These colors are the ones tinting the BlurBackground. Instead of the normal Grey, you can now choose colors in any way you like.\nThere are three color filters available for: Light backgrounds, Dark backgrounds and Light/Dark backgrounds.\nSo how are these colors working?? \n Simple, as the titles say, the Light filter will be used for Lighter backgrounds, Dark filter for dark backgrounds and the mixed filter one will be used for backgrounds not too dark but neither too light.\nThese colors are used for both BlurBackgrounds: NotificationsDrawer and RecentsApps </string>
    <!-- ****************************** UI Interface Cat ends ****************************** -->
+   <!-- ****************************** Changelog Cat starts ****************************** -->
+   <!-- Changelog -->
+   <string name="changelog_title">Changelog</string>
+   <string name="changelog_error">Unable to load changelog</string>
+   <!-- ****************************** Changelog Cat ends ****************************** -->
 
 </resources>

@@ -88,7 +88,6 @@
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Utilizzo applicazioni personalizzate</string>
     <string name="use_custom_app_summary">"Utilizzare un\'applicazione personalizzata al posto della finestra di applicazioni recenti"</string>
-    <string name="select_custom_app_title">Seleziona app personalizzata</string>
     <string name="group_applications">Applicazioni</string>
     <string name="picker_activities">Attività</string>
     <string name="select_custom_app_title">Seleziona un\'applicazione personalizzata</string>
@@ -164,10 +163,6 @@
     <string name="trigger_top_summary">Regola la posizione verticale dell\'area di attivazione</string>
     <string name="trigger_bottom_title">Altezza area attivazione</string>
     <string name="trigger_bottom_summary">Regola l\'altezza dell\'area di attivazione</string>
-    <string name="picker_activities">Attività</string>
-    <string name="select_custom_app_title">Seleziona un\'app personalizzata</string>
-    <string name="select_custom_activity_title">Seleziona un\'attività personalizzata</string>
-    <string name="profile_applist_title">Applicazioni</string>
     <!-- Gesture Anywhere -->
     <string name="picker_activities">Attività</string>
     <string name="select_custom_app_title">Seleziona un\'applicazione personalizzata</string>
@@ -258,6 +253,12 @@
     <string name="wakelock_blocker_reload">Ricarica</string>
     <string name="wakelock_blocker_warning_title">Procedi con cautela</string>
     <string name="wakelock_blocker_warning">Bloccare i wakelock potrebbe causare instabilità, crash o perdita di dati</string>
+  
+    <!-- Screenshot delay -->
+    <string name="screenshot_options_category">Opzioni screenshot</string>
+    <string name="screenshot_delay_title">Ritardo screenshot</string>
+    <string name="screenshot_delay_summary">Regola il tempo di acquisizione di uno screenshot</string>
+  
     <!-- ****************************** General Cat ends ****************************** -->
 
     <!-- ****************************** Lockscreen Cat starts ****************************** -->
@@ -270,6 +271,9 @@
 
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Visualizza la musica sul display</string>
+  
+    <!-- title for lock screen weather preference -->
+    <string name="lockscreen_weather_enabled_title">Mostra meteo</string>
 
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Autenticazione impronta digitale con vibrazione</string>

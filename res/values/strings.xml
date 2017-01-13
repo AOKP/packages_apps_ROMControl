@@ -41,6 +41,7 @@
     <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>
     <string name="category_ui">User Interface</string>
+    <string name="category_changelog">Changelog</string>
 
     <!-- Generic -->
     <string name="ok">OK</string>
@@ -925,5 +926,10 @@
    <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
    <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
    <!-- ****************************** UI Interface Cat ends ****************************** -->
+   <!-- ****************************** Changelog Cat starts ****************************** -->
+   <!-- Changelog -->
+   <string name="changelog_title">Changelog</string>
+   <string name="changelog_error">Unable to load changelog</string>
+   <!-- ****************************** Changelog Cat ends ****************************** -->
 
 </resources>

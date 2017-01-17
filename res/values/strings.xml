@@ -460,6 +460,9 @@
     <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
     <string name="lockscreen_maxnotif_sumary">Enable adjustment of max lockscreen notifications</string>
     <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
+
+    <!-- title for lock screen blur preference -->
+    <string name="lockscreen_blur_enabled_title">Blur background</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->

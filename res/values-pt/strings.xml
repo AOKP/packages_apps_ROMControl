@@ -26,6 +26,11 @@
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Mostrar na grade de aplicativos</string>
 
+    <!-- Optional screenshot type -->
+    <string name="screenshot_type_title">Tipo de Screenshot</string>
+    <string name="screenshot_type_fullscreen">Tire screenshots de tela cheia</string>
+    <string name="screenshot_type_partial">Arraste e selecione a área que deseja tirar um print</string>
+
     <!-- Header Strings -->
     <string name="category_about_aokp">Sobre</string>
     <string name="category_app_launcher">App Launcher</string>

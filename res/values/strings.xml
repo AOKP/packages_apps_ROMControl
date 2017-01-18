@@ -159,7 +159,11 @@
     <string name="github_rolandroid" translatable="false">https://github.com/RolanDroid</string>
     <string name="github_csendre" translatable="false">https://github.com/csendre</string>
     <string name="github_varuniyer" translatable="false">https://github.com/varuniyer</string>
+<<<<<<< HEAD
     <string name="github_blackscorpion3" translatable="false">https://github.com/blackscorpion3</string>
+=======
+    <string name="github_blkscorp33" translatable="false">https://github.com/blkscorp33</string>
+>>>>>>> 7098816... Fixed String in ROMControl to match my github
     <string name="github_schwabe93" translatable="false">https://github.com/schwabe93</string>
     <!-- ****************************** About Cat ends ****************************** -->
 

@@ -312,6 +312,9 @@
     <string name="button_wake_title">Wake up device</string>
     <string name="home_answer_call_title">Answer call</string>
     <string name="home_answer_call_summary">Pressing the home button will answer the current incoming call</string>
+    <string name="dt2l_camera_category">DT2L camera options</string>
+    <string name="dt2l_camera_vib_title">Adjust the launch\'s vibration</string>
+    <string name="dt2l_camera_vib_summary">Adjust the vibration while launching the camera</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Backlight</string>
     <string name="button_backlight_enabled">Illuminate buttons</string>

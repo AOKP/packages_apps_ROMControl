@@ -111,6 +111,7 @@ public class ButtonSettingsFragment extends Fragment {
         private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
         private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
         private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE = "camera_double_tap_power_gesture";
+        private static final String DT2L_CAMERA_VIBRATE_CONFIG = "dt2l_camera_vibrate_config";
 
         private static final String CATEGORY_POWER = "power_key";
         private static final String CATEGORY_HOME = "home_key";
@@ -185,6 +186,7 @@ public class ButtonSettingsFragment extends Fragment {
 
         private SwitchPreference mKillAppLongPressBack;
         private SeekBarPreferenceCham mKillAppLongpressTimeout;
+        private SeekBarPreferenceCham mDt2lCameraVibrateConfig;
 
         private Handler mHandler;
 
@@ -276,6 +278,11 @@ public class ButtonSettingsFragment extends Fragment {
                     Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, 1000);
             mKillAppLongpressTimeout.setValue(killconf);
             mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
+
+            mDt2lCameraVibrateConfig = (SeekBarPreferenceCham) findPreference(DT2L_CAMERA_VIBRATE_CONFIG);
+            mDt2lCameraVibrateConfig.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.DT2L_CAMERA_VIBRATE_CONFIG, 1));
+            mDt2lCameraVibrateConfig.setOnPreferenceChangeListener(this);
 
             if (hasPowerKey) {
                 if (!Utils.isVoiceCapable(getActivity())) {
@@ -639,6 +646,11 @@ public class ButtonSettingsFragment extends Fragment {
                 int killconf = (Integer) newValue;
                 Settings.Secure.putInt(mResolver,
                         Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, killconf);
+                return true;
+            } else if (preference == mDt2lCameraVibrateConfig) {
+                int dt2lcameravib = (Integer) newValue;
+                Settings.System.putInt(mResolver,
+                        Settings.System.DT2L_CAMERA_VIBRATE_CONFIG, dt2lcameravib * 10);
                 return true;
             }
             return false;

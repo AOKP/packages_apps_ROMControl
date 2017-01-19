@@ -52,6 +52,16 @@
             android:summary="@string/camera_double_tap_power_gesture_desc"
             android:persistent="false" />
 
+        <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
+            android:key="dt2l_camera_vibrate_config"
+            android:title="@string/dt2l_camera_vib_title"
+            android:max="1000"
+            aokp:minimum="0"
+            aokp:unitsLeft=""
+            aokp:unitsRight="dp"
+            android:dependency="camera_double_tap_power_gesture"
+            android:persistent="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

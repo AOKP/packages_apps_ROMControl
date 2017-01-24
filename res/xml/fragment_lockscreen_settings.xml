@@ -38,7 +38,7 @@
     <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
         android:key="lock_screen_blur_enabled"
         android:title="@string/lockscreen_blur_enabled_title"
-        android:defaultValue="true"
+        android:defaultValue="false"
         aokp:requiresConfig="@*android:bool/config_uiBlurEnabled" />
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference

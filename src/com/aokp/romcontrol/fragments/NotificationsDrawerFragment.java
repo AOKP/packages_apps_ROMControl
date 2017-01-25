@@ -41,6 +41,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -392,37 +394,41 @@ public class NotificationsDrawerFragment extends Fragment {
         }
 
         private void getAvailableHeaderPacks(List<String> entries, List<String> values) {
+            String defaultLabel = null;
+            Map<String, String> headerMap = new HashMap<String, String>();
             Intent i = new Intent();
             PackageManager packageManager = getActivity().getPackageManager();
             i.setAction("org.omnirom.DaylightHeaderPack");
             for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
                 String packageName = r.activityInfo.packageName;
-                if (packageName.equals(DEFAULT_HEADER_PACKAGE)) {
-                    values.add(0, packageName);
-                } else {
-                    values.add(packageName);
-                }
                 String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
                 if (label == null) {
                     label = r.activityInfo.packageName;
                 }
                 if (packageName.equals(DEFAULT_HEADER_PACKAGE)) {
-                    entries.add(0, label);
+                    defaultLabel = label;
                 } else {
-                    entries.add(label);
+                    headerMap.put(label, packageName);
                 }
             }
             i.setAction("org.omnirom.DaylightHeaderPack1");
             for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
                 String packageName = r.activityInfo.packageName;
-                values.add(packageName  + "/" + r.activityInfo.name);
-
                 String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
                 if (label == null) {
                     label = packageName;
                 }
-                entries.add(label);
+                headerMap.put(label, packageName  + "/" + r.activityInfo.name);
             }
+            List<String> labelList = new ArrayList<String>();
+            labelList.addAll(headerMap.keySet());
+            Collections.sort(labelList);
+            for (String label : labelList) {
+                entries.add(label);
+                values.add(headerMap.get(label));
+            }
+            entries.add(0, defaultLabel);
+            values.add(0, DEFAULT_HEADER_PACKAGE);
         }
 
         private boolean isBrowseHeaderAvailable() {

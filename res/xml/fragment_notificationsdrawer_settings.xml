@@ -124,6 +124,12 @@
         android:defaultValue="false" />
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="qs_running_services_toggle"
+        android:title="@string/qs_running_services_title"
+        android:summary="@string/qs_running_services_summary"
+        android:defaultValue="true" />
+
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="qs_edit_toggle"
         android:title="@string/qs_edit_title"
         android:summary="@string/qs_edit_summary"

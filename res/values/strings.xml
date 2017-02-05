@@ -574,6 +574,8 @@
     <!-- QS Header Icons -->
     <string name="qs_settings_icon_title">Settings Shortcut</string>
     <string name="qs_settings_icon_summary">Disable the settings shortcut in the header</string>
+    <string name="qs_running_services_title">Running Services Icon</string>
+    <string name="qs_running_services_summary">Disable the tile running services icon in the header</string>
     <string name="qs_edit_title">Edit Icon</string>
     <string name="qs_edit_summary">Disable the tile edit icon in the header</string>
     <string name="qs_multiuser_switch_title">Multi-user Switch</string>

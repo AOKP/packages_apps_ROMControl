@@ -125,7 +125,7 @@ public class ButtonSettingsFragment extends Fragment {
 
         // Available custom actions to perform on a key press.
         // Must match values for KEY_HOME_LONG_PRESS_ACTION in:
-        // frameworks/base/core/java/android/provider/Settings.java
+        // cm_platform_sdk/sdk/src/java/cyanogenmod/providers/CMSettings.java
         private static final int ACTION_NOTHING = 0;
         private static final int ACTION_MENU = 1;
         private static final int ACTION_APP_SWITCH = 2;
@@ -135,6 +135,7 @@ public class ButtonSettingsFragment extends Fragment {
         private static final int ACTION_LAUNCH_CAMERA = 6;
         private static final int ACTION_SLEEP = 7;
         private static final int ACTION_LAST_APP = 8;
+        private static final int ACTION_SPLIT_SCREEN = 9;
 
         // Masks for checking presence of hardware keys.
         // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -401,7 +402,7 @@ public class ButtonSettingsFragment extends Fragment {
                 mAppSwitchPressAction = initActionList(KEY_APP_SWITCH_PRESS, pressAction);
 
                 int longPressAction = CMSettings.System.getInt(mResolver,
-                        CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION, ACTION_NOTHING);
+                        CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION, ACTION_SPLIT_SCREEN);
                 mAppSwitchLongPressAction = initActionList(KEY_APP_SWITCH_LONG_PRESS, longPressAction);
 
                 hasAnyBindableKey = true;

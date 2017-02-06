@@ -30,13 +30,15 @@
 
     <!-- Header Strings -->
     <string name="category_about_aokp">A proposito di</string>
+    <string name="category_app_launcher">Avvio App</string>
     <string name="category_general">Generale</string>
+    <string name="category_hardware_keys">Tasti Hardware</string>
     <string name="category_lockscreen">Schermata di blocco</string>
-    <string name="category_statusbar">Barra di stato</string>
-    <string name="category_notifications_drawer">Drawer Notifiche</string>
-    <string name="category_power_menu">Power menu</string>
+     <string name="category_notifications_drawer">Drawer Notifiche</string>
+    <string name="category_power_menu">Power menù</string>
     <string name="category_navbar">Barra di Navigazione</string>
     <string name="category_sound">Impostazioni Audio</string>
+    <string name="category_statusbar">Barra di stato</string>
     <string name="category_ui">Interfaccia Utente</string>
 
     <!-- Generic -->
@@ -217,6 +219,97 @@
     <string name="trigger_bottom_summary">Imposta l\'altezza dell\'area interruttore</string>
     <!-- ****************************** AppLauncher Cat ends ****************************** -->
 
+   <!-- ****************************** Hardware keys Cat starts ****************************** -->
+    <!-- Button Settings -->
+    <string name="hw_keys_title">Tasti fisici</string>
+    <string name="hw_keys_summary">Abilita tasti fisici</string>
+    <string name="button_pref_title">Pulsanti</string>
+    <string name="hardware_keys_volume_keys_title">Cursore del volume</string>
+    <string name="hardware_keys_home_key_title">Pulsante home</string>
+    <string name="hardware_keys_menu_key_title">Pulsante menù</string>
+    <string name="hardware_keys_assist_key_title">Pulsante cerca</string>
+    <string name="hardware_keys_appswitch_key_title">Pulsante generale</string>
+    <string name="hardware_keys_back_key_title">Pulsante indietro</string>
+    <string name="hardware_keys_camera_key_title">Pulsante fotocamera</string>
+    <string name="hardware_keys_double_tap_summary">Imposta azione doppio tocco</string>
+    <string name="hardware_keys_single_tap_summary">Imposta azione singolo tocco</string>
+    <string name="hardware_keys_long_press_summary">Imposta azione pressione prolungata</string>
+    <string name="hardware_keys_single_tap_title">Azione singolo tocco</string>
+    <string name="hardware_keys_long_press_title">Azione pressione prolungata</string>
+    <string name="hardware_keys_double_tap_title">Azione doppio tocco</string>
+    <string name="hardware_keys_action_nothing">Nessuna azione</string>
+    <string name="hardware_keys_action_menu">Apri/Chiudi menù</string>
+    <string name="hardware_keys_action_app_switch">Selettore app recenti</string>
+    <string name="hardware_keys_action_search">Assistente di ricerca</string>
+    <string name="hardware_keys_action_voice_search">Ricerca vocale</string>
+    <string name="hardware_keys_action_in_app_search">Ricerca in app</string>
+    <string name="hardware_keys_action_launch_camera">Avvia fotocamera</string>
+    <string name="hardware_keys_action_sleep">Spegni lo schermo</string>
+    <string name="hardware_keys_action_last_app">Ultima app utilizzata</string>
+    <string name="hardware_keys_category">Tasti fisici</string>
+    <string name="hardware_keys_disable_title">Disabilita i tasti fisici</string>
+    <string name="hardware_keys_power_key_title">Pulsante alimentazione</string>
+    <string name="camera_sleep_on_release_title">Sguardo allo schermo</string>
+    <string name="camera_sleep_on_release_summary">Una pressione a metà manterrà lo schermo acceso finchè il pulsante resterà premuto</string>
+    <string name="camera_launch_title">Avvia Fotocamera</string>
+    <string name="camera_launch_summary">Una pressione prolungata e rilascio avvierà la fotocamera</string>
+    <string name="volbtn_music_controls_title">Controllo di riproduzione</string>
+    <string name="volbtn_music_controls_summary">Quando lo schermo è spento la pressione prolungata dei tasti volume cambia traccia</string>
+    <string name="volbtn_cursor_control_title">Controllo cursore con tasti</string>
+    <string name="volbtn_cursor_control_off">Disattivato</string>
+    <string name="volbtn_cursor_control_on">I pulsanti Volume su/giù spostano il cursore nel testo a sinistra/destra</string>
+    <string name="volbtn_cursor_control_on_reverse">I tasti Volume su/giù spostano il cursore nel testo a destra/sinistra</string>
+    <string name="power_end_call_title">Termina chiamata</string>
+    <string name="power_end_call_summary">Premendo il pulsante alimentazione si concluderà la chiamata corrente</string>
+    <string name="swap_volume_buttons_title">Riorienta</string>
+    <string name="swap_volume_buttons_summary">Scambia i pulsanti volume quando lo schermo viene ruotato</string>
+    <string name="button_wake_title">Risveglia dispositivo</string>
+    <string name="home_answer_call_title">Rispondi chiamata</string>
+    <string name="home_answer_call_summary">Premendo il pulsante Home si risponderà alla chiamata in entrata</string>
+    <string name="dt2l_camera_category">Opzioni della fotocamera DT2L</string>
+    <string name="dt2l_camera_vib_title">Regola la vibrazione del pulsante di attivazione</string>
+    <string name="dt2l_camera_vib_summary">Regola la vibrazione durante l\'avvio della fotocamera</string>
+    <!-- Key backlight -->
+    <string name="button_backlight_title">Retroilluminazione</string>
+    <string name="button_backlight_enabled">Illumina pulsanti</string>
+    <string name="keyboard_backlight_enabled">Illumina tastiera</string>
+    <string name="button_backlight_seekbar_title">Luminosità pulsanti</string>
+    <string name="keyboard_backlight_seekbar_title">Luminosità tastiera</string>
+    <string name="backlight_timeout_title">Tempo di illuminazione</string>
+    <string name="backlight_timeout_unlimited">Non spegnere</string>
+    <string name="backlight_summary_disabled">Disattivato</string>
+    <string name="backlight_summary_enabled_with_timeout">Abilita per <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Abilitata</string>
+
+    <string name="volume_keys_control_ring_stream_title">Controllo volume suoneria</string>
+    <string name="volume_keys_control_ring_stream_summary_on">I tasti volume regolano la suoneria</string>
+    <string name="volume_keys_control_ring_stream_summary_off">I tasti volume regolano le applicazioni multimediali</string>
+
+    <!-- Title of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=40] -->
+    <string name="camera_double_tap_power_gesture_title">Premi due volte il pulsante alimentazione per avviare la fotocamera</string>
+
+    <!-- Description of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=NONE] -->
+    <string name="camera_double_tap_power_gesture_desc">Consente di aprire rapidamente la fotocamera senza sbloccare lo schermo</string>
+
+    <!-- Keyboard and Input ASS methods  -->
+    <string name="title_ime_features">Caratteristiche IME</string>
+    <string name="disable_fullscreen_keyboard_title">Disabilita tastiera a schermo intero</string>
+    <string name="disable_fullscreen_keyboard_summary">La tastiera in modalità orizzontale non occuperà mai tutto lo schermo</string>
+    <string name="keyboard_rotation_toggle_title">Rotazione automatica della tastiera</string>
+    <string name="keyboard_rotation_toggle_summary">Forza la rotazione automatica quando la tastiera è visualizzata</string>
+    <string name="keyboard_rotation_timeout_title">Timeout rotazione automatica</string>
+    <string name="keyboard_rotation_timeout_summary">Disabilita il sensore di rotazione automatica <xliff:g id="rotate_timeout"> %1$s </xliff:g> secondi dopo che la tastiera viene nascosta</string>
+    <string name="keyboard_rotation_dialog">Questa funzione forza temporaneamente la rotazione automatica durante la visualizzazione della tastiera. Non ha effetti quando la rotazione automatica è già attivata.</string>
+    <string name="show_enter_key_title">Mostra tasto invio</string>
+    <string name="show_enter_key_summary">Forza la tastiera a mostrare il tasto invio invece che il tasto delle emoticon</string>
+
+    <!-- Kill app long-press back -->
+    <string name="kill_app_longpress_back">Termina app con pulsante indietro</string>
+    <string name="kill_app_longpress_back_summary">Termina l\'applicazione in primo piano premendo a lungo il tasto indietro</string>
+    <!-- long press back to kill configurable timeout -->
+    <string name="kill_app_longpress_timeout_title">Tempo pressione prolungata pulsante indietro</string>
+    <!-- ****************************** Hardware keys Cat ends ****************************** -->
+  
     <!-- ****************************** General Cat starts ****************************** -->
     <!-- General -->
     <string name="general_settings">Impostazioni generali</string>
@@ -245,6 +338,19 @@
     <string name="immersive_recents_statusbar">Solo barra di stato</string>
     <string name="immersive_recents_navbar">Solo barra di navigazione</string>
 
+    <string name="show_clear_all_recents_button_title">Pulsante cancella tutto</string>
+    <string name="show_clear_all_recents_button_summary">Mostra il pulsante cancella tutto</string>
+    <string name="recents_clear_all_location_title">Posizione pulsante cancella tutto</string>
+    <string name="recents_clear_all_location_top_right">In alto a destra</string>
+    <string name="recents_clear_all_location_top_left">In alto a sinistra</string>
+    <string name="recents_clear_all_location_top_center">In alto al centro</string>
+    <string name="recents_clear_all_location_bottom_right">In basso a destra</string>
+    <string name="recents_clear_all_location_bottom_left">In basso a sinistra</string>
+    <string name="recents_clear_all_location_bottom_center">In basso al centro</string>
+    <string name="recents_clear_all_title">Pulsante cancella tutto</string>
+    <string name="recents_anim_title">Animazione recenti</string>
+    <string name="recents_anim_summary">Personalizza il ritardo della finestra Recenti e le sue azioni</string>
+
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Blocca i wakelock di sistema</string>
@@ -253,6 +359,11 @@
     <string name="wakelock_blocker_reload">Ricarica</string>
     <string name="wakelock_blocker_warning_title">Procedi con cautela</string>
     <string name="wakelock_blocker_warning">Bloccare i wakelock potrebbe causare instabilità, crash o perdita di dati</string>
+  
+    <!-- Optional screenshot type -->
+    <string name="screenshot_type_title">Tipo di screenshot</string>
+    <string name="screenshot_type_fullscreen">Screenshot a schermo intero</string>
+    <string name="screenshot_type_partial">Trascinare la selezione sulla zona che si vuole catturare</string>
   
     <!-- Screenshot delay -->
     <string name="screenshot_options_category">Opzioni screenshot</string>
@@ -303,6 +414,17 @@
     <string name="lockscreen_maxnotif_title">Contatore notifiche schermata di blocco</string>
     <string name="lockscreen_maxnotif_sumary">Limita il numero massimo di notifiche nella schermata di blocco</string>
     <string name="lockscreen_maxnotif_config">Notifiche massime nella schermata di blocco</string>
+ 
+    <!-- title for lock screen blur preference -->
+    <string name="lockscreen_blur_enabled_title">Sfocatura dello sfondo</string>
+
+    <!-- Lockscreen Torch -->
+    <string name="keyguard_torch_title">Torcia schermata di blocco</string>
+    <string name="keyguard_torch_summary">Tieni premuto il pulsante alimentazione mentre lo schermo è spento per accendere la torcia</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Info batteria schermata di blocco</string>
+    <string name="lockscreen_battery_info_summary">Mostra il voltaggio e la temperatura della batteria sulla schermata di blocco durante la carica</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->
@@ -356,6 +478,14 @@
     <string name="qs_fancy_animation_title">Animazione di fantasia</string>
     <string name="qs_fancy_animation_summary">Abilita un effetto di animazione diverso quando si tira giù la barra di stato</string>
 
+     <!-- Wifi easy toggle -->
+    <string name="qs_wifi_easy_toggle_title">WiFi attivo al tocco</string>
+    <string name="qs_wifi_easy_toggle_summary">Fa in modo che con un clic verrà attivato o disattivato il Wi-Fi invece di entrare nelle impostazioni</string>
+
+    <!-- BT easy toggle -->
+    <string name="qs_bt_easy_toggle_title">Bluetooth attivo al tocco</string>
+    <string name="qs_bt_easy_toggle_summary">Fa in modo che con un clic verrà attivato o disattivato il Bluetooth invece di entrare nelle impostazioni</string>
+
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Discesa intelligente</string>
     <string name="smart_pulldown_summary">Apri le impostazioni rapide quando ci sono %1$s notifiche presenti</string>
@@ -365,7 +495,73 @@
     <string name="smart_pulldown_dismissable">Non removibili</string>
     <string name="smart_pulldown_ongoing">Non in corso</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
-
+  
+  <!-- ****************************** PIE Cat starts ****************************** -->
+  <!-- PA Pie control -->
+  <string name="pa_piecontrol_settings_summary">Personalizza, stile, dimensione e colore del Pie</string>
+  <string name="pa_pie_control_title">Controlli Pie</string>
+  <string name="pa_pie_control_enable_title">Attiva controlli pie</string>
+  <string name="pa_pie_always_right_title">Pie sempre a destra</string>
+  <string name="pa_pie_always_right_summary">Il Pie verrà sempre visualizzato a destra, mentre in modalità orizzontale</string>
+  <string name="pa_pie_targets_title">Pulsanti Pie</string>
+  <string name="pa_pie_style_title">Stile Pie</string>
+  <string name="pa_pie_menu_title">Mostra sempre il pulsante menù</string>
+  <string name="pa_pie_menu_summary">Il pulsante menù deve sempre essere visualizzato, anche quando non necessario</string>
+  <string name="pa_pie_size_title">Dimensioni Pie</string>
+  <string name="pa_pie_size_summary">Definisci la dimensione dei controlli del Pie</string>
+  <string name="pa_pie_size_small">Piccola</string>
+  <string name="pa_pie_size_default">@string/pa_pie_mode_default</string>
+  <string name="pa_pie_size_large">Grande</string>
+  <string name="pa_pie_size_gigantic">Gigantesco</string>
+  <string name="pa_pie_size_monster">Mostruoso</string>
+  <string name="pa_pie_size_enormous">Enorme</string>
+  <string name="pa_pie_mode_default">Predefinito</string>
+  <string name="pa_pie_gravity_title">Gravità Pie</string>
+  <string name="pa_pie_gravity_summary">Seleziona la posizione in cui verrà collocato il Pie</string>
+  <string name="pa_pie_gravity_bottom">In Basso</string>
+  <string name="pa_pie_gravity_right">A destra</string>
+  <string name="pa_pie_gravity_left">A sinistra</string>
+  <string name="pa_pie_gap_title">Distanza elementi</string>
+  <string name="pa_pie_gap_summary">Regola la distanza che separa gli elementi nel Pie</string>
+  <string name="pa_pie_angle_title">Angolo Pie</string>
+  <string name="pa_pie_angle_summary">Regola l\'angolo dei bordi del Pie dal collegamento</string>
+  <string name="pa_pie_angle_none">Nessuno (vecchio)</string>
+  <string name="pa_pie_angle_small">Piccola</string>
+  <string name="pa_pie_angle_big">Normale (predefinito)</string>
+  <string name="pa_pie_angle_huge">Grande</string>
+  <string name="pa_pie_angle_super">Enorme</string>
+  <string name="pa_pie_gap_none">Niente</string>
+  <string name="pa_pie_gap_small">Piccola</string>
+  <string name="pa_pie_gap_big">Grande (predefinito)</string>
+  <string name="pa_pie_gap_huge">Enorme</string>
+  <string name="pa_pie_mode_title">Stile Pie</string>
+  <string name="pa_pie_mode_summary">Gestisci come animazioni e stati aggiuntivi verranno gestiti</string>
+  <string name="pa_pie_mode_bare">Base</string>
+  <string name="pa_pie_mode_quick">Veloce</string>
+  <string name="pa_pie_mode_default">Predefinito</string>
+  <string name="pa_pie_mode_slow">Lento</string>
+  <string name="pa_pie_lastapp_title">Ultima App</string>
+  <string name="pa_pie_lastapp_summary">Abilita il pulsante ultima app</string>
+  <string name="pa_pie_killtask_title">Termina processo</string>
+  <string name="pa_pie_killtask_summary">Abilita il pulsante termina processo</string>
+  <string name="pa_pie_notifications_title">Notifiche</string>
+  <string name="pa_pie_notifications_summary">Abilita pulsante notifiche</string>
+  <string name="pa_pie_settings_panel_title">Pannello impostazioni rapide</string>
+  <string name="pa_pie_settings_panel_summary">Abilita il pulsante espandi pannello impostazioni rapide</string>
+  <string name="pa_pie_screenshot_title">Cattura schermo</string>
+  <string name="pa_pie_screenshot_summary">Abilita il pulsante Cattura schermo</string>
+  <string name="pa_pie_color_title">Impostazioni colore Pie</string>
+  <string name="pa_pie_color_style_title">Stile colore Pie</string>
+  <string name="pa_pie_background_title">Colore sfondo</string>
+  <string name="pa_pie_select_title">Selezione colore</string>
+  <string name="pa_pie_outlines_title">Colore contorni</string>
+  <string name="pa_pie_status_clock_title">Colore orologio</string>
+  <string name="pa_pie_status_title">Colore stati</string>
+  <string name="pa_pie_chevron_title">Colore bordo esterno</string>
+  <string name="pa_pie_juice_title">Colore interno batteria</string>
+  <string name="pa_pie_button_color">Colore pulsante</string>
+  <string name="pa_pie_button_color_title">Colore pulsanti</string>
+  
     <!-- ****************************** PowerMenu Cat starts ****************************** -->
     <!-- Power menu -->
     <string name="power_menu_title">Power Menù</string>

@@ -123,13 +123,13 @@ public class SeekBarPreferenceCham extends Preference implements OnSeekBarChange
             mImagePlus.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View view) {
-                     mSeekBar.setProgress((mCurrentValue + 1) - mMinValue);
+                     mSeekBar.setProgress((mCurrentValue + mInterval) - mMinValue);
                  }
              });
              mImagePlus.setOnLongClickListener(new View.OnLongClickListener() {
                  @Override
                  public boolean onLongClick(View view) {
-                     mSeekBar.setProgress((mCurrentValue + 10) - mMinValue);
+                     mSeekBar.setProgress((mCurrentValue + (mMaxValue-mMinValue)/10) - mMinValue);
                     return true;
                 }
             });
@@ -137,13 +137,13 @@ public class SeekBarPreferenceCham extends Preference implements OnSeekBarChange
             mImageMinus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mSeekBar.setProgress((mCurrentValue - 1) - mMinValue);
+                    mSeekBar.setProgress((mCurrentValue - mInterval) - mMinValue);
                 }
             });
             mImageMinus.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    mSeekBar.setProgress((mCurrentValue - 10) - mMinValue);
+                    mSeekBar.setProgress((mCurrentValue - (mMaxValue-mMinValue)/10) - mMinValue);
                     return true;
                 }
             });

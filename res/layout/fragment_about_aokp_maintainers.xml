@@ -36,6 +36,15 @@
                 android:layout_height="wrap_content"/>
 
         <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Gustavo Henrique"
+                aokp:nameDev="Mestreian"
+                aokp:twitterHandle=""
+                aokp:githubLink="@string/github_mestreian"
+                aokp:emailDev="ghenrique737@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Sean Hacker"
                 aokp:nameDev="task650"
                 aokp:twitterHandle="task650"

@@ -165,6 +165,8 @@
     <string name="trigger_top_summary">Regola la posizione verticale dell\'area di attivazione</string>
     <string name="trigger_bottom_title">Altezza area attivazione</string>
     <string name="trigger_bottom_summary">Regola l\'altezza dell\'area di attivazione</string>
+    <string name="app_sidebar_hide_timeout_title">Nascondi automaticamente Appbar</string>
+    <string name="app_sidebar_hide_timeout_summary">Tempo prima di nascondere automaticamente l\'Appbar.</string>
     <!-- Gesture Anywhere -->
     <string name="picker_activities">Attività</string>
     <string name="select_custom_app_title">Seleziona un\'applicazione personalizzata</string>
@@ -494,6 +496,16 @@
     <string name="smart_pulldown_none">Nessuna notifica</string>
     <string name="smart_pulldown_dismissable">Non removibili</string>
     <string name="smart_pulldown_ongoing">Non in corso</string>
+     <!-- Header images -->
+    <string name="status_bar_custom_header_title">Immagine intestazione personalizzata</string>
+    <string name="status_bar_custom_header_summary">Abilita un\'immagine nell\'intestazione nel pannello delle notifiche</string>
+    <string name="daylight_header_pack_title">Pacchetto immagini intestazione</string>
+    <string name="status_bar_custom_header_shadow_title">Ombra immagine intestazione</string>
+    <string name="status_bar_custom_header_shadow_summary">Per una migliore visibilità su immagini luminose</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- qqs scroller -->
+    <string name="qqs_scroll_title">Scorrimento tile piccoli</string>
+    <string name="qqs_scroll_summary">Permette lo scorrimento dei tile piccoli delle impostazioni rapide</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
   
   <!-- ****************************** PIE Cat starts ****************************** -->
@@ -754,6 +766,15 @@
     <string name="status_bar_logo_position_right">Destra</string>
     <string name="status_bar_logo_position_left">Sinistra</string>
     <string name="status_bar_logo_position_center">Centro</string>
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_category">Notifiche lampeggianti</string>
+    <string name="breathing_notifications_title">Notifiche lampeggianti</string>
+    <string name="sms_breath_title">SMS lampeggianti</string>
+    <string name="sms_breath_summary">Le notifiche sms avranno un effetto lampeggiante nella barra di stato</string>
+    <string name="missed_call_breath_title">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">Le notifiche delle chiamate perse avranno un effetto lampeggiante nella barra di stato</string>
+    <string name="voicemail_breath_title">Messaggi vocali lampeggianti</string>
+    <string name="voicemail_breath_summary">Le notifiche dei messaggi vocali avranno un effetto lampeggiante nella barra di stato</string>
     <!-- ****************************** StatusBar Cat ends ****************************** -->
 
     <!-- ****************************** UI Interface Cat starts ****************************** -->
@@ -875,6 +896,41 @@
     <string name="volume_dialog_corner_radius_title">Raggio d\'angolo</string>
     <string name="volume_dialog_dash_width_title">Larghezza del bordo tratteggiato</string>
     <string name="volume_dialog_dash_gap_title">Spessore del bordo tratteggiato</string>
+    <!-- Blur UI -->
+    <string name="header_tweaks">Intestazione Tweaks</string>
+    <string name="blur_ui_category_title">Personalizzazioni di sfocatura</string>
+    <string name="blurred_status_bar_expanded_enabled_pref">Sfocatura sfondo barra di stato</string>
+    <string name="blurred_status_bar_expanded_enabled_pref_summary">Sfoca lo sfondo quando si tira verso il basso la barra di stato</string>
+    <string name="translucent_notifications_pref">Notifiche trasparenti</string>
+    <string name="translucent_notifications_pref_summary">Imposta lo sfondo della notifica trasparente</string>
+    <string name="translucent_header_pref">Intestazione barra di stato sfocata </string>
+    <string name="translucent_header_pref_summary">Sfoca lo sfondo di intestazione della barra di stato</string>
+    <string name="translucent_quick_settings_pref">Trasparenza barra di stato espansa</string>
+    <string name="translucent_quick_settings_pref_summary">Rendi trasparente lo sfondo del pannello delle impostazioni rapide</string>
+    <string name="transluency_level_universal">Livello di trasparenza</string>
+    <string name="blur_expstatus_cat">Barra di stato estesa  </string>
+    <string name="blur_notifications_cat">Notifiche</string>
+    <string name="blur_header_cat">Intestazione barra di stato</string>
+    <string name="blur_qs_cat">Impostazioni rapide</string>
+    <string name="blur_recents_cat">Recenti</string>
+    <string name="blurred_recent_app_enabled_pref">Sfondo recenti sfocate </string>
+    <string name="blurred_recent_app_enabled_pref_summary">Sfoca lo sfondo delle applicazioni recenti</string>
+    <string name="blurred_scale">Scala sfocatura</string>
+    <string name="blurred_scale_summary">Qualità immagine sfocata</string>
+    <string name="blurred_radius">Raggio sfocatura</string>
+    <string name="blurred_radius_summary">Quantità di sfocatura</string>
+    <string name="blur_cat_notice">Avviso</string>
+    <string name="blur_cat_notice_summary">Le personalizzazioni della sfocatura sono disabilitate quando viene visualizzata la tastiera!</string>
+    <string name="blurred_scale">Scala sfocatura</string>
+    <string name="blurred_scale_summary">Qualità immagine sfocata</string>
+    <string name="blurred_radius">Raggio sfocatura</string>
+    <string name="blurred_radius_summary">Quantità di sfocatura</string>
+    <string name="blur_colors_cat">Filtri di sfocatura colore</string>
+    <string name="blur_light_color">Filtro colore immagine chiaro/string>
+    <string name="blur_dark_color">Filtro colore immagine scuro</string>
+    <string name="blur_mixed_color">Filtro colore immagine misto/string>
+    <string name="blur_colors_notice">Cosa fanno questi colori?</string>
+    <string name="blur_colors_notice_summary">Questi colori sono la tinta dei colori di sfondo della sfocatura. Anziché il normale grigio, è ora possibile scegliere il colore che più preferisci. \n Ci sono 3 filtri di colore: Uno usato per sfondi chiari, uno usato per sfondi scuri e uno usato per sfondi misti. \n Ma come lavorano questi colori? \n Semplice, come il titolo dice, il filtro chiaro viene usato sugli sfondi più chiari, il filtro scuro viene usato sugli sfondi più scuri e il filtro misto viene usato nelle situazioni in cui lo sfondo non è ne troppo chiaro e ne troppo scuro. \n Questi colori sono usati sia nella barra di stato che nel pannello delle applicazioni recenti</string>
     <!-- ****************************** UI Interface Cat ends ****************************** -->
 
 </resources>

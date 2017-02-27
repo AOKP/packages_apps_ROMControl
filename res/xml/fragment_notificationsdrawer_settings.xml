@@ -21,6 +21,11 @@
     android:title="@string/notifications_drawer_settings"
     xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="notification_guts_kill_app_button"
+        android:title="@string/notification_guts_kill_app_button_title"
+        android:summary="@string/notification_guts_kill_app_button_summary" />
+
     <com.aokp.romcontrol.settings.SecureSettingSwitchPreference
         android:key="qs_show_brightness"
         android:title="@string/qs_brightness_slider_title"

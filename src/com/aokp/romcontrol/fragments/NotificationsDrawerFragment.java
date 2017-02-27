@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 import cyanogenmod.providers.CMSettings;
 
@@ -88,6 +89,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
         private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
         private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
+        private static final String NOTIFICATION_GUTS_KILL_APP_BUTTON = "notification_guts_kill_app_button";
 
         private ListPreference mDaylightHeaderPack;
         private ListPreference mTileAnimationStyle;
@@ -103,6 +105,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private ListPreference mHeaderProvider;
         private String mDaylightHeaderProvider;
         private PreferenceScreen mHeaderBrowse;
+        private Preference mNotificationKill;
 
         private ContentResolver mResolver;
 
@@ -234,6 +237,9 @@ public class NotificationsDrawerFragment extends Fragment {
             mHeaderBrowse = (PreferenceScreen) findPreference(CUSTOM_HEADER_BROWSE);
             mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
 
+            mNotificationKill = findPreference(NOTIFICATION_GUTS_KILL_APP_BUTTON);
+            mNotificationKill.setOnPreferenceChangeListener(this);
+
             setHasOptionsMenu(true);
             return prefSet;
         }
@@ -329,6 +335,11 @@ public class NotificationsDrawerFragment extends Fragment {
                 int valueIndex = mHeaderProvider.findIndexOfValue(value);
                 mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
                 mDaylightHeaderPack.setEnabled(value.equals(mDaylightHeaderProvider));
+                return true;
+            } else if (preference == mNotificationKill) {
+                // Setting will only apply to new created notifications.
+                // By restarting SystemUI, we can re-create all notifications
+                Helpers.showSystemUIrestartDialog(getActivity());
                 return true;
             }
             return false;

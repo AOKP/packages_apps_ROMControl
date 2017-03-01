@@ -26,19 +26,19 @@
         android:title="@string/notification_guts_kill_app_button_title"
         android:summary="@string/notification_guts_kill_app_button_summary" />
 
-    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
-        android:key="qs_show_brightness_slider"
-        android:title="@string/status_bar_brightness_slider_title"
-        android:summary="@string/status_bar_brightness_slider_summary"
+    <com.aokp.romcontrol.settings.SecureSettingSwitchPreference
+        android:key="qs_show_brightness"
+        android:title="@string/qs_brightness_slider_title"
+        android:summaryOn="@string/qs_brightness_slider_enabled"
+        android:summaryOff="@string/qs_brightness_slider_disabled"
         android:defaultValue="true" />
 
-    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
-        android:key="qs_show_auto_brightness"
-        android:title="@string/status_bar_brightness_slider_auto_title"
-        android:summary="@string/status_bar_brightness_slider_auto_summary"
-        android:dependency="qs_show_brightness_slider"
-        aokp:requiresConfig="@*android:bool/config_automatic_brightness_available"
-        android:defaultValue="true" />
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="brightness_icon"
+        android:title="@string/brightness_icon_title"
+        android:summary="@string/brightness_icon_summary"
+        android:dependency="qs_show_brightness"
+        android:defaultValue="true"/>
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="qs_quickbar_scroll_enabled"
@@ -210,11 +210,17 @@
             android:dependency="header_weather_enabled"
             android:defaultValue="false" />
 
+        <ListPreference
+           android:key="weather_icon_pack"
+           android:title="@string/weather_icon_pack_title"
+           android:persistent="false" />
+
         <PreferenceScreen
+            android:key="weather_config"
             android:title="@string/weather_config_title"
             android:summary="@string/weather_config_summary"
             android:dependency="header_weather_enabled" >
-        <intent android:action="android.intent.action.MAIN"
+            <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="org.omnirom.omnijaws"
                 android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
         </PreferenceScreen>

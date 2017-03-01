@@ -683,6 +683,10 @@
     <string name="header_weather_enabled_summary">Enable weather info in expanded header</string>
     <string name="header_weather_image_enabled_title">Weather Image</string>
     <string name="header_weather_image_enabled_summary">Enable weather image in expanded header</string>
+    <string name="weather_title">Weather</string>
+    <string name="weather_config_title">Service settings</string>
+    <string name="weather_config_summary"></string>
+    <string name="weather_icon_pack_title">Condition icon pack</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PIE Cat starts ****************************** -->
@@ -886,6 +890,12 @@
     <string name="network_traffic_hidearrow_summary">Hide the arrows in the traffic indicators</string>
 
     <!-- Status bar -->
+    <!-- Status bar - Brightness -->
+    <string name="status_bar_brightness_category">Brightness</string>
+    <string name="status_bar_brightness_slider_title">Brightness slider</string>
+    <string name="status_bar_brightness_slider_summary">Adjust brightness from the Quick Settings</string>
+    <string name="status_bar_brightness_slider_auto_title">Auto brightness</string>
+    <string name="status_bar_brightness_slider_auto_summary">Show toggle for adaptive brightness near the slider</string>
     <string name="status_bar_title">Status bar</string>
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>

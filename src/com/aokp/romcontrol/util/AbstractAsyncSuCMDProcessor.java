@@ -1,27 +1,44 @@
+/*
+ * Copyright (C) 2017 The AOKP Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.aokp.romcontrol.util;
 
 import android.os.AsyncTask;
 
 /**
  * An abstract implentation of AsyncTask
- * <p/>
+ *
  * since our needs are simple send a command, perform a task when we finish
  * this implentation requires you send the command as String...
  * in the .execute(String) so you can send String[] of commands if needed
- * <p/>
+ *
  * This class is not for you if...
- * 1) You do not need to perform any action after command execution
- * you want a Thread not this.
- * 2) You need to perform more complex tasks in doInBackground
- * than simple script/command sequence of commands
- * you want your own AsyncTask not this.
- * <p/>
+ *     1) You do not need to perform any action after command execution
+ *        you want a Thread not this.
+ *     2) You need to perform more complex tasks in doInBackground
+ *        than simple script/command sequence of commands
+ *        you want your own AsyncTask not this.
+ *
  * This class is for you if...
- * 1) You need to run a command/script/sequence of commands without
- * blocking the UI thread and you must perform actions after the
- * task completes.
- * 2) see #1.
+ *     1) You need to run a command/script/sequence of commands without
+ *        blocking the UI thread and you must perform actions after the
+ *        task completes.
+ *     2) see #1.
  */
+
 public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void, String> {
     // if /system needs to be mounted before command
     private boolean mMountSystem;
@@ -46,11 +63,12 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
     /**
      * DO NOT override this method you should simply send your commands off
      * as params and expect to handle results in {@link #onPostExecute}
-     * <p/>
+     *
      * if you find a need to @Override this method then you should
      * consider using a new AsyncTask implentation instead
      *
      * @param params The parameters of the task.
+     *
      * @return A result, defined by the subclass of this task.
      */
     @Override
@@ -88,11 +106,11 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
     }
 
     /**
-     * <p>Runs on the UI thread after {@link #doInBackground}. The
-     * specified result is the value returned by {@link #doInBackground}.</p>
-     * <p/>
-     * <p>This method won't be invoked if the task was cancelled.</p>
-     * <p/>
+     * Runs on the UI thread after {@link #doInBackground}. The
+     * specified result is the value returned by {@link #doInBackground}.
+     *
+     * This method won't be invoked if the task was cancelled.
+     *
      * You MUST @Override this method if you don't need the result
      * then you should consider using a new Thread implentation instead
      *
@@ -101,4 +119,3 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
     @Override
     protected abstract void onPostExecute(String result);
 }
-

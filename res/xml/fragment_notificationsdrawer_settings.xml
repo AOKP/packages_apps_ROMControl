@@ -210,11 +210,17 @@
             android:dependency="header_weather_enabled"
             android:defaultValue="false" />
 
+        <ListPreference
+           android:key="weather_icon_pack"
+           android:title="@string/weather_icon_pack_title"
+           android:persistent="false" />
+
         <PreferenceScreen
+            android:key="weather_config"
             android:title="@string/weather_config_title"
             android:summary="@string/weather_config_summary"
             android:dependency="header_weather_enabled" >
-        <intent android:action="android.intent.action.MAIN"
+            <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="org.omnirom.omnijaws"
                 android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
         </PreferenceScreen>

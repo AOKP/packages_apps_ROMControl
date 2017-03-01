@@ -210,6 +210,11 @@
             android:dependency="header_weather_enabled"
             android:defaultValue="false" />
 
+        <ListPreference
+           android:key="weather_icon_pack"
+           android:title="@string/weather_icon_pack_title"
+           android:persistent="false" />
+
         <PreferenceScreen
             android:title="@string/weather_config_title"
             android:summary="@string/weather_config_summary"

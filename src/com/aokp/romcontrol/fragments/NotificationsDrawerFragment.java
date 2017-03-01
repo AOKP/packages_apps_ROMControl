@@ -17,14 +17,19 @@
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.ListPreference;
@@ -35,6 +40,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -50,6 +56,8 @@ import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 import cyanogenmod.providers.CMSettings;
+
+import com.android.internal.util.omni.PackageUtils;
 
 public class NotificationsDrawerFragment extends Fragment {
 
@@ -90,6 +98,16 @@ public class NotificationsDrawerFragment extends Fragment {
         private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
         private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
         private static final String NOTIFICATION_GUTS_KILL_APP_BUTTON = "notification_guts_kill_app_button";
+
+        private static final String CATEGORY_WEATHER = "weather_category";
+        private static final String WEATHER_ICON_PACK = "weather_icon_pack";
+        private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
+        private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+        private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
+
+        private static final String DEFAULT_PACKAGE = "com.android.systemui";
+        private PreferenceCategory mWeatherCategory;
+        private ListPreference mWeatherIconPack;
 
         private ListPreference mDaylightHeaderPack;
         private ListPreference mTileAnimationStyle;
@@ -240,6 +258,36 @@ public class NotificationsDrawerFragment extends Fragment {
             mNotificationKill = findPreference(NOTIFICATION_GUTS_KILL_APP_BUTTON);
             mNotificationKill.setOnPreferenceChangeListener(this);
 
+            mWeatherCategory = (PreferenceCategory) prefSet.findPreference(CATEGORY_WEATHER);
+            if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
+                prefSet.removePreference(mWeatherCategory);
+            } else {
+                String settingsJaws = Settings.System.getString(mResolver,
+                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK);
+                if (settingsJaws == null) {
+                    settingsJaws = DEFAULT_WEATHER_ICON_PACKAGE;
+                }
+                mWeatherIconPack = (ListPreference) findPreference(WEATHER_ICON_PACK);
+
+                List<String> entriesJaws = new ArrayList<String>();
+                List<String> valuesJaws = new ArrayList<String>();
+                getAvailableWeatherIconPacks(entriesJaws, valuesJaws);
+                mWeatherIconPack.setEntries(entries.toArray(new String[entriesJaws.size()]));
+                mWeatherIconPack.setEntryValues(values.toArray(new String[valuesJaws.size()]));
+
+                int valueJawsIndex = mWeatherIconPack.findIndexOfValue(settingHeaderPackage);
+                if (valueJawsIndex == -1) {
+                    // no longer found
+                    settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE;
+                    Settings.System.putString(mResolver,
+                            Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingHeaderPackage);
+                    valueJawsIndex = mWeatherIconPack.findIndexOfValue(settingHeaderPackage);
+                }
+                mWeatherIconPack.setValueIndex(valueJawsIndex >= 0 ? valueJawsIndex : 0);
+                mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
+                mWeatherIconPack.setOnPreferenceChangeListener(this);
+            }
+
             setHasOptionsMenu(true);
             return prefSet;
         }
@@ -340,6 +388,13 @@ public class NotificationsDrawerFragment extends Fragment {
                 // Setting will only apply to new created notifications.
                 // By restarting SystemUI, we can re-create all notifications
                 Helpers.showSystemUIrestartDialog(getActivity());
+                return true;
+            } else if (preference == mWeatherIconPack) {
+                String value = (String) newValue;
+                Settings.System.putString(mResolver,
+                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);
+                int valueIndex = mWeatherIconPack.findIndexOfValue(value);
+                mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
                 return true;
             }
             return false;
@@ -447,6 +502,66 @@ public class NotificationsDrawerFragment extends Fragment {
             Intent browse = new Intent();
             browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseHeaderActivity");
             return pm.resolveActivity(browse, 0) != null;
+        }
+
+        private boolean isOmniJawsServiceInstalled() {
+            return PackageUtils.isAvailableApp(WEATHER_SERVICE_PACKAGE, getActivity());
+        }
+
+        private void getAvailableWeatherIconPacks(List<String> entries, List<String> values) {
+            Intent i = new Intent();
+            PackageManager packageManager = getActivity().getPackageManager();
+            i.setAction("org.omnirom.WeatherIconPack");
+            for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+                String packageName = r.activityInfo.packageName;
+                Log.d("maxwen", packageName);
+                if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
+                    values.add(0, r.activityInfo.name);
+                } else {
+                    values.add(r.activityInfo.name);
+                }
+                String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
+                if (label == null) {
+                    label = r.activityInfo.packageName;
+                }
+                if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
+                    entries.add(0, label);
+                } else {
+                    entries.add(label);
+                }
+            }
+            i = new Intent(Intent.ACTION_MAIN);
+            i.addCategory(CHRONUS_ICON_PACK_INTENT);
+            for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+                String packageName = r.activityInfo.packageName;
+                values.add(packageName + ".weather");
+                String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
+                if (label == null) {
+                    label = r.activityInfo.packageName;
+                }
+                entries.add(label);
+            }
+        }
+
+        private boolean isOmniJawsEnabled() {
+            final Uri SETTINGS_URI
+                = Uri.parse("content://org.omnirom.omnijaws.provider/settings");
+
+            final String[] SETTINGS_PROJECTION = new String[] {
+                "enabled"
+            };
+
+            final Cursor c = mResolver.query(SETTINGS_URI, SETTINGS_PROJECTION,
+                    null, null, null);
+            if (c != null) {
+                int count = c.getCount();
+                if (count == 1) {
+                    c.moveToPosition(0);
+                    boolean enabled = c.getInt(0) == 1;
+                    return enabled;
+                }
+            }
+             return true;
         }
     }
 }

@@ -136,6 +136,8 @@ public class ButtonSettingsFragment extends Fragment {
         private static final int ACTION_SLEEP = 7;
         private static final int ACTION_LAST_APP = 8;
         private static final int ACTION_SPLIT_SCREEN = 9;
+        private static final int SINGLE_HAND_LEFT = 10;
+        private static final int SINGLE_HAND_RIGHT = 11;
 
         // Masks for checking presence of hardware keys.
         // Must match values in frameworks/base/core/res/res/values/config.xml

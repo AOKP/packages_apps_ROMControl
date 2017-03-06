@@ -24,9 +24,14 @@ import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.ListPreference;
@@ -38,6 +43,7 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -48,9 +54,12 @@ import android.widget.EditText;
 
 import lineageos.providers.LineageSettings;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.Helpers;
 
 public class StatusbarSettingsFragment extends Fragment {
 
@@ -91,6 +100,12 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUSBAR_BATTERY_STYLE = "statusbar_battery_style";
         private static final String FORCE_BATTERY_PERCENTAGE = "keyguard_qsheader_show_battery_percent";
 
+        private static final String CATEGORY_WEATHER = "weather_category";
+        private static final String WEATHER_ICON_PACK = "weather_icon_pack";
+        private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
+        private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+        private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
+
         public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
         public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
         private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
@@ -102,6 +117,9 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mBatteryStyle;
         private SwitchPreference mShowSU;
         private SwitchPreference mForceShowQSHeaderPercent;
+        private PreferenceCategory mWeatherCategory;
+        private ListPreference mWeatherIconPack;
+        private String mWeatherIconPackNote;
 
         private boolean mForceShowPercent;
         private boolean mCheckPreferences;
@@ -118,6 +136,8 @@ public class StatusbarSettingsFragment extends Fragment {
             addPreferencesFromResource(R.xml.fragment_statusbar_settings);
             PreferenceScreen prefSet = getPreferenceScreen();
             final ContentResolver resolver = getActivity().getContentResolver();
+            final PackageManager pm = getActivity().getPackageManager();
+            mWeatherIconPackNote = getResources().getString(R.string.weather_icon_pack_note);
 
             mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
             mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
@@ -171,6 +191,33 @@ public class StatusbarSettingsFragment extends Fragment {
                 Settings.System.SHOW_BATTERY_PERCENT,0) != 0;
 
             updateDependencies(Integer.parseInt((String) mBatteryStyle.getValue()));
+
+            if (Helpers.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm)) {
+                String settingsJaws = Settings.System.getString(resolver,
+                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK);
+                if (settingsJaws == null) {
+                    settingsJaws = DEFAULT_WEATHER_ICON_PACKAGE;
+                }
+                mWeatherIconPack = (ListPreference) findPreference(WEATHER_ICON_PACK);
+
+                List<String> entries = new ArrayList<String>();
+                List<String> values = new ArrayList<String>();
+                getAvailableWeatherIconPacks(entries, values);
+                mWeatherIconPack.setEntries(entries.toArray(new String[entries.size()]));
+                mWeatherIconPack.setEntryValues(values.toArray(new String[values.size()]));
+
+                int valueJawsIndex = mWeatherIconPack.findIndexOfValue(settingsJaws);
+                if (valueJawsIndex == -1) {
+                    // no longer found
+                    settingsJaws = DEFAULT_WEATHER_ICON_PACKAGE;
+                    Settings.System.putString(resolver,
+                            Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingsJaws);
+                    valueJawsIndex = mWeatherIconPack.findIndexOfValue(settingsJaws);
+                }
+                mWeatherIconPack.setValueIndex(valueJawsIndex >= 0 ? valueJawsIndex : 0);
+                mWeatherIconPack.setSummary(mWeatherIconPackNote + "\n\n" + mWeatherIconPack.getEntry());
+                mWeatherIconPack.setOnPreferenceChangeListener(this);
+            }
 
             return prefSet;
         }
@@ -286,6 +333,13 @@ public class StatusbarSettingsFragment extends Fragment {
                 Settings.System.putInt(resolver, Settings.System.QS_HEADER_BATTERY_PERCENT,
                         value ? 1 : 0);
                 return true;
+            } else if (preference == mWeatherIconPack) {
+                String value = (String) newValue;
+                Settings.System.putString(resolver,
+                      Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);
+                int valueIndex = mWeatherIconPack.findIndexOfValue(value);
+                mWeatherIconPack.setSummary(mWeatherIconPackNote + " \n\n" + mWeatherIconPack.getEntries()[valueIndex]);
+                return true;
             }
             return false;
         }
@@ -348,6 +402,62 @@ public class StatusbarSettingsFragment extends Fragment {
                       mForceShowQSHeaderPercent.setEnabled(true);
                   }
             }
+        }
+
+        private void getAvailableWeatherIconPacks(List<String> entries, List<String> values) {
+            Intent i = new Intent();
+            PackageManager packageManager = getActivity().getPackageManager();
+            i.setAction("org.omnirom.WeatherIconPack");
+            for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+                String packageName = r.activityInfo.packageName;
+                Log.d("IconPack package name: ", packageName);
+                if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
+                    values.add(0, r.activityInfo.name);
+                } else {
+                    values.add(r.activityInfo.name);
+                }
+                String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
+                if (label == null) {
+                    label = r.activityInfo.packageName;
+                }
+                if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
+                    entries.add(0, label);
+                } else {
+                    entries.add(label);
+                }
+            }
+            i = new Intent(Intent.ACTION_MAIN);
+            i.addCategory(CHRONUS_ICON_PACK_INTENT);
+            for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+                String packageName = r.activityInfo.packageName;
+                values.add(packageName + ".weather");
+                String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
+                if (label == null) {
+                    label = r.activityInfo.packageName;
+                }
+                entries.add(label);
+            }
+       }
+
+       private boolean isOmniJawsEnabled() {
+            final Uri SETTINGS_URI
+                = Uri.parse("content://org.omnirom.omnijaws.provider/settings");
+
+            final String[] SETTINGS_PROJECTION = new String[] {
+                "enabled"
+            };
+
+            final Cursor c = getActivity().getContentResolver().query(SETTINGS_URI, SETTINGS_PROJECTION,
+                    null, null, null);
+            if (c != null) {
+               int count = c.getCount();
+               if (count == 1) {
+                    c.moveToPosition(0);
+                    boolean enabled = c.getInt(0) == 1;
+                    return enabled;
+                }
+            }
+            return true;
         }
     }
 }

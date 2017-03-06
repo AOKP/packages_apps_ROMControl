@@ -68,4 +68,23 @@
         android:persistent="false"
         android:defaultValue="true" />
 
+    <PreferenceCategory
+        android:key="weather_category"
+        android:title="@string/weather_title" >
+
+        <PreferenceScreen
+            android:title="@string/weather_config_title"
+            android:summary="@string/weather_config_summary" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="org.omnirom.omnijaws"
+                android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
+        </PreferenceScreen>
+
+        <ListPreference
+           android:key="weather_icon_pack"
+           android:title="@string/weather_icon_pack_title"
+           android:persistent="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -114,6 +114,7 @@ public class NotificationsDrawerFragment extends Fragment {
         private ListPreference mHeaderProvider;
         private PreferenceCategory mWeatherCategory;
         private ListPreference mWeatherIconPack;
+        private String mWeatherIconPackNote;
 
         private String mDaylightHeaderProvider;
         private PreferenceScreen mHeaderBrowse;
@@ -133,6 +134,7 @@ public class NotificationsDrawerFragment extends Fragment {
             mResolver = getActivity().getContentResolver();
             PreferenceScreen prefSet = getPreferenceScreen();
             final PackageManager pm = getActivity().getPackageManager();
+            mWeatherIconPackNote = getResources().getString(R.string.weather_icon_pack_note);
             int defaultValue;
 
             // QS tile animation
@@ -279,7 +281,7 @@ public class NotificationsDrawerFragment extends Fragment {
                     valueJawsIndex = mWeatherIconPack.findIndexOfValue(settingsJaws);
                 }
                 mWeatherIconPack.setValueIndex(valueJawsIndex >= 0 ? valueJawsIndex : 0);
-                mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
+                mWeatherIconPack.setSummary(mWeatherIconPackNote + "\n\n" + mWeatherIconPack.getEntry());
                 mWeatherIconPack.setOnPreferenceChangeListener(this);
             }
 
@@ -389,7 +391,7 @@ public class NotificationsDrawerFragment extends Fragment {
                 Settings.System.putString(resolver,
                       Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);
                 int valueIndex = mWeatherIconPack.findIndexOfValue(value);
-                mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
+                mWeatherIconPack.setSummary(mWeatherIconPackNote + " \n\n" + mWeatherIconPack.getEntries()[valueIndex]);
                 return true;
             }
             return false;

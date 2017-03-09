@@ -480,6 +480,17 @@
     <string name="weather_config_summary"></string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
     <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
+
+    <!-- StatusBar weather settings -->
+    <string name="statusbar_weather_title">Status bar weather</string>
+    <string name="statusbar_weather_summary">Configure from QS settings/Weather</string>
+    <string name="statusbar_weather_dialog_title">Status bar weather style</string>
+    <string name="status_bar_weather_hidden">Hide weather</string>
+    <string name="status_bar_temperature_image_show_scale">Show temp with scale and image</string>
+    <string name="status_bar_temperature_image_hide_scale">Show temp with image without scale</string>
+    <string name="status_bar_temperature_show_scale_hide_image">Show temp with scale</string>
+    <string name="status_bar_temperature_hide_scale_hide_image">Show temp without scale</string>
+    <string name="status_bar_show_image">Show image</string>
     <!-- ****************************** StatusBar Cat ends ****************************** -->
 
     <!-- ****************************** UI Interface Cat starts ****************************** -->

@@ -534,27 +534,6 @@ public class NotificationsDrawerFragment extends Fragment {
                 }
                 entries.add(label);
             }
-       }
-
-       private boolean isOmniJawsEnabled() {
-            final Uri SETTINGS_URI
-                = Uri.parse("content://org.omnirom.omnijaws.provider/settings");
-
-            final String[] SETTINGS_PROJECTION = new String[] {
-                "enabled"
-            };
-
-            final Cursor c = getActivity().getContentResolver().query(SETTINGS_URI, SETTINGS_PROJECTION,
-                    null, null, null);
-            if (c != null) {
-               int count = c.getCount();
-               if (count == 1) {
-                    c.moveToPosition(0);
-                    boolean enabled = c.getInt(0) == 1;
-                    return enabled;
-                }
-            }
-            return true;
         }
     }
 }

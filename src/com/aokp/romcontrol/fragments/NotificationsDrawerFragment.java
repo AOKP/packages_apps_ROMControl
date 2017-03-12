@@ -94,11 +94,8 @@ public class NotificationsDrawerFragment extends Fragment {
         private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
         private static final String NOTIFICATION_GUTS_KILL_APP_BUTTON = "notification_guts_kill_app_button";
 
-        private static final String CATEGORY_WEATHER = "weather_category";
-        private static final String WEATHER_ICON_PACK = "weather_icon_pack";
-        private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
+        private static final String WEATHER_CATEGORY = "weather_category";
         private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
-        private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
         private static final String PREF_STATUS_BAR_WEATHER = "status_bar_weather";
 
         private ListPreference mDaylightHeaderPack;
@@ -114,8 +111,6 @@ public class NotificationsDrawerFragment extends Fragment {
         private SeekBarPreferenceCham mHeaderShadow;
         private ListPreference mHeaderProvider;
         private PreferenceCategory mWeatherCategory;
-        private ListPreference mWeatherIconPack;
-        private String mWeatherIconPackNote;
         private ListPreference mStatusBarWeather;
 
         private String mDaylightHeaderProvider;
@@ -135,9 +130,9 @@ public class NotificationsDrawerFragment extends Fragment {
             addPreferencesFromResource(R.xml.fragment_notificationsdrawer_settings);
             mResolver = getActivity().getContentResolver();
             PreferenceScreen prefSet = getPreferenceScreen();
-            final PackageManager pm = getActivity().getPackageManager();
-            mWeatherIconPackNote = getResources().getString(R.string.weather_icon_pack_note);
+            PackageManager pm = getActivity().getPackageManager();
             int defaultValue;
+            mWeatherCategory = (PreferenceCategory) prefSet.findPreference(WEATHER_CATEGORY);
 
             // QS tile animation
             mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
@@ -257,49 +252,22 @@ public class NotificationsDrawerFragment extends Fragment {
             mNotificationKill = findPreference(NOTIFICATION_GUTS_KILL_APP_BUTTON);
             mNotificationKill.setOnPreferenceChangeListener(this);
 
-            mWeatherCategory = (PreferenceCategory) prefSet.findPreference(CATEGORY_WEATHER);
+            // Status bar weather
+            mStatusBarWeather = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER);
             if (mWeatherCategory != null && (!Helpers.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
                 prefSet.removePreference(mWeatherCategory);
             } else {
-                String settingsJaws = Settings.System.getString(resolver,
-                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK);
-                if (settingsJaws == null) {
-                    settingsJaws = DEFAULT_WEATHER_ICON_PACKAGE;
+                int temperatureShow = Settings.System.getIntForUser(mResolver,
+                        Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
+                        UserHandle.USER_CURRENT);
+                mStatusBarWeather.setValue(String.valueOf(temperatureShow));
+                if (temperatureShow == 0) {
+                    mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
+                } else {
+                    mStatusBarWeather.setSummary(mStatusBarWeather.getEntry());
                 }
-                mWeatherIconPack = (ListPreference) findPreference(WEATHER_ICON_PACK);
-
-                List<String> entries = new ArrayList<String>();
-                List<String> values = new ArrayList<String>();
-                getAvailableWeatherIconPacks(entries, values);
-                mWeatherIconPack.setEntries(entries.toArray(new String[entries.size()]));
-                mWeatherIconPack.setEntryValues(values.toArray(new String[values.size()]));
-
-                int valueJawsIndex = mWeatherIconPack.findIndexOfValue(settingsJaws);
-                if (valueJawsIndex == -1) {
-                    // no longer found
-                    settingsJaws = DEFAULT_WEATHER_ICON_PACKAGE;
-                    Settings.System.putString(resolver,
-                            Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingsJaws);
-                    valueJawsIndex = mWeatherIconPack.findIndexOfValue(settingsJaws);
-                }
-                mWeatherIconPack.setValueIndex(valueJawsIndex >= 0 ? valueJawsIndex : 0);
-                mWeatherIconPack.setSummary(mWeatherIconPackNote + "\n\n" + mWeatherIconPack.getEntry());
-                mWeatherIconPack.setOnPreferenceChangeListener(this);
+                mStatusBarWeather.setOnPreferenceChangeListener(this);
             }
-
-            // Status bar weather
-            mStatusBarWeather = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER);
-            int temperatureShow = Settings.System.getIntForUser(resolver,
-                    Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
-                    UserHandle.USER_CURRENT);
-            mStatusBarWeather.setValue(String.valueOf(temperatureShow));
-            if (temperatureShow == 0) {
-                mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
-            } else {
-                mStatusBarWeather.setSummary(mStatusBarWeather.getEntry());
-            }
-            mStatusBarWeather.setOnPreferenceChangeListener(this);
-
             setHasOptionsMenu(true);
             return prefSet;
         }
@@ -401,24 +369,17 @@ public class NotificationsDrawerFragment extends Fragment {
                 // By restarting SystemUI, we can re-create all notifications
                 Helpers.showSystemUIrestartDialog(getActivity());
                 return true;
-            } else if (preference == mWeatherIconPack) {
-                String value = (String) newValue;
-                Settings.System.putString(resolver,
-                      Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);
-                int valueIndex = mWeatherIconPack.findIndexOfValue(value);
-                mWeatherIconPack.setSummary(mWeatherIconPackNote + " \n\n" + mWeatherIconPack.getEntries()[valueIndex]);
-                return true;
             } else if (preference == mStatusBarWeather) {
                 int temperatureShow = Integer.valueOf((String) newValue);
-               int index = mStatusBarWeather.findIndexOfValue((String) newValue);
-                Settings.System.putIntForUser(resolver,
+                int indexTemp = mStatusBarWeather.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(mResolver,
                         Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,
                         temperatureShow, UserHandle.USER_CURRENT);
                 if (temperatureShow == 0) {
                     mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
                 } else {
                     mStatusBarWeather.setSummary(
-                            mStatusBarWeather.getEntries()[index]);
+                            mStatusBarWeather.getEntries()[indexTemp]);
                 }
                 return true;
             }
@@ -527,41 +488,6 @@ public class NotificationsDrawerFragment extends Fragment {
             Intent browse = new Intent();
             browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseHeaderActivity");
             return pm.resolveActivity(browse, 0) != null;
-        }
-
-        private void getAvailableWeatherIconPacks(List<String> entries, List<String> values) {
-            Intent i = new Intent();
-            PackageManager packageManager = getActivity().getPackageManager();
-            i.setAction("org.omnirom.WeatherIconPack");
-            for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
-                String packageName = r.activityInfo.packageName;
-                Log.d("IconPack package name: ", packageName);
-                if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
-                    values.add(0, r.activityInfo.name);
-                } else {
-                    values.add(r.activityInfo.name);
-                }
-                String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
-                if (label == null) {
-                    label = r.activityInfo.packageName;
-                }
-                if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
-                    entries.add(0, label);
-                } else {
-                    entries.add(label);
-                }
-            }
-            i = new Intent(Intent.ACTION_MAIN);
-            i.addCategory(CHRONUS_ICON_PACK_INTENT);
-            for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
-                String packageName = r.activityInfo.packageName;
-                values.add(packageName + ".weather");
-                String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
-                if (label == null) {
-                    label = r.activityInfo.packageName;
-                }
-                entries.add(label);
-            }
         }
     }
 }

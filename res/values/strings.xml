@@ -151,8 +151,11 @@
     <!-- General -->
     <string name="general_settings">General settings</string>
     <!-- Toast Icons -->
+    <string name="toast_settings_title">Toast settings</string>
     <string name="toast_icon_title">Toast icon</string>
     <string name="toast_icon_summary">Show app icon behind toast notification</string>
+    <string name="toast_text_color">Toast text color</string>
+    <string name="toast_icon_color">Toast icon color</string>
 
     <!-- LockClocK -->
     <string name="lock_clock_title">cLock settings</string>

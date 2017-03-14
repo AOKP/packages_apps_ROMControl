@@ -67,18 +67,31 @@
         android:summary="@string/disable_immersive_message_summary"
         android:defaultValue="false" />
 
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+    <PreferenceCategory
+        android:title="@string/toast_settings_title">
+        <ListPreference
+            android:key="toast_animation"
+            android:title="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
+            android:persistent="false" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
             android:key="toast_icon"
             android:title="@string/toast_icon_title"
             android:summary="@string/toast_icon_summary"
             android:defaultValue="true" />
 
-    <ListPreference
-        android:key="toast_animation"
-        android:title="@string/toast_animation_title"
-        android:entries="@array/toast_animation_entries"
-        android:entryValues="@array/toast_animation_values"
-        android:persistent="false" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="toast_icon_color"
+            android:title="@string/toast_icon_color"
+            android:defaultValue="0xffffffff"
+            android:dependency="toast_icon" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="toast_text_color"
+            android:title="@string/toast_text_color"
+            android:defaultValue="0xffffffff" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
-

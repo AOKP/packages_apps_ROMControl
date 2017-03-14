@@ -47,6 +47,8 @@ import java.util.ArrayList;
 
 import com.aokp.romcontrol.R;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class DisplayAnimationsSettings extends Fragment {
 
     public DisplayAnimationsSettings() {
@@ -78,13 +80,16 @@ public class DisplayAnimationsSettings extends Fragment {
         private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
         private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
         private static final String KEY_TOAST_ANIMATION = "toast_animation";
-
+        private static final String TOAST_ICON_COLOR = "toast_icon_color";
+        private static final String TOAST_TEXT_COLOR = "toast_text_color";
         private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
         private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
         private static final String SCROLLINGCACHE_DEFAULT = "1";
         private static final String PREF_TRANSITION_ANIMATION = "disable_transition_animations";
         private static final String LIST_SCREEN_OFF_ANIMATION = "screen_off_animation";
 
+        private ColorPickerPreference mIconColor;
+        private ColorPickerPreference mTextColor;
         private ListPreference mListViewAnimation;
         private ListPreference mListViewInterpolator;
         private ListPreference mScrollingCachePref;
@@ -147,6 +152,27 @@ public class DisplayAnimationsSettings extends Fragment {
             mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
             mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
             mToastAnimation.setOnPreferenceChangeListener(this);
+
+            int intColor = 0xffffffff;
+            String hexColor = String.format("#%08x", (0xffffffff & 0xffffffff));
+
+            // Toast icon color
+            mIconColor = (ColorPickerPreference) findPreference(TOAST_ICON_COLOR);
+            intColor = Settings.System.getInt(resolver,
+                    Settings.System.TOAST_ICON_COLOR, 0xffffffff);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mIconColor.setNewPreviewColor(intColor);
+            mIconColor.setSummary(hexColor);
+            mIconColor.setOnPreferenceChangeListener(this);
+
+            // Toast text color
+            mTextColor = (ColorPickerPreference) findPreference(TOAST_TEXT_COLOR);
+            intColor = Settings.System.getInt(resolver,
+                    Settings.System.TOAST_TEXT_COLOR, 0xffffffff);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mTextColor.setNewPreviewColor(intColor);
+            mTextColor.setSummary(hexColor);
+            mTextColor.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -211,6 +237,26 @@ public class DisplayAnimationsSettings extends Fragment {
                 mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
                 Toast.makeText(getActivity(), mToastAnimation.getEntries()[index],
                         Toast.LENGTH_SHORT).show();
+                return true;
+            }  else if (preference == mIconColor) {
+                String hex = ColorPickerPreference.convertToARGB(Integer
+                       .valueOf(String.valueOf(objValue)));
+                preference.setSummary(hex);
+               int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(resolver,
+                       Settings.System.TOAST_ICON_COLOR, intHex);
+                Toast.makeText(getActivity(), mToastAnimation.getEntry(),
+                       Toast.LENGTH_SHORT).show();
+                return true;
+            } else if (preference == mTextColor) {
+                String hex = ColorPickerPreference.convertToARGB(Integer
+                      .valueOf(String.valueOf(objValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(resolver,
+                      Settings.System.TOAST_TEXT_COLOR, intHex);
+                Toast.makeText(getActivity(), mToastAnimation.getEntry(),
+                      Toast.LENGTH_SHORT).show();
                 return true;
             }
             return false;

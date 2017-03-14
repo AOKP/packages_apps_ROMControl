@@ -169,8 +169,8 @@ public class DisplayAnimationsSettings extends Fragment {
                 return true;
             } else if (preference == mToastAnimation) {
                 int index = mToastAnimation.findIndexOfValue((String) objValue);
-                Settings.System.putString(resolver,
-                        Settings.System.TOAST_ANIMATION, (String) objValue);
+                Settings.System.putInt(resolver,
+                        Settings.System.TOAST_ANIMATION, index);
                 mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
                 Toast.makeText(getActivity(), "AOKP ToasTest", Toast.LENGTH_SHORT).show();
                 return true;

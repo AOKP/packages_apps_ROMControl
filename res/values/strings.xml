@@ -36,7 +36,6 @@
     <string name="category_lockscreen">Lockscreen</string>
     <string name="category_notifications_drawer">Notifications Drawer</string>
     <string name="category_power_menu">Power menu</string>
-    <string name="category_notifications_drawer">Notifications Drawer</string>
     <string name="category_pie">PIE</string>
     <string name="category_sound">Sound</string>
     <string name="category_statusbar">Statusbar</string>

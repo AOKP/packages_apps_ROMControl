@@ -33,7 +33,8 @@
     <string name="category_hardware_keys">Teclas de hardware</string>
     <string name="category_lockscreen">Tela de bloqueio</string>
     <string name="category_notifications_drawer">Notificações Gaveta</string>
-	<string name="category_notifications_drawer">Notificações Gaveta</string>
+    <string name="category_power_menu">Power menu</string>
+    <string name="category_pie">PIE</string>
     <string name="category_sound">Som</string>
     <string name="category_statusbar">Barra de status</string>
     <string name="category_ui">Interface de usuário</string>
@@ -307,8 +308,11 @@
     <!-- General -->
     <string name="general_settings">Configurações Gerais</string>
     <!-- Toast Icons -->
-    <string name="toast_icon_title">Icone de Brinde</string>
-    <string name="toast_icon_summary">Mostrar ícone do app atrás da notificação do brinde</string>
+    <string name="toast_settings_title">Configurações do Toast</string>
+    <string name="toast_icon_title">Icone de Toast</string>
+    <string name="toast_icon_summary">Mostrar ícone do app atrás da notificação do toast</string>
+    <string name="toast_text_color">Cor do texto no toast</string>
+    <string name="toast_icon_color">Cor do icone do toast</string>
 
     <!-- LockClocK -->
     <string name="lock_clock_title">Configurações do Relógio</string>
@@ -498,6 +502,18 @@
     <!-- qqs scroller -->
     <string name="qqs_scroll_title">Rolar pequenos tiles QS</string>
     <string name="qqs_scroll_summary">Permitir a rolagem através das pequenas tiles QS</string>
+	
+    <!-- QS Header Icons -->
+    <string name="qs_settings_icon_title">Atalho de configurações</string>
+    <string name="qs_settings_icon_summary">Desativar o atalho das configurações no cabeçalho</string>
+    <string name="qs_running_services_title">Ícone de Serviços Correntes</string>
+    <string name="qs_running_services_summary">Desativar o ícone de serviços de execução de blocos no cabeçalho</string>
+    <string name="qs_edit_title">Editar Icone</string>
+    <string name="qs_edit_summary">Desativar o ícone de edição da tile no cabeçalho</string>
+    <string name="qs_multiuser_switch_title">Opção de Multiusuário</string>
+    <string name="qs_multiuser_switch_summary">Desativar a opção multiusuário no cabeçalho</string>
+    <string name="qs_expand_indicator_title">Expandir Indicador</string>
+    <string name="qs_expand_indicator_summary">Desativar o indicador de expansão no cabeçalho</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PIE Cat starts ****************************** -->

@@ -39,6 +39,7 @@ public class GeneralTabHostFragment extends Fragment {
     private static final int[] mFragments = new int[] {
             R.string.general_settings,
             R.string.recents_settings,
+            R.string.screen_state_toggles_title,
             R.string.wakelock_blocker_title
     };
 
@@ -95,6 +96,8 @@ public class GeneralTabHostFragment extends Fragment {
                 case 1:
                     return new RecentsSettingsFragment();
                 case 2:
+                    return new SuspendActionsFragment();
+                case 3:
                     return new WakelockBlockerFragment();
             }
             return null;

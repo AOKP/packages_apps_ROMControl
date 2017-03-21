@@ -44,6 +44,7 @@ import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
 import com.aokp.romcontrol.fragments.general.HostnamePreference;
 import com.aokp.romcontrol.fragments.general.RecentsSettingsFragment;
+import com.aokp.romcontrol.fragments.general.SuspendActionsFragment;
 import com.aokp.romcontrol.fragments.general.WakelockBlockerFragment;
 
 import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;

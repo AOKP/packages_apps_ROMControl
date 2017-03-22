@@ -199,7 +199,7 @@ public class DisplayAnimationsSettings extends Fragment {
                 Settings.System.putInt(resolver,
                         Settings.System.TOAST_ANIMATION, index);
                 mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
-                Toast.makeText(getActivity(), mToastAnimation.getEntry(),
+                Toast.makeText(getActivity(), mToastAnimation.getEntries()[index],
                         Toast.LENGTH_SHORT).show();
                 return true;
             } else if (preference == mScrollingCachePref) {

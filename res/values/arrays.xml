@@ -567,6 +567,7 @@
         <item>@string/status_bar_battery_style_icon_landscape</item>
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_solid</item>
+        <item>@string/status_bar_battery_style_aokp</item>
         <item>@string/status_bar_battery_style_text</item>
         <item>@string/status_bar_battery_style_hidden</item>
     </string-array>
@@ -576,6 +577,7 @@
         <item>5</item>
         <item>2</item>
         <item>7</item>
+        <item>8</item>
         <item>6</item>
         <item>4</item>
     </string-array>

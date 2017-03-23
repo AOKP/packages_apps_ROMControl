@@ -109,6 +109,7 @@
     <string name="github_willdeberry" translatable="false">https://github.com/willdeberry</string>
     <string name="github_xoom" translatable="false">https://github.com/xoomdev</string>
     <string name="github_zaph" translatable="false">https://github.com/Zaphod-Beeblebrox</string>
+    <string name="github_tribual" translatable="false">https://github.com/tribual</string>
     <string name="url_aokp" translatable="false">http://aokp.co/</string>
     <string name="url_aokp_gerrit" translatable="false">http://gerrit.aokp.co</string>
     <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>

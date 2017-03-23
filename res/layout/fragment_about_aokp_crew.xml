@@ -373,6 +373,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="tribual"
+                aokp:nameDev="Sven Jautz"
+                aokp:twitterHandle="none"
+                aokp:githubLink="@string/github_tribual"
+                aokp:emailDev="tribual81@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
 
     </LinearLayout>
 </ScrollView>

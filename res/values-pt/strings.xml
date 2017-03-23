@@ -279,7 +279,7 @@
     <string name="volume_keys_control_ring_stream_summary_off">As teclas de volume controlam o volume de mídia</string>
 
     <!-- Title of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=40] -->
-    <string name="camera_double_tap_power_gesture_title">    <string name="camera_double_tap_power_gesture_title">Pressione o botão power duas vezes para abrir a câmera</string></string>
+    <string name="camera_double_tap_power_gesture_title">Pressione o botão power duas vezes para abrir a câmera</string>
 
     <!-- Description of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=NONE] -->
     <string name="camera_double_tap_power_gesture_desc">Abra rapidamente a câmera sem desbloquear a tela</string>

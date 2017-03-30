@@ -57,6 +57,12 @@
         android:title="@string/unlock_quick_unlock_control_title"
         android:summary="@string/unlock_quick_unlock_control_summary" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="fp_unlock_keystore"
+        android:title="@string/fp_unlock_keystore_title"
+        android:summary="@string/fp_unlock_keystore_summary"
+        android:defaultValue="false" />
+
     <com.aokp.romcontrol.settings.SecureSettingSwitchPreference
         android:key="status_bar_locked_on_secure_keyguard"
         android:title="@string/block_on_secure_keyguard_title"

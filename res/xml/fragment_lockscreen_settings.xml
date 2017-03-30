@@ -48,6 +48,12 @@
         android:defaultValue="true" />
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="fp_unlock_keystore"
+        android:title="@string/fp_unlock_keystore_title"
+        android:summary="@string/fp_unlock_keystore_summary"
+        android:defaultValue="false" />
+
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="double_tap_sleep_anywhere"
         android:title="@string/double_tap_sleep_anywhere_title"
         android:summary="@string/double_tap_sleep_anywhere_summary" />

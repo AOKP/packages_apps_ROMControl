@@ -71,11 +71,13 @@ public class LockScreenSettingsFragment extends Fragment {
         private static final String TAG = "LockScreenSettings";
         private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
         private static final String PREF_KEYGUARD_TORCH = "keyguard_toggle_torch";
+        private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
 
         private ContentResolver mResolver;
 
         private FingerprintManager mFingerprintManager;
         private SwitchPreference mFingerprintVib;
+        private SwitchPreference mFpKeystore;
         private SeekBarPreferenceCham mMaxKeyguardNotifConfig;
         private SwitchPreference mKeyguardTorch;
 
@@ -93,6 +95,12 @@ public class LockScreenSettingsFragment extends Fragment {
             mFingerprintVib = (SwitchPreference) prefSet.findPreference("fingerprint_success_vib");
             if (!mFingerprintManager.isHardwareDetected()){
                 prefSet.removePreference(mFingerprintVib);
+            }
+
+            // Fingerprint unlock keystore
+           mFpKeystore = (SwitchPreference) prefSet.findPreference("fp_unlock_keystore");
+            if (!mFingerprintManager.isHardwareDetected()){
+                prefSet.removePreference(mFpKeystore);
             }
 
             mMaxKeyguardNotifConfig = (SeekBarPreferenceCham) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);

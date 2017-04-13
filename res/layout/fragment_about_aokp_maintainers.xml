@@ -26,6 +26,15 @@
             android:id="@+id/maintainers"
             style="@style/settingsFragmentStyle">
 
+	<com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Rkschunk"
+                aokp:nameDev="rkschunk"
+                aokp:twitterHandle="rkschunk"
+                aokp:githubLink="@string/github_rkschunk"
+                aokp:emailDev="rkschunk@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
         <com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Esrom Cataneo"
                 aokp:nameDev="EsromG5"

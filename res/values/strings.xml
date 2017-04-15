@@ -677,6 +677,12 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Kill app button</string>
     <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
+
+    <!-- Header Weather -->
+    <string name="header_weather_enabled_title">Weather</string>
+    <string name="header_weather_enabled_summary">Enable weather info in expanded header</string>
+    <string name="header_weather_image_enabled_title">Weather Image</string>
+    <string name="header_weather_image_enabled_summary">Enable weather image in expanded header</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PIE Cat starts ****************************** -->

@@ -197,6 +197,28 @@
             android:persistent="false"
             android:dependency="status_bar_custom_header" />
 
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="header_weather_enabled"
+            android:title="@string/header_weather_enabled_title"
+            android:summary="@string/header_weather_enabled_summary"
+            android:defaultValue="false" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="header_weather_image_enabled"
+            android:title="@string/header_weather_image_enabled_title"
+            android:summary="@string/header_weather_image_enabled_summary"
+            android:dependency="header_weather_enabled"
+            android:defaultValue="false" />
+
+        <PreferenceScreen
+            android:title="@string/weather_config_title"
+            android:summary="@string/weather_config_summary"
+            android:dependency="header_weather_enabled" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="org.omnirom.omnijaws"
+                android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
+        </PreferenceScreen>
+
     </PreferenceCategory>
 
     <com.aokp.romcontrol.settings.SecureSettingSwitchPreference

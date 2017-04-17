@@ -514,6 +514,10 @@
     <string name="qs_multiuser_switch_summary">Desativar a opção multiusuário no cabeçalho</string>
     <string name="qs_expand_indicator_title">Expandir Indicador</string>
     <string name="qs_expand_indicator_summary">Desativar o indicador de expansão no cabeçalho</string>
+
+    <!-- Notification guts kill app button -->
+    <string name="notification_guts_kill_app_button_title">Botão eliminar App</string>
+    <string name="notification_guts_kill_app_button_summary">Mostrar um botão de eliminar aplicativos em notificações quando pressionar menu</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PIE Cat starts ****************************** -->
@@ -595,6 +599,8 @@
     <string name="power_menu_bug_report_title">Relatório de erro</string>
     <string name="power_menu_sound_title">Painel de som</string>
     <string name="power_menu_bug_report_disabled">O relatório de erros está desativado nas configurações de desenvolvimento</string>
+    <!-- Power menu torch -->
+    <string name="power_menu_torch_title">Lanterna</string>
 
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Animação do Menu Desligar</string>

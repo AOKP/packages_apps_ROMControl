@@ -38,7 +38,7 @@
         <com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Esrom Cataneo"
                 aokp:nameDev="EsromG5"
-                aokp:twitterHandle="EsromG5"
+                aokp:twitterHandle="esromg5"
                 aokp:githubLink="@string/github_esromg5"
                 aokp:emailDev="esromgalaxy5@gmail.com"
                 android:layout_width="match_parent"

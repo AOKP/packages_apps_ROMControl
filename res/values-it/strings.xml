@@ -217,6 +217,8 @@
     <string name="trigger_top_summary">Imposta la posizione verticale dell\'area interruttore</string>
     <string name="trigger_bottom_title">Altezza Interruttore</string>
     <string name="trigger_bottom_summary">Imposta l\'altezza dell\'area interruttore</string>
+    <string name="app_sidebar_hide_timeout_title">Nascondi automaticamente l\'Appbar</string>
+    <string name="app_sidebar_hide_timeout_summary">L\'arco di tempo per nascondere automaticamente l\'Appbar.</string>
     <!-- ****************************** AppLauncher Cat ends ****************************** -->
 
    <!-- ****************************** Hardware keys Cat starts ****************************** -->
@@ -314,8 +316,11 @@
     <!-- General -->
     <string name="general_settings">Impostazioni generali</string>
     <!-- Toast Icons -->
-    <string name="toast_icon_title">Icona sul Toast</string>
+    <string name="toast_settings_title">impostazioni Toast</string>
+    <string name="toast_icon_title">Icona Toast</string>
     <string name="toast_icon_summary">Mostra con il toast l\'icona corrispondente all\'applicazione</string>
+    <string name="toast_text_color">Colore testo del Toast</string>
+    <string name="toast_icon_color">Colore icona del Toast</string>
 
     <!-- LockClocK -->
     <string name="lock_clock_title">Impostazioni cLock</string>
@@ -351,6 +356,81 @@
     <string name="recents_anim_title">Animazione recenti</string>
     <string name="recents_anim_summary">Personalizza il ritardo della finestra Recenti e le sue azioni</string>
 
+  <string name="clear_recents_style">Stile del pulsante</string>
+  <string name="fab_button_color">Colore sfondo cancella tutto</string>
+  <string name="mem_bar_color">Barra della memoria</string>
+  <string name="recents_date_color">Testo data a schermo intero</string>
+  <string name="recents_colors">Stili</string>
+  <string name="recents_style_2">Colori</string>
+  <string name="recents_style_3">Taskview intestazione</string>
+  <string name="pin_button_color">Pulsante blocco schermata </string>
+  <string name="mw_button_color">Pulsante Multi-Window</string>
+  <string name="float_button_color">Pulsante fluttuante</string>
+  <string name="kill_app_button_color">Colore icona cancella tutto</string>										  
+  <string name="tv_app_color">Riempie icona App (Riempie interamente l\'icona)</string>
+  <string name="tv_app_text_color">Descrizione Testo App</string>
+  <string name="recent_styles">Stile menu app recenti </string>
+  <string name="recent_styles_summary">Personalizza vari elementi nel menu app recenti </string>
+  <string name="mem_text_color">Testo barra della memoria</string>
+  <string name="clear_button_color">Pulsante cancella tutto</string>
+  <string name="clear_recents_style_enable">Personalizza stile menu app recenti</string>
+  <string name="clear_recents_style_enable_summary">Abilita o disabilita personalizzazione stile della visualizzazione app recenti</string>
+  <string name="recents_rotate_fab">Pulsante animato</string>
+  <string name="recents_rotate_fab_summary">Abilita o disabilita la rotazione del pulsante cancella tutto</string>
+  <string name="recents_fab_vibrate">Vibra quando viene premuto il pulsante cancella tutto</string>
+  <string name="recents_fab_vibrate_summary">Abilita o disabilita la vibrazione del pulsante rimuovi tutto</string>
+  <string name="fab_animation_style">Animazione pulsante mobile</string>
+  <string name="recents_fab_lp">Abilita pressione prolungata sul pulsante</string>
+  <string name="recents_fab_lp_summary">Pressione prolungata aggiorna la barra della memoria se presente</string>
+  <string name="recents_fab_lp_anim">Animazione pressione prolungata FAB</string>
+  <string name="clear_animation_style">Animazione pulsante cancella tutto</string>
+  <string name="button1">Predefinito </string>
+  <string name="button2">Casella di controllo quadrata </string>
+  <string name="button3">Grafico </string>
+  <string name="button4">Linee verticali 1</string>
+  <string name="button5">Linee verticali 2</string>
+  <string name="button6">Appunti </string>
+  <string name="button7">Disegno</string>
+  <string name="button8">Linee orizzontali</string>
+  <string name="button9">Casella di controllo circolare </string>
+  <string name="button10">Striscia per eliminare </string>
+  <string name="button11">Zzzzz</string>
+  <string name="button12">Occhio Chiuso</string>
+  <string name="button13">Pulsante mi piace</string>
+  <string name="button14">Cubo con strisce</string>
+  <string name="button15">Campana </string>
+  <string name="button16">Linee freccia a sinistra </string>
+  <string name="button17">Layers Off </string>
+  <string name="button18">Linee freccia indietro</string>
+  <string name="button19">Layers</string>
+  <string name="button20">Archivio </string>
+  <string name="button21">Database Plus</string>
+  <string name="button22">Frecce contratte</string>
+  <string name="button23">Google</string>
+  <string name="button24">Database Minus </string>
+  <string name="button25">Sequenza Cubo</string>
+  <string name="button26">Cronometro</string>
+  <string name="button27">Resurrection</string>
+  <string name="button28">Android (Stock)</string>
+  <string name="button29">Resurrection Lollipop</string>
+  <string name="button30">Android N</string>
+  <string name="animation0">Rotazione </string>
+  <string name="animation1">Uscita app recenti</string>
+  <string name="animation2">Uscita traslucido </string>
+  <string name="animation3">Uscita nastro translucido</string>
+  <string name="animation4">Uscita toast</string>
+  <string name="animation5">Scorri dal basso </string>
+  <string name="animation6">Uscita Xylon </string>
+  <string name="animation7">Uscita toast Honami</string>
+  <string name="animation8">Scorri da destra </string>
+  <string name="animation9">Ruotazione 360°</string>
+  <string name="animation10">Dissolvenza lenta </string>
+  <string name="animation11">Scorri da sinistra</string>
+  <string name="animation12">Dissolvenza in uscita</string>
+  <string name="animation13">Dissolvenza veloce </string>
+  <string name="animation14">Scorri dall\'alto </string>
+  <string name="animation15">Rotazione veloce</string>
+  
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Blocca i wakelock di sistema</string>
@@ -370,6 +450,16 @@
     <string name="screenshot_delay_title">Ritardo screenshot</string>
     <string name="screenshot_delay_summary">Regola il tempo di acquisizione di uno screenshot</string>
   
+    <!-- Custom bootanim -->
+    <string name="custom_bootanimation_title">Animazione di avvio</string>
+    <string name="custom_bootanimation_summary">Seleziona la tua nuova animazione di avvio.\nAd ogni modifica, all\'animazione corrente verrà eseguito il backup sulla cartella di archiviazione/AOKP_ota con l\'indicatore di data corrente. Quelli vecchi devono essere eliminati manualmente se non necessari.</string>
+    <string name="bootanimation_preview">Anteprima animazione di avvio</string>
+    <string name="set_custom_bootanimation">Imposta personalizzata...</string>
+    <string name="creating_preview">Creazione anteprima...</string>
+    <string name="error_reading_zip_file">Errore durante la lettura del file zip</string>
+    <string name="error_creating_preview">Errore durante la creazione dell\'anteprima</string>
+    <string name="install_file_manager_error">Non è stata trovata alcuna applicazione per scegliere il file zip. Installare un file manager.</string>
+    <string name="apply">Applica</string>
     <!-- ****************************** General Cat ends ****************************** -->
 
     <!-- ****************************** Lockscreen Cat starts ****************************** -->
@@ -397,6 +487,10 @@
     <!-- Lockscreen Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- Fingerprint unlock keystore -->
+    <string name="fp_unlock_keystore_title">Sblocco digitale</string>
+    <string name="fp_unlock_keystore_summary">Sblocca il dispositivo con l\'impronta digitale dopo il riavvio senza PIN/Password/Sequenza\nNota: a proprio rischio!</string>
 
     <!-- Disable OS on lockscreen -->
     <string name="block_on_secure_keyguard_title">Disattiva le impostazioni rapide</string>
@@ -521,7 +615,11 @@
     <string name="qs_multiuser_switch_summary">Disabilita l\'icona cambio utente nell\'intestazione</string>
     <string name="qs_expand_indicator_title">Indicatore espansione</string>
     <string name="qs_expand_indicator_summary">Disabilita l\'indicatore di espansione nell\'intestazione</string>
-    <!-- ****************************** Not Drawer Cat ends ****************************** -->
+  
+  <!-- Notification guts kill app button -->
+  <string name="notification_guts_kill_app_button_title">Pulsante termina app</string>
+  <string name="notification_guts_kill_app_button_summary">Mostra un pulsante per chiudere l\'applicazione quando si preme a lungo sulla notifica</string>
+ <!-- ****************************** Not Drawer Cat ends ****************************** -->
   
   <!-- ****************************** PIE Cat starts ****************************** -->
   <!-- PA Pie control -->
@@ -602,7 +700,9 @@
     <string name="power_menu_bug_report_title">Segnalazione bug</string>
     <string name="power_menu_sound_title">Pannello suoni</string>
     <string name="power_menu_bug_report_disabled">La segnalazione bug è disattivata nelle impostazioni di sviluppo</string>
-
+    <!-- Power menu torch -->
+    <string name="power_menu_torch_title">Torcia</string>
+  
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Animazione power menù</string>
     <string name="power_menu_animation_summary">Cambia l\'animazione per l\'entrata e l\'uscita dal power menù</string>
@@ -696,7 +796,7 @@
     <string name="su_indicator">Indicatore Superuser</string>
     <string name="su_indicator_summary_on">"L\'indicatore Superuser è visibile quando una sessione SU è attiva"</string>
     <string name="su_indicator_summary_off">"Comando per mostrare l\'indicatore Superuser quando una sessione è attiva. Solo per root CM integrato"</string>
-
+  
     <!-- Network traffic -->
     <string name="traffic_category">Indicatori di traffico</string>
     <string name="network_traffic_title">Traffico di rete</string>
@@ -750,6 +850,11 @@
     <string name="status_bar_am_pm_small">Piccola</string>
     <string name="status_bar_am_pm_hidden">Nascosta</string>
 
+    <!-- Pa Battery -->
+    <string name="status_bar_battery_style_solid">Solido</string>
+    <!-- AOKP Battery -->
+    <string name="status_bar_battery_style_aokp">Batteria</string>
+  
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Stile indicatore batteria</string>
     <string name="status_bar_battery_style_icon_portrait">Icona verticale</string>

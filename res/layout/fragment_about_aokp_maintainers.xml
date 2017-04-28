@@ -26,6 +26,15 @@
             android:id="@+id/maintainers"
             style="@style/settingsFragmentStyle">
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Aniket Lamba"
+                aokp:nameDev="aniket.lamba"
+                aokp:twitterHandle="u_remedy"
+                aokp:githubLink="@string/github_mr-tweaker"
+                aokp:emailDev="aniket.lamba@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
 	<com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Rkschunk"
                 aokp:nameDev="rkschunk"

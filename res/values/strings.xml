@@ -114,6 +114,7 @@
     <string name="donate_aokp" translatable="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
     </string>
     <string name="github_aokp" translatable="false">https://github.com/AOKP</string>
+    <string name="github_mr_tweaker" translatable="false">https://github.com/mr-tweaker</string>
     <string name="github_rkschunk" translatable="false">https://github.com/rkschunk</string>
     <string name="github_esromg5" translatable="false">https://github.com/EsromG5</string>
     <string name="github_mestreian" translatable="false">https://github.com/mestreian</string>

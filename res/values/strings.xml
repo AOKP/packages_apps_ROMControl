@@ -681,6 +681,13 @@
     <!-- OmniJaws -->
     <string name="weather_title">Weather</string>
     <string name="weather_config_title">Weather tile settings</string>
+    <string name="weather_config_summary"></string>
+
+    <!-- Header Weather -->
+    <string name="header_weather_enabled_title">Weather</string>
+    <string name="header_weather_enabled_summary">Enable weather info in expanded header</string>
+    <string name="header_weather_image_enabled_title">Weather Image</string>
+    <string name="header_weather_image_enabled_summary">Enable weather image in expanded header</string>
 
     <!-- StatusBar weather settings -->
     <string name="statusbar_weather_title">Status bar weather</string>

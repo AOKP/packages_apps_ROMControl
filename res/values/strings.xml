@@ -580,11 +580,11 @@
     <string name="notifications_drawer_settings">Notif Drawer Settings</string>
 
     <!-- Brightness slider -->
-    <string name="qs_brightness_slider_title">Brightness slider switch</string>
-    <string name="qs_brightness_slider_enabled">Enabled</string>
-    <string name="qs_brightness_slider_disabled">Disabled</string>
-    <string name="brightness_icon_title">Brightness icon </string>
-    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
+    <string name="status_bar_brightness_category">Brightness</string>
+    <string name="status_bar_brightness_slider_title">Brightness slider</string>
+    <string name="status_bar_brightness_slider_summary">Adjust brightness from the Quick Settings</string>
+    <string name="status_bar_brightness_slider_auto_title">Auto brightness</string>
+    <string name="status_bar_brightness_slider_auto_summary">Show toggle for adaptive brightness near the slider</string>
 
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_style_title">Tiles animation style</string>

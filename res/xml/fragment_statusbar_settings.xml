@@ -98,11 +98,19 @@
         android:persistent="false"
         android:defaultValue="0xffffff" />
 
-    <com.aokp.romcontrol.settings.CMSystemSettingSwitchPreference
-        android:key="status_bar_brightness_control"
-        android:title="@string/status_bar_toggle_brightness"
-        android:summary="@string/status_bar_toggle_brightness_summary"
-        android:defaultValue="false" />
+    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
+        android:key="qs_show_brightness_slider"
+        android:title="@string/status_bar_brightness_slider_title"
+        android:summary="@string/status_bar_brightness_slider_summary"
+        android:defaultValue="true" />
+
+    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
+        android:key="qs_show_auto_brightness"
+        android:title="@string/status_bar_brightness_slider_auto_title"
+        android:summary="@string/status_bar_brightness_slider_auto_summary"
+        android:dependency="qs_show_brightness_slider"
+        aokp:requiresConfig="@*android:bool/config_automatic_brightness_available"
+        android:defaultValue="true" />
 
     <com.aokp.romcontrol.settings.CMSystemSettingSwitchPreference
         android:key="status_bar_notif_count"

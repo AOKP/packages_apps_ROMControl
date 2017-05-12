@@ -701,6 +701,12 @@
     <string name="header_weather_image_enabled_title">Weather Image</string>
     <string name="header_weather_image_enabled_summary">Enable weather image in expanded header</string>
 
+    <!-- Misc Weather -->
+    <string name="misc_weather_category_title">Miscellaneous settings</string>
+    <string name="weather_windspeed_metric_units">Windspeed (metric) display units</string>
+    <string name="weather_windspeed_metric_units_summaryOn">Windspeed is displayed in meters/second (m/s)</string>
+    <string name="weather_windspeed_metric_units_summaryOff">Windspeed is displayed in km/hours (km/h)</string>
+
     <!-- StatusBar weather settings -->
     <string name="statusbar_weather_title">Status bar weather</string>
     <string name="statusbar_weather_summary">Configure from QS settings/Weather.</string>

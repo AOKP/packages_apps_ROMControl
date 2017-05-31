@@ -26,19 +26,19 @@
         android:title="@string/notification_guts_kill_app_button_title"
         android:summary="@string/notification_guts_kill_app_button_summary" />
 
-    <com.aokp.romcontrol.settings.SecureSettingSwitchPreference
-        android:key="qs_show_brightness"
-        android:title="@string/qs_brightness_slider_title"
-        android:summaryOn="@string/qs_brightness_slider_enabled"
-        android:summaryOff="@string/qs_brightness_slider_disabled"
+    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
+        android:key="qs_show_brightness_slider"
+        android:title="@string/status_bar_brightness_slider_title"
+        android:summary="@string/status_bar_brightness_slider_summary"
         android:defaultValue="true" />
 
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-        android:key="brightness_icon"
-        android:title="@string/brightness_icon_title"
-        android:summary="@string/brightness_icon_summary"
-        android:dependency="qs_show_brightness"
-        android:defaultValue="true"/>
+    <com.aokp.romcontrol.settings.CMSecureSettingSwitchPreference
+        android:key="qs_show_auto_brightness"
+        android:title="@string/status_bar_brightness_slider_auto_title"
+        android:summary="@string/status_bar_brightness_slider_auto_summary"
+        android:dependency="qs_show_brightness_slider"
+        aokp:requiresConfig="@*android:bool/config_automatic_brightness_available"
+        android:defaultValue="true" />
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="qs_quickbar_scroll_enabled"

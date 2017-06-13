@@ -40,7 +40,8 @@
     <string name="category_sound">Impostazioni Audio</string>
     <string name="category_statusbar">Barra di stato</string>
     <string name="category_ui">Interfaccia Utente</string>
-
+    <string name="category_changelog">Modifiche</string>
+  
     <!-- Generic -->
     <string name="ok">OK</string>
     <string name="save">Salva</string>
@@ -108,22 +109,22 @@
     <string name="aokp_review_summary">Visualizza l\'istanza Gerrit di AOKP</string>
     <string name="aokp_irc_title">Unisciti a noi su IRC</string>
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
-    <string name="about_aokp">About AOKP</string>
     <string name="maintainers">I Manutentori</string>
+    <string name="about_aokp">Info su AOKP</string>
     <!-- ****************************** About Cat ends ****************************** -->
 
     <!-- ****************************** AppLauncher Cat starts ****************************** -->
     <!-- Gesture Anywhere -->
-    <string name="gesture_anywhere_title">Gesture ovunque</string>
-    <string name="gesture_anywhere_enabled_title">Gesture ovunque</string>
-    <string name="gesture_anywhere_enabled_summary">Abilita la funzione gesture ovunque</string>
+    <string name="gesture_anywhere_title">Gesti ovunque</string>
+    <string name="gesture_anywhere_enabled_title">Gesti ovunque</string>
+    <string name="gesture_anywhere_enabled_summary">Abilita la funzione dei gesti ovunque</string>
     <string name="gesture_anywhere_position_title">Posizione</string>
     <string name="gesture_anywhere_position_left">Bordo sinistro</string>
     <string name="gesture_anywhere_position_right">Bordo destro</string>
-    <string name="gesture_anywhere_gestures_title">Gesture</string>
-    <string name="gesture_anywhere_gestures_summary">Aggiungi, rimuovi e modifica le gesture</string>
+    <string name="gesture_anywhere_gestures_title">Gesti</string>
+    <string name="gesture_anywhere_gestures_summary">Aggiungi, rimuovi e modifica i gesti</string>
     <!-- Label, button used to add a gesture -->
-    <string name="ga_button_add">Aggiungi gesture</string>
+    <string name="ga_button_add">Aggiungi gesti</string>
     <!-- Label, button used to reload all gestures -->
     <string name="ga_button_reload">Ricarica</string>
     <!-- Label, button used to cancel the operation of adding a gesture -->
@@ -141,21 +142,21 @@
     <!-- Buttons in Rename gesture dialog box -->
     <string name="ga_cancel_action">Annulla</string>
     <!-- Message displayed when the user opens the gestures settings screen -->
-    <string name="ga_gestures_loading">Caricamento gesture...</string>
+    <string name="ga_gestures_loading">Caricamento gesti...</string>
     <!-- Message displayed when the user has no gestures -->
-    <string name="ga_gestures_empty">Nessuna gesture</string>
+    <string name="ga_gestures_empty">Nessun gesto</string>
     <!-- Title of the screen used to view/manage gestures -->
-    <string name="ga_gestures_activity">Gesture</string>
+    <string name="ga_gestures_activity">Gesto</string>
     <!-- Noun, menu item used to edit a gesture -->
     <string name="ga_gestures_edit">Modifica</string>
     <!-- Noun, menu item used to remove a gesture -->
     <string name="ga_gestures_delete">Elimina</string>
     <!-- Message displayed when a gesture is successfully deleted -->
-    <string name="ga_gestures_delete_success">Gesture eliminata</string>
+    <string name="ga_gestures_delete_success">Gesto eliminato</string>
     <!-- Title of dialog box -->
-    <string name="ga_gestures_rename_title">Rinomina gesture</string>
+    <string name="ga_gestures_rename_title">Rinomina gesto</string>
     <!-- Label of gesture name field in Rename gesture dialog box -->
-    <string name="ga_gestures_rename_label">Nome gesture</string>
+    <string name="ga_gestures_rename_label">Nome gesto</string>
     <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
     <string name="ga_gestures_error_loading">Impossibile caricare %s. Assicurati di avere memoria disponibile.</string>
     <string name="trigger_category">Area di attivazione</string>
@@ -609,6 +610,8 @@
     <!-- QS Header Icons -->
     <string name="qs_settings_icon_title">Scorciatoia impostazioni</string>
     <string name="qs_settings_icon_summary">Disabilita la scorciatoia delle impostazioni nell\'intestazione</string>
+    <string name="qs_running_services_title">Icona servizi in esecuzione</string>
+    <string name="qs_running_services_summary">Disattiva l\'icona dei servizi in esecuzione dei tile nell\'intestazione</string>
     <string name="qs_edit_title">Modifica icona</string>
     <string name="qs_edit_summary">Disabilita l\'icona di modifica dei tile nell\'intestazione</string>
     <string name="qs_multiuser_switch_title">Icona cambio utente</string>
@@ -754,7 +757,7 @@
     <string name="volume_steps_title">Livelli del volume</string>
     <string name="volume_steps_alarm_title">Livello volume: Sveglia</string>
     <string name="volume_steps_dtmf_title">Livello volume: DTMF</string>
-    <string name="volume_steps_music_title">Livello volume: Media</string>
+    <string name="volume_steps_music_title">Livello volume: Musica</string>
     <string name="volume_steps_notification_title">Livello volume: Notifica</string>
     <string name="volume_steps_ring_title">Livello volume: Suoneria</string>
     <string name="volume_steps_system_title">Livello volume: Sistema</string>
@@ -838,6 +841,7 @@
     <string name="status_bar_quick_qs_pulldown_left">Sinistra</string>
     <string name="status_bar_quick_qs_pulldown_right">Destra</string>
 
+    <!-- Status bar - Clock -->
     <string name="status_bar_clock_style_title">Stile orologio</string>
     <string name="status_bar_clock_style_right">Destra</string>
     <string name="status_bar_clock_style_left">Sinistra</string>
@@ -868,6 +872,11 @@
     <string name="status_bar_battery_percentage_default">Nascosta</string>
     <string name="status_bar_battery_percentage_text_inside">All\'interno dell\'icona</string>
     <string name="status_bar_battery_percentage_text_next">Accanto all\'icona</string>
+    <string name="status_bar_charge_color_title">Colore icona della batteria in carica</string>
+    <string name="status_bar_charge_color_summary">Imposta il colore dell\'icona della batteria durante la carica</string>
+    <string name="force_charge_battery_text_title">Percentuale di carica della batteria</string>
+    <string name="force_charge_battery_text_summary_on">Visualizza la percentuale della batteria fuori l\'icona durante la carica</string>
+    <string name="force_charge_battery_text_summary_off">Visualizza la percentuale di carica della batteria all\'interno dell\'icona durante la ricarica</string>
 
     <!-- Status bar - icon blacklist -->
     <string name="status_bar_icons_title">Icone della barra di stato</string>

@@ -81,6 +81,15 @@
         android:title="@string/power_menu_torch_title"
         android:defaultValue="false" />
 
+    <ListPreference
+        android:key="torch_long_press_power_timeout"
+        android:dialogTitle="@string/torch_long_press_power_timeout_title"
+        android:title="@string/torch_long_press_power_timeout_title"
+        android:entries="@array/torch_long_press_power_timeout_entries"
+        android:entryValues="@array/torch_long_press_power_timeout_values"
+        android:dependency="torch_long_press_power_gesture"
+        android:persistent="false" />
+
     <SwitchPreference
         android:key="voiceassist"
         android:title="@string/power_menu_sound_title"

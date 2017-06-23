@@ -114,6 +114,7 @@ public class ButtonSettingsFragment extends Fragment {
         private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
         private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE = "camera_double_tap_power_gesture";
         private static final String DT2L_CAMERA_VIBRATE_CONFIG = "dt2l_camera_vibrate_config";
+        private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
 
         private static final String CATEGORY_POWER = "power_key";
         private static final String CATEGORY_HOME = "home_key";
@@ -181,6 +182,7 @@ public class ButtonSettingsFragment extends Fragment {
         private SwitchPreference mPowerEndCall;
         private SwitchPreference mHomeAnswerCall;
         private SwitchPreference mCameraDoubleTapPowerGesture;
+        private ListPreference mTorchLongPressPowerTimeout;
 
         private SwitchPreference mEnableHwKeys;
 
@@ -656,6 +658,11 @@ public class ButtonSettingsFragment extends Fragment {
                 int dt2lcameravib = (Integer) newValue;
                 Settings.System.putInt(mResolver,
                         Settings.System.DT2L_CAMERA_VIBRATE_CONFIG, dt2lcameravib * 10);
+                return true;
+
+            } else if (preference == mTorchLongPressPowerTimeout) {
+                handleListChange(mTorchLongPressPowerTimeout, newValue,
+                        CMSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT);
                 return true;
             }
             return false;

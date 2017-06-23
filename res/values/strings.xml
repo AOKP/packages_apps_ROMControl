@@ -760,6 +760,7 @@
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
     <!-- Power menu torch -->
     <string name="power_menu_torch_title">Torch</string>
+    <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
 
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Power menu animation</string>

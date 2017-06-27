@@ -211,7 +211,7 @@
     <string name="tab_position_summary">Mostra la tab in cima, al centro, o in fondo al bordo dello schermo.</string>
     <string name="tab_size_title">Dimensioni Tab</string>
     <string name="tab_size_summary">Cambia le dimensioni della tab.</string>
-    <string name="trigger_category">Regione Interruttore</string>
+    <string name="trigger_category">Area di attivazione</string>
     <string name="trigger_width_title">Ampiezza interruttore</string>
     <string name="trigger_width_summary">Imposta l\'ampiezza dell\'area interruttore</string>
     <string name="trigger_top_title">Posizione Interruttore</string>
@@ -324,8 +324,8 @@
     <string name="toast_icon_color">Colore icona del Toast</string>
 
     <!-- LockClocK -->
-    <string name="lock_clock_title">Impostazioni cLock</string>
-    <string name="lock_clock_summary">Visualizza o modifica la modalità di visualizzazione del widget cLock.</string>
+    <string name="lock_clock_title">Impostazioni orologio</string>
+    <string name="lock_clock_summary">Visualizza o modifica la modalità di visualizzazione del widget orologio.</string>
 
     <!-- Hostname setting -->
     <string name="device_hostname">Hostname dispositivo</string>
@@ -336,7 +336,7 @@
     <string name="systemui_recents_mem_display_title">Mostra utilizzo memoria</string>
     <string name="systemui_recents_mem_display_summary">Abilita o disabilita la barra della ram visualizzata in app recenti</string>
     <!-- Immersive Recents -->
-     <string name="immersive_recents_title">Recenti immersivi</string>
+    <string name="immersive_recents_title">Recenti immersivi</string>
     <string name="immersive_recents_summary">Cambia la visualizzazione della schermata dei recenti</string>
     <string name="immersive_recents_dialog_title">Seleziona l\'aspetto dei recenti</string>
     <string name="immersive_recents_default">Predefinita</string>
@@ -360,27 +360,27 @@
   <string name="clear_recents_style">Stile del pulsante</string>
   <string name="fab_button_color">Colore sfondo cancella tutto</string>
   <string name="mem_bar_color">Barra della memoria</string>
-  <string name="recents_date_color">Testo data a schermo intero</string>
+  <string name="recents_styles_1">Stili</string>
   <string name="recents_colors">Stili</string>
   <string name="recents_style_2">Colori</string>
   <string name="recents_style_3">Taskview intestazione</string>
-  <string name="pin_button_color">Pulsante blocco schermata </string>
+  <string name="pin_button_color">Pulsante blocco schermata</string>
   <string name="mw_button_color">Pulsante Multi-Window</string>
   <string name="float_button_color">Pulsante fluttuante</string>
-  <string name="kill_app_button_color">Colore icona cancella tutto</string>										  
+  <string name="kill_app_button_color">Colore icona cancella tutto</string>  
   <string name="tv_app_color">Riempie icona App (Riempie interamente l\'icona)</string>
   <string name="tv_app_text_color">Descrizione Testo App</string>
-  <string name="recent_styles">Stile menu app recenti </string>
-  <string name="recent_styles_summary">Personalizza vari elementi nel menu app recenti </string>
+  <string name="recent_styles">Stile menù app recenti </string>
+  <string name="recent_styles_summary">Personalizza vari elementi nel menù app recenti </string>
   <string name="mem_text_color">Testo barra della memoria</string>
   <string name="clear_button_color">Pulsante cancella tutto</string>
-  <string name="clear_recents_style_enable">Personalizza stile menu app recenti</string>
-  <string name="clear_recents_style_enable_summary">Abilita o disabilita personalizzazione stile della visualizzazione app recenti</string>
+  <string name="clear_recents_style_enable">Personalizza lo stile del pulsante</string>
+  <string name="clear_recents_style_enable_summary">Abilita o disabilita la personalizzazione e lo stile del pulsante</string>
   <string name="recents_rotate_fab">Pulsante animato</string>
-  <string name="recents_rotate_fab_summary">Abilita o disabilita la rotazione del pulsante cancella tutto</string>
+  <string name="recents_rotate_fab_summary">Abilita o disabilita l\'animazione del pulsante</string>
   <string name="recents_fab_vibrate">Vibra quando viene premuto il pulsante cancella tutto</string>
   <string name="recents_fab_vibrate_summary">Abilita o disabilita la vibrazione del pulsante rimuovi tutto</string>
-  <string name="fab_animation_style">Animazione pulsante mobile</string>
+  <string name="fab_animation_style">Animazione del pulsante</string>
   <string name="recents_fab_lp">Abilita pressione prolungata sul pulsante</string>
   <string name="recents_fab_lp_summary">Pressione prolungata aggiorna la barra della memoria se presente</string>
   <string name="recents_fab_lp_anim">Animazione pressione prolungata FAB</string>
@@ -475,7 +475,7 @@
     <string name="lockscreen_visualizer_title">Visualizza la musica sul display</string>
   
     <!-- title for lock screen weather preference -->
-    <string name="lockscreen_weather_enabled_title">Mostra meteo</string>
+    <string name="lockscreen_weather_enabled_title">Mostra il meteo</string>
 
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Autenticazione impronta digitale con vibrazione</string>
@@ -486,8 +486,8 @@
     <string name="double_tap_sleep_anywhere_summary">Doppio tocco sulla schermata di blocco per sospendere il dispositivo</string>
 
     <!-- Lockscreen Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+    <string name="unlock_quick_unlock_control_title">Sblocco veloce</string>
+    <string name="unlock_quick_unlock_control_summary">Sblocca automaticamente quando vengono inseriti il PIN o la password corretti</string>
 
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">Sblocco digitale</string>
@@ -502,13 +502,13 @@
     <string name="hide_lockscreen_date_title">Mostra la data</string>
 
     <!-- Keyguard Statusbar Clock -->
-    <string name="keyguard_statusbar_clock_title">Orologio nella barra di stato della schermata di blocco</string>
+    <string name="keyguard_statusbar_clock_title">Orologio nella barra di stato</string>
     <string name="keyguard_statusbar_clock_summary">Abilita l\'orologio sul lato sinistro della barra di stato nella schermata di blocco</string>
 
     <!-- Lockscreen notif count -->
-    <string name="lockscreen_maxnotif_title">Contatore notifiche schermata di blocco</string>
+    <string name="lockscreen_maxnotif_title">Contatore delle notifiche</string>
     <string name="lockscreen_maxnotif_sumary">Limita il numero massimo di notifiche nella schermata di blocco</string>
-    <string name="lockscreen_maxnotif_config">Notifiche massime nella schermata di blocco</string>
+    <string name="lockscreen_maxnotif_config">Notifiche massime</string>
  
     <!-- title for lock screen blur preference -->
     <string name="lockscreen_blur_enabled_title">Sfocatura dello sfondo</string>
@@ -518,7 +518,7 @@
     <string name="keyguard_torch_summary">Tieni premuto il pulsante alimentazione mentre lo schermo è spento per accendere la torcia</string>
 
     <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">Info batteria schermata di blocco</string>
+    <string name="lockscreen_battery_info_title">Info batteria</string>
     <string name="lockscreen_battery_info_summary">Mostra il voltaggio e la temperatura della batteria sulla schermata di blocco durante la carica</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
@@ -527,11 +527,11 @@
     <string name="notifications_drawer_settings">Impostazioni Drawer notifiche</string>
 
     <!-- Brightness slider -->
-    <string name="qs_brightness_slider_title">Cursore luminosità</string>
-    <string name="qs_brightness_slider_enabled">Abilitato</string>
-    <string name="qs_brightness_slider_disabled">Disabilitato</string>
-    <string name="brightness_icon_title">Icona luminosità</string>
-    <string name="brightness_icon_summary">Mostra l\'icona di luminosità alla sinistra del cursore di luminosità per regolare la luminosità </string>
+    <string name="status_bar_brightness_category">Luminosità</string>
+    <string name="status_bar_brightness_slider_title">Cursore luminosità</string>
+    <string name="status_bar_brightness_slider_summary">Regola la luminosità facendo scorrere il dito sulla barra di stato</string>
+    <string name="status_bar_brightness_slider_auto_title">Luminosità automatica</string>
+    <string name="status_bar_brightness_slider_auto_summary">Mostra l\'icona di luminosità alla sinistra del cursore per regolare la luminosità</string>
 
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_style_title">Stile animazione</string>
@@ -561,8 +561,8 @@
     <string name="quick_settings_vibrate_summary">Vibra quando i tile vengono toccati</string>
 
     <!-- Advanced data tile -->
-    <string name="quick_settings_vibrate_title">Vibrazione al tocco</string>
-    <string name="quick_settings_vibrate_summary">Vibra quando vengono toccati i tile</string>
+    <string name="qs_advanced_data_title">Dati attivi al tocco</string>
+    <string name="qs_advanced_data_summary">Fa in modo che con un clic verranno attivati o disattivati i dati invece di entrare nelle impostazioni</string>
 
     <string name="sysui_qqs_count_title">Piccoli tile impostazioni rapide</string>
     <!-- Quick settings tiles columns and rows config -->
@@ -612,7 +612,7 @@
     <string name="qs_settings_icon_summary">Disabilita la scorciatoia delle impostazioni nell\'intestazione</string>
     <string name="qs_running_services_title">Icona servizi in esecuzione</string>
     <string name="qs_running_services_summary">Disattiva l\'icona dei servizi in esecuzione dei tile nell\'intestazione</string>
-    <string name="qs_edit_title">Modifica icona</string>
+    <string name="qs_edit_title">Icona modifica</string>
     <string name="qs_edit_summary">Disabilita l\'icona di modifica dei tile nell\'intestazione</string>
     <string name="qs_multiuser_switch_title">Icona cambio utente</string>
     <string name="qs_multiuser_switch_summary">Disabilita l\'icona cambio utente nell\'intestazione</string>
@@ -945,13 +945,13 @@
     <string name="listview_translate_right">Trasla (da destra)</string>
 
     <!-- ListView interpolator -->
-    <string name="listview_interpolator_title">Interpolatore ListView</string>
+    <string name="listview_interpolator_title">Interpolatore elenco</string>
     <string name="listview_accelerate_interpolator">Accelera</string>
     <string name="listview_decelerate_interpolator">Decelera</string>
     <string name="listview_accelerate_decelerate_interpolator">Accelera e decelera</string>
     <string name="listview_anticipate_interpolator">Anticipa</string>
     <string name="listview_overshoot_interpolator">Oltrepassa</string>
-    <string name="listview_anticipate_overshoot_interpolator">Anticipa and oltrepassa</string>
+    <string name="listview_anticipate_overshoot_interpolator">Anticipa e supera</string>
     <string name="listview_bounce_interpolator">Rimbalza</string>
 
     <!-- AOKP custom system animations -->
@@ -994,34 +994,34 @@
      <!-- Transparency Porn -->
     <string name="transparency_porn_title">Trasparenza</string>
     <!-- QS shade transparency -->
-    <string name="qs_transparent_shade">Pannello Impostazioni rapide</string>
+    <string name="qs_transparent_shade">Trasparenza pannello</string>
     <!-- QS header transparency -->
-    <string name="qs_transparent_header">Pannello intestazione</string>
+    <string name="qs_transparent_header">Trasparenza pannello intestazione</string>
     <!-- Volume dialog transparency -->
-    <string name="volume_dialog_transparency">Dialogo volume</string>
+    <string name="volume_dialog_transparency">Trasparenza finestra di dialogo volume</string>
     <!-- Power menu and dialogs transparency -->
-    <string name="power_menu_transparency">Power menù/riavvio</string>
+    <string name="power_menu_transparency">Trasparenza del Power menù/riavvio</string>
     <!-- Power/reboot dialogs dim amount -->
-    <string name="power_menu_dialog_dim">Offuscamento sfondo dialogo Power/Riavvio</string>
+    <string name="power_menu_dialog_dim">Sfondo scuro sotto il Power menù/riavvio</string>
     <!-- Notifications transparency -->
     <string name="notifications_transparency">Trasparenza delle notifiche</string>
     <!-- QS stroke settings -->
-    <string name="volume_dialog_stroke_title">Bordo finestra</string>
-    <string name="volume_dialog_stroke_disabled">Disattivato</string>
-    <string name="volume_dialog_stroke_accent">Colore in rilievo</string>
-    <string name="volume_dialog_stroke_custom">Colore personalizzato</string>
-    <string name="volume_dialog_stroke_color_title">Colore bordo finestra</string>
-    <string name="volume_dialog_stroke_thickness_title">Spessore del bordo</string>
-    <string name="volume_dialog_corner_radius_title">Raggio d\'angolo</string>
-    <string name="volume_dialog_dash_width_title">Larghezza del bordo tratteggiato</string>
-    <string name="volume_dialog_dash_gap_title">Spessore del bordo tratteggiato</string>
+    <string name="qs_stroke_title">Bordo impostazioni rapide</string>
+    <string name="qs_stroke_disabled">Disattivato</string>
+    <string name="qs_stroke_accent">Colore in rilievo</string>
+    <string name="qs_stroke_custom">Colore personalizzato</string>
+    <string name="qs_stroke_color_title">Colore del bordo</string>
+    <string name="qs_stroke_thickness_title">Spessore del bordo</string>
+    <string name="qs_corner_radius_title">Raggio d\'angolo</string>
+    <string name="qs_dash_width_title">Larghezza del bordo tratteggiato</string>
+    <string name="qs_dash_gap_title">Spessore del bordo tratteggiato</string>
     <!-- Volume dialog stroke settings -->
-    <string name="volume_dialog_title">Dialogo volume</string>
-    <string name="volume_dialog_stroke_title">Bordo finestra</string>
+    <string name="volume_dialog_title">Finestra dialogo del volume</string>
+    <string name="volume_dialog_stroke_title">Bordo della finestra</string>
     <string name="volume_dialog_stroke_disabled">Disattivato</string>
     <string name="volume_dialog_stroke_accent">Colore in rilievo</string>
     <string name="volume_dialog_stroke_custom">Colore personalizzato</string>
-    <string name="volume_dialog_stroke_color_title">Colore bordo finestra</string>
+    <string name="volume_dialog_stroke_color_title">Colore del bordo</string>
     <string name="volume_dialog_stroke_thickness_title">Spessore del bordo</string>
     <string name="volume_dialog_corner_radius_title">Raggio d\'angolo</string>
     <string name="volume_dialog_dash_width_title">Larghezza del bordo tratteggiato</string>
@@ -1039,22 +1039,22 @@
     <string name="translucent_quick_settings_pref">Sfocatura barra di stato espansa</string>
     <string name="translucent_quick_settings_pref_summary">Rendi sfocato lo sfondo delle impostazioni rapide</string>
     <string name="transluency_level_universal">Livello di sfocatura</string>
-    <string name="blur_expstatus_cat">Barra di stato estesa </string>
+    <string name="blur_expstatus_cat">Barra di stato estesa</string>
     <string name="blur_notifications_cat">Notifiche</string>
     <string name="blur_header_cat">Intestazione barra di stato</string>
     <string name="blur_qs_cat">Impostazioni rapide</string>
     <string name="blur_recents_cat">Recenti</string>
     <string name="blurred_recent_app_enabled_pref">Applicazioni recenti sfocate</string>
     <string name="blurred_recent_app_enabled_pref_summary">Sfoca lo sfondo delle applicazioni recenti</string>
-    <string name="blurred_scale">Scala sfocatura</string>
-    <string name="blurred_scale_summary">Qualità della sfocatura immagine</string>
-    <string name="blurred_radius">Raggio sfocatura</string>
+    <string name="blurred_scale">Scala la sfocatura</string>
+    <string name="blurred_scale_summary">Qualità della sfocatura dell\'immagine</string>
+    <string name="blurred_radius">Raggio di sfocatura</string>
     <string name="blurred_radius_summary">Quantità di sfocatura</string>
     <string name="blur_cat_notice">Avviso</string>
     <string name="blur_cat_notice_summary">Le personalizzazioni della sfocatura sono disabilitate quando è visualizzata la Tastiera! Solo le Notifiche Traslucide sono abilitate!</string>
-    <string name="blurred_scale">Scala sfocatura</string>
+    <string name="blurred_scale">Scala la sfocatura</string>
     <string name="blurred_scale_summary">Qualità della sfocatura immagine</string>
-    <string name="blurred_radius">Raggio sfocatura</string>
+    <string name="blurred_radius">Raggio di sfocatura</string>
     <string name="blurred_radius_summary">Quantità di sfocatura</string>
     <string name="blur_colors_cat">Filtri colore sfocatura</string>
     <string name="blur_light_color">Filtro colore immagine chiara</string>

@@ -102,7 +102,7 @@
     <string name="about_aokp">Sobre AOKP</string>
     <string name="android_open_kang_project">Projeto Open Kang do Android</string>
     <string name="kanglings">O Kanglings</string>
-	
+
     <string name="maintainers">Os Mantenedores</string>
     <!-- ****************************** About Cat ends ****************************** -->
 
@@ -491,8 +491,6 @@
     <string name="daylight_header_pack_title">Pacote de imagens de cabeçalho</string>
     <string name="status_bar_custom_header_shadow_title">Cabeçalho imagem sombra</string>
     <string name="status_bar_custom_header_shadow_summary">Para melhor visibilidade em imagens brilhantes</string>
-    <string name="static_header_provider" translatable="false">estático</string>
-    <string name="daylight_header_provider" translatable="false">Luz do dia</string>
     <string name="static_header_provider_title">Estático</string>
     <string name="daylight_header_provider_title">Dinâmico</string>
     <string name="custom_header_provider_title">Fornecedor de cabeçalho</string>
@@ -502,7 +500,7 @@
     <!-- qqs scroller -->
     <string name="qqs_scroll_title">Rolar pequenos tiles QS</string>
     <string name="qqs_scroll_summary">Permitir a rolagem através das pequenas tiles QS</string>
-	
+
     <!-- QS Header Icons -->
     <string name="qs_settings_icon_title">Atalho de configurações</string>
     <string name="qs_settings_icon_summary">Desativar o atalho das configurações no cabeçalho</string>

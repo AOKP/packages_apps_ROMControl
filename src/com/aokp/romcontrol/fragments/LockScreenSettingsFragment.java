@@ -22,6 +22,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.content.res.Configuration;
 import android.hardware.fingerprint.FingerprintManager;
@@ -29,6 +30,7 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -43,6 +45,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.Helpers;
 import com.aokp.romcontrol.util.Utils;
 import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;
 
@@ -72,6 +75,8 @@ public class LockScreenSettingsFragment extends Fragment {
         private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
         private static final String PREF_KEYGUARD_TORCH = "keyguard_toggle_torch";
         private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+        private static final String WEATHER_CATEGORY = "lock_screen_weather_category";
+        private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
 
         private ContentResolver mResolver;
 
@@ -80,6 +85,7 @@ public class LockScreenSettingsFragment extends Fragment {
         private SwitchPreference mFpKeystore;
         private SeekBarPreferenceCham mMaxKeyguardNotifConfig;
         private SwitchPreference mKeyguardTorch;
+        private PreferenceCategory mWeatherCategory;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -89,6 +95,7 @@ public class LockScreenSettingsFragment extends Fragment {
             addPreferencesFromResource(R.xml.fragment_lockscreen_settings);
             mResolver = getActivity().getContentResolver();
             PreferenceScreen prefSet = getPreferenceScreen();
+            PackageManager pm = getActivity().getPackageManager();
 
             // Fingerprint vibration
             mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
@@ -113,6 +120,10 @@ public class LockScreenSettingsFragment extends Fragment {
             mKeyguardTorch = (SwitchPreference) prefSet.findPreference(PREF_KEYGUARD_TORCH);
             if (!Utils.deviceSupportsFlashLight(getActivity())) {
                 prefSet.removePreference(mKeyguardTorch);
+            }
+            // LockScreen weather category
+            if (mWeatherCategory != null && (!Helpers.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
+                prefSet.removePreference(mWeatherCategory);
             }
 
             setHasOptionsMenu(true);

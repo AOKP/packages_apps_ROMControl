@@ -142,17 +142,26 @@
         android:summary="@string/voicemail_breath_summary"
         android:persistent="false"/>
 
-    <PreferenceScreen
-        android:key="status_bar_icons"
-        android:title="@string/status_bar_icons_title"
-        android:summary="@string/status_bar_icons_summary">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.TunerActivity">
-            <extra android:name="tuner" android:value="status_bar" />
-        </intent>
-    </PreferenceScreen>
+    <PreferenceCategory
+        android:key="weather_category"
+        android:title="@string/weather_title" >
+
+        <ListPreference
+            android:key="status_bar_weather"
+            android:title="@string/statusbar_weather_title"
+            android:dialogTitle="@string/statusbar_weather_dialog_title"
+            android:entries="@array/status_bar_weather_entries"
+            android:entryValues="@array/status_bar_weather_values" />
+
+        <PreferenceScreen
+            android:title="@string/weather_config_title"
+            android:summary="@string/weather_config_summary" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="org.omnirom.omnijaws"
+                android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
 
     <!-- Status bar AOKP logo -->
     <PreferenceCategory
@@ -179,5 +188,17 @@
             android:dependency="status_bar_aokp_logo" />
 
     </PreferenceCategory>
+
+    <PreferenceScreen
+        android:key="status_bar_icons"
+        android:title="@string/status_bar_icons_title"
+        android:summary="@string/status_bar_icons_summary">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.android.systemui.tuner.TunerActivity">
+            <extra android:name="tuner" android:value="status_bar" />
+        </intent>
+    </PreferenceScreen>
 
 </PreferenceScreen>

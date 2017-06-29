@@ -111,7 +111,6 @@ public class NotificationsDrawerFragment extends Fragment {
         private SeekBarPreferenceCham mHeaderShadow;
         private ListPreference mHeaderProvider;
         private PreferenceCategory mWeatherCategory;
-        private ListPreference mStatusBarWeather;
 
         private String mDaylightHeaderProvider;
         private PreferenceScreen mHeaderBrowse;
@@ -252,21 +251,9 @@ public class NotificationsDrawerFragment extends Fragment {
             mNotificationKill = findPreference(NOTIFICATION_GUTS_KILL_APP_BUTTON);
             mNotificationKill.setOnPreferenceChangeListener(this);
 
-            // Status bar weather
-            mStatusBarWeather = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER);
+            // Status bar weather category
             if (mWeatherCategory != null && (!Helpers.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
                 prefSet.removePreference(mWeatherCategory);
-            } else {
-                int temperatureShow = Settings.System.getIntForUser(mResolver,
-                        Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
-                        UserHandle.USER_CURRENT);
-                mStatusBarWeather.setValue(String.valueOf(temperatureShow));
-                if (temperatureShow == 0) {
-                    mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
-                } else {
-                    mStatusBarWeather.setSummary(mStatusBarWeather.getEntry());
-                }
-                mStatusBarWeather.setOnPreferenceChangeListener(this);
             }
             setHasOptionsMenu(true);
             return prefSet;
@@ -368,19 +355,6 @@ public class NotificationsDrawerFragment extends Fragment {
                 // Setting will only apply to new created notifications.
                 // By restarting SystemUI, we can re-create all notifications
                 Helpers.showSystemUIrestartDialog(getActivity());
-                return true;
-            } else if (preference == mStatusBarWeather) {
-                int temperatureShow = Integer.valueOf((String) newValue);
-                int indexTemp = mStatusBarWeather.findIndexOfValue((String) newValue);
-                Settings.System.putIntForUser(mResolver,
-                        Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,
-                        temperatureShow, UserHandle.USER_CURRENT);
-                if (temperatureShow == 0) {
-                    mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
-                } else {
-                    mStatusBarWeather.setSummary(
-                            mStatusBarWeather.getEntries()[indexTemp]);
-                }
                 return true;
             }
             return false;

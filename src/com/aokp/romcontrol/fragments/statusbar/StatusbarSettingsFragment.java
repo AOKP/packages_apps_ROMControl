@@ -55,6 +55,7 @@ import cyanogenmod.providers.CMSettings;
 import java.util.Date;
 
 import com.aokp.romcontrol.R;
+import com.aokp.romcontrol.util.Helpers;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusbarSettingsFragment extends Fragment {
@@ -112,6 +113,10 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String KEY_AOKP_LOGO_COLOR = "status_bar_aokp_logo_color";
         private static final String KEY_AOKP_LOGO_STYLE = "status_bar_aokp_logo_style";
 
+        private static final String WEATHER_CATEGORY = "weather_category";
+        private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+        private static final String PREF_STATUS_BAR_WEATHER = "status_bar_weather";
+
         private ListPreference mStatusBarDate;
         private ListPreference mStatusBarDateStyle;
         private ListPreference mStatusBarDateFormat;
@@ -129,6 +134,9 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mAokpLogoStyle;
         private ColorPickerPreference mChargeColor;
         private boolean mCheckPreferences;
+
+        private PreferenceCategory mWeatherCategory;
+        private ListPreference mStatusBarWeather;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -152,6 +160,7 @@ public class StatusbarSettingsFragment extends Fragment {
                 return null;
             }
 
+            mWeatherCategory = (PreferenceCategory) prefSet.findPreference(WEATHER_CATEGORY);
             mStatusBarDate = (ListPreference) findPreference(STATUS_BAR_DATE);
             mStatusBarDateStyle = (ListPreference) findPreference(STATUS_BAR_DATE_STYLE);
             mStatusBarDateFormat = (ListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
@@ -268,6 +277,24 @@ public class StatusbarSettingsFragment extends Fragment {
             mChargeColor.setNewPreviewColor(chargeColor);
             mChargeColor.setOnPreferenceChangeListener(this);
 
+            // Status bar weather
+            mStatusBarWeather = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER);
+            if (mWeatherCategory != null && (!Helpers.isPackageInstalled(WEATHER_SERVICE_PACKAGE, pm))) {
+                prefSet.removePreference(mWeatherCategory);
+            } else {
+                int temperatureShow = Settings.System.getIntForUser(resolver,
+                        Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
+                        UserHandle.USER_CURRENT);
+                mStatusBarWeather.setValue(String.valueOf(temperatureShow));
+                if (temperatureShow == 0) {
+                    mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
+                } else {
+                    mStatusBarWeather.setSummary(mStatusBarWeather.getEntry());
+                }
+                mStatusBarWeather.setOnPreferenceChangeListener(this);
+            }
+
+            setHasOptionsMenu(true);
             return prefSet;
         }
 
@@ -428,6 +455,19 @@ public class StatusbarSettingsFragment extends Fragment {
                 int color = ((Integer) newValue).intValue();
                 Settings.Secure.putInt(resolver,
                         Settings.Secure.STATUS_BAR_CHARGE_COLOR, color);
+                return true;
+            } else if (preference == mStatusBarWeather) {
+                int temperatureShow = Integer.valueOf((String) newValue);
+                int indexTemp = mStatusBarWeather.findIndexOfValue((String) newValue);
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,
+                        temperatureShow, UserHandle.USER_CURRENT);
+                if (temperatureShow == 0) {
+                    mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
+                } else {
+                    mStatusBarWeather.setSummary(
+                            mStatusBarWeather.getEntries()[indexTemp]);
+                }
                 return true;
             }
             return false;

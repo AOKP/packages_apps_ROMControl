@@ -520,6 +520,18 @@
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Info batteria</string>
     <string name="lockscreen_battery_info_summary">Mostra il voltaggio e la temperatura della batteria sulla schermata di blocco durante la carica</string>
+  
+    <!-- Lockscreen Weather -->
+    <string name="lock_screen_weather_category_title">Meteo</string>
+    <string name="lock_screen_show_weather_title">Visualizza meteo</string>
+    <string name="lock_screen_show_weather_summaryOn">Il meteo viene visualizzato nella schermata di blocco</string>
+    <string name="lock_screen_show_weather_summaryOff">Il meteo viene nascosto nella schermata di blocco</string>
+    <string name="lock_screen_show_location_title">Visualizzazione della posizione</string>
+    <string name="lock_screen_show_location_summaryOn">La posizione viene visualizzata nella schermata di blocco</string>
+    <string name="lock_screen_show_location_summaryOff">La posizione viene nascosta sulla schermata di blocco</string>
+    <string name="lock_screen_weather_condition_icon_title">Visualizza icona condizione</string>
+    <string name="lock_screen_weather_condition_icon_summaryOn">L\'icona delle condizioni viene visualizzata nella schermata di blocco</string>
+    <string name="lock_screen_weather_condition_icon_summaryOff">L\'icona delle condizioni viene nascosta nella schermata di blocco</string>
     <!-- ****************************** Lockscreen Cat ends ****************************** -->
 
     <!-- ****************************** Not Drawer Cat starts ****************************** -->
@@ -619,9 +631,40 @@
     <string name="qs_expand_indicator_title">Indicatore espansione</string>
     <string name="qs_expand_indicator_summary">Disabilita l\'indicatore di espansione nell\'intestazione</string>
 
-  <!-- Notification guts kill app button -->
-  <string name="notification_guts_kill_app_button_title">Pulsante termina app</string>
-  <string name="notification_guts_kill_app_button_summary">Mostra un pulsante per chiudere l\'applicazione quando si preme a lungo sulla notifica</string>
+    <!-- Notification guts kill app button -->
+    <string name="notification_guts_kill_app_button_title">Pulsante termina app</string>
+   <string name="notification_guts_kill_app_button_summary">Mostra un pulsante per chiudere l\'applicazione quando si preme a lungo sulla notifica</string>
+  
+    <!-- OmniJaws -->
+    <string name="weather_title">Meteo</string>
+    <string name="weather_config_title">Impostazioni del tile meteo</string>
+    <string name="weather_config_summary"></string>
+
+    <!-- Header Weather -->
+    <string name="header_weather_enabled_title">Meteo</string>
+    <string name="header_weather_enabled_summary">Attiva le informazioni meteo nell\'intestazione estesa</string>
+    <string name="header_weather_image_enabled_title">Immagine del meteo</string>
+    <string name="header_weather_image_enabled_summary">Attiva l\'immagine del meteo nell\'intestazione estesa</string>
+
+    <!-- Misc Weather -->
+    <string name="misc_weather_category_title">Impostazioni varie</string>
+    <string name="weather_windspeed_metric_units">Unità di visualizzazione del vento (metrico)</string>
+    <string name="weather_windspeed_metric_units_summaryOn">Il vento viene visualizzato in metri/secondi (m/s)</string>
+    <string name="weather_windspeed_metric_units_summaryOff">La velocità del vento viene visualizzata in km/h (km/h)</string>
+    <string name="weather_winddirection_display_title">Visualizza direzione del vento</string>
+    <string name="weather_winddirection_display_summaryOn">La direzione del vento viene visualizzata usando le direzioni del rotore</string>
+    <string name="weather_winddirection_display_summaryOff">La direzione del vento viene visualizzata usando le direzioni angolari</string>
+
+    <!-- StatusBar weather settings -->
+    <string name="statusbar_weather_title">Meteo barra di stato</string>
+    <string name="statusbar_weather_summary">Configura dalle impostazioni rapide/Meteo.</string>
+    <string name="statusbar_weather_dialog_title">Stile meteo barra di stato</string>
+    <string name="status_bar_weather_hidden">Nascondo meteo</string>
+    <string name="status_bar_temperature_image_show_scale">Mostra temperatura con scala e immagine</string>
+    <string name="status_bar_temperature_image_hide_scale">Mostra temperatura con immagine senza scala</string>
+    <string name="status_bar_temperature_show_scale_hide_image">Mostra temperatura con scala</string>
+    <string name="status_bar_temperature_hide_scale_hide_image">Mostra temperatura senza scala</string>
+    <string name="status_bar_show_image">Mostra immagine</string>
  <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
   <!-- ****************************** PIE Cat starts ****************************** -->

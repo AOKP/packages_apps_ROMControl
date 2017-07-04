@@ -337,12 +337,12 @@ public class ButtonSettingsFragment extends Fragment {
                 int longPressAction = CMSettings.System.getInt(mResolver,
                         CMSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                         defaultLongPressAction);
-                mHomeLongPressAction = initActionList(KEY_HOME_LONG_PRESS, longPressAction);
+                mHomeLongPressAction = initList(KEY_HOME_LONG_PRESS, longPressAction);
 
                 int doubleTapAction = CMSettings.System.getInt(mResolver,
                         CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                         defaultDoubleTapAction);
-                mHomeDoubleTapAction = initActionList(KEY_HOME_DOUBLE_TAP, doubleTapAction);
+                mHomeDoubleTapAction = initList(KEY_HOME_DOUBLE_TAP, doubleTapAction);
 
                 hasAnyBindableKey = true;
             } else {
@@ -365,12 +365,12 @@ public class ButtonSettingsFragment extends Fragment {
 
                 int pressAction = CMSettings.System.getInt(mResolver,
                         CMSettings.System.KEY_MENU_ACTION, ACTION_MENU);
-                mMenuPressAction = initActionList(KEY_MENU_PRESS, pressAction);
+                mMenuPressAction = initList(KEY_MENU_PRESS, pressAction);
 
                 int longPressAction = CMSettings.System.getInt(mResolver,
                             CMSettings.System.KEY_MENU_LONG_PRESS_ACTION,
                             hasAssistKey ? ACTION_NOTHING : ACTION_SEARCH);
-                mMenuLongPressAction = initActionList(KEY_MENU_LONG_PRESS, longPressAction);
+                mMenuLongPressAction = initList(KEY_MENU_LONG_PRESS, longPressAction);
 
                 hasAnyBindableKey = true;
             } else {
@@ -384,11 +384,11 @@ public class ButtonSettingsFragment extends Fragment {
 
                 int pressAction = CMSettings.System.getInt(mResolver,
                         CMSettings.System.KEY_ASSIST_ACTION, ACTION_SEARCH);
-                mAssistPressAction = initActionList(KEY_ASSIST_PRESS, pressAction);
+                mAssistPressAction = initList(KEY_ASSIST_PRESS, pressAction);
 
                 int longPressAction = CMSettings.System.getInt(mResolver,
                         CMSettings.System.KEY_ASSIST_LONG_PRESS_ACTION, ACTION_VOICE_SEARCH);
-                mAssistLongPressAction = initActionList(KEY_ASSIST_LONG_PRESS, longPressAction);
+                mAssistLongPressAction = initList(KEY_ASSIST_LONG_PRESS, longPressAction);
 
                 hasAnyBindableKey = true;
             } else {
@@ -403,11 +403,11 @@ public class ButtonSettingsFragment extends Fragment {
 
                 int pressAction = CMSettings.System.getInt(mResolver,
                         CMSettings.System.KEY_APP_SWITCH_ACTION, ACTION_APP_SWITCH);
-                mAppSwitchPressAction = initActionList(KEY_APP_SWITCH_PRESS, pressAction);
+                mAppSwitchPressAction = initList(KEY_APP_SWITCH_PRESS, pressAction);
 
                 int longPressAction = CMSettings.System.getInt(mResolver,
                         CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION, ACTION_SPLIT_SCREEN);
-                mAppSwitchLongPressAction = initActionList(KEY_APP_SWITCH_LONG_PRESS, longPressAction);
+                mAppSwitchLongPressAction = initList(KEY_APP_SWITCH_LONG_PRESS, longPressAction);
 
                 hasAnyBindableKey = true;
             } else {
@@ -438,7 +438,7 @@ public class ButtonSettingsFragment extends Fragment {
 
                 int cursorControlAction = Settings.System.getInt(mResolver,
                         Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
-                mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
+                mVolumeKeyCursorControl = initList(KEY_VOLUME_KEY_CURSOR_CONTROL,
                         cursorControlAction);
 
                 int swapVolumeKeys = CMSettings.System.getInt(mResolver,
@@ -535,7 +535,7 @@ public class ButtonSettingsFragment extends Fragment {
             }
         }
 
-        private ListPreference initActionList(String key, int value) {
+        private ListPreference initList(String key, int value) {
             ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
             if (list == null) return null;
             list.setValue(Integer.toString(value));
@@ -544,7 +544,7 @@ public class ButtonSettingsFragment extends Fragment {
             return list;
         }
 
-        private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
+        private void handleListChange(ListPreference pref, Object newValue, String setting) {
             String value = (String) newValue;
             int index = pref.findIndexOfValue(value);
             pref.setSummary(pref.getEntries()[index]);
@@ -574,35 +574,35 @@ public class ButtonSettingsFragment extends Fragment {
                 updateDisableHwKeysOption();
                 return true;
             } else if (preference == mHomeLongPressAction) {
-                handleActionListChange(mHomeLongPressAction, newValue,
+                handleListChange(mHomeLongPressAction, newValue,
                         CMSettings.System.KEY_HOME_LONG_PRESS_ACTION);
                 return true;
             } else if (preference == mHomeDoubleTapAction) {
-                handleActionListChange(mHomeDoubleTapAction, newValue,
+                handleListChange(mHomeDoubleTapAction, newValue,
                         CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION);
                 return true;
             } else if (preference == mMenuPressAction) {
-                handleActionListChange(mMenuPressAction, newValue,
+                handleListChange(mMenuPressAction, newValue,
                         CMSettings.System.KEY_MENU_ACTION);
                 return true;
             } else if (preference == mMenuLongPressAction) {
-                handleActionListChange(mMenuLongPressAction, newValue,
+                handleListChange(mMenuLongPressAction, newValue,
                         CMSettings.System.KEY_MENU_LONG_PRESS_ACTION);
                 return true;
             } else if (preference == mAssistPressAction) {
-                handleActionListChange(mAssistPressAction, newValue,
+                handleListChange(mAssistPressAction, newValue,
                         CMSettings.System.KEY_ASSIST_ACTION);
                 return true;
             } else if (preference == mAssistLongPressAction) {
-                handleActionListChange(mAssistLongPressAction, newValue,
+                handleListChange(mAssistLongPressAction, newValue,
                         CMSettings.System.KEY_ASSIST_LONG_PRESS_ACTION);
                 return true;
             } else if (preference == mAppSwitchPressAction) {
-                handleActionListChange(mAppSwitchPressAction, newValue,
+                handleListChange(mAppSwitchPressAction, newValue,
                         CMSettings.System.KEY_APP_SWITCH_ACTION);
                 return true;
             } else if (preference == mAppSwitchLongPressAction) {
-                handleActionListChange(mAppSwitchLongPressAction, newValue,
+                handleListChange(mAppSwitchLongPressAction, newValue,
                         CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
                 return true;
             } else if (preference == mVolumeKeyCursorControl) {

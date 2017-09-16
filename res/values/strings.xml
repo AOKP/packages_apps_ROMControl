@@ -720,6 +720,10 @@
     <string name="status_bar_temperature_show_scale_hide_image">Show temp with scale</string>
     <string name="status_bar_temperature_hide_scale_hide_image">Show temp without scale</string>
     <string name="status_bar_show_image">Show image</string>
+
+    <!-- Qs easy tile add -->
+    <string name="single_tap_tile_add_title">Easy tile add</string>
+    <string name="single_tap_tile_add_summary">Add quick tiles easily from qs customizer by simply tapping on them instead of dragging them</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** PIE Cat starts ****************************** -->

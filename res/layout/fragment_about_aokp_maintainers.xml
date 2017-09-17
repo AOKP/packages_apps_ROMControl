@@ -143,5 +143,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Lorenzo Cano Sanchez"
+                aokp:nameDev="lordinal82"
+                aokp:twitterHandle="lordinal82"
+                aokp:githubLink="@string/github_lordinal82"
+                aokp:emailDev="loren.canosan@gmail.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

@@ -665,7 +665,12 @@
     <string name="status_bar_temperature_show_scale_hide_image">Mostra temperatura con scala</string>
     <string name="status_bar_temperature_hide_scale_hide_image">Mostra temperatura senza scala</string>
     <string name="status_bar_show_image">Mostra immagine</string>
- <!-- ****************************** Not Drawer Cat ends ****************************** -->
+  
+    <!-- Qs easy tile add -->
+    <string name="single_tap_tile_add_title">Aggiunta semplice dei tile</string>
+    <string name="single_tap_tile_add_summary">Aggiungi facilmente i tile per personalizzare le impostazioni rapide semplicemente toccandoli invece di trascinarli</string>
+    
+  <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
   <!-- ****************************** PIE Cat starts ****************************** -->
   <!-- PA Pie control -->

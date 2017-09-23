@@ -193,12 +193,7 @@
         android:key="status_bar_icons"
         android:title="@string/status_bar_icons_title"
         android:summary="@string/status_bar_icons_summary">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.TunerActivity">
-            <extra android:name="tuner" android:value="status_bar" />
-        </intent>
+        <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
     </PreferenceScreen>
 
 </PreferenceScreen>

@@ -175,6 +175,11 @@
     <string name="qs_rows_portrait_title">Rows (portrait)</string>
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_title">Columns</string>
+    
+    <!-- QS tiles title visibility -->
+    <string name="qs_tile_title_visibility_title">Show tiles title</string>
+    <string name="qs_tile_title_visibility_summary">Display tile titles underneath when checked</string>
+
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** Sound Cat starts ****************************** -->

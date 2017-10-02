@@ -45,4 +45,10 @@
         android:entries="@array/sysui_qqs_count_entries"
         android:entryValues="@array/sysui_qqs_count_values" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="qs_tile_title_visibility"
+        android:title="@string/qs_tile_title_visibility_title"
+        android:summary="@string/qs_tile_title_visibility_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

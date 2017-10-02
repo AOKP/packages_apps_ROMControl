@@ -63,6 +63,12 @@
         android:summary="@string/qs_footer_warnings_summary"
         android:defaultValue="false" />
 
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="qs_tile_title_visibility"
+        android:title="@string/qs_tile_title_visibility_title"
+        android:summary="@string/qs_tile_title_visibility_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="category_custom_header"
         android:title="@string/custom_header_title">

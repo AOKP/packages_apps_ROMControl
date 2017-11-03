@@ -34,4 +34,34 @@
         android:summary="@string/unlock_quick_unlock_control_summary"
         android:defaultValue="false" />
 
+    <!-- Lockscreen weather -->
+    <PreferenceCategory
+        android:key="lock_screen_weather_category"
+        android:title="@string/lock_screen_weather_category_title" >
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="lock_screen_show_weather"
+            android:title="@string/lock_screen_show_weather_title"
+            android:summaryOn="@string/lock_screen_show_weather_summaryOn"
+            android:summaryOff="@string/lock_screen_show_weather_summaryOff"
+            android:defaultValue="false" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="lock_screen_show_weather_location"
+            android:title="@string/lock_screen_show_location_title"
+            android:summaryOn="@string/lock_screen_show_location_summaryOn"
+            android:summaryOff="@string/lock_screen_show_location_summaryOff"
+            android:defaultValue="true"
+            android:dependency="lock_screen_show_weather" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="lock_screen_weather_condition_icon"
+            android:title="@string/lock_screen_weather_condition_icon_title"
+            android:summaryOn="@string/lock_screen_weather_condition_icon_summaryOn"
+            android:summaryOff="@string/lock_screen_weather_condition_icon_summaryOff"
+            android:defaultValue="true"
+            android:dependency="lock_screen_show_weather" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

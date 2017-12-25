@@ -13,7 +13,7 @@
 <PreferenceScreen
     android:title="@string/transparency_porn_title"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
+    xmlns:aokp="http://schemas.android.com/apk/res-auto">
 
    <PreferenceCategory
         android:title="@string/volume_dialog_title">
@@ -75,6 +75,29 @@
             aokp:unitsLeft=""
             aokp:unitsRight="px"
             android:defaultValue="10" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/power">
+
+        <com.aokp.romcontrol.settings.SystemSettingSeekBarPreference
+            android:key="transparent_power_menu"
+            android:title="@string/power_menu_transparency"
+            android:max="100"
+            android:min="0"
+            aokp:unitsLeft=""
+            aokp:unitsRight="%"
+            android:defaultValue="100" />
+
+        <com.aokp.romcontrol.settings.SystemSettingSeekBarPreference
+            android:key="transparent_power_dialog_dim"
+            android:title="@string/power_menu_dialog_dim"
+            android:max="100"
+            android:min="0"
+            aokp:unitsLeft=""
+            aokp:unitsRight="%"
+            android:defaultValue="50" />
 
     </PreferenceCategory>
 

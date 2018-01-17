@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Switch;
 import com.aokp.romcontrol.R;
 
-import cyanogenmod.providers.CMSettings;
+import lineageos.providers.LineageSettings;
 
 /**
  * Setting toggle which represents a boolean value

@@ -35,11 +35,4 @@
     <color name="notification_background">#55555555</color>
     <color name="setting_separator">#ff484848</color>
 
-    <!-- Gesture Anywhere -->
-    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
-
-    <color name="seekbar_dot_color">@android:color/holo_red_light</color>
-
-    <color name="floating_action_button_touch_tint">#80ffffff</color>
-
 </resources>

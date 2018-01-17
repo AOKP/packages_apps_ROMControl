@@ -59,63 +59,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.aokp.romcontrol.fragments.ButtonSettingsFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.ChangelogFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.NotificationsDrawerFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.PowerMenuSettingsFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.LockScreenSettingsFragment" />
-
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutCrewFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.about.AboutMaintainersFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.about.AboutTabHostFragment" />
-
-        <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings" />
-        <activity android:name="com.aokp.romcontrol.fragments.applauncher.AppSideBarSettings" />
-        <activity android:name="com.aokp.romcontrol.fragments.applauncher.GestureAnywhereSettings" />
-        <activity android:name="com.aokp.romcontrol.fragments.applauncher.GestureAnywhereBuilderActivity" />
-        <activity android:name="com.aokp.romcontrol.fragments.applauncher.GestureAnywhereCreateGestureActivity" />
 
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralTabHostFragment" />
         <activity android:name="com.aokp.romcontrol.fragments.general.GeneralSettingsFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.general.HostnamePreference" />
-        <activity android:name="com.aokp.romcontrol.fragments.general.RecentsSettingsFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.general.WakelockBlockerFragment" />
-
-        <activity android:name="com.aokp.romcontrol.fragments.sound.SoundTabHostFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.sound.SoundSettingsFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.sound.LiveVolumeFragment" />
-
-        <activity android:name="com.aokp.romcontrol.fragments.pie.PieColorFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.pie.PieControlFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.pie.PieTabHostFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.pie.PieTargetsFragment" />
-
-        <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment" />
-
-        <activity android:name="com.aokp.romcontrol.fragments.ui.UITabHostFragment" />
-        <activity android:name="com.aokp.romcontrol.fragments.ui.AnimBarPreference" />
-        <activity android:name="com.aokp.romcontrol.fragments.ui.AnimationControls" />
-        <activity android:name="com.aokp.romcontrol.fragments.ui.BlurPersonalizations" />
-        <activity android:name="com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings" />
-        <activity android:name="com.aokp.romcontrol.fragments.ui.TransparencyPornFragment" />
-
-        <!-- PA Pie settings activity. -->
-        <activity android:name="ROMControl$PieControlSettingsActivity"
-                android:label="@string/pa_pie_control_title"
-                android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.aokp.romcontrol.FRAGMENT_CLASS"
-                android:value="com.aokp.romcontrol.fragments.pie.PieControl" />
-            <meta-data android:name="com.aokp.romcontrol.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/pie_settings_main" />
-        </activity>
+        <activity android:name="com.aokp.romcontrol.fragments.NavigationDrawerFragment" />
     </application>
 
 </manifest>

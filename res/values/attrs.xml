@@ -64,7 +64,7 @@
         <attr name="scrollOffset" format="dimension" />
         <attr name="tabBackground" format="reference" />
         <attr name="shouldExpand" format="boolean" />
-        <attr name="textAllCaps" format="boolean" />
+        <attr name="textAllCaps" format="reference|boolean" />
     </declare-styleable>
 
     <declare-styleable name="SeekBarPreference">
@@ -77,25 +77,14 @@
     </declare-styleable>
 
     <declare-styleable name="IntervalSeekBar">
-        <attr name="min" format="float" />
+        <attr name="min" format="integer"/>
         <attr name="max" format="float" />
-        <attr name="defaultValue" format="float" />
+        <attr name="defaultValue" format="string|boolean|integer|reference|float" />
         <attr name="digits" format="integer" />
     </declare-styleable>
 
     <attr name="colorPrimary" format="color"/>
     <attr name="colorPrimaryDark" format="color"/>
     <attr name="colorAccent" format="color"/>
-
-    <declare-styleable name="aokp:SelfRemovingPreference">
-        <attr name="requiresPackage" format="string" />
-        <attr name="requiresFeature" format="string" />
-        <attr name="requiresConfig" format="string" />
-        <attr name="requiresProperty" format="string" />
-        <attr name="requiresOwner" format="boolean" />
-        <attr name="requiresAction" format="string" />
-        <attr name="replacesKey" format="string" />
-        <attr name="minSummaryLines" format="integer" />
-    </declare-styleable>
 
 </resources>

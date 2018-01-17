@@ -1,30 +1,10 @@
-/*
- * Copyright (C) 2017 The AOKP Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.aokp.romcontrol.util;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.SystemProperties;
 import android.util.Log;
 import android.widget.Toast;
@@ -37,8 +17,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
 
-import com.aokp.romcontrol.R;
-
 // don't show unavoidable warnings
 @SuppressWarnings({
         "UnusedDeclaration",
@@ -47,7 +25,6 @@ import com.aokp.romcontrol.R;
         "NestedAssignment",
         "DynamicRegexReplaceableByCompiledPattern",
         "BreakStatement"})
-
 public class Helpers {
     // avoids hardcoding the tag
     private static final String TAG = Thread.currentThread().getStackTrace()[1].getClassName();
@@ -324,44 +301,6 @@ public class Helpers {
 
     public static void restartSystemUI() {
         CMDProcessor.startSuCommand("pkill -TERM -f com.android.systemui");
-    }
-
-    public static void showSystemUIrestartDialog(Activity a) {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(a);
-        builder.setTitle(R.string.systemui_restart_title);
-        builder.setMessage(R.string.systemui_restart_message);
-        builder.setPositiveButton(R.string.print_restart,
-                new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
-                    @Override
-                    protected void onPreExecute() {
-                        ProgressDialog dialog = new ProgressDialog(a);
-                        dialog.setMessage(a.getResources().getString(R.string.restarting_ui));
-                        dialog.setCancelable(false);
-                        dialog.setIndeterminate(true);
-                        dialog.show();
-                    }
-                    @Override
-                    protected Void doInBackground(Void... params) {
-                        // Give the user a second to see the dialog
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            // Ignore
-                        }
-
-                        // Restart the UI
-                        CMDProcessor.startSuCommand("pkill -f com.android.systemui");
-                        a.finish();
-                        return null;
-                    }
-                };
-                task.execute();
-            }
-        });
-        builder.setNegativeButton(android.R.string.cancel, null);
-        builder.show();
     }
 
     public static void setSystemProp(String prop, String val) {

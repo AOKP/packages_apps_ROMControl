@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2016, The Android Open Kang Project
+ * Copyright (c) 2015, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol"
     android:title="@string/general_settings">
 
     <!-- LockClock settings -->
@@ -31,39 +30,5 @@
             android:targetPackage="com.cyanogenmod.lockclock"
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
-
-    <com.aokp.romcontrol.fragments.general.HostnamePreference
-            android:key="device_hostname"
-            android:title="@string/device_hostname"
-            android:dialogTitle="@string/device_hostname"
-            android:positiveButtonText="@string/save"
-            android:negativeButtonText="@string/cancel"
-            android:selectAllOnFocus="true"
-            android:imeOptions="actionDone"
-            android:inputType="textNoSuggestions"
-            android:persistent="false" />
-
-    <ListPreference
-            android:entries="@array/screenshot_type_entries"
-            android:entryValues="@array/screenshot_type_values"
-            android:key="screenshot_type"
-            android:title="@string/screenshot_type_title" />
-
-    <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
-            android:key="screenshot_delay"
-            android:title="@string/screenshot_delay_title"
-            android:summary="@string/screenshot_delay_summary"
-            android:max="10000"
-            aokp:min="100"
-            aokp:interval="100"
-            aokp:unitsLeft=""
-            aokp:unitsRight="ms"
-            android:persistent="false" />
-
-    <!-- Custom bootanim -->
-    <Preference
-            android:key="custom_bootanimation"
-            android:title="@string/custom_bootanimation_title"
-            android:summary="@string/custom_bootanimation_summary" />
 
 </PreferenceScreen>

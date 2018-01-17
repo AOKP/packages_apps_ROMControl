@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The Android Open Kang Project
+ * Copyright (C) 2015 The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,51 +30,14 @@ import android.view.MenuItem;
 
 import android.view.View;
 
-import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
-
-import com.aokp.romcontrol.fragments.ButtonSettingsFragment;
-import com.aokp.romcontrol.fragments.ChangelogFragment;
-import com.aokp.romcontrol.fragments.LockScreenSettingsFragment;
-import com.aokp.romcontrol.fragments.NotificationsDrawerFragment;
-import com.aokp.romcontrol.fragments.PowerMenuSettingsFragment;
-
 import com.aokp.romcontrol.fragments.about.AboutCrewFragment;
 import com.aokp.romcontrol.fragments.about.AboutFragment;
-import com.aokp.romcontrol.fragments.about.AboutMaintainersFragment;
 import com.aokp.romcontrol.fragments.about.AboutTabHostFragment;
-
-import com.aokp.romcontrol.fragments.applauncher.AppLauncherTabHostFragment;
-import com.aokp.romcontrol.fragments.applauncher.AppCircleBarSettings;
-import com.aokp.romcontrol.fragments.applauncher.AppSideBarSettings;
-import com.aokp.romcontrol.fragments.applauncher.GestureAnywhereSettings;
 
 import com.aokp.romcontrol.fragments.general.GeneralTabHostFragment;
 import com.aokp.romcontrol.fragments.general.GeneralSettingsFragment;
-import com.aokp.romcontrol.fragments.general.HostnamePreference;
-import com.aokp.romcontrol.fragments.general.RecentsSettingsFragment;
-import com.aokp.romcontrol.fragments.general.WakelockBlockerFragment;
-
-import com.aokp.romcontrol.fragments.pie.PieColorFragment;
-import com.aokp.romcontrol.fragments.pie.PieControlFragment;
-import com.aokp.romcontrol.fragments.pie.PieTabHostFragment;
-import com.aokp.romcontrol.fragments.pie.PieTargetsFragment;
-
-import com.aokp.romcontrol.fragments.sound.SoundTabHostFragment;
-import com.aokp.romcontrol.fragments.sound.SoundSettingsFragment;
-import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
-
-import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
-import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
-import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
-
-import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
-import com.aokp.romcontrol.fragments.ui.AnimBarPreference;
-import com.aokp.romcontrol.fragments.ui.AnimationControls;
-import com.aokp.romcontrol.fragments.ui.BlurPersonalizations;
-import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
-import com.aokp.romcontrol.fragments.ui.TransparencyPornFragment;
-
-import cyanogenmod.providers.CMSettings;
+import com.aokp.romcontrol.fragments.NavigationDrawerFragment;
+import lineageos.providers.LineageSettings;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -135,47 +98,7 @@ public class MainActivity extends Activity
                 break;
 
             case 1:
-                fragment = new AppLauncherTabHostFragment();
-                break;
-
-            case 2:
                 fragment = new GeneralTabHostFragment();
-                break;
-
-            case 3:
-                fragment = new ButtonSettingsFragment();
-                break;
-
-            case 4:
-                fragment = new LockScreenSettingsFragment();
-                break;
-
-            case 5:
-                fragment = new NotificationsDrawerFragment();
-                break;
-
-            case 6:
-                fragment = new PieTabHostFragment();
-                break;
-
-            case 7:
-                fragment = new PowerMenuSettingsFragment();
-                break;
-
-            case 8:
-                fragment = new SoundTabHostFragment();
-                break;
-
-            case 9:
-                fragment = new StatusBarTabHostFragment();
-                break;
-
-            case 10:
-                fragment = new UITabHostFragment();
-                break;
-
-            case 11:
-                fragment = new ChangelogFragment();
                 break;
         }
         return fragment;

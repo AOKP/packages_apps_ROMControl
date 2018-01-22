@@ -18,7 +18,8 @@
 -->
 <PreferenceScreen
     android:title="@string/notifications_drawer_settings"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aokp="http://schemas.android.com/apk/res-auto">
 
     <ListPreference
         android:key="qs_rows_portrait"
@@ -84,14 +85,22 @@
                     android:targetClass="org.omnirom.omnistyle.PickHeaderActivity" />
         </Preference>
 
+        <Preference
+            android:key="file_header_select"
+            android:title="@string/file_header_select_title"
+            android:summary="@string/file_header_select_summary"
+            android:persistent="false"
+            android:dependency="status_bar_custom_header" >
+        </Preference>
+
         <com.aokp.romcontrol.settings.SystemSettingSeekBarPreference
             android:key="status_bar_custom_header_shadow"
             android:title="@string/status_bar_custom_header_shadow_title"
             android:summary="@string/status_bar_custom_header_shadow_summary"
             android:max="100"
             android:min="0"
-            aicpextras:unitsLeft=""
-            aicpextras:unitsRight="@string/unit_percent"
+            aokp:unitsLeft=""
+            aokp:unitsRight="@string/unit_percent"
             android:persistent="false"
             android:defaultValue="0"
             android:dependency="status_bar_custom_header" />

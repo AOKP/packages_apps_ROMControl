@@ -26,7 +26,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 
 import com.aokp.romcontrol.R;
-import cyanogenmod.providers.CMSettings;
+import lineageos.providers.LineageSettings;
 
 public class HostnamePreference extends EditTextPreference {
 
@@ -124,7 +124,7 @@ public class HostnamePreference extends EditTextPreference {
     }
 
     public void persistHostname(String hostname) {
-        CMSettings.Secure.putString(getContext().getContentResolver(),
-                CMSettings.Secure.DEVICE_HOSTNAME, hostname);
+        LineageSettings.Secure.putString(getContext().getContentResolver(),
+                LineageSettings.Secure.DEVICE_HOSTNAME, hostname);
     }
 }

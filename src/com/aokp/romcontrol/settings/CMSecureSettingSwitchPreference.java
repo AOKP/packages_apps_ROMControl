@@ -18,8 +18,8 @@ package com.aokp.romcontrol.settings;
 
 import android.content.Context;
 import android.preference.SwitchPreference;
-import android.provider.Settings;
 import android.util.AttributeSet;
+
 import lineageos.providers.LineageSettings;
 
 public class CMSecureSettingSwitchPreference extends SwitchPreference {
@@ -56,5 +56,4 @@ public class CMSecureSettingSwitchPreference extends SwitchPreference {
         return LineageSettings.Secure.getInt(getContext().getContentResolver(),
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
-
 }

@@ -17,8 +17,8 @@
 package com.aokp.romcontrol.settings;
 
 import android.content.Context;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.preference.SwitchPreference;
 import android.util.AttributeSet;
 
 public class SystemSettingSwitchPreference extends SwitchPreference {
@@ -55,5 +55,4 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
         return Settings.System.getInt(getContext().getContentResolver(),
                 getKey(), defaultReturnValue ? 1 : 0) != 0;
     }
-
 }

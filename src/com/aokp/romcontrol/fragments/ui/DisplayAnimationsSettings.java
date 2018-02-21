@@ -76,11 +76,10 @@ public class DisplayAnimationsSettings extends Fragment {
 
         private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
         private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
-        private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
         private ListPreference mListViewAnimation;
         private ListPreference mListViewInterpolator;
-        private ListPreference mToastAnimation;
+
         private Context mContext;
 
         @Override
@@ -112,14 +111,6 @@ public class DisplayAnimationsSettings extends Fragment {
             mListViewInterpolator.setOnPreferenceChangeListener(this);
             mListViewInterpolator.setEnabled(listviewanimation > 0);
 
-            // Toast Animations
-            mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
-            mToastAnimation.setSummary(mToastAnimation.getEntry());
-            int CurrentToastAnimation = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.TOAST_ANIMATION, 1);
-            mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
-            mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
-            mToastAnimation.setOnPreferenceChangeListener(this);
             return prefSet;
         }
 
@@ -157,14 +148,6 @@ public class DisplayAnimationsSettings extends Fragment {
                         Settings.System.LISTVIEW_INTERPOLATOR,
                         value);
                 mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
-            }
-            if (preference == mToastAnimation) {
-                int index = mToastAnimation.findIndexOfValue((String) objValue);
-                Settings.System.putString(getActivity().getContentResolver(),
-                        Settings.System.TOAST_ANIMATION, (String) objValue);
-                mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
-                Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
-                return true;
             }
             return false;
         }

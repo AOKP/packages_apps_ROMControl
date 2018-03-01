@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2016, The Android Open Kang Project
+ * Copyright (c) 2018, The AOKP Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -301,6 +301,9 @@
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_title">Columns</string>
 
+    <!-- Notification guts kill app button -->
+    <string name="notification_guts_kill_app_button_title">Kill app button</string>
+    <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
 
     <!-- ****************************** Sound Cat starts ****************************** -->

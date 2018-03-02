@@ -88,6 +88,8 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
         private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
         private static final String PREF_SHOWSU = "show_su_indicator";
+        private static final String STATUSBAR_BATTERY_STYLE = "statusbar_battery_style";
+        private static final String FORCE_BATTERY_PERCENTAGE = "keyguard_qsheader_show_battery_percent";
 
         public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
         public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -97,8 +99,11 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mStatusBarDateStyle;
         private ListPreference mStatusBarDateFormat;
         private ListPreference mClockDatePosition;
+        private ListPreference mBatteryStyle;
         private SwitchPreference mShowSU;
+        private SwitchPreference mForceShowQSHeaderPercent;
 
+        private boolean mForceShowPercent;
         private boolean mCheckPreferences;
 
         @Override
@@ -149,6 +154,23 @@ public class StatusbarSettingsFragment extends Fragment {
             mShowSU.setChecked(Settings.System.getInt(resolver,
                     Settings.System.SHOW_SU_INDICATOR, 1) != 0);
             mShowSU.setOnPreferenceChangeListener(this);
+
+            mBatteryStyle = (ListPreference) findPreference(STATUSBAR_BATTERY_STYLE);
+            mBatteryStyle.setOnPreferenceChangeListener(this);
+            mBatteryStyle.setValue(Integer.toString(Settings.Secure.getInt(resolver,
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0)));
+            mBatteryStyle.setSummary(mBatteryStyle.getEntry());
+
+            mForceShowQSHeaderPercent = (SwitchPreference) findPreference(FORCE_BATTERY_PERCENTAGE);
+            mForceShowQSHeaderPercent.setOnPreferenceChangeListener(this);
+            int forceShowQSHeaderPercent = Settings.System.getInt(resolver,
+                Settings.System.QS_HEADER_BATTERY_PERCENT, 0);
+            mForceShowQSHeaderPercent.setChecked(forceShowQSHeaderPercent != 0);
+
+            mForceShowPercent = Settings.System.getInt(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT,0) != 0;
+
+            updateDependencies(Integer.parseInt((String) mBatteryStyle.getValue()));
 
             return prefSet;
         }
@@ -251,6 +273,19 @@ public class StatusbarSettingsFragment extends Fragment {
                 Settings.System.putInt(resolver,
                         Settings.System.SHOW_SU_INDICATOR, value ? 1 : 0);
                 return true;
+            } else if (preference == mBatteryStyle) {
+                int val = Integer.parseInt((String) newValue);
+                int index = mBatteryStyle.findIndexOfValue((String) newValue);
+                Settings.Secure.putInt(resolver,
+                        Settings.Secure.STATUS_BAR_BATTERY_STYLE, val);
+                mBatteryStyle.setSummary(mBatteryStyle.getEntries()[index]);
+                updateDependencies(val);
+                return true;
+            } else if (preference == mForceShowQSHeaderPercent) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver, Settings.System.QS_HEADER_BATTERY_PERCENT,
+                        value ? 1 : 0);
+                return true;
             }
             return false;
         }
@@ -297,6 +332,22 @@ public class StatusbarSettingsFragment extends Fragment {
                 }
             }
             mStatusBarDateFormat.setEntries(parsedDateEntries);
+        }
+
+        private void updateDependencies(int index) {
+            if (mForceShowPercent) {
+                  if (index != 5) {
+                      mForceShowQSHeaderPercent.setEnabled(false);
+                  } else {
+                      mForceShowQSHeaderPercent.setEnabled(true);
+                  }
+            } else {
+                  if (index == 2 || index == 3) {
+                      mForceShowQSHeaderPercent.setEnabled(false);
+                  } else {
+                      mForceShowQSHeaderPercent.setEnabled(true);
+                  }
+            }
         }
     }
 }

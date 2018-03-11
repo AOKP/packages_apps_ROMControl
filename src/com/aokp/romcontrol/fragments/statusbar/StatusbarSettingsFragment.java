@@ -35,6 +35,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
@@ -86,6 +87,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
         private static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
         private static final String PREF_CLOCK_DATE_POSITION = "clock_date_position";
+        private static final String PREF_SHOWSU = "show_su_indicator";
 
         public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
         public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -95,6 +97,7 @@ public class StatusbarSettingsFragment extends Fragment {
         private ListPreference mStatusBarDateStyle;
         private ListPreference mStatusBarDateFormat;
         private ListPreference mClockDatePosition;
+        private SwitchPreference mShowSU;
 
         private boolean mCheckPreferences;
 
@@ -142,6 +145,11 @@ public class StatusbarSettingsFragment extends Fragment {
                     0)));
             mClockDatePosition.setSummary(mClockDatePosition.getEntry());
 
+            mShowSU = (SwitchPreference) findPreference(PREF_SHOWSU);
+            mShowSU.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.SHOW_SU_INDICATOR, 1) != 0);
+            mShowSU.setOnPreferenceChangeListener(this);
+
             return prefSet;
         }
 
@@ -161,6 +169,12 @@ public class StatusbarSettingsFragment extends Fragment {
                 mContentResolver = context.getContentResolver();
             }
             return mContentResolver;
+        }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+            // If we didn't handle it, let preferences handle it.
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -231,6 +245,11 @@ public class StatusbarSettingsFragment extends Fragment {
                         Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
                 mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
                 parseClockDateFormats();
+                return true;
+            } else if (preference == mShowSU) {
+                boolean value = (Boolean) newValue;
+                Settings.System.putInt(resolver,
+                        Settings.System.SHOW_SU_INDICATOR, value ? 1 : 0);
                 return true;
             }
             return false;

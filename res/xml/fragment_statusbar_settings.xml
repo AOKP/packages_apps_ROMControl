@@ -48,11 +48,12 @@
         android:entries="@array/clock_date_position_entries"
         android:entryValues="@array/clock_date_position_values" />
 
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+    <SwitchPreference
         android:key="show_su_indicator"
         android:title="@string/su_indicator"
         android:summaryOn="@string/su_indicator_summary_on"
         android:summaryOff="@string/su_indicator_summary_off"
-        android:defaultValue="false" />
+        android:persistent="false"
+        android:defaultValue="true" />
 
 </PreferenceScreen>

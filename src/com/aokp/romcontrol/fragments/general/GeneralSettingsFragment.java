@@ -28,6 +28,8 @@ import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,7 +57,8 @@ public class GeneralSettingsFragment extends Fragment {
         return v;
     }
 
-    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment {
+    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
         public GeneralSettingsPreferenceFragment() {
 
@@ -63,11 +66,14 @@ public class GeneralSettingsFragment extends Fragment {
 
         private static final String TAG = "GeneralSettingsPreferenceFragment";
         private static final String KEY_LOCKCLOCK = "lock_clock";
+        private static final String PREF_SHOWSU = "show_su_indicator";
+
         // Package name of the cLock app
         public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
 
         private Context mContext;
         private Preference mLockClock;
+        private SwitchPreference mShowSU;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -81,6 +87,7 @@ public class GeneralSettingsFragment extends Fragment {
             PreferenceScreen prefSet = getPreferenceScreen();
             mContext = getActivity().getApplicationContext();
             PackageManager pm = getActivity().getPackageManager();
+            final ContentResolver resolver = getActivity().getContentResolver();
 
             // cLock app check
             mLockClock = (Preference)
@@ -88,7 +95,31 @@ public class GeneralSettingsFragment extends Fragment {
             if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
                 prefSet.removePreference(mLockClock);
             }
+
+            mShowSU = (SwitchPreference) findPreference(PREF_SHOWSU);
+            mShowSU.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.SHOW_SU_INDICATOR, 1) != 0);
+            mShowSU.setOnPreferenceChangeListener(this);
+
             return prefSet;
+        }
+
+         @Override
+         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+             // If we didn't handle it, let preferences handle it.
+             return super.onPreferenceTreeClick(preferenceScreen, preference);
+         }
+
+        @Override
+        public boolean onPreferenceChange(Preference preference, Object objValue) {
+            ContentResolver resolver = getActivity().getContentResolver();
+            if (preference == mShowSU) {
+                boolean value = (Boolean) objValue;
+                Settings.System.putInt(resolver,
+                        Settings.System.SHOW_SU_INDICATOR, value ? 1 : 0);
+                return true;
+            }
+            return false;
         }
 
         @Override

@@ -397,6 +397,8 @@
     <string name="qs_tile_animation_duration_low">Low</string>
     <string name="qs_tile_animation_duration_default">Default</string>
     <string name="qs_tile_animation_duration_fast">Fast</string>
+    <string name="qs_tile_animation_duration_quite_fast">Quite fast</string>
+    <string name="qs_tile_animation_duration_super_fast">Super fast</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>

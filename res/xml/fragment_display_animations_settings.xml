@@ -47,5 +47,13 @@
         android:summary="@string/disable_animations_summary"
         android:defaultValue="false" />
 
+    <ListPreference
+        android:key="screen_off_animation"
+        android:dialogTitle="@string/screen_off_animation_title"
+        android:title="@string/screen_off_animation_title"
+        android:summary="%s"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values" />
+
 </PreferenceScreen>
 

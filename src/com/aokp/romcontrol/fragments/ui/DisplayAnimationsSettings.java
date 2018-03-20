@@ -82,11 +82,13 @@ public class DisplayAnimationsSettings extends Fragment {
         private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
         private static final String SCROLLINGCACHE_DEFAULT = "1";
         private static final String PREF_TRANSITION_ANIMATION = "disable_transition_animations";
+        private static final String LIST_SCREEN_OFF_ANIMATION = "screen_off_animation";
 
         private ListPreference mListViewAnimation;
         private ListPreference mListViewInterpolator;
         private ListPreference mScrollingCachePref;
         private SwitchPreference mTransitionAnimations;
+        private ListPreference mScreenOffAnimation;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -127,6 +129,14 @@ public class DisplayAnimationsSettings extends Fragment {
                     Settings.System.DISABLE_TRANSITION_ANIMATIONS, 1) != 0);
             mTransitionAnimations.setOnPreferenceChangeListener(this);
 
+            //ScreenOff Animation
+            mScreenOffAnimation = (ListPreference) prefSet.findPreference(LIST_SCREEN_OFF_ANIMATION);
+            int screenoffanimation = Settings.System.getInt(resolver,
+                    Settings.System.SCREEN_OFF_ANIMATION, 0);
+            mScreenOffAnimation.setValue(String.valueOf(screenoffanimation));
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+            mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
             return prefSet;
         }
 
@@ -164,7 +174,7 @@ public class DisplayAnimationsSettings extends Fragment {
                         Settings.System.LISTVIEW_INTERPOLATOR,
                         value);
                 mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
-
+                return true;
             } else if (preference == mScrollingCachePref) {
                 if (objValue != null) {
                     SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)objValue);
@@ -174,6 +184,14 @@ public class DisplayAnimationsSettings extends Fragment {
                 boolean value = (Boolean) objValue;
                 Settings.System.putInt(resolver,
                         Settings.System.DISABLE_TRANSITION_ANIMATIONS, value ? 1 : 0);
+                return true;
+            } else if (preference == mScreenOffAnimation) {
+                int value = Integer.parseInt((String) objValue);
+                int index = mScreenOffAnimation.findIndexOfValue((String) objValue);
+                Settings.System.putInt(resolver,
+                        Settings.System.SCREEN_OFF_ANIMATION,
+                        value);
+                mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
                 return true;
             }
             return false;

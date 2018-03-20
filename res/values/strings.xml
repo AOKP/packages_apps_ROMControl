@@ -137,6 +137,9 @@
     <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
     <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
     <string name="kanglings">The Kanglings</string>
+
+    <string name="maintainers">The Maintainers</string>
+    <string name="github_tribual" translatable="false">https://github.com/tribual</string>
     <!-- ****************************** About Cat ends ****************************** -->
 
     <!-- ****************************** General Cat starts ****************************** -->

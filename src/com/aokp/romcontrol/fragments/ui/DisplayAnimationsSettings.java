@@ -82,6 +82,7 @@ public class DisplayAnimationsSettings extends Fragment {
         private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
         private static final String SCROLLINGCACHE_DEFAULT = "1";
         private static final String PREF_TRANSITION_ANIMATION = "disable_transition_animations";
+        private static final String LIST_SCREEN_OFF_ANIMATION = "screen_off_animation";
 
         private ListPreference mListViewAnimation;
         private ListPreference mListViewInterpolator;
@@ -89,6 +90,7 @@ public class DisplayAnimationsSettings extends Fragment {
         private ListPreference mScrollingCachePref;
         private Context mContext;
         private SwitchPreference mTransitionAnimations;
+        private ListPreference mScreenOffAnimation;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -138,6 +140,14 @@ public class DisplayAnimationsSettings extends Fragment {
             mTransitionAnimations.setChecked(Settings.System.getInt(resolver,
                     Settings.System.DISABLE_TRANSITION_ANIMATIONS, 1) != 0);
             mTransitionAnimations.setOnPreferenceChangeListener(this);
+
+            //ScreenOff Animation
+            mScreenOffAnimation = (ListPreference) prefSet.findPreference(LIST_SCREEN_OFF_ANIMATION);
+            int screenoffanimation = Settings.Global.getInt(resolver,
+                    Settings.Global.SCREEN_OFF_ANIMATION, 0);
+            mScreenOffAnimation.setValue(String.valueOf(screenoffanimation));
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+            mScreenOffAnimation.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -194,6 +204,14 @@ public class DisplayAnimationsSettings extends Fragment {
                 boolean value = (Boolean) objValue;
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.DISABLE_TRANSITION_ANIMATIONS, value ? 1 : 0);
+                return true;
+            } else if (preference == mScreenOffAnimation) {
+                int value = Integer.parseInt((String) objValue);
+                int index = mScreenOffAnimation.findIndexOfValue((String) objValue);
+                Settings.Global.putInt(getActivity().getContentResolver(),
+                        Settings.Global.SCREEN_OFF_ANIMATION,
+                        value);
+                mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
                 return true;
             }
             return false;

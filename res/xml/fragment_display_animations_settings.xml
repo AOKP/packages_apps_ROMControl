@@ -66,5 +66,14 @@
         android:summary="@string/force_expanded_notifications_summary"
         android:defaultValue="false" />
 
+    <ListPreference
+        android:key="screen_off_animation"
+        android:dialogTitle="@string/screen_off_animation_title"
+        android:title="@string/screen_off_animation_title"
+        android:summary="%s"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:defaultValue="0" />
+        
 </PreferenceScreen>
 

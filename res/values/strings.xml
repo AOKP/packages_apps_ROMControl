@@ -354,6 +354,13 @@
    <string name="force_expanded_notifications_title">Force Expanded Notifications</string>
    <string name="force_expanded_notifications_summary">Available only for apps that support expanded notifications</string>
 
+    <!-- Screen off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_fade">Simple fade</string>
+    <string name="screen_off_animation_color">Color fade</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
+
     <!-- ****************************** UI Interface Cat ends ****************************** -->
 
 </resources>

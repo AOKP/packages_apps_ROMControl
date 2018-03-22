@@ -46,5 +46,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Santiago Villar"
+                aokp:nameDev="Villarleg"
+                aokp:githubLink="@string/github_villarleg"
+                aokp:emailDev="santialovera20@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

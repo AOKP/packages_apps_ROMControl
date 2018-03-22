@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2017, The Android Open Kang Project
+ * Copyright (c) 2018, The Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,6 @@
                 aokp:twitterHandle="task650"
                 aokp:githubLink="@string/github_task650"
                 aokp:emailDev="task650@gmail.com"
-
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
                 
@@ -44,8 +42,15 @@
                 aokp:twitterHandle=""
                 aokp:githubLink="@string/github_tribual"
                 aokp:emailDev="tribual81@gmail.com"
-                
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Santiago Villar"
+                aokp:nameDev="Villarleg"
+                aokp:twitterHandle="villarleg"
+                aokp:githubLink="@string/github_villarleg"
+                aokp:emailDev="santialovera20@gmail.com"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

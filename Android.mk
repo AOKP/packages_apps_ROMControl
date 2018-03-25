@@ -6,12 +6,13 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.cfg
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13 \
-                               android-support-v4 \
-			        AndroidAsync \
-			        gson \
-                               jsr305 \
-                               org.lineageos.platform.internal
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    android-support-v13 \
+    android-support-v4 \
+    AndroidAsync \
+    gson \
+    jsr305 \
+    org.lineageos.platform.internal
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files, src)
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
@@ -27,5 +28,5 @@ include frameworks/base/packages/SettingsLib/common.mk
 LOCAL_JAVA_LIBRARIES += org.lineageos.hardware
 include $(BUILD_PACKAGE)
 
-# Use the folloing include to make our test apk.
+# Use the following include to make our test apk.
 include $(call all-makefiles-under,$(LOCAL_PATH))

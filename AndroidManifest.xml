@@ -29,9 +29,9 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
     <uses-permission android:name="com.google.android.gallery3d.permission.GALLERY_PROVIDER"/>
-    <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
-    <uses-permission android:name="cyanogenmod.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />
+    <uses-permission android:name="lineageos.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="lineageos.permission.WRITE_SECURE_SETTINGS"/>
 
     <uses-sdk
             android:minSdkVersion="19"

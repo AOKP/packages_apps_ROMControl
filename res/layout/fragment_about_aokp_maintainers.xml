@@ -56,5 +56,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Eric Clothier"
+                aokp:nameDev="shane87"
+                aokp:githubLink="@string/github_shane87"
+                aokp:emailDev="eric.clothier@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
     </LinearLayout>
 </ScrollView>

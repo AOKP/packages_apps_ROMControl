@@ -22,21 +22,21 @@ import android.content.Context;
 import android.preference.SwitchPreference;
 import android.util.AttributeSet;
 
-public class SystemSettingSwitchPreference extends SwitchPreference {
+public class GlobalSettingSwitchPreference extends SwitchPreference {
 
-    public SystemSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSwitchPreference(Context context, AttributeSet attrs) {
+    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSwitchPreference(Context context) {
+    public GlobalSettingSwitchPreference(Context context) {
         super(context);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
 
     @Override

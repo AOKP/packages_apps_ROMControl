@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2014-2016 The Dirty Unicorns Project
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="battery_bar"
+        android:title="@string/battery_bar_title"/>
+
+        <ListPreference
+            android:key="battery_bar_list"
+            android:title="@string/battery_bar_location"
+            android:entries="@array/battery_bar_entries"
+            android:entryValues="@array/battery_bar_values" />
+
+        <ListPreference
+            android:key="battery_bar_style"
+            android:title="@string/battery_bar_style_title"
+            android:entries="@array/battery_bar_style_entries"
+            android:entryValues="@array/battery_bar_style_values" />
+
+        <ListPreference
+            android:key="battery_bar_thickness"
+            android:title="@string/battery_bar_thickness_title"
+            android:entries="@array/battery_bar_thickness_entries"
+            android:entryValues="@array/battery_bar_thickness_values" />
+
+        <SwitchPreference
+            android:key="battery_bar_animate"
+            android:title="@string/battery_bar_animate_title"
+            android:summary="@string/battery_bar_animate_summary" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_bar_color"
+            android:title="@string/battery_bar_color"
+            android:defaultValue="0xffffffff"
+            android:dialogTitle="@string/battery_bar_color" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_bar_charging_color"
+            android:title="@string/battery_bar_charging_color"
+            android:defaultValue="0xFF00FF00"
+            android:dialogTitle="@string/battery_bar_color" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_bar_battery_low_color_warning"
+            android:title="@string/battery_bar_battery_low_color"
+            android:defaultValue="0xFFFF6600"
+            android:dialogTitle="@string/battery_bar_color" />
+
+        <SwitchPreference
+            android:key="battery_bar_use_gradient_color"
+            android:title="@string/battery_bar_use_gradient_color"
+            android:summary="@string/battery_bar_gradient_color_summary" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_bar_low_color"
+            android:title="@string/battery_bar_low_color"
+            android:defaultValue="0xffff4444"
+            android:dialogTitle="@string/battery_bar_color" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_bar_high_color"
+            android:title="@string/battery_bar_high_color"
+            android:defaultValue="0xff99CC00"
+            android:dialogTitle="@string/battery_bar_color" />
+
+</PreferenceScreen>

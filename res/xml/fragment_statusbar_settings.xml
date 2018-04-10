@@ -68,5 +68,9 @@
         android:summaryOff="@string/su_indicator_summary_off"
         android:persistent="false"
         android:defaultValue="true" />
+        
+    <ListPreference
+        android:key="batterybar"
+		android:title="@string/battery_bar_title" />
 
 </PreferenceScreen>

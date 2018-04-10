@@ -93,6 +93,8 @@ public class StatusBarTabHostFragment extends Fragment {
                     return new StatusbarSettingsFragment();
                 case 1:
                     return new TrafficSettingsFragment();
+				case 2:
+                    return new BatteryBar();
             }
             return null;
         }

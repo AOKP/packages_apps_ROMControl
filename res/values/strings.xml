@@ -426,6 +426,29 @@
     <string name="force_battery_percentage_title">Force show battery percent</string>
     <string name="force_battery_percentage_summary">Show battery percent text in QSHeader and KeyGuard.</string>
 
+    <!-- Battery bar -->
+    <string name="battery_bar_title">Battery bar</string>
+    <string name="battery_bar_summary">Display and customize battery bar above status bar</string>
+    <string name="battery_bar_location">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_style_title">Battery bar style</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="battery_bar_hide">Hide</string>
+    <string name="battery_bar_statusbar">Statusbar</string>
+    <string name="battery_bar_topnav">Top of navbar</string>
+    <string name="battery_bar_bottomnav">Bottom of navbar</string>
+    <string name="battery_bar_reg">Regular</string>
+    <string name="battery_bar_center">Center-mirrored</string>
+    <string name="battery_bar_charging_color">Battery bar charging color</string>
+    <string name="battery_bar_battery_low_color">Battery bar low battery color</string>
+    <string name="battery_bar_reversed">Reversed</string>
+    <string name="battery_bar_use_gradient_color">Use gradient color</string>
+    <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
+    <string name="battery_bar_high_color">High level color"</string>
+    <string name="battery_bar_low_color">Low level color"</string>
+
     <!-- ****************************** StatusBar Cat ends ****************************** -->
 
     <!-- ****************************** UI Interface Cat starts ****************************** -->

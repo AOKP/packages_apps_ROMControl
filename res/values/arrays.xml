@@ -90,6 +90,47 @@
         <item>2000</item>
     </string-array>
 
+    <!-- Battery Bar -->
+    <string-array name="battery_bar_entries" translatable="false">
+        <item>@string/battery_bar_hide</item>
+        <item>@string/battery_bar_statusbar</item>
+        <item>@string/battery_bar_topnav</item>
+        <item>@string/battery_bar_bottomnav</item>
+    </string-array>
+
+    <string-array name="battery_bar_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="battery_bar_style_entries" translatable="false">
+        <item>@string/battery_bar_reg</item>
+        <item>@string/battery_bar_center</item>
+        <item>@string/battery_bar_reversed</item>
+    </string-array>
+
+    <string-array name="battery_bar_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="battery_bar_thickness_entries" translatable="false">
+        <item>1 dp</item>
+        <item>2 dp</item>
+        <item>3 dp</item>
+        <item>4 dp</item>
+    </string-array>
+
+    <string-array name="battery_bar_thickness_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+</string-array>
+
     <!-- Listview animation -->
     <string-array name="listview_animation_entries">
         <item>@string/listview_off</item>

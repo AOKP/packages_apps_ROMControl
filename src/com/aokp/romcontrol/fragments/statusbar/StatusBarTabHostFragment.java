@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, The Android Open Kang Project
+ * Copyright (c) 2018, The AOKP Android Open Kang Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,8 @@ public class StatusBarTabHostFragment extends Fragment {
 
     private static final int[] mFragments = new int[] {
             R.string.statusbar_settings,
-            R.string.network_traffic_title
+            R.string.network_traffic_title,
+            R.string.battery_bar_title
     };
 
     public StatusBarTabHostFragment() {
@@ -93,6 +94,8 @@ public class StatusBarTabHostFragment extends Fragment {
                     return new StatusbarSettingsFragment();
                 case 1:
                     return new TrafficSettingsFragment();
+                case 2:
+                    return new BatteryBarFragment();
             }
             return null;
         }

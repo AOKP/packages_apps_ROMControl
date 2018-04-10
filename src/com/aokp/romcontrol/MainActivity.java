@@ -52,6 +52,7 @@ import com.aokp.romcontrol.fragments.sound.LiveVolumeFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusBarTabHostFragment;
 import com.aokp.romcontrol.fragments.statusbar.StatusbarSettingsFragment;
 import com.aokp.romcontrol.fragments.statusbar.TrafficSettingsFragment;
+import com.aokp.romcontrol.fragments.statusbar.BatteryBarFragment;
 
 import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
 import com.aokp.romcontrol.fragments.ui.AnimBarPreference;

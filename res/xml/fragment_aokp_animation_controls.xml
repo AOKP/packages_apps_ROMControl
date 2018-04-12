@@ -18,8 +18,8 @@
 -->
 
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/aokp_animation_title">
+    android:title="@string/aokp_animation_title"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
         <ListPreference
             android:key="activity_open"

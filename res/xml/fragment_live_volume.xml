@@ -18,8 +18,8 @@
 -->
 
 <PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/volume_steps_title">
+        android:title="@string/volume_steps_title"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
 
         <ListPreference
                 android:key="volume_steps_alarm"

@@ -18,8 +18,8 @@
 -->
 
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/general_settings">
+    android:title="@string/general_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <!-- LockClock settings -->
     <PreferenceScreen

@@ -17,9 +17,8 @@
  */
 -->
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/notifications_drawer_settings"
-    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ListPreference
         android:key="qs_rows_portrait"

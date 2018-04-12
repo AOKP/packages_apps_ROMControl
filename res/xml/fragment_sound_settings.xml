@@ -18,9 +18,8 @@
 -->
 
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol"
-    android:title="@string/sound_settings">
+    android:title="@string/sound_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <SwitchPreference
         android:key="camera_sounds"

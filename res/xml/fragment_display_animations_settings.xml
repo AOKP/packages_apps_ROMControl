@@ -14,8 +14,9 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/ui_settings">
+<PreferenceScreen
+    android:title="@string/ui_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ListPreference
         android:key="listview_animation"

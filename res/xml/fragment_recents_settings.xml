@@ -19,8 +19,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/recents_settings"
-    xmlns:aokp="http://schemas.android.com/apk/res-auto" >
+    android:title="@string/recents_settings" >
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
            android:key="systemui_recents_mem_display"

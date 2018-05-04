@@ -66,5 +66,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+        <com.aokp.romcontrol.widgets.DeveloperPreference
+                android:title="Esrom Cataneo"
+                aokp:nameDev="EsromTech"
+                aokp:twitterHandle="esromg5"
+                aokp:githubLink="@string/github_esromtech"
+                aokp:emailDev="esromgalaxy5@gmail.com"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
     </LinearLayout>
 </ScrollView>

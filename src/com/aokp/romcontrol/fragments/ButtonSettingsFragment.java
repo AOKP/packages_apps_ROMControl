@@ -664,18 +664,20 @@ public class ButtonSettingsFragment extends Fragment {
         @Override
         public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
             if (preference == mSwapVolumeButtons) {
-                int value = mSwapVolumeButtons.isChecked()
-                        ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
-            if (value == 2) {
-                Display defaultDisplay = getActivity().getWindowManager().getDefaultDisplay();
+            int value;
 
-                DisplayInfo displayInfo = new DisplayInfo();
-                defaultDisplay.getDisplayInfo(displayInfo);
-
-                // Not all tablets are landscape
-                if (displayInfo.getNaturalWidth() < displayInfo.getNaturalHeight()) {
-                    value = 1;
-                }
+            if (mSwapVolumeButtons.isChecked()) {
+                /* The native inputflinger service uses the same logic of:
+                 *   1 - the volume rocker is on one the sides, relative to the natural
+                 *       orientation of the display (true for all phones and most tablets)
+                 *   2 - the volume rocker is on the top or bottom, relative to the
+                 *       natural orientation of the display (true for some tablets)
+                 */
+                value = getResources().getInteger(
+                        R.integer.config_volumeRockerVsDisplayOrientation);
+            } else {
+                /* Disable the re-orient functionality */
+                value = 0;
             }
                 CMSettings.System.putInt(getActivity().getContentResolver(),
                     CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);

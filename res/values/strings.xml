@@ -294,6 +294,7 @@
     <string name="network_traffic_hidearrow_summary">Hide the arrows in the traffic indicators</string>
 
     <!-- Battery Styles -->
+    <string name="battery_title">Battery</string>
     <string name="battery_style_title">Battery icon style</string>
     <string name="battery_style_summary">Change the look of the icon in the statusbar</string>
     <string name="battery_style_port">Portrait</string>
@@ -326,6 +327,51 @@
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
 
+    <!-- Statusbar AOKP logo -->
+    <string name="status_bar_aokp_logo_title">AOKP logo</string>
+    <string name="status_bar_aokp_logo_summary">Enable to show AOKP logo on the left side of statusbar</string>
+    <string name="status_bar_logo_title">Statusbar Logo</string>
+    <string name="status_bar_logo_summary">Enable to display logo in the status bar</string>
+    <string name="status_bar_logo_color_title">Color</string>
+    <string name="status_bar_logo_position_title">Position</string>
+    <string name="status_bar_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_logo_position_right">Right</string>
+    <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_logo_style_title">Style</string>
+    <string name="status_bar_logo_style_summary">Choose which style the logo should have</string>
+    <string name="status_bar_logo_style_aokp">AOKP</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Emoticon</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticon cool</string>
+    <string name="status_bar_logo_style_emoticon_dead">Emoticon dead</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon devil</string>
+    <string name="status_bar_logo_style_emoticon_happy">Emoticon happy</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Emoticon neutral</string>
+    <string name="status_bar_logo_style_emoticon_poop">Emoticon poop</string>
+    <string name="status_bar_logo_style_emoticon_sad">Emoticon sad</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Emoticon tongue</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Cake</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_heart">Heart</string>
+    <string name="status_bar_logo_style_flower">Flower</string>
+    <string name="status_bar_logo_style_ghost">Ghost</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_human_male">Man</string>
+    <string name="status_bar_logo_style_human_female">Woman</string>
+    <string name="status_bar_logo_style_human_male_female">Man &amp; woman</string>
+    <string name="status_bar_logo_style_gender_male">Male</string>
+    <string name="status_bar_logo_style_gender_female">Female</string>
+    <string name="status_bar_logo_style_gender_male_female">Male &amp; female</string>
+    <string name="status_bar_logo_style_guitar_electric">Electric guitar</string>
     <!-- ****************************** StatusBar Cat ends ****************************** -->
 
     <!-- ****************************** UI Interface Cat starts ****************************** -->

@@ -64,7 +64,7 @@ public class GeneralSettingsFragment extends Fragment {
         private static final String TAG = "GeneralSettingsPreferenceFragment";
         private static final String KEY_LOCKCLOCK = "lock_clock";
         // Package name of the cLock app
-        public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+        public static final String LOCKCLOCK_PACKAGE_NAME = "org.lineageos.lockclock";
 
         private Context mContext;
         private Preference mLockClock;

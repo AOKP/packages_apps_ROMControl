@@ -27,8 +27,8 @@
         android:title="@string/lock_clock_title"
         android:summary="@string/lock_clock_summary">
         <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.cyanogenmod.lockclock"
-            android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+            android:targetPackage="org.lineageos.lockclock"
+            android:targetClass="org.lineageos.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
     <com.aokp.romcontrol.fragments.general.HostnamePreference

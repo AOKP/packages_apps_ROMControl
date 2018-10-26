@@ -30,6 +30,13 @@
             android:targetPackage="org.lineageos.lockclock"
             android:targetClass="org.lineageos.lockclock.preference.Preferences" />
     </PreferenceScreen>
+    
+    
+	<com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+         android:key="lockscreen_battery_info"
+         android:title="@string/lockscreen_battery_info_title"
+         android:summary="@string/lockscreen_battery_info_summary"
+         android:defaultValue="true" />
 
     <com.aokp.romcontrol.fragments.general.HostnamePreference
             android:key="device_hostname"

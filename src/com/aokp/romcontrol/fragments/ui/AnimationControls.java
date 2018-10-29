@@ -37,7 +37,7 @@ import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
 
-import com.android.internal.util.crdroid.AwesomeAnimationHelper;
+import com.android.internal.util.aokp.AwesomeAnimationHelper;
 
 import java.util.Arrays;
 

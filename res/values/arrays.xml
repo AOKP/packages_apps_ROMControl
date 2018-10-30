@@ -359,5 +359,50 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-
+    
+    <!-- Smart Pixels -->
+    <string-array name="smart_pixels_percent_strings" translatable="false">
+        <item>12</item>
+        <item>25</item>
+        <item>38</item>
+        <item>50</item>
+        <item>62</item>
+        <item>75</item>
+        <item>88</item>
+    </string-array>
+    
+     <string-array name="smart_pixels_percent_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    
+     <string-array name="smart_pixels_shift_times">
+        <item>@string/smart_pixels_shift_times_15s</item>
+        <item>@string/smart_pixels_shift_times_30s</item>
+        <item>@string/smart_pixels_shift_times_1min</item>
+        <item>@string/smart_pixels_shift_times_2min</item>
+        <item>@string/smart_pixels_shift_times_5min</item>
+        <item>@string/smart_pixels_shift_times_10min</item>
+        <item>@string/smart_pixels_shift_times_20min</item>
+        <item>@string/smart_pixels_shift_times_30min</item>
+        <item>@string/smart_pixels_shift_times_1h</item>
+    </string-array>
+    
+     <string-array name="smart_pixels_shift_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    
 </resources>

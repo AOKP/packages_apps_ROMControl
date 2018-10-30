@@ -56,6 +56,7 @@ import com.aokp.romcontrol.fragments.ui.UITabHostFragment;
 import com.aokp.romcontrol.fragments.ui.AnimBarPreference;
 import com.aokp.romcontrol.fragments.ui.AnimationControls;
 import com.aokp.romcontrol.fragments.ui.DisplayAnimationsSettings;
+import com.aokp.romcontrol.fragments.ui.SmartPixels;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {

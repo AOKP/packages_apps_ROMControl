@@ -40,7 +40,7 @@
         <com.aokp.romcontrol.widgets.DeveloperPreference
                 android:title="Sven Jautz"
                 aokp:nameDev="tribual"
-                aokp:twitterHandle=""
+                aokp:twitterHandle="tribual"
                 aokp:githubLink="@string/github_tribual"
                 aokp:emailDev="tribual81@gmail.com"
                 android:layout_width="match_parent"

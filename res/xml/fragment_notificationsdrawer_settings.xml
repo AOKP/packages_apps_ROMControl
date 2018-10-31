@@ -22,19 +22,19 @@
     android:title="@string/notifications_drawer_settings"
     xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol" >
 
-    <ListPreference
+    <com.aokp.romcontrol.settings.SystemSettingListPreference
         android:key="qs_rows_portrait"
         android:title="@string/qs_rows_portrait_title"
         android:entries="@array/qs_rows_portrait_entries"
         android:entryValues="@array/qs_rows_portrait_values" />
 
-    <ListPreference
+    <com.aokp.romcontrol.settings.SystemSettingListPreference
         android:key="qs_rows_landscape"
         android:title="@string/qs_rows_landscape_title"
         android:entries="@array/qs_rows_landscape_entries"
         android:entryValues="@array/qs_rows_landscape_values" />
 
-    <ListPreference
+    <com.aokp.romcontrol.settings.SystemSettingListPreference
         android:key="qs_columns"
         android:title="@string/qs_columns_title"
         android:entries="@array/qs_columns_entries"

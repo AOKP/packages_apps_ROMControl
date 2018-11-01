@@ -44,6 +44,7 @@ import android.view.MenuItem;
 import android.view.MenuInflater;
 
 import com.aokp.romcontrol.R;
+import com.android.internal.util.aokp.AOKPUtils;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -72,7 +73,10 @@ public class RecentsSettingsFragment extends Fragment {
         public RecentsSettingsPreferenceFragment() {
 
         }
-
+		
+		private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+		private ListPreference mRecentsComponentType;
+		
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -86,6 +90,14 @@ public class RecentsSettingsFragment extends Fragment {
 
             PreferenceScreen prefSet = getPreferenceScreen();
             ContentResolver resolver = getActivity().getContentResolver();
+            
+            // recents component type
+			mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
+			int type = Settings.System.getInt(resolver,
+					Settings.System.RECENTS_COMPONENT, 0);
+			mRecentsComponentType.setValue(String.valueOf(type));
+			mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
+			mRecentsComponentType.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -103,6 +115,19 @@ public class RecentsSettingsFragment extends Fragment {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
                 ContentResolver resolver = getActivity().getContentResolver();
+                if (preference == mRecentsComponentType) {
+				int type = Integer.valueOf((String) newValue);
+				int index = mRecentsComponentType.findIndexOfValue((String) newValue);
+				Settings.System.putInt(getActivity().getContentResolver(),
+						Settings.System.RECENTS_COMPONENT, type);
+				mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
+				if (type == 1) { // Disable swipe up gesture, if oreo type selected
+				Settings.Secure.putInt(getActivity().getContentResolver(),
+						Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
+				}
+				AOKPUtils.showSystemUiRestartDialog(getContext());
+				return true;
+				}
             return false;
         }
     }

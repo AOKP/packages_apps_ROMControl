@@ -175,6 +175,11 @@
     <string name="systemui_recents_mem_display_title">Show Memory Bar</string>
     <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string>
 
+	<!-- Pie and Oreo recents -->
+    <string name="recents_component_type_title">Stock Recents Style</string>
+    <string name="recents_pie">Pie</string>
+    <string name="recents_oreo">Oreo</string>
+    
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Block system wakelocks</string>

@@ -28,4 +28,12 @@
            android:summary="@string/systemui_recents_mem_display_summary"
            android:defaultValue="false" />
 
+    <ListPreference
+           android:key="recents_component"
+           android:title="@string/recents_component_type_title"
+           android:dialogTitle="@string/recents_component_type_title"
+           android:entries="@array/recents_component_type_title_entries"
+           android:defaultValue="0"
+           android:entryValues="@array/recents_component_type_title_values"/>
+            
 </PreferenceScreen>

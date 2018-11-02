@@ -190,7 +190,16 @@
 	<!-- Pie and Oreo recents -->
     <string name="recents_component_type_title">Stock Recents Style</string>
     <string name="recents_pie">Pie</string>
-    <string name="recents_oreo">Oreo</string>
+    <string name="recents_oreo">Oreo</string>  
+    
+    <!-- Recents style -->
+    <string name="navbar_recents_style_title">Recents style</string>
+    <string name="keys_action_app_switch_defaut">Default</string>
+    <string name="keys_action_omniswitch_short">OmniSwitch</string>
+    <string name="omniswitch_settings">Settings</string>
+    <string name="omniswitch_dialog_running_new">OmniSwitch is currently not enabled. Please enable it in the app settings.</string>
+    <string name="omniswitch_dialog_unavail">OmniSwitch is not installed.</string>
+    <string name="omniswitch_title">Recents style</string>
     
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>

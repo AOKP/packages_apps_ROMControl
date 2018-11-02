@@ -27,6 +27,13 @@
            android:title="@string/systemui_recents_mem_display_title"
            android:summary="@string/systemui_recents_mem_display_summary"
            android:defaultValue="false" />
+           
+    <ListPreference
+        android:key="navbar_recents_style"
+        android:title="@string/navbar_recents_style_title"
+        android:entries="@array/navbar_recents_style_entries"
+        android:entryValues="@array/navbar_recents_style_values"
+        android:persistent="false"/>
 
     <ListPreference
            android:key="recents_component"

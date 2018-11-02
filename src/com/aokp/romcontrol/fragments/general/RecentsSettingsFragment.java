@@ -18,6 +18,7 @@ package com.aokp.romcontrol.fragments.general;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlertDialog; 
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -42,6 +43,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuInflater;
+
+import com.android.internal.util.aokp.OmniSwitchConstants; 
 
 import com.aokp.romcontrol.R;
 import com.android.internal.util.aokp.AOKPUtils;
@@ -75,7 +78,9 @@ public class RecentsSettingsFragment extends Fragment {
         }
 		
 		private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+		private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
 		private ListPreference mRecentsComponentType;
+		private ListPreference mNavbarRecentsStyle;
 		
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -98,6 +103,13 @@ public class RecentsSettingsFragment extends Fragment {
 			mRecentsComponentType.setValue(String.valueOf(type));
 			mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
 			mRecentsComponentType.setOnPreferenceChangeListener(this);
+			
+			mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
+			int recentsStyle = Settings.System.getInt(resolver,
+					Settings.System.OMNI_NAVIGATION_BAR_RECENTS, 0);
+			mNavbarRecentsStyle.setValue(Integer.toString(recentsStyle));
+			mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
+			mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -127,8 +139,46 @@ public class RecentsSettingsFragment extends Fragment {
 				}
 				AOKPUtils.showSystemUiRestartDialog(getContext());
 				return true;
+				} else if (preference == mNavbarRecentsStyle) {
+				int value = Integer.valueOf((String) newValue);
+				if (value == 1) {
+					if (!isOmniSwitchInstalled()){
+						doOmniSwitchUnavail();
+					} else if (!OmniSwitchConstants.isOmniSwitchRunning(getActivity())) {
+						doOmniSwitchConfig();
+					}
+				}
+				int index = mNavbarRecentsStyle.findIndexOfValue((String) newValue);
+				mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntries()[index]);
+				Settings.System.putInt(resolver, Settings.System.OMNI_NAVIGATION_BAR_RECENTS, value);
+				return true;
 				}
             return false;
         }
+        
+		private void doOmniSwitchConfig() {
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+			alertDialogBuilder.setTitle(R.string.omniswitch_title);
+			alertDialogBuilder.setMessage(R.string.omniswitch_dialog_running_new)
+				.setPositiveButton(R.string.omniswitch_settings, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog,int id) {
+						startActivity(OmniSwitchConstants.INTENT_LAUNCH_APP);
+					}
+				});
+			AlertDialog alertDialog = alertDialogBuilder.create();
+			alertDialog.show();
+		}
+		
+		private void doOmniSwitchUnavail() {
+			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+			alertDialogBuilder.setTitle(R.string.omniswitch_title);
+			alertDialogBuilder.setMessage(R.string.omniswitch_dialog_unavail);
+			AlertDialog alertDialog = alertDialogBuilder.create();
+			alertDialog.show();
+		}
+		
+		private boolean isOmniSwitchInstalled() {
+			return AOKPUtils.isAvailableApp(OmniSwitchConstants.APP_PACKAGE_NAME, getActivity());
+		}
     }
 }

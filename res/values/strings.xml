@@ -181,11 +181,7 @@
     <string name="device_hostname">Device Hostname</string>
 
     <!-- Recents setting -->
-
-    <string name="recents_settings">Recents settings</string>
-
-    <string name="systemui_recents_mem_display_title">Show Memory Bar</string>
-    <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string>
+    <string name="recents_settings">Recents Settings</string>
 
 	<!-- Pie and Oreo recents -->
     <string name="recents_component_type_title">Stock Recents Style</string>

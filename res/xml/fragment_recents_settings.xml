@@ -21,12 +21,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/recents_settings"
     xmlns:aokp="http://schemas.android.com/apk/res-auto" >
-
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-           android:key="systemui_recents_mem_display"
-           android:title="@string/systemui_recents_mem_display_title"
-           android:summary="@string/systemui_recents_mem_display_summary"
-           android:defaultValue="false" />
            
     <ListPreference
         android:key="navbar_recents_style"

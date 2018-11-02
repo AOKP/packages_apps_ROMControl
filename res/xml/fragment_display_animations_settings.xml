@@ -21,6 +21,36 @@
         android:title="@string/ui_settings">
 
     <ListPreference
+        android:key="pref_scrollingcache"
+        android:dialogTitle="@string/pref_scrollingcache_title"
+        android:title="@string/pref_scrollingcache_title"
+        android:summary="@string/pref_scrollingcache_summary"
+        android:entries="@array/entries_scrollingcache"
+        android:entryValues="@array/values_scrollingcache" />
+        
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+            android:key="toast_icon"
+            android:title="@string/toast_icon_title"
+            android:summary="@string/toast_icon_summary"
+            android:defaultValue="true" />
+
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="force_expanded_notifications"
+        android:title="@string/force_expanded_notifications_title"
+        android:summary="@string/force_expanded_notifications_summary"
+        android:defaultValue="false" />
+        
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+        android:key="disable_immersive_message"
+        android:title="@string/disable_immersive_message_title"
+        android:summary="@string/disable_immersive_message_summary"
+        android:defaultValue="false" />
+        
+    <PreferenceCategory
+        android:key="ui_animations_category"
+        android:title="@string/animations_title" >
+        
+    <ListPreference
         android:key="listview_animation"
         android:dialogTitle="@string/listview_animation_title"
         android:title="@string/listview_animation_title"
@@ -37,38 +67,18 @@
         android:defaultValue="0" />
 
     <ListPreference
-        android:key="pref_scrollingcache"
-        android:dialogTitle="@string/pref_scrollingcache_title"
-        android:title="@string/pref_scrollingcache_title"
-        android:summary="@string/pref_scrollingcache_summary"
-        android:entries="@array/entries_scrollingcache"
-        android:entryValues="@array/values_scrollingcache" />
-
-    <ListPreference
         android:key="toast_animation"
         android:title="@string/toast_animation_title"
         android:entries="@array/toast_animation_entries"
         android:entryValues="@array/toast_animation_values"
         android:persistent="false" />
 
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-            android:key="toast_icon"
-            android:title="@string/toast_icon_title"
-            android:summary="@string/toast_icon_summary"
-            android:defaultValue="true" />
-
     <SwitchPreference
         android:key="disable_transition_animations"
         android:title="@string/disable_animations"
         android:summary="@string/disable_animations_summary"
         android:defaultValue="false" />
-
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-        android:key="force_expanded_notifications"
-        android:title="@string/force_expanded_notifications_title"
-        android:summary="@string/force_expanded_notifications_summary"
-        android:defaultValue="false" />
-
+        
     <ListPreference
         android:key="screen_off_animation"
         android:dialogTitle="@string/screen_off_animation_title"
@@ -78,11 +88,7 @@
         android:entryValues="@array/screen_off_animation_values"
         android:defaultValue="0" />
         
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
-        android:key="disable_immersive_message"
-        android:title="@string/disable_immersive_message_title"
-        android:summary="@string/disable_immersive_message_summary"
-        android:defaultValue="false" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
 

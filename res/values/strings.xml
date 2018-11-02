@@ -403,6 +403,7 @@
     <!-- ****************************** UI Interface Cat starts ****************************** -->
     <!-- UI Interface -->
     <string name="ui_settings">UI Interface Settings</string>
+    <string name="animations_title">Animations</string>
 
     <!-- Toast Animations -->
     <string name="toast_animation_title">Toast Animations</string>

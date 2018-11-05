@@ -229,6 +229,10 @@
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Fullscreen screenshots</string>
     <string name="screenshot_type_partial">Partial screenshots</string>
+    
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
     <!-- ****************************** General Cat ends ****************************** -->
 
     <!-- ****************************** Lockscreen Cat starts ****************************** -->

@@ -31,8 +31,7 @@
             android:targetClass="org.lineageos.lockclock.preference.Preferences" />
     </PreferenceScreen>
     
-    
-	<com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
          android:key="lockscreen_battery_info"
          android:title="@string/lockscreen_battery_info_title"
          android:summary="@string/lockscreen_battery_info_summary"
@@ -54,5 +53,11 @@
             android:entries="@array/screenshot_type_entries"
             android:entryValues="@array/screenshot_type_values"
             android:title="@string/screenshot_type_title" />
+           
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference 
+             android:key="three_finger_gesture" 
+             android:title="@string/three_finger_gesture" 
+             android:summary="@string/three_finger_gesture_summary" 
+             android:defaultValue="false" /> 
 
 </PreferenceScreen>

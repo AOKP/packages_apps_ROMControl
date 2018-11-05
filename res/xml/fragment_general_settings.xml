@@ -48,5 +48,11 @@
             android:imeOptions="actionDone"
             android:inputType="textNoSuggestions"
             android:persistent="false" />
+            
+    <com.aokp.romcontrol.settings.SystemSettingListPreference
+            android:key="screenshot_type"
+            android:entries="@array/screenshot_type_entries"
+            android:entryValues="@array/screenshot_type_values"
+            android:title="@string/screenshot_type_title" />
 
 </PreferenceScreen>

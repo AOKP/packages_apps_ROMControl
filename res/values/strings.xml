@@ -224,7 +224,11 @@
     <string name="screen_state_off_delay_summary">Number of minutes to wait before performing actions after screen off</string>
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
     <string name="screen_state_on_delay_summary">Number of minutes to wait before performing actions after screen on</string>
-
+    
+    <!-- Screenshot type -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Fullscreen screenshots</string>
+    <string name="screenshot_type_partial">Partial screenshots</string>
     <!-- ****************************** General Cat ends ****************************** -->
 
     <!-- ****************************** Lockscreen Cat starts ****************************** -->

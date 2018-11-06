@@ -36,5 +36,25 @@
            android:entries="@array/recents_component_type_title_entries"
            android:defaultValue="0"
            android:entryValues="@array/recents_component_type_title_values"/>
+           
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference  
+           android:key="systemui_recents_mem_display" 
+           android:title="@string/systemui_recents_mem_display_title" 
+           android:summary="@string/systemui_recents_mem_display_summary" 
+           android:defaultValue="false" /> 
+           
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+           android:key="show_clear_all_recents"
+           android:title="@string/show_clear_all_recents_button_title"
+           android:summary="@string/show_clear_all_recents_button_summary"
+           android:defaultValue="true" />
+
+    <ListPreference
+           android:key="recents_clear_all_location"
+           android:title="@string/recents_clear_all_location_title"
+           android:entries="@array/recents_clear_all_location_entries"
+           android:entryValues="@array/recents_clear_all_location_values"
+           android:defaultValue="3"
+           android:dependency="show_clear_all_recents" />
             
 </PreferenceScreen>

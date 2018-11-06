@@ -37,6 +37,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
@@ -56,7 +57,7 @@ public class RecentsSettingsFragment extends Fragment {
     public RecentsSettingsFragment() {
 
     }
-
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_recents_settings_main, container, false);
@@ -81,6 +82,9 @@ public class RecentsSettingsFragment extends Fragment {
 		private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
 		private ListPreference mRecentsComponentType;
 		private ListPreference mNavbarRecentsStyle;
+		private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+                private ListPreference mRecentsClearAllLocation;
+                private SwitchPreference mRecentsClearAll;
 		
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -110,6 +114,14 @@ public class RecentsSettingsFragment extends Fragment {
 			mNavbarRecentsStyle.setValue(Integer.toString(recentsStyle));
 			mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
 			mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
+			
+            // clear all recents
+			mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+                        int location = Settings.System.getIntForUser(resolver,
+                        Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+                        mRecentsClearAllLocation.setValue(String.valueOf(location));
+                        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+                        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
             return prefSet;
         }
@@ -124,7 +136,7 @@ public class RecentsSettingsFragment extends Fragment {
             super.onResume();
         }
 
-        @Override
+ @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
                 ContentResolver resolver = getActivity().getContentResolver();
                 if (preference == mRecentsComponentType) {
@@ -153,8 +165,17 @@ public class RecentsSettingsFragment extends Fragment {
 				Settings.System.putInt(resolver, Settings.System.OMNI_NAVIGATION_BAR_RECENTS, value);
 				return true;
 				}
+	     else if (preference == mRecentsClearAllLocation) {
+             int location = Integer.valueOf((String) newValue);
+             int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+             Settings.System.putIntForUser(getActivity().getContentResolver(),
+                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+         return true;
+         }
             return false;
         }
+
         
 		private void doOmniSwitchConfig() {
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());

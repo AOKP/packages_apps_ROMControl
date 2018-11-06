@@ -119,7 +119,7 @@ public class BatteryBarFragment extends Fragment {
         mBatteryBarColor = (ColorPickerPreference) findPreference(PREF_BATT_BAR_COLOR);
         mBatteryBarColor.setOnPreferenceChangeListener(this);
         intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                "status_bar_benzo_logo_color_dark_mode", 0xffffffff);
+                "battery_bar_color", 0xffffffff);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mBatteryBarColor.setSummary(hexColor);
         mBatteryBarColor.setNewPreviewColor(intColor);

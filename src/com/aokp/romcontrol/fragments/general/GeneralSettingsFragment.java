@@ -21,6 +21,7 @@ import android.app.ActivityManager;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -28,6 +29,8 @@ import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,7 +58,7 @@ public class GeneralSettingsFragment extends Fragment {
         return v;
     }
 
-    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment {
+    public static class GeneralSettingsPreferenceFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener{
 
         public GeneralSettingsPreferenceFragment() {
 
@@ -65,7 +68,9 @@ public class GeneralSettingsFragment extends Fragment {
         private static final String KEY_LOCKCLOCK = "lock_clock";
         // Package name of the cLock app
         public static final String LOCKCLOCK_PACKAGE_NAME = "org.lineageos.lockclock";
-
+        private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+        
+        private SwitchPreference mShowCpuInfo;
         private Context mContext;
         private Preference mLockClock;
 
@@ -81,6 +86,11 @@ public class GeneralSettingsFragment extends Fragment {
             PreferenceScreen prefSet = getPreferenceScreen();
             mContext = getActivity().getApplicationContext();
             PackageManager pm = getActivity().getPackageManager();
+            
+            mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
+            mShowCpuInfo.setChecked(Settings.Global.getInt(getActivity().getContentResolver(),
+                Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
+            mShowCpuInfo.setOnPreferenceChangeListener(this);
 
             // cLock app check
             mLockClock = (Preference)
@@ -99,6 +109,27 @@ public class GeneralSettingsFragment extends Fragment {
         @Override
         public void onResume() {
             super.onResume();
+        }
+        
+        private void writeCpuInfoOptions(boolean value) {
+			Settings.Global.putInt(getActivity().getContentResolver(),
+			Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
+			Intent service = (new Intent())
+                .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
+                if (value) {
+					getActivity().startService(service);
+				} else {
+					getActivity().stopService(service);
+				}
+		}
+		
+		@Override
+		public boolean onPreferenceChange(Preference preference, Object newValue) {
+			if (preference == mShowCpuInfo) {
+            writeCpuInfoOptions((Boolean) newValue);
+            return true;
+        }
+        return false;
         }
     }
 }

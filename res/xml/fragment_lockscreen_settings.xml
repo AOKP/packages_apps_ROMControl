@@ -21,6 +21,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/lockscreen_settings_title"
     xmlns:aokp="http://schemas.android.com/apk/res-auto" >
+    
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+         android:key="lockscreen_battery_info"
+         android:title="@string/lockscreen_battery_info_title"
+         android:summary="@string/lockscreen_battery_info_summary"
+         android:defaultValue="true" />
 
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="lockscreen_quick_unlock_control"

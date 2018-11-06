@@ -173,10 +173,6 @@
     <!-- LockClocK -->
     <string name="lock_clock_title">cLock Settings</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
-    
-    <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">Lockscreen Charging Info</string>
-    <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
 
     <!-- Hostname setting -->
     <string name="device_hostname">Device Hostname</string>
@@ -238,6 +234,10 @@
     <!-- ****************************** Lockscreen Cat starts ****************************** -->
     <!-- Lockscreen -->
     <string name="lockscreen_settings_title">Lockscreen</string>
+    
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Lockscreen Charging Info</string>
+    <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
 
     <!-- Lockscreen Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>

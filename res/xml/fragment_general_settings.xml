@@ -57,6 +57,13 @@
     <SwitchPreference 
              android:key="show_cpu_info"
              android:title="@string/show_cpu_info"
-             android:summary="@string/show_cpu_info_summary" /> 
+             android:summary="@string/show_cpu_info_summary" />
+             
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+              android:key="fingerprint_success_vib"
+              android:title="@string/fprint_sucess_vib_title"
+              android:summaryOn="@string/fprint_sucess_vib_summary_on"
+              android:summaryOff="@string/fprint_sucess_vib_summary_off"
+              android:defaultValue="true" /> 
 
 </PreferenceScreen>

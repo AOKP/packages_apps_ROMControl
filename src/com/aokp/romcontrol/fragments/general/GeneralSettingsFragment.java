@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager; 
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.Preference;
@@ -69,7 +70,10 @@ public class GeneralSettingsFragment extends Fragment {
         // Package name of the cLock app
         public static final String LOCKCLOCK_PACKAGE_NAME = "org.lineageos.lockclock";
         private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+        private static final String FP_SUCCESS_VIBRATION = "fingerprint_success_vib";
         
+        private FingerprintManager mFingerprintManager;
+        private SwitchPreference mFingerprintVib;
         private SwitchPreference mShowCpuInfo;
         private Context mContext;
         private Preference mLockClock;
@@ -98,6 +102,18 @@ public class GeneralSettingsFragment extends Fragment {
             if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
                 prefSet.removePreference(mLockClock);
             }
+            
+            try {
+            	mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+            } catch (Exception e) {
+            //ignore
+            }
+            // Fingerprint vibration
+            mFingerprintVib = (SwitchPreference) prefSet.findPreference(FP_SUCCESS_VIBRATION);
+            if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()){
+            	mFingerprintVib.getParent().removePreference(mFingerprintVib);
+            }
+			
             return prefSet;
         }
 

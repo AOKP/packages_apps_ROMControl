@@ -39,6 +39,7 @@ public class UITabHostFragment extends Fragment {
     private static final int[] mFragments = new int[] {
             R.string.category_ui,
             R.string.aokp_animation_title,
+            R.string.pulse_settings,
             R.string.smart_pixels_title
     };
 
@@ -95,6 +96,8 @@ public class UITabHostFragment extends Fragment {
                 case 1:
                     return new AnimationControls();
                 case 2:
+                    return new PulseSettings();
+                case 3:
                     return new SmartPixels();
             }
             return null;

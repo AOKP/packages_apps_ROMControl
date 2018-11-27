@@ -21,7 +21,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.res.Resources;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -34,7 +33,6 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
@@ -49,7 +47,6 @@ public class LiveVolumeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_live_volume_main, container, false);
 
-        Resources res = getResources();
         super.onCreate(savedInstanceState);
 
         getChildFragmentManager().beginTransaction()
@@ -94,7 +91,6 @@ public class LiveVolumeFragment extends Fragment {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.fragment_live_volume);
             PreferenceScreen prefSet = getPreferenceScreen();
-            Resources res = getResources();
             ContentResolver resolver = getActivity().getContentResolver();
 
             int activePhoneType = TelephonyManager.getDefault().getCurrentPhoneType();

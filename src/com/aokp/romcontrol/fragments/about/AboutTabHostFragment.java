@@ -65,15 +65,19 @@ public class AboutTabHostFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
+			Fragment fragment = null;
             switch (position) {
                 case 0:
-                    return new AboutFragment();
+                    fragment = new AboutFragment();
+                    break;
                 case 1:
-                    return new AboutCrewFragment();
+                    fragment = new AboutCrewFragment();
+                    break;
                 case 2:
-                    return new AboutMaintainersFragment();
+                    fragment = new AboutMaintainersFragment();
+                    break;
             }
-            return null;
+            return fragment;
         }
     }
 }

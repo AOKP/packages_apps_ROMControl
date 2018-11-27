@@ -20,7 +20,6 @@ package com.aokp.romcontrol.fragments.pie;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.content.Context;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -28,10 +27,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,8 +43,6 @@ public class PieControlFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_pie_settings_main, container, false);
-
-        Resources res = getResources();
 
         super.onCreate(savedInstanceState);
 

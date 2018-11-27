@@ -19,29 +19,21 @@ package com.aokp.romcontrol.fragments.statusbar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.RemoteException;
-import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManagerGlobal;
 
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.settings.SystemSettingSwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class BatteryBarFragment extends Fragment {
@@ -53,8 +45,6 @@ public class BatteryBarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_batterybar_main, container, false);
-
-        Resources res = getResources();
 
         super.onCreate(savedInstanceState);
 

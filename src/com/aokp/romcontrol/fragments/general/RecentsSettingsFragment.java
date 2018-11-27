@@ -17,20 +17,14 @@
 package com.aokp.romcontrol.fragments.general;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.AlertDialog; 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.database.ContentObserver;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -39,13 +33,8 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MenuInflater;
 
-import com.android.internal.util.aokp.OmniSwitchConstants; 
+import com.android.internal.util.aokp.OmniSwitchConstants;
 
 import com.aokp.romcontrol.R;
 import com.android.internal.util.aokp.AOKPUtils;
@@ -57,12 +46,11 @@ public class RecentsSettingsFragment extends Fragment {
     public RecentsSettingsFragment() {
 
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_recents_settings_main, container, false);
 
-        Resources res = getResources();
         super.onCreate(savedInstanceState);
 
         getChildFragmentManager().beginTransaction()
@@ -77,15 +65,15 @@ public class RecentsSettingsFragment extends Fragment {
         public RecentsSettingsPreferenceFragment() {
 
         }
-		
-		private static final String RECENTS_COMPONENT_TYPE = "recents_component";
-		private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
-		private ListPreference mRecentsComponentType;
-		private ListPreference mNavbarRecentsStyle;
-		private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+        private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+        private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
+        private ListPreference mRecentsComponentType;
+        private ListPreference mNavbarRecentsStyle;
+        private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
                 private ListPreference mRecentsClearAllLocation;
                 private SwitchPreference mRecentsClearAll;
-		
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -99,24 +87,24 @@ public class RecentsSettingsFragment extends Fragment {
 
             PreferenceScreen prefSet = getPreferenceScreen();
             ContentResolver resolver = getActivity().getContentResolver();
-            
+
             // recents component type
-			mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
-			int type = Settings.System.getInt(resolver,
-					Settings.System.RECENTS_COMPONENT, 0);
-			mRecentsComponentType.setValue(String.valueOf(type));
-			mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
-			mRecentsComponentType.setOnPreferenceChangeListener(this);
-			
-			mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
-			int recentsStyle = Settings.System.getInt(resolver,
-					Settings.System.OMNI_NAVIGATION_BAR_RECENTS, 0);
-			mNavbarRecentsStyle.setValue(Integer.toString(recentsStyle));
-			mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
-			mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
-			
+            mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
+            int type = Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_COMPONENT, 0);
+            mRecentsComponentType.setValue(String.valueOf(type));
+            mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
+            mRecentsComponentType.setOnPreferenceChangeListener(this);
+
+            mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
+            int recentsStyle = Settings.System.getInt(resolver,
+                    Settings.System.OMNI_NAVIGATION_BAR_RECENTS, 0);
+            mNavbarRecentsStyle.setValue(Integer.toString(recentsStyle));
+            mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
+            mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
+
             // clear all recents
-			mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+            mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
                         int location = Settings.System.getIntForUser(resolver,
                         Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
                         mRecentsClearAllLocation.setValue(String.valueOf(location));
@@ -140,32 +128,32 @@ public class RecentsSettingsFragment extends Fragment {
         public boolean onPreferenceChange(Preference preference, Object newValue) {
                 ContentResolver resolver = getActivity().getContentResolver();
                 if (preference == mRecentsComponentType) {
-				int type = Integer.valueOf((String) newValue);
-				int index = mRecentsComponentType.findIndexOfValue((String) newValue);
-				Settings.System.putInt(getActivity().getContentResolver(),
-						Settings.System.RECENTS_COMPONENT, type);
-				mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
-				if (type == 1) { // Disable swipe up gesture, if oreo type selected
-				Settings.Secure.putInt(getActivity().getContentResolver(),
-						Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
-				}
-				AOKPUtils.showSystemUiRestartDialog(getContext());
-				return true;
-				} else if (preference == mNavbarRecentsStyle) {
-				int value = Integer.valueOf((String) newValue);
-				if (value == 1) {
-					if (!isOmniSwitchInstalled()){
-						doOmniSwitchUnavail();
-					} else if (!OmniSwitchConstants.isOmniSwitchRunning(getActivity())) {
-						doOmniSwitchConfig();
-					}
-				}
-				int index = mNavbarRecentsStyle.findIndexOfValue((String) newValue);
-				mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntries()[index]);
-				Settings.System.putInt(resolver, Settings.System.OMNI_NAVIGATION_BAR_RECENTS, value);
-				return true;
-				}
-	     else if (preference == mRecentsClearAllLocation) {
+                int type = Integer.valueOf((String) newValue);
+                int index = mRecentsComponentType.findIndexOfValue((String) newValue);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.RECENTS_COMPONENT, type);
+                mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
+                if (type == 1) { // Disable swipe up gesture, if oreo type selected
+                Settings.Secure.putInt(getActivity().getContentResolver(),
+                        Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
+                }
+                AOKPUtils.showSystemUiRestartDialog(getContext());
+                return true;
+                } else if (preference == mNavbarRecentsStyle) {
+                int value = Integer.valueOf((String) newValue);
+                if (value == 1) {
+                    if (!isOmniSwitchInstalled()){
+                        doOmniSwitchUnavail();
+                    } else if (!OmniSwitchConstants.isOmniSwitchRunning(getActivity())) {
+                        doOmniSwitchConfig();
+                    }
+                }
+                int index = mNavbarRecentsStyle.findIndexOfValue((String) newValue);
+                mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntries()[index]);
+                Settings.System.putInt(resolver, Settings.System.OMNI_NAVIGATION_BAR_RECENTS, value);
+                return true;
+                }
+         else if (preference == mRecentsClearAllLocation) {
              int location = Integer.valueOf((String) newValue);
              int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
              Settings.System.putIntForUser(getActivity().getContentResolver(),
@@ -176,30 +164,30 @@ public class RecentsSettingsFragment extends Fragment {
             return false;
         }
 
-        
-		private void doOmniSwitchConfig() {
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-			alertDialogBuilder.setTitle(R.string.omniswitch_title);
-			alertDialogBuilder.setMessage(R.string.omniswitch_dialog_running_new)
-				.setPositiveButton(R.string.omniswitch_settings, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog,int id) {
-						startActivity(OmniSwitchConstants.INTENT_LAUNCH_APP);
-					}
-				});
-			AlertDialog alertDialog = alertDialogBuilder.create();
-			alertDialog.show();
-		}
-		
-		private void doOmniSwitchUnavail() {
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-			alertDialogBuilder.setTitle(R.string.omniswitch_title);
-			alertDialogBuilder.setMessage(R.string.omniswitch_dialog_unavail);
-			AlertDialog alertDialog = alertDialogBuilder.create();
-			alertDialog.show();
-		}
-		
-		private boolean isOmniSwitchInstalled() {
-			return AOKPUtils.isAvailableApp(OmniSwitchConstants.APP_PACKAGE_NAME, getActivity());
-		}
+
+        private void doOmniSwitchConfig() {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+            alertDialogBuilder.setTitle(R.string.omniswitch_title);
+            alertDialogBuilder.setMessage(R.string.omniswitch_dialog_running_new)
+                .setPositiveButton(R.string.omniswitch_settings, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        startActivity(OmniSwitchConstants.INTENT_LAUNCH_APP);
+                    }
+                });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
+
+        private void doOmniSwitchUnavail() {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+            alertDialogBuilder.setTitle(R.string.omniswitch_title);
+            alertDialogBuilder.setMessage(R.string.omniswitch_dialog_unavail);
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
+
+        private boolean isOmniSwitchInstalled() {
+            return AOKPUtils.isAvailableApp(OmniSwitchConstants.APP_PACKAGE_NAME, getActivity());
+        }
     }
 }

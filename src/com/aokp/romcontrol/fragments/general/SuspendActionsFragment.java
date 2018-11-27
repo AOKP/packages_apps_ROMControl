@@ -22,10 +22,8 @@ import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -37,7 +35,6 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
@@ -50,7 +47,6 @@ public class SuspendActionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_suspend_actions_settings_main, container, false);
 
-        Resources res = getResources();
         super.onCreate(savedInstanceState);
 
         getChildFragmentManager().beginTransaction()

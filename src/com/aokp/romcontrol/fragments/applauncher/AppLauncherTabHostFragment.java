@@ -87,11 +87,13 @@ public class AppLauncherTabHostFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
+            Fragment fragment = null;
             switch (position) {
                 case 0:
-                    return new AppCircleBarSettings();
+                    fragment = new AppCircleBarSettings();
+                    break;
             }
-            return null;
+            return fragment;
         }
     }
 }

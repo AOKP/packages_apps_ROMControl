@@ -87,11 +87,13 @@ public class PieTabHostFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
+            Fragment fragment = null;
             switch (position) {
                 case 0:
-                    return new PieControlFragment();
+                    fragment = new PieControlFragment();
+                    break;
             }
-            return null;
+            return fragment;
         }
     }
 }

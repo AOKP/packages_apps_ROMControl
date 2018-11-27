@@ -20,7 +20,6 @@ package com.aokp.romcontrol.fragments.pie;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.content.Context;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -28,10 +27,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
-import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,8 +43,6 @@ public class PieControlFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_pie_settings_main, container, false);
-
-        Resources res = getResources();
 
         super.onCreate(savedInstanceState);
 
@@ -100,33 +94,33 @@ public class PieControlFragment extends Fragment {
             mResolver = context.getContentResolver();
 
             mTheme = (ListPreference) findPreference(KEY_PIE_THEME);
-			if (mTheme != null) {
-				int value = Settings.Secure.getInt(mResolver,
-						Settings.Secure.PIE_THEME_MODE, 0);
-				mTheme.setValue(String.valueOf(value));
-				mTheme.setOnPreferenceChangeListener(this);
-			}
-			mBattery = (ListPreference) findPreference(KEY_PIE_BATTERY);
-			if (mBattery != null) {
-				int value = Settings.Secure.getInt(mResolver,
-						Settings.Secure.PIE_BATTERY_MODE, 0);
-				mBattery.setValue(String.valueOf(value));
-				mBattery.setOnPreferenceChangeListener(this);
-			}
-			mStatus = (ListPreference) findPreference(KEY_PIE_STATUS);
-			if (mStatus != null) {
-				int value = Settings.Secure.getInt(mResolver,
-						Settings.Secure.PIE_STATUS_INDICATOR, 0);
-				mStatus.setValue(String.valueOf(value));
-				mStatus.setOnPreferenceChangeListener(this);
-			}
-			mPieGravity = (ListPreference) findPreference(PA_PIE_GRAVITY);
-			if (mPieGravity != null) {
-				int pieGravity = Settings.Secure.getInt(mResolver,
-						Settings.Secure.PIE_GRAVITY, 2);
-				mPieGravity.setValue(String.valueOf(pieGravity));
-				mPieGravity.setOnPreferenceChangeListener(this);
-			}
+            if (mTheme != null) {
+                int value = Settings.Secure.getInt(mResolver,
+                        Settings.Secure.PIE_THEME_MODE, 0);
+                mTheme.setValue(String.valueOf(value));
+                mTheme.setOnPreferenceChangeListener(this);
+            }
+            mBattery = (ListPreference) findPreference(KEY_PIE_BATTERY);
+            if (mBattery != null) {
+                int value = Settings.Secure.getInt(mResolver,
+                        Settings.Secure.PIE_BATTERY_MODE, 0);
+                mBattery.setValue(String.valueOf(value));
+                mBattery.setOnPreferenceChangeListener(this);
+            }
+            mStatus = (ListPreference) findPreference(KEY_PIE_STATUS);
+            if (mStatus != null) {
+                int value = Settings.Secure.getInt(mResolver,
+                        Settings.Secure.PIE_STATUS_INDICATOR, 0);
+                mStatus.setValue(String.valueOf(value));
+                mStatus.setOnPreferenceChangeListener(this);
+            }
+            mPieGravity = (ListPreference) findPreference(PA_PIE_GRAVITY);
+            if (mPieGravity != null) {
+                int pieGravity = Settings.Secure.getInt(mResolver,
+                        Settings.Secure.PIE_GRAVITY, 2);
+                mPieGravity.setValue(String.valueOf(pieGravity));
+                mPieGravity.setOnPreferenceChangeListener(this);
+            }
         }
 
         @Override
@@ -137,18 +131,18 @@ public class PieControlFragment extends Fragment {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             int value = Integer.parseInt((String) newValue);
-			if (preference == mBattery) {
-				Settings.Secure.putInt(mResolver, Settings.Secure.PIE_BATTERY_MODE, value);
-			}
-			if (preference == mTheme) {
-				Settings.Secure.putInt(mResolver, Settings.Secure.PIE_THEME_MODE, value);
-			}
-			if (preference == mStatus) {
-				Settings.Secure.putInt(mResolver, Settings.Secure.PIE_STATUS_INDICATOR, value);
-			} if (preference == mPieGravity) {
-				Settings.Secure.putInt(mResolver, Settings.Secure.PIE_GRAVITY, value);
-			}
-			return true;
+            if (preference == mBattery) {
+                Settings.Secure.putInt(mResolver, Settings.Secure.PIE_BATTERY_MODE, value);
+            }
+            if (preference == mTheme) {
+                Settings.Secure.putInt(mResolver, Settings.Secure.PIE_THEME_MODE, value);
+            }
+            if (preference == mStatus) {
+                Settings.Secure.putInt(mResolver, Settings.Secure.PIE_STATUS_INDICATOR, value);
+            } if (preference == mPieGravity) {
+                Settings.Secure.putInt(mResolver, Settings.Secure.PIE_GRAVITY, value);
+            }
+            return true;
         }
     }
 }

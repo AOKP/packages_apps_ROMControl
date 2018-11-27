@@ -17,7 +17,6 @@
 package com.aokp.romcontrol.fragments.ui;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.content.ContentResolver;
@@ -29,7 +28,6 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
@@ -46,16 +44,13 @@ public class PulseSettings extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_pulse_settings_main, container, false);
-        return v;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
                 .replace(R.id.pulse_settings_main, new SettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
 
@@ -204,7 +199,6 @@ public class PulseSettings extends Fragment {
         }
 
         public boolean onPreferenceChange(Preference preference, Object objValue) {
-            AlertDialog dialog;
             ContentResolver resolver = getActivity().getContentResolver();
 
             if (preference == mPulseColor) {

@@ -89,15 +89,19 @@ public class StatusBarTabHostFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
+            Fragment fragment = null;
             switch (position) {
                 case 0:
-                    return new StatusbarSettingsFragment();
+                    fragment = new StatusbarSettingsFragment();
+                    break;
                 case 1:
-                    return new TrafficSettingsFragment();
+                    fragment = new TrafficSettingsFragment();
+                    break;
                 case 2:
-                    return new BatteryBarFragment();
+                    fragment = new BatteryBarFragment();
+                    break;
             }
-            return null;
+            return fragment;
         }
     }
 }

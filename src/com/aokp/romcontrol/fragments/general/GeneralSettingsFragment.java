@@ -23,10 +23,8 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.hardware.fingerprint.FingerprintManager; 
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
@@ -34,7 +32,6 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
@@ -50,7 +47,6 @@ public class GeneralSettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_general_settings_main, container, false);
 
-        Resources res = getResources();
         super.onCreate(savedInstanceState);
 
         getChildFragmentManager().beginTransaction()
@@ -71,7 +67,7 @@ public class GeneralSettingsFragment extends Fragment {
         public static final String LOCKCLOCK_PACKAGE_NAME = "org.lineageos.lockclock";
         private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
         private static final String FP_SUCCESS_VIBRATION = "fingerprint_success_vib";
-        
+
         private FingerprintManager mFingerprintManager;
         private SwitchPreference mFingerprintVib;
         private SwitchPreference mShowCpuInfo;
@@ -90,7 +86,7 @@ public class GeneralSettingsFragment extends Fragment {
             PreferenceScreen prefSet = getPreferenceScreen();
             mContext = getActivity().getApplicationContext();
             PackageManager pm = getActivity().getPackageManager();
-            
+
             mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
             mShowCpuInfo.setChecked(Settings.Global.getInt(getActivity().getContentResolver(),
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
@@ -102,18 +98,18 @@ public class GeneralSettingsFragment extends Fragment {
             if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
                 prefSet.removePreference(mLockClock);
             }
-            
+
             try {
-            	mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+                mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
             } catch (Exception e) {
             //ignore
             }
             // Fingerprint vibration
             mFingerprintVib = (SwitchPreference) prefSet.findPreference(FP_SUCCESS_VIBRATION);
             if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()){
-            	mFingerprintVib.getParent().removePreference(mFingerprintVib);
+                mFingerprintVib.getParent().removePreference(mFingerprintVib);
             }
-			
+
             return prefSet;
         }
 
@@ -126,22 +122,22 @@ public class GeneralSettingsFragment extends Fragment {
         public void onResume() {
             super.onResume();
         }
-        
+
         private void writeCpuInfoOptions(boolean value) {
-			Settings.Global.putInt(getActivity().getContentResolver(),
-			Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
-			Intent service = (new Intent())
+            Settings.Global.putInt(getActivity().getContentResolver(),
+            Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
+            Intent service = (new Intent())
                 .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
                 if (value) {
-					getActivity().startService(service);
-				} else {
-					getActivity().stopService(service);
-				}
-		}
-		
-		@Override
-		public boolean onPreferenceChange(Preference preference, Object newValue) {
-			if (preference == mShowCpuInfo) {
+                    getActivity().startService(service);
+                } else {
+                    getActivity().stopService(service);
+                }
+        }
+
+        @Override
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+            if (preference == mShowCpuInfo) {
             writeCpuInfoOptions((Boolean) newValue);
             return true;
         }

@@ -90,17 +90,22 @@ public class GeneralTabHostFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
+            Fragment fragment = null;
             switch (position) {
                 case 0:
-                    return new GeneralSettingsFragment();
+                    fragment = new GeneralSettingsFragment();
+                    break;
                 case 1:
-                    return new RecentsSettingsFragment();
+                    fragment = new RecentsSettingsFragment();
+                    break;
                 case 2:
-                    return new SuspendActionsFragment();
+                    fragment = new SuspendActionsFragment();
+                    break;
                 case 3:
-                    return new WakelockBlockerFragment();
+                    fragment = new WakelockBlockerFragment();
+                    break;
             }
-            return null;
+            return fragment;
         }
     }
 }

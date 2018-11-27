@@ -21,8 +21,6 @@ package com.aokp.romcontrol.fragments.ui;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -32,14 +30,11 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 import com.aokp.romcontrol.R;
 
 import com.android.internal.util.aokp.AwesomeAnimationHelper;
-
-import java.util.Arrays;
 
 public class AnimationControls extends Fragment {
 
@@ -51,18 +46,12 @@ public class AnimationControls extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_aokp_animation_main, container, false);
 
-        Resources res = getResources();
-
-        return v;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActivity().getFragmentManager().beginTransaction()
                 .replace(R.id.aokp_animation_main, new SettingsPreferenceFragment())
                 .commit();
+        return v;
     }
 
 

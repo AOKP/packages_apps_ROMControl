@@ -90,17 +90,22 @@ public class UITabHostFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
+			Fragment fragment = null;
             switch (position) {
                 case 0:
-                    return new DisplayAnimationsSettings();
+                    fragment = new DisplayAnimationsSettings();
+                    break;
                 case 1:
-                    return new AnimationControls();
+                    fragment = new AnimationControls();
+                    break;
                 case 2:
-                    return new PulseSettings();
+                    fragment = new PulseSettings();
+                    break;
                 case 3:
-                    return new SmartPixels();
+                    fragment = new SmartPixels();
+                    break;
             }
-            return null;
+            return fragment;
         }
     }
 }

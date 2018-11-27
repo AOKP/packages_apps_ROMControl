@@ -17,7 +17,6 @@
 package com.aokp.romcontrol.fragments.statusbar;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -27,19 +26,13 @@ import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.android.internal.logging.MetricsLogger;
 
 import com.aokp.romcontrol.R;
 import com.aokp.romcontrol.widgets.SeekBarPreferenceCham;

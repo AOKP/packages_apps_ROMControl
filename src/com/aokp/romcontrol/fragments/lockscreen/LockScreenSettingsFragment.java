@@ -20,18 +20,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.ContentResolver;
-import android.content.Intent;
-import android.net.Uri;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
-import android.provider.Settings;
 import android.view.View;
 
 import com.aokp.romcontrol.R;

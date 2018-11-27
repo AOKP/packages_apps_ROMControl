@@ -88,13 +88,16 @@ public class SoundTabHostFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
+			Fragment fragment = null;
             switch (position) {
                 case 0:
-                    return new SoundSettingsFragment();
+                    fragment = new SoundSettingsFragment();
+                    break;
                 case 1:
-                    return new LiveVolumeFragment();
+                    fragment = new LiveVolumeFragment();
+                    break;
             }
-            return null;
+            return fragment;
         }
     }
 }

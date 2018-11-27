@@ -17,20 +17,14 @@
 package com.aokp.romcontrol.fragments.general;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.AlertDialog; 
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.database.ContentObserver;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -39,11 +33,6 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MenuInflater;
 
 import com.android.internal.util.aokp.OmniSwitchConstants; 
 
@@ -62,7 +51,6 @@ public class RecentsSettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_recents_settings_main, container, false);
 
-        Resources res = getResources();
         super.onCreate(savedInstanceState);
 
         getChildFragmentManager().beginTransaction()

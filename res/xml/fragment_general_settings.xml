@@ -41,6 +41,12 @@
             android:imeOptions="actionDone"
             android:inputType="textNoSuggestions"
             android:persistent="false" />
+    
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference 
+            android:key="use_bottom_gesture_navigation"
+            android:title="@string/gesture_settings_title"
+            android:summary="@string/gesture_settings_summary"
+            android:defaultValue="false" />        
             
     <com.aokp.romcontrol.settings.SystemSettingListPreference
             android:key="screenshot_type"

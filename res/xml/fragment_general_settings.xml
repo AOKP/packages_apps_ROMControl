@@ -41,35 +41,35 @@
             android:imeOptions="actionDone"
             android:inputType="textNoSuggestions"
             android:persistent="false" />
-    
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference 
+
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
             android:key="use_bottom_gesture_navigation"
             android:title="@string/gesture_settings_title"
             android:summary="@string/gesture_settings_summary"
-            android:defaultValue="false" />        
-            
+            android:defaultValue="false" />
+
     <com.aokp.romcontrol.settings.SystemSettingListPreference
             android:key="screenshot_type"
             android:entries="@array/screenshot_type_entries"
             android:entryValues="@array/screenshot_type_values"
             android:title="@string/screenshot_type_title" />
-           
-    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference 
-             android:key="three_finger_gesture" 
-             android:title="@string/three_finger_gesture" 
-             android:summary="@string/three_finger_gesture_summary" 
+
+    <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
+             android:key="three_finger_gesture"
+             android:title="@string/three_finger_gesture"
+             android:summary="@string/three_finger_gesture_summary"
              android:defaultValue="false" />
-             
-    <SwitchPreference 
+
+    <SwitchPreference
              android:key="show_cpu_info"
              android:title="@string/show_cpu_info"
              android:summary="@string/show_cpu_info_summary" />
-             
+
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
               android:key="fingerprint_success_vib"
               android:title="@string/fprint_sucess_vib_title"
               android:summaryOn="@string/fprint_sucess_vib_summary_on"
               android:summaryOff="@string/fprint_sucess_vib_summary_off"
-              android:defaultValue="true" /> 
+              android:defaultValue="true" />
 
 </PreferenceScreen>

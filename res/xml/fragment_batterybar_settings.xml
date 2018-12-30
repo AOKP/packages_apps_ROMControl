@@ -37,7 +37,7 @@
             android:title="@string/battery_bar_thickness_title"
             android:entries="@array/battery_bar_thickness_entries"
             android:entryValues="@array/battery_bar_thickness_values" />
-            
+
         <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
             android:key="battery_bar_animate"
             android:title="@string/battery_bar_animate_title"

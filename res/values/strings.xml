@@ -161,7 +161,7 @@
     <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
-    
+
     <!-- ****************************** AppLauncher Cat ends ****************************** -->
 
     <!-- ****************************** General Cat starts ****************************** -->
@@ -181,11 +181,11 @@
     <!-- Recents setting -->
     <string name="recents_settings">Recents Settings</string>
 
-	<!-- Pie and Oreo recents -->
+    <!-- Pie and Oreo recents -->
     <string name="recents_component_type_title">Stock Recents Style</string>
     <string name="recents_pie">Pie</string>
-    <string name="recents_oreo">Oreo</string>  
-    
+    <string name="recents_oreo">Oreo</string>
+
     <!-- Recents style -->
     <string name="navbar_recents_style_title">Recents style</string>
     <string name="keys_action_app_switch_defaut">Default</string>
@@ -194,11 +194,11 @@
     <string name="omniswitch_dialog_running_new">OmniSwitch is currently not enabled. Please enable it in the app settings.</string>
     <string name="omniswitch_dialog_unavail">OmniSwitch is not installed.</string>
     <string name="omniswitch_title">Recents style</string>
-    
+
     <!-- Recents Membar -->
-    <string name="systemui_recents_mem_display_title">Show memory bar</string> 
-    <string name="systemui_recents_mem_display_summary">Enable or disable ram bar in recent app view</string> 
-    
+    <string name="systemui_recents_mem_display_title">Show memory bar</string>
+    <string name="systemui_recents_mem_display_summary">Enable or disable ram bar in recent app view</string>
+
     <!-- Recents panel settings -->
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>
@@ -209,7 +209,7 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
-    
+
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker_title">Wakelock Blocker</string>
     <string name="wakelock_blocker_summary">Block system wakelocks</string>
@@ -236,25 +236,25 @@
     <string name="screen_state_off_delay_summary">Number of minutes to wait before performing actions after screen off</string>
     <string name="screen_state_on_delay_title">Screen On actions delay</string>
     <string name="screen_state_on_delay_summary">Number of minutes to wait before performing actions after screen on</string>
-    
+
     <!-- Screenshot type -->
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Fullscreen screenshots</string>
     <string name="screenshot_type_partial">Partial screenshots</string>
-    
+
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
-    
+
     <!-- CPU info -->
     <string name="show_cpu_info">Show CPU info</string>
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
-    
+
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary_on">Vibrate on successful fingerprint authentication enabled</string>
     <string name="fprint_sucess_vib_summary_off">Vibrate on successful fingerprint authentication disabled</string>
-    
+
     <!-- Navigation gestures -->
     <string name="gesture_settings_title">OP Navigation gestures</string>
     <string name="gesture_settings_summary">Use bottom swipe up gestures for navigation</string>
@@ -263,7 +263,7 @@
     <!-- ****************************** Lockscreen Cat starts ****************************** -->
     <!-- Lockscreen -->
     <string name="lockscreen_settings_title">Lockscreen</string>
-    
+
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen Charging Info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
@@ -294,37 +294,37 @@
     <string name="qs_rows_portrait_title">Rows (portrait)</string>
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name="qs_columns_title">Columns</string>
-    
+
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Show Tiles Title</string>
     <string name="qs_tile_title_visibility_summary">Display tile titles underneath when checked</string>
 
     <!-- ****************************** Not Drawer Cat ends ****************************** -->
-    
+
     <!-- ****************************** PIE Cat starts ****************************** -->
     <!-- PA Pie control -->
     <string name="pa_pie_control_summary">Edge shortcuts and navigation controls</string>
-    <string name="pie_enable_title">Enable pie control</string> 
-    <string name="pa_pie_control_title">Pie Control</string> 
-    <string name="pie_settings">Pie settings</string> 
-    <string name="pie_settings_summary">Adjust pie to your liking</string> 
-    <string name="pie_theme_mode_title">Theme</string> 
-    <string name="pie_auto">Automatic</string> 
-    <string name="pie_white">White</string> 
-    <string name="pie_dark">Dark</string> 
-    <string name="pie_battery_title">Battery indicator</string> 
-    <string name="pie_battery_text">Text only</string> 
-    <string name="pie_battery_circle">Circle only</string> 
-    <string name="pie_battery_both">Both</string> 
-    <string name="pie_status_indicator">Network indicator</string> 
-    <string name="pie_status_wifi">Wifi only</string> 
-    <string name="pie_status_mobile">Mobile network only</string> 
-    <string name="pie_status_none">None</string> 
-    <string name="pie_status_both">Both</string> 
-    <string name="pa_pie_gravity_title">Pie Gravity</string> 
-    <string name="pa_pie_gravity_summary">Select the location where the Pie will be placed</string> 
-    <string name="pa_pie_gravity_bottom">Bottom</string> 
-    <string name="pa_pie_gravity_right">Right</string> 
+    <string name="pie_enable_title">Enable pie control</string>
+    <string name="pa_pie_control_title">Pie Control</string>
+    <string name="pie_settings">Pie settings</string>
+    <string name="pie_settings_summary">Adjust pie to your liking</string>
+    <string name="pie_theme_mode_title">Theme</string>
+    <string name="pie_auto">Automatic</string>
+    <string name="pie_white">White</string>
+    <string name="pie_dark">Dark</string>
+    <string name="pie_battery_title">Battery indicator</string>
+    <string name="pie_battery_text">Text only</string>
+    <string name="pie_battery_circle">Circle only</string>
+    <string name="pie_battery_both">Both</string>
+    <string name="pie_status_indicator">Network indicator</string>
+    <string name="pie_status_wifi">Wifi only</string>
+    <string name="pie_status_mobile">Mobile network only</string>
+    <string name="pie_status_none">None</string>
+    <string name="pie_status_both">Both</string>
+    <string name="pa_pie_gravity_title">Pie Gravity</string>
+    <string name="pa_pie_gravity_summary">Select the location where the Pie will be placed</string>
+    <string name="pa_pie_gravity_bottom">Bottom</string>
+    <string name="pa_pie_gravity_right">Right</string>
     <string name="pa_pie_gravity_left">Left</string>
     <!-- ****************************** PIE Cat ends ****************************** -->
 
@@ -499,7 +499,7 @@
     <string name="status_bar_logo_style_gender_female">Female</string>
     <string name="status_bar_logo_style_gender_male_female">Male &amp; female</string>
     <string name="status_bar_logo_style_guitar_electric">Electric guitar</string>
-    
+
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
@@ -610,7 +610,7 @@
     <string name="screen_off_animation_color">Color fade</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
-    
+
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
@@ -632,7 +632,7 @@
    <!-- Disabling immersive mode messages -->
    <string name="disable_immersive_message_title">Disable Immersive Mode Messages</string>
    <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
-   
+
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_summary">Pulse does not work with some audio sources when listening on device speaker</string>
     <string name="pulse_settings">Pulse</string>
@@ -657,7 +657,7 @@
     <string name="pulse_custom_buttons_opacity_title">Smartbar buttons opacity on Pulse</string>
     <string name="pulse_auto_color_title">Automatic Pulse color</string>
     <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string>
-    
+
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Bar width</string>
     <string name="pulse_custom_div">Bar spacing</string>

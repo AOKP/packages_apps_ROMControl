@@ -28,37 +28,37 @@
         android:title="@string/fling_show_pulse_title"
         android:summary="@string/fling_show_pulse_summary"
         android:defaultValue="false" />
-        
+
     <com.aokp.romcontrol.settings.SystemSettingListPreference
         android:key="pulse_render_style"
         android:title="@string/pulse_render_mode_title"
         android:entries="@array/pulse_render_mode_entries"
-        android:entryValues="@array/pulse_render_mode_values" 
+        android:entryValues="@array/pulse_render_mode_values"
         android:defaultValue="1" />
-        
+
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="pulse_auto_color"
         android:title="@string/pulse_auto_color_title"
         android:summary="@string/pulse_auto_color_summary"
         android:defaultValue="false" />
-        
+
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="fling_pulse_color"
         android:title="@string/fling_pulse_color"
         android:summary="@string/fling_pulse_color_summary"
         android:defaultValue="0xffffffff"
         alphaSlider="true" />
-        
+
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="fling_pulse_lavalamp_enabled"
         android:title="@string/eos_fling_lavalamp_title"
         android:summary="@string/eos_fling_lavalamp_summary"
         android:defaultValue="true" />
-        
+
     <PreferenceCategory
         android:key="pulse_fading_bars_category"
         android:title="@string/pulse_legacy_mode_advanced_category">
-        
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_custom_dimen"
             android:title="@string/pulse_custom_dimen"
@@ -68,7 +68,7 @@
             aokp:unitsRight="dp"
             android:defaultValue="14"
             android:dependency="pulse_fading_bars_category"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_custom_div"
             android:title="@string/pulse_custom_div"
@@ -79,7 +79,7 @@
             aokp:unitsRight="dp"
             android:defaultValue="16"
             android:dependency="pulse_fading_bars_category"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_filled_block_size"
             android:title="@string/pulse_filled_block_size"
@@ -89,7 +89,7 @@
             aokp:unitsRight="dp"
             android:defaultValue="4"
             android:dependency="pulse_fading_bars_category"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_empty_block_size"
             android:title="@string/pulse_empty_block_size"
@@ -99,7 +99,7 @@
             aokp:unitsRight="dp"
             android:defaultValue="1"
             android:dependency="pulse_fading_bars_category"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_custom_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
@@ -109,7 +109,7 @@
             aokp:unitsRight="dp"
             android:defaultValue="4"
             android:dependency="pulse_fading_bars_category"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="fling_pulse_lavalamp_speed"
             android:title="@string/lavamp_solid_speed_title"
@@ -120,13 +120,13 @@
             aokp:unitsRight="ms"
             android:defaultValue="10000"
             android:dependency="pulse_fading_bars_category"/>
-            
+
     </PreferenceCategory>
-    
+
     <PreferenceCategory
         android:key="pulse_2"
         android:title="@string/pulse_solid_dimen_category" >
-        
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_solid_units_opacity"
             android:title="@string/pulse_solid_units_opacity"
@@ -134,7 +134,7 @@
             android:min="0"
             android:defaultValue="200"
             android:dependency="pulse_2"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_solid_units_count"
             android:title="@string/pulse_solid_units_count"
@@ -143,7 +143,7 @@
             aokp:interval="16"
             android:defaultValue="64"
             android:dependency="pulse_2"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="pulse_solid_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
@@ -151,7 +151,7 @@
             android:min="2"
             android:defaultValue="5"
             android:dependency="pulse_2"/>
-            
+
         <com.aokp.romcontrol.widgets.SeekBarPreferenceCham
             android:key="lava_lamp_solid_speed"
             android:title="@string/lavamp_solid_speed_title"
@@ -162,7 +162,7 @@
             aokp:unitsRight="ms"
             android:defaultValue="10000"
             android:dependency="pulse_2"/>
-            
+
     </PreferenceCategory>
 
 </PreferenceScreen>

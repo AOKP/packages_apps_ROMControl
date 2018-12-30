@@ -70,7 +70,7 @@
             android:dependency="status_bar_aokp_logo" />
 
     </PreferenceCategory>
-    
+
     <PreferenceCategory
         android:key="status_bar_date_category"
         android:title="@string/status_bar_date_title" >
@@ -103,7 +103,7 @@
         android:entryValues="@array/clock_date_position_values" />
 
     </PreferenceCategory>
-    
+
     <PreferenceCategory
         android:key="weather_category"
         android:title="@string/weather_title" >

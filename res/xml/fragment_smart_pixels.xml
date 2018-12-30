@@ -28,13 +28,13 @@
         android:title="@string/smart_pixels_enable_title"
         android:summary="@string/smart_pixels_enable_summary"
         android:defaultValue="false" />
-        
+
     <com.aokp.romcontrol.settings.SystemSettingSwitchPreference
         android:key="smart_pixels_on_power_save"
         android:title="@string/smart_pixels_on_power_save_title"
         android:summary="@string/smart_pixels_on_power_save_summary"
         android:defaultValue="false" />
-        
+
     <com.aokp.romcontrol.settings.SystemSettingListPreference
         android:key="smart_pixels_pattern"
         android:entries="@array/smart_pixels_percent_strings"
@@ -42,7 +42,7 @@
         android:defaultValue="3"
         android:title="@string/smart_pixels_percent"
         android:dialogTitle="@string/smart_pixels_percent" />
-        
+
     <com.aokp.romcontrol.settings.SystemSettingListPreference
         android:key="smart_pixels_shift_timeout"
         android:entries="@array/smart_pixels_shift_times"

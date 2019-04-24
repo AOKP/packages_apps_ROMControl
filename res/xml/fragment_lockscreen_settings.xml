@@ -62,6 +62,12 @@
             android:defaultValue="true"
             android:dependency="lock_screen_show_weather" />
 
+        <PreferenceScreen
+            android:key="lockscreen_tuner"
+            android:title="@string/open_lockscreen_tuner">
+            <intent android:action="com.android.settings.action.LOCK_SCREEN_TUNER" />
+    </PreferenceScreen>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

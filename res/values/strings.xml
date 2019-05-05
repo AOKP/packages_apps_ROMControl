@@ -266,7 +266,7 @@
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen Charging Info</string>
-    <string name="lockscreen_battery_info_summary">Display negociated charger max current and voltage and battery temperature on lockscreen while charging</string>
+    <string name="lockscreen_battery_info_summary">Display negotiated charger max current and voltage and battery temperature on lockscreen while charging</string>
 
     <!-- Lockscreen Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
